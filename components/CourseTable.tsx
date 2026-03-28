@@ -195,7 +195,7 @@ export default function CourseTable({ courses, vccsSlug, onAuditClick, pinnedCRN
                   <th className="px-4 py-3 font-medium">Schedule</th>
                   <th className="px-4 py-3 font-medium">Campus</th>
                   <th className="px-4 py-3 font-medium">Mode</th>
-                  <th className="px-4 py-3 font-medium" />
+                  <th className="px-4 py-3 font-medium w-32" />
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
@@ -212,18 +212,19 @@ export default function CourseTable({ courses, vccsSlug, onAuditClick, pinnedCRN
                       <td className="whitespace-nowrap px-4 py-3 font-medium text-gray-900">
                         {course.course_prefix} {course.course_number}
                       </td>
-                      <td className="px-4 py-3 text-gray-700">
-                        <span>{course.course_title}</span>
+                      <td className="px-4 py-3 text-gray-700 max-w-[300px]">
+                        <div>{course.course_title}</div>
                         {course.prerequisite_text && (
-                          <span
-                            className="ml-1.5 inline-flex items-center gap-0.5 rounded bg-amber-50 border border-amber-200 px-1.5 py-0.5 text-[10px] font-medium text-amber-700"
-                            title={`Requires: ${course.prerequisite_text}`}
-                          >
-                            <svg className="h-2.5 w-2.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
-                            </svg>
-                            Prereq
-                          </span>
+                          <div className="mt-1">
+                            <span
+                              className="inline-flex items-center gap-0.5 rounded bg-amber-50 border border-amber-200 px-1.5 py-0.5 text-[10px] font-medium text-amber-700"
+                            >
+                              <svg className="h-2.5 w-2.5 shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                              </svg>
+                              Requires: {course.prerequisite_text}
+                            </span>
+                          </div>
                         )}
                       </td>
                       <td className="whitespace-nowrap px-4 py-3 text-gray-600">
@@ -239,7 +240,7 @@ export default function CourseTable({ courses, vccsSlug, onAuditClick, pinnedCRN
                           {style.label}
                         </span>
                       </td>
-                      <td className="px-4 py-3 text-right space-x-2">
+                      <td className="whitespace-nowrap px-4 py-3 text-right space-x-2">
                         {onTogglePin && (
                           <button
                             type="button"
