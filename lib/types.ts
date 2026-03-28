@@ -67,6 +67,8 @@ export interface CourseSection {
   instructor: string | null;
   seats_open: number | null;
   seats_total: number | null;
+  prerequisite_text: string | null;
+  prerequisite_courses: string[];
 }
 
 export interface SearchResult {

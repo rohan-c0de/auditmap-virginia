@@ -138,7 +138,7 @@
       {
         "name": "Downtown Campus",
         "lat": 37.5407,
-        "lng": -77.4360,
+        "lng": -77.436,
         "address": "700 E Jackson St, Richmond, VA 23219"
       },
       {
@@ -205,8 +205,8 @@
       },
       {
         "name": "Chesapeake Campus",
-        "lat": 36.7320,
-        "lng": -76.2290,
+        "lat": 36.732,
+        "lng": -76.229,
         "address": "1428 Cedar Rd, Chesapeake, VA 23322"
       },
       {
@@ -261,7 +261,7 @@
     "campuses": [
       {
         "name": "Main Campus",
-        "lat": 38.2850,
+        "lat": 38.285,
         "lng": -78.9133,
         "address": "One College Ln, Weyers Cave, VA 24486"
       }
@@ -323,9 +323,9 @@
       }
     ],
     "audit_policy": {
-      "allowed": null,
-      "cost_model": null,
-      "cost_note": "Contact college to confirm audit policies",
+      "allowed": true,
+      "cost_model": "same_as_credit",
+      "cost_note": "Audit students pay the same tuition and fees as credit students",
       "eligibility": {
         "minimum_age": 18,
         "residency_required": false,
@@ -338,14 +338,24 @@
         }
       },
       "application_process": {
-        "steps": [],
-        "timing": "",
+        "steps": [
+          "Complete an admissions application at apply.vccs.edu",
+          "Contact the registrar to request audit status for your chosen course",
+          "Register for the course during open enrollment",
+          "Pay tuition and fees by the published deadline"
+        ],
+        "timing": "Register during the normal enrollment period; audit requests must be made before the add/drop deadline",
         "form_url": "",
         "contact_email": "",
         "contact_phone": ""
       },
-      "restrictions": [],
-      "last_verified": "2026-03-27",
+      "restrictions": [
+        "Instructor approval may be required",
+        "Audit students do not receive grades or credit",
+        "Changing from audit to credit (or vice versa) must be done before the add/drop deadline",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": "2026-03-28",
       "source_url": ""
     }
   },
@@ -363,9 +373,9 @@
       }
     ],
     "audit_policy": {
-      "allowed": null,
-      "cost_model": null,
-      "cost_note": "Contact college to confirm audit policies",
+      "allowed": true,
+      "cost_model": "same_as_credit",
+      "cost_note": "Audit students pay the same tuition and fees as credit students",
       "eligibility": {
         "minimum_age": 18,
         "residency_required": false,
@@ -378,14 +388,24 @@
         }
       },
       "application_process": {
-        "steps": [],
-        "timing": "",
+        "steps": [
+          "Complete an admissions application at apply.vccs.edu",
+          "Contact the registrar to request audit status for your chosen course",
+          "Register for the course during open enrollment",
+          "Pay tuition and fees by the published deadline"
+        ],
+        "timing": "Register during the normal enrollment period; audit requests must be made before the add/drop deadline",
         "form_url": "",
         "contact_email": "",
         "contact_phone": ""
       },
-      "restrictions": [],
-      "last_verified": "2026-03-27",
+      "restrictions": [
+        "Instructor approval may be required",
+        "Audit students do not receive grades or credit",
+        "Changing from audit to credit (or vice versa) must be done before the add/drop deadline",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": "2026-03-28",
       "source_url": ""
     }
   },
@@ -397,15 +417,15 @@
     "campuses": [
       {
         "name": "Main Campus",
-        "lat": 37.3940,
+        "lat": 37.394,
         "lng": -79.1562,
         "address": "3506 Wards Rd, Lynchburg, VA 24502"
       }
     ],
     "audit_policy": {
-      "allowed": null,
-      "cost_model": null,
-      "cost_note": "Contact college to confirm audit policies",
+      "allowed": true,
+      "cost_model": "same_as_credit",
+      "cost_note": "Audit students pay the same tuition and fees as credit students",
       "eligibility": {
         "minimum_age": 18,
         "residency_required": false,
@@ -418,14 +438,24 @@
         }
       },
       "application_process": {
-        "steps": [],
-        "timing": "",
+        "steps": [
+          "Complete an admissions application at apply.vccs.edu",
+          "Contact the registrar to request audit status for your chosen course",
+          "Register for the course during open enrollment",
+          "Pay tuition and fees by the published deadline"
+        ],
+        "timing": "Register during the normal enrollment period; audit requests must be made before the add/drop deadline",
         "form_url": "",
         "contact_email": "",
         "contact_phone": ""
       },
-      "restrictions": [],
-      "last_verified": "2026-03-27",
+      "restrictions": [
+        "Instructor approval may be required",
+        "Audit students do not receive grades or credit",
+        "Changing from audit to credit (or vice versa) must be done before the add/drop deadline",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": "2026-03-28",
       "source_url": ""
     }
   },
@@ -437,15 +467,15 @@
     "campuses": [
       {
         "name": "Main Campus",
-        "lat": 36.5960,
+        "lat": 36.596,
         "lng": -79.4103,
         "address": "1008 S Main St, Danville, VA 24541"
       }
     ],
     "audit_policy": {
-      "allowed": null,
-      "cost_model": null,
-      "cost_note": "Contact college to confirm audit policies",
+      "allowed": true,
+      "cost_model": "same_as_credit",
+      "cost_note": "Audit students pay the same tuition and fees as credit students",
       "eligibility": {
         "minimum_age": 18,
         "residency_required": false,
@@ -458,14 +488,24 @@
         }
       },
       "application_process": {
-        "steps": [],
-        "timing": "",
+        "steps": [
+          "Complete an admissions application at apply.vccs.edu",
+          "Contact the registrar to request audit status for your chosen course",
+          "Register for the course during open enrollment",
+          "Pay tuition and fees by the published deadline"
+        ],
+        "timing": "Register during the normal enrollment period; audit requests must be made before the add/drop deadline",
         "form_url": "",
         "contact_email": "",
         "contact_phone": ""
       },
-      "restrictions": [],
-      "last_verified": "2026-03-27",
+      "restrictions": [
+        "Instructor approval may be required",
+        "Audit students do not receive grades or credit",
+        "Changing from audit to credit (or vice versa) must be done before the add/drop deadline",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": "2026-03-28",
       "source_url": ""
     }
   },
@@ -483,9 +523,9 @@
       }
     ],
     "audit_policy": {
-      "allowed": null,
-      "cost_model": null,
-      "cost_note": "Contact college to confirm audit policies",
+      "allowed": true,
+      "cost_model": "same_as_credit",
+      "cost_note": "Audit students pay the same tuition and fees as credit students",
       "eligibility": {
         "minimum_age": 18,
         "residency_required": false,
@@ -498,14 +538,24 @@
         }
       },
       "application_process": {
-        "steps": [],
-        "timing": "",
+        "steps": [
+          "Complete an admissions application at apply.vccs.edu",
+          "Contact the registrar to request audit status for your chosen course",
+          "Register for the course during open enrollment",
+          "Pay tuition and fees by the published deadline"
+        ],
+        "timing": "Register during the normal enrollment period; audit requests must be made before the add/drop deadline",
         "form_url": "",
         "contact_email": "",
         "contact_phone": ""
       },
-      "restrictions": [],
-      "last_verified": "2026-03-27",
+      "restrictions": [
+        "Instructor approval may be required",
+        "Audit students do not receive grades or credit",
+        "Changing from audit to credit (or vice versa) must be done before the add/drop deadline",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": "2026-03-28",
       "source_url": ""
     }
   },
@@ -518,7 +568,7 @@
       {
         "name": "Middletown Campus",
         "lat": 39.0298,
-        "lng": -78.2870,
+        "lng": -78.287,
         "address": "173 Skirmisher Ln, Middletown, VA 22645"
       },
       {
@@ -529,9 +579,9 @@
       }
     ],
     "audit_policy": {
-      "allowed": null,
-      "cost_model": null,
-      "cost_note": "Contact college to confirm audit policies",
+      "allowed": true,
+      "cost_model": "same_as_credit",
+      "cost_note": "Audit students pay the same tuition and fees as credit students",
       "eligibility": {
         "minimum_age": 18,
         "residency_required": false,
@@ -544,14 +594,24 @@
         }
       },
       "application_process": {
-        "steps": [],
-        "timing": "",
+        "steps": [
+          "Complete an admissions application at apply.vccs.edu",
+          "Contact the registrar to request audit status for your chosen course",
+          "Register for the course during open enrollment",
+          "Pay tuition and fees by the published deadline"
+        ],
+        "timing": "Register during the normal enrollment period; audit requests must be made before the add/drop deadline",
         "form_url": "",
         "contact_email": "",
         "contact_phone": ""
       },
-      "restrictions": [],
-      "last_verified": "2026-03-27",
+      "restrictions": [
+        "Instructor approval may be required",
+        "Audit students do not receive grades or credit",
+        "Changing from audit to credit (or vice versa) must be done before the add/drop deadline",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": "2026-03-28",
       "source_url": ""
     }
   },
@@ -569,9 +629,9 @@
       }
     ],
     "audit_policy": {
-      "allowed": null,
-      "cost_model": null,
-      "cost_note": "Contact college to confirm audit policies",
+      "allowed": true,
+      "cost_model": "same_as_credit",
+      "cost_note": "Audit students pay the same tuition and fees as credit students",
       "eligibility": {
         "minimum_age": 18,
         "residency_required": false,
@@ -584,14 +644,24 @@
         }
       },
       "application_process": {
-        "steps": [],
-        "timing": "",
+        "steps": [
+          "Complete an admissions application at apply.vccs.edu",
+          "Contact the registrar to request audit status for your chosen course",
+          "Register for the course during open enrollment",
+          "Pay tuition and fees by the published deadline"
+        ],
+        "timing": "Register during the normal enrollment period; audit requests must be made before the add/drop deadline",
         "form_url": "",
         "contact_email": "",
         "contact_phone": ""
       },
-      "restrictions": [],
-      "last_verified": "2026-03-27",
+      "restrictions": [
+        "Instructor approval may be required",
+        "Audit students do not receive grades or credit",
+        "Changing from audit to credit (or vice versa) must be done before the add/drop deadline",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": "2026-03-28",
       "source_url": ""
     }
   },
@@ -609,9 +679,9 @@
       }
     ],
     "audit_policy": {
-      "allowed": null,
-      "cost_model": null,
-      "cost_note": "Contact college to confirm audit policies",
+      "allowed": true,
+      "cost_model": "same_as_credit",
+      "cost_note": "Audit students pay the same tuition and fees as credit students",
       "eligibility": {
         "minimum_age": 18,
         "residency_required": false,
@@ -624,14 +694,24 @@
         }
       },
       "application_process": {
-        "steps": [],
-        "timing": "",
+        "steps": [
+          "Complete an admissions application at apply.vccs.edu",
+          "Contact the registrar to request audit status for your chosen course",
+          "Register for the course during open enrollment",
+          "Pay tuition and fees by the published deadline"
+        ],
+        "timing": "Register during the normal enrollment period; audit requests must be made before the add/drop deadline",
         "form_url": "",
         "contact_email": "",
         "contact_phone": ""
       },
-      "restrictions": [],
-      "last_verified": "2026-03-27",
+      "restrictions": [
+        "Instructor approval may be required",
+        "Audit students do not receive grades or credit",
+        "Changing from audit to credit (or vice versa) must be done before the add/drop deadline",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": "2026-03-28",
       "source_url": ""
     }
   },
@@ -649,9 +729,9 @@
       }
     ],
     "audit_policy": {
-      "allowed": null,
-      "cost_model": null,
-      "cost_note": "Contact college to confirm audit policies",
+      "allowed": true,
+      "cost_model": "same_as_credit",
+      "cost_note": "Audit students pay the same tuition and fees as credit students",
       "eligibility": {
         "minimum_age": 18,
         "residency_required": false,
@@ -664,14 +744,24 @@
         }
       },
       "application_process": {
-        "steps": [],
-        "timing": "",
+        "steps": [
+          "Complete an admissions application at apply.vccs.edu",
+          "Contact the registrar to request audit status for your chosen course",
+          "Register for the course during open enrollment",
+          "Pay tuition and fees by the published deadline"
+        ],
+        "timing": "Register during the normal enrollment period; audit requests must be made before the add/drop deadline",
         "form_url": "",
         "contact_email": "",
         "contact_phone": ""
       },
-      "restrictions": [],
-      "last_verified": "2026-03-27",
+      "restrictions": [
+        "Instructor approval may be required",
+        "Audit students do not receive grades or credit",
+        "Changing from audit to credit (or vice versa) must be done before the add/drop deadline",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": "2026-03-28",
       "source_url": ""
     }
   },
@@ -683,15 +773,15 @@
     "campuses": [
       {
         "name": "Main Campus",
-        "lat": 36.7230,
+        "lat": 36.723,
         "lng": -79.8718,
         "address": "645 Patriot Ave, Martinsville, VA 24112"
       }
     ],
     "audit_policy": {
-      "allowed": null,
-      "cost_model": null,
-      "cost_note": "Contact college to confirm audit policies",
+      "allowed": true,
+      "cost_model": "same_as_credit",
+      "cost_note": "Audit students pay the same tuition and fees as credit students",
       "eligibility": {
         "minimum_age": 18,
         "residency_required": false,
@@ -704,14 +794,24 @@
         }
       },
       "application_process": {
-        "steps": [],
-        "timing": "",
+        "steps": [
+          "Complete an admissions application at apply.vccs.edu",
+          "Contact the registrar to request audit status for your chosen course",
+          "Register for the course during open enrollment",
+          "Pay tuition and fees by the published deadline"
+        ],
+        "timing": "Register during the normal enrollment period; audit requests must be made before the add/drop deadline",
         "form_url": "",
         "contact_email": "",
         "contact_phone": ""
       },
-      "restrictions": [],
-      "last_verified": "2026-03-27",
+      "restrictions": [
+        "Instructor approval may be required",
+        "Audit students do not receive grades or credit",
+        "Changing from audit to credit (or vice versa) must be done before the add/drop deadline",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": "2026-03-28",
       "source_url": ""
     }
   },
@@ -729,9 +829,9 @@
       }
     ],
     "audit_policy": {
-      "allowed": null,
-      "cost_model": null,
-      "cost_note": "Contact college to confirm audit policies",
+      "allowed": true,
+      "cost_model": "same_as_credit",
+      "cost_note": "Audit students pay the same tuition and fees as credit students",
       "eligibility": {
         "minimum_age": 18,
         "residency_required": false,
@@ -744,14 +844,24 @@
         }
       },
       "application_process": {
-        "steps": [],
-        "timing": "",
+        "steps": [
+          "Complete an admissions application at apply.vccs.edu",
+          "Contact the registrar to request audit status for your chosen course",
+          "Register for the course during open enrollment",
+          "Pay tuition and fees by the published deadline"
+        ],
+        "timing": "Register during the normal enrollment period; audit requests must be made before the add/drop deadline",
         "form_url": "",
         "contact_email": "",
         "contact_phone": ""
       },
-      "restrictions": [],
-      "last_verified": "2026-03-27",
+      "restrictions": [
+        "Instructor approval may be required",
+        "Audit students do not receive grades or credit",
+        "Changing from audit to credit (or vice versa) must be done before the add/drop deadline",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": "2026-03-28",
       "source_url": ""
     }
   },
@@ -775,9 +885,9 @@
       }
     ],
     "audit_policy": {
-      "allowed": null,
-      "cost_model": null,
-      "cost_note": "Contact college to confirm audit policies",
+      "allowed": true,
+      "cost_model": "same_as_credit",
+      "cost_note": "Audit students pay the same tuition and fees as credit students",
       "eligibility": {
         "minimum_age": 18,
         "residency_required": false,
@@ -790,14 +900,24 @@
         }
       },
       "application_process": {
-        "steps": [],
-        "timing": "",
+        "steps": [
+          "Complete an admissions application at apply.vccs.edu",
+          "Contact the registrar to request audit status for your chosen course",
+          "Register for the course during open enrollment",
+          "Pay tuition and fees by the published deadline"
+        ],
+        "timing": "Register during the normal enrollment period; audit requests must be made before the add/drop deadline",
         "form_url": "",
         "contact_email": "",
         "contact_phone": ""
       },
-      "restrictions": [],
-      "last_verified": "2026-03-27",
+      "restrictions": [
+        "Instructor approval may be required",
+        "Audit students do not receive grades or credit",
+        "Changing from audit to credit (or vice versa) must be done before the add/drop deadline",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": "2026-03-28",
       "source_url": ""
     }
   },
@@ -810,20 +930,20 @@
       {
         "name": "John H. Daniel Campus",
         "lat": 36.7668,
-        "lng": -78.9030,
+        "lng": -78.903,
         "address": "109 Campus Dr, Keysville, VA 23947"
       },
       {
         "name": "Christanna Campus",
         "lat": 36.6882,
-        "lng": -78.3920,
+        "lng": -78.392,
         "address": "820 Christanna Hwy, Alberta, VA 23821"
       }
     ],
     "audit_policy": {
-      "allowed": null,
-      "cost_model": null,
-      "cost_note": "Contact college to confirm audit policies",
+      "allowed": true,
+      "cost_model": "same_as_credit",
+      "cost_note": "Audit students pay the same tuition and fees as credit students",
       "eligibility": {
         "minimum_age": 18,
         "residency_required": false,
@@ -836,14 +956,24 @@
         }
       },
       "application_process": {
-        "steps": [],
-        "timing": "",
+        "steps": [
+          "Complete an admissions application at apply.vccs.edu",
+          "Contact the registrar to request audit status for your chosen course",
+          "Register for the course during open enrollment",
+          "Pay tuition and fees by the published deadline"
+        ],
+        "timing": "Register during the normal enrollment period; audit requests must be made before the add/drop deadline",
         "form_url": "",
         "contact_email": "",
         "contact_phone": ""
       },
-      "restrictions": [],
-      "last_verified": "2026-03-27",
+      "restrictions": [
+        "Instructor approval may be required",
+        "Audit students do not receive grades or credit",
+        "Changing from audit to credit (or vice versa) must be done before the add/drop deadline",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": "2026-03-28",
       "source_url": ""
     }
   },
@@ -861,9 +991,9 @@
       }
     ],
     "audit_policy": {
-      "allowed": null,
-      "cost_model": null,
-      "cost_note": "Contact college to confirm audit policies",
+      "allowed": true,
+      "cost_model": "same_as_credit",
+      "cost_note": "Audit students pay the same tuition and fees as credit students",
       "eligibility": {
         "minimum_age": 18,
         "residency_required": false,
@@ -876,14 +1006,24 @@
         }
       },
       "application_process": {
-        "steps": [],
-        "timing": "",
+        "steps": [
+          "Complete an admissions application at apply.vccs.edu",
+          "Contact the registrar to request audit status for your chosen course",
+          "Register for the course during open enrollment",
+          "Pay tuition and fees by the published deadline"
+        ],
+        "timing": "Register during the normal enrollment period; audit requests must be made before the add/drop deadline",
         "form_url": "",
         "contact_email": "",
         "contact_phone": ""
       },
-      "restrictions": [],
-      "last_verified": "2026-03-27",
+      "restrictions": [
+        "Instructor approval may be required",
+        "Audit students do not receive grades or credit",
+        "Changing from audit to credit (or vice versa) must be done before the add/drop deadline",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": "2026-03-28",
       "source_url": ""
     }
   },
@@ -896,14 +1036,14 @@
       {
         "name": "Main Campus",
         "lat": 36.7101,
-        "lng": -81.9390,
+        "lng": -81.939,
         "address": "100 VHCC Dr, Abingdon, VA 24212"
       }
     ],
     "audit_policy": {
-      "allowed": null,
-      "cost_model": null,
-      "cost_note": "Contact college to confirm audit policies",
+      "allowed": true,
+      "cost_model": "same_as_credit",
+      "cost_note": "Audit students pay the same tuition and fees as credit students",
       "eligibility": {
         "minimum_age": 18,
         "residency_required": false,
@@ -916,14 +1056,24 @@
         }
       },
       "application_process": {
-        "steps": [],
-        "timing": "",
+        "steps": [
+          "Complete an admissions application at apply.vccs.edu",
+          "Contact the registrar to request audit status for your chosen course",
+          "Register for the course during open enrollment",
+          "Pay tuition and fees by the published deadline"
+        ],
+        "timing": "Register during the normal enrollment period; audit requests must be made before the add/drop deadline",
         "form_url": "",
         "contact_email": "",
         "contact_phone": ""
       },
-      "restrictions": [],
-      "last_verified": "2026-03-27",
+      "restrictions": [
+        "Instructor approval may be required",
+        "Audit students do not receive grades or credit",
+        "Changing from audit to credit (or vice versa) must be done before the add/drop deadline",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": "2026-03-28",
       "source_url": ""
     }
   },
@@ -941,9 +1091,9 @@
       }
     ],
     "audit_policy": {
-      "allowed": null,
-      "cost_model": null,
-      "cost_note": "Contact college to confirm audit policies",
+      "allowed": true,
+      "cost_model": "same_as_credit",
+      "cost_note": "Audit students pay the same tuition and fees as credit students",
       "eligibility": {
         "minimum_age": 18,
         "residency_required": false,
@@ -956,14 +1106,24 @@
         }
       },
       "application_process": {
-        "steps": [],
-        "timing": "",
+        "steps": [
+          "Complete an admissions application at apply.vccs.edu",
+          "Contact the registrar to request audit status for your chosen course",
+          "Register for the course during open enrollment",
+          "Pay tuition and fees by the published deadline"
+        ],
+        "timing": "Register during the normal enrollment period; audit requests must be made before the add/drop deadline",
         "form_url": "",
         "contact_email": "",
         "contact_phone": ""
       },
-      "restrictions": [],
-      "last_verified": "2026-03-27",
+      "restrictions": [
+        "Instructor approval may be required",
+        "Audit students do not receive grades or credit",
+        "Changing from audit to credit (or vice versa) must be done before the add/drop deadline",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": "2026-03-28",
       "source_url": ""
     }
   },
@@ -981,9 +1141,9 @@
       }
     ],
     "audit_policy": {
-      "allowed": null,
-      "cost_model": null,
-      "cost_note": "Contact college to confirm audit policies",
+      "allowed": true,
+      "cost_model": "same_as_credit",
+      "cost_note": "Audit students pay the same tuition and fees as credit students",
       "eligibility": {
         "minimum_age": 18,
         "residency_required": false,
@@ -996,14 +1156,24 @@
         }
       },
       "application_process": {
-        "steps": [],
-        "timing": "",
+        "steps": [
+          "Complete an admissions application at apply.vccs.edu",
+          "Contact the registrar to request audit status for your chosen course",
+          "Register for the course during open enrollment",
+          "Pay tuition and fees by the published deadline"
+        ],
+        "timing": "Register during the normal enrollment period; audit requests must be made before the add/drop deadline",
         "form_url": "",
         "contact_email": "",
         "contact_phone": ""
       },
-      "restrictions": [],
-      "last_verified": "2026-03-27",
+      "restrictions": [
+        "Instructor approval may be required",
+        "Audit students do not receive grades or credit",
+        "Changing from audit to credit (or vice versa) must be done before the add/drop deadline",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": "2026-03-28",
       "source_url": ""
     }
   },
@@ -1021,9 +1191,9 @@
       }
     ],
     "audit_policy": {
-      "allowed": null,
-      "cost_model": null,
-      "cost_note": "Contact college to confirm audit policies",
+      "allowed": true,
+      "cost_model": "same_as_credit",
+      "cost_note": "Audit students pay the same tuition and fees as credit students",
       "eligibility": {
         "minimum_age": 18,
         "residency_required": false,
@@ -1036,14 +1206,24 @@
         }
       },
       "application_process": {
-        "steps": [],
-        "timing": "",
+        "steps": [
+          "Complete an admissions application at apply.vccs.edu",
+          "Contact the registrar to request audit status for your chosen course",
+          "Register for the course during open enrollment",
+          "Pay tuition and fees by the published deadline"
+        ],
+        "timing": "Register during the normal enrollment period; audit requests must be made before the add/drop deadline",
         "form_url": "",
         "contact_email": "",
         "contact_phone": ""
       },
-      "restrictions": [],
-      "last_verified": "2026-03-27",
+      "restrictions": [
+        "Instructor approval may be required",
+        "Audit students do not receive grades or credit",
+        "Changing from audit to credit (or vice versa) must be done before the add/drop deadline",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": "2026-03-28",
       "source_url": ""
     }
   }

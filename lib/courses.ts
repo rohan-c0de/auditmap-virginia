@@ -209,6 +209,8 @@ export interface CourseGroup {
   credits: number;
   colleges: CollegeGroup[];
   totalSections: number;
+  prerequisite_text: string | null;
+  prerequisite_courses: string[];
 }
 
 export interface CollegeGroup {
@@ -281,6 +283,8 @@ export function searchCoursesAcrossColleges(
       number: string;
       title: string;
       credits: number;
+      prerequisite_text: string | null;
+      prerequisite_courses: string[];
       byCollege: Map<string, CourseSection[]>;
     }
   >();
@@ -293,10 +297,17 @@ export function searchCoursesAcrossColleges(
         number: s.course_number,
         title: s.course_title,
         credits: s.credits,
+        prerequisite_text: s.prerequisite_text || null,
+        prerequisite_courses: s.prerequisite_courses || [],
         byCollege: new Map(),
       });
     }
     const group = courseMap.get(courseKey)!;
+    // Fill in prerequisites from the first section that has them
+    if (!group.prerequisite_text && s.prerequisite_text) {
+      group.prerequisite_text = s.prerequisite_text;
+      group.prerequisite_courses = s.prerequisite_courses || [];
+    }
     if (!group.byCollege.has(s.college_code)) {
       group.byCollege.set(s.college_code, []);
     }
@@ -350,6 +361,8 @@ export function searchCoursesAcrossColleges(
       credits: data.credits,
       colleges,
       totalSections: colleges.reduce((sum, c) => sum + c.sections.length, 0),
+      prerequisite_text: data.prerequisite_text,
+      prerequisite_courses: data.prerequisite_courses,
     });
   }
 

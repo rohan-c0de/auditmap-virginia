@@ -93,6 +93,43 @@ function sleep(ms: number): Promise<void> {
   return new Promise((r) => setTimeout(r, ms));
 }
 
+/** Extract prerequisite info from the course description area */
+function parsePrerequisites($: cheerio.CheerioAPI): {
+  text: string | null;
+  courses: string[];
+} {
+  // Prerequisites appear in div.endtext after the hours line
+  const endtext = $("div.endtext").first().html() || "";
+  const prereqMatch = endtext.match(/Prerequisite:\s*(.*?)(?:<\/div>|$)/is);
+  if (!prereqMatch) return { text: null, courses: [] };
+
+  // Get the text version (strip HTML tags)
+  const rawHtml = prereqMatch[1].trim();
+  const text = rawHtml
+    .replace(/<[^>]+>/g, "")
+    .replace(/&nbsp;/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (!text) return { text: null, courses: [] };
+
+  // Extract linked course codes from <a> tags
+  const courses: string[] = [];
+  const linkPattern = /<a[^>]*>([A-Z]{2,4}\s*\d{3})<\/a>/gi;
+  let m;
+  while ((m = linkPattern.exec(rawHtml)) !== null) {
+    courses.push(m[1].replace(/\s+/g, " ").trim());
+  }
+
+  // Also catch unlinked course codes in the text
+  const codePattern = /\b([A-Z]{2,4})\s+(\d{3})\b/g;
+  while ((m = codePattern.exec(text)) !== null) {
+    const code = `${m[1]} ${m[2]}`;
+    if (!courses.includes(code)) courses.push(code);
+  }
+
+  return { text, courses };
+}
+
 async function fetchPage(url: string): Promise<string> {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
@@ -133,6 +170,8 @@ interface CourseSection {
   instructor: null;
   seats_open: null;
   seats_total: null;
+  prerequisite_text: string | null;
+  prerequisite_courses: string[];
 }
 
 // ---------------------------------------------------------------------------
@@ -220,6 +259,9 @@ function scrapeSections(
   const cm = creditsText.match(/(\d+)\s*credits?/i);
   if (cm) defaultCredits = parseInt(cm[1], 10);
 
+  // Parse prerequisites (per-course, applied to all sections)
+  const prereqs = parsePrerequisites($);
+
   $("div#schedule div.card").each((_, card) => {
     const $card = $(card);
     const termName = $card.find("div.card-header a.card-link h4").first().text().trim();
@@ -267,6 +309,8 @@ function scrapeSections(
         instructor: null,
         seats_open: null,
         seats_total: null,
+        prerequisite_text: prereqs.text,
+        prerequisite_courses: prereqs.courses,
       });
     });
   });
