@@ -53,6 +53,12 @@ export default function RootLayout({
                 Search
               </Link>
               <Link
+                href="/courses"
+                className="hover:text-teal-600 transition-colors"
+              >
+                Find a Course
+              </Link>
+              <Link
                 href="/colleges"
                 className="hover:text-teal-600 transition-colors"
               >

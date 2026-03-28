@@ -36,15 +36,17 @@ function getUniqueModes(courses: CourseSection[]): CourseMode[] {
   return Array.from(modes).sort() as CourseMode[];
 }
 
+function isValidTime(t: string): boolean {
+  return !!t && t !== "TBA" && t !== "0:00 AM" && t !== "0:00 PM";
+}
+
 function formatSchedule(course: CourseSection): string {
-  if (!course.days && (!course.start_time || course.start_time === "TBA")) {
+  const hasTime = isValidTime(course.start_time) && isValidTime(course.end_time);
+  if (!course.days && !hasTime) {
     return "Asynchronous / Online";
   }
   const days = course.days || "";
-  const time =
-    course.start_time && course.start_time !== "TBA" && course.end_time && course.end_time !== "TBA"
-      ? `${course.start_time}\u2013${course.end_time}`
-      : "";
+  const time = hasTime ? `${course.start_time}\u2013${course.end_time}` : "";
   if (days && time) return `${days} ${time}`;
   if (days) return days;
   if (time) return time;

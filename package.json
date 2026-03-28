@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "scrape": "tsx scripts/scrape-vccs.ts",
+    "scrape:college": "tsx scripts/scrape-vccs.ts --college"
   },
   "dependencies": {
     "cheerio": "^1.2.0",
@@ -25,6 +27,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.1",
     "tailwindcss": "^4",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   }
 }
