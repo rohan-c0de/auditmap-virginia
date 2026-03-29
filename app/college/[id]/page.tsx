@@ -5,11 +5,11 @@ import institutionsData from "@/data/institutions.json";
 import { loadCoursesForCollege, isDataStale } from "@/lib/courses";
 import type { Institution } from "@/lib/types";
 import { isInProgress } from "@/lib/course-status";
+import { getCurrentTerm, termLabel } from "@/lib/terms";
 import CollegeDetailClient from "./CollegeDetailClient";
 import CollegeMap from "./CollegeMap";
 
 const institutions = institutionsData as Institution[];
-const CURRENT_TERM = "2026SP";
 
 // Revalidate every 24 hours — course data only changes when re-scraped
 export const revalidate = 86400;
@@ -45,8 +45,23 @@ export default async function CollegeDetailPage(props: PageProps) {
     notFound();
   }
 
-  const courses = loadCoursesForCollege(institution.vccs_slug, CURRENT_TERM);
-  const stale = isDataStale(institution.vccs_slug, CURRENT_TERM);
+  // Use the latest term that has data for this college, falling back to earlier terms
+  let currentTerm = getCurrentTerm();
+  let courses = loadCoursesForCollege(institution.vccs_slug, currentTerm);
+  if (courses.length === 0) {
+    // Fall back to earlier terms
+    const { getAvailableTerms } = await import("@/lib/courses");
+    const allTerms = getAvailableTerms();
+    for (const t of allTerms.reverse()) {
+      const c = loadCoursesForCollege(institution.vccs_slug, t);
+      if (c.length > 0) {
+        currentTerm = t;
+        courses = c;
+        break;
+      }
+    }
+  }
+  const stale = isDataStale(institution.vccs_slug, currentTerm);
 
   // VCCS slug for building per-course URLs
   const vccsSlug = institution.vccs_slug;
@@ -317,7 +332,7 @@ export default async function CollegeDetailPage(props: PageProps) {
       <section>
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-xl font-semibold text-gray-900">
-            Spring 2026 Courses{" "}
+            {termLabel(currentTerm)} Courses{" "}
             <span className="text-gray-500 font-normal text-base">
               ({courses.length} sections)
             </span>

@@ -4,8 +4,9 @@ import { rateLimit, getClientKey } from "@/lib/rate-limit";
 import institutionsData from "@/data/institutions.json";
 import type { Institution } from "@/lib/types";
 
+import { getCurrentTerm } from "@/lib/terms";
+
 const institutions = institutionsData as Institution[];
-const CURRENT_TERM = "2026SP";
 
 export async function GET(request: NextRequest) {
   const { allowed, remaining } = rateLimit(getClientKey(request));
@@ -37,7 +38,7 @@ export async function GET(request: NextRequest) {
   }
 
   const results = searchCoursesAcrossColleges(
-    CURRENT_TERM,
+    getCurrentTerm(),
     q,
     institutions,
     { mode, day, timeOfDay, zip },

@@ -12,7 +12,10 @@
     "discover:ps": "tsx scripts/discover-ps-responses.ts",
     "enrich": "tsx scripts/enrich-peoplesoft.ts",
     "enrich:college": "tsx scripts/enrich-peoplesoft.ts --slug",
-    "enrich:dry-run": "tsx scripts/enrich-peoplesoft.ts --dry-run"
+    "enrich:dry-run": "tsx scripts/enrich-peoplesoft.ts --dry-run",
+    "scrape:ps": "tsx scripts/scrape-peoplesoft.ts",
+    "scrape:ps:summer": "tsx scripts/scrape-peoplesoft.ts --term \"Summer 2026\"",
+    "scrape:ps:fall": "tsx scripts/scrape-peoplesoft.ts --term \"Fall 2026\""
   },
   "dependencies": {
     "cheerio": "^1.2.0",

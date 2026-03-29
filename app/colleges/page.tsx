@@ -2,10 +2,10 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import institutionsData from "@/data/institutions.json";
 import { getCourseCount } from "@/lib/courses";
+import { getCurrentTerm } from "@/lib/terms";
 import type { Institution } from "@/lib/types";
 
 const institutions = institutionsData as Institution[];
-const CURRENT_TERM = "2026SP";
 
 export const metadata: Metadata = {
   title: "All 23 VCCS Colleges — AuditMap Virginia",
@@ -47,7 +47,7 @@ export default function CollegesPage() {
         {sorted.map((institution) => {
           const courseCount = getCourseCount(
             institution.vccs_slug,
-            CURRENT_TERM
+            getCurrentTerm()
           );
           const allowed = institution.audit_policy.allowed;
 

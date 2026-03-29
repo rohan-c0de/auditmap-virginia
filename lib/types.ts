@@ -92,6 +92,7 @@ export interface ScheduleRequest {
   mode?: CourseMode | "any";
   minBreakMinutes: 0 | 30 | 60;
   includeInProgress?: boolean; // default false — exclude sections that already started
+  term?: string; // e.g. "2026SU" — defaults to getCurrentTerm()
 }
 
 export interface ScoreBreakdown {

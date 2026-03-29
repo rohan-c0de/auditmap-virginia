@@ -21,8 +21,7 @@ import { loadAllCourses } from "./courses";
 import { getZipCoordinates, calculateDistance } from "./geo";
 import { parseTimeToMinutes, daysToBitmask } from "./time-utils";
 import { isInProgress } from "./course-status";
-
-const CURRENT_TERM = "2026SP";
+import { getCurrentTerm } from "./terms";
 const MAX_RESULTS = 20;
 const MAX_HEAP_SIZE = 50;
 const MAX_COMBINATIONS_EVALUATED = 100_000;
@@ -96,7 +95,8 @@ export function generateSchedules(
   );
 
   // Stage 1: Filter all sections to candidates
-  const allSections = loadAllCourses(CURRENT_TERM);
+  const term = request.term || getCurrentTerm();
+  const allSections = loadAllCourses(term);
   const candidates = filterSections(
     allSections,
     exactCourses,
