@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useCallback } from "react";
 import type { CourseSection, CourseMode } from "@/lib/types";
 import { getCourseStatus, formatStartInfo, isInProgress, type CourseStatus } from "@/lib/course-status";
 
@@ -85,6 +85,55 @@ function sortByStartDate(courses: CourseSection[]): CourseSection[] {
     // Within in-progress: most recently started first
     return (b.start_date || "").localeCompare(a.start_date || "");
   });
+}
+
+function ShareButton({ course, vccsSlug }: { course: CourseSection; vccsSlug: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleShare = useCallback(async () => {
+    const title = `${course.course_prefix} ${course.course_number}: ${course.course_title}`;
+    const text = `Check out ${title} — ${formatSchedule(course)}${course.campus ? ` at ${course.campus}` : ""}`;
+    const url = typeof window !== "undefined"
+      ? `${window.location.origin}/college/${vccsSlug}?crn=${course.crn}`
+      : "";
+
+    if (typeof navigator !== "undefined" && navigator.share) {
+      try {
+        await navigator.share({ title, text, url });
+        return;
+      } catch {
+        // User cancelled or share failed — fall back to clipboard
+      }
+    }
+
+    // Clipboard fallback
+    try {
+      await navigator.clipboard.writeText(`${text}\n${url}`);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Last resort
+    }
+  }, [course, vccsSlug]);
+
+  return (
+    <button
+      type="button"
+      onClick={handleShare}
+      className="inline-flex items-center justify-center w-7 h-7 rounded-md border bg-white border-gray-300 text-gray-400 hover:text-teal-600 hover:border-teal-300 transition"
+      title={copied ? "Link copied!" : "Share this course"}
+    >
+      {copied ? (
+        <svg className="h-3.5 w-3.5 text-teal-600" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+        </svg>
+      ) : (
+        <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z" />
+        </svg>
+      )}
+    </button>
+  );
 }
 
 export default function CourseTable({ courses, vccsSlug, onAuditClick, pinnedCRNs, onTogglePin }: CourseTableProps) {
@@ -289,6 +338,7 @@ export default function CourseTable({ courses, vccsSlug, onAuditClick, pinnedCRN
                         </span>
                       </td>
                       <td className="whitespace-nowrap px-4 py-3 text-right space-x-2">
+                        <ShareButton course={course} vccsSlug={vccsSlug} />
                         {onTogglePin && (
                           <button
                             type="button"
@@ -381,6 +431,7 @@ export default function CourseTable({ courses, vccsSlug, onAuditClick, pinnedCRN
                     )}
                   </div>
                   <div className="mt-3 flex items-center justify-center gap-4 border-t border-gray-100 pt-3">
+                    <ShareButton course={course} vccsSlug={vccsSlug} />
                     {onTogglePin && (
                       <button
                         type="button"

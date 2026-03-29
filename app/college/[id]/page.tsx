@@ -2,12 +2,13 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import institutionsData from "@/data/institutions.json";
-import { loadCoursesForCollege, isDataStale } from "@/lib/courses";
+import { loadCoursesForCollege, isDataStale, getAvailableTerms } from "@/lib/courses";
 import type { Institution } from "@/lib/types";
 import { isInProgress } from "@/lib/course-status";
 import { getCurrentTerm, termLabel } from "@/lib/terms";
 import CollegeDetailClient from "./CollegeDetailClient";
 import CollegeMap from "./CollegeMap";
+import TermSelector from "./TermSelector";
 
 const institutions = institutionsData as Institution[];
 
@@ -16,6 +17,7 @@ export const revalidate = 86400;
 
 type PageProps = {
   params: Promise<{ id: string }>;
+  searchParams: Promise<{ term?: string }>;
 };
 
 export async function generateMetadata(props: PageProps): Promise<Metadata> {
@@ -39,20 +41,27 @@ export function generateStaticParams() {
 
 export default async function CollegeDetailPage(props: PageProps) {
   const { id } = await props.params;
+  const { term: requestedTerm } = await props.searchParams;
   const institution = institutions.find((i) => i.id === id);
 
   if (!institution) {
     notFound();
   }
 
-  // Use the latest term that has data for this college, falling back to earlier terms
-  let currentTerm = getCurrentTerm();
+  // Build list of terms that have data for THIS college
+  const allTerms = getAvailableTerms();
+  const termsWithData = allTerms
+    .filter((t) => loadCoursesForCollege(institution.vccs_slug, t).length > 0)
+    .sort();
+
+  // Use requested term if valid, otherwise fall back to latest with data
+  let currentTerm = requestedTerm && termsWithData.includes(requestedTerm)
+    ? requestedTerm
+    : getCurrentTerm();
   let courses = loadCoursesForCollege(institution.vccs_slug, currentTerm);
   if (courses.length === 0) {
-    // Fall back to earlier terms
-    const { getAvailableTerms } = await import("@/lib/courses");
-    const allTerms = getAvailableTerms();
-    for (const t of allTerms.reverse()) {
+    // Fall back to earlier terms that have data for this college
+    for (const t of [...termsWithData].reverse()) {
       const c = loadCoursesForCollege(institution.vccs_slug, t);
       if (c.length > 0) {
         currentTerm = t;
@@ -330,13 +339,22 @@ export default async function CollegeDetailPage(props: PageProps) {
 
       {/* Course Listings */}
       <section>
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-semibold text-gray-900">
-            {termLabel(currentTerm)} Courses{" "}
-            <span className="text-gray-500 font-normal text-base">
-              ({courses.length} sections)
-            </span>
-          </h2>
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+          <div className="flex items-center gap-3">
+            <h2 className="text-xl font-semibold text-gray-900">
+              {termLabel(currentTerm)} Courses{" "}
+              <span className="text-gray-500 font-normal text-base">
+                ({courses.length} sections)
+              </span>
+            </h2>
+            {termsWithData.length > 1 && (
+              <TermSelector
+                terms={termsWithData.map((t) => ({ code: t, label: termLabel(t) }))}
+                currentTerm={currentTerm}
+                collegeId={institution.id}
+              />
+            )}
+          </div>
           <a
             href={`https://courses.vccs.edu/colleges/${institution.vccs_slug}/courses`}
             target="_blank"
