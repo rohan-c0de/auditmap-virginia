@@ -17,6 +17,7 @@
     "scrape:transfer:vcu": "tsx scripts/scrape-transfer-vcu.ts",
     "scrape:transfer:odu": "tsx scripts/scrape-transfer-odu.ts",
     "scrape:transfer:gmu": "tsx scripts/scrape-transfer-gmu.ts",
+    "scrape:transfer:umw": "tsx scripts/scrape-transfer-umw.ts",
     "scrape:ps": "tsx scripts/scrape-peoplesoft.ts",
     "scrape:ps:summer": "tsx scripts/scrape-peoplesoft.ts --term \"Summer 2026\"",
     "scrape:ps:fall": "tsx scripts/scrape-peoplesoft.ts --term \"Fall 2026\""
