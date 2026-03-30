@@ -20,13 +20,24 @@ export default function AuditInstructions({
   const { audit_policy } = institution;
   const { application_process } = audit_policy;
 
+  // Convert term code like "2026SU" to "Summer 2026"
+  function formatTerm(code?: string): string {
+    if (!code) return "this term";
+    const match = code.match(/^(\d{4})(SP|SU|FA)$/);
+    if (!match) return code;
+    const season = match[2] === "SP" ? "Spring" : match[2] === "SU" ? "Summer" : "Fall";
+    return `${season} ${match[1]}`;
+  }
+
+  const term = course ? formatTerm(course.term) : "this term";
+
   const emailTemplate = course
-    ? `I am interested in auditing ${course.course_title} (${course.crn}) this term. Could you confirm availability for community auditors and share the audit request form?`
-    : `I am interested in auditing a course this term. Could you confirm availability for community auditors and share the audit request form?`;
+    ? `Hello,\n\nI would like to audit the following course:\n\nCourse: ${course.course_prefix} ${course.course_number} — ${course.course_title}\nCRN: ${course.crn}\nTerm: ${term}\n\nCould you let me know the process to register as an auditor and confirm that this course is available for auditing?\n\nThank you,\n[Your Name]`
+    : `Hello,\n\nI am interested in auditing a course at ${institution.name} ${term === "this term" ? "this term" : `for ${term}`}. Could you let me know the process to register as an auditor?\n\nThank you,\n[Your Name]`;
 
   const emailSubject = course
-    ? `Audit Request: ${course.course_prefix} ${course.course_number} (CRN ${course.crn})`
-    : `Audit Request - ${institution.name}`;
+    ? `Course Audit Inquiry: ${course.course_prefix} ${course.course_number} — ${term}`
+    : `Course Audit Inquiry — ${institution.name}`;
 
   const mailtoHref = `mailto:${application_process.contact_email}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailTemplate)}`;
 
@@ -151,7 +162,7 @@ export default function AuditInstructions({
               Email Template
             </h4>
             <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-              <p className="text-sm italic text-gray-700">{emailTemplate}</p>
+              <p className="text-sm italic text-gray-700 whitespace-pre-line">{emailTemplate}</p>
               <div className="mt-3 flex flex-wrap gap-2">
                 <button
                   type="button"
@@ -185,6 +196,16 @@ export default function AuditInstructions({
                 </a>
               </div>
             </div>
+          </div>
+
+          {/* What to expect */}
+          <div className="mb-5 rounded-lg border border-blue-200 bg-blue-50 px-4 py-3">
+            <p className="text-sm text-blue-800">
+              <span className="font-semibold">What to expect: </span>The college
+              may ask for additional information such as your name, student ID,
+              unofficial transcript, or instructor approval. Response times
+              vary — follow up if you don&apos;t hear back within a week.
+            </p>
           </div>
 
           {/* Contact info */}

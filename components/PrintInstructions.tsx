@@ -11,9 +11,20 @@ export default function PrintInstructions({ institution, course }: Props) {
   const { audit_policy } = institution;
   const { application_process } = audit_policy;
 
+  // Convert term code like "2026SU" to "Summer 2026"
+  function formatTerm(code?: string): string {
+    if (!code) return "this term";
+    const match = code.match(/^(\d{4})(SP|SU|FA)$/);
+    if (!match) return code;
+    const season = match[2] === "SP" ? "Spring" : match[2] === "SU" ? "Summer" : "Fall";
+    return `${season} ${match[1]}`;
+  }
+
+  const term = course ? formatTerm(course.term) : "this term";
+
   const emailTemplate = course
-    ? `I am interested in auditing ${course.course_title} (${course.crn}) this term. Could you confirm availability for community auditors and share the audit request form?`
-    : `I am interested in auditing a course this term. Could you confirm availability for community auditors and share the audit request form?`;
+    ? `Hello,\n\nI would like to audit the following course:\n\nCourse: ${course.course_prefix} ${course.course_number} — ${course.course_title}\nCRN: ${course.crn}\nTerm: ${term}\n\nCould you let me know the process to register as an auditor and confirm that this course is available for auditing?\n\nThank you,\n[Your Name]`
+    : `Hello,\n\nI am interested in auditing a course at ${institution.name} ${term === "this term" ? "this term" : `for ${term}`}. Could you let me know the process to register as an auditor?\n\nThank you,\n[Your Name]`;
 
   function handlePrint() {
     const printWindow = window.open("", "_blank");
@@ -77,8 +88,8 @@ export default function PrintInstructions({ institution, course }: Props) {
   <h2>Email Template</h2>
   <div class="email-box">
     <strong>To:</strong> ${application_process.contact_email}<br/>
-    <strong>Subject:</strong> Audit Request${course ? ` — ${course.course_prefix} ${course.course_number}` : ""}<br/><br/>
-    ${emailTemplate}
+    <strong>Subject:</strong> Course Audit Inquiry${course ? `: ${course.course_prefix} ${course.course_number} — ${term}` : ` — ${institution.name}`}<br/><br/>
+    ${emailTemplate.replace(/\n/g, "<br/>")}
   </div>
 
   <h2>Contact</h2>
