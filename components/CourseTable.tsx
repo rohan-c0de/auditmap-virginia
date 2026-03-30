@@ -142,39 +142,83 @@ function ShareButton({ course, vccsSlug }: { course: CourseSection; vccsSlug: st
   );
 }
 
+const SHORT_NAMES: Record<string, string> = {
+  vt: "VT", vcu: "VCU", odu: "ODU", gmu: "GMU",
+  umw: "UMW", vsu: "VSU", vwu: "VWU", uva: "UVA",
+};
+
 function TransferBadge({ prefix, number, lookup }: { prefix: string; number: string; lookup: TransferLookup }) {
+  const [expanded, setExpanded] = useState(false);
   const key = `${prefix}-${number}`;
   const info = lookup[key];
   if (!info || info.length === 0) return null;
 
-  const entry = info[0];
-  if (entry.type === "no-credit") {
-    return (
-      <span className="inline-flex items-center gap-0.5 text-[10px] text-gray-400">
-        <svg className="h-2.5 w-2.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-        No VT credit
-      </span>
-    );
+  // Deduplicate by university (keep best type: direct > elective)
+  const byUni = new Map<string, { university: string; type: "direct" | "elective" | "no-credit" }>();
+  for (const e of info) {
+    if (e.type === "no-credit") continue;
+    const existing = byUni.get(e.university);
+    if (!existing || (e.type === "direct" && existing.type === "elective")) {
+      byUni.set(e.university, e);
+    }
   }
-  if (entry.type === "elective") {
-    return (
-      <span className="inline-flex items-center gap-0.5 text-[10px] text-gray-500">
-        <svg className="h-2.5 w-2.5 text-teal-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+  const deduped = Array.from(byUni.values());
+  const direct = deduped.filter((e) => e.type === "direct");
+  const elective = deduped.filter((e) => e.type === "elective");
+  const accepting = deduped;
+
+  if (accepting.length === 0) return null;
+
+  const totalUnis = accepting.length;
+  const hasDirect = direct.length > 0;
+
+  // Build badge text
+  let badgeText: string;
+  if (totalUnis === 1) {
+    const e = accepting[0];
+    const name = SHORT_NAMES[e.university] || e.university;
+    badgeText = e.type === "elective" ? `${name} elective credit` : `Transfers to ${name}`;
+  } else if (totalUnis === 2) {
+    const names = accepting.map((e) => SHORT_NAMES[e.university] || e.university);
+    badgeText = `Transfers to ${names.join(", ")}`;
+  } else {
+    badgeText = hasDirect
+      ? `Transfers to ${totalUnis} universities`
+      : `Elective credit at ${totalUnis} universities`;
+  }
+
+  return (
+    <div className="inline-block">
+      <button
+        type="button"
+        onClick={(e) => { e.stopPropagation(); setExpanded(!expanded); }}
+        className={`inline-flex items-center gap-0.5 text-[10px] font-medium ${hasDirect ? "text-teal-700" : "text-gray-500"} hover:underline cursor-pointer`}
+      >
+        <svg className="h-2.5 w-2.5 text-teal-500 shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
         </svg>
-        VT elective credit
-      </span>
-    );
-  }
-  return (
-    <span className="inline-flex items-center gap-0.5 text-[10px] text-teal-700 font-medium">
-      <svg className="h-2.5 w-2.5 text-teal-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-      </svg>
-      Transfers to VT
-    </span>
+        {badgeText}
+        {totalUnis > 1 && (
+          <svg className={`h-2.5 w-2.5 text-gray-400 transition-transform ${expanded ? "rotate-180" : ""}`} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        )}
+      </button>
+      {expanded && (
+        <div className="mt-1 rounded border border-gray-200 bg-gray-50 px-2 py-1.5 text-[10px] text-gray-600 space-y-0.5">
+          {direct.length > 0 && direct.map((e) => (
+            <div key={e.university} className="text-teal-700">
+              {SHORT_NAMES[e.university] || e.university}: direct
+            </div>
+          ))}
+          {elective.length > 0 && elective.map((e) => (
+            <div key={e.university} className="text-gray-500">
+              {SHORT_NAMES[e.university] || e.university}: elective
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
   );
 }
 
