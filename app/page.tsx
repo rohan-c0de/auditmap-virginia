@@ -1,5 +1,6 @@
 import SeniorBanner from "@/components/SeniorBanner";
 import SearchForm from "@/components/SearchForm";
+import StartingSoonCallout from "@/components/StartingSoonCallout";
 import NotifyBanner from "@/components/NotifyBanner";
 
 export default function HomePage() {
@@ -18,6 +19,7 @@ export default function HomePage() {
             course auditing, what it costs, and exactly how to apply.
           </p>
           <SearchForm />
+          <StartingSoonCallout />
         </div>
       </section>
 

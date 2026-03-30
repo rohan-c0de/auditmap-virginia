@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { getCoursesForUniversity, getUniversities } from "@/lib/transfer";
+import { loadTransferMappings, getUniversities } from "@/lib/transfer";
 import { loadAllCourses } from "@/lib/courses";
 import { getCurrentTerm } from "@/lib/terms";
 import TransferClient from "./TransferClient";
@@ -13,9 +13,9 @@ export const metadata: Metadata = {
 
 export default function TransferPage() {
   const universities = getUniversities();
-  // Default to first university (VT)
   const defaultUni = universities[0]?.slug || "vt";
-  const mappings = getCoursesForUniversity(defaultUni);
+  // Pass ALL mappings — client filters by selected university
+  const mappings = loadTransferMappings();
 
   // Get current course availability for cross-referencing
   const allCourses = loadAllCourses(getCurrentTerm());

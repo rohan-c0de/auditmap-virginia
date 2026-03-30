@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import type { CourseMode } from "@/lib/types";
 
@@ -102,10 +102,25 @@ export default function CourseSearchClient() {
   const [day, setDay] = useState("");
   const [timeOfDay, setTimeOfDay] = useState("");
 
+  const [transferTo, setTransferTo] = useState("");
+  const [transferLookup, setTransferLookup] = useState<Record<string, { university: string; type: string }[]> | null>(null);
+  const [universities, setUniversities] = useState<{ slug: string; name: string }[]>([]);
+
   const [results, setResults] = useState<SearchResponse | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [hasSearched, setHasSearched] = useState(false);
+
+  // Fetch transfer lookup data on mount (small, cached 24h)
+  useEffect(() => {
+    fetch("/api/transfer/lookup")
+      .then((r) => r.json())
+      .then((data) => {
+        setTransferLookup(data.lookup);
+        setUniversities(data.universities);
+      })
+      .catch(() => {}); // silently fail — filter just won't appear
+  }, []);
 
   // Track which college groups are expanded (keyed by "courseKey-slug")
   const [expanded, setExpanded] = useState<Set<string>>(new Set());
@@ -185,8 +200,22 @@ export default function CourseSearchClient() {
     return counts;
   }
 
-  const displayedCourses = results?.courses.slice(0, displayLimit) || [];
-  const hasMore = results ? displayLimit < results.courses.length : false;
+  // Apply client-side transfer filter
+  const filteredCourses = useMemo(() => {
+    if (!results) return [];
+    if (!transferTo || !transferLookup) return results.courses;
+    return results.courses.filter((course) => {
+      const key = `${course.prefix}-${course.number}`;
+      const entries = transferLookup[key];
+      if (!entries) return false;
+      return entries.some(
+        (e) => e.university === transferTo && e.type !== "no-credit"
+      );
+    });
+  }, [results, transferTo, transferLookup]);
+
+  const displayedCourses = filteredCourses.slice(0, displayLimit);
+  const hasMore = displayLimit < filteredCourses.length;
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -275,6 +304,26 @@ export default function CourseSearchClient() {
               </select>
             </div>
 
+            {universities.length > 0 && (
+              <div className="min-w-[150px]">
+                <label className="block text-xs font-medium text-gray-500 mb-1">
+                  Transfers to
+                </label>
+                <select
+                  value={transferTo}
+                  onChange={(e) => setTransferTo(e.target.value)}
+                  className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-200"
+                >
+                  <option value="">Any University</option>
+                  {universities.map((u) => (
+                    <option key={u.slug} value={u.slug}>
+                      {u.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            )}
+
             <button
               type="submit"
               disabled={loading}
@@ -307,12 +356,25 @@ export default function CourseSearchClient() {
           {/* Results summary */}
           <div className="mb-6 flex flex-wrap items-center gap-3">
             <p className="text-sm text-gray-700">
-              <span className="font-semibold text-gray-900">{results.totalSections}</span>{" "}
-              {results.totalSections === 1 ? "section" : "sections"} of{" "}
-              <span className="font-semibold text-gray-900">{results.totalCourses}</span>{" "}
-              {results.totalCourses === 1 ? "course" : "courses"} at{" "}
-              <span className="font-semibold text-gray-900">{results.totalColleges}</span>{" "}
-              {results.totalColleges === 1 ? "college" : "colleges"}
+              {transferTo && filteredCourses.length !== results.courses.length ? (
+                <>
+                  <span className="font-semibold text-gray-900">{filteredCourses.length}</span>{" "}
+                  of {results.totalCourses} {results.totalCourses === 1 ? "course" : "courses"}{" "}
+                  transfer to{" "}
+                  <span className="font-semibold text-teal-700">
+                    {universities.find((u) => u.slug === transferTo)?.name}
+                  </span>
+                </>
+              ) : (
+                <>
+                  <span className="font-semibold text-gray-900">{results.totalSections}</span>{" "}
+                  {results.totalSections === 1 ? "section" : "sections"} of{" "}
+                  <span className="font-semibold text-gray-900">{results.totalCourses}</span>{" "}
+                  {results.totalCourses === 1 ? "course" : "courses"} at{" "}
+                  <span className="font-semibold text-gray-900">{results.totalColleges}</span>{" "}
+                  {results.totalColleges === 1 ? "college" : "colleges"}
+                </>
+              )}
             </p>
             <div className="flex gap-1.5">
               {Object.entries(getModeSummary()).map(([m, count]) => {
@@ -362,6 +424,28 @@ export default function CourseSearchClient() {
                         {course.credits} credits &middot;{" "}
                         {course.totalSections} {course.totalSections === 1 ? "section" : "sections"} at{" "}
                         {course.colleges.length} {course.colleges.length === 1 ? "college" : "colleges"}
+                        {transferTo && transferLookup && (() => {
+                          const key = `${course.prefix}-${course.number}`;
+                          const entries = transferLookup[key];
+                          if (!entries) return null;
+                          const entry = entries.find((e) => e.university === transferTo);
+                          if (!entry) return null;
+                          if (entry.type === "direct") {
+                            return (
+                              <span className="ml-2 inline-flex items-center gap-1 text-teal-700">
+                                &middot; Transfers to {universities.find((u) => u.slug === transferTo)?.name}
+                              </span>
+                            );
+                          }
+                          if (entry.type === "elective") {
+                            return (
+                              <span className="ml-2 inline-flex items-center gap-1 text-blue-600">
+                                &middot; Elective credit at {universities.find((u) => u.slug === transferTo)?.name}
+                              </span>
+                            );
+                          }
+                          return null;
+                        })()}
                       </p>
                     </div>
                     {course.prerequisite_text && (
@@ -498,7 +582,7 @@ export default function CourseSearchClient() {
                 onClick={() => setDisplayLimit((prev) => prev + 10)}
                 className="rounded-lg border border-gray-300 bg-white px-6 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 transition"
               >
-                Show more courses ({results.courses.length - displayLimit} remaining)
+                Show more courses ({filteredCourses.length - displayLimit} remaining)
               </button>
             </div>
           )}

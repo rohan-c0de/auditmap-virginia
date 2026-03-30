@@ -20,21 +20,27 @@ export default function TransferClient({
   courseAvailability,
   defaultUniversity,
 }: Props) {
+  const [selectedUniversity, setSelectedUniversity] = useState(defaultUniversity);
   const [subjectFilter, setSubjectFilter] = useState("");
   const [typeFilter, setTypeFilter] = useState<
     "" | "direct" | "elective" | "no-credit"
   >("");
   const [availableOnly, setAvailableOnly] = useState(false);
 
-  // Get unique subjects from mappings
-  const subjects = useMemo(() => {
-    const s = new Set(mappings.map((m) => m.vccs_prefix));
-    return Array.from(s).sort();
-  }, [mappings]);
+  // Filter mappings by selected university first
+  const universityMappings = useMemo(() => {
+    return mappings.filter((m) => m.university === selectedUniversity);
+  }, [mappings, selectedUniversity]);
 
-  // Filter mappings
+  // Get unique subjects from university-filtered mappings
+  const subjects = useMemo(() => {
+    const s = new Set(universityMappings.map((m) => m.vccs_prefix));
+    return Array.from(s).sort();
+  }, [universityMappings]);
+
+  // Apply additional filters
   const filtered = useMemo(() => {
-    return mappings.filter((m) => {
+    return universityMappings.filter((m) => {
       if (subjectFilter && m.vccs_prefix !== subjectFilter) return false;
       if (typeFilter === "direct" && (m.no_credit || m.is_elective))
         return false;
@@ -47,7 +53,7 @@ export default function TransferClient({
       }
       return true;
     });
-  }, [mappings, subjectFilter, typeFilter, availableOnly, courseAvailability]);
+  }, [universityMappings, subjectFilter, typeFilter, availableOnly, courseAvailability]);
 
   // Group by subject prefix
   const grouped = useMemo(() => {
@@ -59,21 +65,21 @@ export default function TransferClient({
     return Array.from(map.entries()).sort(([a], [b]) => a.localeCompare(b));
   }, [filtered]);
 
-  // Stats
+  // Stats (based on selected university's mappings)
   const stats = useMemo(() => {
-    const direct = mappings.filter((m) => !m.no_credit && !m.is_elective).length;
-    const elective = mappings.filter((m) => m.is_elective && !m.no_credit).length;
-    const noCredit = mappings.filter((m) => m.no_credit).length;
-    const available = mappings.filter((m) => {
+    const direct = universityMappings.filter((m) => !m.no_credit && !m.is_elective).length;
+    const elective = universityMappings.filter((m) => m.is_elective && !m.no_credit).length;
+    const noCredit = universityMappings.filter((m) => m.no_credit).length;
+    const available = universityMappings.filter((m) => {
       const key = `${m.vccs_prefix}-${m.vccs_number}`;
       return courseAvailability[key] && !m.no_credit;
     }).length;
-    return { direct, elective, noCredit, total: mappings.length, available };
-  }, [mappings, courseAvailability]);
+    return { direct, elective, noCredit, total: universityMappings.length, available };
+  }, [universityMappings, courseAvailability]);
 
   const uniName =
-    universities.find((u) => u.slug === defaultUniversity)?.name ||
-    defaultUniversity;
+    universities.find((u) => u.slug === selectedUniversity)?.name ||
+    selectedUniversity;
 
   return (
     <div>
@@ -83,8 +89,12 @@ export default function TransferClient({
           I want to transfer to:
         </label>
         <select
-          value={defaultUniversity}
-          disabled={universities.length <= 1}
+          value={selectedUniversity}
+          onChange={(e) => {
+            setSelectedUniversity(e.target.value);
+            setSubjectFilter("");
+            setTypeFilter("");
+          }}
           className="rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-900 focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-200"
         >
           {universities.map((u) => (
@@ -93,11 +103,6 @@ export default function TransferClient({
             </option>
           ))}
         </select>
-        {universities.length <= 1 && (
-          <span className="ml-2 text-xs text-gray-400">
-            More universities coming soon
-          </span>
-        )}
       </div>
 
       {/* Stats banner */}
