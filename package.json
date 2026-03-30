@@ -21,7 +21,9 @@
     "scrape:ps": "tsx scripts/scrape-peoplesoft.ts",
     "scrape:ps:summer": "tsx scripts/scrape-peoplesoft.ts --term \"Summer 2026\"",
     "scrape:ps:fall": "tsx scripts/scrape-peoplesoft.ts --term \"Fall 2026\"",
-    "scrape:transfer:vsu": "tsx scripts/scrape-transfer-vsu.ts"
+    "scrape:transfer:vsu": "tsx scripts/scrape-transfer-vsu.ts",
+    "scrape:transfer:vwu": "tsx scripts/scrape-transfer-vwu.ts",
+    "scrape:transfer:uva": "tsx scripts/scrape-transfer-uva.ts"
   },
   "dependencies": {
     "cheerio": "^1.2.0",
