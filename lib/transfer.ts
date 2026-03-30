@@ -107,6 +107,10 @@ export function buildTransferLookup(): Record<
   > = {};
 
   for (const m of mappings) {
+    // Skip combo-credit entries (e.g. ODU's "**** ****") — they only
+    // transfer when paired with other courses, not standalone.
+    if (m.univ_course && m.univ_course.includes("*")) continue;
+
     const key = `${m.vccs_prefix}-${m.vccs_number}`;
     if (!lookup[key]) lookup[key] = [];
     lookup[key].push({

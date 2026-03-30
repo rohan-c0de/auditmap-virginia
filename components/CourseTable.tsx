@@ -206,14 +206,11 @@ function TransferBadge({ prefix, number, lookup }: { prefix: string; number: str
       </button>
       {expanded && (
         <div className="mt-1 rounded border border-gray-200 bg-gray-50 px-2 py-1.5 text-[10px] text-gray-600 space-y-0.5">
-          {direct.length > 0 && direct.map((e) => {
-            const courseName = e.course && !e.course.includes("*") ? e.course : "direct equivalent";
-            return (
-              <div key={e.university} className="text-teal-700">
-                {SHORT_NAMES[e.university] || e.university}: {courseName}
-              </div>
-            );
-          })}
+          {direct.length > 0 && direct.map((e) => (
+            <div key={e.university} className="text-teal-700">
+              {SHORT_NAMES[e.university] || e.university}: {e.course || "direct equivalent"}
+            </div>
+          ))}
           {elective.length > 0 && elective.map((e) => (
             <div key={e.university} className="text-gray-500">
               {SHORT_NAMES[e.university] || e.university}: elective credit
