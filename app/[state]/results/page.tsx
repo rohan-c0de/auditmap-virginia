@@ -1,16 +1,22 @@
 import { Suspense } from "react";
+import type { Metadata } from "next";
 import ResultsContent from "./ResultsContent";
+import { getStateConfig } from "@/lib/states/registry";
 
-export const metadata = {
-  title: "Search Results — AuditMap Virginia",
-  description: "Community colleges near you that offer course auditing.",
+type Props = {
+  params: Promise<{ state: string }>;
 };
 
-export default async function ResultsPage({
-  params,
-}: {
-  params: Promise<{ state: string }>;
-}) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { state } = await params;
+  const config = getStateConfig(state);
+  return {
+    title: `Search Results — ${config.branding.siteName}`,
+    description: `Community colleges near you in ${config.name} that offer course auditing.`,
+  };
+}
+
+export default async function ResultsPage({ params }: Props) {
   const { state } = await params;
 
   return (

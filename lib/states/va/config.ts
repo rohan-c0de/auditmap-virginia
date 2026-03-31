@@ -25,6 +25,9 @@ const vaConfig: StateConfig = {
   courseDiscoveryUrl: (collegeSlug: string, prefix: string, number: string) =>
     `https://courses.vccs.edu/colleges/${collegeSlug}/courses/${prefix}${number}`,
 
+  collegeCoursesUrl: (collegeSlug: string) =>
+    `https://courses.vccs.edu/colleges/${collegeSlug}/courses`,
+
   branding: {
     siteName: "AuditMap Virginia",
     tagline:

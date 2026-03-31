@@ -7,8 +7,9 @@ function dataDir(state = "va"): string {
   return path.join(process.cwd(), "data", state, "courses");
 }
 
-// Module-level cache for all-college data (keyed by state+term)
-let allCoursesCache: { key: string; data: CourseSection[] } | null = null;
+// Module-level cache for all-college data (keyed by "state:term"), max 4 entries
+const allCoursesCache = new Map<string, CourseSection[]>();
+const MAX_CACHE_ENTRIES = 4;
 
 /**
  * Load all course sections for a given college and term from the static JSON
@@ -132,9 +133,8 @@ export function getUniqueSubjects(courses: CourseSection[]): string[] {
  */
 export function loadAllCourses(term: string, state = "va"): CourseSection[] {
   const cacheKey = `${state}:${term}`;
-  if (allCoursesCache && allCoursesCache.key === cacheKey) {
-    return allCoursesCache.data;
-  }
+  const cached = allCoursesCache.get(cacheKey);
+  if (cached) return cached;
 
   const all: CourseSection[] = [];
   try {
@@ -149,7 +149,11 @@ export function loadAllCourses(term: string, state = "va"): CourseSection[] {
     // data directory may not exist
   }
 
-  allCoursesCache = { key: cacheKey, data: all };
+  if (allCoursesCache.size >= MAX_CACHE_ENTRIES) {
+    const oldest = allCoursesCache.keys().next().value!;
+    allCoursesCache.delete(oldest);
+  }
+  allCoursesCache.set(cacheKey, all);
   return all;
 }
 
@@ -254,7 +258,7 @@ export function searchCoursesAcrossColleges(
   // Build institution lookup
   const instMap = new Map<string, Institution>();
   for (const inst of institutions) {
-    instMap.set(inst.vccs_slug, inst);
+    instMap.set(inst.college_slug, inst);
   }
 
   // Get user coordinates for distance

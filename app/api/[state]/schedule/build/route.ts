@@ -2,12 +2,17 @@ import { NextResponse } from "next/server";
 import type { ScheduleRequest } from "@/lib/types";
 import { generateSchedules } from "@/lib/schedule";
 import { rateLimit, getClientKey } from "@/lib/rate-limit";
-import institutionsData from "@/data/va/institutions.json";
-import type { Institution } from "@/lib/types";
+import { loadInstitutions } from "@/lib/institutions";
+import { isValidState } from "@/lib/states/registry";
 
-const institutions = institutionsData as Institution[];
+type RouteContext = { params: Promise<{ state: string }> };
 
-export async function POST(req: Request) {
+export async function POST(req: Request, context: RouteContext) {
+  const { state } = await context.params;
+
+  if (!isValidState(state)) {
+    return NextResponse.json({ error: "Unknown state" }, { status: 404 });
+  }
   const { allowed } = rateLimit(getClientKey(req), 20);
   if (!allowed) {
     return NextResponse.json(
@@ -63,6 +68,7 @@ export async function POST(req: Request) {
       includeInProgress: body.includeInProgress ?? false,
     };
 
+    const institutions = loadInstitutions(state);
     const result = generateSchedules(request, institutions);
     return NextResponse.json(result);
   } catch (error) {

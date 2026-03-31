@@ -1,18 +1,23 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { getStateConfig } from "@/lib/states/registry";
 
-export const metadata: Metadata = {
-  title: "About Course Auditing — AuditMap Virginia",
-  description:
-    "Learn what course auditing is, how it works at Virginia community colleges, and whether you're eligible.",
+type Props = {
+  params: Promise<{ state: string }>;
 };
 
-export default async function AboutPage({
-  params,
-}: {
-  params: Promise<{ state: string }>;
-}) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { state } = await params;
+  const config = getStateConfig(state);
+  return {
+    title: `About Course Auditing — ${config.branding.siteName}`,
+    description: `Learn what course auditing is, how it works at ${config.name} community colleges, and whether you're eligible.`,
+  };
+}
+
+export default async function AboutPage({ params }: Props) {
+  const { state } = await params;
+  const config = getStateConfig(state);
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -80,25 +85,28 @@ export default async function AboutPage({
                 before taking it for credit
               </span>
             </li>
-            <li className="flex gap-2">
-              <span className="text-teal-600 font-bold shrink-0">-</span>
-              <span>
-                <strong>Retirees and seniors</strong> — Virginia residents 60+
-                may qualify for free tuition under state law
-              </span>
-            </li>
+            {config.seniorWaiver && (
+              <li className="flex gap-2">
+                <span className="text-teal-600 font-bold shrink-0">-</span>
+                <span>
+                  <strong>Retirees and seniors</strong> — {config.name} residents{" "}
+                  {config.seniorWaiver.ageThreshold}+ may qualify for free
+                  tuition under state law
+                </span>
+              </li>
+            )}
           </ul>
         </section>
 
-        {/* How it works in Virginia */}
+        {/* How it works */}
         <section>
           <h2 className="text-xl font-semibold text-gray-900 mb-3">
-            How It Works at Virginia Community Colleges
+            How It Works at {config.name} Community Colleges
           </h2>
           <p className="text-gray-600 mb-4">
-            Virginia&apos;s 23 community colleges (the VCCS system) generally
-            allow course auditing, though policies vary by college. The typical
-            process:
+            {config.name}&apos;s {config.collegeCount} community colleges (the{" "}
+            {config.systemName} system) generally allow course auditing, though
+            policies vary by college. The typical process:
           </p>
           <ol className="space-y-3">
             {[
@@ -124,22 +132,21 @@ export default async function AboutPage({
             What Does It Cost?
           </h2>
           <p className="text-gray-600 mb-3">
-            At most VCCS colleges, audit students pay the same tuition and fees
-            as credit students — typically around $165 per credit hour for
-            Virginia residents. A 3-credit course would cost roughly $495.
+            At most {config.systemName} colleges, audit students pay the same
+            tuition and fees as credit students. Check each college&apos;s page
+            for specific cost details.
           </p>
-          <div className="bg-teal-50 border border-teal-200 rounded-lg p-4">
-            <h3 className="font-semibold text-teal-900 mb-1">
-              Virginia 60+ Tuition Waiver
-            </h3>
-            <p className="text-teal-800 text-sm">
-              Virginia Code 23.1-638 provides a tuition waiver for Virginia
-              residents aged 60 and older at public colleges. This may make
-              auditing free or significantly reduced — but whether it applies
-              specifically to audit enrollment varies by college. We flag this on
-              every college page with links to verify.
-            </p>
-          </div>
+          {config.seniorWaiver && (
+            <div className="bg-teal-50 border border-teal-200 rounded-lg p-4">
+              <h3 className="font-semibold text-teal-900 mb-1">
+                {config.name} {config.seniorWaiver.ageThreshold}+ Tuition Waiver
+              </h3>
+              <p className="text-teal-800 text-sm">
+                {config.seniorWaiver.description} We flag this on every college
+                page with links to verify.
+              </p>
+            </div>
+          )}
         </section>
 
         {/* Important notes */}
@@ -173,13 +180,14 @@ export default async function AboutPage({
         {/* About this site */}
         <section className="border-t border-gray-200 pt-8">
           <h2 className="text-xl font-semibold text-gray-900 mb-3">
-            About AuditMap Virginia
+            About {config.branding.siteName}
           </h2>
           <p className="text-gray-600 mb-3">
-            AuditMap Virginia is a free tool that helps you find and navigate
-            course auditing opportunities at Virginia community colleges. We
-            aggregate course listings from the VCCS system and pair them with
-            manually researched audit policies for each college.
+            {config.branding.siteName} is a free tool that helps you find and
+            navigate course auditing opportunities at {config.name} community
+            colleges. We aggregate course listings from the {config.systemName}{" "}
+            system and pair them with manually researched audit policies for each
+            college.
           </p>
           <p className="text-gray-600 mb-3">
             Every audit policy on this site includes a &quot;last verified&quot;
@@ -187,8 +195,7 @@ export default async function AboutPage({
             confirm directly with the college before enrolling.
           </p>
           <p className="text-sm text-gray-400">
-            AuditMap Virginia is not affiliated with VCCS or any individual
-            college.
+            {config.branding.disclaimer}
           </p>
         </section>
       </div>

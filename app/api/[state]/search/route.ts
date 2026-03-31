@@ -2,12 +2,20 @@ import { NextRequest, NextResponse } from "next/server";
 import { resolveLocation, findNearbyInstitutions } from "@/lib/geo";
 import { getCourseCount } from "@/lib/courses";
 import { getCurrentTerm } from "@/lib/terms";
-import type { Institution } from "@/lib/types";
-import institutionsData from "@/data/va/institutions.json";
+import { loadInstitutions } from "@/lib/institutions";
+import { getStateConfig, isValidState } from "@/lib/states/registry";
 
-const institutions = institutionsData as Institution[];
+type RouteContext = { params: Promise<{ state: string }> };
 
-export async function GET(request: NextRequest) {
+export async function GET(request: NextRequest, context: RouteContext) {
+  const { state } = await context.params;
+
+  if (!isValidState(state)) {
+    return NextResponse.json({ error: "Unknown state" }, { status: 404 });
+  }
+
+  const config = getStateConfig(state);
+  const institutions = loadInstitutions(state);
   const { searchParams } = new URL(request.url);
   const query = searchParams.get("zip") || searchParams.get("q") || "";
   const radius = parseInt(searchParams.get("radius") || "25", 10);
@@ -19,11 +27,11 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  const location = resolveLocation(query);
+  const location = resolveLocation(query, state);
   if (!location) {
     return NextResponse.json(
       {
-        error: `"${query}" not found in our Virginia database. Try a 5-digit zip code or a Virginia city name.`,
+        error: `"${query}" not found in our ${config.name} database. Try a 5-digit zip code or a ${config.name} city name.`,
       },
       { status: 404 }
     );
@@ -39,7 +47,7 @@ export async function GET(request: NextRequest) {
   // Populate course counts
   const resultsWithCounts = results.map((result) => ({
     ...result,
-    courseCount: getCourseCount(result.institution.vccs_slug, getCurrentTerm()),
+    courseCount: getCourseCount(result.institution.college_slug, getCurrentTerm(state), state),
   }));
 
   return NextResponse.json({
@@ -48,6 +56,6 @@ export async function GET(request: NextRequest) {
     city: location.city,
     zip: location.zip,
     radius,
-    term: getCurrentTerm(),
+    term: getCurrentTerm(state),
   });
 }

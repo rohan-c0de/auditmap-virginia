@@ -30,7 +30,7 @@ export function getTransferInfo(
 ): TransferMapping[] {
   const mappings = loadTransferMappings(state);
   return mappings.filter(
-    (m) => m.vccs_prefix === prefix && m.vccs_number === number
+    (m) => m.cc_prefix === prefix && m.cc_number === number
   );
 }
 
@@ -118,7 +118,7 @@ export function buildTransferLookup(state = "va"): Record<
     // transfer when paired with other courses, not standalone.
     if (m.univ_course && m.univ_course.includes("*")) continue;
 
-    const key = `${m.vccs_prefix}-${m.vccs_number}`;
+    const key = `${m.cc_prefix}-${m.cc_number}`;
     if (!lookup[key]) lookup[key] = [];
     lookup[key].push({
       university: m.university,

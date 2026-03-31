@@ -1,18 +1,29 @@
 import type { Metadata } from "next";
 import CourseSearchClient from "./CourseSearchClient";
+import { getStateConfig } from "@/lib/states/registry";
 
-export const metadata: Metadata = {
-  title: "Find a Course — Search All 23 VCCS Colleges | AuditMap Virginia",
-  description:
-    "Search for courses across all 23 Virginia community colleges at once. Find the best schedule, location, and format for auditing.",
+type Props = {
+  params: Promise<{ state: string }>;
 };
 
-export default async function CoursesPage({
-  params,
-}: {
-  params: Promise<{ state: string }>;
-}) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { state } = await params;
+  const config = getStateConfig(state);
+  return {
+    title: `Find a Course — Search All ${config.collegeCount} ${config.systemName} Colleges | ${config.branding.siteName}`,
+    description: `Search for courses across all ${config.collegeCount} ${config.name} community colleges at once. Find the best schedule, location, and format for auditing.`,
+  };
+}
 
-  return <CourseSearchClient state={state} />;
+export default async function CoursesPage({ params }: Props) {
+  const { state } = await params;
+  const config = getStateConfig(state);
+
+  return (
+    <CourseSearchClient
+      state={state}
+      systemName={config.systemName}
+      collegeCount={config.collegeCount}
+    />
+  );
 }

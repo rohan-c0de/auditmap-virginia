@@ -36,21 +36,21 @@ export default function TransferClient({
 
   // Get unique subjects from university-filtered mappings
   const subjects = useMemo(() => {
-    const s = new Set(universityMappings.map((m) => m.vccs_prefix));
+    const s = new Set(universityMappings.map((m) => m.cc_prefix));
     return Array.from(s).sort();
   }, [universityMappings]);
 
   // Apply additional filters
   const filtered = useMemo(() => {
     return universityMappings.filter((m) => {
-      if (subjectFilter && m.vccs_prefix !== subjectFilter) return false;
+      if (subjectFilter && m.cc_prefix !== subjectFilter) return false;
       if (typeFilter === "direct" && (m.no_credit || m.is_elective))
         return false;
       if (typeFilter === "elective" && (!m.is_elective || m.no_credit))
         return false;
       if (typeFilter === "no-credit" && !m.no_credit) return false;
       if (availableOnly) {
-        const key = `${m.vccs_prefix}-${m.vccs_number}`;
+        const key = `${m.cc_prefix}-${m.cc_number}`;
         if (!courseAvailability[key]) return false;
       }
       return true;
@@ -61,8 +61,8 @@ export default function TransferClient({
   const grouped = useMemo(() => {
     const map = new Map<string, TransferMapping[]>();
     for (const m of filtered) {
-      if (!map.has(m.vccs_prefix)) map.set(m.vccs_prefix, []);
-      map.get(m.vccs_prefix)!.push(m);
+      if (!map.has(m.cc_prefix)) map.set(m.cc_prefix, []);
+      map.get(m.cc_prefix)!.push(m);
     }
     return Array.from(map.entries()).sort(([a], [b]) => a.localeCompare(b));
   }, [filtered]);
@@ -73,7 +73,7 @@ export default function TransferClient({
     const elective = universityMappings.filter((m) => m.is_elective && !m.no_credit).length;
     const noCredit = universityMappings.filter((m) => m.no_credit).length;
     const available = universityMappings.filter((m) => {
-      const key = `${m.vccs_prefix}-${m.vccs_number}`;
+      const key = `${m.cc_prefix}-${m.cc_number}`;
       return courseAvailability[key] && !m.no_credit;
     }).length;
     return { direct, elective, noCredit, total: universityMappings.length, available };
@@ -207,7 +207,7 @@ export default function TransferClient({
               {/* Course rows */}
               <div className="rounded-lg border border-gray-200 bg-white divide-y divide-gray-100 overflow-hidden">
                 {courses.map((m, i) => {
-                  const key = `${m.vccs_prefix}-${m.vccs_number}`;
+                  const key = `${m.cc_prefix}-${m.cc_number}`;
                   const availability = courseAvailability[key];
 
                   return (
@@ -220,7 +220,7 @@ export default function TransferClient({
                         <div className="min-w-0">
                           <div className="flex items-center gap-2 flex-wrap">
                             <span className="font-medium text-gray-900">
-                              {m.vccs_course}
+                              {m.cc_course}
                             </span>
                             {!m.no_credit && (
                               <>
@@ -243,7 +243,7 @@ export default function TransferClient({
                             )}
                           </div>
                           <div className="text-xs text-gray-500 mt-0.5">
-                            {m.vccs_title}
+                            {m.cc_title}
                             {!m.no_credit && m.univ_title && (
                               <span className="text-gray-400">
                                 {" "}
@@ -262,7 +262,7 @@ export default function TransferClient({
                         <div className="flex items-center gap-3 shrink-0">
                           {!m.no_credit && (
                             <span className="text-xs text-gray-400">
-                              {m.vccs_credits} cr &rarr; {m.univ_credits} cr
+                              {m.cc_credits} cr &rarr; {m.univ_credits} cr
                             </span>
                           )}
                           {m.is_elective && !m.no_credit && (
@@ -277,7 +277,7 @@ export default function TransferClient({
                           )}
                           {availability && !m.no_credit && (
                             <Link
-                              href={`/${state}/courses?q=${m.vccs_prefix}+${m.vccs_number}`}
+                              href={`/${state}/courses?q=${m.cc_prefix}+${m.cc_number}`}
                               className="text-[10px] text-teal-600 hover:text-teal-800 hover:underline whitespace-nowrap"
                             >
                               {availability.totalSections} sections at{" "}

@@ -11,17 +11,27 @@ type TransferLookup = Record<
 
 interface CourseTableProps {
   courses: CourseSection[];
-  vccsSlug: string;
+  collegeSlug: string;
+  courseUrlBuilder?: (collegeSlug: string, prefix: string, number: string) => string;
+  systemName?: string;
   onAuditClick?: (course: CourseSection) => void;
   pinnedCRNs?: Set<string>;
   onTogglePin?: (crn: string) => void;
   transferLookup?: TransferLookup;
 }
 
-/** Build a courses.vccs.edu URL for a specific course section */
-function buildCourseUrl(vccsSlug: string, course: CourseSection): string {
+/** Build external URL for a specific course section */
+function buildCourseUrl(
+  collegeSlug: string,
+  course: CourseSection,
+  urlBuilder?: (slug: string, prefix: string, number: string) => string
+): string {
+  if (urlBuilder) {
+    return urlBuilder(collegeSlug, course.course_prefix, course.course_number);
+  }
+  // Fallback for VA (default)
   const titleSlug = course.course_title.replace(/[^a-zA-Z0-9]/g, "");
-  return `https://courses.vccs.edu/colleges/${vccsSlug}/courses/${course.course_prefix}${course.course_number}-${titleSlug}`;
+  return `https://courses.vccs.edu/colleges/${collegeSlug}/courses/${course.course_prefix}${course.course_number}-${titleSlug}`;
 }
 
 const MODE_STYLES: Record<CourseMode, { bg: string; text: string; label: string }> = {
@@ -93,14 +103,14 @@ function sortByStartDate(courses: CourseSection[]): CourseSection[] {
   });
 }
 
-function ShareButton({ course, vccsSlug }: { course: CourseSection; vccsSlug: string }) {
+function ShareButton({ course, collegeSlug }: { course: CourseSection; collegeSlug: string }) {
   const [copied, setCopied] = useState(false);
 
   const handleShare = useCallback(async () => {
     const title = `${course.course_prefix} ${course.course_number}: ${course.course_title}`;
     const text = `Check out ${title} — ${formatSchedule(course)}${course.campus ? ` at ${course.campus}` : ""}`;
     const url = typeof window !== "undefined"
-      ? `${window.location.origin}/college/${vccsSlug}?crn=${course.crn}`
+      ? `${window.location.origin}/college/${collegeSlug}?crn=${course.crn}`
       : "";
 
     if (typeof navigator !== "undefined" && navigator.share) {
@@ -120,7 +130,7 @@ function ShareButton({ course, vccsSlug }: { course: CourseSection; vccsSlug: st
     } catch {
       // Last resort
     }
-  }, [course, vccsSlug]);
+  }, [course, collegeSlug]);
 
   return (
     <button
@@ -222,7 +232,7 @@ function TransferBadge({ prefix, number, lookup }: { prefix: string; number: str
   );
 }
 
-export default function CourseTable({ courses, vccsSlug, onAuditClick, pinnedCRNs, onTogglePin, transferLookup }: CourseTableProps) {
+export default function CourseTable({ courses, collegeSlug, courseUrlBuilder, systemName = "VCCS", onAuditClick, pinnedCRNs, onTogglePin, transferLookup }: CourseTableProps) {
   const [subjectFilter, setSubjectFilter] = useState("");
   const [dayFilter, setDayFilter] = useState("");
   const [modeFilter, setModeFilter] = useState("");
@@ -429,7 +439,7 @@ export default function CourseTable({ courses, vccsSlug, onAuditClick, pinnedCRN
                         </span>
                       </td>
                       <td className="whitespace-nowrap px-2 py-3 text-right space-x-1">
-                        <ShareButton course={course} vccsSlug={vccsSlug} />
+                        <ShareButton course={course} collegeSlug={collegeSlug} />
                         {onTogglePin && (
                           <button
                             type="button"
@@ -456,12 +466,12 @@ export default function CourseTable({ courses, vccsSlug, onAuditClick, pinnedCRN
                           </button>
                         )}
                         <a
-                          href={buildCourseUrl(vccsSlug, course)}
+                          href={buildCourseUrl(collegeSlug, course, courseUrlBuilder)}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-xs font-medium text-gray-500 hover:text-gray-700 hover:underline"
                         >
-                          VCCS &rarr;
+                          {systemName} &rarr;
                         </a>
                       </td>
                     </tr>
@@ -527,7 +537,7 @@ export default function CourseTable({ courses, vccsSlug, onAuditClick, pinnedCRN
                     )}
                   </div>
                   <div className="mt-3 flex items-center justify-center gap-4 border-t border-gray-100 pt-3">
-                    <ShareButton course={course} vccsSlug={vccsSlug} />
+                    <ShareButton course={course} collegeSlug={collegeSlug} />
                     {onTogglePin && (
                       <button
                         type="button"
@@ -547,12 +557,12 @@ export default function CourseTable({ courses, vccsSlug, onAuditClick, pinnedCRN
                       </button>
                     )}
                     <a
-                      href={buildCourseUrl(vccsSlug, course)}
+                      href={buildCourseUrl(collegeSlug, course, courseUrlBuilder)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-xs font-medium text-gray-500 hover:text-gray-700 hover:underline"
                     >
-                      View on VCCS &rarr;
+                      View on {systemName} &rarr;
                     </a>
                   </div>
                 </div>

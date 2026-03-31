@@ -1,14 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
 import { searchCoursesAcrossColleges } from "@/lib/courses";
 import { rateLimit, getClientKey } from "@/lib/rate-limit";
-import institutionsData from "@/data/va/institutions.json";
-import type { Institution } from "@/lib/types";
-
+import { loadInstitutions } from "@/lib/institutions";
+import { isValidState } from "@/lib/states/registry";
 import { getCurrentTerm } from "@/lib/terms";
 
-const institutions = institutionsData as Institution[];
+type RouteContext = { params: Promise<{ state: string }> };
 
-export async function GET(request: NextRequest) {
+export async function GET(request: NextRequest, context: RouteContext) {
+  const { state } = await context.params;
+
+  if (!isValidState(state)) {
+    return NextResponse.json({ error: "Unknown state" }, { status: 404 });
+  }
+
   const { allowed, remaining } = rateLimit(getClientKey(request));
   if (!allowed) {
     return NextResponse.json(
@@ -17,6 +22,7 @@ export async function GET(request: NextRequest) {
     );
   }
 
+  const institutions = loadInstitutions(state);
   const { searchParams } = request.nextUrl;
   const q = searchParams.get("q")?.trim() || "";
   const zip = searchParams.get("zip")?.trim() || undefined;
@@ -38,12 +44,13 @@ export async function GET(request: NextRequest) {
   }
 
   const results = searchCoursesAcrossColleges(
-    getCurrentTerm(),
+    getCurrentTerm(state),
     q,
     institutions,
     { mode, day, timeOfDay, zip },
     limit,
-    offset
+    offset,
+    state
   );
 
   return NextResponse.json(results);

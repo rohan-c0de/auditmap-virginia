@@ -13,11 +13,11 @@ import fs from "fs";
 import path from "path";
 
 interface TransferMapping {
-  vccs_prefix: string;
-  vccs_number: string;
-  vccs_course: string;
-  vccs_title: string;
-  vccs_credits: string;
+  cc_prefix: string;
+  cc_number: string;
+  cc_course: string;
+  cc_title: string;
+  cc_credits: string;
   university: string;
   university_name: string;
   univ_course: string;
@@ -86,11 +86,11 @@ async function scrapeVcu(): Promise<TransferMapping[]> {
       vcuTitle.toUpperCase().includes("NO VCU CREDIT");
 
     mappings.push({
-      vccs_prefix: vccsPrefix,
-      vccs_number: vccsNumber,
-      vccs_course: `${vccsPrefix} ${vccsNumber}`,
-      vccs_title: entry.Transfer.Title,
-      vccs_credits: entry.Transfer.CreditHours,
+      cc_prefix: vccsPrefix,
+      cc_number: vccsNumber,
+      cc_course: `${vccsPrefix} ${vccsNumber}`,
+      cc_title: entry.Transfer.Title,
+      cc_credits: entry.Transfer.CreditHours,
       university: "vcu",
       university_name: "Virginia Commonwealth University",
       univ_course: noCredit ? "" : vcuCourse,
@@ -119,7 +119,7 @@ async function main() {
     (m) => !m.no_credit && m.is_elective
   ).length;
   const noCredit = vcuMappings.filter((m) => m.no_credit).length;
-  const prefixes = new Set(vcuMappings.map((m) => m.vccs_prefix));
+  const prefixes = new Set(vcuMappings.map((m) => m.cc_prefix));
 
   console.log(`\nVCU Summary:`);
   console.log(`  Total mappings: ${vcuMappings.length}`);
@@ -130,7 +130,7 @@ async function main() {
 
   // Spot checks
   const eng111 = vcuMappings.find(
-    (m) => m.vccs_prefix === "ENG" && m.vccs_number === "111"
+    (m) => m.cc_prefix === "ENG" && m.cc_number === "111"
   );
   if (eng111) {
     console.log(
@@ -139,7 +139,7 @@ async function main() {
   }
 
   const psy200 = vcuMappings.find(
-    (m) => m.vccs_prefix === "PSY" && m.vccs_number === "200"
+    (m) => m.cc_prefix === "PSY" && m.cc_number === "200"
   );
   if (psy200) {
     console.log(

@@ -32,8 +32,10 @@ export interface StateConfig {
   seniorWaiver: SeniorWaiverConfig | null;
   /** Whether transfer equivalency data is available */
   transferSupported: boolean;
-  /** Build the external course discovery URL for a section */
+  /** Build the external course discovery URL for a specific course */
   courseDiscoveryUrl: (collegeSlug: string, prefix: string, number: string) => string;
+  /** Build the external URL for a college's course listing page */
+  collegeCoursesUrl: (collegeSlug: string) => string;
   /** Branding and SEO */
   branding: {
     siteName: string;
@@ -55,6 +57,9 @@ function ensureLoaded(): void {
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   const va = require("./va/config").default as StateConfig;
   configs[va.slug] = va;
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const nc = require("./nc/config").default as StateConfig;
+  configs[nc.slug] = nc;
 }
 
 /** Get the config for a specific state. Throws if unknown. */

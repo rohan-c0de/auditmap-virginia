@@ -4,10 +4,9 @@ import { daysUntilStart } from "@/lib/course-status";
 import { rateLimit, getClientKey } from "@/lib/rate-limit";
 import { getCurrentTerm } from "@/lib/terms";
 import { getZipCoordinates, calculateDistance } from "@/lib/geo";
-import institutionsData from "@/data/va/institutions.json";
+import { loadInstitutions } from "@/lib/institutions";
+import { isValidState } from "@/lib/states/registry";
 import type { Institution, CourseSection } from "@/lib/types";
-
-const institutions = institutionsData as Institution[];
 
 interface CollegeGroup {
   slug: string;
@@ -34,7 +33,15 @@ interface DateGroup {
   totalSections: number;
 }
 
-export async function GET(request: NextRequest) {
+type RouteContext = { params: Promise<{ state: string }> };
+
+export async function GET(request: NextRequest, context: RouteContext) {
+  const { state } = await context.params;
+
+  if (!isValidState(state)) {
+    return NextResponse.json({ error: "Unknown state" }, { status: 404 });
+  }
+
   const { allowed } = rateLimit(getClientKey(request));
   if (!allowed) {
     return NextResponse.json(
@@ -43,24 +50,25 @@ export async function GET(request: NextRequest) {
     );
   }
 
+  const institutions = loadInstitutions(state);
   const { searchParams } = request.nextUrl;
   const window = Math.min(parseInt(searchParams.get("window") || "14", 10), 60);
   const mode = searchParams.get("mode")?.trim() || undefined;
   const subject = searchParams.get("subject")?.trim().toUpperCase() || undefined;
   const zip = searchParams.get("zip")?.trim() || undefined;
 
-  const allCourses = loadAllCourses(getCurrentTerm());
+  const allCourses = loadAllCourses(getCurrentTerm(state), state);
 
   // Build institution lookup
   const instMap = new Map<string, Institution>();
   for (const inst of institutions) {
-    instMap.set(inst.vccs_slug, inst);
+    instMap.set(inst.college_slug, inst);
   }
 
   // Get user coordinates
   let userCoords: { lat: number; lng: number } | null = null;
   if (zip) {
-    const zipInfo = getZipCoordinates(zip);
+    const zipInfo = getZipCoordinates(zip, state);
     if (zipInfo) userCoords = { lat: zipInfo.lat, lng: zipInfo.lng };
   }
 

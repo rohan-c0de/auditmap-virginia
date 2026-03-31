@@ -36,11 +36,11 @@ interface VsuEntry {
 }
 
 interface TransferMapping {
-  vccs_prefix: string;
-  vccs_number: string;
-  vccs_course: string;
-  vccs_title: string;
-  vccs_credits: string;
+  cc_prefix: string;
+  cc_number: string;
+  cc_course: string;
+  cc_title: string;
+  cc_credits: string;
   university: string;
   university_name: string;
   univ_course: string;
@@ -114,11 +114,11 @@ function transformToMappings(entries: VsuEntry[]): TransferMapping[] {
         : `${e.vsucoursesubject} ${e.vsucoursenumber}`;
 
       return {
-        vccs_prefix: prefix,
-        vccs_number: number,
-        vccs_course: `${prefix} ${number}`,
-        vccs_title: e.coursetitle || "",
-        vccs_credits: String(e.coursehours),
+        cc_prefix: prefix,
+        cc_number: number,
+        cc_course: `${prefix} ${number}`,
+        cc_title: e.coursetitle || "",
+        cc_credits: String(e.coursehours),
         university: "vsu",
         university_name: "Virginia State University",
         univ_course: noCredit ? "" : univCourse,
@@ -149,7 +149,7 @@ async function main() {
   const directEquiv = mappings.filter((m) => !m.no_credit && !m.is_elective).length;
   const electives = mappings.filter((m) => !m.no_credit && m.is_elective).length;
   const noCredit = mappings.filter((m) => m.no_credit).length;
-  const prefixes = new Set(mappings.map((m) => m.vccs_prefix));
+  const prefixes = new Set(mappings.map((m) => m.cc_prefix));
 
   console.log(`\nVSU Summary:`);
   console.log(`  Total mappings: ${mappings.length}`);
@@ -160,7 +160,7 @@ async function main() {
 
   // Spot checks
   const eng111 = mappings.find(
-    (m) => m.vccs_prefix === "ENG" && m.vccs_number === "111"
+    (m) => m.cc_prefix === "ENG" && m.cc_number === "111"
   );
   if (eng111) {
     console.log(
@@ -168,7 +168,7 @@ async function main() {
     );
   }
   const bio101 = mappings.find(
-    (m) => m.vccs_prefix === "BIO" && m.vccs_number === "101"
+    (m) => m.cc_prefix === "BIO" && m.cc_number === "101"
   );
   if (bio101) {
     console.log(
@@ -176,7 +176,7 @@ async function main() {
     );
   }
   const psy200 = mappings.find(
-    (m) => m.vccs_prefix === "PSY" && m.vccs_number === "200"
+    (m) => m.cc_prefix === "PSY" && m.cc_number === "200"
   );
   if (psy200) {
     console.log(

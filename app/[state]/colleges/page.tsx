@@ -1,12 +1,9 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import institutionsData from "@/data/va/institutions.json";
+import { loadInstitutions } from "@/lib/institutions";
 import { getCourseCount } from "@/lib/courses";
 import { getCurrentTerm } from "@/lib/terms";
 import { getStateConfig } from "@/lib/states/registry";
-import type { Institution } from "@/lib/types";
-
-const institutions = institutionsData as Institution[];
 
 type Props = {
   params: Promise<{ state: string }>;
@@ -24,6 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function CollegesPage({ params }: Props) {
   const { state } = await params;
   const config = getStateConfig(state);
+  const institutions = loadInstitutions(state);
 
   // Sort alphabetically
   const sorted = [...institutions].sort((a, b) =>
@@ -57,7 +55,7 @@ export default async function CollegesPage({ params }: Props) {
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {sorted.map((institution) => {
           const courseCount = getCourseCount(
-            institution.vccs_slug,
+            institution.college_slug,
             getCurrentTerm(state),
             state
           );
@@ -107,7 +105,7 @@ export default async function CollegesPage({ params }: Props) {
                   institution.audit_policy.eligibility.senior_discount
                     .available && (
                     <span className="text-teal-600 font-medium">
-                      Free for 60+
+                      Free for {config.seniorWaiver?.ageThreshold ?? 60}+
                     </span>
                   )}
               </div>

@@ -1,9 +1,6 @@
 import type { MetadataRoute } from "next";
-import institutionsData from "@/data/va/institutions.json";
 import { getAllStates } from "@/lib/states/registry";
-import type { Institution } from "@/lib/types";
-
-const institutions = institutionsData as Institution[];
+import { loadInstitutions } from "@/lib/institutions";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl =
@@ -27,12 +24,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     );
   }
 
-  // College detail pages (Virginia for now)
-  const collegePages: MetadataRoute.Sitemap = institutions.map((inst) => ({
-    url: `${baseUrl}/va/college/${inst.id}`,
-    changeFrequency: "weekly" as const,
-    priority: 0.7,
-  }));
+  // College detail pages for all states
+  const collegePages: MetadataRoute.Sitemap = [];
+  for (const state of getAllStates()) {
+    const institutions = loadInstitutions(state.slug);
+    for (const inst of institutions) {
+      collegePages.push({
+        url: `${baseUrl}/${state.slug}/college/${inst.id}`,
+        changeFrequency: "weekly" as const,
+        priority: 0.7,
+      });
+    }
+  }
 
   return [...entries, ...collegePages];
 }

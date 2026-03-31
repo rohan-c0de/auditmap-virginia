@@ -64,7 +64,7 @@ export default async function StateLayout({ children, params }: Props) {
           }),
         }}
       />
-      <Header state={state} />
+      <Header state={state} stateName={config.name} />
 
       {/* Main content */}
       <main className="flex-1">{children}</main>

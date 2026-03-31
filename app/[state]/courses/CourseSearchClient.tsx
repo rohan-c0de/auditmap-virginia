@@ -95,7 +95,13 @@ function buildCourseUrl(slug: string, s: SectionResult): string {
 // Component
 // ---------------------------------------------------------------------------
 
-export default function CourseSearchClient({ state }: { state: string }) {
+interface CourseSearchProps {
+  state: string;
+  systemName?: string;
+  collegeCount?: number;
+}
+
+export default function CourseSearchClient({ state, systemName = "VCCS", collegeCount = 23 }: CourseSearchProps) {
   const [query, setQuery] = useState("");
   const [zip, setZip] = useState("");
   const [mode, setMode] = useState("");
@@ -223,7 +229,7 @@ export default function CourseSearchClient({ state }: { state: string }) {
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900">Find a Course</h1>
         <p className="text-gray-600 mt-1">
-          Search across all 23 VCCS colleges at once
+          Search across all {collegeCount} {systemName} colleges at once
         </p>
       </div>
 
@@ -560,7 +566,7 @@ export default function CourseSearchClient({ state }: { state: string }) {
                                   rel="noopener noreferrer"
                                   className="text-xs font-medium text-gray-500 hover:text-gray-700 hover:underline"
                                 >
-                                  View on VCCS &rarr;
+                                  View on {systemName} &rarr;
                                 </a>
                               </div>
                             </div>
@@ -597,10 +603,10 @@ export default function CourseSearchClient({ state }: { state: string }) {
               <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
             </svg>
           </div>
-          <h3 className="font-medium text-gray-900">Search all VCCS colleges at once</h3>
+          <h3 className="font-medium text-gray-900">Search all {systemName} colleges at once</h3>
           <p className="mt-1 text-sm text-gray-500 max-w-md mx-auto">
             Enter a subject code (ENG), course number (ENG 111), or keyword
-            (psychology) to find sections across all 23 Virginia community colleges.
+            (psychology) to find sections across all {collegeCount} community colleges.
           </p>
           <div className="mt-4 flex flex-wrap justify-center gap-2">
             {["PSY 200", "ENG 111", "computer science", "MTH", "biology"].map((example) => (

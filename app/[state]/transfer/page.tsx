@@ -3,27 +3,32 @@ import type { Metadata } from "next";
 import { loadTransferMappings, getUniversities } from "@/lib/transfer";
 import { loadAllCourses } from "@/lib/courses";
 import { getCurrentTerm } from "@/lib/terms";
+import { getStateConfig } from "@/lib/states/registry";
 import TransferClient from "./TransferClient";
 
-export const metadata: Metadata = {
-  title: "Transfer Course Finder — Which VCCS Courses Transfer? | AuditMap Virginia",
-  description:
-    "Find which Virginia community college courses transfer to Virginia Tech, VCU, and other universities. See direct equivalencies, elective credit, and course availability.",
+type Props = {
+  params: Promise<{ state: string }>;
 };
 
-export default async function TransferPage({
-  params,
-}: {
-  params: Promise<{ state: string }>;
-}) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { state } = await params;
-  const universities = getUniversities();
-  const defaultUni = universities[0]?.slug || "vt";
+  const config = getStateConfig(state);
+  return {
+    title: `Transfer Course Finder — Which ${config.systemName} Courses Transfer? | ${config.branding.siteName}`,
+    description: `Find which ${config.name} community college courses transfer to universities. See direct equivalencies, elective credit, and course availability.`,
+  };
+}
+
+export default async function TransferPage({ params }: Props) {
+  const { state } = await params;
+  const config = getStateConfig(state);
+  const universities = getUniversities(state);
+  const defaultUni = universities[0]?.slug || "";
   // Pass ALL mappings — client filters by selected university
-  const mappings = loadTransferMappings();
+  const mappings = loadTransferMappings(state);
 
   // Get current course availability for cross-referencing
-  const allCourses = loadAllCourses(getCurrentTerm());
+  const allCourses = loadAllCourses(getCurrentTerm(state), state);
   const courseAvailability: Record<string, { colleges: string[]; totalSections: number }> = {};
   for (const c of allCourses) {
     const key = `${c.course_prefix}-${c.course_number}`;
@@ -49,8 +54,9 @@ export default async function TransferPage({
         Transfer Course Finder
       </h1>
       <p className="text-gray-600 mb-8">
-        Find which VCCS courses transfer to your target university. See direct
-        equivalencies, elective credit, and what&apos;s available this term.
+        Find which {config.systemName} courses transfer to your target
+        university. See direct equivalencies, elective credit, and what&apos;s
+        available this term.
       </p>
 
       <TransferClient

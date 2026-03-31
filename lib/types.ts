@@ -42,7 +42,7 @@ export interface Institution {
   id: string;
   name: string;
   system: string;
-  vccs_slug: string;
+  college_slug: string;
   campuses: Campus[];
   audit_policy: AuditPolicy;
 }
@@ -119,11 +119,11 @@ export interface GeneratedSchedule {
 // ---------------------------------------------------------------------------
 
 export interface TransferMapping {
-  vccs_prefix: string;
-  vccs_number: string;
-  vccs_course: string;
-  vccs_title: string;
-  vccs_credits: string;
+  cc_prefix: string;
+  cc_number: string;
+  cc_course: string;
+  cc_title: string;
+  cc_credits: string;
   university: string;
   university_name: string;
   univ_course: string;

@@ -13,7 +13,7 @@ const NAV_ITEMS = [
   { path: "/about", label: "About Auditing" },
 ];
 
-export default function Header({ state = "va" }: { state?: string }) {
+export default function Header({ state = "va", stateName = "Virginia" }: { state?: string; stateName?: string }) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const links = NAV_ITEMS.map((item) => ({
@@ -29,7 +29,7 @@ export default function Header({ state = "va" }: { state?: string }) {
             <span className="text-white font-bold text-sm">AM</span>
           </div>
           <span className="text-xl font-semibold text-gray-900">
-            AuditMap <span className="text-teal-600">Virginia</span>
+            AuditMap <span className="text-teal-600">{stateName}</span>
           </span>
         </Link>
 

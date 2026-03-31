@@ -16,11 +16,11 @@ import fs from "fs";
 import path from "path";
 
 interface TransferMapping {
-  vccs_prefix: string;
-  vccs_number: string;
-  vccs_course: string;
-  vccs_title: string;
-  vccs_credits: string;
+  cc_prefix: string;
+  cc_number: string;
+  cc_course: string;
+  cc_title: string;
+  cc_credits: string;
   university: string;
   university_name: string;
   univ_course: string;
@@ -129,11 +129,11 @@ async function scrapeSubject(subject: string): Promise<TransferMapping[]> {
       const notes = genEd || "";
 
       mappings.push({
-        vccs_prefix: prefix,
-        vccs_number: number,
-        vccs_course: `${prefix} ${number}`,
-        vccs_title: vccsTitle,
-        vccs_credits: umwCredits,
+        cc_prefix: prefix,
+        cc_number: number,
+        cc_course: `${prefix} ${number}`,
+        cc_title: vccsTitle,
+        cc_credits: umwCredits,
         university: "umw",
         university_name: "University of Mary Washington",
         univ_course: noCredit ? "" : umwCourse,
@@ -179,7 +179,7 @@ async function main() {
   const directEquiv = allMappings.filter((m) => !m.no_credit && !m.is_elective).length;
   const electives = allMappings.filter((m) => !m.no_credit && m.is_elective).length;
   const noCredit = allMappings.filter((m) => m.no_credit).length;
-  const prefixes = new Set(allMappings.map((m) => m.vccs_prefix));
+  const prefixes = new Set(allMappings.map((m) => m.cc_prefix));
 
   console.log(`\nUMW Summary:`);
   console.log(`  Total mappings: ${allMappings.length}`);
@@ -189,11 +189,11 @@ async function main() {
   console.log(`  Subject areas: ${prefixes.size}`);
 
   // Spot checks
-  const eng111 = allMappings.find((m) => m.vccs_prefix === "ENG" && m.vccs_number === "111");
+  const eng111 = allMappings.find((m) => m.cc_prefix === "ENG" && m.cc_number === "111");
   if (eng111) {
     console.log(`\n  Spot check — ENG 111: → ${eng111.univ_course} (${eng111.univ_title})`);
   }
-  const psy200 = allMappings.find((m) => m.vccs_prefix === "PSY" && m.vccs_number === "200");
+  const psy200 = allMappings.find((m) => m.cc_prefix === "PSY" && m.cc_number === "200");
   if (psy200) {
     console.log(`  Spot check — PSY 200: → ${psy200.univ_course} (${psy200.univ_title})`);
   }

@@ -54,7 +54,7 @@ export function generateSchedules(
   // Build institution lookup
   const instMap = new Map<string, Institution>();
   for (const inst of institutions) {
-    instMap.set(inst.vccs_slug, inst);
+    instMap.set(inst.college_slug, inst);
   }
 
   // Pre-compute distance map: college slug → nearest campus distance
@@ -72,7 +72,7 @@ export function generateSchedules(
             calculateDistance(userCoords!.lat, userCoords!.lng, c.lat, c.lng)
           )
         );
-        distanceMap.set(inst.vccs_slug, Math.round(minDist * 10) / 10);
+        distanceMap.set(inst.college_slug, Math.round(minDist * 10) / 10);
       }
     }
   }

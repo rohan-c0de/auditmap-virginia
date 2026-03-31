@@ -15,14 +15,14 @@ type TransferLookup = Record<
 interface Props {
   courses: CourseSection[];
   institution: Institution;
-  vccsSlug: string;
+  collegeSlug: string;
   transferLookup?: TransferLookup;
 }
 
 export default function CollegeDetailClient({
   courses,
   institution,
-  vccsSlug,
+  collegeSlug,
   transferLookup,
 }: Props) {
   const [selectedCourse, setSelectedCourse] = useState<CourseSection | null>(
@@ -44,7 +44,7 @@ export default function CollegeDetailClient({
     <div>
       <CourseTable
         courses={courses}
-        vccsSlug={vccsSlug}
+        collegeSlug={collegeSlug}
         onAuditClick={(course) => {
           setSelectedCourse(course);
           setShowInstructions(true);

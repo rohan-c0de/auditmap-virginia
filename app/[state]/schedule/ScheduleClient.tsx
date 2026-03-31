@@ -6,7 +6,13 @@ import ScheduleResults from "@/components/schedule/ScheduleResults";
 import type { ScheduleFormData } from "@/components/schedule/ScheduleForm";
 import type { ScheduleResponse } from "@/lib/types";
 
-export default function ScheduleClient({ state }: { state: string }) {
+interface ScheduleClientProps {
+  state: string;
+  systemName?: string;
+  collegeCount?: number;
+}
+
+export default function ScheduleClient({ state, systemName = "VCCS", collegeCount = 23 }: ScheduleClientProps) {
   const [response, setResponse] = useState<ScheduleResponse | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -59,7 +65,7 @@ export default function ScheduleClient({ state }: { state: string }) {
         </h1>
         <p className="text-gray-600 mt-1">
           Tell us your constraints and we&apos;ll build conflict-free schedules
-          across all 23 VCCS colleges.
+          across all {collegeCount} {systemName} colleges.
         </p>
       </div>
 

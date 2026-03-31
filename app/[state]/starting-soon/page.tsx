@@ -1,19 +1,24 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import StartingSoonClient from "./StartingSoonClient";
+import { getStateConfig } from "@/lib/states/registry";
 
-export const metadata: Metadata = {
-  title: "Courses Starting Soon — Late-Start Classes | AuditMap Virginia",
-  description:
-    "Find late-start courses, mini-sessions, and upcoming classes across all 23 Virginia community colleges. Don't miss registration deadlines.",
+type Props = {
+  params: Promise<{ state: string }>;
 };
 
-export default async function StartingSoonPage({
-  params,
-}: {
-  params: Promise<{ state: string }>;
-}) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { state } = await params;
+  const config = getStateConfig(state);
+  return {
+    title: `Courses Starting Soon — Late-Start Classes | ${config.branding.siteName}`,
+    description: `Find late-start courses, mini-sessions, and upcoming classes across all ${config.collegeCount} ${config.name} community colleges. Don't miss registration deadlines.`,
+  };
+}
+
+export default async function StartingSoonPage({ params }: Props) {
+  const { state } = await params;
+  const config = getStateConfig(state);
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -28,8 +33,9 @@ export default async function StartingSoonPage({
         Courses Starting Soon
       </h1>
       <p className="text-gray-600 mb-8">
-        Late-start courses, mini-sessions, and upcoming classes across all 23
-        Virginia community colleges. Find sections still open for registration.
+        Late-start courses, mini-sessions, and upcoming classes across all{" "}
+        {config.collegeCount} {config.name} community colleges. Find sections
+        still open for registration.
       </p>
 
       <StartingSoonClient state={state} />

@@ -14,11 +14,11 @@ import fs from "fs";
 import path from "path";
 
 interface TransferMapping {
-  vccs_prefix: string;
-  vccs_number: string;
-  vccs_course: string;
-  vccs_title: string;
-  vccs_credits: string;
+  cc_prefix: string;
+  cc_number: string;
+  cc_course: string;
+  cc_title: string;
+  cc_credits: string;
   university: string;
   university_name: string;
   univ_course: string;
@@ -95,11 +95,11 @@ async function scrapeVirginiaTech(): Promise<TransferMapping[]> {
     if (!prefix) return;
 
     mappings.push({
-      vccs_prefix: prefix,
-      vccs_number: number,
-      vccs_course: vccsCourseRaw,
-      vccs_title: vccsTitle,
-      vccs_credits: vccsCredits,
+      cc_prefix: prefix,
+      cc_number: number,
+      cc_course: vccsCourseRaw,
+      cc_title: vccsTitle,
+      cc_credits: vccsCredits,
       university: "vt",
       university_name: "Virginia Tech",
       univ_course: noCredit ? "" : vtCourseRaw,
@@ -131,7 +131,7 @@ async function main() {
     (m) => !m.no_credit && m.is_elective
   ).length;
   const noCredit = vtMappings.filter((m) => m.no_credit).length;
-  const prefixes = new Set(vtMappings.map((m) => m.vccs_prefix));
+  const prefixes = new Set(vtMappings.map((m) => m.cc_prefix));
 
   console.log(`\nSummary:`);
   console.log(`  Total mappings: ${vtMappings.length}`);
@@ -142,7 +142,7 @@ async function main() {
 
   // Spot checks
   const eng111 = vtMappings.find(
-    (m) => m.vccs_prefix === "ENG" && m.vccs_number === "111"
+    (m) => m.cc_prefix === "ENG" && m.cc_number === "111"
   );
   if (eng111) {
     console.log(
@@ -151,7 +151,7 @@ async function main() {
   }
 
   const acc211 = vtMappings.find(
-    (m) => m.vccs_prefix === "ACC" && m.vccs_number === "211"
+    (m) => m.cc_prefix === "ACC" && m.cc_number === "211"
   );
   if (acc211) {
     console.log(

@@ -1,17 +1,15 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
-import institutionsData from "@/data/va/institutions.json";
+import { loadInstitutions } from "@/lib/institutions";
 import { loadCoursesForCollege, isDataStale, getAvailableTerms } from "@/lib/courses";
-import type { Institution } from "@/lib/types";
 import { isInProgress } from "@/lib/course-status";
 import { getCurrentTerm, termLabel } from "@/lib/terms";
 import CollegeDetailClient from "./CollegeDetailClient";
 import CollegeMap from "./CollegeMap";
 import TermSelector from "./TermSelector";
 import { buildTransferLookup } from "@/lib/transfer";
-
-const institutions = institutionsData as Institution[];
+import { getStateConfig, getAllStates } from "@/lib/states/registry";
 
 // Revalidate every 24 hours — course data only changes when re-scraped
 export const revalidate = 86400;
@@ -22,13 +20,13 @@ type PageProps = {
 };
 
 export async function generateMetadata(props: PageProps): Promise<Metadata> {
-  const { id } = await props.params;
-
+  const { state, id } = await props.params;
+  const institutions = loadInstitutions(state);
   const institution = institutions.find((i) => i.id === id);
   if (!institution) return { title: "College Not Found" };
 
   return {
-    title: `${institution.name} — Audit Courses | AuditMap Virginia`,
+    title: `${institution.name} — Audit Courses | AuditMap ${getStateConfig(state).name}`,
     description: `Find out how to audit courses at ${institution.name}. ${
       institution.audit_policy.allowed
         ? "Auditing is available."
@@ -38,12 +36,16 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
 }
 
 export function generateStaticParams() {
-  return institutions.map((i) => ({ state: "va", id: i.id }));
+  return getAllStates().flatMap((config) =>
+    loadInstitutions(config.slug).map((i) => ({ state: config.slug, id: i.id }))
+  );
 }
 
 export default async function CollegeDetailPage(props: PageProps) {
   const { state, id } = await props.params;
   const { term: requestedTerm } = await props.searchParams;
+  const config = getStateConfig(state);
+  const institutions = loadInstitutions(state);
   const institution = institutions.find((i) => i.id === id);
 
   if (!institution) {
@@ -51,20 +53,20 @@ export default async function CollegeDetailPage(props: PageProps) {
   }
 
   // Build list of terms that have data for THIS college
-  const allTerms = getAvailableTerms();
+  const allTerms = getAvailableTerms(state);
   const termsWithData = allTerms
-    .filter((t) => loadCoursesForCollege(institution.vccs_slug, t).length > 0)
+    .filter((t) => loadCoursesForCollege(institution.college_slug, t, state).length > 0)
     .sort();
 
   // Use requested term if valid, otherwise fall back to latest with data
   let currentTerm = requestedTerm && termsWithData.includes(requestedTerm)
     ? requestedTerm
-    : getCurrentTerm();
-  let courses = loadCoursesForCollege(institution.vccs_slug, currentTerm);
+    : getCurrentTerm(state);
+  let courses = loadCoursesForCollege(institution.college_slug, currentTerm, state);
   if (courses.length === 0) {
     // Fall back to earlier terms that have data for this college
     for (const t of [...termsWithData].reverse()) {
-      const c = loadCoursesForCollege(institution.vccs_slug, t);
+      const c = loadCoursesForCollege(institution.college_slug, t, state);
       if (c.length > 0) {
         currentTerm = t;
         courses = c;
@@ -72,10 +74,9 @@ export default async function CollegeDetailPage(props: PageProps) {
       }
     }
   }
-  const stale = isDataStale(institution.vccs_slug, currentTerm);
+  const stale = isDataStale(institution.college_slug, currentTerm, state);
 
-  // VCCS slug for building per-course URLs
-  const vccsSlug = institution.vccs_slug;
+  const collegeSlug = institution.college_slug;
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://auditmap.virginia.example.com";
   const jsonLd = {
@@ -154,12 +155,12 @@ export default async function CollegeDetailPage(props: PageProps) {
             <strong>Note:</strong> Course data may be outdated (last updated
             more than 8 days ago). Check{" "}
             <a
-              href={`https://courses.vccs.edu/colleges/${institution.vccs_slug}/courses`}
+              href={config.collegeCoursesUrl(institution.college_slug)}
               target="_blank"
               rel="noopener noreferrer"
               className="underline"
             >
-              courses.vccs.edu
+              {config.systemName} course site
             </a>{" "}
             for the latest listings.
           </p>
@@ -359,12 +360,12 @@ export default async function CollegeDetailPage(props: PageProps) {
             )}
           </div>
           <a
-            href={`https://courses.vccs.edu/colleges/${institution.vccs_slug}/courses`}
+            href={config.collegeCoursesUrl(institution.college_slug)}
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-teal-600 hover:text-teal-700"
           >
-            View on VCCS &rarr;
+            View on {config.systemName} &rarr;
           </a>
         </div>
 
@@ -399,20 +400,20 @@ export default async function CollegeDetailPage(props: PageProps) {
               No course data available for this term.
             </p>
             <a
-              href={`https://courses.vccs.edu/colleges/${institution.vccs_slug}/courses`}
+              href={config.collegeCoursesUrl(institution.college_slug)}
               target="_blank"
               rel="noopener noreferrer"
               className="text-teal-600 hover:underline text-sm"
             >
-              Check courses.vccs.edu directly &rarr;
+              Check {config.systemName} course site directly &rarr;
             </a>
           </div>
         ) : (
           <CollegeDetailClient
             courses={courses}
             institution={institution}
-            vccsSlug={vccsSlug}
-            transferLookup={buildTransferLookup()}
+            collegeSlug={collegeSlug}
+            transferLookup={buildTransferLookup(state)}
           />
         )}
       </section>
