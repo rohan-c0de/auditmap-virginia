@@ -49,3 +49,23 @@ export function getCurrentTerm(): string {
   // Sort by term key and return the latest
   return terms.sort((a, b) => termSortKey(b) - termSortKey(a))[0];
 }
+
+/**
+ * Get the next term after the latest one we have data for.
+ * SP → SU → FA → next year SP
+ */
+export function getNextTerm(): { code: string; label: string } {
+  const current = getCurrentTerm();
+  const match = current.match(/^(\d{4})(SP|SU|FA)$/);
+  if (!match) return { code: "2026FA", label: "Fall 2026" };
+
+  const year = parseInt(match[1]);
+  const season = match[2];
+
+  let nextCode: string;
+  if (season === "SP") nextCode = `${year}SU`;
+  else if (season === "SU") nextCode = `${year}FA`;
+  else nextCode = `${year + 1}SP`;
+
+  return { code: nextCode, label: termLabel(nextCode) };
+}

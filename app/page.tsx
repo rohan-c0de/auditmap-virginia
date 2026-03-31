@@ -2,8 +2,10 @@ import SeniorBanner from "@/components/SeniorBanner";
 import SearchForm from "@/components/SearchForm";
 import StartingSoonCallout from "@/components/StartingSoonCallout";
 import NotifyBanner from "@/components/NotifyBanner";
+import { getNextTerm } from "@/lib/terms";
 
 export default function HomePage() {
+  const nextTerm = getNextTerm();
   return (
     <div>
       <SeniorBanner />
@@ -73,7 +75,7 @@ export default function HomePage() {
       {/* Notify banner */}
       <section className="px-4 sm:px-6 lg:px-8 pb-8">
         <div className="max-w-2xl mx-auto">
-          <NotifyBanner />
+          <NotifyBanner nextTerm={nextTerm.label} />
         </div>
       </section>
 

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function NotifyBanner() {
+export default function NotifyBanner({ nextTerm }: { nextTerm: string }) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
@@ -44,7 +44,7 @@ export default function NotifyBanner() {
   return (
     <div className="bg-amber-50 border border-amber-200 rounded-lg px-4 py-4">
       <p className="text-sm font-medium text-amber-900 mb-2">
-        Summer 2026 schedules aren&apos;t posted yet.
+        {`${nextTerm} schedules aren't posted yet.`}
       </p>
       <p className="text-xs text-amber-700 mb-3">
         Get notified when new semester schedules become available.
