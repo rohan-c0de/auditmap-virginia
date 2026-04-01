@@ -25,9 +25,9 @@ const PAGE_SIZE = 500; // max per request to minimize pagination
 
 // NC colleges using Ellucian Colleague Self-Service
 const COLLEAGUE_COLLEGES: Record<string, string> = {
+  // --- Original 9 (confirmed working) ---
   "wake-technical": "https://selfserve.waketech.edu",
   "fayetteville-technical": "https://selfserv.faytechcc.edu",
-  "cape-fear": "https://selfservice.cfcc.edu",
   "durham-technical": "https://selfservice.durhamtech.edu",
   "central-piedmont": "https://mycollegess.cpcc.edu",
   "asheville-buncombe-technical": "https://selfservice.abtech.edu",
@@ -35,6 +35,41 @@ const COLLEAGUE_COLLEGES: Record<string, string> = {
   "guilford-technical": "https://selfservice.gtcc.edu",
   "pitt": "https://sscourses.pittcc.edu",
   "rowan-cabarrus": "https://ss-prod.cloud.rccc.edu",
+  // --- Discovered via subdomain probe ---
+  "alamance": "https://ss-prod.cloud.alamancecc.edu",
+  "beaufort-county": "https://ss-prod.cloud.beaufortccc.edu",
+  "bladen": "https://selfservice.bladencc.edu",
+  "blue-ridge": "https://ss-prod.cloud.blueridge.edu",
+  "caldwell": "https://selfservice.cccti.edu",
+  "central-carolina": "https://ss-prod.cloud.cccc.edu",
+  "craven": "https://selfservice.cravencc.edu",
+  "haywood": "https://selfservice.haywood.edu",
+  "isothermal": "https://ss-prod.cloud.isothermal.edu",
+  "james-sprunt": "https://ss.jamessprunt.edu",
+  "johnston": "https://selfserv.johnstoncc.edu",
+  "lenoir": "https://ss.lenoircc.edu",
+  "mcdowell-technical": "https://ss-prod.cloud.mcdowelltech.edu",
+  "mitchell": "https://selfservice.mitchellcc.edu",
+  "montgomery": "https://ss-prod.cloud.montgomery.edu",
+  "piedmont": "https://ss.piedmontcc.edu",
+  "randolph": "https://ss-prod.cloud.randolph.edu",
+  "richmond": "https://ss-prod.cloud.richmondcc.edu",
+  "roanoke-chowan": "https://selfservice.roanokechowan.edu",
+  "robeson": "https://selfservice.robeson.edu",
+  "rockingham": "https://ss-prod.cloud.rockinghamcc.edu",
+  "sampson": "https://ss.sampsoncc.edu",
+  "south-piedmont": "https://selfservice.spcc.edu",
+  "southwestern": "https://ss.southwesterncc.edu",
+  "stanly": "https://selfservice.stanly.edu",
+  "vance-granville": "https://ss-prod.cloud.vgcc.edu",
+  "wayne": "https://selfserv.waynecc.edu",
+  "western-piedmont": "https://selfservice.wpcc.edu",
+  // --- Discovered via research (ss-prod-cloud / other patterns) ---
+  "catawba-valley": "https://ss-prod-cloud.cvcc.edu",
+  "gaston": "https://ss-prod-cloud.gaston.edu",
+  "coastal-carolina": "https://ss-prod-cloud.coastalcarolina.edu",
+  "nash": "https://ss-prod-cloud.nashcc.edu",
+  "surry": "https://ssprod.surry.edu",
 };
 
 type CourseMode = "in-person" | "online" | "hybrid" | "zoom";
@@ -194,6 +229,36 @@ async function scrapeCollege(
     });
     await page.waitForTimeout(3000);
 
+    // Check if we were redirected to a login page
+    const currentUrl = page.url();
+    if (currentUrl.includes("/Account/Login")) {
+      console.log(`  Redirected to login page, looking for guest access...`);
+
+      // Try clicking "Continue as Guest" / "Search as Guest" links/buttons
+      const guestLink = await page.$(
+        'a:has-text("Guest"), a:has-text("guest"), a:has-text("Search"), button:has-text("Guest")'
+      );
+      if (guestLink) {
+        await guestLink.click();
+        await page.waitForTimeout(3000);
+        console.log(`  Clicked guest access link`);
+      } else {
+        // Try navigating to guest course catalog URL
+        console.log(`  No guest link found, trying guest URL...`);
+        await page.goto(`${baseUrl}/Student/Courses?guestUser=true`, {
+          waitUntil: "domcontentloaded",
+          timeout: 30000,
+        });
+        await page.waitForTimeout(3000);
+
+        // Still on login page?
+        if (page.url().includes("/Account/Login")) {
+          console.error(`  ${slug} requires authentication — no guest access available. Skipping.`);
+          return [];
+        }
+      }
+    }
+
     // Extract CSRF token
     const csrfToken = await page.evaluate(() => {
       const input = document.querySelector(
@@ -221,17 +286,32 @@ async function scrapeCollege(
     // Flexible term matching: "Spring 2026" should match "Spring 2026", "Spring Semester 2026", etc.
     const termNameLower = termName.toLowerCase();
     const termParts = termNameLower.split(/\s+/); // e.g., ["spring", "2026"]
+
+    // Build expected term code from name (e.g., "Spring 2026" → "2026SP")
+    const seasonCodeMap: Record<string, string> = {
+      spring: "SP", summer: "SU", fall: "FA", winter: "WI",
+    };
+    const yearMatch = termName.match(/(\d{4})/);
+    const seasonMatch = termName.match(/(spring|summer|fall|winter)/i);
+    const expectedTermCode = yearMatch && seasonMatch
+      ? `${yearMatch[1]}${seasonCodeMap[seasonMatch[1].toLowerCase()] || ""}`
+      : null;
+
     const termOption = termOptions.find(
       (t) => {
         const label = t.label.toLowerCase();
-        // Exact match
+        const value = t.value;
+        // Exact label match
         if (label === termNameLower) return true;
         // All parts of the search term appear in the label (e.g., "spring" and "2026" both in "Spring Semester 2026")
-        return termParts.every((part) => label.includes(part)) && !label.includes("ce");
+        if (termParts.every((part) => label.includes(part)) && !label.includes("ce")) return true;
+        // Match by term code (e.g., value "2026SP" or label "2026SP")
+        if (expectedTermCode && (value === expectedTermCode || label === expectedTermCode.toLowerCase())) return true;
+        return false;
       }
     );
     if (!termOption || !termOption.value) {
-      console.error(`  Term "${termName}" not found. Available: ${termOptions.map((t) => t.label).join(", ")}`);
+      console.error(`  Term "${termName}" not found. Available: ${termOptions.map((t) => t.label || t.value).join(", ")}`);
       return [];
     }
     const termCode = termOption.value;
