@@ -45,6 +45,8 @@ const SELF_SERVICE_URLS: Record<string, string> = {
   "nash": "https://ss-prod-cloud.nashcc.edu",
   "surry": "https://ssprod.surry.edu",
   "wilkes": "https://selfservice.cloud.wilkescc.edu",
+  "davidson-davie": "https://selfservice.cloud.davidsondavie.edu",
+  "halifax": "https://sss.halifaxcc.edu",
 };
 
 const ncConfig: StateConfig = {

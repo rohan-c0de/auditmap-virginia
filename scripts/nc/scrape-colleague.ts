@@ -71,6 +71,9 @@ const COLLEAGUE_COLLEGES: Record<string, string> = {
   "nash": "https://ss-prod-cloud.nashcc.edu",
   "surry": "https://ssprod.surry.edu",
   "wilkes": "https://selfservice.cloud.wilkescc.edu",
+  // --- Discovered in second research pass ---
+  "davidson-davie": "https://selfservice.cloud.davidsondavie.edu",
+  "halifax": "https://sss.halifaxcc.edu",
 };
 
 type CourseMode = "in-person" | "online" | "hybrid" | "zoom";
