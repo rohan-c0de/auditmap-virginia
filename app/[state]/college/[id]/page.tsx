@@ -365,7 +365,7 @@ export default async function CollegeDetailPage(props: PageProps) {
             rel="noopener noreferrer"
             className="text-sm text-teal-600 hover:text-teal-700"
           >
-            View on {config.systemName} &rarr;
+            {`View on ${config.systemName} →`}
           </a>
         </div>
 
@@ -405,7 +405,7 @@ export default async function CollegeDetailPage(props: PageProps) {
               rel="noopener noreferrer"
               className="text-teal-600 hover:underline text-sm"
             >
-              Check {config.systemName} course site directly &rarr;
+              {`Check ${config.systemName} course site directly →`}
             </a>
           </div>
         ) : (

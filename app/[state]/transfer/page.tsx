@@ -53,9 +53,7 @@ export default async function TransferPage({ params }: Props) {
         Transfer Course Finder
       </h1>
       <p className="text-gray-600 mb-8">
-        Find which {config.systemName} courses transfer to your target
-        university. See direct equivalencies, elective credit, and what&apos;s
-        available this term.
+        {`Find which ${config.systemName} courses transfer to your target university. See direct equivalencies, elective credit, and what's available this term.`}
       </p>
 
       <TransferClient

@@ -132,9 +132,7 @@ export default async function AboutPage({ params }: Props) {
             What Does It Cost?
           </h2>
           <p className="text-gray-600 mb-3">
-            At most {config.systemName} colleges, audit students pay the same
-            tuition and fees as credit students. Check each college&apos;s page
-            for specific cost details.
+            {`At most ${config.systemName} colleges, audit students pay the same tuition and fees as credit students. Check each college's page for specific cost details.`}
           </p>
           {config.seniorWaiver && (
             <div className="bg-teal-50 border border-teal-200 rounded-lg p-4">
