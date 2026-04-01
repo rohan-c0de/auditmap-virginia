@@ -18,6 +18,7 @@ interface Props {
   collegeSlug: string;
   transferLookup?: TransferLookup;
   systemName?: string;
+  courseListingUrl?: string;
 }
 
 export default function CollegeDetailClient({
@@ -26,6 +27,7 @@ export default function CollegeDetailClient({
   collegeSlug,
   systemName,
   transferLookup,
+  courseListingUrl,
 }: Props) {
   const [selectedCourse, setSelectedCourse] = useState<CourseSection | null>(
     null
@@ -48,6 +50,7 @@ export default function CollegeDetailClient({
         courses={courses}
         collegeSlug={collegeSlug}
         systemName={systemName}
+        courseListingUrl={courseListingUrl}
         onAuditClick={(course) => {
           setSelectedCourse(course);
           setShowInstructions(true);

@@ -13,6 +13,7 @@ interface CourseTableProps {
   courses: CourseSection[];
   collegeSlug: string;
   courseUrlBuilder?: (collegeSlug: string, prefix: string, number: string) => string;
+  courseListingUrl?: string;
   systemName?: string;
   onAuditClick?: (course: CourseSection) => void;
   pinnedCRNs?: Set<string>;
@@ -24,10 +25,14 @@ interface CourseTableProps {
 function buildCourseUrl(
   collegeSlug: string,
   course: CourseSection,
-  urlBuilder?: (slug: string, prefix: string, number: string) => string
+  urlBuilder?: (slug: string, prefix: string, number: string) => string,
+  courseListingUrl?: string
 ): string {
   if (urlBuilder) {
     return urlBuilder(collegeSlug, course.course_prefix, course.course_number);
+  }
+  if (courseListingUrl) {
+    return courseListingUrl;
   }
   // Fallback for VA (default)
   const titleSlug = course.course_title.replace(/[^a-zA-Z0-9]/g, "");
@@ -232,7 +237,7 @@ function TransferBadge({ prefix, number, lookup }: { prefix: string; number: str
   );
 }
 
-export default function CourseTable({ courses, collegeSlug, courseUrlBuilder, systemName = "VCCS", onAuditClick, pinnedCRNs, onTogglePin, transferLookup }: CourseTableProps) {
+export default function CourseTable({ courses, collegeSlug, courseUrlBuilder, courseListingUrl, systemName = "VCCS", onAuditClick, pinnedCRNs, onTogglePin, transferLookup }: CourseTableProps) {
   const [subjectFilter, setSubjectFilter] = useState("");
   const [dayFilter, setDayFilter] = useState("");
   const [modeFilter, setModeFilter] = useState("");
@@ -466,7 +471,7 @@ export default function CourseTable({ courses, collegeSlug, courseUrlBuilder, sy
                           </button>
                         )}
                         <a
-                          href={buildCourseUrl(collegeSlug, course, courseUrlBuilder)}
+                          href={buildCourseUrl(collegeSlug, course, courseUrlBuilder, courseListingUrl)}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-xs font-medium text-gray-500 hover:text-gray-700 hover:underline"
@@ -557,7 +562,7 @@ export default function CourseTable({ courses, collegeSlug, courseUrlBuilder, sy
                       </button>
                     )}
                     <a
-                      href={buildCourseUrl(collegeSlug, course, courseUrlBuilder)}
+                      href={buildCourseUrl(collegeSlug, course, courseUrlBuilder, courseListingUrl)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-xs font-medium text-gray-500 hover:text-gray-700 hover:underline"

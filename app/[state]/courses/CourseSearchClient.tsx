@@ -86,7 +86,11 @@ function formatSchedule(s: SectionResult): string {
   return "Asynchronous / Online";
 }
 
-function buildCourseUrl(slug: string, s: SectionResult): string {
+function buildCourseUrl(slug: string, s: SectionResult, courseUrlMap?: Record<string, string>): string {
+  if (courseUrlMap && courseUrlMap[slug]) {
+    return courseUrlMap[slug];
+  }
+  // Fallback for VA (default)
   const titleSlug = s.course_title.replace(/[^a-zA-Z0-9]/g, "");
   return `https://courses.vccs.edu/colleges/${slug}/courses/${s.course_prefix}${s.course_number}-${titleSlug}`;
 }
@@ -99,9 +103,10 @@ interface CourseSearchProps {
   state: string;
   systemName?: string;
   collegeCount?: number;
+  courseUrlMap?: Record<string, string>;
 }
 
-export default function CourseSearchClient({ state, systemName = "VCCS", collegeCount = 23 }: CourseSearchProps) {
+export default function CourseSearchClient({ state, systemName = "VCCS", collegeCount = 23, courseUrlMap }: CourseSearchProps) {
   const [query, setQuery] = useState("");
   const [zip, setZip] = useState("");
   const [mode, setMode] = useState("");
@@ -561,7 +566,7 @@ export default function CourseSearchClient({ state, systemName = "VCCS", college
                                   How to Audit
                                 </Link>
                                 <a
-                                  href={buildCourseUrl(college.slug, college.sections[0])}
+                                  href={buildCourseUrl(college.slug, college.sections[0], courseUrlMap)}
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   className="text-xs font-medium text-gray-500 hover:text-gray-700 hover:underline"
