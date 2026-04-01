@@ -238,7 +238,7 @@ export default function StartingSoonClient({ state }: { state: string }) {
               type="text"
               value={zipInput}
               onChange={(e) => setZipInput(e.target.value)}
-              placeholder="e.g. 22030"
+              placeholder={state === "nc" ? "e.g. 27601" : "e.g. 22030"}
               maxLength={5}
               className="w-24 rounded-md border border-gray-300 bg-white px-3 py-2 text-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-200"
             />

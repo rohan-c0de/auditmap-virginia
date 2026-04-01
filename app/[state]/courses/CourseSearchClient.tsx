@@ -269,7 +269,7 @@ export default function CourseSearchClient({ state, systemName = "VCCS", college
                 type="text"
                 value={zip}
                 onChange={(e) => setZip(e.target.value.replace(/\D/g, "").slice(0, 5))}
-                placeholder="22030"
+                placeholder={state === "nc" ? "27601" : "22030"}
                 className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-200"
                 maxLength={5}
               />

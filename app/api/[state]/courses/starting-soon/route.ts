@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { loadAllCourses } from "@/lib/courses";
+import { loadAllCourses, getAvailableTerms } from "@/lib/courses";
 import { daysUntilStart } from "@/lib/course-status";
 import { rateLimit, getClientKey } from "@/lib/rate-limit";
-import { getCurrentTerm } from "@/lib/terms";
 import { getZipCoordinates, calculateDistance } from "@/lib/geo";
 import { loadInstitutions } from "@/lib/institutions";
 import { isValidState } from "@/lib/states/registry";
@@ -57,7 +56,9 @@ export async function GET(request: NextRequest, context: RouteContext) {
   const subject = searchParams.get("subject")?.trim().toUpperCase() || undefined;
   const zip = searchParams.get("zip")?.trim() || undefined;
 
-  const allCourses = loadAllCourses(getCurrentTerm(state), state);
+  // Load courses from all available terms — late-start Spring sections and
+  // early Summer sections can both fall within the upcoming window.
+  const allCourses = getAvailableTerms(state).flatMap((t) => loadAllCourses(t, state));
 
   // Build institution lookup
   const instMap = new Map<string, Institution>();
