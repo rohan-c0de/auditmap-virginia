@@ -70,6 +70,9 @@ const ncConfig: StateConfig = {
 
   courseDiscoveryUrl: (collegeSlug: string, prefix: string, number: string) => {
     const base = SELF_SERVICE_URLS[collegeSlug];
+    if (base && prefix && number) {
+      return `${base}/Student/Courses/Search?keyword=${encodeURIComponent(prefix + " " + number)}`;
+    }
     if (base) return `${base}/Student/Courses`;
     return `https://www.nccommunitycolleges.edu/colleges/${collegeSlug}`;
   },

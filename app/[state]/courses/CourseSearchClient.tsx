@@ -88,7 +88,12 @@ function formatSchedule(s: SectionResult): string {
 
 function buildCourseUrl(slug: string, s: SectionResult, courseUrlMap?: Record<string, string>): string {
   if (courseUrlMap && courseUrlMap[slug]) {
-    return courseUrlMap[slug];
+    const base = courseUrlMap[slug];
+    // If it's a Colleague Self-Service URL, deep-link to course search
+    if (base.includes("/Student/Courses") && s.course_prefix && s.course_number) {
+      return `${base}/Search?keyword=${encodeURIComponent(s.course_prefix + " " + s.course_number)}`;
+    }
+    return base;
   }
   // Fallback for VA (default)
   const titleSlug = s.course_title.replace(/[^a-zA-Z0-9]/g, "");
