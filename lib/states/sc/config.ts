@@ -40,7 +40,7 @@ const scConfig: StateConfig = {
       "SC law allows residents aged 60+ to attend classes at public technical colleges with tuition waived, space permitting. Fees and textbooks still apply.",
   },
 
-  transferSupported: false,
+  transferSupported: true,
 
   courseDiscoveryUrl: (collegeSlug: string, prefix: string, number: string) => {
     const base = SELF_SERVICE_URLS[collegeSlug];
