@@ -31,6 +31,10 @@ const COLLEAGUE_COLLEGES: Record<string, string> = {
   "spartanburg": "https://selfserviceprod.sccsc.edu:8172",
   "lowcountry": "https://selfservice.tcl.edu",
   "central-carolina": "https://ssb.cctech.edu",
+  "york": "https://coll-ss.yorktech.edu:8473",
+  "trident": "https://selfservice.tridenttech.edu",
+  "midlands": "https://collselfserve.midlandstech.edu",
+  "northeastern": "https://selfservice.netc.edu",
 };
 
 type CourseMode = "in-person" | "online" | "hybrid" | "zoom";

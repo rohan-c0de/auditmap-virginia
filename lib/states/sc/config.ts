@@ -1,13 +1,23 @@
 import type { StateConfig } from "../registry";
 
-// Maps college slug → Colleague Self-Service base URL for course catalog links
+// Maps college slug → course catalog base URL
 const SELF_SERVICE_URLS: Record<string, string> = {
+  // Colleague Self-Service
   "aiken": "https://courses.atc.edu",
   "denmark": "https://selfservice.denmarktech.edu",
   "florence-darlington": "https://selfservice.fdtc.edu",
   "spartanburg": "https://selfserviceprod.sccsc.edu:8172",
   "lowcountry": "https://selfservice.tcl.edu",
   "central-carolina": "https://ssb.cctech.edu",
+  "york": "https://coll-ss.yorktech.edu:8473",
+  "trident": "https://selfservice.tridenttech.edu",
+  "midlands": "https://collselfserve.midlandstech.edu",
+  "northeastern": "https://selfservice.netc.edu",
+  // Banner SSB
+  "piedmont": "https://banner.ptc.edu/StudentRegistrationSsb/ssb/classSearch",
+  "horry-georgetown": "https://ssb.hgtc.edu/PROD9/bwckschd.p_disp_dyn_sched",
+  // Cygnet
+  "greenville": "https://cygnet.gvltec.edu/courselist/courselist.cfm",
 };
 
 const scConfig: StateConfig = {
