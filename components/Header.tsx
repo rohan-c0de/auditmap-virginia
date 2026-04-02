@@ -13,13 +13,15 @@ const NAV_ITEMS = [
   { path: "/about", label: "About Auditing" },
 ];
 
-export default function Header({ state = "va", stateName = "Virginia" }: { state?: string; stateName?: string }) {
+export default function Header({ state = "va", stateName = "Virginia", transferSupported = true }: { state?: string; stateName?: string; transferSupported?: boolean }) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const links = NAV_ITEMS.map((item) => ({
-    href: `/${state}${item.path}`,
-    label: item.label,
-  }));
+  const links = NAV_ITEMS
+    .filter((item) => item.path !== "/transfer" || transferSupported)
+    .map((item) => ({
+      href: `/${state}${item.path}`,
+      label: item.label,
+    }));
 
   return (
     <header className="border-b border-gray-200 bg-white sticky top-0 z-50">

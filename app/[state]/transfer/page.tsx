@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { loadTransferMappings, getUniversities } from "@/lib/transfer";
 import { loadAllCourses, getAvailableTerms } from "@/lib/courses";
 import { getStateConfig } from "@/lib/states/registry";
@@ -12,6 +13,7 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { state } = await params;
   const config = getStateConfig(state);
+  if (!config.transferSupported) return {};
   return {
     title: `Transfer Course Finder — Which ${config.systemName} Courses Transfer? | ${config.branding.siteName}`,
     description: `Find which ${config.name} community college courses transfer to universities. See direct equivalencies, elective credit, and course availability.`,
@@ -21,6 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function TransferPage({ params }: Props) {
   const { state } = await params;
   const config = getStateConfig(state);
+  if (!config.transferSupported) notFound();
   const universities = getUniversities(state);
   const defaultUni = universities[0]?.slug || "";
   // Pass ALL mappings — client filters by selected university

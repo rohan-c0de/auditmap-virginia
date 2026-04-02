@@ -505,7 +505,12 @@ async function main() {
     const sections = await scrapeCollege(slug, baseUrl, termName, context);
 
     if (sections.length > 0) {
-      const termCode = sections[0].term;
+      const rawTermCode = sections[0].term;
+      // Normalize term codes like "2026SU1" → "2026SU" for consistent file naming
+      const termCode = rawTermCode.replace(/^(\d{4}(?:SP|SU|FA)).*$/, "$1");
+      if (termCode !== rawTermCode) {
+        for (const s of sections) s.term = termCode;
+      }
       const outDir = path.join(process.cwd(), "data", "sc", "courses", slug);
       fs.mkdirSync(outDir, { recursive: true });
       const outPath = path.join(outDir, `${termCode}.json`);
