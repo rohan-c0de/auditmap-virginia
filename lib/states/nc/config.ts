@@ -71,6 +71,7 @@ const ncConfig: StateConfig = {
   },
 
   transferSupported: true,
+  defaultZip: "27601",
 
   courseDiscoveryUrl: (collegeSlug: string, prefix: string, number: string) => {
     const base = SELF_SERVICE_URLS[collegeSlug];
@@ -88,20 +89,20 @@ const ncConfig: StateConfig = {
   },
 
   branding: {
-    siteName: "AuditMap North Carolina",
+    siteName: "CC CourseMap North Carolina",
     tagline:
-      "Discover which North Carolina community colleges allow course auditing, what it costs, and how to apply. Free for NC residents 65+.",
+      "Search North Carolina community college courses, check transfer equivalencies, and build your schedule. Free tuition for NC residents 65+.",
     footerText:
-      "AuditMap North Carolina — Helping North Carolinians discover course auditing opportunities.",
+      "CC CourseMap North Carolina — Find courses across all 58 NCCCS colleges.",
     disclaimer:
       "This is an independent project and is not affiliated with, endorsed by, or sponsored by the North Carolina Community College System (NCCCS).",
     metaKeywords: [
-      "North Carolina community college audit",
-      "NCCCS audit course",
-      "audit college class North Carolina",
+      "North Carolina community college courses",
+      "NCCCS course search",
+      "NC community college transfer",
       "free college courses seniors NC",
       "North Carolina 65+ tuition waiver",
-      "NC community college courses",
+      "NC schedule builder",
     ],
   },
 };

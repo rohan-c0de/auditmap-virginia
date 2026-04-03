@@ -24,6 +24,7 @@ export default async function SchedulePage({ params }: Props) {
       state={state}
       systemName={config.systemName}
       collegeCount={config.collegeCount}
+      defaultZip={config.defaultZip}
     />
   );
 }

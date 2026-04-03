@@ -3,6 +3,7 @@
 import { useState, useMemo, useCallback } from "react";
 import type { CourseSection, CourseMode } from "@/lib/types";
 import { getCourseStatus, formatStartInfo, isInProgress, type CourseStatus } from "@/lib/course-status";
+import { expandDays } from "@/lib/time-utils";
 
 type TransferLookup = Record<
   string,
@@ -71,7 +72,7 @@ function formatSchedule(course: CourseSection): string {
   if (!course.days && !hasTime) {
     return "Asynchronous / Online";
   }
-  const days = course.days || "";
+  const days = course.days ? expandDays(course.days) : "";
   const time = hasTime ? `${course.start_time}\u2013${course.end_time}` : "";
   if (days && time) return `${days} ${time}`;
   if (days) return days;
@@ -369,18 +370,18 @@ export default function CourseTable({ courses, collegeSlug, courseUrlBuilder, co
       ) : (
         <>
           {/* Desktop table */}
-          <div className="hidden overflow-x-auto rounded-lg border border-gray-200 md:block">
-            <table className="w-full text-left text-sm">
+          <div className="hidden rounded-lg border border-gray-200 md:block overflow-hidden">
+            <table className="w-full text-left text-sm" style={{ tableLayout: "auto" }}>
               <thead className="border-b border-gray-200 bg-gray-50 text-xs uppercase tracking-wider text-gray-500">
                 <tr>
-                  <th className="px-3 py-3 font-medium w-[60px]">CRN</th>
-                  <th className="px-3 py-3 font-medium w-[80px]">Course</th>
-                  <th className="px-3 py-3 font-medium">Title</th>
-                  <th className="px-3 py-3 font-medium w-[150px]">Schedule</th>
-                  <th className="px-3 py-3 font-medium w-[100px]">Starts</th>
-                  <th className="px-3 py-3 font-medium w-[90px]">Instructor</th>
-                  <th className="px-3 py-3 font-medium w-[70px]">Campus</th>
-                  <th className="px-3 py-3 font-medium w-[60px]">Mode</th>
+                  <th className="whitespace-nowrap px-3 py-3 font-medium">CRN</th>
+                  <th className="whitespace-nowrap px-3 py-3 font-medium">Course</th>
+                  <th className="px-3 py-3 font-medium w-full">Title</th>
+                  <th className="whitespace-nowrap px-3 py-3 font-medium">Schedule</th>
+                  <th className="whitespace-nowrap px-3 py-3 font-medium">Starts</th>
+                  <th className="whitespace-nowrap px-3 py-3 font-medium">Instructor</th>
+                  <th className="whitespace-nowrap px-3 py-3 font-medium">Campus</th>
+                  <th className="whitespace-nowrap px-3 py-3 font-medium">Mode</th>
                   <th className="px-2 py-3 font-medium" />
                 </tr>
               </thead>
@@ -402,82 +403,86 @@ export default function CourseTable({ courses, collegeSlug, courseUrlBuilder, co
                         {course.course_prefix} {course.course_number}
                       </td>
                       <td className="px-3 py-3 text-gray-700">
-                        <div>{course.course_title}</div>
-                        {transferLookup && (
-                          <div className="mt-0.5">
-                            <TransferBadge prefix={course.course_prefix} number={course.course_number} lookup={transferLookup} />
-                          </div>
-                        )}
-                        {course.prerequisite_text && (
-                          <div className="mt-1">
-                            <span
-                              className="inline-flex items-center gap-0.5 rounded bg-amber-50 border border-amber-200 px-1.5 py-0.5 text-[10px] font-medium text-amber-700"
-                            >
-                              <svg className="h-2.5 w-2.5 shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
-                              </svg>
-                              Requires: {course.prerequisite_text}
-                            </span>
-                          </div>
-                        )}
+                        <div className="max-w-[220px]">
+                          <div className="truncate">{course.course_title}</div>
+                          {transferLookup && (
+                            <div className="mt-0.5">
+                              <TransferBadge prefix={course.course_prefix} number={course.course_number} lookup={transferLookup} />
+                            </div>
+                          )}
+                          {course.prerequisite_text && (
+                            <div className="mt-1">
+                              <span
+                                className="inline-flex items-center gap-0.5 rounded bg-amber-50 border border-amber-200 px-1.5 py-0.5 text-[10px] font-medium text-amber-700"
+                              >
+                                <svg className="h-2.5 w-2.5 shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                                </svg>
+                                Requires: {course.prerequisite_text}
+                              </span>
+                            </div>
+                          )}
+                        </div>
                       </td>
-                      <td className="whitespace-nowrap px-3 py-3 text-gray-600">
+                      <td className="whitespace-nowrap px-3 py-3 text-xs text-gray-600">
                         {formatSchedule(course)}
                       </td>
                       <td className="whitespace-nowrap px-3 py-3">
                         <span className={`inline-flex items-center gap-1.5 text-xs ${statusStyle.text}`}>
-                          <span className={`inline-block h-1.5 w-1.5 rounded-full ${statusStyle.dot}`} />
+                          <span className={`inline-block h-1.5 w-1.5 rounded-full shrink-0 ${statusStyle.dot}`} />
                           {formatStartInfo(course.start_date)}
                         </span>
                       </td>
-                      <td className="px-3 py-3 text-gray-600 truncate max-w-[90px]">
+                      <td className="whitespace-nowrap px-3 py-3 text-xs text-gray-600 max-w-[110px] truncate">
                         {course.instructor || <span className="text-gray-300">&mdash;</span>}
                       </td>
-                      <td className="px-3 py-3 text-gray-600 truncate max-w-[70px]">
+                      <td className="whitespace-nowrap px-3 py-3 text-xs text-gray-600 max-w-[90px] truncate">
                         {course.campus || "---"}
                       </td>
-                      <td className="px-3 py-3">
+                      <td className="whitespace-nowrap px-3 py-3">
                         <span
                           className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-medium ${style.bg} ${style.text}`}
                         >
                           {style.label}
                         </span>
                       </td>
-                      <td className="whitespace-nowrap px-2 py-3 text-right space-x-1">
-                        <ShareButton course={course} collegeSlug={collegeSlug} />
-                        {onTogglePin && (
-                          <button
-                            type="button"
-                            onClick={() => onTogglePin(course.crn)}
-                            className={`inline-flex items-center justify-center w-7 h-7 rounded-md border transition ${
-                              pinnedCRNs?.has(course.crn)
-                                ? "bg-teal-100 border-teal-300 text-teal-700"
-                                : "bg-white border-gray-300 text-gray-400 hover:text-teal-600 hover:border-teal-300"
-                            }`}
-                            title={pinnedCRNs?.has(course.crn) ? "Remove from schedule" : "Add to schedule"}
+                      <td className="whitespace-nowrap px-2 py-3">
+                        <div className="flex items-center justify-end gap-1.5">
+                          <ShareButton course={course} collegeSlug={collegeSlug} />
+                          {onTogglePin && (
+                            <button
+                              type="button"
+                              onClick={() => onTogglePin(course.crn)}
+                              className={`inline-flex items-center justify-center w-7 h-7 rounded-md border transition ${
+                                pinnedCRNs?.has(course.crn)
+                                  ? "bg-teal-100 border-teal-300 text-teal-700"
+                                  : "bg-white border-gray-300 text-gray-400 hover:text-teal-600 hover:border-teal-300"
+                              }`}
+                              title={pinnedCRNs?.has(course.crn) ? "Remove from schedule" : "Add to schedule"}
+                            >
+                              <svg className="h-3.5 w-3.5" fill={pinnedCRNs?.has(course.crn) ? "currentColor" : "none"} stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                              </svg>
+                            </button>
+                          )}
+                          {onAuditClick && (
+                            <button
+                              type="button"
+                              onClick={() => onAuditClick(course)}
+                              className="text-xs font-medium text-teal-600 hover:text-teal-800 hover:underline"
+                            >
+                              Audit
+                            </button>
+                          )}
+                          <a
+                            href={buildCourseUrl(collegeSlug, course, courseUrlBuilder, courseListingUrl)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs font-medium text-gray-500 hover:text-gray-700 hover:underline"
                           >
-                            <svg className="h-3.5 w-3.5" fill={pinnedCRNs?.has(course.crn) ? "currentColor" : "none"} stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
-                            </svg>
-                          </button>
-                        )}
-                        {onAuditClick && (
-                          <button
-                            type="button"
-                            onClick={() => onAuditClick(course)}
-                            className="text-xs font-medium text-teal-600 hover:text-teal-800 hover:underline"
-                          >
-                            Audit
-                          </button>
-                        )}
-                        <a
-                          href={buildCourseUrl(collegeSlug, course, courseUrlBuilder, courseListingUrl)}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-xs font-medium text-gray-500 hover:text-gray-700 hover:underline"
-                        >
-                          {systemName} &rarr;
-                        </a>
+                            {systemName} &rarr;
+                          </a>
+                        </div>
                       </td>
                     </tr>
                   );

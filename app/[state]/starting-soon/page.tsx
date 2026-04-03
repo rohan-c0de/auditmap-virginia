@@ -38,7 +38,7 @@ export default async function StartingSoonPage({ params }: Props) {
         still open for registration.
       </p>
 
-      <StartingSoonClient state={state} />
+      <StartingSoonClient state={state} defaultZip={config.defaultZip} />
     </div>
   );
 }

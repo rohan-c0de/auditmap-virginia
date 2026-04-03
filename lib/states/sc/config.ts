@@ -47,6 +47,7 @@ const scConfig: StateConfig = {
   },
 
   transferSupported: true,
+  defaultZip: "29201",
 
   courseDiscoveryUrl: (collegeSlug: string, prefix: string, number: string) => {
     // Colleague: append search path
@@ -74,20 +75,20 @@ const scConfig: StateConfig = {
   },
 
   branding: {
-    siteName: "AuditMap South Carolina",
+    siteName: "CC CourseMap South Carolina",
     tagline:
-      "Discover which South Carolina technical colleges allow course auditing, what it costs, and how to apply. Tuition waived for SC residents 60+.",
+      "Search South Carolina technical college courses, check transfer equivalencies, and build your schedule. Tuition waived for SC residents 60+.",
     footerText:
-      "AuditMap South Carolina — Helping South Carolinians discover course auditing opportunities.",
+      "CC CourseMap South Carolina — Find courses across all 16 SCTCS colleges.",
     disclaimer:
       "This is an independent project and is not affiliated with, endorsed by, or sponsored by the South Carolina Technical College System (SCTCS).",
     metaKeywords: [
-      "South Carolina technical college audit",
-      "SCTCS audit course",
-      "audit college class South Carolina",
+      "South Carolina technical college courses",
+      "SCTCS course search",
+      "SC technical college transfer",
       "free college courses seniors SC",
       "South Carolina 60+ tuition waiver",
-      "SC technical college courses",
+      "SC schedule builder",
     ],
   },
 };

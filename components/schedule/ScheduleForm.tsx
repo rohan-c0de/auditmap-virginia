@@ -18,6 +18,7 @@ export interface ScheduleFormData {
 interface Props {
   onSubmit: (data: ScheduleFormData) => void;
   loading: boolean;
+  defaultZip?: string;
 }
 
 const DAYS = [
@@ -46,7 +47,7 @@ const DISTANCE_OPTIONS = [
   { value: 50, label: "50 miles" },
 ];
 
-export default function ScheduleForm({ onSubmit, loading }: Props) {
+export default function ScheduleForm({ onSubmit, loading, defaultZip = "22030" }: Props) {
   const [subjects, setSubjects] = useState<string[]>([]);
   const [subjectInput, setSubjectInput] = useState("");
   const [daysAvailable, setDaysAvailable] = useState<string[]>(["M", "Tu", "W", "Th", "F"]);
@@ -278,7 +279,7 @@ export default function ScheduleForm({ onSubmit, loading }: Props) {
               type="text"
               value={zip}
               onChange={(e) => setZip(e.target.value.replace(/\D/g, "").slice(0, 5))}
-              placeholder="22030"
+              placeholder={defaultZip}
               className="w-full rounded-lg border border-gray-300 px-4 py-2 text-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-200"
               maxLength={5}
             />

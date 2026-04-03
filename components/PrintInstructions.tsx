@@ -1,6 +1,7 @@
 "use client";
 
 import type { Institution, CourseSection } from "@/lib/types";
+import { expandDays } from "@/lib/time-utils";
 
 interface Props {
   institution: Institution;
@@ -34,7 +35,7 @@ export default function PrintInstructions({ institution, course }: Props) {
       ? `<div style="margin-bottom:20px;padding:12px;background:#f0f9ff;border:1px solid #bae6fd;border-radius:6px;">
            <strong>Course:</strong> ${course.course_prefix} ${course.course_number} — ${course.course_title}<br/>
            <strong>CRN:</strong> ${course.crn}<br/>
-           <strong>Schedule:</strong> ${course.days || "Online"} ${course.start_time && course.start_time !== "TBA" ? course.start_time + "–" + course.end_time : ""}<br/>
+           <strong>Schedule:</strong> ${course.days ? expandDays(course.days) : "Online"} ${course.start_time && course.start_time !== "TBA" ? course.start_time + "–" + course.end_time : ""}<br/>
            <strong>Campus:</strong> ${course.campus || "Virtual"}
          </div>`
       : "";
@@ -101,7 +102,7 @@ export default function PrintInstructions({ institution, course }: Props) {
   ${restrictionsHtml}
 
   <div class="footer">
-    <p>Generated from AuditMap Virginia · Last verified: ${audit_policy.last_verified}</p>
+    <p>Generated from CC CourseMap · Last verified: ${audit_policy.last_verified}</p>
     ${audit_policy.source_url ? `<p>Source: ${audit_policy.source_url}</p>` : ""}
     <p>Always confirm directly with the college before enrolling.</p>
   </div>

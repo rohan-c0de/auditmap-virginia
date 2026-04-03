@@ -40,12 +40,12 @@ export default async function HomePage({ params }: Props) {
       <section id="search" className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Find {config.name} Community College Courses to Audit
+            Find {config.name} Community College Courses
           </h1>
           <p className="text-lg text-gray-600 mb-8">
-            Search by zip code to discover which {config.systemName} colleges
-            near you allow course auditing, what it costs, and exactly how to
-            apply.
+            Search by zip code to find nearby {config.systemName} colleges,
+            browse courses, check transfer equivalencies, and build your
+            schedule.
           </p>
           <SearchForm state={state} />
           <StartingSoonCallout state={state} />

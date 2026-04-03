@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import type { CourseMode } from "@/lib/types";
+import { expandDays } from "@/lib/time-utils";
 
 // ---------------------------------------------------------------------------
 // Types matching the API response
@@ -91,7 +92,7 @@ function isValidTime(t: string): boolean {
 function formatSchedule(s: SectionResult): string {
   const hasTime = isValidTime(s.start_time) && isValidTime(s.end_time);
   if (!s.days && !hasTime) return "Asynchronous / Online";
-  const days = s.days || "";
+  const days = s.days ? expandDays(s.days) : "";
   const time = hasTime
     ? `${s.start_time}\u2013${s.end_time}`
     : "";
@@ -111,7 +112,7 @@ function daysAwayLabel(days: number): string {
 // Component
 // ---------------------------------------------------------------------------
 
-export default function StartingSoonClient({ state }: { state: string }) {
+export default function StartingSoonClient({ state, defaultZip = "22030" }: { state: string; defaultZip?: string }) {
   const [window, setWindow] = useState(60);
   const [subject, setSubject] = useState("");
   const [mode, setMode] = useState("");
@@ -238,7 +239,7 @@ export default function StartingSoonClient({ state }: { state: string }) {
               type="text"
               value={zipInput}
               onChange={(e) => setZipInput(e.target.value)}
-              placeholder={state === "nc" ? "e.g. 27601" : "e.g. 22030"}
+              placeholder={`e.g. ${defaultZip}`}
               maxLength={5}
               className="w-24 rounded-md border border-gray-300 bg-white px-3 py-2 text-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-200"
             />

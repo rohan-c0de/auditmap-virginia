@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — AuditMap Virginia",
-  description: "Privacy policy for AuditMap Virginia.",
+  title: "Privacy Policy — CC CourseMap",
+  description: "Privacy policy for CC CourseMap.",
 };
 
 export default function PrivacyPage() {
@@ -15,7 +15,7 @@ export default function PrivacyPage() {
         <section>
           <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-3">Overview</h2>
           <p>
-            AuditMap Virginia is a free tool that helps people find community college
+            CC CourseMap is a free tool that helps people find community college
             courses available for auditing across the Virginia Community College System
             (VCCS). We are committed to protecting your privacy and being transparent
             about the data we collect.

@@ -26,7 +26,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
   if (!institution) return { title: "College Not Found" };
 
   return {
-    title: `${institution.name} — Audit Courses | AuditMap ${getStateConfig(state).name}`,
+    title: `${institution.name} — Courses & Transfer Info | CC CourseMap ${getStateConfig(state).name}`,
     description: `Find out how to audit courses at ${institution.name}. ${
       institution.audit_policy.allowed
         ? "Auditing is available."

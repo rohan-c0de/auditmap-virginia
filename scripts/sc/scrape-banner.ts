@@ -223,10 +223,147 @@ function detectMode(
   return "in-person";
 }
 
+// ---------------------------------------------------------------------------
+// Prerequisite helpers (ported from DC scraper, parameterized for multi-college)
+// ---------------------------------------------------------------------------
+
+interface PrereqInfo {
+  text: string;       // e.g. "ENG 101 (min C) or ENG 101H (min C)"
+  courses: string[];  // e.g. ["ENG 101", "ENG 101H"]
+}
+
+async function buildSubjectMap(
+  baseUrl: string,
+  termCode: string,
+  cookies: string
+): Promise<Record<string, string>> {
+  const map: Record<string, string> = {};
+  try {
+    const res = await fetch(
+      `${baseUrl}/StudentRegistrationSsb/ssb/classSearch/get_subject?term=${termCode}&offset=1&max=500`,
+      { headers: { Cookie: cookies } }
+    );
+    const subjects: { code: string; description: string }[] = await res.json();
+    for (const s of subjects) {
+      map[s.description.toLowerCase()] = s.code;
+    }
+    console.log(`  Built subject map: ${Object.keys(map).length} subjects`);
+  } catch (e) {
+    console.warn("  Warning: Could not fetch subject map, prereq names may use full names");
+  }
+  return map;
+}
+
+function parsePrereqHtml(
+  html: string,
+  subjectMap: Record<string, string>
+): PrereqInfo | null {
+  if (html.includes("No prerequisite")) return null;
+
+  const rows: { andOr: string; subject: string; courseNum: string; grade: string }[] = [];
+  const trRegex = /<tr>\s*([\s\S]*?)<\/tr>/g;
+  let trMatch;
+  while ((trMatch = trRegex.exec(html)) !== null) {
+    const tds: string[] = [];
+    const tdRegex = /<td[^>]*>([\s\S]*?)<\/td>/g;
+    let tdMatch;
+    while ((tdMatch = tdRegex.exec(trMatch[1])) !== null) {
+      tds.push(tdMatch[1].trim());
+    }
+    if (tds.length >= 8 && (tds[4] || tds[5])) {
+      rows.push({
+        andOr: tds[0] || "",
+        subject: tds[4],
+        courseNum: tds[5],
+        grade: tds[7],
+      });
+    }
+  }
+
+  if (rows.length === 0) return null;
+
+  const courses: string[] = [];
+  const parts: string[] = [];
+  for (const row of rows) {
+    const prefix = subjectMap[row.subject.toLowerCase()] || row.subject;
+    const courseCode = `${prefix} ${row.courseNum}`;
+    const gradeNote = row.grade && row.grade !== "TR" ? ` (min ${row.grade})` : "";
+    const connector = row.andOr ? ` ${row.andOr.toLowerCase()} ` : "";
+
+    if (connector && parts.length > 0) {
+      parts.push(connector);
+    }
+    parts.push(`${courseCode}${gradeNote}`);
+
+    if (row.grade !== "TR" && !courses.includes(courseCode)) {
+      courses.push(courseCode);
+    }
+  }
+
+  return {
+    text: parts.join("").trim(),
+    courses,
+  };
+}
+
+async function fetchPrerequisites(
+  baseUrl: string,
+  termCode: string,
+  sections: BannerSection[],
+  cookies: string,
+  subjectMap: Record<string, string>
+): Promise<Map<string, PrereqInfo>> {
+  // Deduplicate: one CRN per unique course
+  const courseMap = new Map<string, string>();
+  for (const s of sections) {
+    const key = `${s.subject} ${s.courseNumber}`;
+    if (!courseMap.has(key)) {
+      courseMap.set(key, s.courseReferenceNumber);
+    }
+  }
+
+  console.log(`  Fetching prerequisites for ${courseMap.size} unique courses...`);
+  const prereqs = new Map<string, PrereqInfo>();
+  const entries = Array.from(courseMap.entries());
+  const BATCH_SIZE = 10;
+  let fetched = 0;
+
+  for (let i = 0; i < entries.length; i += BATCH_SIZE) {
+    const batch = entries.slice(i, i + BATCH_SIZE);
+    const results = await Promise.all(
+      batch.map(async ([courseKey, crn]) => {
+        try {
+          const res = await fetch(
+            `${baseUrl}/StudentRegistrationSsb/ssb/searchResults/getSectionPrerequisites?term=${termCode}&courseReferenceNumber=${crn}`,
+            { headers: { Cookie: cookies } }
+          );
+          const html = await res.text();
+          const info = parsePrereqHtml(html, subjectMap);
+          return { courseKey, info };
+        } catch {
+          return { courseKey, info: null };
+        }
+      })
+    );
+    for (const { courseKey, info } of results) {
+      if (info) prereqs.set(courseKey, info);
+    }
+    fetched += batch.length;
+    if (fetched % 100 === 0 || fetched === entries.length) {
+      console.log(`    prereqs: ${fetched}/${entries.length} (${prereqs.size} with prereqs)`);
+    }
+  }
+
+  return prereqs;
+}
+
+// ---------------------------------------------------------------------------
+
 function mapSection(
   slug: string,
   termCode: string,
-  section: BannerSection
+  section: BannerSection,
+  prereq?: PrereqInfo
 ): CourseSection {
   const meetings = section.meetingsFaculty || [];
   const primary = meetings[0]?.meetingTime;
@@ -262,8 +399,8 @@ function mapSection(
     instructor,
     seats_open: section.seatsAvailable,
     seats_total: section.maximumEnrollment,
-    prerequisite_text: null,
-    prerequisite_courses: [],
+    prerequisite_text: prereq?.text || null,
+    prerequisite_courses: prereq?.courses || [],
   };
 }
 
@@ -317,8 +454,8 @@ async function scrapeCollege(
 
   const cookies = await setTerm(baseUrl, term.code, initCookies);
 
-  // Step 3: Paginate through all results
-  const allSections: CourseSection[] = [];
+  // Step 3: Paginate through all raw sections
+  const rawSections: BannerSection[] = [];
   let offset = 0;
   let totalCount = 0;
 
@@ -328,12 +465,10 @@ async function scrapeCollege(
 
     if (!result.data || result.data.length === 0) break;
 
-    for (const s of result.data) {
-      allSections.push(mapSection(slug, normalizeTermCode(term, termName), s));
-    }
+    rawSections.push(...result.data);
 
     console.log(
-      `  Fetched ${allSections.length}/${totalCount} sections...`
+      `  Fetched ${rawSections.length}/${totalCount} sections...`
     );
     offset += PAGE_SIZE;
 
@@ -341,6 +476,19 @@ async function scrapeCollege(
       await sleep(DELAY_MS);
     }
   } while (offset < totalCount);
+
+  // Step 4: Fetch prerequisites
+  const subjectMap = await buildSubjectMap(baseUrl, term.code, cookies);
+  const prereqs = await fetchPrerequisites(baseUrl, term.code, rawSections, cookies, subjectMap);
+  const withPrereqs = prereqs.size;
+  console.log(`  Found prerequisites for ${withPrereqs} courses`);
+
+  // Step 5: Map sections with prereq data
+  const termCode = normalizeTermCode(term, termName);
+  const allSections: CourseSection[] = rawSections.map((s) => {
+    const courseKey = `${s.subject} ${s.courseNumber}`;
+    return mapSection(slug, termCode, s, prereqs.get(courseKey));
+  });
 
   return allSections;
 }

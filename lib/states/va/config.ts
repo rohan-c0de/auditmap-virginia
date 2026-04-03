@@ -21,6 +21,7 @@ const vaConfig: StateConfig = {
   },
 
   transferSupported: true,
+  defaultZip: "22030",
 
   courseDiscoveryUrl: (collegeSlug: string, prefix: string, number: string) =>
     `https://courses.vccs.edu/colleges/${collegeSlug}/courses/${prefix}${number}`,
@@ -29,19 +30,20 @@ const vaConfig: StateConfig = {
     `https://courses.vccs.edu/colleges/${collegeSlug}/courses`,
 
   branding: {
-    siteName: "AuditMap Virginia",
+    siteName: "CC CourseMap Virginia",
     tagline:
-      "Discover which Virginia community colleges allow course auditing, what it costs, and how to apply. Free for Virginia residents 60+.",
+      "Search Virginia community college courses, check transfer equivalencies, and build your schedule. Free tuition for Virginia residents 60+.",
     footerText:
-      "AuditMap Virginia \u2014 Helping Virginians discover course auditing opportunities.",
+      "CC CourseMap Virginia — Find courses across all 23 VCCS colleges.",
     disclaimer:
       "This is an independent project and is not affiliated with, endorsed by, or sponsored by the Virginia Community College System (VCCS).",
     metaKeywords: [
-      "Virginia community college audit",
-      "VCCS audit course",
-      "audit college class Virginia",
+      "Virginia community college courses",
+      "VCCS course search",
+      "Virginia community college transfer",
       "free college courses seniors Virginia",
       "Virginia 60+ tuition waiver",
+      "VCCS schedule builder",
     ],
   },
 };

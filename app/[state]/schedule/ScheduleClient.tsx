@@ -10,9 +10,10 @@ interface ScheduleClientProps {
   state: string;
   systemName?: string;
   collegeCount?: number;
+  defaultZip?: string;
 }
 
-export default function ScheduleClient({ state, systemName = "VCCS", collegeCount = 23 }: ScheduleClientProps) {
+export default function ScheduleClient({ state, systemName = "VCCS", collegeCount = 23, defaultZip = "22030" }: ScheduleClientProps) {
   const [response, setResponse] = useState<ScheduleResponse | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -71,7 +72,7 @@ export default function ScheduleClient({ state, systemName = "VCCS", collegeCoun
 
       {/* Form */}
       <div className="mb-8">
-        <ScheduleForm onSubmit={handleBuild} loading={loading} />
+        <ScheduleForm onSubmit={handleBuild} loading={loading} defaultZip={defaultZip} />
       </div>
 
       {/* Error */}

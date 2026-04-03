@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { CourseSection } from "@/lib/types";
+import { expandDays } from "@/lib/time-utils";
 
 interface Props {
   courses: CourseSection[];
@@ -166,7 +167,7 @@ export default function ScheduleBuilder({ courses, pinnedCRNs, onTogglePin }: Pr
                         {course.course_prefix} {course.course_number}
                       </span>
                       <span className="text-[10px] opacity-60">
-                        {course.days || "Online"}{" "}
+                        {course.days ? expandDays(course.days) : "Online"}{" "}
                         {course.start_time && course.start_time !== "TBA"
                           ? course.start_time
                           : ""}

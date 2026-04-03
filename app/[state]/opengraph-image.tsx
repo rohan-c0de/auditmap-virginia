@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { getStateConfig, isValidState } from "@/lib/states/registry";
 
 export const runtime = "nodejs";
-export const alt = "AuditMap — Find Community College Courses to Audit";
+export const alt = "CC CourseMap — Community College Course Finder";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -69,7 +69,7 @@ export default async function Image({
                 fontWeight: 700,
               }}
             >
-              A
+              CCM
             </div>
             <span
               style={{
@@ -78,7 +78,7 @@ export default async function Image({
                 color: "#0d9488",
               }}
             >
-              AuditMap
+              CC CourseMap
             </span>
           </div>
 
@@ -92,7 +92,7 @@ export default async function Image({
               marginBottom: "20px",
             }}
           >
-            {`Find ${config.name} Community College Courses to Audit`}
+            {`Find ${config.name} Community College Courses`}
           </div>
 
           <div
@@ -104,7 +104,7 @@ export default async function Image({
               maxWidth: "800px",
             }}
           >
-            {`Search ${config.collegeCount} ${config.systemName} colleges · Compare audit policies · Free for ${config.seniorWaiver?.ageThreshold ?? 60}+`}
+            {`Search ${config.collegeCount} ${config.systemName} colleges · Transfer equivalencies · Schedule builder · Free for ${config.seniorWaiver?.ageThreshold ?? 60}+`}
           </div>
         </div>
       </div>

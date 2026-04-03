@@ -70,6 +70,31 @@ export function formatHour(hour: number): string {
 }
 
 /**
+ * Convert compact day codes like "MTuWThF" to spaced "M Tu W Th F".
+ * Splits concatenated short codes into readable spaced form.
+ */
+export function expandDays(compact: string): string {
+  // Already spaced (e.g. "M W F") — return as-is
+  if (compact.includes(" ")) return compact;
+  // Extract 2-char codes first (Th, Tu, Sa, Su), then single-char (M, W, F)
+  const tokens: string[] = [];
+  let i = 0;
+  while (i < compact.length) {
+    if (i + 1 < compact.length) {
+      const two = compact.substring(i, i + 2);
+      if (two === "Th" || two === "Tu" || two === "Sa" || two === "Su") {
+        tokens.push(two);
+        i += 2;
+        continue;
+      }
+    }
+    tokens.push(compact[i]);
+    i++;
+  }
+  return tokens.join(" ");
+}
+
+/**
  * Check if a time string is valid (not TBA, not "0:00 AM").
  */
 export function isValidTime(t: string): boolean {

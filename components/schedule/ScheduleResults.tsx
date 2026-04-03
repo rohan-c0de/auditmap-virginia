@@ -5,7 +5,7 @@ import Link from "next/link";
 import type { GeneratedSchedule, ScheduleResponse, ScheduleSection } from "@/lib/types";
 import WeeklyCalendar from "./WeeklyCalendar";
 import ScoreBar from "./ScoreBar";
-import { isValidTime } from "@/lib/time-utils";
+import { isValidTime, expandDays } from "@/lib/time-utils";
 
 interface Props {
   response: ScheduleResponse;
@@ -22,9 +22,10 @@ const MODE_STYLES: Record<string, { bg: string; text: string; label: string }> =
 function formatSchedule(days: string, startTime: string, endTime: string): string {
   const hasTime = isValidTime(startTime) && isValidTime(endTime);
   if (!days && !hasTime) return "Async / Online";
+  const d = days ? expandDays(days) : "";
   const time = hasTime ? `${startTime}\u2013${endTime}` : "";
-  if (days && time) return `${days} ${time}`;
-  return days || time || "Async / Online";
+  if (d && time) return `${d} ${time}`;
+  return d || time || "Async / Online";
 }
 
 function scoreColor(score: number): string {

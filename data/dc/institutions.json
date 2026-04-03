@@ -1,0 +1,64 @@
+[
+  {
+    "id": "udc-cc",
+    "name": "UDC Community College",
+    "system": "UDC-CC",
+    "college_slug": "udc-cc",
+    "campuses": [
+      {
+        "name": "Lamond-Riggs Campus",
+        "lat": 38.9459,
+        "lng": -76.9897,
+        "address": "5171 South Dakota Ave NE, Washington, DC 20017"
+      },
+      {
+        "name": "Congress Heights Campus",
+        "lat": 38.8421,
+        "lng": -76.9994,
+        "address": "3100 Martin Luther King Jr Ave SE, Washington, DC 20032"
+      },
+      {
+        "name": "Bertie Backus Campus",
+        "lat": 38.9063,
+        "lng": -76.9514,
+        "address": "5171 South Dakota Ave NE, Building 39, Washington, DC 20017"
+      }
+    ],
+    "audit_policy": {
+      "allowed": true,
+      "cost_model": "same_as_credit",
+      "cost_note": "Audit students pay the same tuition and fees as credit students. DC residents 65+ may have tuition waived.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "DC residents aged 65+ may have tuition and fees waived, space permitting. Degree-seeking seniors pay half tuition.",
+          "source_url": "https://www.udc.edu/cc/"
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Complete an admissions application at www.udc.edu/cc/admissions.",
+          "Contact the Office of the Registrar at uregistrar@udc.edu to request audit enrollment.",
+          "Register for the course during the normal enrollment period.",
+          "Confirm audit status with the registrar before the add/drop deadline."
+        ],
+        "timing": "Register during the normal enrollment period. Audit requests should be submitted before the add/drop deadline.",
+        "form_url": "https://www.udc.edu/cc/admissions/",
+        "contact_email": "uregistrar@udc.edu",
+        "contact_phone": "202-274-5800"
+      },
+      "restrictions": [
+        "Instructor approval may be required for audit enrollment",
+        "Audit students do not receive grades or academic credit",
+        "Space availability may limit audit enrollment",
+        "Some courses may not be available for audit"
+      ],
+      "last_verified": "2026-04-02",
+      "source_url": "https://www.udc.edu/cc/"
+    }
+  }
+]

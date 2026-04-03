@@ -67,6 +67,7 @@ export default async function CoursesPage({ params }: Props) {
         systemName={config.systemName}
         collegeCount={config.collegeCount}
         courseUrlMap={courseUrlMap}
+        defaultZip={config.defaultZip}
       />
     </>
   );

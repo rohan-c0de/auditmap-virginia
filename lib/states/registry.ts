@@ -36,6 +36,8 @@ export interface StateConfig {
   courseDiscoveryUrl: (collegeSlug: string, prefix: string, number: string) => string;
   /** Build the external URL for a college's course listing page */
   collegeCoursesUrl: (collegeSlug: string) => string;
+  /** Default zip code placeholder for search forms */
+  defaultZip: string;
   /** Branding and SEO */
   branding: {
     siteName: string;
@@ -63,6 +65,9 @@ function ensureLoaded(): void {
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   const sc = require("./sc/config").default as StateConfig;
   configs[sc.slug] = sc;
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const dc = require("./dc/config").default as StateConfig;
+  configs[dc.slug] = dc;
 }
 
 /** Get the config for a specific state. Throws if unknown. */

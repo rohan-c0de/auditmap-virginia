@@ -75,7 +75,7 @@ export async function GET(request: NextRequest, context: RouteContext) {
 
   // Filter to upcoming courses within the window
   const upcoming = allCourses.filter((s) => {
-    if (!s.start_date) return false;
+    if (!s.start_date || !/^\d{4}-\d{2}-\d{2}$/.test(s.start_date)) return false;
     const days = daysUntilStart(s.start_date);
     if (days < 0 || days > window) return false;
     if (mode && s.mode !== mode) return false;

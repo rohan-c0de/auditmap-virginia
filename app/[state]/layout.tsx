@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const b = config.branding;
 
   return {
-    title: `${b.siteName} — Find Community College Courses to Audit`,
+    title: `${b.siteName} — Community College Course Finder`,
     description: b.tagline,
     keywords: b.metaKeywords,
     openGraph: {
