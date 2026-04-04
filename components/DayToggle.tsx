@@ -62,7 +62,6 @@ export default function DayToggle({ selectedDays, onChange }: DayToggleProps) {
           </button>
         );
       })}
-      <span className="mx-0.5 text-gray-300">|</span>
       {PRESETS.map((p) => {
         const active = arraysEqual(selectedDays, p.keys);
         return (
