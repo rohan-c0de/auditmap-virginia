@@ -84,8 +84,12 @@ const DAY_OPTIONS = [
 
 function courseMatchesDay(courseDays: string, filterDay: string): boolean {
   if (!courseDays) return false;
-  const parts = courseDays.split(" ");
-  return parts.includes(filterDay);
+  // Extract day tokens — handles "M Tu W", "M T W Th", and "MTuWThF" formats
+  const tokens = courseDays.match(/[A-Z][a-z]?/g);
+  if (!tokens) return false;
+  // Normalize: standalone "T" → "Tu" (some scrapers use T for Tuesday)
+  const normalized = tokens.map((t) => (t === "T" ? "Tu" : t));
+  return normalized.includes(filterDay);
 }
 
 /** Sort: upcoming first (soonest start), then in-progress (most recent start first) */
