@@ -45,10 +45,10 @@ interface EnrichedSection extends CourseSection {
 // Main entry point
 // ---------------------------------------------------------------------------
 
-export function generateSchedules(
+export async function generateSchedules(
   request: ScheduleRequest,
   institutions: Institution[]
-): ScheduleResponse {
+): Promise<ScheduleResponse> {
   const t0 = performance.now();
 
   // Build institution lookup
@@ -95,8 +95,8 @@ export function generateSchedules(
   );
 
   // Stage 1: Filter all sections to candidates
-  const term = request.term || getCurrentTerm();
-  const allSections = loadAllCourses(term);
+  const term = request.term || await getCurrentTerm();
+  const allSections = await loadAllCourses(term);
   const candidates = filterSections(
     allSections,
     exactCourses,

@@ -31,7 +31,7 @@ export default async function TransferPage({ params }: Props) {
   const mappings = loadTransferMappings(state);
 
   // Get course availability for current term (matches what course search shows)
-  const allCourses = loadAllCourses(getCurrentTerm(state), state);
+  const allCourses = await loadAllCourses(await getCurrentTerm(state), state);
   const courseAvailability: Record<string, { colleges: string[]; totalSections: number }> = {};
   for (const c of allCourses) {
     const key = `${c.course_prefix}-${c.course_number}`;

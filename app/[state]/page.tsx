@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function HomePage({ params }: Props) {
   const { state } = await params;
   const config = getStateConfig(state);
-  const nextTerm = getNextTerm(state);
+  const nextTerm = await getNextTerm(state);
 
   return (
     <div>
@@ -102,7 +102,7 @@ export default async function HomePage({ params }: Props) {
       {/* Notify banner */}
       <section className="px-4 sm:px-6 lg:px-8 pb-8">
         <div className="max-w-2xl mx-auto">
-          <NotifyBanner nextTerm={nextTerm.label} />
+          <NotifyBanner nextTerm={nextTerm.label} state={state} />
         </div>
       </section>
 

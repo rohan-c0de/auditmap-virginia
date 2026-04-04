@@ -27,9 +27,10 @@ export default async function Image({
 
   const config = getStateConfig(state);
   const allowed = institution.audit_policy.allowed;
-  const courseCount = getCourseCount(
+  const currentTerm = await getCurrentTerm(state);
+  const courseCount = await getCourseCount(
     institution.college_slug,
-    getCurrentTerm(state),
+    currentTerm,
     state
   );
 

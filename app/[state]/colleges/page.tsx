@@ -35,6 +35,14 @@ export default async function CollegesPage({ params }: Props) {
     (i) => i.audit_policy.allowed === null
   ).length;
 
+  // Pre-compute course counts (async)
+  const currentTerm = await getCurrentTerm(state);
+  const courseCountMap = new Map<string, number>();
+  for (const inst of sorted) {
+    const count = await getCourseCount(inst.college_slug, currentTerm, state);
+    courseCountMap.set(inst.college_slug, count);
+  }
+
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.auditmap.com";
 
   const breadcrumbLd = {
@@ -91,11 +99,7 @@ export default async function CollegesPage({ params }: Props) {
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {sorted.map((institution) => {
-          const courseCount = getCourseCount(
-            institution.college_slug,
-            getCurrentTerm(state),
-            state
-          );
+          const courseCount = courseCountMap.get(institution.college_slug) || 0;
           const allowed = institution.audit_policy.allowed;
 
           return (

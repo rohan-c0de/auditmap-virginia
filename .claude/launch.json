@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "auditmap-dev",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
+      "runtimeExecutable": "/bin/sh",
+      "runtimeArgs": ["-c", "export PATH=/opt/homebrew/bin:$PATH && npx next dev --port $PORT"],
       "port": 3000,
       "autoPort": true
     }

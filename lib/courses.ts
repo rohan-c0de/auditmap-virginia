@@ -1,69 +1,104 @@
-import fs from "fs";
-import path from "path";
 import type { CourseSection, Institution } from "./types";
 import { getZipCoordinates, calculateDistance } from "./geo";
+import { supabase } from "./supabase";
 
-function dataDir(state = "va"): string {
-  return path.join(process.cwd(), "data", state, "courses");
+// ---------------------------------------------------------------------------
+// In-memory cache (server-side, survives across requests in dev/prod)
+// ---------------------------------------------------------------------------
+
+const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+
+interface CacheEntry<T> {
+  data: T;
+  expires: number;
 }
 
-// Module-level cache for all-college data (keyed by "state:term"), max 4 entries
-const allCoursesCache = new Map<string, CourseSection[]>();
-const MAX_CACHE_ENTRIES = 4;
+const cache = new Map<string, CacheEntry<unknown>>();
+
+async function cached<T>(key: string, fn: () => Promise<T>): Promise<T> {
+  const entry = cache.get(key) as CacheEntry<T> | undefined;
+  if (entry && entry.expires > Date.now()) return entry.data;
+  const data = await fn();
+  cache.set(key, { data, expires: Date.now() + CACHE_TTL });
+  return data;
+}
 
 /**
- * Load all course sections for a given college and term from the static JSON
- * file at data/courses/{slug}/{term}.json.
+ * Load all course sections for a given college and term from Supabase.
  */
-export function loadCoursesForCollege(
+export async function loadCoursesForCollege(
   collegeSlug: string,
   term: string,
   state = "va"
-): CourseSection[] {
-  const filePath = path.join(dataDir(state), collegeSlug, `${term}.json`);
+): Promise<CourseSection[]> {
+  return cached(`courses:${state}:${collegeSlug}:${term}`, async () => {
+    const { data, error } = await supabase
+      .from("courses")
+      .select("*")
+      .eq("college_code", collegeSlug)
+      .eq("term", term)
+      .eq("state", state);
 
-  try {
-    const raw = fs.readFileSync(filePath, "utf-8");
-    return JSON.parse(raw) as CourseSection[];
-  } catch {
-    return [];
-  }
-}
-
-/**
- * Scan the data/courses directory tree and return all term identifiers that
- * have at least one JSON file present across any college.
- */
-export function getAvailableTerms(state = "va"): string[] {
-  const terms = new Set<string>();
-
-  try {
-    const slugs = fs.readdirSync(dataDir(state));
-
-    for (const slug of slugs) {
-      const slugDir = path.join(dataDir(state), slug);
-      if (!fs.statSync(slugDir).isDirectory()) continue;
-
-      const files = fs.readdirSync(slugDir);
-      for (const file of files) {
-        if (file.endsWith(".json")) {
-          terms.add(file.replace(".json", ""));
-        }
-      }
+    if (error) {
+      console.error("loadCoursesForCollege error:", error.message);
+      return [];
     }
-  } catch {
-    // data directory may not exist yet
-  }
 
-  return Array.from(terms).sort();
+    return (data || []).map(mapRow);
+  });
 }
 
 /**
- * Return the number of course sections for a college/term combination without
- * loading the full array into the caller's scope.
+ * Get all term codes that have at least one course in Supabase for a state.
+ * Uses RPC function to avoid downloading all rows.
  */
-export function getCourseCount(collegeSlug: string, term: string, state = "va"): number {
-  return loadCoursesForCollege(collegeSlug, term, state).length;
+export async function getAvailableTerms(state = "va"): Promise<string[]> {
+  return cached(`terms:${state}`, async () => {
+    // Use RPC if available, fallback to manual distinct
+    const { data, error } = await supabase.rpc("get_distinct_terms", {
+      p_state: state,
+    });
+
+    if (!error && data) {
+      return (data as { term: string }[]).map((r) => r.term).sort();
+    }
+
+    // Fallback: select distinct via select + limit (less efficient but works without RPC)
+    console.warn("get_distinct_terms RPC not available, using fallback");
+    const { data: fallback, error: fbErr } = await supabase
+      .from("courses")
+      .select("term")
+      .eq("state", state);
+
+    if (fbErr || !fallback) return [];
+
+    const terms = new Set<string>();
+    for (const row of fallback) {
+      terms.add(row.term);
+    }
+    return Array.from(terms).sort();
+  });
+}
+
+/**
+ * Return the count of course sections for a college/term without loading all data.
+ */
+export async function getCourseCount(
+  collegeSlug: string,
+  term: string,
+  state = "va"
+): Promise<number> {
+  return cached(`count:${state}:${collegeSlug}:${term}`, async () => {
+    const { count, error } = await supabase
+      .from("courses")
+      .select("id", { count: "exact", head: true })
+      .eq("college_code", collegeSlug)
+      .eq("term", term)
+      .eq("state", state);
+
+    if (error) return 0;
+    return count || 0;
+  });
 }
 
 /**
@@ -92,21 +127,28 @@ export function filterCourses(
 }
 
 /**
- * Check whether the data file for a college/term is stale (more than 8 days
- * old based on file modification time).
+ * Check whether the course data for a college/term is stale (more than 8 days
+ * old based on the most recent created_at timestamp).
  */
-export function isDataStale(collegeSlug: string, term: string, state = "va"): boolean {
-  const filePath = path.join(dataDir(state), collegeSlug, `${term}.json`);
+export async function isDataStale(
+  collegeSlug: string,
+  term: string,
+  state = "va"
+): Promise<boolean> {
+  const { data, error } = await supabase
+    .from("courses")
+    .select("created_at")
+    .eq("college_code", collegeSlug)
+    .eq("term", term)
+    .eq("state", state)
+    .order("created_at", { ascending: false })
+    .limit(1);
 
-  try {
-    const stat = fs.statSync(filePath);
-    const ageMs = Date.now() - stat.mtimeMs;
-    const eightDaysMs = 8 * 24 * 60 * 60 * 1000;
-    return ageMs > eightDaysMs;
-  } catch {
-    // If the file does not exist, consider it stale
-    return true;
-  }
+  if (error || !data || data.length === 0) return true;
+
+  const ageMs = Date.now() - new Date(data[0].created_at).getTime();
+  const eightDaysMs = 8 * 24 * 60 * 60 * 1000;
+  return ageMs > eightDaysMs;
 }
 
 /**
@@ -128,33 +170,51 @@ export function getUniqueSubjects(courses: CourseSection[]): string[] {
 // ---------------------------------------------------------------------------
 
 /**
- * Load all courses from all colleges for a given term.
- * Uses a module-level cache to avoid re-reading files on repeated calls.
+ * Load all courses from all colleges for a given term from Supabase.
+ * Uses parallel pagination for speed.
  */
-export function loadAllCourses(term: string, state = "va"): CourseSection[] {
-  const cacheKey = `${state}:${term}`;
-  const cached = allCoursesCache.get(cacheKey);
-  if (cached) return cached;
+export async function loadAllCourses(
+  term: string,
+  state = "va"
+): Promise<CourseSection[]> {
+  return cached(`allCourses:${state}:${term}`, async () => {
+    // First, get total count to know how many pages we need
+    const { count, error: countErr } = await supabase
+      .from("courses")
+      .select("id", { count: "exact", head: true })
+      .eq("term", term)
+      .eq("state", state);
 
-  const all: CourseSection[] = [];
-  try {
-    const slugs = fs.readdirSync(dataDir(state));
-    for (const slug of slugs) {
-      const slugDir = path.join(dataDir(state), slug);
-      if (!fs.statSync(slugDir).isDirectory()) continue;
-      const courses = loadCoursesForCollege(slug, term, state);
-      all.push(...courses);
+    if (countErr || !count || count === 0) return [];
+
+    // Fetch all pages in parallel (much faster than sequential)
+    const PAGE_SIZE = 1000;
+    const pages = Math.ceil(count / PAGE_SIZE);
+    const promises: Promise<CourseSection[]>[] = [];
+
+    for (let i = 0; i < pages; i++) {
+      const start = i * PAGE_SIZE;
+      const end = start + PAGE_SIZE - 1;
+      promises.push(
+        (async () => {
+          const { data, error } = await supabase
+            .from("courses")
+            .select("*")
+            .eq("term", term)
+            .eq("state", state)
+            .range(start, end);
+          if (error) {
+            console.error(`loadAllCourses page ${i} error:`, error.message);
+            return [];
+          }
+          return (data || []).map(mapRow);
+        })()
+      );
     }
-  } catch {
-    // data directory may not exist
-  }
 
-  if (allCoursesCache.size >= MAX_CACHE_ENTRIES) {
-    const oldest = allCoursesCache.keys().next().value!;
-    allCoursesCache.delete(oldest);
-  }
-  allCoursesCache.set(cacheKey, all);
-  return all;
+    const results = await Promise.all(promises);
+    return results.flat();
+  });
 }
 
 /** Parse a search query into structured parts */
@@ -233,7 +293,7 @@ export interface CollegeGroup {
  * Search courses across all colleges.
  * Returns results grouped by course, then by college.
  */
-export function searchCoursesAcrossColleges(
+export async function searchCoursesAcrossColleges(
   term: string,
   query: string,
   institutions: Institution[],
@@ -246,13 +306,13 @@ export function searchCoursesAcrossColleges(
   limit = 10,
   offset = 0,
   state = "va"
-): {
+): Promise<{
   courses: CourseGroup[];
   totalCourses: number;
   totalSections: number;
   totalColleges: number;
-} {
-  const allCourses = loadAllCourses(term, state);
+}> {
+  const allCourses = await loadAllCourses(term, state);
   const { prefix, number, keyword } = parseQuery(query);
 
   // Build institution lookup
@@ -386,4 +446,37 @@ export function searchCoursesAcrossColleges(
   const paginated = courseGroups.slice(offset, offset + limit);
 
   return { courses: paginated, totalCourses, totalSections, totalColleges };
+}
+
+// ---------------------------------------------------------------------------
+// Helpers
+// ---------------------------------------------------------------------------
+
+/**
+ * Map a Supabase row to a CourseSection object.
+ * Handles field name mapping and type coercion.
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function mapRow(row: any): CourseSection {
+  return {
+    college_code: row.college_code,
+    term: row.term,
+    course_prefix: row.course_prefix,
+    course_number: row.course_number,
+    course_title: row.course_title,
+    credits: Number(row.credits) || 0,
+    crn: row.crn,
+    days: row.days || "",
+    start_time: row.start_time || "",
+    end_time: row.end_time || "",
+    start_date: row.start_date || "",
+    location: row.location || "",
+    campus: row.campus || "",
+    mode: row.mode || "in-person",
+    instructor: row.instructor || null,
+    seats_open: row.seats_open ?? null,
+    seats_total: row.seats_total ?? null,
+    prerequisite_text: row.prerequisite_text || null,
+    prerequisite_courses: row.prerequisite_courses || [],
+  };
 }

@@ -5,8 +5,9 @@ import { daysUntilStart } from "@/lib/course-status";
 
 const WINDOW_DAYS = 14;
 
-export default function StartingSoonCallout({ state }: { state: string }) {
-  const allCourses = loadAllCourses(getCurrentTerm(state), state);
+export default async function StartingSoonCallout({ state }: { state: string }) {
+  const currentTerm = await getCurrentTerm(state);
+  const allCourses = await loadAllCourses(currentTerm, state);
 
   const upcoming = allCourses.filter((s) => {
     if (!s.start_date) return false;

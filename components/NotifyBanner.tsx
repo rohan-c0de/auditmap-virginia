@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function NotifyBanner({ nextTerm }: { nextTerm: string }) {
+export default function NotifyBanner({ nextTerm, state }: { nextTerm: string; state: string }) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
@@ -13,10 +13,10 @@ export default function NotifyBanner({ nextTerm }: { nextTerm: string }) {
 
     setStatus("loading");
     try {
-      const res = await fetch("/api/notify", {
+      const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, state }),
       });
       const data = await res.json();
       if (res.ok) {

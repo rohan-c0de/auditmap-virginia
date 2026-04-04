@@ -45,10 +45,13 @@ export async function GET(request: NextRequest, context: RouteContext) {
   );
 
   // Populate course counts
-  const resultsWithCounts = results.map((result) => ({
-    ...result,
-    courseCount: getCourseCount(result.institution.college_slug, getCurrentTerm(state), state),
-  }));
+  const currentTerm = await getCurrentTerm(state);
+  const resultsWithCounts = await Promise.all(
+    results.map(async (result) => ({
+      ...result,
+      courseCount: await getCourseCount(result.institution.college_slug, currentTerm, state),
+    }))
+  );
 
   return NextResponse.json({
     results: resultsWithCounts,
@@ -56,6 +59,6 @@ export async function GET(request: NextRequest, context: RouteContext) {
     city: location.city,
     zip: location.zip,
     radius,
-    term: getCurrentTerm(state),
+    term: currentTerm,
   });
 }

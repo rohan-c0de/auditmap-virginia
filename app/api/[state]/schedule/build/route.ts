@@ -69,7 +69,7 @@ export async function POST(req: Request, context: RouteContext) {
     };
 
     const institutions = loadInstitutions(state);
-    const result = generateSchedules(request, institutions);
+    const result = await generateSchedules(request, institutions);
     return NextResponse.json(result);
   } catch (error) {
     console.error("Schedule build error:", error);

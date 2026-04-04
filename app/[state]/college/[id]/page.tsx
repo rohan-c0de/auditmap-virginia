@@ -53,20 +53,23 @@ export default async function CollegeDetailPage(props: PageProps) {
   }
 
   // Build list of terms that have data for THIS college
-  const allTerms = getAvailableTerms(state);
-  const termsWithData = allTerms
-    .filter((t) => loadCoursesForCollege(institution.college_slug, t, state).length > 0)
-    .sort();
+  const allTerms = await getAvailableTerms(state);
+  const termsWithData: string[] = [];
+  for (const t of allTerms) {
+    const c = await loadCoursesForCollege(institution.college_slug, t, state);
+    if (c.length > 0) termsWithData.push(t);
+  }
+  termsWithData.sort();
 
   // Use requested term if valid, otherwise fall back to latest with data
   let currentTerm = requestedTerm && termsWithData.includes(requestedTerm)
     ? requestedTerm
-    : getCurrentTerm(state);
-  let courses = loadCoursesForCollege(institution.college_slug, currentTerm, state);
+    : await getCurrentTerm(state);
+  let courses = await loadCoursesForCollege(institution.college_slug, currentTerm, state);
   if (courses.length === 0) {
     // Fall back to earlier terms that have data for this college
     for (const t of [...termsWithData].reverse()) {
-      const c = loadCoursesForCollege(institution.college_slug, t, state);
+      const c = await loadCoursesForCollege(institution.college_slug, t, state);
       if (c.length > 0) {
         currentTerm = t;
         courses = c;
@@ -74,7 +77,7 @@ export default async function CollegeDetailPage(props: PageProps) {
       }
     }
   }
-  const stale = isDataStale(institution.college_slug, currentTerm, state);
+  const stale = await isDataStale(institution.college_slug, currentTerm, state);
 
   const collegeSlug = institution.college_slug;
 

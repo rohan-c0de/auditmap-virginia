@@ -58,7 +58,9 @@ export async function GET(request: NextRequest, context: RouteContext) {
 
   // Load courses from all available terms — late-start Spring sections and
   // early Summer sections can both fall within the upcoming window.
-  const allCourses = getAvailableTerms(state).flatMap((t) => loadAllCourses(t, state));
+  const terms = await getAvailableTerms(state);
+  const coursesPerTerm = await Promise.all(terms.map((t) => loadAllCourses(t, state)));
+  const allCourses = coursesPerTerm.flat();
 
   // Build institution lookup
   const instMap = new Map<string, Institution>();

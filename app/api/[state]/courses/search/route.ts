@@ -43,8 +43,8 @@ export async function GET(request: NextRequest, context: RouteContext) {
     );
   }
 
-  const results = searchCoursesAcrossColleges(
-    getCurrentTerm(state),
+  const results = await searchCoursesAcrossColleges(
+    await getCurrentTerm(state),
     q,
     institutions,
     { mode, day, timeOfDay, zip },

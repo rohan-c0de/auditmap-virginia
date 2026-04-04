@@ -9,7 +9,7 @@ export default function PrivacyPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <h1 className="text-3xl font-bold mb-8">Privacy Policy</h1>
-      <p className="text-sm text-gray-500 mb-8">Last updated: March 29, 2026</p>
+      <p className="text-sm text-gray-500 mb-8">Last updated: April 3, 2026</p>
 
       <div className="prose prose-gray max-w-none space-y-6 text-gray-700">
         <section>
@@ -34,9 +34,13 @@ export default function PrivacyPage() {
           <h3 className="text-lg font-medium text-gray-800 mt-4 mb-2">Email Addresses</h3>
           <p>
             If you sign up for notifications (e.g., to be alerted when new semester
-            schedules are posted), we collect your email address. We will only use it
-            for the specific purpose you signed up for. We do not sell or share your
-            email with third parties.
+            schedules are posted), we collect your email address. We use a
+            double opt-in process: after signing up, you&apos;ll receive a
+            confirmation email and must click a verification link before
+            receiving any notifications. We will only use your email for the
+            specific purpose you signed up for. We do not sell or share your
+            email with third parties. Every notification email includes an
+            unsubscribe link so you can opt out at any time.
           </p>
           <h3 className="text-lg font-medium text-gray-800 mt-4 mb-2">Search Data</h3>
           <p>
@@ -97,7 +101,8 @@ export default function PrivacyPage() {
           <p>
             Analytics data is retained according to Google Analytics default retention
             settings. Email addresses collected for notifications are retained until
-            you unsubscribe or request deletion.
+            you unsubscribe or request deletion. Unverified email subscriptions that
+            are never confirmed may be periodically removed.
           </p>
         </section>
 
