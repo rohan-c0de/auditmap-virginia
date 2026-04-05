@@ -164,4 +164,32 @@ export const articles: ArticleMeta[] = [
     author: "CC CourseMap",
     tags: ["multi-campus", "scheduling", "enrollment", "financial-aid"],
   },
+
+  // --- Standalone: Schedule building ---
+  {
+    slug: "how-to-build-community-college-schedule",
+    title:
+      "How to Build a Community College Schedule Across Multiple Campuses or Colleges",
+    description:
+      "Multi-campus scheduling takes more planning, but it's entirely doable. Here's a step-by-step system for building a workable schedule across locations.",
+    date: "2026-04-04",
+    category: "cross-college-scheduling",
+    state: null,
+    author: "CC CourseMap",
+    tags: ["scheduling", "multi-campus", "schedule-builder", "commute"],
+  },
+
+  // --- Standalone: Schedule timing ---
+  {
+    slug: "when-do-community-college-schedules-go-live",
+    title:
+      "When Do Community College Class Schedules Usually Go Live?",
+    description:
+      "Course schedules typically post 2–4 months before the semester. Here's the general timeline and how to plan before the schedule drops.",
+    date: "2026-04-04",
+    category: "registration-timing",
+    state: null,
+    author: "CC CourseMap",
+    tags: ["registration", "schedule", "timing", "course-catalog"],
+  },
 ];
