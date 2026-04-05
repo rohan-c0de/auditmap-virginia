@@ -119,6 +119,7 @@ jobs:
         script:
           - md/scrape-banner-ssb
           - md/scrape-banner8
+          - md/scrape-custom
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

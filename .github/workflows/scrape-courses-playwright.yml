@@ -55,7 +55,8 @@ jobs:
       - run: npx playwright install chromium --with-deps
       - run: npx tsx scripts/sc/scrape-colleague.ts
 
-  # ── MD Playwright scrapers (Colleague, Jenzabar, Custom) ────────────
+  # ── MD Playwright scrapers (Colleague, Jenzabar) ────────────────────
+  # Note: scrape-custom moved to HTTP workflow (no longer needs Playwright)
   scrape-md-playwright:
     if: >-
       github.event_name == 'schedule' ||
@@ -68,7 +69,6 @@ jobs:
         script:
           - md/scrape-colleague
           - md/scrape-jenzabar
-          - md/scrape-custom
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
