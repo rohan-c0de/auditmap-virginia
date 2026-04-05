@@ -88,7 +88,7 @@ export default async function StateLayout({ children, params }: Props) {
               </p>
               <span>|</span>
               <a
-                href="https://buymeacoffee.com/auditmap"
+                href="https://buymeacoffee.com/voidseer"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 rounded-md bg-amber-400 px-2.5 py-1 text-xs font-medium text-amber-900 hover:bg-amber-500 transition-colors"
