@@ -23,11 +23,15 @@ const deConfig: StateConfig = {
   transferSupported: false,
   defaultZip: "19901",
 
-  courseDiscoveryUrl: (_collegeSlug: string, _prefix: string, _number: string) =>
-    `https://banner.dtcc.edu/dtcc/bwckschd.p_disp_dyn_sched`,
+  courseDiscoveryUrl: (_collegeSlug: string, prefix: string, number: string) => {
+    if (prefix && number) {
+      return `https://banner.dtcc.edu/StudentRegistrationSsb/ssb/classSearch/classSearch`;
+    }
+    return `https://banner.dtcc.edu/StudentRegistrationSsb/ssb/classSearch/classSearch`;
+  },
 
   collegeCoursesUrl: (_collegeSlug: string) =>
-    `https://banner.dtcc.edu/dtcc/bwckschd.p_disp_dyn_sched`,
+    `https://banner.dtcc.edu/StudentRegistrationSsb/ssb/classSearch/classSearch`,
 
   branding: {
     siteName: "Community College Path Delaware",

@@ -690,6 +690,8 @@ async function main() {
       const rawTermCode = sections[0].term;
       // Normalize: strip slashes (e.g. "2026/FA" → "2026FA", "26/FA" → "2026FA")
       let termCode = rawTermCode.replace(/\//g, "");
+      // Normalize SM → SU (some Colleague portals use SM for Summer)
+      termCode = termCode.replace(/SM$/, "SU").replace(/SM(\d)/, "SU$1");
       // Fix 2-digit year prefix (e.g. "26FA" → "2026FA")
       if (/^\d{2}(SP|SU|FA)$/.test(termCode)) {
         termCode = "20" + termCode;
