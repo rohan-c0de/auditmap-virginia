@@ -1,0 +1,104 @@
+name: Scrape Courses (Playwright)
+
+on:
+  schedule:
+    - cron: "0 8 * * *" # Daily at 8 AM UTC (3 AM EST), staggered from HTTP
+  workflow_dispatch:
+    inputs:
+      state:
+        description: "State to scrape (nc/sc/md/va or all)"
+        default: "all"
+
+env:
+  NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+  SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+  NODE_TLS_REJECT_UNAUTHORIZED: "0"
+
+jobs:
+  # ── NC Colleague (46 colleges, Playwright) ──────────────────────────
+  scrape-nc-colleague:
+    if: >-
+      github.event_name == 'schedule' ||
+      inputs.state == 'all' || inputs.state == 'nc'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install chromium --with-deps
+      - run: npx tsx scripts/nc/scrape-colleague.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nc-colleague-courses
+          path: data/nc/courses/
+          retention-days: 7
+
+  # ── SC Colleague (Playwright) ───────────────────────────────────────
+  scrape-sc-colleague:
+    if: >-
+      github.event_name == 'schedule' ||
+      inputs.state == 'all' || inputs.state == 'sc'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install chromium --with-deps
+      - run: npx tsx scripts/sc/scrape-colleague.ts
+
+  # ── MD Playwright scrapers (Colleague, Jenzabar, Custom) ────────────
+  scrape-md-playwright:
+    if: >-
+      github.event_name == 'schedule' ||
+      inputs.state == 'all' || inputs.state == 'md'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        script:
+          - md/scrape-colleague
+          - md/scrape-jenzabar
+          - md/scrape-custom
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install chromium --with-deps
+      - run: npx tsx scripts/${{ matrix.script }}.ts
+
+  # ── VA PeopleSoft (Playwright — longest running) ────────────────────
+  scrape-va-peoplesoft:
+    if: >-
+      github.event_name == 'schedule' ||
+      inputs.state == 'all' || inputs.state == 'va'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install chromium --with-deps
+      - run: npx tsx scripts/va/scrape-peoplesoft.ts
+      - run: npx tsx scripts/va/enrich-peoplesoft.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: va-peoplesoft-courses
+          path: data/va/courses/
+          retention-days: 7

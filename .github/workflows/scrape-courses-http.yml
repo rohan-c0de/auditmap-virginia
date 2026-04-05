@@ -1,0 +1,161 @@
+name: Scrape Courses (HTTP)
+
+on:
+  schedule:
+    - cron: "0 6 * * *" # Daily at 6 AM UTC (1 AM EST)
+  workflow_dispatch:
+    inputs:
+      state:
+        description: "State to scrape (va/nc/sc/ga/md/de/dc or all)"
+        default: "all"
+
+env:
+  NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+  SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+  NODE_TLS_REJECT_UNAUTHORIZED: "0"
+
+jobs:
+  # ── Virginia (VCCS) ──────────────────────────────────────────────────
+  scrape-va:
+    if: >-
+      github.event_name == 'schedule' ||
+      inputs.state == 'all' || inputs.state == 'va'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/va/scrape-vccs.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: va-courses
+          path: data/va/courses/
+          retention-days: 7
+
+  # ── North Carolina (individual HTTP scrapers) ────────────────────────
+  scrape-nc-individual:
+    if: >-
+      github.event_name == 'schedule' ||
+      inputs.state == 'all' || inputs.state == 'nc'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        script:
+          - nc/scrape-albemarle
+          - nc/scrape-cape-fear
+          - nc/scrape-cleveland
+          - nc/scrape-martin
+          - nc/scrape-mayland
+          - nc/scrape-pamlico
+          - nc/scrape-sandhills
+          - nc/scrape-southeastern
+          - nc/scrape-tri-county
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/${{ matrix.script }}.ts
+
+  # ── South Carolina (Banner, Banner8, Cygnet, Midlands) ──────────────
+  scrape-sc:
+    if: >-
+      github.event_name == 'schedule' ||
+      inputs.state == 'all' || inputs.state == 'sc'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        script:
+          - sc/scrape-banner
+          - sc/scrape-banner8
+          - sc/scrape-cygnet
+          - sc/scrape-midlands
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/${{ matrix.script }}.ts
+
+  # ── Georgia (TCSG Banner SSB) ───────────────────────────────────────
+  scrape-ga:
+    if: >-
+      github.event_name == 'schedule' ||
+      inputs.state == 'all' || inputs.state == 'ga'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/ga/scrape-banner-ssb.ts
+
+  # ── Maryland (HTTP-only scrapers) ───────────────────────────────────
+  scrape-md-http:
+    if: >-
+      github.event_name == 'schedule' ||
+      inputs.state == 'all' || inputs.state == 'md'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        script:
+          - md/scrape-banner-ssb
+          - md/scrape-banner8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/${{ matrix.script }}.ts
+
+  # ── Delaware (DTCC Banner SSB) ──────────────────────────────────────
+  scrape-de:
+    if: >-
+      github.event_name == 'schedule' ||
+      inputs.state == 'all' || inputs.state == 'de'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/de/scrape-banner-ssb.ts
+
+  # ── Washington DC ───────────────────────────────────────────────────
+  scrape-dc:
+    if: >-
+      github.event_name == 'schedule' ||
+      inputs.state == 'all' || inputs.state == 'dc'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/dc/scrape-banner.ts

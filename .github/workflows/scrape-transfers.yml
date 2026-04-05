@@ -1,0 +1,157 @@
+name: Scrape Transfers
+
+on:
+  schedule:
+    - cron: "0 10 * * 0" # Weekly Sunday 10 AM UTC
+  workflow_dispatch:
+    inputs:
+      state:
+        description: "State to scrape (va/nc/sc/md or all)"
+        default: "all"
+
+env:
+  NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+  SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+
+jobs:
+  # ── Virginia Transfer Scrapers ──────────────────────────────────────
+  scrape-va-transfers:
+    if: >-
+      github.event_name == 'schedule' ||
+      inputs.state == 'all' || inputs.state == 'va'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        script:
+          - va/scrape-transfer-equiv
+          - va/scrape-transfer-gmu
+          - va/scrape-transfer-odu
+          - va/scrape-transfer-uva
+          - va/scrape-transfer-vcu
+          - va/scrape-transfer-vsu
+          - va/scrape-transfer-umw
+          - va/scrape-transfer-vwu
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/${{ matrix.script }}.ts
+
+  import-va-transfers:
+    if: >-
+      github.event_name == 'schedule' ||
+      inputs.state == 'all' || inputs.state == 'va'
+    needs: scrape-va-transfers
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/import-transfers.ts --state va
+
+  # ── North Carolina Transfer Scrapers ────────────────────────────────
+  scrape-nc-transfers:
+    if: >-
+      github.event_name == 'schedule' ||
+      inputs.state == 'all' || inputs.state == 'nc'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        script:
+          - nc/scrape-transfer-cns
+          - nc/scrape-transfer-catawba
+          - nc/scrape-transfer-elon
+          - nc/scrape-transfer-hpu
+          - nc/scrape-transfer-ncstate
+          - nc/scrape-transfer-uncg
+          - nc/scrape-transfer-wingate
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/${{ matrix.script }}.ts
+
+  import-nc-transfers:
+    if: >-
+      github.event_name == 'schedule' ||
+      inputs.state == 'all' || inputs.state == 'nc'
+    needs: scrape-nc-transfers
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/import-transfers.ts --state nc
+
+  # ── South Carolina Transfer Scrapers ────────────────────────────────
+  scrape-sc-transfers:
+    if: >-
+      github.event_name == 'schedule' ||
+      inputs.state == 'all' || inputs.state == 'sc'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        script:
+          - sc/scrape-transfer-clemson
+          - sc/scrape-transfer-universities
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/${{ matrix.script }}.ts
+
+  import-sc-transfers:
+    if: >-
+      github.event_name == 'schedule' ||
+      inputs.state == 'all' || inputs.state == 'sc'
+    needs: scrape-sc-transfers
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/import-transfers.ts --state sc
+
+  # ── Maryland Transfers (ARTSYS) ─────────────────────────────────────
+  scrape-md-transfers:
+    if: >-
+      github.event_name == 'schedule' ||
+      inputs.state == 'all' || inputs.state == 'md'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/md/scrape-transfer-artsys.ts
+      - run: npx tsx scripts/import-transfers.ts --state md
