@@ -24,13 +24,21 @@ export default function LandingPage() {
     <div className="min-h-screen flex flex-col">
       {/* Minimal header */}
       <header className="border-b border-gray-200 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center gap-2">
-          <div className="w-8 h-8 bg-teal-600 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-xs">CCM</span>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 bg-teal-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-xs">CCM</span>
+            </div>
+            <span className="text-xl font-semibold text-gray-900">
+              CC <span className="text-teal-600">CourseMap</span>
+            </span>
           </div>
-          <span className="text-xl font-semibold text-gray-900">
-            CC <span className="text-teal-600">CourseMap</span>
-          </span>
+          <Link
+            href="/blog"
+            className="text-sm text-gray-600 hover:text-teal-600 transition-colors"
+          >
+            Blog
+          </Link>
         </div>
       </header>
 
@@ -167,6 +175,9 @@ export default function LandingPage() {
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
           <p>&copy; {new Date().getFullYear()} CC CourseMap</p>
           <div className="flex gap-4">
+            <Link href="/blog" className="hover:text-teal-600 transition-colors">
+              Blog
+            </Link>
             <Link href="/privacy" className="hover:text-teal-600 transition-colors">
               Privacy Policy
             </Link>
