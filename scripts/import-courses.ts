@@ -11,7 +11,7 @@
 
 import { importCoursesToSupabase } from "./lib/supabase-import";
 
-const ALL_STATES = ["va", "nc", "sc", "dc"];
+const ALL_STATES = ["va", "nc", "sc", "dc", "md", "ga"];
 
 async function main() {
   const args = process.argv.slice(2);

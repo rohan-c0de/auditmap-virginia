@@ -5,6 +5,8 @@ const STATES = [
   { slug: "nc", label: "North Carolina" },
   { slug: "sc", label: "South Carolina" },
   { slug: "dc", label: "DC" },
+  { slug: "md", label: "Maryland" },
+  { slug: "ga", label: "Georgia" },
 ];
 
 interface ProductCalloutProps {

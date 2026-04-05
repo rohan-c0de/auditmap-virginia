@@ -6,7 +6,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 export const metadata: Metadata = {
   title: "CC CourseMap — Your Community College Course Finder",
   description:
-    "Search courses, plan transfers, and build schedules across 97 community colleges in Virginia, North Carolina, and South Carolina.",
+    "Search courses, plan transfers, and build schedules across community colleges in Virginia, North Carolina, South Carolina, DC, Maryland, and Georgia.",
   keywords: [
     "community college courses",
     "CC course finder",
