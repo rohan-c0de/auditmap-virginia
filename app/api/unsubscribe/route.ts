@@ -6,7 +6,7 @@ export async function GET(req: Request) {
   const email = url.searchParams.get("email");
   const state = url.searchParams.get("state");
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://cc-coursemap.vercel.app";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com";
 
   if (email && state && isValidState(state)) {
     await removeSubscriber(state, decodeURIComponent(email));

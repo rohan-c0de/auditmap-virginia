@@ -40,7 +40,7 @@ export default async function StateLayout({ children, params }: Props) {
   const config = getStateConfig(state);
   const b = config.branding;
   const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://cc-coursemap.vercel.app";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com";
 
   return (
     <>

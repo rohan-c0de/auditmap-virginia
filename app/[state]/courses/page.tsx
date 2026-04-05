@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function CoursesPage({ params }: Props) {
   const { state } = await params;
   const config = getStateConfig(state);
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://cc-coursemap.vercel.app";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com";
 
   const breadcrumbLd = {
     "@context": "https://schema.org",

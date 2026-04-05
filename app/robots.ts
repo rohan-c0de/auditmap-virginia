@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
     },
     sitemap:
       (process.env.NEXT_PUBLIC_SITE_URL ||
-        "https://cc-coursemap.vercel.app") + "/sitemap.xml",
+        "https://communitycollegepath.com") + "/sitemap.xml",
   };
 }

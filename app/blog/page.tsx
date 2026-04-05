@@ -34,7 +34,7 @@ export default async function BlogIndexPage({ searchParams }: Props) {
   }
 
   const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://cc-coursemap.vercel.app";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com";
 
   const breadcrumbLd = {
     "@context": "https://schema.org",

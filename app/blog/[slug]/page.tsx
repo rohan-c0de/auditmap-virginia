@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!meta) return { title: "Not Found" };
 
   const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://cc-coursemap.vercel.app";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com";
 
   return {
     title: `${meta.title} — CC CourseMap Blog`,
@@ -62,7 +62,7 @@ export default async function BlogPostPage({ params }: Props) {
   }
 
   const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://cc-coursemap.vercel.app";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com";
 
   const articleLd = {
     "@context": "https://schema.org",

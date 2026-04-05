@@ -81,7 +81,7 @@ export default async function CollegeDetailPage(props: PageProps) {
 
   const collegeSlug = institution.college_slug;
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://cc-coursemap.vercel.app";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com";
   const stateAbbr = state.toUpperCase();
   const jsonLd = {
     "@context": "https://schema.org",

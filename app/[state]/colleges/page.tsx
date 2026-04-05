@@ -43,7 +43,7 @@ export default async function CollegesPage({ params }: Props) {
     courseCountMap.set(inst.college_slug, count);
   }
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://cc-coursemap.vercel.app";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com";
 
   const breadcrumbLd = {
     "@context": "https://schema.org",

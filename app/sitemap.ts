@@ -6,7 +6,7 @@ import { getAllArticles } from "@/lib/blog";
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl =
     process.env.NEXT_PUBLIC_SITE_URL ||
-    "https://cc-coursemap.vercel.app";
+    "https://communitycollegepath.com";
 
   const entries: MetadataRoute.Sitemap = [
     { url: baseUrl, changeFrequency: "weekly", priority: 1 },

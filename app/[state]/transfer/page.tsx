@@ -44,7 +44,7 @@ export default async function TransferPage({ params }: Props) {
     }
   }
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://cc-coursemap.vercel.app";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com";
 
   const breadcrumbLd = {
     "@context": "https://schema.org",

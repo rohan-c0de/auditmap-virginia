@@ -18,7 +18,7 @@ function getResend(): Resend {
 const FROM_ADDRESS = "CC CourseMap <notifications@auditmap.com>";
 
 function getSiteUrl(): string {
-  return process.env.NEXT_PUBLIC_SITE_URL || "https://cc-coursemap.vercel.app";
+  return process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com";
 }
 
 function unsubscribeUrl(email: string, state: string): string {

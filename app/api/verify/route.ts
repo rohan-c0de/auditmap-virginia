@@ -2,7 +2,7 @@ import { isValidState, getStateConfig } from "@/lib/states/registry";
 import { verifySubscriber } from "@/lib/subscribers";
 
 function htmlPage(title: string, body: string, state?: string): Response {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://cc-coursemap.vercel.app";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com";
   const backLink = state ? `${siteUrl}/${state}` : siteUrl;
 
   const html = `

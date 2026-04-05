@@ -2,7 +2,7 @@ import { getAllArticles } from "@/lib/blog";
 
 export function GET() {
   const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://cc-coursemap.vercel.app";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com";
   const articles = getAllArticles();
 
   const items = articles
