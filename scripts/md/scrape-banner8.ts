@@ -50,26 +50,24 @@ const BANNER8_COLLEGES: Record<
   },
 };
 
-// CCBC term code patterns — common Banner 8 convention:
-// Fall 2026 = 202710, Spring 2026 = 202620, Summer 2026 = 202630
-function codeToStandardTerm(code: string): string {
-  const prefix = code.slice(0, 4);
-  const suffix = code.slice(4, 6);
-  const year = parseInt(prefix);
-  if (suffix === "10") return `${year - 1}FA`;
-  if (suffix === "20") return `${year}SP`;
-  if (suffix === "30") return `${year}SU`;
-  return `${year}XX`;
-}
+// Use description-based term mapping since each Banner 8 school
+// has its own term code conventions (e.g., CCBC uses 202691=Fall 2026)
+function codeToStandardTerm(code: string, description: string): string {
+  const descLower = description.toLowerCase();
+  const yearMatch = description.match(/\b(20\d{2})\b/);
+  const year = yearMatch ? yearMatch[1] : code.substring(0, 4);
 
-function termNameToCode(termName: string): string {
-  const match = termName.match(/(spring|summer|fall)\s*(\d{4})/i);
-  if (!match) return termName;
-  const season = match[1].toLowerCase();
-  const year = parseInt(match[2]);
-  if (season === "fall") return `${year + 1}10`;
-  if (season === "spring") return `${year}20`;
-  return `${year}30`;
+  if (descLower.includes("fall")) return `${year}FA`;
+  if (descLower.includes("spring") || descLower.includes("winter")) return `${year}SP`;
+  if (descLower.includes("summer")) return `${year}SU`;
+
+  // Fallback to code suffix parsing
+  const codeYear = parseInt(code.substring(0, 4));
+  const suffix = code.slice(4);
+  if (suffix === "10" || suffix === "91") return `${codeYear}FA`;
+  if (suffix === "20" || suffix === "21") return `${codeYear}SP`;
+  if (suffix === "30" || suffix === "51") return `${codeYear}SU`;
+  return `${year}XX`;
 }
 
 const HEADERS = {
@@ -178,7 +176,7 @@ function parseSections(
   slug: string
 ): CourseSection[] {
   const sections: CourseSection[] = [];
-  const standardTerm = codeToStandardTerm(termCode);
+  const standardTerm = codeToStandardTerm(termCode, "");
 
   // Split by section headers:
   // <th class="ddtitle"><a ...>Title - CRN - SUBJ NUM - Section</a></th>
@@ -357,16 +355,17 @@ function sleep(ms: number): Promise<void> {
   return new Promise((r) => setTimeout(r, ms));
 }
 
-async function scrapeCollege(
+async function scrapeCollegeTerm(
   slug: string,
   config: { baseUrl: string; prodPath: string },
-  termCode: string
+  termCode: string,
+  termDescription: string
 ): Promise<number> {
   const { baseUrl, prodPath } = config;
-  const standardTerm = codeToStandardTerm(termCode);
+  const standardTerm = codeToStandardTerm(termCode, termDescription);
 
   console.log(
-    `\n=== Scraping ${slug} (Banner 8) for term ${termCode} → ${standardTerm} ===`
+    `\n  Scraping ${termDescription} (${termCode} → ${standardTerm})...`
   );
 
   // Get available subjects
@@ -380,6 +379,10 @@ async function scrapeCollege(
     try {
       const html = await searchSubject(baseUrl, prodPath, termCode, subj);
       const sections = parseSections(html, termCode, slug);
+      // Fix term for each section using description-based mapping
+      for (const s of sections) {
+        s.term = standardTerm;
+      }
       if (sections.length > 0) {
         process.stdout.write(
           `  [${i + 1}/${subjects.length}] ${subj}  ${sections.length} sections\n`
@@ -411,21 +414,58 @@ async function scrapeCollege(
   return allSections.length;
 }
 
+async function scrapeCollege(
+  slug: string,
+  config: { baseUrl: string; prodPath: string }
+): Promise<number> {
+  console.log(`\n=== Scraping ${slug} (Banner 8) ===`);
+
+  // Auto-discover available terms
+  const terms = await getAvailableTerms(config.baseUrl, config.prodPath);
+  console.log(`  Available terms: ${terms.map((t) => t.description).join(", ")}`);
+
+  // Filter to recent/upcoming terms (skip "Professional Dev" and very old terms)
+  const targetTerms = terms.filter((t) => {
+    const desc = t.description.toLowerCase();
+    if (desc.includes("professional dev")) return false;
+    // Keep terms with year >= 2026
+    const yearMatch = t.description.match(/\b(20\d{2})\b/);
+    if (!yearMatch) return false;
+    return parseInt(yearMatch[1]) >= 2026;
+  });
+
+  if (targetTerms.length === 0) {
+    console.log("  No recent terms found");
+    return 0;
+  }
+
+  console.log(
+    `  Target terms: ${targetTerms.map((t) => t.description).join(", ")}`
+  );
+
+  let totalSections = 0;
+  for (const term of targetTerms) {
+    const count = await scrapeCollegeTerm(
+      slug,
+      config,
+      term.code,
+      term.description
+    );
+    totalSections += count;
+  }
+
+  console.log(`\n  ${slug}: ${totalSections} total sections scraped.`);
+  return totalSections;
+}
+
 // ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
 
 async function main() {
   const args = process.argv.slice(2);
-  const termIdx = args.indexOf("--term");
-  const termInput = termIdx >= 0 ? args[termIdx + 1] : "Fall 2026";
   const collegeFlag = args.indexOf("--college");
   const allFlag = args.includes("--all");
-
-  // Allow both "Fall 2026" and "202710" formats
-  const termCode = /^\d{6}$/.test(termInput)
-    ? termInput
-    : termNameToCode(termInput);
 
   let targets: [string, { baseUrl: string; prodPath: string }][];
 
@@ -464,7 +504,7 @@ async function main() {
 
   let grandTotal = 0;
   for (const [slug, config] of targets) {
-    const count = await scrapeCollege(slug, config, termCode);
+    const count = await scrapeCollege(slug, config);
     grandTotal += count;
   }
 

@@ -18,9 +18,14 @@ const BANNER_SSB_URLS: Record<string, string> = {
   montgomery: "https://b9pubstu.glb.montgomerycollege.edu/StudentRegistrationSsb/ssb/classSearch/classSearch",
 };
 
-// Banner Classic (Banner 8) base URLs
-const BANNER_CLASSIC_URLS: Record<string, string> = {
-  ccbc: "https://simon.ccbcmd.edu/pls/PROD/bwckschd.p_disp_dyn_sched",
+// Banner Classic (Banner 8) — NOTE: CCBC has disabled public Banner 8 access.
+// They now use a custom JS-based course finder at ccbcmd.edu.
+// Keeping the old URL for reference; actual scraping uses custom scraper.
+const BANNER_CLASSIC_URLS: Record<string, string> = {};
+
+// CCBC moved to custom platform bucket
+const CUSTOM_URLS: Record<string, string> = {
+  ccbc: "https://www.ccbcmd.edu/Programs-and-Courses-Finder/index.html",
 };
 
 // Jenzabar JICS
@@ -75,15 +80,14 @@ const mdConfig: StateConfig = {
     const bannerSsb = BANNER_SSB_URLS[collegeSlug];
     if (bannerSsb) return bannerSsb;
 
-    // Banner Classic
-    const bannerClassic = BANNER_CLASSIC_URLS[collegeSlug];
-    if (bannerClassic) return bannerClassic;
-
     // Jenzabar
     const jenzabar = JENZABAR_URLS[collegeSlug];
     if (jenzabar) return jenzabar;
 
-    // Other platforms
+    // Custom platforms (CCBC, AACC, BCCC, Frederick)
+    const custom = CUSTOM_URLS[collegeSlug];
+    if (custom) return custom;
+
     const other = OTHER_URLS[collegeSlug];
     if (other) return other;
 
@@ -97,11 +101,11 @@ const mdConfig: StateConfig = {
     const bannerSsb = BANNER_SSB_URLS[collegeSlug];
     if (bannerSsb) return bannerSsb;
 
-    const bannerClassic = BANNER_CLASSIC_URLS[collegeSlug];
-    if (bannerClassic) return bannerClassic;
-
     const jenzabar = JENZABAR_URLS[collegeSlug];
     if (jenzabar) return jenzabar;
+
+    const custom = CUSTOM_URLS[collegeSlug];
+    if (custom) return custom;
 
     const other = OTHER_URLS[collegeSlug];
     if (other) return other;
