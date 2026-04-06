@@ -155,7 +155,7 @@ jobs:
       - run: npm ci
       - run: npx tsx scripts/ga/scrape-transfer-gatech.ts
 
-  # ── Delaware Transfers (UDel Transfer Matrix) ──────────────────────
+  # ── Delaware Transfers (UDel + CollegeTransfer.Net) ─────────────────
   scrape-de-transfers:
     if: >-
       github.event_name == 'schedule' ||
@@ -170,6 +170,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx tsx scripts/de/scrape-transfer-udel.ts
+      - run: npx tsx scripts/de/scrape-transfer-collegetransfer.ts
 
   # ── Maryland Transfers (ARTSYS) ─────────────────────────────────────
   scrape-md-transfers:
