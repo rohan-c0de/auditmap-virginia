@@ -139,13 +139,15 @@ jobs:
       - run: npm ci
       - run: npx tsx scripts/import-transfers.ts --state sc
 
-  # ── Georgia Transfers (Georgia Tech Banner) ─────────────────────────
+  # ── Georgia Transfers (GaTech + UGA + GSU + KSU + UWG) ──────────────
+  # All GA scrapers share data/ga/transfer-equiv.json, so they must run
+  # in a single job to merge correctly.
   scrape-ga-transfers:
     if: >-
       github.event_name == 'schedule' ||
       inputs.state == 'all' || inputs.state == 'ga'
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -153,7 +155,14 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
+      - run: npx playwright install chromium --with-deps
+      # HTTP-based scrapers (no browser needed)
       - run: npx tsx scripts/ga/scrape-transfer-gatech.ts
+      - run: npx tsx scripts/ga/scrape-transfer-uga.ts
+      - run: npx tsx scripts/ga/scrape-transfer-gsu.ts
+      # Playwright-based scrapers (BannerExtensibility AngularJS)
+      - run: npx tsx scripts/ga/scrape-transfer-usg.ts --university ksu
+      - run: npx tsx scripts/ga/scrape-transfer-usg.ts --university uwg
 
   # ── Delaware Transfers (UDel + CollegeTransfer.Net) ─────────────────
   scrape-de-transfers:
