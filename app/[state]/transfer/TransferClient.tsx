@@ -14,6 +14,7 @@ interface Props {
   >;
   defaultUniversity: string;
   state: string;
+  popularCourses: string[];
 }
 
 type ViewMode = "browse" | "compare";
@@ -25,6 +26,7 @@ export default function TransferClient({
   courseAvailability,
   defaultUniversity,
   state,
+  popularCourses,
 }: Props) {
   const [viewMode, setViewMode] = useState<ViewMode>("browse");
   const [selectedUniversity, setSelectedUniversity] = useState(defaultUniversity);
@@ -264,6 +266,7 @@ export default function TransferClient({
           mappings={mappings}
           courseAvailability={courseAvailability}
           state={state}
+          popularCourses={popularCourses}
         />
       ) : (
       <>

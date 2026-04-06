@@ -32,6 +32,8 @@ export interface StateConfig {
   seniorWaiver: SeniorWaiverConfig | null;
   /** Whether transfer equivalency data is available */
   transferSupported: boolean;
+  /** Popular CC courses for transfer compare presets (e.g. ["ENGL 1101", "MATH 1111"]) */
+  popularCourses: string[];
   /** Build the external course discovery URL for a specific course */
   courseDiscoveryUrl: (collegeSlug: string, prefix: string, number: string) => string;
   /** Build the external URL for a college's course listing page */

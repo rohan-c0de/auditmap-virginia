@@ -81,6 +81,7 @@ export default async function TransferPage({ params }: Props) {
         courseAvailability={courseAvailability}
         defaultUniversity={defaultUni}
         state={state}
+        popularCourses={config.popularCourses}
       />
     </div>
   );

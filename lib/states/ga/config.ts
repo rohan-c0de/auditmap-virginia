@@ -47,6 +47,7 @@ const gaConfig: StateConfig = {
   },
 
   transferSupported: true,
+  popularCourses: ["ENGL 1101", "MATH 1111", "HIST 2111", "BIOL 1111", "PSYC 1101", "ECON 2105"],
   defaultZip: "30303",
 
   courseDiscoveryUrl: (collegeSlug: string, prefix: string, number: string) => {

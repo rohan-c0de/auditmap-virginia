@@ -21,6 +21,7 @@ const dcConfig: StateConfig = {
   },
 
   transferSupported: false,
+  popularCourses: [],
   defaultZip: "20001",
 
   courseDiscoveryUrl: (collegeSlug: string, prefix: string, number: string) => {
