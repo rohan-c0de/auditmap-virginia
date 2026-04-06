@@ -209,6 +209,38 @@ export const articles: ArticleMeta[] = [
     clusterRole: "spoke",
   },
 
+  // --- Cluster A spoke: GA transfer ---
+  {
+    slug: "georgia-tcsg-transfer-credit-guide",
+    title:
+      "How Georgia Transfer Credit Actually Works: A TCSG Student's Guide",
+    description:
+      "The same TCSG course can be a direct match at one Georgia university and worth nothing at another. Here's how transfer credit works across Georgia Tech, UGA, GSU, KSU, and UWG.",
+    date: "2026-04-06",
+    category: "state-system-explainers",
+    state: "ga",
+    author: "Community College Path",
+    tags: ["transfer", "georgia", "tcsg", "georgia-tech", "uga", "gsu", "ksu", "uwg"],
+    cluster: "transfer-credit-guide",
+    clusterRole: "spoke",
+  },
+
+  // --- Cluster A spoke: comparing transfer credit ---
+  {
+    slug: "comparing-transfer-credit-across-universities",
+    title:
+      'Comparing Transfer Credit Across Universities: What "Transfers" Really Means',
+    description:
+      "Two universities can evaluate the same transcript and reach completely different conclusions. Here's how to compare transfer credit across schools — and why direct matches matter more than total credits.",
+    date: "2026-04-06",
+    category: "transfer-confusion",
+    state: null,
+    author: "Community College Path",
+    tags: ["transfer", "comparison", "direct-match", "elective-credit", "university-selection"],
+    cluster: "transfer-credit-guide",
+    clusterRole: "spoke",
+  },
+
   // --- Cluster A spoke: SC transfer ---
   {
     slug: "south-carolina-technical-college-transfer",

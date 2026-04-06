@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "auditmap-dev",
-      "runtimeExecutable": "/Users/rohanupalekar/claudecode/auditmap-virginia/.claude/start-dev.sh",
-      "runtimeArgs": [],
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": ["/Users/rohanupalekar/claudecode/auditmap-virginia/.claude/start-dev.sh"],
       "port": 3000,
       "autoPort": true
     }
