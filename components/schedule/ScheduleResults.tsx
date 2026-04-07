@@ -78,6 +78,47 @@ function downloadICS(sections: ScheduleSection[]) {
     return parts.join(",");
   }
 
+  // JS day-of-week index for each abbreviation (Sunday=0)
+  const DAY_INDEX: Record<string, number> = {
+    Su: 0, M: 1, Tu: 2, W: 3, Th: 4, F: 5, Sa: 6,
+  };
+
+  /** Advance a YYYY-MM-DD date to the first day that matches the course's meeting days */
+  function advanceToFirstMeetingDay(dateStr: string, days: string): string {
+    // Parse which JS day-of-week numbers this course meets on
+    const meetingDays: number[] = [];
+    let i = 0;
+    while (i < days.length) {
+      if (i + 1 < days.length && days[i + 1] === days[i + 1].toLowerCase()) {
+        const twoChar = days.substring(i, i + 2);
+        if (DAY_INDEX[twoChar] !== undefined) { meetingDays.push(DAY_INDEX[twoChar]); i += 2; continue; }
+      }
+      const oneChar = days[i];
+      if (DAY_INDEX[oneChar] !== undefined) meetingDays.push(DAY_INDEX[oneChar]);
+      i++;
+    }
+    if (meetingDays.length === 0) return dateStr;
+
+    const [year, month, day] = dateStr.split("-").map(Number);
+    const date = new Date(year, month - 1, day);
+    const startDow = date.getDay(); // 0=Sun .. 6=Sat
+
+    // If start_date already falls on a meeting day, keep it
+    if (meetingDays.includes(startDow)) return dateStr;
+
+    // Find the nearest future meeting day
+    for (let offset = 1; offset <= 6; offset++) {
+      if (meetingDays.includes((startDow + offset) % 7)) {
+        date.setDate(date.getDate() + offset);
+        const y = date.getFullYear();
+        const m = String(date.getMonth() + 1).padStart(2, "0");
+        const d = String(date.getDate()).padStart(2, "0");
+        return `${y}-${m}-${d}`;
+      }
+    }
+    return dateStr;
+  }
+
   const lines: string[] = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
@@ -88,8 +129,9 @@ function downloadICS(sections: ScheduleSection[]) {
   for (const s of sections) {
     if (!isValidTime(s.start_time) || !isValidTime(s.end_time) || !s.start_date) continue;
 
-    const dtStart = toICSDate(s.start_date, s.start_time);
-    const dtEnd = toICSDate(s.start_date, s.end_time);
+    const adjustedDate = advanceToFirstMeetingDay(s.start_date, s.days);
+    const dtStart = toICSDate(adjustedDate, s.start_time);
+    const dtEnd = toICSDate(adjustedDate, s.end_time);
     if (!dtStart || !dtEnd) continue;
     const rruleDays = expandDaysToRRule(s.days);
 
