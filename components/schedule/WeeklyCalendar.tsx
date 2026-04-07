@@ -9,6 +9,7 @@ import {
   parseTime,
   timeToSlot,
   formatHour,
+  expandDays,
   COURSE_COLORS,
 } from "@/lib/time-utils";
 
@@ -108,7 +109,7 @@ export default function WeeklyCalendar({ sections }: Props) {
             const endSlot = timeToSlot(endTime);
             const span = Math.max(endSlot - startSlot, 1);
 
-            const days = section.days ? section.days.split(" ") : [];
+            const days = section.days ? expandDays(section.days).split(" ") : [];
             const key = `${section.course_prefix} ${section.course_number}`;
             const color = colorMap.get(key)!;
 
