@@ -44,6 +44,12 @@ function scoreColor(score: number): string {
 // ICS export — generates a downloadable .ics calendar file
 // ---------------------------------------------------------------------------
 
+function semesterWeeks(sections: ScheduleSection[]): number {
+  const term = sections[0]?.term || "";
+  if (term.endsWith("SU")) return 10;
+  return 16;
+}
+
 function downloadICS(sections: ScheduleSection[]) {
   const DAY_MAP: Record<string, string> = {
     M: "MO", Tu: "TU", W: "WE", Th: "TH", F: "FR", Sa: "SA", Su: "SU",
@@ -143,7 +149,7 @@ function downloadICS(sections: ScheduleSection[]) {
     lines.push(`DTSTART:${dtStart}`);
     lines.push(`DTEND:${dtEnd}`);
     if (rruleDays) {
-      lines.push(`RRULE:FREQ=WEEKLY;COUNT=16;BYDAY=${rruleDays}`);
+      lines.push(`RRULE:FREQ=WEEKLY;COUNT=${semesterWeeks(sections)};BYDAY=${rruleDays}`);
     }
     lines.push(`SUMMARY:${s.course_prefix} ${s.course_number} - ${s.course_title}`);
     lines.push(`LOCATION:${s.collegeName}${s.location ? ` — ${s.location}` : ""}`);
@@ -243,6 +249,7 @@ export default function ScheduleResults({ response, state }: Props) {
 
   const displayed = groups.slice(0, displayLimit);
   const wasGrouped = groups.length < schedules.length;
+  const hasTransferData = schedules.some((s) => s.sections.some((sec) => sec.transferStatus));
 
   if (meta.message && schedules.length === 0) {
     return (
@@ -311,6 +318,7 @@ export default function ScheduleResults({ response, state }: Props) {
               )
             }
             state={state}
+            showTransfer={hasTransferData}
           />
         ))}
       </div>
@@ -341,12 +349,14 @@ function ScheduleCard({
   isExpanded,
   onToggle,
   state,
+  showTransfer,
 }: {
   group: ScheduleGroup;
   rank: number;
   isExpanded: boolean;
   onToggle: () => void;
   state: string;
+  showTransfer: boolean;
 }) {
   const { representative, collegeOptions, count } = group;
   const { sections, score, scoreBreakdown } = representative;
@@ -463,7 +473,7 @@ function ScheduleCard({
       {isExpanded && (
         <div className="border-t border-gray-100 dark:border-slate-700 px-5 py-4 space-y-4">
           {/* Score breakdown */}
-          <ScoreBar breakdown={scoreBreakdown} total={score} />
+          <ScoreBar breakdown={scoreBreakdown} total={score} showTransfer={showTransfer} />
 
           {/* Weekly calendar */}
           <WeeklyCalendar sections={sections} />

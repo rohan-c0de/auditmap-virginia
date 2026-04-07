@@ -86,6 +86,7 @@ export async function POST(req: Request, context: RouteContext) {
     const result = await generateSchedules(
       request,
       institutions,
+      state,
       transferLookup,
       request.targetUniversity || null
     );

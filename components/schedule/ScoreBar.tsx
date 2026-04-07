@@ -5,6 +5,7 @@ import type { ScoreBreakdown } from "@/lib/types";
 interface Props {
   breakdown: ScoreBreakdown;
   total: number;
+  showTransfer?: boolean;
 }
 
 const SEGMENTS = [
@@ -16,10 +17,9 @@ const SEGMENTS = [
   { key: "transferScore" as const, label: "Transfer", color: "bg-rose-400", max: 15 },
 ] as const;
 
-export default function ScoreBar({ breakdown, total }: Props) {
-  // Only show transfer segment if it contributes meaningfully (i.e. target university was set)
+export default function ScoreBar({ breakdown, total, showTransfer = true }: Props) {
   const visibleSegments = SEGMENTS.filter((seg) => {
-    if (seg.key === "transferScore" && breakdown.transferScore === 7.5) return false; // neutral = no target set
+    if (seg.key === "transferScore" && !showTransfer) return false;
     return true;
   });
 

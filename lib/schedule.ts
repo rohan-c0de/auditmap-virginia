@@ -57,6 +57,7 @@ interface EnrichedSection extends CourseSection {
 export async function generateSchedules(
   request: ScheduleRequest,
   institutions: Institution[],
+  state: string,
   transferLookup?: TransferLookup | null,
   targetUniversity?: string | null
 ): Promise<ScheduleResponse> {
@@ -107,9 +108,9 @@ export async function generateSchedules(
 
   // Stage 1: Filter all sections to candidates
   const term = request.term || await getCurrentTerm();
-  const allSections = await loadAllCourses(term);
+  const allSections = await loadAllCourses(term, state);
   const hideFullSections = request.hideFullSections !== false; // default true
-  const candidates = filterSections(
+  const { sections: candidates, filteredFullCount } = filterSections(
     allSections,
     exactCourses,
     subjectPrefixes,
@@ -124,11 +125,6 @@ export async function generateSchedules(
     transferLookup ?? null,
     targetUniversity ?? null
   );
-
-  // Count how many were filtered due to full seats
-  const filteredFullSections = hideFullSections
-    ? allSections.filter((s) => s.seats_open === 0).length
-    : 0;
 
   // Stage 2: Group by course, deduplicate by schedule signature
   const courseMap = new Map<string, EnrichedSection[]>();
@@ -212,7 +208,7 @@ export async function generateSchedules(
       combinationsEvaluated,
       timeTakenMs,
       message,
-      filteredFullSections: filteredFullSections > 0 ? filteredFullSections : undefined,
+      filteredFullSections: filteredFullCount > 0 ? filteredFullCount : undefined,
     },
   };
 }
@@ -295,7 +291,7 @@ function filterSections(
   hideFullSections: boolean,
   transferLookup: TransferLookup | null,
   targetUniversity: string | null
-): EnrichedSection[] {
+): { sections: EnrichedSection[]; filteredFullCount: number } {
   const exactSet = new Set(exactCourses);
   const prefixSet = new Set(subjectPrefixes);
   // For keyword search: lowercase prefixes that don't look like course codes
@@ -303,6 +299,7 @@ function filterSections(
   const keywordsLower = keywords.map((k) => k.toLowerCase());
 
   const results: EnrichedSection[] = [];
+  let filteredFullCount = 0;
 
   for (const s of allSections) {
     const courseKey = `${s.course_prefix}-${s.course_number}`;
@@ -325,9 +322,6 @@ function filterSections(
       }
     }
     if (!matched) continue;
-
-    // Seat availability filter
-    if (hideFullSections && s.seats_open !== null && s.seats_open === 0) continue;
 
     // Date filter: skip sections that already started (unless opted in)
     if (!includeInProgress && isInProgress(s.start_date)) continue;
@@ -355,6 +349,12 @@ function filterSections(
     if (!isAsync && dist !== null && dist > maxDistance) continue;
     // If mode is in-person and no distance data but maxDistance is set, let it through
     // (we only filter when we have data)
+
+    // Seat availability filter (checked after all other criteria so count is accurate)
+    if (hideFullSections && s.seats_open !== null && s.seats_open === 0) {
+      filteredFullCount++;
+      continue;
+    }
 
     const inst = instMap.get(s.college_code);
 
@@ -386,7 +386,7 @@ function filterSections(
     });
   }
 
-  return results;
+  return { sections: results, filteredFullCount };
 }
 
 // ---------------------------------------------------------------------------

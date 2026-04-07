@@ -100,9 +100,12 @@ export default function ScheduleForm({ onSubmit, loading, defaultZip, universiti
     );
   }
 
+  const hasPartialZip = zip.length > 0 && zip.length < 5;
+  const distanceWithoutZip = maxDistance !== undefined && zip.length === 0;
+
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (subjects.length === 0) return;
+    if (subjects.length === 0 || hasPartialZip) return;
 
     const preset = TIME_PRESETS.find((p) => p.value === timeBucket) || TIME_PRESETS[0];
 
@@ -295,6 +298,11 @@ export default function ScheduleForm({ onSubmit, loading, defaultZip, universiti
               className="w-full rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-4 py-2 text-sm dark:text-slate-100 focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-200 dark:focus:ring-teal-800 dark:placeholder:text-slate-500"
               maxLength={5}
             />
+            {hasPartialZip && (
+              <p className="mt-1 text-[11px] text-red-500 dark:text-red-400">
+                Enter a full 5-digit zip code
+              </p>
+            )}
           </div>
 
           <div>
@@ -314,6 +322,11 @@ export default function ScheduleForm({ onSubmit, loading, defaultZip, universiti
                 </option>
               ))}
             </select>
+            {distanceWithoutZip && (
+              <p className="mt-1 text-[11px] text-amber-600 dark:text-amber-400">
+                Enter a zip code to filter by distance
+              </p>
+            )}
           </div>
 
           <div>
@@ -394,7 +407,7 @@ export default function ScheduleForm({ onSubmit, loading, defaultZip, universiti
           </p>
           <button
             type="submit"
-            disabled={loading || subjects.length === 0 || daysAvailable.length === 0}
+            disabled={loading || subjects.length === 0 || daysAvailable.length === 0 || hasPartialZip}
             className="rounded-lg bg-teal-600 px-8 py-2.5 text-sm font-medium text-white hover:bg-teal-700 disabled:opacity-50 transition-colors"
           >
             {loading ? (
