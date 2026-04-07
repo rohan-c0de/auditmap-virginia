@@ -202,10 +202,16 @@ async function scrapeUSGUniversity(
 
     try {
       const mappings = await scrapeOneCollege(page, uni, collegeName);
-      console.log(`    ${mappings.length} equivalencies`);
+      if (mappings.length === 0) {
+        console.log(
+          `    0 equivalencies (may indicate name mismatch or no data)`
+        );
+      } else {
+        console.log(`    ${mappings.length} equivalencies`);
+      }
       allMappings.push(...mappings);
     } catch (err) {
-      console.log(`    ⚠ Error: ${(err as Error).message}`);
+      console.log(`    !! FAILED: ${(err as Error).message}`);
     }
 
     if (collegeIndex < total) await sleep(1000);
@@ -263,31 +269,96 @@ async function scrapeOneCollege(
       }));
     });
 
-    // Find matching school (try exact, then partial)
+    // Find matching school using multi-word scoring
     const nameLower = collegeName.toLowerCase();
+    const noiseWords = new Set(["of", "the", "and", "college", "a"]);
+    const nameWords = nameLower
+      .split(/\s+/)
+      .filter((w) => !noiseWords.has(w));
+
+    // Tier 1: exact match (case-insensitive)
     let match = allSchools.find(
-      (s) => s.text.toLowerCase() === nameLower
+      (s) => s.text.toLowerCase().trim() === nameLower
     );
+
+    // Tier 2: score each option by how many significant words match.
+    // Normalizes common abbreviations (tech→technical, ga→georgia) and
+    // uses strict prefix matching for remaining truncations.
     if (!match) {
-      // Partial match on first word
-      const firstWord = nameLower.split(" ")[0];
-      match = allSchools.find(
-        (s) =>
-          s.text.toLowerCase().includes(firstWord) &&
-          s.text.toLowerCase().includes("technical")
-      );
-    }
-    if (!match) {
-      // Even more fuzzy — just the first word
-      const firstWord = nameLower.split(" ")[0];
-      match = allSchools.find((s) =>
-        s.text.toLowerCase().includes(firstWord)
-      );
+      // Abbreviation map for dropdown names that truncate words
+      const ABBREVS: Record<string, string> = {
+        tech: "technical",
+        ga: "georgia",
+        coll: "college",
+        col: "college",
+        colleg: "college",
+        univ: "university",
+        instit: "institute",
+        agricultrl: "agricultural",
+      };
+      const normalize = (words: string[]) =>
+        words.map((w) => ABBREVS[w] || w);
+
+      let bestScore = 0;
+      let bestMatch: (typeof allSchools)[0] | undefined;
+
+      for (const school of allSchools) {
+        if (!school.value) continue;
+        if (school.text.toLowerCase().includes("do not use")) continue;
+        const rawSchoolWords = school.text
+          .toLowerCase()
+          .split(/[\s\-]+/)
+          .filter((w) => w.length > 0);
+        const schoolNorm = normalize(rawSchoolWords);
+        const nameNorm = normalize(nameWords);
+
+        let score = 0;
+        for (const word of nameNorm) {
+          // Exact match after normalization = 2pts
+          const exact = schoolNorm.some((sw) => sw === word);
+          if (exact) {
+            score += 2;
+          } else {
+            // Strict prefix: shorter word must be ≥60% of longer word
+            // Prevents "south" matching "southeastern" (42%) while
+            // allowing "colleg" matching "college" (86%)
+            const prefix = schoolNorm.some((sw) => {
+              const shorter = Math.min(sw.length, word.length);
+              const longer = Math.max(sw.length, word.length);
+              return (
+                shorter >= 3 &&
+                shorter / longer >= 0.6 &&
+                (sw.startsWith(word) || word.startsWith(sw))
+              );
+            });
+            if (prefix) score += 1;
+          }
+        }
+        if (score > bestScore) {
+          bestScore = score;
+          bestMatch = school;
+        }
+      }
+
+      // Require at least 2 significant words to match (avoids false positives)
+      if (bestMatch && bestScore >= 2) {
+        match = bestMatch;
+      }
     }
 
     if (!match || !match.value) {
+      // Log all available schools for debugging
+      const validSchools = allSchools.filter((s) => s.value);
+      console.log(
+        `    Available schools in dropdown (${validSchools.length}):`
+      );
+      for (const s of validSchools) {
+        console.log(`      - "${s.text}" (value: ${s.value})`);
+      }
       throw new Error(`"${collegeName}" not found in school dropdown`);
     }
+
+    console.log(`    Matched: "${match.text}"`);
 
     await page.selectOption("#pbid-SchoolSelectList", { value: match.value });
     await page.waitForTimeout(300);
@@ -344,15 +415,22 @@ async function scrapeOneCollege(
         await page.waitForTimeout(3000);
       }
 
-      // If still more than 120, need page 2
+      // Paginate through all remaining pages
       if (recordCountText > 120) {
-        // Click next page button
-        const nextPage = page.locator(
-          'button:has-text("Next"), .ui-grid-pager-next, [aria-label="Next page"]'
-        );
-        if ((await nextPage.count()) > 0) {
-          await nextPage.first().click();
-          await page.waitForTimeout(3000);
+        const totalPages = Math.ceil(recordCountText / 120);
+        for (let p = 2; p <= totalPages; p++) {
+          const nextPage = page.locator(
+            'button:has-text("Next"), .ui-grid-pager-next, [aria-label="Next page"]'
+          );
+          if ((await nextPage.count()) > 0) {
+            await nextPage.first().click();
+            await page.waitForTimeout(3000);
+          } else {
+            console.log(
+              `    Pagination: no "Next" button at page ${p}/${totalPages}`
+            );
+            break;
+          }
         }
       }
     }
@@ -386,6 +464,8 @@ async function main() {
     if (args[i] === "--college" && args[i + 1]) targetCollege = args[i + 1];
   }
 
+  const listSchools = args.includes("--list-schools");
+
   if (targetCollege && !TCSG_COLLEGES[targetCollege]) {
     console.error(`Unknown college: ${targetCollege}`);
     process.exit(1);
@@ -393,6 +473,52 @@ async function main() {
   if (targetUni && !USG_UNIVERSITIES[targetUni]) {
     console.error(`Unknown university: ${targetUni}`);
     process.exit(1);
+  }
+
+  // Discovery mode: list all schools in the dropdown and exit
+  if (listSchools) {
+    const unis = targetUni
+      ? { [targetUni]: USG_UNIVERSITIES[targetUni] }
+      : USG_UNIVERSITIES;
+
+    for (const [key, uni] of Object.entries(unis)) {
+      console.log(`\n${uni.name} (${key}) — Available Schools:\n`);
+      const browser = await chromium.launch({ headless: true });
+      const context = await browser.newContext({
+        userAgent:
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+      });
+      const page = await context.newPage();
+
+      await page.goto(uni.url, { waitUntil: "networkidle", timeout: 30000 });
+      await page.waitForTimeout(2000);
+      await page.click('button:has-text("Yes")');
+      await page.waitForTimeout(800);
+      await page.selectOption("#pbid-StateSelectList", { label: "Georgia" });
+      await page.waitForTimeout(300);
+      await page.click('button:has-text("Get State")');
+      await page.waitForTimeout(2000);
+
+      const allSchools = await page.evaluate(() => {
+        const sel = document.querySelector(
+          "#pbid-SchoolSelectList"
+        ) as HTMLSelectElement;
+        return Array.from(sel?.options || []).map((o) => ({
+          value: o.value,
+          text: o.text.trim(),
+        }));
+      });
+
+      const schools = allSchools.filter((s) => s.value);
+      console.log(`  ${schools.length} schools found:`);
+      for (const s of schools) {
+        console.log(`  - "${s.text}" (value: ${s.value})`);
+      }
+
+      await browser.close();
+    }
+
+    process.exit(0);
   }
 
   const universities = targetUni
