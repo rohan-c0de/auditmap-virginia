@@ -127,7 +127,7 @@ export function filterCourses(
 }
 
 /**
- * Check whether the course data for a college/term is stale (more than 8 days
+ * Check whether the course data for a college/term is stale (more than 3 days
  * old based on the most recent created_at timestamp).
  */
 export async function isDataStale(
@@ -147,8 +147,8 @@ export async function isDataStale(
   if (error || !data || data.length === 0) return true;
 
   const ageMs = Date.now() - new Date(data[0].created_at).getTime();
-  const eightDaysMs = 8 * 24 * 60 * 60 * 1000;
-  return ageMs > eightDaysMs;
+  const threeDaysMs = 3 * 24 * 60 * 60 * 1000;
+  return ageMs > threeDaysMs;
 }
 
 /**

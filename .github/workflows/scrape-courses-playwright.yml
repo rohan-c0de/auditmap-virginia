@@ -2,7 +2,7 @@ name: Scrape Courses (Playwright)
 
 on:
   schedule:
-    - cron: "0 8 * * 3" # Weekly Wednesday 8 AM UTC (3 AM EST)
+    - cron: "0 8 * * 1,3,5" # Every other day (Mon/Wed/Fri) 8 AM UTC (3 AM EST)
   workflow_dispatch:
     inputs:
       state:

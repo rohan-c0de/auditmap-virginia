@@ -2,7 +2,7 @@ name: Scrape Courses (HTTP)
 
 on:
   schedule:
-    - cron: "0 6 * * 1" # Weekly Monday 6 AM UTC (1 AM EST)
+    - cron: "0 6 * * 0,2,4" # Every other day (Sun/Tue/Thu) 6 AM UTC (1 AM EST)
   workflow_dispatch:
     inputs:
       state:
