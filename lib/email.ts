@@ -15,7 +15,12 @@ function getResend(): Resend {
   return _resend;
 }
 
-const FROM_ADDRESS = "Community College Path <notifications@auditmap.com>";
+// Override via EMAIL_FROM env var once a different sending identity is
+// verified in Resend. The default must be a domain that's verified on
+// the Resend account, or sends will be rejected.
+const FROM_ADDRESS =
+  process.env.EMAIL_FROM ||
+  "Community College Path <notifications@communitycollegepath.com>";
 
 function getSiteUrl(): string {
   return process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com";

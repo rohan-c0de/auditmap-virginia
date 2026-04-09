@@ -40,11 +40,17 @@ export async function POST(req: Request) {
       });
     }
 
-    // Send verification email (don't fail the request if email sending fails)
     try {
       await sendVerificationEmail(email, state, subscriber.token);
     } catch (err) {
       console.error("Failed to send verification email:", err);
+      return NextResponse.json(
+        {
+          error:
+            "We couldn't send your confirmation email right now. Please try again in a few minutes.",
+        },
+        { status: 502 }
+      );
     }
 
     return NextResponse.json({
