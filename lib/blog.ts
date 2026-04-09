@@ -1,4 +1,5 @@
 import { articles, CATEGORIES, type ArticleMeta } from "@/content/blog/index";
+import { isValidState, getStateConfig } from "@/lib/states/registry";
 
 export type { ArticleMeta };
 export { CATEGORIES };
@@ -37,14 +38,6 @@ export function categoryLabel(category: string): string {
 
 /** Human-readable state label for article badges. */
 export function stateLabel(state: string): string {
-  const labels: Record<string, string> = {
-    va: "Virginia",
-    nc: "North Carolina",
-    sc: "South Carolina",
-    dc: "DC",
-    md: "Maryland",
-    ga: "Georgia",
-    de: "Delaware",
-  };
-  return labels[state] ?? state.toUpperCase();
+  if (!isValidState(state)) return state.toUpperCase();
+  return getStateConfig(state).name;
 }

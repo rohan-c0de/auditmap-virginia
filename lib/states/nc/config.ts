@@ -73,6 +73,7 @@ const ncConfig: StateConfig = {
   transferSupported: true,
   popularCourses: ["ENG 111", "MAT 171", "BIO 111", "HIS 111", "PSY 150", "ECO 251"],
   defaultZip: "27601",
+  defaultZipCity: "Raleigh",
 
   courseDiscoveryUrl: (collegeSlug: string, prefix: string, number: string) => {
     const base = SELF_SERVICE_URLS[collegeSlug];

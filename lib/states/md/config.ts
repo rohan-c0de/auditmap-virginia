@@ -64,6 +64,7 @@ const mdConfig: StateConfig = {
   transferSupported: true,
   popularCourses: ["ENGL 101", "MATH 135", "BIOL 101", "HIST 101", "PSYC 101", "ECON 201"],
   defaultZip: "21202",
+  defaultZipCity: "Baltimore",
 
   courseDiscoveryUrl: (
     collegeSlug: string,

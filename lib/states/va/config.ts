@@ -23,6 +23,7 @@ const vaConfig: StateConfig = {
   transferSupported: true,
   popularCourses: ["ENG 111", "ENG 112", "MTH 154", "MTH 161", "BIO 101", "HIS 121", "PSY 200", "ECO 201"],
   defaultZip: "22030",
+  defaultZipCity: "Fairfax",
 
   courseDiscoveryUrl: (collegeSlug: string, prefix: string, number: string) =>
     `https://courses.vccs.edu/colleges/${collegeSlug}/courses/${prefix}${number}`,

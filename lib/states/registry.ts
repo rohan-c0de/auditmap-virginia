@@ -40,6 +40,8 @@ export interface StateConfig {
   collegeCoursesUrl: (collegeSlug: string) => string;
   /** Default zip code placeholder for search forms */
   defaultZip: string;
+  /** Default city for the search form placeholder (paired with defaultZip), e.g. "Atlanta" */
+  defaultZipCity: string;
   /** Branding and SEO */
   branding: {
     siteName: string;

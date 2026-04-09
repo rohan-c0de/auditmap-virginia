@@ -10,8 +10,9 @@
  */
 
 import { importCoursesToSupabase } from "./lib/supabase-import";
+import { getAllStates } from "../lib/states/registry";
 
-const ALL_STATES = ["va", "nc", "sc", "dc", "md", "ga", "de"];
+const ALL_STATES = getAllStates().map((s) => s.slug);
 
 async function main() {
   const args = process.argv.slice(2);

@@ -1,14 +1,7 @@
 import Link from "next/link";
+import { getAllStates } from "@/lib/states/registry";
 
-const STATES = [
-  { slug: "va", label: "Virginia" },
-  { slug: "nc", label: "North Carolina" },
-  { slug: "sc", label: "South Carolina" },
-  { slug: "dc", label: "DC" },
-  { slug: "md", label: "Maryland" },
-  { slug: "ga", label: "Georgia" },
-  { slug: "de", label: "Delaware" },
-];
+const STATES = getAllStates().map((s) => ({ slug: s.slug, label: s.name }));
 
 interface ProductCalloutProps {
   text: string;

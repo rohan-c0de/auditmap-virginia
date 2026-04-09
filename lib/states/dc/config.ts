@@ -23,6 +23,7 @@ const dcConfig: StateConfig = {
   transferSupported: false,
   popularCourses: [],
   defaultZip: "20001",
+  defaultZipCity: "Washington",
 
   courseDiscoveryUrl: (collegeSlug: string, prefix: string, number: string) => {
     if (prefix && number) {

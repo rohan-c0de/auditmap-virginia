@@ -3,10 +3,15 @@ import type { Metadata } from "next";
 import { getAllStates } from "@/lib/states/registry";
 import ThemeToggle from "@/components/ThemeToggle";
 
+const STATE_NAMES = getAllStates().map((s) => s.name);
+const STATE_LIST_SENTENCE =
+  STATE_NAMES.length <= 1
+    ? STATE_NAMES.join("")
+    : `${STATE_NAMES.slice(0, -1).join(", ")}, and ${STATE_NAMES[STATE_NAMES.length - 1]}`;
+
 export const metadata: Metadata = {
   title: "Community College Path — Your Community College Course Finder",
-  description:
-    "Search courses, plan transfers, and build schedules across community colleges in Virginia, North Carolina, South Carolina, DC, Maryland, and Georgia.",
+  description: `Search courses, plan transfers, and build schedules across community colleges in ${STATE_LIST_SENTENCE}.`,
   keywords: [
     "community college courses",
     "CC course finder",

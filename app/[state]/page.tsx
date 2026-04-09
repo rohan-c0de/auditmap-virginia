@@ -43,7 +43,10 @@ export default async function HomePage({ params }: Props) {
             browse courses, check transfer equivalencies, and build your
             schedule.
           </p>
-          <SearchForm state={state} />
+          <SearchForm
+            state={state}
+            placeholder={`e.g. ${config.defaultZip} or ${config.defaultZipCity}`}
+          />
           <StartingSoonCallout state={state} />
         </div>
       </section>

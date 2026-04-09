@@ -23,6 +23,7 @@ const deConfig: StateConfig = {
   transferSupported: true,
   popularCourses: ["ENG 111", "MAT 153", "BIO 120", "HIS 111", "PSY 121", "ECO 251"],
   defaultZip: "19901",
+  defaultZipCity: "Dover",
 
   courseDiscoveryUrl: (_collegeSlug: string, prefix: string, number: string) => {
     if (prefix && number) {

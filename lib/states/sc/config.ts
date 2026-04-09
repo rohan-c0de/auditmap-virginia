@@ -49,6 +49,7 @@ const scConfig: StateConfig = {
   transferSupported: true,
   popularCourses: ["ENG 101", "MAT 110", "BIO 101", "HIS 101", "PSY 201", "ECO 210"],
   defaultZip: "29201",
+  defaultZipCity: "Columbia",
 
   courseDiscoveryUrl: (collegeSlug: string, prefix: string, number: string) => {
     // Colleague: append search path
