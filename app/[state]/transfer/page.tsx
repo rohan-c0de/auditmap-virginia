@@ -7,6 +7,9 @@ import { getCurrentTerm } from "@/lib/terms";
 import { getStateConfig, getAllStates } from "@/lib/states/registry";
 import TransferClient from "./TransferClient";
 
+// Render on demand — some states' transfer data exceeds Vercel's ISR size limit
+export const dynamic = "force-dynamic";
+
 type Props = {
   params: Promise<{ state: string }>;
 };
