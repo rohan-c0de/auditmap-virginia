@@ -5,6 +5,7 @@ import type { CourseSection, CourseMode } from "@/lib/types";
 import { getCourseStatus, formatStartInfo, isInProgress, type CourseStatus } from "@/lib/course-status";
 import { expandDays } from "@/lib/time-utils";
 import DayToggle from "@/components/DayToggle";
+import PrereqChain from "@/components/PrereqChain";
 
 type TransferLookup = Record<
   string,
@@ -20,6 +21,8 @@ interface CourseTableProps {
   pinnedCRNs?: Set<string>;
   onTogglePin?: (crn: string) => void;
   transferLookup?: TransferLookup;
+  /** State slug for prereq chain API calls (e.g., "tn", "de") */
+  state?: string;
 }
 
 /** Build external URL for a specific course section by replacing template sentinels */
@@ -172,7 +175,7 @@ const SHORT_NAMES: Record<string, string> = {
   "cuny-sph": "SPH", "cuny-som": "SoM", "cuny-law": "CUNY Law",
   macaulay: "Macaulay",
   // TN (receiving 4-years from per-university transfer equivalency tools)
-  utk: "UTK",
+  utk: "UTK", mtsu: "MTSU", apsu: "APSU",
 };
 
 function TransferBadge({ prefix, number, lookup }: { prefix: string; number: string; lookup: TransferLookup }) {
@@ -250,7 +253,7 @@ function TransferBadge({ prefix, number, lookup }: { prefix: string; number: str
   );
 }
 
-export default function CourseTable({ courses, collegeSlug, courseListingUrl, systemName, onAuditClick, pinnedCRNs, onTogglePin, transferLookup }: CourseTableProps) {
+export default function CourseTable({ courses, collegeSlug, courseListingUrl, systemName, onAuditClick, pinnedCRNs, onTogglePin, transferLookup, state }: CourseTableProps) {
   const [subjectFilter, setSubjectFilter] = useState("");
   const [dayFilters, setDayFilters] = useState<string[]>([]);
   const [modeFilter, setModeFilter] = useState("");
@@ -413,14 +416,22 @@ export default function CourseTable({ courses, collegeSlug, courseListingUrl, sy
                           )}
                           {course.prerequisite_text && (
                             <div className="mt-1">
-                              <span
-                                className="inline-flex items-center gap-0.5 rounded bg-amber-50 border border-amber-200 px-1.5 py-0.5 text-[10px] font-medium text-amber-700 dark:bg-amber-900/30 dark:border-amber-800"
-                              >
-                                <svg className="h-2.5 w-2.5 shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
-                                </svg>
-                                Requires: {course.prerequisite_text}
-                              </span>
+                              {state ? (
+                                <PrereqChain
+                                  state={state}
+                                  course={`${course.course_prefix} ${course.course_number}`}
+                                  prereqText={course.prerequisite_text}
+                                />
+                              ) : (
+                                <span
+                                  className="inline-flex items-center gap-0.5 rounded bg-amber-50 border border-amber-200 px-1.5 py-0.5 text-[10px] font-medium text-amber-700 dark:bg-amber-900/30 dark:border-amber-800"
+                                >
+                                  <svg className="h-2.5 w-2.5 shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                                  </svg>
+                                  Requires: {course.prerequisite_text}
+                                </span>
+                              )}
                             </div>
                           )}
                         </div>
@@ -523,9 +534,19 @@ export default function CourseTable({ courses, collegeSlug, courseListingUrl, sy
                         </div>
                       )}
                       {course.prerequisite_text && (
-                        <p className="mt-1 text-[10px] text-amber-700 bg-amber-50 border border-amber-200 rounded px-1.5 py-0.5 inline-block dark:bg-amber-900/30 dark:border-amber-800">
-                          Requires: {course.prerequisite_text}
-                        </p>
+                        <div className="mt-1">
+                          {state ? (
+                            <PrereqChain
+                              state={state}
+                              course={`${course.course_prefix} ${course.course_number}`}
+                              prereqText={course.prerequisite_text}
+                            />
+                          ) : (
+                            <p className="text-[10px] text-amber-700 bg-amber-50 border border-amber-200 rounded px-1.5 py-0.5 inline-block dark:bg-amber-900/30 dark:border-amber-800">
+                              Requires: {course.prerequisite_text}
+                            </p>
+                          )}
+                        </div>
                       )}
                     </div>
                     <span
