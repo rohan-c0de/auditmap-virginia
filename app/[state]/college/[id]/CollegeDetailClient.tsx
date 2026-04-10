@@ -19,6 +19,7 @@ interface Props {
   transferLookup?: TransferLookup;
   systemName?: string;
   courseListingUrl?: string;
+  state?: string;
 }
 
 export default function CollegeDetailClient({
@@ -28,6 +29,7 @@ export default function CollegeDetailClient({
   systemName,
   transferLookup,
   courseListingUrl,
+  state,
 }: Props) {
   const [selectedCourse, setSelectedCourse] = useState<CourseSection | null>(
     null
@@ -70,6 +72,7 @@ export default function CollegeDetailClient({
         pinnedCRNs={pinnedCRNs}
         onTogglePin={togglePin}
         transferLookup={transferLookup}
+        state={state}
       />
 
       <ScheduleBuilder

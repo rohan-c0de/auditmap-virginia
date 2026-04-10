@@ -6,6 +6,7 @@ import Link from "next/link";
 import type { CourseMode } from "@/lib/types";
 import { expandDays } from "@/lib/time-utils";
 import DayToggle from "@/components/DayToggle";
+import PrereqChain from "@/components/PrereqChain";
 
 // ---------------------------------------------------------------------------
 // Types matching the API response
@@ -462,12 +463,13 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
                       </p>
                     </div>
                     {course.prerequisite_text && (
-                      <span className="shrink-0 inline-flex items-center gap-1 rounded-md bg-amber-50 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800 px-2 py-1 text-xs text-amber-800 dark:text-amber-300">
-                        <svg className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
-                        </svg>
-                        Requires: {course.prerequisite_text}
-                      </span>
+                      <div className="shrink-0">
+                        <PrereqChain
+                          state={state}
+                          course={`${course.prefix} ${course.number}`}
+                          prereqText={course.prerequisite_text}
+                        />
+                      </div>
                     )}
                   </div>
 
