@@ -24,33 +24,131 @@ interface SemesterPlannerProps {
 }
 
 // ---------------------------------------------------------------------------
-// Algorithm: topological sort → semester assignment
+// AND/OR prereq text parser
+// ---------------------------------------------------------------------------
+
+/**
+ * Parse a prereq text string into AND-of-OR groups.
+ *
+ * Example: "ACC 101 and (BUS 107 or CIS 107 or OAT 152)"
+ *  → [["ACC 101"], ["BUS 107", "CIS 107", "OAT 152"]]
+ *
+ * Meaning: you must take ACC 101 AND (one of BUS 107 / CIS 107 / OAT 152).
+ *
+ * Strategy: split the text on top-level "and" (outside parentheses), then
+ * map each known course code to the chunk it appears in. Courses in the
+ * same chunk form an OR group.
+ */
+function parsePrereqGroups(text: string, courses: string[]): string[][] {
+  if (courses.length === 0) return [];
+  if (courses.length === 1) return [courses];
+
+  // Split text on top-level " and " (not inside parentheses)
+  const chunks: string[] = [];
+  let depth = 0;
+  let current = "";
+  const tokens = text.split(/(\s+)/);
+
+  for (const token of tokens) {
+    for (const ch of token) {
+      if (ch === "(") depth++;
+      if (ch === ")") depth--;
+    }
+    if (token.toLowerCase() === "and" && depth === 0 && current.trim()) {
+      chunks.push(current.trim());
+      current = "";
+    } else {
+      current += token;
+    }
+  }
+  if (current.trim()) chunks.push(current.trim());
+
+  // Map each course to its chunk → courses in the same chunk are OR alternatives
+  const groups: string[][] = [];
+  const assigned = new Set<string>();
+
+  for (const chunk of chunks) {
+    const group: string[] = [];
+    for (const course of courses) {
+      if (assigned.has(course)) continue;
+      if (chunk.toUpperCase().includes(course)) {
+        group.push(course);
+        assigned.add(course);
+      }
+    }
+    if (group.length > 0) groups.push(group);
+  }
+
+  // Any unassigned courses become their own AND group (required)
+  for (const course of courses) {
+    if (!assigned.has(course)) {
+      groups.push([course]);
+    }
+  }
+
+  return groups;
+}
+
+// ---------------------------------------------------------------------------
+// Algorithm: topological sort → semester assignment (AND/OR aware)
 // ---------------------------------------------------------------------------
 
 /**
  * Given a set of target courses and a prereq lookup table, compute the
  * minimum-semester plan. Uses a reverse topological sort:
  *
- * 1. Collect ALL courses in the dependency graph (targets + transitive prereqs)
- * 2. Find "level" of each course (max distance from any leaf)
- * 3. Group by level → each level is one semester
+ * 1. Parse each course's prereqs into AND-of-OR groups
+ * 2. For each OR group, pick the option with the fewest direct prereqs
+ * 3. BFS from targets using only resolved (picked) prereqs
+ * 4. Compute "level" of each course (max distance from any leaf)
+ * 5. Group by level → each level is one semester
  */
 function buildPlan(
   targets: string[],
   lookup: Map<string, PrereqEntry>,
 ): PlanCourse[] {
-  // Collect all courses reachable from targets (BFS)
+  // Cache resolved prereqs: for each course, the actual prereqs to take
+  // (after OR resolution)
+  const resolvedPrereqs = new Map<string, string[]>();
+
+  function getResolvedPrereqs(course: string): string[] {
+    if (resolvedPrereqs.has(course)) return resolvedPrereqs.get(course)!;
+    const entry = lookup.get(course);
+    if (!entry || entry.prereqs.length === 0) {
+      resolvedPrereqs.set(course, []);
+      return [];
+    }
+
+    const groups = parsePrereqGroups(entry.text, entry.prereqs);
+    const picked: string[] = [];
+
+    for (const group of groups) {
+      if (group.length === 1) {
+        picked.push(group[0]);
+      } else {
+        // Pick the OR option with the fewest direct prereqs (cheapest path)
+        const best = group.reduce((a, b) => {
+          const aCount = lookup.get(a)?.prereqs.length || 0;
+          const bCount = lookup.get(b)?.prereqs.length || 0;
+          return aCount <= bCount ? a : b;
+        });
+        picked.push(best);
+      }
+    }
+
+    resolvedPrereqs.set(course, picked);
+    return picked;
+  }
+
+  // BFS collecting only the courses we actually need
   const visited = new Set<string>();
   const queue = [...targets];
   while (queue.length > 0) {
     const course = queue.shift()!;
     if (visited.has(course)) continue;
     visited.add(course);
-    const entry = lookup.get(course);
-    if (entry) {
-      for (const prereq of entry.prereqs) {
-        if (!visited.has(prereq)) queue.push(prereq);
-      }
+    for (const prereq of getResolvedPrereqs(course)) {
+      if (!visited.has(prereq)) queue.push(prereq);
     }
   }
 
@@ -62,15 +160,15 @@ function buildPlan(
     if (path.has(course)) return 0; // cycle guard
     path.add(course);
 
-    const entry = lookup.get(course);
-    if (!entry || entry.prereqs.length === 0) {
+    const prereqs = getResolvedPrereqs(course);
+    if (prereqs.length === 0) {
       levels.set(course, 0);
       path.delete(course);
       return 0;
     }
 
     let maxChildLevel = 0;
-    for (const prereq of entry.prereqs) {
+    for (const prereq of prereqs) {
       if (visited.has(prereq)) {
         maxChildLevel = Math.max(maxChildLevel, computeLevel(prereq, path) + 1);
       }

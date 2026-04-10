@@ -7,12 +7,15 @@ type RouteContext = { params: Promise<{ state: string }> };
 
 /**
  * Prerequisite chain tree node. Each node represents a course and its
- * direct prerequisites, recursively nested.
+ * direct prerequisites, recursively nested. Children are grouped into
+ * AND-of-OR groups: outer array = AND (all required), inner array = OR
+ * (pick one). A flat `children` array is also provided for backward compat.
  */
 interface ChainNode {
   course: string;
   text: string;        // Human-readable prereq description for THIS course
   children: ChainNode[];
+  groups?: ChainNode[][]; // AND-of-OR groups (if applicable)
 }
 
 /**
@@ -34,9 +37,57 @@ function loadPrereqs(
 }
 
 /**
+ * Parse prereq text into AND-of-OR groups.
+ * "ACC 101 and (BUS 107 or CIS 107)" → [["ACC 101"], ["BUS 107","CIS 107"]]
+ */
+function parsePrereqGroups(text: string, courses: string[]): string[][] {
+  if (courses.length === 0) return [];
+  if (courses.length === 1) return [courses];
+
+  const chunks: string[] = [];
+  let depth = 0;
+  let current = "";
+  const tokens = text.split(/(\s+)/);
+  for (const token of tokens) {
+    for (const ch of token) {
+      if (ch === "(") depth++;
+      if (ch === ")") depth--;
+    }
+    if (token.toLowerCase() === "and" && depth === 0 && current.trim()) {
+      chunks.push(current.trim());
+      current = "";
+    } else {
+      current += token;
+    }
+  }
+  if (current.trim()) chunks.push(current.trim());
+
+  const groups: string[][] = [];
+  const assigned = new Set<string>();
+  for (const chunk of chunks) {
+    const group: string[] = [];
+    for (const course of courses) {
+      if (assigned.has(course)) continue;
+      if (chunk.toUpperCase().includes(course)) {
+        group.push(course);
+        assigned.add(course);
+      }
+    }
+    if (group.length > 0) groups.push(group);
+  }
+  for (const course of courses) {
+    if (!assigned.has(course)) groups.push([course]);
+  }
+  return groups;
+}
+
+/**
  * Recursively build the prerequisite chain tree. Caps depth at 6 to avoid
  * runaway recursion from circular prereq definitions (which exist in some
  * catalogs, e.g. "MATH A requires MATH B" + "MATH B requires MATH A").
+ *
+ * Returns both a flat `children` array (backward compat) and a `groups`
+ * array that preserves AND-of-OR structure from the prereq text.
  */
 function buildChain(
   course: string,
@@ -54,8 +105,23 @@ function buildChain(
   if (depth >= 6 || !entry || visited.has(course)) return node;
   visited.add(course);
 
-  for (const dep of entry.courses) {
-    node.children.push(buildChain(dep, prereqs, visited, depth + 1));
+  // Build children with AND/OR grouping
+  const orGroups = parsePrereqGroups(entry.text, entry.courses);
+  const groupNodes: ChainNode[][] = [];
+
+  for (const group of orGroups) {
+    const groupChildren: ChainNode[] = [];
+    for (const dep of group) {
+      const child = buildChain(dep, prereqs, new Set(visited), depth + 1);
+      node.children.push(child);
+      groupChildren.push(child);
+    }
+    groupNodes.push(groupChildren);
+  }
+
+  // Only include groups if there are actual OR alternatives
+  if (groupNodes.some((g) => g.length > 1)) {
+    node.groups = groupNodes;
   }
 
   return node;
