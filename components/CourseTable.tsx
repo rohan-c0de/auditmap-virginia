@@ -171,6 +171,8 @@ const SHORT_NAMES: Record<string, string> = {
   "grad-center": "Grad Ctr", "cuny-sps": "SPS", "cuny-slu": "SLU",
   "cuny-sph": "SPH", "cuny-som": "SoM", "cuny-law": "CUNY Law",
   macaulay: "Macaulay",
+  // TN (receiving 4-years from per-university transfer equivalency tools)
+  utk: "UTK",
 };
 
 function TransferBadge({ prefix, number, lookup }: { prefix: string; number: string; lookup: TransferLookup }) {

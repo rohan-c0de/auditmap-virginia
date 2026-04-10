@@ -40,9 +40,11 @@ const tnConfig: StateConfig = {
       "Tenn. Code Ann. \u00A7 49-7-113 allows Tennessee residents aged 65+ to attend credit courses at TBR community colleges with tuition and most mandatory fees waived on a space-available basis. A small service fee may still apply.",
   },
 
-  transferSupported: false,
-  // Tennessee Transfer Pathways (TTP) data is not yet imported; once a TTP
-  // scraper exists, flip this flag and seed transfer-equiv.json.
+  transferSupported: true,
+  // Transfer data sourced from UTK's public transfer course equivalency tool
+  // at bannerssb.utk.edu (10k+ mappings across all 13 TBR CCs). Additional
+  // universities (APSU, MTSU, etc.) are added incrementally by running
+  // scripts/tn/transfer/scrape-*.ts adapters — see the plan file for details.
 
   popularCourses: ["ENGL 1010", "ENGL 1020", "MATH 1530", "HIST 2010", "BIOL 1110", "PSYC 1030"],
   defaultZip: "37203",
