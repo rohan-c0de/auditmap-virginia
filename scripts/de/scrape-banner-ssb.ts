@@ -183,6 +183,31 @@ interface PrereqInfo {
   courses: string[];
 }
 
+/**
+ * Load catalog-sourced prereq fallback from data/de/prereqs.json.
+ *
+ * DTCC's Banner `getSectionPrerequisites` endpoint returns empty HTML for
+ * every course (confirmed 0% coverage across ~650 unique courses), so we
+ * fall back to a static JSON file scraped from the SmartCatalog course
+ * catalog at dtcc.smartcatalogiq.com. See scripts/de/scrape-catalog-prereqs.ts
+ * for the source scraper. The JSON is checked in and refreshed once per
+ * semester when DTCC publishes a new catalog year.
+ */
+function loadCatalogPrereqs(): Map<string, PrereqInfo> {
+  const jsonPath = path.join(process.cwd(), "data", "de", "prereqs.json");
+  try {
+    const raw = JSON.parse(fs.readFileSync(jsonPath, "utf-8")) as Record<string, PrereqInfo>;
+    const map = new Map<string, PrereqInfo>();
+    for (const [key, value] of Object.entries(raw)) {
+      map.set(key, value);
+    }
+    return map;
+  } catch (e) {
+    console.warn(`  Warning: could not load ${jsonPath}: ${e}`);
+    return new Map();
+  }
+}
+
 function parsePrereqHtml(html: string): PrereqInfo | null {
   if (html.includes("No prerequisite")) return null;
 
@@ -396,7 +421,16 @@ async function scrapeTerm(term: BannerTerm): Promise<number> {
     }
 
     const prereqs = await fetchPrerequisites(term.code, sections, cookies);
-    console.log(`  Found prerequisites for ${prereqs.size} courses`);
+    console.log(`  Found prerequisites for ${prereqs.size} courses (Banner)`);
+
+    // Catalog fallback: DTCC's Banner instance returns empty prereq HTML
+    // for every course, so we merge in data from the SmartCatalog catalog
+    // scrape (scripts/de/scrape-catalog-prereqs.ts → data/de/prereqs.json).
+    // Banner data wins when both sources have a hit; catalog fills the gaps.
+    const catalogPrereqs = loadCatalogPrereqs();
+    if (catalogPrereqs.size > 0) {
+      console.log(`  Loaded ${catalogPrereqs.size} catalog prereqs (fallback)`);
+    }
 
     const converted = sections.map((s) => {
       const mt = s.meetingsFaculty?.[0]?.meetingTime;
@@ -408,7 +442,7 @@ async function scrapeTerm(term: BannerTerm): Promise<number> {
         ? detectMode(mt, rawCampus, s.instructionalMethodDescription)
         : "online";
       const courseKey = `${s.subject} ${s.courseNumber}`;
-      const prereq = prereqs.get(courseKey);
+      const prereq = prereqs.get(courseKey) ?? catalogPrereqs.get(courseKey);
 
       return {
         college_code: COLLEGE_SLUG,
