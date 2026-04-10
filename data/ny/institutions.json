@@ -1,0 +1,345 @@
+[
+  {
+    "id": "bmcc",
+    "name": "Borough of Manhattan Community College",
+    "system": "CUNY",
+    "college_slug": "bmcc",
+    "campuses": [
+      {
+        "name": "Main Campus",
+        "lat": 40.7174,
+        "lng": -74.0122,
+        "address": "199 Chambers St, New York, NY 10007"
+      }
+    ],
+    "audit_policy": {
+      "allowed": true,
+      "cost_model": "tuition_free_for_seniors",
+      "cost_note": "New York State residents aged 60+ may audit undergraduate courses at CUNY community colleges on a space-available basis with tuition waived under N.Y. Education Law \u00a7 6304(5). Standard tuition applies to all other audit students, and regular fees may still apply.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 60,
+          "cost": "free",
+          "notes": "N.Y. Education Law \u00a7 6304(5) allows NYS residents aged 60+ to audit undergraduate courses at CUNY community colleges tuition-free on a space-available basis. Audited courses do not count toward a degree.",
+          "source_url": "https://www.bmcc.cuny.edu"
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Complete a non-degree application",
+          "Contact the Registrar about the Senior Citizen Audit Program",
+          "Register after matriculated students during the late-registration window"
+        ],
+        "timing": "Register during the late-registration window (after matriculated students)",
+        "form_url": "https://www.bmcc.cuny.edu/admissions/",
+        "contact_email": "",
+        "contact_phone": "212-220-8000"
+      },
+      "restrictions": [
+        "Audit registration typically opens after matriculated students register",
+        "Audited courses do not count for degree credit",
+        "Financial aid does not cover audited courses",
+        "Regular student fees may still apply"
+      ],
+      "last_verified": "2026-04-09",
+      "source_url": "https://www.bmcc.cuny.edu"
+    }
+  },
+  {
+    "id": "bronx-cc",
+    "name": "Bronx Community College",
+    "system": "CUNY",
+    "college_slug": "bronx-cc",
+    "campuses": [
+      {
+        "name": "Main Campus",
+        "lat": 40.8553,
+        "lng": -73.9102,
+        "address": "2155 University Ave, Bronx, NY 10453"
+      }
+    ],
+    "audit_policy": {
+      "allowed": true,
+      "cost_model": "tuition_free_for_seniors",
+      "cost_note": "New York State residents aged 60+ may audit undergraduate courses at CUNY community colleges on a space-available basis with tuition waived under N.Y. Education Law \u00a7 6304(5). Standard tuition applies to all other audit students, and regular fees may still apply.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 60,
+          "cost": "free",
+          "notes": "N.Y. Education Law \u00a7 6304(5) allows NYS residents aged 60+ to audit undergraduate courses at CUNY community colleges tuition-free on a space-available basis. Audited courses do not count toward a degree.",
+          "source_url": "https://www.bcc.cuny.edu"
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Complete a non-degree application",
+          "Contact the Registrar about the Senior Citizen Audit Program",
+          "Register after matriculated students during the late-registration window"
+        ],
+        "timing": "Register during the late-registration window (after matriculated students)",
+        "form_url": "https://www.bcc.cuny.edu/admissions/",
+        "contact_email": "",
+        "contact_phone": "718-289-5100"
+      },
+      "restrictions": [
+        "Audit registration typically opens after matriculated students register",
+        "Audited courses do not count for degree credit",
+        "Financial aid does not cover audited courses",
+        "Regular student fees may still apply"
+      ],
+      "last_verified": "2026-04-09",
+      "source_url": "https://www.bcc.cuny.edu"
+    }
+  },
+  {
+    "id": "guttman-cc",
+    "name": "Stella and Charles Guttman Community College",
+    "system": "CUNY",
+    "college_slug": "guttman-cc",
+    "campuses": [
+      {
+        "name": "Main Campus",
+        "lat": 40.7536,
+        "lng": -73.9843,
+        "address": "50 W 40th St, New York, NY 10018"
+      }
+    ],
+    "audit_policy": {
+      "allowed": true,
+      "cost_model": "tuition_free_for_seniors",
+      "cost_note": "New York State residents aged 60+ may audit undergraduate courses at CUNY community colleges on a space-available basis with tuition waived under N.Y. Education Law \u00a7 6304(5). Standard tuition applies to all other audit students, and regular fees may still apply.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 60,
+          "cost": "free",
+          "notes": "N.Y. Education Law \u00a7 6304(5) allows NYS residents aged 60+ to audit undergraduate courses at CUNY community colleges tuition-free on a space-available basis. Audited courses do not count toward a degree.",
+          "source_url": "https://guttman.cuny.edu"
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Complete a non-degree application",
+          "Contact the Registrar about the Senior Citizen Audit Program",
+          "Register after matriculated students during the late-registration window"
+        ],
+        "timing": "Register during the late-registration window (after matriculated students)",
+        "form_url": "https://guttman.cuny.edu/admissions/",
+        "contact_email": "",
+        "contact_phone": "646-313-8000"
+      },
+      "restrictions": [
+        "Audit registration typically opens after matriculated students register",
+        "Audited courses do not count for degree credit",
+        "Financial aid does not cover audited courses",
+        "Regular student fees may still apply"
+      ],
+      "last_verified": "2026-04-09",
+      "source_url": "https://guttman.cuny.edu"
+    }
+  },
+  {
+    "id": "hostos-cc",
+    "name": "Eugenio Mar\u00eda de Hostos Community College",
+    "system": "CUNY",
+    "college_slug": "hostos-cc",
+    "campuses": [
+      {
+        "name": "Main Campus",
+        "lat": 40.8188,
+        "lng": -73.9269,
+        "address": "500 Grand Concourse, Bronx, NY 10451"
+      }
+    ],
+    "audit_policy": {
+      "allowed": true,
+      "cost_model": "tuition_free_for_seniors",
+      "cost_note": "New York State residents aged 60+ may audit undergraduate courses at CUNY community colleges on a space-available basis with tuition waived under N.Y. Education Law \u00a7 6304(5). Standard tuition applies to all other audit students, and regular fees may still apply.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 60,
+          "cost": "free",
+          "notes": "N.Y. Education Law \u00a7 6304(5) allows NYS residents aged 60+ to audit undergraduate courses at CUNY community colleges tuition-free on a space-available basis. Audited courses do not count toward a degree.",
+          "source_url": "https://www.hostos.cuny.edu"
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Complete a non-degree application",
+          "Contact the Registrar about the Senior Citizen Audit Program",
+          "Register after matriculated students during the late-registration window"
+        ],
+        "timing": "Register during the late-registration window (after matriculated students)",
+        "form_url": "https://www.hostos.cuny.edu/Admissions",
+        "contact_email": "",
+        "contact_phone": "718-518-4444"
+      },
+      "restrictions": [
+        "Audit registration typically opens after matriculated students register",
+        "Audited courses do not count for degree credit",
+        "Financial aid does not cover audited courses",
+        "Regular student fees may still apply"
+      ],
+      "last_verified": "2026-04-09",
+      "source_url": "https://www.hostos.cuny.edu"
+    }
+  },
+  {
+    "id": "kingsborough-cc",
+    "name": "Kingsborough Community College",
+    "system": "CUNY",
+    "college_slug": "kingsborough-cc",
+    "campuses": [
+      {
+        "name": "Main Campus",
+        "lat": 40.5791,
+        "lng": -73.9356,
+        "address": "2001 Oriental Blvd, Brooklyn, NY 11235"
+      }
+    ],
+    "audit_policy": {
+      "allowed": true,
+      "cost_model": "tuition_free_for_seniors",
+      "cost_note": "New York State residents aged 60+ may audit undergraduate courses at CUNY community colleges on a space-available basis with tuition waived under N.Y. Education Law \u00a7 6304(5). Standard tuition applies to all other audit students, and regular fees may still apply.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 60,
+          "cost": "free",
+          "notes": "N.Y. Education Law \u00a7 6304(5) allows NYS residents aged 60+ to audit undergraduate courses at CUNY community colleges tuition-free on a space-available basis. Audited courses do not count toward a degree.",
+          "source_url": "https://www.kbcc.cuny.edu"
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Complete a non-degree application",
+          "Contact the Registrar about the Senior Citizen Audit Program",
+          "Register after matriculated students during the late-registration window"
+        ],
+        "timing": "Register during the late-registration window (after matriculated students)",
+        "form_url": "https://www.kbcc.cuny.edu/admissions/",
+        "contact_email": "",
+        "contact_phone": "718-368-5000"
+      },
+      "restrictions": [
+        "Audit registration typically opens after matriculated students register",
+        "Audited courses do not count for degree credit",
+        "Financial aid does not cover audited courses",
+        "Regular student fees may still apply"
+      ],
+      "last_verified": "2026-04-09",
+      "source_url": "https://www.kbcc.cuny.edu"
+    }
+  },
+  {
+    "id": "laguardia-cc",
+    "name": "Fiorello H. LaGuardia Community College",
+    "system": "CUNY",
+    "college_slug": "laguardia-cc",
+    "campuses": [
+      {
+        "name": "Main Campus",
+        "lat": 40.7448,
+        "lng": -73.9374,
+        "address": "31-10 Thomson Ave, Long Island City, NY 11101"
+      }
+    ],
+    "audit_policy": {
+      "allowed": true,
+      "cost_model": "tuition_free_for_seniors",
+      "cost_note": "New York State residents aged 60+ may audit undergraduate courses at CUNY community colleges on a space-available basis with tuition waived under N.Y. Education Law \u00a7 6304(5). Standard tuition applies to all other audit students, and regular fees may still apply.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 60,
+          "cost": "free",
+          "notes": "N.Y. Education Law \u00a7 6304(5) allows NYS residents aged 60+ to audit undergraduate courses at CUNY community colleges tuition-free on a space-available basis. Audited courses do not count toward a degree.",
+          "source_url": "https://www.laguardia.edu"
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Complete a non-degree application",
+          "Contact the Registrar about the Senior Citizen Audit Program",
+          "Register after matriculated students during the late-registration window"
+        ],
+        "timing": "Register during the late-registration window (after matriculated students)",
+        "form_url": "https://www.laguardia.edu/admissions/",
+        "contact_email": "",
+        "contact_phone": "718-482-7200"
+      },
+      "restrictions": [
+        "Audit registration typically opens after matriculated students register",
+        "Audited courses do not count for degree credit",
+        "Financial aid does not cover audited courses",
+        "Regular student fees may still apply"
+      ],
+      "last_verified": "2026-04-09",
+      "source_url": "https://www.laguardia.edu"
+    }
+  },
+  {
+    "id": "queensborough-cc",
+    "name": "Queensborough Community College",
+    "system": "CUNY",
+    "college_slug": "queensborough-cc",
+    "campuses": [
+      {
+        "name": "Main Campus",
+        "lat": 40.7608,
+        "lng": -73.7620,
+        "address": "222-05 56th Ave, Bayside, NY 11364"
+      }
+    ],
+    "audit_policy": {
+      "allowed": true,
+      "cost_model": "tuition_free_for_seniors",
+      "cost_note": "New York State residents aged 60+ may audit undergraduate courses at CUNY community colleges on a space-available basis with tuition waived under N.Y. Education Law \u00a7 6304(5). Standard tuition applies to all other audit students, and regular fees may still apply.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 60,
+          "cost": "free",
+          "notes": "N.Y. Education Law \u00a7 6304(5) allows NYS residents aged 60+ to audit undergraduate courses at CUNY community colleges tuition-free on a space-available basis. Audited courses do not count toward a degree.",
+          "source_url": "https://www.qcc.cuny.edu"
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Complete a non-degree application",
+          "Contact the Registrar about the Senior Citizen Audit Program",
+          "Register after matriculated students during the late-registration window"
+        ],
+        "timing": "Register during the late-registration window (after matriculated students)",
+        "form_url": "https://www.qcc.cuny.edu/admissions/",
+        "contact_email": "",
+        "contact_phone": "718-631-6262"
+      },
+      "restrictions": [
+        "Audit registration typically opens after matriculated students register",
+        "Audited courses do not count for degree credit",
+        "Financial aid does not cover audited courses",
+        "Regular student fees may still apply"
+      ],
+      "last_verified": "2026-04-09",
+      "source_url": "https://www.qcc.cuny.edu"
+    }
+  }
+]
