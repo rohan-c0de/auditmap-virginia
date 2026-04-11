@@ -291,7 +291,8 @@ export default async function SubjectPage(props: PageProps) {
           courseListingUrl={config.courseDiscoveryUrl(
             institution.college_slug,
             "__PREFIX__",
-            "__NUMBER__"
+            "__NUMBER__",
+            currentTerm
           )}
           state={state}
         />

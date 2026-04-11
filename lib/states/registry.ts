@@ -35,7 +35,7 @@ export interface StateConfig {
   /** Popular CC courses for transfer compare presets (e.g. ["ENGL 1101", "MATH 1111"]) */
   popularCourses: string[];
   /** Build the external course discovery URL for a specific course */
-  courseDiscoveryUrl: (collegeSlug: string, prefix: string, number: string) => string;
+  courseDiscoveryUrl: (collegeSlug: string, prefix: string, number: string, term?: string) => string;
   /** Build the external URL for a college's course listing page */
   collegeCoursesUrl: (collegeSlug: string) => string;
   /** Default zip code placeholder for search forms */

@@ -34,7 +34,8 @@ function buildCourseUrl(
   if (!courseListingUrl) return "";
   return courseListingUrl
     .replace("__PREFIX__", course.course_prefix)
-    .replace("__NUMBER__", course.course_number);
+    .replace("__NUMBER__", course.course_number)
+    .replace("__CRN_B64__", btoa(course.crn));
 }
 
 const MODE_STYLES: Record<CourseMode, { bg: string; text: string; label: string }> = {

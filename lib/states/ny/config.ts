@@ -7,9 +7,8 @@ import type { StateConfig } from "../registry";
 //
 // The scraper uses https://globalsearch.cuny.edu/CFGlobalSearchTool/ — a
 // JSP/ColdFusion wrapper around CUNYfirst (PeopleSoft Campus Solutions) that
-// returns HTML. Per-college registrar pages below are fallbacks for linking
-// users to official course listings; Global Class Search does not support
-// deep-linking to specific courses via URL parameters.
+// returns HTML. Deep-linking to a specific section is supported via Base64-
+// encoded query params on CFSearchToolController (CRN, term, institution).
 const COLLEGE_REGISTRAR_URLS: Record<string, string> = {
   "bmcc": "https://www.bmcc.cuny.edu/registrar/academics-classes-registration/class-search/",
   "bronx-cc": "https://www.bcc.cuny.edu/academics/registrar/",
@@ -21,6 +20,27 @@ const COLLEGE_REGISTRAR_URLS: Record<string, string> = {
 };
 
 const GLOBAL_SEARCH_URL = "https://globalsearch.cuny.edu/CFGlobalSearchTool/search.jsp";
+
+// Institution display names used in the Global Search deep-link URL.
+// Must match the exact strings CUNY uses (decoded from inst_searched param).
+const CUNY_COLLEGE_NAMES: Record<string, string> = {
+  "bmcc": "Borough of Manhattan CC",
+  "bronx-cc": "Bronx CC",
+  "guttman-cc": "Guttman CC",
+  "hostos-cc": "Hostos CC",
+  "kingsborough-cc": "Kingsborough CC",
+  "laguardia-cc": "LaGuardia CC",
+  "queensborough-cc": "Queensborough CC",
+};
+
+// Convert our standardized term (e.g. "2026SP") to CUNY PeopleSoft term code.
+// Formula: "1" + last 2 digits of year + season (2=Spring, 6=Summer, 9=Fall).
+function toCunyTermCode(term: string): string {
+  const year = term.slice(2, 4);
+  const season = term.slice(4);
+  const seasonCode = season === "SP" ? "2" : season === "SU" ? "6" : "9";
+  return `1${year}${seasonCode}`;
+}
 
 const nyConfig: StateConfig = {
   slug: "ny",
@@ -54,10 +74,13 @@ const nyConfig: StateConfig = {
   defaultZip: "10007",
   defaultZipCity: "New York",
 
-  courseDiscoveryUrl: (_collegeSlug: string, _prefix: string, _number: string) => {
-    // CUNY Global Class Search does not accept URL params for pre-filling the
-    // form. Return the search landing page — users choose institution + term.
-    return GLOBAL_SEARCH_URL;
+  courseDiscoveryUrl: (collegeSlug: string, _prefix: string, _number: string, term?: string) => {
+    const collegeName = CUNY_COLLEGE_NAMES[collegeSlug];
+    if (!collegeName || !term) return GLOBAL_SEARCH_URL;
+    const instB64 = Buffer.from(collegeName).toString("base64");
+    const termB64 = Buffer.from(toCunyTermCode(term)).toString("base64");
+    // CRN is per-section — substituted client-side via __CRN_B64__ placeholder
+    return `https://globalsearch.cuny.edu/CFGlobalSearchTool/CFSearchToolController?class_number_searched=__CRN_B64__&term_searched=${termB64}&inst_searched=${instB64}`;
   },
 
   collegeCoursesUrl: (collegeSlug: string) => {
