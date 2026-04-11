@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
   async redirects() {
     // Backward-compatible redirects from old routes to /va/ prefixed routes
     return [
-      { source: "/colleges", destination: "/va/colleges", permanent: true },
+      // /colleges is now a real all-states directory page — no redirect
       { source: "/college/:id", destination: "/va/college/:id", permanent: true },
       { source: "/courses", destination: "/va/courses", permanent: true },
       { source: "/starting-soon", destination: "/va/starting-soon", permanent: true },

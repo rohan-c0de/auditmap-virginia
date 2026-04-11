@@ -41,6 +41,12 @@ export default function LandingPage() {
           </div>
           <div className="flex items-center gap-4">
             <Link
+              href="/colleges"
+              className="text-sm text-gray-600 dark:text-slate-400 hover:text-teal-600 transition-colors"
+            >
+              All Colleges
+            </Link>
+            <Link
               href="/blog"
               className="text-sm text-gray-600 dark:text-slate-400 hover:text-teal-600 transition-colors"
             >
@@ -68,6 +74,15 @@ export default function LandingPage() {
             </span>
             .
           </p>
+          <Link
+            href="/colleges"
+            className="inline-flex items-center gap-1.5 mt-4 text-sm font-medium text-teal-600 hover:text-teal-700 transition-colors"
+          >
+            Browse all colleges
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </Link>
         </div>
       </section>
 
@@ -184,6 +199,9 @@ export default function LandingPage() {
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500 dark:text-slate-400">
           <p>&copy; {new Date().getFullYear()} Community College Path</p>
           <div className="flex gap-4">
+            <Link href="/colleges" className="hover:text-teal-600 transition-colors">
+              All Colleges
+            </Link>
             <Link href="/blog" className="hover:text-teal-600 transition-colors">
               Blog
             </Link>
