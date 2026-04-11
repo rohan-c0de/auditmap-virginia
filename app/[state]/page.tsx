@@ -185,6 +185,37 @@ export default async function HomePage({ params }: Props) {
               </p>
             </Link>
           </div>
+          <p className="text-center text-sm text-gray-500 dark:text-slate-400 mt-6">
+            Or{" "}
+            <Link
+              href="/colleges"
+              className="text-teal-600 hover:text-teal-700 transition-colors"
+            >
+              browse colleges in all {getAllStates().length} states
+            </Link>
+          </p>
+        </div>
+      </section>
+
+      {/* Explore other states */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-slate-100 mb-4 text-center">
+            Explore Other States
+          </h2>
+          <div className="flex flex-wrap justify-center gap-2">
+            {getAllStates()
+              .filter((s) => s.slug !== state)
+              .map((s) => (
+                <Link
+                  key={s.slug}
+                  href={`/${s.slug}`}
+                  className="rounded-md bg-gray-100 dark:bg-slate-700 px-3 py-1.5 text-sm text-gray-700 dark:text-slate-300 hover:bg-teal-100 dark:hover:bg-teal-900/40 hover:text-teal-700 dark:hover:text-teal-400 transition-colors"
+                >
+                  {s.name}
+                </Link>
+              ))}
+          </div>
         </div>
       </section>
     </div>

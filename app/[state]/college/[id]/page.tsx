@@ -431,6 +431,47 @@ export default async function CollegeDetailPage(props: PageProps) {
           </div>
         </details>
       </section>
+
+      {/* Other colleges in this state — internal linking for SEO */}
+      {(() => {
+        const allInstitutions = loadInstitutions(state);
+        const others = allInstitutions
+          .filter((i) => i.id !== id)
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .slice(0, 6);
+        if (others.length === 0) return null;
+        return (
+          <section className="mt-8">
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-slate-100 mb-3">
+              Other {config.systemName} Colleges
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {others.map((inst) => (
+                <Link
+                  key={inst.id}
+                  href={`/${state}/college/${inst.id}`}
+                  className="group block rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-3 transition hover:shadow-md hover:border-teal-300"
+                >
+                  <h3 className="font-medium text-sm text-gray-900 dark:text-slate-100 group-hover:text-teal-700 transition-colors">
+                    {inst.name}
+                  </h3>
+                  <p className="text-[11px] text-gray-400 dark:text-slate-500 truncate mt-0.5">
+                    {inst.campuses?.map((c) => c.name).join(", ")}
+                  </p>
+                </Link>
+              ))}
+            </div>
+            <p className="text-center mt-3">
+              <Link
+                href={`/${state}/colleges`}
+                className="text-sm text-teal-600 hover:text-teal-700 transition-colors"
+              >
+                View all {config.collegeCount} {config.systemName} colleges &rarr;
+              </Link>
+            </p>
+          </section>
+        );
+      })()}
     </div>
   );
 }

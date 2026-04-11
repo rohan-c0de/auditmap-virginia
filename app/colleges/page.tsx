@@ -168,9 +168,11 @@ export default async function AllCollegesPage() {
         {stateData.map((s) => (
           <section key={s.slug} id={s.slug}>
             <div className="flex items-baseline gap-3 mb-4">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-slate-100">
-                {s.name}
-              </h2>
+              <Link href={`/${s.slug}`} className="group">
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-slate-100 group-hover:text-teal-600 transition-colors">
+                  {s.name}
+                </h2>
+              </Link>
               <span className="text-sm text-gray-500 dark:text-slate-400">
                 {s.systemName} &middot; {s.institutions.length} colleges
               </span>
