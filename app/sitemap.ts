@@ -2,8 +2,13 @@ import type { MetadataRoute } from "next";
 import { getAllStates } from "@/lib/states/registry";
 import { loadInstitutions } from "@/lib/institutions";
 import { getAllArticles } from "@/lib/blog";
+import {
+  loadCoursesForCollege,
+  getUniqueSubjects,
+} from "@/lib/courses";
+import { getCurrentTerm } from "@/lib/terms";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl =
     process.env.NEXT_PUBLIC_SITE_URL ||
     "https://communitycollegepath.com";
@@ -28,16 +33,39 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  // College detail pages for all states
+  // College detail pages + subject pages for all states
   const collegePages: MetadataRoute.Sitemap = [];
+  const subjectPages: MetadataRoute.Sitemap = [];
+
   for (const state of getAllStates()) {
     const institutions = loadInstitutions(state.slug);
+    const currentTerm = await getCurrentTerm(state.slug);
+
     for (const inst of institutions) {
       collegePages.push({
         url: `${baseUrl}/${state.slug}/college/${inst.id}`,
         changeFrequency: "weekly" as const,
         priority: 0.7,
       });
+
+      // Subject pages (pSEO)
+      try {
+        const courses = await loadCoursesForCollege(
+          inst.college_slug,
+          currentTerm,
+          state.slug
+        );
+        const subjects = getUniqueSubjects(courses);
+        for (const prefix of subjects) {
+          subjectPages.push({
+            url: `${baseUrl}/${state.slug}/college/${inst.id}/courses/${prefix.toLowerCase()}`,
+            changeFrequency: "weekly" as const,
+            priority: 0.6,
+          });
+        }
+      } catch {
+        // Skip if course loading fails
+      }
     }
   }
 
@@ -52,5 +80,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 
-  return [...entries, ...collegePages, ...blogPages];
+  return [...entries, ...collegePages, ...subjectPages, ...blogPages];
 }

@@ -10,6 +10,8 @@ import CollegeMap from "./CollegeMap";
 import TermSelector from "./TermSelector";
 import { buildTransferLookup } from "@/lib/transfer";
 import { getStateConfig, getAllStates } from "@/lib/states/registry";
+import { getUniqueSubjects } from "@/lib/courses";
+import { subjectName } from "@/lib/subjects";
 
 // Revalidate every 24 hours — course data only changes when re-scraped
 export const revalidate = 86400;
@@ -264,6 +266,34 @@ export default async function CollegeDetailPage(props: PageProps) {
           />
         )}
       </section>
+
+      {/* Browse by Subject — pSEO internal links */}
+      {courses.length > 0 && (() => {
+        const subjects = getUniqueSubjects(courses);
+        if (subjects.length < 2) return null;
+        return (
+          <section className="mt-8">
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-slate-100 mb-3">
+              Browse by Subject
+            </h2>
+            <div className="flex flex-wrap gap-2">
+              {subjects.map((prefix) => {
+                const count = courses.filter(c => c.course_prefix === prefix).length;
+                return (
+                  <Link
+                    key={prefix}
+                    href={`/${state}/college/${id}/courses/${prefix.toLowerCase()}`}
+                    className="inline-flex items-center gap-1.5 rounded-md bg-gray-100 dark:bg-slate-700 px-3 py-1.5 text-xs font-medium text-gray-700 dark:text-slate-300 hover:bg-teal-100 dark:hover:bg-teal-900/40 hover:text-teal-700 dark:hover:text-teal-400 transition-colors"
+                  >
+                    {subjectName(prefix)}
+                    <span className="text-gray-400 dark:text-slate-500">({count})</span>
+                  </Link>
+                );
+              })}
+            </div>
+          </section>
+        );
+      })()}
 
       {/* Audit Policy — collapsed by default, below courses */}
       <section className="mt-8">

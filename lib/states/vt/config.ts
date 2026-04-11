@@ -25,8 +25,8 @@ const vtConfig: StateConfig = {
   defaultZip: "05401",
   defaultZipCity: "Burlington",
 
-  courseDiscoveryUrl: (_collegeSlug: string, _prefix: string, _number: string) =>
-    "https://selfservice.vsc.edu/Student/Courses/Search",
+  courseDiscoveryUrl: (_collegeSlug: string, prefix: string, number: string) =>
+    `https://selfservice.vsc.edu/Student/Courses/Search?keyword=${encodeURIComponent(`${prefix} ${number}`)}`,
 
   collegeCoursesUrl: (_collegeSlug: string) =>
     "https://selfservice.vsc.edu/Student/Courses/Search",
