@@ -20,7 +20,7 @@ const riConfig: StateConfig = {
       "Rhode Island General Law \u00A716-57-4 allows residents aged 60+ to audit credit courses at public institutions tuition-free on a space-available basis.",
   },
 
-  transferSupported: false,
+  transferSupported: true,
   popularCourses: ["ENGL 1010", "MATH 1000", "BIOL 1010", "PSYC 2010", "HIST 1010", "ECON 2010"],
   defaultZip: "02886",
   defaultZipCity: "Warwick",

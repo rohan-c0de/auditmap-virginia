@@ -1,0 +1,982 @@
+[
+  {
+    "id": "atlantic-cape",
+    "name": "Atlantic Cape Community College",
+    "system": "NJ County Colleges",
+    "college_slug": "atlantic-cape",
+    "campuses": [
+      {
+        "name": "Mays Landing Campus",
+        "lat": 39.4527,
+        "lng": -74.7177,
+        "address": "5100 Black Horse Pike, Mays Landing, NJ 08330"
+      },
+      {
+        "name": "Cape May Campus",
+        "lat": 39.0846,
+        "lng": -74.8118,
+        "address": "341 Court House South Dennis Rd, Cape May Court House, NJ 08210"
+      }
+    ],
+    "audit_policy": {
+      "allowed": null,
+      "cost_model": "unknown",
+      "cost_note": "Contact the college for audit enrollment policies and costs.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "N.J.S.A. 18A:64A-26.1 — NJ residents 65+ may enroll tuition-free on space-available basis at county colleges. Fees may apply.",
+          "source_url": ""
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Complete an admissions application at atlantic.edu",
+          "Contact the Registrar's Office about audit enrollment",
+          "Register for the course during the enrollment period",
+          "Senior tuition waiver applicants (65+) must provide proof of age and NJ residency"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "https://www.atlantic.edu/admissions/",
+        "contact_email": "admissions@atlantic.edu",
+        "contact_phone": "609-343-4900"
+      },
+      "restrictions": [
+        "Instructor approval may be required for audit enrollment",
+        "Audit students do not receive grades or academic credit",
+        "Space availability may limit audit enrollment",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": null,
+      "source_url": "https://www.atlantic.edu"
+    }
+  },
+  {
+    "id": "bergen",
+    "name": "Bergen Community College",
+    "system": "NJ County Colleges",
+    "college_slug": "bergen",
+    "campuses": [
+      {
+        "name": "Main Campus (Paramus)",
+        "lat": 40.9590,
+        "lng": -74.0726,
+        "address": "400 Paramus Rd, Paramus, NJ 07652"
+      }
+    ],
+    "audit_policy": {
+      "allowed": null,
+      "cost_model": "unknown",
+      "cost_note": "Contact the college for audit enrollment policies and costs.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "N.J.S.A. 18A:64A-26.1 — NJ residents 65+ may enroll tuition-free on space-available basis at county colleges. Fees may apply.",
+          "source_url": ""
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Complete an admissions application at bergen.edu",
+          "Contact the Registrar's Office about audit enrollment",
+          "Register for the course during the enrollment period",
+          "Senior tuition waiver applicants (65+) must provide proof of age and NJ residency"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "https://www.bergen.edu/admissions/",
+        "contact_email": "admissions@bergen.edu",
+        "contact_phone": "201-447-7100"
+      },
+      "restrictions": [
+        "Instructor approval may be required for audit enrollment",
+        "Audit students do not receive grades or academic credit",
+        "Space availability may limit audit enrollment",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": null,
+      "source_url": "https://www.bergen.edu"
+    }
+  },
+  {
+    "id": "brookdale",
+    "name": "Brookdale Community College",
+    "system": "NJ County Colleges",
+    "college_slug": "brookdale",
+    "campuses": [
+      {
+        "name": "Main Campus (Lincroft)",
+        "lat": 40.3429,
+        "lng": -74.1206,
+        "address": "765 Newman Springs Rd, Lincroft, NJ 07738"
+      }
+    ],
+    "audit_policy": {
+      "allowed": null,
+      "cost_model": "unknown",
+      "cost_note": "Contact the college for audit enrollment policies and costs.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "N.J.S.A. 18A:64A-26.1 — NJ residents 65+ may enroll tuition-free on space-available basis at county colleges. Fees may apply.",
+          "source_url": ""
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Complete an admissions application at brookdalecc.edu",
+          "Contact the Registrar's Office about audit enrollment",
+          "Register for the course during the enrollment period",
+          "Senior tuition waiver applicants (65+) must provide proof of age and NJ residency"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "https://www.brookdalecc.edu/admissions/",
+        "contact_email": "admissions@brookdalecc.edu",
+        "contact_phone": "732-224-2345"
+      },
+      "restrictions": [
+        "Instructor approval may be required for audit enrollment",
+        "Audit students do not receive grades or academic credit",
+        "Space availability may limit audit enrollment",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": null,
+      "source_url": "https://www.brookdalecc.edu"
+    }
+  },
+  {
+    "id": "camden",
+    "name": "Camden County College",
+    "system": "NJ County Colleges",
+    "college_slug": "camden",
+    "campuses": [
+      {
+        "name": "Blackwood Campus",
+        "lat": 39.7907,
+        "lng": -75.0639,
+        "address": "200 College Dr, Blackwood, NJ 08012"
+      },
+      {
+        "name": "Camden City Campus",
+        "lat": 39.9440,
+        "lng": -75.1198,
+        "address": "200 N Broadway, Camden, NJ 08102"
+      }
+    ],
+    "audit_policy": {
+      "allowed": null,
+      "cost_model": "unknown",
+      "cost_note": "Contact the college for audit enrollment policies and costs.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "N.J.S.A. 18A:64A-26.1 — NJ residents 65+ may enroll tuition-free on space-available basis at county colleges. Fees may apply.",
+          "source_url": ""
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Complete an admissions application at camdencc.edu",
+          "Contact the Registrar's Office about audit enrollment",
+          "Register for the course during the enrollment period",
+          "Senior tuition waiver applicants (65+) must provide proof of age and NJ residency"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "https://www.camdencc.edu/admissions/",
+        "contact_email": "admissions@camdencc.edu",
+        "contact_phone": "856-227-7200"
+      },
+      "restrictions": [
+        "Instructor approval may be required for audit enrollment",
+        "Audit students do not receive grades or academic credit",
+        "Space availability may limit audit enrollment",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": null,
+      "source_url": "https://www.camdencc.edu"
+    }
+  },
+  {
+    "id": "ccm",
+    "name": "County College of Morris",
+    "system": "NJ County Colleges",
+    "college_slug": "ccm",
+    "campuses": [
+      {
+        "name": "Main Campus (Randolph)",
+        "lat": 40.8535,
+        "lng": -74.5743,
+        "address": "214 Center Grove Rd, Randolph, NJ 07869"
+      }
+    ],
+    "audit_policy": {
+      "allowed": null,
+      "cost_model": "unknown",
+      "cost_note": "Contact the college for audit enrollment policies and costs.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "N.J.S.A. 18A:64A-26.1 — NJ residents 65+ may enroll tuition-free on space-available basis at county colleges. Fees may apply.",
+          "source_url": ""
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Complete an admissions application at ccm.edu",
+          "Contact the Registrar's Office about audit enrollment",
+          "Register for the course during the enrollment period",
+          "Senior tuition waiver applicants (65+) must provide proof of age and NJ residency"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "https://www.ccm.edu/admissions/",
+        "contact_email": "admissions@ccm.edu",
+        "contact_phone": "973-328-5000"
+      },
+      "restrictions": [
+        "Instructor approval may be required for audit enrollment",
+        "Audit students do not receive grades or academic credit",
+        "Space availability may limit audit enrollment",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": null,
+      "source_url": "https://www.ccm.edu"
+    }
+  },
+  {
+    "id": "essex",
+    "name": "Essex County College",
+    "system": "NJ County Colleges",
+    "college_slug": "essex",
+    "campuses": [
+      {
+        "name": "Main Campus (Newark)",
+        "lat": 40.7420,
+        "lng": -74.1821,
+        "address": "303 University Ave, Newark, NJ 07102"
+      }
+    ],
+    "audit_policy": {
+      "allowed": null,
+      "cost_model": "unknown",
+      "cost_note": "Contact the college for audit enrollment policies and costs.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "N.J.S.A. 18A:64A-26.1 — NJ residents 65+ may enroll tuition-free on space-available basis at county colleges. Fees may apply.",
+          "source_url": ""
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Complete an admissions application at essex.edu",
+          "Contact the Registrar's Office about audit enrollment",
+          "Register for the course during the enrollment period",
+          "Senior tuition waiver applicants (65+) must provide proof of age and NJ residency"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "https://www.essex.edu/admissions/",
+        "contact_email": "admissions@essex.edu",
+        "contact_phone": "973-877-3000"
+      },
+      "restrictions": [
+        "Instructor approval may be required for audit enrollment",
+        "Audit students do not receive grades or academic credit",
+        "Space availability may limit audit enrollment",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": null,
+      "source_url": "https://www.essex.edu"
+    }
+  },
+  {
+    "id": "hccc",
+    "name": "Hudson County Community College",
+    "system": "NJ County Colleges",
+    "college_slug": "hccc",
+    "campuses": [
+      {
+        "name": "Journal Square Campus",
+        "lat": 40.7326,
+        "lng": -74.0636,
+        "address": "70 Sip Ave, Jersey City, NJ 07306"
+      }
+    ],
+    "audit_policy": {
+      "allowed": null,
+      "cost_model": "unknown",
+      "cost_note": "Contact the college for audit enrollment policies and costs.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "N.J.S.A. 18A:64A-26.1 — NJ residents 65+ may enroll tuition-free on space-available basis at county colleges. Fees may apply.",
+          "source_url": ""
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Complete an admissions application at hccc.edu",
+          "Contact the Registrar's Office about audit enrollment",
+          "Register for the course during the enrollment period",
+          "Senior tuition waiver applicants (65+) must provide proof of age and NJ residency"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "https://www.hccc.edu/admissions/",
+        "contact_email": "admissions@hccc.edu",
+        "contact_phone": "201-714-7100"
+      },
+      "restrictions": [
+        "Instructor approval may be required for audit enrollment",
+        "Audit students do not receive grades or academic credit",
+        "Space availability may limit audit enrollment",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": null,
+      "source_url": "https://www.hccc.edu"
+    }
+  },
+  {
+    "id": "mercer",
+    "name": "Mercer County Community College",
+    "system": "NJ County Colleges",
+    "college_slug": "mercer",
+    "campuses": [
+      {
+        "name": "West Windsor Campus",
+        "lat": 40.2873,
+        "lng": -74.6362,
+        "address": "1200 Old Trenton Rd, West Windsor, NJ 08550"
+      },
+      {
+        "name": "James Kerney Campus (Trenton)",
+        "lat": 40.2195,
+        "lng": -74.7682,
+        "address": "137 N Broad St, Trenton, NJ 08608"
+      }
+    ],
+    "audit_policy": {
+      "allowed": null,
+      "cost_model": "unknown",
+      "cost_note": "Contact the college for audit enrollment policies and costs.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "N.J.S.A. 18A:64A-26.1 — NJ residents 65+ may enroll tuition-free on space-available basis at county colleges. Fees may apply.",
+          "source_url": ""
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Complete an admissions application at mccc.edu",
+          "Contact the Registrar's Office about audit enrollment",
+          "Register for the course during the enrollment period",
+          "Senior tuition waiver applicants (65+) must provide proof of age and NJ residency"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "https://www.mccc.edu/admissions/",
+        "contact_email": "admissions@mccc.edu",
+        "contact_phone": "609-586-4800"
+      },
+      "restrictions": [
+        "Instructor approval may be required for audit enrollment",
+        "Audit students do not receive grades or academic credit",
+        "Space availability may limit audit enrollment",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": null,
+      "source_url": "https://www.mccc.edu"
+    }
+  },
+  {
+    "id": "middlesex",
+    "name": "Middlesex College",
+    "system": "NJ County Colleges",
+    "college_slug": "middlesex",
+    "campuses": [
+      {
+        "name": "Main Campus (Edison)",
+        "lat": 40.5374,
+        "lng": -74.3485,
+        "address": "2600 Woodbridge Ave, Edison, NJ 08818"
+      },
+      {
+        "name": "New Brunswick Center",
+        "lat": 40.4862,
+        "lng": -74.4432,
+        "address": "140 New St, New Brunswick, NJ 08901"
+      }
+    ],
+    "audit_policy": {
+      "allowed": null,
+      "cost_model": "unknown",
+      "cost_note": "Contact the college for audit enrollment policies and costs.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "N.J.S.A. 18A:64A-26.1 — NJ residents 65+ may enroll tuition-free on space-available basis at county colleges. Fees may apply.",
+          "source_url": ""
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Complete an admissions application at middlesexcc.edu",
+          "Contact the Registrar's Office about audit enrollment",
+          "Register for the course during the enrollment period",
+          "Senior tuition waiver applicants (65+) must provide proof of age and NJ residency"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "https://www.middlesexcc.edu/admissions/",
+        "contact_email": "admissions@middlesexcc.edu",
+        "contact_phone": "732-548-6000"
+      },
+      "restrictions": [
+        "Instructor approval may be required for audit enrollment",
+        "Audit students do not receive grades or academic credit",
+        "Space availability may limit audit enrollment",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": null,
+      "source_url": "https://www.middlesexcc.edu"
+    }
+  },
+  {
+    "id": "ocean",
+    "name": "Ocean County College",
+    "system": "NJ County Colleges",
+    "college_slug": "ocean",
+    "campuses": [
+      {
+        "name": "Main Campus (Toms River)",
+        "lat": 39.9708,
+        "lng": -74.1777,
+        "address": "College Dr, Toms River, NJ 08754"
+      }
+    ],
+    "audit_policy": {
+      "allowed": null,
+      "cost_model": "unknown",
+      "cost_note": "Contact the college for audit enrollment policies and costs.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "N.J.S.A. 18A:64A-26.1 — NJ residents 65+ may enroll tuition-free on space-available basis at county colleges. Fees may apply.",
+          "source_url": ""
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Complete an admissions application at ocean.edu",
+          "Contact the Registrar's Office about audit enrollment",
+          "Register for the course during the enrollment period",
+          "Senior tuition waiver applicants (65+) must provide proof of age and NJ residency"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "https://www.ocean.edu/admissions/",
+        "contact_email": "admissions@ocean.edu",
+        "contact_phone": "732-255-0400"
+      },
+      "restrictions": [
+        "Instructor approval may be required for audit enrollment",
+        "Audit students do not receive grades or academic credit",
+        "Space availability may limit audit enrollment",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": null,
+      "source_url": "https://www.ocean.edu"
+    }
+  },
+  {
+    "id": "passaic",
+    "name": "Passaic County Community College",
+    "system": "NJ County Colleges",
+    "college_slug": "passaic",
+    "campuses": [
+      {
+        "name": "Main Campus (Paterson)",
+        "lat": 40.9146,
+        "lng": -74.1714,
+        "address": "1 College Blvd, Paterson, NJ 07505"
+      }
+    ],
+    "audit_policy": {
+      "allowed": null,
+      "cost_model": "unknown",
+      "cost_note": "Contact the college for audit enrollment policies and costs.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "N.J.S.A. 18A:64A-26.1 — NJ residents 65+ may enroll tuition-free on space-available basis at county colleges. Fees may apply.",
+          "source_url": ""
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Complete an admissions application at pccc.edu",
+          "Contact the Registrar's Office about audit enrollment",
+          "Register for the course during the enrollment period",
+          "Senior tuition waiver applicants (65+) must provide proof of age and NJ residency"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "https://www.pccc.edu/admissions/",
+        "contact_email": "admissions@pccc.edu",
+        "contact_phone": "973-684-6868"
+      },
+      "restrictions": [
+        "Instructor approval may be required for audit enrollment",
+        "Audit students do not receive grades or academic credit",
+        "Space availability may limit audit enrollment",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": null,
+      "source_url": "https://www.pccc.edu"
+    }
+  },
+  {
+    "id": "rvcc",
+    "name": "Raritan Valley Community College",
+    "system": "NJ County Colleges",
+    "college_slug": "rvcc",
+    "campuses": [
+      {
+        "name": "Main Campus (Branchburg)",
+        "lat": 40.5640,
+        "lng": -74.6826,
+        "address": "118 Lamington Rd, Branchburg, NJ 08876"
+      }
+    ],
+    "audit_policy": {
+      "allowed": null,
+      "cost_model": "unknown",
+      "cost_note": "Contact the college for audit enrollment policies and costs.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "N.J.S.A. 18A:64A-26.1 — NJ residents 65+ may enroll tuition-free on space-available basis at county colleges. Fees may apply.",
+          "source_url": ""
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Complete an admissions application at raritanval.edu",
+          "Contact the Registrar's Office about audit enrollment",
+          "Register for the course during the enrollment period",
+          "Senior tuition waiver applicants (65+) must provide proof of age and NJ residency"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "https://www.raritanval.edu/admissions/",
+        "contact_email": "admissions@raritanval.edu",
+        "contact_phone": "908-526-1200"
+      },
+      "restrictions": [
+        "Instructor approval may be required for audit enrollment",
+        "Audit students do not receive grades or academic credit",
+        "Space availability may limit audit enrollment",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": null,
+      "source_url": "https://www.raritanval.edu"
+    }
+  },
+  {
+    "id": "rcbc",
+    "name": "Rowan College at Burlington County",
+    "system": "NJ County Colleges",
+    "college_slug": "rcbc",
+    "campuses": [
+      {
+        "name": "Main Campus (Mount Laurel)",
+        "lat": 39.9618,
+        "lng": -74.9082,
+        "address": "900 College Circle, Mount Laurel, NJ 08054"
+      }
+    ],
+    "audit_policy": {
+      "allowed": null,
+      "cost_model": "unknown",
+      "cost_note": "Contact the college for audit enrollment policies and costs.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "N.J.S.A. 18A:64A-26.1 — NJ residents 65+ may enroll tuition-free on space-available basis at county colleges. Fees may apply.",
+          "source_url": ""
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Complete an admissions application at rcbc.edu",
+          "Contact the Registrar's Office about audit enrollment",
+          "Register for the course during the enrollment period",
+          "Senior tuition waiver applicants (65+) must provide proof of age and NJ residency"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "https://www.rcbc.edu/admissions",
+        "contact_email": "admissions@rcbc.edu",
+        "contact_phone": "856-222-9311"
+      },
+      "restrictions": [
+        "Instructor approval may be required for audit enrollment",
+        "Audit students do not receive grades or academic credit",
+        "Space availability may limit audit enrollment",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": null,
+      "source_url": "https://www.rcbc.edu"
+    }
+  },
+  {
+    "id": "rcsj-cumberland",
+    "name": "Rowan College of South Jersey - Cumberland Campus",
+    "system": "NJ County Colleges",
+    "college_slug": "rcsj-cumberland",
+    "campuses": [
+      {
+        "name": "Cumberland Campus (Vineland)",
+        "lat": 39.4720,
+        "lng": -75.0202,
+        "address": "3322 College Dr, Vineland, NJ 08360"
+      }
+    ],
+    "audit_policy": {
+      "allowed": null,
+      "cost_model": "unknown",
+      "cost_note": "Contact the college for audit enrollment policies and costs.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "N.J.S.A. 18A:64A-26.1 — NJ residents 65+ may enroll tuition-free on space-available basis at county colleges. Fees may apply.",
+          "source_url": ""
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Complete an admissions application at rcsj.edu",
+          "Contact the Registrar's Office about audit enrollment",
+          "Register for the course during the enrollment period",
+          "Senior tuition waiver applicants (65+) must provide proof of age and NJ residency"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "https://www.rcsj.edu/admissions",
+        "contact_email": "admissions@rcsj.edu",
+        "contact_phone": "856-691-8600"
+      },
+      "restrictions": [
+        "Instructor approval may be required for audit enrollment",
+        "Audit students do not receive grades or academic credit",
+        "Space availability may limit audit enrollment",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": null,
+      "source_url": "https://www.rcsj.edu"
+    }
+  },
+  {
+    "id": "rcsj-gloucester",
+    "name": "Rowan College of South Jersey - Gloucester Campus",
+    "system": "NJ County Colleges",
+    "college_slug": "rcsj-gloucester",
+    "campuses": [
+      {
+        "name": "Gloucester Campus (Sewell)",
+        "lat": 39.7505,
+        "lng": -75.0979,
+        "address": "1400 Tanyard Rd, Sewell, NJ 08080"
+      }
+    ],
+    "audit_policy": {
+      "allowed": null,
+      "cost_model": "unknown",
+      "cost_note": "Contact the college for audit enrollment policies and costs.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "N.J.S.A. 18A:64A-26.1 — NJ residents 65+ may enroll tuition-free on space-available basis at county colleges. Fees may apply.",
+          "source_url": ""
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Complete an admissions application at rcsj.edu",
+          "Contact the Registrar's Office about audit enrollment",
+          "Register for the course during the enrollment period",
+          "Senior tuition waiver applicants (65+) must provide proof of age and NJ residency"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "https://www.rcsj.edu/admissions",
+        "contact_email": "admissions@rcsj.edu",
+        "contact_phone": "856-468-5000"
+      },
+      "restrictions": [
+        "Instructor approval may be required for audit enrollment",
+        "Audit students do not receive grades or academic credit",
+        "Space availability may limit audit enrollment",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": null,
+      "source_url": "https://www.rcsj.edu"
+    }
+  },
+  {
+    "id": "salem",
+    "name": "Salem Community College",
+    "system": "NJ County Colleges",
+    "college_slug": "salem",
+    "campuses": [
+      {
+        "name": "Main Campus (Carneys Point)",
+        "lat": 39.7091,
+        "lng": -75.4691,
+        "address": "460 Hollywood Ave, Carneys Point, NJ 08069"
+      }
+    ],
+    "audit_policy": {
+      "allowed": null,
+      "cost_model": "unknown",
+      "cost_note": "Contact the college for audit enrollment policies and costs.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "N.J.S.A. 18A:64A-26.1 — NJ residents 65+ may enroll tuition-free on space-available basis at county colleges. Fees may apply.",
+          "source_url": ""
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Complete an admissions application at salemcc.edu",
+          "Contact the Registrar's Office about audit enrollment",
+          "Register for the course during the enrollment period",
+          "Senior tuition waiver applicants (65+) must provide proof of age and NJ residency"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "https://www.salemcc.edu/admissions",
+        "contact_email": "admissions@salemcc.edu",
+        "contact_phone": "856-299-2100"
+      },
+      "restrictions": [
+        "Instructor approval may be required for audit enrollment",
+        "Audit students do not receive grades or academic credit",
+        "Space availability may limit audit enrollment",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": null,
+      "source_url": "https://www.salemcc.edu"
+    }
+  },
+  {
+    "id": "sussex",
+    "name": "Sussex County Community College",
+    "system": "NJ County Colleges",
+    "college_slug": "sussex",
+    "campuses": [
+      {
+        "name": "Main Campus (Newton)",
+        "lat": 41.0463,
+        "lng": -74.7680,
+        "address": "1 College Hill Rd, Newton, NJ 07860"
+      }
+    ],
+    "audit_policy": {
+      "allowed": null,
+      "cost_model": "unknown",
+      "cost_note": "Contact the college for audit enrollment policies and costs.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "N.J.S.A. 18A:64A-26.1 — NJ residents 65+ may enroll tuition-free on space-available basis at county colleges. Fees may apply.",
+          "source_url": ""
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Complete an admissions application at sussex.edu",
+          "Contact the Registrar's Office about audit enrollment",
+          "Register for the course during the enrollment period",
+          "Senior tuition waiver applicants (65+) must provide proof of age and NJ residency"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "https://www.sussex.edu/admissions/",
+        "contact_email": "admissions@sussex.edu",
+        "contact_phone": "973-300-2100"
+      },
+      "restrictions": [
+        "Instructor approval may be required for audit enrollment",
+        "Audit students do not receive grades or academic credit",
+        "Space availability may limit audit enrollment",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": null,
+      "source_url": "https://www.sussex.edu"
+    }
+  },
+  {
+    "id": "ucnj",
+    "name": "UCNJ Union College",
+    "system": "NJ County Colleges",
+    "college_slug": "ucnj",
+    "campuses": [
+      {
+        "name": "Cranford Campus",
+        "lat": 40.6581,
+        "lng": -74.3013,
+        "address": "1033 Springfield Ave, Cranford, NJ 07016"
+      },
+      {
+        "name": "Elizabeth Campus",
+        "lat": 40.6612,
+        "lng": -74.2172,
+        "address": "40 W Jersey St, Elizabeth, NJ 07202"
+      }
+    ],
+    "audit_policy": {
+      "allowed": null,
+      "cost_model": "unknown",
+      "cost_note": "Contact the college for audit enrollment policies and costs.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "N.J.S.A. 18A:64A-26.1 — NJ residents 65+ may enroll tuition-free on space-available basis at county colleges. Fees may apply.",
+          "source_url": ""
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Complete an admissions application at ucc.edu",
+          "Contact the Registrar's Office about audit enrollment",
+          "Register for the course during the enrollment period",
+          "Senior tuition waiver applicants (65+) must provide proof of age and NJ residency"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "https://www.ucc.edu/admissions/",
+        "contact_email": "admissions@ucc.edu",
+        "contact_phone": "908-709-7000"
+      },
+      "restrictions": [
+        "Instructor approval may be required for audit enrollment",
+        "Audit students do not receive grades or academic credit",
+        "Space availability may limit audit enrollment",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": null,
+      "source_url": "https://www.ucc.edu"
+    }
+  },
+  {
+    "id": "warren",
+    "name": "Warren County Community College",
+    "system": "NJ County Colleges",
+    "college_slug": "warren",
+    "campuses": [
+      {
+        "name": "Main Campus (Washington)",
+        "lat": 40.7485,
+        "lng": -74.9898,
+        "address": "475 Route 57 W, Washington, NJ 07882"
+      }
+    ],
+    "audit_policy": {
+      "allowed": null,
+      "cost_model": "unknown",
+      "cost_note": "Contact the college for audit enrollment policies and costs.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "N.J.S.A. 18A:64A-26.1 — NJ residents 65+ may enroll tuition-free on space-available basis at county colleges. Fees may apply.",
+          "source_url": ""
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Complete an admissions application at warren.edu",
+          "Contact the Registrar's Office about audit enrollment",
+          "Register for the course during the enrollment period",
+          "Senior tuition waiver applicants (65+) must provide proof of age and NJ residency"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "https://www.warren.edu/admissions/",
+        "contact_email": "admissions@warren.edu",
+        "contact_phone": "908-835-9222"
+      },
+      "restrictions": [
+        "Instructor approval may be required for audit enrollment",
+        "Audit students do not receive grades or academic credit",
+        "Space availability may limit audit enrollment",
+        "Financial aid does not cover audited courses"
+      ],
+      "last_verified": null,
+      "source_url": "https://www.warren.edu"
+    }
+  }
+]

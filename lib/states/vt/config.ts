@@ -20,7 +20,7 @@ const vtConfig: StateConfig = {
       "Vermont law allows residents aged 65+ to audit credit courses at state colleges tuition-free on a space-available basis. Fees may still apply.",
   },
 
-  transferSupported: false,
+  transferSupported: true,
   popularCourses: ["ENG 1061", "MAT 1041", "BIO 1011", "PSY 1011", "HIS 1210", "SOC 1010"],
   defaultZip: "05401",
   defaultZipCity: "Burlington",

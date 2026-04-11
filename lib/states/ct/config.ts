@@ -20,7 +20,7 @@ const ctConfig: StateConfig = {
       "Connecticut General Statutes \u00A710a-27 allows residents aged 62+ to take courses at public institutions tuition-free on a space-available basis.",
   },
 
-  transferSupported: false,
+  transferSupported: true,
   popularCourses: ["ENG 101", "MAT 137", "BIO 111", "PSY 111", "HIS 101", "SOC 101"],
   defaultZip: "06103",
   defaultZipCity: "Hartford",

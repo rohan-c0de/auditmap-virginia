@@ -99,6 +99,12 @@ function ensureLoaded(): void {
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   const me = require("./me/config").default as StateConfig;
   configs[me.slug] = me;
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const pa = require("./pa/config").default as StateConfig;
+  configs[pa.slug] = pa;
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const nj = require("./nj/config").default as StateConfig;
+  configs[nj.slug] = nj;
 }
 
 /** Get the config for a specific state. Throws if unknown. */
