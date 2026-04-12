@@ -303,6 +303,38 @@ export const articles: ArticleMeta[] = [
     tags: ["registration", "waitlist", "alternatives", "course-planning"],
   },
 
+  // --- Cluster A spoke: MD transfer ---
+  {
+    slug: "maryland-community-college-transfer-credit-guide",
+    title:
+      "How Maryland Community College Transfer Credit Actually Works: An ARTSYS Student's Guide",
+    description:
+      "Maryland has 122,000+ published transfer equivalencies across 8 universities — but the same course can be a direct match at Towson and elective credit at UMGC. Here's how to navigate it.",
+    date: "2026-04-11",
+    category: "state-system-explainers",
+    state: "md",
+    author: "Community College Path",
+    tags: ["transfer", "maryland", "artsys", "umd", "towson", "umbc", "umgc"],
+    cluster: "transfer-credit-guide",
+    clusterRole: "spoke",
+  },
+
+  // --- Cluster A spoke: NY CUNY transfer ---
+  {
+    slug: "new-york-cuny-community-college-transfer-guide",
+    title:
+      "How CUNY Community College Transfer Credit Actually Works: A Student's Guide",
+    description:
+      "CUNY's 7 community colleges feed into 14 senior colleges — but transfer outcomes vary wildly. Brooklyn College accepts 68% as direct matches; Medgar Evers rejects 57%. Here's what to know.",
+    date: "2026-04-11",
+    category: "state-system-explainers",
+    state: "ny",
+    author: "Community College Path",
+    tags: ["transfer", "new-york", "cuny", "brooklyn-college", "hunter", "baruch", "t-rex"],
+    cluster: "transfer-credit-guide",
+    clusterRole: "spoke",
+  },
+
   // --- Standalone: Online vs in-person ---
   {
     slug: "online-vs-in-person-community-college-classes",
