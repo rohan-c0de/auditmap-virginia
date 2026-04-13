@@ -103,6 +103,7 @@ export default function ScheduleClient({ state, systemName, collegeCount, defaul
   const [response, setResponse] = useState<ScheduleResponse | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [lastFormData, setLastFormData] = useState<Record<string, unknown> | null>(null);
   const autoBuilt = useRef(false);
 
   // Parse initial defaults from URL
@@ -112,6 +113,7 @@ export default function ScheduleClient({ state, systemName, collegeCount, defaul
     setLoading(true);
     setError("");
     setResponse(null);
+    setLastFormData(data as unknown as Record<string, unknown>);
 
     // Update URL with form params (replace, don't push)
     const params = formToParams(data);
@@ -226,7 +228,7 @@ export default function ScheduleClient({ state, systemName, collegeCount, defaul
       )}
 
       {/* Results */}
-      {!loading && response && <ScheduleResults response={response} state={state} />}
+      {!loading && response && <ScheduleResults response={response} state={state} formData={lastFormData || undefined} />}
 
       {/* Empty state */}
       {!loading && !response && !error && (

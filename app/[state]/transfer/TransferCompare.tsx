@@ -10,6 +10,8 @@ import CompareScoreCard from "./compare/CompareScoreCard";
 import CompareTable from "./compare/CompareTable";
 import CompareMobileCards from "./compare/CompareMobileCards";
 import CompareEmptyState from "./compare/CompareEmptyState";
+import { useAuth } from "@/lib/hooks/useAuth";
+import { createClient } from "@/lib/supabase/client";
 
 interface Props {
   universities: { slug: string; name: string }[];
@@ -36,12 +38,14 @@ export default function TransferCompare({
   popularCourses,
 }: Props) {
   const searchParams = useSearchParams();
+  const { user, openLoginModal } = useAuth();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCourses, setSelectedCourses] = useState<Set<string>>(
     new Set()
   );
   const [filters, setFilters] = useState<CompareFilters>(DEFAULT_FILTERS);
   const [columnSortSlug, setColumnSortSlug] = useState<string | null>(null);
+  const [saveStatus, setSaveStatus] = useState<"idle" | "saving" | "saved">("idle");
 
   // ---------------------------------------------------------------------------
   // Course data memos
@@ -383,6 +387,26 @@ export default function TransferCompare({
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
 
+  const handleSaveComparison = useCallback(async () => {
+    if (!user) { openLoginModal(); return; }
+    setSaveStatus("saving");
+    try {
+      const supabase = createClient();
+      await supabase.from("saved_transfers").insert({
+        user_id: user.id,
+        state,
+        name: `${selectedCourses.size} course comparison`,
+        selected_courses: Array.from(selectedCourses),
+        selected_universities: universityScores.map((u) => u.slug),
+        filters: filters as unknown as Record<string, unknown>,
+      });
+      setSaveStatus("saved");
+      setTimeout(() => setSaveStatus("idle"), 3000);
+    } catch {
+      setSaveStatus("idle");
+    }
+  }, [user, openLoginModal, state, selectedCourses, universityScores, filters]);
+
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
@@ -497,15 +521,47 @@ export default function TransferCompare({
         />
       ) : (
         <>
-          {/* ── Filter bar ── */}
-          <CompareFilterBar
-            filters={filters}
-            onFiltersChange={setFilters}
-            activeFilterCount={activeFilterCount}
-            availabilitySummary={availabilitySummary}
-            hasAvailabilityData={hasAvailabilityData}
-            onExportCSV={downloadCSV}
-          />
+          {/* ── Filter bar + Save ── */}
+          <div className="flex items-center gap-2 mb-1">
+            <div className="flex-1">
+              <CompareFilterBar
+                filters={filters}
+                onFiltersChange={setFilters}
+                activeFilterCount={activeFilterCount}
+                availabilitySummary={availabilitySummary}
+                hasAvailabilityData={hasAvailabilityData}
+                onExportCSV={downloadCSV}
+              />
+            </div>
+            <button
+              type="button"
+              onClick={handleSaveComparison}
+              disabled={saveStatus === "saving" || saveStatus === "saved"}
+              className={`inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-medium transition shrink-0 ${
+                saveStatus === "saved"
+                  ? "border-emerald-300 dark:border-emerald-700 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400"
+                  : "border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-600 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-700"
+              }`}
+            >
+              {saveStatus === "saved" ? (
+                <>
+                  <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                  Saved
+                </>
+              ) : saveStatus === "saving" ? (
+                "Saving..."
+              ) : (
+                <>
+                  <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                  </svg>
+                  {user ? "Save" : "Sign in to save"}
+                </>
+              )}
+            </button>
+          </div>
 
           {/* ── Summary cards — ranked ── */}
           <div className="mb-6">

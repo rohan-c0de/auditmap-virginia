@@ -6,10 +6,13 @@ import type { GeneratedSchedule, ScheduleResponse, ScheduleSection } from "@/lib
 import WeeklyCalendar from "./WeeklyCalendar";
 import ScoreBar from "./ScoreBar";
 import { isValidTime, expandDays } from "@/lib/time-utils";
+import { useAuth } from "@/lib/hooks/useAuth";
+import { createClient } from "@/lib/supabase/client";
 
 interface Props {
   response: ScheduleResponse;
   state: string;
+  formData?: Record<string, unknown>;
 }
 
 const MODE_STYLES: Record<string, { bg: string; text: string; label: string }> = {
@@ -245,7 +248,7 @@ function groupSchedules(schedules: GeneratedSchedule[]): ScheduleGroup[] {
 // Main component
 // ---------------------------------------------------------------------------
 
-export default function ScheduleResults({ response, state }: Props) {
+export default function ScheduleResults({ response, state, formData }: Props) {
   const { schedules, meta } = response;
   const groups = useMemo(() => groupSchedules(schedules), [schedules]);
 
@@ -326,6 +329,7 @@ export default function ScheduleResults({ response, state }: Props) {
             }
             state={state}
             showTransfer={hasTransferData}
+            formData={formData}
           />
         ))}
       </div>
@@ -357,6 +361,7 @@ function ScheduleCard({
   onToggle,
   state,
   showTransfer,
+  formData,
 }: {
   group: ScheduleGroup;
   rank: number;
@@ -364,7 +369,10 @@ function ScheduleCard({
   onToggle: () => void;
   state: string;
   showTransfer: boolean;
+  formData?: Record<string, unknown>;
 }) {
+  const { user, openLoginModal } = useAuth();
+  const [saveStatus, setSaveStatus] = useState<"idle" | "saving" | "saved">("idle");
   const { representative, collegeOptions, count } = group;
   const { sections, score, scoreBreakdown } = representative;
 
@@ -494,7 +502,7 @@ function ScheduleCard({
           {/* Weekly calendar */}
           <WeeklyCalendar sections={sections} />
 
-          {/* Export button */}
+          {/* Export & Save buttons */}
           <div className="flex gap-2">
             <button
               type="button"
@@ -505,6 +513,53 @@ function ScheduleCard({
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
               </svg>
               Export to Calendar (.ics)
+            </button>
+            <button
+              type="button"
+              onClick={async () => {
+                if (!user) { openLoginModal(); return; }
+                setSaveStatus("saving");
+                try {
+                  const supabase = createClient();
+                  await supabase.from("saved_schedules").insert({
+                    user_id: user.id,
+                    state,
+                    name: `Schedule #${rank}`,
+                    form_data: formData || {},
+                    sections: sections,
+                    score,
+                    score_breakdown: scoreBreakdown,
+                  });
+                  setSaveStatus("saved");
+                  setTimeout(() => setSaveStatus("idle"), 3000);
+                } catch {
+                  setSaveStatus("idle");
+                }
+              }}
+              disabled={saveStatus === "saving" || saveStatus === "saved"}
+              className={`inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-medium transition ${
+                saveStatus === "saved"
+                  ? "border-emerald-300 dark:border-emerald-700 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400"
+                  : "border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-600 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-700"
+              }`}
+            >
+              {saveStatus === "saved" ? (
+                <>
+                  <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                  Saved
+                </>
+              ) : saveStatus === "saving" ? (
+                "Saving..."
+              ) : (
+                <>
+                  <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                  </svg>
+                  {user ? "Save" : "Sign in to save"}
+                </>
+              )}
             </button>
           </div>
 

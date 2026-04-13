@@ -7,6 +7,8 @@ import type { CourseMode } from "@/lib/types";
 import { expandDays } from "@/lib/time-utils";
 import DayToggle from "@/components/DayToggle";
 import PrereqChain from "@/components/PrereqChain";
+import { useAuth } from "@/lib/hooks/useAuth";
+import { createClient } from "@/lib/supabase/client";
 
 // ---------------------------------------------------------------------------
 // Types matching the API response
@@ -104,12 +106,64 @@ interface CourseSearchProps {
 export default function CourseSearchClient({ state, systemName, collegeCount, courseUrlMap, defaultZip }: CourseSearchProps) {
   const searchParams = useSearchParams();
   const initialQuery = searchParams.get("q")?.replace(/\+/g, " ") || "";
+  const { user, openLoginModal } = useAuth();
 
   const [query, setQuery] = useState(initialQuery);
   const [zip, setZip] = useState("");
   const [mode, setMode] = useState("");
   const [days, setDays] = useState<string[]>([]);
   const [timeOfDay, setTimeOfDay] = useState("");
+
+  // Bookmark state
+  const [bookmarkedCourses, setBookmarkedCourses] = useState<Set<string>>(new Set());
+  const [bookmarkLoading, setBookmarkLoading] = useState<Set<string>>(new Set());
+
+  // Load bookmarks when user is authenticated
+  useEffect(() => {
+    if (!user) { setBookmarkedCourses(new Set()); return; }
+    const supabase = createClient();
+    supabase
+      .from("saved_courses")
+      .select("course_prefix, course_number")
+      .eq("user_id", user.id)
+      .eq("state", state)
+      .then(({ data }) => {
+        if (data) {
+          setBookmarkedCourses(new Set(data.map((d) => `${d.course_prefix}-${d.course_number}`)));
+        }
+      });
+  }, [user, state]);
+
+  const toggleBookmark = useCallback(async (course: CourseGroup) => {
+    if (!user) { openLoginModal(); return; }
+    const key = `${course.prefix}-${course.number}`;
+    setBookmarkLoading((prev) => new Set(prev).add(key));
+    try {
+      const supabase = createClient();
+      if (bookmarkedCourses.has(key)) {
+        await supabase
+          .from("saved_courses")
+          .delete()
+          .eq("user_id", user.id)
+          .eq("state", state)
+          .eq("course_prefix", course.prefix)
+          .eq("course_number", course.number);
+        setBookmarkedCourses((prev) => { const next = new Set(prev); next.delete(key); return next; });
+      } else {
+        await supabase.from("saved_courses").insert({
+          user_id: user.id,
+          state,
+          course_prefix: course.prefix,
+          course_number: course.number,
+          course_title: course.title,
+        });
+        setBookmarkedCourses((prev) => new Set(prev).add(key));
+      }
+    } catch {
+      // silently fail
+    }
+    setBookmarkLoading((prev) => { const next = new Set(prev); next.delete(key); return next; });
+  }, [user, openLoginModal, bookmarkedCourses, state]);
 
   const [transferTo, setTransferTo] = useState("");
   const [transferLookup, setTransferLookup] = useState<Record<string, { university: string; type: string }[]> | null>(null);
@@ -462,15 +516,30 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
                         })()}
                       </p>
                     </div>
-                    {course.prerequisite_text && (
-                      <div className="shrink-0">
+                    <div className="flex items-center gap-2 shrink-0">
+                      {course.prerequisite_text && (
                         <PrereqChain
                           state={state}
                           course={`${course.prefix} ${course.number}`}
                           prereqText={course.prerequisite_text}
                         />
-                      </div>
-                    )}
+                      )}
+                      <button
+                        type="button"
+                        onClick={(e) => { e.stopPropagation(); toggleBookmark(course); }}
+                        disabled={bookmarkLoading.has(`${course.prefix}-${course.number}`)}
+                        className={`p-1.5 rounded-lg transition ${
+                          bookmarkedCourses.has(`${course.prefix}-${course.number}`)
+                            ? "text-teal-600 dark:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-900/30"
+                            : "text-gray-400 dark:text-slate-500 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-gray-100 dark:hover:bg-slate-700"
+                        }`}
+                        title={bookmarkedCourses.has(`${course.prefix}-${course.number}`) ? "Remove bookmark" : user ? "Bookmark course" : "Sign in to bookmark"}
+                      >
+                        <svg className="h-4 w-4" fill={bookmarkedCourses.has(`${course.prefix}-${course.number}`) ? "currentColor" : "none"} stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                        </svg>
+                      </button>
+                    </div>
                   </div>
 
                   {/* College groups */}
