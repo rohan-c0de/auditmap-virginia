@@ -4,6 +4,7 @@ import { loadInstitutions } from "@/lib/institutions";
 import { getAllArticles } from "@/lib/blog";
 import {
   loadCoursesForCollege,
+  loadAllCourses,
   getUniqueSubjects,
 } from "@/lib/courses";
 import { getCurrentTerm } from "@/lib/terms";
@@ -74,6 +75,31 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   }
 
+  // Course detail pages (pSEO) — one page per unique course per state
+  const coursePages: MetadataRoute.Sitemap = [];
+
+  for (const state of getAllStates()) {
+    try {
+      const currentTerm = await getCurrentTerm(state.slug);
+      const allCourses = await loadAllCourses(currentTerm, state.slug);
+      const seen = new Set<string>();
+
+      for (const c of allCourses) {
+        const key = `${c.course_prefix}-${c.course_number}`.toLowerCase();
+        if (!seen.has(key)) {
+          seen.add(key);
+          coursePages.push({
+            url: `${baseUrl}/${state.slug}/course/${key}`,
+            changeFrequency: "weekly" as const,
+            priority: 0.7,
+          });
+        }
+      }
+    } catch {
+      // Skip state if data loading fails
+    }
+  }
+
   // Blog pages
   const blogPages: MetadataRoute.Sitemap = [
     { url: `${baseUrl}/blog`, changeFrequency: "weekly" as const, priority: 0.7 },
@@ -85,5 +111,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })),
   ];
 
-  return [...entries, ...collegePages, ...subjectPages, ...blogPages];
+  return [...entries, ...collegePages, ...subjectPages, ...coursePages, ...blogPages];
 }
