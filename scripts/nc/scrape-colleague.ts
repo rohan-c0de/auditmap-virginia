@@ -653,7 +653,11 @@ async function main() {
   const termFlag = args.indexOf("--term");
   const allFlag = args.includes("--all");
 
-  const termName = termFlag >= 0 ? args[termFlag + 1] : "Spring 2026";
+  // Support comma-separated terms: --term "Summer 2026,Fall 2026"
+  const termNames = termFlag >= 0
+    ? args[termFlag + 1].split(",").map((t) => t.trim()).filter(Boolean)
+    : ["Spring 2026"];
+  const termName = termNames[0]; // primary term (used for single-term log below)
 
   let targets: [string, string][];
 
@@ -676,7 +680,7 @@ async function main() {
     process.exit(0);
   }
 
-  console.log(`Scraping ${targets.length} college(s) for ${termName}...\n`);
+  console.log(`Scraping ${targets.length} college(s) for ${termNames.length} term(s): ${termNames.join(", ")}...\n`);
 
   const browser = await chromium.launch({ headless: true });
   const context = await browser.newContext({
@@ -684,21 +688,25 @@ async function main() {
       "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
   });
 
-  for (const [slug, baseUrl] of targets) {
-    const sections = await scrapeCollege(slug, baseUrl, termName, context);
+  for (const currentTermName of termNames) {
+    console.log(`\n--- Term: ${currentTermName} ---\n`);
 
-    if (sections.length > 0) {
-      const termCode = sections[0].term;
-      const outDir = path.join(process.cwd(), "data", "nc", "courses", slug);
-      fs.mkdirSync(outDir, { recursive: true });
-      const outPath = path.join(outDir, `${termCode}.json`);
-      fs.writeFileSync(outPath, JSON.stringify(sections, null, 2) + "\n");
-      console.log(`\n  Written ${sections.length} sections to ${outPath}`);
-    } else {
-      console.log(`\n  No sections found for ${slug}`);
+    for (const [slug, baseUrl] of targets) {
+      const sections = await scrapeCollege(slug, baseUrl, currentTermName, context);
+
+      if (sections.length > 0) {
+        const termCode = sections[0].term;
+        const outDir = path.join(process.cwd(), "data", "nc", "courses", slug);
+        fs.mkdirSync(outDir, { recursive: true });
+        const outPath = path.join(outDir, `${termCode}.json`);
+        fs.writeFileSync(outPath, JSON.stringify(sections, null, 2) + "\n");
+        console.log(`\n  Written ${sections.length} sections to ${outPath}`);
+      } else {
+        console.log(`\n  No sections found for ${slug} (${currentTermName})`);
+      }
+
+      await sleep(DELAY_MS);
     }
-
-    await sleep(DELAY_MS);
   }
 
   await browser.close();

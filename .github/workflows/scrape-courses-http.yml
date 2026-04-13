@@ -13,20 +13,16 @@ env:
   NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
   SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
   NODE_TLS_REJECT_UNAUTHORIZED: "0"
-  # VCCS term to target — update when registration opens for the next term.
-  # Must match VCCS_TERM in scrape-courses-playwright.yml.
-  VCCS_TERM: "Summer 2026"
 
 jobs:
-  # ── Virginia (VCCS) ──────────────────────────────────────────────────
-  # 23 VCCS colleges scraped sequentially at ~5 min each ≈ 115 min total.
-  # Keep timeout comfortably above that.
-  scrape-va:
-    if: >-
-      github.event_name == 'schedule' ||
-      inputs.state == 'all' || inputs.state == 'va'
+  # ── Resolve terms ───────────────────────────────────────────────────
+  # Auto-detect which terms to scrape (current + next if registration open).
+  # Eliminates the manual "update VCCS_TERM" step.
+  resolve-terms:
     runs-on: ubuntu-latest
-    timeout-minutes: 150
+    timeout-minutes: 5
+    outputs:
+      vccs_terms: ${{ steps.resolve.outputs.vccs_terms }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -34,7 +30,32 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      - run: npx tsx scripts/va/scrape-vccs.ts --term "${{ env.VCCS_TERM }}"
+      - name: Resolve VCCS terms
+        id: resolve
+        run: |
+          result=$(npx tsx scripts/lib/resolve-terms.ts --system vccs 2>/dev/null)
+          terms=$(echo "$result" | jq -r '.terms | join(",")')
+          echo "vccs_terms=$terms" >> "$GITHUB_OUTPUT"
+          echo "Resolved VCCS terms: $terms" >&2
+
+  # ── Virginia (VCCS) ──────────────────────────────────────────────────
+  # 23 VCCS colleges scraped sequentially at ~5 min each ≈ 115 min total.
+  # Now scrapes current + next term automatically.
+  scrape-va:
+    needs: resolve-terms
+    if: >-
+      github.event_name == 'schedule' ||
+      inputs.state == 'all' || inputs.state == 'va'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/va/scrape-vccs.ts --term "${{ needs.resolve-terms.outputs.vccs_terms }}"
       - uses: actions/upload-artifact@v4
         if: always()
         with:

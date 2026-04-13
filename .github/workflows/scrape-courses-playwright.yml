@@ -13,20 +13,54 @@ env:
   NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
   SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
   NODE_TLS_REJECT_UNAUTHORIZED: "0"
-  # VCCS term to target — update when registration opens for the next term.
-  # Keep all three values in sync (see TERM_CODES in scripts/va/scrape-peoplesoft.ts).
-  VCCS_TERM: "Summer 2026"
-  VCCS_TERM_CODE: "2263"
-  VCCS_JSON_TERM: "2026SU"
 
 jobs:
+  # ── Resolve terms ───────────────────────────────────────────────────
+  # Auto-detect which terms to scrape. Replaces hardcoded VCCS_TERM env vars.
+  resolve-terms:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      vccs_terms: ${{ steps.resolve.outputs.vccs_terms }}
+      vccs_ps_terms: ${{ steps.resolve.outputs.vccs_ps_terms }}
+      vccs_ps_codes: ${{ steps.resolve.outputs.vccs_ps_codes }}
+      vccs_ps_json: ${{ steps.resolve.outputs.vccs_ps_json }}
+      colleague_nc_terms: ${{ steps.resolve.outputs.colleague_nc_terms }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Resolve terms for all systems
+        id: resolve
+        run: |
+          # VCCS (HTTP scraper terms)
+          vccs=$(npx tsx scripts/lib/resolve-terms.ts --system vccs 2>/dev/null)
+          echo "vccs_terms=$(echo "$vccs" | jq -r '.terms | join(",")')" >> "$GITHUB_OUTPUT"
+          echo "Resolved VCCS terms: $(echo "$vccs" | jq -r '.terms | join(",")')" >&2
+
+          # VCCS PeopleSoft (needs special term codes)
+          vccs_ps=$(npx tsx scripts/lib/resolve-terms.ts --system vccs-ps 2>/dev/null)
+          echo "vccs_ps_terms=$(echo "$vccs_ps" | jq -r '.terms | join(",")')" >> "$GITHUB_OUTPUT"
+          echo "vccs_ps_codes=$(echo "$vccs_ps" | jq -r '.psTermCodes | join(",")')" >> "$GITHUB_OUTPUT"
+          echo "vccs_ps_json=$(echo "$vccs_ps" | jq -r '.psJsonTerms | join(",")')" >> "$GITHUB_OUTPUT"
+          echo "Resolved VCCS PS terms: $(echo "$vccs_ps" | jq -r '.terms | join(",")')" >&2
+
+          # NC Colleague
+          nc=$(npx tsx scripts/lib/resolve-terms.ts --system colleague-nc 2>/dev/null)
+          echo "colleague_nc_terms=$(echo "$nc" | jq -r '.terms | join(",")')" >> "$GITHUB_OUTPUT"
+          echo "Resolved NC terms: $(echo "$nc" | jq -r '.terms | join(",")')" >&2
+
   # ── NC Colleague (46 colleges, Playwright) ──────────────────────────
   scrape-nc-colleague:
+    needs: resolve-terms
     if: >-
       github.event_name == 'schedule' ||
       inputs.state == 'all' || inputs.state == 'nc'
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -35,7 +69,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx playwright install chromium --with-deps
-      - run: npx tsx scripts/nc/scrape-colleague.ts
+      - run: npx tsx scripts/nc/scrape-colleague.ts --all --term "${{ needs.resolve-terms.outputs.colleague_nc_terms }}"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -61,7 +95,6 @@ jobs:
       - run: npx tsx scripts/sc/scrape-colleague.ts
 
   # ── MD Playwright scrapers (Colleague, Jenzabar) ────────────────────
-  # Note: scrape-custom moved to HTTP workflow (no longer needs Playwright)
   scrape-md-playwright:
     if: >-
       github.event_name == 'schedule' ||
@@ -85,12 +118,14 @@ jobs:
       - run: npx tsx scripts/${{ matrix.script }}.ts
 
   # ── VA PeopleSoft (Playwright — longest running) ────────────────────
+  # Now scrapes each resolved term sequentially.
   scrape-va-peoplesoft:
+    needs: resolve-terms
     if: >-
       github.event_name == 'schedule' ||
       inputs.state == 'all' || inputs.state == 'va'
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -99,8 +134,26 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx playwright install chromium --with-deps
-      - run: npx tsx scripts/va/scrape-peoplesoft.ts --term "${{ env.VCCS_TERM }}"
-      - run: npx tsx scripts/va/enrich-peoplesoft.ts --term-code=${{ env.VCCS_TERM_CODE }} --json-term=${{ env.VCCS_JSON_TERM }}
+      - name: Scrape PeopleSoft for each term
+        run: |
+          IFS=',' read -ra TERMS <<< "${{ needs.resolve-terms.outputs.vccs_ps_terms }}"
+          IFS=',' read -ra CODES <<< "${{ needs.resolve-terms.outputs.vccs_ps_codes }}"
+          IFS=',' read -ra JSONS <<< "${{ needs.resolve-terms.outputs.vccs_ps_json }}"
+
+          for i in "${!TERMS[@]}"; do
+            term="${TERMS[$i]}"
+            code="${CODES[$i]:-}"
+            json="${JSONS[$i]:-}"
+
+            if [ -z "$code" ] || [ -z "$json" ]; then
+              echo "WARNING: No PeopleSoft code mapping for '$term', skipping"
+              continue
+            fi
+
+            echo "=== Scraping PeopleSoft: $term (code=$code, json=$json) ==="
+            npx tsx scripts/va/scrape-peoplesoft.ts --term "$term"
+            npx tsx scripts/va/enrich-peoplesoft.ts --term-code="$code" --json-term="$json"
+          done
       - uses: actions/upload-artifact@v4
         if: always()
         with:

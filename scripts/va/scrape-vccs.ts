@@ -387,42 +387,50 @@ async function scrapeCollege(slug: string, targetTerm: string): Promise<CourseSe
 async function main() {
   const args = process.argv.slice(2);
   let targetSlugs = ALL_SLUGS;
-  let targetTerm = DEFAULT_TERM;
+  let targetTerms = [DEFAULT_TERM];
 
   for (let i = 0; i < args.length; i++) {
     if (args[i] === "--college" && args[i + 1]) {
       targetSlugs = [args[i + 1]];
       i++;
     } else if (args[i] === "--term" && args[i + 1]) {
-      targetTerm = args[i + 1];
+      // Support comma-separated terms: --term "Summer 2026,Fall 2026"
+      targetTerms = args[i + 1].split(",").map((t) => t.trim()).filter(Boolean);
       i++;
     }
   }
 
-  const termCode = termToCode(targetTerm);
-  console.log(`🔍 Scraping ${targetSlugs.length} college(s) for: ${targetTerm} (${termCode})`);
-  console.log(`   Delay: ${DELAY_MS}ms | Timeout: ${FETCH_TIMEOUT_MS}ms\n`);
-
   const dataDir = path.join(process.cwd(), "data", "va", "courses");
-  let totalSections = 0;
+  let grandTotal = 0;
 
-  for (const slug of targetSlugs) {
-    try {
-      const sections = await scrapeCollege(slug, targetTerm);
-      const collegeDir = path.join(dataDir, slug);
-      if (!fs.existsSync(collegeDir)) fs.mkdirSync(collegeDir, { recursive: true });
+  for (const targetTerm of targetTerms) {
+    const termCode = termToCode(targetTerm);
+    console.log(`\n🔍 Scraping ${targetSlugs.length} college(s) for: ${targetTerm} (${termCode})`);
+    console.log(`   Delay: ${DELAY_MS}ms | Timeout: ${FETCH_TIMEOUT_MS}ms\n`);
 
-      const outFile = path.join(collegeDir, `${termCode}.json`);
-      fs.writeFileSync(outFile, JSON.stringify(sections, null, 2) + "\n");
-      console.log(`  💾 ${outFile} (${sections.length} sections)`);
-      totalSections += sections.length;
-    } catch (err) {
-      console.error(`❌ ${slug}: ${(err as Error).message}`);
+    let totalSections = 0;
+
+    for (const slug of targetSlugs) {
+      try {
+        const sections = await scrapeCollege(slug, targetTerm);
+        const collegeDir = path.join(dataDir, slug);
+        if (!fs.existsSync(collegeDir)) fs.mkdirSync(collegeDir, { recursive: true });
+
+        const outFile = path.join(collegeDir, `${termCode}.json`);
+        fs.writeFileSync(outFile, JSON.stringify(sections, null, 2) + "\n");
+        console.log(`  💾 ${outFile} (${sections.length} sections)`);
+        totalSections += sections.length;
+      } catch (err) {
+        console.error(`❌ ${slug}: ${(err as Error).message}`);
+      }
     }
+
+    console.log(`  ${targetTerm}: ${totalSections} sections`);
+    grandTotal += totalSections;
   }
 
   console.log(`\n${"=".repeat(50)}`);
-  console.log(`✅ Done! ${totalSections} total sections across ${targetSlugs.length} colleges`);
+  console.log(`✅ Done! ${grandTotal} total sections across ${targetSlugs.length} colleges, ${targetTerms.length} term(s)`);
 
   // Auto-import into Supabase (skip with --no-import)
   if (!args.includes("--no-import")) {
