@@ -13,7 +13,13 @@ import { useAuth } from "@/lib/hooks/useAuth";
 export default function UserMenu() {
   const { user, profile, isLoading, openLoginModal, signOut } = useAuth();
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+
+  // Prevent hydration mismatch — only render after client mount
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -37,8 +43,8 @@ export default function UserMenu() {
     return () => document.removeEventListener("keydown", handleEsc);
   }, [dropdownOpen]);
 
-  // Don't render anything while loading to prevent flash
-  if (isLoading) {
+  // Don't render anything while hydrating or loading
+  if (!mounted || isLoading) {
     return (
       <div className="w-8 h-8 rounded-full bg-gray-100 dark:bg-slate-700 animate-pulse" />
     );

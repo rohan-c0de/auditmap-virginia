@@ -63,14 +63,18 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
 
   // Fetch profile from profiles table
   const fetchProfile = useCallback(async (userId: string) => {
-    const { data } = await supabaseRef.current
-      .from("profiles")
-      .select("*")
-      .eq("id", userId)
-      .single();
+    try {
+      const { data } = await supabaseRef.current
+        .from("profiles")
+        .select("*")
+        .eq("id", userId)
+        .single();
 
-    if (data) {
-      setProfile(data as Profile);
+      if (data) {
+        setProfile(data as Profile);
+      }
+    } catch {
+      // Profile fetch failed — user stays authenticated without profile data
     }
   }, []);
 
