@@ -24,24 +24,27 @@ export default async function AccountPage() {
     .eq("id", user.id)
     .single();
 
-  // Fetch saved data counts for the dashboard summary
+  // Fetch all saved data for the dashboard
   const [
-    { count: schedulesCount },
-    { count: coursesCount },
-    { count: transfersCount },
+    { data: schedules },
+    { data: courses },
+    { data: transfers },
   ] = await Promise.all([
     supabase
       .from("saved_schedules")
-      .select("*", { count: "exact", head: true })
-      .eq("user_id", user.id),
+      .select("id, state, name, score, score_breakdown, form_data, sections, created_at")
+      .eq("user_id", user.id)
+      .order("created_at", { ascending: false }),
     supabase
       .from("saved_courses")
-      .select("*", { count: "exact", head: true })
-      .eq("user_id", user.id),
+      .select("id, state, course_prefix, course_number, course_title, college_code, crn, notes, created_at")
+      .eq("user_id", user.id)
+      .order("created_at", { ascending: false }),
     supabase
       .from("saved_transfers")
-      .select("*", { count: "exact", head: true })
-      .eq("user_id", user.id),
+      .select("id, state, name, selected_courses, selected_universities, filters, created_at")
+      .eq("user_id", user.id)
+      .order("created_at", { ascending: false }),
   ]);
 
   return (
@@ -61,11 +64,9 @@ export default async function AccountPage() {
         authProvider: profile?.auth_provider ?? null,
         defaultState: profile?.default_state ?? null,
       }}
-      counts={{
-        schedules: schedulesCount ?? 0,
-        courses: coursesCount ?? 0,
-        transfers: transfersCount ?? 0,
-      }}
+      savedSchedules={schedules ?? []}
+      savedCourses={courses ?? []}
+      savedTransfers={transfers ?? []}
     />
   );
 }
