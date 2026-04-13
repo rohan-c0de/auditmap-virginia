@@ -334,9 +334,18 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
                 value={zip}
                 onChange={(e) => setZip(e.target.value.replace(/\D/g, "").slice(0, 5))}
                 placeholder={defaultZip || "zip code"}
-                className="w-full rounded-lg border border-gray-300 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 px-4 py-2.5 text-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-200"
+                className={`w-full rounded-lg border px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-teal-200 dark:bg-slate-800 dark:text-slate-100 ${
+                  zip.length > 0 && zip.length < 5
+                    ? "border-red-300 dark:border-red-700 focus:border-red-500"
+                    : "border-gray-300 dark:border-slate-600 focus:border-teal-500"
+                }`}
                 maxLength={5}
               />
+              {zip.length > 0 && zip.length < 5 && (
+                <p className="mt-1 text-[11px] text-red-500 dark:text-red-400">
+                  Enter a full 5-digit zip code
+                </p>
+              )}
             </div>
           </div>
 

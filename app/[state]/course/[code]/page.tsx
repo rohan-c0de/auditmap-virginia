@@ -254,7 +254,7 @@ export default async function CoursePage(props: PageProps) {
     educationalLevel: "Community College",
     isAccessibleForFree: false,
     inLanguage: "en",
-    hasCourseInstance: colleges.slice(0, 5).map((c) => ({
+    hasCourseInstance: colleges.slice(0, 10).map((c) => ({
       "@type": "CourseInstance",
       name: `${prefix} ${number} at ${c.name}`,
       courseMode: c.sections.some((s) => s.mode === "online") ? "online" : "onsite",
