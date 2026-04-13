@@ -82,19 +82,24 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const supabase = supabaseRef.current;
 
-    // Get the initial session
+    // Get the initial session with a timeout so loading never hangs
     const initAuth = async () => {
       try {
+        const userPromise = supabase.auth.getUser();
+        const timeoutPromise = new Promise<never>((_, reject) =>
+          setTimeout(() => reject(new Error("Auth timeout")), 5000)
+        );
+
         const {
           data: { user: currentUser },
-        } = await supabase.auth.getUser();
+        } = await Promise.race([userPromise, timeoutPromise]);
 
         setUser(currentUser);
         if (currentUser) {
           await fetchProfile(currentUser.id);
         }
       } catch {
-        // No session or error — user stays null
+        // No session, timeout, or error — user stays null
       } finally {
         setIsLoading(false);
       }

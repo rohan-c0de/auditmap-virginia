@@ -14,12 +14,24 @@ export default function UserMenu() {
   const { user, profile, isLoading, openLoginModal, signOut } = useAuth();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [loadingTimedOut, setLoadingTimedOut] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
   // Prevent hydration mismatch — only render after client mount
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  // Safety timeout — don't show loading skeleton forever.
+  // If auth check is slow (cold start, network), fall back to "Sign In".
+  useEffect(() => {
+    if (!isLoading) {
+      setLoadingTimedOut(false);
+      return;
+    }
+    const timer = setTimeout(() => setLoadingTimedOut(true), 1500);
+    return () => clearTimeout(timer);
+  }, [isLoading]);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -43,8 +55,15 @@ export default function UserMenu() {
     return () => document.removeEventListener("keydown", handleEsc);
   }, [dropdownOpen]);
 
-  // Don't render anything while hydrating or loading
-  if (!mounted || isLoading) {
+  // Don't render anything while hydrating
+  if (!mounted) {
+    return (
+      <div className="w-8 h-8 rounded-full bg-gray-100 dark:bg-slate-700 animate-pulse" />
+    );
+  }
+
+  // Show skeleton only briefly — if loading times out, show Sign In button
+  if (isLoading && !loadingTimedOut) {
     return (
       <div className="w-8 h-8 rounded-full bg-gray-100 dark:bg-slate-700 animate-pulse" />
     );
