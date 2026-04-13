@@ -5,6 +5,7 @@ import AdSenseScript from "@/components/AdSenseScript";
 import ThemeProvider from "@/components/ThemeProvider";
 import AuthProvider from "@/components/AuthProvider";
 import LoginModal from "@/components/auth/LoginModal";
+import { getAllStates } from "@/lib/states/registry";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -17,6 +18,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const _states = getAllStates();
+const _totalColleges = _states.reduce((sum, s) => sum + s.collegeCount, 0);
+
 export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com"
@@ -25,8 +29,7 @@ export const metadata: Metadata = {
     default: "Community College Path — Course Finder & Transfer Guide",
     template: "%s | Community College Path",
   },
-  description:
-    "Search courses, plan transfers, and build schedules across 190+ community colleges in 15 states. Free course finder for community college students.",
+  description: `Search courses, plan transfers, and build schedules across ${_totalColleges}+ community colleges in ${_states.length} states. Free course finder for community college students.`,
   openGraph: {
     type: "website",
     siteName: "Community College Path",

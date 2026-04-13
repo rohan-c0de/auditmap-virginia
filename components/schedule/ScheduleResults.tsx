@@ -523,15 +523,21 @@ function ScheduleCard({
                 setSaveStatus("saving");
                 try {
                   const supabase = createClient();
-                  await supabase.from("saved_schedules").insert({
+                  // Build a descriptive name from course codes
+                  const courseLabels = [...new Set(sections.map((s) => `${s.course_prefix} ${s.course_number}`))];
+                  const name = courseLabels.length > 0
+                    ? courseLabels.join(", ")
+                    : `Schedule #${rank}`;
+                  const { error } = await supabase.from("saved_schedules").insert({
                     user_id: user.id,
                     state,
-                    name: `Schedule #${rank}`,
-                    form_data: formData || {},
+                    name,
+                    form_data: formData && Object.keys(formData).length > 0 ? formData : null,
                     sections: sections,
                     score,
                     score_breakdown: scoreBreakdown,
                   });
+                  if (error) throw error;
                   setSaveStatus("saved");
                   setTimeout(() => setSaveStatus("idle"), 3000);
                 } catch {

@@ -570,15 +570,17 @@ function ScheduleRow({ schedule, onDelete }: { schedule: SavedSchedule; onDelete
 
       {/* Actions */}
       <div className="flex items-center gap-2 shrink-0">
-        <Link
-          href={buildScheduleUrl(schedule.state, schedule.form_data)}
-          className="inline-flex items-center gap-1 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-2.5 py-1.5 text-xs font-medium text-teal-600 dark:text-teal-400 hover:bg-gray-50 dark:hover:bg-slate-700 transition"
-        >
-          <svg className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182" />
-          </svg>
-          Re-run
-        </Link>
+        {schedule.form_data && Object.keys(schedule.form_data).length > 0 && (
+          <Link
+            href={buildScheduleUrl(schedule.state, schedule.form_data)}
+            className="inline-flex items-center gap-1 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-2.5 py-1.5 text-xs font-medium text-teal-600 dark:text-teal-400 hover:bg-gray-50 dark:hover:bg-slate-700 transition"
+          >
+            <svg className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182" />
+            </svg>
+            Re-run
+          </Link>
+        )}
         <DeleteButton onDelete={() => onDelete(schedule.id)} />
       </div>
     </div>

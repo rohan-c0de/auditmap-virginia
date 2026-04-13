@@ -123,7 +123,8 @@ export default function TransferCompare({
   useEffect(() => {
     const coursesParam = searchParams.get("courses");
     if (coursesParam) {
-      const codes = coursesParam.split(",").map((c) => c.replace(/\+/g, " ").trim());
+      // searchParams.get() decodes %20 but may leave +; handle both
+      const codes = coursesParam.split(",").map((c) => decodeURIComponent(c.replace(/\+/g, " ")).trim());
       const valid = codes.filter((c) => allCourses.some((ac) => ac.course === c));
       if (valid.length > 0) {
         setSelectedCourses(new Set(valid));
@@ -376,7 +377,7 @@ export default function TransferCompare({
     });
 
     const csv = [headers, ...rows]
-      .map((row) => row.map((cell) => `"${cell}"`).join(","))
+      .map((row) => row.map((cell) => `"${String(cell).replace(/"/g, '""')}"`).join(","))
       .join("\n");
     const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
     const url = URL.createObjectURL(blob);
