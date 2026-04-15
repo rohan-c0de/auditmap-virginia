@@ -110,25 +110,193 @@ async function probeVccsTerm(termName: string): Promise<boolean> {
 }
 
 // ---------------------------------------------------------------------------
-// Colleague term probe — checks if a Colleague site lists a term
+// Colleague term probe — POSTs to PostSearchCriteria to discover active terms
 // ---------------------------------------------------------------------------
 
-async function probeColleagueTerm(termName: string, baseUrl: string): Promise<boolean> {
+interface ColleagueActivePlanTerm {
+  Code: string;         // "2026SP" or custom like "V26SP"
+  Description: string;  // "Spring 2026", "CCV Spring 2026", etc.
+}
+
+interface ColleagueSession {
+  cookie: string;          // Serialized "name=value; ..." cookie header
+  verificationToken: string;
+}
+
+/** Build the JSON payload Colleague's Knockout.js search form sends. */
+function colleagueSearchPayload(termCodes: string[] = []): Record<string, unknown> {
+  return {
+    subjects: [],
+    synonyms: [],
+    academicLevels: [],
+    courseLevels: [],
+    courseTypes: [],
+    topicCodes: [],
+    terms: termCodes,
+    days: [],
+    locations: [],
+    faculty: [],
+    startDate: null,
+    endDate: null,
+    startTime: null,
+    endTime: null,
+    startsAtTime: null,
+    endsByTime: null,
+    keyword: null,
+    requirement: null,
+    subrequirement: null,
+    group: null,
+    courseIds: null,
+    sectionIds: null,
+    requirementText: null,
+    subRequirementText: null,
+    onlineCategories: null,
+    pageNumber: 1,
+    quantityPerPage: 1,
+    openSections: null,
+    openAndWaitlistedSections: null,
+    keywordComponents: [],
+    searchResultsView: "CatalogListing",
+    sortOn: "None",
+    sortDirection: "Ascending",
+  };
+}
+
+/**
+ * Colleague Self-Service's PostSearchCriteria endpoint requires an antiforgery
+ * token (both as a cookie and as an `__RequestVerificationToken` header).
+ * Prime a session by GETting the Search page, capturing Set-Cookie headers,
+ * and extracting the hidden token from the HTML.
+ */
+async function openColleagueSession(baseUrl: string): Promise<ColleagueSession | null> {
   try {
-    // Colleague Self-Service has a terms API endpoint
-    const url = `${baseUrl}/Student/Courses/Search`;
-    const res = await fetch(url, {
+    const res = await fetch(`${baseUrl}/Student/Courses/Search`, {
       headers: { "User-Agent": "CommunityCollegePath/1.0" },
-      signal: AbortSignal.timeout(10_000),
+      signal: AbortSignal.timeout(15_000),
       redirect: "follow",
     });
-    if (!res.ok) return false;
+    if (!res.ok) return null;
     const html = await res.text();
-    // Check if the term name appears in the term dropdown
-    return html.toLowerCase().includes(termName.toLowerCase());
+
+    // Extract hidden antiforgery token from the rendered form.
+    const tokenMatch = html.match(
+      /name="__RequestVerificationToken"[^>]*value="([^"]+)"/
+    );
+    if (!tokenMatch) return null;
+
+    // Collect cookies from Set-Cookie headers (getSetCookie is Node 20+).
+    const setCookieHeaders =
+      typeof (res.headers as unknown as { getSetCookie?: () => string[] }).getSetCookie === "function"
+        ? (res.headers as unknown as { getSetCookie: () => string[] }).getSetCookie()
+        : res.headers.get("set-cookie")?.split(/,(?=[^;]+=[^;]+)/g) ?? [];
+
+    const cookiePairs: string[] = [];
+    for (const raw of setCookieHeaders) {
+      const [pair] = raw.split(";");
+      if (pair && pair.includes("=")) cookiePairs.push(pair.trim());
+    }
+
+    return {
+      cookie: cookiePairs.join("; "),
+      verificationToken: tokenMatch[1],
+    };
   } catch {
-    return false;
+    return null;
   }
+}
+
+/** POST to Colleague's PostSearchCriteria endpoint using a primed session. */
+async function colleaguePostSearch(
+  baseUrl: string,
+  session: ColleagueSession,
+  termCodes: string[] = []
+): Promise<{ TotalItems?: number; ActivePlanTerms?: ColleagueActivePlanTerm[] } | null> {
+  try {
+    const url = `${baseUrl}/Student/Courses/PostSearchCriteria`;
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {
+        "User-Agent": "CommunityCollegePath/1.0",
+        "Content-Type": "application/json; charset=UTF-8",
+        Accept: "application/json",
+        "X-Requested-With": "XMLHttpRequest",
+        "__RequestVerificationToken": session.verificationToken,
+        Cookie: session.cookie,
+      },
+      body: JSON.stringify(colleagueSearchPayload(termCodes)),
+      signal: AbortSignal.timeout(15_000),
+      redirect: "follow",
+    });
+    if (!res.ok) return null;
+    return await res.json();
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Probe a Colleague site to find which of our candidate terms (current, next,
+ * optionally next-next) have live sections. Returns a list of TermInfo whose
+ * codes reflect the site's own term codes (handles VSC custom codes like V26SP).
+ */
+async function probeColleagueTerms(
+  baseUrl: string,
+  candidates: TermInfo[]
+): Promise<TermInfo[]> {
+  const session = await openColleagueSession(baseUrl);
+  if (!session) return [];
+
+  // Step 1: discover ActivePlanTerms (the terms the site knows about).
+  //         Note: Colleague often lists terms far into the future here — the
+  //         presence of a code doesn't mean sections are posted. We still
+  //         have to verify each candidate with a filtered query.
+  const discovery = await colleaguePostSearch(baseUrl, session);
+  if (!discovery?.ActivePlanTerms || discovery.ActivePlanTerms.length === 0) {
+    return [];
+  }
+
+  const found: TermInfo[] = [];
+  const seenCodes = new Set<string>();
+
+  // Step 2: for each candidate calendar term, find matching ActivePlanTerm(s).
+  //         Two strategies because Colleague deployments are inconsistent:
+  //           (a) Description contains the calendar name ("Spring 2026").
+  //               Catches standard sites and multi-college sites like VSC
+  //               where codes are custom (V26SP, S26SP) but descriptions
+  //               still say "Spring 2026".
+  //           (b) Code starts with the candidate's standard code ("2026SP").
+  //               Catches sites with weird description formats (e.g. FDTC
+  //               says "Spring 25-26 15-WK Term") but preserves the standard
+  //               code convention, including mini-session variants like
+  //               2026SP2 / 2026SP3 that represent different scheduling
+  //               windows within the same semester.
+  for (const cand of candidates) {
+    const nameLc = cand.name.toLowerCase();
+    const codeLc = cand.code.toLowerCase();
+    const matches = discovery.ActivePlanTerms.filter(
+      (t) =>
+        t.Description.toLowerCase().includes(nameLc) ||
+        t.Code.toLowerCase().startsWith(codeLc)
+    );
+
+    for (const m of matches) {
+      if (seenCodes.has(m.Code)) continue;
+      // Step 3: verify the term actually has sections posted
+      const verify = await colleaguePostSearch(baseUrl, session, [m.Code]);
+      const hasSections = (verify?.TotalItems ?? 0) > 0;
+      if (hasSections) {
+        seenCodes.add(m.Code);
+        found.push({
+          name: cand.name,
+          code: m.Code,
+          season: cand.season,
+          year: cand.year,
+        });
+      }
+    }
+  }
+
+  return found;
 }
 
 // ---------------------------------------------------------------------------
@@ -236,24 +404,41 @@ async function resolveVccsPs(): Promise<ResolvedTerms> {
 async function resolveColleague(sampleBaseUrl: string): Promise<ResolvedTerms> {
   const current = currentCalendarTerm();
   const next = nextTerm(current);
+  const nextNext = nextTerm(next);
 
-  console.error(`Probing Colleague terms at ${sampleBaseUrl}: ${current.name}, ${next.name}...`);
+  const candidates = [current, next, nextNext];
+  console.error(
+    `Probing Colleague terms at ${sampleBaseUrl}: ${candidates.map((c) => c.name).join(", ")}...`
+  );
 
-  const [currentHasData, nextHasData] = await Promise.all([
-    probeColleagueTerm(current.name, sampleBaseUrl),
-    probeColleagueTerm(next.name, sampleBaseUrl),
-  ]);
+  const found = await probeColleagueTerms(sampleBaseUrl, candidates);
 
-  console.error(`  ${current.name}: ${currentHasData ? "FOUND" : "not found"}`);
-  console.error(`  ${next.name}: ${nextHasData ? "FOUND" : "not found"}`);
+  for (const cand of candidates) {
+    const hit = found.find((f) => f.name === cand.name);
+    if (hit) {
+      console.error(`  ${cand.name}: FOUND (code=${hit.code})`);
+    } else {
+      console.error(`  ${cand.name}: not found`);
+    }
+  }
 
-  const terms: TermInfo[] = [];
-  if (currentHasData) terms.push(current);
-  if (nextHasData) terms.push(next);
-  if (terms.length === 0) terms.push(prevTerm(current));
+  // Dedup by calendar term name — Colleague sites may expose per-college term
+  // codes (e.g. VSC "V26SP" + "S26SP" for the same Spring 2026). We keep
+  // distinct term codes but collapse the human-readable list.
+  const terms: TermInfo[] = found.length > 0 ? found : [prevTerm(current)];
+
+  // Unique human-readable names preserving order.
+  const seenNames = new Set<string>();
+  const termNames: string[] = [];
+  for (const t of terms) {
+    if (!seenNames.has(t.name)) {
+      seenNames.add(t.name);
+      termNames.push(t.name);
+    }
+  }
 
   return {
-    terms: terms.map((t) => t.name),
+    terms: termNames,
     termCodes: terms.map((t) => t.code),
   };
 }
@@ -275,11 +460,14 @@ async function resolveBanner(): Promise<ResolvedTerms> {
 // Sample college URLs for probing each system
 // ---------------------------------------------------------------------------
 
+// Sample Colleague Self-Service hosts used to probe available terms per state.
+// These must be live Colleague Self-Service instances that respond to
+// /Student/Courses/PostSearchCriteria. Verified 2026-04.
 const COLLEAGUE_SAMPLES: Record<string, string> = {
-  nc: "https://selfserve.waketech.edu",
-  sc: "https://ssb-prod.ec.commnet.edu",  // fallback
-  md: "https://selfservice.howardcc.edu",
-  vt: "https://selfservice.ccv.edu",
+  nc: "https://selfserve.waketech.edu",      // Wake Tech
+  sc: "https://selfservice.fdtc.edu",        // Florence-Darlington Tech
+  md: "https://selfservice.pgcc.edu",        // Prince George's CC
+  vt: "https://selfservice.vsc.edu",         // Vermont State Colleges (CCV + VTSU)
 };
 
 // ---------------------------------------------------------------------------
