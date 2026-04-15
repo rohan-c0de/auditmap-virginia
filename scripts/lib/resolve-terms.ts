@@ -349,29 +349,30 @@ interface ResolvedTerms {
 async function resolveVccs(): Promise<ResolvedTerms> {
   const current = currentCalendarTerm();
   const next = nextTerm(current);
+  const nextNext = nextTerm(next);
 
-  console.error(`Probing VCCS terms: ${current.name}, ${next.name}...`);
+  // Probe current + next two terms. VCCS colleges typically open the
+  // registration catalog ~6 months ahead, so in mid-April a student planning
+  // for Fall is a real use case (Wake Tech already had 667 Fall sections
+  // posted in April 2026). Probing three terms keeps parity with the
+  // Colleague probe.
+  const candidates = [current, next, nextNext];
+  console.error(
+    `Probing VCCS terms: ${candidates.map((c) => c.name).join(", ")}...`
+  );
 
-  const [currentHasData, nextHasData] = await Promise.all([
-    probeVccsTerm(current.name),
-    probeVccsTerm(next.name),
-  ]);
-
-  console.error(`  ${current.name}: ${currentHasData ? "HAS DATA" : "no data"}`);
-  console.error(`  ${next.name}: ${nextHasData ? "HAS DATA" : "no data"}`);
+  const results = await Promise.all(candidates.map((c) => probeVccsTerm(c.name)));
 
   const terms: TermInfo[] = [];
+  candidates.forEach((c, i) => {
+    console.error(`  ${c.name}: ${results[i] ? "HAS DATA" : "no data"}`);
+    if (results[i]) terms.push(c);
+  });
 
-  // Always include current term if it has data
-  if (currentHasData) terms.push(current);
-
-  // Include next term if registration has opened
-  if (nextHasData) terms.push(next);
-
-  // Fallback: if neither has data (unusual), try previous term
+  // Fallback: if nothing has data (unusual), try previous term
   if (terms.length === 0) {
     const prev = prevTerm(current);
-    console.error(`  Neither term has data, falling back to ${prev.name}`);
+    console.error(`  No candidate has data, falling back to ${prev.name}`);
     terms.push(prev);
   }
 
