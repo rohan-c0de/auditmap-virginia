@@ -77,12 +77,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Course detail pages (pSEO) — one page per unique course per state
   const coursePages: MetadataRoute.Sitemap = [];
+  // State-wide subject pages (pSEO) — e.g. /va/subject/eng (all ENG across state)
+  const stateSubjectPages: MetadataRoute.Sitemap = [];
 
   for (const state of getAllStates()) {
     try {
       const currentTerm = await getCurrentTerm(state.slug);
       const allCourses = await loadAllCourses(currentTerm, state.slug);
       const seen = new Set<string>();
+      const subjectSectionCounts = new Map<string, number>();
 
       for (const c of allCourses) {
         const key = `${c.course_prefix}-${c.course_number}`.toLowerCase();
@@ -92,6 +95,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             url: `${baseUrl}/${state.slug}/course/${key}`,
             changeFrequency: "weekly" as const,
             priority: 0.7,
+          });
+        }
+        subjectSectionCounts.set(
+          c.course_prefix,
+          (subjectSectionCounts.get(c.course_prefix) || 0) + 1
+        );
+      }
+
+      // Only include state subject pages with ≥5 sections — avoids thin content
+      for (const [prefix, count] of subjectSectionCounts) {
+        if (count >= 5) {
+          stateSubjectPages.push({
+            url: `${baseUrl}/${state.slug}/subject/${prefix.toLowerCase()}`,
+            changeFrequency: "weekly" as const,
+            priority: 0.65,
           });
         }
       }
@@ -111,5 +129,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })),
   ];
 
-  return [...entries, ...collegePages, ...subjectPages, ...coursePages, ...blogPages];
+  return [
+    ...entries,
+    ...collegePages,
+    ...subjectPages,
+    ...stateSubjectPages,
+    ...coursePages,
+    ...blogPages,
+  ];
 }

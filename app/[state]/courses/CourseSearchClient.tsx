@@ -9,6 +9,8 @@ import DayToggle from "@/components/DayToggle";
 import PrereqChain from "@/components/PrereqChain";
 import { useAuth } from "@/lib/hooks/useAuth";
 import { createClient } from "@/lib/supabase/client";
+import { track } from "@/lib/analytics";
+import AdUnit from "@/components/AdUnit";
 
 // ---------------------------------------------------------------------------
 // Types matching the API response
@@ -153,6 +155,7 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
           .eq("course_number", course.number);
         if (error) throw error;
         setBookmarkedCourses((prev) => { const next = new Set(prev); next.delete(key); return next; });
+        track("course_bookmark_remove", { state, course: key });
       } else {
         const { error } = await supabase.from("saved_courses").insert({
           user_id: user.id,
@@ -163,6 +166,7 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
         });
         if (error) throw error;
         setBookmarkedCourses((prev) => new Set(prev).add(key));
+        track("course_bookmark_add", { state, course: key });
       }
     } catch {
       setBookmarkError(`Failed to ${bookmarkedCourses.has(key) ? "remove" : "save"} bookmark. Please try again.`);
@@ -246,6 +250,14 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
 
   async function handleSearch(e: React.FormEvent) {
     e.preventDefault();
+    track("course_search_submit", {
+      state,
+      query: query.trim().slice(0, 80),
+      has_zip: !!zip,
+      mode: mode || "any",
+      days: days.length > 0 ? days.join("") : "any",
+      time_of_day: timeOfDay || "any",
+    });
     doSearch(query);
   }
 
@@ -690,6 +702,13 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
               >
                 Show more courses ({filteredCourses.length - displayLimit} remaining)
               </button>
+            </div>
+          )}
+
+          {/* In-feed ad — only after meaningful results so AdSense approves */}
+          {results.courses.length > 3 && (
+            <div className="mt-8">
+              <AdUnit slot="4182937461" format="auto" className="min-h-[100px]" />
             </div>
           )}
         </div>

@@ -12,6 +12,8 @@ import { buildTransferLookup } from "@/lib/transfer";
 import { getStateConfig, getAllStates } from "@/lib/states/registry";
 import { getUniqueSubjects } from "@/lib/courses";
 import { subjectName } from "@/lib/subjects";
+import AdUnit from "@/components/AdUnit";
+import TrackView from "@/components/TrackView";
 
 // Revalidate every 24 hours — course data only changes when re-scraped
 export const revalidate = 86400;
@@ -116,6 +118,10 @@ export default async function CollegeDetailPage(props: PageProps) {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <TrackView
+        event="college_detail_view"
+        params={{ state, college: id }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -432,6 +438,11 @@ export default async function CollegeDetailPage(props: PageProps) {
           </div>
         </details>
       </section>
+
+      {/* In-page ad (well after main content per AdSense policy) */}
+      <div className="mt-8">
+        <AdUnit slot="3816492750" format="auto" className="min-h-[100px]" />
+      </div>
 
       {/* Other colleges in this state — internal linking for SEO */}
       {(() => {

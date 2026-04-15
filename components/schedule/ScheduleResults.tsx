@@ -8,6 +8,7 @@ import ScoreBar from "./ScoreBar";
 import { isValidTime, expandDays } from "@/lib/time-utils";
 import { useAuth } from "@/lib/hooks/useAuth";
 import { createClient } from "@/lib/supabase/client";
+import { track } from "@/lib/analytics";
 
 interface Props {
   response: ScheduleResponse;
@@ -539,6 +540,13 @@ function ScheduleCard({
                   });
                   if (error) throw error;
                   setSaveStatus("saved");
+                  track("schedule_save", {
+                    state,
+                    sections: sections.length,
+                    courses: courseLabels.length,
+                    rank,
+                    score,
+                  });
                   setTimeout(() => setSaveStatus("idle"), 3000);
                 } catch {
                   setSaveStatus("idle");

@@ -12,6 +12,8 @@ import { getStateConfig, getAllStates } from "@/lib/states/registry";
 import { buildTransferLookup } from "@/lib/transfer";
 import { subjectName } from "@/lib/subjects";
 import CollegeDetailClient from "../../CollegeDetailClient";
+import AdUnit from "@/components/AdUnit";
+import TrackView from "@/components/TrackView";
 
 export const revalidate = 86400;
 
@@ -211,6 +213,16 @@ export default async function SubjectPage(props: PageProps) {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <TrackView
+        event="subject_page_view"
+        params={{
+          state,
+          college: id,
+          subject: prefix,
+          sections: courses.length,
+          scope: "college",
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -297,6 +309,11 @@ export default async function SubjectPage(props: PageProps) {
           state={state}
         />
       </section>
+
+      {/* In-content ad */}
+      <div className="mt-8">
+        <AdUnit slot="9402617538" format="auto" className="min-h-[100px]" />
+      </div>
 
       {/* Browse other subjects */}
       <section className="mt-10">

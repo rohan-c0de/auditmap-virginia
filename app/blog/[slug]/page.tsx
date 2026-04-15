@@ -8,6 +8,7 @@ import {
   stateLabel,
 } from "@/lib/blog";
 import RelatedArticles from "@/components/blog/RelatedArticles";
+import AdUnit from "@/components/AdUnit";
 import Link from "next/link";
 
 type Props = {
@@ -154,6 +155,11 @@ export default async function BlogPostPage({ params }: Props) {
       {/* MDX content */}
       <div className="prose prose-gray prose-lg max-w-none prose-headings:text-gray-900 dark:prose-headings:text-slate-100 prose-a:text-teal-600 dark:prose-a:text-teal-400 prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-900 dark:prose-strong:text-slate-100">
         <Post />
+      </div>
+
+      {/* End-of-article ad */}
+      <div className="my-10">
+        <AdUnit slot="5837291604" format="auto" className="min-h-[100px]" />
       </div>
 
       {/* Related articles */}

@@ -6,6 +6,7 @@ import ScheduleForm from "@/components/schedule/ScheduleForm";
 import ScheduleResults from "@/components/schedule/ScheduleResults";
 import type { ScheduleFormData } from "@/components/schedule/ScheduleForm";
 import type { ScheduleResponse } from "@/lib/types";
+import { track } from "@/lib/analytics";
 
 interface UniversityOption {
   slug: string;
@@ -151,6 +152,11 @@ export default function ScheduleClient({ state, systemName, collegeCount, defaul
 
       const json: ScheduleResponse = await res.json();
       setResponse(json);
+      track("schedule_results_view", {
+        state,
+        schedules: json.schedules?.length ?? 0,
+        subjects: data.subjects.length,
+      });
     } catch {
       setError("Failed to connect. Please try again.");
     }

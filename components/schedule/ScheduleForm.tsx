@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, type KeyboardEvent } from "react";
+import { track } from "@/lib/analytics";
 
 export interface ScheduleFormData {
   subjects: string[];
@@ -122,6 +123,16 @@ export default function ScheduleForm({ onSubmit, loading, defaultZip, universiti
     if (subjects.length === 0 || hasPartialZip) return;
 
     const preset = TIME_PRESETS.find((p) => p.value === timeBucket) || TIME_PRESETS[0];
+
+    track("schedule_build_submit", {
+      subjects: subjects.length,
+      max_courses: maxCourses,
+      days: daysAvailable.join("") || "any",
+      time_bucket: timeBucket,
+      has_zip: !!zip,
+      mode: mode || "any",
+      target_university: targetUniversity || "none",
+    });
 
     onSubmit({
       subjects,

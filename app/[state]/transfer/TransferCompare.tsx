@@ -12,6 +12,7 @@ import CompareMobileCards from "./compare/CompareMobileCards";
 import CompareEmptyState from "./compare/CompareEmptyState";
 import { useAuth } from "@/lib/hooks/useAuth";
 import { createClient } from "@/lib/supabase/client";
+import { track } from "@/lib/analytics";
 
 interface Props {
   universities: { slug: string; name: string }[];
@@ -321,7 +322,10 @@ export default function TransferCompare({
     setSelectedCourses((prev) => {
       const next = new Set(prev);
       if (next.has(course)) next.delete(course);
-      else next.add(course);
+      else {
+        next.add(course);
+        track("transfer_course_add", { state, course });
+      }
       return next;
     });
   }
@@ -402,6 +406,11 @@ export default function TransferCompare({
         filters: filters as unknown as Record<string, unknown>,
       });
       setSaveStatus("saved");
+      track("transfer_lookup_submit", {
+        state,
+        courses: selectedCourses.size,
+        universities: universityScores.length,
+      });
       setTimeout(() => setSaveStatus("idle"), 3000);
     } catch {
       setSaveStatus("idle");

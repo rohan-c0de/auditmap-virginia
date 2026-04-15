@@ -8,6 +8,8 @@ import { getStateConfig, getAllStates, isValidState } from "@/lib/states/registr
 import { getTransferInfo, getUniversities } from "@/lib/transfer";
 import { subjectName } from "@/lib/subjects";
 import type { CourseSection } from "@/lib/types";
+import AdUnit from "@/components/AdUnit";
+import TrackView from "@/components/TrackView";
 
 export const revalidate = 86400; // 24 hours
 
@@ -301,6 +303,17 @@ export default async function CoursePage(props: PageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
 
+      <TrackView
+        event="course_detail_view"
+        params={{
+          state,
+          course: `${prefix} ${number}`,
+          prefix,
+          sections: sections.length,
+          colleges: colleges.length,
+        }}
+      />
+
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-1.5 text-xs text-gray-500 dark:text-slate-400 mb-6">
@@ -460,6 +473,11 @@ export default async function CoursePage(props: PageProps) {
             ))}
           </div>
         </section>
+
+        {/* In-content ad (after high-value college availability table) */}
+        <div className="mb-8">
+          <AdUnit slot="7261548390" format="auto" className="min-h-[100px]" />
+        </div>
 
         {/* Related courses */}
         {related.length > 0 && (
