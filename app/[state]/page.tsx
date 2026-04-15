@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import SearchForm from "@/components/SearchForm";
 import StartingSoonCallout from "@/components/StartingSoonCallout";
 import NotifyBanner from "@/components/NotifyBanner";
 import { getNextTerm } from "@/lib/terms";
-import { getStateConfig, getAllStates } from "@/lib/states/registry";
+import { getStateConfig, getAllStates, isValidState } from "@/lib/states/registry";
 
 type Props = {
   params: Promise<{ state: string }>;
@@ -16,10 +17,11 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { state } = await params;
+  if (!isValidState(state)) return { title: "Not Found" };
   const config = getStateConfig(state);
   const b = config.branding;
   return {
-    title: `${b.siteName} — Community College Course Finder`,
+    title: `${config.name} Community College Course Finder`,
     description: b.tagline,
     keywords: b.metaKeywords,
   };
@@ -27,6 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function HomePage({ params }: Props) {
   const { state } = await params;
+  if (!isValidState(state)) notFound();
   const config = getStateConfig(state);
   const nextTerm = await getNextTerm(state);
 

@@ -100,8 +100,8 @@ export default function ResultsContent({ state }: { state: string }) {
         </h1>
         <div className="flex items-center gap-4 mt-1">
           <p className="text-gray-600 dark:text-slate-400">
-            Within {radius} miles &middot; Showing colleges with course listings
-            this term
+            Within {radius}
+            {" "}miles &middot; Showing colleges with course listings this term
           </p>
           <button
             type="button"

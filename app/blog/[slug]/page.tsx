@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com";
 
   return {
-    title: `${meta.title} — Community College Path Blog`,
+    title: meta.title,
     description: meta.description,
     openGraph: {
       title: meta.title,

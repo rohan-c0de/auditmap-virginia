@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { loadInstitutions } from "@/lib/institutions";
-import { loadAllCourses } from "@/lib/courses";
+import { loadCourseByCode, loadCoursesBySubject } from "@/lib/courses";
 import { getCurrentTerm, termLabel } from "@/lib/terms";
 import { getStateConfig, getAllStates, isValidState } from "@/lib/states/registry";
 import { getTransferInfo, getUniversities } from "@/lib/transfer";
@@ -11,7 +11,7 @@ import type { CourseSection } from "@/lib/types";
 import AdUnit from "@/components/AdUnit";
 import TrackView from "@/components/TrackView";
 
-export const revalidate = 86400; // 24 hours
+export const revalidate = 604800; // 7 days — pSEO content rarely changes
 
 type PageProps = {
   params: Promise<{ state: string; code: string }>;
@@ -107,7 +107,7 @@ function formatSchedule(s: CourseSection): string {
 // ---------------------------------------------------------------------------
 
 // Return empty — all 25k+ course pages are generated on-demand via ISR
-// (revalidate = 86400). The sitemap still lists every URL so Google finds them.
+// (revalidate = 604800). The sitemap still lists every URL so Google finds them.
 export async function generateStaticParams() {
   return [];
 }
@@ -125,10 +125,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
 
   const config = getStateConfig(state);
   const currentTerm = await getCurrentTerm(state);
-  const allCourses = await loadAllCourses(currentTerm, state);
-  const sections = allCourses.filter(
-    (c) => c.course_prefix === parsed.prefix && c.course_number === parsed.number
-  );
+  const sections = await loadCourseByCode(parsed.prefix, parsed.number, currentTerm, state);
 
   if (sections.length === 0) return { title: "Not Found" };
 
@@ -170,7 +167,7 @@ const MODE_STYLES: Record<string, { bg: string; text: string; label: string }> =
   "in-person": { bg: "bg-emerald-50 dark:bg-emerald-900/30", text: "text-emerald-700 dark:text-emerald-400", label: "In-Person" },
   online: { bg: "bg-blue-50 dark:bg-blue-900/30", text: "text-blue-700 dark:text-blue-400", label: "Online" },
   hybrid: { bg: "bg-purple-50 dark:bg-purple-900/30", text: "text-purple-700 dark:text-purple-400", label: "Hybrid" },
-  zoom: { bg: "bg-blue-50 dark:bg-blue-900/30", text: "text-blue-700 dark:text-blue-400", label: "Online" },
+  zoom: { bg: "bg-sky-50 dark:bg-sky-900/30", text: "text-sky-700 dark:text-sky-400", label: "Zoom" },
 };
 
 const TRANSFER_BADGE: Record<string, { bg: string; text: string; label: string }> = {
@@ -190,12 +187,11 @@ export default async function CoursePage(props: PageProps) {
   const config = getStateConfig(state);
   const institutions = loadInstitutions(state);
   const currentTerm = await getCurrentTerm(state);
-  const allCourses = await loadAllCourses(currentTerm, state);
 
-  // Filter to this specific course
-  const sections = allCourses.filter(
-    (c) => c.course_prefix === prefix && c.course_number === number
-  );
+  // Pull only this subject's rows once and split — used for both the target
+  // course's sections and the "Related courses" sidebar (same prefix).
+  const subjectSections = await loadCoursesBySubject(prefix, currentTerm, state);
+  const sections = subjectSections.filter((c) => c.course_number === number);
 
   if (sections.length === 0) notFound();
 
@@ -223,10 +219,10 @@ export default async function CoursePage(props: PageProps) {
     : [];
   const uniNameMap = new Map(universities.map((u) => [u.slug, u.name]));
 
-  // Related courses — same prefix
+  // Related courses — same prefix, different number
   const relatedCourses = new Map<string, string>();
-  for (const c of allCourses) {
-    if (c.course_prefix === prefix && c.course_number !== number) {
+  for (const c of subjectSections) {
+    if (c.course_number !== number) {
       const key = `${c.course_prefix}-${c.course_number}`;
       if (!relatedCourses.has(key)) {
         relatedCourses.set(key, c.course_title);

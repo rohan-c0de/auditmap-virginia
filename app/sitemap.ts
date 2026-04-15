@@ -4,8 +4,8 @@ import { loadInstitutions } from "@/lib/institutions";
 import { getAllArticles } from "@/lib/blog";
 import {
   loadCoursesForCollege,
-  loadAllCourses,
   getUniqueSubjects,
+  getSitemapCourseIndex,
 } from "@/lib/courses";
 import { getCurrentTerm } from "@/lib/terms";
 
@@ -83,24 +83,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   for (const state of getAllStates()) {
     try {
       const currentTerm = await getCurrentTerm(state.slug);
-      const allCourses = await loadAllCourses(currentTerm, state.slug);
-      const seen = new Set<string>();
-      const subjectSectionCounts = new Map<string, number>();
+      // Single 2-column scan instead of full row catalog (~9 MB → ~50 KB).
+      const { codes, subjectSectionCounts } = await getSitemapCourseIndex(
+        currentTerm,
+        state.slug
+      );
 
-      for (const c of allCourses) {
-        const key = `${c.course_prefix}-${c.course_number}`.toLowerCase();
-        if (!seen.has(key)) {
-          seen.add(key);
-          coursePages.push({
-            url: `${baseUrl}/${state.slug}/course/${key}`,
-            changeFrequency: "weekly" as const,
-            priority: 0.7,
-          });
-        }
-        subjectSectionCounts.set(
-          c.course_prefix,
-          (subjectSectionCounts.get(c.course_prefix) || 0) + 1
-        );
+      for (const c of codes) {
+        const key = `${c.prefix}-${c.number}`.toLowerCase();
+        coursePages.push({
+          url: `${baseUrl}/${state.slug}/course/${key}`,
+          changeFrequency: "weekly" as const,
+          priority: 0.7,
+        });
       }
 
       // Only include state subject pages with ≥5 sections — avoids thin content

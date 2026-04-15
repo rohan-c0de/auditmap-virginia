@@ -4,15 +4,15 @@
  * Lists every course under a given subject (prefix) across all colleges in the
  * state. e.g. `/va/subject/eng` shows all ENG courses across VCCS.
  *
- * Uses ISR (revalidate = 86400). Pages are rendered on-demand and cached for
- * 24h, same pattern as `/[state]/course/[code]`. Sitemap lists every valid
+ * Uses ISR (revalidate = 604800). Pages are rendered on-demand and cached for
+ * 7 days, same pattern as `/[state]/course/[code]`. Sitemap lists every valid
  * (state, prefix) combination so Google discovers them.
  */
 
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { loadAllCourses, getUniqueSubjects } from "@/lib/courses";
+import { loadCoursesBySubject, getDistinctSubjects } from "@/lib/courses";
 import { getCurrentTerm, termLabel } from "@/lib/terms";
 import { getStateConfig, isValidState } from "@/lib/states/registry";
 import { subjectName } from "@/lib/subjects";
@@ -20,7 +20,7 @@ import AdUnit from "@/components/AdUnit";
 import TrackView from "@/components/TrackView";
 import type { CourseSection } from "@/lib/types";
 
-export const revalidate = 86400; // 24 hours
+export const revalidate = 604800; // 7 days — pSEO content rarely changes
 
 type PageProps = {
   params: Promise<{ state: string; prefix: string }>;
@@ -45,8 +45,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
   const prefix = rawPrefix.toUpperCase();
   const config = getStateConfig(state);
   const currentTerm = await getCurrentTerm(state);
-  const allCourses = await loadAllCourses(currentTerm, state);
-  const filtered = allCourses.filter((c) => c.course_prefix === prefix);
+  const filtered = await loadCoursesBySubject(prefix, currentTerm, state);
 
   if (filtered.length === 0) return { title: "Not Found" };
 
@@ -148,9 +147,7 @@ export default async function StateSubjectPage(props: PageProps) {
   const prefix = rawPrefix.toUpperCase();
   const config = getStateConfig(state);
   const currentTerm = await getCurrentTerm(state);
-  const allCourses = await loadAllCourses(currentTerm, state);
-
-  const sections = allCourses.filter((c) => c.course_prefix === prefix);
+  const sections = await loadCoursesBySubject(prefix, currentTerm, state);
   if (sections.length === 0) notFound();
 
   const subject = subjectName(prefix);
@@ -163,8 +160,10 @@ export default async function StateSubjectPage(props: PageProps) {
   const inPersonCount = sections.filter((s) => s.mode === "in-person").length;
   const term = termLabel(currentTerm);
 
-  // Other subjects for browse links
-  const allSubjects = getUniqueSubjects(allCourses).filter((s) => s !== prefix);
+  // Other subjects for browse links — distinct prefix scan, not full catalog
+  const allSubjects = (await getDistinctSubjects(currentTerm, state)).filter(
+    (s) => s !== prefix
+  );
 
   // Structured data — ItemList of courses
   const siteUrl =

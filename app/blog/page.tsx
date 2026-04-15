@@ -10,7 +10,7 @@ import {
 } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Blog — Community College Path",
+  title: "Blog",
   description:
     "Practical guides for community college course planning, transfer credits, scheduling, and senior tuition waivers.",
   openGraph: {

@@ -48,19 +48,47 @@ export async function loadCoursesForCollege(
   state = "va"
 ): Promise<CourseSection[]> {
   return cached(`courses:${state}:${collegeSlug}:${term}`, async () => {
-    const { data, error } = await supabase
+    // Supabase caps rows at 1000 by default. Paginate in parallel to get
+    // everything for colleges with more than 1000 sections (e.g. NOVA ~2000+).
+    const { count, error: countErr } = await supabase
       .from("courses")
-      .select("*")
+      .select("id", { count: "exact", head: true })
       .eq("college_code", collegeSlug)
       .eq("term", term)
       .eq("state", state);
 
-    if (error) {
-      console.error("loadCoursesForCollege error:", error.message);
+    if (countErr || !count || count === 0) {
+      if (countErr) console.error("loadCoursesForCollege count error:", countErr.message);
       return [];
     }
 
-    return (data || []).map(mapRow);
+    const PAGE_SIZE = 1000;
+    const pages = Math.ceil(count / PAGE_SIZE);
+    const promises: Promise<CourseSection[]>[] = [];
+
+    for (let i = 0; i < pages; i++) {
+      const start = i * PAGE_SIZE;
+      const end = start + PAGE_SIZE - 1;
+      promises.push(
+        (async () => {
+          const { data, error } = await supabase
+            .from("courses")
+            .select("*")
+            .eq("college_code", collegeSlug)
+            .eq("term", term)
+            .eq("state", state)
+            .range(start, end);
+          if (error) {
+            console.error(`loadCoursesForCollege page ${i} error:`, error.message);
+            return [];
+          }
+          return (data || []).map(mapRow);
+        })()
+      );
+    }
+
+    const results = await Promise.all(promises);
+    return results.flat();
   });
 }
 
@@ -231,6 +259,220 @@ export async function loadAllCourses(
 
     const results = await Promise.all(promises);
     return results.flat();
+  });
+}
+
+/**
+ * Load all sections for a single course (prefix + number) across the state.
+ * Targeted query — pulls ~10–100 rows instead of the full ~30k state catalog.
+ * Used by the course detail pSEO pages to keep CPU + origin transfer small.
+ */
+export async function loadCourseByCode(
+  prefix: string,
+  number: string,
+  term: string,
+  state = "va"
+): Promise<CourseSection[]> {
+  return cached(`course:${state}:${term}:${prefix}:${number}`, async () => {
+    const { data, error } = await supabase
+      .from("courses")
+      .select("*")
+      .eq("state", state)
+      .eq("term", term)
+      .eq("course_prefix", prefix)
+      .eq("course_number", number);
+
+    if (error) {
+      console.error("loadCourseByCode error:", error.message);
+      return [];
+    }
+    return (data || []).map(mapRow);
+  });
+}
+
+/**
+ * Load all sections for one subject prefix across the state.
+ * Targeted query — pulls only the rows for that prefix (typically 100–2000)
+ * instead of the full state catalog. Used by the subject pSEO pages.
+ *
+ * Paginates in parallel because some popular subjects (e.g. ENG, MTH) can
+ * exceed the Supabase 1000-row default cap.
+ */
+export async function loadCoursesBySubject(
+  prefix: string,
+  term: string,
+  state = "va"
+): Promise<CourseSection[]> {
+  return cached(`subject:${state}:${term}:${prefix}`, async () => {
+    const { count, error: countErr } = await supabase
+      .from("courses")
+      .select("id", { count: "exact", head: true })
+      .eq("state", state)
+      .eq("term", term)
+      .eq("course_prefix", prefix);
+
+    if (countErr || !count || count === 0) {
+      if (countErr) console.error("loadCoursesBySubject count error:", countErr.message);
+      return [];
+    }
+
+    const PAGE_SIZE = 1000;
+    const pages = Math.ceil(count / PAGE_SIZE);
+    const promises: Promise<CourseSection[]>[] = [];
+
+    for (let i = 0; i < pages; i++) {
+      const start = i * PAGE_SIZE;
+      const end = start + PAGE_SIZE - 1;
+      promises.push(
+        (async () => {
+          const { data, error } = await supabase
+            .from("courses")
+            .select("*")
+            .eq("state", state)
+            .eq("term", term)
+            .eq("course_prefix", prefix)
+            .range(start, end);
+          if (error) {
+            console.error(`loadCoursesBySubject page ${i} error:`, error.message);
+            return [];
+          }
+          return (data || []).map(mapRow);
+        })()
+      );
+    }
+
+    const results = await Promise.all(promises);
+    return results.flat();
+  });
+}
+
+/**
+ * Single scan returning both distinct course codes and per-prefix section
+ * counts for a state+term. Used by the sitemap so it doesn't have to pull
+ * the full row catalog (~9 MB) just to enumerate URLs (~50 KB).
+ */
+export async function getSitemapCourseIndex(
+  term: string,
+  state = "va"
+): Promise<{
+  codes: { prefix: string; number: string }[];
+  subjectSectionCounts: Map<string, number>;
+}> {
+  return cached(`sitemapIndex:${state}:${term}`, async () => {
+    const seen = new Set<string>();
+    const codes: { prefix: string; number: string }[] = [];
+    const subjectSectionCounts = new Map<string, number>();
+
+    const PAGE_SIZE = 1000;
+    let page = 0;
+    while (true) {
+      const start = page * PAGE_SIZE;
+      const { data: rows, error } = await supabase
+        .from("courses")
+        .select("course_prefix,course_number")
+        .eq("state", state)
+        .eq("term", term)
+        .range(start, start + PAGE_SIZE - 1);
+      if (error || !rows || rows.length === 0) break;
+      for (const r of rows) {
+        const key = `${r.course_prefix}-${r.course_number}`;
+        if (!seen.has(key)) {
+          seen.add(key);
+          codes.push({ prefix: r.course_prefix, number: r.course_number });
+        }
+        subjectSectionCounts.set(
+          r.course_prefix,
+          (subjectSectionCounts.get(r.course_prefix) || 0) + 1
+        );
+      }
+      if (rows.length < PAGE_SIZE) break;
+      page++;
+    }
+    return { codes, subjectSectionCounts };
+  });
+}
+
+/**
+ * Return distinct subject prefixes for a state+term.
+ * Used by subject pages to build "browse other subjects" links without
+ * loading the full state catalog.
+ */
+export async function getDistinctSubjects(
+  term: string,
+  state = "va"
+): Promise<string[]> {
+  return cached(`distinctSubjects:${state}:${term}`, async () => {
+    // Fallback scan that pulls only the prefix column — even without an RPC
+    // this is ~50 KB instead of the 9 MB for the full catalog.
+    const seen = new Set<string>();
+    const PAGE_SIZE = 1000;
+    let page = 0;
+    while (true) {
+      const start = page * PAGE_SIZE;
+      const { data: rows, error } = await supabase
+        .from("courses")
+        .select("course_prefix")
+        .eq("state", state)
+        .eq("term", term)
+        .range(start, start + PAGE_SIZE - 1);
+      if (error || !rows || rows.length === 0) break;
+      for (const r of rows) seen.add(r.course_prefix);
+      if (rows.length < PAGE_SIZE) break;
+      page++;
+    }
+    return Array.from(seen).sort();
+  });
+}
+
+/**
+ * Return distinct (course_prefix, course_number) pairs for a state+term.
+ * Used by the sitemap to enumerate course detail URLs without pulling the
+ * entire course catalog. Falls back to a paginated 2-column scan if the
+ * Supabase RPC is missing.
+ */
+export async function getDistinctCourseCodes(
+  term: string,
+  state = "va"
+): Promise<{ prefix: string; number: string }[]> {
+  return cached(`distinctCourses:${state}:${term}`, async () => {
+    // Try RPC first (most efficient: server-side DISTINCT)
+    const { data, error } = await supabase.rpc("get_distinct_course_codes", {
+      p_state: state,
+      p_term: term,
+    });
+
+    if (!error && data) {
+      return (data as { course_prefix: string; course_number: string }[]).map(
+        (r) => ({ prefix: r.course_prefix, number: r.course_number })
+      );
+    }
+
+    // Fallback: select only the two columns we need (cheaper than select *)
+    console.warn("get_distinct_course_codes RPC missing, using fallback scan");
+    const seen = new Set<string>();
+    const out: { prefix: string; number: string }[] = [];
+    const PAGE_SIZE = 1000;
+    let page = 0;
+    while (true) {
+      const start = page * PAGE_SIZE;
+      const { data: rows, error: pageErr } = await supabase
+        .from("courses")
+        .select("course_prefix,course_number")
+        .eq("state", state)
+        .eq("term", term)
+        .range(start, start + PAGE_SIZE - 1);
+      if (pageErr || !rows || rows.length === 0) break;
+      for (const r of rows) {
+        const key = `${r.course_prefix}-${r.course_number}`;
+        if (!seen.has(key)) {
+          seen.add(key);
+          out.push({ prefix: r.course_prefix, number: r.course_number });
+        }
+      }
+      if (rows.length < PAGE_SIZE) break;
+      page++;
+    }
+    return out;
   });
 }
 
