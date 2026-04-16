@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CollegeDetailClient from "../../CollegeDetailClient";
 import TermSelector from "../../TermSelector";
 import { termLabel } from "@/lib/term-label";
@@ -12,41 +12,108 @@ type TransferLookup = Record<
 >;
 
 interface Props {
-  /** Trimmed course sections for this prefix, grouped by term. */
-  coursesByTerm: Record<string, CourseSection[]>;
+  /** The term the server prerendered. */
+  defaultTerm: string;
+  /** Trimmed courses for the default term. */
+  defaultCourses: CourseSection[];
+  /** Transfer lookup filtered to the default term's courses. */
+  defaultTransferLookup?: TransferLookup;
   /** Terms that have at least one section of this prefix for this college. */
   termsWithData: string[];
-  defaultTerm: string;
   /** Per-term course-discovery URL template (uses __PREFIX__/__NUMBER__). */
   courseListingUrlByTerm: Record<string, string>;
-  /** Transfer lookup filtered to the union of courses across all shipped terms. */
-  transferLookup?: TransferLookup;
   institution: Institution;
   systemName: string;
   state: string;
+  /** College `id` from the route — used to build the lazy-load API URL. */
+  collegeId: string;
+  /** Upper-case subject prefix. */
+  prefix: string;
+}
+
+interface TermData {
+  courses: CourseSection[];
+  transferLookup?: TransferLookup;
 }
 
 export default function SubjectTermSection({
-  coursesByTerm,
-  termsWithData,
   defaultTerm,
+  defaultCourses,
+  defaultTransferLookup,
+  termsWithData,
   courseListingUrlByTerm,
-  transferLookup,
   institution,
   systemName,
   state,
+  collegeId,
+  prefix,
 }: Props) {
   const [currentTerm, setCurrentTerm] = useState(defaultTerm);
+  // Per-term cache seeded with the server-rendered default term so that
+  // toggling back to the default is instant and doesn't re-fetch.
+  const [termData, setTermData] = useState<Record<string, TermData>>({
+    [defaultTerm]: {
+      courses: defaultCourses,
+      transferLookup: defaultTransferLookup,
+    },
+  });
+  const [isLoading, setIsLoading] = useState(false);
+  // Dedupe concurrent fetches for the same term (e.g. rapid back/forward).
+  const inflight = useRef<Map<string, Promise<TermData>>>(new Map());
+
+  async function fetchTerm(term: string): Promise<TermData> {
+    const existing = inflight.current.get(term);
+    if (existing) return existing;
+
+    const promise = (async () => {
+      const res = await fetch(
+        `/api/${state}/college/${collegeId}/courses/${prefix.toLowerCase()}?term=${encodeURIComponent(term)}`
+      );
+      if (!res.ok) {
+        throw new Error(`Failed to load ${term}: HTTP ${res.status}`);
+      }
+      const json = (await res.json()) as TermData;
+      return json;
+    })();
+
+    inflight.current.set(term, promise);
+    try {
+      return await promise;
+    } finally {
+      inflight.current.delete(term);
+    }
+  }
+
+  async function loadTerm(term: string) {
+    if (termData[term]) return; // already cached
+    setIsLoading(true);
+    try {
+      const data = await fetchTerm(term);
+      setTermData((prev) =>
+        prev[term] ? prev : { ...prev, [term]: data }
+      );
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setIsLoading(false);
+    }
+  }
 
   useEffect(() => {
     function readTermFromUrl() {
       const params = new URLSearchParams(window.location.search);
       const t = params.get("term");
-      setCurrentTerm(t && termsWithData.includes(t) ? t : defaultTerm);
+      const next = t && termsWithData.includes(t) ? t : defaultTerm;
+      setCurrentTerm(next);
+      if (next !== defaultTerm) void loadTerm(next);
     }
     window.addEventListener("popstate", readTermFromUrl);
     readTermFromUrl();
     return () => window.removeEventListener("popstate", readTermFromUrl);
+    // `loadTerm` is stable enough for this effect's intent — we only re-run
+    // when the set of valid terms or the default term changes, not on every
+    // render of the arrow function.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [defaultTerm, termsWithData]);
 
   function handleTermChange(newTerm: string) {
@@ -58,10 +125,14 @@ export default function SubjectTermSection({
       url.searchParams.set("term", newTerm);
     }
     window.history.replaceState(null, "", url.toString());
+    void loadTerm(newTerm);
   }
 
-  const courses = coursesByTerm[currentTerm] ?? [];
+  const cached = termData[currentTerm];
+  const courses = cached?.courses ?? [];
+  const transferLookup = cached?.transferLookup;
   const courseListingUrl = courseListingUrlByTerm[currentTerm];
+  const showingPlaceholder = !cached && isLoading;
 
   // Mode counts recomputed client-side — cheap relative to what we already ship
   const onlineCount = courses.filter((c) => c.mode === "online").length;
@@ -83,8 +154,10 @@ export default function SubjectTermSection({
       {/* Term-scoped section header */}
       <div className="flex flex-wrap items-center gap-3 mb-4">
         <p className="text-gray-600 dark:text-slate-400 text-sm">
-          {termLabel(currentTerm)} &middot; {courses.length} sections across{" "}
-          {uniqueCourses} courses
+          {termLabel(currentTerm)} &middot;{" "}
+          {showingPlaceholder
+            ? "Loading…"
+            : `${courses.length} sections across ${uniqueCourses} courses`}
         </p>
         {termsWithData.length > 1 && (
           <TermSelector
@@ -125,16 +198,22 @@ export default function SubjectTermSection({
 
       {/* Course table */}
       <section>
-        <CollegeDetailClient
-          key={currentTerm}
-          courses={courses}
-          institution={institution}
-          collegeSlug={institution.college_slug}
-          transferLookup={transferLookup}
-          systemName={systemName}
-          courseListingUrl={courseListingUrl}
-          state={state}
-        />
+        {showingPlaceholder ? (
+          <div className="bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg p-8 text-center text-gray-600 dark:text-slate-400 text-sm">
+            Loading {termLabel(currentTerm)} sections…
+          </div>
+        ) : (
+          <CollegeDetailClient
+            key={currentTerm}
+            courses={courses}
+            institution={institution}
+            collegeSlug={institution.college_slug}
+            transferLookup={transferLookup}
+            systemName={systemName}
+            courseListingUrl={courseListingUrl}
+            state={state}
+          />
+        )}
       </section>
     </>
   );
