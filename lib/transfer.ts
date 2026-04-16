@@ -1,7 +1,86 @@
 import fs from "fs";
 import path from "path";
-import type { TransferMapping } from "./types";
+import type { TransferMapping, TransferMappingClient } from "./types";
 import { supabase } from "./supabase";
+
+/**
+ * Hard cap on mappings passed to the client on a single transfer-hub page.
+ * Protects against Vercel's 19 MB ISR pre-render payload limit for
+ * universities with huge mapping counts (UMGC ~39k, Frostburg ~23k, UMBC ~17k).
+ * Most user queries narrow by subject and won't hit this ceiling.
+ */
+export const TRANSFER_HUB_MAX_CLIENT_MAPPINGS = 2500;
+
+/**
+ * Strip redundant fields before serializing to the client. On pages with
+ * many thousands of mappings, these per-row fields add up to several MB
+ * of wire payload for no user-visible benefit.
+ */
+export function trimMappingsForClient(
+  mappings: TransferMapping[]
+): TransferMappingClient[] {
+  const out: TransferMappingClient[] = new Array(mappings.length);
+  for (let i = 0; i < mappings.length; i++) {
+    const m = mappings[i];
+    out[i] = {
+      cc_prefix: m.cc_prefix,
+      cc_number: m.cc_number,
+      cc_title: m.cc_title,
+      cc_credits: m.cc_credits,
+      univ_course: m.univ_course,
+      univ_title: m.univ_title,
+      notes: m.notes,
+      is_elective: m.is_elective,
+    };
+  }
+  return out;
+}
+
+/**
+ * Cap mapping count via round-robin across `cc_prefix` buckets, so every
+ * subject that exists in the dataset is represented in the capped output.
+ *
+ * If we simply sliced the top N after an alphabetical sort, universities
+ * with tens of thousands of mappings (e.g. UMGC) would drop every subject
+ * starting past roughly letter "M" — so the client-side subject filter
+ * would silently not show those subjects at all. Round-robin preserves
+ * subject diversity at the cost of depth within each subject.
+ *
+ * Input is assumed to already be sorted by (cc_prefix, cc_number) so that
+ * each bucket's retained rows are in a stable order.
+ */
+export function capMappingsByRoundRobin(
+  mappings: TransferMapping[],
+  cap: number
+): TransferMapping[] {
+  if (mappings.length <= cap) return mappings;
+  const buckets = new Map<string, TransferMapping[]>();
+  for (const m of mappings) {
+    const key = m.cc_prefix;
+    let bucket = buckets.get(key);
+    if (!bucket) {
+      bucket = [];
+      buckets.set(key, bucket);
+    }
+    bucket.push(m);
+  }
+  const queues = Array.from(buckets.values());
+  const out: TransferMapping[] = [];
+  let i = 0;
+  while (out.length < cap) {
+    let tookAny = false;
+    for (const q of queues) {
+      if (q.length > i) {
+        out.push(q[i]);
+        tookAny = true;
+        if (out.length >= cap) break;
+      }
+    }
+    if (!tookAny) break;
+    i++;
+  }
+  return out;
+}
 
 function dataPath(state = "va"): string {
   return path.join(process.cwd(), "data", state, "transfer-equiv.json");

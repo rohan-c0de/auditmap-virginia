@@ -142,6 +142,24 @@ export interface TransferMapping {
   is_elective: boolean;
 }
 
+/**
+ * Slim version of TransferMapping passed to the client on the transfer-hub
+ * page. Omits redundant fields that are constant for the page
+ * (university, university_name) or derivable (cc_course = prefix+number) —
+ * this keeps the RSC serialization payload well under Vercel's 19 MB ISR
+ * cap for universities with tens of thousands of mappings (UMGC, UMBC).
+ */
+export interface TransferMappingClient {
+  cc_prefix: string;
+  cc_number: string;
+  cc_title: string;
+  cc_credits: string;
+  univ_course: string;
+  univ_title: string;
+  notes: string;
+  is_elective: boolean;
+}
+
 export interface ScheduleResponse {
   schedules: GeneratedSchedule[];
   meta: {

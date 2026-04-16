@@ -2,12 +2,19 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import type { TransferMapping } from "@/lib/types";
+import type { TransferMappingClient } from "@/lib/types";
 
 type Props = {
-  mappings: TransferMapping[];
+  mappings: TransferMappingClient[];
   state: string;
   universityName: string;
+  /**
+   * Total count of transferable mappings before capping. When this is larger
+   * than `mappings.length`, we show a note so users know the list was
+   * truncated to keep the page under Vercel's ISR payload limit.
+   */
+  totalMappingCount: number;
+  truncated: boolean;
 };
 
 type SortKey = "cc" | "univ" | "type";
@@ -16,6 +23,8 @@ type TypeFilter = "all" | "direct" | "elective";
 export default function TransferHubClient({
   mappings,
   state,
+  totalMappingCount,
+  truncated,
 }: Props) {
   const [query, setQuery] = useState("");
   const [subjectFilter, setSubjectFilter] = useState<string>("all");
@@ -107,6 +116,14 @@ export default function TransferHubClient({
       {/* Results count */}
       <div className="px-4 py-2 text-xs text-gray-500 dark:text-slate-400 border-b border-gray-100 dark:border-slate-700">
         Showing {filtered.length} of {mappings.length} courses
+        {truncated && (
+          <span className="ml-1 text-amber-700 dark:text-amber-400">
+            {" "}
+            (top {mappings.length.toLocaleString()} of{" "}
+            {totalMappingCount.toLocaleString()} — narrow by subject to see
+            more)
+          </span>
+        )}
       </div>
 
       {/* Table */}

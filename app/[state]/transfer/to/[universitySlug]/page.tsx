@@ -4,6 +4,9 @@ import type { Metadata } from "next";
 import {
   getCoursesForUniversity,
   getUniversitiesWithCounts,
+  trimMappingsForClient,
+  capMappingsByRoundRobin,
+  TRANSFER_HUB_MAX_CLIENT_MAPPINGS,
 } from "@/lib/transfer";
 import { loadInstitutions } from "@/lib/institutions";
 import { getStateConfig, getAllStates, isValidState } from "@/lib/states/registry";
@@ -125,6 +128,31 @@ export default async function TransferHubPage(props: PageProps) {
   );
 
   if (mappings.length < MIN_TRANSFERABLE) notFound();
+
+  // Slim the payload for the client table. Three things are at play:
+  //   1) Strip redundant per-row fields (cc_course, university, university_name,
+  //      univ_credits, no_credit) — they're either constant for the page or
+  //      derivable from the remaining fields.
+  //   2) Sort deterministically by subject + course number so the cap below
+  //      produces a stable, alphabetized view within each subject.
+  //   3) Cap to TRANSFER_HUB_MAX_CLIENT_MAPPINGS via round-robin across
+  //      subjects to stay under Vercel's 19 MB ISR pre-render limit. Some
+  //      universities (UMGC, Frostburg, UMBC) have tens of thousands of
+  //      mappings that bloat the RSC payload past the cap. Round-robin (vs
+  //      a naive top-N slice) preserves subject diversity so every subject
+  //      filter in the client is still populated.
+  const sortedMappings = [...mappings].sort((a, b) => {
+    const p = a.cc_prefix.localeCompare(b.cc_prefix);
+    if (p !== 0) return p;
+    return a.cc_number.localeCompare(b.cc_number, undefined, { numeric: true });
+  });
+  const cappedMappings = capMappingsByRoundRobin(
+    sortedMappings,
+    TRANSFER_HUB_MAX_CLIENT_MAPPINGS
+  );
+  const clientMappings = trimMappingsForClient(cappedMappings);
+  const totalMappingCount = mappings.length;
+  const mappingsTruncated = totalMappingCount > clientMappings.length;
 
   // Build a lookup from CC course prefix → CC display name. We use the course
   // *prefix* rather than college because the upstream data keys mappings to
@@ -310,9 +338,11 @@ export default async function TransferHubPage(props: PageProps) {
           All Transferable Courses
         </h2>
         <TransferHubClient
-          mappings={mappings}
+          mappings={clientMappings}
           state={state}
           universityName={uni.name}
+          totalMappingCount={totalMappingCount}
+          truncated={mappingsTruncated}
         />
       </section>
 
