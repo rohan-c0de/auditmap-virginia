@@ -7,6 +7,7 @@ import {
   getUniqueSubjects,
   getSitemapCourseIndex,
 } from "@/lib/courses";
+import { getInstructorSitemapEntries } from "@/lib/instructors";
 import { getCurrentTerm } from "@/lib/terms";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -113,6 +114,28 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   }
 
+  // Instructor pages (pSEO) — one page per instructor with ≥2 sections
+  const instructorPages: MetadataRoute.Sitemap = [];
+
+  for (const state of getAllStates()) {
+    try {
+      const currentTerm = await getCurrentTerm(state.slug);
+      const instructorEntries = await getInstructorSitemapEntries(
+        currentTerm,
+        state.slug
+      );
+      for (const entry of instructorEntries) {
+        instructorPages.push({
+          url: `${baseUrl}/${state.slug}/college/${entry.collegeId}/instructor/${entry.slug}`,
+          changeFrequency: "weekly" as const,
+          priority: 0.6,
+        });
+      }
+    } catch {
+      // Skip state if instructor loading fails
+    }
+  }
+
   // Blog pages
   const blogPages: MetadataRoute.Sitemap = [
     { url: `${baseUrl}/blog`, changeFrequency: "weekly" as const, priority: 0.7 },
@@ -130,6 +153,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...subjectPages,
     ...stateSubjectPages,
     ...coursePages,
+    ...instructorPages,
     ...blogPages,
   ];
 }
