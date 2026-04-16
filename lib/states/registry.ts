@@ -53,63 +53,51 @@ export interface StateConfig {
 }
 
 // ---------------------------------------------------------------------------
-// Registry — import each state's config lazily
+// Registry — static imports so this module is safe on the edge runtime.
+// `require()` only works on Node; static `import` gets statically analyzed
+// and bundled by Turbopack/Next for both Node and edge.
 // ---------------------------------------------------------------------------
 
-const configs: Record<string, StateConfig> = {};
+import vaConfig from "./va/config";
+import ncConfig from "./nc/config";
+import scConfig from "./sc/config";
+import dcConfig from "./dc/config";
+import mdConfig from "./md/config";
+import gaConfig from "./ga/config";
+import deConfig from "./de/config";
+import tnConfig from "./tn/config";
+import nyConfig from "./ny/config";
+import riConfig from "./ri/config";
+import vtConfig from "./vt/config";
+import ctConfig from "./ct/config";
+import meConfig from "./me/config";
+import paConfig from "./pa/config";
+import njConfig from "./nj/config";
 
-function ensureLoaded(): void {
-  if (Object.keys(configs).length > 0) return;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const va = require("./va/config").default as StateConfig;
-  configs[va.slug] = va;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const nc = require("./nc/config").default as StateConfig;
-  configs[nc.slug] = nc;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const sc = require("./sc/config").default as StateConfig;
-  configs[sc.slug] = sc;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const dc = require("./dc/config").default as StateConfig;
-  configs[dc.slug] = dc;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const md = require("./md/config").default as StateConfig;
-  configs[md.slug] = md;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const ga = require("./ga/config").default as StateConfig;
-  configs[ga.slug] = ga;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const de = require("./de/config").default as StateConfig;
-  configs[de.slug] = de;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const tn = require("./tn/config").default as StateConfig;
-  configs[tn.slug] = tn;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const ny = require("./ny/config").default as StateConfig;
-  configs[ny.slug] = ny;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const ri = require("./ri/config").default as StateConfig;
-  configs[ri.slug] = ri;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const vt = require("./vt/config").default as StateConfig;
-  configs[vt.slug] = vt;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const ct = require("./ct/config").default as StateConfig;
-  configs[ct.slug] = ct;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const me = require("./me/config").default as StateConfig;
-  configs[me.slug] = me;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const pa = require("./pa/config").default as StateConfig;
-  configs[pa.slug] = pa;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const nj = require("./nj/config").default as StateConfig;
-  configs[nj.slug] = nj;
-}
+const ALL_CONFIGS: StateConfig[] = [
+  vaConfig,
+  ncConfig,
+  scConfig,
+  dcConfig,
+  mdConfig,
+  gaConfig,
+  deConfig,
+  tnConfig,
+  nyConfig,
+  riConfig,
+  vtConfig,
+  ctConfig,
+  meConfig,
+  paConfig,
+  njConfig,
+];
+
+const configs: Record<string, StateConfig> = Object.fromEntries(
+  ALL_CONFIGS.map((c) => [c.slug, c])
+);
 
 /** Get the config for a specific state. Throws if unknown. */
 export function getStateConfig(slug: string): StateConfig {
-  ensureLoaded();
   const cfg = configs[slug];
   if (!cfg) {
     throw new Error(`Unknown state: "${slug}". Available: ${Object.keys(configs).join(", ")}`);
@@ -119,13 +107,11 @@ export function getStateConfig(slug: string): StateConfig {
 
 /** Get all registered state configs. */
 export function getAllStates(): StateConfig[] {
-  ensureLoaded();
-  return Object.values(configs);
+  return ALL_CONFIGS;
 }
 
 /** Check if a state slug is valid. */
 export function isValidState(slug: string): boolean {
-  ensureLoaded();
   return slug in configs;
 }
 

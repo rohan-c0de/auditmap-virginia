@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { searchCoursesAcrossColleges } from "@/lib/courses";
+import { searchCoursesAcrossColleges } from "@/lib/courses-search";
 import { rateLimit, getClientKey } from "@/lib/rate-limit";
 import { loadInstitutions } from "@/lib/institutions";
 import { isValidState } from "@/lib/states/registry";
