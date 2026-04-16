@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type { ScheduleRequest } from "@/lib/types";
 import { generateSchedules } from "@/lib/schedule";
-import { buildTransferLookup } from "@/lib/transfer";
+import { buildTransferLookupForSubjects } from "@/lib/transfer-scoped";
 import { rateLimit, getClientKey } from "@/lib/rate-limit";
 import { loadInstitutions } from "@/lib/institutions";
 import { isValidState } from "@/lib/states/registry";
@@ -89,11 +89,16 @@ export async function POST(req: Request, context: RouteContext) {
 
     const institutions = loadInstitutions(state);
 
-    // Load transfer lookup if a target university is specified
+    // Load transfer lookup if a target university is specified. Scoped to the
+    // user's chosen subjects so we don't pull the whole state catalog just to
+    // discard 70-90% of it.
     let transferLookup = null;
     if (request.targetUniversity) {
       try {
-        transferLookup = await buildTransferLookup(state);
+        transferLookup = await buildTransferLookupForSubjects(
+          request.subjects,
+          state
+        );
       } catch {
         // Transfer data unavailable — continue without it
       }

@@ -273,26 +273,6 @@ export function trimCoursesForClient(
 }
 
 /**
- * Filter a state-wide transfer lookup down to only the courses present at
- * this college. Without this, a college page serializes transfer mappings
- * for every course in the whole state (can be 100k+ entries → megabytes).
- */
-export function filterTransferLookupToCourses<T>(
-  lookup: Record<string, T[]> | undefined,
-  courses: CourseSection[]
-): Record<string, T[]> | undefined {
-  if (!lookup) return lookup;
-  const keys = new Set(
-    courses.map((c) => `${c.course_prefix}-${c.course_number}`)
-  );
-  const filtered: Record<string, T[]> = {};
-  for (const k of keys) {
-    if (lookup[k]) filtered[k] = lookup[k];
-  }
-  return filtered;
-}
-
-/**
  * Extract a sorted list of unique course prefixes (subjects) from an array of
  * course sections.
  */

@@ -272,29 +272,19 @@ export async function getUniversitiesWithCounts(state = "va"): Promise<
     .sort((a, b) => b.totalCount - a.totalCount);
 }
 
+// Re-export the lookup shape from the edge-safe module so callers that need
+// the type can import it from either module. The scoped helpers themselves
+// live in `lib/transfer-scoped.ts` to keep `fs`/`path` out of edge bundles.
+export type { TransferLookup } from "./transfer-scoped";
+import type { TransferLookup } from "./transfer-scoped";
+
 /**
  * Build a lookup map for client-side filtering:
  * { "ENG-111": [{ university: "vt", type: "direct" }], ... }
  */
-export async function buildTransferLookup(state = "va"): Promise<
-  Record<
-    string,
-    {
-      university: string;
-      type: "direct" | "elective" | "no-credit";
-      course: string;
-    }[]
-  >
-> {
+export async function buildTransferLookup(state = "va"): Promise<TransferLookup> {
   const mappings = await loadTransferMappings(state);
-  const lookup: Record<
-    string,
-    {
-      university: string;
-      type: "direct" | "elective" | "no-credit";
-      course: string;
-    }[]
-  > = {};
+  const lookup: TransferLookup = {};
 
   for (const m of mappings) {
     // Skip combo-credit entries (e.g. ODU's "**** ****") — they only

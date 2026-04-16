@@ -7,12 +7,11 @@ import {
   isDataStale,
   getAvailableTerms,
   trimCoursesForClient,
-  filterTransferLookupToCourses,
 } from "@/lib/courses";
 import { getCurrentTerm } from "@/lib/terms";
 import CollegeMap from "./CollegeMap";
 import CollegeTermSection from "./CollegeTermSection";
-import { buildTransferLookup } from "@/lib/transfer";
+import { buildTransferLookupForCourses } from "@/lib/transfer-scoped";
 import { getStateConfig, getAllStates } from "@/lib/states/registry";
 import { getTopInstructors } from "@/lib/instructors";
 import type { CourseSection } from "@/lib/types";
@@ -120,12 +119,10 @@ export default async function CollegeDetailPage(props: PageProps) {
     })
   );
 
-  // Shared transfer lookup, filtered to the union of courses across all terms
+  // Shared transfer lookup, scoped to the union of courses across all terms
   // so the map stays the same regardless of which term the client picks.
-  const transferLookup = filterTransferLookupToCourses(
-    await buildTransferLookup(state),
-    union
-  );
+  // Targeted Supabase query instead of loading the whole state catalog.
+  const transferLookup = await buildTransferLookupForCourses(union, state);
 
   const systemCollegeCoursesUrl = config.collegeCoursesUrl(collegeSlug);
 

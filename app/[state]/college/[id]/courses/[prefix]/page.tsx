@@ -7,11 +7,10 @@ import {
   getTermsWithDataForCollegeSubject,
   getUniqueSubjects,
   trimCoursesForClient,
-  filterTransferLookupToCourses,
 } from "@/lib/courses";
 import { getCurrentTerm, termLabel } from "@/lib/terms";
 import { getStateConfig } from "@/lib/states/registry";
-import { buildTransferLookup } from "@/lib/transfer";
+import { buildTransferLookupForCourses } from "@/lib/transfer-scoped";
 import { subjectName } from "@/lib/subjects";
 import SubjectTermSection from "./SubjectTermSection";
 import AdUnit from "@/components/AdUnit";
@@ -159,10 +158,11 @@ export default async function SubjectPage(props: PageProps) {
 
   // Transfer lookup is scoped to the default term's courses. When the client
   // switches terms, the API route returns a fresh lookup filtered to that
-  // term's courses.
-  const defaultTransferLookup = filterTransferLookupToCourses(
-    await buildTransferLookup(state),
-    defaultCoursesFull
+  // term's courses. Targeted Supabase query — avoids loading the full state
+  // transfer catalog just to discard 99% of it.
+  const defaultTransferLookup = await buildTransferLookupForCourses(
+    defaultCoursesFull,
+    state
   );
 
   const subject = subjectName(prefix);
