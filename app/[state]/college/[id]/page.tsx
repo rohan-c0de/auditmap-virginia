@@ -12,6 +12,7 @@ import { buildTransferLookup } from "@/lib/transfer";
 import { getStateConfig, getAllStates } from "@/lib/states/registry";
 import { getUniqueSubjects } from "@/lib/courses";
 import { subjectName } from "@/lib/subjects";
+import { getTopInstructors } from "@/lib/instructors";
 import AdUnit from "@/components/AdUnit";
 import TrackView from "@/components/TrackView";
 
@@ -443,6 +444,41 @@ export default async function CollegeDetailPage(props: PageProps) {
       <div className="mt-8">
         <AdUnit slot="3816492750" format="auto" className="min-h-[100px]" />
       </div>
+
+      {/* Browse Instructors */}
+      {await (async () => {
+        try {
+          const topInstructors = await getTopInstructors(
+            institution.college_slug,
+            currentTerm,
+            state
+          );
+          if (topInstructors.length === 0) return null;
+          return (
+            <section className="mt-8">
+              <h2 className="text-lg font-semibold text-gray-900 dark:text-slate-100 mb-3">
+                Browse Instructors
+              </h2>
+              <div className="flex flex-wrap gap-2">
+                {topInstructors.map((inst) => (
+                  <Link
+                    key={inst.slug}
+                    href={`/${state}/college/${id}/instructor/${inst.slug}`}
+                    className="rounded-full border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-1.5 text-xs font-medium text-gray-700 dark:text-slate-300 hover:border-teal-300 dark:hover:border-teal-700 hover:text-teal-700 dark:hover:text-teal-400 transition"
+                  >
+                    {inst.displayName}
+                    <span className="text-gray-400 dark:text-slate-500 ml-1">
+                      ({inst.sectionCount})
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          );
+        } catch {
+          return null;
+        }
+      })()}
 
       {/* Other colleges in this state — internal linking for SEO */}
       {(() => {

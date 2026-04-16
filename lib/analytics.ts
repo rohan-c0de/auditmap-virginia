@@ -22,6 +22,7 @@ export type AnalyticsEvent =
   | "course_detail_view"
   | "college_detail_view"
   | "subject_page_view"
+  | "instructor_page_view"
   // Transfer
   | "transfer_lookup_submit"
   | "transfer_course_add"
