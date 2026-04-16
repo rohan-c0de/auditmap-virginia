@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import CourseTable from "@/components/CourseTable";
+import CourseTable from "@/components/CourseTableDynamic";
 import AuditInstructions from "@/components/AuditInstructions";
 import PrintInstructions from "@/components/PrintInstructions";
 import ScheduleBuilder from "@/components/ScheduleBuilder";
