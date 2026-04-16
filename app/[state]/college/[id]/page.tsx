@@ -9,16 +9,13 @@ import {
   trimCoursesForClient,
   filterTransferLookupToCourses,
 } from "@/lib/courses";
-import { isInProgress } from "@/lib/course-status";
-import { getCurrentTerm, termLabel } from "@/lib/terms";
-import CollegeDetailClient from "./CollegeDetailClient";
+import { getCurrentTerm } from "@/lib/terms";
 import CollegeMap from "./CollegeMap";
-import TermSelector from "./TermSelector";
+import CollegeTermSection from "./CollegeTermSection";
 import { buildTransferLookup } from "@/lib/transfer";
 import { getStateConfig, getAllStates } from "@/lib/states/registry";
-import { getUniqueSubjects } from "@/lib/courses";
-import { subjectName } from "@/lib/subjects";
 import { getTopInstructors } from "@/lib/instructors";
+import type { CourseSection } from "@/lib/types";
 import AdUnit from "@/components/AdUnit";
 import TrackView from "@/components/TrackView";
 
@@ -27,7 +24,10 @@ export const revalidate = 86400;
 
 type PageProps = {
   params: Promise<{ state: string; id: string }>;
-  searchParams: Promise<{ term?: string }>;
+  // Note: searchParams intentionally omitted. Reading searchParams in a server
+  // page is a Request-time API that opts the route into fully dynamic
+  // rendering and disables ISR edge caching. The `?term=` selection is now
+  // handled client-side in CollegeTermSection via useSearchParams.
 };
 
 export async function generateMetadata(props: PageProps): Promise<Metadata> {
@@ -55,7 +55,6 @@ export function generateStaticParams() {
 
 export default async function CollegeDetailPage(props: PageProps) {
   const { state, id } = await props.params;
-  const { term: requestedTerm } = await props.searchParams;
   const config = getStateConfig(state);
   const institutions = loadInstitutions(state);
   const institution = institutions.find((i) => i.id === id);
@@ -64,34 +63,71 @@ export default async function CollegeDetailPage(props: PageProps) {
     notFound();
   }
 
-  // Build list of terms that have data for THIS college
+  // Load courses for every term this college has data in. Doing this server-
+  // side lets the client switch terms via the URL without triggering a fresh
+  // server render, which would force the whole page out of ISR.
   const allTerms = await getAvailableTerms(state);
-  const termsWithData: string[] = [];
-  for (const t of allTerms) {
-    const c = await loadCoursesForCollege(institution.college_slug, t, state);
-    if (c.length > 0) termsWithData.push(t);
-  }
-  termsWithData.sort();
+  const termCoursePairs: { term: string; courses: CourseSection[] }[] =
+    await Promise.all(
+      allTerms.map(async (t) => ({
+        term: t,
+        courses: await loadCoursesForCollege(institution.college_slug, t, state),
+      }))
+    );
+  const termsWithData = termCoursePairs
+    .filter((p) => p.courses.length > 0)
+    .map((p) => p.term)
+    .sort();
 
-  // Use requested term if valid, otherwise fall back to latest with data
-  let currentTerm = requestedTerm && termsWithData.includes(requestedTerm)
-    ? requestedTerm
-    : await getCurrentTerm(state);
-  let courses = await loadCoursesForCollege(institution.college_slug, currentTerm, state);
-  if (courses.length === 0) {
-    // Fall back to earlier terms that have data for this college
-    for (const t of [...termsWithData].reverse()) {
-      const c = await loadCoursesForCollege(institution.college_slug, t, state);
-      if (c.length > 0) {
-        currentTerm = t;
-        courses = c;
-        break;
-      }
-    }
-  }
-  const stale = await isDataStale(institution.college_slug, currentTerm, state);
+  // Default term = most-recent term with data (same fallback logic the page
+  // used previously, only now it no longer depends on ?term=).
+  const preferredTerm = await getCurrentTerm(state);
+  const defaultTerm = termsWithData.includes(preferredTerm)
+    ? preferredTerm
+    : (termsWithData[termsWithData.length - 1] ?? preferredTerm);
 
   const collegeSlug = institution.college_slug;
+
+  // Build per-term maps for the client wrapper. Only the terms that actually
+  // have data are shipped.
+  const coursesByTerm: Record<string, CourseSection[]> = {};
+  const staleByTerm: Record<string, boolean> = {};
+  const topInstructorsByTerm: Record<
+    string,
+    { slug: string; displayName: string; sectionCount: number }[]
+  > = {};
+  const courseListingUrlByTerm: Record<string, string> = {};
+
+  const union: CourseSection[] = [];
+  await Promise.all(
+    termsWithData.map(async (t) => {
+      const courses =
+        termCoursePairs.find((p) => p.term === t)?.courses ?? [];
+      coursesByTerm[t] = trimCoursesForClient(courses);
+      staleByTerm[t] = await isDataStale(collegeSlug, t, state);
+      topInstructorsByTerm[t] = await getTopInstructors(
+        collegeSlug,
+        t,
+        state
+      );
+      courseListingUrlByTerm[t] = config.courseDiscoveryUrl(
+        collegeSlug,
+        "__PREFIX__",
+        "__NUMBER__",
+        t
+      );
+      union.push(...courses);
+    })
+  );
+
+  // Shared transfer lookup, filtered to the union of courses across all terms
+  // so the map stays the same regardless of which term the client picks.
+  const transferLookup = filterTransferLookupToCourses(
+    await buildTransferLookup(state),
+    union
+  );
+
+  const systemCollegeCoursesUrl = config.collegeCoursesUrl(collegeSlug);
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com";
   const stateAbbr = state.toUpperCase();
@@ -181,136 +217,24 @@ export default async function CollegeDetailPage(props: PageProps) {
         </div>
       )}
 
-      {/* Staleness warning */}
-      {stale && courses.length > 0 && (
-        <div className="bg-amber-50 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800 rounded-lg p-4 mb-6">
-          <p className="text-amber-800 dark:text-amber-300 text-sm">
-            <strong>Note:</strong> Course data may be outdated (last updated
-            more than 3 days ago). Check{" "}
-            <a
-              href={config.collegeCoursesUrl(institution.college_slug)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              {config.systemName} course site
-            </a>{" "}
-            for the latest listings.
-          </p>
-        </div>
-      )}
-
-      {/* Course Listings */}
-      <section>
-        <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-          <div className="flex items-center gap-3">
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-slate-100">
-              {termLabel(currentTerm)} Courses{" "}
-              <span className="text-gray-500 dark:text-slate-400 font-normal text-base">
-                ({courses.length} sections)
-              </span>
-            </h2>
-            {termsWithData.length > 1 && (
-              <TermSelector
-                terms={termsWithData.map((t) => ({ code: t, label: termLabel(t) }))}
-                currentTerm={currentTerm}
-                collegeId={institution.id}
-                state={state}
-              />
-            )}
-          </div>
-          <a
-            href={config.collegeCoursesUrl(institution.college_slug)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-teal-600 hover:text-teal-700"
-          >
-            {`View on ${config.systemName} →`}
-          </a>
-        </div>
-
-        {/* Registration status summary */}
-        {courses.length > 0 && (() => {
-          const upcoming = courses.filter((c) => !isInProgress(c.start_date)).length;
-          const started = courses.length - upcoming;
-          return upcoming > 0 ? (
-            <div className="mb-4 flex items-center gap-2 rounded-lg border border-emerald-200 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-900/30 px-4 py-2.5 text-sm">
-              <span className="inline-block h-2 w-2 rounded-full bg-emerald-400" />
-              <span className="text-emerald-800 dark:text-emerald-400">
-                <strong>{upcoming}</strong> {upcoming === 1 ? "section" : "sections"} still open for registration
-              </span>
-              <span className="text-emerald-600">·</span>
-              <span className="text-emerald-600">
-                {started} already in progress
-              </span>
-            </div>
-          ) : (
-            <div className="mb-4 flex items-center gap-2 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 px-4 py-2.5 text-sm">
-              <span className="inline-block h-2 w-2 rounded-full bg-gray-300 dark:bg-slate-600" />
-              <span className="text-gray-600 dark:text-slate-400">
-                All {started} sections have already started
-              </span>
-            </div>
-          );
-        })()}
-
-        {courses.length === 0 ? (
-          <div className="bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg p-8 text-center">
-            <p className="text-gray-600 dark:text-slate-400 mb-2">
-              No course data available for this term.
-            </p>
-            <a
-              href={config.collegeCoursesUrl(institution.college_slug)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-teal-600 hover:underline text-sm"
-            >
-              {`Check ${config.systemName} course site directly →`}
-            </a>
-          </div>
-        ) : (
-          <CollegeDetailClient
-            courses={trimCoursesForClient(courses)}
-            institution={institution}
-            collegeSlug={collegeSlug}
-            transferLookup={filterTransferLookupToCourses(
-              await buildTransferLookup(state),
-              courses
-            )}
-            systemName={config.systemName}
-            courseListingUrl={config.courseDiscoveryUrl(collegeSlug, "__PREFIX__", "__NUMBER__", currentTerm)}
-            state={state}
-          />
-        )}
-      </section>
-
-      {/* Browse by Subject — pSEO internal links */}
-      {courses.length > 0 && (() => {
-        const subjects = getUniqueSubjects(courses);
-        if (subjects.length < 2) return null;
-        return (
-          <section className="mt-8">
-            <h2 className="text-lg font-semibold text-gray-900 dark:text-slate-100 mb-3">
-              Browse by Subject
-            </h2>
-            <div className="flex flex-wrap gap-2">
-              {subjects.map((prefix) => {
-                const count = courses.filter(c => c.course_prefix === prefix).length;
-                return (
-                  <Link
-                    key={prefix}
-                    href={`/${state}/college/${id}/courses/${prefix.toLowerCase()}`}
-                    className="inline-flex items-center gap-1.5 rounded-md bg-gray-100 dark:bg-slate-700 px-3 py-1.5 text-xs font-medium text-gray-700 dark:text-slate-300 hover:bg-teal-100 dark:hover:bg-teal-900/40 hover:text-teal-700 dark:hover:text-teal-400 transition-colors"
-                  >
-                    {subjectName(prefix)}
-                    <span className="text-gray-400 dark:text-slate-500">({count})</span>
-                  </Link>
-                );
-              })}
-            </div>
-          </section>
-        );
-      })()}
+      {/* Term-dependent content (staleness, term picker, course table, subject
+          browser, instructor browser) — client-rendered so ?term= switches
+          happen without a server round-trip. */}
+      <CollegeTermSection
+        coursesByTerm={coursesByTerm}
+        termsWithData={termsWithData}
+        defaultTerm={defaultTerm}
+        staleByTerm={staleByTerm}
+        topInstructorsByTerm={topInstructorsByTerm}
+        courseListingUrlByTerm={courseListingUrlByTerm}
+        transferLookup={transferLookup}
+        institution={institution}
+        collegeSlug={collegeSlug}
+        state={state}
+        id={id}
+        systemName={config.systemName}
+        systemCollegeCoursesUrl={systemCollegeCoursesUrl}
+      />
 
       {/* Audit Policy — collapsed by default, below courses */}
       <section className="mt-8">
@@ -453,41 +377,6 @@ export default async function CollegeDetailPage(props: PageProps) {
       <div className="mt-8">
         <AdUnit slot="3816492750" format="auto" className="min-h-[100px]" />
       </div>
-
-      {/* Browse Instructors */}
-      {await (async () => {
-        try {
-          const topInstructors = await getTopInstructors(
-            institution.college_slug,
-            currentTerm,
-            state
-          );
-          if (topInstructors.length === 0) return null;
-          return (
-            <section className="mt-8">
-              <h2 className="text-lg font-semibold text-gray-900 dark:text-slate-100 mb-3">
-                Browse Instructors
-              </h2>
-              <div className="flex flex-wrap gap-2">
-                {topInstructors.map((inst) => (
-                  <Link
-                    key={inst.slug}
-                    href={`/${state}/college/${id}/instructor/${inst.slug}`}
-                    className="rounded-full border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-1.5 text-xs font-medium text-gray-700 dark:text-slate-300 hover:border-teal-300 dark:hover:border-teal-700 hover:text-teal-700 dark:hover:text-teal-400 transition"
-                  >
-                    {inst.displayName}
-                    <span className="text-gray-400 dark:text-slate-500 ml-1">
-                      ({inst.sectionCount})
-                    </span>
-                  </Link>
-                ))}
-              </div>
-            </section>
-          );
-        } catch {
-          return null;
-        }
-      })()}
 
       {/* Other colleges in this state — internal linking for SEO */}
       {(() => {

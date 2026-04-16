@@ -13,7 +13,8 @@ import { getCurrentTerm, termLabel } from "@/lib/terms";
 import { getStateConfig, getAllStates } from "@/lib/states/registry";
 import { buildTransferLookup } from "@/lib/transfer";
 import { subjectName } from "@/lib/subjects";
-import CollegeDetailClient from "../../CollegeDetailClient";
+import type { CourseSection } from "@/lib/types";
+import SubjectTermSection from "./SubjectTermSection";
 import AdUnit from "@/components/AdUnit";
 import TrackView from "@/components/TrackView";
 
@@ -21,7 +22,9 @@ export const revalidate = 86400;
 
 type PageProps = {
   params: Promise<{ state: string; id: string; prefix: string }>;
-  searchParams: Promise<{ term?: string }>;
+  // searchParams intentionally omitted — reading it would opt the page into
+  // dynamic rendering and disable ISR edge caching. `?term=` is now handled
+  // client-side in SubjectTermSection via useEffect + history.replaceState.
 };
 
 // ---------------------------------------------------------------------------
@@ -70,10 +73,10 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
 
   const subject = subjectName(prefix);
 
-  // Resolve term with fallback (same logic as page component)
+  // Resolve the default term for SEO copy — same fallback logic the page uses.
   const allTerms = await getAvailableTerms(state);
   let resolvedTerm = await getCurrentTerm(state);
-  let courses = await loadCoursesForCollege(
+  const courses = await loadCoursesForCollege(
     institution.college_slug,
     resolvedTerm,
     state
@@ -127,7 +130,6 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
 
 export default async function SubjectPage(props: PageProps) {
   const { state, id, prefix: rawPrefix } = await props.params;
-  const { term: requestedTerm } = await props.searchParams;
   const prefix = rawPrefix.toUpperCase();
   const config = getStateConfig(state);
   const institutions = loadInstitutions(state);
@@ -135,90 +137,83 @@ export default async function SubjectPage(props: PageProps) {
 
   if (!institution) notFound();
 
-  // Resolve term — honour ?term= if valid, otherwise try current term
-  // then fall back to earlier terms that have data for this prefix.
+  // Load courses for every term, filtered to this subject prefix, so the
+  // client can switch terms without a server round-trip. If no term has any
+  // sections for this prefix, the page 404s.
   const allTerms = await getAvailableTerms(state);
-  let currentTerm: string;
-  let allCourses: Awaited<ReturnType<typeof loadCoursesForCollege>>;
-  let courses: typeof allCourses;
+  const perTerm: { term: string; courses: CourseSection[] }[] = await Promise.all(
+    allTerms.map(async (t) => {
+      const full = await loadCoursesForCollege(
+        institution.college_slug,
+        t,
+        state
+      );
+      return { term: t, courses: full.filter((c) => c.course_prefix === prefix) };
+    })
+  );
+  const termsWithData = perTerm
+    .filter((p) => p.courses.length > 0)
+    .map((p) => p.term)
+    .sort();
 
-  if (requestedTerm && allTerms.includes(requestedTerm)) {
-    currentTerm = requestedTerm;
-    allCourses = await loadCoursesForCollege(
-      institution.college_slug,
-      currentTerm,
-      state
-    );
-    courses = allCourses.filter((c) => c.course_prefix === prefix);
-  } else {
-    // Try current term first, fall back to earlier terms with this prefix
-    const defaultTerm = await getCurrentTerm(state);
-    allCourses = await loadCoursesForCollege(
-      institution.college_slug,
-      defaultTerm,
-      state
-    );
-    courses = allCourses.filter((c) => c.course_prefix === prefix);
+  if (termsWithData.length === 0) notFound();
 
-    if (courses.length > 0) {
-      currentTerm = defaultTerm;
-    } else {
-      // Fall back through available terms (most recent first)
-      currentTerm = defaultTerm;
-      for (const t of [...allTerms].reverse()) {
-        if (t === defaultTerm) continue;
-        const termCourses = await loadCoursesForCollege(
-          institution.college_slug,
-          t,
-          state
-        );
-        const filtered = termCourses.filter((c) => c.course_prefix === prefix);
-        if (filtered.length > 0) {
-          currentTerm = t;
-          allCourses = termCourses;
-          courses = filtered;
-          break;
-        }
-      }
-    }
+  // Default term = most-recent term with data for this subject at this college.
+  const preferredTerm = await getCurrentTerm(state);
+  const defaultTerm = termsWithData.includes(preferredTerm)
+    ? preferredTerm
+    : termsWithData[termsWithData.length - 1];
+
+  const coursesByTerm: Record<string, CourseSection[]> = {};
+  const courseListingUrlByTerm: Record<string, string> = {};
+  const union: CourseSection[] = [];
+  for (const t of termsWithData) {
+    const courses = perTerm.find((p) => p.term === t)?.courses ?? [];
+    coursesByTerm[t] = trimCoursesForClient(courses);
+    courseListingUrlByTerm[t] = config.courseDiscoveryUrl(
+      institution.college_slug,
+      "__PREFIX__",
+      "__NUMBER__",
+      t
+    );
+    union.push(...courses);
   }
 
-  if (courses.length === 0) notFound();
+  const transferLookup = filterTransferLookupToCourses(
+    await buildTransferLookup(state),
+    union
+  );
 
+  const defaultCourses = coursesByTerm[defaultTerm];
   const subject = subjectName(prefix);
-  const uniqueCourses = [
-    ...new Set(courses.map((c) => `${c.course_prefix} ${c.course_number}`)),
+  const uniqueCoursesForJsonLd = [
+    ...new Set(
+      defaultCourses.map((c) => `${c.course_prefix} ${c.course_number}`)
+    ),
   ].sort();
-  const onlineCount = courses.filter((c) => c.mode === "online").length;
-  const hybridCount = courses.filter((c) => c.mode === "hybrid").length;
-  const inPersonCount = courses.filter(
-    (c) => c.mode === "in-person"
-  ).length;
-  const eveningCount = courses.filter((c) => {
-    if (!c.start_time) return false;
-    const hour = parseInt(c.start_time.split(":")[0]);
-    const isPM = c.start_time.toLowerCase().includes("pm");
-    return isPM && hour >= 5 && hour !== 12;
-  }).length;
 
-  // Get all subjects for this college for the sidebar links
-  const allSubjects = getUniqueSubjects(allCourses);
+  // All subjects at this college for the "Browse Other Subjects" links.
+  // Uses the default term's full course list (the server-side registry of
+  // what this college offers this season).
+  const defaultTermFullCourses = await loadCoursesForCollege(
+    institution.college_slug,
+    defaultTerm,
+    state
+  );
+  const allSubjects = getUniqueSubjects(defaultTermFullCourses);
 
-  // Transfer lookup
-  const transferLookup = await buildTransferLookup(state);
-
-  // Structured data
+  // Structured data — reflects the default term the page prerenders with.
   const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com";
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: `${subject} Courses at ${institution.name}`,
-    description: `${courses.length} ${subject} sections available for ${termLabel(currentTerm)}`,
-    numberOfItems: courses.length,
+    description: `${defaultCourses.length} ${subject} sections available for ${termLabel(defaultTerm)}`,
+    numberOfItems: defaultCourses.length,
     url: `${siteUrl}/${state}/college/${id}/courses/${rawPrefix}`,
-    itemListElement: uniqueCourses.slice(0, 20).map((code, i) => {
-      const sample = courses.find(
+    itemListElement: uniqueCoursesForJsonLd.slice(0, 20).map((code, i) => {
+      const sample = defaultCourses.find(
         (c) => `${c.course_prefix} ${c.course_number}` === code
       )!;
       return {
@@ -275,7 +270,7 @@ export default async function SubjectPage(props: PageProps) {
           state,
           college: id,
           subject: prefix,
-          sections: courses.length,
+          sections: defaultCourses.length,
           scope: "college",
         }}
       />
@@ -314,57 +309,19 @@ export default async function SubjectPage(props: PageProps) {
         <h1 className="text-3xl font-bold text-gray-900 dark:text-slate-100">
           {subject} Courses at {institution.name}
         </h1>
-        <p className="text-gray-600 dark:text-slate-400 mt-1">
-          {termLabel(currentTerm)} &middot; {courses.length} sections across{" "}
-          {uniqueCourses.length} courses
-        </p>
       </div>
 
-      {/* Stats bar */}
-      <div className="flex flex-wrap gap-3 mb-6">
-        {inPersonCount > 0 && (
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-teal-50 dark:bg-teal-900/30 px-3 py-1 text-xs font-medium text-teal-700 dark:text-teal-400 ring-1 ring-inset ring-teal-200 dark:ring-teal-800">
-            <span className="h-1.5 w-1.5 rounded-full bg-teal-500" />
-            {inPersonCount} In-Person
-          </span>
-        )}
-        {onlineCount > 0 && (
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 dark:bg-blue-900/30 px-3 py-1 text-xs font-medium text-blue-700 dark:text-blue-400 ring-1 ring-inset ring-blue-200 dark:ring-blue-800">
-            <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
-            {onlineCount} Online
-          </span>
-        )}
-        {hybridCount > 0 && (
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-purple-50 dark:bg-purple-900/30 px-3 py-1 text-xs font-medium text-purple-700 dark:text-purple-400 ring-1 ring-inset ring-purple-200 dark:ring-purple-800">
-            <span className="h-1.5 w-1.5 rounded-full bg-purple-500" />
-            {hybridCount} Hybrid
-          </span>
-        )}
-        {eveningCount > 0 && (
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-50 dark:bg-amber-900/30 px-3 py-1 text-xs font-medium text-amber-700 dark:text-amber-400 ring-1 ring-inset ring-amber-200 dark:ring-amber-800">
-            <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
-            {eveningCount} Evening
-          </span>
-        )}
-      </div>
-
-      {/* Course table */}
-      <section>
-        <CollegeDetailClient
-          courses={trimCoursesForClient(courses)}
-          institution={institution}
-          collegeSlug={institution.college_slug}
-          transferLookup={filterTransferLookupToCourses(transferLookup, courses)}
-          systemName={config.systemName}
-          courseListingUrl={config.courseDiscoveryUrl(
-            institution.college_slug,
-            "__PREFIX__",
-            "__NUMBER__",
-            currentTerm
-          )}
-          state={state}
-        />
-      </section>
+      {/* Term-scoped content (stats bar, term picker, course table) */}
+      <SubjectTermSection
+        coursesByTerm={coursesByTerm}
+        termsWithData={termsWithData}
+        defaultTerm={defaultTerm}
+        courseListingUrlByTerm={courseListingUrlByTerm}
+        transferLookup={transferLookup}
+        institution={institution}
+        systemName={config.systemName}
+        state={state}
+      />
 
       {/* In-content ad */}
       <div className="mt-8">
