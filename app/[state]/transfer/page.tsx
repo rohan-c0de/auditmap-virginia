@@ -1,7 +1,11 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { loadTransferMappings, getUniversities } from "@/lib/transfer";
+import {
+  loadTransferMappings,
+  getUniversities,
+  getUniversitiesWithCounts,
+} from "@/lib/transfer";
 import { loadAllCourses } from "@/lib/courses";
 import { getCurrentTerm } from "@/lib/terms";
 import { getStateConfig, getAllStates } from "@/lib/states/registry";
@@ -94,6 +98,47 @@ export default async function TransferPage({ params }: Props) {
         state={state}
         popularCourses={config.popularCourses}
       />
+
+      {/* Browse transfer pathways by university — hub-page directory */}
+      <BrowseTransferHubs state={state} />
     </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Internal linking: directory of per-university transfer hub pages. Feeds
+// crawl discovery and gives users a way to drop straight into a specific
+// university's pathway. Only shows universities meeting the thin-content
+// guard (>= 10 transferable courses).
+// ---------------------------------------------------------------------------
+async function BrowseTransferHubs({ state }: { state: string }) {
+  const universities = await getUniversitiesWithCounts(state);
+  const eligible = universities.filter((u) => u.totalCount >= 10);
+  if (eligible.length === 0) return null;
+
+  return (
+    <section className="mt-12 pt-8 border-t border-gray-200 dark:border-slate-700">
+      <h2 className="text-lg font-semibold text-gray-900 dark:text-slate-100 mb-1">
+        Browse transfer pathways by university
+      </h2>
+      <p className="text-sm text-gray-600 dark:text-slate-400 mb-4">
+        Pick a target 4-year school to see every community college course in
+        the state that transfers in.
+      </p>
+      <div className="flex flex-wrap gap-2">
+        {eligible.map((u) => (
+          <Link
+            key={u.slug}
+            href={`/${state}/transfer/to/${u.slug}`}
+            className="inline-flex items-center gap-1.5 rounded-md border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-1.5 text-sm font-medium text-gray-700 dark:text-slate-300 hover:border-teal-300 dark:hover:border-teal-700 hover:text-teal-700 dark:hover:text-teal-400 transition-colors"
+          >
+            <span>{u.name}</span>
+            <span className="text-xs text-gray-400 dark:text-slate-500">
+              {u.totalCount}
+            </span>
+          </Link>
+        ))}
+      </div>
+    </section>
   );
 }

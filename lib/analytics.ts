@@ -26,6 +26,7 @@ export type AnalyticsEvent =
   // Transfer
   | "transfer_lookup_submit"
   | "transfer_course_add"
+  | "transfer_hub_view"
   // Schedule builder
   | "schedule_build_submit"
   | "schedule_results_view"

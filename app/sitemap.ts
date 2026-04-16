@@ -9,6 +9,10 @@ import {
 } from "@/lib/courses";
 import { getInstructorSitemapEntries } from "@/lib/instructors";
 import { getCurrentTerm } from "@/lib/terms";
+import { getUniversitiesWithCounts } from "@/lib/transfer";
+
+// Thin-content guard: keep in sync with the /[state]/transfer/to/[slug] page.
+const MIN_TRANSFER_HUB_COUNT = 10;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl =
@@ -114,6 +118,26 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   }
 
+  // University transfer hub pages (pSEO) — one per (state, receiving university)
+  // where at least MIN_TRANSFER_HUB_COUNT transferable courses exist.
+  const transferHubPages: MetadataRoute.Sitemap = [];
+  for (const state of getAllStates()) {
+    if (!state.transferSupported) continue;
+    try {
+      const universities = await getUniversitiesWithCounts(state.slug);
+      for (const u of universities) {
+        if (u.totalCount < MIN_TRANSFER_HUB_COUNT) continue;
+        transferHubPages.push({
+          url: `${baseUrl}/${state.slug}/transfer/to/${u.slug}`,
+          changeFrequency: "weekly" as const,
+          priority: 0.8,
+        });
+      }
+    } catch {
+      // Skip if transfer data loading fails
+    }
+  }
+
   // Instructor pages (pSEO) — one page per instructor with ≥2 sections
   const instructorPages: MetadataRoute.Sitemap = [];
 
@@ -153,6 +177,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...subjectPages,
     ...stateSubjectPages,
     ...coursePages,
+    ...transferHubPages,
     ...instructorPages,
     ...blogPages,
   ];

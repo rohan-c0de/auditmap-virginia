@@ -428,7 +428,16 @@ export default async function CoursePage(props: PageProps) {
                     return (
                       <tr key={t.university} className="hover:bg-gray-50 dark:hover:bg-slate-800">
                         <td className="px-4 py-2.5 font-medium text-gray-900 dark:text-slate-100">
-                          {uniNameMap.get(t.university) || t.university_name || t.university}
+                          {t.no_credit ? (
+                            uniNameMap.get(t.university) || t.university_name || t.university
+                          ) : (
+                            <Link
+                              href={`/${state}/transfer/to/${t.university}`}
+                              className="text-teal-700 dark:text-teal-400 hover:underline"
+                            >
+                              {uniNameMap.get(t.university) || t.university_name || t.university}
+                            </Link>
+                          )}
                         </td>
                         <td className="px-4 py-2.5 text-gray-600 dark:text-slate-400">
                           {t.no_credit ? (

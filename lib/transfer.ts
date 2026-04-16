@@ -145,6 +145,55 @@ export async function getUniversities(
 }
 
 /**
+ * Get all universities with per-university mapping counts, excluding
+ * combo-credit rows (univ_course containing "*") and counting direct,
+ * elective, and no-credit separately.
+ *
+ * Used by the /[state]/transfer "Browse by university" list and by the
+ * transfer-hub page's thin-content guard in generateStaticParams.
+ */
+export async function getUniversitiesWithCounts(state = "va"): Promise<
+  {
+    slug: string;
+    name: string;
+    directCount: number;
+    electiveCount: number;
+    totalCount: number; // direct + elective (i.e. "transferable" count)
+  }[]
+> {
+  const mappings = await loadTransferMappings(state);
+  const map = new Map<
+    string,
+    { name: string; directCount: number; electiveCount: number }
+  >();
+
+  for (const m of mappings) {
+    if (m.univ_course && m.univ_course.includes("*")) continue;
+    if (m.no_credit) continue; // hub page lists only transferable courses
+    if (!map.has(m.university)) {
+      map.set(m.university, {
+        name: m.university_name,
+        directCount: 0,
+        electiveCount: 0,
+      });
+    }
+    const entry = map.get(m.university)!;
+    if (m.is_elective) entry.electiveCount++;
+    else entry.directCount++;
+  }
+
+  return Array.from(map.entries())
+    .map(([slug, v]) => ({
+      slug,
+      name: v.name,
+      directCount: v.directCount,
+      electiveCount: v.electiveCount,
+      totalCount: v.directCount + v.electiveCount,
+    }))
+    .sort((a, b) => b.totalCount - a.totalCount);
+}
+
+/**
  * Build a lookup map for client-side filtering:
  * { "ENG-111": [{ university: "vt", type: "direct" }], ... }
  */
