@@ -375,8 +375,8 @@ export default function CourseTable({ courses, collegeSlug, courseListingUrl, sy
       ) : (
         <>
           {/* Desktop table */}
-          <div className="hidden rounded-lg border border-gray-200 md:block overflow-hidden dark:border-slate-700">
-            <table className="w-full text-left text-sm" style={{ tableLayout: "auto" }}>
+          <div className="hidden rounded-lg border border-gray-200 md:block overflow-x-auto dark:border-slate-700">
+            <table className="w-full text-left text-sm">
               <thead className="border-b border-gray-200 bg-gray-50 text-xs uppercase tracking-wider text-gray-500 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-400">
                 <tr>
                   <th className="whitespace-nowrap px-3 py-3 font-medium">CRN</th>
@@ -401,14 +401,14 @@ export default function CourseTable({ courses, collegeSlug, courseListingUrl, sy
                       key={`${course.crn}-${course.course_prefix}${course.course_number}-${course.days}-${course.start_time}`}
                       className={`transition hover:bg-gray-50 dark:hover:bg-slate-800 ${started ? "opacity-50" : ""}`}
                     >
-                      <td className="whitespace-nowrap px-3 py-3 font-mono text-xs text-gray-600 dark:text-slate-400">
+                      <td className="whitespace-nowrap px-3 py-3 font-mono text-xs text-gray-600 dark:text-slate-400 max-w-[100px] truncate">
                         {course.crn}
                       </td>
                       <td className="whitespace-nowrap px-3 py-3 font-medium text-gray-900 dark:text-slate-100">
                         {course.course_prefix} {course.course_number}
                       </td>
                       <td className="px-3 py-3 text-gray-700 dark:text-slate-300">
-                        <div className="max-w-[220px]">
+                        <div className="max-w-[280px]">
                           <div className="truncate">{course.course_title}</div>
                           {transferLookup && (
                             <div className="mt-0.5">
@@ -446,10 +446,10 @@ export default function CourseTable({ courses, collegeSlug, courseListingUrl, sy
                           {formatStartInfo(course.start_date)}
                         </span>
                       </td>
-                      <td className="whitespace-nowrap px-3 py-3 text-xs text-gray-600 max-w-[110px] truncate dark:text-slate-400">
+                      <td className="whitespace-nowrap px-3 py-3 text-xs text-gray-600 max-w-[130px] truncate dark:text-slate-400">
                         {course.instructor || <span className="text-gray-300 dark:text-slate-600">&mdash;</span>}
                       </td>
-                      <td className="whitespace-nowrap px-3 py-3 text-xs text-gray-600 max-w-[90px] truncate dark:text-slate-400">
+                      <td className="whitespace-nowrap px-3 py-3 text-xs text-gray-600 max-w-[100px] truncate dark:text-slate-400">
                         {course.campus || "---"}
                       </td>
                       <td className="whitespace-nowrap px-3 py-3">
@@ -526,7 +526,7 @@ export default function CourseTable({ courses, collegeSlug, courseListingUrl, sy
                       <p className="font-medium text-gray-900 dark:text-slate-100">
                         {course.course_prefix} {course.course_number}
                       </p>
-                      <p className="text-sm text-gray-600 dark:text-slate-400">
+                      <p className="text-sm text-gray-600 dark:text-slate-400 line-clamp-2">
                         {course.course_title}
                       </p>
                       {transferLookup && (
@@ -562,7 +562,7 @@ export default function CourseTable({ courses, collegeSlug, courseListingUrl, sy
                     </span>
                   </div>
                   <div className="grid grid-cols-2 gap-y-1 text-xs text-gray-500 dark:text-slate-400">
-                    <span>CRN: <span className="font-mono text-gray-700 dark:text-slate-300">{course.crn}</span></span>
+                    <span className="truncate">CRN: <span className="font-mono text-gray-700 dark:text-slate-300">{course.crn}</span></span>
                     <span>Campus: <span className="text-gray-700 dark:text-slate-300">{course.campus || "---"}</span></span>
                     <span className="col-span-2">
                       Schedule: <span className="text-gray-700 dark:text-slate-300">{formatSchedule(course)}</span>
