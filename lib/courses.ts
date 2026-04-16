@@ -126,6 +126,52 @@ export async function getAvailableTerms(state = "va"): Promise<string[]> {
 }
 
 /**
+ * Return the sorted list of terms that have at least one section of a given
+ * subject prefix at a given college. Targeted `SELECT term` scan — returns
+ * only the term column for matching rows (~hundreds of rows) instead of the
+ * full catalog per term. Used to build the term selector on the subject page
+ * without paying for a full `loadCoursesForCollege` × N_terms round trip.
+ */
+export async function getTermsWithDataForCollegeSubject(
+  collegeSlug: string,
+  prefix: string,
+  state = "va"
+): Promise<string[]> {
+  return cached(
+    `termsForCollegeSubject:${state}:${collegeSlug}:${prefix}`,
+    async () => {
+      // Paginate the term-only scan to handle subjects at large colleges
+      // that exceed the 1000-row default cap (rare but possible).
+      const seen = new Set<string>();
+      const PAGE_SIZE = 1000;
+      let page = 0;
+      while (true) {
+        const start = page * PAGE_SIZE;
+        const { data, error } = await supabase
+          .from("courses")
+          .select("term")
+          .eq("college_code", collegeSlug)
+          .eq("course_prefix", prefix)
+          .eq("state", state)
+          .range(start, start + PAGE_SIZE - 1);
+        if (error) {
+          console.error(
+            "getTermsWithDataForCollegeSubject error:",
+            error.message
+          );
+          break;
+        }
+        if (!data || data.length === 0) break;
+        for (const row of data) seen.add(row.term);
+        if (data.length < PAGE_SIZE) break;
+        page++;
+      }
+      return Array.from(seen).sort();
+    }
+  );
+}
+
+/**
  * Return the count of course sections for a college/term without loading all data.
  */
 export async function getCourseCount(

@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { loadInstitutions } from "@/lib/institutions";
 import {
   loadCoursesForCollege,
-  getAvailableTerms,
+  getTermsWithDataForCollegeSubject,
   getUniqueSubjects,
   trimCoursesForClient,
   filterTransferLookupToCourses,
@@ -13,7 +13,6 @@ import { getCurrentTerm, termLabel } from "@/lib/terms";
 import { getStateConfig } from "@/lib/states/registry";
 import { buildTransferLookup } from "@/lib/transfer";
 import { subjectName } from "@/lib/subjects";
-import type { CourseSection } from "@/lib/types";
 import SubjectTermSection from "./SubjectTermSection";
 import AdUnit from "@/components/AdUnit";
 import TrackView from "@/components/TrackView";
@@ -57,31 +56,26 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
   const subject = subjectName(prefix);
 
   // Resolve the default term for SEO copy — same fallback logic the page uses.
-  const allTerms = await getAvailableTerms(state);
-  let resolvedTerm = await getCurrentTerm(state);
-  const courses = await loadCoursesForCollege(
+  // Use the targeted `getTermsWithDataForCollegeSubject` query instead of
+  // loading every term's full catalog so metadata generation stays cheap.
+  const termsWithData = await getTermsWithDataForCollegeSubject(
+    institution.college_slug,
+    prefix,
+    state
+  );
+  if (termsWithData.length === 0) return { title: "Not Found" };
+
+  const preferredTerm = await getCurrentTerm(state);
+  const resolvedTerm = termsWithData.includes(preferredTerm)
+    ? preferredTerm
+    : termsWithData[termsWithData.length - 1];
+
+  const allCourses = await loadCoursesForCollege(
     institution.college_slug,
     resolvedTerm,
     state
   );
-  let filtered = courses.filter((c) => c.course_prefix === prefix);
-
-  if (filtered.length === 0) {
-    for (const t of [...allTerms].reverse()) {
-      if (t === resolvedTerm) continue;
-      const termCourses = await loadCoursesForCollege(
-        institution.college_slug,
-        t,
-        state
-      );
-      const termFiltered = termCourses.filter((c) => c.course_prefix === prefix);
-      if (termFiltered.length > 0) {
-        resolvedTerm = t;
-        filtered = termFiltered;
-        break;
-      }
-    }
-  }
+  const filtered = allCourses.filter((c) => c.course_prefix === prefix);
 
   const onlineCount = filtered.filter((c) => c.mode === "online").length;
   const uniqueCourses = new Set(
@@ -120,24 +114,14 @@ export default async function SubjectPage(props: PageProps) {
 
   if (!institution) notFound();
 
-  // Load courses for every term, filtered to this subject prefix, so the
-  // client can switch terms without a server round-trip. If no term has any
-  // sections for this prefix, the page 404s.
-  const allTerms = await getAvailableTerms(state);
-  const perTerm: { term: string; courses: CourseSection[] }[] = await Promise.all(
-    allTerms.map(async (t) => {
-      const full = await loadCoursesForCollege(
-        institution.college_slug,
-        t,
-        state
-      );
-      return { term: t, courses: full.filter((c) => c.course_prefix === prefix) };
-    })
+  // Discover which terms have data for this subject at this college via a
+  // targeted `SELECT term` query (~hundreds of rows). Cheap enough to run on
+  // every render, avoids loading every term's full catalog upfront.
+  const termsWithData = await getTermsWithDataForCollegeSubject(
+    institution.college_slug,
+    prefix,
+    state
   );
-  const termsWithData = perTerm
-    .filter((p) => p.courses.length > 0)
-    .map((p) => p.term)
-    .sort();
 
   if (termsWithData.length === 0) notFound();
 
@@ -147,27 +131,40 @@ export default async function SubjectPage(props: PageProps) {
     ? preferredTerm
     : termsWithData[termsWithData.length - 1];
 
-  const coursesByTerm: Record<string, CourseSection[]> = {};
+  // Load ONLY the default term's full catalog for this college. Other terms
+  // are lazy-loaded client-side via the `/api/[state]/college/[id]/courses/
+  // [prefix]?term=...` route when the user switches, keeping cold ISR
+  // latency bounded to a single-term round trip.
+  const defaultTermFullCourses = await loadCoursesForCollege(
+    institution.college_slug,
+    defaultTerm,
+    state
+  );
+  const defaultCoursesFull = defaultTermFullCourses.filter(
+    (c) => c.course_prefix === prefix
+  );
+  const defaultCourses = trimCoursesForClient(defaultCoursesFull);
+
+  // Build URL templates for every term up front — no DB work, just string
+  // formatting via the state config.
   const courseListingUrlByTerm: Record<string, string> = {};
-  const union: CourseSection[] = [];
   for (const t of termsWithData) {
-    const courses = perTerm.find((p) => p.term === t)?.courses ?? [];
-    coursesByTerm[t] = trimCoursesForClient(courses);
     courseListingUrlByTerm[t] = config.courseDiscoveryUrl(
       institution.college_slug,
       "__PREFIX__",
       "__NUMBER__",
       t
     );
-    union.push(...courses);
   }
 
-  const transferLookup = filterTransferLookupToCourses(
+  // Transfer lookup is scoped to the default term's courses. When the client
+  // switches terms, the API route returns a fresh lookup filtered to that
+  // term's courses.
+  const defaultTransferLookup = filterTransferLookupToCourses(
     await buildTransferLookup(state),
-    union
+    defaultCoursesFull
   );
 
-  const defaultCourses = coursesByTerm[defaultTerm];
   const subject = subjectName(prefix);
   const uniqueCoursesForJsonLd = [
     ...new Set(
@@ -176,13 +173,7 @@ export default async function SubjectPage(props: PageProps) {
   ].sort();
 
   // All subjects at this college for the "Browse Other Subjects" links.
-  // Uses the default term's full course list (the server-side registry of
-  // what this college offers this season).
-  const defaultTermFullCourses = await loadCoursesForCollege(
-    institution.college_slug,
-    defaultTerm,
-    state
-  );
+  // Reuses the default term's full course list we already loaded above.
   const allSubjects = getUniqueSubjects(defaultTermFullCourses);
 
   // Structured data — reflects the default term the page prerenders with.
@@ -296,14 +287,16 @@ export default async function SubjectPage(props: PageProps) {
 
       {/* Term-scoped content (stats bar, term picker, course table) */}
       <SubjectTermSection
-        coursesByTerm={coursesByTerm}
-        termsWithData={termsWithData}
         defaultTerm={defaultTerm}
+        defaultCourses={defaultCourses}
+        defaultTransferLookup={defaultTransferLookup}
+        termsWithData={termsWithData}
         courseListingUrlByTerm={courseListingUrlByTerm}
-        transferLookup={transferLookup}
         institution={institution}
         systemName={config.systemName}
         state={state}
+        collegeId={id}
+        prefix={prefix}
       />
 
       {/* In-content ad */}
