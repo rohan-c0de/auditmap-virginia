@@ -8,8 +8,12 @@ import {
   useRef,
   type ReactNode,
 } from "react";
-import { createClient } from "@/lib/supabase/client";
-import type { User } from "@supabase/supabase-js";
+import type { SupabaseClient, User } from "@supabase/supabase-js";
+
+// Type-only imports above don't add bundle weight. The runtime
+// `@supabase/supabase-js` code is behind a dynamic import in
+// `getSupabase()` below, so logged-out visitors never download the
+// ~60KB gzipped Supabase chunk.
 
 // ---------------------------------------------------------------------------
 // Types
@@ -51,6 +55,27 @@ export interface AuthContextValue {
 export const AuthContext = createContext<AuthContextValue | null>(null);
 
 // ---------------------------------------------------------------------------
+// Cookie sniff
+// ---------------------------------------------------------------------------
+
+/**
+ * Is there a Supabase session cookie in `document.cookie`? Used to skip the
+ * Supabase client load entirely for logged-out visitors. Matches both the
+ * modern `sb-<ref>-auth-token` and legacy `supabase.auth.token` naming
+ * conventions, with optional `.0`/`.1`/… chunk suffixes that `@supabase/ssr`
+ * adds when the serialized session grows past the ~4 KB cookie limit.
+ */
+const SESSION_COOKIE_RE = /^(sb-.+-auth-token|supabase\.auth\.token)(\.\d+)?$/;
+
+function hasSupabaseSessionCookie(): boolean {
+  if (typeof document === "undefined") return false;
+  return document.cookie.split(";").some((c) => {
+    const name = c.trim().split("=")[0];
+    return SESSION_COOKIE_RE.test(name);
+  });
+}
+
+// ---------------------------------------------------------------------------
 // Provider
 // ---------------------------------------------------------------------------
 
@@ -59,12 +84,22 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [loginModalOpen, setLoginModalOpen] = useState(false);
-  const supabaseRef = useRef(createClient());
 
-  // Fetch profile from profiles table
+  // Cached Supabase client. Null until first call to `getSupabase()`.
+  const supabaseRef = useRef<SupabaseClient | null>(null);
+  // Inflight import promise; deduplicates concurrent getSupabase() calls.
+  const loaderRef = useRef<Promise<SupabaseClient> | null>(null);
+  // Subscription handle so we can unsubscribe on unmount.
+  const subscriptionRef = useRef<{ unsubscribe: () => void } | null>(null);
+
+  // Fetch profile from profiles table. Uses whatever Supabase client is
+  // already loaded — called only after auth state is known, so the client
+  // is guaranteed to exist.
   const fetchProfile = useCallback(async (userId: string) => {
+    const supabase = supabaseRef.current;
+    if (!supabase) return;
     try {
-      const { data } = await supabaseRef.current
+      const { data } = await supabase
         .from("profiles")
         .select("*")
         .eq("id", userId)
@@ -78,13 +113,60 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  // Initialize auth state
-  useEffect(() => {
-    const supabase = supabaseRef.current;
+  /**
+   * Dynamic-import + instantiate the Supabase client on first call. Wires
+   * up the `onAuthStateChange` subscription exactly once per mount so that
+   * sign-in / token-refresh / cross-tab sign-out all flow through to React
+   * state regardless of which code path first triggered the load.
+   */
+  const getSupabase = useCallback(async (): Promise<SupabaseClient> => {
+    if (supabaseRef.current) return supabaseRef.current;
+    if (!loaderRef.current) {
+      loaderRef.current = import("@/lib/supabase/client").then(
+        ({ createClient }) => {
+          const client = createClient();
+          supabaseRef.current = client;
 
-    // Get the initial session with a timeout so loading never hangs
+          // Subscribe once per client instantiation.
+          const { data } = client.auth.onAuthStateChange(
+            async (_event, session) => {
+              const newUser = session?.user ?? null;
+              setUser(newUser);
+              if (newUser) {
+                await fetchProfile(newUser.id);
+                setLoginModalOpen(false);
+              } else {
+                setProfile(null);
+              }
+              setIsLoading(false);
+            }
+          );
+          subscriptionRef.current = data.subscription;
+
+          return client;
+        }
+      );
+    }
+    return loaderRef.current;
+  }, [fetchProfile]);
+
+  // Initialize auth state on mount.
+  useEffect(() => {
     const initAuth = async () => {
+      // Fast path for logged-out visitors: no Supabase cookie → skip the
+      // client load entirely. This keeps the ~60KB gzip chunk off the
+      // initial bundle for the vast majority of first-touch traffic.
+      // sign-in buttons will still load it on click via getSupabase().
+      if (!hasSupabaseSessionCookie()) {
+        setIsLoading(false);
+        return;
+      }
+
       try {
+        const supabase = await getSupabase();
+
+        // Resolve initial session with a 5s safety timeout so the loading
+        // spinner never hangs if the network is unreachable.
         const userPromise = supabase.auth.getUser();
         const timeoutPromise = new Promise<never>((_, reject) =>
           setTimeout(() => reject(new Error("Auth timeout")), 5000)
@@ -99,7 +181,7 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
           await fetchProfile(currentUser.id);
         }
       } catch {
-        // No session, timeout, or error — user stays null
+        // No session, timeout, or error — user stays null.
       } finally {
         setIsLoading(false);
       }
@@ -107,52 +189,37 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
 
     initAuth();
 
-    // Listen for auth state changes (login, logout, token refresh)
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange(async (event, session) => {
-      const newUser = session?.user ?? null;
-      setUser(newUser);
-
-      if (newUser) {
-        await fetchProfile(newUser.id);
-        // Close login modal on successful sign-in
-        setLoginModalOpen(false);
-      } else {
-        setProfile(null);
-      }
-
-      setIsLoading(false);
-    });
-
     return () => {
-      subscription.unsubscribe();
+      subscriptionRef.current?.unsubscribe();
+      subscriptionRef.current = null;
     };
-  }, [fetchProfile]);
+  }, [fetchProfile, getSupabase]);
 
   // ---------------------------------------------------------------------------
-  // Auth actions
+  // Auth actions — each triggers the dynamic Supabase load on first use
   // ---------------------------------------------------------------------------
 
-  const signInWithOAuth = useCallback(async (provider: string) => {
-    const siteUrl =
-      typeof window !== "undefined"
-        ? window.location.origin
-        : process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com";
+  const signInWithOAuth = useCallback(
+    async (provider: string) => {
+      const siteUrl =
+        typeof window !== "undefined"
+          ? window.location.origin
+          : process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com";
 
-    // Redirect back to the current page after auth
-    const redirectTo = `${siteUrl}/auth/callback?next=${encodeURIComponent(
-      typeof window !== "undefined" ? window.location.pathname : "/"
-    )}`;
+      // Redirect back to the current page after auth
+      const redirectTo = `${siteUrl}/auth/callback?next=${encodeURIComponent(
+        typeof window !== "undefined" ? window.location.pathname : "/"
+      )}`;
 
-    await supabaseRef.current.auth.signInWithOAuth({
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      provider: provider as any,
-      options: {
-        redirectTo,
-      },
-    });
-  }, []);
+      const supabase = await getSupabase();
+      await supabase.auth.signInWithOAuth({
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        provider: provider as any,
+        options: { redirectTo },
+      });
+    },
+    [getSupabase]
+  );
 
   const signInWithMagicLink = useCallback(
     async (email: string): Promise<{ error: string | null }> => {
@@ -166,20 +233,23 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
         typeof window !== "undefined" ? window.location.pathname : "/"
       )}`;
 
-      const { error } = await supabaseRef.current.auth.signInWithOtp({
+      const supabase = await getSupabase();
+      const { error } = await supabase.auth.signInWithOtp({
         email,
-        options: {
-          emailRedirectTo: redirectTo,
-        },
+        options: { emailRedirectTo: redirectTo },
       });
 
       return { error: error?.message ?? null };
     },
-    []
+    [getSupabase]
   );
 
   const signOut = useCallback(async () => {
-    await supabaseRef.current.auth.signOut();
+    // If the client never loaded (logged-out visitor who never clicked
+    // sign-in), there's nothing to sign out of — just clear local state.
+    if (supabaseRef.current) {
+      await supabaseRef.current.auth.signOut();
+    }
     setUser(null);
     setProfile(null);
   }, []);
