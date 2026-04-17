@@ -9,6 +9,43 @@
 
 import { supabase } from "./supabase";
 
+// ---------------------------------------------------------------------------
+// In-memory TTL cache + inflight dedup (same pattern as lib/courses.ts)
+// ---------------------------------------------------------------------------
+
+const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+
+interface CacheEntry<T> {
+  data: T;
+  expires: number;
+}
+
+const cache = new Map<string, CacheEntry<unknown>>();
+const inflight = new Map<string, Promise<unknown>>();
+
+async function cached<T>(key: string, fn: () => Promise<T>): Promise<T> {
+  const entry = cache.get(key) as CacheEntry<T> | undefined;
+  if (entry && entry.expires > Date.now()) return entry.data;
+
+  // Deduplicate concurrent requests for the same key
+  const existing = inflight.get(key) as Promise<T> | undefined;
+  if (existing) return existing;
+
+  const promise = fn()
+    .then((data) => {
+      cache.set(key, { data, expires: Date.now() + CACHE_TTL });
+      inflight.delete(key);
+      return data;
+    })
+    .catch((err) => {
+      inflight.delete(key);
+      throw err;
+    });
+
+  inflight.set(key, promise);
+  return promise;
+}
+
 /**
  * Client-side lookup shape: `"ENG-111" → [{ university, type, course }, …]`.
  */
@@ -77,37 +114,44 @@ export async function buildTransferLookupForCourses(
       number: c.course_number,
     });
   }
-  const pairArr = Array.from(pairs.values());
 
-  const chunks: (typeof pairArr)[] = [];
-  for (let i = 0; i < pairArr.length; i += CHUNK_SIZE) {
-    chunks.push(pairArr.slice(i, i + CHUNK_SIZE));
-  }
+  // Stable cache key: sorted pair keys so the same set of courses always
+  // hits the same cache entry regardless of input order.
+  const cacheKey = `xfer-courses:${state}:${Array.from(pairs.keys()).sort().join("|")}`;
 
-  const chunkResults = await Promise.all(
-    chunks.map(async (chunk) => {
-      const orClauses = chunk
-        .map(
-          (p) =>
-            `and(cc_prefix.eq.${encodeURIComponent(p.prefix)},cc_number.eq.${encodeURIComponent(p.number)})`
-        )
-        .join(",");
-      const { data, error } = await supabase
-        .from("transfers")
-        .select(
-          "cc_prefix, cc_number, university, univ_course, is_elective, no_credit"
-        )
-        .eq("state", state)
-        .or(orClauses);
-      if (error) {
-        console.error("buildTransferLookupForCourses error:", error.message);
-        return [] as TransferRow[];
-      }
-      return (data ?? []) as TransferRow[];
-    })
-  );
+  return cached(cacheKey, async () => {
+    const pairArr = Array.from(pairs.values());
 
-  return rowsToLookup(chunkResults.flat());
+    const chunks: (typeof pairArr)[] = [];
+    for (let i = 0; i < pairArr.length; i += CHUNK_SIZE) {
+      chunks.push(pairArr.slice(i, i + CHUNK_SIZE));
+    }
+
+    const chunkResults = await Promise.all(
+      chunks.map(async (chunk) => {
+        const orClauses = chunk
+          .map(
+            (p) =>
+              `and(cc_prefix.eq.${encodeURIComponent(p.prefix)},cc_number.eq.${encodeURIComponent(p.number)})`
+          )
+          .join(",");
+        const { data, error } = await supabase
+          .from("transfers")
+          .select(
+            "cc_prefix, cc_number, university, univ_course, is_elective, no_credit"
+          )
+          .eq("state", state)
+          .or(orClauses);
+        if (error) {
+          console.error("buildTransferLookupForCourses error:", error.message);
+          return [] as TransferRow[];
+        }
+        return (data ?? []) as TransferRow[];
+      })
+    );
+
+    return rowsToLookup(chunkResults.flat());
+  });
 }
 
 /**
@@ -122,17 +166,22 @@ export async function buildTransferLookupForSubjects(
 ): Promise<TransferLookup> {
   if (subjectPrefixes.length === 0) return {};
 
-  const { data, error } = await supabase
-    .from("transfers")
-    .select(
-      "cc_prefix, cc_number, university, univ_course, is_elective, no_credit"
-    )
-    .eq("state", state)
-    .in("cc_prefix", subjectPrefixes);
+  const sorted = [...subjectPrefixes].sort();
+  const cacheKey = `xfer-subjects:${state}:${sorted.join("|")}`;
 
-  if (error) {
-    console.error("buildTransferLookupForSubjects error:", error.message);
-    return {};
-  }
-  return rowsToLookup((data ?? []) as TransferRow[]);
+  return cached(cacheKey, async () => {
+    const { data, error } = await supabase
+      .from("transfers")
+      .select(
+        "cc_prefix, cc_number, university, univ_course, is_elective, no_credit"
+      )
+      .eq("state", state)
+      .in("cc_prefix", subjectPrefixes);
+
+    if (error) {
+      console.error("buildTransferLookupForSubjects error:", error.message);
+      return {};
+    }
+    return rowsToLookup((data ?? []) as TransferRow[]);
+  });
 }
