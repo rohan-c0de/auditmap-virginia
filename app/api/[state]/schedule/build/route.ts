@@ -6,6 +6,15 @@ import { rateLimit, getClientKey } from "@/lib/rate-limit";
 import { loadInstitutions } from "@/lib/institutions";
 import { isValidState } from "@/lib/states/registry";
 
+// Run on Vercel's edge runtime — cuts cold function-start from ~2s (Node
+// serverless) to ~500ms. All transitive deps are edge-safe:
+//  - `lib/schedule` is a pure algorithm
+//  - `lib/geo` uses static JSON imports (no `fs`)
+//  - `lib/courses` + `lib/transfer-scoped` use Supabase (edge-compatible)
+//  - `lib/institutions` + `lib/states/registry` use static imports
+//  - `lib/rate-limit` uses Web APIs (setInterval, Date.now)
+export const runtime = "edge";
+
 type RouteContext = { params: Promise<{ state: string }> };
 
 export async function POST(req: Request, context: RouteContext) {

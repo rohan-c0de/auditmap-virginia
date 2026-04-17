@@ -1,24 +1,48 @@
-import fs from "fs";
-import path from "path";
 import type { Institution, SearchResult } from "./types";
 
-// Static zip code data cache (keyed by state)
-const zipDataCache: Record<string, Record<string, { lat: number; lng: number; city: string }>> = {};
+// Static JSON imports so this module is safe on the edge runtime (no `fs`).
+// Same pattern as `lib/institutions.ts`. Empty placeholder JSON files exist
+// for states without geocoded ZIP data (pa, nj) so distance filtering
+// gracefully no-ops there rather than erroring.
+// Full data set is ~500 KB uncompressed across 15 states.
+import vaZipcodes from "@/data/va/zipcodes.json";
+import ncZipcodes from "@/data/nc/zipcodes.json";
+import scZipcodes from "@/data/sc/zipcodes.json";
+import dcZipcodes from "@/data/dc/zipcodes.json";
+import mdZipcodes from "@/data/md/zipcodes.json";
+import gaZipcodes from "@/data/ga/zipcodes.json";
+import deZipcodes from "@/data/de/zipcodes.json";
+import tnZipcodes from "@/data/tn/zipcodes.json";
+import nyZipcodes from "@/data/ny/zipcodes.json";
+import riZipcodes from "@/data/ri/zipcodes.json";
+import vtZipcodes from "@/data/vt/zipcodes.json";
+import ctZipcodes from "@/data/ct/zipcodes.json";
+import meZipcodes from "@/data/me/zipcodes.json";
+import paZipcodes from "@/data/pa/zipcodes.json";
+import njZipcodes from "@/data/nj/zipcodes.json";
 
-function loadZipData(state = "va"): Record<
-  string,
-  { lat: number; lng: number; city: string }
-> {
-  if (!zipDataCache[state]) {
-    try {
-      const filePath = path.join(process.cwd(), "data", state, "zipcodes.json");
-      const raw = fs.readFileSync(filePath, "utf-8");
-      zipDataCache[state] = JSON.parse(raw);
-    } catch {
-      zipDataCache[state] = {};
-    }
-  }
-  return zipDataCache[state];
+type ZipEntry = { lat: number; lng: number; city: string };
+
+const ZIP_REGISTRY: Record<string, Record<string, ZipEntry>> = {
+  va: vaZipcodes as Record<string, ZipEntry>,
+  nc: ncZipcodes as Record<string, ZipEntry>,
+  sc: scZipcodes as Record<string, ZipEntry>,
+  dc: dcZipcodes as Record<string, ZipEntry>,
+  md: mdZipcodes as Record<string, ZipEntry>,
+  ga: gaZipcodes as Record<string, ZipEntry>,
+  de: deZipcodes as Record<string, ZipEntry>,
+  tn: tnZipcodes as Record<string, ZipEntry>,
+  ny: nyZipcodes as Record<string, ZipEntry>,
+  ri: riZipcodes as Record<string, ZipEntry>,
+  vt: vtZipcodes as Record<string, ZipEntry>,
+  ct: ctZipcodes as Record<string, ZipEntry>,
+  me: meZipcodes as Record<string, ZipEntry>,
+  pa: paZipcodes as Record<string, ZipEntry>,
+  nj: njZipcodes as Record<string, ZipEntry>,
+};
+
+function loadZipData(state = "va"): Record<string, ZipEntry> {
+  return ZIP_REGISTRY[state] ?? {};
 }
 
 /**
