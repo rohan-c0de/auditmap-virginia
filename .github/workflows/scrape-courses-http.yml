@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       state:
-        description: "State to scrape (va/nc/sc/ga/md/de/dc or all)"
+        description: "State to scrape (va/nc/sc/ga/md/de/dc/ny/ri/ct or all)"
         default: "all"
 
 env:
@@ -190,3 +190,57 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx tsx scripts/dc/scrape-banner.ts
+
+  # ── New York (CUNY Global Class Search) ─────────────────────────────
+  # 7 CUNY community colleges via CUNYfirst PeopleSoft form API (HTTP).
+  # Scraper auto-imports to Supabase on success.
+  scrape-ny:
+    if: >-
+      github.event_name == 'schedule' ||
+      inputs.state == 'all' || inputs.state == 'ny'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/ny/scrape-cuny.ts --all
+
+  # ── Rhode Island (CCRI Banner 8) ────────────────────────────────────
+  # Single college (Community College of RI) via legacy Banner 8 HTTP forms.
+  # Scraper auto-imports to Supabase on success.
+  scrape-ri:
+    if: >-
+      github.event_name == 'schedule' ||
+      inputs.state == 'all' || inputs.state == 'ri'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/ri/scrape-banner8.ts
+
+  # ── Connecticut (CT State Community College Banner SSB) ─────────────
+  # Single state system endpoint covering all 12 former campuses (HTTP).
+  # Scraper auto-imports to Supabase on success.
+  scrape-ct:
+    if: >-
+      github.event_name == 'schedule' ||
+      inputs.state == 'all' || inputs.state == 'ct'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/ct/scrape-banner.ts

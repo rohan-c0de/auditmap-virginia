@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       state:
-        description: "State to scrape (va/nc/sc/md/ga/de or all)"
+        description: "State to scrape (va/nc/sc/md/ga/de/ny/ri/vt/ct or all)"
         default: "all"
 
 env:
@@ -200,3 +200,77 @@ jobs:
       - run: npm ci
       - run: npx tsx scripts/md/scrape-transfer-artsys.ts
       - run: npx tsx scripts/import-transfers.ts --state md
+
+  # ── New York Transfers (TREX) ───────────────────────────────────────
+  # 7 CUNY community colleges → major NY universities via TREX public API.
+  # Scraper auto-imports to Supabase.
+  scrape-ny-transfers:
+    if: >-
+      github.event_name == 'schedule' ||
+      inputs.state == 'all' || inputs.state == 'ny'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/ny/scrape-transfer-trex.ts
+
+  # ── Rhode Island Transfers (TES math CAPTCHA — solvable) ────────────
+  # CCRI → URI + RIC via TES Public View. The TES math CAPTCHA is solved
+  # programmatically in the scraper, so this does run headlessly.
+  # Scraper auto-imports to Supabase.
+  scrape-ri-transfers:
+    if: >-
+      github.event_name == 'schedule' ||
+      inputs.state == 'all' || inputs.state == 'ri'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/ri/scrape-transfer.ts
+
+  # ── Vermont Transfers ───────────────────────────────────────────────
+  # CCV → VT universities. Scraper auto-imports to Supabase.
+  scrape-vt-transfers:
+    if: >-
+      github.event_name == 'schedule' ||
+      inputs.state == 'all' || inputs.state == 'vt'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/vt/scrape-transfer.ts
+
+  # ── Connecticut Transfers (CCSU + ECSU + SCSU via all-orchestrator) ─
+  # scrape-transfer-all orchestrates the three university adapters
+  # sequentially and merges into a single data/ct/transfer-equiv.json —
+  # must run in one job to merge correctly (same pattern as GA transfers).
+  # Orchestrator auto-imports to Supabase after merge.
+  scrape-ct-transfers:
+    if: >-
+      github.event_name == 'schedule' ||
+      inputs.state == 'all' || inputs.state == 'ct'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/ct/scrape-transfer-all.ts

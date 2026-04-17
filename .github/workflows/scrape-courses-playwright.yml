@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       state:
-        description: "State to scrape (nc/sc/md/va or all)"
+        description: "State to scrape (nc/sc/md/va/vt/me or all)"
         default: "all"
 
 env:
@@ -160,3 +160,43 @@ jobs:
           name: va-peoplesoft-courses
           path: data/va/courses/
           retention-days: 7
+
+  # ── Vermont (CCV Colleague SPA) ─────────────────────────────────────
+  # Single college (Community College of Vermont) via shared VSC Colleague
+  # Self-Service SPA. Scraper auto-imports to Supabase on success.
+  scrape-vt:
+    if: >-
+      github.event_name == 'schedule' ||
+      inputs.state == 'all' || inputs.state == 'vt'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install chromium --with-deps
+      - run: npx tsx scripts/vt/scrape-colleague.ts
+
+  # ── Maine (MCCS WordPress DataTables) ───────────────────────────────
+  # 6 MCCS colleges via WordPress sites with client-side DataTables (JS
+  # required, hence Playwright). KVCC excluded — it's PDF-only.
+  # Writes local JSON only — needs explicit import-courses step.
+  scrape-me:
+    if: >-
+      github.event_name == 'schedule' ||
+      inputs.state == 'all' || inputs.state == 'me'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install chromium --with-deps
+      - run: npx tsx scripts/me/scrape-mccs.ts
+      - run: npx tsx scripts/import-courses.ts --state me
