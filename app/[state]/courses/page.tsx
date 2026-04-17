@@ -32,7 +32,7 @@ export default async function CoursesPage({ params }: Props) {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/${state}` },
-      { "@type": "ListItem", position: 2, name: "Find a Course" },
+      { "@type": "ListItem", position: 2, name: "Find a Course", item: `${siteUrl}/${state}/courses` },
     ],
   };
 

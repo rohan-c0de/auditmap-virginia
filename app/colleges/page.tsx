@@ -96,6 +96,7 @@ export default async function AllCollegesPage() {
         "@type": "ListItem",
         position: 2,
         name: "All Colleges",
+        item: `${siteUrl}/colleges`,
       },
     ],
   };

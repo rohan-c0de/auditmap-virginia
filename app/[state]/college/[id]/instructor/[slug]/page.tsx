@@ -261,11 +261,6 @@ export default async function InstructorPage(props: PageProps) {
       {
         "@type": "ListItem",
         position: 3,
-        name: "Instructors",
-      },
-      {
-        "@type": "ListItem",
-        position: 4,
         name: profile.displayName,
         item: `${siteUrl}/${state}/college/${id}/instructor/${slug}`,
       },

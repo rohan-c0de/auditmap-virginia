@@ -251,6 +251,7 @@ export default async function SubjectPage(props: PageProps) {
         "@type": "ListItem",
         position: 3,
         name: `${subject} Courses`,
+        item: `${siteUrl}/${state}/college/${id}/courses/${rawPrefix}`,
       },
     ],
   };

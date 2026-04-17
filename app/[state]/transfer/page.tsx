@@ -66,7 +66,7 @@ export default async function TransferPage({ params }: Props) {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/${state}` },
-      { "@type": "ListItem", position: 2, name: "Transfer Course Finder" },
+      { "@type": "ListItem", position: 2, name: "Transfer Course Finder", item: `${siteUrl}/${state}/transfer` },
     ],
   };
 

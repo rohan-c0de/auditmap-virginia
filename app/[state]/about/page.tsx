@@ -77,7 +77,7 @@ export default async function AboutPage({ params }: Props) {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/${state}` },
-      { "@type": "ListItem", position: 2, name: "About Course Auditing" },
+      { "@type": "ListItem", position: 2, name: "About Course Auditing", item: `${siteUrl}/${state}/about` },
     ],
   };
 

@@ -60,7 +60,7 @@ export default async function BlogIndexPage({ searchParams }: Props) {
         name: "Home",
         item: siteUrl,
       },
-      { "@type": "ListItem", position: 2, name: "Blog" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${siteUrl}/blog` },
     ],
   };
 

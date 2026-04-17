@@ -98,7 +98,7 @@ export default async function BlogPostPage({ params }: Props) {
         name: "Blog",
         item: `${siteUrl}/blog`,
       },
-      { "@type": "ListItem", position: 3, name: meta.title },
+      { "@type": "ListItem", position: 3, name: meta.title, item: `${siteUrl}/blog/${meta.slug}` },
     ],
   };
 

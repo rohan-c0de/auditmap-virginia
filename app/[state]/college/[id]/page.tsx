@@ -152,7 +152,7 @@ export default async function CollegeDetailPage(props: PageProps) {
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/${state}` },
       { "@type": "ListItem", position: 2, name: "Colleges", item: `${siteUrl}/${state}/colleges` },
-      { "@type": "ListItem", position: 3, name: institution.name },
+      { "@type": "ListItem", position: 3, name: institution.name, item: `${siteUrl}/${state}/college/${id}` },
     ],
   };
 

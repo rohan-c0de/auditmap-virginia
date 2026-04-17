@@ -58,7 +58,7 @@ export default async function CollegesPage({ params }: Props) {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/${state}` },
-      { "@type": "ListItem", position: 2, name: "All Colleges" },
+      { "@type": "ListItem", position: 2, name: "All Colleges", item: `${siteUrl}/${state}/colleges` },
     ],
   };
 
