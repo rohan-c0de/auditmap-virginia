@@ -451,10 +451,12 @@ export async function getSitemapCourseIndex(
         .range(start, start + PAGE_SIZE - 1);
       if (error || !rows || rows.length === 0) break;
       for (const r of rows) {
-        const key = `${r.course_prefix}-${r.course_number}`;
+        const cleanNum = sanitizeCourseNumber(r.course_number);
+        if (!cleanNum) continue; // drop rows whose number becomes empty after strip
+        const key = `${r.course_prefix}-${cleanNum}`;
         if (!seen.has(key)) {
           seen.add(key);
-          codes.push({ prefix: r.course_prefix, number: r.course_number });
+          codes.push({ prefix: r.course_prefix, number: cleanNum });
         }
         subjectSectionCounts.set(
           r.course_prefix,
@@ -518,9 +520,12 @@ export async function getDistinctCourseCodes(
     });
 
     if (!error && data) {
-      return (data as { course_prefix: string; course_number: string }[]).map(
-        (r) => ({ prefix: r.course_prefix, number: r.course_number })
-      );
+      return (data as { course_prefix: string; course_number: string }[])
+        .map((r) => ({
+          prefix: r.course_prefix,
+          number: sanitizeCourseNumber(r.course_number),
+        }))
+        .filter((r) => r.number);
     }
 
     // Fallback: select only the two columns we need (cheaper than select *)
@@ -539,10 +544,12 @@ export async function getDistinctCourseCodes(
         .range(start, start + PAGE_SIZE - 1);
       if (pageErr || !rows || rows.length === 0) break;
       for (const r of rows) {
-        const key = `${r.course_prefix}-${r.course_number}`;
+        const cleanNum = sanitizeCourseNumber(r.course_number);
+        if (!cleanNum) continue;
+        const key = `${r.course_prefix}-${cleanNum}`;
         if (!seen.has(key)) {
           seen.add(key);
-          out.push({ prefix: r.course_prefix, number: r.course_number });
+          out.push({ prefix: r.course_prefix, number: cleanNum });
         }
       }
       if (rows.length < PAGE_SIZE) break;
@@ -560,13 +567,26 @@ export async function getDistinctCourseCodes(
  * Map a Supabase row to a CourseSection object.
  * Handles field name mapping and type coercion.
  */
+/**
+ * Strip stray punctuation from `course_number` at read time. A handful of
+ * legacy VA rows (28 at last count — e.g. `CHM-5:`, `ESL-21:`, `DNH-95:`)
+ * came out of the VCCS PDF scrape with a trailing `:`. Rather than run a
+ * Supabase migration to rewrite the stored values, we normalize on read
+ * so every downstream consumer (page render, sitemap URL, prereq lookup)
+ * sees the same clean identifier.
+ */
+function sanitizeCourseNumber(raw: string): string {
+  if (!raw) return raw;
+  return raw.replace(/[^A-Za-z0-9-]/g, "").trim();
+}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function mapRow(row: any): CourseSection {
   return {
     college_code: row.college_code,
     term: row.term,
     course_prefix: row.course_prefix,
-    course_number: row.course_number,
+    course_number: sanitizeCourseNumber(row.course_number),
     course_title: row.course_title,
     credits: Number(row.credits) || 0,
     crn: row.crn,

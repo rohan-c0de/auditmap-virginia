@@ -22,7 +22,18 @@ type PageProps = {
 // ---------------------------------------------------------------------------
 
 function parseCode(code: string): { prefix: string; number: string } | null {
-  const match = code.toUpperCase().match(/^([A-Z]{2,5})-(\d{3,5}[A-Z]{0,3})$/);
+  // Loose match so every real course number in the dataset round-trips:
+  //   - VA/NC/SC/GA/TN/ME 3-5 digit, optional 1-3 letter suffix (`MTH-263`,
+  //     `BIO-101L`)
+  //   - NY (CUNY) 2-digit (`ESE-11`)
+  //   - DE letter-first (`IDT-G01`)
+  //   - DC law-school style (`LAW-L204`)
+  //   - MD alpha-only (`MATH-A`, `ESOL-LA`)
+  //   - VT hyphenated (`EDU-GTEW1`)
+  // The prior strict `/^([A-Z]{2,5})-(\d{3,5}[A-Z]{0,3})$/` regex rejected
+  // 455 valid course codes, causing `notFound()` to fire on URLs that
+  // Google had indexed — a Soft 404 flood in Search Console.
+  const match = code.toUpperCase().match(/^([A-Z]{2,5})-([A-Z0-9-]{1,10})$/);
   if (!match) return null;
   return { prefix: match[1], number: match[2] };
 }
