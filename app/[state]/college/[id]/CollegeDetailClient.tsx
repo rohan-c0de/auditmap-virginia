@@ -1,11 +1,46 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import CourseTable from "@/components/CourseTableDynamic";
-import AuditInstructions from "@/components/AuditInstructions";
-import PrintInstructions from "@/components/PrintInstructions";
-import ScheduleBuilder from "@/components/ScheduleBuilder";
 import type { Institution, CourseSection } from "@/lib/types";
+
+// Dynamic imports keep the heavy interactive components out of the college
+// page's initial JS bundle. Lighthouse mobile identified college as the
+// worst-performing page (TBT 1.1 s post-#15, score 59) because these three
+// client chunks load + parse + execute synchronously with first paint even
+// though they only become useful after user interaction:
+//
+//   - ScheduleBuilder (302 lines)  — used once the user pins ≥2 courses;
+//                                    below the course table on every render.
+//   - AuditInstructions (277 lines) — only shown inside the "How to audit"
+//                                    modal.
+//   - PrintInstructions (140 lines) — only shown inside the same modal.
+//
+// `ssr: false` because none of these contribute to SEO content; the
+// course table + static audit badges on the page handle that. The
+// placeholder is a 200 px skeleton that reserves the ScheduleBuilder's
+// layout slot so there's no CLS when it swaps in.
+
+const ScheduleBuilder = dynamic(
+  () => import("@/components/ScheduleBuilder"),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="mt-6 h-[200px] w-full animate-pulse rounded-lg bg-gray-100 dark:bg-slate-800" />
+    ),
+  }
+);
+
+const AuditInstructions = dynamic(
+  () => import("@/components/AuditInstructions"),
+  { ssr: false }
+);
+
+const PrintInstructions = dynamic(
+  () => import("@/components/PrintInstructions"),
+  { ssr: false }
+);
 
 type TransferLookup = Record<
   string,
