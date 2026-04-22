@@ -380,4 +380,128 @@ export const articles: ArticleMeta[] = [
     cluster: "transfer-credit-guide",
     clusterRole: "spoke",
   },
+
+  // --- Cluster A spoke: PA transfer ---
+  {
+    slug: "pennsylvania-community-college-transfer-credit-guide",
+    title:
+      "How Pennsylvania Community College Transfer Credit Actually Works",
+    description:
+      "PA has 14 community colleges but no statewide articulation agreement. Penn State, Pitt, Temple, West Chester, and Drexel each evaluate CC credits independently. Here's what that actually looks like.",
+    date: "2026-04-20",
+    category: "state-system-explainers",
+    state: "pa",
+    author: "Community College Path",
+    tags: ["transfer", "pennsylvania", "penn-state", "pitt", "temple", "pa-trac", "ccp"],
+    cluster: "transfer-credit-guide",
+    clusterRole: "spoke",
+  },
+
+  // --- Cluster A spoke: TN TBR transfer ---
+  {
+    slug: "tennessee-tbr-community-college-transfer-guide",
+    title:
+      "Tennessee TBR Transfer Credit: Why It's Easier Than Most States",
+    description:
+      "TN is the only state that enforces common course numbering across all 13 community colleges. ENGL 1010 is ENGL 1010 everywhere. Here's why that matters and how the Tennessee Transfer Pathways work.",
+    date: "2026-04-20",
+    category: "state-system-explainers",
+    state: "tn",
+    author: "Community College Path",
+    tags: ["transfer", "tennessee", "tbr", "ttp", "tsu", "mtsu", "apsu", "common-course-numbering"],
+    cluster: "transfer-credit-guide",
+    clusterRole: "spoke",
+  },
+
+  // --- Cluster A spoke: DE transfer ---
+  {
+    slug: "delaware-community-college-transfer-credit-guide",
+    title:
+      "Delaware Community College Transfer: A DTCC Student's Guide",
+    description:
+      "Delaware has one community college (DTCC, four campuses) and three primary transfer destinations (UDel, Delaware State, Wilmington). Here's how the Connected Degree program works and when to use it.",
+    date: "2026-04-20",
+    category: "state-system-explainers",
+    state: "de",
+    author: "Community College Path",
+    tags: ["transfer", "delaware", "dtcc", "udel", "connected-degree", "wilmington-university"],
+    cluster: "transfer-credit-guide",
+    clusterRole: "spoke",
+  },
+
+  // --- Cluster A spoke: CT unified system ---
+  {
+    slug: "connecticut-ct-state-unified-system-guide",
+    title:
+      "Connecticut's CT State Community College: What the 2023 Merger Means for Students",
+    description:
+      "Connecticut merged 12 community colleges into one accredited institution in 2023. One transcript, one catalog, one articulation agreement. Here's what changed and what didn't.",
+    date: "2026-04-20",
+    category: "state-system-explainers",
+    state: "ct",
+    author: "Community College Path",
+    tags: ["transfer", "connecticut", "ct-state", "caga", "ccsu", "ecsu", "scsu", "merger"],
+    cluster: "transfer-credit-guide",
+    clusterRole: "spoke",
+  },
+
+  // --- Standalone: Prerequisite chains ---
+  {
+    slug: "prerequisite-chains-why-four-semester-plans-take-six",
+    title:
+      "Why Your Four-Semester Community College Plan Is Actually Six",
+    description:
+      "Across 12 states, 40-60% of courses have at least one prerequisite. Some chains go four levels deep. Here's how to spot them before you register — using real data from community college catalogs.",
+    date: "2026-04-20",
+    category: "mistake-avoidance",
+    state: null,
+    author: "Community College Path",
+    tags: ["prerequisites", "planning", "two-year-degree", "course-sequence", "developmental"],
+  },
+
+  // --- Cluster A spoke: transfer equivalency reading ---
+  {
+    slug: "how-to-read-transfer-equivalency-table",
+    title:
+      "How to Read a Community College Transfer Equivalency Table",
+    description:
+      "Transfer tables use notation nobody teaches: direct match vs elective, wildcards, grade minimums, credit caps. Here's how to decode them before you lose a semester assuming a course will count.",
+    date: "2026-04-20",
+    category: "transfer-confusion",
+    state: null,
+    author: "Community College Path",
+    tags: ["transfer", "equivalency", "direct-match", "elective-credit", "notation"],
+    cluster: "transfer-credit-guide",
+    clusterRole: "spoke",
+  },
+
+  // --- Cluster B spoke: 15-state senior tuition comparison ---
+  {
+    slug: "senior-citizen-community-college-tuition-all-15-states",
+    title:
+      "Senior Citizen Community College Tuition: All 15 States Compared",
+    description:
+      "Age thresholds, income caps, audit-only vs credit-eligible. Senior tuition waiver rules vary dramatically across states. Here's the complete comparison matrix for all 15 states we track.",
+    date: "2026-04-20",
+    category: "senior-waivers",
+    state: null,
+    author: "Community College Path",
+    tags: ["seniors", "tuition-waiver", "auditing", "comparison", "all-states"],
+    cluster: "senior-waivers-guide",
+    clusterRole: "spoke",
+  },
+
+  // --- Standalone: hybrid classes ---
+  {
+    slug: "hybrid-community-college-classes-explained",
+    title:
+      "Hybrid Community College Classes: The Hidden Third Option",
+    description:
+      "Hybrid courses are now 10-20% of community college offerings in most states. Here's what they actually are (including HyFlex), when hybrid wins over online or in-person, and how to spot them in registration.",
+    date: "2026-04-20",
+    category: "registration-timing",
+    state: null,
+    author: "Community College Path",
+    tags: ["hybrid", "hyflex", "online", "in-person", "course-format", "scheduling"],
+  },
 ];
