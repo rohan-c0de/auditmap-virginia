@@ -20,7 +20,14 @@ const nhConfig: StateConfig = {
       "New Hampshire law allows residents aged 65+ to enroll in credit courses at Community College System of New Hampshire institutions tuition-free on a space-available basis.",
   },
 
-  transferSupported: false,
+  // 2026-04: enabled after scripts/nh/scrape-transfer.ts populated
+  // data/nh/transfer-equiv.json with ~4,400 mappings from 6 of 7 CCSNH
+  // colleges via CollegeTransfer.Net (wmcc hit the public API rate limit
+  // and will be filled by subsequent cron runs — partial runs are safe).
+  // Note: USNH receiving institutions (UNH/Plymouth/Keene) are not
+  // published to CollegeTransfer.Net, so in-state transfers are not
+  // covered by this dataset; out-of-state (USC, Clemson, Utah, etc.) is.
+  transferSupported: true,
   popularCourses: ["ENGL 101", "MATH 120", "BIOL 105", "PSYC 101", "HIST 101", "SOCI 101"],
   defaultZip: "03101",
   defaultZipCity: "Manchester",
