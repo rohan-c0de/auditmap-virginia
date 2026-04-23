@@ -53,6 +53,12 @@ Branch naming convention used so far: `claude/<state>-phase<N><letter>-<topic>` 
 
 Merging is the user's job — they click "Squash and merge" on GitHub. Don't run `gh pr merge` on their behalf unless they explicitly ask.
 
+**Don't push to a PR branch after you've told the user to merge.** GitHub squashes whatever is on the branch at merge-time; a commit pushed seconds after they click Merge becomes an orphaned dead commit on the remote branch and never reaches `main`. This has happened twice (PR #37 and PR #41). If you realize you need one more small edit after saying "go merge", either:
+1. Wait for the merge to land, then open a tiny follow-up PR, or
+2. Grab the user's attention before they click Merge ("one more commit coming, hold on").
+
+Never push a commit and _hope_ the user hasn't merged yet. That's what caused the lost commits.
+
 ## Verifying your work — three checks, in order
 
 Typecheck passing and a scraper completing without errors are necessary but not sufficient. Data can be wrong, APIs can return the right shape with broken content, and a PR that looks fine in isolation can break the UI for real users. Do these three, every time:
