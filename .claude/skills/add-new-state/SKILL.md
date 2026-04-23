@@ -15,10 +15,18 @@ Since commit `be494a7`, adding a state is config-driven. You should only need to
 - `data/{ST}/transfer-equiv.json` — start empty (`[]`) — transfer data lands in Phase 3
 - `lib/states/{ST}/config.ts` — `StateConfig` including `defaultZip`, `defaultZipCity`, SIS platform URLs, senior-waiver statute, `transferSupported: false` initially
 - `lib/states/registry.ts` — one-line registration
+- **`lib/institutions.ts`** — two-line registration: one `import nhInstitutions from "@/data/nh/institutions.json"` and one line in the `REGISTRY` map.
+- **`lib/geo.ts`** — same two-line pattern for `zipcodes.json` in the `ZIP_REGISTRY` map.
+
+### Why `lib/institutions.ts` and `lib/geo.ts` are hardcoded
+
+These two files look like they violate the "never hardcode state lists" invariant, but they can't be dynamic. Both are imported from code that may run on the **edge runtime** (middleware, some API routes), which cannot use `fs.readFileSync` or dynamic filesystem paths. The imports have to be static so the bundler knows at build time which JSON to include.
+
+If you miss these two files, `/{state}/colleges` renders an empty grid (no colleges shown) and `/{state}` zip-code search silently returns nothing. There's no runtime error — it just looks like the state has no data. Ask how we know: NH shipped without these edits in April 2026 (PR #30) and the bug wasn't caught until a user opened `/nh/colleges` on prod.
 
 **If you find yourself editing `components/SearchForm.tsx`, `components/blog/ProductCallout.tsx`, `app/page.tsx`, or `lib/blog.ts` to add a state — stop.** Those are registry-driven (see `getAllStates()` / `getStateConfig()`). Editing them re-introduces the exact coupling `be494a7` removed.
 
-Pattern reference: commit `9fb92bc` (CT/RI/VT/ME bootstrap — four states in one commit, only these 5 file types touched).
+Pattern reference: commit `9fb92bc` (CT/RI/VT/ME bootstrap — four states in one commit, only these file types touched).
 
 ## Phase 2 — Course scraper
 
@@ -53,7 +61,8 @@ Run `scripts/import-courses.ts` and `scripts/import-transfers.ts` for the new st
 - [ ] `transferSupported` flag reflects reality (false until Phase 3 completes)
 - [ ] Senior-waiver law cited with statute reference in the config
 - [ ] Scraper filename matches SIS platform (`scrape-banner-ssb.ts`, `scrape-colleague.ts`, etc.)
-- [ ] No hardcoded state slugs introduced anywhere outside `data/{ST}/`, `scripts/{ST}/`, `lib/states/{ST}/`
+- [ ] No hardcoded state slugs introduced anywhere outside `data/{ST}/`, `scripts/{ST}/`, `lib/states/{ST}/`, `lib/institutions.ts`, `lib/geo.ts`
+- [ ] **Phase 1 smoke test:** before opening the PR, hit `/{state}/colleges` in the local dev server. It should show all colleges, not an empty grid. An empty grid almost always means `lib/institutions.ts` wasn't updated.
 
 ## Commit message convention
 
