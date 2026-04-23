@@ -73,6 +73,7 @@ import ctConfig from "./ct/config";
 import meConfig from "./me/config";
 import paConfig from "./pa/config";
 import njConfig from "./nj/config";
+import nhConfig from "./nh/config";
 
 const ALL_CONFIGS: StateConfig[] = [
   vaConfig,
@@ -90,6 +91,7 @@ const ALL_CONFIGS: StateConfig[] = [
   meConfig,
   paConfig,
   njConfig,
+  nhConfig,
 ];
 
 const configs: Record<string, StateConfig> = Object.fromEntries(

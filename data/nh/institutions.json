@@ -1,0 +1,335 @@
+[
+  {
+    "id": "gbcc",
+    "name": "Great Bay Community College",
+    "system": "CCSNH",
+    "college_slug": "gbcc",
+    "campuses": [
+      {
+        "name": "Portsmouth Campus",
+        "lat": 43.0892,
+        "lng": -70.8256,
+        "address": "320 Corporate Dr, Portsmouth, NH 03801"
+      },
+      {
+        "name": "Rochester Campus",
+        "lat": 43.3045,
+        "lng": -70.9753,
+        "address": "5 Milton Rd, Rochester, NH 03868"
+      }
+    ],
+    "audit_policy": {
+      "allowed": true,
+      "cost_model": "free_for_seniors",
+      "cost_note": "NH residents 65+ may enroll in CCSNH courses tuition-free on a space-available basis.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "New Hampshire residents aged 65+ may enroll in CCSNH courses tuition-free on a space-available basis per NH RSA 188-F:20.",
+          "source_url": "https://www.greatbay.edu"
+        }
+      },
+      "restrictions": [
+        "Space-available basis only",
+        "Some fees may still apply"
+      ],
+      "application_process": {
+        "steps": [
+          "Apply online at greatbay.edu",
+          "Register as a non-degree student",
+          "Register for courses during open enrollment"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "",
+        "contact_email": "",
+        "contact_phone": ""
+      }
+    }
+  },
+  {
+    "id": "lrcc",
+    "name": "Lakes Region Community College",
+    "system": "CCSNH",
+    "college_slug": "lrcc",
+    "campuses": [
+      {
+        "name": "Main Campus (Laconia)",
+        "lat": 43.5306,
+        "lng": -71.4645,
+        "address": "379 Belmont Rd, Laconia, NH 03246"
+      }
+    ],
+    "audit_policy": {
+      "allowed": true,
+      "cost_model": "free_for_seniors",
+      "cost_note": "NH residents 65+ may enroll in CCSNH courses tuition-free on a space-available basis.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "New Hampshire residents aged 65+ may enroll in CCSNH courses tuition-free on a space-available basis per NH RSA 188-F:20.",
+          "source_url": "https://www.lrcc.edu"
+        }
+      },
+      "restrictions": [
+        "Space-available basis only",
+        "Some fees may still apply"
+      ],
+      "application_process": {
+        "steps": [
+          "Apply online at lrcc.edu",
+          "Register as a non-degree student",
+          "Register for courses during open enrollment"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "",
+        "contact_email": "",
+        "contact_phone": ""
+      }
+    }
+  },
+  {
+    "id": "mccnh",
+    "name": "Manchester Community College",
+    "system": "CCSNH",
+    "college_slug": "mccnh",
+    "campuses": [
+      {
+        "name": "Main Campus (Manchester)",
+        "lat": 42.9929,
+        "lng": -71.4326,
+        "address": "1066 Front St, Manchester, NH 03102"
+      }
+    ],
+    "audit_policy": {
+      "allowed": true,
+      "cost_model": "free_for_seniors",
+      "cost_note": "NH residents 65+ may enroll in CCSNH courses tuition-free on a space-available basis.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "New Hampshire residents aged 65+ may enroll in CCSNH courses tuition-free on a space-available basis per NH RSA 188-F:20.",
+          "source_url": "https://www.mccnh.edu"
+        }
+      },
+      "restrictions": [
+        "Space-available basis only",
+        "Some fees may still apply"
+      ],
+      "application_process": {
+        "steps": [
+          "Apply online at mccnh.edu",
+          "Register as a non-degree student",
+          "Register for courses during open enrollment"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "",
+        "contact_email": "",
+        "contact_phone": ""
+      }
+    }
+  },
+  {
+    "id": "nashuacc",
+    "name": "Nashua Community College",
+    "system": "CCSNH",
+    "college_slug": "nashuacc",
+    "campuses": [
+      {
+        "name": "Main Campus (Nashua)",
+        "lat": 42.7425,
+        "lng": -71.5115,
+        "address": "505 Amherst St, Nashua, NH 03063"
+      }
+    ],
+    "audit_policy": {
+      "allowed": true,
+      "cost_model": "free_for_seniors",
+      "cost_note": "NH residents 65+ may enroll in CCSNH courses tuition-free on a space-available basis.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "New Hampshire residents aged 65+ may enroll in CCSNH courses tuition-free on a space-available basis per NH RSA 188-F:20.",
+          "source_url": "https://www.nashuacc.edu"
+        }
+      },
+      "restrictions": [
+        "Space-available basis only",
+        "Some fees may still apply"
+      ],
+      "application_process": {
+        "steps": [
+          "Apply online at nashuacc.edu",
+          "Register as a non-degree student",
+          "Register for courses during open enrollment"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "",
+        "contact_email": "",
+        "contact_phone": ""
+      }
+    }
+  },
+  {
+    "id": "nhti",
+    "name": "NHTI, Concord's Community College",
+    "system": "CCSNH",
+    "college_slug": "nhti",
+    "campuses": [
+      {
+        "name": "Main Campus (Concord)",
+        "lat": 43.2214,
+        "lng": -71.5087,
+        "address": "31 College Dr, Concord, NH 03301"
+      }
+    ],
+    "audit_policy": {
+      "allowed": true,
+      "cost_model": "free_for_seniors",
+      "cost_note": "NH residents 65+ may enroll in CCSNH courses tuition-free on a space-available basis.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "New Hampshire residents aged 65+ may enroll in CCSNH courses tuition-free on a space-available basis per NH RSA 188-F:20.",
+          "source_url": "https://www.nhti.edu"
+        }
+      },
+      "restrictions": [
+        "Space-available basis only",
+        "Some fees may still apply"
+      ],
+      "application_process": {
+        "steps": [
+          "Apply online at nhti.edu",
+          "Register as a non-degree student",
+          "Register for courses during open enrollment"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "",
+        "contact_email": "",
+        "contact_phone": ""
+      }
+    }
+  },
+  {
+    "id": "rvcc",
+    "name": "River Valley Community College",
+    "system": "CCSNH",
+    "college_slug": "rvcc",
+    "campuses": [
+      {
+        "name": "Main Campus (Claremont)",
+        "lat": 43.3812,
+        "lng": -72.3458,
+        "address": "1 College Pl, Claremont, NH 03743"
+      },
+      {
+        "name": "Keene Academic Center",
+        "lat": 42.9370,
+        "lng": -72.2784,
+        "address": "438 Washington St, Keene, NH 03431"
+      },
+      {
+        "name": "Lebanon Academic Center",
+        "lat": 43.6423,
+        "lng": -72.2518,
+        "address": "15 Hanover St, Lebanon, NH 03766"
+      }
+    ],
+    "audit_policy": {
+      "allowed": true,
+      "cost_model": "free_for_seniors",
+      "cost_note": "NH residents 65+ may enroll in CCSNH courses tuition-free on a space-available basis.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "New Hampshire residents aged 65+ may enroll in CCSNH courses tuition-free on a space-available basis per NH RSA 188-F:20.",
+          "source_url": "https://www.rivervalley.edu"
+        }
+      },
+      "restrictions": [
+        "Space-available basis only",
+        "Some fees may still apply"
+      ],
+      "application_process": {
+        "steps": [
+          "Apply online at rivervalley.edu",
+          "Register as a non-degree student",
+          "Register for courses during open enrollment"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "",
+        "contact_email": "",
+        "contact_phone": ""
+      }
+    }
+  },
+  {
+    "id": "wmcc",
+    "name": "White Mountains Community College",
+    "system": "CCSNH",
+    "college_slug": "wmcc",
+    "campuses": [
+      {
+        "name": "Main Campus (Berlin)",
+        "lat": 44.4676,
+        "lng": -71.1826,
+        "address": "2020 Riverside Dr, Berlin, NH 03570"
+      }
+    ],
+    "audit_policy": {
+      "allowed": true,
+      "cost_model": "free_for_seniors",
+      "cost_note": "NH residents 65+ may enroll in CCSNH courses tuition-free on a space-available basis.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "New Hampshire residents aged 65+ may enroll in CCSNH courses tuition-free on a space-available basis per NH RSA 188-F:20.",
+          "source_url": "https://www.wmcc.edu"
+        }
+      },
+      "restrictions": [
+        "Space-available basis only",
+        "Some fees may still apply"
+      ],
+      "application_process": {
+        "steps": [
+          "Apply online at wmcc.edu",
+          "Register as a non-degree student",
+          "Register for courses during open enrollment"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "",
+        "contact_email": "",
+        "contact_phone": ""
+      }
+    }
+  }
+]
