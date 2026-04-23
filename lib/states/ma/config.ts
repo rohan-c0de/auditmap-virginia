@@ -20,7 +20,14 @@ const maConfig: StateConfig = {
       "Massachusetts law allows residents aged 60+ to attend credit courses at state community colleges tuition-free on a space-available basis.",
   },
 
-  transferSupported: false,
+  // 2026-04: enabled after scripts/ma/scrape-masstransfer.ts populated
+  // data/ma/transfer-equiv.json with ~46k mappings covering all 15 MA CCs
+  // × 14 state/UMass receivers via the MassTransfer public equivalency
+  // database. Unlike per-college scrapes (NH), MassTransfer is a single
+  // state-run source so coverage is uniform across all CCs — including
+  // the ones whose scheduling systems are SSO-gated (Massasoit, Cape Cod,
+  // QCC, Roxbury, MassBay).
+  transferSupported: true,
   popularCourses: ["ENG 101", "MAT 128", "BIO 110", "PSY 101", "HIS 101", "SOC 101"],
   defaultZip: "02108",
   defaultZipCity: "Boston",
