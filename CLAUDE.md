@@ -10,7 +10,7 @@ A national community college course navigator. Helps students find classes, plan
 
 The project is **national, expanding state-by-state**. East Coast is nearly complete. Never treat this as a Virginia-only tool — VA was the original scope but the architecture is multi-state.
 
-Currently covered states (as of this writing): ct, dc, de, ga, md, me, nc, nj, ny, pa, ri, sc, tn, va, vt. Run `getAllStates()` for the authoritative list.
+Currently covered states (as of this writing): ct, dc, de, ga, ma, md, me, nc, nh, nj, ny, pa, ri, sc, tn, va, vt. Run `getAllStates()` for the authoritative list.
 
 ## Stack
 
