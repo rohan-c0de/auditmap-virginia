@@ -15,6 +15,13 @@ import * as fs from "fs";
 import * as path from "path";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import { loadEnv } from "./load-env";
+import {
+  CourseSectionSchema,
+  TransferMappingSchema,
+  MAX_INVALID_RATIO,
+  validateRows,
+  isTransferHeaderRow,
+} from "../../lib/schemas";
 
 const BATCH_SIZE = 500;
 
@@ -101,6 +108,46 @@ export async function importCoursesToSupabase(state: string): Promise<number> {
 
       if (sections.length === 0) continue;
 
+      // Schema-validate every section before touching Supabase. If >5% fail,
+      // abort this (college, term) entirely — the scraper is broken and
+      // half-importing would replace good cloud data with partial data.
+      // If <5% fail, log and skip the bad rows so one malformed section
+      // doesn't block an otherwise-good import. See issue #49.
+      const validation = validateRows(
+        sections,
+        CourseSectionSchema,
+        (row, i) => {
+          const r = row as Record<string, unknown>;
+          const label = r.crn ? `CRN ${r.crn}` : `row ${i}`;
+          const course = r.course_prefix && r.course_number
+            ? `${r.course_prefix} ${r.course_number}`
+            : "<unknown course>";
+          return `${slug}/${term} ${course} ${label}`;
+        }
+      );
+
+      const invalidRatio = validation.invalid.length / sections.length;
+      if (validation.invalid.length > 0) {
+        console.warn(
+          `  SCHEMA ${slug}/${term}: ${validation.invalid.length}/${sections.length} rows failed validation (${(invalidRatio * 100).toFixed(1)}%)`
+        );
+        for (const bad of validation.invalid.slice(0, 10)) {
+          console.warn(`    - ${bad.identity}: ${bad.errors.join("; ")}`);
+        }
+        if (validation.invalid.length > 10) {
+          console.warn(
+            `    - ...and ${validation.invalid.length - 10} more`
+          );
+        }
+      }
+
+      if (invalidRatio > MAX_INVALID_RATIO) {
+        console.error(
+          `  ABORT ${slug}/${term}: invalid-row ratio ${(invalidRatio * 100).toFixed(1)}% exceeds ${(MAX_INVALID_RATIO * 100).toFixed(0)}% threshold. Fix the scraper and re-run. Cloud data for this (college, term) is unchanged.`
+        );
+        continue;
+      }
+
       // Delete existing rows for this (state, college, term)
       const { error: delError } = await sb
         .from("courses")
@@ -122,9 +169,12 @@ export async function importCoursesToSupabase(state: string): Promise<number> {
       // term but inserts off the row term — leaving stale rows forever. Same
       // for college_code: if a scraper wrote the wrong slug, future imports
       // never clean it up. Always trust the directory structure.
+      const validatedSections = validation.valid;
+      if (validatedSections.length === 0) continue;
+
       let rowTermOverrides = 0;
       let rowSlugOverrides = 0;
-      const rows: CourseRow[] = sections.map((s) => {
+      const rows: CourseRow[] = validatedSections.map((s) => {
         if (s.term && s.term !== term) rowTermOverrides++;
         if (s.college_code && s.college_code !== slug) rowSlugOverrides++;
         return {
@@ -244,21 +294,52 @@ export async function importTransfersToSupabase(
   const mappings = JSON.parse(raw) as Array<Record<string, unknown>>;
 
   // Skip header row if present (cc_prefix === "VCCS" or similar header-like value)
-  const data = mappings.filter(
-    (m) =>
-      m.cc_number !== "Course Number" &&
-      m.cc_prefix !== "VCCS" &&
-      m.cc_prefix !== "NCCCS" &&
-      m.cc_prefix !== "SCTCS"
-  );
+  const data = mappings.filter((m) => !isTransferHeaderRow(m));
 
   if (data.length === 0) {
     console.log(`  No transfer mappings for ${state}.`);
     return 0;
   }
 
+  // Schema-validate. Same 5% abort threshold as course import (issue #49).
+  const validation = validateRows(
+    data,
+    TransferMappingSchema,
+    (row, i) => {
+      const r = row as Record<string, unknown>;
+      const cc = r.cc_course || `${r.cc_prefix ?? "?"} ${r.cc_number ?? "?"}`;
+      return `${state} ${cc} -> ${r.university ?? "?"} (row ${i})`;
+    }
+  );
+
+  const invalidRatio = validation.invalid.length / data.length;
+  if (validation.invalid.length > 0) {
+    console.warn(
+      `  SCHEMA ${state} transfers: ${validation.invalid.length}/${data.length} rows failed validation (${(invalidRatio * 100).toFixed(1)}%)`
+    );
+    for (const bad of validation.invalid.slice(0, 10)) {
+      console.warn(`    - ${bad.identity}: ${bad.errors.join("; ")}`);
+    }
+    if (validation.invalid.length > 10) {
+      console.warn(`    - ...and ${validation.invalid.length - 10} more`);
+    }
+  }
+
+  if (invalidRatio > MAX_INVALID_RATIO) {
+    console.error(
+      `  ABORT ${state} transfers: invalid-row ratio ${(invalidRatio * 100).toFixed(1)}% exceeds ${(MAX_INVALID_RATIO * 100).toFixed(0)}% threshold. Fix the scraper and re-run. Cloud transfer data for this state is unchanged.`
+    );
+    return 0;
+  }
+
+  const validated = validation.valid;
+  if (validated.length === 0) {
+    console.log(`  No valid transfer mappings for ${state} after validation.`);
+    return 0;
+  }
+
   console.log(
-    `\nImporting ${state.toUpperCase()} transfers into Supabase: ${data.length} mappings`
+    `\nImporting ${state.toUpperCase()} transfers into Supabase: ${validated.length} mappings`
   );
 
   // Delete existing rows for this state
@@ -273,21 +354,21 @@ export async function importTransfersToSupabase(
   }
 
   // Prepare rows
-  const rows: TransferRow[] = data.map((m) => ({
+  const rows: TransferRow[] = validated.map((m) => ({
     state,
-    cc_prefix: (m.cc_prefix as string) || "",
-    cc_number: (m.cc_number as string) || "",
-    cc_course: (m.cc_course as string) || "",
-    cc_title: (m.cc_title as string) || "",
-    cc_credits: (m.cc_credits as string) || "",
-    university: (m.university as string) || "",
-    university_name: (m.university_name as string) || "",
-    univ_course: (m.univ_course as string) || "",
-    univ_title: (m.univ_title as string) || "",
-    univ_credits: (m.univ_credits as string) || "",
-    notes: (m.notes as string) || "",
-    no_credit: (m.no_credit as boolean) || false,
-    is_elective: (m.is_elective as boolean) || false,
+    cc_prefix: m.cc_prefix,
+    cc_number: m.cc_number,
+    cc_course: m.cc_course,
+    cc_title: m.cc_title,
+    cc_credits: m.cc_credits,
+    university: m.university,
+    university_name: m.university_name,
+    univ_course: m.univ_course,
+    univ_title: m.univ_title,
+    univ_credits: m.univ_credits,
+    notes: m.notes,
+    no_credit: m.no_credit,
+    is_elective: m.is_elective,
   }));
 
   // Insert in batches — abort on first failure to limit data loss
