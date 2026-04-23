@@ -1,0 +1,166 @@
+name: Scrape Prereqs
+
+# Refresh community college prerequisite data weekly and commit the
+# resulting data/<state>/prereqs.json back to the repo so Next.js can
+# serve the new data on the next deploy. Each state runs in its own job
+# so one flaky upstream catalog doesn't block the others.
+#
+# Two kinds of jobs:
+#   1. Dedicated catalog scrapers (ct/de/ny/pa/ri/vt) — each writes
+#      data/<state>/prereqs.json directly.
+#   2. Aggregate-from-courses (va/nc/sc/ga/dc) — reads the most recent
+#      data/<state>/courses/**.json (produced by scrape-courses-*.yml)
+#      and flattens the prerequisite_text field into prereqs.json.
+#
+# Each job runs the regression check BEFORE committing. If the new file
+# has <80% of the committed entry count (or is empty / malformed), the
+# job fails without committing — GitHub emails the actor on failure.
+
+on:
+  schedule:
+    - cron: "0 7 * * 0" # Sundays 7 AM UTC (2 AM EST)
+  workflow_dispatch:
+    inputs:
+      state:
+        description: "State to scrape (ct/de/ny/pa/ri/vt/aggregate or all)"
+        default: "all"
+
+permissions:
+  contents: write # required for auto-commit
+
+env:
+  NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+  SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+
+jobs:
+  # ── Catalog scrapers (one per state) ─────────────────────────────────
+  scrape-catalog:
+    if: >-
+      github.event_name == 'schedule' ||
+      inputs.state == 'all' || inputs.state == 'ct' || inputs.state == 'de' ||
+      inputs.state == 'ny' || inputs.state == 'pa' || inputs.state == 'ri' ||
+      inputs.state == 'vt'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      # Only run states the user actually selected (or all for schedule).
+      # The `include` block pins per-state extras (Playwright-heavy states).
+      matrix:
+        state: [ct, de, ny, pa, ri, vt]
+    concurrency:
+      # Serialize jobs that push to the same branch.
+      group: scrape-prereqs-${{ matrix.state }}
+      cancel-in-progress: false
+    steps:
+      # Skip matrix entries the user didn't select when dispatching manually.
+      # (Can't filter matrix with `if` alone — GitHub evaluates matrix before
+      # job-level if, so we short-circuit at the step level here.)
+      - name: Filter by dispatch input
+        id: filter
+        run: |
+          want='${{ inputs.state }}'
+          this='${{ matrix.state }}'
+          if [ "${{ github.event_name }}" = "schedule" ] || [ -z "$want" ] || [ "$want" = "all" ] || [ "$want" = "$this" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "Skipping $this (dispatch selected $want)"
+          fi
+
+      - if: steps.filter.outputs.run == 'true'
+        uses: actions/checkout@v4
+
+      - if: steps.filter.outputs.run == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - if: steps.filter.outputs.run == 'true'
+        run: npm ci
+
+      # NY uses Playwright (CUNY Coursedog needs a real browser session).
+      # The other states' scrapers are pure HTTP. Installing chromium only
+      # when needed saves ~30s per non-NY job.
+      - if: steps.filter.outputs.run == 'true' && matrix.state == 'ny'
+        run: npx playwright install chromium --with-deps
+
+      - if: steps.filter.outputs.run == 'true'
+        name: Scrape ${{ matrix.state }} prereqs
+        run: npx tsx scripts/${{ matrix.state }}/scrape-catalog-prereqs.ts
+
+      - if: steps.filter.outputs.run == 'true'
+        name: Regression check
+        run: npx tsx scripts/lib/check-prereq-regression.ts ${{ matrix.state }}
+
+      - if: steps.filter.outputs.run == 'true'
+        name: Commit updated prereqs
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          # Scope the commit strictly to the one file this job owns — prevents
+          # accidental commits of anything else a scraper might touch.
+          file_pattern: data/${{ matrix.state }}/prereqs.json
+          commit_message: "chore(${{ matrix.state }}): refresh prereqs.json [skip ci]"
+          commit_user_name: "github-actions[bot]"
+          commit_user_email: "41898282+github-actions[bot]@users.noreply.github.com"
+
+  # ── Aggregate-from-courses (VA/NC/SC/GA/DC) ──────────────────────────
+  # These states' course scrapers embed prerequisite_text on each section;
+  # aggregate-prereqs.ts flattens the latest courses/*.json into a single
+  # prereqs.json. Runs off whatever's currently committed in
+  # data/<state>/courses/ — scrape-courses-*.yml handles that refresh
+  # separately on its own cron.
+  aggregate:
+    if: >-
+      github.event_name == 'schedule' ||
+      inputs.state == 'all' || inputs.state == 'aggregate' ||
+      inputs.state == 'va' || inputs.state == 'nc' || inputs.state == 'sc' ||
+      inputs.state == 'ga' || inputs.state == 'dc'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        state: [va, nc, sc, ga, dc]
+    concurrency:
+      group: scrape-prereqs-${{ matrix.state }}
+      cancel-in-progress: false
+    steps:
+      - name: Filter by dispatch input
+        id: filter
+        run: |
+          want='${{ inputs.state }}'
+          this='${{ matrix.state }}'
+          if [ "${{ github.event_name }}" = "schedule" ] || [ -z "$want" ] || [ "$want" = "all" ] || [ "$want" = "aggregate" ] || [ "$want" = "$this" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - if: steps.filter.outputs.run == 'true'
+        uses: actions/checkout@v4
+      - if: steps.filter.outputs.run == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - if: steps.filter.outputs.run == 'true'
+        run: npm ci
+
+      - if: steps.filter.outputs.run == 'true'
+        name: Aggregate ${{ matrix.state }} prereqs
+        run: npx tsx scripts/lib/aggregate-prereqs.ts ${{ matrix.state }}
+
+      - if: steps.filter.outputs.run == 'true'
+        name: Regression check
+        run: npx tsx scripts/lib/check-prereq-regression.ts ${{ matrix.state }}
+
+      - if: steps.filter.outputs.run == 'true'
+        name: Commit updated prereqs
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          file_pattern: data/${{ matrix.state }}/prereqs.json
+          commit_message: "chore(${{ matrix.state }}): refresh prereqs.json (aggregate) [skip ci]"
+          commit_user_name: "github-actions[bot]"
+          commit_user_email: "41898282+github-actions[bot]@users.noreply.github.com"
