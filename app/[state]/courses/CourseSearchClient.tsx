@@ -108,13 +108,25 @@ interface CourseSearchProps {
 export default function CourseSearchClient({ state, systemName, collegeCount, courseUrlMap, defaultZip }: CourseSearchProps) {
   const searchParams = useSearchParams();
   const initialQuery = searchParams.get("q")?.replace(/\+/g, " ") || "";
+  // Initialize filter state from URL so deep links like
+  // /{state}/courses?q=accounting&days=Sa&transfersTo=umass-boston actually
+  // apply the filters on first load. Previously only `q` was read and the
+  // rest defaulted to empty, which silently dropped every other filter.
+  const initialZip = searchParams.get("zip") || "";
+  const initialMode = searchParams.get("mode") || "";
+  const initialDays = (searchParams.get("days") || "")
+    .split(",")
+    .map((d) => d.trim())
+    .filter(Boolean);
+  const initialTimeOfDay = searchParams.get("timeOfDay") || "";
+  const initialTransferTo = searchParams.get("transfersTo") || "";
   const { user, openLoginModal } = useAuth();
 
   const [query, setQuery] = useState(initialQuery);
-  const [zip, setZip] = useState("");
-  const [mode, setMode] = useState("");
-  const [days, setDays] = useState<string[]>([]);
-  const [timeOfDay, setTimeOfDay] = useState("");
+  const [zip, setZip] = useState(initialZip);
+  const [mode, setMode] = useState(initialMode);
+  const [days, setDays] = useState<string[]>(initialDays);
+  const [timeOfDay, setTimeOfDay] = useState(initialTimeOfDay);
 
   // Bookmark state
   const [bookmarkedCourses, setBookmarkedCourses] = useState<Set<string>>(new Set());
@@ -175,7 +187,7 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
     setBookmarkLoading((prev) => { const next = new Set(prev); next.delete(key); return next; });
   }, [user, openLoginModal, bookmarkedCourses, state]);
 
-  const [transferTo, setTransferTo] = useState("");
+  const [transferTo, setTransferTo] = useState(initialTransferTo);
   const [transferLookup, setTransferLookup] = useState<Record<string, { university: string; type: string }[]> | null>(null);
   const [universities, setUniversities] = useState<{ slug: string; name: string }[]>([]);
 
