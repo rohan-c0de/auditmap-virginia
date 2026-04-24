@@ -1,0 +1,219 @@
+name: Scheduled scrape (unified)
+
+# Unified scheduled-scrape workflow (issue #59, PR 2). Replaces the
+# VA-only weekly-scrape-va.yml exemplar (#58). Reads StateConfig.scrapers
+# to build its matrix, so adding a state to cron is a config edit, not
+# a YAML edit.
+#
+# Runs `--no-import` only. The scraped JSON never touches Supabase from
+# this workflow — a human merges the PR, then scripts/import-courses.ts
+# picks up the files on main and runs schema validation (#49) + change
+# detection (#51) before any row lands in the database.
+#
+# Three crons, one per data type. `github.event.schedule` tells us which
+# fired. Manual dispatch accepts a `datatype` input.
+#
+# Runs in parallel with the four existing scrape-*.yml files during the
+# overlap period. PR 3 of #59 retires those once this one has produced
+# one or two clean weekly runs.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1,3,5" # Mon/Wed/Fri 06:00 UTC — courses
+    - cron: "0 10 * * 3,6"  # Wed/Sat 10:00 UTC — transfers
+    - cron: "0 7 * * 0"     # Sun 07:00 UTC — prereqs
+  workflow_dispatch:
+    inputs:
+      datatype:
+        description: "Which data type to scrape"
+        type: choice
+        options: [courses, transfers, prereqs]
+        default: courses
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+      datatype: ${{ steps.plan.outputs.datatype }}
+      empty: ${{ steps.plan.outputs.empty }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - run: npm ci
+
+      - name: Determine datatype
+        id: datatype
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            dt="${{ inputs.datatype }}"
+          else
+            case "${{ github.event.schedule }}" in
+              "0 6 * * 1,3,5") dt="courses" ;;
+              "0 10 * * 3,6")  dt="transfers" ;;
+              "0 7 * * 0")     dt="prereqs" ;;
+              *) echo "Unexpected schedule: ${{ github.event.schedule }}"; exit 1 ;;
+            esac
+          fi
+          echo "value=$dt" >> "$GITHUB_OUTPUT"
+          echo "Running scheduled scrape for datatype=$dt" >&2
+
+      - name: Build matrix from registry
+        id: plan
+        run: |
+          dt="${{ steps.datatype.outputs.value }}"
+          matrix=$(npx tsx scripts/lib/scraper-matrix.ts --datatype "$dt")
+          count=$(echo "$matrix" | jq '.include | length')
+          echo "matrix=$matrix" >> "$GITHUB_OUTPUT"
+          echo "datatype=$dt" >> "$GITHUB_OUTPUT"
+          if [ "$count" = "0" ]; then
+            echo "empty=true" >> "$GITHUB_OUTPUT"
+            echo "No states declare scheduled $dt scraping. Nothing to do." >&2
+          else
+            echo "empty=false" >> "$GITHUB_OUTPUT"
+            echo "Matrix: $count entries across the registry." >&2
+          fi
+
+  scrape:
+    needs: plan
+    if: needs.plan.outputs.empty == 'false'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - run: npm ci
+
+      - name: Install Playwright (runner-dependent)
+        if: matrix.runner == 'playwright'
+        run: npx playwright install chromium --with-deps
+
+      - name: Run scraper scripts
+        env:
+          # Scrapers have an inline Supabase-import fallback when env is set;
+          # deliberately pass --no-import and omit the service key so nothing
+          # can write to prod from this workflow. See #59 design doc.
+          SUPABASE_SERVICE_ROLE_KEY: ""
+        run: |
+          set -e
+          echo "${{ matrix.scripts }}" | while IFS= read -r script; do
+            [ -z "$script" ] && continue
+            echo "::group::$script"
+            npx tsx "$script" --no-import
+            echo "::endgroup::"
+          done
+
+      - name: Upload scraped data
+        uses: actions/upload-artifact@v4
+        with:
+          name: scrape-${{ matrix.id }}
+          path: data/${{ matrix.state }}
+          retention-days: 7
+          if-no-files-found: ignore
+
+  aggregate:
+    needs: [plan, scrape]
+    if: always() && needs.plan.outputs.empty == 'false'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - run: npm ci
+
+      - name: Download all scrape artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: scrape-*
+          path: /tmp/scrape-artifacts
+
+      - name: Overlay artifacts into working tree
+        run: |
+          # Each artifact was uploaded from data/{state}/; restore that
+          # directory structure under data/ in this checkout.
+          shopt -s nullglob
+          for dir in /tmp/scrape-artifacts/scrape-*; do
+            # Artifact name is scrape-{state}-{datatype}-{idx}
+            base=$(basename "$dir")
+            state=$(echo "$base" | sed -E 's/^scrape-([a-z]+)-.*/\1/')
+            mkdir -p "data/$state"
+            cp -R "$dir"/. "data/$state/"
+          done
+          git status --short | head -40
+
+      - name: Diff against main
+        id: diff
+        run: |
+          json=$(npx tsx scripts/lib/scrape-diff.ts --path data/ --format json)
+          md=$(npx tsx scripts/lib/scrape-diff.ts --path data/ --format markdown)
+          {
+            echo "report_json<<EOF"
+            echo "$json"
+            echo "EOF"
+            echo "report_md<<EOF"
+            echo "$md"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+          echo "broken=$(echo "$json" | jq -r '.broken')" >> "$GITHUB_OUTPUT"
+          echo "changed=$(echo "$json" | jq -r '.changed')" >> "$GITHUB_OUTPUT"
+          echo "$md"
+
+      - name: Open issue on regression
+        if: steps.diff.outputs.broken == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPORT_MD: ${{ steps.diff.outputs.report_md }}
+          RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          DT: ${{ needs.plan.outputs.datatype }}
+        run: |
+          today=$(date -u +"%Y-%m-%d")
+          {
+            echo "Scheduled **${DT}** scrape on ${today} produced one or more files that dropped below 50% of their prior row count. Scraper is likely broken (expired cookie, source-site change, parser regression)."
+            echo
+            printf '%s\n' "$REPORT_MD"
+            echo
+            echo "**No PR was opened.** Investigate the scraper(s) before re-running."
+            echo
+            echo "Workflow run: ${RUN_URL}"
+          } > issue-body.md
+          gh issue create \
+            --title "Scheduled ${DT} scrape: suspected regression (${today})" \
+            --body-file issue-body.md
+
+      - name: Open PR with fresh data
+        if: steps.diff.outputs.broken == 'false' && steps.diff.outputs.changed != '0'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: scheduled-scrape/${{ needs.plan.outputs.datatype }}
+          commit-message: "Scheduled ${{ needs.plan.outputs.datatype }} scrape — ${{ steps.diff.outputs.changed }} file(s)"
+          title: "Scheduled ${{ needs.plan.outputs.datatype }} scrape — ${{ steps.diff.outputs.changed }} file(s) updated"
+          body: |
+            Automated output of the unified scheduled-scrape workflow (issue #59).
+
+            ${{ steps.diff.outputs.report_md }}
+
+            **Do not auto-merge.** Skim the diff — spot-check one or two states in the preview URL before landing. Schema validation (#49) and change detection (#51) both run again at import time once this lands on main.
+          labels: scraper-output,automated
+          delete-branch: true
+
+      - name: No-op summary
+        if: steps.diff.outputs.broken == 'false' && steps.diff.outputs.changed == '0'
+        run: echo "No changes vs. main — nothing to PR."

@@ -99,6 +99,10 @@ Run `scripts/import-courses.ts` and `scripts/import-transfers.ts` for the new st
 
 Imports run every row through schema validation (`lib/schemas.ts`). If your scraper's output fails validation, **fix the scraper** — don't bypass the check. When >5% of rows in a (college, term) combination fail, the import aborts that combination with cloud data unchanged; when <5% fail, bad rows are logged and skipped. Run `npx tsx scripts/check-scraper-output.ts --state <slug>` as a dry-run before the real import.
 
+### Register for scheduled scraping
+
+Once the scraper works manually, populate the state's `scrapers` field in `lib/states/{ST}/config.ts` so `scheduled-scrape.yml` picks it up on the next cron. Declare one `ScrapeJob` per runner flavor (http vs playwright), list every scraper script for that data type, and — for states where `prerequisite_text` comes along inside the course scrape — set `prereqs: { source: "aggregate-from-courses" }`. If the scraper exists but you want a few manual cycles before cron'ing, add a `// manual-only: <reason>` comment above the config export instead. CI (`npm run check:scrapers`) fails PRs that do neither — see the registry-invariant bullet in CLAUDE.md.
+
 ### After import: confirm the next prod build completes
 Supabase imports add a lot of rows at once. The static-generation step for `/colleges` runs `buildTransferLookupForCourses` per college per state; this query scales with total transfer rows across all states and has a strict `service_role` statement timeout.
 

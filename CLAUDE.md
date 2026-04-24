@@ -22,6 +22,7 @@ Next.js 16 (App Router) + React 19 + TypeScript · Supabase (Postgres + SSR auth
 2. **State-specific defaults live in `StateConfig`.** Zip placeholders, senior-waiver citations, SIS URLs, `defaultZip`, `defaultZipCity`, etc. Never write ternary chains like `state === 'va' ? X : Y` in components.
 3. **Per-state file layout is fixed.** Data in `data/{state}/`, scrapers in `scripts/{state}/`, config in `lib/states/{state}/config.ts`. Dynamic routing through `app/[state]/…`.
 4. **Student data never runs through prod with fake values.** If a scraper fails, leave the existing data untouched rather than substitute placeholder courses.
+5. **Scheduled scraping is declared in `StateConfig.scrapers`, not in workflow YAML.** The unified `scheduled-scrape.yml` reads the registry to build its matrix — adding a state to cron is a config edit, not a YAML edit. CI (`check:scrapers`) fails a PR that adds a state without declaring scrapers or including a `// manual-only: <reason>` marker.
 
 ## Environment variables
 
