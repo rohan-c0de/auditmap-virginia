@@ -103,6 +103,14 @@ jobs:
         if: matrix.runner == 'playwright'
         run: npx playwright install chromium --with-deps
 
+      - name: Install pdfplumber (NC scrapers shell out to Python for PDF parsing)
+        # scripts/nc/scrape-pamlico.ts and scrape-cleveland.ts call
+        # `python3 -c '... pdfplumber ...'` to parse college-published PDF
+        # course catalogs. The Ubuntu runner has python3 pre-installed but
+        # not the pdfplumber package, so install on demand for nc entries.
+        if: matrix.state == 'nc'
+        run: pip install --quiet pdfplumber
+
       - name: Run scraper scripts
         env:
           # Scrapers have an inline Supabase-import fallback when env is set;
