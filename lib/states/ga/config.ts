@@ -88,10 +88,12 @@ const gaConfig: StateConfig = {
           "scripts/ga/scrape-transfer-gatech.ts",
           "scripts/ga/scrape-transfer-uga.ts",
           "scripts/ga/scrape-transfer-gsu.ts",
-          "scripts/ga/scrape-transfer-usg.ts",
         ],
         runner: "http",
       },
+      // scrape-transfer-usg.ts uses Playwright to drive the USG TES portal,
+      // unlike the other three transfer scripts which are pure HTTP.
+      { scripts: ["scripts/ga/scrape-transfer-usg.ts"], runner: "playwright" },
     ],
     prereqs: { source: "aggregate-from-courses" },
   },
