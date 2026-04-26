@@ -25,9 +25,10 @@
     ]
   },
   "ACCT 312": {
-    "text": "ACCT 202 (min C) or ACCT 202",
+    "text": "ACCT 202 (min C) or ACCT 202 or ACCT 202C (min C) or ACCT 202C",
     "courses": [
-      "ACCT 202"
+      "ACCT 202",
+      "ACCT 202C"
     ]
   },
   "ACCT 325": {
@@ -187,6 +188,19 @@
     "courses": [
       "APCT 231",
       "APCT 231C",
+      "APCT 233",
+      "APCT 233C"
+    ]
+  },
+  "APCT 233": {
+    "text": "APCT 111 (min C)",
+    "courses": [
+      "APCT 111"
+    ]
+  },
+  "APCT 234": {
+    "text": "APCT 233 (min C) or APCT 233C (min C)",
+    "courses": [
       "APCT 233",
       "APCT 233C"
     ]
@@ -547,17 +561,17 @@
     ]
   },
   "BGMT 304": {
-    "text": "ECON 202 (min C) or ECON 202C (min C)",
+    "text": "IGED 111 (min C) or IGED 111C (min C) or IGED 111 or IGED 111C",
     "courses": [
-      "ECON 202",
-      "ECON 202C"
+      "IGED 111",
+      "IGED 111C"
     ]
   },
   "BGMT 305": {
-    "text": "BGMT 208 (min C) or BGMT 208C (min C)",
+    "text": "IGED 111 (min C) or IGED 111C (min C) or IGED 111 or IGED 111C",
     "courses": [
-      "BGMT 208",
-      "BGMT 208C"
+      "IGED 111",
+      "IGED 111C"
     ]
   },
   "BGMT 306": {
@@ -567,9 +581,10 @@
     ]
   },
   "BGMT 308": {
-    "text": "BGMT 304 (min C)",
+    "text": "IGED 111 (min C) or IGED 111C (min C) or IGED 111 or IGED 111C",
     "courses": [
-      "BGMT 304"
+      "IGED 111",
+      "IGED 111C"
     ]
   },
   "BGMT 309": {
@@ -587,10 +602,10 @@
     ]
   },
   "BGMT 311": {
-    "text": "MGIS 120 (min C) and FINA 220 (min C)",
+    "text": "FINA 220 (min C) or FINA 220C (min C) or FINA 220 or FINA 220C",
     "courses": [
-      "MGIS 120",
-      "FINA 220"
+      "FINA 220",
+      "FINA 220C"
     ]
   },
   "BGMT 312": {
@@ -948,11 +963,29 @@
       "CHEM 105C"
     ]
   },
+  "CHEM 111C": {
+    "text": "CHEM 105C (min C) and CHEM 106C (min C) or CHEM 105 (min C) and CHEM 106 (min C)",
+    "courses": [
+      "CHEM 105C",
+      "CHEM 106C",
+      "CHEM 105",
+      "CHEM 106"
+    ]
+  },
   "CHEM 112": {
     "text": "CHEM 111 (min C) or CHEM 111C (min C)",
     "courses": [
       "CHEM 111",
       "CHEM 111C"
+    ]
+  },
+  "CHEM 113C": {
+    "text": "CHEM 105C (min C) or CHEM 105 (min C) and CHEM 106C (min C) or CHEM 106 (min C)",
+    "courses": [
+      "CHEM 105C",
+      "CHEM 105",
+      "CHEM 106C",
+      "CHEM 106"
     ]
   },
   "CHEM 114": {
@@ -1105,6 +1138,13 @@
       "APCT 233C"
     ]
   },
+  "CMOP 236": {
+    "text": "APCT 233 (min C) or APCT 233C (min C)",
+    "courses": [
+      "APCT 233",
+      "APCT 233C"
+    ]
+  },
   "CSCI 100C": {
     "text": "CMOP 121C (min C) or CMOP 121 (min C)",
     "courses": [
@@ -1129,28 +1169,30 @@
     ]
   },
   "CSCI 306": {
-    "text": "APCT 231 (min C) and APCT 233 (min C) or APCT 231C (min C) and APCT 233C (min C)",
+    "text": "APCT 231 (min C) or APCT 231C (min C) and APCT 233 (min C) or APCT 233C (min C)",
     "courses": [
       "APCT 231",
-      "APCT 233",
       "APCT 231C",
+      "APCT 233",
       "APCT 233C"
     ]
   },
   "CSCI 308": {
-    "text": "APCT 232 (min C) and APCT 234 (min C) or APCT 232C (min C) and APCT 234C (min C)",
+    "text": "APCT 232 (min C) or APCT 232C (min C) and APCT 234 (min C) or APCT 234C (min C)",
     "courses": [
       "APCT 232",
-      "APCT 234",
       "APCT 232C",
+      "APCT 234",
       "APCT 234C"
     ]
   },
   "CSCI 315": {
-    "text": "APCT 232 (min C) and APCT 234 (min C)",
+    "text": "APCT 232 (min C) or APCT 232C (min C) and APCT 234 (min C) or APCT 234C (min C)",
     "courses": [
       "APCT 232",
-      "APCT 234"
+      "APCT 232C",
+      "APCT 234",
+      "APCT 234C"
     ]
   },
   "CSCI 325": {
@@ -1170,10 +1212,14 @@
     ]
   },
   "CSCI 342": {
-    "text": "CMOP 131 (min C) and CMOP 132 (min C)",
+    "text": "CMOP 231 (min C) or CMOP 231C (min C) and CMOP 232 (min C) or CMOP 232C (min C) or CSCI 241 (min C) or CSCI 241C (min C)",
     "courses": [
-      "CMOP 131",
-      "CMOP 132"
+      "CMOP 231",
+      "CMOP 231C",
+      "CMOP 232",
+      "CMOP 232C",
+      "CSCI 241",
+      "CSCI 241C"
     ]
   },
   "CSCI 343": {
@@ -1185,27 +1231,42 @@
       "APCT 234C"
     ]
   },
-  "CSCI 351": {
-    "text": "CMOP 131 (min C) and CMOP 132 (min C) or CSCI 241 (min C) or CSCI 241C (min C)",
+  "CSCI 345": {
+    "text": "CMOP 235 (min C) or CMOP 235C (min C) and CMOP 236 (min C) or CMOP 236C (min C)",
     "courses": [
-      "CMOP 131",
-      "CMOP 132",
+      "CMOP 235",
+      "CMOP 235C",
+      "CMOP 236",
+      "CMOP 236C"
+    ]
+  },
+  "CSCI 351": {
+    "text": "CMOP 231 (min C) and CMOP 232 (min C) or CSCI 241 (min C) or CSCI 241C (min C)",
+    "courses": [
+      "CMOP 231",
+      "CMOP 232",
       "CSCI 241",
       "CSCI 241C"
     ]
   },
   "CSCI 352": {
-    "text": "CMOP 131 (min C) and CMOP 132 (min C)",
+    "text": "CMOP 231 (min C) or CMOP 231C (min C) and CMOP 232 (min C) or CMOP 232C (min C) and CSCI 241 (min C) or CSCI 241C (min C)",
     "courses": [
-      "CMOP 131",
-      "CMOP 132"
+      "CMOP 231",
+      "CMOP 231C",
+      "CMOP 232",
+      "CMOP 232C",
+      "CSCI 241",
+      "CSCI 241C"
     ]
   },
   "CSCI 398": {
-    "text": "APCT 232 (min C) and APCT 234 (min C)",
+    "text": "Applied Computing 232 (min C) or Applied Computing 232C (min C) and Applied Computing 234 (min C) or Applied Computing 234C (min C)",
     "courses": [
-      "APCT 232",
-      "APCT 234"
+      "Applied Computing 232",
+      "Applied Computing 232C",
+      "Applied Computing 234",
+      "Applied Computing 234C"
     ]
   },
   "CSCI 410": {
@@ -1222,10 +1283,10 @@
     ]
   },
   "CSCI 412": {
-    "text": "CSCI 311 (min C) and CSCI 313 (min C)",
+    "text": "CSCI 241 (min C) or CSCI 241C (min C)",
     "courses": [
-      "CSCI 311",
-      "CSCI 313"
+      "CSCI 241",
+      "CSCI 241C"
     ]
   },
   "CSCI 414": {
@@ -1243,10 +1304,17 @@
     ]
   },
   "CSCI 421": {
-    "text": "APCT 232 (min C) and APCT 234 (min C)",
+    "text": "APCT 232 (min C) or APCT 232C (min C) and APCT 234 (min C) or APCT 234C (min C) and MATH 225 (min C) and MATH 151 (min C) or MATH 151C (min C) and MATH 155 (min C) or MATH 155C (min C)",
     "courses": [
       "APCT 232",
-      "APCT 234"
+      "APCT 232C",
+      "APCT 234",
+      "APCT 234C",
+      "MATH 225",
+      "MATH 151",
+      "MATH 151C",
+      "MATH 155",
+      "MATH 155C"
     ]
   },
   "CSCI 434": {
@@ -1282,10 +1350,18 @@
     ]
   },
   "CSCI 453": {
-    "text": "CSCI 341 (min C) or CYSE 320 (min C)",
+    "text": "CSCI 341 (min C)",
     "courses": [
-      "CSCI 341",
-      "CYSE 320"
+      "CSCI 341"
+    ]
+  },
+  "CSCI 455": {
+    "text": "CSCI 241 (min C) or CSCI 241C (min C) and CSCI 308 (min C) or CYSE 220 (min C)",
+    "courses": [
+      "CSCI 241",
+      "CSCI 241C",
+      "CSCI 308",
+      "CYSE 220"
     ]
   },
   "CSCI 490": {
@@ -1449,12 +1525,6 @@
       "CVEN 351"
     ]
   },
-  "CVEN 559": {
-    "text": "CVEN 351 (min C)",
-    "courses": [
-      "CVEN 351"
-    ]
-  },
   "CYSE 115C": {
     "text": "CMOP 121C (min C) or CMOP 121 (min C)",
     "courses": [
@@ -1530,31 +1600,29 @@
     ]
   },
   "CYSE 430": {
-    "text": "CYSE 100 (min C) and CYSE 275 (min C)",
+    "text": "CYSE 275 (min C)",
     "courses": [
-      "CYSE 100",
       "CYSE 275"
     ]
   },
   "CYSE 440": {
-    "text": "CYSE 200 (min C) or CYSE 352 (min C)",
+    "text": "CYSE 200 (min C) and CYSE 310 (min C)",
     "courses": [
       "CYSE 200",
-      "CYSE 352"
+      "CYSE 310"
     ]
   },
   "CYSE 455": {
-    "text": "CSCI 414 (min C) and CSCI 200 (min C) or CSCI 352 (min C)",
+    "text": "CSCI 352 (min C) and CSCI 414 (min C)",
     "courses": [
-      "CSCI 414",
-      "CSCI 200",
-      "CSCI 352"
+      "CSCI 352",
+      "CSCI 414"
     ]
   },
   "CYSE 460": {
-    "text": "CYSE 375 (min C) and CYSE 200 (min C) or CSCI 352 (min C)",
+    "text": "CYSE 275 (min C) and CYSE 200 (min C) or CSCI 352 (min C)",
     "courses": [
-      "CYSE 375",
+      "CYSE 275",
       "CYSE 200",
       "CSCI 352"
     ]
@@ -1566,10 +1634,9 @@
     ]
   },
   "CYSE 498": {
-    "text": "CYSE 320 (min C) and CYSE 425 (min C)",
+    "text": "CYSE 320 (min C)",
     "courses": [
-      "CYSE 320",
-      "CYSE 425"
+      "CYSE 320"
     ]
   },
   "CYSE 499": {
@@ -2260,9 +2327,10 @@
     ]
   },
   "FINA 220": {
-    "text": "MATH 116 (min C)",
+    "text": "MATH 116 (min C) or MATH 116C (min C) or MATH 116",
     "courses": [
-      "MATH 116"
+      "MATH 116",
+      "MATH 116C"
     ]
   },
   "FINA 220C": {
@@ -2282,6 +2350,18 @@
     ]
   },
   "FINA 315": {
+    "text": "FINA 314 (min C)",
+    "courses": [
+      "FINA 314"
+    ]
+  },
+  "FINA 411": {
+    "text": "FINA 314 (min C)",
+    "courses": [
+      "FINA 314"
+    ]
+  },
+  "FINA 416": {
     "text": "FINA 314 (min C)",
     "courses": [
       "FINA 314"
@@ -2332,17 +2412,17 @@
     ]
   },
   "HMGT 211C": {
-    "text": "HMGT 110C (min C) and FBMT 106C (min C)",
+    "text": "HMGT 110C (min C) and Food &amp; Beverage Management 106C (min C)",
     "courses": [
       "HMGT 110C",
-      "FBMT 106C"
+      "Food &amp; Beverage Management 106C"
     ]
   },
   "HMGT 215C": {
-    "text": "HMGT 110C (min C) or FBMT 106C (min C)",
+    "text": "HMGT 110C (min C) or Food &amp; Beverage Management 106C (min C)",
     "courses": [
       "HMGT 110C",
-      "FBMT 106C"
+      "Food &amp; Beverage Management 106C"
     ]
   },
   "HMGT 220C": {
@@ -2852,19 +2932,6 @@
       "NUDT 245"
     ]
   },
-  "NUDT 245": {
-    "text": "CHEM 112 or CHEM 112C and CHEM 114 or CHEM 114C and BIOL 112 or BIOL 112C and BIOL 114 or BIOL 114C",
-    "courses": [
-      "CHEM 112",
-      "CHEM 112C",
-      "CHEM 114",
-      "CHEM 114C",
-      "BIOL 112",
-      "BIOL 112C",
-      "BIOL 114",
-      "BIOL 114C"
-    ]
-  },
   "NUDT 311": {
     "text": "MATH 185 (min C)",
     "courses": [
@@ -3255,6 +3322,15 @@
       "POLI 206C"
     ]
   },
+  "POLI 485": {
+    "text": "POLI 205 (min C) or POLI 206 (min C) or POLI 205C (min C) or POLI 206C (min C)",
+    "courses": [
+      "POLI 205",
+      "POLI 206",
+      "POLI 205C",
+      "POLI 206C"
+    ]
+  },
   "POLI 495": {
     "text": "POLI 205 (min C) and POLI 206 (min C) and POLI 295 (min C)",
     "courses": [
@@ -3286,9 +3362,10 @@
     ]
   },
   "PSYC 228": {
-    "text": "PSYC 201 (min C)",
+    "text": "PSYC 201 (min C) or PSYC 201C (min C)",
     "courses": [
-      "PSYC 201"
+      "PSYC 201",
+      "PSYC 201C"
     ]
   },
   "PSYC 235": {
@@ -3439,6 +3516,13 @@
     "text": "SOWK 490 (min C)",
     "courses": [
       "SOWK 490"
+    ]
+  },
+  "SPED 411": {
+    "text": "Education Psychology 300 (min C) and SPED 104 (min C)",
+    "courses": [
+      "Education Psychology 300",
+      "SPED 104"
     ]
   },
   "SPLP 560": {
