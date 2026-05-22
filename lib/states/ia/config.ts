@@ -41,9 +41,11 @@ const iaConfig: StateConfig = {
     ],
   },
   scrapers: {
-    // manual-only: courses — mixed-platform state, 2 colleges scraped via colleague template; per-state cron not yet wired.
+    courses: [
+      { scripts: ["scripts/ia/scrape-colleague.ts"], runner: "playwright" },
+    ],
     // manual-only: transfers — no articulation portal registered for IA yet.
-    // manual-only: prereqs — runs as part of course aggregation.
+    prereqs: { source: "aggregate-from-courses" },
     // manual-only: programs — Phase 5+.
   },
 };
