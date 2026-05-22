@@ -36,6 +36,10 @@ const orConfig: StateConfig = {
     courses: [
       { scripts: ["scripts/or/scrape-banner-ssb.ts"], runner: "http" },
       { scripts: ["scripts/or/scrape-tvcc.ts"], runner: "http" },
+      { scripts: ["scripts/or/scrape-klamath.ts"], runner: "http" },
+      { scripts: ["scripts/or/scrape-oregon-coast.ts"], runner: "http" },
+      { scripts: ["scripts/or/scrape-columbia-gorge.ts"], runner: "http" },
+      { scripts: ["scripts/or/scrape-colleague.ts"], runner: "playwright" },
     ],
     prereqs: { source: "aggregate-from-courses" },
     // manual-only: transfers — Oregon uses CCN (Common Course Numbering) rather than a per-course equivalency portal.
