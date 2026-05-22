@@ -33,9 +33,12 @@ const orConfig: StateConfig = {
     ],
   },
   scrapers: {
-    // manual-only: courses — Phase 2 (course scraper) not yet wired up.
-    // manual-only: transfers — Phase 3 (transfer-equiv) not yet wired up.
-    // manual-only: prereqs — Phase 4.
+    courses: [
+      { scripts: ["scripts/or/scrape-banner-ssb.ts"], runner: "http" },
+      { scripts: ["scripts/or/scrape-tvcc.ts"], runner: "http" },
+    ],
+    prereqs: { source: "aggregate-from-courses" },
+    // manual-only: transfers — Oregon uses CCN (Common Course Numbering) rather than a per-course equivalency portal.
     // manual-only: programs — Phase 5+.
   },
 };

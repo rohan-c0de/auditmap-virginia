@@ -119,8 +119,7 @@ async function scrapeTerm(pdfName: string, termCode: string): Promise<CourseSect
     return [];
   }
 
-  const parser = new PDFParse(data);
-  await parser.load();
+  const parser = new PDFParse({ data });
   const result = await parser.getText();
 
   const sections: CourseSection[] = [];
