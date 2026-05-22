@@ -46,9 +46,13 @@ const moConfig: StateConfig = {
     ],
   },
   scrapers: {
-    // manual-only: courses — mixed-platform state, 6 colleges scraped via banner-ssb-9 / colleague templates; per-state cron not yet wired.
+    // Two of MO's six scrapable colleges are wired; jefferson-college and
+    // MCC-Kansas-City need re-fingerprint (see scripts/mo/scrape-colleague.ts).
+    courses: [
+      { scripts: ["scripts/mo/scrape-colleague.ts"], runner: "playwright" },
+    ],
     // manual-only: transfers — no articulation portal registered for MO yet.
-    // manual-only: prereqs — runs as part of course aggregation.
+    prereqs: { source: "aggregate-from-courses" },
     // manual-only: programs — Phase 5+.
   },
 };
