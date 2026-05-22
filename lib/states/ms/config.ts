@@ -36,9 +36,10 @@ const msConfig: StateConfig = {
     ],
   },
   scrapers: {
-    // manual-only: courses — MS colleges use a mix of platforms (Colleague,
-    //   Banner SSB 9, Banner 8, Jenzabar, custom). SIS fingerprinting
-    //   identifies each college's platform for targeted scraping.
+    // Only Meridian CC is wired today (Banner 8). The other 14 MS colleges
+    // remain fingerprinted but unscrapped pending wrapper work for the
+    // mixed-platform mix (Colleague, Banner SSB 9, Jenzabar, custom).
+    courses: [{ scripts: ["scripts/ms/scrape-banner8.ts"], runner: "http" }],
     // manual-only: transfers — Mississippi runs MTAG (Mississippi Transfer
     //   Agreement Guide) — check as a potential source for articulation data.
     prereqs: [{ scripts: ["scripts/ms/scrape-catalog-prereqs.ts"], runner: "playwright" }],
