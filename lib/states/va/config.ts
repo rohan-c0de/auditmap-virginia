@@ -61,43 +61,10 @@ const vaConfig: StateConfig = {
     { slug: "liberty", names: ["Liberty", "Liberty University"] },
   ],
   scrapers: {
-    courses: [
-      { scripts: ["scripts/va/scrape-vccs.ts"], runner: "http", termSystem: "vccs" },
-      { scripts: ["scripts/va/scrape-peoplesoft.ts", "scripts/va/enrich-peoplesoft.ts"], runner: "playwright", termSystem: "vccs-ps" },
-    ],
-    transfers: [
-      {
-        scripts: [
-          "scripts/va/scrape-transfer-equiv.ts",
-          "scripts/va/scrape-transfer-gmu.ts",
-          "scripts/va/scrape-transfer-odu.ts",
-          "scripts/va/scrape-transfer-uva.ts",
-          "scripts/va/scrape-transfer-vcu.ts",
-          "scripts/va/scrape-transfer-vsu.ts",
-          "scripts/va/scrape-transfer-umw.ts",
-          "scripts/va/scrape-transfer-vwu.ts",
-        ],
-        runner: "http",
-      },
-    ],
-    prereqs: [
-      { scripts: ["scripts/va/scrape-catalog-prereqs.ts"], runner: "http" },
-    ],
-    programs: [
-      { scripts: ["scripts/va/scrape-programs.ts"], runner: "http" },
-      {
-        scripts: ["scripts/va/scrape-courseleaf-programs.ts"],
-        runner: "http",
-      },
-      {
-        scripts: ["scripts/va/scrape-vhcc-pdf-programs.ts"],
-        runner: "http",
-      },
-      {
-        scripts: ["scripts/va/scrape-camp-pdf-programs.ts"],
-        runner: "http",
-      },
-    ],
+    // manual-only: courses — VA PeopleSoft scraper consistently exceeds the 6h GitHub Actions timeout; run manually when needed.
+    // manual-only: transfers — disabled alongside courses to avoid partial-refresh drift.
+    // manual-only: prereqs — disabled alongside courses.
+    // manual-only: programs — disabled alongside courses.
   },
 };
 
