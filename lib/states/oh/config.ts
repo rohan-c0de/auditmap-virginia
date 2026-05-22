@@ -46,9 +46,16 @@ const ohConfig: StateConfig = {
     ],
   },
   scrapers: {
-    // manual-only: courses — mixed-platform state, 8 colleges scraped via banner-ssb-9 / colleague / banner-8 templates per-college; per-state cron not yet wired.
+    // Five of OH's eight scrapable colleges are wired across three
+    // platforms. The other three (committed during auto-add-state but
+    // not represented in data/oh/courses today) need re-fingerprint.
+    courses: [
+      { scripts: ["scripts/oh/scrape-banner-ssb.ts"], runner: "http" },
+      { scripts: ["scripts/oh/scrape-colleague.ts"], runner: "playwright" },
+      { scripts: ["scripts/oh/scrape-banner8.ts"], runner: "http" },
+    ],
     // manual-only: transfers — no articulation portal registered for OH yet.
-    // manual-only: prereqs — runs as part of course aggregation.
+    prereqs: { source: "aggregate-from-courses" },
     // manual-only: programs — Phase 5+.
   },
 };
