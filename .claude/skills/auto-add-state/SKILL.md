@@ -116,6 +116,45 @@ The full pipeline (orchestrated by `scripts/lib/add-state.ts`):
     user can decide quickly which to address before merging vs which can
     wait. Don't merge for the user — they review and click Squash & merge.
 
+12. **Build bespoke scrapers for non-auth-gated custom-platform colleges
+    BEFORE opening the PR.** This is a hard rule: when `manualTodos[]`
+    includes `[fingerprint]` entries like "custom HTML/SPA — bespoke
+    scraper needed", investigate each before opening the PR. For every
+    college whose course-search page is publicly accessible (no SSO,
+    no login wall), build the scraper now in the same branch.
+
+    Why: Deferring custom-HTML scrapers as TODOs creates drag — the user
+    has to come back, re-investigate each site, and ship per-college
+    follow-ups. One comprehensive PR is preferable.
+
+    Workflow per custom college:
+    - Use the WebFetch/Agent tools to confirm the URL of the course search
+    - Inspect raw HTML via `curl -sL <url>` to understand the table/JSON
+      structure
+    - Pattern-match against existing bespoke scrapers for templates:
+      - WordPress/static HTML tables → `scripts/or/scrape-oregon-coast.ts`
+      - ColdFusion form POST → `scripts/or/scrape-tvcc.ts`
+      - ASP.NET WebForms (VIEWSTATE) → `scripts/or/scrape-columbia-gorge.ts`
+      - JSON API endpoints → `scripts/or/scrape-klamath.ts`
+    - Run the scraper, verify a sample record looks correct, drop past
+      terms (`year < currentYear` filter), commit data + script + wire
+      to `StateConfig.scrapers`.
+
+    When to skip: auth-gated (any SSO/login wall), tiny colleges (<500
+    students) where the scraper effort isn't justified, programs/catalog
+    platforms (acalog, courseleaf — no course sections), or sites that
+    require JavaScript-only interactions you can't reverse-engineer in
+    under ~30 minutes.
+
+    Common gotchas:
+    - Old ASP.NET sites: require `Accept-Language` header (User-Agent
+      alone often isn't enough)
+    - JICS/Jenzabar Cloud sites: may use weak DH keys; need
+      `ciphers: "DEFAULT@SECLEVEL=0"` via Node's `https.request`
+      (Node 20+ fetch can't override)
+    - WordPress schedule tables: skip subject-header rows (h4 in cell)
+      and lab sub-rows (empty code cell with title like "FOO-Z1 Lab")
+
 ## Manual TODOs to expect
 
 The orchestrator's `manualTodos[]` is the most important output. Categories:
@@ -127,15 +166,19 @@ The orchestrator's `manualTodos[]` is the most important output. Categories:
 
 - **`[fingerprint]`** — colleges whose SIS platform isn't in the
   banner-ssb-9 / colleague / banner-8 trio. Specifics:
-  - `custom HTML/SPA` — bespoke scraper needed; out of scope for this skill
+  - `custom HTML/SPA` — **build the bespoke scraper now (step 12)** if
+    publicly accessible; only defer if auth-gated
   - `auth-gated` — SSO-only; can't scrape without credentials; user accepts
     the gap or contacts the college
   - `jenzabar` / `peoplesoft` / `workday` / etc. — known platforms with no
-    template yet; future PR could add one
+    template yet; build inline if a public course-search URL exists,
+    otherwise defer
   - `acalog` / `courseleaf` — programs/catalog platforms, not course-search;
     irrelevant for Phase 2
-  - `unknown` — no SIS detected; usually means the homepage doesn't link
-    to the registration system on a discoverable nav path. Manual lookup.
+  - `unknown` — no SIS detected; **investigate before opening the PR** —
+    often the registration system lives at a discoverable subdomain
+    (e.g. `ss.college.edu`, `my.college.edu`, `selfservice.college.edu`)
+    that the fingerprinter missed
 
 - **`[transfers]`** — state has no entry in `data/articulation-portals.json`.
   Fallback to CollegeTransfer.Net is suggested but requires per-college
@@ -175,7 +218,8 @@ The orchestrator's `manualTodos[]` is the most important output. Categories:
 - Import scraped data to Supabase directly (the existing
   `import-on-merge.yml` workflow handles that when the PR lands)
 - Phase 5 (programs) — left as a manual follow-up
-- Custom-platform scrapers — flagged as TODOs, not built
+- Custom-platform scrapers for auth-gated colleges — only public ones get
+  built (per step 12 above; auth-gated stays a TODO)
 
 ## Adding new platform support later
 
