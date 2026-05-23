@@ -173,12 +173,15 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
 
   const canonical = `${process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com"}/${state}/course/${code}`;
 
-  // Thin-content guard (#337 deliverable 5): a course with fewer than 3
-  // sections all at a single college is too narrow to be a useful search
-  // result. Render the page (legitimate users may still want it) but mark
-  // it noindex so Google doesn't classify it as thin and dock crawl
-  // budget.
-  const isThin = sections.length < 3 && collegeCount === 1;
+  // Thin-content guard. GSC audit (2026-05) found 26K of these "Discovered –
+  // not indexed". A course is thin unless it has either real breadth
+  // (≥3 sections at ≥2 colleges) or substantial breadth at one college
+  // (≥5 sections). The previous rule (`<3 && colleges===1`) was too narrow:
+  // a course with 2 sections at 2 colleges, or 4 sections at one college,
+  // would slip through as "indexable" with very little unique content.
+  const isThin =
+    sections.length < 3 ||
+    (collegeCount < 2 && sections.length < 5);
 
   return {
     title: pageTitle,

@@ -438,12 +438,17 @@ export async function getSitemapCourseIndex(
   term: string,
   state: string
 ): Promise<{
-  codes: { prefix: string; number: string }[];
+  codes: {
+    prefix: string;
+    number: string;
+    sectionCount: number;
+    collegeCount: number;
+  }[];
   subjectSectionCounts: Map<string, number>;
 }> {
   return cached(`sitemapIndex:${state}:${term}`, async () => {
-    const seen = new Set<string>();
-    const codes: { prefix: string; number: string }[] = [];
+    const sectionCounts = new Map<string, number>();
+    const collegeSets = new Map<string, Set<string>>();
     const subjectSectionCounts = new Map<string, number>();
 
     const PAGE_SIZE = 1000;
@@ -452,19 +457,22 @@ export async function getSitemapCourseIndex(
       const start = page * PAGE_SIZE;
       const { data: rows, error } = await supabase
         .from("courses")
-        .select("course_prefix,course_number")
+        .select("course_prefix,course_number,college_code")
         .eq("state", state)
         .eq("term", term)
         .range(start, start + PAGE_SIZE - 1);
       if (error || !rows || rows.length === 0) break;
       for (const r of rows) {
         const cleanNum = sanitizeCourseNumber(r.course_number);
-        if (!cleanNum) continue; // drop rows whose number becomes empty after strip
+        if (!cleanNum) continue;
         const key = `${r.course_prefix}-${cleanNum}`;
-        if (!seen.has(key)) {
-          seen.add(key);
-          codes.push({ prefix: r.course_prefix, number: cleanNum });
+        sectionCounts.set(key, (sectionCounts.get(key) || 0) + 1);
+        let colleges = collegeSets.get(key);
+        if (!colleges) {
+          colleges = new Set<string>();
+          collegeSets.set(key, colleges);
         }
+        if (r.college_code) colleges.add(r.college_code);
         subjectSectionCounts.set(
           r.course_prefix,
           (subjectSectionCounts.get(r.course_prefix) || 0) + 1
@@ -473,6 +481,19 @@ export async function getSitemapCourseIndex(
       if (rows.length < PAGE_SIZE) break;
       page++;
     }
+
+    const codes = Array.from(sectionCounts.entries()).map(([key, sectionCount]) => {
+      // Course numbers can contain hyphens (e.g. EDU-GTEW1), so split only
+      // on the first hyphen.
+      const dash = key.indexOf("-");
+      return {
+        prefix: key.slice(0, dash),
+        number: key.slice(dash + 1),
+        sectionCount,
+        collegeCount: collegeSets.get(key)?.size ?? 0,
+      };
+    });
+
     return { codes, subjectSectionCounts };
   });
 }
