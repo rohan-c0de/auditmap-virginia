@@ -21,7 +21,7 @@ const nvConfig: StateConfig = {
   },
 
   transferSupported: true,
-  popularCourses: [],
+  popularCourses: ["ENG 101", "COM 101", "PSY 101", "ENG 100", "PSC 101", "ENG 102"],
   defaultZip: "89101",
   defaultZipCity: "Las Vegas",
 
