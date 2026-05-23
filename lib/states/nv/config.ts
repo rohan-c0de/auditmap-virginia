@@ -20,7 +20,7 @@ const nvConfig: StateConfig = {
       "Nevada law (NRS 396.540) allows residents aged 62+ to register for credit courses at NSHE institutions on a space-available basis with registration fees waived.",
   },
 
-  transferSupported: false,
+  transferSupported: true,
   popularCourses: [],
   defaultZip: "89101",
   defaultZipCity: "Las Vegas",
@@ -46,7 +46,9 @@ const nvConfig: StateConfig = {
     courses: [
       { scripts: ["scripts/nv/scrape-peoplesoft.ts"], runner: "playwright" },
     ],
-    // manual-only: transfers — no articulation portal registered for NV yet.
+    transfers: [
+      { scripts: ["scripts/nv/scrape-nv-transfers.ts"], runner: "http" },
+    ],
     prereqs: [
       { scripts: ["scripts/nv/scrape-catalog-prereqs.ts"], runner: "playwright" },
     ],
