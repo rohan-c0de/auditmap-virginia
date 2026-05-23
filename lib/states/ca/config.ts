@@ -41,6 +41,9 @@ const caConfig: StateConfig = {
     courses: [
       { scripts: ["scripts/ca/scrape-banner-ssb.ts"], runner: "http" },
       { scripts: ["scripts/ca/scrape-colleague.ts"], runner: "playwright" },
+      // LACCD cluster: one bespoke scraper covers all 9 Los Angeles CC District
+      // colleges via shared PS Community Access (mycollege-guest.laccd.edu).
+      { scripts: ["scripts/ca/scrape-laccd.ts"], runner: "playwright" },
     ],
     prereqs: { source: "aggregate-from-courses" },
     // manual-only: transfers — California has no equivalency portal registered
