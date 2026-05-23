@@ -1,0 +1,46 @@
+{
+  "unitid": 122384,
+  "schoolName": "San Diego Miramar College",
+  "state": "CA",
+  "city": "San Diego",
+  "schoolUrl": "www.sdmiramar.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-23T07:22:10.435Z",
+  "size": 11271,
+  "shareFirstGeneration": 0.4462074303,
+  "cost": {
+    "tuitionInState": 1146,
+    "tuitionOutOfState": 10002,
+    "attendanceAcademicYear": 17126,
+    "avgNetPricePublic": 3337,
+    "bookSupply": 1062,
+    "roomBoardOffCampus": 31243,
+    "netPriceByIncome": {
+      "0_30000": 1358,
+      "30001_48000": 1662,
+      "48001_75000": 6284,
+      "75001_110000": 10379,
+      "110001_plus": 11600
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.1197,
+    "federalLoanRate": 0.0063,
+    "medianDebtCompleters": 6750
+  },
+  "completion": {
+    "completionRate150nt": 0.4848,
+    "completionRate200nt": 0.5335,
+    "transferRate": 0.1196,
+    "retentionRateFullTime": 0.7247,
+    "retentionRatePartTime": 0.4707
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 48224,
+    "median1YrAfterCompletion": 40036,
+    "percentile25_10YrsAfterEntry": 24293,
+    "percentile75_10YrsAfterEntry": 74555,
+    "shareEarningAboveHsGrad": 0.655
+  }
+}

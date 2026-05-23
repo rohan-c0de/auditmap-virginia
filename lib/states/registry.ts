@@ -146,6 +146,7 @@ import ilConfig from "./il/config";
 import hiConfig from "./hi/config";
 import mtConfig from "./mt/config";
 import orConfig from "./or/config";
+import caConfig from "./ca/config";
 import nvConfig from "./nv/config";
 
 const ALL_CONFIGS: StateConfig[] = [
@@ -180,6 +181,7 @@ const ALL_CONFIGS: StateConfig[] = [
   hiConfig,
   mtConfig,
   orConfig,
+  caConfig,
   nvConfig,
 ];
 
