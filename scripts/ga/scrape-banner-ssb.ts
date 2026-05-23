@@ -25,8 +25,7 @@ const PAGE_SIZE = 500;
 
 // All 22 TCSG colleges — Banner SSB base URLs
 // Verified pattern: bannerss.{college-domain}
-// Note: north-ga-tech may only have Banner 8 (SSB returns 404)
-//       south-ga-tech may timeout (firewalled or intermittent)
+// Note: south-ga-tech may timeout (firewalled or intermittent)
 //       atlanta-tech and lanier-tech may have SSL cert issues
 const BANNER_COLLEGES: Record<string, string> = {
   "albany-tech": "https://bannerss.albanytech.edu",
