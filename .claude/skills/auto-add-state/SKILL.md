@@ -98,7 +98,8 @@ The full pipeline (orchestrated by `scripts/lib/add-state.ts`):
     - Merge all colleges into one `data/{slug}/prereqs.json`
     - Update `StateConfig.scrapers.prereqs` from
       `{ source: "aggregate-from-courses" }` to
-      `{ source: "catalog-scrape", scripts: ["scripts/{slug}/scrape-catalog-prereqs.ts"] }`
+      `[{ scripts: ["scripts/{slug}/scrape-catalog-prereqs.ts"], runner: "playwright" }]`
+      (the type is `ScrapeJob[] | { source: "aggregate-from-courses" }`)
 
     **When to skip:** Only skip a college's catalog if it's auth-gated (SSO
     login wall) or uses a Coursedog SPA that can't be scraped without
@@ -134,7 +135,7 @@ The full pipeline (orchestrated by `scripts/lib/add-state.ts`):
    # Phase 3 + 4 (if any transfer / prereq data)
    git add data/{slug}/prereqs.json scripts/{slug}/scrape-catalog-prereqs.ts
    git commit -m "feat: {state} prereqs — {N} courses (via {source})"
-   # {source} is "aggregate-from-courses" or "catalog-scrape (Acalog/Courseleaf/...)"
+   # Use ScrapeJob[] when a dedicated catalog scraper exists
 
    # Phase 5 (if any scorecard data — only when COLLEGE_SCORECARD_API_KEY is set)
    git add data/{slug}/scorecard/ data/{slug}/institutions.json data/scorecard-mapping.json
