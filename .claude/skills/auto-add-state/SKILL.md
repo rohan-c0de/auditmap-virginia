@@ -16,7 +16,8 @@ The full pipeline (orchestrated by `scripts/lib/add-state.ts`):
 - Phase 2b — course scraping via the right template
   (`scripts/lib/scrape-{banner-ssb,colleague,banner-8}.ts`)
 - Phase 3 — articulation lookup (`data/articulation-portals.json`)
-- Phase 4 — prereq aggregation (`scripts/lib/aggregate-prereqs.ts`)
+- Phase 4 — prereq aggregation (`scripts/lib/aggregate-prereqs.ts`),
+  with catalog-prereq fallback if aggregation yields 0 entries
 - Phase 5 — Scorecard ingest (`scripts/scorecard-map.ts` + `scripts/ingest-scorecard.ts`).
   Maps each new college to its IPEDS unitid then fetches federal cost / aid /
   completion data into `data/{slug}/scorecard/`. Auto-skips if
@@ -62,6 +63,47 @@ The full pipeline (orchestrated by `scripts/lib/add-state.ts`):
    supported by IPEDS sector ∈ {1,4} + cat ∈ {3,4} (rare; e.g. AK has
    only one CC and may need manual handling). Don't commit. Don't push.
 
+6b. **Catalog-prereq fallback** — if `prereqs.aggregated === 0` (the course
+    SIS doesn't expose prereqs), scrape prereqs from each college's catalog
+    platform. This is mandatory, not optional — don't ship a state with
+    empty prereqs if catalog data is available.
+
+    Many SIS platforms (PeopleSoft Community Access, some Banner instances)
+    don't include prerequisite data in course search results. But the same
+    colleges almost always publish prereqs in a separate catalog system
+    (Acalog, Courseleaf, Coursedog, or custom HTML).
+
+    **Discovery per college:**
+    1. Check common catalog URLs: `catalog.{domain}`, `{domain}/catalog`,
+       `{domain}/academics/catalog`
+    2. Identify the platform:
+       - **Acalog**: page source contains "acalog", URLs like
+         `preview_course_nopop.php?catoid=X&coid=Y`
+       - **Courseleaf**: page source contains "courseleaf" or "leepfrog",
+         URLs like `/coursesaz/{subject}/`
+       - **Coursedog**: page source contains "coursedog" or
+         `static.catalog.prod.coursedog.com`
+       - **Custom HTML**: course descriptions with inline prereq text in
+         `<strong>Prerequisite:</strong>` blocks
+    3. Check whether individual course pages show "Prerequisite:" text
+
+    **Building the scraper:**
+    - Pattern-match against existing catalog prereq scrapers:
+      - Acalog → `scripts/tn/scrape-catalog-prereqs.ts`
+      - Courseleaf → parse `/coursesaz/{subject}/` pages for
+        `Enrollment Requirements:` blocks
+      - Custom HTML → parse subject pages for `<strong>Prerequisite:`
+      - Coursedog SPA → skip (requires headless browser; defer as TODO)
+    - Output format: `{ "PREFIX NUMBER": { "text": "...", "courses": [...] } }`
+    - Merge all colleges into one `data/{slug}/prereqs.json`
+    - Update `StateConfig.scrapers.prereqs` from
+      `{ source: "aggregate-from-courses" }` to
+      `{ source: "catalog-scrape", scripts: ["scripts/{slug}/scrape-catalog-prereqs.ts"] }`
+
+    **When to skip:** Only skip a college's catalog if it's auth-gated (SSO
+    login wall) or uses a Coursedog SPA that can't be scraped without
+    Playwright. Always note skipped colleges in the PR body.
+
 7. **Pre-PR feature check** (per `CLAUDE.md`'s three-checks-in-order rule).
    Per Section "Verifying your work" item 1: load `/{slug}/colleges` in
    local dev. Use the preview tools:
@@ -90,8 +132,9 @@ The full pipeline (orchestrated by `scripts/lib/add-state.ts`):
    git commit -m "feat: scrape {state} courses — {sections} sections across {N} colleges"
 
    # Phase 3 + 4 (if any transfer / prereq data)
-   git add data/{slug}/prereqs.json
-   git commit -m "feat: aggregate {state} prereqs — {N} courses"
+   git add data/{slug}/prereqs.json scripts/{slug}/scrape-catalog-prereqs.ts
+   git commit -m "feat: {state} prereqs — {N} courses (via {source})"
+   # {source} is "aggregate-from-courses" or "catalog-scrape (Acalog/Courseleaf/...)"
 
    # Phase 5 (if any scorecard data — only when COLLEGE_SCORECARD_API_KEY is set)
    git add data/{slug}/scorecard/ data/{slug}/institutions.json data/scorecard-mapping.json
@@ -185,9 +228,10 @@ The orchestrator's `manualTodos[]` is the most important output. Categories:
   SourceInstitutionIds (one-time research per college). Or the user adds a
   registry entry once they identify the state's articulation portal.
 
-- **`[prereqs]`** — aggregation failed. Usually means Phase 2 produced no
-  data (every college had a custom platform). Re-run after Phase 2 issues
-  are resolved.
+- **`[prereqs]`** — aggregation yielded 0 entries. This is expected when
+  the course-search SIS (PeopleSoft, certain Banner instances) doesn't
+  expose prerequisite data. **Do not leave prereqs empty** — proceed to
+  the catalog-prereq fallback (step 6b).
 
 ## Failure modes
 

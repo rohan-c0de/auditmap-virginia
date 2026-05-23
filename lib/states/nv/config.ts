@@ -47,7 +47,10 @@ const nvConfig: StateConfig = {
       { scripts: ["scripts/nv/scrape-peoplesoft.ts"], runner: "playwright" },
     ],
     // manual-only: transfers — no articulation portal registered for NV yet.
-    prereqs: { source: "aggregate-from-courses" },
+    prereqs: {
+      source: "catalog-scrape",
+      scripts: ["scripts/nv/scrape-catalog-prereqs.ts"],
+    },
     // manual-only: programs — Phase 5+.
   },
 };
