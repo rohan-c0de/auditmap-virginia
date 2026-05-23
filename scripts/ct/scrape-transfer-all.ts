@@ -58,17 +58,17 @@ const ADAPTERS: { slug: string; script: string; name: string }[] = [
     script: "scrape-transfer-ecsu.ts",
     name: "Eastern Connecticut State University",
   },
-  // TODO: WCSU adapter — https://webapp.wcsu.edu/transfer/
-  //   WCSU uses a custom JS webapp with an "Institution Course List" tab.
-  //   Requires Playwright or reverse-engineering the JS API. The webapp
-  //   loads data dynamically via AJAX calls.
-  // { slug: "wcsu", script: "scrape-transfer-wcsu.ts", name: "Western Connecticut State University" },
+  {
+    slug: "wcsu",
+    script: "scrape-transfer-wcsu.ts",
+    name: "Western Connecticut State University",
+  },
 
-  // TODO: UConn adapter — https://admissions.uconn.edu/apply/transfer/transfer-credit/equivalencies/
-  //   UConn has its own transfer equivalency tool. More complex, may use
-  //   a different backend (not Banner). Lower priority since UConn is not
-  //   a CSU school.
-  // { slug: "uconn", script: "scrape-transfer-uconn.ts", name: "University of Connecticut" },
+  {
+    slug: "uconn",
+    script: "scrape-transfer-uconn.ts",
+    name: "University of Connecticut",
+  },
 ];
 
 function main() {
