@@ -547,9 +547,6 @@ export default async function CollegeDetailPage(props: PageProps) {
                     <p className="font-medium text-sm text-gray-900 dark:text-slate-100 group-hover:text-teal-700 dark:group-hover:text-teal-400 transition-colors">
                       {inst.name}
                     </p>
-                    <p className="text-[11px] text-gray-400 dark:text-slate-500 mt-0.5">
-                      {inst.audit_policy.allowed === true ? "Audit verified" : "Contact to confirm"}
-                    </p>
                   </Link>
                 ))}
               </div>

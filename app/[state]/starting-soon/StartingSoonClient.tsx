@@ -383,19 +383,6 @@ export default function StartingSoonClient({ state, defaultZip }: { state: strin
                                   : "sections"}
                               </span>
                             </div>
-                            <div className="flex items-center gap-2 shrink-0">
-                              {college.auditAllowed === true && (
-                                <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 dark:bg-emerald-900/30 px-2 py-0.5 text-[10px] font-semibold text-emerald-700 dark:text-emerald-400 ring-1 ring-inset ring-emerald-200">
-                                  <span className="h-1 w-1 rounded-full bg-emerald-500" />
-                                  Audit OK
-                                </span>
-                              )}
-                              {college.auditAllowed === null && (
-                                <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 dark:bg-amber-900/30 px-2 py-0.5 text-[10px] font-semibold text-amber-700 dark:text-amber-400 ring-1 ring-inset ring-amber-200">
-                                  Unverified
-                                </span>
-                              )}
-                            </div>
                           </button>
 
                           {/* Expanded sections */}
