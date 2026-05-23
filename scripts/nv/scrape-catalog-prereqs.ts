@@ -5,7 +5,7 @@
  *   - CSN: Acalog (catalog.csn.edu)
  *   - GBC: Custom HTML (gbcnv.edu/catalog/current/courses/)
  *   - TMCC: Courseleaf (catalog.tmcc.edu)
- *   - WNC: Coursedog SPA — skipped (requires headless browser)
+ *   - WNC: Coursedog SPA (catalog.wnc.edu) via Playwright
  *
  * Merges all prereqs into data/nv/prereqs.json keyed by "PREFIX NUMBER".
  * When multiple colleges list the same course, first-seen wins.
@@ -18,6 +18,7 @@
 
 import * as fs from "fs";
 import * as path from "path";
+import { scrapeCoursedogCatalog } from "../lib/scrape-coursedog";
 
 const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
@@ -293,6 +294,40 @@ async function scrapeTMCC(limit: number): Promise<Record<string, PrereqEntry>> {
 }
 
 // ---------------------------------------------------------------------------
+// WNC — Coursedog SPA (catalog.wnc.edu) via Playwright
+// ---------------------------------------------------------------------------
+
+async function scrapeWNC(): Promise<Record<string, PrereqEntry>> {
+  console.log("\n📚 WNC (Coursedog via Playwright)");
+
+  const result = await scrapeCoursedogCatalog({
+    state: "nv",
+    slug: "western-nevada-college",
+    catalogDomain: "catalog.wnc.edu",
+  });
+
+  if (result.error) {
+    console.log(`  ⚠ ${result.error}`);
+    return {};
+  }
+
+  const prereqs: Record<string, PrereqEntry> = {};
+  let withPrereqs = 0;
+
+  for (const course of result.courses) {
+    if (!course.prerequisite_text) continue;
+    const key = `${course.prefix} ${course.number}`;
+    const text = course.prerequisite_text.replace(/\s+/g, " ").trim();
+    if (!isNonTrivialPrereq(text) || prereqs[key]) continue;
+    prereqs[key] = { text, courses: course.prerequisite_courses };
+    withPrereqs++;
+  }
+
+  console.log(`  ✓ ${withPrereqs} courses with prereqs (from ${result.coursesCount} total)`);
+  return prereqs;
+}
+
+// ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
 
@@ -310,6 +345,7 @@ async function main() {
     { name: "csn", fn: () => scrapeCSN(limit) },
     { name: "gbc", fn: () => scrapeGBC(limit) },
     { name: "tmcc", fn: () => scrapeTMCC(limit) },
+    { name: "wnc", fn: () => scrapeWNC() },
   ];
 
   for (const { name, fn } of colleges) {
