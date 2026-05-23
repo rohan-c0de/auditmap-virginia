@@ -15,7 +15,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Linda H. Orndorf",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -36,7 +36,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Keith V. Blankenship",
-    "seats_open": 25,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -57,7 +57,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Marie Blankenship",
-    "seats_open": 25,
+    "seats_open": 24,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -78,7 +78,7 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Fiona H. Chrystall",
-    "seats_open": 20,
+    "seats_open": 17,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -99,7 +99,7 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Paula M. Hayes",
-    "seats_open": 20,
+    "seats_open": 17,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -120,7 +120,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Kenet Adamson",
-    "seats_open": 25,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -141,7 +141,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Jennifer L. Tracy",
-    "seats_open": 25,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -162,28 +162,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Roy J. Cole",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "asheville-buncombe-technical",
-    "term": "2026SU",
-    "course_prefix": "ACA",
-    "course_number": "122",
-    "course_title": "College Transfer Success",
-    "credits": 1,
-    "crn": "ACA-122-OAM7",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-06-05",
-    "location": "Online",
-    "campus": "ONLIN",
-    "mode": "online",
-    "instructor": "Erin O. Lesh",
-    "seats_open": 25,
+    "seats_open": 8,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -204,8 +183,8 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Ghassan Dib",
-    "seats_open": 25,
-    "seats_total": 25,
+    "seats_open": 0,
+    "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -224,11 +203,13 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "Derek Zealy-Wright",
+    "seats_open": 5,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ACC 120",
+    "prerequisite_courses": [
+      "ACC 120"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -246,10 +227,13 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Ghassan Dib",
-    "seats_open": 25,
+    "seats_open": 17,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ACC 115 or ACC 120",
+    "prerequisite_courses": [
+      "ACC 115",
+      "ACC 120"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -267,10 +251,13 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Ghassan Dib",
-    "seats_open": 25,
+    "seats_open": 16,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ACC 115 or ACC 120",
+    "prerequisite_courses": [
+      "ACC 115",
+      "ACC 120"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -288,10 +275,33 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Bryan Haffey",
-    "seats_open": 25,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "AER",
+    "course_number": "161",
+    "course_title": "Flight-Instrument Pilot",
+    "credits": 2,
+    "crn": "AER-161-H1",
+    "days": "W",
+    "start_time": "3:00 PM",
+    "end_time": "3:45 PM",
+    "start_date": "2026-05-22",
+    "location": "A-B Tech Main Campus",
+    "campus": "A",
+    "mode": "in-person",
+    "instructor": "Timothy P. Anderson",
+    "seats_open": 3,
+    "seats_total": 5,
+    "prerequisite_text": "AER 151",
+    "prerequisite_courses": [
+      "AER 151"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -309,7 +319,7 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Timothy P. Anderson",
-    "seats_open": 18,
+    "seats_open": 6,
     "seats_total": 18,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -329,8 +339,8 @@
     "location": "A-B Tech Main Campus",
     "campus": "A",
     "mode": "in-person",
-    "instructor": "Bryan Haffey",
-    "seats_open": 18,
+    "instructor": "Timothy P. Anderson",
+    "seats_open": 4,
     "seats_total": 18,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -351,29 +361,8 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Timothy P. Anderson",
-    "seats_open": 18,
-    "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "asheville-buncombe-technical",
-    "term": "2026SU",
-    "course_prefix": "AER",
-    "course_number": "218",
-    "course_title": "Human Factors in Aviation",
-    "credits": 2,
-    "crn": "AER-218-B2",
-    "days": "Th",
-    "start_time": "6:00 PM",
-    "end_time": "8:50 PM",
-    "start_date": "2026-05-22",
-    "location": "A-B Tech Main Campus",
-    "campus": "A",
-    "mode": "in-person",
-    "instructor": "Timothy P. Anderson",
-    "seats_open": 18,
-    "seats_total": 18,
+    "seats_open": 2,
+    "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -393,10 +382,12 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Ned Hart",
-    "seats_open": 12,
+    "seats_open": 9,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AHR 110",
+    "prerequisite_courses": [
+      "AHR 110"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -414,10 +405,14 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Phillip A. Mobley",
-    "seats_open": 12,
+    "seats_open": 6,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AHR 111 or ELC 111 or ELC 112",
+    "prerequisite_courses": [
+      "AHR 111",
+      "ELC 111",
+      "ELC 112"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -435,31 +430,13 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Ned Hart",
-    "seats_open": 12,
+    "seats_open": 4,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "asheville-buncombe-technical",
-    "term": "2026SU",
-    "course_prefix": "ARC",
-    "course_number": "131",
-    "course_title": "Building Codes",
-    "credits": 3,
-    "crn": "ARC-131-OA1",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-22",
-    "location": "Online",
-    "campus": "ONLIN",
-    "mode": "online",
-    "instructor": "Maggie M. Shoup",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AHR 112 or AHR 113",
+    "prerequisite_courses": [
+      "AHR 112",
+      "AHR 113"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -476,8 +453,8 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "William D. Rhodarmer",
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -498,7 +475,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Ani K. Volkan",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -519,7 +496,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "William D. Rhodarmer",
-    "seats_open": 25,
+    "seats_open": 17,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -540,7 +517,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Katherine E. Inge",
-    "seats_open": 25,
+    "seats_open": 6,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -561,7 +538,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Melissa R. Garrett",
-    "seats_open": 25,
+    "seats_open": 22,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -624,7 +601,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Lori L. Johnson",
-    "seats_open": 25,
+    "seats_open": 11,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -645,10 +622,12 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Kevin Fletcher",
-    "seats_open": 18,
+    "seats_open": 0,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AUT 141A",
+    "prerequisite_courses": [
+      "AUT 141A"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -666,10 +645,12 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Kevin Fletcher",
-    "seats_open": 18,
+    "seats_open": 0,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AUT 141",
+    "prerequisite_courses": [
+      "AUT 141"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -687,10 +668,37 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Amanda Chapman",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 025"
+    ]
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "BIO",
+    "course_number": "110",
+    "course_title": "Principles of Biology",
+    "credits": 4,
+    "crn": "BIO-110-OA2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-05",
+    "location": "Online",
+    "campus": "ONLIN",
+    "mode": "online",
+    "instructor": "Emma Moore",
+    "seats_open": 18,
+    "seats_total": 25,
+    "prerequisite_text": "DRE 097 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -708,10 +716,51 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Ms. Dacia L. Harris",
+    "seats_open": 5,
+    "seats_total": 25,
+    "prerequisite_text": "MAT 003 or MAT 025 or MAT 035 and DRE 097 or DRE 098 or ENG 002 or ENG 025 or ENG 110 or ENG 111",
+    "prerequisite_courses": [
+      "MAT 003",
+      "MAT 025",
+      "MAT 035",
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025",
+      "ENG 110",
+      "ENG 111"
+    ]
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "BIO",
+    "course_number": "111",
+    "course_title": "General Biology I",
+    "credits": 4,
+    "crn": "BIO-111-OA2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-05",
+    "location": "Online",
+    "campus": "ONLIN",
+    "mode": "online",
+    "instructor": "Margot Popecki",
     "seats_open": 25,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 003 or MAT 025 or MAT 035 and DRE 097 or DRE 098 or ENG 002 or ENG 025 or ENG 110 or ENG 111",
+    "prerequisite_courses": [
+      "MAT 003",
+      "MAT 025",
+      "MAT 035",
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025",
+      "ENG 110",
+      "ENG 111"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -729,10 +778,12 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Helen L. Burrell",
-    "seats_open": 25,
+    "seats_open": 14,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 111",
+    "prerequisite_courses": [
+      "BIO 111"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -750,10 +801,16 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Ms. Dacia L. Harris",
-    "seats_open": 25,
+    "seats_open": 22,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 140 and DRE 097 or DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "BIO 140",
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -771,10 +828,16 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Ms. Dacia L. Harris",
-    "seats_open": 25,
+    "seats_open": 22,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025 and BIO 140A",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025",
+      "BIO 140A"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -792,7 +855,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Scott A. Paxon",
-    "seats_open": 25,
+    "seats_open": 19,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -813,7 +876,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Cynthia G. Eayre",
-    "seats_open": 25,
+    "seats_open": 7,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -834,10 +897,45 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "James Hutcherson",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025 and MAT 025 or MAT 035",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025",
+      "MAT 025",
+      "MAT 035"
+    ]
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "BIO",
+    "course_number": "163",
+    "course_title": "Basic Anat & Physiology",
+    "credits": 5,
+    "crn": "BIO-163-OA2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-05",
+    "location": "Online",
+    "campus": "ONLIN",
+    "mode": "online",
+    "instructor": "Amanda R. Nix",
+    "seats_open": 22,
+    "seats_total": 25,
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025 and MAT 025 or MAT 035",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025",
+      "MAT 025",
+      "MAT 035"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -855,10 +953,17 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Audra Bassett-Touchell",
-    "seats_open": 24,
+    "seats_open": 1,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025 and MAT 025 or MAT 035",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025",
+      "MAT 025",
+      "MAT 035"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -876,10 +981,17 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Amy Bridges",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025 and MAT 025 or MAT 035",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025",
+      "MAT 025",
+      "MAT 035"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -897,10 +1009,45 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Curtis Criswell",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025 and MAT 025 or MAT 035",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025",
+      "MAT 025",
+      "MAT 035"
+    ]
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "BIO",
+    "course_number": "168",
+    "course_title": "Anatomy and Physiology I",
+    "credits": 4,
+    "crn": "BIO-168-OA3",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-05",
+    "location": "Online",
+    "campus": "ONLIN",
+    "mode": "online",
+    "instructor": "Amy Bridges",
+    "seats_open": 6,
+    "seats_total": 25,
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025 and MAT 025 or MAT 035",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025",
+      "MAT 025",
+      "MAT 035"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -918,10 +1065,12 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Scott A. Paxon",
-    "seats_open": 24,
+    "seats_open": 3,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 168",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -939,10 +1088,62 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Audra Bassett-Touchell",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 168",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "BIO",
+    "course_number": "169",
+    "course_title": "Anatomy and Physiology II",
+    "credits": 4,
+    "crn": "BIO-169-OA2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-05",
+    "location": "Online",
+    "campus": "ONLIN",
+    "mode": "online",
+    "instructor": "April Cudd",
+    "seats_open": 18,
+    "seats_total": 25,
+    "prerequisite_text": "BIO 168",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "BIO",
+    "course_number": "175",
+    "course_title": "General Microbiology",
+    "credits": 3,
+    "crn": "BIO-175-B1",
+    "days": "M W",
+    "start_time": "8:30 AM",
+    "end_time": "10:20 AM",
+    "start_date": "2026-06-05",
+    "location": "A-B Tech Main Campus",
+    "campus": "A",
+    "mode": "in-person",
+    "instructor": "Margot Popecki",
+    "seats_open": 3,
+    "seats_total": 24,
+    "prerequisite_text": "BIO 110 or BIO 111 or BIO 163 or BIO 165 or BIO 168",
+    "prerequisite_courses": [
+      "BIO 110",
+      "BIO 111",
+      "BIO 163",
+      "BIO 165",
+      "BIO 168"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -960,10 +1161,43 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Helen L. Burrell",
-    "seats_open": 24,
+    "seats_open": 1,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 110 or BIO 111 or BIO 163 or BIO 165 or BIO 168",
+    "prerequisite_courses": [
+      "BIO 110",
+      "BIO 111",
+      "BIO 163",
+      "BIO 165",
+      "BIO 168"
+    ]
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "BIO",
+    "course_number": "175",
+    "course_title": "General Microbiology",
+    "credits": 3,
+    "crn": "BIO-175-B3",
+    "days": "T Th",
+    "start_time": "12:30 PM",
+    "end_time": "2:20 PM",
+    "start_date": "2026-06-05",
+    "location": "A-B Tech Main Campus",
+    "campus": "A",
+    "mode": "in-person",
+    "instructor": "Emma Moore",
+    "seats_open": 13,
+    "seats_total": 24,
+    "prerequisite_text": "BIO 110 or BIO 111 or BIO 163 or BIO 165 or BIO 168",
+    "prerequisite_courses": [
+      "BIO 110",
+      "BIO 111",
+      "BIO 163",
+      "BIO 165",
+      "BIO 168"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -983,8 +1217,13 @@
     "instructor": "Vincent J. Donatelli",
     "seats_open": 10,
     "seats_total": 10,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CUL 110 and CUL 160 and CUL 260 and CUL 110 and CUL 160 and BPA 150",
+    "prerequisite_courses": [
+      "CUL 110",
+      "CUL 160",
+      "CUL 260",
+      "BPA 150"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1002,7 +1241,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Maggie M. Shoup",
-    "seats_open": 25,
+    "seats_open": 7,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1023,8 +1262,8 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Sandy Dantone",
-    "seats_open": 20,
-    "seats_total": 20,
+    "seats_open": 0,
+    "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1044,8 +1283,8 @@
     "campus": "ONMAD",
     "mode": "online",
     "instructor": "Sandy Dantone",
-    "seats_open": 5,
-    "seats_total": 5,
+    "seats_open": 14,
+    "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1064,9 +1303,9 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": "Sandy Dantone",
-    "seats_open": 25,
-    "seats_total": 25,
+    "instructor": "Antowan Batts",
+    "seats_open": 0,
+    "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1085,8 +1324,8 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": "Sandy Dantone",
-    "seats_open": 25,
+    "instructor": "Derek Zealy-Wright",
+    "seats_open": 15,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1106,29 +1345,8 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "asheville-buncombe-technical",
-    "term": "2026SU",
-    "course_prefix": "BUS",
-    "course_number": "137",
-    "course_title": "Principles of Management",
-    "credits": 3,
-    "crn": "BUS-137-OA2",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-06-05",
-    "location": "Online",
-    "campus": "ONLIN",
-    "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "Sandy Dantone",
+    "seats_open": 7,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1148,11 +1366,35 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "Sandy Dantone",
+    "seats_open": 5,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "CEG",
+    "course_number": "211",
+    "course_title": "Hydrology & Erosion Control",
+    "credits": 3,
+    "crn": "CEG-211-B1",
+    "days": "T Th",
+    "start_time": "1:00 PM",
+    "end_time": "2:00 PM",
+    "start_date": "2026-05-22",
+    "location": "A-B Tech Main Campus",
+    "campus": "A",
+    "mode": "in-person",
+    "instructor": "Richard L. Hardison",
+    "seats_open": 0,
+    "seats_total": 12,
+    "prerequisite_text": "MAT 121 (min C) or MAT 171 (min C)",
+    "prerequisite_courses": [
+      "MAT 121",
+      "MAT 171"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1169,11 +1411,17 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": null,
+    "instructor": "Candice M. Henderson",
     "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_total": 50,
+    "prerequisite_text": "MAT 025 or MAT 035 and DRE 097 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "MAT 025",
+      "MAT 035",
+      "DRE 097",
+      "ENG 002",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1190,11 +1438,17 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "Candice M. Henderson",
+    "seats_open": 21,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 025 or MAT 035 and DRE 097 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "MAT 025",
+      "MAT 035",
+      "DRE 097",
+      "ENG 002",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1211,11 +1465,13 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "Susan J. Schwarz",
+    "seats_open": 8,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 130",
+    "prerequisite_courses": [
+      "CHM 130"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1232,11 +1488,25 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "Susan J. Schwarz",
+    "seats_open": 8,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 110 or BIO 110 or MAT 110 or BIO 111 or MAT 110 or BIO 161 or MAT 110 or BIO 163 or MAT 110 or BIO 168 and DRE 097 or DRE 098 or ENG 002 or ENG 025 or ENG 110 or ENG 111 and CHM 130A",
+    "prerequisite_courses": [
+      "MAT 110",
+      "BIO 110",
+      "BIO 111",
+      "BIO 161",
+      "BIO 163",
+      "BIO 168",
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025",
+      "ENG 110",
+      "ENG 111",
+      "CHM 130A"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1253,11 +1523,15 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "Glenn C. Ratcliff",
+    "seats_open": 10,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 131 or CHM 151 and CHM 131 and CHM 131A and CHM 151",
+    "prerequisite_courses": [
+      "CHM 131",
+      "CHM 151",
+      "CHM 131A"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1274,11 +1548,20 @@
     "location": "A-B Tech Main Campus",
     "campus": "A",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 17,
+    "instructor": "Evan T. Lunt",
+    "seats_open": 14,
     "seats_total": 17,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 092 or CHM 121 and DRE 097 or DRE 098 or ENG 002 or ENG 025 and MAT 025 or MAT 035",
+    "prerequisite_courses": [
+      "CHM 092",
+      "CHM 121",
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025",
+      "MAT 025",
+      "MAT 035"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1295,11 +1578,50 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "Suzanne C. Willis",
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 092 or CHM 121 and DRE 097 or DRE 098 or ENG 002 or ENG 025 and MAT 025 or MAT 035",
+    "prerequisite_courses": [
+      "CHM 092",
+      "CHM 121",
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025",
+      "MAT 025",
+      "MAT 035"
+    ]
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "CHM",
+    "course_number": "151",
+    "course_title": "General Chemistry I",
+    "credits": 4,
+    "crn": "CHM-151-OA2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-05",
+    "location": "Online",
+    "campus": "ONLIN",
+    "mode": "online",
+    "instructor": "Suzanne C. Willis",
+    "seats_open": 10,
+    "seats_total": 25,
+    "prerequisite_text": "CHM 092 or CHM 121 and DRE 097 or DRE 098 or ENG 002 or ENG 025 and MAT 025 or MAT 035",
+    "prerequisite_courses": [
+      "CHM 092",
+      "CHM 121",
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025",
+      "MAT 025",
+      "MAT 035"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1316,11 +1638,42 @@
     "location": "A-B Tech Main Campus",
     "campus": "A",
     "mode": "in-person",
-    "instructor": null,
+    "instructor": "Nicole Dragan",
+    "seats_open": 5,
+    "seats_total": 17,
+    "prerequisite_text": "CHM 151 and MAT 161 or MAT 171 or MAT 175",
+    "prerequisite_courses": [
+      "CHM 151",
+      "MAT 161",
+      "MAT 171",
+      "MAT 175"
+    ]
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "CHM",
+    "course_number": "152",
+    "course_title": "General Chemistry II",
+    "credits": 4,
+    "crn": "CHM-152-H2",
+    "days": "W",
+    "start_time": "9:30 AM",
+    "end_time": "1:50 PM",
+    "start_date": "2026-06-05",
+    "location": "A-B Tech Main Campus",
+    "campus": "A",
+    "mode": "in-person",
+    "instructor": "Nicole Dragan",
     "seats_open": 17,
     "seats_total": 17,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 151 and MAT 161 or MAT 171 or MAT 175",
+    "prerequisite_courses": [
+      "CHM 151",
+      "MAT 161",
+      "MAT 171",
+      "MAT 175"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1337,11 +1690,13 @@
     "location": "A-B Tech Main Campus",
     "campus": "A",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 12,
+    "instructor": "Evan T. Lunt",
+    "seats_open": 9,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 152",
+    "prerequisite_courses": [
+      "CHM 152"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1350,19 +1705,21 @@
     "course_number": "271",
     "course_title": "Biochemical Principles",
     "credits": 3,
-    "crn": "CHM-271-OS1",
-    "days": "T Th",
-    "start_time": "5:30 PM",
-    "end_time": "8:00 PM",
+    "crn": "CHM-271-OA1",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
     "start_date": "2026-06-05",
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "Evan T. Lunt",
+    "seats_open": 13,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 252",
+    "prerequisite_courses": [
+      "CHM 252"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1380,7 +1737,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Veronica P. Dooly",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1401,7 +1758,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Steve Weese",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1422,28 +1779,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Steve Weese",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "asheville-buncombe-technical",
-    "term": "2026SU",
-    "course_prefix": "CIS",
-    "course_number": "110",
-    "course_title": "Introduction to Computers",
-    "credits": 3,
-    "crn": "CIS-110-OA4",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-06-05",
-    "location": "Online",
-    "campus": "ONLIN",
-    "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
+    "seats_open": 10,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1464,7 +1800,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Constance A. Humphries",
-    "seats_open": 25,
+    "seats_open": 19,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1485,10 +1821,15 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Ms. Rebekah S. Handy",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1506,10 +1847,93 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Ms. Rebekah S. Handy",
-    "seats_open": 25,
+    "seats_open": 2,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "COM",
+    "course_number": "120",
+    "course_title": "Intro Interpersonal Com",
+    "credits": 3,
+    "crn": "COM-120-OA3",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-05",
+    "location": "Online",
+    "campus": "ONLIN",
+    "mode": "online",
+    "instructor": "Ms. Heidi L. Smathers",
+    "seats_open": 1,
+    "seats_total": 25,
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "COM",
+    "course_number": "120",
+    "course_title": "Intro Interpersonal Com",
+    "credits": 3,
+    "crn": "COM-120-OA4",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-05",
+    "location": "Online",
+    "campus": "ONLIN",
+    "mode": "online",
+    "instructor": "Martha E. Gates",
+    "seats_open": 0,
+    "seats_total": 25,
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "COM",
+    "course_number": "120",
+    "course_title": "Intro Interpersonal Com",
+    "credits": 3,
+    "crn": "COM-120-OA5",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-05",
+    "location": "Online",
+    "campus": "ONLIN",
+    "mode": "online",
+    "instructor": "Ms. Heidi L. Smathers",
+    "seats_open": 1,
+    "seats_total": 25,
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1527,10 +1951,15 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Ms. Heidi L. Smathers",
-    "seats_open": 20,
+    "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1548,10 +1977,15 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Ms. Heidi L. Smathers",
-    "seats_open": 20,
+    "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1569,10 +2003,15 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Martha E. Gates",
-    "seats_open": 20,
+    "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1590,10 +2029,15 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Martha E. Gates",
-    "seats_open": 20,
+    "seats_open": 1,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1611,10 +2055,15 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Curtis L. Philon",
-    "seats_open": 20,
+    "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1632,10 +2081,15 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Curtis L. Philon",
-    "seats_open": 20,
+    "seats_open": 5,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1653,10 +2107,15 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Rhonda T. Dobson",
-    "seats_open": 16,
+    "seats_open": 3,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112 and COS 114 or COS 114AB and COS 114AB",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112",
+      "COS 114",
+      "COS 114AB"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1674,10 +2133,15 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Rhonda T. Dobson",
-    "seats_open": 16,
+    "seats_open": 3,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112 and COS 113 or COS 113AB and COS 113AB",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112",
+      "COS 113",
+      "COS 113AB"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1695,10 +2159,15 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Tambra M. Luppino",
-    "seats_open": 16,
+    "seats_open": 1,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112 and COS 113 and COS 116",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112",
+      "COS 113",
+      "COS 116"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1716,10 +2185,15 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Ms. Doreen E. Carroll",
-    "seats_open": 16,
+    "seats_open": 1,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112 and COS 114 and COS 115",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112",
+      "COS 114",
+      "COS 115"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1737,10 +2211,33 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Tambra M. Luppino",
-    "seats_open": 16,
+    "seats_open": 14,
     "seats_total": 16,
     "prerequisite_text": null,
     "prerequisite_courses": []
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "COS",
+    "course_number": "222",
+    "course_title": "Manicure/Nail Tech. II",
+    "credits": 6,
+    "crn": "COS-222-M1",
+    "days": "T Th",
+    "start_time": "10:00 AM",
+    "end_time": "11:20 AM",
+    "start_date": "2026-05-22",
+    "location": "A-B Tech Main Campus",
+    "campus": "A",
+    "mode": "in-person",
+    "instructor": "Savanna Velez",
+    "seats_open": 8,
+    "seats_total": 16,
+    "prerequisite_text": "COS 121",
+    "prerequisite_courses": [
+      "COS 121"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1758,10 +2255,14 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "John M. Locklear",
-    "seats_open": 25,
+    "seats_open": 17,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CIS 115 or MAT 172 or EGR 150",
+    "prerequisite_courses": [
+      "CIS 115",
+      "MAT 172",
+      "EGR 150"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1779,7 +2280,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Dan Rosenthal",
-    "seats_open": 25,
+    "seats_open": 7,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1800,7 +2301,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Matthew B. Meadows",
-    "seats_open": 25,
+    "seats_open": 12,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1821,7 +2322,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Mike Peluso",
-    "seats_open": 25,
+    "seats_open": 7,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1841,8 +2342,8 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": "Michelle Bailey",
-    "seats_open": 24,
+    "instructor": "Frederick L. Snyder",
+    "seats_open": 15,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1863,7 +2364,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Stephen M. Hertz",
-    "seats_open": 24,
+    "seats_open": 16,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1884,10 +2385,12 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Michelle Bailey",
-    "seats_open": 16,
+    "seats_open": 8,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CUL 110",
+    "prerequisite_courses": [
+      "CUL 110"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1898,17 +2401,19 @@
     "credits": 3,
     "crn": "CUL-160-1",
     "days": "T",
-    "start_time": "9:00 AM",
-    "end_time": "10:50 AM",
+    "start_time": "10:00 AM",
+    "end_time": "11:50 AM",
     "start_date": "2026-05-22",
     "location": "A-B Tech Main Campus",
     "campus": "A",
     "mode": "in-person",
     "instructor": "Vincent J. Donatelli",
-    "seats_open": 8,
+    "seats_open": 0,
     "seats_total": 8,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CUL 110",
+    "prerequisite_courses": [
+      "CUL 110"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1926,10 +2431,13 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Stephen M. Hertz",
-    "seats_open": 16,
+    "seats_open": 12,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CUL 110 and CUL 140",
+    "prerequisite_courses": [
+      "CUL 110",
+      "CUL 140"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1947,10 +2455,20 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Frederick L. Snyder",
-    "seats_open": 8,
-    "seats_total": 8,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 6,
+    "seats_total": 6,
+    "prerequisite_text": "CUL 140 and CUL 240 and CUL 110 and CUL 112 and CUL 140A and CUL 150 and CUL 170 and CUL 270 and HRM 220",
+    "prerequisite_courses": [
+      "CUL 140",
+      "CUL 240",
+      "CUL 110",
+      "CUL 112",
+      "CUL 140A",
+      "CUL 150",
+      "CUL 170",
+      "CUL 270",
+      "HRM 220"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1967,11 +2485,13 @@
     "location": "Off-Campus",
     "campus": "O",
     "mode": "in-person",
-    "instructor": "Kelli Harrell",
-    "seats_open": 12,
+    "instructor": "Kelli Harrell, Nataliya P. Poprozhuk, Kelly M. Duncan, Sarah Hauser, Zoe Hale, Kerry Lee, Tracy Fisher, Chastity L. Case",
+    "seats_open": 3,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CVS 161",
+    "prerequisite_courses": [
+      "CVS 161"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -1989,10 +2509,12 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "John M. Locklear",
-    "seats_open": 25,
+    "seats_open": 4,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DBA 120",
+    "prerequisite_courses": [
+      "DBA 120"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -2009,11 +2531,13 @@
     "location": "A-B Tech Main Campus",
     "campus": "A",
     "mode": "in-person",
-    "instructor": "Joy T. Anderson",
-    "seats_open": 24,
+    "instructor": "Ms. Lauren E. Brown, Brooke C. Hensley",
+    "seats_open": 3,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DEN 106",
+    "prerequisite_courses": [
+      "DEN 106"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -2031,7 +2555,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Kimberly F. Hoffman",
-    "seats_open": 20,
+    "seats_open": 8,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2051,11 +2575,14 @@
     "location": "A-B Tech Main Campus",
     "campus": "A",
     "mode": "in-person",
-    "instructor": "Jeniffer Nicholson",
-    "seats_open": 20,
+    "instructor": "Carolyn M. Derbes, Jeniffer Nicholson",
+    "seats_open": 8,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DEN 130 and DEN 141",
+    "prerequisite_courses": [
+      "DEN 130",
+      "DEN 141"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -2072,11 +2599,14 @@
     "location": "A-B Tech Main Campus",
     "campus": "A",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 20,
+    "instructor": "Jeniffer Nicholson, Ms. Marilyn E. Biddix, Kimberly F. Hoffman, Carolyn M. Derbes, Kendall M. Bernier, Darlene Saccuzzo, Meghann Radgowski, Laura Chen",
+    "seats_open": 8,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DEN 131 and DEN 140",
+    "prerequisite_courses": [
+      "DEN 131",
+      "DEN 140"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -2094,10 +2624,14 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Lauren Gibbs",
-    "seats_open": 20,
+    "seats_open": 8,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 163 or BIO 165 or BIO 168",
+    "prerequisite_courses": [
+      "BIO 163",
+      "BIO 165",
+      "BIO 168"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -2115,7 +2649,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Kevin Warth",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2136,7 +2670,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Kevin Warth",
-    "seats_open": 25,
+    "seats_open": 6,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2157,7 +2691,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Kevin Warth",
-    "seats_open": 25,
+    "seats_open": 4,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2178,7 +2712,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Antowan Batts",
-    "seats_open": 25,
+    "seats_open": 17,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2198,8 +2732,8 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "Erin DeBruyn",
+    "seats_open": 19,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2219,8 +2753,8 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "Erin DeBruyn",
+    "seats_open": 14,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2240,8 +2774,8 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "Beth Pokorski",
+    "seats_open": 12,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2261,8 +2795,8 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "Beth Pokorski",
+    "seats_open": 20,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2283,7 +2817,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "James B. Houston",
-    "seats_open": 25,
+    "seats_open": 7,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2304,8 +2838,8 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "James B. Houston",
-    "seats_open": 14,
-    "seats_total": 14,
+    "seats_open": 3,
+    "seats_total": 18,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2325,8 +2859,8 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Russell C. Brockman",
-    "seats_open": 12,
-    "seats_total": 12,
+    "seats_open": 5,
+    "seats_total": 16,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2346,10 +2880,14 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Russell C. Brockman",
-    "seats_open": 12,
-    "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 1,
+    "seats_total": 14,
+    "prerequisite_text": "AHR 111 or ELC 111 or ELC 113",
+    "prerequisite_courses": [
+      "AHR 111",
+      "ELC 111",
+      "ELC 113"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -2367,10 +2905,12 @@
     "campus": "WC",
     "mode": "in-person",
     "instructor": "Charles B. Newsom",
-    "seats_open": 42,
+    "seats_open": 28,
     "seats_total": 42,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EMS 110",
+    "prerequisite_courses": [
+      "EMS 110"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -2388,10 +2928,15 @@
     "campus": "WC",
     "mode": "in-person",
     "instructor": "Charles B. Newsom",
-    "seats_open": 42,
+    "seats_open": 31,
     "seats_total": 42,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EMS 122 and EMS 130 and EMS 160 and EMS 221",
+    "prerequisite_courses": [
+      "EMS 122",
+      "EMS 130",
+      "EMS 160",
+      "EMS 221"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -2409,10 +2954,14 @@
     "campus": "O",
     "mode": "in-person",
     "instructor": "Whitney Joy",
-    "seats_open": 10,
+    "seats_open": 5,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EMS 121 or EMS 122 and EMS 220",
+    "prerequisite_courses": [
+      "EMS 121",
+      "EMS 122",
+      "EMS 220"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -2430,10 +2979,14 @@
     "campus": "O",
     "mode": "in-person",
     "instructor": "Whitney Joy",
-    "seats_open": 10,
+    "seats_open": 4,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EMS 121 or EMS 122 and EMS 220",
+    "prerequisite_courses": [
+      "EMS 121",
+      "EMS 122",
+      "EMS 220"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -2453,8 +3006,12 @@
     "instructor": "Whitney Joy",
     "seats_open": 10,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EMS 121 or EMS 122 and EMS 220",
+    "prerequisite_courses": [
+      "EMS 121",
+      "EMS 122",
+      "EMS 220"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -2463,7 +3020,7 @@
     "course_number": "240",
     "course_title": "Patients W/ Special Challenges",
     "credits": 2,
-    "crn": "EMS-240-W1",
+    "crn": "EMS-240-WH1",
     "days": "T",
     "start_time": "8:00 AM",
     "end_time": "10:50 AM",
@@ -2472,10 +3029,15 @@
     "campus": "WC",
     "mode": "in-person",
     "instructor": "Whitney Joy",
-    "seats_open": 42,
+    "seats_open": 32,
     "seats_total": 42,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EMS 122 and EMS 130 and EMS 221 and EMS 131",
+    "prerequisite_courses": [
+      "EMS 122",
+      "EMS 130",
+      "EMS 221",
+      "EMS 131"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -2493,7 +3055,7 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Robyn Luney",
-    "seats_open": 16,
+    "seats_open": 9,
     "seats_total": 16,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2514,7 +3076,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Robyn Luney",
-    "seats_open": 16,
+    "seats_open": 4,
     "seats_total": 16,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2526,16 +3088,16 @@
     "course_number": "045",
     "course_title": "English Skills Support",
     "credits": 2,
-    "crn": "ENG-045-CB5",
+    "crn": "ENG-045-CB7",
     "days": "T Th",
     "start_time": "11:00 AM",
     "end_time": "11:50 AM",
-    "start_date": "2026-05-22",
+    "start_date": "2026-06-05",
     "location": "A-B Tech Main Campus",
     "campus": "A",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 16,
+    "instructor": "Chelsea West",
+    "seats_open": 13,
     "seats_total": 16,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2556,7 +3118,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Lynn Clark",
-    "seats_open": 16,
+    "seats_open": 0,
     "seats_total": 16,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2577,7 +3139,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Stephany L. Newberry-Davis",
-    "seats_open": 16,
+    "seats_open": 9,
     "seats_total": 16,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2598,7 +3160,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Emily G. Fox",
-    "seats_open": 16,
+    "seats_open": 10,
     "seats_total": 16,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2619,10 +3181,14 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Chelsey R. Patterson",
-    "seats_open": 20,
+    "seats_open": 5,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -2631,19 +3197,25 @@
     "course_number": "111",
     "course_title": "Writing and Inquiry",
     "credits": 3,
-    "crn": "ENG-111-CB5",
+    "crn": "ENG-111-CB7",
     "days": "T Th",
     "start_time": "9:30 AM",
     "end_time": "10:45 AM",
-    "start_date": "2026-05-22",
+    "start_date": "2026-06-05",
     "location": "A-B Tech Main Campus",
     "campus": "A",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 16,
+    "instructor": "Chelsea West",
+    "seats_open": 13,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 011 and ENG 045",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 011",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -2661,10 +3233,16 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Lynn Clark",
-    "seats_open": 16,
+    "seats_open": 0,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 011 and ENG 045",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 011",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -2682,10 +3260,16 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Stephany L. Newberry-Davis",
-    "seats_open": 16,
+    "seats_open": 9,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 011 and ENG 045",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 011",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -2703,10 +3287,16 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Emily G. Fox",
-    "seats_open": 16,
+    "seats_open": 10,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 011 and ENG 045",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 011",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -2724,10 +3314,16 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Chelsey R. Patterson",
-    "seats_open": 20,
+    "seats_open": 10,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 011 and ENG 045",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 011",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -2745,10 +3341,16 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Erin O. Lesh",
-    "seats_open": 20,
+    "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 011 and ENG 045",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 011",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -2766,10 +3368,16 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Erin O. Lesh",
-    "seats_open": 20,
+    "seats_open": 2,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 011 and ENG 045",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 011",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -2787,10 +3395,16 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Roy J. Cole",
-    "seats_open": 20,
+    "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 011 and ENG 045",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 011",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -2808,10 +3422,16 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Michelle A. Payton",
-    "seats_open": 20,
+    "seats_open": 6,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 011 and ENG 045",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 011",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -2829,10 +3449,12 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Ariel Robinson",
-    "seats_open": 23,
+    "seats_open": 13,
     "seats_total": 23,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -2850,10 +3472,12 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Jennifer L. Browning",
-    "seats_open": 23,
+    "seats_open": 0,
     "seats_total": 23,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -2871,10 +3495,12 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Jennifer L. Browning",
-    "seats_open": 23,
+    "seats_open": 0,
     "seats_total": 23,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -2892,10 +3518,12 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Jennifer L. Browning",
-    "seats_open": 23,
+    "seats_open": 10,
     "seats_total": 23,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -2913,10 +3541,12 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Michelle A. Payton",
-    "seats_open": 25,
+    "seats_open": 9,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -2934,10 +3564,14 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Jennifer L. Browning",
-    "seats_open": 25,
+    "seats_open": 12,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 112 or ENG 113 or ENG 114",
+    "prerequisite_courses": [
+      "ENG 112",
+      "ENG 113",
+      "ENG 114"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -2954,8 +3588,8 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "Michael Stonehocker",
+    "seats_open": 6,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2976,7 +3610,7 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "David W. Walker",
-    "seats_open": 18,
+    "seats_open": 4,
     "seats_total": 18,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2997,7 +3631,7 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Mr. Robert M. Parker",
-    "seats_open": 18,
+    "seats_open": 5,
     "seats_total": 18,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3018,10 +3652,41 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Holly R. Godfrey",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "HIS",
+    "course_number": "111",
+    "course_title": "World Civilizations I",
+    "credits": 3,
+    "crn": "HIS-111-OA2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-05",
+    "location": "Online",
+    "campus": "ONLIN",
+    "mode": "online",
+    "instructor": "Holly R. Godfrey",
+    "seats_open": 15,
+    "seats_total": 25,
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -3039,10 +3704,41 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "John W. Martin",
-    "seats_open": 25,
+    "seats_open": 1,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "HIS",
+    "course_number": "112",
+    "course_title": "World Civilizations II",
+    "credits": 3,
+    "crn": "HIS-112-OA2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-05",
+    "location": "Online",
+    "campus": "ONLIN",
+    "mode": "online",
+    "instructor": "John W. Martin",
+    "seats_open": 14,
+    "seats_total": 25,
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -3060,10 +3756,41 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Austin M. Mitchell",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "HIS",
+    "course_number": "131",
+    "course_title": "American History I",
+    "credits": 3,
+    "crn": "HIS-131-OA2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-05",
+    "location": "Online",
+    "campus": "ONLIN",
+    "mode": "online",
+    "instructor": "Austin M. Mitchell",
+    "seats_open": 10,
+    "seats_total": 25,
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -3080,11 +3807,16 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "Andrew Paul",
+    "seats_open": 11,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -3093,7 +3825,7 @@
     "course_number": "135",
     "course_title": "Facilities Management",
     "credits": 3,
-    "crn": "HRM-135-IOA1",
+    "crn": "HRM-135-I1",
     "days": "M T W Th F Sa Su",
     "start_time": "",
     "end_time": "",
@@ -3102,8 +3834,8 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Walter A. Rapetski, Jr.",
-    "seats_open": null,
-    "seats_total": null,
+    "seats_open": 0,
+    "seats_total": 2,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -3123,10 +3855,16 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Walter A. Rapetski, Jr.",
-    "seats_open": 16,
+    "seats_open": 14,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CUL 110 and CUL 140 and HRM 220 and HRM 245 and CUL 110 and CUL 142 and HRM 220 and HRM 245",
+    "prerequisite_courses": [
+      "CUL 110",
+      "CUL 140",
+      "HRM 220",
+      "HRM 245",
+      "CUL 142"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -3144,7 +3882,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Walter A. Rapetski, Jr.",
-    "seats_open": 20,
+    "seats_open": 8,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3165,7 +3903,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Walter A. Rapetski, Jr.",
-    "seats_open": 24,
+    "seats_open": 13,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3185,8 +3923,29 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "Autumn Wallen",
+    "seats_open": 2,
+    "seats_total": 25,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "HSE",
+    "course_number": "110",
+    "course_title": "Intro to Human Services",
+    "credits": 3,
+    "crn": "HSE-110-OAM3",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-05",
+    "location": "Online",
+    "campus": "ONLIN",
+    "mode": "online",
+    "instructor": "Hannah C. Yamouti",
+    "seats_open": 20,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3206,8 +3965,29 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "Shaneka N. Haynes",
+    "seats_open": 0,
+    "seats_total": 25,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "HSE",
+    "course_number": "123",
+    "course_title": "Interview Tech Human Service",
+    "credits": 3,
+    "crn": "HSE-123-OAM3",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-05",
+    "location": "Online",
+    "campus": "ONLIN",
+    "mode": "online",
+    "instructor": "Hannah C. Yamouti",
+    "seats_open": 9,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3227,8 +4007,8 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "Shaneka N. Haynes",
+    "seats_open": 13,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3248,11 +4028,13 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "Autumn Wallen",
+    "seats_open": 14,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HSE 110",
+    "prerequisite_courses": [
+      "HSE 110"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -3269,8 +4051,8 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "Autumn Wallen",
+    "seats_open": 16,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3291,7 +4073,28 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Terese G Derballa",
-    "seats_open": 25,
+    "seats_open": 0,
+    "seats_total": 25,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "HUM",
+    "course_number": "110",
+    "course_title": "Technology and Society",
+    "credits": 3,
+    "crn": "HUM-110-OA2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-05",
+    "location": "Online",
+    "campus": "ONLIN",
+    "mode": "online",
+    "instructor": "Terese G Derballa",
+    "seats_open": 23,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3312,10 +4115,15 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Liz Watkin",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -3333,10 +4141,15 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Sara C. Cook",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -3354,10 +4167,41 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Sara C. Cook",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "HUM",
+    "course_number": "115",
+    "course_title": "Critical Thinking",
+    "credits": 3,
+    "crn": "HUM-115-OA4",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-05",
+    "location": "Online",
+    "campus": "ONLIN",
+    "mode": "online",
+    "instructor": "Liz Watkin",
+    "seats_open": 5,
+    "seats_total": 25,
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -3375,10 +4219,12 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Margaret F. Poist",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -3396,10 +4242,12 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Margaret F. Poist",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -3417,10 +4265,35 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Eleanor L. Macken",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "HUM",
+    "course_number": "220",
+    "course_title": "Human Values and Meaning",
+    "credits": 3,
+    "crn": "HUM-220-OA4",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-05",
+    "location": "Online",
+    "campus": "ONLIN",
+    "mode": "online",
+    "instructor": "Kenet Adamson",
+    "seats_open": 17,
+    "seats_total": 25,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -3438,7 +4311,7 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Mr. Robert M. Parker",
-    "seats_open": 12,
+    "seats_open": 0,
     "seats_total": 12,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3480,7 +4353,7 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Rachael A. Tipton",
-    "seats_open": 8,
+    "seats_open": 7,
     "seats_total": 8,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3501,28 +4374,7 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Rachael A. Tipton",
-    "seats_open": 8,
-    "seats_total": 8,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "asheville-buncombe-technical",
-    "term": "2026SU",
-    "course_prefix": "MAC",
-    "course_number": "248",
-    "course_title": "Production Procedures",
-    "credits": 2,
-    "crn": "MAC-248-B1",
-    "days": "W",
-    "start_time": "4:30 PM",
-    "end_time": "5:20 PM",
-    "start_date": "2026-05-22",
-    "location": "A-B Tech Main Campus",
-    "campus": "A",
-    "mode": "in-person",
-    "instructor": "Shannon W. Moser",
-    "seats_open": 8,
+    "seats_open": 6,
     "seats_total": 8,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3543,7 +4395,7 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Jennifer L. Tracy",
-    "seats_open": 20,
+    "seats_open": 10,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3564,7 +4416,7 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Jillian H. McMeans",
-    "seats_open": 20,
+    "seats_open": 8,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3585,7 +4437,7 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Jennifer L. Tracy",
-    "seats_open": 20,
+    "seats_open": 8,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3606,10 +4458,14 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Jillian H. McMeans",
-    "seats_open": 24,
-    "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 14,
+    "seats_total": 20,
+    "prerequisite_text": "DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -3627,10 +4483,14 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Joshua D. Cushman",
-    "seats_open": 25,
+    "seats_open": 7,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -3648,10 +4508,14 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Taylor H. Conn",
-    "seats_open": 24,
-    "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 10,
+    "seats_total": 20,
+    "prerequisite_text": "DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -3669,10 +4533,64 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "David K. Blevins",
-    "seats_open": 25,
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "152",
+    "course_title": "Statistical Methods I",
+    "credits": 4,
+    "crn": "MAT-152-OA2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-05",
+    "location": "Online",
+    "campus": "ONLIN",
+    "mode": "online",
+    "instructor": "Mathew Knowlen",
+    "seats_open": 2,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "152",
+    "course_title": "Statistical Methods I",
+    "credits": 4,
+    "crn": "MAT-152-OA3",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-05",
+    "location": "Online",
+    "campus": "ONLIN",
+    "mode": "online",
+    "instructor": "Holly Bass",
+    "seats_open": 14,
+    "seats_total": 25,
+    "prerequisite_text": "DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -3690,10 +4608,23 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "James C. Wilson",
-    "seats_open": 24,
-    "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 8,
+    "seats_total": 20,
+    "prerequisite_text": "MAT 035 or MAT 003 or DMA 010 or DMA 020 or DMA 030 or DMA 040 or DMA 050 or DMA 060 or DMA 070 or DMA 080 or MAT 080 or MAT 121",
+    "prerequisite_courses": [
+      "MAT 035",
+      "MAT 003",
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DMA 040",
+      "DMA 050",
+      "DMA 060",
+      "DMA 070",
+      "DMA 080",
+      "MAT 080",
+      "MAT 121"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -3711,10 +4642,57 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Valerie L. Martin",
-    "seats_open": 25,
+    "seats_open": 1,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 035 or MAT 003 or DMA 010 or DMA 020 or DMA 030 or DMA 040 or DMA 050 or DMA 060 or DMA 070 or DMA 080 or MAT 080 or MAT 121",
+    "prerequisite_courses": [
+      "MAT 035",
+      "MAT 003",
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DMA 040",
+      "DMA 050",
+      "DMA 060",
+      "DMA 070",
+      "DMA 080",
+      "MAT 080",
+      "MAT 121"
+    ]
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "171",
+    "course_title": "Precalculus Algebra",
+    "credits": 4,
+    "crn": "MAT-171-OA2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-22",
+    "location": "Online",
+    "campus": "ONLIN",
+    "mode": "online",
+    "instructor": "James C. Wilson",
+    "seats_open": 2,
+    "seats_total": 25,
+    "prerequisite_text": "MAT 035 or MAT 003 or DMA 010 or DMA 020 or DMA 030 or DMA 040 or DMA 050 or DMA 060 or DMA 070 or DMA 080 or MAT 080 or MAT 121",
+    "prerequisite_courses": [
+      "MAT 035",
+      "MAT 003",
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DMA 040",
+      "DMA 050",
+      "DMA 060",
+      "DMA 070",
+      "DMA 080",
+      "MAT 080",
+      "MAT 121"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -3732,10 +4710,12 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Jillian H. McMeans",
-    "seats_open": 24,
-    "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 12,
+    "seats_total": 20,
+    "prerequisite_text": "MAT 171",
+    "prerequisite_courses": [
+      "MAT 171"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -3753,10 +4733,12 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "David K. Blevins",
-    "seats_open": 25,
+    "seats_open": 6,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 171",
+    "prerequisite_courses": [
+      "MAT 171"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -3774,10 +4756,13 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Taylor H. Conn",
-    "seats_open": 24,
+    "seats_open": 9,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 172 or MAT 175",
+    "prerequisite_courses": [
+      "MAT 172",
+      "MAT 175"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -3795,10 +4780,12 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Cindy M. Moore",
-    "seats_open": 25,
+    "seats_open": 4,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 271",
+    "prerequisite_courses": [
+      "MAT 271"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -3816,10 +4803,12 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Valerie L. Martin",
-    "seats_open": 25,
+    "seats_open": 7,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 272",
+    "prerequisite_courses": [
+      "MAT 272"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -3837,7 +4826,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Lindsey J. Stephenson",
-    "seats_open": 20,
+    "seats_open": 1,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3858,10 +4847,12 @@
     "campus": "O",
     "mode": "in-person",
     "instructor": "Lindsey J. Stephenson",
-    "seats_open": 20,
+    "seats_open": 10,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MED 240",
+    "prerequisite_courses": [
+      "MED 240"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -3879,7 +4870,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Kevin Warth",
-    "seats_open": 25,
+    "seats_open": 8,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3892,18 +4883,21 @@
     "course_title": "Transfusion Medicine",
     "credits": 3,
     "crn": "MLT-127-B1",
-    "days": "W Th",
-    "start_time": "3:00 PM",
-    "end_time": "4:40 PM",
+    "days": "W",
+    "start_time": "3:20 PM",
+    "end_time": "5:00 PM",
     "start_date": "2026-05-22",
     "location": "A-B Tech Main Campus",
     "campus": "A",
     "mode": "in-person",
     "instructor": "Jennifer K. Picher, Annelise Caldwell",
-    "seats_open": 11,
+    "seats_open": 3,
     "seats_total": 22,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MLT 116 and MLT 126",
+    "prerequisite_courses": [
+      "MLT 116",
+      "MLT 126"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -3913,18 +4907,21 @@
     "course_title": "Transfusion Medicine",
     "credits": 3,
     "crn": "MLT-127-B2",
-    "days": "W Th",
-    "start_time": "3:00 PM",
-    "end_time": "4:40 PM",
+    "days": "W",
+    "start_time": "3:20 PM",
+    "end_time": "5:00 PM",
     "start_date": "2026-05-22",
     "location": "A-B Tech Main Campus",
     "campus": "A",
     "mode": "in-person",
     "instructor": "Jennifer K. Picher",
-    "seats_open": 11,
+    "seats_open": 5,
     "seats_total": 22,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MLT 116 and MLT 126",
+    "prerequisite_courses": [
+      "MLT 116",
+      "MLT 126"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -3941,11 +4938,14 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": "Jennifer K. Picher",
-    "seats_open": 8,
+    "instructor": "Molly R. McKeown",
+    "seats_open": 6,
     "seats_total": 8,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MLT 116 and MLT 126",
+    "prerequisite_courses": [
+      "MLT 116",
+      "MLT 126"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -3963,10 +4963,20 @@
     "campus": "HOSP",
     "mode": "in-person",
     "instructor": "Molly R. McKeown",
-    "seats_open": 16,
+    "seats_open": 3,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MLT 120 or MLT 126 or MLT 130 or MLT 240 or BIO 163 or CHM 130 or CHM 130A and MLT 111 and MLT 127",
+    "prerequisite_courses": [
+      "MLT 120",
+      "MLT 126",
+      "MLT 130",
+      "MLT 240",
+      "BIO 163",
+      "CHM 130",
+      "CHM 130A",
+      "MLT 111",
+      "MLT 127"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -3984,7 +4994,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Cary E. Fridley",
-    "seats_open": 25,
+    "seats_open": 7,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4005,7 +5015,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Robert Teague",
-    "seats_open": 25,
+    "seats_open": 15,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4026,7 +5036,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Robert Teague",
-    "seats_open": 25,
+    "seats_open": 21,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4047,7 +5057,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Joanna Agnew",
-    "seats_open": 25,
+    "seats_open": 22,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4068,10 +5078,12 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Michael D. Deaver",
-    "seats_open": 20,
+    "seats_open": 10,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NET 125",
+    "prerequisite_courses": [
+      "NET 125"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4089,10 +5101,12 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Michael D. Deaver",
-    "seats_open": 25,
+    "seats_open": 14,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NOS 120",
+    "prerequisite_courses": [
+      "NOS 120"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4110,10 +5124,13 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Abby N. Meyer, Tipton G. Dillingham, Deanna W. Littrell, Monica E. Smith",
-    "seats_open": 25,
+    "seats_open": 11,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 101 and NUR 102",
+    "prerequisite_courses": [
+      "NUR 101",
+      "NUR 102"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4130,11 +5147,15 @@
     "location": "A-B Tech Main Campus",
     "campus": "A",
     "mode": "in-person",
-    "instructor": "William B. Evans, Christy C. Andrews, Tipton G. Dillingham, Deanna W. Littrell, Joan C. Vassey",
-    "seats_open": 100,
+    "instructor": "William B. Evans, Christy C. Andrews, Tipton G. Dillingham, Deanna W. Littrell, Joan C. Vassey, Alex Arnette, Melissa Craig, Pamela J. Griffin, Olivia Holbein, Erin Kimmel, Denice R. Morgan, Lynn Neilly-Miller, Donna Nesmith, Nita M. Kirkpatrick, Betty Duncan",
+    "seats_open": 12,
     "seats_total": 115,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 111 and NUR 111 and NUR 212 and NUR 114",
+    "prerequisite_courses": [
+      "NUR 111",
+      "NUR 212",
+      "NUR 114"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4152,10 +5173,12 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Gwenn P. Stinnett",
-    "seats_open": 25,
+    "seats_open": 20,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "OST 136",
+    "prerequisite_courses": [
+      "OST 136"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4172,8 +5195,8 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": "Christine M. Culbreth",
-    "seats_open": 25,
+    "instructor": "Lindsey J. Stephenson",
+    "seats_open": 10,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4194,10 +5217,12 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Christine M. Culbreth",
-    "seats_open": 25,
+    "seats_open": 7,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "OST 148",
+    "prerequisite_courses": [
+      "OST 148"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4215,10 +5240,13 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Maryann S. Aucompaugh",
-    "seats_open": 25,
+    "seats_open": 4,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MED 121 or OST 141",
+    "prerequisite_courses": [
+      "MED 121",
+      "OST 141"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4236,10 +5264,37 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Maryann S. Aucompaugh",
-    "seats_open": 25,
+    "seats_open": 12,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MED 121 or OST 141",
+    "prerequisite_courses": [
+      "MED 121",
+      "OST 141"
+    ]
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "OST",
+    "course_number": "247",
+    "course_title": "Procedure Coding",
+    "credits": 3,
+    "crn": "OST-247-OA3",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-05",
+    "location": "Online",
+    "campus": "ONLIN",
+    "mode": "online",
+    "instructor": "Maryann S. Aucompaugh",
+    "seats_open": 11,
+    "seats_total": 25,
+    "prerequisite_text": "MED 121 or OST 141",
+    "prerequisite_courses": [
+      "MED 121",
+      "OST 141"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4257,10 +5312,13 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Gwenn P. Stinnett",
-    "seats_open": 25,
+    "seats_open": 7,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MED 121 or OST 141",
+    "prerequisite_courses": [
+      "MED 121",
+      "OST 141"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4278,10 +5336,37 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Gwenn P. Stinnett",
-    "seats_open": 25,
+    "seats_open": 9,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MED 121 or OST 141",
+    "prerequisite_courses": [
+      "MED 121",
+      "OST 141"
+    ]
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "OST",
+    "course_number": "248",
+    "course_title": "Diagnostic Coding",
+    "credits": 3,
+    "crn": "OST-248-OA3",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-05",
+    "location": "Online",
+    "campus": "ONLIN",
+    "mode": "online",
+    "instructor": "Gwenn P. Stinnett",
+    "seats_open": 8,
+    "seats_total": 25,
+    "prerequisite_text": "MED 121 or OST 141",
+    "prerequisite_courses": [
+      "MED 121",
+      "OST 141"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4299,10 +5384,12 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Christine M. Culbreth",
-    "seats_open": 25,
+    "seats_open": 20,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "OST 164",
+    "prerequisite_courses": [
+      "OST 164"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4320,10 +5407,14 @@
     "campus": "O",
     "mode": "in-person",
     "instructor": "Christine E. Lomax",
-    "seats_open": 25,
+    "seats_open": 14,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "OTA 120 and OTA 140 and OTA 130",
+    "prerequisite_courses": [
+      "OTA 120",
+      "OTA 140",
+      "OTA 130"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4341,10 +5432,14 @@
     "campus": "O",
     "mode": "in-person",
     "instructor": "Christine E. Lomax",
-    "seats_open": 25,
+    "seats_open": 14,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "OTA 120 and OTA 140 and OTA 130",
+    "prerequisite_courses": [
+      "OTA 120",
+      "OTA 140",
+      "OTA 130"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4361,11 +5456,13 @@
     "location": "A-B Tech Main Campus",
     "campus": "A",
     "mode": "in-person",
-    "instructor": "Cheryl R. Mott",
-    "seats_open": 13,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "instructor": "Cheryl R. Mott, Christine E. Lomax",
+    "seats_open": 0,
+    "seats_total": 11,
+    "prerequisite_text": "OTA 140",
+    "prerequisite_courses": [
+      "OTA 140"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4382,11 +5479,13 @@
     "location": "A-B Tech Main Campus",
     "campus": "A",
     "mode": "in-person",
-    "instructor": "Cheryl R. Mott",
-    "seats_open": 12,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "instructor": "Cheryl R. Mott, Christine E. Lomax",
+    "seats_open": 0,
+    "seats_total": 11,
+    "prerequisite_text": "OTA 140",
+    "prerequisite_courses": [
+      "OTA 140"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4403,8 +5502,8 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "Cheryl L. Coulson",
+    "seats_open": 9,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4425,10 +5524,12 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Maria S. Stephens",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 6,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4446,10 +5547,12 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Maria S. Stephens",
-    "seats_open": 25,
+    "seats_open": 1,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4467,10 +5570,12 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Duston E. Mason",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4488,10 +5593,35 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Duston E. Mason",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "PHI",
+    "course_number": "240",
+    "course_title": "Introduction to Ethics",
+    "credits": 3,
+    "crn": "PHI-240-OA4",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-05",
+    "location": "Online",
+    "campus": "ONLIN",
+    "mode": "online",
+    "instructor": "Dave Smith",
+    "seats_open": 14,
+    "seats_total": 25,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4508,11 +5638,13 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "Shannon T. Bonomi",
+    "seats_open": 16,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PHY 110",
+    "prerequisite_courses": [
+      "PHY 110"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4529,11 +5661,18 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "Shannon T. Bonomi",
+    "seats_open": 16,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025 or ENG 045 and PHY 110A",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025",
+      "ENG 045",
+      "PHY 110A"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4550,11 +5689,20 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "Shannon T. Bonomi",
+    "seats_open": 9,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 098 or ENG 002 or ENG 025 or ENG 045 and DMA 030 or MAT 025 or MAT 035 or MAT 003",
+    "prerequisite_courses": [
+      "DRE 098",
+      "ENG 002",
+      "ENG 025",
+      "ENG 045",
+      "DMA 030",
+      "MAT 025",
+      "MAT 035",
+      "MAT 003"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4571,11 +5719,50 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "John Davis",
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 171 or MAT 271 and DRE 097 or DRE 098 or ENG 002 or ENG 025 or ENG 045 and MAT 171 or MAT 175 or MAT 271",
+    "prerequisite_courses": [
+      "MAT 171",
+      "MAT 271",
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025",
+      "ENG 045",
+      "MAT 175"
+    ]
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "PHY",
+    "course_number": "151",
+    "course_title": "College Physics I",
+    "credits": 4,
+    "crn": "PHY-151-OA2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-05",
+    "location": "Online",
+    "campus": "ONLIN",
+    "mode": "online",
+    "instructor": null,
+    "seats_open": 23,
+    "seats_total": 25,
+    "prerequisite_text": "MAT 171 or MAT 271 and DRE 097 or DRE 098 or ENG 002 or ENG 025 or ENG 045 and MAT 171 or MAT 175 or MAT 271",
+    "prerequisite_courses": [
+      "MAT 171",
+      "MAT 271",
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025",
+      "ENG 045",
+      "MAT 175"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4592,11 +5779,13 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "instructor": "John Davis",
+    "seats_open": 3,
+    "seats_total": 32,
+    "prerequisite_text": "PHY 151 (min C)",
+    "prerequisite_courses": [
+      "PHY 151"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4614,7 +5803,7 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Mark Daddona",
-    "seats_open": 25,
+    "seats_open": 18,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4635,7 +5824,7 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Steven W. Luke",
-    "seats_open": 25,
+    "seats_open": 15,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4656,7 +5845,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Daniel M. Burrello",
-    "seats_open": 50,
+    "seats_open": 1,
     "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4677,7 +5866,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Samantha F. Johnson",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4698,7 +5887,49 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Marin Clontz",
-    "seats_open": 25,
+    "seats_open": 0,
+    "seats_total": 25,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "PSY",
+    "course_number": "150",
+    "course_title": "General Psychology",
+    "credits": 3,
+    "crn": "PSY-150-OA7",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-05",
+    "location": "Online",
+    "campus": "ONLIN",
+    "mode": "online",
+    "instructor": "Maria B. LeBaron",
+    "seats_open": 0,
+    "seats_total": 25,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "PSY",
+    "course_number": "150",
+    "course_title": "General Psychology",
+    "credits": 3,
+    "crn": "PSY-150-OA9",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-05",
+    "location": "Online",
+    "campus": "ONLIN",
+    "mode": "online",
+    "instructor": "Lydia Warpoole",
+    "seats_open": 2,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4719,10 +5950,13 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Samantha F. Johnson",
-    "seats_open": 25,
+    "seats_open": 12,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150 or SOC 210",
+    "prerequisite_courses": [
+      "PSY 150",
+      "SOC 210"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4740,10 +5974,35 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Ms. Robin B. Howse",
-    "seats_open": 50,
+    "seats_open": 0,
     "seats_total": 50,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "PSY",
+    "course_number": "241",
+    "course_title": "Developmental Psych",
+    "credits": 3,
+    "crn": "PSY-241-OA3",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-05",
+    "location": "Online",
+    "campus": "ONLIN",
+    "mode": "online",
+    "instructor": "Ms. Robin B. Howse",
+    "seats_open": 18,
+    "seats_total": 25,
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4761,10 +6020,12 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Ms. Julie S. Parker",
-    "seats_open": 50,
+    "seats_open": 27,
     "seats_total": 50,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4782,10 +6043,12 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Sereitha D. Miller",
-    "seats_open": 26,
+    "seats_open": 4,
     "seats_total": 26,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RAD 121",
+    "prerequisite_courses": [
+      "RAD 121"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4803,10 +6066,12 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Kayce Leon",
-    "seats_open": 26,
+    "seats_open": 4,
     "seats_total": 26,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RAD 121",
+    "prerequisite_courses": [
+      "RAD 121"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4819,15 +6084,17 @@
     "days": "M T W",
     "start_time": "8:00 AM",
     "end_time": "12:00 PM",
-    "start_date": "2026-06-08",
+    "start_date": "2026-06-09",
     "location": "Off-Campus",
     "campus": "O",
     "mode": "in-person",
-    "instructor": "Kayce Leon",
-    "seats_open": 26,
+    "instructor": "Kayce Leon, Rene Brooks, Lisa J. Auman, Sereitha D. Miller, Cyndal Maggard",
+    "seats_open": 4,
     "seats_total": 26,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RAD 161",
+    "prerequisite_courses": [
+      "RAD 161"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4844,11 +6111,13 @@
     "location": "Off-Campus",
     "campus": "O",
     "mode": "in-person",
-    "instructor": "Kayce Leon",
-    "seats_open": 26,
+    "instructor": "Kayce Leon, Rene Brooks, Sereitha D. Miller, Lisa J. Auman, Cyndal Maggard",
+    "seats_open": 4,
     "seats_total": 26,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RAD 161",
+    "prerequisite_courses": [
+      "RAD 161"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4866,10 +6135,12 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Matthew B. Meadows",
-    "seats_open": 25,
+    "seats_open": 21,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CTI 120",
+    "prerequisite_courses": [
+      "CTI 120"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -4887,7 +6158,7 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Steven W. Luke",
-    "seats_open": 25,
+    "seats_open": 14,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4908,7 +6179,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Veronica Van Ry",
-    "seats_open": 50,
+    "seats_open": 1,
     "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4928,9 +6199,30 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": "Kimberly Hayes",
-    "seats_open": 50,
-    "seats_total": 50,
+    "instructor": "Natasha Sessoms",
+    "seats_open": 0,
+    "seats_total": 25,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "SOC",
+    "course_number": "210",
+    "course_title": "Introduction to Sociology",
+    "credits": 3,
+    "crn": "SOC-210-OA5",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-05",
+    "location": "Online",
+    "campus": "ONLIN",
+    "mode": "online",
+    "instructor": "Carra M. Miskovich",
+    "seats_open": 15,
+    "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -4950,8 +6242,8 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Kenneth N. Rudolph",
-    "seats_open": 25,
-    "seats_total": 25,
+    "seats_open": 19,
+    "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -4970,8 +6262,8 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "Shaneka N. Haynes",
+    "seats_open": 10,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4991,11 +6283,13 @@
     "location": "Off-Campus",
     "campus": "O",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 12,
+    "instructor": "Jonathan D. Harwood, Nataliya P. Poprozhuk, Kelly M. Duncan, Tracy Fisher, Chastity L. Case",
+    "seats_open": 1,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SON 120",
+    "prerequisite_courses": [
+      "SON 120"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -5012,11 +6306,13 @@
     "location": "A-B Tech Main Campus",
     "campus": "A",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 12,
+    "instructor": "Kelly M. Duncan, Chastity L. Case",
+    "seats_open": 1,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SON 241",
+    "prerequisite_courses": [
+      "SON 241"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -5033,11 +6329,16 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": "Casey Boyatt",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "instructor": "Tammy Tobin",
+    "seats_open": 3,
+    "seats_total": 30,
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -5055,10 +6356,15 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Casey Boyatt",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -5076,10 +6382,35 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Casey Boyatt",
-    "seats_open": 25,
+    "seats_open": 2,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 111",
+    "prerequisite_courses": [
+      "SPA 111"
+    ]
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "SPA",
+    "course_number": "112",
+    "course_title": "Elementary Spanish II",
+    "credits": 3,
+    "crn": "SPA-112-OA2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-05",
+    "location": "Online",
+    "campus": "ONLIN",
+    "mode": "online",
+    "instructor": "Casey Boyatt",
+    "seats_open": 20,
+    "seats_total": 25,
+    "prerequisite_text": "SPA 111",
+    "prerequisite_courses": [
+      "SPA 111"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -5097,10 +6428,33 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Michael J. Harney, Jr.",
-    "seats_open": 25,
+    "seats_open": 23,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "SRV",
+    "course_number": "111",
+    "course_title": "Surveying II",
+    "credits": 4,
+    "crn": "SRV-111-B1",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-22",
+    "location": "A-B Tech Main Campus",
+    "campus": "A",
+    "mode": "online",
+    "instructor": "Nick Iannucci",
+    "seats_open": 2,
+    "seats_total": 12,
+    "prerequisite_text": "SRV 110",
+    "prerequisite_courses": [
+      "SRV 110"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -5117,11 +6471,14 @@
     "location": "Online",
     "campus": "ONLIN",
     "mode": "online",
-    "instructor": "Rachel Vickers",
-    "seats_open": 18,
+    "instructor": "Valerie Clontz",
+    "seats_open": 10,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SUR 123 and SUR 135",
+    "prerequisite_courses": [
+      "SUR 123",
+      "SUR 135"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -5132,17 +6489,21 @@
     "credits": 4,
     "crn": "SUR-135-X1",
     "days": "M T W",
-    "start_time": "7:00 AM",
-    "end_time": "11:30 AM",
+    "start_time": "6:30 AM",
+    "end_time": "12:00 PM",
     "start_date": "2026-05-22",
     "location": "Off-Campus",
     "campus": "O",
     "mode": "in-person",
-    "instructor": "Rachel Vickers",
-    "seats_open": 18,
+    "instructor": "Valerie Clontz, Harrison Rolfe",
+    "seats_open": 10,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SUR 123 and SUR 134 and SUR 122",
+    "prerequisite_courses": [
+      "SUR 123",
+      "SUR 134",
+      "SUR 122"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -5160,7 +6521,7 @@
     "campus": "ONLIN",
     "mode": "online",
     "instructor": "Charles E. Knies",
-    "seats_open": 25,
+    "seats_open": 4,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5181,7 +6542,7 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Mr. Robert M. Parker",
-    "seats_open": 18,
+    "seats_open": 5,
     "seats_total": 18,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5202,10 +6563,12 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Charles E. Knies",
-    "seats_open": 14,
+    "seats_open": 2,
     "seats_total": 14,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "TRN 140",
+    "prerequisite_courses": [
+      "TRN 140"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -5223,10 +6586,12 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Charles E. Knies",
-    "seats_open": 14,
+    "seats_open": 4,
     "seats_total": 14,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "TRN 140",
+    "prerequisite_courses": [
+      "TRN 140"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -5244,7 +6609,7 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Charles E. Knies",
-    "seats_open": 14,
+    "seats_open": 1,
     "seats_total": 14,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5265,29 +6630,8 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Charles E. Knies",
-    "seats_open": 14,
+    "seats_open": 4,
     "seats_total": 14,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "asheville-buncombe-technical",
-    "term": "2026SU",
-    "course_prefix": "VET",
-    "course_number": "125",
-    "course_title": "Veterinary Diseases I",
-    "credits": 2,
-    "crn": "VET-125-B1",
-    "days": "W",
-    "start_time": "9:00 AM",
-    "end_time": "10:50 AM",
-    "start_date": "2026-05-22",
-    "location": "A-B Tech Main Campus",
-    "campus": "A",
-    "mode": "in-person",
-    "instructor": "Sierra Chapman",
-    "seats_open": 20,
-    "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -5298,19 +6642,21 @@
     "course_number": "126",
     "course_title": "Veterinary Diseases II",
     "credits": 2,
-    "crn": "VET-126-OA1",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
+    "crn": "VET-126-B1",
+    "days": "Th",
+    "start_time": "10:00 AM",
+    "end_time": "11:50 AM",
     "start_date": "2026-05-22",
-    "location": "Online",
-    "campus": "ONLIN",
-    "mode": "online",
+    "location": "A-B Tech Main Campus",
+    "campus": "A",
+    "mode": "in-person",
     "instructor": "Sierra Chapman",
-    "seats_open": 26,
+    "seats_open": 9,
     "seats_total": 26,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "VET 125",
+    "prerequisite_courses": [
+      "VET 125"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -5328,10 +6674,14 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Sierra Chapman",
-    "seats_open": 10,
+    "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "VET 123 and VET 133 and VET 125",
+    "prerequisite_courses": [
+      "VET 123",
+      "VET 133",
+      "VET 125"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -5349,10 +6699,14 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Sierra Chapman",
-    "seats_open": 10,
+    "seats_open": 2,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "VET 123 and VET 133 and VET 125",
+    "prerequisite_courses": [
+      "VET 123",
+      "VET 133",
+      "VET 125"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -5369,11 +6723,16 @@
     "location": "Buncombe County Animal Shelter",
     "campus": "BCAS",
     "mode": "in-person",
-    "instructor": "Lane R. Torrington",
-    "seats_open": 10,
+    "instructor": "Kris Hubbard, Tyler H. Holman, Angelia Feick, Paige Jimeson, Ms. Bailey B. Brewington",
+    "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "VET 123 and VET 125 and VET 131 and VET 120",
+    "prerequisite_courses": [
+      "VET 123",
+      "VET 125",
+      "VET 131",
+      "VET 120"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -5390,11 +6749,16 @@
     "location": "Buncombe County Animal Shelter",
     "campus": "BCAS",
     "mode": "in-person",
-    "instructor": "Lane R. Torrington",
-    "seats_open": 10,
+    "instructor": "Kris Hubbard, Tyler H. Holman, Paige Jimeson, Ms. Bailey B. Brewington",
+    "seats_open": 2,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "VET 123 and VET 125 and VET 131 and VET 120",
+    "prerequisite_courses": [
+      "VET 123",
+      "VET 125",
+      "VET 131",
+      "VET 120"
+    ]
   },
   {
     "college_code": "asheville-buncombe-technical",
@@ -5412,7 +6776,7 @@
     "campus": "O",
     "mode": "in-person",
     "instructor": "Porscha R. Orndorf",
-    "seats_open": 15,
+    "seats_open": 14,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5428,12 +6792,12 @@
     "days": "M T W Th F Sa Su",
     "start_time": "",
     "end_time": "",
-    "start_date": "2026-05-16",
+    "start_date": "2026-05-22",
     "location": "Off-Campus",
     "campus": "O",
     "mode": "in-person",
     "instructor": "Frederick L. Snyder, Stephen M. Hertz, Michelle Bailey",
-    "seats_open": 24,
+    "seats_open": 3,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5454,7 +6818,7 @@
     "campus": "O",
     "mode": "in-person",
     "instructor": "John M. Lyda",
-    "seats_open": 24,
+    "seats_open": 19,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5474,9 +6838,30 @@
     "location": "Off-Campus",
     "campus": "O",
     "mode": "in-person",
-    "instructor": "Paige Jimeson",
-    "seats_open": 20,
-    "seats_total": 20,
+    "instructor": "Sierra Chapman",
+    "seats_open": 2,
+    "seats_total": 24,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "asheville-buncombe-technical",
+    "term": "2026SU",
+    "course_prefix": "WLD",
+    "course_number": "268",
+    "course_title": "Robotic Gas Metal Arc Welding",
+    "credits": 4,
+    "crn": "WLD-268-1",
+    "days": "M W",
+    "start_time": "8:00 AM",
+    "end_time": "8:50 AM",
+    "start_date": "2026-05-22",
+    "location": "A-B Tech Main Campus",
+    "campus": "A",
+    "mode": "in-person",
+    "instructor": "Kevin S. Kiser",
+    "seats_open": 9,
+    "seats_total": 12,
     "prerequisite_text": null,
     "prerequisite_courses": []
   }
