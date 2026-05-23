@@ -42,13 +42,15 @@ const ADAPTERS: { slug: string; script: string; name: string }[] = [
   { slug: "utk", script: "scrape-utk.ts", name: "University of Tennessee Knoxville" },
   { slug: "apsu", script: "scrape-apsu.ts", name: "Austin Peay State University" },
   { slug: "mtsu", script: "scrape-mtsu.ts", name: "Middle Tennessee State University" },
-  // Future adapters:
+  { slug: "utm", script: "scrape-utm.ts", name: "University of Tennessee at Martin" },
+  { slug: "ttu", script: "scrape-ttu.ts", name: "Tennessee Technological University" },
+  // Auth-gated (no public tool):
   // { slug: "etsu", script: "scrape-etsu.ts", name: "East Tennessee State University" },
-  // { slug: "memphis", script: "scrape-memphis.ts", name: "University of Memphis" },
-  // { slug: "tntech", script: "scrape-tntech.ts", name: "Tennessee Technological University" },
-  // { slug: "utc", script: "scrape-utc.ts", name: "University of Tennessee at Chattanooga" },
-  // { slug: "utm", script: "scrape-utm.ts", name: "University of Tennessee at Martin" },
   // { slug: "tsu", script: "scrape-tsu.ts", name: "Tennessee State University" },
+  // PDF-only (lower priority):
+  // { slug: "memphis", script: "scrape-memphis.ts", name: "University of Memphis" },
+  // Banner Extensibility (complex, future):
+  // { slug: "utc", script: "scrape-utc.ts", name: "University of Tennessee at Chattanooga" },
 ];
 
 function main() {
