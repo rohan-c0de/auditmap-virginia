@@ -8,7 +8,7 @@
  *
  *   meridian-community-college → ssb.meridiancc.edu/ssb/prod
  *
- * Meridian's host serves the classic (bwsk*/bwck*) Banner 8 endpoints;
+ * Meridian's host serves the classic (bwsk/bwck) Banner 8 endpoints;
  * page header reports "Banner Web Self-Service Release: 8.7.2.11".
  *
  * Usage:
