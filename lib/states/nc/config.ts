@@ -48,6 +48,8 @@ const SELF_SERVICE_URLS: Record<string, string> = {
   "davidson-davie": "https://selfservice.cloud.davidsondavie.edu",
   "halifax": "https://sss.halifaxcc.edu",
   "brunswick": "https://ss2-prod-cloud.brunswickcc.edu",
+  "carteret": "https://ss-prod-cloud.carteret.edu",
+  "edgecombe": "https://ss-prod-cloud.edgecombe.edu",
 };
 
 const ncConfig: StateConfig = {

@@ -253,11 +253,15 @@
   },
   "AHR 110": {
     "text": "Take AHR-111 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "courses": [
+      "AHR 111"
+    ]
   },
   "AHR 111": {
     "text": "Take AHR-110; - Must be taken at the same time as this course.",
-    "courses": []
+    "courses": [
+      "AHR 110"
+    ]
   },
   "AHR 112": {
     "text": "AHR 111",
@@ -336,7 +340,9 @@
   },
   "AHR 210": {
     "text": "Take AHR-110 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "courses": [
+      "AHR 110"
+    ]
   },
   "AHR 211": {
     "text": "ENG 110 or ENG 111",
@@ -899,7 +905,9 @@
   },
   "ART 286": {
     "text": "Take ART-285 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "ART 285"
+    ]
   },
   "ART 288": {
     "text": "ART 131 or ART 240 or ART 283",
@@ -958,7 +966,9 @@
   },
   "ASL 221": {
     "text": "Take ASL-212 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "ASL 212"
+    ]
   },
   "ASL 250": {
     "text": "ASL 112",
@@ -1321,7 +1331,9 @@
   },
   "AUT 212": {
     "text": "Take TRN-110 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "TRN 110"
+    ]
   },
   "AUT 213": {
     "text": "TRN 120",
@@ -1843,11 +1855,16 @@
   },
   "BMS 117": {
     "text": "Take BTB-110 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "BTB 110"
+    ]
   },
   "BMS 118": {
     "text": "Take BTB-107 and BTB-110 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "courses": [
+      "BTB 107",
+      "BTB 110"
+    ]
   },
   "BMT 213": {
     "text": "BMT 212 and BMT 225",
@@ -2105,39 +2122,61 @@
   },
   "BTB 101": {
     "text": "Take DFT-100 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "courses": [
+      "DFT 100"
+    ]
   },
   "BTB 101A": {
     "text": "Take DFT-100 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "courses": [
+      "DFT 100"
+    ]
   },
   "BTB 101B": {
     "text": "Take BTB-101A DFT-100 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "BTB 101A",
+      "DFT 100"
+    ]
   },
   "BTB 103": {
-    "text": "Take BTB-102 - Must be taken either prior to or at the same time as this course.,<br>Take BTB-101 - Must be completed prior to taking this course.",
-    "courses": []
+    "text": "Take BTB-102 - Must be taken either prior to or at the same time as this course.,, Take BTB-101 - Must be completed prior to taking this course.",
+    "courses": [
+      "BTB 101",
+      "BTB 102"
+    ]
   },
   "BTB 106": {
     "text": "Take BTB-108 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "BTB 108"
+    ]
   },
   "BTB 107": {
     "text": "Take BTB-110 and BMS-118 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "courses": [
+      "BMS 118",
+      "BTB 110"
+    ]
   },
   "BTB 108": {
     "text": "Take BTB-107 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "BTB 107"
+    ]
   },
   "BTB 110": {
     "text": "Take BTB-107 and BMS-118 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "courses": [
+      "BMS 118",
+      "BTB 107"
+    ]
   },
   "BTB 111": {
     "text": "Take BTB-110 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "BTB 110"
+    ]
   },
   "BTC 150": {
     "text": "ENG 002 or ENG 025",
@@ -2253,7 +2292,9 @@
   },
   "BUS 135": {
     "text": "Take BUS-110 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "BUS 110"
+    ]
   },
   "BUS 137": {
     "text": "BUS 110 or CTS 115",
@@ -2475,7 +2516,9 @@
   },
   "CCT 260": {
     "text": "Take CET-150 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "CET 150"
+    ]
   },
   "CCT 280": {
     "text": "CSC 227",
@@ -2545,15 +2588,22 @@
   },
   "CET 150": {
     "text": "Take CTS-120 or CET-130 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "CET 130",
+      "CTS 120"
+    ]
   },
   "CET 245": {
     "text": "Take CET-130 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "CET 130"
+    ]
   },
   "CET 250": {
     "text": "Take CET-150 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "CET 150"
+    ]
   },
   "CET 251": {
     "text": "CSC 143",
@@ -3079,7 +3129,10 @@
   },
   "CMT 112": {
     "text": "Take CST-111 and CMT-214; - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "CMT 214",
+      "CST 111"
+    ]
   },
   "CMT 212": {
     "text": "CMT 210",
@@ -3415,7 +3468,9 @@
   },
   "COS 120": {
     "text": "Take COS-119 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "courses": [
+      "COS 119"
+    ]
   },
   "COS 120BB": {
     "text": "COS 120AB",
@@ -3473,7 +3528,10 @@
   },
   "COS 224": {
     "text": "Take COS-111 COS-112 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   "COS 224BB": {
     "text": "COS 224AB",
@@ -3599,7 +3657,9 @@
   },
   "CSC 130": {
     "text": "Take CSC-120 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "CSC 120"
+    ]
   },
   "CSC 134": {
     "text": "MAT 045A or MAT 045P or MAT 121 or MAT 143 or MAT 152 or MAT 171 or MAT 271 or MAT 252",
@@ -3668,7 +3728,9 @@
   },
   "CSC 174": {
     "text": "Take CTI-110 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "CTI 110"
+    ]
   },
   "CSC 214": {
     "text": "CSC 114 and CSC 114 or CSC 221",
@@ -3832,31 +3894,50 @@
   },
   "CTC 145": {
     "text": "Take One: CTC-114 or CTC-115 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "CTC 114",
+      "CTC 115"
+    ]
   },
   "CTC 150": {
     "text": "Take One: CTC-114 or CTC-115 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "CTC 114",
+      "CTC 115"
+    ]
   },
   "CTC 210": {
     "text": "Take CTC-145 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "CTC 145"
+    ]
   },
   "CTC 235": {
     "text": "Take CTC-145 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "CTC 145"
+    ]
   },
   "CTC 240": {
     "text": "Take One: CTC-114 or CTC-115 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "CTC 114",
+      "CTC 115"
+    ]
   },
   "CTC 250": {
     "text": "Take One: CTC-114 or CTC-115 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "CTC 114",
+      "CTC 115"
+    ]
   },
   "CTC 260": {
     "text": "Take One: CTC-240 or CTC-250 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "CTC 240",
+      "CTC 250"
+    ]
   },
   "CTI 110": {
     "text": "ENG 002 or ENG 025 and MAT 003 or MAT 025 or MAT 035 or MAT 110",
@@ -4329,7 +4410,9 @@
   },
   "CVS 162": {
     "text": "Take CVS-161 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "CVS 161"
+    ]
   },
   "CVS 164": {
     "text": "CVS 163",
@@ -4339,7 +4422,9 @@
   },
   "CVS 260": {
     "text": "Take CVS-162 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "CVS 162"
+    ]
   },
   "CVS 261": {
     "text": "CVS 260",
@@ -4533,7 +4618,9 @@
   },
   "DEN 101": {
     "text": "Take DEN-111 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "courses": [
+      "DEN 111"
+    ]
   },
   "DEN 101BB": {
     "text": "DEN 101AB",
@@ -4543,7 +4630,9 @@
   },
   "DEN 102": {
     "text": "Take DEN-101 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "courses": [
+      "DEN 101"
+    ]
   },
   "DEN 103": {
     "text": "DEN 100 (min C) and DEN 101 (min C) and DEN 102 (min C) and DEN 111 (min C) and DEN 104 and DEN 112",
@@ -4593,11 +4682,16 @@
   },
   "DEN 110": {
     "text": "Take DEN-121 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "courses": [
+      "DEN 121"
+    ]
   },
   "DEN 111": {
     "text": "Take DEN-101 or DEN-121 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "courses": [
+      "DEN 101",
+      "DEN 121"
+    ]
   },
   "DEN 112": {
     "text": "DEN 100 and DEN 110 and DEN 111",
@@ -4617,11 +4711,17 @@
   },
   "DEN 120": {
     "text": "Take DEN-121 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "courses": [
+      "DEN 121"
+    ]
   },
   "DEN 121": {
-    "text": "Take DEN-110 and DEN-111 - Must be taken either prior to or at the same time as this course.,<br>Take DEN-120 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "text": "Take DEN-110 and DEN-111 - Must be taken either prior to or at the same time as this course.,, Take DEN-120 - Must be taken either prior to or at the same time as this course.",
+    "courses": [
+      "DEN 110",
+      "DEN 111",
+      "DEN 120"
+    ]
   },
   "DEN 124": {
     "text": "DEN 110 and DEN 130",
@@ -4649,20 +4749,32 @@
     ]
   },
   "DEN 140": {
-    "text": "Take DEN-130 - Must be completed prior to taking this course.,<br>Take DEN-141 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "text": "Take DEN-130 - Must be completed prior to taking this course.,, Take DEN-141 - Must be taken either prior to or at the same time as this course.",
+    "courses": [
+      "DEN 130",
+      "DEN 141"
+    ]
   },
   "DEN 141": {
-    "text": "Take DEN-131 - Must be completed prior to taking this course.,<br>Take DEN-140 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "text": "Take DEN-131 - Must be completed prior to taking this course.,, Take DEN-140 - Must be taken either prior to or at the same time as this course.",
+    "courses": [
+      "DEN 131",
+      "DEN 140"
+    ]
   },
   "DEN 220": {
-    "text": "Take DEN-140 - Must be completed prior to taking this course.,<br>Take DEN-221 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "text": "Take DEN-140 - Must be completed prior to taking this course.,, Take DEN-221 - Must be taken either prior to or at the same time as this course.",
+    "courses": [
+      "DEN 140",
+      "DEN 221"
+    ]
   },
   "DEN 221": {
-    "text": "Take DEN-141 - Must be completed prior to taking this course.,<br>Take DEN-220 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "text": "Take DEN-141 - Must be completed prior to taking this course.,, Take DEN-220 - Must be taken either prior to or at the same time as this course.",
+    "courses": [
+      "DEN 141",
+      "DEN 220"
+    ]
   },
   "DEN 222": {
     "text": "BIO 163 or BIO 165 or BIO 168 and DEN 130",
@@ -4710,11 +4822,16 @@
   },
   "DES 110": {
     "text": "Take DES-125 DES-135  - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "courses": [
+      "DES 125",
+      "DES 135"
+    ]
   },
   "DES 111": {
     "text": "#Take DES-240 - Must be taken at the same time as this course.",
-    "courses": []
+    "courses": [
+      "DES 240"
+    ]
   },
   "DES 120": {
     "text": "DES 110",
@@ -4724,15 +4841,25 @@
   },
   "DES 125": {
     "text": "Take DES-110 DES-135 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "courses": [
+      "DES 110",
+      "DES 135"
+    ]
   },
   "DES 130": {
     "text": "Take DES-110 DES-125 DES-135 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "DES 110",
+      "DES 125",
+      "DES 135"
+    ]
   },
   "DES 135": {
     "text": "Take DES-110 DES-125 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "courses": [
+      "DES 110",
+      "DES 125"
+    ]
   },
   "DES 136": {
     "text": "DES 135",
@@ -4767,7 +4894,11 @@
   },
   "DES 230": {
     "text": "Take DES-125 DES-136 DES-220 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "DES 125",
+      "DES 136",
+      "DES 220"
+    ]
   },
   "DES 235": {
     "text": "DES 220",
@@ -4803,7 +4934,10 @@
   },
   "DES 260": {
     "text": "Take DES-220 DES-235; - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "DES 220",
+      "DES 235"
+    ]
   },
   "DES 265": {
     "text": "DES 135 and ARC 111 and ARC 114",
@@ -4823,7 +4957,9 @@
   },
   "DFT 100": {
     "text": "Take BTB-101 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "courses": [
+      "BTB 101"
+    ]
   },
   "DFT 112": {
     "text": "DFT 111",
@@ -5021,7 +5157,9 @@
   },
   "DRA 135": {
     "text": "Take DRA-130 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "DRA 130"
+    ]
   },
   "DRA 136": {
     "text": "DRA 135",
@@ -5255,8 +5393,11 @@
     ]
   },
   "EDU 234A": {
-    "text": "Take EDU-119 - Must be completed prior to taking this course.,<br>Take EDU-234 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "text": "Take EDU-119 - Must be completed prior to taking this course.,, Take EDU-234 - Must be taken either prior to or at the same time as this course.",
+    "courses": [
+      "EDU 119",
+      "EDU 234"
+    ]
   },
   "EDU 238": {
     "text": "EDU 206",
@@ -5523,7 +5664,9 @@
   },
   "EGR 214": {
     "text": "Take MAT-272 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "MAT 272"
+    ]
   },
   "EGR 220": {
     "text": "PHY 251 (min C) and MAT 272 (min C) and MAT 273",
@@ -5558,7 +5701,9 @@
   },
   "EGR 251": {
     "text": "Take PHY-131 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "PHY 131"
+    ]
   },
   "EGR 252": {
     "text": "EGR 251",
@@ -5767,7 +5912,9 @@
   },
   "ELN 132": {
     "text": "Take ELN-131 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "ELN 131"
+    ]
   },
   "ELN 133": {
     "text": "ELC 111 or ELC 112 or ELC 131 or ELC 140",
@@ -6151,7 +6298,9 @@
   },
   "ENG 129": {
     "text": "Take ENG-125 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "courses": [
+      "ENG 125"
+    ]
   },
   "ENG 204": {
     "text": "ENG 101 or ENG 108 or ENG 106 or ENG 180",
@@ -6664,15 +6813,21 @@
   },
   "FVP 115": {
     "text": "Take FVP-114 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "FVP 114"
+    ]
   },
   "FVP 120": {
     "text": "Take FVP-112 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "FVP 112"
+    ]
   },
   "FVP 130": {
     "text": "Take FVP-113 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "FVP 113"
+    ]
   },
   "FVP 213": {
     "text": "FVP 212",
@@ -6695,19 +6850,29 @@
   },
   "FVP 223": {
     "text": "Take One: FVP-116 or FVP-220 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "FVP 116",
+      "FVP 220"
+    ]
   },
   "FVP 227": {
     "text": "Take FVP-212 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "FVP 212"
+    ]
   },
   "FVP 240": {
     "text": "Take ENG-111 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "ENG 111"
+    ]
   },
   "FVP 250": {
     "text": "Take FVP-111 FVP-114 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "FVP 111",
+      "FVP 114"
+    ]
   },
   "FWL 252": {
     "text": "FWL 254",
@@ -7001,7 +7166,10 @@
   },
   "GRD 275": {
     "text": "Take One: GRD-151 or GRA-151 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "GRA 151",
+      "GRD 151"
+    ]
   },
   "GRD 280": {
     "text": "GRD 142 and GRD 153 or GRA 153 or GRA 154",
@@ -7158,8 +7326,11 @@
     ]
   },
   "HET 110": {
-    "text": "Take TRN-110 - Must be completed prior to taking this course.,<br>Take MRN-121 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "text": "Take TRN-110 - Must be completed prior to taking this course.,, Take MRN-121 - Must be taken either prior to or at the same time as this course.",
+    "courses": [
+      "MRN 121",
+      "TRN 110"
+    ]
   },
   "HET 114": {
     "text": "TRN 110",
@@ -7169,7 +7340,9 @@
   },
   "HET 115": {
     "text": "Take TRN-120 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "TRN 120"
+    ]
   },
   "HET 126": {
     "text": "HET 125",
@@ -7203,11 +7376,17 @@
   },
   "HFS 116": {
     "text": "Take BIO-111 or BIO-168 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "courses": [
+      "BIO 111",
+      "BIO 168"
+    ]
   },
   "HFS 118": {
     "text": "Take BIO-168 or BIO-169 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "courses": [
+      "BIO 168",
+      "BIO 169"
+    ]
   },
   "HFS 120": {
     "text": "HFS 110",
@@ -7231,7 +7410,9 @@
   },
   "HFS 218": {
     "text": "Take HFS-210 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "HFS 210"
+    ]
   },
   "HIS 111": {
     "text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025 and ENG 111",
@@ -7941,11 +8122,15 @@
   },
   "IPP 112": {
     "text": "Take ASL-212 with a grade of C or better - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "courses": [
+      "ASL 212"
+    ]
   },
   "IPP 130": {
     "text": "Take ASL-112 and pass with grade of C or better. - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "ASL 112"
+    ]
   },
   "IPP 152": {
     "text": "ASL 112",
@@ -7961,7 +8146,9 @@
   },
   "IPP 221": {
     "text": "Take IPP-161 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "IPP 161"
+    ]
   },
   "IPP 222": {
     "text": "IPP 221",
@@ -7971,11 +8158,15 @@
   },
   "IPP 224": {
     "text": "Take IPP-152 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "IPP 152"
+    ]
   },
   "IPP 240": {
     "text": "Take IPP-221 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "courses": [
+      "IPP 221"
+    ]
   },
   "IPP 245": {
     "text": "IPP 111",
@@ -7991,11 +8182,16 @@
   },
   "ISC 130": {
     "text": "Take MAT-121 or MAT-171 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "MAT 121",
+      "MAT 171"
+    ]
   },
   "ISC 210": {
     "text": "Take OMT-110 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "OMT 110"
+    ]
   },
   "ITL 245": {
     "text": "ITL 220",
@@ -8191,7 +8387,10 @@
   },
   "LEX 273": {
     "text": "Take LEX-120 and  LEX-140(S16406) - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "LEX 120",
+      "LEX 140"
+    ]
   },
   "LEX 280": {
     "text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025 and ENG 111",
@@ -8333,7 +8532,10 @@
   },
   "LSG 232": {
     "text": "Take All: LSG-123 and HOR-161 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "HOR 161",
+      "LSG 123"
+    ]
   },
   "MAC 111BB": {
     "text": "MAC 111AB",
@@ -8351,7 +8553,10 @@
   },
   "MAC 113": {
     "text": "Take MAC-112(S22988) MEC-231(S20658); - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "MAC 112",
+      "MEC 231"
+    ]
   },
   "MAC 121": {
     "text": "MAC 112",
@@ -8722,7 +8927,10 @@
   },
   "MAT 167": {
     "text": "Take One: MAT-121 or MAT-171 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "MAT 121",
+      "MAT 171"
+    ]
   },
   "MAT 171": {
     "text": "DMA 010 or DMA 020 or DMA 030 or DMA 040 or DMA 050 or DMA 060 or DMA 070 or DMA 080 or DMA 025 or DMA 040 or DMA 050 or DMA 060 or DMA 070 or DMA 080 or DMA 025 or DMA 045 or DMA 060 or DMA 070 or DMA 080 or DMA 010 or DMA 020 or DMA 030 or DMA 045 or DMA 065 or MAT 003 or BSP 4003 or MAT 035 or MAT 7035 or MAT 110 or MAT 143 or MAT 152 or MAT 121 or MAT 175 or DMA 010 or DMA 030 or DMA 040 or DMA 050 or DMA 065 or DMA 025 or DMA 045 or DMA 065 or DMA 010 or DMA 020 or DMA 030 or DMA 045 or DMA 060 or DMA 070 or DMA 080 or DMA 025 or DMA 040 or DMA 050 or DMA 065 or MAT 003 or MAT 021 or MAT 003 or MAT 043 or MAT 003 or MAT 052 or MAT 003 or MAT 071",
@@ -9102,7 +9310,9 @@
   },
   "MKT 221": {
     "text": "Take BUS-110 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "BUS 110"
+    ]
   },
   "MKT 225": {
     "text": "DMA 025 and DMA 030 and MAT 003 and MAT 025 and MKT 120",
@@ -9327,8 +9537,11 @@
     ]
   },
   "MRN 121": {
-    "text": "Take TRN-110 - Must be completed prior to taking this course.,<br>Take HET-110 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "text": "Take TRN-110 - Must be completed prior to taking this course.,, Take HET-110 - Must be taken either prior to or at the same time as this course.",
+    "courses": [
+      "HET 110",
+      "TRN 110"
+    ]
   },
   "MRN 121BB": {
     "text": "MRN 121AB",
@@ -9338,7 +9551,9 @@
   },
   "MRN 150": {
     "text": "Take TRN-120 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "TRN 120"
+    ]
   },
   "MRN 150BB": {
     "text": "TRN 120 and MRN 150AB",
@@ -9349,27 +9564,48 @@
   },
   "MSC 114": {
     "text": "Take One: MSC-110 or MSC-112 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "MSC 110",
+      "MSC 112"
+    ]
   },
   "MSC 134": {
     "text": "Take MSC-132 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "MSC 132"
+    ]
   },
   "MSC 216": {
     "text": "Take One Set: Set 1: MSC-110, MSC-114, and MSC-152 Set 2: MSC-112, MSC-114, and MSC-152 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "MSC 110",
+      "MSC 112",
+      "MSC 114",
+      "MSC 152"
+    ]
   },
   "MSC 218": {
     "text": "Take One Set: Set 1: MSC-114 and MSC-152 Set 2: MSC-216 and MSC-152 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "MSC 114",
+      "MSC 152",
+      "MSC 216"
+    ]
   },
   "MSC 254": {
     "text": "Take All: NET-125 and MSC-152 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "MSC 152",
+      "NET 125"
+    ]
   },
   "MSC 256": {
-    "text": "Take NET-125 MSC-152 - Must be completed prior to taking this course.,<br>Take MSC-254 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "text": "Take NET-125 MSC-152 - Must be completed prior to taking this course.,, Take MSC-254 - Must be taken either prior to or at the same time as this course.",
+    "courses": [
+      "MSC 152",
+      "MSC 254",
+      "NET 125"
+    ]
   },
   "MSP 120": {
     "text": "MSP 115 (min C)",
@@ -9654,7 +9890,9 @@
   },
   "MUS 215": {
     "text": "Take MUS-214 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "MUS 214"
+    ]
   },
   "MUS 217": {
     "text": "MUS 111",
@@ -9725,11 +9963,15 @@
   },
   "MUS 237": {
     "text": "Take MUS-138 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "MUS 138"
+    ]
   },
   "MUS 238": {
     "text": "Take MUS-237 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "MUS 237"
+    ]
   },
   "MUS 241": {
     "text": "MUS 142",
@@ -10150,7 +10392,11 @@
   },
   "NUC 120": {
     "text": "Take one set:   Set 1: Take ENG-111 MAT-121   Set 2: Take ENG-111 MAT-122    - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "ENG 111",
+      "MAT 121",
+      "MAT 122"
+    ]
   },
   "NUR 101": {
     "text": "NUR 101C and HSC 215",
@@ -10983,8 +11229,16 @@
     ]
   },
   "OTA 163": {
-    "text": "Take OTA-220 - Must be completed prior to taking this course.,<br>Take OTA-180, OTA-240 and OTA-250 - Must be taken either prior to or at the same time as this course.,<br>Take OTA-120 and OTA-140 - Must be completed prior to taking this course.,<br>Take OTA-130 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "text": "Take OTA-220 - Must be completed prior to taking this course.,, Take OTA-180, OTA-240 and OTA-250 - Must be taken either prior to or at the same time as this course.,, Take OTA-120 and OTA-140 - Must be completed prior to taking this course.,, Take OTA-130 - Must be taken either prior to or at the same time as this course.",
+    "courses": [
+      "OTA 120",
+      "OTA 130",
+      "OTA 140",
+      "OTA 180",
+      "OTA 220",
+      "OTA 240",
+      "OTA 250"
+    ]
   },
   "OTA 170": {
     "text": "OTA 130 and BIO 168 (min C) and BIO 169 (min C)",
@@ -11004,8 +11258,15 @@
     ]
   },
   "OTA 220": {
-    "text": "Take OTA-150 OTA-161 OTA-170 - Must be completed prior to taking this course.,<br>Take OTA-162 - Must be taken either prior to or at the same time as this course.,<br>Take OTA-120 and OTA-130 - Must be completed prior to taking this course.",
-    "courses": []
+    "text": "Take OTA-150 OTA-161 OTA-170 - Must be completed prior to taking this course.,, Take OTA-162 - Must be taken either prior to or at the same time as this course.,, Take OTA-120 and OTA-130 - Must be completed prior to taking this course.",
+    "courses": [
+      "OTA 120",
+      "OTA 130",
+      "OTA 150",
+      "OTA 161",
+      "OTA 162",
+      "OTA 170"
+    ]
   },
   "OTA 240": {
     "text": "OTA 140",
@@ -11242,11 +11503,15 @@
   },
   "PHM 115": {
     "text": "Take  PHM-115A  - Must be taken at the same time as this course.",
-    "courses": []
+    "courses": [
+      "PHM 115A"
+    ]
   },
   "PHM 115A": {
     "text": "Take PHM-115 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "courses": [
+      "PHM 115"
+    ]
   },
   "PHM 118": {
     "text": "PHM 110 and PHM 111 and PHM 110 (min C) and PHM 111 (min C) and PHM 115 (min C) and PHM 120 (min C) and PHM 132 and PHM 125",
@@ -11260,8 +11525,13 @@
     ]
   },
   "PHM 120": {
-    "text": "Take PHM-110 PHM-111; - Must be completed prior to taking this course.,<br>Take PHM-118 PHM-136 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "text": "Take PHM-110 PHM-111; - Must be completed prior to taking this course.,, Take PHM-118 PHM-136 - Must be taken either prior to or at the same time as this course.",
+    "courses": [
+      "PHM 110",
+      "PHM 111",
+      "PHM 118",
+      "PHM 136"
+    ]
   },
   "PHM 125": {
     "text": "PHM 120 (min C) and DRE 097 and ENG 002 and BSP 4002 and ENG 111 and DMA 010 and DMA 020 and DMA 030 and MAT 003 and BSP 4003",
@@ -11295,8 +11565,13 @@
     ]
   },
   "PHM 136": {
-    "text": "Take PHM-110 PHM-111; - Must be completed prior to taking this course.,<br>Take PHM-118 PHM-120 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "text": "Take PHM-110 PHM-111; - Must be completed prior to taking this course.,, Take PHM-118 PHM-120 - Must be taken either prior to or at the same time as this course.",
+    "courses": [
+      "PHM 110",
+      "PHM 111",
+      "PHM 118",
+      "PHM 120"
+    ]
   },
   "PHM 140": {
     "text": "DRE 097 and ENG 002 and BSP 4002 and ENG 111 and DMA 010 and DMA 020 and DMA 030 and MAT 003 and BSP 4003",
@@ -11314,11 +11589,19 @@
   },
   "PHM 155": {
     "text": "Take PHM-110 PHM-111 PHM-125 and PHM-118 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "PHM 110",
+      "PHM 111",
+      "PHM 118",
+      "PHM 125"
+    ]
   },
   "PHM 160": {
     "text": "Take PHM-125 PHM-118 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "PHM 118",
+      "PHM 125"
+    ]
   },
   "PHM 165": {
     "text": "PHM 118 (min C) and PHM 125 (min C) and PHM 132 (min C) and PHM 134 and PHM 140",
@@ -11543,7 +11826,9 @@
   },
   "PMT 110": {
     "text": "Take BUS-110 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "BUS 110"
+    ]
   },
   "PMT 111": {
     "text": "PMT 110",
@@ -11798,7 +12083,9 @@
   },
   "PSY 265": {
     "text": "Take PSY-150 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "PSY 150"
+    ]
   },
   "PSY 271": {
     "text": "PSY 150",
@@ -12012,7 +12299,10 @@
   },
   "RAD 111": {
     "text": "RAD-110 RAD-151 - Must be taken at the same time as this course.",
-    "courses": []
+    "courses": [
+      "RAD 110",
+      "RAD 151"
+    ]
   },
   "RAD 112": {
     "text": "RAD 110 and RAD 111 and RAD 151 and BIO 163 and MAT 143 and RAD 121 and RAD 161",
@@ -12088,7 +12378,9 @@
   },
   "RAD 281": {
     "text": "Take RAD-161; - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "RAD 161"
+    ]
   },
   "RCP 111": {
     "text": "RCP 110 and RCP 114 and RCP 115 and RCP 113 and RCP 123 and RCP 144 or RCP 132",
@@ -12831,7 +13123,9 @@
   },
   "SON 121": {
     "text": "Take SON-120 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "SON 120"
+    ]
   },
   "SON 131": {
     "text": "SON 130",
@@ -12878,7 +13172,9 @@
   },
   "SON 250": {
     "text": "Take SON-111(S23619); - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "SON 111"
+    ]
   },
   "SON 272": {
     "text": "SON 110",
@@ -12926,7 +13222,9 @@
   },
   "SPA 161": {
     "text": "Take SPA-111 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "SPA 111"
+    ]
   },
   "SPA 181": {
     "text": "ENG 002 or ENG 025 and SPA 111",
@@ -12983,8 +13281,11 @@
     ]
   },
   "SPA 282": {
-    "text": "Take SPA-281 - Must be completed prior to taking this course.,<br>Take SPA-212 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "text": "Take SPA-281 - Must be completed prior to taking this course.,, Take SPA-212 - Must be taken either prior to or at the same time as this course.",
+    "courses": [
+      "SPA 212",
+      "SPA 281"
+    ]
   },
   "SPE 217": {
     "text": "EDU 215",
@@ -13339,7 +13640,9 @@
   },
   "TDP 110": {
     "text": "Take DFT-154 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "DFT 154"
+    ]
   },
   "TDP 140": {
     "text": "TDP 110",
@@ -13367,7 +13670,9 @@
   },
   "TNE 255": {
     "text": "Take CET-130 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "CET 130"
+    ]
   },
   "TRE 282": {
     "text": "TRE 211 and TRE 288",
@@ -13535,8 +13840,11 @@
     ]
   },
   "VET 213": {
-    "text": "Take VET-133 - Must be completed prior to taking this course.,<br>Take VET-220 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "text": "Take VET-133 - Must be completed prior to taking this course.,, Take VET-220 - Must be taken either prior to or at the same time as this course.",
+    "courses": [
+      "VET 133",
+      "VET 220"
+    ]
   },
   "VET 214": {
     "text": "VET 211 and VET 215 and VET 212 and VET 217 and VET 213",
@@ -13549,12 +13857,19 @@
     ]
   },
   "VET 215": {
-    "text": "Take One Set: Set 1: CHM-130 and CHM-130A Set 2: CHM-151 - Must be completed prior to taking this course.,<br>Take VET-213 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "text": "Take One Set: Set 1: CHM-130 and CHM-130A Set 2: CHM-151 - Must be completed prior to taking this course.,, Take VET-213 - Must be taken either prior to or at the same time as this course.",
+    "courses": [
+      "CHM 130",
+      "CHM 130A",
+      "CHM 151",
+      "VET 213"
+    ]
   },
   "VET 216": {
     "text": "Take VET-215 - Must be completed prior to taking this course.",
-    "courses": []
+    "courses": [
+      "VET 215"
+    ]
   },
   "VET 217": {
     "text": "VET 125 and VET 212 and VET 214 and VET 215 and VET 120 and VET 213",
@@ -13568,8 +13883,11 @@
     ]
   },
   "VET 220": {
-    "text": "Take VET-132 - Must be completed prior to taking this course.,<br>Take VET-213 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "text": "Take VET-132 - Must be completed prior to taking this course.,, Take VET-213 - Must be taken either prior to or at the same time as this course.",
+    "courses": [
+      "VET 132",
+      "VET 213"
+    ]
   },
   "VET 237": {
     "text": "CHM 130 and CHM 130A",
@@ -13900,7 +14218,12 @@
   },
   "WBL 115F": {
     "text": "Take One: WBL-111, WBL-112, WBL-113 or WBL-114 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "courses": [
+      "WBL 111",
+      "WBL 112",
+      "WBL 113",
+      "WBL 114"
+    ]
   },
   "WBL 115H": {
     "text": "WBL 111 or WBL 112 or WBL 113 or WBL 114",
@@ -13922,7 +14245,12 @@
   },
   "WBL 115K": {
     "text": "Take One: WBL-111, WBL-112, WBL-113 or WBL-114 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "courses": [
+      "WBL 111",
+      "WBL 112",
+      "WBL 113",
+      "WBL 114"
+    ]
   },
   "WBL 115Q": {
     "text": "WBL 111 or WBL 112 or WBL 113 or WBL 114",
@@ -13966,8 +14294,22 @@
     ]
   },
   "WBL 115U": {
-    "text": "Take HSE-110 SAB-110 HSE-112 HSE-123 HSE-125 SAB-120 - Must be completed prior to taking this course.,<br>Take WBL-111U SAB-135 SAB-240 - Must be taken either prior to or at the same time as this course.,<br>Take One: WBL-111, WBL-112, WBL-113 or WBL-114 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "text": "Take HSE-110 SAB-110 HSE-112 HSE-123 HSE-125 SAB-120 - Must be completed prior to taking this course.,, Take WBL-111U SAB-135 SAB-240 - Must be taken either prior to or at the same time as this course.,, Take One: WBL-111, WBL-112, WBL-113 or WBL-114 - Must be taken either prior to or at the same time as this course.",
+    "courses": [
+      "HSE 110",
+      "HSE 112",
+      "HSE 123",
+      "HSE 125",
+      "SAB 110",
+      "SAB 120",
+      "SAB 135",
+      "SAB 240",
+      "WBL 111",
+      "WBL 111U",
+      "WBL 112",
+      "WBL 113",
+      "WBL 114"
+    ]
   },
   "WBL 115V": {
     "text": "WBL 111 or WBL 112 or WBL 113 or WBL 114",
@@ -13980,7 +14322,12 @@
   },
   "WBL 115Y": {
     "text": "Take One: WBL-111, WBL-112, WBL-113 or WBL-114 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "courses": [
+      "WBL 111",
+      "WBL 112",
+      "WBL 113",
+      "WBL 114"
+    ]
   },
   "WBL 115Z": {
     "text": "WBL 111 or WBL 112 or WBL 113 or WBL 114 and WBL 111Z",
@@ -14014,7 +14361,9 @@
   },
   "WBL 121K": {
     "text": "Take WBL-125 - Must be taken at the same time as this course.",
-    "courses": []
+    "courses": [
+      "WBL 125"
+    ]
   },
   "WBL 121U": {
     "text": "WBL 111",
@@ -14061,7 +14410,12 @@
   },
   "WBL 125U": {
     "text": "Take One: WBL-121, WBL-122, WBL-123 or WBL-124 - Must be taken either prior to or at the same time as this course.",
-    "courses": []
+    "courses": [
+      "WBL 121",
+      "WBL 122",
+      "WBL 123",
+      "WBL 124"
+    ]
   },
   "WBL 125Z": {
     "text": "WBL 121 or WBL 122 or WBL 123 or WBL 124 and WBL 121Z",

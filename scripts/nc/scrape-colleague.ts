@@ -82,6 +82,9 @@ const COLLEAGUE_COLLEGES: Record<string, string> = {
   "halifax": "https://sss.halifaxcc.edu",
   "brunswick": "https://ss2-prod-cloud.brunswickcc.edu",
   "wilson": "https://wilson-ss.colleague.elluciancloud.com",
+  // --- Discovered in NC B→A audit (carteret.edu not carteretcc.edu) ---
+  "carteret": "https://ss-prod-cloud.carteret.edu",
+  "edgecombe": "https://ss-prod-cloud.edgecombe.edu",
 };
 
 type CourseMode = "in-person" | "online" | "hybrid" | "zoom";
