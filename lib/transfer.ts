@@ -126,12 +126,14 @@ export async function loadTransferMappingsByUniversity(
       offset += PAGE_SIZE;
     }
 
-    return allData;
+    if (allData.length > 0) return allData;
   } catch {
-    // Fallback: filter from the full local JSON
-    const all = await loadTransferMappings(state);
-    return all.filter((m) => m.university === university);
+    // Supabase unavailable — fall through
   }
+
+  // Fallback: filter from the full local JSON
+  const all = await loadTransferMappings(state);
+  return all.filter((m) => m.university === university);
 }
 
 /**
