@@ -19,12 +19,22 @@ export async function GET() {
       const currentTerm = await getCurrentTerm(state.slug);
       const { codes } = await getSitemapCourseIndex(currentTerm, state.slug);
       const lastModified = getCourseLastUpdated(state.slug) ?? undefined;
-      return codes.map((c) => ({
-        url: `${url}/${state.slug}/course/${`${c.prefix}-${c.number}`.toLowerCase()}`,
-        changeFrequency: "monthly" as const,
-        priority: 0.5,
-        lastModified,
-      }));
+      // Mirror the page-level thin-content guard in
+      // app/[state]/course/[code]/page.tsx — only submit courses with real
+      // breadth (≥3 sections at ≥2 colleges, or ≥5 sections at one).
+      // Submitting courses we'd noindex anyway just wastes crawl budget;
+      // GSC audit (2026-05) showed 26K such pages stuck in "Discovered –
+      // not indexed".
+      return codes
+        .filter(
+          (c) => c.sectionCount >= 3 && (c.collegeCount >= 2 || c.sectionCount >= 5)
+        )
+        .map((c) => ({
+          url: `${url}/${state.slug}/course/${`${c.prefix}-${c.number}`.toLowerCase()}`,
+          changeFrequency: "monthly" as const,
+          priority: 0.5,
+          lastModified,
+        }));
     })
   );
 
