@@ -36,13 +36,6 @@ export default async function CollegesPage({ params }: Props) {
     a.name.localeCompare(b.name)
   );
 
-  const verifiedCount = sorted.filter(
-    (i) => i.audit_policy.allowed === true
-  ).length;
-  const unverifiedCount = sorted.filter(
-    (i) => i.audit_policy.allowed === null
-  ).length;
-
   // Pre-compute course counts (async)
   const currentTerm = await getCurrentTerm(state);
   const courseCountMap = new Map<string, number>();
@@ -101,14 +94,13 @@ export default async function CollegesPage({ params }: Props) {
         All {config.collegeCount} {config.systemName} Colleges
       </h1>
       <p className="text-gray-600 dark:text-slate-400 mb-8">
-        Browse courses, check transfers, and find audit policies across all{" "}
-        {config.collegeCount} colleges.
+        Browse courses and transfer info across all {config.collegeCount}{" "}
+        colleges.
       </p>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {sorted.map((institution) => {
           const courseCount = courseCountMap.get(institution.college_slug) || 0;
-          const allowed = institution.audit_policy.allowed;
 
           return (
             <Link
@@ -116,21 +108,10 @@ export default async function CollegesPage({ params }: Props) {
               href={`/${state}/college/${institution.id}`}
               className="group block rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-4 transition hover:shadow-md dark:hover:shadow-slate-900/50 hover:border-teal-300"
             >
-              <div className="flex items-start justify-between gap-2 mb-2">
+              <div className="mb-2">
                 <h2 className="font-semibold text-gray-900 dark:text-slate-100 group-hover:text-teal-700 text-sm leading-tight">
                   {institution.name}
                 </h2>
-                {allowed === true ? (
-                  <span className="shrink-0 inline-flex items-center gap-1 rounded-full bg-emerald-50 dark:bg-emerald-900/30 px-2 py-0.5 text-[10px] font-semibold text-emerald-700 dark:text-emerald-400 ring-1 ring-inset ring-emerald-200 dark:ring-emerald-800">
-                    <span className="h-1 w-1 rounded-full bg-emerald-500" />
-                    Verified
-                  </span>
-                ) : (
-                  <span className="shrink-0 inline-flex items-center gap-1 rounded-full bg-amber-50 dark:bg-amber-900/30 px-2 py-0.5 text-[10px] font-semibold text-amber-700 dark:text-amber-400 ring-1 ring-inset ring-amber-200 dark:ring-amber-800">
-                    <span className="h-1 w-1 rounded-full bg-amber-500" />
-                    Unverified
-                  </span>
-                )}
               </div>
 
               <p className="text-xs text-gray-500 dark:text-slate-400 mb-3">
@@ -150,7 +131,7 @@ export default async function CollegesPage({ params }: Props) {
                     <span className="text-gray-400 dark:text-slate-500">No course data</span>
                   )}
                 </span>
-                {allowed === true &&
+                {institution.audit_policy.allowed === true &&
                   institution.audit_policy.eligibility.senior_discount
                     .available && (
                     <span className="text-teal-600 font-medium">
