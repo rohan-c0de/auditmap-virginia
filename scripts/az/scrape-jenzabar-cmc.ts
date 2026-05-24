@@ -1,15 +1,22 @@
 /**
- * Northland Pioneer College — Jenzabar CMC Portal (ASP.NET WebForms) scraper
+ * AZ Jenzabar CMC Portal scraper — covers multiple AZ colleges that share
+ * the same Jenzabar CampusManager Cloud (CMC) Portal pattern, an ASP.NET
+ * WebForms course-schedule page at:
+ *   https://my.<domain>/CMCPortal/Common/CourseSchedule.aspx
  *
- * NPC's orchestrator-detected platform was "acalog" (catalog/programs only),
- * but re-probing surfaced a public course-schedule page at:
- *   https://my.npc.edu/CMCPortal/Common/CourseSchedule.aspx
+ * Same template as scripts/or/scrape-columbia-gorge.ts. Each instance
+ * needs:
+ *   - GET the form → harvest VIEWSTATE / VIEWSTATEGENERATOR / EVENTVALIDATION
+ *   - POST per term with cbCampus + cbTerm + VIEWSTATE
+ *   - Parse #CourseList tbody rows (12 cells)
  *
- * Same Jenzabar CMC Portal pattern as Columbia Gorge CC in OR — needs a GET
- * to harvest VIEWSTATE, then a POST with VIEWSTATE + search criteria. Term
- * labels differ from CGCC ("Fall Semester 2026" vs CGCC's "2026-27 Fall
- * Term"), so the label-to-standardized-term converter is NPC-specific. The
- * Campus dropdown has one option (5 = MAIN Campus, the only campus).
+ * Term-label conventions differ per college (NPC: "Fall Semester 2026",
+ * EAC: "Fall 2026"), so the label-to-standardized-term converter accepts
+ * an optional season/year regex per host.
+ *
+ * Currently wired:
+ *   - northland-pioneer-college @ my.npc.edu (re-probed from acalog verdict)
+ *   - eastern-arizona-college   @ my.eac.edu (re-probed)
  *
  * Result row HTML (12 cells, same shape as CGCC):
  *   [0]  span#lblCourseCode       — "AAS101" (no space)
@@ -25,28 +32,43 @@
  *   [10] availability — "23 of 30"
  *   [11] "Click for Details"
  *
- * Term codes are NPC-internal IDs (166=Summer, 184=Spring, 186=Fall as of
- * 2026-05). Discovered fresh from the form each run.
- *
  * Usage:
- *   npx tsx scripts/az/scrape-northland-pioneer.ts
- *   npx tsx scripts/az/scrape-northland-pioneer.ts --no-import
+ *   npx tsx scripts/az/scrape-jenzabar-cmc.ts
+ *   npx tsx scripts/az/scrape-jenzabar-cmc.ts --college northland-pioneer-college
+ *   npx tsx scripts/az/scrape-jenzabar-cmc.ts --no-import
  */
 import * as cheerio from "cheerio";
 import * as fs from "fs";
 import * as path from "path";
 
-const SLUG = "northland-pioneer-college";
 const STATE = "az";
-const BASE = "https://my.npc.edu";
-const FORM_URL = `${BASE}/CMCPortal/Common/CourseSchedule.aspx`;
-const COURSES_DIR = path.join(process.cwd(), "data", STATE, "courses", SLUG);
-const CAMPUS_NAME = "MAIN Campus";
-// The Campus dropdown has only this value as a non-placeholder option.
-const CAMPUS_ID = "5";
-
 const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36";
+
+interface CollegeConfig {
+  slug: string;
+  /** Portal host without trailing slash, e.g. "https://my.npc.edu". */
+  base: string;
+  /** Campus dropdown value (most CMC Portal deployments expose one campus). */
+  campusId: string;
+  /** Human-readable campus name written into each section row. */
+  campusName: string;
+}
+
+const COLLEGES: CollegeConfig[] = [
+  {
+    slug: "northland-pioneer-college",
+    base: "https://my.npc.edu",
+    campusId: "5",
+    campusName: "MAIN Campus",
+  },
+  {
+    slug: "eastern-arizona-college",
+    base: "https://my.eac.edu",
+    campusId: "5",
+    campusName: "Eastern Arizona College",
+  },
+];
 
 interface CourseSection {
   college_code: string;
@@ -82,21 +104,22 @@ function parseCookies(setCookieHeaders: string[]): string {
   return setCookieHeaders.map((h) => h.split(";")[0]).filter(Boolean).join("; ");
 }
 
-/** "Fall Semester 2026" → "2026FA", "Spring Semester 2026" → "2026SP",
- *  "Summer Session 2026" → "2026SU". */
-function npcLabelToTerm(label: string): string {
-  const m = label.match(/(Fall|Winter|Spring|Summer)\s+(Semester|Session|Term)\s+(\d{4})/i);
+/** Accepts "Fall Semester 2026", "Fall 2026", "Summer Session 2026",
+ *  "Summer 2026" — covers both observed label styles. */
+function labelToTerm(label: string): string {
+  const m = label.match(/(Fall|Winter|Spring|Summer)(?:\s+(?:Semester|Session|Term))?\s+(\d{4})/i);
   if (!m) return "";
   const seasonCode: Record<string, string> = {
     fall: "FA", winter: "WI", spring: "SP", summer: "SU",
   };
   const code = seasonCode[m[1].toLowerCase()];
   if (!code) return "";
-  return `${m[3]}${code}`;
+  return `${m[2]}${code}`;
 }
 
-async function loadForm(): Promise<FormState> {
-  const res = await fetch(FORM_URL, {
+async function loadForm(college: CollegeConfig): Promise<FormState> {
+  const formUrl = `${college.base}/CMCPortal/Common/CourseSchedule.aspx`;
+  const res = await fetch(formUrl, {
     headers: {
       "User-Agent": UA,
       Accept: "text/html,application/xhtml+xml,application/xml;q=0.9",
@@ -116,7 +139,7 @@ async function loadForm(): Promise<FormState> {
     const id = $(el).attr("value") || "";
     const label = $(el).text().trim();
     if (!id || id === "-1") return;
-    const term = npcLabelToTerm(label);
+    const term = labelToTerm(label);
     if (!term) return;
     terms.push({ id, label, term });
   });
@@ -125,15 +148,17 @@ async function loadForm(): Promise<FormState> {
 }
 
 async function scrapeTerm(
+  college: CollegeConfig,
   form: FormState,
   termId: string,
   termCode: string,
 ): Promise<CourseSection[]> {
+  const formUrl = `${college.base}/CMCPortal/Common/CourseSchedule.aspx`;
   const body = new URLSearchParams({
     __VIEWSTATE: form.viewState,
     __VIEWSTATEGENERATOR: form.viewStateGenerator,
     __EVENTVALIDATION: form.eventValidation,
-    "_ctl0:PlaceHolderMain:_ctl0:cbCampus": CAMPUS_ID,
+    "_ctl0:PlaceHolderMain:_ctl0:cbCampus": college.campusId,
     "_ctl0:PlaceHolderMain:_ctl0:cbTerm": termId,
     "_ctl0:PlaceHolderMain:_ctl0:cbDept": "-1",
     "_ctl0:PlaceHolderMain:_ctl0:cbLowTime": "0",
@@ -141,7 +166,7 @@ async function scrapeTerm(
     "_ctl0:PlaceHolderMain:_ctl0:btnSearch": "Search",
   });
 
-  const res = await fetch(FORM_URL, {
+  const res = await fetch(formUrl, {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
@@ -190,7 +215,7 @@ async function scrapeTerm(
           : "in-person";
 
     sections.push({
-      college_code: SLUG,
+      college_code: college.slug,
       term: termCode,
       course_prefix: codeMatch[1],
       course_number: codeMatch[2],
@@ -202,7 +227,7 @@ async function scrapeTerm(
       end_time: "",
       start_date: startDate,
       location: "",
-      campus: CAMPUS_NAME,
+      campus: college.campusName,
       mode,
       instructor: instructor && !/^TBD$/i.test(instructor) && !/^Staff$/i.test(instructor) ? instructor : null,
       seats_open: seatsOpen,
@@ -215,16 +240,17 @@ async function scrapeTerm(
   return sections;
 }
 
-async function main() {
-  console.log("🌵 Northland Pioneer College Jenzabar CMC Portal scraper");
-  fs.mkdirSync(COURSES_DIR, { recursive: true });
+async function scrapeCollege(college: CollegeConfig): Promise<number> {
+  console.log(`\n=== ${college.slug} (${college.base}) ===`);
+  const outDir = path.join(process.cwd(), "data", STATE, "courses", college.slug);
+  fs.mkdirSync(outDir, { recursive: true });
 
-  const form = await loadForm();
+  const form = await loadForm(college);
   console.log(`  Found ${form.terms.length} terms: ${form.terms.map((t) => `${t.label} (${t.id} → ${t.term})`).join(", ")}`);
 
   const now = new Date();
   const currentYear = now.getFullYear();
-  let grandTotal = 0;
+  let total = 0;
 
   for (const { id, label, term } of form.terms) {
     const year = parseInt(term.slice(0, 4), 10);
@@ -233,25 +259,53 @@ async function main() {
       continue;
     }
 
-    // Each search may invalidate VIEWSTATE — refetch the form per term.
-    const fresh = await loadForm();
-    const sections = await scrapeTerm(fresh, id, term);
+    // Each POST may invalidate VIEWSTATE — refetch per term.
+    const fresh = await loadForm(college);
+    const sections = await scrapeTerm(college, fresh, id, term);
 
     if (sections.length === 0) {
       console.log(`  ${label}: 0 sections`);
       continue;
     }
 
-    const outPath = path.join(COURSES_DIR, `${term}.json`);
+    const outPath = path.join(outDir, `${term}.json`);
     fs.writeFileSync(outPath, JSON.stringify(sections, null, 2) + "\n");
     console.log(`  ${label}: ${sections.length} sections → ${path.relative(process.cwd(), outPath)}`);
-    grandTotal += sections.length;
+    total += sections.length;
   }
 
-  console.log(`\n✅ ${SLUG}: ${grandTotal} total sections`);
+  return total;
+}
+
+async function main() {
+  const args = process.argv.slice(2);
+  const collegeIdx = args.indexOf("--college");
+  const collegeFilter = collegeIdx >= 0 ? args[collegeIdx + 1] : undefined;
+
+  console.log("🌵 AZ Jenzabar CMC Portal scraper");
+
+  const targets = collegeFilter
+    ? COLLEGES.filter((c) => c.slug === collegeFilter)
+    : COLLEGES;
+  if (targets.length === 0) {
+    const known = COLLEGES.map((c) => c.slug).join(", ");
+    console.error(`Unknown college: ${collegeFilter}. Known: ${known}`);
+    process.exit(1);
+  }
+
+  let grandTotal = 0;
+  for (const college of targets) {
+    try {
+      grandTotal += await scrapeCollege(college);
+    } catch (e) {
+      console.error(`  ${college.slug} FAILED: ${(e as Error).message}`);
+    }
+  }
+
+  console.log(`\n✅ AZ Jenzabar CMC: ${grandTotal} total sections across ${targets.length} college(s)`);
 }
 
 main().catch((err) => {
-  console.error("❌ NPC scraper failed:", err);
+  console.error("❌ AZ Jenzabar CMC scraper failed:", err);
   process.exit(1);
 });
