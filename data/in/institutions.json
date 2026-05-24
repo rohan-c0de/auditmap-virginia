@@ -1,0 +1,49 @@
+[
+  {
+    "id": "ivy-tech-community-college",
+    "name": "Ivy Tech Community College",
+    "system": "Public 2-year",
+    "college_slug": "ivy-tech-community-college",
+    "campuses": [
+      {
+        "name": "Ivy Tech Community College (Indianapolis)",
+        "lat": 39.803753,
+        "lng": -86.158213,
+        "address": "50 W. Fall Creek Parkway N. Drive, Indianapolis, IN 46208-5752"
+      }
+    ],
+    "audit_policy": {
+      "allowed": true,
+      "cost_model": "varies",
+      "cost_note": "Audit-policy details for Ivy Tech Community College have not yet been verified — confirm with the registrar before relying on this entry.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": false,
+          "age_threshold": null,
+          "cost": "",
+          "notes": "Senior-waiver policy not yet researched for this state. Verify with the college's registrar.",
+          "source_url": ""
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Apply online at ivytech.edu",
+          "Register as a non-degree / audit student",
+          "Register for courses during open enrollment"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "",
+        "contact_email": "",
+        "contact_phone": ""
+      },
+      "restrictions": [
+        "Verify all restrictions with the college before enrolling"
+      ],
+      "last_verified": "2026-05-24",
+      "source_url": "https://ivytech.edu"
+    },
+    "unitid": 150987
+  }
+]
