@@ -17,7 +17,14 @@ The full pipeline (orchestrated by `scripts/lib/add-state.ts`):
   (`scripts/lib/scrape-{banner-ssb,colleague,banner-8}.ts`)
 - Phase 3 — articulation lookup (`data/articulation-portals.json`)
 - Phase 4 — prereq aggregation (`scripts/lib/aggregate-prereqs.ts`),
-  with catalog-prereq fallback if aggregation yields 0 entries
+  with catalog-prereq fallback if aggregation yields 0 entries.
+  **Skip when `StateConfig.scrapers.prereqs` references a dedicated
+  scraper script** (e.g. an Acalog catalog scraper like
+  `scripts/me/scrape-catalog-prereqs.ts`) — running the aggregator
+  against a section corpus with no inline prereq text writes an empty
+  array and clobbers catalog-sourced prereqs (ME lost 948 entries
+  this way in one botched run). The orchestrator should inspect the
+  config shape before invoking the aggregator.
 - Phase 5 — Scorecard ingest (`scripts/scorecard-map.ts` + `scripts/ingest-scorecard.ts`).
   Maps each new college to its IPEDS unitid then fetches federal cost / aid /
   completion data into `data/{slug}/scorecard/`. Auto-skips if
@@ -115,6 +122,13 @@ The full pipeline (orchestrated by `scripts/lib/add-state.ts`):
    - If empty grid: the registry edits didn't apply correctly — abort,
      tell the user, do not commit. Almost always means a regex in
      `bootstrap-state.ts`'s `applyRegistryEdit` matched in the wrong place.
+
+   **Then run two data-quality spot checks before continuing.** Rendering
+   isn't enough — bad dates and CE-laden term files ship cleanly through
+   a grid render. For each of 3 sample colleges:
+
+   - **Dates**: `jq '[.[].start_date] | group_by(.) | map({d: .[0], n: length}) | sort_by(.n) | reverse | .[:3]' data/{slug}/courses/{college}/{term}.json` — the dominant date must fall in the term's expected month range. If you see `2001-*` or `1970-*` for a 2026 term, the template's date parser is splitting on the wrong separator (this is exactly how SMCC shipped 1053 sections dated `2001-08-01`). Fix the template before commit.
+   - **Credits**: `jq '[.[] | select(.credits == 0)] | length'` per college. If >50% of sections are 0-credit, the scraper is pulling in CE / non-credit / continuing-ed terms. Investigate the term-code filter (reject CE-coded values, not just CE-labeled ones) before commit.
 
 8. **Commit in three logical chunks.** This makes the PR reviewable;
    reviewers can scan Phase 1 (~thousands of lines of generated data),
@@ -217,6 +231,18 @@ The full pipeline (orchestrated by `scripts/lib/add-state.ts`):
     platforms (acalog, courseleaf — no course sections), or sites that
     require JavaScript-only interactions you can't reverse-engineer in
     under ~30 minutes.
+
+    **Re-probe before trusting a "PDF-only" / "auth-gated" / "unavailable"
+    comment in an existing scraper.** Findings rot — colleges deploy
+    Banner SSB 9, swap into Colleague Self-Service, or replace their
+    static PDFs with WordPress course-search widgets months after the
+    original investigation. Before treating a stale skip note as
+    authoritative, re-fetch the college's catalog/registration page and
+    check for the patterns its in-state siblings use (WordPress
+    year-term chooser, Banner SSB 9 endpoints, Colleague Self-Service
+    subdomains). This session's KVCC gap survived because a "PDF only"
+    comment in `scrape-mccs.ts` was never re-checked even after the WP
+    site started serving the same chooser as the other 6 MCCS colleges.
 
     Common gotchas:
     - Old ASP.NET sites: require `Accept-Language` header (User-Agent

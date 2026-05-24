@@ -159,6 +159,30 @@ function aggregateState(state: string): number {
     sorted[key] = prereqs[key];
   }
 
+  // Safety net: refuse to overwrite a non-empty prereqs.json with zero
+  // entries. This catches the ME-style mistake where someone runs the
+  // aggregator against a state whose prereqs come from a catalog scraper
+  // (not from section inline text) — sections have no prereq_text, so
+  // aggregation yields 0 entries and would clobber 948 catalog-sourced
+  // entries. Pass --force to override (e.g. for genuine resets).
+  const newCount = Object.keys(sorted).length;
+  if (newCount === 0 && fs.existsSync(outPath)) {
+    let existingCount = 0;
+    try {
+      const existing = JSON.parse(fs.readFileSync(outPath, "utf-8"));
+      existingCount = existing && typeof existing === "object" ? Object.keys(existing).length : 0;
+    } catch { /* unreadable — treat as empty */ }
+    if (existingCount > 0 && !process.argv.includes("--force")) {
+      console.error(
+        `  REFUSED to overwrite ${outPath}: aggregation produced 0 entries ` +
+          `but the existing file has ${existingCount}. This state likely uses ` +
+          `a catalog-based prereq scraper — check StateConfig.scrapers.prereqs. ` +
+          `Re-run with --force to overwrite anyway.`,
+      );
+      return existingCount;
+    }
+  }
+
   fs.writeFileSync(outPath, JSON.stringify(sorted, null, 2));
 
   const catalogNote =
