@@ -167,6 +167,34 @@ The full pipeline (orchestrated by `scripts/lib/add-state.ts`):
     college whose course-search page is publicly accessible (no SSO,
     no login wall), build the scraper now in the same branch.
 
+    **For `[fingerprint-cluster]` entries** (Phase 2a.5 grouped multiple
+    colleges sharing infrastructure): treat the cluster as ONE bespoke-
+    scraper target — but first **verify public guest access** via the
+    cluster's shared host. A cluster signal proves shared infrastructure;
+    it does NOT prove scrape-ability. Probes to run before authoring:
+
+      curl -sIL --max-time 10 -A "Mozilla/5.0" \
+        "https://{host}/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL"
+      # ↑ PeopleSoft Community Access — LACCD / SD CCD / NV pattern
+      curl -sIL ... "https://{host}/StudentRegistrationSsb/ssb/classSearch/classSearch"
+      # ↑ Banner SSB 9 guest
+      curl -sIL ... "https://{host}/Student/Courses"
+      # ↑ Colleague Self-Service guest
+
+    A 200 = green light, follow the LACCD/SD CCD template. A 302 to
+    `login.microsoftonline.com` / ADFS / Shibboleth / Ellucian Experience
+    SSO = the cluster is auth-gated; **drop it** (file the cluster name in
+    the PR body under "auth-gated clusters" for transparency). Don't waste
+    cycles trying to bypass SSO. See memory:
+    `feedback_verify_public_access_before_cluster_scraper`.
+
+    **Specifically watch out for `experience.elluciancloud.com`** — that's
+    Ellucian's *portal aggregator* product, not a class-search system.
+    Colleges using it have their class data either (a) behind SSO via
+    Banner under the portal, or (b) on the college's own custom public
+    schedule page (heterogeneous; not unifiable). Don't try to build a
+    single scraper for an "Experience cluster."
+
     Why: Deferring custom-HTML scrapers as TODOs creates drag — the user
     has to come back, re-investigate each site, and ship per-college
     follow-ups. One comprehensive PR is preferable.
