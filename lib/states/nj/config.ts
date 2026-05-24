@@ -86,6 +86,11 @@ const njConfig: StateConfig = {
     courses: [
       { scripts: ["scripts/nj/scrape-colleague.ts"], runner: "playwright" },
       { scripts: ["scripts/nj/scrape-banner-ssb.ts"], runner: "http" },
+      // RCSJ cluster: one bespoke scraper covers Rowan College of South
+      // Jersey's two campuses (Cumberland + Gloucester) via shared Anthology /
+      // Campus Nexus portal (sisportal-100962.campusnexus.cloud). HTTP-only
+      // (uses Node's https module, not fetch — Anthology Cloud rejects HTTP/2).
+      { scripts: ["scripts/nj/scrape-rcsj.ts"], runner: "http" },
     ],
     transfers: [{ scripts: ["scripts/nj/scrape-transfer.ts"], runner: "http" }],
     prereqs: { source: "aggregate-from-courses" },
