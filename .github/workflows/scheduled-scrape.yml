@@ -366,12 +366,17 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          # --history-out writes only NEW records to a temp delta file; the
+          # next step concatenates it onto data/state-health/history.jsonl
+          # (in main) and pushes. Writing to a delta file rather than the
+          # working-tree file lets us rebase-and-retry safely on push race.
           npx tsx scripts/lib/check-scrape-health.ts \
             --datatype "${{ needs.plan.outputs.datatype }}" \
             --run-id "${{ github.run_id }}" \
             --repo "${{ github.repository }}" \
             --data-dir data \
-            --status-out /tmp/health.json
+            --status-out /tmp/health.json \
+            --history-out /tmp/history-delta.jsonl
           echo "all_healthy=$(jq -r '.allHealthy' /tmp/health.json)" >> "$GITHUB_OUTPUT"
           # Persist markdown body via env to avoid GITHUB_OUTPUT multiline quoting issues.
           {
@@ -379,6 +384,46 @@ jobs:
             jq -r '.markdown' /tmp/health.json
             echo 'HEALTH_BODY_EOF'
           } >> "$GITHUB_OUTPUT"
+
+      - name: Append history delta to main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DT: ${{ needs.plan.outputs.datatype }}
+        run: |
+          set -e
+          if [ ! -s /tmp/history-delta.jsonl ]; then
+            echo "No delta records to persist (file missing or empty); skipping."
+            exit 0
+          fi
+          delta_count=$(wc -l < /tmp/history-delta.jsonl)
+
+          git config user.name "state-health-bot"
+          git config user.email "state-health-bot@users.noreply.github.com"
+
+          # Append-only file: pull-rebase-retry handles concurrent cron writes.
+          # In practice the four datatypes' cron schedules don't overlap by
+          # more than a few hours, but a retry loop is cheap insurance.
+          attempt=0
+          max_attempts=5
+          until [ $attempt -ge $max_attempts ]; do
+            attempt=$((attempt + 1))
+            git pull --rebase --autostash origin main || true
+            mkdir -p data/state-health
+            cat /tmp/history-delta.jsonl >> data/state-health/history.jsonl
+            git add data/state-health/history.jsonl
+            git commit -m "chore(state-health): append ${delta_count} ${DT} records from run ${{ github.run_id }}" \
+              -m "Run URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+              || { echo "Nothing to commit"; exit 0; }
+            if git push origin main; then
+              echo "Pushed history append on attempt ${attempt}."
+              exit 0
+            fi
+            echo "Push failed on attempt ${attempt} (likely concurrent push). Rolling back local commit and retrying."
+            git reset --hard HEAD~1
+            sleep $((attempt * 5))
+          done
+          echo "Failed to push history append after ${max_attempts} attempts." >&2
+          exit 1
 
       - name: Update rolling health issue
         env:
