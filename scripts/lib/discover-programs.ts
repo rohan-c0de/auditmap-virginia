@@ -70,6 +70,27 @@ function candidatesFor(domain: string, slug: string): string[] {
   ];
 }
 
+/** Check that the catalog body actually belongs to the college we're
+ *  probing for. Cross-state false positives happen when a domain
+ *  fallback like `catalog.{first-word}.edu` resolves to an unrelated
+ *  school (e.g. `arizona-western-college` → `catalog.arizona.edu` =
+ *  University of Arizona). Compare body title + first ~5KB against
+ *  the college slug's tokens. */
+function bodyMatchesCollege(body: string, collegeSlug: string): boolean {
+  const titleMatch = body.match(/<title>([^<]+)<\/title>/i);
+  const title = (titleMatch?.[1] || "").toLowerCase();
+  const head = body.slice(0, 5000).toLowerCase();
+  // Tokens from the slug, dropping the generic "community"/"college"/"of"/etc.
+  const stopwords = new Set(["community", "college", "the", "of", "and", "state", "school", "institute", "district"]);
+  const tokens = collegeSlug
+    .split("-")
+    .filter((t) => t.length >= 3 && !stopwords.has(t));
+  if (tokens.length === 0) return true; // can't verify; let it pass
+  // Require at least one distinctive token (3+ chars, non-stopword) to
+  // appear in the title or the first 5KB of body.
+  return tokens.some((t) => title.includes(t) || head.includes(t));
+}
+
 function identifyPlatform(
   url: string,
   body: string,
@@ -129,14 +150,17 @@ export async function discoverPrograms(
       const r = await probe(url);
       if (!r.ok) continue;
       const platform = identifyPlatform(r.finalUrl, r.body);
-      if (platform) {
-        found = {
-          collegeSlug: college.slug,
-          platform,
-          catalogUrl: new URL(r.finalUrl).origin,
-        };
-        break;
-      }
+      if (!platform) continue;
+      // Confirm the catalog actually belongs to this college, not a
+      // cross-state name collision (e.g. `arizona-western-college` →
+      // `catalog.arizona.edu` = University of Arizona).
+      if (!bodyMatchesCollege(r.body, college.slug)) continue;
+      found = {
+        collegeSlug: college.slug,
+        platform,
+        catalogUrl: new URL(r.finalUrl).origin,
+      };
+      break;
     }
 
     if (found) {

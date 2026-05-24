@@ -36,6 +36,17 @@ Source of truth: `.env.example` in repo root. Local dev uses `.env.local` (gitig
 - `npm run enrich:college -- <slug>` — PeopleSoft enrichment for one VA college
 - Per-state scrapers live at `scripts/{state}/…` — invoke directly with `tsx`
 
+### Long-running commands MUST be detached
+
+`Bash run_in_background: true` is capped at 10 min and its children are killed on session archive — we have lost two multi-hour runs this way (LACCD scrape, AZ auto-add-state Phase 2a). For any command expected to run >10 minutes (orchestrators, full-state scrapers, multi-college Playwright runs, programs scrapes), wrap it in the double-fork detach pattern so it reparents to init and survives:
+
+```bash
+( nohup <your-command> > /tmp/<task>.log 2>&1 < /dev/null & )
+# verify: ps -o pid,ppid -p <pid>   # PPID must be 1
+```
+
+Then persist resume metadata to `/tmp/<task>-info.txt` (PID, log path, branch, ETA). The hook at `.claude/hooks/pre-detach-guard.sh` blocks `run_in_background: true` on known long-running scripts unless they're wrapped this way — if you hit a block, don't bypass; fix the invocation. Polls/checks of the detached process (`pgrep`, `tail`, `jq` on the log) run as normal foreground Bash. See memory `feedback_detach_long_running` for the full recipe.
+
 ## Adding a new state
 
 This is the most frequent multi-step workflow. Two skills cover it:
