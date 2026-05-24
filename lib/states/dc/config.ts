@@ -79,6 +79,8 @@ const dcConfig: StateConfig = {
   documentedCeilings: {
     transfers:
       "UDC's 1,400+ CollegeTransfer.Net equivalencies target zero in-state institutions. The in-state-only rule strips every row to empty on each run.",
+    programs:
+      "UDC publishes degree requirements only in a biennial PDF catalog (docs.udc.edu/catalog/2024-2026-UDC-Catalog.pdf). Per-program pages at /cc/programs-majors/* are descriptive prose with no course codes. The SmartCatalog subdomain (udc.smartcatalogiq.com) is unprovisioned. Verified 2026-05-24.",
   },
 };
 

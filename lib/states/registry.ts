@@ -124,6 +124,9 @@ export interface StateConfig {
     scorecard?: string;
     /** Per-college course-coverage gaps that won't be closed. */
     courses?: Array<{ collegeSlug: string; reason: string }>;
+    /** Programs / degree-plan coverage gap — typically PDF-only catalogs
+     *  or descriptive prose pages with no structured curriculum. */
+    programs?: string;
   };
 }
 

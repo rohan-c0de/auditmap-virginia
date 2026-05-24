@@ -78,8 +78,11 @@ function identifyPlatform(
   if (u.includes(".smartcatalogiq.com")) return "smartcatalogiq";
   if (u.includes(".cleancatalog.net")) return "cleancatalog";
   // Body-marker checks — order matters; courseleaf and acalog have very
-  // distinctive markers, coursedog ships a static asset host.
-  if (/preview_program\.php|powered by .*acalog|"acalog"/i.test(body)) return "acalog";
+  // distinctive markers, coursedog ships a static asset host. Use the
+  // bare platform name as the marker (acalog ships CSS from
+  // acalog-clients.s3.amazonaws.com on every page, courseleaf ships
+  // leepfrog.com assets, etc.) — quoted-only matches missed CSN.
+  if (/preview_program\.php|acalog/i.test(body)) return "acalog";
   if (/courseleaf|leepfrog/i.test(body)) return "courseleaf";
   if (/static\.catalog\.prod\.coursedog\.com|coursedog/i.test(body)) return "coursedog";
   if (/smartcatalogiq/i.test(body)) return "smartcatalogiq";
@@ -176,10 +179,24 @@ export function renderProgramsWrapper(
     imports.push(`import { ${fnName} } from "../lib/scrape-${platform}-programs.js";`);
 
     for (const hit of list) {
+      // Each platform's ProgramConfig has different required fields. Emit
+      // a minimal-but-typed config; operator fills in the platform-specific
+      // bits (acalog catoid/navoids, coursedog catalogYear, etc.) per the
+      // template's interface comments before running.
+      let cfg: string;
+      if (platform === "acalog") {
+        cfg = `{ collegeSlug: "${hit.collegeSlug}", baseUrl: "${hit.catalogUrl}", catoidFallback: 0, programNavoids: [], autoDiscoverCatoid: true }`;
+      } else if (platform === "coursedog") {
+        const host = new URL(hit.catalogUrl).host;
+        cfg = `{ collegeSlug: "${hit.collegeSlug}", catalogDomain: "${host}", catalogYear: "" }`;
+      } else {
+        // courseleaf / smartcatalogiq / cleancatalog accept { collegeSlug, baseUrl } alone.
+        cfg = `{ collegeSlug: "${hit.collegeSlug}", baseUrl: "${hit.catalogUrl}" }`;
+      }
       blocks.push(
         `  // ${hit.collegeSlug} (${platform})\n` +
           `  await run("${hit.collegeSlug}", () =>\n` +
-          `    ${fnName}({ collegeSlug: "${hit.collegeSlug}", baseUrl: "${hit.catalogUrl}" }),\n` +
+          `    ${fnName}(${cfg}),\n` +
           `  );`,
       );
     }

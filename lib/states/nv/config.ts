@@ -52,7 +52,13 @@ const nvConfig: StateConfig = {
     prereqs: [
       { scripts: ["scripts/nv/scrape-catalog-prereqs.ts"], runner: "playwright" },
     ],
-    // manual-only: programs — Phase 5+.
+    programs: [
+      { scripts: ["scripts/nv/scrape-programs.ts"], runner: "playwright" },
+    ],
+  },
+  documentedCeilings: {
+    programs:
+      "GBC publishes degree requirements only as per-program PDFs (www.gbcnv.edu/catalog — no live HTML). TMCC's Courseleaf variant uses a degree-page layout the current template parser doesn't recognize (197 paths found, 0 awards extracted) — needs Courseleaf parser tuning.",
   },
 };
 
