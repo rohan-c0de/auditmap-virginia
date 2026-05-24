@@ -1,0 +1,97 @@
+name: Config URL health check
+
+# Weekly HEAD-request sweep of every URL in StateConfig across every
+# state. Catches:
+#   - 404s when a state agency rebrands or moves a page
+#   - DNS failures (example: MD selfservice.allegany.edu)
+#   - Placeholder URLs left over from auto-add-state (example.edu / .com)
+#
+# Output: a single rolling GitHub issue "Config URL health" that opens
+# on first failure, updates body on each subsequent tick, and auto-closes
+# when all URLs are healthy again. Same pattern as the scraper-health
+# rolling issues (#123, #124, #474).
+#
+# Triggers:
+#   - Monday 14:00 UTC weekly
+#   - workflow_dispatch for manual / on-demand checks
+#
+# Permissions: contents:read; issues:write
+
+on:
+  schedule:
+    - cron: "0 14 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - run: npm ci
+
+      - name: Probe every StateConfig URL
+        id: probe
+        run: |
+          npx tsx scripts/lib/check-config-urls.ts \
+            --status-out /tmp/url-check.json \
+            --timeout-ms 10000
+          echo "failures=$(jq -r '.failures' /tmp/url-check.json)" >> "$GITHUB_OUTPUT"
+          {
+            echo 'body<<URL_BODY_EOF'
+            echo '# Config URL health'
+            echo
+            jq -r '"Generated: \(.generatedAt)\n\n**\(.failures) failure(s) of \(.total) URLs checked.**"' /tmp/url-check.json
+            echo
+            jq -r 'if .failures > 0 then "## Failures\n\n| State | Field | URL | Status | Error |\n| --- | --- | --- | --- | --- |\n\(.results | map(select(.ok == false)) | map("| `\(.state)` | `\(.field)` | <\(.url)> | \(.status // "ERR") | \(.error // "—") |") | join("\n"))\n\n## Probably worth fixing\n\nPlaceholder URLs are bootstrap leftovers from auto-add-state — they need real values in `lib/states/{state}/config.ts`. DNS failures and 4xx/5xx may indicate the source site moved or rebranded.\n" else "All URLs healthy ✅" end' /tmp/url-check.json
+            echo 'URL_BODY_EOF'
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Update rolling URL-health issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BODY: ${{ steps.probe.outputs.body }}
+          FAILURES: ${{ steps.probe.outputs.failures }}
+        run: |
+          set -e
+          title="Config URL health"
+          existing=$(gh issue list \
+            --search "in:title \"${title}\"" \
+            --state all \
+            --limit 5 \
+            --json number,state,title \
+            --jq ".[] | select(.title == \"${title}\") | .number" \
+            | head -n 1)
+
+          printf '%s\n' "$BODY" > /tmp/issue-body.md
+
+          if [ -z "$existing" ]; then
+            if [ "$FAILURES" = "0" ]; then
+              echo "First run, no failures — not opening an issue."
+              exit 0
+            fi
+            gh issue create \
+              --title "${title}" \
+              --body-file /tmp/issue-body.md \
+              --label "config-health,automated"
+            exit 0
+          fi
+
+          gh issue edit "$existing" --body-file /tmp/issue-body.md
+
+          state=$(gh issue view "$existing" --json state --jq .state)
+          if [ "$FAILURES" = "0" ] && [ "$state" = "OPEN" ]; then
+            gh issue close "$existing" --comment "All config URLs healthy on the latest sweep. Closing — will reopen automatically if a future sweep finds failures."
+          elif [ "$FAILURES" != "0" ] && [ "$state" = "CLOSED" ]; then
+            gh issue reopen "$existing" --comment "Reopening — at least one config URL is failing."
+          fi
