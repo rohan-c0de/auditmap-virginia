@@ -17,6 +17,12 @@
       "ABE 010"
     ]
   },
+  "ACC 112": {
+    "text": "ACC111 with a grade of \"C\" or better, or permission of Department or Division.",
+    "courses": [
+      "ACC111"
+    ]
+  },
   "ACC 120": {
     "text": "PCS 023 and TRE 089",
     "courses": [
@@ -125,10 +131,54 @@
     ]
   },
   "ACC 212": {
-    "text": "ACC 211 (min C) or ACC 101 (min C)",
+    "text": "A grade of \"C\" or better in (ACC111 and ACC112), or ACC211, and (CIS105 or permission of Department or Division).",
     "courses": [
-      "ACC 211",
-      "ACC 101"
+      "ACC111",
+      "ACC112",
+      "ACC211",
+      "CIS105"
+    ]
+  },
+  "ACC 215": {
+    "text": "A grade of C or better in ACC112 or ACC211, or permission of Department or Division.",
+    "courses": [
+      "ACC112",
+      "ACC211"
+    ]
+  },
+  "ACC 216": {
+    "text": "A grade of \"C\" or better in (ACC230 or ACC112 or ACC211) or permission of Department or Division.",
+    "courses": [
+      "ACC230",
+      "ACC112",
+      "ACC211"
+    ]
+  },
+  "ACC 219": {
+    "text": "A grade of C or better in ACC212 or ACC240 or permission of Department or Division.",
+    "courses": [
+      "ACC212",
+      "ACC240"
+    ]
+  },
+  "ACC 220": {
+    "text": "A grade of C or better in ACC219 or permission of Department or Division.",
+    "courses": [
+      "ACC219"
+    ]
+  },
+  "ACC 221": {
+    "text": "A grade of C or better in ACC111 or ACC211 or permission of Department or Division.",
+    "courses": [
+      "ACC111",
+      "ACC211"
+    ]
+  },
+  "ACC 224": {
+    "text": "A grade of C or better in ACC121 or ACC221.",
+    "courses": [
+      "ACC121",
+      "ACC221"
     ]
   },
   "ACC 225": {
@@ -157,6 +207,47 @@
       "ACC 211",
       "ACC 101"
     ]
+  },
+  "ACC 255": {
+    "text": "ACC 108 (min C) and MAT 140 (min C) or MAT 142 (min C) or MAT 151 (min C) or MAT 160 (min C) or MAT 187 (min C) or MAT 211 (min C) or MAT 220 (min C) or MAT 230 (min C) or MAT 241 (min C) or MAT 261 (min C)",
+    "courses": [
+      "ACC 108",
+      "MAT 140",
+      "MAT 142",
+      "MAT 151",
+      "MAT 160",
+      "MAT 187",
+      "MAT 211",
+      "MAT 220",
+      "MAT 230",
+      "MAT 241",
+      "MAT 261"
+    ]
+  },
+  "ACC 256": {
+    "text": "ACC 255 (min C)",
+    "courses": [
+      "ACC 255"
+    ]
+  },
+  "ACC 260": {
+    "text": "A grade of C or better in ACC111, or ACC211 or (bookkeeping experience and permission of Instructor).",
+    "courses": [
+      "ACC111",
+      "ACC211"
+    ]
+  },
+  "ACC 270AA": {
+    "text": "Permission of Department or Division.",
+    "courses": []
+  },
+  "ACC 270AB": {
+    "text": "Permission of Department or Division.",
+    "courses": []
+  },
+  "ACC 270AC": {
+    "text": "Permission of Department or Division.",
+    "courses": []
   },
   "ACC 281": {
     "text": "ACC 105 (min C) or ACC 100 (min C) and ACC 150 (min C) and ACC 211 (min C) or ACC 101 (min C)",
@@ -215,6 +306,43 @@
     "courses": [
       "CRP 135",
       "CRP 136"
+    ]
+  },
+  "ACU 410": {
+    "text": "A grade of C or better in ACC220, or permission of Program Director.",
+    "courses": [
+      "ACC220"
+    ]
+  },
+  "ACU 490": {
+    "text": "Permission of Program Director or Department/Division Chair.",
+    "courses": []
+  },
+  "AES 111": {
+    "text": "AES 101 (min C) and AES 250 (min C)",
+    "courses": [
+      "AES 101",
+      "AES 250"
+    ]
+  },
+  "AES 209": {
+    "text": "AES 101 (min D) and AES 102 (min D)",
+    "courses": [
+      "AES 101",
+      "AES 102"
+    ]
+  },
+  "AES 211": {
+    "text": "AES 201 (min C) and AES 250 (min C)",
+    "courses": [
+      "AES 201",
+      "AES 250"
+    ]
+  },
+  "AET 217": {
+    "text": "A grade of C or better in AET110 or permission of Instructor.",
+    "courses": [
+      "AET110"
     ]
   },
   "AFA 130": {
@@ -311,6 +439,81 @@
       "RDG 100"
     ]
   },
+  "AHS 110": {
+    "text": "Reading 099 (min C) or ENG 098 (min C) or ENG 101 (min C) or ENG 101A (min C) or ENG 102 (min C)",
+    "courses": [
+      "Reading 099",
+      "ENG 098",
+      "ENG 101",
+      "ENG 101A",
+      "ENG 102"
+    ]
+  },
+  "AHS 120": {
+    "text": "ENG 095 (min C) or ENG 098 (min C) or ENG 101A (min C) or ENG 101 (min C)",
+    "courses": [
+      "ENG 095",
+      "ENG 098",
+      "ENG 101A",
+      "ENG 101"
+    ]
+  },
+  "AHS 131": {
+    "text": "ENG 098 (min C) or ENG 101 (min C) or ENG 101A (min C) or ENG 102 (min C)",
+    "courses": [
+      "ENG 098",
+      "ENG 101",
+      "ENG 101A",
+      "ENG 102"
+    ]
+  },
+  "AHS 145": {
+    "text": "AHS 146 (min C) and AHS 147 (min C) or AHS 148 (min C) and AHS 149 (min C)",
+    "courses": [
+      "AHS 146",
+      "AHS 147",
+      "AHS 148",
+      "AHS 149"
+    ]
+  },
+  "AHS 146": {
+    "text": "ENG 099 (min C) or ENG 100 (min C) or ENG 101 (min C) or ENG 101A (min C) or ENG 102 (min C) or Reading 099 (min C) or ENG 101 (min C) or ENG 102 (min C) or MAT 091 (min C) or MAT 096 (min C) or MAT 097 (min C) or MAT 121 (min C) or MAT 122 (min C) or MAT 140 (min C) or MAT 142 (min C) or MAT 151 (min C) or MAT 160 (min C) or MAT 172 (min C) or MAT 180 (min C) or MAT 181 (min C) or MAT 187 (min C) or MAT 211 (min C) or MAT 220 (min C) or MAT 230 (min C) or MAT 241 (min C) or MAT 261 (min C) or AHS 147 (min C) and AHS 145 (min C) or AHS 289 (min C)",
+    "courses": [
+      "ENG 099",
+      "ENG 100",
+      "ENG 101",
+      "ENG 101A",
+      "ENG 102",
+      "Reading 099",
+      "MAT 091",
+      "MAT 096",
+      "MAT 097",
+      "MAT 121",
+      "MAT 122",
+      "MAT 140",
+      "MAT 142",
+      "MAT 151",
+      "MAT 160",
+      "MAT 172",
+      "MAT 180",
+      "MAT 181",
+      "MAT 187",
+      "MAT 211",
+      "MAT 220",
+      "MAT 230",
+      "MAT 241",
+      "MAT 261",
+      "AHS 147",
+      "AHS 145",
+      "AHS 289"
+    ]
+  },
+  "AHS 147": {
+    "text": "AHS 146 (min C)",
+    "courses": [
+      "AHS 146"
+    ]
+  },
   "AIS 148": {
     "text": "WRT 101 (min C) or WRT 101S (min C) or WRT 101SE (min C) or WRT 107 (min C) or WRT 101HC (min C) or WRT 101P (min C) or WRT 101C (min C) or WRT 107C (min C) or AGEC Pseudo Transfer Courses EC (min C)",
     "courses": [
@@ -323,6 +526,37 @@
       "WRT 101C",
       "WRT 107C",
       "AGEC Pseudo Transfer Courses EC"
+    ]
+  },
+  "AIS 213": {
+    "text": "A grade of C or better in ENG101, or ENG107, or equivalent.",
+    "courses": [
+      "ENG101",
+      "ENG107"
+    ]
+  },
+  "AIT 105": {
+    "text": "AIT 100 (min C)",
+    "courses": [
+      "AIT 100"
+    ]
+  },
+  "AIT 115": {
+    "text": "AIT 100 (min C)",
+    "courses": [
+      "AIT 100"
+    ]
+  },
+  "AIT 120": {
+    "text": "AIT 100 (min C)",
+    "courses": [
+      "AIT 100"
+    ]
+  },
+  "AIT 125": {
+    "text": "AIT 100 (min C)",
+    "courses": [
+      "AIT 100"
     ]
   },
   "AIT 205": {
@@ -509,6 +743,16 @@
       "ENG 102H"
     ]
   },
+  "AJS 243": {
+    "text": "A grade of C or better in AJS215 or AJS216 or AJS219 or AJS275 or FOR105 or permission of Instructor.",
+    "courses": [
+      "AJS215",
+      "AJS216",
+      "AJS219",
+      "AJS275",
+      "FOR105"
+    ]
+  },
   "AJS 245": {
     "text": "ENG 101",
     "courses": [
@@ -560,6 +804,74 @@
       "AJS 101",
       "AJS 109",
       "AJS 124"
+    ]
+  },
+  "ALT 100": {
+    "text": "An appropriate District placement.",
+    "courses": []
+  },
+  "AMT 220": {
+    "text": "A grade of C or better in (AMT124, AMT126, and AMT128) or permission of Program Director.",
+    "courses": [
+      "AMT124",
+      "AMT126",
+      "AMT128"
+    ]
+  },
+  "AMT 222": {
+    "text": "A grade of C or better in (AMT124, AMT126, and AMT128) or permission of Program Director.",
+    "courses": [
+      "AMT124",
+      "AMT126",
+      "AMT128"
+    ]
+  },
+  "AMT 224": {
+    "text": "A grade of C or better in (AMT124, AMT126, and AMT128) or permission of Program Director.",
+    "courses": [
+      "AMT124",
+      "AMT126",
+      "AMT128"
+    ]
+  },
+  "AMT 226": {
+    "text": "A grade of C or better in (AMT124, AMT126, and AMT128) or permission of Program Director.",
+    "courses": [
+      "AMT124",
+      "AMT126",
+      "AMT128"
+    ]
+  },
+  "AMT 228": {
+    "text": "A grade of C or better in (AMT124, AMT126, and AMT128) or permission of Program Director.",
+    "courses": [
+      "AMT124",
+      "AMT126",
+      "AMT128"
+    ]
+  },
+  "AMT 230": {
+    "text": "A grade of C or better in (AMT124, AMT126, and AMT128) or permission of Program Director.",
+    "courses": [
+      "AMT124",
+      "AMT126",
+      "AMT128"
+    ]
+  },
+  "AMT 264": {
+    "text": "A grade of C or better in (AMT124, AMT126, and AMT128) or permission of Program Director.",
+    "courses": [
+      "AMT124",
+      "AMT126",
+      "AMT128"
+    ]
+  },
+  "AMT 272": {
+    "text": "A grade of C or better in (AMT124, AMT126, and AMT128) or permission of Program Director.",
+    "courses": [
+      "AMT124",
+      "AMT126",
+      "AMT128"
     ]
   },
   "ANS 131": {
@@ -685,6 +997,30 @@
       "ENG 102"
     ]
   },
+  "ARB 102": {
+    "text": "A grade of C or better in ARB101.",
+    "courses": [
+      "ARB101"
+    ]
+  },
+  "ARB 201": {
+    "text": "A grade of C or better in ARB102 or permission of Department or Division.",
+    "courses": [
+      "ARB102"
+    ]
+  },
+  "ARB 202": {
+    "text": "A grade of C or better in ARB201 or permission of Department or Division.",
+    "courses": [
+      "ARB201"
+    ]
+  },
+  "ARC 112": {
+    "text": "A grade of C or better in ARC/INT111.",
+    "courses": [
+      "INT111"
+    ]
+  },
   "ARC 277": {
     "text": "ANT 275 (min C) or ARC 275 (min C)",
     "courses": [
@@ -712,10 +1048,22 @@
       "RDG 122"
     ]
   },
+  "ART 111": {
+    "text": "ART 110 (min C)",
+    "courses": [
+      "ART 110"
+    ]
+  },
   "ART 113": {
     "text": "ART 111",
     "courses": [
       "ART 111"
+    ]
+  },
+  "ART 117": {
+    "text": "ART116.",
+    "courses": [
+      "ART116"
     ]
   },
   "ART 120": {
@@ -729,6 +1077,18 @@
       "ENG 101B",
       "ENG 102",
       "ENG 102H"
+    ]
+  },
+  "ART 121": {
+    "text": "ART 120 (min C)",
+    "courses": [
+      "ART 120"
+    ]
+  },
+  "ART 122": {
+    "text": "A grade of C or better in ART111.",
+    "courses": [
+      "ART111"
     ]
   },
   "ART 128": {
@@ -765,6 +1125,56 @@
       "WRT 101SE"
     ]
   },
+  "ART 132": {
+    "text": "A grade of C or better in ART131 or permission of Instructor.",
+    "courses": [
+      "ART131"
+    ]
+  },
+  "ART 152": {
+    "text": "A grade of C or better in ART151.",
+    "courses": [
+      "ART151"
+    ]
+  },
+  "ART 160": {
+    "text": "ART 110 (min C)",
+    "courses": [
+      "ART 110"
+    ]
+  },
+  "ART 162": {
+    "text": "A grade of C or better in ART161.",
+    "courses": [
+      "ART161"
+    ]
+  },
+  "ART 165": {
+    "text": "A grade of C or better in (ART111 and ART112), or permission of Instructor.",
+    "courses": [
+      "ART111",
+      "ART112"
+    ]
+  },
+  "ART 166": {
+    "text": "A grade of C or better in ART165.",
+    "courses": [
+      "ART165"
+    ]
+  },
+  "ART 167": {
+    "text": "A grade of C or better in (ART111 and ART112), or permission of Instructor.",
+    "courses": [
+      "ART111",
+      "ART112"
+    ]
+  },
+  "ART 168": {
+    "text": "A grade of C or better in ART167 or permission of Instructor.",
+    "courses": [
+      "ART167"
+    ]
+  },
   "ART 171": {
     "text": "PCS 021",
     "courses": [
@@ -781,6 +1191,25 @@
     "text": "ART 175",
     "courses": [
       "ART 175"
+    ]
+  },
+  "ART 190": {
+    "text": "ART 160 (min C)",
+    "courses": [
+      "ART 160"
+    ]
+  },
+  "ART 191": {
+    "text": "ART 160 (min C) and ART 190 (min C)",
+    "courses": [
+      "ART 160",
+      "ART 190"
+    ]
+  },
+  "ART 194": {
+    "text": "ART 110 (min C)",
+    "courses": [
+      "ART 110"
     ]
   },
   "ART 201": {
@@ -801,6 +1230,24 @@
     "text": "RDG100. Meets Special Awareness Area: CU or GI or HI.",
     "courses": [
       "RDG 100"
+    ]
+  },
+  "ART 210": {
+    "text": "ART 110 (min C)",
+    "courses": [
+      "ART 110"
+    ]
+  },
+  "ART 211": {
+    "text": "A grade of C or better in ART122 or permission of Instructor.",
+    "courses": [
+      "ART122"
+    ]
+  },
+  "ART 212": {
+    "text": "ART 210 (min C)",
+    "courses": [
+      "ART 210"
     ]
   },
   "ART 214": {
@@ -839,6 +1286,12 @@
       "ART 121"
     ]
   },
+  "ART 222": {
+    "text": "A grade of C or better in ART211 or permission of Instructor.",
+    "courses": [
+      "ART211"
+    ]
+  },
   "ART 227": {
     "text": "ART 217 (min C)",
     "courses": [
@@ -866,9 +1319,22 @@
     ]
   },
   "ART 250": {
-    "text": "ART 100 (min C)",
+    "text": "A grade of C or better in ART111 or ART112.",
     "courses": [
-      "ART 100"
+      "ART111",
+      "ART112"
+    ]
+  },
+  "ART 251": {
+    "text": "A grade of C or better in ART152.",
+    "courses": [
+      "ART152"
+    ]
+  },
+  "ART 252": {
+    "text": "A grade of C or better in ART251.",
+    "courses": [
+      "ART251"
     ]
   },
   "ART 260": {
@@ -878,15 +1344,45 @@
     ]
   },
   "ART 261": {
-    "text": "ART 260 (min C)",
+    "text": "A grade of C or better in ART162 or permission of Instructor.",
     "courses": [
-      "ART 260"
+      "ART162"
     ]
   },
   "ART 262": {
-    "text": "ART 261 (min C)",
+    "text": "A grade of C or better in ART261.",
     "courses": [
-      "ART 261"
+      "ART261"
+    ]
+  },
+  "ART 263": {
+    "text": "A grade of C or better in ART167 or permission of Instructor.",
+    "courses": [
+      "ART167"
+    ]
+  },
+  "ART 265": {
+    "text": "A grade of C or better in ART166 or permission of Instructor.",
+    "courses": [
+      "ART166"
+    ]
+  },
+  "ART 266": {
+    "text": "A grade of C or better in ART265.",
+    "courses": [
+      "ART265"
+    ]
+  },
+  "ART 267": {
+    "text": "A grade of C or better in ART168 or permission of Instructor.",
+    "courses": [
+      "ART168"
+    ]
+  },
+  "ART 268": {
+    "text": "A grade of C or better in ART267 or permission of Instructor.",
+    "courses": [
+      "ART267"
     ]
   },
   "ART 270": {
@@ -939,16 +1435,19 @@
     ]
   },
   "ART 280": {
-    "text": "ART 103 (min C) or ART 106 (min C)",
+    "text": "ART 111 (min C) or ART 190 (min C) or ART 195 (min C) or ART 210 (min C)",
     "courses": [
-      "ART 103",
-      "ART 106"
+      "ART 111",
+      "ART 190",
+      "ART 195",
+      "ART 210"
     ]
   },
   "ART 281": {
-    "text": "ART 280 (min C)",
+    "text": "ART 120 (min C) and ART 121 (min C)",
     "courses": [
-      "ART 280"
+      "ART 120",
+      "ART 121"
     ]
   },
   "ART 282": {
@@ -957,10 +1456,73 @@
       "ART 281"
     ]
   },
+  "ART 285": {
+    "text": "ART 120 (min C)",
+    "courses": [
+      "ART 120"
+    ]
+  },
   "ART 290": {
     "text": "ART 231 (min C)",
     "courses": [
       "ART 231"
+    ]
+  },
+  "ART 290AC": {
+    "text": "Permission of Instructor.",
+    "courses": []
+  },
+  "ART 290EC": {
+    "text": "A grade of C or better in ART132 or permission of Instructor.",
+    "courses": [
+      "ART132"
+    ]
+  },
+  "ART 290FF": {
+    "text": "A grade of C or better in ART252 or permission of Instructor.",
+    "courses": [
+      "ART252"
+    ]
+  },
+  "ART 290GC": {
+    "text": "A grade of C or better in ART162 or permission of Instructor.",
+    "courses": [
+      "ART162"
+    ]
+  },
+  "ART 290HC": {
+    "text": "A grade of C or better in ART166 or permission of Instructor.",
+    "courses": [
+      "ART166"
+    ]
+  },
+  "ART 290PC": {
+    "text": "A grade of C or better in ART168 or permission of Instructor.",
+    "courses": [
+      "ART168"
+    ]
+  },
+  "ART 295AC": {
+    "text": "Minimum of three (3) credits introductory and three (3) credits intermediate level courses in specific field or permission of Department or Division Chair.",
+    "courses": []
+  },
+  "ASB 298AA": {
+    "text": "Permission of Program Director or Instructor.",
+    "courses": []
+  },
+  "ASD 275": {
+    "text": "ASD220, ASD226, ASD245 and ASD250 with a grade of C or better, or permission of Instructor.",
+    "courses": [
+      "ASD220",
+      "ASD226",
+      "ASD245",
+      "ASD250"
+    ]
+  },
+  "ASD 280": {
+    "text": "A grade of C or better in ASD275, or permission of Department or Division.",
+    "courses": [
+      "ASD275"
     ]
   },
   "ASE 105": {
@@ -1017,10 +1579,30 @@
       "ASE 125"
     ]
   },
+  "ASE 240": {
+    "text": "A grade of C or better in ASE140, or ASE140AU, or permission of Instructor.",
+    "courses": [
+      "ASE140",
+      "ASE140AU"
+    ]
+  },
   "ASE 245": {
     "text": "ASE 125",
     "courses": [
       "ASE 125"
+    ]
+  },
+  "ASE 260": {
+    "text": "A grade of C or better in ASE160, or ASE160AU, or permission of Instructor.",
+    "courses": [
+      "ASE160",
+      "ASE160AU"
+    ]
+  },
+  "ASE 265": {
+    "text": "A grade of C or better in ASE260, or permission of Instructor.",
+    "courses": [
+      "ASE260"
     ]
   },
   "ASE 275": {
@@ -1028,6 +1610,25 @@
     "courses": [
       "ASE 125"
     ]
+  },
+  "ASE 280": {
+    "text": "A grade of C or better in ASE180, or ASE180AU, or permission of Instructor.",
+    "courses": [
+      "ASE180",
+      "ASE180AU"
+    ]
+  },
+  "ASE 290AA": {
+    "text": "Permission of Department or Division.",
+    "courses": []
+  },
+  "ASE 298AA": {
+    "text": "Permission of Program Director or Instructor.",
+    "courses": []
+  },
+  "ASE 298AB": {
+    "text": "Permission of Program Director or Instructor.",
+    "courses": []
   },
   "ASL 101": {
     "text": "PCS 021 and TRE 089",
@@ -1043,6 +1644,18 @@
       "Sign Language 101"
     ]
   },
+  "ASL 110": {
+    "text": "A grade of C or better in ASL101 or permission of Department or Division.",
+    "courses": [
+      "ASL101"
+    ]
+  },
+  "ASL 200": {
+    "text": "A grade of C or better in ASL102 or permission of Department or Division.",
+    "courses": [
+      "ASL102"
+    ]
+  },
   "ASL 201": {
     "text": "ASL 102 (min C) or Sign Language 102 (min C)",
     "courses": [
@@ -1055,6 +1668,24 @@
     "courses": [
       "ASL 201",
       "Sign Language 201"
+    ]
+  },
+  "ASL 203": {
+    "text": "A grade of C or better in ASL202.",
+    "courses": [
+      "ASL202"
+    ]
+  },
+  "ASL 204": {
+    "text": "A grade of C or better in ASL202.",
+    "courses": [
+      "ASL202"
+    ]
+  },
+  "ASL 212": {
+    "text": "A grade of C or better in ASL202 or permission of Department or Division.",
+    "courses": [
+      "ASL202"
     ]
   },
   "AST 101": {
@@ -1125,6 +1756,26 @@
       "MAT 241",
       "MAT 252",
       "MAT 262"
+    ]
+  },
+  "AST 106": {
+    "text": "A grade of C or better in MAT090 or MAT091 or MAT092 or completion of higher level mathematics course, or satisfactory placement.",
+    "courses": [
+      "MAT090",
+      "MAT091",
+      "MAT092"
+    ]
+  },
+  "AST 111": {
+    "text": "A grade of C or better in MAT092 or higher, or satisfactory district placement.",
+    "courses": [
+      "MAT092"
+    ]
+  },
+  "AST 112": {
+    "text": "A grade of C or better in MAT092 or higher, or satisfactory district placement.",
+    "courses": [
+      "MAT092"
     ]
   },
   "AST 180": {
@@ -1202,6 +1853,12 @@
       "AUT 102"
     ]
   },
+  "AUT 110": {
+    "text": "AUT 100 (min C)",
+    "courses": [
+      "AUT 100"
+    ]
+  },
   "AUT 112": {
     "text": "AUT 101 (min C) and AUT 102 (min C)",
     "courses": [
@@ -1214,6 +1871,12 @@
     "courses": [
       "AUT 101",
       "AUT 102"
+    ]
+  },
+  "AUT 120": {
+    "text": "AUT 100 (min C)",
+    "courses": [
+      "AUT 100"
     ]
   },
   "AUT 124": {
@@ -1242,10 +1905,16 @@
       "AUT 102"
     ]
   },
-  "AUT 142": {
-    "text": "AUT 128 (min C)",
+  "AUT 136": {
+    "text": "AUT 100 (min C)",
     "courses": [
-      "AUT 128"
+      "AUT 100"
+    ]
+  },
+  "AUT 142": {
+    "text": "AUT 100 (min C)",
+    "courses": [
+      "AUT 100"
     ]
   },
   "AUT 201": {
@@ -1281,6 +1950,104 @@
       "AUT 101",
       "AUT 102"
     ]
+  },
+  "AVC 140": {
+    "text": "A grade of C or better in ART131, or AVC142, or permission of Instructor.",
+    "courses": [
+      "ART131",
+      "AVC142"
+    ]
+  },
+  "AVC 143": {
+    "text": "A grade of C or better in AVC142 or permission of Instructor.",
+    "courses": [
+      "AVC142"
+    ]
+  },
+  "AVC 178": {
+    "text": "A grade of C or better in AVC100 or permission of Instructor.",
+    "courses": [
+      "AVC100"
+    ]
+  },
+  "AVC 181": {
+    "text": "A grade of C or better in AVC100 or permission of Instructor.",
+    "courses": [
+      "AVC100"
+    ]
+  },
+  "AVC 184": {
+    "text": "A grade of C or better in (ART111 or ART116) or permission of Instructor.",
+    "courses": [
+      "ART111",
+      "ART116"
+    ]
+  },
+  "AVC 202": {
+    "text": "A grade of C or better in AVC100 or permission of Instructor.",
+    "courses": [
+      "AVC100"
+    ]
+  },
+  "AVC 219": {
+    "text": "A grade of C or better in (AVC100 and AVC119) or permission of Instructor.",
+    "courses": [
+      "AVC100",
+      "AVC119"
+    ]
+  },
+  "AVC 220": {
+    "text": "A grade of C or better in AVC100 or permission of Instructor.",
+    "courses": [
+      "AVC100"
+    ]
+  },
+  "AVC 221": {
+    "text": "A grade of C or better in (AVC100 and AVC219) or permission of Instructor.",
+    "courses": [
+      "AVC100",
+      "AVC219"
+    ]
+  },
+  "AVC 280AC": {
+    "text": "Permission of Program Director or Instructor.",
+    "courses": []
+  },
+  "AVC 283": {
+    "text": "A grade of C or better in AVC183 or permission of Instructor.",
+    "courses": [
+      "AVC183"
+    ]
+  },
+  "AVC 284": {
+    "text": "A grade of C or better in AVC184 or permission of Instructor.",
+    "courses": [
+      "AVC184"
+    ]
+  },
+  "AVC 285": {
+    "text": "A grade of C or better in AVC185.",
+    "courses": [
+      "AVC185"
+    ]
+  },
+  "AVC 287": {
+    "text": "A grade of C or better in AVC184.",
+    "courses": [
+      "AVC184"
+    ]
+  },
+  "AVC 297AA": {
+    "text": "Permission of Department or Division.",
+    "courses": []
+  },
+  "AVC 297AB": {
+    "text": "Permission of Department or Division.",
+    "courses": []
+  },
+  "AVC 297AC": {
+    "text": "Permission of Department or Division.",
+    "courses": []
   },
   "AVM 207": {
     "text": "GTM 105V (min C) or AVM 103 (min C)",
@@ -1632,12 +2399,94 @@
       "BHS 152"
     ]
   },
-  "BIO 100": {
-    "text": "PCS 021 and TRE 089 and TRM 090",
+  "BHS 190": {
+    "text": "A grade of C or better in BHS150, or BHS155, or BHS160, or permission of Department or Division.",
     "courses": [
-      "PCS 021",
-      "TRE 089",
-      "TRM 090"
+      "BHS150",
+      "BHS155",
+      "BHS160"
+    ]
+  },
+  "BHS 300": {
+    "text": "A grade of C or better in MAT206, or PSY230, or (PSY230 and PSY231), or PSY230WL, or SWU225, or GBS221.",
+    "courses": [
+      "MAT206",
+      "PSY230",
+      "PSY231",
+      "PSY230WL",
+      "SWU225",
+      "GBS221"
+    ]
+  },
+  "BHS 310": {
+    "text": "A grade of C or better in BHS205, or permission of Instructor or Department.",
+    "courses": [
+      "BHS205"
+    ]
+  },
+  "BHS 320": {
+    "text": "A grade of C or better in PSY101.",
+    "courses": [
+      "PSY101"
+    ]
+  },
+  "BHS 340": {
+    "text": "A grade of C or better in (BHS150 and BHS185), or permission of Instructor.",
+    "courses": [
+      "BHS150",
+      "BHS185"
+    ]
+  },
+  "BHS 385": {
+    "text": "A grade of C or better in BHS185, or permission of Instructor.",
+    "courses": [
+      "BHS185"
+    ]
+  },
+  "BHS 400": {
+    "text": "A grade of C or better in BIO160, or (BIO201 and BIO202).",
+    "courses": [
+      "BIO160",
+      "BIO201",
+      "BIO202"
+    ]
+  },
+  "BHS 410": {
+    "text": "A grade of C or better in (BHS210 and BHS340), or permission of Instructor.",
+    "courses": [
+      "BHS210",
+      "BHS340"
+    ]
+  },
+  "BHS 420": {
+    "text": "A grade of C or better in BHS175, or permission of Instructor or Department.",
+    "courses": [
+      "BHS175"
+    ]
+  },
+  "BHS 430": {
+    "text": "A grade of C or better in (BHS205 and BHS320), or permission of Instructor or Department.",
+    "courses": [
+      "BHS205",
+      "BHS320"
+    ]
+  },
+  "BHS 490": {
+    "text": "A grade of C or better in BHS410 and BHS430.",
+    "courses": [
+      "BHS410",
+      "BHS430"
+    ]
+  },
+  "BIO 100": {
+    "text": "ENG 099 (min C) or ENG 098 (min C) or ENG 100 (min C) or ENG 101 (min C) or ENG 101A (min C) or ENG 102 (min C)",
+    "courses": [
+      "ENG 099",
+      "ENG 098",
+      "ENG 100",
+      "ENG 101",
+      "ENG 101A",
+      "ENG 102"
     ]
   },
   "BIO 105": {
@@ -1648,10 +2497,11 @@
     ]
   },
   "BIO 156": {
-    "text": "RDG 092 (min C) or RDG 122 (min C)",
+    "text": "A grade of C or better in RDG100, or RDG100LL, or higher, or eligibility for CRE101.",
     "courses": [
-      "RDG 092",
-      "RDG 122"
+      "RDG100",
+      "RDG100LL",
+      "CRE101"
     ]
   },
   "BIO 160": {
@@ -1663,11 +2513,22 @@
     ]
   },
   "BIO 181": {
-    "text": "PCS 021 and TRE 089 and TRM 090",
+    "text": "ENG 098 (min C) or ENG 101 (min C) or ENG 101A (min C) or ENG 102 (min C) and MAT 097 (min C) or MAT 142 (min C) or MAT 180 (min C) or MAT 151 (min C) or MAT 187 (min C) or MAT 160 (min C) or MAT 232 (min C) or MAT 211 (min C) or MAT 172 (min C) or MAT 220 (min C)",
     "courses": [
-      "PCS 021",
-      "TRE 089",
-      "TRM 090"
+      "ENG 098",
+      "ENG 101",
+      "ENG 101A",
+      "ENG 102",
+      "MAT 097",
+      "MAT 142",
+      "MAT 180",
+      "MAT 151",
+      "MAT 187",
+      "MAT 160",
+      "MAT 232",
+      "MAT 211",
+      "MAT 172",
+      "MAT 220"
     ]
   },
   "BIO 181IN": {
@@ -1696,9 +2557,19 @@
     ]
   },
   "BIO 182": {
-    "text": "BIO 181 (min C)",
+    "text": "A grade of C or better in BIO181, or BIO181CM, or BIO181XT, or permission of Department or Division.",
     "courses": [
-      "BIO 181"
+      "BIO181",
+      "BIO181CM",
+      "BIO181XT"
+    ]
+  },
+  "BIO 195AA": {
+    "text": "A grade of C or better in (BIO181 or CHM151 or PHY111) or permission of Instructor.",
+    "courses": [
+      "BIO181",
+      "CHM151",
+      "PHY111"
     ]
   },
   "BIO 200": {
@@ -1708,11 +2579,15 @@
     ]
   },
   "BIO 201": {
-    "text": "BIO156 or BIO181 or a grade of C or better on the Introductory Biology Assessment. Recommended: RDG100.",
+    "text": "A grade of C or better in (BIO156, or BIO156XT, or BIO181, or BIO181XT, or one year of high school biology) and (RDG100, or RDG100LL, or higher, or eligibility for CRE101).",
     "courses": [
-      "BIO 156",
-      "BIO 181",
-      "RDG 100"
+      "BIO156",
+      "BIO156XT",
+      "BIO181",
+      "BIO181XT",
+      "RDG100",
+      "RDG100LL",
+      "CRE101"
     ]
   },
   "BIO 201IH": {
@@ -1769,10 +2644,10 @@
     ]
   },
   "BIO 202": {
-    "text": "BIO 160 or BIO 201",
+    "text": "A grade of C or better in BIO201 or BIO201XT.",
     "courses": [
-      "BIO 160",
-      "BIO 201"
+      "BIO201",
+      "BIO201XT"
     ]
   },
   "BIO 202IN": {
@@ -1791,11 +2666,15 @@
     ]
   },
   "BIO 205": {
-    "text": "BIO 100 or BIO 160 or BIO 181",
+    "text": "A grade of C or better in (BIO156, or BIO156XT, or BIO181, or BIO181XT, or one year of high school biology) and (RDG100, or RDG100LL, or higher, or eligibility for CRE101).",
     "courses": [
-      "BIO 100",
-      "BIO 160",
-      "BIO 181"
+      "BIO156",
+      "BIO156XT",
+      "BIO181",
+      "BIO181XT",
+      "RDG100",
+      "RDG100LL",
+      "CRE101"
     ]
   },
   "BIO 205IN": {
@@ -1829,6 +2708,12 @@
       "WRT 107C",
       "AGEC Pseudo Transfer Courses EC",
       "WRT 101SE"
+    ]
+  },
+  "BPC 270": {
+    "text": "A grade of C or better in CIS105 or permission of Instructor.",
+    "courses": [
+      "CIS105"
     ]
   },
   "BUE 101": {
@@ -1964,6 +2849,14 @@
       "CIS 281"
     ]
   },
+  "BUS 204": {
+    "text": "ENG 101 (min C) or ENG 101A (min C) and ENG 102 (min C)",
+    "courses": [
+      "ENG 101",
+      "ENG 101A",
+      "ENG 102"
+    ]
+  },
   "BUS 205": {
     "text": "MAT 212 (min C) or MAT 220 (min C)",
     "courses": [
@@ -1988,6 +2881,14 @@
     "courses": [
       "PCS 021",
       "MAT 151"
+    ]
+  },
+  "BUS 214": {
+    "text": "ENG 101 (min C) or ENG 101A (min C) or ENG 102 (min C)",
+    "courses": [
+      "ENG 101",
+      "ENG 101A",
+      "ENG 102"
     ]
   },
   "BUS 218": {
@@ -2021,6 +2922,23 @@
     "text": "ACC 125",
     "courses": [
       "ACC 125"
+    ]
+  },
+  "BUS 232": {
+    "text": "MAT 140 (min C) or MAT 142 (min C) or MAT 151 (min C) or MAT 160 (min C) or PSY 230 (min C) or MAT 172 (min C) or MAT 187 (min C) or MAT 211 (min C) or MAT 220 (min C) or MAT 230 (min C) or MAT 241 (min C) or MAT 261 (min C)",
+    "courses": [
+      "MAT 140",
+      "MAT 142",
+      "MAT 151",
+      "MAT 160",
+      "PSY 230",
+      "MAT 172",
+      "MAT 187",
+      "MAT 211",
+      "MAT 220",
+      "MAT 230",
+      "MAT 241",
+      "MAT 261"
     ]
   },
   "BUS 233": {
@@ -2109,6 +3027,22 @@
       "BUS 100"
     ]
   },
+  "BUS 305": {
+    "text": "A grade of C or better in (ACC212, CIS105, GBS205, GBS221, and GBS233), or permission of Instructor.",
+    "courses": [
+      "ACC212",
+      "CIS105",
+      "GBS205",
+      "GBS221",
+      "GBS233"
+    ]
+  },
+  "BUS 310": {
+    "text": "A grade of C or better in ACC212, or permission of Program Director.",
+    "courses": [
+      "ACC212"
+    ]
+  },
   "CAD 155": {
     "text": "CAD 101 (min C)",
     "courses": [
@@ -2177,6 +3111,31 @@
       "CAD 242"
     ]
   },
+  "CAD 287": {
+    "text": "A grade of C or better in CAD167 or permission of Department or Division.",
+    "courses": [
+      "CAD167"
+    ]
+  },
+  "CAP 240": {
+    "text": "A grade of C or better in CAP120.",
+    "courses": [
+      "CAP120"
+    ]
+  },
+  "CAP 260": {
+    "text": "A grade of C or better in ENG101.",
+    "courses": [
+      "ENG101"
+    ]
+  },
+  "CCS 101": {
+    "text": "A grade of C or better in ENG101, or ENG107, or equivalent.",
+    "courses": [
+      "ENG101",
+      "ENG107"
+    ]
+  },
   "CDL 102": {
     "text": "CDL 101 (min P)",
     "courses": [
@@ -2193,6 +3152,34 @@
     "text": "CDL 101 (min P)",
     "courses": [
       "CDL 101"
+    ]
+  },
+  "CFS 259": {
+    "text": "Permission of Department or Division.",
+    "courses": []
+  },
+  "CFS 284AA": {
+    "text": "A grade of C or better in CFS/ECH176 and permission of Department or Division.",
+    "courses": [
+      "ECH176"
+    ]
+  },
+  "CHI 102": {
+    "text": "A grade of C or better in CHI101, or permission of Department or Division.",
+    "courses": [
+      "CHI101"
+    ]
+  },
+  "CHI 201": {
+    "text": "A grade of C or better in CHI102, or permission of Department or Division.",
+    "courses": [
+      "CHI102"
+    ]
+  },
+  "CHI 202": {
+    "text": "A grade of C or better in CHI201, or permission of Department or Division.",
+    "courses": [
+      "CHI201"
     ]
   },
   "CHM 080": {
@@ -2222,30 +3209,41 @@
     ]
   },
   "CHM 130": {
-    "text": "MAT 081 (min C) or MAT 081A (min C) and MAT 081B (min C) or MAT 082 (min C) or MAT 091 (min C) or MAT 122 (min C) or MAT 123 (min C) or MAT 123A (min C) or MAT 123B (min C) or MAT 132 (min C) or MAT 132L (min C) or MAT 142 (min C) or MAT 142L (min C) or MAT 151 (min C) or MAT 151L (min C) or MAT 154 (min C) or MAT 156 (min C) or MAT 182 (min C) or MAT 187 (min C) or MAT 220 (min C) and RDG 092 (min C) or RDG 122 (min C)",
+    "text": "ENG 099 (min C) or ENG 098 (min C) or ENG 100 (min C) or ENG 101 (min C) or ENG 101A (min C) or ENG 102 (min C) or MAT 096 (min C) or MAT 097 (min C) or MAT 121 (min C) or MAT 122 (min C) or MAT 140 (min C) or MAT 142 (min C) or MAT 151 (min C) or MAT 160 (min C) or BUS 232 (min C) or PSY 230 (min C) or MAT 172 (min C) or MAT 187 (min C) or MAT 211 (min C) or MAT 220 (min C) or MAT 230 (min C) or MAT 241 (min C) or MAT 261 (min C)",
     "courses": [
-      "MAT 081",
-      "MAT 081A",
-      "MAT 081B",
-      "MAT 082",
-      "MAT 091",
+      "ENG 099",
+      "ENG 098",
+      "ENG 100",
+      "ENG 101",
+      "ENG 101A",
+      "ENG 102",
+      "MAT 096",
+      "MAT 097",
+      "MAT 121",
       "MAT 122",
-      "MAT 123",
-      "MAT 123A",
-      "MAT 123B",
-      "MAT 132",
-      "MAT 132L",
+      "MAT 140",
       "MAT 142",
-      "MAT 142L",
       "MAT 151",
-      "MAT 151L",
-      "MAT 154",
-      "MAT 156",
-      "MAT 182",
+      "MAT 160",
+      "BUS 232",
+      "PSY 230",
+      "MAT 172",
       "MAT 187",
+      "MAT 211",
       "MAT 220",
-      "RDG 092",
-      "RDG 122"
+      "MAT 230",
+      "MAT 241",
+      "MAT 261"
+    ]
+  },
+  "CHM 130AA": {
+    "text": "A grade of C or better in [(CHM100, or high school algebra, or MAT140 or higher, or an EdReady-Quantitative Reasoning, Algebra and Statistics score of 70 or higher, or an EdReady-College Algebra score of 80 or higher) and (RDG100, or RDG100LL, or higher, or eligibility for CRE101 as indicated by appropriate reading placement)], or permission of the Instructor, or Department or Division Chair.",
+    "courses": [
+      "CHM100",
+      "MAT140",
+      "RDG100",
+      "RDG100LL",
+      "CRE101"
     ]
   },
   "CHM 130IN": {
@@ -2275,6 +3273,15 @@
       "MAT 262"
     ]
   },
+  "CHM 138": {
+    "text": "A grade of C or better in (CHM100 or MAT090 or MAT091 or MAT092 or higher or satisfactory math placement), or one year of high school chemistry taken within the last five years with a grade of C or better, or permission of the Instructor, or Department or Division Chair.",
+    "courses": [
+      "CHM100",
+      "MAT090",
+      "MAT091",
+      "MAT092"
+    ]
+  },
   "CHM 138IN": {
     "text": "MAT 092 (min C) or MAT 095 (min C) or MAT 097 (min C) or MAT 122 (min C) or MAT 122Z (min C) or MAT 123 (min C) or MAT 141 (min C) or MAT 142 (min C) or MAT 142RQ (min C) or MAT 151 (min C) or MAT 151RQ (min C) or MAT 172 (min C) or MAT 182 (min C) or MAT 187 (min C) or MAT 188 (min C) or MAT 189 (min C) or MAT 212 (min C) or MAT 220 (min C) or MAT 231 (min C) or MAT 241 (min C) or MAT 252 (min C) or MAT 262 (min C)",
     "courses": [
@@ -2300,6 +3307,15 @@
       "MAT 241",
       "MAT 252",
       "MAT 262"
+    ]
+  },
+  "CHM 140AA": {
+    "text": "A grade of C or better in [(CHM130 and CHM130LL), or CHM130AA, or one year of high school chemistry taken within the last five years] and (a grade of C or better in MAT151 or higher level mathematics course, or satisfactory placement), or permission of Instructor, or Department or Division Chair.",
+    "courses": [
+      "CHM130",
+      "CHM130LL",
+      "CHM130AA",
+      "MAT151"
     ]
   },
   "CHM 140IN": {
@@ -2331,6 +3347,15 @@
       "CHM 138"
     ]
   },
+  "CHM 151AA": {
+    "text": "A grade of C or better in [(CHM130 and CHM130LL), or CHM130AA, or one year of high school chemistry taken within the last five years] and (a grade of C or better in MAT151 or higher level mathematics course, or satisfactory placement), or permission of the Instructor, or Department or Division Chair.",
+    "courses": [
+      "CHM130",
+      "CHM130LL",
+      "CHM130AA",
+      "MAT151"
+    ]
+  },
   "CHM 151IN": {
     "text": "MAT 151RQ (min C) or MAT 151 (min C) or MAT 187 (min C) or MAT 188 (min C) or MAT 189 (min C) or MAT 220 (min C) or MAT 220HC (min C) and CHM 080 (min C) or CHM 130 (min C) and CHM 130LB (min C) or CHM 130IN (min C) or CHM 138IN (min C)",
     "courses": [
@@ -2349,12 +3374,23 @@
     ]
   },
   "CHM 152": {
-    "text": "CHM 151 (min C) and MAT 182 (min C) or MAT 187 (min C) or MAT 220 (min C)",
+    "text": "A grade of C or better in [(CHM150 or CHM151) and CHM151LL], or CHM150AA, or CHM151AA, or permission of the Instructor, or Department or Division Chair.",
     "courses": [
-      "CHM 151",
-      "MAT 182",
-      "MAT 187",
-      "MAT 220"
+      "CHM150",
+      "CHM151",
+      "CHM151LL",
+      "CHM150AA",
+      "CHM151AA"
+    ]
+  },
+  "CHM 152AA": {
+    "text": "A grade of C or better in [(CHM150 or CHM151) and CHM151LL], or CHM150AA, or CHM151AA, or permission of the Instructor, or Department or Division Chair.",
+    "courses": [
+      "CHM150",
+      "CHM151",
+      "CHM151LL",
+      "CHM150AA",
+      "CHM151AA"
     ]
   },
   "CHM 152IN": {
@@ -2365,10 +3401,37 @@
       "CHM 151LB"
     ]
   },
-  "CHM 235": {
-    "text": "CHM 152 (min C)",
+  "CHM 230": {
+    "text": "A grade of C or better in (CHM130 and CHM130LL) or [(CHM150 or CHM151) and CHM151LL], or permission of Instructor, or Department or Division Chair.",
     "courses": [
-      "CHM 152"
+      "CHM130",
+      "CHM130LL",
+      "CHM150",
+      "CHM151",
+      "CHM151LL"
+    ]
+  },
+  "CHM 230LL": {
+    "text": "A grade of C or better in CHM130LL or CHM151LL, or equivalent.",
+    "courses": [
+      "CHM130LL",
+      "CHM151LL"
+    ]
+  },
+  "CHM 235": {
+    "text": "A grade of C or better in (CHM152 and CHM152LL), or CHM152AA, or permission of the Instructor, or Department or Division Chair.",
+    "courses": [
+      "CHM152",
+      "CHM152LL",
+      "CHM152AA"
+    ]
+  },
+  "CHM 235AA": {
+    "text": "A grade of C or better in (CHM152 and CHM152LL), or CHM152AA, or permission of the Instructor, or Department or Division Chair.",
+    "courses": [
+      "CHM152",
+      "CHM152LL",
+      "CHM152AA"
     ]
   },
   "CHM 235IN": {
@@ -2379,10 +3442,18 @@
       "CHM 152LB"
     ]
   },
-  "CHM 236": {
-    "text": "CHM 235 (min C)",
+  "CHM 235LL": {
+    "text": "A grade of C or better in CHM235 or Corequisites: CHM235.",
     "courses": [
-      "CHM 235"
+      "CHM235"
+    ]
+  },
+  "CHM 236": {
+    "text": "A grade of C or better in (CHM235 and CHM235LL) or CHM235AA, or permission of the Instructor, or Department or Division Chair.",
+    "courses": [
+      "CHM235",
+      "CHM235LL",
+      "CHM235AA"
     ]
   },
   "CHM 236IN": {
@@ -2392,6 +3463,27 @@
       "CHM 235LB",
       "CHM 235"
     ]
+  },
+  "CHM 236LL": {
+    "text": "A grade of C or better in CHM236 or Corequisites: CHM236.",
+    "courses": [
+      "CHM236"
+    ]
+  },
+  "CHM 260": {
+    "text": "A grade of C or better in [(CHM230 and CHM230LL) or CHM230AA], or [(CHM235 and CHM235LL) or CHM235AA], or permission of the Instructor, or Department or Division Chair.",
+    "courses": [
+      "CHM230",
+      "CHM230LL",
+      "CHM230AA",
+      "CHM235",
+      "CHM235LL",
+      "CHM235AA"
+    ]
+  },
+  "CHM 298AA": {
+    "text": "Permission of Program Director or Instructor.",
+    "courses": []
   },
   "CIS 110": {
     "text": "PCS 021 and TRE 089",
@@ -2447,6 +3539,18 @@
       "MAT 212",
       "MAT 220",
       "MAT 220HC"
+    ]
+  },
+  "CIS 122AE": {
+    "text": "A grade of C or better in CIS121AE, or permission of Instructor.",
+    "courses": [
+      "CIS121AE"
+    ]
+  },
+  "CIS 124BA": {
+    "text": "A grade of C or better in CIS124AA or permission of Instructor.",
+    "courses": [
+      "CIS124AA"
     ]
   },
   "CIS 125": {
@@ -2546,6 +3650,13 @@
       "PCS 021"
     ]
   },
+  "CIS 144": {
+    "text": "A grade of C or better in AIM100 or CIS137.",
+    "courses": [
+      "AIM100",
+      "CIS137"
+    ]
+  },
   "CIS 153": {
     "text": "PCS 021",
     "courses": [
@@ -2558,10 +3669,67 @@
       "CIS 153"
     ]
   },
+  "CIS 156": {
+    "text": "A grade of C or better in CIS105 or permission of Instructor.",
+    "courses": [
+      "CIS105"
+    ]
+  },
+  "CIS 159": {
+    "text": "A grade of C or better in CIS105 or permission of Instructor.",
+    "courses": [
+      "CIS105"
+    ]
+  },
   "CIS 162": {
     "text": "CIS123.",
     "courses": [
       "CIS 123"
+    ]
+  },
+  "CIS 162AD": {
+    "text": "A grade of C or better in CIS105 or permission of Instructor.",
+    "courses": [
+      "CIS105"
+    ]
+  },
+  "CIS 163AA": {
+    "text": "A grade of C or better in CIS105 or permission of Instructor.",
+    "courses": [
+      "CIS105"
+    ]
+  },
+  "CIS 165": {
+    "text": "A grade of C or better in CIS150++, or CIS156, or CIS159, or CIS162++, or CIS163AA, or permission of Instructor.",
+    "courses": [
+      "CIS150",
+      "CIS156",
+      "CIS159",
+      "CIS162",
+      "CIS163AA"
+    ]
+  },
+  "CIS 165DA": {
+    "text": "A grade of C or better in CIS150++, or CIS156, or CIS159, or CIS162++, or CIS163AA, or permission of Instructor.",
+    "courses": [
+      "CIS150",
+      "CIS156",
+      "CIS159",
+      "CIS162",
+      "CIS163AA"
+    ]
+  },
+  "CIS 165DB": {
+    "text": "A grade of C or better in CIS159 or CIS162AD or permission of Instructor.",
+    "courses": [
+      "CIS159",
+      "CIS162AD"
+    ]
+  },
+  "CIS 166AA": {
+    "text": "A grade of C or better in CIS133DA or permission of Instructor.",
+    "courses": [
+      "CIS133DA"
     ]
   },
   "CIS 179": {
@@ -2644,6 +3812,21 @@
       "CIS 210"
     ]
   },
+  "CIS 213DE": {
+    "text": "A grade of C or better in CIS113DE or (CIS113AE and CIS113BE and CIS113CE), or permission of Instructor.",
+    "courses": [
+      "CIS113DE",
+      "CIS113AE",
+      "CIS113BE",
+      "CIS113CE"
+    ]
+  },
+  "CIS 214DE": {
+    "text": "A grade of C or better in CIS114DE, or permission of Instructor.",
+    "courses": [
+      "CIS114DE"
+    ]
+  },
   "CIS 216": {
     "text": "CIS 119 (min C)",
     "courses": [
@@ -2656,16 +3839,34 @@
       "CIS 130"
     ]
   },
+  "CIS 217AM": {
+    "text": "A grade of C or better in CIS117DM.",
+    "courses": [
+      "CIS117DM"
+    ]
+  },
   "CIS 219": {
     "text": "CIS 119 (min C)",
     "courses": [
       "CIS 119"
     ]
   },
+  "CIS 220": {
+    "text": "CIS 120 (min C)",
+    "courses": [
+      "CIS 120"
+    ]
+  },
   "CIS 220C": {
     "text": "CIS 204 (min C)",
     "courses": [
       "CIS 204"
+    ]
+  },
+  "CIS 220DF": {
+    "text": "A grade of C or better in CIS120DF or permission of Instructor.",
+    "courses": [
+      "CIS120DF"
     ]
   },
   "CIS 220J": {
@@ -2701,10 +3902,20 @@
       "CIS 137"
     ]
   },
+  "CIS 225AB": {
+    "text": "Any programming language or permission of Instructor.",
+    "courses": []
+  },
   "CIS 226": {
     "text": "CIS 225 (min C)",
     "courses": [
       "CIS 225"
+    ]
+  },
+  "CIS 227": {
+    "text": "A grade of C or better in CIS162++ or permission of Instructor.",
+    "courses": [
+      "CIS162"
     ]
   },
   "CIS 228": {
@@ -2732,6 +3943,37 @@
       "CIS 123"
     ]
   },
+  "CIS 233DA": {
+    "text": "A grade of C or better in CIS133DA or permission of Instructor.",
+    "courses": [
+      "CIS133DA"
+    ]
+  },
+  "CIS 235": {
+    "text": "A grade of C or better in CIS133DA or permission of Instructor.",
+    "courses": [
+      "CIS133DA"
+    ]
+  },
+  "CIS 237": {
+    "text": "CIS 228 (min C)",
+    "courses": [
+      "CIS 228"
+    ]
+  },
+  "CIS 238DL": {
+    "text": "A grade of C or better in CIS126DL or CIS126RH or permission of Instructor.",
+    "courses": [
+      "CIS126DL",
+      "CIS126RH"
+    ]
+  },
+  "CIS 238RH": {
+    "text": "A grade of C or better in CIS126RH, or permission of Instructor.",
+    "courses": [
+      "CIS126RH"
+    ]
+  },
   "CIS 245": {
     "text": "CIS 225 (min C) and CIS 228 (min C)",
     "courses": [
@@ -2754,10 +3996,28 @@
       "CIS 278"
     ]
   },
+  "CIS 251": {
+    "text": "CIS 120 (min C)",
+    "courses": [
+      "CIS 120"
+    ]
+  },
   "CIS 253": {
     "text": "CIS 156",
     "courses": [
       "CIS 156"
+    ]
+  },
+  "CIS 256": {
+    "text": "A grade of C or better in CIS156 or permission of Instructor.",
+    "courses": [
+      "CIS156"
+    ]
+  },
+  "CIS 256DA": {
+    "text": "A grade of C or better in CIS156 or permission of Instructor.",
+    "courses": [
+      "CIS156"
     ]
   },
   "CIS 259": {
@@ -2766,16 +4026,51 @@
       "CIS 229"
     ]
   },
+  "CIS 260TB": {
+    "text": "A grade of C or better in CIS114DE, and (CIS215 or CIS214DA), and (CIS276DA or CIS276DB), or permission of Instructor.",
+    "courses": [
+      "CIS114DE",
+      "CIS215",
+      "CIS214DA",
+      "CIS276DA",
+      "CIS276DB"
+    ]
+  },
+  "CIS 261": {
+    "text": "CIS 228 (min C)",
+    "courses": [
+      "CIS 228"
+    ]
+  },
+  "CIS 262AD": {
+    "text": "A grade of C or better in CIS162AD, or permission of Instructor.",
+    "courses": [
+      "CIS162AD"
+    ]
+  },
   "CIS 263": {
     "text": "CIS210.",
     "courses": [
       "CIS 210"
     ]
   },
-  "CIS 265": {
-    "text": "CIS 131 (min C)",
+  "CIS 263AA": {
+    "text": "A grade of C or better in CIS163AA or permission of Instructor.",
     "courses": [
-      "CIS 131"
+      "CIS163AA"
+    ]
+  },
+  "CIS 265": {
+    "text": "A grade of C or better in CIS150++ and CIS165, or permission of Instructor.",
+    "courses": [
+      "CIS150",
+      "CIS165"
+    ]
+  },
+  "CIS 265DA": {
+    "text": "A grade of C or better in CIS165DA or permission of Instructor.",
+    "courses": [
+      "CIS165DA"
     ]
   },
   "CIS 268": {
@@ -2793,9 +4088,14 @@
     ]
   },
   "CIS 270": {
-    "text": "CIS 120 (min C)",
+    "text": "A grade of C or better in BPC270 or BPC274 or CIS126++ or MST150, and CIS190 or CNT140++, or permission of Instructor.",
     "courses": [
-      "CIS 120"
+      "BPC270",
+      "BPC274",
+      "CIS126",
+      "MST150",
+      "CIS190",
+      "CNT140"
     ]
   },
   "CIS 273": {
@@ -2809,6 +4109,20 @@
     "courses": [
       "CIS 119",
       "CIS 121"
+    ]
+  },
+  "CIS 276DA": {
+    "text": "A grade of C or better in CIS105, or CIS117DM, or permission of Instructor.",
+    "courses": [
+      "CIS105",
+      "CIS117DM"
+    ]
+  },
+  "CIS 276DB": {
+    "text": "A grade of C or better in CIS105, or CIS117DM, or permission of Instructor.",
+    "courses": [
+      "CIS105",
+      "CIS117DM"
     ]
   },
   "CIS 278": {
@@ -2836,10 +4150,90 @@
       "CIS 181"
     ]
   },
+  "CIS 285": {
+    "text": "Permission of Program Director or Instructor.",
+    "courses": []
+  },
   "CIS 287": {
     "text": "CIS 185 (min C)",
     "courses": [
       "CIS 185"
+    ]
+  },
+  "CIS 288": {
+    "text": "A grade of C or better in CIS133DA and a grade of C or better in (CIS120DB or CIS120DF or CIS138DA) or permission of Instructor.",
+    "courses": [
+      "CIS133DA",
+      "CIS120DB",
+      "CIS120DF",
+      "CIS138DA"
+    ]
+  },
+  "CIS 290AA": {
+    "text": "Permission of Instructor.",
+    "courses": []
+  },
+  "CIS 290AB": {
+    "text": "Permission of Instructor.",
+    "courses": []
+  },
+  "CIS 290AC": {
+    "text": "Permission of Instructor.",
+    "courses": []
+  },
+  "CIS 298AC": {
+    "text": "Permission of Program Director or Instructor.",
+    "courses": []
+  },
+  "CIS 315": {
+    "text": "A grade of C or better in CIS156, CIS162AD, CIS215, and (CIS276DA or CIS276DB), or permission of Instructor.",
+    "courses": [
+      "CIS156",
+      "CIS162AD",
+      "CIS215",
+      "CIS276DA",
+      "CIS276DB"
+    ]
+  },
+  "CIS 316": {
+    "text": "A grade of C or better in CIS114DE, CIS215, CIS256DA, and (CIS276DA or CIS276DB), or permission of Instructor.",
+    "courses": [
+      "CIS114DE",
+      "CIS215",
+      "CIS256DA",
+      "CIS276DA",
+      "CIS276DB"
+    ]
+  },
+  "CIS 318": {
+    "text": "A grade of C or better in CIS215, CIS256, CIS256DA, CIS316 and GBS220, or permission of Instructor.",
+    "courses": [
+      "CIS215",
+      "CIS256",
+      "CIS256DA",
+      "CIS316",
+      "GBS220"
+    ]
+  },
+  "CIS 350": {
+    "text": "A grade of C or better in CIS250.",
+    "courses": [
+      "CIS250"
+    ]
+  },
+  "CIS 411": {
+    "text": "A grade of C or better in CIS111 or ITS120.",
+    "courses": [
+      "CIS111",
+      "ITS120"
+    ]
+  },
+  "CIS 475": {
+    "text": "A grade of C or better in (CIS190 or CNT140AB) and CIS270.",
+    "courses": [
+      "CIS190",
+      "CNT140AB",
+      "CIS270"
     ]
   },
   "CLA 175": {
@@ -2852,6 +4246,18 @@
     "text": "CLD 110 (min C)",
     "courses": [
       "CLD 110"
+    ]
+  },
+  "CLD 130": {
+    "text": "A grade of C or better in CLD120 or equivalent AAWS Certified Solutions Architect – Associate certification.",
+    "courses": [
+      "CLD120"
+    ]
+  },
+  "CLD 140": {
+    "text": "A grade of C or better in CLD120 or equivalent AAWS Certified Solutions Architect – Associate certification.",
+    "courses": [
+      "CLD120"
     ]
   },
   "CLD 260": {
@@ -2883,11 +4289,32 @@
       "RDG 100"
     ]
   },
+  "CNT 150AB": {
+    "text": "A grade of C or better in CNT140AB or permission of Instructor.",
+    "courses": [
+      "CNT140AB"
+    ]
+  },
+  "CNT 160AB": {
+    "text": "A grade of C or better in CNT150AB or permission of Instructor.",
+    "courses": [
+      "CNT150AB"
+    ]
+  },
   "COM 100": {
     "text": "PCS 021 and TRE 089",
     "courses": [
       "PCS 021",
       "TRE 089"
+    ]
+  },
+  "COM 101": {
+    "text": "ENG 101 (min C) or ENG 101A (min C) and ENG 102 (min C) or ENG 102H (min C)",
+    "courses": [
+      "ENG 101",
+      "ENG 101A",
+      "ENG 102",
+      "ENG 102H"
     ]
   },
   "COM 102": {
@@ -2940,10 +4367,25 @@
     ]
   },
   "COM 207": {
-    "text": "COM100, ENG102.",
+    "text": "A grade of C or better in ENG101 or ENG107 or equivalent, and COM100 or equivalent, or permission of Instructor.",
     "courses": [
-      "COM 100",
-      "ENG 102"
+      "ENG101",
+      "ENG107",
+      "COM100"
+    ]
+  },
+  "COM 225": {
+    "text": "A grade of C or better in ENG101, or ENG107, or equivalent.",
+    "courses": [
+      "ENG101",
+      "ENG107"
+    ]
+  },
+  "COM 259": {
+    "text": "A grade of C or better in ENG101, or ENG107, or equivalent.",
+    "courses": [
+      "ENG101",
+      "ENG107"
     ]
   },
   "COM 263": {
@@ -2958,6 +4400,30 @@
     "text": "Completion of 9 credits of COM courses.",
     "courses": []
   },
+  "COM 282AC": {
+    "text": "Permission of Instructor.",
+    "courses": []
+  },
+  "CON 232": {
+    "text": "A grade of C or better in CON132, or (CON132AA, CON132AB, and CON132AC), or permission of Instructor.",
+    "courses": [
+      "CON132",
+      "CON132AA",
+      "CON132AB",
+      "CON132AC"
+    ]
+  },
+  "CON 290AA": {
+    "text": "Permission of Department or Division.",
+    "courses": []
+  },
+  "CPD 160": {
+    "text": "A grade of C or better in ENG101 or ENG107, or permission of Instructor.",
+    "courses": [
+      "ENG101",
+      "ENG107"
+    ]
+  },
   "CRC 201": {
     "text": "CRC 151 (min C)",
     "courses": [
@@ -2969,6 +4435,19 @@
     "courses": [
       "CRC 250IN",
       "CRC 230"
+    ]
+  },
+  "CRE 101": {
+    "text": "A grade of C or better in [(ENG101 or ENG107) and (RDG100, or RDG100LL, or RDG111, or RDG112, or RDG113)], or a grade of B or better in ALT100, or an appropriate district placement, or permission of Instructor.",
+    "courses": [
+      "ENG101",
+      "ENG107",
+      "RDG100",
+      "RDG100LL",
+      "RDG111",
+      "RDG112",
+      "RDG113",
+      "ALT100"
     ]
   },
   "CRP 101": {
@@ -3126,6 +4605,46 @@
     "text": "Program Director approval.",
     "courses": []
   },
+  "CRW 200": {
+    "text": "A grade of C or better in CRW150 or permission of Instructor.",
+    "courses": [
+      "CRW150"
+    ]
+  },
+  "CRW 201": {
+    "text": "(Acceptance into Creative Writing Certificate Program and completion of at least nine (9) credit hours in creative writing (CRW)), or permission of Program Director.",
+    "courses": []
+  },
+  "CRW 271": {
+    "text": "A grade of C or better in CRW150 or permission of Instructor.",
+    "courses": [
+      "CRW150"
+    ]
+  },
+  "CRW 272": {
+    "text": "A grade of C or better in CRW150 or permission of Instructor.",
+    "courses": [
+      "CRW150"
+    ]
+  },
+  "CRW 273": {
+    "text": "A grade of C or better in CRW272 or permission of Instructor.",
+    "courses": [
+      "CRW272"
+    ]
+  },
+  "CRW 274": {
+    "text": "A grade of C or better in CRW273 or permission of Instructor.",
+    "courses": [
+      "CRW273"
+    ]
+  },
+  "CRW 290": {
+    "text": "A grade of C or better in CRW190 or permission of Instructor.",
+    "courses": [
+      "CRW190"
+    ]
+  },
   "CSA 110": {
     "text": "MAT 086 (min C) or MAT 092 (min C) or MAT 095 (min C) or MAT 097 (min C) or MAT 122 (min C) or MAT 122Z (min C) or MAT 123 (min C) or MAT 141 (min C) or MAT 142 (min C) or MAT 142RQ (min C) or MAT 151 (min C) or MAT 151RQ (min C) or MAT 172 (min C) or MAT 182 (min C) or MAT 187 (min C) or MAT 188 (min C) or MAT 189 (min C) or MAT 212 (min C) or MAT 220 (min C) or MAT 22OHC (min C) or MAT 231 (min C) or MAT 241 (min C) or MAT 252 (min C) or MAT 262 (min C)",
     "courses": [
@@ -3155,6 +4674,13 @@
       "MAT 262"
     ]
   },
+  "CSC 100AB": {
+    "text": "A grade of C or better in MAT114, or MAT115, or MAT12+, or an appropriate District placement for MAT15+ or higher, or permission of Instructor or Department/Division Chair.",
+    "courses": [
+      "MAT114",
+      "MAT115"
+    ]
+  },
   "CSC 110": {
     "text": "MAT 151 and CIS 120",
     "courses": [
@@ -3162,11 +4688,63 @@
       "CIS 120"
     ]
   },
+  "CSC 110AB": {
+    "text": "A grade of C or better in MAT114, or MAT115, or MAT12+, or an appropriate District placement for MAT15+ or higher, or permission of Instructor or Department/Division Chair.",
+    "courses": [
+      "MAT114",
+      "MAT115"
+    ]
+  },
+  "CSC 205": {
+    "text": "A grade of C or better in CSC110, or CSC110AB, or permission of Instructor.",
+    "courses": [
+      "CSC110",
+      "CSC110AB"
+    ]
+  },
+  "CSC 205AB": {
+    "text": "A grade of C or better in CSC110, or CSC110AB, or permission of Instructor.",
+    "courses": [
+      "CSC110",
+      "CSC110AB"
+    ]
+  },
   "CSC 210": {
     "text": "CSC 110 and MAT 151",
     "courses": [
       "CSC 110",
       "MAT 151"
+    ]
+  },
+  "CSC 220": {
+    "text": "A grade of C or better in (CSC/EEE120 and CSC205), or permission of Instructor or Division or Department Chair.",
+    "courses": [
+      "EEE120",
+      "CSC205"
+    ]
+  },
+  "CSC 230": {
+    "text": "A grade of C or better in [(CSC100 or CSC110 or CSC110AB) and CSC/EEE120], or permission of Instructor or Division or Department Chair.",
+    "courses": [
+      "CSC100",
+      "CSC110",
+      "CSC110AB",
+      "EEE120"
+    ]
+  },
+  "CSC 240": {
+    "text": "A grade of C or better in \nCSC205 or permission of Instructor.",
+    "courses": [
+      "CSC205"
+    ]
+  },
+  "CSC 310": {
+    "text": "A grade of C or better in [CSC240, and (MAT230 or MAT231), and MAT227], or permission of Program Director.",
+    "courses": [
+      "CSC240",
+      "MAT230",
+      "MAT231",
+      "MAT227"
     ]
   },
   "CTEFSC 101": {
@@ -3192,6 +4770,43 @@
   "CTEWWT 203": {
     "text": "Must have a high school diploma or GED prior to scheduling your Operator Exam.",
     "courses": []
+  },
+  "CTM 123": {
+    "text": "CTM 122 (min C)",
+    "courses": [
+      "CTM 122"
+    ]
+  },
+  "CTM 124": {
+    "text": "CTM 123 (min C)",
+    "courses": [
+      "CTM 123"
+    ]
+  },
+  "CTM 237": {
+    "text": "CTM 150 (min C)",
+    "courses": [
+      "CTM 150"
+    ]
+  },
+  "CTM 238": {
+    "text": "CTM 111 (min C) and CTM 150 (min C)",
+    "courses": [
+      "CTM 111",
+      "CTM 150"
+    ]
+  },
+  "CTT 115": {
+    "text": "A grade of C or better in CTT110.",
+    "courses": [
+      "CTT110"
+    ]
+  },
+  "CTT 201": {
+    "text": "A grade of C or better in CTT110.",
+    "courses": [
+      "CTT110"
+    ]
   },
   "CUL 101": {
     "text": "CUL 105 (min C) and CUL 140 (min C)",
@@ -3349,6 +4964,12 @@
     "courses": [
       "CUL 105",
       "CUL 140"
+    ]
+  },
+  "CUL 219": {
+    "text": "A grade of C or better in CUL113 or permission of Program Director.",
+    "courses": [
+      "CUL113"
     ]
   },
   "CUL 220": {
@@ -3574,12 +5195,184 @@
       "DAE 118L"
     ]
   },
+  "DAE 124": {
+    "text": "A grade of C or better in DAE156 or permission of Program Director.",
+    "courses": [
+      "DAE156"
+    ]
+  },
   "DAE 128": {
     "text": "DAE 100 and DAE 105",
     "courses": [
       "DAE 100",
       "DAE 105"
     ]
+  },
+  "DAE 131": {
+    "text": "A grade of C or better in DAE156 or permission of Program Director.",
+    "courses": [
+      "DAE156"
+    ]
+  },
+  "DAE 140": {
+    "text": "A grade of C or better in DAE156 or permission of Program Director.",
+    "courses": [
+      "DAE156"
+    ]
+  },
+  "DAE 156": {
+    "text": "A grade of C or better in DAE112 or permission of Program Director.",
+    "courses": [
+      "DAE112"
+    ]
+  },
+  "DAE 212": {
+    "text": "A grade of C or better in DAE156 or permission of Program Director.",
+    "courses": [
+      "DAE156"
+    ]
+  },
+  "DAE 256": {
+    "text": "A grade of C or better in DAE212 or permission of Program Director.",
+    "courses": [
+      "DAE212"
+    ]
+  },
+  "DAE 260": {
+    "text": "A grade of C or better in DAE156 or permission of Program Director.",
+    "courses": [
+      "DAE156"
+    ]
+  },
+  "DAE 261": {
+    "text": "A grade of C or better in DAE260 or permission of Program Director.",
+    "courses": [
+      "DAE260"
+    ]
+  },
+  "DAE 262": {
+    "text": "A grade of C or better in DAE261 or permission of Program Director.",
+    "courses": [
+      "DAE261"
+    ]
+  },
+  "DAE 263": {
+    "text": "A grade of C or better in DAE262 or permission of Program Director.",
+    "courses": [
+      "DAE262"
+    ]
+  },
+  "DAN 134": {
+    "text": "A grade of C or better in DAN131 or permission of Instructor.",
+    "courses": [
+      "DAN131"
+    ]
+  },
+  "DAN 134PA": {
+    "text": "A grade of C or better in DAN131PA or permission of Department or Division.",
+    "courses": [
+      "DAN131PA"
+    ]
+  },
+  "DAN 135": {
+    "text": "A grade of C or better in DAN132 or permission of Instructor.",
+    "courses": [
+      "DAN132"
+    ]
+  },
+  "DAN 135PA": {
+    "text": "A grade of C or better in DAN132PA or permission of Department or Division.",
+    "courses": [
+      "DAN132PA"
+    ]
+  },
+  "DAN 136": {
+    "text": "A grade of C or better in DAN133 or permission of Instructor.",
+    "courses": [
+      "DAN133"
+    ]
+  },
+  "DAN 136PA": {
+    "text": "A grade of C or better in DAN133PA or permission of Department or Division.",
+    "courses": [
+      "DAN133PA"
+    ]
+  },
+  "DAN 145": {
+    "text": "A grade of C or better in DAN140 or permission of Instructor.",
+    "courses": [
+      "DAN140"
+    ]
+  },
+  "DAN 231": {
+    "text": "A grade of C or better in DAN134 or permission of Instructor.",
+    "courses": [
+      "DAN134"
+    ]
+  },
+  "DAN 231PA": {
+    "text": "A grade of C or better in DAN134PA or permission of Department or Division.",
+    "courses": [
+      "DAN134PA"
+    ]
+  },
+  "DAN 232": {
+    "text": "A grade of C or better in DAN135 or permission of Instructor.",
+    "courses": [
+      "DAN135"
+    ]
+  },
+  "DAN 232PA": {
+    "text": "A grade of C or better in DAN135PA or permission of Department or Division.",
+    "courses": [
+      "DAN135PA"
+    ]
+  },
+  "DAN 233": {
+    "text": "A grade of C or better in DAN136 or permission of Instructor.",
+    "courses": [
+      "DAN136"
+    ]
+  },
+  "DAN 233PA": {
+    "text": "A grade of C or better in DAN136PA or permission of Department or Division.",
+    "courses": [
+      "DAN136PA"
+    ]
+  },
+  "DAN 234": {
+    "text": "A grade of C or better in DAN231 or permission of Instructor.",
+    "courses": [
+      "DAN231"
+    ]
+  },
+  "DAN 235": {
+    "text": "A grade of C or better in DAN232 or permission of Instructor.",
+    "courses": [
+      "DAN232"
+    ]
+  },
+  "DAN 236": {
+    "text": "A grade of C or better in DAN233 or permission of Instructor.",
+    "courses": [
+      "DAN233"
+    ]
+  },
+  "DAN 240": {
+    "text": "A grade of C or better in DAN145 or permission of Instructor.",
+    "courses": [
+      "DAN145"
+    ]
+  },
+  "DAN 245": {
+    "text": "A grade of C or better in DAN240 or permission of Instructor.",
+    "courses": [
+      "DAN240"
+    ]
+  },
+  "DAN 298AA": {
+    "text": "Permission of Program Director or Instructor.",
+    "courses": []
   },
   "DAR 115": {
     "text": "DAR 103 (min C)",
@@ -3779,6 +5572,26 @@
       "BIO 205IN"
     ]
   },
+  "DHE 115": {
+    "text": "Admission to the Dental Hygiene Program.",
+    "courses": []
+  },
+  "DHE 117": {
+    "text": "Admission to the Dental Hygiene Program or permission of Program Director.",
+    "courses": []
+  },
+  "DHE 120": {
+    "text": "Admission to the Dental Hygiene Program or permission of Instructor.",
+    "courses": []
+  },
+  "DHE 121": {
+    "text": "Admission to the Dental Hygiene Program.",
+    "courses": []
+  },
+  "DHE 127": {
+    "text": "Admission to the Dental Hygiene Program or permission of Instructor.",
+    "courses": []
+  },
   "DHE 208LC": {
     "text": "DHE 119 (min C) and DHE 120 (min C) and DHE 122 (min C) and DHE 132 (min C) and DHE 132LB (min C) and DHE 150 (min C) and DHE 150LC (min C) and DHE 150LB (min C)",
     "courses": [
@@ -3804,6 +5617,34 @@
       "DHE 150LB",
       "DHE 150LC"
     ]
+  },
+  "DHE 212": {
+    "text": "A grade of C or better in DHE132 and DHE133 and admission to the Dental Hygiene Program.",
+    "courses": [
+      "DHE132",
+      "DHE133"
+    ]
+  },
+  "DHE 213": {
+    "text": "A grade of C or better in DHE132 and DHE133 and admission to the Dental Hygiene Program.",
+    "courses": [
+      "DHE132",
+      "DHE133"
+    ]
+  },
+  "DHE 225": {
+    "text": "Admission to the Dental Hygiene Program or permission of Instructor.",
+    "courses": []
+  },
+  "DHE 227": {
+    "text": "A grade of C or better in DHE119.",
+    "courses": [
+      "DHE119"
+    ]
+  },
+  "DHE 229": {
+    "text": "Admission to the Dental Hygiene Program or permission of Instructor.",
+    "courses": []
   },
   "DHE 250": {
     "text": "DHE 119 (min C) and DHE 120 (min C) and DHE 122 (min C) and DHE 132 (min C) and DHE 132LB (min C) and DHE 150 (min C) and DHE 150LC (min C) and DHE 150LB (min C)",
@@ -3973,6 +5814,10 @@
       "DMA 266"
     ]
   },
+  "DMS 110": {
+    "text": "Admission to Diagnostic Medical Sonography program.",
+    "courses": []
+  },
   "DMS 112": {
     "text": "DMS 110 and DMS 121",
     "courses": [
@@ -4081,6 +5926,10 @@
       "DMS 154"
     ]
   },
+  "DMS 155": {
+    "text": "Admission to Diagnostic Medical Sonography program.",
+    "courses": []
+  },
   "DMS 158": {
     "text": "Admission to Diagnostic Medical Sonography program; DMS101; DMS101L.",
     "courses": [
@@ -4093,6 +5942,14 @@
     "courses": [
       "DMS 158"
     ]
+  },
+  "DMS 171": {
+    "text": "Admission to Diagnostic Medical Sonography program.",
+    "courses": []
+  },
+  "DMS 172": {
+    "text": "Admission to Diagnostic Medical Sonography program.",
+    "courses": []
   },
   "DMS 180": {
     "text": "DMS 135 and DMS 221 and DMS 150",
@@ -4108,11 +5965,22 @@
       "DMS 150"
     ]
   },
+  "DMS 220": {
+    "text": "A grade of C or better in (BIO160 or BIO201), or a graduate of a related medical program of study, or currently registered as a technologist in radiography, nuclear medicine, radiation therapy, or sonography.",
+    "courses": [
+      "BIO160",
+      "BIO201"
+    ]
+  },
   "DMS 221": {
     "text": "DMS 121",
     "courses": [
       "DMS 121"
     ]
+  },
+  "DMS 225": {
+    "text": "Admission to Diagnostic Medical Sonography program.",
+    "courses": []
   },
   "DMS 230": {
     "text": "DMS 180",
@@ -4155,6 +6023,18 @@
       "DMS 240"
     ]
   },
+  "DMS 261": {
+    "text": "Admission to Diagnostic Medical Sonography program.",
+    "courses": []
+  },
+  "DMS 262": {
+    "text": "Admission to Diagnostic Medical Sonography program.",
+    "courses": []
+  },
+  "DMS 263": {
+    "text": "Admission to Diagnostic Medical Sonography program.",
+    "courses": []
+  },
   "DMS 270": {
     "text": "DMS 240 and DMS 260",
     "courses": [
@@ -4174,6 +6054,10 @@
     "courses": [
       "DMS 275"
     ]
+  },
+  "DMS 286": {
+    "text": "Admission to Diagnostic Medical Sonography program.",
+    "courses": []
   },
   "DNC 151": {
     "text": "DNC 150 (min C)",
@@ -4272,6 +6156,29 @@
       "CRP 136"
     ]
   },
+  "ECE 102": {
+    "text": "A grade of C or better in MAT15+ or higher-level mathematics course, or an appropriate District placement above MAT15+, or permission of Instructor or Division or Department Chair.",
+    "courses": []
+  },
+  "ECE 103": {
+    "text": "A grade of C or better in ECE102 or permission of Instructor or Division or Department Chair.",
+    "courses": [
+      "ECE102"
+    ]
+  },
+  "ECE 105": {
+    "text": "A grade of C or better in [(MAT150 or MAT151 or MAT152 or MAT155 or MAT156) and MAT182] or (MAT187 or MAT188) or higher level mathematics course or permission of Instructor or Division or Department Chair.",
+    "courses": [
+      "MAT150",
+      "MAT151",
+      "MAT152",
+      "MAT155",
+      "MAT156",
+      "MAT182",
+      "MAT187",
+      "MAT188"
+    ]
+  },
   "ECE 115": {
     "text": "ECE 117 (min C)",
     "courses": [
@@ -4334,9 +6241,29 @@
     ]
   },
   "ECE 211": {
-    "text": "ECE 117 (min C)",
+    "text": "A grade of C or better in PHY121 or permission of Instructor or Division or Department Chair.",
     "courses": [
-      "ECE 117"
+      "PHY121"
+    ]
+  },
+  "ECE 212": {
+    "text": "(ECE211 and PHY121) or permission of Instructor or Division or Department Chair.",
+    "courses": [
+      "ECE211",
+      "PHY121"
+    ]
+  },
+  "ECE 215": {
+    "text": "A grade of C or better in ECE211 or ECE214 or permission of Instructor or Division or Department Chair.",
+    "courses": [
+      "ECE211",
+      "ECE214"
+    ]
+  },
+  "ECE 216AA": {
+    "text": "A grade of C or better in ECE103 or permission of Instructor or Division or Department Chair.",
+    "courses": [
+      "ECE103"
     ]
   },
   "ECE 226": {
@@ -4364,6 +6291,22 @@
       "ECE 118"
     ]
   },
+  "ECE 270": {
+    "text": "ECE 100 (min C) and ECE 110 (min C) and ECE 120 (min C) and ECE 200 (min C) and ECE 210 (min C) or ECE 230 (min C) and ECE 220 (min C) and ECE 240 (min C) and ECE 234 (min C) and ECE 250 (min C) and ECE 265 (min C)",
+    "courses": [
+      "ECE 100",
+      "ECE 110",
+      "ECE 120",
+      "ECE 200",
+      "ECE 210",
+      "ECE 230",
+      "ECE 220",
+      "ECE 240",
+      "ECE 234",
+      "ECE 250",
+      "ECE 265"
+    ]
+  },
   "ECE 292": {
     "text": "ECE 115 (min C) and ECE 125 (min C) and ECE 226 (min C) and ECE 211 (min C) and ECE 228 (min C) and ECE 251 (min C)",
     "courses": [
@@ -4374,6 +6317,10 @@
       "ECE 228",
       "ECE 251"
     ]
+  },
+  "ECH 269": {
+    "text": "Permission of Department or Division.",
+    "courses": []
   },
   "ECN 201": {
     "text": "ENG 101 (min C) or ENG 101L (min C) or ENG 101A (min C) and ENG 101B (min C) or ENG 102 (min C) or ENG 102H (min C)",
@@ -4438,9 +6385,14 @@
     ]
   },
   "EDU 200": {
-    "text": "ENG 101",
+    "text": "ENG 100 (min C) or ENG 099 (min C) or ENG 098 (min C) or ENG 101 (min C) or ENG 101A (min C) or ENG 102 (min C)",
     "courses": [
-      "ENG 101"
+      "ENG 100",
+      "ENG 099",
+      "ENG 098",
+      "ENG 101",
+      "ENG 101A",
+      "ENG 102"
     ]
   },
   "EDU 201": {
@@ -4456,6 +6408,10 @@
       "ENG 102H"
     ]
   },
+  "EDU 204": {
+    "text": "Formal acceptance to a Maricopa Community College state approved teacher preparation program or permission of Department or Division.",
+    "courses": []
+  },
   "EDU 205": {
     "text": "ENG 101",
     "courses": [
@@ -4463,10 +6419,15 @@
     ]
   },
   "EDU 222": {
-    "text": "EDU 201 (min C)",
+    "text": "ENG 101 (min C) or ENG 101A (min C)",
     "courses": [
-      "EDU 201"
+      "ENG 101",
+      "ENG 101A"
     ]
+  },
+  "EDU 223AF": {
+    "text": "Baccalaureate Degree and formal admission to a state approved post-baccalaureate teacher preparation program.",
+    "courses": []
   },
   "EDU 224": {
     "text": "EDU 201 (min C)",
@@ -4486,6 +6447,42 @@
       "EDU 201"
     ]
   },
+  "EDU 239": {
+    "text": "Baccalaureate Degree or permission of Department or Division.",
+    "courses": []
+  },
+  "EDU 240": {
+    "text": "Baccalaureate Degree or permission of Department or Division.",
+    "courses": []
+  },
+  "EDU 242": {
+    "text": "Baccalaureate Degree and formal admission to a state approved post-baccalaureate teacher preparation program or permission of Department or Division.",
+    "courses": []
+  },
+  "EDU 244": {
+    "text": "Baccalaureate Degree and formal admission to a state approved post-baccalaureate teacher preparation program or permission of Department or Division.",
+    "courses": []
+  },
+  "EDU 267": {
+    "text": "Formal acceptance to a Maricopa Community College state approved teacher preparation program or permission of Department or Division.",
+    "courses": []
+  },
+  "EDU 268": {
+    "text": "Formal acceptance to a Maricopa Community College state approved teacher preparation program or permission of Department or Division.",
+    "courses": []
+  },
+  "EDU 270": {
+    "text": "Baccalaureate Degree and formal acceptance to a Maricopa Community College state approved post-baccalaureate teacher preparation program or permission of Department or Division.",
+    "courses": []
+  },
+  "EDU 289": {
+    "text": "Baccalaureate Degree and formal admission to a state approved post-baccalaureate teacher preparation program.",
+    "courses": []
+  },
+  "EDU 297": {
+    "text": "Baccalaureate Degree and formal admission to a state approved post-baccalaureate teacher preparation program or permission of Department or Division.",
+    "courses": []
+  },
   "EDU 306": {
     "text": "EDU 205 and EDU 485",
     "courses": [
@@ -4499,6 +6496,10 @@
       "EDU 438"
     ]
   },
+  "EDU 337": {
+    "text": "Formal acceptance to a Maricopa Community College state approved teacher preparation program or permission of Department or Division.",
+    "courses": []
+  },
   "EDU 370C": {
     "text": "EDU370A.",
     "courses": [
@@ -4511,8 +6512,78 @@
       "EDU 370B"
     ]
   },
+  "EDU 372": {
+    "text": "Formal acceptance to a Maricopa Community College state approved teacher preparation program or permission of Department or Division.",
+    "courses": []
+  },
   "EDU 470B": {
     "text": "Baccalaureate Degree and formal acceptance to the Central Arizona College state approved post-baccalaureate or bachelor's degree Educator Preparation Program or permission of Department or Division, and Capstone readiness approval are required before enrolling in this course. Traditional students will enroll in this course the final 12 weeks of the program. Traditional students will be placed in a",
+    "courses": []
+  },
+  "EED 210": {
+    "text": "A grade of C or better in CFS/ECH176, or CFS235, or EED205.",
+    "courses": [
+      "ECH176",
+      "CFS235",
+      "EED205"
+    ]
+  },
+  "EED 255": {
+    "text": "A grade of C or better in completion of twelve (12) credit hours of EED Early Education coursework and permission of Program Coordinator.",
+    "courses": []
+  },
+  "EED 260": {
+    "text": "Permission of Department or Division.",
+    "courses": []
+  },
+  "EED 261": {
+    "text": "Permission of Department or Division.",
+    "courses": []
+  },
+  "EED 278": {
+    "text": "A grade of C or better in EED200.",
+    "courses": [
+      "EED200"
+    ]
+  },
+  "EED 280": {
+    "text": "A grade of C or better in CFS/ECH176, or CFS235, or EED205.",
+    "courses": [
+      "ECH176",
+      "CFS235",
+      "EED205"
+    ]
+  },
+  "EEE 203": {
+    "text": "A grade of C or better in EEE202.",
+    "courses": [
+      "EEE202"
+    ]
+  },
+  "EEE 220": {
+    "text": "A grade of C or better in (CSC/EEE120 and CSC205), or permission of Instructor or Division or Department Chair.",
+    "courses": [
+      "EEE120",
+      "CSC205"
+    ]
+  },
+  "EEE 230": {
+    "text": "A grade of C or better in [(CSC100 or CSC110 or CSC110AB) and CSC/EEE120], or permission of Instructor or Division or Department Chair.",
+    "courses": [
+      "CSC100",
+      "CSC110",
+      "CSC110AB",
+      "EEE120"
+    ]
+  },
+  "EEG 225": {
+    "text": "A grade of C or better in EEG215 and admission into the Clinical Neurodiagnostic Technology program.",
+    "courses": [
+      "EEG215"
+    ]
+  },
+  "EEP 266": {
+    "text": "Baccalaureate Degree and formal admission to a state approved post-baccalaureate early childhood teacher preparation program.",
     "courses": []
   },
   "EGR 102": {
@@ -4536,6 +6607,16 @@
       "MAT 241",
       "MAT 252",
       "MAT 262"
+    ]
+  },
+  "EGR 186": {
+    "text": "MAT 187 (min C) or MAT 220 (min C) or MAT 230 (min C) or MAT 241 (min C) or MAT 261 (min C)",
+    "courses": [
+      "MAT 187",
+      "MAT 220",
+      "MAT 230",
+      "MAT 241",
+      "MAT 261"
     ]
   },
   "EGR 195": {
@@ -4666,6 +6747,18 @@
       "ELC 110"
     ]
   },
+  "ELC 125": {
+    "text": "A grade of C or better in ELC123 or permission of Instructor or admission to Electric League of Arizona program.",
+    "courses": [
+      "ELC123"
+    ]
+  },
+  "ELC 144": {
+    "text": "A grade of C or better in ELC120 or permission of Instructor or admission to Electric League of Arizona program.",
+    "courses": [
+      "ELC120"
+    ]
+  },
   "ELC 210": {
     "text": "PCS 021 and TRM 090",
     "courses": [
@@ -4710,6 +6803,26 @@
     "courses": [
       "EMS 110",
       "ENG 101"
+    ]
+  },
+  "EMS 131": {
+    "text": "Reading 089 (min C) or Reading 099 (min C) or ENG 101 (min C) or ENG 101A (min C) or ENG 102 (min C)",
+    "courses": [
+      "Reading 089",
+      "Reading 099",
+      "ENG 101",
+      "ENG 101A",
+      "ENG 102"
+    ]
+  },
+  "EMS 131A": {
+    "text": "Reading 089 (min C) or Reading 099 (min C) or ENG 101 (min C) or ENG 101A (min C) or ENG 102 (min C)",
+    "courses": [
+      "Reading 089",
+      "Reading 099",
+      "ENG 101",
+      "ENG 101A",
+      "ENG 102"
     ]
   },
   "EMS 190": {
@@ -4768,6 +6881,18 @@
       "EMS 243"
     ]
   },
+  "EMS 262A": {
+    "text": "EMS 131 (min C)",
+    "courses": [
+      "EMS 131"
+    ]
+  },
+  "EMS 262C": {
+    "text": "EMS 262B (min C)",
+    "courses": [
+      "EMS 262B"
+    ]
+  },
   "EMS 272A": {
     "text": "Certified EMT with one year of experience or approval of the program director; FSC129 or proof of attendance in 8 hours of training that meets OSHA First responder operations level training, 29 CFR 1910.120(q)(6)(ii); current proof of American Heart Association Basic Life Support Certification, entrance assessment; ability to obtain a DPS background clearance card for clinical sites; vaccination r",
     "courses": [
@@ -4782,12 +6907,28 @@
       "EMS 272B"
     ]
   },
+  "EMT 104": {
+    "text": "(A grade of C or better in EMT101, or current validation in Basic Life Support Health Care Provider/Professional Rescuer) and (Accuplacer: 74 or higher, or Next Gen Accuplacer 249 or higher, or Asset 42 or higher, or Compass 83 or higher, or EDReady Critical Reading & Thinking 90 or higher, OR High School GPA 3.",
+    "courses": [
+      "EMT101"
+    ]
+  },
+  "EMT 104LL": {
+    "text": "A grade of C or better in EMT104 or permission of Instructor or Corequisites: EMT104.",
+    "courses": [
+      "EMT104"
+    ]
+  },
   "EMT 174": {
     "text": "RDG 092 (min C) or RDG 122 (min C)",
     "courses": [
       "RDG 092",
       "RDG 122"
     ]
+  },
+  "EMT 200": {
+    "text": "Current validation in Basic Life Support (BLS) Health Care Provider/Professional Rescuer or permission of Instructor.",
+    "courses": []
   },
   "EMT 242": {
     "text": "EMT 219 (min C)",
@@ -4821,12 +6962,31 @@
       "CPD 150"
     ]
   },
-  "ENG 101": {
-    "text": "PCS 021 or ABE 021 and TRE 089",
+  "ENG 100AE": {
+    "text": "Appropriate English placement test score, or a grade of C or better in ESL097, or permission of Instructor.",
     "courses": [
-      "PCS 021",
-      "ABE 021",
-      "TRE 089"
+      "ESL097"
+    ]
+  },
+  "ENG 101": {
+    "text": "Appropriate writing placement test score, or (a grade of C or better in ESL097 or WAC101), or (a grade of B or better in ALT100), or (a grade of C in ALT100 and Corequisites: ENG101LL, or ENG107LL, or WAC101, or ENG100A+), or (a grade of C or better in ESL202 and Corequisites: ENG101LL, or ENG107LL, or WAC101, or ENG100A+).",
+    "courses": [
+      "ESL097",
+      "WAC101",
+      "ALT100",
+      "ENG101LL",
+      "ENG107LL",
+      "ENG100A",
+      "ESL202"
+    ]
+  },
+  "ENG 101A": {
+    "text": "ENG 101 (min C) or Reading 099 (min C) or ENG 095 (min C) or ENG 098 (min C)",
+    "courses": [
+      "ENG 101",
+      "Reading 099",
+      "ENG 095",
+      "ENG 098"
     ]
   },
   "ENG 101L": {
@@ -4834,6 +6994,12 @@
     "courses": [
       "ENG 096",
       "ENG 100"
+    ]
+  },
+  "ENG 101LL": {
+    "text": "Appropriate writing placement test score, or (a grade of C or better in ESL202.",
+    "courses": [
+      "ESL202"
     ]
   },
   "ENG 102": {
@@ -4846,9 +7012,10 @@
     ]
   },
   "ENG 102H": {
-    "text": "ENG101.",
+    "text": "ENG 101 (min C) or ENG 101A (min C)",
     "courses": [
-      "ENG 101"
+      "ENG 101",
+      "ENG 101A"
     ]
   },
   "ENG 102IN": {
@@ -4866,6 +7033,37 @@
       "MAT 241",
       "MAT 252",
       "MAT 262"
+    ]
+  },
+  "ENG 107": {
+    "text": "Appropriate writing placement test score, or (a grade of C or better in ESL097 or WAC101), or (a grade of B or better in ALT100), or (a grade of C in ALT100 and Corequisites: ENG101LL, or ENG107LL, or WAC101, or ENG100A+), or (a grade of C or better in ESL202 and Corequisites: ENG101LL, or ENG107LL, or WAC101, or ENG100A+).",
+    "courses": [
+      "ESL097",
+      "WAC101",
+      "ALT100",
+      "ENG101LL",
+      "ENG107LL",
+      "ENG100A",
+      "ESL202"
+    ]
+  },
+  "ENG 107LL": {
+    "text": "Appropriate writing placement test score, or (a grade of C or better in ESL202.",
+    "courses": [
+      "ESL202"
+    ]
+  },
+  "ENG 108": {
+    "text": "A grade of C or better in ENG107.",
+    "courses": [
+      "ENG107"
+    ]
+  },
+  "ENG 111": {
+    "text": "A grade of C or better in ENG101 or ENG107 or permission of Instructor.",
+    "courses": [
+      "ENG101",
+      "ENG107"
     ]
   },
   "ENG 119": {
@@ -4910,6 +7108,15 @@
       "TRE 089"
     ]
   },
+  "ENG 139": {
+    "text": "ENG 101 (min C) or ENG 101A (min C) and ENG 102 (min C) or ENG 102H (min C)",
+    "courses": [
+      "ENG 101",
+      "ENG 101A",
+      "ENG 102",
+      "ENG 102H"
+    ]
+  },
   "ENG 175IN": {
     "text": "MAT 189 (min C) or MAT 212 (min C) or MAT 187 (min C) or MAT 220 (min C) or MAT 220HC (min C) or MAT 227 (min C) or MAT 231 (min C) or MAT 231HC (min C) or MAT 241 (min C) or MAT 252 (min C) or MAT 262 (min C)",
     "courses": [
@@ -4927,9 +7134,16 @@
     ]
   },
   "ENG 200": {
-    "text": "ENG101.",
+    "text": "ENG 102 (min C)",
     "courses": [
-      "ENG 101"
+      "ENG 102"
+    ]
+  },
+  "ENG 206": {
+    "text": "A grade of C or better in ENG102 or ENG108.",
+    "courses": [
+      "ENG102",
+      "ENG108"
     ]
   },
   "ENG 210": {
@@ -4956,6 +7170,13 @@
       "MAT 252",
       "MAT 262",
       "MAT 227"
+    ]
+  },
+  "ENG 213": {
+    "text": "A grade of C or better in ENG102, or ENG111, or permission of Instructor.",
+    "courses": [
+      "ENG102",
+      "ENG111"
     ]
   },
   "ENG 219": {
@@ -5031,11 +7252,23 @@
       "ENG 101"
     ]
   },
+  "ENG 237": {
+    "text": "ENG 102 (min C)",
+    "courses": [
+      "ENG 102"
+    ]
+  },
   "ENG 238": {
     "text": "PCS 021 and TRE 089",
     "courses": [
       "PCS 021",
       "TRE 089"
+    ]
+  },
+  "ENG 250": {
+    "text": "ENG 102",
+    "courses": [
+      "ENG 102"
     ]
   },
   "ENG 260": {
@@ -5046,6 +7279,12 @@
       "PHY 216IN",
       "PHY 216",
       "PHY 216LB"
+    ]
+  },
+  "ENG 270": {
+    "text": "ENG 102 (min C)",
+    "courses": [
+      "ENG 102"
     ]
   },
   "ENG 273": {
@@ -5062,6 +7301,44 @@
       "ENG 175IN"
     ]
   },
+  "ENG 298AA": {
+    "text": "Permission of Program Director or Instructor.",
+    "courses": []
+  },
+  "ENH 222": {
+    "text": "A grade of C or better in ENG101 or ENG107.",
+    "courses": [
+      "ENG101",
+      "ENG107"
+    ]
+  },
+  "ENH 241": {
+    "text": "A grade of C or better in ENG101.",
+    "courses": [
+      "ENG101"
+    ]
+  },
+  "ENH 253": {
+    "text": "A grade of C or better in ENG101, or ENG107, or equivalent.",
+    "courses": [
+      "ENG101",
+      "ENG107"
+    ]
+  },
+  "ENH 255": {
+    "text": "A grade of C or better in ENG101, or ENG107, or equivalent.",
+    "courses": [
+      "ENG101",
+      "ENG107"
+    ]
+  },
+  "ENH 280": {
+    "text": "A grade of C or better in ENG101 or ENG107, or permission of Instructor.",
+    "courses": [
+      "ENG101",
+      "ENG107"
+    ]
+  },
   "ENV 101": {
     "text": "PCS 021 and TRE 089 and TRM 090",
     "courses": [
@@ -5069,6 +7346,29 @@
       "TRE 089",
       "TRM 090"
     ]
+  },
+  "EPD 254": {
+    "text": "A grade of C or better in EPD250, EPD251, EPD252, and EPD253.",
+    "courses": [
+      "EPD250",
+      "EPD251",
+      "EPD252",
+      "EPD253"
+    ]
+  },
+  "EPD 255": {
+    "text": "A grade of C or better in EPD250, EPD251, EPD252, EPD253, and EPD254.",
+    "courses": [
+      "EPD250",
+      "EPD251",
+      "EPD252",
+      "EPD253",
+      "EPD254"
+    ]
+  },
+  "EPD 271AA": {
+    "text": "Must hold a valid Arizona Elementary, Secondary, Special Education, or Early Childhood teaching certificate, or permission of Department or Division.",
+    "courses": []
   },
   "ESE 290": {
     "text": "EDC 266 (min C) or EDC 267 (min C)",
@@ -5097,10 +7397,33 @@
       "EDU 222"
     ]
   },
+  "ESL 010": {
+    "text": "Appropriate ESL placement test score.",
+    "courses": []
+  },
+  "ESL 011": {
+    "text": "Appropriate ESL placement test score or a grade of C or better in ESL002.",
+    "courses": [
+      "ESL002"
+    ]
+  },
+  "ESL 012": {
+    "text": "Appropriate ESL placement test score or permission of instructor.",
+    "courses": []
+  },
   "ESL 020": {
     "text": "ESL 010 (min C)",
     "courses": [
       "ESL 010"
+    ]
+  },
+  "ESL 021": {
+    "text": "Appropriate ESL placement test score, or a grade of C or better in ESL010, or ESL011, or ESL012, or ESL/RDG016.",
+    "courses": [
+      "ESL010",
+      "ESL011",
+      "ESL012",
+      "RDG016"
     ]
   },
   "ESL 022": {
@@ -5127,6 +7450,15 @@
       "ESL 020"
     ]
   },
+  "ESL 031": {
+    "text": "Appropriate ESL placement test score, or a grade of C or better in ESL020, or ESL021, or ESL022, or ESL026.",
+    "courses": [
+      "ESL020",
+      "ESL021",
+      "ESL022",
+      "ESL026"
+    ]
+  },
   "ESL 032": {
     "text": "ESL 022 (min C)",
     "courses": [
@@ -5151,10 +7483,46 @@
       "ESL 030"
     ]
   },
+  "ESL 041": {
+    "text": "Appropriate ESL placement test score, or a grade of C or better in ESL030, or ESL031, or ESL032, or ESL036.",
+    "courses": [
+      "ESL030",
+      "ESL031",
+      "ESL032",
+      "ESL036"
+    ]
+  },
+  "ESL 042": {
+    "text": "Appropriate ESL course placement score, or a grade of C or better in ESL032, or permission of Instructor.",
+    "courses": [
+      "ESL032"
+    ]
+  },
+  "ESL 046": {
+    "text": "Appropriate ESL placement test score, or grade of C or better in ESL036, or permission of Instructor.",
+    "courses": [
+      "ESL036"
+    ]
+  },
   "ESL 049": {
     "text": "ESL 030 (min C)",
     "courses": [
       "ESL 030"
+    ]
+  },
+  "ESL 050": {
+    "text": "Appropriate ESL course placement score, or a grade of C or better in ESL040, or permission of Instructor.",
+    "courses": [
+      "ESL040"
+    ]
+  },
+  "ESL 053": {
+    "text": "Appropriate ESL course placement score, or a grade of C or better in (ESL020, or ESL021, or ESL022, or ESL026), or permission of Instructor.",
+    "courses": [
+      "ESL020",
+      "ESL021",
+      "ESL022",
+      "ESL026"
     ]
   },
   "ESL 070CM": {
@@ -5199,6 +7567,13 @@
       "ESL 070WG"
     ]
   },
+  "ESL 087": {
+    "text": "Appropriate ESL course placement score or a grade of C or better in ESL042 or ESL202 or permission of ESL Coordinator.",
+    "courses": [
+      "ESL042",
+      "ESL202"
+    ]
+  },
   "ESL 088CM": {
     "text": "ESL 080CM (min C) or ESL 085CM (min C)",
     "courses": [
@@ -5220,6 +7595,70 @@
       "ESL 085WG"
     ]
   },
+  "ESL 097": {
+    "text": "A grade of C or better in ESL087 or permission of Department or Division Chair.",
+    "courses": [
+      "ESL087"
+    ]
+  },
+  "ESL 101AA": {
+    "text": "Appropriate ESL placement score or permission of Instructor.",
+    "courses": []
+  },
+  "ESL 101AB": {
+    "text": "Appropriate ESL placement score or permission of Instructor.",
+    "courses": []
+  },
+  "ESL 102AA": {
+    "text": "A grade of C or better in ESL101, or (ESL101AA and ESL101AB), or appropriate placement score, or permission of Instructor.",
+    "courses": [
+      "ESL101",
+      "ESL101AA",
+      "ESL101AB"
+    ]
+  },
+  "ESL 102AB": {
+    "text": "A grade of C or better in ESL101, or (ESL101AA and ESL101AB), or appropriate placement score, or permission of Instructor.",
+    "courses": [
+      "ESL101",
+      "ESL101AA",
+      "ESL101AB"
+    ]
+  },
+  "ESL 110": {
+    "text": "Appropriate ESL placement score or permission of Instructor.",
+    "courses": []
+  },
+  "ESL 140": {
+    "text": "Appropriate ESL placement score or permission of Instructor.",
+    "courses": []
+  },
+  "ESL 201": {
+    "text": "A grade of C or better in ESL102, or (ESL102AA and ESL102AB), or appropriate ESL placement score, or permission of Instructor.",
+    "courses": [
+      "ESL102",
+      "ESL102AA",
+      "ESL102AB"
+    ]
+  },
+  "ESL 202": {
+    "text": "A grade of C or better in ESL201, or (ESL201AA and ESL201AB), or appropriate ESL placement score, or permission of Instructor.",
+    "courses": [
+      "ESL201",
+      "ESL201AA",
+      "ESL201AB"
+    ]
+  },
+  "ESL 220": {
+    "text": "A grade of C or better in ESL102, or appropriate ESL course placement score, or permission of Instructor.",
+    "courses": [
+      "ESL102"
+    ]
+  },
+  "ESL 298AC": {
+    "text": "Permission of Program Director or Instructor.",
+    "courses": []
+  },
   "EST 230": {
     "text": "EST130, EST140, & EST160. Corequisites: EST240 & EST260.",
     "courses": [
@@ -5239,6 +7678,51 @@
       "EST 230",
       "EST 260"
     ]
+  },
+  "EXS 270": {
+    "text": "Completion of nine (9) credits of EXS courses with a grade of C or better, current CPR and AED card, and permission of Department/Division Chair and/or the Program Director.",
+    "courses": []
+  },
+  "EXS 270AA": {
+    "text": "Completion of nine (9) credits of EXS courses with a grade of C or better, current CPR and AED card, and permission of Department/Division Chair and/or the Program Director.",
+    "courses": []
+  },
+  "EXS 270AB": {
+    "text": "Completion of nine (9) credits of EXS courses with a grade of C or better, current CPR and AED card, and permission of Department/Division Chair and/or the Program Director.",
+    "courses": []
+  },
+  "EXS 275AA": {
+    "text": "Completion of a grade of C or better in nine (9) credits of EXS courses, approved by the Department Chair and/or Director, current CPR and AED card, and permission of Department or Division.",
+    "courses": []
+  },
+  "EXS 290": {
+    "text": "A grade of C or better in (EXS101, or FON100, or FON241, or HES100, or HES110, or PSY101) and (ENG101 or ENG107), or permission of Instructor.",
+    "courses": [
+      "EXS101",
+      "FON100",
+      "FON241",
+      "HES100",
+      "HES110",
+      "PSY101",
+      "ENG101",
+      "ENG107"
+    ]
+  },
+  "EXS 298AA": {
+    "text": "Permission of Program Director or Instructor.",
+    "courses": []
+  },
+  "EXS 298AB": {
+    "text": "Permission of Program Director or Instructor.",
+    "courses": []
+  },
+  "EXS 298AC": {
+    "text": "Permission of Program Director or Instructor.",
+    "courses": []
+  },
+  "FCS 250": {
+    "text": "A grade of C or better in 12 credit hours of CFS and/or FCS coursework or permission of Program Director.",
+    "courses": []
   },
   "FDC 111": {
     "text": "FDC 110 (min B)",
@@ -5284,6 +7768,23 @@
       "ACC 105"
     ]
   },
+  "FIT 210": {
+    "text": "FIT 111 (min C) or Dance 111 (min C)",
+    "courses": [
+      "FIT 111",
+      "Dance 111"
+    ]
+  },
+  "FMT 136": {
+    "text": "A grade of C or better in FMT135 or permission of Department or Division.",
+    "courses": [
+      "FMT135"
+    ]
+  },
+  "FMT 296WA": {
+    "text": "Completion of at least twelve (12) college credits, minimum 2.",
+    "courses": []
+  },
   "FON 201": {
     "text": "BIO 156 (min C) or BIO 160 (min C) or BIO 181 (min C) or BIO 182 (min C) or CHM 130 (min C) or CHM 138 (min C) or CHM 151 (min C) or CHM 152 (min C) or CHM 235 (min C) or CHM 236 (min C)",
     "courses": [
@@ -5299,16 +7800,58 @@
       "CHM 236"
     ]
   },
-  "FRE 102": {
-    "text": "FRE 101 (min C)",
+  "FON 241LL": {
+    "text": "A grade of C or better in FON241 or Corequisites: FON241.",
     "courses": [
-      "FRE 101"
+      "FON241"
+    ]
+  },
+  "FON 245AA": {
+    "text": "A grade of C or better in (FON125, FON242, and HCC145AA) and (MAT092, or equivalent, or satisfactory district placement) and permission of Program Director.",
+    "courses": [
+      "FON125",
+      "FON242",
+      "HCC145AA",
+      "MAT092"
+    ]
+  },
+  "FON 245AB": {
+    "text": "A grade of C or better in (FON125, FON242, and HCC145AA) and (MAT092, or equivalent, or satisfactory district placement) and permission of Program Director.",
+    "courses": [
+      "FON125",
+      "FON242",
+      "HCC145AA",
+      "MAT092"
+    ]
+  },
+  "FON 250": {
+    "text": "Permission of Program Director.",
+    "courses": []
+  },
+  "FRE 102": {
+    "text": "A grade of C or better in FRE101, or FRE101AA, or permission of Department or Division.",
+    "courses": [
+      "FRE101",
+      "FRE101AA"
     ]
   },
   "FRE 201": {
-    "text": "FRE 102 (min C)",
+    "text": "(FRE102 or FRE102AA with a grade of \"C\" or better), or two years of high school French with an average of \"C\" or better, or permission of Department or Division.",
     "courses": [
-      "FRE 102"
+      "FRE102",
+      "FRE102AA"
+    ]
+  },
+  "FRE 202": {
+    "text": "FRE201 with a grade of \"C\" or better, or three years of high school French with an average of \"C\" or better.",
+    "courses": [
+      "FRE201"
+    ]
+  },
+  "FRE 225": {
+    "text": "A grade of C or better in FRE116, or permission of Department or Division.",
+    "courses": [
+      "FRE116"
     ]
   },
   "FSC 105": {
@@ -5544,6 +8087,41 @@
       "GAM 120"
     ]
   },
+  "GBS 220": {
+    "text": "(A grade of C or better in MAT150 or MAT151 or MAT152) or satisfactory District math placement.",
+    "courses": [
+      "MAT150",
+      "MAT151",
+      "MAT152"
+    ]
+  },
+  "GBS 221": {
+    "text": "A grade of C or better in GBS220 or MAT217 or MAT218.",
+    "courses": [
+      "GBS220",
+      "MAT217",
+      "MAT218"
+    ]
+  },
+  "GBS 233": {
+    "text": "ENG101 or ENG107 with grade of \"C\" or better, or permission of Department or Division.",
+    "courses": [
+      "ENG101",
+      "ENG107"
+    ]
+  },
+  "GBS 270AA": {
+    "text": "Permission of Department or Division.",
+    "courses": []
+  },
+  "GBS 270AB": {
+    "text": "Permission of Department or Division.",
+    "courses": []
+  },
+  "GBS 270AC": {
+    "text": "Permission of Department or Division.",
+    "courses": []
+  },
   "GEO 101": {
     "text": "RDG 092 (min C) or RDG 122 (min C) and MAT 081 (min C) or MAT 081A (min C) or MAT 081B (min C) or MAT 082 (min C) or MAT 091 (min C) or MAT 122 (min C) or MAT 123 (min C) or MAT 123A (min C) or MAT 123B (min C) or MAT 132 (min C) or MAT 132L (min C) or MAT 142 (min C) or MAT 142L (min C) or MAT 151 (min C) or MAT 151L (min C) or MAT 154 (min C) or MAT 156 (min C) or MAT 182 (min C) or MAT 187 (min C) or MAT 220 (min C) and ENG 096 (min C) or ENG 100 (min C) or ENG 101 (min C) or ENG 101L (min C) or ENG 101A (min C) or ENG 101B (min C) or ENG 102 (min C) or ENG 102H (min C)",
     "courses": [
@@ -5598,6 +8176,12 @@
       "GER 102"
     ]
   },
+  "GER 202": {
+    "text": "A grade of C or better in GER201 or permission of Department or Division.",
+    "courses": [
+      "GER201"
+    ]
+  },
   "GHY 240": {
     "text": "PCS 021 and TRE 089",
     "courses": [
@@ -5622,11 +8206,12 @@
     ]
   },
   "GLG 110": {
-    "text": "PCS 021 and TRE 089 and TRM 090",
+    "text": "ENG 098 (min C) or ENG 101 (min C) or ENG 101A (min C) or ENG 102 (min C)",
     "courses": [
-      "PCS 021",
-      "TRE 089",
-      "TRM 090"
+      "ENG 098",
+      "ENG 101",
+      "ENG 101A",
+      "ENG 102"
     ]
   },
   "GLG 140": {
@@ -5635,6 +8220,12 @@
       "TRE 089",
       "TRM 091",
       "MAT 101"
+    ]
+  },
+  "GPH 112": {
+    "text": "A grade of C or better in GPH111 or Corequisites: GPH111.",
+    "courses": [
+      "GPH111"
     ]
   },
   "GTM 105": {
@@ -5669,6 +8260,45 @@
       "MAT 252",
       "MAT 262"
     ]
+  },
+  "HCC 145AB": {
+    "text": "A grade of C or better in HCC145AA.",
+    "courses": [
+      "HCC145AA"
+    ]
+  },
+  "HCR 210": {
+    "text": "A grade of C or better in ENG102 or ENG108 or permission of Instructor.",
+    "courses": [
+      "ENG102",
+      "ENG108"
+    ]
+  },
+  "HCR 220": {
+    "text": "A grade of C or better in ENG102 or ENG108 or permission of Instructor.",
+    "courses": [
+      "ENG102",
+      "ENG108"
+    ]
+  },
+  "HCR 240": {
+    "text": "A grade of C or better in BIO202 or BIO205, or permission of Instructor.",
+    "courses": [
+      "BIO202",
+      "BIO205"
+    ]
+  },
+  "HCS 100": {
+    "text": "Admission into the Hospital Central Service Technology or Surgical Technology program or permission of the Program Director.",
+    "courses": []
+  },
+  "HCS 102": {
+    "text": "Admission into the Hospital Central Service Technology or Surgical Technology program or permission of the Program Director.",
+    "courses": []
+  },
+  "HCS 107": {
+    "text": "Admission into the Hospital Central Service Technology or Surgical Technology program or permission of the Program Director.",
+    "courses": []
   },
   "HEO 100": {
     "text": "Current and valid driver license or instructor consent.",
@@ -5722,6 +8352,14 @@
       "TRE 089"
     ]
   },
+  "HIM 101": {
+    "text": "Acceptance into the (Medical Coding: Hospital-Based, or Medical Billing and Coding: Physician-Based, or Health Information Technology) program, and permission of Program Director.",
+    "courses": []
+  },
+  "HIM 106": {
+    "text": "Acceptance into the Health Information Technology program and permission of Program Director.",
+    "courses": []
+  },
   "HIM 121": {
     "text": "HIM115.",
     "courses": [
@@ -5736,10 +8374,100 @@
       "HIM 138"
     ]
   },
-  "HIM 210": {
-    "text": "HIM205.",
+  "HIM 180": {
+    "text": "Permission of Program Director.",
+    "courses": []
+  },
+  "HIM 181": {
+    "text": "[(BPC110 or CIS105) and HIM180] or permission of Program Director.",
     "courses": [
-      "HIM 205"
+      "BPC110",
+      "CIS105",
+      "HIM180"
+    ]
+  },
+  "HIM 203": {
+    "text": "A grade of C or better in (CIS114DE, HIM160 and MAT112) or permission of Program Director.",
+    "courses": [
+      "CIS114DE",
+      "HIM160",
+      "MAT112"
+    ]
+  },
+  "HIM 207": {
+    "text": "A grade of C or better in (HIM101 and HIM106) or permission of Program Director.",
+    "courses": [
+      "HIM101",
+      "HIM106"
+    ]
+  },
+  "HIM 208": {
+    "text": "(BIO202, HCC145, and HIM200) or permission of Program Director.",
+    "courses": [
+      "BIO202",
+      "HCC145",
+      "HIM200"
+    ]
+  },
+  "HIM 210": {
+    "text": "BIO202 and HIM200.",
+    "courses": [
+      "BIO202",
+      "HIM200"
+    ]
+  },
+  "HIM 211": {
+    "text": "A grade of C or better in (HIM208 and HIM210) or permission of Program Director.",
+    "courses": [
+      "HIM208",
+      "HIM210"
+    ]
+  },
+  "HIM 213": {
+    "text": "A grade of C or better in BIO202, HCC145, and HIM200.",
+    "courses": [
+      "BIO202",
+      "HCC145",
+      "HIM200"
+    ]
+  },
+  "HIM 215": {
+    "text": "HIM213 or permission of Program Director.",
+    "courses": [
+      "HIM213"
+    ]
+  },
+  "HIM 216": {
+    "text": "HIM213 or permission of Program Director.",
+    "courses": [
+      "HIM213"
+    ]
+  },
+  "HIM 219": {
+    "text": "A grade of C or better in HIM160, and (BPC110 or CIS105).",
+    "courses": [
+      "HIM160",
+      "BPC110",
+      "CIS105"
+    ]
+  },
+  "HIM 221": {
+    "text": "HIM213 or permission of Program Director.",
+    "courses": [
+      "HIM213"
+    ]
+  },
+  "HIM 222": {
+    "text": "HIM213 or permission of Program Director.",
+    "courses": [
+      "HIM213"
+    ]
+  },
+  "HIM 225": {
+    "text": "A grade of C or better in (CIS114DE and HIM203).",
+    "courses": [
+      "CIS114DE",
+      "HIM203"
     ]
   },
   "HIM 230": {
@@ -5747,6 +8475,22 @@
     "courses": [
       "HIM 160",
       "HIM 205"
+    ]
+  },
+  "HIM 233": {
+    "text": "A grade of C or better in HIM203, HIM208, and HIM210, or permission of Program Director.",
+    "courses": [
+      "HIM203",
+      "HIM208",
+      "HIM210"
+    ]
+  },
+  "HIM 234": {
+    "text": "A grade of C or better in HIM203, HIM208, and HIM210 or permission of Program Director.",
+    "courses": [
+      "HIM203",
+      "HIM208",
+      "HIM210"
     ]
   },
   "HIM 296": {
@@ -6065,6 +8809,10 @@
       "HLT 160"
     ]
   },
+  "HON 201": {
+    "text": "Admission to the college honors program or permission of Instructor.",
+    "courses": []
+  },
   "HON 210": {
     "text": "HON 101 (min C)",
     "courses": [
@@ -6305,6 +9053,52 @@
     "text": "Appropriate math placement test score AND a completed TABE survey in math with placement at ABE III or above; OR a documented failing score on the GED Mathematical Reasoning Test.",
     "courses": []
   },
+  "HST 180": {
+    "text": "Admission to Histologic Technology program or permission of Program Director.",
+    "courses": []
+  },
+  "HST 181": {
+    "text": "Admission to Histologic Technology program or permission of Program Director, and a grade of C or better in HST180.",
+    "courses": [
+      "HST180"
+    ]
+  },
+  "HST 182": {
+    "text": "A grade of C or better in HST181.",
+    "courses": [
+      "HST181"
+    ]
+  },
+  "HST 183": {
+    "text": "A grade of C or better in HST181 or permission of Program Director.",
+    "courses": [
+      "HST181"
+    ]
+  },
+  "HST 184": {
+    "text": "A grade of C or better in HST182.",
+    "courses": [
+      "HST182"
+    ]
+  },
+  "HST 186": {
+    "text": "A grade of C or better in HST185.",
+    "courses": [
+      "HST185"
+    ]
+  },
+  "HST 187": {
+    "text": "A grade of C or better in HST185.",
+    "courses": [
+      "HST185"
+    ]
+  },
+  "HST 188": {
+    "text": "A grade of C or better in HST186.",
+    "courses": [
+      "HST186"
+    ]
+  },
   "HUM 101": {
     "text": "ENG 096 (min C) or ENG 100 (min C) or ENG 101 (min C) or ENG 101L (min C) or ENG 101A (min C) or ENG 101B (min C) or ENG 102 (min C) or ENG 102H (min C)",
     "courses": [
@@ -6351,11 +9145,54 @@
       "ENG 102H"
     ]
   },
+  "HUM 225": {
+    "text": "A grade of C or better in ENG101 or ENG107.",
+    "courses": [
+      "ENG101",
+      "ENG107"
+    ]
+  },
+  "HUM 235": {
+    "text": "ENG 101 (min C) or ENG 101A (min C) or ENG 102 (min C) or ENG 139 (min C) or ENG 220 (min C) or ENG 236 (min C) or ENG 237 (min C) or ENG 238 (min C) or ENG 240 (min C) or ENG 270 (min C) or ENG 271 (min C) or ENG 272 (min C)",
+    "courses": [
+      "ENG 101",
+      "ENG 101A",
+      "ENG 102",
+      "ENG 139",
+      "ENG 220",
+      "ENG 236",
+      "ENG 237",
+      "ENG 238",
+      "ENG 240",
+      "ENG 270",
+      "ENG 271",
+      "ENG 272"
+    ]
+  },
+  "HUM 241": {
+    "text": "ENG 102 (min C)",
+    "courses": [
+      "ENG 102"
+    ]
+  },
+  "HUM 241H": {
+    "text": "ENG 102 (min C) or ENG 102H (min C)",
+    "courses": [
+      "ENG 102",
+      "ENG 102H"
+    ]
+  },
   "HUM 250": {
     "text": "PCS 021 and TRE 089",
     "courses": [
       "PCS 021",
       "TRE 089"
+    ]
+  },
+  "HUM 251": {
+    "text": "A grade of C or better in ENG101.",
+    "courses": [
+      "ENG101"
     ]
   },
   "HUM 260": {
@@ -6374,6 +9211,12 @@
   "HVA 101": {
     "text": "ASP approval and GED or high school diploma.",
     "courses": []
+  },
+  "HVA 120": {
+    "text": "A grade of C or better in HVA102 or permission of Department or Division.",
+    "courses": [
+      "HVA102"
+    ]
   },
   "HVA 201": {
     "text": "ASP approval and GED or high school diploma. Recommendations: Mechanical ability is a benefit.",
@@ -6408,6 +9251,125 @@
       "HVA 116"
     ]
   },
+  "ICE 220": {
+    "text": "A grade of C or better in (BIO160 or BIO201) and (HCC145 or HCC146), or a graduate of a related medical program of study or currently registered as a technologist in radiography, nuclear medicine, radiation therapy or sonography.",
+    "courses": [
+      "BIO160",
+      "BIO201",
+      "HCC145",
+      "HCC146"
+    ]
+  },
+  "ICE 229": {
+    "text": "[(Certified by American Registry of Radiologic Technologists (ARRT) in Radiography or in Radiation Therapy), or (certified by ARRT or the Nuclear Medicine Technology Certification Board (NMTCB) in Nuclear Medicine), or (certified by American Registry of Diagnostic Medical Sonography (ARDMS) or ARRT in Diagnostic Medical Sonography), or (Radiography, Radiation Therapist, Nuclear Medicine, or Sonography student currently enrolled at GateWay), or registry eligible graduate] and a grade of C or better in DMS/ICE220 and ICE233.",
+    "courses": [
+      "ICE220",
+      "ICE233"
+    ]
+  },
+  "ICE 233": {
+    "text": "(Certified by American Registry of Radiologic Technologists (ARRT) in Radiography or in Radiation Therapy), or (certified by ARRT or the Nuclear Medicine Technology Certification Board (NMTCB) in Nuclear Medicine), or (certified by American Registry of Diagnostic Medical Sonography (ARDMS) or ARRT in Diagnostic Medical Sonography), or (Radiography, Radiation Therapist, Nuclear Medicine or Sonography student currently enrolled at GateWay), or registry eligible graduate.",
+    "courses": []
+  },
+  "ICE 250": {
+    "text": "American Registry of Radiologic Technologists (A.",
+    "courses": []
+  },
+  "ICE 254": {
+    "text": "[(Certified by American Registry of Radiologic Technologists (ARRT) in Radiography or in Radiation Therapy), or (certified by ARRT or the Nuclear Medicine Technology Certification Board (NMTCB) in Nuclear Medicine), or (Radiography or Nuclear Medicine student currently enrolled at GateWay), or registry eligible graduates] or permission of Instructor.",
+    "courses": []
+  },
+  "ICE 260": {
+    "text": "[(Certified by American Registry of Radiologic Technologists (ARRT) in Radiography or in Radiation Therapy), or (certified by ARRT or the Nuclear Medicine Technology Certification Board (NMTCB) in Nuclear Medicine), or (Radiography or Nuclear Medicine student currently enrolled at GateWay), or registry eligible graduates] or permission of Instructor.",
+    "courses": []
+  },
+  "ICE 264": {
+    "text": "[(Certified by American Registry of Radiologic Technologists (ARRT) in Radiography or in Radiation Therapy), or (certified by ARRT or the Nuclear Medicine Technology Certification Board (NMTCB) in Nuclear Medicine), or (certified by American Registry of Diagnostic Medical Sonography (ARDMS) or ARRT in Diagnostic Medical Sonography), or (Radiography, Radiation Therapist, Nuclear Medicine, or Sonography student currently enrolled at GateWay), or registry eligible graduate] and a grade of C or better in DMS/ICE220 and ICE233.",
+    "courses": [
+      "ICE220",
+      "ICE233"
+    ]
+  },
+  "IFS 201": {
+    "text": "A grade of C or better in ENG101 or ENG107.",
+    "courses": [
+      "ENG101",
+      "ENG107"
+    ]
+  },
+  "INS 205": {
+    "text": "A grade of C or better in INS200 or permission of Instructor.",
+    "courses": [
+      "INS200"
+    ]
+  },
+  "INS 210": {
+    "text": "A grade of C or better in INS200 or permission of Instructor.",
+    "courses": [
+      "INS200"
+    ]
+  },
+  "INS 241": {
+    "text": "A grade of C of better in INS210.",
+    "courses": [
+      "INS210"
+    ]
+  },
+  "INT 112": {
+    "text": "A grade of C or better in ARC/INT111.",
+    "courses": [
+      "INT111"
+    ]
+  },
+  "INT 201": {
+    "text": "A grade of C or better in INT101, INT122, INT145, and INT165.",
+    "courses": [
+      "INT101",
+      "INT122",
+      "INT145",
+      "INT165"
+    ]
+  },
+  "INT 205": {
+    "text": "A grade of C or better in ARC/INT111, INT101, INT122, and INT145.",
+    "courses": [
+      "INT111",
+      "INT101",
+      "INT122",
+      "INT145"
+    ]
+  },
+  "INT 212": {
+    "text": "INT101, INT122, INT145, INT165, and ARC/INT112.",
+    "courses": [
+      "INT101",
+      "INT122",
+      "INT145",
+      "INT165",
+      "INT112"
+    ]
+  },
+  "INT 222": {
+    "text": "INT165 and INT210.",
+    "courses": [
+      "INT165",
+      "INT210"
+    ]
+  },
+  "INT 241": {
+    "text": "A grade of C or better in INT212, or (INT240AA and INT240AB), or permission of Program Director.",
+    "courses": [
+      "INT212",
+      "INT240AA",
+      "INT240AB"
+    ]
+  },
+  "INT 242": {
+    "text": "A grade of C or better in INT212.",
+    "courses": [
+      "INT212"
+    ]
+  },
   "IOS 145": {
     "text": "ENG 101 (min C) or ENG 101L (min C) or ENG 101A (min C) and ENG 101B (min C) or ENG 102 (min C) or ENG 102H (min C)",
     "courses": [
@@ -6430,10 +9392,95 @@
       "Military Intel Ops 103"
     ]
   },
+  "IPP 198": {
+    "text": "A grade of C or better in IPP205 or permission of Department or Division.",
+    "courses": [
+      "IPP205"
+    ]
+  },
+  "IPP 205": {
+    "text": "A grade of C or better in ASL201 or permission of Department or Division.",
+    "courses": [
+      "ASL201"
+    ]
+  },
+  "IPP 207": {
+    "text": "ASL201 or permission of Department or Division.",
+    "courses": [
+      "ASL201"
+    ]
+  },
+  "IPP 209": {
+    "text": "A grade of B or better in IPP205 or permission of Department or Division.",
+    "courses": [
+      "IPP205"
+    ]
+  },
+  "IPP 210": {
+    "text": "A grade of C or better in CRE101, ENG102, and IPP207.",
+    "courses": [
+      "CRE101",
+      "ENG102",
+      "IPP207"
+    ]
+  },
+  "IPP 211": {
+    "text": "Acceptance into the Interpreter Preparation Program or permission of Department or Division.",
+    "courses": []
+  },
+  "IPP 215": {
+    "text": "(Acceptance into the Interpreter Preparation Program or permission of Department or Division) and IPP211 with a grade of \"B\" or better.",
+    "courses": [
+      "IPP211"
+    ]
+  },
+  "IPP 218": {
+    "text": "(Acceptance into the Interpreter Preparation Program or permission of Department or Division) and a grade of B or better in IPP211.",
+    "courses": [
+      "IPP211"
+    ]
+  },
+  "IPP 220": {
+    "text": "A grade of B or better in IPP211 or permission of Department or Division.",
+    "courses": [
+      "IPP211"
+    ]
+  },
+  "IPP 250AA": {
+    "text": "Acceptance into the Interpreter Preparation Program or permission of Program Director.",
+    "courses": []
+  },
+  "ITS 110": {
+    "text": "A grade of C or better in CIS126DL, or CIS126RH, or permission of Program Director.",
+    "courses": [
+      "CIS126DL",
+      "CIS126RH"
+    ]
+  },
+  "ITS 240": {
+    "text": "A grade of C or better in ITS110, or CNT205, or CIS270, or permission of Instructor.",
+    "courses": [
+      "ITS110",
+      "CNT205",
+      "CIS270"
+    ]
+  },
+  "JPN 102": {
+    "text": "A grade of C or better in JPN101 or permission of Department or Division.",
+    "courses": [
+      "JPN101"
+    ]
+  },
   "JPN 201": {
     "text": "JPN 102 (min C)",
     "courses": [
       "JPN 102"
+    ]
+  },
+  "JPN 202": {
+    "text": "A grade of C or better in JPN201 or permission of Department or Division.",
+    "courses": [
+      "JPN201"
     ]
   },
   "JRN 101": {
@@ -6475,6 +9522,104 @@
     "courses": [
       "KOR 101"
     ]
+  },
+  "LAS 109": {
+    "text": "Acceptance into the Paralegal Studies program.",
+    "courses": []
+  },
+  "LAS 110": {
+    "text": "A grade of C or better in LAS109 and (BPC110 or CIS105 or permission of Program Director).",
+    "courses": [
+      "LAS109",
+      "BPC110",
+      "CIS105"
+    ]
+  },
+  "LAS 115": {
+    "text": "A grade of C or better in LAS109 and (BPC110 or CIS105 or permission of Program Director).",
+    "courses": [
+      "LAS109",
+      "BPC110",
+      "CIS105"
+    ]
+  },
+  "LAS 203": {
+    "text": "A grade of C or better in LAS131 and (BPC110 or CIS105 or permission of Program Director).",
+    "courses": [
+      "LAS131",
+      "BPC110",
+      "CIS105"
+    ]
+  },
+  "LAS 214": {
+    "text": "A grade of C or better in LAS109 and (BPC110 or CIS105 or permission of Program Director).",
+    "courses": [
+      "LAS109",
+      "BPC110",
+      "CIS105"
+    ]
+  },
+  "LAS 217": {
+    "text": "A grade of C or better in LAS109 and (BPC110 or CIS105 or permission of Program Director).",
+    "courses": [
+      "LAS109",
+      "BPC110",
+      "CIS105"
+    ]
+  },
+  "LAS 225": {
+    "text": "A grade of C or better in LAS131 and LAS211 and (BPC110 or CIS105 or permission of Program Director).",
+    "courses": [
+      "LAS131",
+      "LAS211",
+      "BPC110",
+      "CIS105"
+    ]
+  },
+  "LAS 229": {
+    "text": "A grade of C or better in LAS110 and (BPC110 or CIS105 or permission of Program Director).",
+    "courses": [
+      "LAS110",
+      "BPC110",
+      "CIS105"
+    ]
+  },
+  "LAS 280": {
+    "text": "LAS110, LAS203, LAS204, LAS214 and (BPC110 or CIS105 or permission of Program Director).",
+    "courses": [
+      "LAS110",
+      "LAS203",
+      "LAS204",
+      "LAS214",
+      "BPC110",
+      "CIS105"
+    ]
+  },
+  "LAT 102": {
+    "text": "A grade of C or better in LAT101 or permission of Department or Division.",
+    "courses": [
+      "LAT101"
+    ]
+  },
+  "LAT 201": {
+    "text": "A grade of C or better in LAT102.",
+    "courses": [
+      "LAT102"
+    ]
+  },
+  "LAT 202": {
+    "text": "A grade of C or better in LAT201.",
+    "courses": [
+      "LAT201"
+    ]
+  },
+  "LET 225": {
+    "text": "Must be a certified police officer or have permission of Department or Division.",
+    "courses": []
+  },
+  "LET 243": {
+    "text": "Must be Law Enforcement personnel or permission of Instructor.",
+    "courses": []
   },
   "LGM 296": {
     "text": "LGM 101 (min C) and LGM 105 (min C) or LGM 106 (min C) or LGM 107 (min C)",
@@ -6750,6 +9895,47 @@
       "MAC 110"
     ]
   },
+  "MAS 102": {
+    "text": "A grade of C or better in MAS101.",
+    "courses": [
+      "MAS101"
+    ]
+  },
+  "MAS 200": {
+    "text": "A grade of C or better in MAS104.",
+    "courses": [
+      "MAS104"
+    ]
+  },
+  "MAS 201": {
+    "text": "Acceptance into the Clinical Medical Assisting or Medical Assisting program.",
+    "courses": []
+  },
+  "MAS 202": {
+    "text": "A grade of C or better in MAS201, or permission of Program Director.",
+    "courses": [
+      "MAS201"
+    ]
+  },
+  "MAS 203": {
+    "text": "A grade of C or better in MAS201 and MAS202.",
+    "courses": [
+      "MAS201",
+      "MAS202"
+    ]
+  },
+  "MAS 204": {
+    "text": "A grade of C or better in MAS203.",
+    "courses": [
+      "MAS203"
+    ]
+  },
+  "MAS 205": {
+    "text": "A grade of C or better in MAS203.",
+    "courses": [
+      "MAS203"
+    ]
+  },
   "MAT 081": {
     "text": "MAT 071 (min C) or MAT 072 (min C) or CPD 150 (min C)",
     "courses": [
@@ -6775,10 +9961,13 @@
     ]
   },
   "MAT 097": {
-    "text": "ICS 081 (min B) or MAT 092 (min C)",
+    "text": "MAT 091 (min C) or MAT 097C (min C) or MAT 091 (min C) or MAT 140 (min C) or MAT 142 (min C) or MAT 160 (min C)",
     "courses": [
-      "ICS 081",
-      "MAT 092"
+      "MAT 091",
+      "MAT 097C",
+      "MAT 140",
+      "MAT 142",
+      "MAT 160"
     ]
   },
   "MAT 097RQ": {
@@ -6795,9 +9984,19 @@
     ]
   },
   "MAT 121": {
-    "text": "TRM 091",
+    "text": "A grade of C or better in each of the following courses: (MAT055, MAT056, and MAT057), OR a grade of C or better in MAT09+, OR an appropriate district placement.",
     "courses": [
-      "TRM 091"
+      "MAT055",
+      "MAT056",
+      "MAT057"
+    ]
+  },
+  "MAT 122": {
+    "text": "A grade of B or better in each of the following courses: (MAT055, MAT056, and MAT057), OR a grade of B or better in MAT09+, OR an appropriate district placement.",
+    "courses": [
+      "MAT055",
+      "MAT056",
+      "MAT057"
     ]
   },
   "MAT 132": {
@@ -6841,6 +10040,32 @@
       "MAT 187",
       "MAT 212",
       "MAT 220"
+    ]
+  },
+  "MAT 140": {
+    "text": "An appropriate District placement, or a grade of C or better in (MAT052, MAT053, and MAT055), or (MAT055, MAT056, and MAT057), or MAT09+, or MAT103, or MAT114, or MAT115, or MAT12+.",
+    "courses": [
+      "MAT052",
+      "MAT053",
+      "MAT055",
+      "MAT056",
+      "MAT057",
+      "MAT103",
+      "MAT114",
+      "MAT115"
+    ]
+  },
+  "MAT 141": {
+    "text": "An appropriate District placement, or a grade of C or better in (MAT052, MAT053, and MAT055), or (MAT055, MAT056, and MAT057), or MAT09+, or MAT103, or MAT114, or MAT115, or MAT12+.",
+    "courses": [
+      "MAT052",
+      "MAT053",
+      "MAT055",
+      "MAT056",
+      "MAT057",
+      "MAT103",
+      "MAT114",
+      "MAT115"
     ]
   },
   "MAT 142": {
@@ -6946,16 +10171,23 @@
     ]
   },
   "MAT 151": {
-    "text": "MAT 091 (min C) or MAT 122 (min C) or MAT 123A (min C) and MAT 123B (min C) or MAT 123 (min C) or MAT 182 (min C) or MAT 187 (min C) or MAT 220 (min C)",
+    "text": "MAT 097 (min C) or MAT 121 (min C) or MAT 122 (min C) or MAT 142 (min C) or MAT 160 (min C) or MAT 172 (min C) or MAT 180 (min C) or MAT 181 (min C) or MAT 187 (min C) or MAT 211 (min C) or MAT 220 (min C) or MAT 230 (min C) or MAT 241 (min C) or MAT 261 (min C) or PSY 230 (min C)",
     "courses": [
-      "MAT 091",
+      "MAT 097",
+      "MAT 121",
       "MAT 122",
-      "MAT 123A",
-      "MAT 123B",
-      "MAT 123",
-      "MAT 182",
+      "MAT 142",
+      "MAT 160",
+      "MAT 172",
+      "MAT 180",
+      "MAT 181",
       "MAT 187",
-      "MAT 220"
+      "MAT 211",
+      "MAT 220",
+      "MAT 230",
+      "MAT 241",
+      "MAT 261",
+      "PSY 230"
     ]
   },
   "MAT 151L": {
@@ -6977,6 +10209,13 @@
       "MAT 092"
     ]
   },
+  "MAT 152": {
+    "text": "A grade of C or better in MAT114, or MAT115, or MAT12+, OR an appropriate district placement for MAT15+, OR permission of Department or Division Chair.",
+    "courses": [
+      "MAT114",
+      "MAT115"
+    ]
+  },
   "MAT 154": {
     "text": "MAT 142 (min C) or MAT 142L (min C) or MAT 151 (min C) or MAT 151L (min C) or MAT 167 (min C) or MAT 182 (min C) or MAT 187 (min C) or MAT 212 (min C) or MAT 220 (min C)",
     "courses": [
@@ -6989,6 +10228,19 @@
       "MAT 187",
       "MAT 212",
       "MAT 220"
+    ]
+  },
+  "MAT 155": {
+    "text": "A grade of C or better in (MAT055, MAT056, and MAT057), or MAT09+, or MAT114, or MAT115, or an appropriate district placement for MAT120 or MAT121 or MAT122, or permission of Department/Division Chair.",
+    "courses": [
+      "MAT055",
+      "MAT056",
+      "MAT057",
+      "MAT114",
+      "MAT115",
+      "MAT120",
+      "MAT121",
+      "MAT122"
     ]
   },
   "MAT 156": {
@@ -7007,16 +10259,31 @@
     ]
   },
   "MAT 160": {
-    "text": "MAT 142 or MAT 151",
+    "text": "MAT 140 (min C) or MAT 142 (min C) or MAT 151 (min C) or MAT 172 (min C) or MAT 187 (min C) or MAT 220 (min C) or MAT 230 (min C) or MAT 241 (min C) or MAT 261 (min C)",
     "courses": [
+      "MAT 140",
       "MAT 142",
-      "MAT 151"
+      "MAT 151",
+      "MAT 172",
+      "MAT 187",
+      "MAT 220",
+      "MAT 230",
+      "MAT 241",
+      "MAT 261"
     ]
   },
   "MAT 161": {
-    "text": "MAT 160",
+    "text": "MAT 140 (min C) or MAT 142 (min C) or MAT 151 (min C) or MAT 172 (min C) or MAT 187 (min C) or MAT 220 (min C) or MAT 230 (min C) or MAT 241 (min C) or MAT 261 (min C)",
     "courses": [
-      "MAT 160"
+      "MAT 140",
+      "MAT 142",
+      "MAT 151",
+      "MAT 172",
+      "MAT 187",
+      "MAT 220",
+      "MAT 230",
+      "MAT 241",
+      "MAT 261"
     ]
   },
   "MAT 167": {
@@ -7039,6 +10306,13 @@
       "MAT 262"
     ]
   },
+  "MAT 172": {
+    "text": "A grade of C or better in MAT15+, or (MAT187 or MAT188), or an appropriate district placement.",
+    "courses": [
+      "MAT187",
+      "MAT188"
+    ]
+  },
   "MAT 181": {
     "text": "MAT 151",
     "courses": [
@@ -7057,11 +10331,24 @@
     ]
   },
   "MAT 187": {
-    "text": "MAT 095 (min C) or MAT 097 (min C)",
+    "text": "MAT 097 (min C) or MAT 121 (min C) or MAT 142 (min C) or MAT 151 (min C) or MAT 160 (min C) or MAT 161 (min C) or MAT 172 (min C) or MAT 220 (min C) or MAT 230 (min C) or MAT 241 (min C) or MAT 261 (min C)",
     "courses": [
-      "MAT 095",
-      "MAT 097"
+      "MAT 097",
+      "MAT 121",
+      "MAT 142",
+      "MAT 151",
+      "MAT 160",
+      "MAT 161",
+      "MAT 172",
+      "MAT 220",
+      "MAT 230",
+      "MAT 241",
+      "MAT 261"
     ]
+  },
+  "MAT 188": {
+    "text": "A grade of C or better in MAT15+, or an appropriate district placement.",
+    "courses": []
   },
   "MAT 189": {
     "text": "MAT 151 (min C) or MAT 151RQ (min C) or MAT 188 (min C)",
@@ -7085,11 +10372,22 @@
       "MAT 151"
     ]
   },
-  "MAT 211": {
-    "text": "MAT 142 or MAT 151",
+  "MAT 206": {
+    "text": "A grade of C or better in MAT14+, or MAT15+, or MAT187, or MAT188, or equivalent, or an appropriate District placement, or permission of Department/Division Chair.",
     "courses": [
-      "MAT 142",
-      "MAT 151"
+      "MAT187",
+      "MAT188"
+    ]
+  },
+  "MAT 211": {
+    "text": "MAT 151 (min C) or MAT 187 (min C) or MAT 220 (min C) or MAT 230 (min C) or MAT 241 (min C) or MAT 261 (min C)",
+    "courses": [
+      "MAT 151",
+      "MAT 187",
+      "MAT 220",
+      "MAT 230",
+      "MAT 241",
+      "MAT 261"
     ]
   },
   "MAT 212": {
@@ -7102,11 +10400,36 @@
       "MAT 187"
     ]
   },
+  "MAT 213": {
+    "text": "A grade of C or better in MAT15+, or MAT187, or MAT188, or an appropriate District placement.",
+    "courses": [
+      "MAT187",
+      "MAT188"
+    ]
+  },
   "MAT 215": {
     "text": "MAT211 or MAT221.",
     "courses": [
       "MAT 211",
       "MAT 221"
+    ]
+  },
+  "MAT 217": {
+    "text": "A grade of C or better in MAT212, or MAT213, or MAT220, or MAT221.",
+    "courses": [
+      "MAT212",
+      "MAT213",
+      "MAT220",
+      "MAT221"
+    ]
+  },
+  "MAT 218": {
+    "text": "A grade of C or better in MAT212, or MAT213, or MAT220, or MAT221.",
+    "courses": [
+      "MAT212",
+      "MAT213",
+      "MAT220",
+      "MAT221"
     ]
   },
   "MAT 220": {
@@ -7133,6 +10456,15 @@
       "MAT 182"
     ]
   },
+  "MAT 225": {
+    "text": "A grade of C or better in MAT212 or MAT213 or MAT220 or MAT221, or equivalent.",
+    "courses": [
+      "MAT212",
+      "MAT213",
+      "MAT220",
+      "MAT221"
+    ]
+  },
   "MAT 227": {
     "text": "MAT 151 (min C) or MAT 151L (min C) and MAT 182 (min C) or MAT 187 (min C) or MAT 220 (min C) or MAT 231 (min C) or MAT 241 (min C) or MAT 252 (min C) or MAT 262 (min C)",
     "courses": [
@@ -7147,11 +10479,18 @@
       "MAT 262"
     ]
   },
-  "MAT 231": {
-    "text": "MAT 220 (min C) or MAT 220HC (min C)",
+  "MAT 230": {
+    "text": "A grade of C or better in MAT220, or MAT221, or equivalent.",
     "courses": [
-      "MAT 220",
-      "MAT 220HC"
+      "MAT220",
+      "MAT221"
+    ]
+  },
+  "MAT 231": {
+    "text": "A grade of C or better in MAT220, or MAT221, or equivalent.",
+    "courses": [
+      "MAT220",
+      "MAT221"
     ]
   },
   "MAT 231HC": {
@@ -7159,6 +10498,13 @@
     "courses": [
       "MAT 220",
       "MAT 220HC"
+    ]
+  },
+  "MAT 240": {
+    "text": "Grade of \"C\" or better in MAT230 or MAT231.",
+    "courses": [
+      "MAT230",
+      "MAT231"
     ]
   },
   "MAT 241": {
@@ -7182,6 +10528,22 @@
       "MAT 262"
     ]
   },
+  "MAT 256": {
+    "text": "A grade of C or better in (MAT15+ or higher), or (MAT12+ and MAT14+), or [MAT14+ and (MAT114 or MAT115)], or (MAT14+ and an appropriate District placement into MAT150, MAT151, or MAT152), or permission of Department/Division Chair.",
+    "courses": [
+      "MAT114",
+      "MAT115",
+      "MAT150",
+      "MAT151",
+      "MAT152"
+    ]
+  },
+  "MAT 257": {
+    "text": "A grade of C or better in MAT256 or permission of Department/Division Chair.",
+    "courses": [
+      "MAT256"
+    ]
+  },
   "MAT 260": {
     "text": "MAT 241",
     "courses": [
@@ -7200,6 +10562,13 @@
     "text": "MAT231. Exams are proctored.",
     "courses": [
       "MAT 231"
+    ]
+  },
+  "MAT 276": {
+    "text": "A grade of C or better in MAT230 or MAT231 or permission of Department/Division Chair.",
+    "courses": [
+      "MAT230",
+      "MAT231"
     ]
   },
   "MDA 130": {
@@ -7237,6 +10606,16 @@
     "text": "MDA 128 (min C)",
     "courses": [
       "MDA 128"
+    ]
+  },
+  "MDL 190": {
+    "text": "Acceptance into the Medical Laboratory Science program and permission of Program Director.",
+    "courses": []
+  },
+  "MDL 247": {
+    "text": "A grade of \"C\" or better in MDL246, acceptance into the Medical Laboratory Science program, and permission of the Program Director.",
+    "courses": [
+      "MDL246"
     ]
   },
   "MEA 100": {
@@ -7424,6 +10803,57 @@
       "AIT 270"
     ]
   },
+  "MGT 270AA": {
+    "text": "Permission of Department or Division.",
+    "courses": []
+  },
+  "MGT 270AB": {
+    "text": "Permission of Department or Division.",
+    "courses": []
+  },
+  "MGT 270AC": {
+    "text": "Permission of Department or Division.",
+    "courses": []
+  },
+  "MGT 286": {
+    "text": "A grade of C or better in MGT276 or permission of Department or Division.",
+    "courses": [
+      "MGT276"
+    ]
+  },
+  "MHL 194": {
+    "text": "A grade of C or better in MTC101 or a higher level MTC course; or Corequisites: MTC105 and MTC106 or permission of Instructor.",
+    "courses": [
+      "MTC101",
+      "MTC105",
+      "MTC106"
+    ]
+  },
+  "MHL 204": {
+    "text": "A grade of C or better in ENG101 or ENG107, or permission of Instructor.",
+    "courses": [
+      "ENG101",
+      "ENG107"
+    ]
+  },
+  "MIS 201": {
+    "text": "A grade of C or better in MIS102.",
+    "courses": [
+      "MIS102"
+    ]
+  },
+  "MKT 280AA": {
+    "text": "Permission of Department or Division.",
+    "courses": []
+  },
+  "MKT 280AB": {
+    "text": "Permission of Department or Division.",
+    "courses": []
+  },
+  "MKT 280AC": {
+    "text": "Permission of Department or Division.",
+    "courses": []
+  },
   "MLS 200": {
     "text": "MLS 100 (min C) and MLS 101 (min C)",
     "courses": [
@@ -7458,17 +10888,467 @@
       "MLT 275LB"
     ]
   },
+  "MNG 300": {
+    "text": "A grade of C or better in (ACC212, GBS205, GBS221, and GBS233), or permission of Instructor.",
+    "courses": [
+      "ACC212",
+      "GBS205",
+      "GBS221",
+      "GBS233"
+    ]
+  },
+  "MNG 305": {
+    "text": "A grade of C or better in (ACC212, GBS205, GBS221, and GBS233), or permission of Instructor.",
+    "courses": [
+      "ACC212",
+      "GBS205",
+      "GBS221",
+      "GBS233"
+    ]
+  },
+  "MNG 310": {
+    "text": "A grade of C or better in ACC212, or permission of Instructor.",
+    "courses": [
+      "ACC212"
+    ]
+  },
+  "MNG 405": {
+    "text": "A grade of C or better in MNG300, or permission of Instructor.",
+    "courses": [
+      "MNG300"
+    ]
+  },
+  "MNG 410": {
+    "text": "A grade of C or better in MNG300, or permission of Instructor.",
+    "courses": [
+      "MNG300"
+    ]
+  },
+  "MNG 415": {
+    "text": "A grade of C or better in MNG300, or permission of Instructor.",
+    "courses": [
+      "MNG300"
+    ]
+  },
+  "MNG 425": {
+    "text": "A grade of C or better in (BUS305, MNG300, MNG305, and MNG310), or permission of Instructor.",
+    "courses": [
+      "BUS305",
+      "MNG300",
+      "MNG305",
+      "MNG310"
+    ]
+  },
+  "MNG 490": {
+    "text": "A grade of C or better in (BUS305, BUS310, MNG300, MNG305, and MNG310), or permission of Instructor.",
+    "courses": [
+      "BUS305",
+      "BUS310",
+      "MNG300",
+      "MNG305",
+      "MNG310"
+    ]
+  },
+  "MNT 130": {
+    "text": "A grade of C or better in MAT114, or MAT115, or MAT12+, or MAT15+ or higher, OR an appropriate district placement for MAT15+ or higher, OR permission of Instructor or Department/Division Chair.",
+    "courses": [
+      "MAT114",
+      "MAT115"
+    ]
+  },
+  "MNT 225": {
+    "text": "A grade of C or better in MNT201 or permission of Instructor.",
+    "courses": [
+      "MNT201"
+    ]
+  },
+  "MNT 245": {
+    "text": "A grade of C or better in MNT130, or OPT105, or permission of Instructor.",
+    "courses": [
+      "MNT130",
+      "OPT105"
+    ]
+  },
+  "MPT 113": {
+    "text": "A grade of C or better in (MPT101 or MPT101MP) and (MPT110 or MPT110MP), or permission of Program Director.",
+    "courses": [
+      "MPT101",
+      "MPT101MP",
+      "MPT110",
+      "MPT110MP"
+    ]
+  },
+  "MPT 131": {
+    "text": "A grade of C or better in MPT120, or MPT120MP, or permission of Program Director.",
+    "courses": [
+      "MPT120",
+      "MPT120MP"
+    ]
+  },
+  "MPT 254": {
+    "text": "A grade of C or better in MPT250 or permission of Program Director.",
+    "courses": [
+      "MPT250"
+    ]
+  },
+  "MPT 260": {
+    "text": "A grade of C or better in MPT130, or MPT130MP, or MPT131, or MPT131MP, or permission of Program Director.",
+    "courses": [
+      "MPT130",
+      "MPT130MP",
+      "MPT131",
+      "MPT131MP"
+    ]
+  },
+  "MPT 298AA": {
+    "text": "Permission of Program Director.",
+    "courses": []
+  },
+  "MPT 298AC": {
+    "text": "Permission of Program Director.",
+    "courses": []
+  },
+  "MSC 130": {
+    "text": "MSC 101 (min C) and MSC 150 (min C)",
+    "courses": [
+      "MSC 101",
+      "MSC 150"
+    ]
+  },
+  "MSC 201": {
+    "text": "MSC 101 (min C) and MSC 102 (min C)",
+    "courses": [
+      "MSC 101",
+      "MSC 102"
+    ]
+  },
+  "MSC 230": {
+    "text": "MSC 201 (min C) and MSC 250 (min C)",
+    "courses": [
+      "MSC 201",
+      "MSC 250"
+    ]
+  },
+  "MTC 105": {
+    "text": "A grade of C or better in MTC101 or permission of instructor.",
+    "courses": [
+      "MTC101"
+    ]
+  },
+  "MTC 155": {
+    "text": "A grade of C or better in MTC105.",
+    "courses": [
+      "MTC105"
+    ]
+  },
+  "MTC 156": {
+    "text": "A grade of C or better in MTC106.",
+    "courses": [
+      "MTC106"
+    ]
+  },
+  "MTC 180": {
+    "text": "A grade of C or better in MTC101, or MTC105, or Corequisites: MTC105, or permission of Instructor.",
+    "courses": [
+      "MTC101",
+      "MTC105"
+    ]
+  },
   "MTC 202": {
     "text": "MTC106.",
     "courses": [
       "MTC 106"
     ]
   },
-  "MTC 206": {
-    "text": "MTC202.",
+  "MTC 205": {
+    "text": "A grade of C or better in MTC155.",
     "courses": [
-      "MTC 202"
+      "MTC155"
     ]
+  },
+  "MTC 206": {
+    "text": "A grade of C or better in MTC156.",
+    "courses": [
+      "MTC156"
+    ]
+  },
+  "MTC 240": {
+    "text": "A grade of C or better in (MTC105 and MTC106 or equivalent) and permission of Instructor.",
+    "courses": [
+      "MTC105",
+      "MTC106"
+    ]
+  },
+  "MTC 255": {
+    "text": "A grade of C or better in MTC205.",
+    "courses": [
+      "MTC205"
+    ]
+  },
+  "MTC 256": {
+    "text": "A grade of C or better in MTC206.",
+    "courses": [
+      "MTC206"
+    ]
+  },
+  "MTC 298AB": {
+    "text": "Permission of Program Director or Instructor.",
+    "courses": []
+  },
+  "MUC 140": {
+    "text": "A grade of C or better in MTC101, or MTC105, or permission of Instructor.",
+    "courses": [
+      "MTC101",
+      "MTC105"
+    ]
+  },
+  "MUC 180": {
+    "text": "A grade of C or better in MUC109, or permission of Instructor or Department or Division Chair.",
+    "courses": [
+      "MUC109"
+    ]
+  },
+  "MUC 192": {
+    "text": "A grade of C or better in MUC191.",
+    "courses": [
+      "MUC191"
+    ]
+  },
+  "MUC 196": {
+    "text": "A grade of C or better in MUC195 or MUC195AA.",
+    "courses": [
+      "MUC195",
+      "MUC195AA"
+    ]
+  },
+  "MUC 209": {
+    "text": "A grade of C or better in (MUC109 and MUC110) or permission of Instructor.",
+    "courses": [
+      "MUC109",
+      "MUC110"
+    ]
+  },
+  "MUC 218": {
+    "text": "A grade of C or better in MUC111 and MUC196, or permission of Instructor.",
+    "courses": [
+      "MUC111",
+      "MUC196"
+    ]
+  },
+  "MUC 222": {
+    "text": "MUC122.",
+    "courses": [
+      "MUC122"
+    ]
+  },
+  "MUC 281": {
+    "text": "A grade of C or better in MUC192.",
+    "courses": [
+      "MUC192"
+    ]
+  },
+  "MUC 290AA": {
+    "text": "Permission of Department or Division.",
+    "courses": []
+  },
+  "MUC 292": {
+    "text": "A grade of C or better in MUC222, or permission of Instructor.",
+    "courses": [
+      "MUC222"
+    ]
+  },
+  "MUC 293": {
+    "text": "A grade of C or better in MUC109, or permission of Instructor or Department or Division Chair.",
+    "courses": [
+      "MUC109"
+    ]
+  },
+  "MUC 295": {
+    "text": "A grade of C or better in MUC196 and (MUC111 or permission of Instructor).",
+    "courses": [
+      "MUC196",
+      "MUC111"
+    ]
+  },
+  "MUC 297AA": {
+    "text": "Permission of Department or Division.",
+    "courses": []
+  },
+  "MUC 298AA": {
+    "text": "Permission of Program Director or Instructor.",
+    "courses": []
+  },
+  "MUP 101AA": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 101AD": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 101AG": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 101AJ": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 101AM": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 101AP": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 101AS": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 101AV": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 101AY": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 101BB": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 101BE": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 101BK": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 101BN": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 101BQ": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 101BT": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 101BW": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 101BZ": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 101CC": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 101CF": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 101CI": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 101CN": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 101CO": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 101CP": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 102AA": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 102AD": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 102AJ": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 102AM": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 102AP": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 102AS": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 102AV": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 102AY": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 102BB": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 102BE": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 102BH": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 102BK": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 102BN": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 102BQ": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 102BT": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 102BW": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 102BZ": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 102CC": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 102CF": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
+  },
+  "MUP 102CI": {
+    "text": "Student must be 18 years or older.",
+    "courses": []
   },
   "MUP 109D": {
     "text": "Instructor consent.",
@@ -7478,6 +11358,282 @@
     "text": "MUP105.",
     "courses": [
       "MUP 105"
+    ]
+  },
+  "MUP 128": {
+    "text": "A grade of C or better in MUP127 or permission of Instructor.",
+    "courses": [
+      "MUP127"
+    ]
+  },
+  "MUP 132": {
+    "text": "A grade of C or better in MUP131 or permission of Instructor.",
+    "courses": [
+      "MUP131"
+    ]
+  },
+  "MUP 134": {
+    "text": "A grade of C or better in MUP133 or permission of Instructor.",
+    "courses": [
+      "MUP133"
+    ]
+  },
+  "MUP 151AA": {
+    "text": "A grade of C or better in MUP101AA and must be 18 years or older.",
+    "courses": [
+      "MUP101AA"
+    ]
+  },
+  "MUP 151AD": {
+    "text": "A grade of C or better in MUP101AD and must be 18 years or older.",
+    "courses": [
+      "MUP101AD"
+    ]
+  },
+  "MUP 151AJ": {
+    "text": "A grade of C or better in MUP101AJ and must be 18 years or older.",
+    "courses": [
+      "MUP101AJ"
+    ]
+  },
+  "MUP 151AM": {
+    "text": "A grade of C or better in MUP101AM and must be 18 years or older.",
+    "courses": [
+      "MUP101AM"
+    ]
+  },
+  "MUP 151AP": {
+    "text": "A grade of C or better in MUP101AP and must be 18 years or older.",
+    "courses": [
+      "MUP101AP"
+    ]
+  },
+  "MUP 151AS": {
+    "text": "A grade of C or better in MUP101AS and must be 18 years or older.",
+    "courses": [
+      "MUP101AS"
+    ]
+  },
+  "MUP 151AV": {
+    "text": "A grade of C or better in MUP101AV and must be 18 years or older.",
+    "courses": [
+      "MUP101AV"
+    ]
+  },
+  "MUP 151AY": {
+    "text": "A grade of C or better in MUP101AY and must be 18 years or older.",
+    "courses": [
+      "MUP101AY"
+    ]
+  },
+  "MUP 151BB": {
+    "text": "A grade of C or better in MUP101BB and must be 18 years or older.",
+    "courses": [
+      "MUP101BB"
+    ]
+  },
+  "MUP 151BE": {
+    "text": "A grade of C or better in MUP101BE and must be 18 years or older.",
+    "courses": [
+      "MUP101BE"
+    ]
+  },
+  "MUP 151BH": {
+    "text": "A grade of C or better in MUP101BH and must be 18 years or older.",
+    "courses": [
+      "MUP101BH"
+    ]
+  },
+  "MUP 151BK": {
+    "text": "A grade of C or better in MUP101BK and must be 18 years or older.",
+    "courses": [
+      "MUP101BK"
+    ]
+  },
+  "MUP 151BN": {
+    "text": "A grade of C or better in MUP101BN and must be 18 years or older.",
+    "courses": [
+      "MUP101BN"
+    ]
+  },
+  "MUP 151BQ": {
+    "text": "A grade of C or better in MUP101BQ and must be 18 years or older.",
+    "courses": [
+      "MUP101BQ"
+    ]
+  },
+  "MUP 151BT": {
+    "text": "A grade of C or better in MUP101BT and must be 18 years or older.",
+    "courses": [
+      "MUP101BT"
+    ]
+  },
+  "MUP 151BW": {
+    "text": "A grade of C or better in MUP101BW and must be 18 years or older.",
+    "courses": [
+      "MUP101BW"
+    ]
+  },
+  "MUP 151BZ": {
+    "text": "A grade of C or better in MUP101BZ and must be 18 years or older.",
+    "courses": [
+      "MUP101BZ"
+    ]
+  },
+  "MUP 151CC": {
+    "text": "A grade of C or better in MUP101CC and must be 18 years or older.",
+    "courses": [
+      "MUP101CC"
+    ]
+  },
+  "MUP 151CF": {
+    "text": "A grade of C or better in MUP101CF and must be 18 years or older.",
+    "courses": [
+      "MUP101CF"
+    ]
+  },
+  "MUP 151CI": {
+    "text": "A grade of C or better in MUP101CI and must be 18 years or older.",
+    "courses": [
+      "MUP101CI"
+    ]
+  },
+  "MUP 151CK": {
+    "text": "A grade of C or better in MUP101CK and must be 18 years or older.",
+    "courses": [
+      "MUP101CK"
+    ]
+  },
+  "MUP 151CN": {
+    "text": "A grade of C or better in MUP101CN and must be 18 years or older.",
+    "courses": [
+      "MUP101CN"
+    ]
+  },
+  "MUP 151CO": {
+    "text": "A grade of C or better in MUP101CO and must be 18 years or older.",
+    "courses": [
+      "MUP101CO"
+    ]
+  },
+  "MUP 151CP": {
+    "text": "A grade of C or better in MUP101CP and must be 18 years or older.",
+    "courses": [
+      "MUP101CP"
+    ]
+  },
+  "MUP 152AA": {
+    "text": "A grade of C or better in MUP102AA and must be 18 years or older.",
+    "courses": [
+      "MUP102AA"
+    ]
+  },
+  "MUP 152AD": {
+    "text": "A grade of C or better in MUP102AD and must be 18 years or older.",
+    "courses": [
+      "MUP102AD"
+    ]
+  },
+  "MUP 152AJ": {
+    "text": "A grade of C or better in MUP102AJ and must be 18 years or older.",
+    "courses": [
+      "MUP102AJ"
+    ]
+  },
+  "MUP 152AM": {
+    "text": "A grade of C or better in MUP102AM and must be 18 years or older.",
+    "courses": [
+      "MUP102AM"
+    ]
+  },
+  "MUP 152AP": {
+    "text": "A grade of C or better in MUP102AP and must be 18 years or older.",
+    "courses": [
+      "MUP102AP"
+    ]
+  },
+  "MUP 152AS": {
+    "text": "A grade of C or better in MUP102AS and must be 18 years or older.",
+    "courses": [
+      "MUP102AS"
+    ]
+  },
+  "MUP 152AY": {
+    "text": "A grade of C or better in MUP102AY and must be 18 years or older.",
+    "courses": [
+      "MUP102AY"
+    ]
+  },
+  "MUP 152BB": {
+    "text": "A grade of C or better in MUP102BB and must be 18 years or older.",
+    "courses": [
+      "MUP102BB"
+    ]
+  },
+  "MUP 152BE": {
+    "text": "A grade of C or better in MUP102BE and must be 18 years or older.",
+    "courses": [
+      "MUP102BE"
+    ]
+  },
+  "MUP 152BH": {
+    "text": "A grade of C or better in MUP102BH and must be 18 years or older.",
+    "courses": [
+      "MUP102BH"
+    ]
+  },
+  "MUP 152BK": {
+    "text": "A grade of C or better in MUP102BK and must be 18 years or older.",
+    "courses": [
+      "MUP102BK"
+    ]
+  },
+  "MUP 152BN": {
+    "text": "A grade of C or better in MUP102BN and must be 18 years or older.",
+    "courses": [
+      "MUP102BN"
+    ]
+  },
+  "MUP 152BQ": {
+    "text": "A grade of C or better in MUP102BQ and must be 18 years or older.",
+    "courses": [
+      "MUP102BQ"
+    ]
+  },
+  "MUP 152BT": {
+    "text": "A grade of C or better in MUP102BT and must be 18 years or older.",
+    "courses": [
+      "MUP102BT"
+    ]
+  },
+  "MUP 152BW": {
+    "text": "A grade of C or better in MUP102BW and must be 18 years or older.",
+    "courses": [
+      "MUP102BW"
+    ]
+  },
+  "MUP 152BZ": {
+    "text": "A grade of C or better in MUP102BZ and must be 18 years or older.",
+    "courses": [
+      "MUP102BZ"
+    ]
+  },
+  "MUP 152CC": {
+    "text": "A grade of C or better in MUP102CC and must be 18 years or older.",
+    "courses": [
+      "MUP102CC"
+    ]
+  },
+  "MUP 152CF": {
+    "text": "A grade of C or better in MUP102CF and must be 18 years or older.",
+    "courses": [
+      "MUP102CF"
+    ]
+  },
+  "MUP 152CI": {
+    "text": "A grade of C or better in MUP102CI and must be 18 years or older.",
+    "courses": [
+      "MUP102CI"
     ]
   },
   "MUP 171": {
@@ -7526,6 +11682,558 @@
     "text": "MUP 168 (min C)",
     "courses": [
       "MUP 168"
+    ]
+  },
+  "MUP 201AA": {
+    "text": "A grade of C or better in MUP151AA and must be 18 years or older.",
+    "courses": [
+      "MUP151AA"
+    ]
+  },
+  "MUP 201AD": {
+    "text": "A grade of C or better in MUP151AD and must be 18 years or older.",
+    "courses": [
+      "MUP151AD"
+    ]
+  },
+  "MUP 201AJ": {
+    "text": "A grade of C or better in MUP151AJ and must be 18 years or older.",
+    "courses": [
+      "MUP151AJ"
+    ]
+  },
+  "MUP 201AM": {
+    "text": "A grade of C or better in MUP151AM and must be 18 years or older.",
+    "courses": [
+      "MUP151AM"
+    ]
+  },
+  "MUP 201AP": {
+    "text": "A grade of C or better in MUP151AP and must be 18 years or older.",
+    "courses": [
+      "MUP151AP"
+    ]
+  },
+  "MUP 201AS": {
+    "text": "A grade of C or better in MUP151AS and must be 18 years or older.",
+    "courses": [
+      "MUP151AS"
+    ]
+  },
+  "MUP 201AV": {
+    "text": "A grade of C or better in MUP151AV and must be 18 years or older.",
+    "courses": [
+      "MUP151AV"
+    ]
+  },
+  "MUP 201AY": {
+    "text": "A grade of C or better in MUP151AY and must be 18 years or older.",
+    "courses": [
+      "MUP151AY"
+    ]
+  },
+  "MUP 201BB": {
+    "text": "A grade of C or better in MUP151BB and must be 18 years or older.",
+    "courses": [
+      "MUP151BB"
+    ]
+  },
+  "MUP 201BE": {
+    "text": "A grade of C or better in MUP151BE and must be 18 years or older.",
+    "courses": [
+      "MUP151BE"
+    ]
+  },
+  "MUP 201BH": {
+    "text": "A grade of C or better in MUP151BH and must be 18 years or older.",
+    "courses": [
+      "MUP151BH"
+    ]
+  },
+  "MUP 201BK": {
+    "text": "A grade of C or better in MUP151BK and must be 18 years or older.",
+    "courses": [
+      "MUP151BK"
+    ]
+  },
+  "MUP 201BN": {
+    "text": "A grade of C or better in MUP151BN and must be 18 years or older.",
+    "courses": [
+      "MUP151BN"
+    ]
+  },
+  "MUP 201BQ": {
+    "text": "A grade of C or better in MUP151BQ and must be 18 years or older.",
+    "courses": [
+      "MUP151BQ"
+    ]
+  },
+  "MUP 201BT": {
+    "text": "A grade of C or better in MUP151BT and must be 18 years or older.",
+    "courses": [
+      "MUP151BT"
+    ]
+  },
+  "MUP 201BW": {
+    "text": "A grade of C or better in MUP151BW and must be 18 years or older.",
+    "courses": [
+      "MUP151BW"
+    ]
+  },
+  "MUP 201BZ": {
+    "text": "A grade of C or better in MUP151BZ and must be 18 years or older.",
+    "courses": [
+      "MUP151BZ"
+    ]
+  },
+  "MUP 201CC": {
+    "text": "A grade of C or better in MUP151CC and must be 18 years or older.",
+    "courses": [
+      "MUP151CC"
+    ]
+  },
+  "MUP 201CF": {
+    "text": "A grade of C or better in MUP151CF and must be 18 years or older.",
+    "courses": [
+      "MUP151CF"
+    ]
+  },
+  "MUP 201CI": {
+    "text": "A grade of C or better in MUP151CI and must be 18 years or older.",
+    "courses": [
+      "MUP151CI"
+    ]
+  },
+  "MUP 201CK": {
+    "text": "A grade of C or better in MUP151CK and must be 18 years or older.",
+    "courses": [
+      "MUP151CK"
+    ]
+  },
+  "MUP 201CN": {
+    "text": "A grade of C or better in MUP151CN and must be 18 years or older.",
+    "courses": [
+      "MUP151CN"
+    ]
+  },
+  "MUP 201CO": {
+    "text": "A grade of C or better in MUP151CO and must be 18 years or older.",
+    "courses": [
+      "MUP151CO"
+    ]
+  },
+  "MUP 201CP": {
+    "text": "A grade of C or better in MUP151CP and must be 18 years or older.",
+    "courses": [
+      "MUP151CP"
+    ]
+  },
+  "MUP 202AA": {
+    "text": "A grade of C or better in MUP152AA and must be 18 years or older.",
+    "courses": [
+      "MUP152AA"
+    ]
+  },
+  "MUP 202AD": {
+    "text": "A grade of C or better in MUP152AD and must be 18 years or older.",
+    "courses": [
+      "MUP152AD"
+    ]
+  },
+  "MUP 202AJ": {
+    "text": "A grade of C or better in MUP152AJ and must be 18 years or older.",
+    "courses": [
+      "MUP152AJ"
+    ]
+  },
+  "MUP 202AM": {
+    "text": "A grade of C or better in MUP152AM and must be 18 years or older.",
+    "courses": [
+      "MUP152AM"
+    ]
+  },
+  "MUP 202AP": {
+    "text": "A grade of C or better in MUP152AP and must be 18 years or older.",
+    "courses": [
+      "MUP152AP"
+    ]
+  },
+  "MUP 202AS": {
+    "text": "A grade of C or better in MUP152AS and must be 18 years or older.",
+    "courses": [
+      "MUP152AS"
+    ]
+  },
+  "MUP 202AV": {
+    "text": "A grade of C or better in MUP152AV and must be 18 years or older.",
+    "courses": [
+      "MUP152AV"
+    ]
+  },
+  "MUP 202AY": {
+    "text": "A grade of C or better in MUP152AY and must be 18 years or older.",
+    "courses": [
+      "MUP152AY"
+    ]
+  },
+  "MUP 202BB": {
+    "text": "A grade of C or better in MUP152BB and must be 18 years or older.",
+    "courses": [
+      "MUP152BB"
+    ]
+  },
+  "MUP 202BE": {
+    "text": "A grade of C or better in MUP152BE and must be 18 years or older.",
+    "courses": [
+      "MUP152BE"
+    ]
+  },
+  "MUP 202BH": {
+    "text": "A grade of C or better in MUP152BH and must be 18 years or older.",
+    "courses": [
+      "MUP152BH"
+    ]
+  },
+  "MUP 202BK": {
+    "text": "A grade of C or better in MUP152BK and must be 18 years or older.",
+    "courses": [
+      "MUP152BK"
+    ]
+  },
+  "MUP 202BN": {
+    "text": "A grade of C or better in MUP152BN and must be 18 years or older.",
+    "courses": [
+      "MUP152BN"
+    ]
+  },
+  "MUP 202BQ": {
+    "text": "A grade of C or better in MUP152BQ and must be 18 years or older.",
+    "courses": [
+      "MUP152BQ"
+    ]
+  },
+  "MUP 202BT": {
+    "text": "A grade of C or better in MUP152BT and must be 18 years or older.",
+    "courses": [
+      "MUP152BT"
+    ]
+  },
+  "MUP 202BW": {
+    "text": "A grade of C or better in MUP152BW and must be 18 years or older.",
+    "courses": [
+      "MUP152BW"
+    ]
+  },
+  "MUP 202BZ": {
+    "text": "A grade of C or better in MUP152BZ and must be 18 years or older.",
+    "courses": [
+      "MUP152BZ"
+    ]
+  },
+  "MUP 202CC": {
+    "text": "A grade of C or better in MUP152CC and must be 18 years or older.",
+    "courses": [
+      "MUP152CC"
+    ]
+  },
+  "MUP 202CF": {
+    "text": "A grade of C or better in MUP152CF and must be 18 years or older.",
+    "courses": [
+      "MUP152CF"
+    ]
+  },
+  "MUP 202CI": {
+    "text": "A grade of C or better in MUP152CI and must be 18 years or older.",
+    "courses": [
+      "MUP152CI"
+    ]
+  },
+  "MUP 231": {
+    "text": "A grade of C or better in MUP132 or permission of Instructor.",
+    "courses": [
+      "MUP132"
+    ]
+  },
+  "MUP 232": {
+    "text": "A grade of C or better in MUP231 or permission of Instructor.",
+    "courses": [
+      "MUP231"
+    ]
+  },
+  "MUP 233": {
+    "text": "A grade of C or better in MUP134.",
+    "courses": [
+      "MUP134"
+    ]
+  },
+  "MUP 234": {
+    "text": "A grade of C or better in MUP233 or permission of Instructor.",
+    "courses": [
+      "MUP233"
+    ]
+  },
+  "MUP 251AA": {
+    "text": "A grade of C or better in MUP201AA and must be 18 years or older.",
+    "courses": [
+      "MUP201AA"
+    ]
+  },
+  "MUP 251AD": {
+    "text": "A grade of C or better in MUP201AD and must be 18 years or older.",
+    "courses": [
+      "MUP201AD"
+    ]
+  },
+  "MUP 251AJ": {
+    "text": "A grade of C or better in MUP201AJ and must be 18 years or older.",
+    "courses": [
+      "MUP201AJ"
+    ]
+  },
+  "MUP 251AM": {
+    "text": "A grade of C or better in MUP201AM and must be 18 years or older.",
+    "courses": [
+      "MUP201AM"
+    ]
+  },
+  "MUP 251AP": {
+    "text": "A grade of C or better in MUP201AP and must be 18 years or older.",
+    "courses": [
+      "MUP201AP"
+    ]
+  },
+  "MUP 251AS": {
+    "text": "A grade of C or better in MUP201AS and must be 18 years or older.",
+    "courses": [
+      "MUP201AS"
+    ]
+  },
+  "MUP 251AV": {
+    "text": "A grade of C or better in MUP201AV and must be 18 years or older.",
+    "courses": [
+      "MUP201AV"
+    ]
+  },
+  "MUP 251AY": {
+    "text": "A grade of C or better in MUP201AY and must be 18 years or older.",
+    "courses": [
+      "MUP201AY"
+    ]
+  },
+  "MUP 251BB": {
+    "text": "A grade of C or better in MUP201BB and must be 18 years or older.",
+    "courses": [
+      "MUP201BB"
+    ]
+  },
+  "MUP 251BE": {
+    "text": "A grade of C or better in MUP201BE and must be 18 years or older.",
+    "courses": [
+      "MUP201BE"
+    ]
+  },
+  "MUP 251BH": {
+    "text": "A grade of C or better in MUP201BH and must be 18 years or older.",
+    "courses": [
+      "MUP201BH"
+    ]
+  },
+  "MUP 251BK": {
+    "text": "A grade of C or better in MUP201BK and must be 18 years or older.",
+    "courses": [
+      "MUP201BK"
+    ]
+  },
+  "MUP 251BN": {
+    "text": "A grade of C or better in MUP201BN and must be 18 years or older.",
+    "courses": [
+      "MUP201BN"
+    ]
+  },
+  "MUP 251BQ": {
+    "text": "A grade of C or better in MUP201BQ and must be 18 years or older.",
+    "courses": [
+      "MUP201BQ"
+    ]
+  },
+  "MUP 251BT": {
+    "text": "A grade of C or better in MUP201BT and must be 18 years or older.",
+    "courses": [
+      "MUP201BT"
+    ]
+  },
+  "MUP 251BW": {
+    "text": "A grade of C or better in MUP201BW and must be 18 years or older.",
+    "courses": [
+      "MUP201BW"
+    ]
+  },
+  "MUP 251BZ": {
+    "text": "A grade of C or better in MUP201BZ and must be 18 years or older.",
+    "courses": [
+      "MUP201BZ"
+    ]
+  },
+  "MUP 251CC": {
+    "text": "A grade of C or better in MUP201CC and must be 18 years or older.",
+    "courses": [
+      "MUP201CC"
+    ]
+  },
+  "MUP 251CF": {
+    "text": "A grade of C or better in MUP201CF and must be 18 years or older.",
+    "courses": [
+      "MUP201CF"
+    ]
+  },
+  "MUP 251CI": {
+    "text": "A grade of C or better in MUP201CI and must be 18 years or older.",
+    "courses": [
+      "MUP201CI"
+    ]
+  },
+  "MUP 251CK": {
+    "text": "A grade of C or better in MUP201CK and must be 18 years or older.",
+    "courses": [
+      "MUP201CK"
+    ]
+  },
+  "MUP 251CN": {
+    "text": "A grade of C or better in MUP201CN and must be 18 years or older.",
+    "courses": [
+      "MUP201CN"
+    ]
+  },
+  "MUP 251CO": {
+    "text": "A grade of C or better in MUP201CO and must be 18 years or older.",
+    "courses": [
+      "MUP201CO"
+    ]
+  },
+  "MUP 251CP": {
+    "text": "A grade of C or better in MUP201CP and must be 18 years or older.",
+    "courses": [
+      "MUP201CP"
+    ]
+  },
+  "MUP 252AA": {
+    "text": "A grade of C or better in MUP202AA and must be 18 years or older.",
+    "courses": [
+      "MUP202AA"
+    ]
+  },
+  "MUP 252AD": {
+    "text": "A grade of C or better in MUP202AD and must be 18 years or older.",
+    "courses": [
+      "MUP202AD"
+    ]
+  },
+  "MUP 252AJ": {
+    "text": "A grade of C or better in MUP202AJ and must be 18 years or older.",
+    "courses": [
+      "MUP202AJ"
+    ]
+  },
+  "MUP 252AM": {
+    "text": "A grade of C or better in MUP202AM and must be 18 years or older.",
+    "courses": [
+      "MUP202AM"
+    ]
+  },
+  "MUP 252AP": {
+    "text": "A grade of C or better in MUP202AP and must be 18 years or older.",
+    "courses": [
+      "MUP202AP"
+    ]
+  },
+  "MUP 252AS": {
+    "text": "A grade of C or better in MUP202AS and must be 18 years or older.",
+    "courses": [
+      "MUP202AS"
+    ]
+  },
+  "MUP 252AV": {
+    "text": "A grade of C or better in MUP202AV and must be 18 years or older.",
+    "courses": [
+      "MUP202AV"
+    ]
+  },
+  "MUP 252AY": {
+    "text": "A grade of C or better in MUP202AY and must be 18 years or older.",
+    "courses": [
+      "MUP202AY"
+    ]
+  },
+  "MUP 252BB": {
+    "text": "A grade of C or better in MUP202BB and must be 18 years or older.",
+    "courses": [
+      "MUP202BB"
+    ]
+  },
+  "MUP 252BE": {
+    "text": "A grade of C or better in MUP202BE and must be 18 years or older.",
+    "courses": [
+      "MUP202BE"
+    ]
+  },
+  "MUP 252BH": {
+    "text": "A grade of C or better in MUP202BH and must be 18 years or older.",
+    "courses": [
+      "MUP202BH"
+    ]
+  },
+  "MUP 252BK": {
+    "text": "A grade of C or better in MUP202BK and must be 18 years or older.",
+    "courses": [
+      "MUP202BK"
+    ]
+  },
+  "MUP 252BN": {
+    "text": "A grade of C or better in MUP202BN and must be 18 years or older.",
+    "courses": [
+      "MUP202BN"
+    ]
+  },
+  "MUP 252BQ": {
+    "text": "A grade of C or better in MUP202BQ and must be 18 years or older.",
+    "courses": [
+      "MUP202BQ"
+    ]
+  },
+  "MUP 252BT": {
+    "text": "A grade of C or better in MUP202BT and must be 18 years or older.",
+    "courses": [
+      "MUP202BT"
+    ]
+  },
+  "MUP 252BW": {
+    "text": "A grade of C or better in MUP202BW and must be 18 years or older.",
+    "courses": [
+      "MUP202BW"
+    ]
+  },
+  "MUP 252BZ": {
+    "text": "A grade of C or better in MUP202BZ and must be 18 years or older.",
+    "courses": [
+      "MUP202BZ"
+    ]
+  },
+  "MUP 252CC": {
+    "text": "A grade of C or better in MUP202CC and must be 18 years or older.",
+    "courses": [
+      "MUP202CC"
+    ]
+  },
+  "MUP 252CF": {
+    "text": "A grade of C or better in MUP202CF and must be 18 years or older.",
+    "courses": [
+      "MUP202CF"
+    ]
+  },
+  "MUP 252CI": {
+    "text": "A grade of C or better in MUP202CI and must be 18 years or older.",
+    "courses": [
+      "MUP202CI"
     ]
   },
   "MUP 261": {
@@ -7623,6 +12331,10 @@
     "courses": [
       "MUP 268"
     ]
+  },
+  "MUP 298AA": {
+    "text": "Permission of Program Director or Instructor.",
+    "courses": []
   },
   "MUS 101": {
     "text": "TRE 089",
@@ -7810,22 +12522,49 @@
       "PCS 023"
     ]
   },
+  "NCE 150": {
+    "text": "One year full-time employment OR two years part-time employment of direct patient care within the past five years OR students who have successfully completed course work that included direct patient care experiences in allied health, medicine or nursing in the past five years, OR permission of the Division Chairperson.",
+    "courses": []
+  },
+  "NCE 211": {
+    "text": "Healthcare professional license or certification, or permission of Instructor.",
+    "courses": []
+  },
+  "NCE 214OP": {
+    "text": "Designee/advanced placement into the Nursing Program or permission of the Nursing Director.",
+    "courses": []
+  },
+  "NCE 221": {
+    "text": "Certified Nurse Assistant (CNA), Nurse Assistant course or equivalent within the past year, and permission of Continuing Education Program Director and/or Instructor.",
+    "courses": []
+  },
   "NDT 101": {
     "text": "NDT 100 (min C)",
     "courses": [
       "NDT 100"
     ]
   },
+  "NDT 101LL": {
+    "text": "Admission into the Clinical Neurodiagnostic Technology program.",
+    "courses": []
+  },
   "NDT 102": {
-    "text": "NDT 100 (min C)",
+    "text": "A grade of C or better in BIO160 or BIO202 and admission into the Clinical Neurodiagnostic Technology program.",
     "courses": [
-      "NDT 100"
+      "BIO160",
+      "BIO202"
     ]
   },
   "NDT 103": {
     "text": "NDT 100 (min C)",
     "courses": [
       "NDT 100"
+    ]
+  },
+  "NDT 103LL": {
+    "text": "A grade of C or better in NDT101LL and admission into the Clinical Neurodiagnostic Technology program.",
+    "courses": [
+      "NDT101LL"
     ]
   },
   "NDT 105": {
@@ -8084,6 +12823,133 @@
     "text": "All Dietetic Technician A.A.S. Degree requirements completed with a grade of C or better. Program Director or instructor consent.",
     "courses": []
   },
+  "NUC 101": {
+    "text": "Admission to Nuclear Medicine Technology program.",
+    "courses": []
+  },
+  "NUC 110": {
+    "text": "Admission to Nuclear Medicine Technology program.",
+    "courses": []
+  },
+  "NUC 112": {
+    "text": "Admission to Nuclear Medicine Technology program.",
+    "courses": []
+  },
+  "NUC 113": {
+    "text": "Admission to Nuclear Medicine Technology program.",
+    "courses": []
+  },
+  "NUC 116": {
+    "text": "Admission to Nuclear Medicine Technology program.",
+    "courses": []
+  },
+  "NUC 180": {
+    "text": "Admission to Nuclear Medicine Technology program or certified by the American Registry of Radiologic Technologists (ARRT) [R.",
+    "courses": []
+  },
+  "NUC 202": {
+    "text": "Admission to Nuclear Medicine Technology program.",
+    "courses": []
+  },
+  "NUC 259": {
+    "text": "Admission to Nuclear Medicine Technology program.",
+    "courses": []
+  },
+  "NUC 303": {
+    "text": "Admission to Nuclear Medicine Technology program.",
+    "courses": []
+  },
+  "NUC 316": {
+    "text": "Admission to Nuclear Medicine Technology program.",
+    "courses": []
+  },
+  "NUC 322": {
+    "text": "Admission to Nuclear Medicine Technology program.",
+    "courses": []
+  },
+  "NUC 350": {
+    "text": "Admission to Nuclear Medicine Technology program or permission of Program Director.",
+    "courses": []
+  },
+  "NUC 359": {
+    "text": "Admission to Nuclear Medicine Technology program.",
+    "courses": []
+  },
+  "NUC 392": {
+    "text": "Admission to Nuclear Medicine Technology program.",
+    "courses": []
+  },
+  "NUC 402": {
+    "text": "Admission to Nuclear Medicine Technology program.",
+    "courses": []
+  },
+  "NUC 422": {
+    "text": "Admission to Nuclear Medicine Technology program.",
+    "courses": []
+  },
+  "NUC 434": {
+    "text": "Admission to Nuclear Medicine Technology program.",
+    "courses": []
+  },
+  "NUC 459": {
+    "text": "A grade of C or better in NUC259 and NUC359.",
+    "courses": [
+      "NUC259",
+      "NUC359"
+    ]
+  },
+  "NUR 110": {
+    "text": "AHS 131 (min C) or MAT 082 (min C) or MAT 086 (min C) or MAT 088 (min C) or MAT 091 (min C) or MAT 096 (min C) or MAT 097 (min C) or MAT 121 (min C) or MAT 122 (min C) or MAT 140 (min C) or MAT 142 (min C) or MAT 151 (min C) or MAT 172 (min C) or MAT 180 (min C) or MAT 181 (min C) or MAT 187 (min C) or MAT 211 (min C) or MAT 220 (min C) or MAT 230 (min C) or Reading 099 (min C) or ENG 098 (min C) or ENG 101 (min C) or ENG 101A (min C) or ENG 102 (min C)",
+    "courses": [
+      "AHS 131",
+      "MAT 082",
+      "MAT 086",
+      "MAT 088",
+      "MAT 091",
+      "MAT 096",
+      "MAT 097",
+      "MAT 121",
+      "MAT 122",
+      "MAT 140",
+      "MAT 142",
+      "MAT 151",
+      "MAT 172",
+      "MAT 180",
+      "MAT 181",
+      "MAT 187",
+      "MAT 211",
+      "MAT 220",
+      "MAT 230",
+      "Reading 099",
+      "ENG 098",
+      "ENG 101",
+      "ENG 101A",
+      "ENG 102"
+    ]
+  },
+  "NUR 110AP": {
+    "text": "ENG 098 (min C) or ENG 101 (min C) or ENG 101A (min C) or ENG 102 (min C) and MAT 088 (min C) or MAT 091 (min C) or MAT 095 (min C) or MAT 097 (min C) or MAT 142 (min C) or MAT 140 (min C) or MAT 151 (min C) or MAT 180 (min C) or MAT 187 (min C) or MAT 160 (min C) or MAT 232 (min C) or MAT 172 (min C) or MAT 211 (min C) or MAT 220 (min C)",
+    "courses": [
+      "ENG 098",
+      "ENG 101",
+      "ENG 101A",
+      "ENG 102",
+      "MAT 088",
+      "MAT 091",
+      "MAT 095",
+      "MAT 097",
+      "MAT 142",
+      "MAT 140",
+      "MAT 151",
+      "MAT 180",
+      "MAT 187",
+      "MAT 160",
+      "MAT 232",
+      "MAT 172",
+      "MAT 211",
+      "MAT 220"
+    ]
+  },
   "NUR 111": {
     "text": "NUR 103",
     "courses": [
@@ -8101,6 +12967,12 @@
       "NUR 121A",
       "HLT 101",
       "HLT 111"
+    ]
+  },
+  "NUR 114": {
+    "text": "BIO 205 (min C)",
+    "courses": [
+      "BIO 205"
     ]
   },
   "NUR 116": {
@@ -8202,11 +13074,12 @@
     ]
   },
   "NUR 124": {
-    "text": "NUR 121A (min B) and NUR 122 (min B) and NUR 123 (min B)",
+    "text": "NUR 114 (min C) and NUR 116 (min C) and BIO 218 (min C) and NTR 135 (min C)",
     "courses": [
-      "NUR 121A",
-      "NUR 122",
-      "NUR 123"
+      "NUR 114",
+      "NUR 116",
+      "BIO 218",
+      "NTR 135"
     ]
   },
   "NUR 125": {
@@ -8318,6 +13191,42 @@
       "NUR 145"
     ]
   },
+  "NUR 152": {
+    "text": "Admission into the Nursing Program.",
+    "courses": []
+  },
+  "NUR 158": {
+    "text": "Reading and math assessment as well as completion of all required Health and Safety documents.",
+    "courses": []
+  },
+  "NUR 160PN": {
+    "text": "Admission into the Fast Track Practical Nursing Program.",
+    "courses": []
+  },
+  "NUR 172": {
+    "text": "A grade of C or better in (BIO202 and NUR152) or permission of Nursing Department Chair.",
+    "courses": [
+      "BIO202",
+      "NUR152"
+    ]
+  },
+  "NUR 180PN": {
+    "text": "A grade of C or better in NUR160PN.",
+    "courses": [
+      "NUR160PN"
+    ]
+  },
+  "NUR 187": {
+    "text": "Permission of Nursing Department/Division Chair.",
+    "courses": []
+  },
+  "NUR 191": {
+    "text": "A grade of C or better in NUR171, or NUR172, or permission of Nursing Department Chair.",
+    "courses": [
+      "NUR171",
+      "NUR172"
+    ]
+  },
   "NUR 200": {
     "text": "Nursing Cohort or admission to Diagnostic Medical Sonography program.",
     "courses": []
@@ -8357,6 +13266,13 @@
     "text": "NUR 212",
     "courses": [
       "NUR 212"
+    ]
+  },
+  "NUR 215": {
+    "text": "NUR 124 (min C) and PSY 240 (min C)",
+    "courses": [
+      "NUR 124",
+      "PSY 240"
     ]
   },
   "NUR 220": {
@@ -8420,6 +13336,45 @@
       "NUR 213"
     ]
   },
+  "NUR 252": {
+    "text": "A grade of C or better in [(CRE101 or appropriate district placement) and NUR172 and PSY101] or permission of Nursing Department Chair.",
+    "courses": [
+      "CRE101",
+      "NUR172",
+      "PSY101"
+    ]
+  },
+  "NUR 283": {
+    "text": "A grade of C or better in (BIO205 and NUR252) or permission of Nursing Department Chair.",
+    "courses": [
+      "BIO205",
+      "NUR252"
+    ]
+  },
+  "NUR 295": {
+    "text": "Permission of Instructor.",
+    "courses": []
+  },
+  "NUR 298AB": {
+    "text": "Permission of Program Director or Instructor.",
+    "courses": []
+  },
+  "NUR 301": {
+    "text": "Admission into the RN to BSN program; current, unencumbered RN license.",
+    "courses": []
+  },
+  "NUR 302": {
+    "text": "Admission into the RN to BSN program; current, unencumbered RN license.",
+    "courses": []
+  },
+  "NUR 303": {
+    "text": "Admission into the RN to BSN program; current, unencumbered RN license.",
+    "courses": []
+  },
+  "NUR 304": {
+    "text": "Admission into the RN to BSN program; current, unencumbered RN license.",
+    "courses": []
+  },
   "NUR 305": {
     "text": "ENG 379 (min C)",
     "courses": [
@@ -8444,6 +13399,22 @@
     "courses": [
       "NUR 305"
     ]
+  },
+  "NUR 401": {
+    "text": "Admission into the RN to BSN program; current, unencumbered RN license.",
+    "courses": []
+  },
+  "NUR 402": {
+    "text": "Admission into the RN to BSN program; current, unencumbered RN license.",
+    "courses": []
+  },
+  "NUR 403": {
+    "text": "Admission into the RN to BSN program; current, unencumbered RN license.",
+    "courses": []
+  },
+  "NUR 404": {
+    "text": "Admission into the RN to BSN program; current, unencumbered RN license.",
+    "courses": []
   },
   "NUR 415": {
     "text": "NUR 305 (min C)",
@@ -8496,6 +13467,36 @@
       "TRE 089"
     ]
   },
+  "OTA 157": {
+    "text": "Admission to the Occupational Therapy Assistant program.",
+    "courses": []
+  },
+  "OTA 201": {
+    "text": "A grade of C or better in OTA157.",
+    "courses": [
+      "OTA157"
+    ]
+  },
+  "OTA 205": {
+    "text": "Admission to the Occupational Therapy Assistant program and a grade of C or better in OTA157.",
+    "courses": [
+      "OTA157"
+    ]
+  },
+  "OTA 207": {
+    "text": "A grade of C or better in OTA157.",
+    "courses": [
+      "OTA157"
+    ]
+  },
+  "OTA 217": {
+    "text": "Admission to the Occupational Therapy Assistant program and a grade of C or better in OTA102, OTA117, and OTA216.",
+    "courses": [
+      "OTA102",
+      "OTA117",
+      "OTA216"
+    ]
+  },
   "PAC 221": {
     "text": "PAC121 or instructor consent.",
     "courses": [
@@ -8520,6 +13521,18 @@
       "PAC 127"
     ]
   },
+  "PAD 107": {
+    "text": "A grade of C or better in CIS114DE.",
+    "courses": [
+      "CIS114DE"
+    ]
+  },
+  "PAD 122": {
+    "text": "A grade of C or better in CIS114DE.",
+    "courses": [
+      "CIS114DE"
+    ]
+  },
   "PAR 102": {
     "text": "PAR 101 (min C) and WRT 101 (min C) or WRT 101HC (min C) or WRT 101C (min C) or WRT 101S (min C) or WRT 101P (min C) or WRT 107 (min C) or WRT 107C (min C) or AGEC Pseudo Transfer Courses EC (min C)",
     "courses": [
@@ -8542,11 +13555,14 @@
     ]
   },
   "PAR 104": {
-    "text": "PAR 101 (min C) and WRT 102 (min C) or WRT 102HC (min C)",
+    "text": "A grade of C or better in (ENG101 or ENG107) and (BPC110 or CIS105) and (CRE101 or equivalent as indicated by assessment) and PAR102, or permission of Program Director.",
     "courses": [
-      "PAR 101",
-      "WRT 102",
-      "WRT 102HC"
+      "ENG101",
+      "ENG107",
+      "BPC110",
+      "CIS105",
+      "CRE101",
+      "PAR102"
     ]
   },
   "PAR 105": {
@@ -8576,6 +13592,22 @@
     "text": "PAR 101",
     "courses": [
       "PAR 101"
+    ]
+  },
+  "PAR 112": {
+    "text": "A grade of C or better in (ENG101 or ENG107) and (BPC110 or CIS105) and (CRE101 or equivalent as indicated by assessment), or permission of Program Director.",
+    "courses": [
+      "ENG101",
+      "ENG107",
+      "BPC110",
+      "CIS105",
+      "CRE101"
+    ]
+  },
+  "PAR 114": {
+    "text": "A grade of C or better in PAR112, or permission of Program Director.",
+    "courses": [
+      "PAR112"
     ]
   },
   "PAR 201": {
@@ -8610,9 +13642,17 @@
     ]
   },
   "PAR 206": {
-    "text": "PAR 201",
+    "text": "A grade of C or better in PAR103 and PAR112, or permission of Program Director.",
     "courses": [
-      "PAR 201"
+      "PAR103",
+      "PAR112"
+    ]
+  },
+  "PAR 208": {
+    "text": "A grade of C or better in PAR103 and PAR112, or permission of Program Director.",
+    "courses": [
+      "PAR103",
+      "PAR112"
     ]
   },
   "PAR 209": {
@@ -8663,6 +13703,73 @@
       "PAR 101"
     ]
   },
+  "PAR 224": {
+    "text": "A grade of C or better in PAR104 or Corequisites: PAR104.",
+    "courses": [
+      "PAR104"
+    ]
+  },
+  "PAR 230": {
+    "text": "A grade of C or better in PAR103 and PAR112, or permission of Program Director.",
+    "courses": [
+      "PAR103",
+      "PAR112"
+    ]
+  },
+  "PAR 232": {
+    "text": "A grade of C or better in PAR103 and PAR112, or permission of Program Director.",
+    "courses": [
+      "PAR103",
+      "PAR112"
+    ]
+  },
+  "PAR 233": {
+    "text": "A grade of C or better in PAR103 and PAR114, or permission of Program Director.",
+    "courses": [
+      "PAR103",
+      "PAR114"
+    ]
+  },
+  "PAR 234": {
+    "text": "A grade of C or better in PAR103 and PAR112, or permission of Program Director.",
+    "courses": [
+      "PAR103",
+      "PAR112"
+    ]
+  },
+  "PAR 236": {
+    "text": "A grade of C or better in PAR103 and PAR112, or permission of Program Director.",
+    "courses": [
+      "PAR103",
+      "PAR112"
+    ]
+  },
+  "PAR 238": {
+    "text": "A grade of C or better in PAR103 and PAR112, or permission of Program Director.",
+    "courses": [
+      "PAR103",
+      "PAR112"
+    ]
+  },
+  "PAR 239": {
+    "text": "A grade of C or better in PAR103 and PAR112, or permission of Program Director.",
+    "courses": [
+      "PAR103",
+      "PAR112"
+    ]
+  },
+  "PAR 240": {
+    "text": "A grade of C or better in PAR114.",
+    "courses": [
+      "PAR114"
+    ]
+  },
+  "PAR 260": {
+    "text": "A grade of C or better in PAR114.",
+    "courses": [
+      "PAR114"
+    ]
+  },
   "PAR 290": {
     "text": "PAR 104 (min C) and PAR 202 (min C) and WRT 102 (min C) or WRT 102C (min C) or WRT 102HC (min C) or WRT 108 (min C) or WRT 108C (min C)",
     "courses": [
@@ -8673,6 +13780,16 @@
       "WRT 102HC",
       "WRT 108",
       "WRT 108C"
+    ]
+  },
+  "PAR 290AA": {
+    "text": "Permission of Department or Division.",
+    "courses": []
+  },
+  "PAR 290AB": {
+    "text": "A grade of C or better in PAR260 and permission of Department or Division.",
+    "courses": [
+      "PAR260"
     ]
   },
   "PEV 201": {
@@ -8867,6 +13984,13 @@
       "TRE 089"
     ]
   },
+  "PHI 103": {
+    "text": "A grade of C or better in ENG101, or ENG107, or equivalent.",
+    "courses": [
+      "ENG101",
+      "ENG107"
+    ]
+  },
   "PHI 111": {
     "text": "ENG 101 (min C) or ENG 101L (min C) or ENG 101A (min C) and ENG 101B (min C) or ENG 102 (min C) or ENG 102H (min C)",
     "courses": [
@@ -8979,6 +14103,13 @@
       "PHT 179IN"
     ]
   },
+  "PHY 101": {
+    "text": "A grade of C or better in MAT090, or higher level mathematics course, or eligibility for MAT120 or higher as indicated by appropriate placement.",
+    "courses": [
+      "MAT090",
+      "MAT120"
+    ]
+  },
   "PHY 107": {
     "text": "TRE 089 and TRM 091 or MAT 101",
     "courses": [
@@ -9026,6 +14157,13 @@
       "PHY 115"
     ]
   },
+  "PHY 121": {
+    "text": "A grade of C or better in MAT220, or MAT221, or permission of Department or Division.",
+    "courses": [
+      "MAT220",
+      "MAT221"
+    ]
+  },
   "PHY 121IN": {
     "text": "MAT 187 (min C) or MAT 189 (min C) or MAT 220 (min C) or MAT 231 (min C) or MAT 241 (min C) or MAT 252 (min C) or MAT 262 (min C)",
     "courses": [
@@ -9044,6 +14182,23 @@
       "PHY 121",
       "PHY 121LB",
       "PHY 121IN"
+    ]
+  },
+  "PHY 131": {
+    "text": "A grade of C or better in MAT230 or MAT231 or permission of Department or Division and PHY121.",
+    "courses": [
+      "MAT230",
+      "MAT231",
+      "PHY121"
+    ]
+  },
+  "PHY 161": {
+    "text": "MAT 220 (min C) or MAT 230 (min C) or MAT 241 (min C) or MAT 261 (min C)",
+    "courses": [
+      "MAT 220",
+      "MAT 230",
+      "MAT 241",
+      "MAT 261"
     ]
   },
   "PHY 210IN": {
@@ -9092,6 +14247,32 @@
     "text": "PHY 230 (min C)",
     "courses": [
       "PHY 230"
+    ]
+  },
+  "PHY 241": {
+    "text": "A grade of C or better in PHY131 or permission of Instructor.",
+    "courses": [
+      "PHY131"
+    ]
+  },
+  "PHY 298AA": {
+    "text": "Permission of Program Director or Instructor.",
+    "courses": []
+  },
+  "PLB 109": {
+    "text": "(Acceptance into the Laboratory Assisting or Phlebotomy program or permission of Instructor), and permission of Program Director.",
+    "courses": []
+  },
+  "PLB 111": {
+    "text": "A grade of C or better in PLB109 and permission of Program Director.",
+    "courses": [
+      "PLB109"
+    ]
+  },
+  "PLB 122": {
+    "text": "PLB109 or permission of Program Director.",
+    "courses": [
+      "PLB109"
     ]
   },
   "PMD 101": {
@@ -9155,6 +14336,70 @@
     "courses": [
       "PMD 205"
     ]
+  },
+  "PME 201": {
+    "text": "Admission into the Paramedic Education Program.",
+    "courses": []
+  },
+  "PME 203": {
+    "text": "Admission into the Paramedic Education Program.",
+    "courses": []
+  },
+  "PME 204": {
+    "text": "Admission into the Paramedic Education Program.",
+    "courses": []
+  },
+  "PME 205": {
+    "text": "Admission into the Paramedic Education Program.",
+    "courses": []
+  },
+  "PME 206": {
+    "text": "Admission into the Paramedic Education Program.",
+    "courses": []
+  },
+  "PME 240": {
+    "text": "Admission into the Paramedic Education Program.",
+    "courses": []
+  },
+  "PME 250": {
+    "text": "Admission into the Paramedic Education Program.",
+    "courses": []
+  },
+  "PME 251": {
+    "text": "Admission into the Paramedic Education Program.",
+    "courses": []
+  },
+  "PME 252": {
+    "text": "Admission into the Paramedic Education Program.",
+    "courses": []
+  },
+  "PME 253": {
+    "text": "Admission into the Paramedic Education Program.",
+    "courses": []
+  },
+  "PME 254": {
+    "text": "Admission into the Paramedic Education Program.",
+    "courses": []
+  },
+  "PME 260": {
+    "text": "Admission into the Paramedic Education Program.",
+    "courses": []
+  },
+  "PME 280": {
+    "text": "Admission into the Paramedic Education Program.",
+    "courses": []
+  },
+  "PME 281": {
+    "text": "Admission into the Paramedic Education Program.",
+    "courses": []
+  },
+  "PME 281AA": {
+    "text": "Admission into the Paramedic Education Program.",
+    "courses": []
+  },
+  "PME 289": {
+    "text": "Admission into the Paramedic Education Program.",
+    "courses": []
   },
   "POS 100": {
     "text": "PCS 021",
@@ -9237,6 +14482,79 @@
       "AGEC Pseudo Transfer Courses EC"
     ]
   },
+  "PSA 305": {
+    "text": "A grade of C or better in [(COM100, or COM110, or COM230, or COM225) and (ENG102 or ENG108)] or permission of Program Director or Department/Division.",
+    "courses": [
+      "COM100",
+      "COM110",
+      "COM230",
+      "COM225",
+      "ENG102",
+      "ENG108"
+    ]
+  },
+  "PSA 310": {
+    "text": "A grade of C or better in [(ENG102 or ENG108), and (MAT14+, or MAT15+, or equivalent), and [MAT206, or PSY230, or (PSY230 and PSY231), or PSY230WL, or SWU225]], or permission of Instructor or Program Director or Department/Division Chair.",
+    "courses": [
+      "ENG102",
+      "ENG108",
+      "MAT206",
+      "PSY230",
+      "PSY231",
+      "PSY230WL",
+      "SWU225"
+    ]
+  },
+  "PSA 315": {
+    "text": "A grade of C or better in [PAD100 and (ENG102 or ENG108)], or permission of Instructor or Program Director or Department/Division Chair.",
+    "courses": [
+      "PAD100",
+      "ENG102",
+      "ENG108"
+    ]
+  },
+  "PSA 410": {
+    "text": "A grade of C or better in PSA310 or permission of Instructor or Program Director or Department/Division Chair.",
+    "courses": [
+      "PSA310"
+    ]
+  },
+  "PSA 439": {
+    "text": "A grade of C or better in (AJS/FSC147 and AJS/FSC148), or permission of Program Director or Department/Division Chair.",
+    "courses": [
+      "FSC147",
+      "FSC148"
+    ]
+  },
+  "PSA 449": {
+    "text": "A grade of C or better in PSA439 or permission of Program Director or Department/Division Chair.",
+    "courses": [
+      "PSA439"
+    ]
+  },
+  "PSA 460": {
+    "text": "A grade of C or better in AJS275, or LET225, or permission of Program Director or Department/Division Chair.",
+    "courses": [
+      "AJS275",
+      "LET225"
+    ]
+  },
+  "PSA 490": {
+    "text": "Permission of Program Director or Department/Division Chair.",
+    "courses": []
+  },
+  "PSG 201": {
+    "text": "A grade of C or better in NDT101 and admission into the Clinical Neurodiagnostic Technology program.",
+    "courses": [
+      "NDT101"
+    ]
+  },
+  "PSG 225": {
+    "text": "A grade of C or better in PSG215 and admission into the Clinical Neurodiagnostic Technology program.",
+    "courses": [
+      "PSG215"
+    ]
+  },
   "PSY 101": {
     "text": "RDG 092 (min C) or RDG 122 (min C)",
     "courses": [
@@ -9257,7 +14575,7 @@
     ]
   },
   "PSY 205": {
-    "text": "PSY101.",
+    "text": "PSY 101 (min C)",
     "courses": [
       "PSY 101"
     ]
@@ -9312,6 +14630,12 @@
       "MAT 262"
     ]
   },
+  "PSY 230WL": {
+    "text": "A grade of C or better in (PSY101 and eligibility for MAT14+ or higher as indicated by appropriate district mathematics placement) or permission of Instructor.",
+    "courses": [
+      "PSY101"
+    ]
+  },
   "PSY 234": {
     "text": "PSY 101",
     "courses": [
@@ -9324,6 +14648,12 @@
       "PSY 101",
       "MAT 142",
       "MAT 151"
+    ]
+  },
+  "PSY 236": {
+    "text": "PSY 101 (min C)",
+    "courses": [
+      "PSY 101"
     ]
   },
   "PSY 240": {
@@ -9341,6 +14671,12 @@
       "ENG 101B",
       "ENG 102",
       "ENG 102H"
+    ]
+  },
+  "PSY 241": {
+    "text": "PSY 101 (min C)",
+    "courses": [
+      "PSY 101"
     ]
   },
   "PSY 245": {
@@ -9387,6 +14723,12 @@
     "courses": [
       "PSY 101",
       "ENG 101"
+    ]
+  },
+  "PSY 266": {
+    "text": "A grade of C or better in PSY101 or permission of Instructor.",
+    "courses": [
+      "PSY101"
     ]
   },
   "PSY 270": {
@@ -9445,6 +14787,20 @@
       "ENG 102H"
     ]
   },
+  "PSY 290AB": {
+    "text": "ENG101 or ENG107.",
+    "courses": [
+      "ENG101",
+      "ENG107"
+    ]
+  },
+  "PSY 290AC": {
+    "text": "ENG101 or ENG107.",
+    "courses": [
+      "ENG101",
+      "ENG107"
+    ]
+  },
   "PSY 350": {
     "text": "MAT 142 (min C) or MAT 142L (min C) or MAT 151 (min C) or MAT 151L (min C) or MAT 154 (min C) or MAT 156 (min C) or MAT 167 (min C) or MAT 182 (min C) or MAT 187 (min C) or MAT 212 (min C) or MAT 220 (min C) or MAT 227 (min C) or MAT 231 (min C) or MAT 241 (min C) or MAT 252 (min C) or MAT 262 (min C) or PSY 250 (min C)",
     "courses": [
@@ -9479,13 +14835,73 @@
       "PSY 101"
     ]
   },
-  "PTA 208": {
-    "text": "PTA 206 and PTA 217 and PTA 210 and PTA 230",
+  "PTA 101": {
+    "text": "Admission to the Physical Therapist Assisting program or permission of the Program Director.",
+    "courses": []
+  },
+  "PTA 103": {
+    "text": "Admission to the Physical Therapist Assisting program or permission of the Program Director.",
+    "courses": []
+  },
+  "PTA 104": {
+    "text": "Admission to the Physical Therapist Assisting program or permission of the Program Director.",
+    "courses": []
+  },
+  "PTA 200": {
+    "text": "A grade of C or better in (PTA101, PTA103, PTA104, and PTA203) or permission of the Program Director.",
     "courses": [
-      "PTA 206",
-      "PTA 217",
-      "PTA 210",
-      "PTA 230"
+      "PTA101",
+      "PTA103",
+      "PTA104",
+      "PTA203"
+    ]
+  },
+  "PTA 203": {
+    "text": "Admission to the Physical Therapist Assisting program or permission of the Program Director.",
+    "courses": []
+  },
+  "PTA 204": {
+    "text": "A grade of C or better in (PTA101, PTA103, PTA104, and PTA203) or permission of the Program Director.",
+    "courses": [
+      "PTA101",
+      "PTA103",
+      "PTA104",
+      "PTA203"
+    ]
+  },
+  "PTA 205": {
+    "text": "Admission to the Physical Therapist Assisting program or permission of Department or Division.",
+    "courses": []
+  },
+  "PTA 206": {
+    "text": "A grade of C or better in (PTA200, PTA204, PTA209, and PTA217) or permission of the Program Director.",
+    "courses": [
+      "PTA200",
+      "PTA204",
+      "PTA209",
+      "PTA217"
+    ]
+  },
+  "PTA 207": {
+    "text": "Admission to the Physical Therapist Assisting program or permission of the Program Director.",
+    "courses": []
+  },
+  "PTA 208": {
+    "text": "A grade of C or better in (PTA200, PTA204, PTA209, and PTA217), or permission of the Program Director.",
+    "courses": [
+      "PTA200",
+      "PTA204",
+      "PTA209",
+      "PTA217"
+    ]
+  },
+  "PTA 209": {
+    "text": "A grade of C or better in (PTA101, PTA103, PTA104, and PTA203) or permission of the Program Director.",
+    "courses": [
+      "PTA101",
+      "PTA103",
+      "PTA104",
+      "PTA203"
     ]
   },
   "PTA 210": {
@@ -9497,6 +14913,28 @@
       "PTA 230"
     ]
   },
+  "PTA 215": {
+    "text": "Admission to the Physical Therapist Assisting program or permission of Department or Division.",
+    "courses": []
+  },
+  "PTA 216": {
+    "text": "A grade of C or better in (PTA200, PTA204, PTA209, and PTA217) or permission of the Program Director.",
+    "courses": [
+      "PTA200",
+      "PTA204",
+      "PTA209",
+      "PTA217"
+    ]
+  },
+  "PTA 217": {
+    "text": "A grade of C or better in (PTA101, PTA103, PTA104, and PTA203) or permission of the Program Director.",
+    "courses": [
+      "PTA101",
+      "PTA103",
+      "PTA104",
+      "PTA203"
+    ]
+  },
   "PTA 230": {
     "text": "PTA 206 and PTA 217 and PTA 208 and PTA 210",
     "courses": [
@@ -9504,6 +14942,15 @@
       "PTA 217",
       "PTA 208",
       "PTA 210"
+    ]
+  },
+  "PTA 279": {
+    "text": "A grade of C or better in (PTA200, PTA204, PTA209, and PTA217) or permission of the Program Director.",
+    "courses": [
+      "PTA200",
+      "PTA204",
+      "PTA209",
+      "PTA217"
     ]
   },
   "PTA 280": {
@@ -9528,8 +14975,36 @@
       "PTA 280"
     ]
   },
+  "PTA 292": {
+    "text": "Admission to the Physical Therapist Assisting program or permission of the Department or Division.",
+    "courses": []
+  },
   "RAD 100": {
     "text": "Radiologic Technology Cohort student.",
+    "courses": []
+  },
+  "RAD 102": {
+    "text": "Admission to the Radiologic Technology program.",
+    "courses": []
+  },
+  "RAD 103": {
+    "text": "Admission to the Radiologic Technology program.",
+    "courses": []
+  },
+  "RAD 104": {
+    "text": "Admission to the Radiologic Technology program.",
+    "courses": []
+  },
+  "RAD 105": {
+    "text": "Admission to the Radiologic Technology program.",
+    "courses": []
+  },
+  "RAD 106": {
+    "text": "Admission to the Radiologic Technology program.",
+    "courses": []
+  },
+  "RAD 107": {
+    "text": "Admission to the Radiologic Technology program.",
     "courses": []
   },
   "RAD 110": {
@@ -9701,6 +15176,14 @@
       "RAD 169"
     ]
   },
+  "RAD 206": {
+    "text": "Admission to the Radiologic Technology program.",
+    "courses": []
+  },
+  "RAD 208": {
+    "text": "Admission to the Radiologic Technology program.",
+    "courses": []
+  },
   "RAD 209": {
     "text": "RAD 165 and RAD 189 and RAD 205",
     "courses": [
@@ -9778,6 +15261,13 @@
       "CPD 150"
     ]
   },
+  "RDG 100": {
+    "text": "A grade of C or better in ALT100, or ESL202, or appropriate reading placement, or permission of Instructor.",
+    "courses": [
+      "ALT100",
+      "ESL202"
+    ]
+  },
   "REA 091": {
     "text": "REA 081 (min C) or ESL 088RV (min C) or ACL 080 (min C)",
     "courses": [
@@ -9817,6 +15307,13 @@
       "WRT 107C"
     ]
   },
+  "REL 203": {
+    "text": "A grade of C or better in ENG101, or ENG107, or equivalent.",
+    "courses": [
+      "ENG101",
+      "ENG107"
+    ]
+  },
   "RES 101": {
     "text": "RES 102",
     "courses": [
@@ -9849,6 +15346,38 @@
       "RES 103",
       "RES 104"
     ]
+  },
+  "RES 130": {
+    "text": "Admission into the Respiratory Care program.",
+    "courses": []
+  },
+  "RES 131": {
+    "text": "Admission into the Respiratory Care program or admission into the Polysomnographic Technology program.",
+    "courses": []
+  },
+  "RES 133": {
+    "text": "Admission into the Respiratory Care program.",
+    "courses": []
+  },
+  "RES 134": {
+    "text": "Admission into the Respiratory Care program or permission of the Program Director.",
+    "courses": []
+  },
+  "RES 136": {
+    "text": "Admission into the Respiratory Care program.",
+    "courses": []
+  },
+  "RES 140": {
+    "text": "Admission into the Respiratory Care program.",
+    "courses": []
+  },
+  "RES 142": {
+    "text": "Admission into the Respiratory Care program.",
+    "courses": []
+  },
+  "RES 144": {
+    "text": "Admission into the Respiratory Care program.",
+    "courses": []
   },
   "RES 201": {
     "text": "RES 104 and RES 105 and RES 202 and RES 205",
@@ -9894,6 +15423,46 @@
       "RES 201",
       "RES 202"
     ]
+  },
+  "RES 224": {
+    "text": "Successful completion of the Respiratory Care program’s first-term courses (RES130, RES131, RES133, RES134, and RES136).",
+    "courses": [
+      "RES130",
+      "RES131",
+      "RES133",
+      "RES134",
+      "RES136"
+    ]
+  },
+  "RES 226": {
+    "text": "Admission into the Respiratory Care program.",
+    "courses": []
+  },
+  "RES 230": {
+    "text": "A grade of C or better in RES220 or permission of the Program Director.",
+    "courses": [
+      "RES220"
+    ]
+  },
+  "RES 232": {
+    "text": "Admission into the Respiratory Care program.",
+    "courses": []
+  },
+  "RES 240": {
+    "text": "Admission into the Respiratory Care program.",
+    "courses": []
+  },
+  "RES 280": {
+    "text": "Admission into the Respiratory Care program or permission of the Program Director.",
+    "courses": []
+  },
+  "RES 291": {
+    "text": "Admission into the Respiratory Care program or permission of the Program Director.",
+    "courses": []
+  },
+  "RES 292": {
+    "text": "Admission into the Respiratory Care program or permission of the Program Director.",
+    "courses": []
   },
   "RTH 135LC": {
     "text": "RTH 123 (min C) and RTH 123LB (min C) and RTH 124 (min C) and RTH 162 (min C)",
@@ -9970,8 +15539,32 @@
       "SOC 131"
     ]
   },
+  "SBS 216": {
+    "text": "A grade of C or better in (SBS200 and SBS204) or SBS220 or permission of Instructor.",
+    "courses": [
+      "SBS200",
+      "SBS204",
+      "SBS220"
+    ]
+  },
+  "SBS 298AA": {
+    "text": "Permission of Program Director or Instructor.",
+    "courses": []
+  },
   "SCI 195A": {
     "text": "Faculty approval.",
+    "courses": []
+  },
+  "SGT 100": {
+    "text": "Admission into the Hospital Central Service Technology or Surgical Technology program or permission of the Program Director.",
+    "courses": []
+  },
+  "SGT 102": {
+    "text": "Admission into the Hospital Central Service Technology or Surgical Technology program or permission of the Program Director.",
+    "courses": []
+  },
+  "SGT 107": {
+    "text": "Admission into the Hospital Central Service Technology or Surgical Technology program or permission of the Program Director.",
     "courses": []
   },
   "SGT 121": {
@@ -9986,6 +15579,18 @@
     "text": "SGT 121 (min B)",
     "courses": [
       "SGT 121"
+    ]
+  },
+  "SGT 200": {
+    "text": "A grade of C or better in SGT165.",
+    "courses": [
+      "SGT165"
+    ]
+  },
+  "SGT 205": {
+    "text": "A grade of C or better in SGT200.",
+    "courses": [
+      "SGT200"
     ]
   },
   "SGT 210": {
@@ -10166,6 +15771,18 @@
       "SPA 202"
     ]
   },
+  "SPA 116": {
+    "text": "A grade of C or better in SPA115 or permission of Department or Division.",
+    "courses": [
+      "SPA115"
+    ]
+  },
+  "SPA 118": {
+    "text": "A grade of C or better in SPA117 or permission of Department or Division.",
+    "courses": [
+      "SPA117"
+    ]
+  },
   "SPA 201": {
     "text": "SPA 102 (min C) or SPA 116 (min C) or SPA 202 (min C) or SPA 215 (min C) or SPA 216 (min C)",
     "courses": [
@@ -10196,11 +15813,53 @@
       "SPA 103"
     ]
   },
+  "SPA 205": {
+    "text": "A grade of B or better in SPA202 or permission of Department or Division.",
+    "courses": [
+      "SPA202"
+    ]
+  },
+  "SPA 206": {
+    "text": "A grade of B or better in SPA205 or permission of Department or Division.",
+    "courses": [
+      "SPA205"
+    ]
+  },
+  "SPA 225": {
+    "text": "A grade of C or better in SPA102, or SPA116, or permission of Department or Division.",
+    "courses": [
+      "SPA102",
+      "SPA116"
+    ]
+  },
+  "SPA 226": {
+    "text": "A grade of C or better in SPA201, or SPA225, or permission of Department or Division.",
+    "courses": [
+      "SPA201",
+      "SPA225"
+    ]
+  },
   "SPA 253": {
     "text": "SPA 203 (min C)",
     "courses": [
       "SPA 203"
     ]
+  },
+  "SPE 341": {
+    "text": "Formal acceptance to a Maricopa Community College state approved teacher preparation program or permission of Department or Division.",
+    "courses": []
+  },
+  "SPE 343": {
+    "text": "Formal acceptance to a Maricopa Community College state approved teacher preparation program or permission of Department or Division.",
+    "courses": []
+  },
+  "SPE 409": {
+    "text": "Formal acceptance to a Maricopa Community College state approved teacher preparation program or permission of Department or Division.",
+    "courses": []
+  },
+  "SPE 424": {
+    "text": "Formal acceptance to a Maricopa Community College undergraduate state approved teacher preparation program or permission of Department or Division.",
+    "courses": []
   },
   "SSE 281": {
     "text": "SSE 110 (min C)",
@@ -10213,6 +15872,150 @@
     "courses": [
       "SSE 110"
     ]
+  },
+  "STO 282AC": {
+    "text": "Permission of Instructor.",
+    "courses": []
+  },
+  "STO 297": {
+    "text": "A grade of C or better in EDU/HUM/STO292.",
+    "courses": [
+      "STO292"
+    ]
+  },
+  "STO 298AC": {
+    "text": "Permission of Program Director or Instructor.",
+    "courses": []
+  },
+  "SUS 232": {
+    "text": "A grade of C or better in SUS110, SSH111, and (ENG101 or ENG107).",
+    "courses": [
+      "SUS110",
+      "SSH111",
+      "ENG101",
+      "ENG107"
+    ]
+  },
+  "SWU 291": {
+    "text": "A grade of C or better in SWU171, or permission of Department or Division or Corequisites: SWU171.",
+    "courses": [
+      "SWU171"
+    ]
+  },
+  "TEC 108": {
+    "text": "A grade of C or better in TEC110 or permission of Instructor.",
+    "courses": [
+      "TEC110"
+    ]
+  },
+  "TEC 111": {
+    "text": "A grade of C or better in TEC110 or permission of Instructor.",
+    "courses": [
+      "TEC110"
+    ]
+  },
+  "TEC 112AQ": {
+    "text": "A grade of C or better in TEC111 or permission of Instructor.",
+    "courses": [
+      "TEC111"
+    ]
+  },
+  "TEC 112AU": {
+    "text": "A grade of C or better in TEC111 or permission of Instructor.",
+    "courses": [
+      "TEC111"
+    ]
+  },
+  "TEC 120": {
+    "text": "A grade of C or better in TEC111, or THP206, or permission of Instructor.",
+    "courses": [
+      "TEC111",
+      "THP206"
+    ]
+  },
+  "TEC 129": {
+    "text": "A grade of C or better in TEC110 or permission of Instructor.",
+    "courses": [
+      "TEC110"
+    ]
+  },
+  "TEC 135": {
+    "text": "A grade of C or better in TEC134 or permission of Instructor.",
+    "courses": [
+      "TEC134"
+    ]
+  },
+  "TEC 143": {
+    "text": "A grade of C or better in TEC111 or permission of Instructor.",
+    "courses": [
+      "TEC111"
+    ]
+  },
+  "TEC 144": {
+    "text": "A grade of C or better in TEC143 or permission of Instructor.",
+    "courses": [
+      "TEC143"
+    ]
+  },
+  "TEC 212": {
+    "text": "A grade of C or better in TEC111, or THP206, or permission of Instructor.",
+    "courses": [
+      "TEC111",
+      "THP206"
+    ]
+  },
+  "TEC 220": {
+    "text": "A grade of C or better in TEC111, or THP206, or permission of Instructor.",
+    "courses": [
+      "TEC111",
+      "THP206"
+    ]
+  },
+  "TEC 225": {
+    "text": "A grade of C or better in TEC111, or THP206, or permission of Instructor.",
+    "courses": [
+      "TEC111",
+      "THP206"
+    ]
+  },
+  "TEC 230": {
+    "text": "A grade of C or better in TEC225 or permission of Instructor.",
+    "courses": [
+      "TEC225"
+    ]
+  },
+  "TEC 231": {
+    "text": "A grade of C or better in TEC111 or permission of Instructor.",
+    "courses": [
+      "TEC111"
+    ]
+  },
+  "TEC 233": {
+    "text": "A grade of C or better in TEC225 or permission of Instructor.",
+    "courses": [
+      "TEC225"
+    ]
+  },
+  "TEC 236": {
+    "text": "A grade of C or better in TEC134 and permission of Department or Division.",
+    "courses": [
+      "TEC134"
+    ]
+  },
+  "TEC 270": {
+    "text": "A grade of C or better in (TEC225 or TEC226) or permission of Instructor.",
+    "courses": [
+      "TEC225",
+      "TEC226"
+    ]
+  },
+  "TEC 271AA": {
+    "text": "Permission of Department or Division.",
+    "courses": []
+  },
+  "TEC 278AA": {
+    "text": "Completion of at least twelve (12) college credits, minimum 2.",
+    "courses": []
   },
   "THE 151": {
     "text": "THE 149 (min C)",
@@ -10238,6 +16041,31 @@
     "courses": [
       "THE 149"
     ]
+  },
+  "THP 212": {
+    "text": "A grade of C or better in THP112 or permission of Department or Division.",
+    "courses": [
+      "THP112"
+    ]
+  },
+  "THP 214": {
+    "text": "A grade of C or better in THP112 or THE220, or permission of Instructor.",
+    "courses": [
+      "THP112",
+      "THE220"
+    ]
+  },
+  "THP 273": {
+    "text": "By audition.",
+    "courses": []
+  },
+  "THP 291AG": {
+    "text": "By audition and interview only.",
+    "courses": []
+  },
+  "THP 292AE": {
+    "text": "By interview only.",
+    "courses": []
   },
   "TRM 090": {
     "text": "PCS 023",
@@ -10343,6 +16171,48 @@
       "VET 115IN"
     ]
   },
+  "VET 250AA": {
+    "text": "A grade of C or better in VET112, VET132, and VET151.",
+    "courses": [
+      "VET112",
+      "VET132",
+      "VET151"
+    ]
+  },
+  "VET 250AC": {
+    "text": "A grade of C or better in VET250AA or permission of Instructor.",
+    "courses": [
+      "VET250AA"
+    ]
+  },
+  "WED 230": {
+    "text": "Acceptance into the Massage Therapy program or permission of Program Director.",
+    "courses": []
+  },
+  "WED 231": {
+    "text": "A grade of C or better in WED230.",
+    "courses": [
+      "WED230"
+    ]
+  },
+  "WED 232": {
+    "text": "A grade of C or better in WED231.",
+    "courses": [
+      "WED231"
+    ]
+  },
+  "WED 250AA": {
+    "text": "A grade of C or better in WED231.",
+    "courses": [
+      "WED231"
+    ]
+  },
+  "WED 250AB": {
+    "text": "A grade of C or better in WED250AA.",
+    "courses": [
+      "WED250AA"
+    ]
+  },
   "WFD 126": {
     "text": "Program Chair consent.",
     "courses": []
@@ -10374,6 +16244,12 @@
   "WFD 136": {
     "text": "Program Director Consent. Must have completed courses for CELA Level I and Level II.",
     "courses": []
+  },
+  "WLD 106": {
+    "text": "WLD 102 (min C)",
+    "courses": [
+      "WLD 102"
+    ]
   },
   "WLD 108": {
     "text": "WLD 106 (min C)",

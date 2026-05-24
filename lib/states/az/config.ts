@@ -40,10 +40,11 @@ const azConfig: StateConfig = {
       { scripts: ["scripts/az/scrape-banner-ssb.ts"], runner: "http" },
       // Colleague Self-Service — Mohave (1 college via Ellucian Cloud)
       { scripts: ["scripts/az/scrape-colleague.ts"], runner: "playwright" },
+      // Maricopa District (10 colleges via shared classes.sis.maricopa.edu)
+      { scripts: ["scripts/az/scrape-maricopa.ts"], runner: "http" },
     ],
-    // Inline prereq text harvested from the scraped Banner SSB + Colleague
-    // sections. The other 17 AZ colleges contribute nothing until their
-    // scrapers ship (Maricopa cluster is the highest-value follow-up).
+    // Inline prereq text harvested from the scraped Banner SSB + Colleague +
+    // Maricopa sections (15 of 21 AZ colleges covered).
     prereqs: { source: "aggregate-from-courses" },
     // manual-only: transfers — AZ has no entry in articulation-portals.json
     //   yet. AZ's state system is AZTransfer.com; needs one-time integration.
