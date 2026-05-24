@@ -38,7 +38,8 @@ const azConfig: StateConfig = {
     courses: [
       // Banner SSB 9 — Cochise, Pima, Coconino (3 colleges via shared template)
       { scripts: ["scripts/az/scrape-banner-ssb.ts"], runner: "http" },
-      // Colleague Self-Service — Mohave (1 college via Ellucian Cloud)
+      // Colleague Self-Service — Mohave (Ellucian Cloud) + Arizona Western
+      // (self-hosted at colss-prod.ec.azwestern.edu).
       { scripts: ["scripts/az/scrape-colleague.ts"], runner: "playwright" },
       // Maricopa District (10 colleges via shared classes.sis.maricopa.edu)
       { scripts: ["scripts/az/scrape-maricopa.ts"], runner: "http" },
@@ -51,6 +52,14 @@ const azConfig: StateConfig = {
     // manual-only: programs — scripts/az/scrape-programs.ts wrapper exists
     //   but each of the 4 Acalog catalogs needs manual navoid identification
     //   (auto-discovery finds catoid but not navoids — same as NV/CSN).
+  },
+  documentedCeilings: {
+    courses: [
+      {
+        collegeSlug: "dine-college",
+        reason: "Diné College (Navajo Nation tribal college) publishes course schedules only as semester PDFs (e.g. Fall-26-Course-Schedule-May-20-2026.pdf at www.dinecollege.edu/admissions/course-schedule/). The my.dinecollege.edu portal is SSO-gated via QuickLaunch. No live HTML/JSON schedule. Verified 2026-05-24.",
+      },
+    ],
   },
 };
 
