@@ -107,6 +107,24 @@ export interface StateConfig {
    * user message so the system prompt stays cacheable across states.
    */
   universityAliases?: Array<{ slug: string; names: string[] }>;
+  /**
+   * Known structural ceilings — gaps in the data that have a documented
+   * reason and cannot be closed through normal scraping work. The audit
+   * grader uses this to distinguish "C-tier because of unfinished work"
+   * from "C-tier because of a real-world constraint". Each value is a
+   * one-line reason a reviewer would accept.
+   *
+   * Examples: DC's transfers (UDC's CT.Net data targets only out-of-state
+   * schools; the in-state-only rule strips it to empty); NH's transfers
+   * (UNH/Plymouth publish no public articulation database); SC's NETC and
+   * Williamsburg courses (Colleague Self-Service is auth-gated).
+   */
+  documentedCeilings?: {
+    transfers?: string;
+    scorecard?: string;
+    /** Per-college course-coverage gaps that won't be closed. */
+    courses?: Array<{ collegeSlug: string; reason: string }>;
+  };
 }
 
 // ---------------------------------------------------------------------------

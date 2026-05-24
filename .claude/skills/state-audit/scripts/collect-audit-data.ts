@@ -74,6 +74,12 @@ interface AuditResult {
     brandingGaps: string[];
     defaultZipSet: boolean;
   };
+  /** Documented structural ceilings from StateConfig.documentedCeilings. */
+  documentedCeilings: {
+    transfers: boolean;
+    scorecard: boolean;
+    courseColleges: string[];
+  };
 }
 
 function getStates(): string[] {
@@ -312,6 +318,29 @@ function auditState(slug: string): AuditResult {
     if (!m || m[1] === "") brandingGaps.push(field);
   }
 
+  // --- Documented ceilings — opt-in field on StateConfig signaling that
+  // a dimension's gap is a real-world constraint, not unfinished work.
+  // The grader treats these as ignored for tier purposes.
+  let ceilingTransfers = false;
+  let ceilingScorecard = false;
+  const ceilingCourseColleges: string[] = [];
+  const ceilingBlockMatch = configText.match(
+    /documentedCeilings\s*:\s*\{([\s\S]*?)\n\s{0,4}\}/,
+  );
+  if (ceilingBlockMatch) {
+    const body = ceilingBlockMatch[1];
+    ceilingTransfers = /(^|\n)\s*transfers\s*:/.test(body);
+    ceilingScorecard = /(^|\n)\s*scorecard\s*:/.test(body);
+    const coursesMatch = body.match(/courses\s*:\s*\[([\s\S]*?)\]/);
+    if (coursesMatch) {
+      const slugs = coursesMatch[1].match(/collegeSlug\s*:\s*"([^"]+)"/g) || [];
+      for (const s of slugs) {
+        const m = s.match(/"([^"]+)"/);
+        if (m) ceilingCourseColleges.push(m[1]);
+      }
+    }
+  }
+
   return {
     slug,
     name,
@@ -370,6 +399,11 @@ function auditState(slug: string): AuditResult {
       brandingComplete: brandingGaps.length === 0,
       brandingGaps,
       defaultZipSet,
+    },
+    documentedCeilings: {
+      transfers: ceilingTransfers,
+      scorecard: ceilingScorecard,
+      courseColleges: ceilingCourseColleges,
     },
   };
 }

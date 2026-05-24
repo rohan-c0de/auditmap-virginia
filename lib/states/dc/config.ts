@@ -76,6 +76,10 @@ const dcConfig: StateConfig = {
     prereqs: { source: "aggregate-from-courses" },
     // manual-only: programs — Acalog program scraper not yet wired up for this state.
   },
+  documentedCeilings: {
+    transfers:
+      "UDC's 1,400+ CollegeTransfer.Net equivalencies target zero in-state institutions. The in-state-only rule strips every row to empty on each run.",
+  },
 };
 
 export default dcConfig;

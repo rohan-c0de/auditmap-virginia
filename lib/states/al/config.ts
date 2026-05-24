@@ -89,6 +89,14 @@ const alConfig: StateConfig = {
     prereqs: { source: "aggregate-from-courses" },
     // manual-only: programs — Phase 5+.
   },
+  documentedCeilings: {
+    courses: [
+      {
+        collegeSlug: "marion-military-institute",
+        reason: "MMI is a military prep college (~400 students) that does not publish a public course schedule on either ACCS cluster; its registrar page has no SIS link. Verified 2026-05-24.",
+      },
+    ],
+  },
 };
 
 export default alConfig;

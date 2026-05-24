@@ -127,6 +127,18 @@ const scConfig: StateConfig = {
     prereqs: { source: "aggregate-from-courses" },
     programs: [{ scripts: ["scripts/sc/scrape-programs.ts"], runner: "http" }],
   },
+  documentedCeilings: {
+    courses: [
+      {
+        collegeSlug: "northeastern",
+        reason: "Colleague Self-Service at selfservice.netc.edu requires login; no public course search or PDF schedule. Verified 2026-05-24.",
+      },
+      {
+        collegeSlug: "williamsburg",
+        reason: "Colleague Self-Service at mywtc.wiltech.edu requires login; only static yearly PDF catalogs are public. Verified 2026-05-24.",
+      },
+    ],
+  },
 };
 
 export default scConfig;

@@ -73,6 +73,10 @@ const nhConfig: StateConfig = {
     prereqs: [{ scripts: ["scripts/nh/scrape-catalog-prereqs.ts"], runner: "http" }],
     programs: [{ scripts: ["scripts/nh/scrape-programs.ts"], runner: "http" }],
   },
+  documentedCeilings: {
+    transfers:
+      "UNH and Plymouth State publish no public CC-to-4-year articulation database. Keene scraper covers what is reachable; the remaining USNH receivers are a hard ceiling.",
+  },
 };
 
 export default nhConfig;
