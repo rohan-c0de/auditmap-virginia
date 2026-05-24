@@ -1,0 +1,102 @@
+name: Coverage expansion candidates
+
+# Weekly scan for colleges that COULD be scraped but aren't yet. Reads
+# data/state-health/fingerprint-baseline.json (produced by the monthly
+# refingerprint-sweep workflow) and identifies colleges whose fingerprint
+# is a templated platform (banner-ssb-9 / banner-8 / colleague / jenzabar
+# / coursedog) but have no course data under data/{state}/courses/{slug}/.
+#
+# Two scenarios this catches:
+#   1. Colleges that have always been templated but were never wired to
+#      a scraper (oversight during add-state)
+#   2. Colleges that migrated from a custom / auth-gated platform to a
+#      templated one (refingerprint catches the platform change; this
+#      catches the coverage implication)
+#
+# Triggers:
+#   - Tuesday 15:00 UTC weekly (after Monday URL check, before Sunday
+#     rollup — spreads the GH Actions load across the week)
+#   - workflow_dispatch
+#
+# Output: rolling issue "Coverage expansion candidates" with the list
+# of newly-addressable colleges and a script-path hint for each.
+# Auto-closes when the candidate list goes empty.
+#
+# Permissions: contents:read; issues:write
+
+on:
+  schedule:
+    - cron: "0 15 * * 2"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - run: npm ci
+
+      - name: Scan for coverage candidates
+        id: scan
+        run: |
+          npx tsx scripts/lib/coverage-expansion.ts --out /tmp/coverage.json
+          echo "candidate_count=$(jq -r '.candidateCount' /tmp/coverage.json)" >> "$GITHUB_OUTPUT"
+          {
+            echo 'body<<COVERAGE_BODY_EOF'
+            echo '# Coverage expansion candidates'
+            echo
+            jq -r '"Generated: \(.generatedAt). Baseline: \(.baselineGeneratedAt // "no baseline yet").\n\n**\(.candidateCount) candidate(s).**"' /tmp/coverage.json
+            echo
+            jq -r 'if (.candidateCount // 0) > 0 then "## By platform\n\n\(.byPlatform | to_entries | map("- \(.key): \(.value)") | join("\n"))\n\n## By confidence\n\n\(.byConfidence | to_entries | map("- \(.key): \(.value)") | join("\n"))\n\n## Candidates\n\n| State | College | Platform | Confidence | URL | Script hint | Reason |\n| --- | --- | --- | --- | --- | --- | --- |\n\(.candidates | map("| `\(.state)` | \(.name) | `\(.platform)` | \(.confidence) | <\(.primaryUrl)> | `\(.scriptHint)` | \(.reason) |") | join("\n"))\n\n## Action\n\nFor each high-confidence candidate, decide whether to:\n\n1. **Wire it in** — extend the existing template scraper in ``scriptHint`` to include this college'\''s URL, then add the script to ``StateConfig.scrapers.courses`` if it'\''s not already declared.\n2. **Skip it** — if the college'\''s SIS is gated despite the platform fingerprint (auth-required, captcha, etc.), document the exception inline. The fingerprinter sometimes overestimates accessibility.\n\nLow-confidence candidates need manual verification before either action — the platform string may shift on the next sweep." else "No candidates this week. Either every templated college is already wired, or the fingerprint baseline is empty (refingerprint-sweep.yml hasn'\''t run yet)." end' /tmp/coverage.json
+            echo 'COVERAGE_BODY_EOF'
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Update rolling coverage-candidates issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BODY: ${{ steps.scan.outputs.body }}
+          CANDIDATE_COUNT: ${{ steps.scan.outputs.candidate_count }}
+        run: |
+          set -e
+          title="Coverage expansion candidates"
+          existing=$(gh issue list \
+            --search "in:title \"${title}\"" \
+            --state all \
+            --limit 5 \
+            --json number,state,title \
+            --jq ".[] | select(.title == \"${title}\") | .number" \
+            | head -n 1)
+
+          printf '%s\n' "$BODY" > /tmp/issue-body.md
+
+          if [ -z "$existing" ]; then
+            if [ "$CANDIDATE_COUNT" = "0" ] || [ -z "$CANDIDATE_COUNT" ]; then
+              echo "First run, no candidates — not opening an issue."
+              exit 0
+            fi
+            gh issue create \
+              --title "${title}" \
+              --body-file /tmp/issue-body.md \
+              --label "coverage-expansion,automated"
+            exit 0
+          fi
+
+          gh issue edit "$existing" --body-file /tmp/issue-body.md
+
+          state=$(gh issue view "$existing" --json state --jq .state)
+          if [ "$CANDIDATE_COUNT" = "0" ] && [ "$state" = "OPEN" ]; then
+            gh issue close "$existing" --comment "No coverage candidates on the latest sweep. Closing — will reopen automatically if a future sweep finds candidates."
+          elif [ "$CANDIDATE_COUNT" != "0" ] && [ "$state" = "CLOSED" ]; then
+            gh issue reopen "$existing" --comment "Reopening — the latest scan found coverage candidates."
+          fi
