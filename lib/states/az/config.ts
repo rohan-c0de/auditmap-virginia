@@ -47,9 +47,14 @@ const azConfig: StateConfig = {
       // parsed via `pdftotext -layout`. Requires poppler-utils on the
       // runner (apt-get install -y poppler-utils, or `brew install poppler`).
       { scripts: ["scripts/az/scrape-dine.ts"], runner: "http" },
+      // Northland Pioneer College — Jenzabar CMC Portal (ASP.NET WebForms)
+      // at my.npc.edu/CMCPortal/Common/CourseSchedule.aspx. Same template
+      // as scripts/or/scrape-columbia-gorge.ts.
+      { scripts: ["scripts/az/scrape-northland-pioneer.ts"], runner: "http" },
     ],
-    // Inline prereq text harvested from every scraped section (16 of 21
-    // AZ colleges covered: 3 Banner SSB + 2 Colleague + 10 Maricopa + Diné).
+    // Inline prereq text harvested from every scraped section (17 of 21
+    // AZ colleges covered: 3 Banner SSB + 2 Colleague + 10 Maricopa +
+    // Diné + Northland Pioneer).
     prereqs: { source: "aggregate-from-courses" },
     // manual-only: transfers — AZ has no entry in articulation-portals.json
     //   yet. AZ's state system is AZTransfer.com; needs one-time integration.
