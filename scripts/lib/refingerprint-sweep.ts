@@ -37,6 +37,7 @@ import {
 } from "node:fs";
 import { dirname, join } from "node:path";
 import { getAllStates } from "../../lib/states/registry";
+import { discoverPublicCommunityColleges } from "./discover-colleges";
 import { fingerprint, type Platform } from "./fingerprint-college";
 
 const BASELINE_PATH = "data/state-health/fingerprint-baseline.json";
@@ -100,6 +101,7 @@ interface InstitutionEntry {
   college_slug?: string;
   slug?: string;
   name?: string;
+  unitid?: number;
   homepage_url?: string;
   url?: string;
   primaryUrl?: string;
@@ -241,19 +243,58 @@ function computeDiff(prev: Baseline | null, current: CollegeEntry[]): DiffEntry[
 async function main() {
   console.log(`Refingerprint sweep (states=${targetStates.length}, concurrency=${concurrency}, dry-run=${dryRun})`);
 
-  // Build task list
+  // Build task list. URLs come from institutions.json when available, with
+  // a fallback to IPEDS via discover-colleges. The fallback is necessary
+  // because most states' institutions.json files were bootstrapped without
+  // a homepage_url field — only NV currently has it. Looking up via IPEDS
+  // by unitid means refingerprint can see all ~500 supported colleges
+  // without backfilling every state's data file.
   const tasks: SweepTask[] = [];
+  let urlsFromInstitutionsJson = 0;
+  let urlsFromIpeds = 0;
+  let skippedNoUrl = 0;
   for (const state of targetStates) {
     const insts = loadInstitutions(state);
+    if (insts.length === 0) continue;
+    // Build the IPEDS unitid → primaryUrl map for this state once. Skip
+    // the IPEDS fetch entirely if every institution already has a URL —
+    // saves a real API roundtrip and works fine for the NV case.
+    const missingUrlCount = insts.filter((i) => !institutionUrl(i)).length;
+    const ipedsByUnitid = new Map<number, string>();
+    if (missingUrlCount > 0) {
+      try {
+        const discovered = await discoverPublicCommunityColleges(state);
+        for (const d of discovered) {
+          if (d.primaryUrl) ipedsByUnitid.set(d.unitid, d.primaryUrl);
+        }
+        console.log(`  ${state}: ${missingUrlCount} colleges missing homepage_url → IPEDS returned URLs for ${ipedsByUnitid.size}`);
+      } catch (err) {
+        console.error(`  ${state}: IPEDS lookup failed (${err instanceof Error ? err.message : err}); will skip colleges without local URLs`);
+      }
+    }
     for (const inst of insts) {
-      const url = institutionUrl(inst);
       const slug = institutionSlug(inst);
       const name = (inst.name ?? slug) as string | undefined;
-      if (!url || !slug) continue;
+      if (!slug) {
+        skippedNoUrl++;
+        continue;
+      }
+      let url = institutionUrl(inst);
+      if (url) {
+        urlsFromInstitutionsJson++;
+      } else if (typeof inst.unitid === "number") {
+        url = ipedsByUnitid.get(inst.unitid) ?? null;
+        if (url) urlsFromIpeds++;
+      }
+      if (!url) {
+        skippedNoUrl++;
+        continue;
+      }
       tasks.push({ state, slug, name: name ?? slug, url });
     }
   }
   console.log(`Tasks: ${tasks.length} colleges across ${targetStates.length} states`);
+  console.log(`  URL sources: ${urlsFromInstitutionsJson} from institutions.json, ${urlsFromIpeds} from IPEDS fallback, ${skippedNoUrl} skipped`);
 
   if (tasks.length === 0) {
     console.error("No tasks — empty institutions or unknown states.");
