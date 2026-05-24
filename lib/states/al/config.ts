@@ -26,7 +26,7 @@ const alConfig: StateConfig = {
   },
 
   transferSupported: true,
-  popularCourses: [],
+  popularCourses: ["ENG 101", "MTH 100", "BIO 103", "PSY 200", "HIS 201", "ECO 231"],
   defaultZip: "35203",
   defaultZipCity: "Birmingham",
 
