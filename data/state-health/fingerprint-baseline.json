@@ -1,0 +1,50 @@
+{
+  "generatedAt": "2026-05-24T22:56:44.826Z",
+  "perCollege": {
+    "nv-great-basin-college": {
+      "state": "nv",
+      "slug": "great-basin-college",
+      "name": "Great Basin College",
+      "primaryUrl": "https://www.gbcnv.edu",
+      "platform": "custom",
+      "confidence": "low",
+      "lastChecked": "2026-05-24T22:55:42.749Z"
+    },
+    "nv-western-nevada-college": {
+      "state": "nv",
+      "slug": "western-nevada-college",
+      "name": "Western Nevada College",
+      "primaryUrl": "https://www.wnc.edu",
+      "platform": "coursedog",
+      "confidence": "high",
+      "lastChecked": "2026-05-24T22:55:43.641Z"
+    },
+    "nv-college-of-southern-nevada": {
+      "state": "nv",
+      "slug": "college-of-southern-nevada",
+      "name": "College of Southern Nevada",
+      "primaryUrl": "https://www.csn.edu",
+      "platform": "acalog",
+      "confidence": "high",
+      "lastChecked": "2026-05-24T22:56:10.257Z"
+    },
+    "nv-truckee-meadows-community-college": {
+      "state": "nv",
+      "slug": "truckee-meadows-community-college",
+      "name": "Truckee Meadows Community College",
+      "primaryUrl": "https://www.tmcc.edu",
+      "platform": "custom",
+      "confidence": "low",
+      "lastChecked": "2026-05-24T22:56:44.825Z"
+    }
+  },
+  "totals": {
+    "statesSwept": 1,
+    "collegesFingerprinted": 4,
+    "byPlatform": {
+      "custom": 2,
+      "coursedog": 1,
+      "acalog": 1
+    }
+  }
+}
