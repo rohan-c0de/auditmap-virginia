@@ -181,33 +181,54 @@ The full pipeline (orchestrated by `scripts/lib/add-state.ts`):
     college whose course-search page is publicly accessible (no SSO,
     no login wall), build the scraper now in the same branch.
 
-    **For `[fingerprint-cluster]` entries** (Phase 2a.5 grouped multiple
-    colleges sharing infrastructure): treat the cluster as ONE bespoke-
-    scraper target — but first **verify public guest access** via the
-    cluster's shared host. A cluster signal proves shared infrastructure;
-    it does NOT prove scrape-ability. Probes to run before authoring:
+    **For `[fingerprint-cluster]` entries**: each cluster comes pre-tagged
+    by the orchestrator (Phase 2a.5, PR #506) with a public-access
+    verdict. Read the verdict before deciding to author a scraper:
 
-      curl -sIL --max-time 10 -A "Mozilla/5.0" \
-        "https://{host}/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL"
-      # ↑ PeopleSoft Community Access — LACCD / SD CCD / NV pattern
-      curl -sIL ... "https://{host}/StudentRegistrationSsb/ssb/classSearch/classSearch"
-      # ↑ Banner SSB 9 guest
-      curl -sIL ... "https://{host}/Student/Courses"
-      # ↑ Colleague Self-Service guest
+    - `PUBLIC at <url>` — green light. Adapt the LACCD scraper template
+      (see "Cluster scraper templates" below).
+    - `SSO-GATED at <host> (<reason>)` — drop the cluster. No scraper
+      will work without credentials. File under "auth-gated clusters" in
+      the PR body for transparency. Don't try to bypass SSO.
+    - `unknown access at <host> — investigate before authoring` — the
+      orchestrator couldn't decide. Two common reasons:
+      - **Registrable-domain cluster** (e.g. `losrios.edu`): no single
+        shared host to probe; each college serves its own custom HTML.
+        Open one member's home page in a browser, find the class-search
+        link, follow it, and probe what you land on.
+      - **Non-standard platform** (uPortal, legacy custom CMS): the
+        probe didn't recognize the endpoint. Manual fallback:
 
-    A 200 = green light, follow the LACCD/SD CCD template. A 302 to
-    `login.microsoftonline.com` / ADFS / Shibboleth / Ellucian Experience
-    SSO = the cluster is auth-gated; **drop it** (file the cluster name in
-    the PR body under "auth-gated clusters" for transparency). Don't waste
-    cycles trying to bypass SSO. See memory:
-    `feedback_verify_public_access_before_cluster_scraper`.
+          curl -sIL --max-time 10 -A "Mozilla/5.0" \
+            "https://{host}/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL"
+          curl -sIL ... "https://{host}/StudentRegistrationSsb/ssb/classSearch/classSearch"
+          curl -sIL ... "https://{host}/Student/Courses"
+          curl -sIL ... "https://{host}/bwckschd.p_disp_dyn_sched"
+
+        (See `scripts/lib/cluster-fingerprints.ts` `PUBLIC_GUEST_PROBE_PATHS`
+        for the full current list.)
+
+    **Never override an `SSO-GATED` verdict by hand without strong
+    evidence** — the probe catches all known SSO patterns; if it flagged
+    a cluster auth-gated, the scraper attempt will dead-end at the login
+    wall. Better to escalate to the user than waste an hour.
 
     **Specifically watch out for `experience.elluciancloud.com`** — that's
     Ellucian's *portal aggregator* product, not a class-search system.
-    Colleges using it have their class data either (a) behind SSO via
-    Banner under the portal, or (b) on the college's own custom public
-    schedule page (heterogeneous; not unifiable). Don't try to build a
-    single scraper for an "Experience cluster."
+    The orchestrator's probe tags it `SSO-GATED` automatically, but if
+    you encounter it in older `data/{state}/clusters.json` files (pre-
+    #506) that lack verdicts, drop it without further investigation.
+
+    See memory:
+    - `feedback_verify_public_access_before_cluster_scraper`
+    - `project_deep_fingerprint_clustering` (CA cluster verdict matrix)
+
+    **Calibration on cluster yield**: from California's 9 detected
+    clusters, 2 turned out scrape-able (LACCD, Grossmont-Cuyamaca),
+    3 SSO-gated, 4 unknown. Don't promise the user that N clusters
+    means N scrapers worth building — the realistic "actually buildable"
+    yield is closer to 1/3 of detected clusters. The orchestrator's
+    auto-probe verdicts make this clear up front in the TODO list.
 
     Why: Deferring custom-HTML scrapers as TODOs creates drag — the user
     has to come back, re-investigate each site, and ship per-college
@@ -244,6 +265,29 @@ The full pipeline (orchestrated by `scripts/lib/add-state.ts`):
     comment in `scrape-mccs.ts` was never re-checked even after the WP
     site started serving the same chooser as the other 6 MCCS colleges.
 
+    **Long-running scrape (>10 min)**: detach via the macOS double-fork
+    pattern so it survives Claude Code session archival. See memory
+    `feedback_detach_long_running` for the recipe (PPID must be `1`).
+    Don't use `Bash run_in_background` for the full scrape — its 10-min
+    cap will kill it. Don't use Monitor either — session archive kills
+    its child processes. The double-fork pattern is the only reliable
+    approach. Always persist resume metadata to `/tmp/<task>-info.txt`
+    (PID, log, worktree path) before walking away.
+
+    **When you discover a new platform quirk** (a PS auto-guest variant,
+    an unusual campus-dropdown behavior, a new SSO host pattern, a
+    weak-DH-keys site, etc.) that took more than a few minutes to
+    figure out, update both:
+    - The relevant memory note
+      (`project_deep_fingerprint_clustering`,
+       `feedback_verify_public_access_before_cluster_scraper`,
+       or file a new one)
+    - The probe/pattern lists in `scripts/lib/cluster-fingerprints.ts`
+      (`PUBLIC_GUEST_PROBE_PATHS`, `SSO_HOST_PATTERNS`, `hostVariants`)
+      if the quirk is detectable
+
+    Closes the loop so the next session/person doesn't redo the work.
+
     Common gotchas:
     - Old ASP.NET sites: require `Accept-Language` header (User-Agent
       alone often isn't enough)
@@ -252,6 +296,72 @@ The full pipeline (orchestrated by `scripts/lib/add-state.ts`):
       (Node 20+ fetch can't override)
     - WordPress schedule tables: skip subject-header rows (h4 in cell)
       and lab sub-rows (empty code cell with title like "FOO-Z1 Lab")
+
+## Cluster scraper templates
+
+When a `[fingerprint-cluster]` lands as `PUBLIC` and you need to author
+its scraper, start from the closest existing template instead of
+reverse-engineering from scratch.
+
+### PeopleSoft Community Access (LACCD pattern)
+
+Template: `scripts/ca/scrape-laccd.ts` (PR #502 — 9 colleges, 11,886
+sections from one scraper).
+
+Use when the verdict URL contains
+`/psc/classsearchguest/.../COMMUNITY_ACCESS.CLASS_SEARCH.GBL`.
+
+Known quirks in PS Community Access deployments:
+
+- **Campus dropdown may not filter.** LACCD's `Campus` dropdown is
+  ignored by the back-end — selecting `LACC` returns the same results
+  as no filter. If a per-campus search returns identical CRNs across
+  campuses, drop the campus filter and bucket results by parsing the
+  `MTG_ROOM` location prefix (e.g. `City-FH 214` → LACC,
+  `EAST-Online` → ELAC). See LACCD's `PREFIX_TO_SLUG` map.
+- **>100 sections confirmation modal.** PS shows a "would you like to
+  continue?" overlay. Auto-click `#ICSave` to proceed. Modal layout
+  varies: LACCD renders it inline in the main DOM; other PS instances
+  (NV) put it in an iframe `ptModFrame_0`. Both patterns are handled
+  in the LACCD scraper.
+- **>400 sections hard error.** PS refuses to return results entirely.
+  Subdivide by Catalog Nbr range (e.g. `< 100`, `100-199`, `>= 200`)
+  and merge, or skip the mega-subjects (MATH, ENGL, BIOL) and ship
+  them as a follow-up.
+- **Term codes follow `2 + YY + {3=Spring, 5=Summer, 7=Fall}`** for
+  most CA CCs (e.g. 2266 = Summer 2026, 2268 = Fall 2026). Not
+  universal — verify by inspecting the `STRM` dropdown options on the
+  live form. Some terms (especially Summer) may not be published yet
+  even when their code "should" be live; check before committing to a
+  multi-hour scrape.
+- **`?cmd=login` round-trip is normal**, not SSO. PS sets a guest
+  session cookie automatically on the second request. Playwright
+  handles this seamlessly; raw `curl` against the search URL returns
+  a small login-redirect page. (The orchestrator's probe in
+  `cluster-fingerprints.ts` special-cases this — see the
+  `isPsAutoGuestLoop` branch.)
+- **Each PS deployment has its own "site name"** in the URL — LACCD
+  uses `classsearchguest`; San Diego CCD uses `IHPRD`; NV CCs use
+  `spcssprd`. Don't hardcode the LACCD path verbatim.
+
+### Banner SSB 9
+
+Template: `scripts/lib/scrape-banner-ssb.ts` (built into the
+orchestrator). Already wired automatically when fingerprinting
+detects Banner SSB 9 — no per-cluster scraper needed.
+
+### Colleague Self-Service
+
+Template: `scripts/lib/scrape-colleague.ts` (built into the
+orchestrator). The Grossmont-Cuyamaca cluster (CA) is an example of
+what scrapes via this template once the cluster's host is identified.
+
+### Custom HTML / per-college bespoke
+
+When the cluster is `unknown` and turns out to be heterogeneous
+custom pages per college (Los Rios, West Hills patterns), pattern-
+match against existing bespoke scrapers (see step 12 list) — not the
+LACCD template.
 
 ## Manual TODOs to expect
 
