@@ -63,6 +63,11 @@ import {
   type Platform,
 } from "./fingerprint-college";
 import {
+  clusterFingerprints,
+  type Cluster,
+  type ClusterInput,
+} from "./cluster-fingerprints";
+import {
   discoverPublicCommunityColleges,
   type DiscoveredCollege,
 } from "./discover-colleges";
@@ -104,6 +109,8 @@ export interface AddStateOptions {
   skipBootstrap?: boolean;
   /** Skip Phase 2a (fingerprint). Phase 2b is auto-skipped if no fingerprint data. */
   skipFingerprint?: boolean;
+  /** Skip Phase 2a.5 (multi-college-district cluster detection). */
+  skipCluster?: boolean;
   /** Skip Phase 2b (course scraping). Useful for "fingerprint only" runs. */
   skipCourses?: boolean;
   /** Skip Phase 3 (transfers). */
@@ -131,6 +138,16 @@ export interface AddStateResult {
   fingerprint: {
     byPlatform: Partial<Record<Platform, FingerprintedCollege[]>>;
     flagged: { slug: string; platform: Platform; note: string }[];
+  };
+  /** Phase 2a.5 — multi-college-district clustering of untemplated colleges. */
+  clusters: {
+    /** Clusters of 2+ colleges sharing a SIS host or registrable domain. */
+    found: Cluster[];
+    /** Untemplated colleges that didn't cluster with anyone. */
+    singletons: { slug: string; primaryUrl: string }[];
+    /** True if data/{state}/clusters.json was written. */
+    written: boolean;
+    error?: string;
   };
   courses: {
     bannerSsb?: SsbStateResult;
@@ -321,6 +338,10 @@ async function phaseFingerprint(
   // platforms (Coursedog, etc.) are NOT flagged here — they're handled
   // by Phase 2c instead, since they yield catalog/prereq data rather
   // than class sections.
+  //
+  // We only populate the `flagged` data here; the corresponding TODOs are
+  // emitted by `phaseCluster` (Phase 2a.5), which groups multi-college-
+  // district clusters into single TODOs instead of N per-college ones.
   for (const platform of Object.keys(byPlatform) as Platform[]) {
     const cohort = byPlatform[platform]!;
     if (TEMPLATED_COURSE_PLATFORMS.includes(platform)) continue;
@@ -336,11 +357,148 @@ async function phaseFingerprint(
             : `platform '${platform}' is not a course-search system (catalog/programs only)`;
     for (const entry of cohort) {
       flagged.push({ slug: entry.college.slug, platform, note: reason });
-      todos.push(`[fingerprint] ${entry.college.slug}: ${reason}`);
     }
   }
 
   return { byPlatform, flagged };
+}
+
+// ---------------------------------------------------------------------------
+// Phase 2a.5: Cluster detection for untemplated colleges (issue #497)
+// ---------------------------------------------------------------------------
+//
+// `phaseFingerprint` returns `flagged[]` — one entry per college whose
+// platform isn't templated for course scraping. Without clustering, the
+// orchestrator would emit one TODO per flagged college, even when N of
+// them share the same SIS (LACCD's 9, Los Rios' 4, State Center's 4, etc.).
+//
+// This phase:
+//   1. Collects the flagged colleges (custom, unknown, peoplesoft, ellucian-
+//      experience, webadvisor, auth-gated).
+//   2. Calls clusterFingerprints() to group them by registrable domain +
+//      shared SIS host (HTTP-probed from the home page).
+//   3. Persists data/{state}/clusters.json for downstream scraper PRs.
+//   4. Emits manualTodos[] as a small number of [fingerprint-cluster]
+//      entries plus [fingerprint] entries for singletons.
+
+async function phaseCluster(
+  state: string,
+  opts: AddStateOptions,
+  fpResult: AddStateResult["fingerprint"],
+  todos: string[],
+): Promise<AddStateResult["clusters"]> {
+  const out: AddStateResult["clusters"] = {
+    found: [],
+    singletons: [],
+    written: false,
+  };
+
+  if (opts.skipCluster) {
+    console.log("Phase 2a.5 (cluster): skipped (--skip-cluster).");
+    // Fall back to per-college TODOs since we won't be grouping them.
+    for (const f of fpResult.flagged) {
+      todos.push(`[fingerprint] ${f.slug}: ${f.note}`);
+    }
+    return out;
+  }
+
+  console.log("\n=== Phase 2a.5: Cluster detection ===");
+
+  // Build the input set: colleges whose platforms aren't templated and
+  // aren't catalog-only. Pull primaryUrl from the fingerprint.input.
+  const flaggedSlugs = new Set(fpResult.flagged.map((f) => f.slug));
+  const inputs: ClusterInput[] = [];
+  for (const platform of Object.keys(fpResult.byPlatform) as Platform[]) {
+    if (TEMPLATED_COURSE_PLATFORMS.includes(platform)) continue;
+    if (CATALOG_PLATFORMS.includes(platform)) continue;
+    const cohort = fpResult.byPlatform[platform]!;
+    for (const entry of cohort) {
+      if (!flaggedSlugs.has(entry.college.slug)) continue;
+      const host = entry.fingerprint.domain || entry.college.primaryUrl;
+      if (!host) continue;
+      inputs.push({
+        slug: entry.college.slug,
+        name: entry.college.name,
+        primaryUrl: host,
+        fingerprint: entry.fingerprint,
+      });
+    }
+  }
+
+  if (inputs.length === 0) {
+    console.log("  No untemplated colleges — skipping clustering.");
+    return out;
+  }
+
+  console.log(`  Clustering ${inputs.length} untemplated college(s)...`);
+  let lastReport = 0;
+  const clusterResult = await clusterFingerprints(inputs, {
+    probeDeep: true,
+    onProgress: (done, total) => {
+      // Throttle progress logs to every 10 colleges
+      if (done - lastReport >= 10 || done === total) {
+        process.stdout.write(`\r  HTTP-probed ${done}/${total}`);
+        lastReport = done;
+      }
+    },
+  });
+  process.stdout.write("\n");
+
+  out.found = clusterResult.clusters;
+  out.singletons = clusterResult.singletons.map((s) => ({
+    slug: s.slug,
+    primaryUrl: s.primaryUrl,
+  }));
+
+  console.log(
+    `  ${clusterResult.clusters.length} cluster(s), ${clusterResult.summary.clusteredCount} clustered, ${clusterResult.summary.singletonCount} singletons.`,
+  );
+
+  // Persist clusters.json (skipped in dry-run)
+  if (!opts.dryRun) {
+    try {
+      const fs = await import("fs");
+      const path = await import("path");
+      const stateDir = path.default.join(process.cwd(), "data", state);
+      fs.default.mkdirSync(stateDir, { recursive: true });
+      const filePath = path.default.join(stateDir, "clusters.json");
+      const payload = {
+        $comment: "Multi-college-district cluster detection output (issue #497). Each cluster represents N colleges that share a SIS host or registrable domain — a single bespoke scraper can cover all members.",
+        state,
+        generatedAt: new Date().toISOString(),
+        summary: clusterResult.summary,
+        clusters: clusterResult.clusters,
+        singletons: out.singletons,
+      };
+      fs.default.writeFileSync(filePath, JSON.stringify(payload, null, 2) + "\n");
+      out.written = true;
+      console.log(`  → wrote ${filePath}`);
+    } catch (e) {
+      out.error = String(e);
+      console.error(`  ⚠ failed to write clusters.json: ${e}`);
+    }
+  }
+
+  // Emit grouped TODOs
+  const clusteredSlugs = new Set<string>();
+  for (const c of clusterResult.clusters) {
+    for (const s of c.memberSlugs) clusteredSlugs.add(s);
+  }
+
+  for (const c of clusterResult.clusters) {
+    const sortedSlugs = [...c.memberSlugs].sort();
+    todos.push(
+      `[fingerprint-cluster] ${c.id} (${c.memberSlugs.length} colleges share ${c.sharedSignal}, ${c.signalKind}): ${sortedSlugs.join(", ")}. → One bespoke scraper covers all ${c.memberSlugs.length}.`,
+    );
+  }
+
+  // Singletons keep their per-college TODOs
+  for (const f of fpResult.flagged) {
+    if (clusteredSlugs.has(f.slug)) continue;
+    todos.push(`[fingerprint] ${f.slug}: ${f.note}`);
+  }
+
+  return out;
 }
 
 // ---------------------------------------------------------------------------
@@ -792,6 +950,17 @@ export function formatReport(r: AddStateResult): string {
     `Phase 2a — Fingerprint:     ${platformCounts.length > 0 ? platformCounts.join(", ") : "no colleges fingerprinted"}`
   );
 
+  // Phase 2a.5 (cluster)
+  if (r.clusters.found.length > 0 || r.clusters.singletons.length > 0) {
+    const totalClustered = r.clusters.found.reduce(
+      (n, c) => n + c.memberSlugs.length,
+      0,
+    );
+    lines.push(
+      `Phase 2a.5 — Cluster:       ${r.clusters.found.length} cluster(s), ${totalClustered} colleges clustered, ${r.clusters.singletons.length} singletons${r.clusters.written ? " (clusters.json written)" : ""}`,
+    );
+  }
+
   // Phase 2b
   let totalSections = 0;
   if (r.courses.bannerSsb) totalSections += r.courses.bannerSsb.grandTotal;
@@ -880,6 +1049,7 @@ export async function addState(
     finishedAt: "",
     bootstrap: null,
     fingerprint: { byPlatform: {}, flagged: [] },
+    clusters: { found: [], singletons: [], written: false },
     courses: { skippedPlatforms: [] },
     catalog: {},
     transfers: { portal: null, scriptsRun: [], fallbackSuggestion: null },
@@ -917,6 +1087,24 @@ export async function addState(
     result.manualTodos.push(`[fingerprint] failed: ${e}`);
   }
   result.durations["2a-fingerprint"] = Date.now() - t2a;
+
+  // Phase 2a.5 (cluster detection for untemplated colleges)
+  const t2a5 = Date.now();
+  try {
+    result.clusters = await phaseCluster(
+      state,
+      opts,
+      result.fingerprint,
+      result.manualTodos,
+    );
+  } catch (e) {
+    result.manualTodos.push(`[cluster] failed: ${e}`);
+    // Fall back to per-college TODOs so we don't silently drop fingerprint info
+    for (const f of result.fingerprint.flagged) {
+      result.manualTodos.push(`[fingerprint] ${f.slug}: ${f.note}`);
+    }
+  }
+  result.durations["2a5-cluster"] = Date.now() - t2a5;
 
   // Phase 2b (course scraping)
   const t2b = Date.now();
@@ -994,6 +1182,7 @@ function parseArgs(argv: string[]): CliArgs {
     else if (a === "--dry-run") out.dryRun = true;
     else if (a === "--skip-bootstrap") out.skipBootstrap = true;
     else if (a === "--skip-fingerprint") out.skipFingerprint = true;
+    else if (a === "--skip-cluster") out.skipCluster = true;
     else if (a === "--skip-courses") out.skipCourses = true;
     else if (a === "--skip-transfers") out.skipTransfers = true;
     else if (a === "--skip-prereqs") out.skipPrereqs = true;
@@ -1019,6 +1208,7 @@ Options:
   --dry-run               Plan only; don't write files or run scrapers.
   --skip-bootstrap        Skip Phase 1 (re-running on existing state).
   --skip-fingerprint      Skip Phase 2a.
+  --skip-cluster          Skip Phase 2a.5 (multi-college-district clustering).
   --skip-courses          Skip Phase 2b.
   --skip-transfers        Skip Phase 3.
   --skip-prereqs          Skip Phase 4.
