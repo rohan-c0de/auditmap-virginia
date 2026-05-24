@@ -101,6 +101,18 @@ const txConfig: StateConfig = {
         scripts: ["scripts/tx/scrape-kilgore.ts"],
         runner: "playwright",
       },
+      // Howard College + Southwest College for the Deaf share a single
+      // Concourse Syllabus Management instance (Intellidemia) at
+      // howardcollege.campusconcourse.com. One scraper covers both slugs;
+      // the form's campus_id filter splits SW → swcd and BS/LA/SA/ON →
+      // howard-college. HTTP-only — Concourse exposes paginated search
+      // results as plain HTML, no auth, no JS required. Sparse data: no
+      // CRN/seats/meeting times in the public listing (CRN synthesized
+      // from Concourse's internal course_id; instructor IS available).
+      {
+        scripts: ["scripts/tx/scrape-howard.ts"],
+        runner: "http",
+      },
     ],
     // manual-only: transfers — Phase 3 (transfer-equiv) not yet wired up.
     // manual-only: prereqs — Phase 4.
