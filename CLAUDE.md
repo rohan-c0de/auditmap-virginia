@@ -54,6 +54,14 @@ This is the most frequent multi-step workflow. Two skills cover it:
 - **`auto-add-state`** (`.claude/skills/auto-add-state/`) — autonomous; one command, one PR. Runs `scripts/lib/add-state.ts` end-to-end: bootstrap → fingerprint → scrape (Banner SSB / Colleague / Banner 8 templates) → articulation lookup → prereq aggregation. Surfaces a manual-TODO list for what couldn't be automated. Use when the user says "/auto-add-state ohio", "add Kentucky", or similar.
 - **`add-new-state`** (`.claude/skills/add-new-state/`) — manual fallback; 5 phases, 5 PRs, full human control over each step. Use when the autonomous flow's TODOs need to be addressed one-by-one, when adding bespoke scrapers for custom-platform colleges, or when the user explicitly asks for the manual flow.
 
+### Hard rule — build inline scrapers before the PR
+
+When an auto-add-state run flags a college as `custom HTML/SPA` or `no SIS platform detected`, and its course-search page is publicly accessible (no SSO / no login wall), **build the bespoke scraper now in the same branch — do not defer as a TODO**. Same applies to multi-college clusters with a public guest endpoint (PeopleSoft Community Access patterns, etc.) — adapt the closest existing cluster template (e.g. `scripts/ca/scrape-laccd.ts`) inline.
+
+Why: the user shouldn't have to come back later and re-investigate every college from scratch. One comprehensive PR > one shallow PR plus N follow-ups. The AZ run on 2026-05-24 shipped with 11 buildable colleges deferred as TODOs ("it's another 1-2 hours") — exactly the failure mode this rule prevents.
+
+The hook at `.claude/hooks/pre-pr-build-check.sh` blocks `gh pr create` on auto-add-state branches when the orchestrator's result JSON shows buildable fingerprint TODOs that aren't matched by new scraper files committed on the branch. If you hit the block, build the scrapers — don't bypass. If a TODO is genuinely deferred (>half a day's work, blocked on investigation), record it with a commit subject `DEFERRED-scrapers: <one-line reason>` so the deferral is explicit and grepable.
+
 ## Where guidance lives
 
 Before adding a new rule, recommendation, or reminder anywhere in this repo, ask which of these it is. Each category has one correct home. Putting the wrong thing in the wrong place either bloats a file no one wants to read or buries a rule no one will follow.
