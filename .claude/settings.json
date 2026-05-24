@@ -14,6 +14,10 @@
           },
           {
             "type": "command",
+            "command": ".claude/hooks/pre-orchestrator-guard.sh"
+          },
+          {
+            "type": "command",
             "command": ".claude/hooks/pre-pr-build-check.sh"
           }
         ]
