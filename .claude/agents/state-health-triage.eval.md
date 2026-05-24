@@ -60,8 +60,10 @@ ts: 2026-05-20T09:41:25Z, state: va, datatype: courses, job_index: 1, conclusion
 
 ---
 
-### Case 2 — VA courses job 0 historical flapping after registry removal
-**Classification:** `registry-evolution`
+### Case 2 — VA courses job 0, historical mix under current manual-only marker
+**Classification:** `known-acceptable`
+
+*Corrected from `registry-evolution` after grading. VA's current config has `scrapers: {}` AND `// manual-only:` comments — by the decision order, the registry check (step 1) wins over the registry-evolution check (step 2). When both apply, prefer `known-acceptable`.*
 
 **Trigger:** No tick after May 20, 2026 for va/courses/job_0.
 
@@ -207,8 +209,10 @@ Only 3 records total. No success ever in window.
 
 ---
 
-### Case 9 — NJ courses, one isolated failure
-**Classification:** `transient`
+### Case 9 — NJ courses, trailing-edge healthy after one old isolated failure
+**Classification:** `stable-healthy`
+
+*Corrected from `transient` after grading. Trigger ts is the live healthy record; trailing edge is all healthy. The historical isolated failure on May 4 is best classified by its own trigger, which is Case 27's job (now correctly `transient`).*
 
 **Trigger:** `ts: 2026-05-24, state: nj, datatype: courses, status: healthy`
 
@@ -403,7 +407,9 @@ Only 3 records total. No success ever in window.
 ---
 
 ### Case 21 — VA courses job 0 historical flap (Apr 30 – May 11)
-**Classification:** `registry-evolution`
+**Classification:** `known-acceptable`
+
+*Corrected from `registry-evolution` after grading — same root cause as Case 2.*
 
 **Trigger:** No current record (filtered out; va has no current scrapers declared).
 
@@ -480,8 +486,10 @@ Only 3 records total. No success ever in window.
 
 ---
 
-### Case 27 — Run 25294595320 (May 4 00:01), large multi-state cluster
-**Classification:** `infrastructure-incident`
+### Case 27 — Run 25294595320 (May 4 00:01), large multi-state cluster (negative test for infrastructure-incident)
+**Classification:** `transient`
+
+**Asking:** Classify (nj, courses, job_index=0) at trigger_ts 2026-05-04T00:01:17Z — the same single failure that Case 9 covers from the live-snapshot angle. The cross-state context is what the agent must resist over-weighting.
 
 **Trigger:** Run 25294595320 (2026-05-04T00:01:17Z) has multiple state failures in the same window:
 - `dc courses → success (recovered same run)`
