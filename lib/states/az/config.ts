@@ -41,24 +41,20 @@ const azConfig: StateConfig = {
       // Colleague Self-Service — Mohave (Ellucian Cloud) + Arizona Western
       // (self-hosted at colss-prod.ec.azwestern.edu).
       { scripts: ["scripts/az/scrape-colleague.ts"], runner: "playwright" },
+      // Diné College — PDF-only schedule (Microsoft Print To PDF output);
+      // parsed via `pdftotext -layout`. Requires poppler-utils on the
+      // runner (apt-get install -y poppler-utils, or `brew install poppler`).
+      { scripts: ["scripts/az/scrape-dine.ts"], runner: "http" },
     ],
-    // Inline prereq text harvested from the scraped Banner SSB + Colleague
-    // sections. The other 17 AZ colleges contribute nothing until their
-    // scrapers ship (Maricopa cluster is the highest-value follow-up).
+    // Inline prereq text harvested from every scraped section (6 of 21
+    // AZ colleges covered by this PR: 3 Banner SSB + 2 Colleague + Diné).
+    // Maricopa District (10 more colleges) ships separately in PR #516.
     prereqs: { source: "aggregate-from-courses" },
     // manual-only: transfers — AZ has no entry in articulation-portals.json
     //   yet. AZ's state system is AZTransfer.com; needs one-time integration.
     // manual-only: programs — scripts/az/scrape-programs.ts wrapper exists
     //   but each of the 4 Acalog catalogs needs manual navoid identification
     //   (auto-discovery finds catoid but not navoids — same as NV/CSN).
-  },
-  documentedCeilings: {
-    courses: [
-      {
-        collegeSlug: "dine-college",
-        reason: "Diné College (Navajo Nation tribal college) publishes course schedules only as semester PDFs (e.g. Fall-26-Course-Schedule-May-20-2026.pdf at www.dinecollege.edu/admissions/course-schedule/). The my.dinecollege.edu portal is SSO-gated via QuickLaunch. No live HTML/JSON schedule. Verified 2026-05-24.",
-      },
-    ],
   },
 };
 
