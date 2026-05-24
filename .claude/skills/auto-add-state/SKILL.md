@@ -29,6 +29,18 @@ The full pipeline (orchestrated by `scripts/lib/add-state.ts`):
   Maps each new college to its IPEDS unitid then fetches federal cost / aid /
   completion data into `data/{slug}/scorecard/`. Auto-skips if
   `COLLEGE_SCORECARD_API_KEY` is unset.
+- Phase 6 — Programs discovery (`scripts/lib/discover-programs.ts`). Probes
+  each college's domain for a public catalog hosted on a templated platform
+  (acalog, courseleaf, smartcatalogiq, coursedog, cleancatalog) and emits a
+  `scripts/{slug}/scrape-programs.ts` wrapper pre-populated with the
+  discovered URLs. Does **not** execute the program scrape — the operator
+  reviews the wrapper, fills in per-college config (catoid, catalogYear,
+  programNavoids if needed), runs it manually, and validates the data
+  before committing. Colleges whose catalogs don't match any template
+  surface as `[programs]` TODOs. Without this phase, the per-college
+  `/{state}/college/{id}/programs` page renders empty and the pathway-intent
+  search ("what should I take to become an X?") falls back to a generic
+  subject-prefix answer.
 
 ## Workflow
 
@@ -426,7 +438,12 @@ The orchestrator's `manualTodos[]` is the most important output. Categories:
 - Refactor any existing scraper (additive-only invariant)
 - Import scraped data to Supabase directly (the existing
   `import-on-merge.yml` workflow handles that when the PR lands)
-- Phase 5 (programs) — left as a manual follow-up
+- **Run** the program scrape — Phase 6 discovers catalogs and writes a
+  per-state wrapper, but does not execute it. The operator validates
+  each discovered URL, fills in platform-specific config (catoid,
+  catalogYear, programNavoids), runs `npx tsx scripts/{slug}/scrape-programs.ts`,
+  spot-checks the output, then commits + declares the scraper in
+  `lib/states/{slug}/config.ts` under `scrapers.programs`.
 - Custom-platform scrapers for auth-gated colleges — only public ones get
   built (per step 12 above; auth-gated stays a TODO)
 

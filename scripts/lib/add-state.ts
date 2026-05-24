@@ -18,6 +18,13 @@
  *   Phase 4  Prereqs aggregation      — call existing aggregate-prereqs.ts
  *                                       to roll inline prereq data into
  *                                       data/{state}/prereqs.json
+ *   Phase 6  Programs discovery      — probe each college for a public catalog
+ *                                       on a templated platform (acalog,
+ *                                       courseleaf, smartcatalogiq, coursedog,
+ *                                       cleancatalog) and emit a per-state
+ *                                       scrape-programs.ts wrapper. Does NOT
+ *                                       execute the scrape — operator validates
+ *                                       URLs first and runs it manually.
  *   Phase 5  Scorecard ingest (#392)  — map each college to its IPEDS unitid,
  *                                       fetch federal cost/aid/completion
  *                                       data into data/{state}/scorecard/.
@@ -92,6 +99,12 @@ import {
   type ScrapeCoursedogResult,
 } from "./scrape-coursedog";
 import {
+  discoverPrograms,
+  renderProgramsWrapper,
+  type ProgramCatalogHit,
+  type ProgramCatalogMiss,
+} from "./discover-programs";
+import {
   lookupArticulationPortal,
   getFallbackPortal,
   type PortalEntry,
@@ -117,6 +130,8 @@ export interface AddStateOptions {
   skipTransfers?: boolean;
   /** Skip Phase 4 (prereqs). */
   skipPrereqs?: boolean;
+  /** Skip Phase 6 (programs discovery). */
+  skipPrograms?: boolean;
   /** Skip Phase 5 (scorecard ingest). Useful when the API key isn't set. */
   skipScorecard?: boolean;
   /** Filter to a single college slug (debug aid). */
@@ -176,6 +191,17 @@ export interface AddStateResult {
     /** Number of scorecard JSON files written under data/{state}/scorecard/. */
     ingested: number;
     /** True if the phase ran and produced data; false if skipped/failed. */
+    ran: boolean;
+    error?: string;
+  };
+  /** Phase 6 — catalog-platform discovery for the programs scraper.
+   *  Does NOT execute the scrape; emits a per-state wrapper file the
+   *  operator runs after validating the discovered URLs. */
+  programs: {
+    hits: ProgramCatalogHit[];
+    misses: ProgramCatalogMiss[];
+    /** Path of the per-state wrapper written under scripts/{state}/, or null. */
+    wrapperPath: string | null;
     ran: boolean;
     error?: string;
   };
@@ -931,6 +957,95 @@ async function phaseScorecard(
 }
 
 // ---------------------------------------------------------------------------
+// Phase 6: Programs — discover catalog platform per college + emit wrapper
+// ---------------------------------------------------------------------------
+
+async function phasePrograms(
+  state: string,
+  opts: AddStateOptions,
+  todos: string[],
+): Promise<AddStateResult["programs"]> {
+  if (opts.skipPrograms || opts.dryRun) {
+    const flag = opts.skipPrograms ? "--skip-programs" : "--dry-run";
+    console.log(`\nPhase 6 (programs): skipped (${flag}).`);
+    return { hits: [], misses: [], wrapperPath: null, ran: false };
+  }
+
+  console.log("\n=== Phase 6: Programs catalog discovery ===");
+
+  const instPath = `data/${state}/institutions.json`;
+  if (!fs.existsSync(instPath)) {
+    const msg = `${instPath} missing — bootstrap must run first.`;
+    console.warn(`  ${msg}`);
+    return { hits: [], misses: [], wrapperPath: null, ran: false, error: msg };
+  }
+
+  let institutions: Array<{ college_slug?: string; id?: string; campuses?: Array<{ address?: string }> }>;
+  try {
+    institutions = JSON.parse(fs.readFileSync(instPath, "utf-8"));
+  } catch (e) {
+    const msg = `failed to read ${instPath}: ${e}`;
+    return { hits: [], misses: [], wrapperPath: null, ran: false, error: msg };
+  }
+
+  // Derive each college's primary web domain. Try a `homepage_url` field
+  // first (some bootstraps populate it), then fall back to `{slug}.edu` —
+  // not perfect, but the discoverer probes 5 URL patterns so a wrong
+  // guess produces a benign miss rather than a wrong hit.
+  const colleges = institutions
+    .filter((i) => i.college_slug || i.id)
+    .map((i) => {
+      const slug = (i.college_slug || i.id) as string;
+      const home = (i as { homepage_url?: string }).homepage_url || "";
+      let domain = "";
+      if (home) {
+        try { domain = new URL(home).host.replace(/^www\./, ""); } catch { /* fallthrough */ }
+      }
+      if (!domain) domain = `${slug.split("-")[0]}.edu`;
+      return { slug, primaryDomain: domain };
+    });
+
+  if (colleges.length === 0) {
+    return { hits: [], misses: [], wrapperPath: null, ran: false, error: "no colleges in institutions.json" };
+  }
+
+  const { hits, misses } = await discoverPrograms(colleges);
+  console.log(`  Probed ${colleges.length} colleges: ${hits.length} hits, ${misses.length} misses`);
+  for (const h of hits) console.log(`    + ${h.collegeSlug} → ${h.platform} @ ${h.catalogUrl}`);
+
+  let wrapperPath: string | null = null;
+  if (hits.length > 0) {
+    const wrapper = renderProgramsWrapper(state, hits);
+    if (wrapper) {
+      const outDir = path.join(process.cwd(), "scripts", state);
+      fs.mkdirSync(outDir, { recursive: true });
+      wrapperPath = path.join(outDir, "scrape-programs.ts");
+      // Don't clobber an existing hand-written wrapper.
+      if (fs.existsSync(wrapperPath)) {
+        console.log(`  ${wrapperPath} already exists — leaving it alone`);
+        todos.push(
+          `[programs] ${wrapperPath} already exists; reconcile the ${hits.length} discovered colleges with the hand-written wrapper.`,
+        );
+      } else {
+        fs.writeFileSync(wrapperPath, wrapper);
+        console.log(`  ✓ Wrote ${wrapperPath}`);
+        todos.push(
+          `[programs] Validate URLs in ${wrapperPath} and run \`npx tsx ${wrapperPath}\` to populate data/${state}/programs/. Then declare the scraper in lib/states/${state}/config.ts under \`scrapers.programs\`.`,
+        );
+      }
+    }
+  }
+
+  for (const m of misses) {
+    todos.push(
+      `[programs] ${m.collegeSlug}: ${m.reason} (probed ${m.triedUrls.length} URLs).`,
+    );
+  }
+
+  return { hits, misses, wrapperPath, ran: true };
+}
+
+// ---------------------------------------------------------------------------
 // Reporter — pretty-prints the result for end-of-run consumption
 // ---------------------------------------------------------------------------
 
@@ -1020,6 +1135,17 @@ export function formatReport(r: AddStateResult): string {
     );
   }
 
+  // Phase 6
+  if (r.programs.ran) {
+    lines.push(
+      `Phase 6 — Programs:         ${r.programs.hits.length} catalog(s) discovered, ${r.programs.misses.length} miss(es)${r.programs.wrapperPath ? `; wrapper written to ${r.programs.wrapperPath}` : ""}`
+    );
+  } else {
+    lines.push(
+      `Phase 6 — Programs:         not run${r.programs.error ? ` (${r.programs.error})` : ""}`
+    );
+  }
+
   // Manual TODOs
   if (r.manualTodos.length > 0) {
     lines.push("");
@@ -1063,6 +1189,7 @@ export async function addState(
     transfers: { portal: null, scriptsRun: [], fallbackSuggestion: null },
     prereqs: { aggregated: false },
     scorecard: { mapped: 0, ingested: 0, ran: false },
+    programs: { hits: [], misses: [], wrapperPath: null, ran: false },
     manualTodos: [],
     durations: {},
   };
@@ -1168,6 +1295,15 @@ export async function addState(
   }
   result.durations["5-scorecard"] = Date.now() - t5;
 
+  // Phase 6 (programs — catalog discovery + wrapper emission, no scrape)
+  const t6 = Date.now();
+  try {
+    result.programs = await phasePrograms(state, opts, result.manualTodos);
+  } catch (e) {
+    result.manualTodos.push(`[programs] failed: ${e}`);
+  }
+  result.durations["6-programs"] = Date.now() - t6;
+
   result.finishedAt = new Date().toISOString();
   return result;
 }
@@ -1195,6 +1331,7 @@ function parseArgs(argv: string[]): CliArgs {
     else if (a === "--skip-transfers") out.skipTransfers = true;
     else if (a === "--skip-prereqs") out.skipPrereqs = true;
     else if (a === "--skip-scorecard") out.skipScorecard = true;
+    else if (a === "--skip-programs") out.skipPrograms = true;
     else if (a === "--college-filter") out.collegeFilter = argv[++i];
     else if (a === "--ipeds-year") out.ipedsYear = parseInt(argv[++i], 10);
     else if (a === "--json") out.json = true;
