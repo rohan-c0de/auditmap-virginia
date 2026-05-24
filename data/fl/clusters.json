@@ -1,0 +1,138 @@
+{
+  "$comment": "Multi-college-district cluster detection output (issue #497). Each cluster represents N colleges that share a SIS host or registrable domain — a single bespoke scraper can cover all members.",
+  "state": "fl",
+  "generatedAt": "2026-05-24T03:02:30.628Z",
+  "summary": {
+    "inputCount": 28,
+    "clusterCount": 1,
+    "clusteredCount": 3,
+    "singletonCount": 25
+  },
+  "clusters": [
+    {
+      "id": "experience-elluciancloud-com",
+      "sharedSignal": "experience.elluciancloud.com",
+      "signalKind": "shared-sis-host",
+      "memberSlugs": [
+        "fsw",
+        "nwfsc",
+        "polk"
+      ],
+      "evidence": {
+        "fsw": [
+          "experience.elluciancloud.com"
+        ],
+        "nwfsc": [
+          "experience.elluciancloud.com"
+        ],
+        "polk": [
+          "experience.elluciancloud.com"
+        ]
+      },
+      "publicGuestAccess": "sso-gated",
+      "publicGuestEvidence": "redirected to https://experience.elluciancloud.com/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL (HTTP 404)"
+    }
+  ],
+  "singletons": [
+    {
+      "slug": "broward",
+      "primaryUrl": "broward.edu"
+    },
+    {
+      "slug": "chipola",
+      "primaryUrl": "chipola.edu"
+    },
+    {
+      "slug": "cf",
+      "primaryUrl": "cf.edu"
+    },
+    {
+      "slug": "daytonastate",
+      "primaryUrl": "daytonastate.edu"
+    },
+    {
+      "slug": "easternflorida",
+      "primaryUrl": "easternflorida.edu"
+    },
+    {
+      "slug": "fgc",
+      "primaryUrl": "fgc.edu"
+    },
+    {
+      "slug": "cfk",
+      "primaryUrl": "cfk.edu"
+    },
+    {
+      "slug": "fscj",
+      "primaryUrl": "fscj.edu"
+    },
+    {
+      "slug": "gulfcoast",
+      "primaryUrl": "gulfcoast.edu"
+    },
+    {
+      "slug": "hccfl",
+      "primaryUrl": "hccfl.edu"
+    },
+    {
+      "slug": "irsc",
+      "primaryUrl": "irsc.edu"
+    },
+    {
+      "slug": "lssc",
+      "primaryUrl": "lssc.edu"
+    },
+    {
+      "slug": "mdc",
+      "primaryUrl": "mdc.edu"
+    },
+    {
+      "slug": "nfc",
+      "primaryUrl": "nfc.edu"
+    },
+    {
+      "slug": "palmbeachstate",
+      "primaryUrl": "palmbeachstate.edu"
+    },
+    {
+      "slug": "phsc",
+      "primaryUrl": "phsc.edu"
+    },
+    {
+      "slug": "pensacolastate",
+      "primaryUrl": "pensacolastate.edu"
+    },
+    {
+      "slug": "sfcollege",
+      "primaryUrl": "sfcollege.edu"
+    },
+    {
+      "slug": "seminolestate",
+      "primaryUrl": "seminolestate.edu"
+    },
+    {
+      "slug": "southflorida",
+      "primaryUrl": "southflorida.edu"
+    },
+    {
+      "slug": "sjrstate",
+      "primaryUrl": "sjrstate.edu"
+    },
+    {
+      "slug": "spcollege",
+      "primaryUrl": "spcollege.edu"
+    },
+    {
+      "slug": "scf",
+      "primaryUrl": "scf.edu"
+    },
+    {
+      "slug": "tcc-fl",
+      "primaryUrl": "tcc.fl.edu"
+    },
+    {
+      "slug": "valencia",
+      "primaryUrl": "valenciacollege.edu"
+    }
+  ]
+}

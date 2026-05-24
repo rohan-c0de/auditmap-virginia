@@ -1,0 +1,48 @@
+{
+  "$comment": "Multi-college-district cluster detection output (issue #497). Each cluster represents N colleges that share a SIS host or registrable domain — a single bespoke scraper can cover all members.",
+  "state": "hi",
+  "generatedAt": "2026-05-24T02:52:16Z",
+  "summary": {
+    "inputCount": 6,
+    "clusterCount": 1,
+    "clusteredCount": 6,
+    "singletonCount": 0
+  },
+  "clusters": [
+    {
+      "id": "hawaii-edu",
+      "sharedSignal": "hawaii.edu",
+      "signalKind": "registrable-domain",
+      "memberSlugs": [
+        "honolulu-community-college",
+        "kapiolani-community-college",
+        "kauai-community-college",
+        "leeward-community-college",
+        "windward-community-college",
+        "hawaii-community-college"
+      ],
+      "evidence": {
+        "honolulu-community-college": [
+          "honolulu.hawaii.edu"
+        ],
+        "kapiolani-community-college": [
+          "kapiolani.hawaii.edu"
+        ],
+        "kauai-community-college": [
+          "kauai.hawaii.edu"
+        ],
+        "leeward-community-college": [
+          "leeward.hawaii.edu"
+        ],
+        "windward-community-college": [
+          "windward.hawaii.edu"
+        ],
+        "hawaii-community-college": [
+          "hawaii.hawaii.edu"
+        ]
+      },
+      "publicGuestAccess": "unknown"
+    }
+  ],
+  "singletons": []
+}

@@ -1,0 +1,39 @@
+{
+  "$comment": "Multi-college-district cluster detection output (issue #497). Each cluster represents N colleges that share a SIS host or registrable domain — a single bespoke scraper can cover all members.",
+  "state": "va",
+  "generatedAt": "2026-05-24T02:55:06Z",
+  "summary": {
+    "inputCount": 5,
+    "clusterCount": 0,
+    "clusteredCount": 0,
+    "singletonCount": 5
+  },
+  "clusters": [],
+  "singletons": [
+    {
+      "slug": "gcc",
+      "name": "Germanna Community College",
+      "primaryUrl": "www.germanna.edu"
+    },
+    {
+      "slug": "nova",
+      "name": "Northern Virginia Community College",
+      "primaryUrl": "www.nvcc.edu"
+    },
+    {
+      "slug": "reynolds",
+      "name": "Reynolds Community College",
+      "primaryUrl": "www.reynolds.edu"
+    },
+    {
+      "slug": "tcc",
+      "name": "Tidewater Community College",
+      "primaryUrl": "www.tcc.edu"
+    },
+    {
+      "slug": "brcc",
+      "name": "Blue Ridge Community College",
+      "primaryUrl": "www.brcc.edu"
+    }
+  ]
+}

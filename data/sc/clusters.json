@@ -1,0 +1,78 @@
+{
+  "$comment": "Multi-college-district cluster detection output (issue #497). Each cluster represents N colleges that share a SIS host or registrable domain — a single bespoke scraper can cover all members.",
+  "state": "sc",
+  "generatedAt": "2026-05-24T03:02:43.616Z",
+  "summary": {
+    "inputCount": 16,
+    "clusterCount": 0,
+    "clusteredCount": 0,
+    "singletonCount": 16
+  },
+  "clusters": [],
+  "singletons": [
+    {
+      "slug": "aiken",
+      "primaryUrl": "atc.edu"
+    },
+    {
+      "slug": "central-carolina",
+      "primaryUrl": "cctech.edu"
+    },
+    {
+      "slug": "denmark",
+      "primaryUrl": "denmarktech.edu"
+    },
+    {
+      "slug": "florence-darlington",
+      "primaryUrl": "fdtc.edu"
+    },
+    {
+      "slug": "greenville",
+      "primaryUrl": "gvltec.edu"
+    },
+    {
+      "slug": "horry-georgetown",
+      "primaryUrl": "hgtc.edu"
+    },
+    {
+      "slug": "midlands",
+      "primaryUrl": "midlandstech.edu"
+    },
+    {
+      "slug": "northeastern",
+      "primaryUrl": "netc.edu"
+    },
+    {
+      "slug": "orangeburg-calhoun",
+      "primaryUrl": "octech.edu"
+    },
+    {
+      "slug": "piedmont",
+      "primaryUrl": "ptc.edu"
+    },
+    {
+      "slug": "spartanburg",
+      "primaryUrl": "sccsc.edu"
+    },
+    {
+      "slug": "lowcountry",
+      "primaryUrl": "tcl.edu"
+    },
+    {
+      "slug": "tri-county",
+      "primaryUrl": "tctc.edu"
+    },
+    {
+      "slug": "trident",
+      "primaryUrl": "tridenttech.edu"
+    },
+    {
+      "slug": "williamsburg",
+      "primaryUrl": "wiltech.edu"
+    },
+    {
+      "slug": "york",
+      "primaryUrl": "yorktech.edu"
+    }
+  ]
+}

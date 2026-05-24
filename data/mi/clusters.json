@@ -1,0 +1,175 @@
+{
+  "$comment": "Multi-college-district cluster detection output (issue #497). Each cluster represents N colleges that share a SIS host or registrable domain — a single bespoke scraper can cover all members.",
+  "state": "mi",
+  "generatedAt": "2026-05-24T02:52:58Z",
+  "summary": {
+    "inputCount": 31,
+    "clusterCount": 1,
+    "clusteredCount": 6,
+    "singletonCount": 25
+  },
+  "clusters": [
+    {
+      "id": "experience-elluciancloud-com",
+      "sharedSignal": "experience.elluciancloud.com",
+      "signalKind": "shared-sis-host",
+      "memberSlugs": [
+        "alpena-community-college",
+        "monroe-county-community-college",
+        "muskegon-community-college",
+        "oakland-community-college",
+        "washtenaw-community-college",
+        "wayne-county-community-college-district"
+      ],
+      "evidence": {
+        "alpena-community-college": [
+          "experience.elluciancloud.com"
+        ],
+        "monroe-county-community-college": [
+          "experience.elluciancloud.com"
+        ],
+        "muskegon-community-college": [
+          "experience.elluciancloud.com"
+        ],
+        "oakland-community-college": [
+          "experience.elluciancloud.com"
+        ],
+        "washtenaw-community-college": [
+          "experience.elluciancloud.com"
+        ],
+        "wayne-county-community-college-district": [
+          "experience.elluciancloud.com"
+        ]
+      },
+      "publicGuestAccess": "sso-gated",
+      "publicGuestEvidence": "redirected to https://experience.elluciancloud.com/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL (HTTP 404)"
+    }
+  ],
+  "singletons": [
+    {
+      "slug": "henry-ford-college",
+      "name": "Henry Ford College",
+      "primaryUrl": "hfcc.edu"
+    },
+    {
+      "slug": "jackson-college",
+      "name": "Jackson College",
+      "primaryUrl": "jccmi.edu"
+    },
+    {
+      "slug": "northwestern-michigan-college",
+      "name": "Northwestern Michigan College",
+      "primaryUrl": "nmc.edu"
+    },
+    {
+      "slug": "schoolcraft-community-college-district",
+      "name": "Schoolcraft Community College District",
+      "primaryUrl": "schoolcraft.edu"
+    },
+    {
+      "slug": "bay-mills-community-college",
+      "name": "Bay Mills Community College",
+      "primaryUrl": "bmcc.edu"
+    },
+    {
+      "slug": "bay-de-noc-community-college",
+      "name": "Bay de Noc Community College",
+      "primaryUrl": "baycollege.edu"
+    },
+    {
+      "slug": "mott-community-college",
+      "name": "Mott Community College",
+      "primaryUrl": "mcc.edu"
+    },
+    {
+      "slug": "delta-college",
+      "name": "Delta College",
+      "primaryUrl": "delta.edu"
+    },
+    {
+      "slug": "glen-oaks-community-college",
+      "name": "Glen Oaks Community College",
+      "primaryUrl": "glenoaks.edu"
+    },
+    {
+      "slug": "gogebic-community-college",
+      "name": "Gogebic Community College",
+      "primaryUrl": "gogebic.edu"
+    },
+    {
+      "slug": "grand-rapids-community-college",
+      "name": "Grand Rapids Community College",
+      "primaryUrl": "grcc.edu"
+    },
+    {
+      "slug": "kalamazoo-valley-community-college",
+      "name": "Kalamazoo Valley Community College",
+      "primaryUrl": "kvcc.edu"
+    },
+    {
+      "slug": "kellogg-community-college",
+      "name": "Kellogg Community College",
+      "primaryUrl": "kellogg.edu"
+    },
+    {
+      "slug": "kirtland-community-college",
+      "name": "Kirtland Community College",
+      "primaryUrl": "kirtland.edu"
+    },
+    {
+      "slug": "lake-michigan-college",
+      "name": "Lake Michigan College",
+      "primaryUrl": "lakemichigancollege.edu"
+    },
+    {
+      "slug": "lansing-community-college",
+      "name": "Lansing Community College",
+      "primaryUrl": "lcc.edu"
+    },
+    {
+      "slug": "macomb-community-college",
+      "name": "Macomb Community College",
+      "primaryUrl": "macomb.edu"
+    },
+    {
+      "slug": "mid-michigan-college",
+      "name": "Mid Michigan College",
+      "primaryUrl": "midmich.edu"
+    },
+    {
+      "slug": "montcalm-community-college",
+      "name": "Montcalm Community College",
+      "primaryUrl": "montcalm.edu"
+    },
+    {
+      "slug": "north-central-michigan-college",
+      "name": "North Central Michigan College",
+      "primaryUrl": "ncmich.edu"
+    },
+    {
+      "slug": "st-clair-county-community-college",
+      "name": "St Clair County Community College",
+      "primaryUrl": "sc4.edu"
+    },
+    {
+      "slug": "southwestern-michigan-college",
+      "name": "Southwestern Michigan College",
+      "primaryUrl": "swmich.edu"
+    },
+    {
+      "slug": "west-shore-community-college",
+      "name": "West Shore Community College",
+      "primaryUrl": "westshore.edu"
+    },
+    {
+      "slug": "saginaw-chippewa-tribal-college",
+      "name": "Saginaw Chippewa Tribal College",
+      "primaryUrl": "sagchip.edu"
+    },
+    {
+      "slug": "keweenaw-bay-ojibwa-community-college",
+      "name": "Keweenaw Bay Ojibwa Community College",
+      "primaryUrl": "kbocc.edu"
+    }
+  ]
+}
