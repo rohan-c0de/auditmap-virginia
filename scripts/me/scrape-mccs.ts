@@ -17,7 +17,8 @@
  *   WCCC  — #course-results-api, 11 cols (includes capacity + description)
  *   YCCC  — Per-semester WordPress pages (16-week, 12-week, 7-week I & II),
  *           5 cols, codes like "ACC 111 01" (prefix number section in one cell)
- *   KVCC  — PDF only (not scraped here)
+ *   KVCC  — #course-listing (SSR, no DataTables), 11 cols; single URL with
+ *           ?courseyear=&courseterm= chooser serves all 3 terms
  *
  * Usage:
  *   npx tsx scripts/me/scrape-mccs.ts
@@ -28,6 +29,7 @@
 import * as fs from "fs";
 import * as path from "path";
 import { chromium, type Page } from "playwright";
+import * as cheerio from "cheerio";
 
 // ---------------------------------------------------------------------------
 // Types
@@ -138,7 +140,9 @@ function parseDates(raw: string): string {
   if (!raw) return "";
   // "08-31-2026 - 12-18-2026" or "2026-08-31 - 2026-12-18" or "2026-08-24 / 2026-12-12"
   // or "Aug 24, 2026 - Dec 12, 2026"
-  const parts = raw.split(/\s*[-–\/]\s*/);
+  // Split only on whitespace-bracketed separators so ISO dates (YYYY-MM-DD)
+  // are not torn apart on every hyphen.
+  const parts = raw.split(/\s+[-–\/]\s+/);
   return normalizeDate(parts[0]?.trim() || "");
 }
 
@@ -405,6 +409,37 @@ async function scrapeYCCC(page: Page, year: number, term: string, termCode: stri
   return all;
 }
 
+/** KVCC — 11 cols: Course Number | Section | Course Name | Credit Hours |
+ *  Days/Time/Location | Start/End Date | Delivery Method | Instructor |
+ *  Seats Filled ("5 / 17") | Course Description | Course Notes.
+ *  Table is server-rendered, so we use plain fetch + cheerio (no Playwright). */
+async function scrapeKvcc(_page: Page, year: number, term: string, termCode: string): Promise<CourseSection[]> {
+  const { courseyear, courseterm } = toMccsParams(year, term);
+  const url = `https://www.kvcc.me.edu/academics/summer-course-search/?courseyear=${courseyear}&courseterm=${courseterm}`;
+  const res = await fetch(url, {
+    headers: {
+      "User-Agent":
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Accept": "text/html,application/xhtml+xml",
+      "Accept-Language": "en-US,en;q=0.9",
+    },
+  });
+  if (!res.ok) throw new Error(`KVCC HTTP ${res.status}`);
+  const html = await res.text();
+  const $ = cheerio.load(html);
+
+  const rows: string[][] = [];
+  $("#course-listing tbody tr").each((_, tr) => {
+    const cells = $(tr).find("td").map((__, td) => $(td).text().replace(/\s+/g, " ").trim()).get();
+    if (cells.length) rows.push(cells);
+  });
+
+  return rowsToSections(rows, "kvcc", termCode, {
+    courseNumber: 0, section: 1, courseName: 2, credits: 3,
+    schedule: 4, dates: 5, deliveryMethod: 6, instructor: 7,
+  });
+}
+
 // ---------------------------------------------------------------------------
 // Generic row→section converter
 // ---------------------------------------------------------------------------
@@ -514,7 +549,7 @@ const ADAPTERS: CollegeAdapter[] = [
   { id: "smcc", name: "Southern Maine CC", fn: scrapeSMCC },
   { id: "wccc", name: "Washington County CC", fn: scrapeWCCC },
   { id: "yccc", name: "York County CC", fn: scrapeYCCC },
-  // KVCC is PDF-only — no web-based course schedule to scrape
+  { id: "kvcc", name: "Kennebec Valley CC", fn: scrapeKvcc },
 ];
 
 async function main() {
@@ -576,9 +611,6 @@ async function main() {
     console.log(`  ${adapter.id.padEnd(6)} ${adapter.name.padEnd(30)} ${status}`);
   }
   console.log(`\n  Total: ${allSections.length} sections across ${byCollege.size} colleges`);
-  if (!byCollege.has("kvcc")) {
-    console.log("  Note: KVCC (Kennebec Valley CC) is PDF-only and not scraped here.");
-  }
 }
 
 main().catch((err) => {
