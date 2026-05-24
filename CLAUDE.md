@@ -101,6 +101,8 @@ This matters because:
 2. `git worktree list` — if any worktrees are listed, confirm the branch you're about to create or check out is not already held by one.
 3. If a worktree holds the target branch, either work inside that worktree's directory or remove it first (`git worktree remove <path>`).
 
+**Long-running orchestrators always run in a worktree, never in the main checkout.** This applies to `auto-add-state` (`scripts/lib/add-state.ts`) and any future cross-cutting >10-min script that writes registry edits or per-state bootstrap files. A concurrent session's `git checkout` in the main checkout will silently clobber in-flight writes while the orchestrator keeps running against its in-memory state — exactly the AR-2026-05-24 failure mode. The hook at `.claude/hooks/pre-orchestrator-guard.sh` blocks `add-state.ts` from the main checkout as a backstop.
+
 Never assume the working directory is the main repo — skills like `blog-pipeline` and `auto-add-state` call `EnterWorktree`, which changes the CWD. After any skill completes, verify `pwd` and `git branch --show-current` before proceeding.
 
 ## Git — narrate as you go

@@ -48,11 +48,22 @@ The full pipeline (orchestrated by `scripts/lib/add-state.ts`):
    state abbr (e.g. `oh`, `ky`, `ia`, `tx`). If they typed a full name
    ("ohio"), convert. Reject anything that isn't a known state.
 
-2. **Create the branch.** Off `main`:
+2. **Create the worktree.** Off `main`, in an isolated directory — never
+   in the main checkout. This is mandatory: the orchestrator runs for
+   20–60+ minutes, and any other Claude session that happens to `git
+   checkout` a different branch in the main repo during that window will
+   silently corrupt the in-flight bootstrap writes (institutions.json,
+   zipcodes.json, registry edits get clobbered; orchestrator keeps
+   running against its in-memory state and reports false success). The
+   AR run on 2026-05-24 lost Phase 1 + Phase 5 this way.
    ```
-   git checkout main && git pull --ff-only
-   git checkout -b claude/{slug}-auto-add-state
+   git fetch origin main
+   git worktree add .claude/worktrees/{slug}-auto-add-state -b claude/{slug}-auto-add-state origin/main
+   cd .claude/worktrees/{slug}-auto-add-state
    ```
+   All subsequent steps (orchestrator, commits, push, PR) run inside
+   that worktree. The `pre-orchestrator-guard.sh` hook will block
+   `add-state.ts` invocations from the main checkout as a backstop.
 
 3. **Run the orchestrator.** This is the long-running step (typically
    20–60 minutes; OH took 7m for fingerprint + several minutes per scraper
