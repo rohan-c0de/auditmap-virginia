@@ -133,10 +133,10 @@
     ]
   },
   "ACC 111": {
-    "text": "MAT 037 or MAT 042",
+    "text": "MAT 016 or ACC 105",
     "courses": [
-      "MAT 037",
-      "MAT 042"
+      "MAT 016",
+      "ACC 105"
     ]
   },
   "ACC 112": {
@@ -165,9 +165,9 @@
     ]
   },
   "ACC 203": {
-    "text": "ACC 104",
+    "text": "ACC 111",
     "courses": [
-      "ACC 104"
+      "ACC 111"
     ]
   },
   "ACC 204": {
@@ -763,6 +763,19 @@
       "ART 120"
     ]
   },
+  "ART 123": {
+    "text": "ART 122",
+    "courses": [
+      "ART 122"
+    ]
+  },
+  "ART 124": {
+    "text": "ART 122 and ART 123",
+    "courses": [
+      "ART 122",
+      "ART 123"
+    ]
+  },
   "ART 125": {
     "text": "ENG 101",
     "courses": [
@@ -786,6 +799,22 @@
     "courses": [
       "ART 113",
       "ART 116"
+    ]
+  },
+  "ART 131": {
+    "text": "ART 122 or ART 130 or DSN 108",
+    "courses": [
+      "ART 122",
+      "ART 130",
+      "DSN 108"
+    ]
+  },
+  "ART 132": {
+    "text": "ART 122 or ART 130 or DSN 108",
+    "courses": [
+      "ART 122",
+      "ART 130",
+      "DSN 108"
     ]
   },
   "ART 140": {
@@ -858,6 +887,14 @@
       "ART 112"
     ]
   },
+  "ART 219": {
+    "text": "ART 122 and ART 130 and ART 131",
+    "courses": [
+      "ART 122",
+      "ART 130",
+      "ART 131"
+    ]
+  },
   "ART 220": {
     "text": "ART 130 or ARC 280",
     "courses": [
@@ -878,9 +915,12 @@
     ]
   },
   "ART 228": {
-    "text": "ART 127",
+    "text": "ART 122 and ART 130 and ART 131 and ART 132",
     "courses": [
-      "ART 127"
+      "ART 122",
+      "ART 130",
+      "ART 131",
+      "ART 132"
     ]
   },
   "ART 229": {
@@ -890,9 +930,12 @@
     ]
   },
   "ART 230": {
-    "text": "ART 229",
+    "text": "ART 122 or ART 131 or ART 130 or DSN 108",
     "courses": [
-      "ART 229"
+      "ART 122",
+      "ART 131",
+      "ART 130",
+      "DSN 108"
     ]
   },
   "ART 232": {
@@ -906,6 +949,12 @@
     "text": "ART 141",
     "courses": [
       "ART 141"
+    ]
+  },
+  "ART 242": {
+    "text": "ART 241",
+    "courses": [
+      "ART 241"
     ]
   },
   "ART 250": {
@@ -1307,6 +1356,12 @@
       "ENG 101"
     ]
   },
+  "ASL 112": {
+    "text": "ASL 111",
+    "courses": [
+      "ASL 111"
+    ]
+  },
   "ASL 122": {
     "text": "ASL 121",
     "courses": [
@@ -1357,6 +1412,12 @@
     "text": "ASL 205",
     "courses": [
       "ASL 205"
+    ]
+  },
+  "ASL 211": {
+    "text": "ASL 112",
+    "courses": [
+      "ASL 112"
     ]
   },
   "ASL 221": {
@@ -2092,17 +2153,20 @@
     ]
   },
   "BIO 121": {
-    "text": "MTH 092 (min C) or MTH 100 (min C) and ENG 101 (min C)",
+    "text": "MAT 016 or MAT 026 and ENG 111 or ENG 111CL or ENG 111CW",
     "courses": [
-      "MTH 092",
-      "MTH 100",
-      "ENG 101"
+      "MAT 016",
+      "MAT 026",
+      "ENG 111",
+      "ENG 111CL",
+      "ENG 111CW"
     ]
   },
   "BIO 122": {
-    "text": "BIO 121 (min C)",
+    "text": "BIO 121 or BIO 180",
     "courses": [
-      "BIO 121"
+      "BIO 121",
+      "BIO 180"
     ]
   },
   "BIO 123": {
@@ -2151,6 +2215,14 @@
       "BIO 120",
       "CHE 107",
       "BIO 130"
+    ]
+  },
+  "BIO 133": {
+    "text": "ENG 111 or ENG 111CL or ENG 111CW",
+    "courses": [
+      "ENG 111",
+      "ENG 111CL",
+      "ENG 111CW"
     ]
   },
   "BIO 140": {
@@ -2265,11 +2337,16 @@
     ]
   },
   "BIO 215": {
-    "text": "CHE 100 or BIO 104LEC or BIO 106",
+    "text": "BIO 101 or BIO 121 or BIO 180 or CHM 117 or CHM 125 and ENG 111 or ENG 111CL or ENG 111CW",
     "courses": [
-      "CHE 100",
-      "BIO 104LEC",
-      "BIO 106"
+      "BIO 101",
+      "BIO 121",
+      "BIO 180",
+      "CHM 117",
+      "CHM 125",
+      "ENG 111",
+      "ENG 111CL",
+      "ENG 111CW"
     ]
   },
   "BIO 220": {
@@ -2921,6 +2998,12 @@
       "MAT 013"
     ]
   },
+  "BUS 136": {
+    "text": "MAT 016",
+    "courses": [
+      "MAT 016"
+    ]
+  },
   "BUS 201": {
     "text": "BUS 101 or BUS 115",
     "courses": [
@@ -2976,9 +3059,15 @@
     ]
   },
   "BUS 211": {
-    "text": "BUS 101 (min C)",
+    "text": "MAT 016",
     "courses": [
-      "BUS 101"
+      "MAT 016"
+    ]
+  },
+  "BUS 212": {
+    "text": "ACC 111",
+    "courses": [
+      "ACC 111"
     ]
   },
   "BUS 213": {
@@ -2988,9 +3077,14 @@
     ]
   },
   "BUS 215": {
-    "text": "ENG 097",
+    "text": "ENG 111 or ENG 111CL or ENG 111CW or ENG 112 or BUS 119 or CMP 126",
     "courses": [
-      "ENG 097"
+      "ENG 111",
+      "ENG 111CL",
+      "ENG 111CW",
+      "ENG 112",
+      "BUS 119",
+      "CMP 126"
     ]
   },
   "BUS 218": {
@@ -3341,6 +3435,18 @@
     "text": "CBP 124",
     "courses": [
       "CBP 124"
+    ]
+  },
+  "CDC 210": {
+    "text": "CDC 110",
+    "courses": [
+      "CDC 110"
+    ]
+  },
+  "CDC 220": {
+    "text": "CDC 210",
+    "courses": [
+      "CDC 210"
     ]
   },
   "CDCC 103": {
@@ -3865,9 +3971,18 @@
     ]
   },
   "CHM 117": {
-    "text": "MAT 013",
+    "text": "MAT 016 or MAT 026",
     "courses": [
-      "MAT 013"
+      "MAT 016",
+      "MAT 026"
+    ]
+  },
+  "CHM 118": {
+    "text": "MAT 016 or MAT 026 and CHM 117",
+    "courses": [
+      "MAT 016",
+      "MAT 026",
+      "CHM 117"
     ]
   },
   "CHM 121": {
@@ -3899,6 +4014,21 @@
       "CHM 122"
     ]
   },
+  "CHM 127": {
+    "text": "CHM 125 and CHM 128",
+    "courses": [
+      "CHM 125",
+      "CHM 128"
+    ]
+  },
+  "CHM 128": {
+    "text": "CHM 125 and CHM 126 and CHM 127",
+    "courses": [
+      "CHM 125",
+      "CHM 126",
+      "CHM 127"
+    ]
+  },
   "CHM 140": {
     "text": "CHM 100 (min C) or MAT 157 (min C) or MAT 048 (min C) and CHM 141",
     "courses": [
@@ -3918,6 +4048,16 @@
     "text": "CHM 104 (min C)",
     "courses": [
       "CHM 104"
+    ]
+  },
+  "CHM 212": {
+    "text": "CHM 117 or CHM 125 and ENG 111 or ENG 111CL or ENG 111CW",
+    "courses": [
+      "CHM 117",
+      "CHM 125",
+      "ENG 111",
+      "ENG 111CL",
+      "ENG 111CW"
     ]
   },
   "CHM 221": {
@@ -3954,6 +4094,28 @@
     "courses": [
       "CHM 122",
       "CHM 126"
+    ]
+  },
+  "CHM 231": {
+    "text": "CHM 127 and CHM 128 and CHM 232 or ENG 111 or ENG 111CL or ENG 111CW",
+    "courses": [
+      "CHM 127",
+      "CHM 128",
+      "CHM 232",
+      "ENG 111",
+      "ENG 111CL",
+      "ENG 111CW"
+    ]
+  },
+  "CHM 232": {
+    "text": "CHM 231 or ENG 111 or ENG 111CL or ENG 111CW and CHM 127 and CHM 128",
+    "courses": [
+      "CHM 231",
+      "ENG 111",
+      "ENG 111CL",
+      "ENG 111CW",
+      "CHM 127",
+      "CHM 128"
     ]
   },
   "CHM 240": {
@@ -4664,6 +4826,76 @@
       "CJI 101"
     ]
   },
+  "CJS 105": {
+    "text": "CJS 121",
+    "courses": [
+      "CJS 121"
+    ]
+  },
+  "CJS 110": {
+    "text": "CJS 116 and CJS 121",
+    "courses": [
+      "CJS 116",
+      "CJS 121"
+    ]
+  },
+  "CJS 121": {
+    "text": "CJS 105",
+    "courses": [
+      "CJS 105"
+    ]
+  },
+  "CJS 205": {
+    "text": "CJS 105",
+    "courses": [
+      "CJS 105"
+    ]
+  },
+  "CJS 213": {
+    "text": "CJS 121",
+    "courses": [
+      "CJS 121"
+    ]
+  },
+  "CJS 220": {
+    "text": "CJS 105 and CJS 121 and ENG 111 or ENG 111CL or ENG 111CW",
+    "courses": [
+      "CJS 105",
+      "CJS 121",
+      "ENG 111",
+      "ENG 111CL",
+      "ENG 111CW"
+    ]
+  },
+  "CJS 221": {
+    "text": "CJS 121",
+    "courses": [
+      "CJS 121"
+    ]
+  },
+  "CJS 224": {
+    "text": "CJS 121",
+    "courses": [
+      "CJS 121"
+    ]
+  },
+  "CJS 228": {
+    "text": "CJS 121 and CJS 116",
+    "courses": [
+      "CJS 121",
+      "CJS 116"
+    ]
+  },
+  "CJS 230": {
+    "text": "ENG 111 or ENG 111CL or ENG 111CW or CJS 105 or CJS 121",
+    "courses": [
+      "ENG 111",
+      "ENG 111CL",
+      "ENG 111CW",
+      "CJS 105",
+      "CJS 121"
+    ]
+  },
   "CLPS 902": {
     "text": "DMSM 105 and DMSM 109 and CLPS 901 and DMSM 106 and DMSM 117",
     "courses": [
@@ -4764,6 +4996,106 @@
       "CMN 253"
     ]
   },
+  "CMP 128": {
+    "text": "MAT 007",
+    "courses": [
+      "MAT 007"
+    ]
+  },
+  "CMP 129": {
+    "text": "CMP 128",
+    "courses": [
+      "CMP 128"
+    ]
+  },
+  "CMP 137": {
+    "text": "CMP 136 or ENR 136",
+    "courses": [
+      "CMP 136",
+      "ENR 136"
+    ]
+  },
+  "CMP 150": {
+    "text": "CMP 128",
+    "courses": [
+      "CMP 128"
+    ]
+  },
+  "CMP 230": {
+    "text": "CMP 128",
+    "courses": [
+      "CMP 128"
+    ]
+  },
+  "CMP 233": {
+    "text": "CMP 129 or MAT 123",
+    "courses": [
+      "CMP 129",
+      "MAT 123"
+    ]
+  },
+  "CMP 241": {
+    "text": "CMP 128 or CMP 131",
+    "courses": [
+      "CMP 128",
+      "CMP 131"
+    ]
+  },
+  "CMP 243": {
+    "text": "CMP 124",
+    "courses": [
+      "CMP 124"
+    ]
+  },
+  "CMP 244": {
+    "text": "CMP 239",
+    "courses": [
+      "CMP 239"
+    ]
+  },
+  "CMP 250": {
+    "text": "CMP 150 or MED 220",
+    "courses": [
+      "CMP 150",
+      "MED 220"
+    ]
+  },
+  "CMP 255": {
+    "text": "CMP 128",
+    "courses": [
+      "CMP 128"
+    ]
+  },
+  "CMP 262": {
+    "text": "CMP 131",
+    "courses": [
+      "CMP 131"
+    ]
+  },
+  "CMP 263": {
+    "text": "CMP 239 or MED 110 or GRD 108",
+    "courses": [
+      "CMP 239",
+      "MED 110",
+      "GRD 108"
+    ]
+  },
+  "CMP 264": {
+    "text": "MAT 114 or CMP 131",
+    "courses": [
+      "MAT 114",
+      "CMP 131"
+    ]
+  },
+  "CMP 280": {
+    "text": "CMP 128 or CMP 129 or CMP 150 or CMP 241",
+    "courses": [
+      "CMP 128",
+      "CMP 129",
+      "CMP 150",
+      "CMP 241"
+    ]
+  },
   "CMS 110": {
     "text": "ENG 101",
     "courses": [
@@ -4844,6 +5176,12 @@
       "COM 105"
     ]
   },
+  "COM 112": {
+    "text": "COM 111",
+    "courses": [
+      "COM 111"
+    ]
+  },
   "COM 121": {
     "text": "COM 105",
     "courses": [
@@ -4881,10 +5219,21 @@
       "COM 106"
     ]
   },
-  "COM 213": {
-    "text": "COM 113",
+  "COM 212": {
+    "text": "COM 114 and COM 211 and MED 210",
     "courses": [
-      "COM 113"
+      "COM 114",
+      "COM 211",
+      "MED 210"
+    ]
+  },
+  "COM 213": {
+    "text": "ENG 111 or ENG 111CL or ENG 111CW or COM 234",
+    "courses": [
+      "ENG 111",
+      "ENG 111CL",
+      "ENG 111CW",
+      "COM 234"
     ]
   },
   "COM 214": {
@@ -6418,6 +6767,54 @@
       "DAN 118"
     ]
   },
+  "DAN 136": {
+    "text": "DAN 135",
+    "courses": [
+      "DAN 135"
+    ]
+  },
+  "DAN 211": {
+    "text": "DAN 138",
+    "courses": [
+      "DAN 138"
+    ]
+  },
+  "DAN 212": {
+    "text": "DAN 211",
+    "courses": [
+      "DAN 211"
+    ]
+  },
+  "DAN 216": {
+    "text": "DAN 142",
+    "courses": [
+      "DAN 142"
+    ]
+  },
+  "DAN 217": {
+    "text": "DAN 216",
+    "courses": [
+      "DAN 216"
+    ]
+  },
+  "DAN 220": {
+    "text": "DAN 136",
+    "courses": [
+      "DAN 136"
+    ]
+  },
+  "DAN 222": {
+    "text": "DAN 220",
+    "courses": [
+      "DAN 220"
+    ]
+  },
+  "DAN 224": {
+    "text": "DAN 141",
+    "courses": [
+      "DAN 141"
+    ]
+  },
   "DAN 285": {
     "text": "DAN 101 and DAN 116 and DAN 117 and DAN 120",
     "courses": [
@@ -7073,6 +7470,46 @@
       "MTH 101"
     ]
   },
+  "DSN 120": {
+    "text": "ART 122 and DSN 108",
+    "courses": [
+      "ART 122",
+      "DSN 108"
+    ]
+  },
+  "DSN 125": {
+    "text": "DSN 120",
+    "courses": [
+      "DSN 120"
+    ]
+  },
+  "DSN 160": {
+    "text": "DSN 135",
+    "courses": [
+      "DSN 135"
+    ]
+  },
+  "DSN 219": {
+    "text": "ENR 117 and ENR 118 and DSN 120",
+    "courses": [
+      "ENR 117",
+      "ENR 118",
+      "DSN 120"
+    ]
+  },
+  "DSN 220": {
+    "text": "DSN 120",
+    "courses": [
+      "DSN 120"
+    ]
+  },
+  "DSN 250": {
+    "text": "DSN 120 and DSN 165",
+    "courses": [
+      "DSN 120",
+      "DSN 165"
+    ]
+  },
   "EC 102": {
     "text": "EC 101 (min C)",
     "courses": [
@@ -7238,6 +7675,20 @@
     "text": "MTH 085",
     "courses": [
       "MTH 085"
+    ]
+  },
+  "ECO 211": {
+    "text": "MAT 016 or MAT 026 or MAT 120",
+    "courses": [
+      "MAT 016",
+      "MAT 026",
+      "MAT 120"
+    ]
+  },
+  "ECO 212": {
+    "text": "ECO 211",
+    "courses": [
+      "ECO 211"
     ]
   },
   "ECON 102": {
@@ -7811,10 +8262,35 @@
       "ELEC 103"
     ]
   },
+  "ELT 100": {
+    "text": "MAT 110 or ENR 124 or MAT 110 or ENR 132 or MAT 123",
+    "courses": [
+      "MAT 110",
+      "ENR 124",
+      "ENR 132",
+      "MAT 123"
+    ]
+  },
   "ELT 105": {
     "text": "MAT 013",
     "courses": [
       "MAT 013"
+    ]
+  },
+  "ELT 115": {
+    "text": "ELT 201 or ELT 100 or ELT 102",
+    "courses": [
+      "ELT 201",
+      "ELT 100",
+      "ELT 102"
+    ]
+  },
+  "ELT 209": {
+    "text": "ELT 110 or ENR 120 or CMP 128",
+    "courses": [
+      "ELT 110",
+      "ENR 120",
+      "CMP 128"
     ]
   },
   "ELT 210": {
@@ -7833,6 +8309,20 @@
     "text": "ELT 111",
     "courses": [
       "ELT 111"
+    ]
+  },
+  "ELT 227": {
+    "text": "ELT 200",
+    "courses": [
+      "ELT 200"
+    ]
+  },
+  "ELT 231": {
+    "text": "ELT 201 or ELT 100 or ELT 102",
+    "courses": [
+      "ELT 201",
+      "ELT 100",
+      "ELT 102"
     ]
   },
   "ELT 239": {
@@ -8033,11 +8523,23 @@
       "ENG 121"
     ]
   },
+  "ENG 030CL": {
+    "text": "ENG 111CL",
+    "courses": [
+      "ENG 111CL"
+    ]
+  },
   "ENG 033": {
     "text": "ENG 011 and ENG 101",
     "courses": [
       "ENG 011",
       "ENG 101"
+    ]
+  },
+  "ENG 035CW": {
+    "text": "ENG 111CW",
+    "courses": [
+      "ENG 111CW"
     ]
   },
   "ENG 071": {
@@ -8103,19 +8605,76 @@
       "ENG 101"
     ]
   },
-  "ENG 112": {
-    "text": "ESL 067 or ESL 068 or ESL 097 or ESL 098",
+  "ENG 111CL": {
+    "text": "ENG 030CL",
     "courses": [
-      "ESL 067",
-      "ESL 068",
-      "ESL 097",
-      "ESL 098"
+      "ENG 030CL"
+    ]
+  },
+  "ENG 111CW": {
+    "text": "ENG 035CW",
+    "courses": [
+      "ENG 035CW"
+    ]
+  },
+  "ENG 112": {
+    "text": "ENG 111 or ENG 111CL or ENG 111CW or ENG 131",
+    "courses": [
+      "ENG 111",
+      "ENG 111CL",
+      "ENG 111CW",
+      "ENG 131"
     ]
   },
   "ENG 113": {
-    "text": "ENG 101",
+    "text": "ENG 111 or ENG 111CL or ENG 111CW or ENG 131",
     "courses": [
-      "ENG 101"
+      "ENG 111",
+      "ENG 111CL",
+      "ENG 111CW",
+      "ENG 131"
+    ]
+  },
+  "ENG 114": {
+    "text": "ENG 113",
+    "courses": [
+      "ENG 113"
+    ]
+  },
+  "ENG 115": {
+    "text": "ENG 111 or ENG 111CL or ENG 111CW or ENG 131",
+    "courses": [
+      "ENG 111",
+      "ENG 111CL",
+      "ENG 111CW",
+      "ENG 131"
+    ]
+  },
+  "ENG 116": {
+    "text": "ENG 111 or ENG 111CL or ENG 111CW or ENG 131",
+    "courses": [
+      "ENG 111",
+      "ENG 111CL",
+      "ENG 111CW",
+      "ENG 131"
+    ]
+  },
+  "ENG 118": {
+    "text": "ENG 111 or ENG 111CL or ENG 111CW or ENG 131",
+    "courses": [
+      "ENG 111",
+      "ENG 111CL",
+      "ENG 111CW",
+      "ENG 131"
+    ]
+  },
+  "ENG 119": {
+    "text": "ENG 111 or ENG 111CL or ENG 111CW or ENG 131",
+    "courses": [
+      "ENG 111",
+      "ENG 111CL",
+      "ENG 111CW",
+      "ENG 131"
     ]
   },
   "ENG 121": {
@@ -8131,6 +8690,13 @@
     "text": "ENG 121",
     "courses": [
       "ENG 121"
+    ]
+  },
+  "ENG 132": {
+    "text": "ENG 111 or ENG 131",
+    "courses": [
+      "ENG 111",
+      "ENG 131"
     ]
   },
   "ENG 201": {
@@ -8300,16 +8866,54 @@
       "ENG 122"
     ]
   },
+  "ENG 243": {
+    "text": "ENG 111 or ENG 111CL or ENG 111CW or ENG 112 or ENG 131 or ENG 132",
+    "courses": [
+      "ENG 111",
+      "ENG 111CL",
+      "ENG 111CW",
+      "ENG 112",
+      "ENG 131",
+      "ENG 132"
+    ]
+  },
+  "ENG 244": {
+    "text": "ENG 111 or ENG 111CL or ENG 111CW or ENG 112 or ENG 131 or ENG 132",
+    "courses": [
+      "ENG 111",
+      "ENG 111CL",
+      "ENG 111CW",
+      "ENG 112",
+      "ENG 131",
+      "ENG 132"
+    ]
+  },
   "ENG 245": {
     "text": "ENG 122",
     "courses": [
       "ENG 122"
     ]
   },
-  "ENG 247": {
-    "text": "ENG 122",
+  "ENG 246": {
+    "text": "ENG 111 or ENG 111CL or ENG 111CW or ENG 112 or ENG 131 or ENG 132",
     "courses": [
-      "ENG 122"
+      "ENG 111",
+      "ENG 111CL",
+      "ENG 111CW",
+      "ENG 112",
+      "ENG 131",
+      "ENG 132"
+    ]
+  },
+  "ENG 247": {
+    "text": "ENG 111 or ENG 111CL or ENG 111CW or ENG 112 or ENG 131 or ENG 132",
+    "courses": [
+      "ENG 111",
+      "ENG 111CL",
+      "ENG 111CW",
+      "ENG 112",
+      "ENG 131",
+      "ENG 132"
     ]
   },
   "ENG 248": {
@@ -8318,10 +8922,26 @@
       "ENG 122"
     ]
   },
-  "ENG 250": {
-    "text": "ENG 122",
+  "ENG 249": {
+    "text": "ENG 111 or ENG 111CL or ENG 111CW or ENG 112 or ENG 131 or ENG 132",
     "courses": [
-      "ENG 122"
+      "ENG 111",
+      "ENG 111CL",
+      "ENG 111CW",
+      "ENG 112",
+      "ENG 131",
+      "ENG 132"
+    ]
+  },
+  "ENG 250": {
+    "text": "ENG 111 or ENG 111CL or ENG 111CW or ENG 112 or ENG 131 or ENG 132",
+    "courses": [
+      "ENG 111",
+      "ENG 111CL",
+      "ENG 111CW",
+      "ENG 112",
+      "ENG 131",
+      "ENG 132"
     ]
   },
   "ENG 251": {
@@ -8740,6 +9360,31 @@
       "PHY 101"
     ]
   },
+  "ENR 118": {
+    "text": "ENR 117 or ENR 121",
+    "courses": [
+      "ENR 117",
+      "ENR 121"
+    ]
+  },
+  "ENR 121": {
+    "text": "MAT 123",
+    "courses": [
+      "MAT 123"
+    ]
+  },
+  "ENR 132": {
+    "text": "MAT 016",
+    "courses": [
+      "MAT 016"
+    ]
+  },
+  "ENR 134": {
+    "text": "MAT 016",
+    "courses": [
+      "MAT 016"
+    ]
+  },
   "ENR 205": {
     "text": "ENR 105 (min C)",
     "courses": [
@@ -8764,6 +9409,13 @@
     "courses": [
       "ENR 211",
       "MTH 122"
+    ]
+  },
+  "ENR 223": {
+    "text": "MAT 131 and PHY 130",
+    "courses": [
+      "MAT 131",
+      "PHY 130"
     ]
   },
   "ENS 106": {
@@ -8963,6 +9615,18 @@
     "text": "ESL 016",
     "courses": [
       "ESL 016"
+    ]
+  },
+  "ESL 019": {
+    "text": "ESL 010",
+    "courses": [
+      "ESL 010"
+    ]
+  },
+  "ESL 020": {
+    "text": "ESL 017",
+    "courses": [
+      "ESL 017"
     ]
   },
   "ESL 022": {
@@ -10248,6 +10912,59 @@
       "ENGL 101"
     ]
   },
+  "GRD 117": {
+    "text": "GRD 108 and GRD 109 and GRD 118 and GRD 120",
+    "courses": [
+      "GRD 108",
+      "GRD 109",
+      "GRD 118",
+      "GRD 120"
+    ]
+  },
+  "GRD 202": {
+    "text": "GRD 117 and GRD 218 and GRD 220",
+    "courses": [
+      "GRD 117",
+      "GRD 218",
+      "GRD 220"
+    ]
+  },
+  "GRD 218": {
+    "text": "GRD 108 or GRD 118 or GRD 120 or GRD 109 or GRD 111",
+    "courses": [
+      "GRD 108",
+      "GRD 118",
+      "GRD 120",
+      "GRD 109",
+      "GRD 111"
+    ]
+  },
+  "GRD 220": {
+    "text": "GRD 108 and GRD 109 and GRD 118 and GRD 120",
+    "courses": [
+      "GRD 108",
+      "GRD 109",
+      "GRD 118",
+      "GRD 120"
+    ]
+  },
+  "GRD 250": {
+    "text": "GRD 108 and GRD 109 and GRD 118 and GRD 120",
+    "courses": [
+      "GRD 108",
+      "GRD 109",
+      "GRD 118",
+      "GRD 120"
+    ]
+  },
+  "GRD 262": {
+    "text": "GRD 109 and GRD 118 and GRD 120",
+    "courses": [
+      "GRD 109",
+      "GRD 118",
+      "GRD 120"
+    ]
+  },
   "GRPH 204": {
     "text": "GRPH 101 or GRPH 102 or ARTS 111",
     "courses": [
@@ -10343,6 +11060,27 @@
       "BS 100",
       "HD 100",
       "HIM 104"
+    ]
+  },
+  "HES 211": {
+    "text": "BIO 101 or BIO 133",
+    "courses": [
+      "BIO 101",
+      "BIO 133"
+    ]
+  },
+  "HES 212": {
+    "text": "BIO 101 and BIO 102 and HES 111",
+    "courses": [
+      "BIO 101",
+      "BIO 102",
+      "HES 111"
+    ]
+  },
+  "HES 213": {
+    "text": "HES 212",
+    "courses": [
+      "HES 212"
     ]
   },
   "HESC 100": {
@@ -11057,6 +11795,12 @@
       "HOS 118"
     ]
   },
+  "HOS 121": {
+    "text": "HOS 117",
+    "courses": [
+      "HOS 117"
+    ]
+  },
   "HOS 203": {
     "text": "ENG 024 or ENG 034 or MAT 037 or MAT 042 or HOS 111 or HOS 118",
     "courses": [
@@ -11092,6 +11836,13 @@
       "HOS 101",
       "HOS 111",
       "HOS 118"
+    ]
+  },
+  "HOS 233": {
+    "text": "HOS 101 and HOS 117",
+    "courses": [
+      "HOS 101",
+      "HOS 117"
     ]
   },
   "HOS 247": {
@@ -12007,6 +12758,18 @@
       "ITAL 102"
     ]
   },
+  "ITL 112": {
+    "text": "ITL 111",
+    "courses": [
+      "ITL 111"
+    ]
+  },
+  "ITL 221": {
+    "text": "ITL 212",
+    "courses": [
+      "ITL 212"
+    ]
+  },
   "JOU 101": {
     "text": "ENG 101",
     "courses": [
@@ -12286,6 +13049,19 @@
       "LGL 205",
       "LGL 208",
       "LGL 220"
+    ]
+  },
+  "LHT 211": {
+    "text": "LHT 114",
+    "courses": [
+      "LHT 114"
+    ]
+  },
+  "LHT 215": {
+    "text": "LHT 110 or LHT 111",
+    "courses": [
+      "LHT 110",
+      "LHT 111"
     ]
   },
   "LIT 203": {
@@ -12655,22 +13431,23 @@
     ]
   },
   "MAT 110": {
-    "text": "MAT 100",
+    "text": "MAT 016 or MAT 026",
     "courses": [
-      "MAT 100"
+      "MAT 016",
+      "MAT 026"
     ]
   },
   "MAT 113": {
-    "text": "MAT 090",
+    "text": "MAT 123",
     "courses": [
-      "MAT 090"
+      "MAT 123"
     ]
   },
   "MAT 114": {
-    "text": "MAT 071 or MAT 073",
+    "text": "MAT 016 or MAT 120",
     "courses": [
-      "MAT 071",
-      "MAT 073"
+      "MAT 016",
+      "MAT 120"
     ]
   },
   "MAT 115": {
@@ -12686,6 +13463,19 @@
       "MAT 100"
     ]
   },
+  "MAT 117": {
+    "text": "MAT 016 or MAT 026",
+    "courses": [
+      "MAT 016",
+      "MAT 026"
+    ]
+  },
+  "MAT 118": {
+    "text": "MAT 110",
+    "courses": [
+      "MAT 110"
+    ]
+  },
   "MAT 119": {
     "text": "MAT 021 or MAT 022 and ENG 097",
     "courses": [
@@ -12695,15 +13485,25 @@
     ]
   },
   "MAT 120": {
-    "text": "MAT 015",
+    "text": "MAT 006 or MAT 007 or MAT 010",
     "courses": [
-      "MAT 015"
+      "MAT 006",
+      "MAT 007",
+      "MAT 010"
     ]
   },
   "MAT 123": {
-    "text": "MAT 013",
+    "text": "MAT 110",
     "courses": [
-      "MAT 013"
+      "MAT 110"
+    ]
+  },
+  "MAT 124": {
+    "text": "MAT 016 or MAT 026 or MAT 120",
+    "courses": [
+      "MAT 016",
+      "MAT 026",
+      "MAT 120"
     ]
   },
   "MAT 125": {
@@ -12763,10 +13563,13 @@
     ]
   },
   "MAT 140": {
-    "text": "MAT 037 or MAT 042",
+    "text": "MAT 016 or MAT 026 and RAD 100 and RAD 104 and RAD 107",
     "courses": [
-      "MAT 037",
-      "MAT 042"
+      "MAT 016",
+      "MAT 026",
+      "RAD 100",
+      "RAD 104",
+      "RAD 107"
     ]
   },
   "MAT 141": {
@@ -12863,6 +13666,14 @@
       "MAT 159"
     ]
   },
+  "MAT 183": {
+    "text": "MAT 016 or MAT 026 or MAT 120",
+    "courses": [
+      "MAT 016",
+      "MAT 026",
+      "MAT 120"
+    ]
+  },
   "MAT 201": {
     "text": "MAT 151 or MAT 149",
     "courses": [
@@ -12894,6 +13705,24 @@
       "MAT 160"
     ]
   },
+  "MAT 225": {
+    "text": "MAT 131",
+    "courses": [
+      "MAT 131"
+    ]
+  },
+  "MAT 228": {
+    "text": "MAT 131",
+    "courses": [
+      "MAT 131"
+    ]
+  },
+  "MAT 230": {
+    "text": "MAT 132",
+    "courses": [
+      "MAT 132"
+    ]
+  },
   "MAT 233": {
     "text": "MAT 132",
     "courses": [
@@ -12904,6 +13733,12 @@
     "text": "MAT 233",
     "courses": [
       "MAT 233"
+    ]
+  },
+  "MAT 244": {
+    "text": "MAT 132",
+    "courses": [
+      "MAT 132"
     ]
   },
   "MAT 246": {
@@ -13494,6 +14329,45 @@
       "MDC 120"
     ]
   },
+  "MEC 104": {
+    "text": "ENR 132 and MAT 123 and MAT 113 or MAT 131",
+    "courses": [
+      "ENR 132",
+      "MAT 123",
+      "MAT 113",
+      "MAT 131"
+    ]
+  },
+  "MEC 110": {
+    "text": "MAT 007",
+    "courses": [
+      "MAT 007"
+    ]
+  },
+  "MEC 141": {
+    "text": "MEC 104 and MAT 110",
+    "courses": [
+      "MEC 104",
+      "MAT 110"
+    ]
+  },
+  "MEC 204": {
+    "text": "MAT 110 and MEC 104 and PHY 111",
+    "courses": [
+      "MAT 110",
+      "MEC 104",
+      "PHY 111"
+    ]
+  },
+  "MEC 209": {
+    "text": "ENR 117 or MEC 117 or MEC 118 or MEC 109",
+    "courses": [
+      "ENR 117",
+      "MEC 117",
+      "MEC 118",
+      "MEC 109"
+    ]
+  },
   "MEC 221": {
     "text": "MAT 131 or MAT 131B",
     "courses": [
@@ -13514,6 +14388,31 @@
     "text": "MEC 125",
     "courses": [
       "MEC 125"
+    ]
+  },
+  "MED 113": {
+    "text": "MED 110",
+    "courses": [
+      "MED 110"
+    ]
+  },
+  "MED 210": {
+    "text": "MED 113 or COM 211",
+    "courses": [
+      "MED 113",
+      "COM 211"
+    ]
+  },
+  "MED 213": {
+    "text": "MED 113",
+    "courses": [
+      "MED 113"
+    ]
+  },
+  "MED 240": {
+    "text": "MED 220",
+    "courses": [
+      "MED 220"
     ]
   },
   "MET 106": {
@@ -13601,6 +14500,12 @@
       "ENG 101"
     ]
   },
+  "MKT 114": {
+    "text": "MKT 113",
+    "courses": [
+      "MKT 113"
+    ]
+  },
   "MKT 201": {
     "text": "BUS 101",
     "courses": [
@@ -13619,10 +14524,28 @@
       "MKT 201"
     ]
   },
+  "MKT 208": {
+    "text": "MKT 113",
+    "courses": [
+      "MKT 113"
+    ]
+  },
   "MKT 209": {
     "text": "MKT 201",
     "courses": [
       "MKT 201"
+    ]
+  },
+  "MKT 211": {
+    "text": "MKT 113",
+    "courses": [
+      "MKT 113"
+    ]
+  },
+  "MKT 218": {
+    "text": "MKT 113",
+    "courses": [
+      "MKT 113"
     ]
   },
   "MLA 102": {
@@ -14522,15 +15445,48 @@
     ]
   },
   "MUS 117": {
-    "text": "ENG 101",
+    "text": "MUS 011 and MUS 125 or MUS 109 or MUS 135",
     "courses": [
-      "ENG 101"
+      "MUS 011",
+      "MUS 125",
+      "MUS 109",
+      "MUS 135"
+    ]
+  },
+  "MUS 118": {
+    "text": "MUS 117 and MUS 126 or MUS 110 or MUS 136",
+    "courses": [
+      "MUS 117",
+      "MUS 126",
+      "MUS 110",
+      "MUS 136"
     ]
   },
   "MUS 121": {
     "text": "ENG 101",
     "courses": [
       "ENG 101"
+    ]
+  },
+  "MUS 124": {
+    "text": "MUS 112",
+    "courses": [
+      "MUS 112"
+    ]
+  },
+  "MUS 125": {
+    "text": "MUS 117 and MUS 135",
+    "courses": [
+      "MUS 117",
+      "MUS 135"
+    ]
+  },
+  "MUS 126": {
+    "text": "MUS 125 and MUS 118 and MUS 136",
+    "courses": [
+      "MUS 125",
+      "MUS 118",
+      "MUS 136"
     ]
   },
   "MUS 128": {
@@ -14558,10 +15514,39 @@
       "MUS 103"
     ]
   },
-  "MUS 136": {
-    "text": "MUS 130",
+  "MUS 135": {
+    "text": "MUS 125 or MUS 109 or MUS 117",
     "courses": [
-      "MUS 130"
+      "MUS 125",
+      "MUS 109",
+      "MUS 117"
+    ]
+  },
+  "MUS 136": {
+    "text": "MUS 135 and MUS 126 or MUS 110 or MUS 118",
+    "courses": [
+      "MUS 135",
+      "MUS 126",
+      "MUS 110",
+      "MUS 118"
+    ]
+  },
+  "MUS 137": {
+    "text": "MUS 136 and MUS 225 or MUS 209 or MUS 215",
+    "courses": [
+      "MUS 136",
+      "MUS 225",
+      "MUS 209",
+      "MUS 215"
+    ]
+  },
+  "MUS 138": {
+    "text": "MUS 137 and MUS 226 or MUS 210 or MUS 216",
+    "courses": [
+      "MUS 137",
+      "MUS 226",
+      "MUS 210",
+      "MUS 216"
     ]
   },
   "MUS 152": {
@@ -14594,12 +15579,34 @@
       "MUS 163"
     ]
   },
+  "MUS 167": {
+    "text": "MUS 165 and MUS 180",
+    "courses": [
+      "MUS 165",
+      "MUS 180"
+    ]
+  },
   "MUS 168": {
     "text": "MUS 127 and MUS 167 and MUS 128",
     "courses": [
       "MUS 127",
       "MUS 167",
       "MUS 128"
+    ]
+  },
+  "MUS 180": {
+    "text": "MUS 165 and MUS 167",
+    "courses": [
+      "MUS 165",
+      "MUS 167"
+    ]
+  },
+  "MUS 182": {
+    "text": "MUS 165 and MUS 167 and MUS 180",
+    "courses": [
+      "MUS 165",
+      "MUS 167",
+      "MUS 180"
     ]
   },
   "MUS 201": {
@@ -14612,6 +15619,12 @@
     "text": "MUS 106 (min C)",
     "courses": [
       "MUS 106"
+    ]
+  },
+  "MUS 209": {
+    "text": "MUS 110",
+    "courses": [
+      "MUS 110"
     ]
   },
   "MUS 209BR": {
@@ -14734,6 +15747,18 @@
       "MUS 209WW"
     ]
   },
+  "MUS 215": {
+    "text": "MUS 118",
+    "courses": [
+      "MUS 118"
+    ]
+  },
+  "MUS 216": {
+    "text": "MUS 215",
+    "courses": [
+      "MUS 215"
+    ]
+  },
   "MUS 220": {
     "text": "MUS 120",
     "courses": [
@@ -14757,6 +15782,22 @@
     "courses": [
       "MUS 103",
       "MUS 105"
+    ]
+  },
+  "MUS 225": {
+    "text": "MUS 126 and MUS 137 and MUS 215",
+    "courses": [
+      "MUS 126",
+      "MUS 137",
+      "MUS 215"
+    ]
+  },
+  "MUS 226": {
+    "text": "MUS 225 and MUS 216 and MUS 138",
+    "courses": [
+      "MUS 225",
+      "MUS 216",
+      "MUS 138"
     ]
   },
   "MUS 231": {
@@ -14789,6 +15830,21 @@
       "MUS 232"
     ]
   },
+  "MUS 244": {
+    "text": "MUS 112 and MUS 124",
+    "courses": [
+      "MUS 112",
+      "MUS 124"
+    ]
+  },
+  "MUS 245": {
+    "text": "MUS 112 and MUS 124 and MUS 244",
+    "courses": [
+      "MUS 112",
+      "MUS 124",
+      "MUS 244"
+    ]
+  },
   "MUS 246": {
     "text": "MUS 140",
     "courses": [
@@ -14807,10 +15863,24 @@
       "MUS 247"
     ]
   },
-  "MUS 250": {
-    "text": "MUS 151",
+  "MUS 249": {
+    "text": "MUS 165 and MUS 167 and MUS 180 and MUS 182 and MUS 259",
     "courses": [
-      "MUS 151"
+      "MUS 165",
+      "MUS 167",
+      "MUS 180",
+      "MUS 182",
+      "MUS 259"
+    ]
+  },
+  "MUS 250": {
+    "text": "MUS 165 and MUS 167 and MUS 180 and MUS 182 and MUS 259",
+    "courses": [
+      "MUS 165",
+      "MUS 167",
+      "MUS 180",
+      "MUS 182",
+      "MUS 259"
     ]
   },
   "MUS 251": {
@@ -14847,6 +15917,16 @@
     "text": "MUS 256",
     "courses": [
       "MUS 256"
+    ]
+  },
+  "MUS 259": {
+    "text": "MUS 165 or MUS 167 or MUS 180 or MUS 165 or MUS 112 or MUS 124",
+    "courses": [
+      "MUS 165",
+      "MUS 167",
+      "MUS 180",
+      "MUS 112",
+      "MUS 124"
     ]
   },
   "MUS 261": {
@@ -15442,6 +16522,20 @@
       "EN 102"
     ]
   },
+  "NUR 105": {
+    "text": "NUR 121 or NUR 123",
+    "courses": [
+      "NUR 121",
+      "NUR 123"
+    ]
+  },
+  "NUR 123": {
+    "text": "NUR 012 or NUR 121",
+    "courses": [
+      "NUR 012",
+      "NUR 121"
+    ]
+  },
   "NUR 130": {
     "text": "BIO 110 or BIO 208 and BIO 111 or BIO 209 and BIO 114 or BIO 212 and BIO 115 or BIO 213 and PSY 101 and NUR 220 and NUR 131 and NUR 132",
     "courses": [
@@ -15582,6 +16676,19 @@
       "NUR 201"
     ]
   },
+  "NUR 213": {
+    "text": "NUR 123",
+    "courses": [
+      "NUR 123"
+    ]
+  },
+  "NUR 214": {
+    "text": "NUR 213 and NUR 224",
+    "courses": [
+      "NUR 213",
+      "NUR 224"
+    ]
+  },
   "NUR 216": {
     "text": "NUR 241 and NUR 245 and NUR 246 and NUR 303 and NUR 250 and NUR 251",
     "courses": [
@@ -15591,6 +16698,13 @@
       "NUR 303",
       "NUR 250",
       "NUR 251"
+    ]
+  },
+  "NUR 224": {
+    "text": "NUR 213 and NUR 214",
+    "courses": [
+      "NUR 213",
+      "NUR 214"
     ]
   },
   "NUR 240": {
@@ -16477,6 +17591,12 @@
       "PAR 207"
     ]
   },
+  "PAR 220": {
+    "text": "PAR 120",
+    "courses": [
+      "PAR 120"
+    ]
+  },
   "PAR 231": {
     "text": "PAR 121 and PAR 232 and PAR 233",
     "courses": [
@@ -16781,6 +17901,12 @@
       "BIO 107"
     ]
   },
+  "PHO 117": {
+    "text": "PHO 115",
+    "courses": [
+      "PHO 115"
+    ]
+  },
   "PHO 202": {
     "text": "PHO 103 or PHO 203",
     "courses": [
@@ -16798,10 +17924,23 @@
       "PHO 220"
     ]
   },
+  "PHO 214": {
+    "text": "PHO 114",
+    "courses": [
+      "PHO 114"
+    ]
+  },
   "PHO 215": {
     "text": "PHO 120",
     "courses": [
       "PHO 120"
+    ]
+  },
+  "PHO 216": {
+    "text": "PHO 105 or PHO 115",
+    "courses": [
+      "PHO 105",
+      "PHO 115"
     ]
   },
   "PHO 220": {
@@ -16840,9 +17979,9 @@
     ]
   },
   "PHY 103": {
-    "text": "MTH 121 (min C)",
+    "text": "MAT 007",
     "courses": [
-      "MTH 121"
+      "MAT 007"
     ]
   },
   "PHY 104": {
@@ -16880,12 +18019,13 @@
     ]
   },
   "PHY 111": {
-    "text": "ENG 024 and ENG 034 and MAT 037 (min C) or MAT 042 (min C)",
+    "text": "ENR 119 or ENR 124 or MAT 110 or MAT 110 or ENR 132 or MAT 123",
     "courses": [
-      "ENG 024",
-      "ENG 034",
-      "MAT 037",
-      "MAT 042"
+      "ENR 119",
+      "ENR 124",
+      "MAT 110",
+      "ENR 132",
+      "MAT 123"
     ]
   },
   "PHY 112": {
@@ -16936,10 +18076,10 @@
     ]
   },
   "PHY 125": {
-    "text": "MAT 129 and PHY 123",
+    "text": "MAT 123 and PHY 126",
     "courses": [
-      "MAT 129",
-      "PHY 123"
+      "MAT 123",
+      "PHY 126"
     ]
   },
   "PHY 126": {
@@ -16949,11 +18089,36 @@
       "PHY 124"
     ]
   },
-  "PHY 133": {
+  "PHY 127": {
+    "text": "PHY 125 and PHY 126 and PHY 128",
+    "courses": [
+      "PHY 125",
+      "PHY 126",
+      "PHY 128"
+    ]
+  },
+  "PHY 128": {
+    "text": "PHY 126 and PHY 125 and PHY 127",
+    "courses": [
+      "PHY 126",
+      "PHY 125",
+      "PHY 127"
+    ]
+  },
+  "PHY 130": {
     "text": "MAT 131 and MAT 132",
     "courses": [
       "MAT 131",
       "MAT 132"
+    ]
+  },
+  "PHY 133": {
+    "text": "PHY 130 and MAT 132 and MAT 230 and PHY 134",
+    "courses": [
+      "PHY 130",
+      "MAT 132",
+      "MAT 230",
+      "PHY 134"
     ]
   },
   "PHY 134": {
@@ -17660,6 +18825,18 @@
       "PSY 101"
     ]
   },
+  "PSY 116": {
+    "text": "PSY 113",
+    "courses": [
+      "PSY 113"
+    ]
+  },
+  "PSY 117": {
+    "text": "PSY 113",
+    "courses": [
+      "PSY 113"
+    ]
+  },
   "PSY 121": {
     "text": "PSY 101 and ENG 101",
     "courses": [
@@ -17740,11 +18917,23 @@
       "SOC 101"
     ]
   },
+  "PSY 214": {
+    "text": "PSY 113",
+    "courses": [
+      "PSY 113"
+    ]
+  },
   "PSY 216": {
     "text": "PSY 101 and ENG 101",
     "courses": [
       "PSY 101",
       "ENG 101"
+    ]
+  },
+  "PSY 217": {
+    "text": "PSY 113",
+    "courses": [
+      "PSY 113"
     ]
   },
   "PSY 218": {
@@ -17759,6 +18948,12 @@
     "courses": [
       "PSY 123",
       "PSY 123H"
+    ]
+  },
+  "PSY 221": {
+    "text": "PSY 113",
+    "courses": [
+      "PSY 113"
     ]
   },
   "PSY 222": {
@@ -17778,6 +18973,12 @@
     "text": "PSY 123",
     "courses": [
       "PSY 123"
+    ]
+  },
+  "PSY 229": {
+    "text": "PSY 113",
+    "courses": [
+      "PSY 113"
     ]
   },
   "PSY 230": {
@@ -18338,6 +19539,14 @@
       "RA 202"
     ]
   },
+  "RAD 100": {
+    "text": "RAD 104 and RAD 107 and MAT 140",
+    "courses": [
+      "RAD 104",
+      "RAD 107",
+      "MAT 140"
+    ]
+  },
   "RAD 101": {
     "text": "RAD 104",
     "courses": [
@@ -18367,9 +19576,11 @@
     ]
   },
   "RAD 104": {
-    "text": "RAD 101",
+    "text": "RAD 100 and RAD 107 and MAT 140",
     "courses": [
-      "RAD 101"
+      "RAD 100",
+      "RAD 107",
+      "MAT 140"
     ]
   },
   "RAD 105": {
@@ -18552,11 +19763,20 @@
       "RAD 285"
     ]
   },
-  "RAD 204": {
-    "text": "RAD 101 and RAD 207",
+  "RAD 200": {
+    "text": "RAD 120 and RAD 204 and RAD 213",
     "courses": [
-      "RAD 101",
-      "RAD 207"
+      "RAD 120",
+      "RAD 204",
+      "RAD 213"
+    ]
+  },
+  "RAD 204": {
+    "text": "RAD 120 and RAD 207 and RAD 213",
+    "courses": [
+      "RAD 120",
+      "RAD 207",
+      "RAD 213"
     ]
   },
   "RAD 205": {
@@ -18566,17 +19786,37 @@
     ]
   },
   "RAD 207": {
-    "text": "RAD 120 and RAD 128 and RAD 117",
+    "text": "RAD 120 and RAD 204 and RAD 213",
     "courses": [
       "RAD 120",
-      "RAD 128",
-      "RAD 117"
+      "RAD 204",
+      "RAD 213"
     ]
   },
   "RAD 208": {
     "text": "RAD 101",
     "courses": [
       "RAD 101"
+    ]
+  },
+  "RAD 210": {
+    "text": "RAD 110 and RAD 120 and RAD 204 and RAD 207",
+    "courses": [
+      "RAD 110",
+      "RAD 120",
+      "RAD 204",
+      "RAD 207"
+    ]
+  },
+  "RAD 213": {
+    "text": "RAD 120 and RAD 114 and RAD 117 and RAD 204 and RAD 207 and RAD 210",
+    "courses": [
+      "RAD 120",
+      "RAD 114",
+      "RAD 117",
+      "RAD 204",
+      "RAD 207",
+      "RAD 210"
     ]
   },
   "RAD 217": {
@@ -19318,6 +20558,44 @@
       "RTC 207"
     ]
   },
+  "RTH 199": {
+    "text": "RTH 202 and RTH 203 and RTH 210",
+    "courses": [
+      "RTH 202",
+      "RTH 203",
+      "RTH 210"
+    ]
+  },
+  "RTH 202": {
+    "text": "BIO 101 and BIO 102 and CHM 117 and CHM 118 and RTH 199 and RTH 203 and RTH 210",
+    "courses": [
+      "BIO 101",
+      "BIO 102",
+      "CHM 117",
+      "CHM 118",
+      "RTH 199",
+      "RTH 203",
+      "RTH 210"
+    ]
+  },
+  "RTH 203": {
+    "text": "BIO 101 and BIO 102 and RTH 199 and RTH 202 and RTH 210",
+    "courses": [
+      "BIO 101",
+      "BIO 102",
+      "RTH 199",
+      "RTH 202",
+      "RTH 210"
+    ]
+  },
+  "RTH 210": {
+    "text": "RTH 199 and RTH 202 and RTH 203",
+    "courses": [
+      "RTH 199",
+      "RTH 202",
+      "RTH 203"
+    ]
+  },
   "RTT 110": {
     "text": "RTT 120 and RTT 121 and RTT 130 and RTT 150",
     "courses": [
@@ -19403,6 +20681,13 @@
     "courses": [
       "MAT 013",
       "ENG 121"
+    ]
+  },
+  "SCI 118": {
+    "text": "MAT 016 or MAT 120",
+    "courses": [
+      "MAT 016",
+      "MAT 120"
     ]
   },
   "SCI 120": {
@@ -19677,6 +20962,12 @@
       "SOC 101"
     ]
   },
+  "SOC 202": {
+    "text": "SOC 120",
+    "courses": [
+      "SOC 120"
+    ]
+  },
   "SOC 204": {
     "text": "SOC 101 (min C)",
     "courses": [
@@ -19724,9 +21015,9 @@
     ]
   },
   "SOC 214": {
-    "text": "SOC 107",
+    "text": "SOC 120",
     "courses": [
-      "SOC 107"
+      "SOC 120"
     ]
   },
   "SOC 219": {
@@ -19741,6 +21032,13 @@
       "SOC 101"
     ]
   },
+  "SOC 224": {
+    "text": "PSY 113 or SOC 120",
+    "courses": [
+      "PSY 113",
+      "SOC 120"
+    ]
+  },
   "SOC 228": {
     "text": "SOC 111 (min C) and SOC 229 (min C)",
     "courses": [
@@ -19753,6 +21051,12 @@
     "courses": [
       "SOC 111",
       "SOC 228"
+    ]
+  },
+  "SOC 240": {
+    "text": "SOC 120",
+    "courses": [
+      "SOC 120"
     ]
   },
   "SOC 250": {
@@ -19947,6 +21251,18 @@
       "SPN 101"
     ]
   },
+  "SPN 112": {
+    "text": "SPN 111",
+    "courses": [
+      "SPN 111"
+    ]
+  },
+  "SPN 220": {
+    "text": "SPN 212",
+    "courses": [
+      "SPN 212"
+    ]
+  },
   "SSCI 101": {
     "text": "ENGL 111 (min D) or ENGL 111H (min D) or ENGL 112 (min D) or ENGL 112H (min D) or ENGL 070 (min C)",
     "courses": [
@@ -20013,6 +21329,18 @@
     "courses": [
       "ENG 101",
       "TEC 101"
+    ]
+  },
+  "TEL 107": {
+    "text": "CMP 130",
+    "courses": [
+      "CMP 130"
+    ]
+  },
+  "TEL 110": {
+    "text": "TEL 107",
+    "courses": [
+      "TEL 107"
     ]
   },
   "TELV 122": {
