@@ -170,7 +170,7 @@ async function sweepState(state: string, concurrency: number): Promise<StateResu
         return;
       }
       try {
-        const r = await fingerprint(`https://${c.primaryUrl}`);
+        const r = await fingerprint(`https://${c.primaryUrl}`, { stateHint: state });
         records.push({
           slug: c.slug,
           name: c.name,
