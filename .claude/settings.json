@@ -11,6 +11,10 @@
           {
             "type": "command",
             "command": ".claude/hooks/pre-detach-guard.sh"
+          },
+          {
+            "type": "command",
+            "command": ".claude/hooks/pre-pr-build-check.sh"
           }
         ]
       }
