@@ -157,7 +157,7 @@ async function runSweep(tasks: SweepTask[]): Promise<CollegeEntry[]> {
       const idx = next++;
       const t = tasks[idx];
       try {
-        const result = await fingerprint(t.url);
+        const result = await fingerprint(t.url, { stateHint: t.state });
         out.push({
           state: t.state,
           slug: t.slug,

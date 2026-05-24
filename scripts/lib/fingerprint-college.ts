@@ -117,6 +117,12 @@ const PROBES: ProbeRule[] = [
       "/pls/PROD/bwckschd.p_disp_dyn_sched",
       "/pls/PROD/bwckctlg.p_disp_cat_term_date",
       "/pls/prod/bwckschd.p_disp_dyn_sched",
+      // No-pls-prefix variants. CCCS uses college-specific codes like
+      // `/PRODOJC/bwckschd.p_disp_dyn_sched` (Otero). We can't enumerate
+      // every state's per-college code, but PROD covers many state systems
+      // that share one Banner instance.
+      "/PROD/bwckschd.p_disp_dyn_sched",
+      "/PROD/bwckctlg.p_disp_cat_term_date",
     ],
     markers: ["bwckschd", "bwckctlg"],
   },
@@ -128,8 +134,16 @@ const PROBES: ProbeRule[] = [
       "/Student/Student/Courses",
     ],
     // Colleague's React shell ships a verification-token meta + the
-    // EllucianColleagueSelfService string in the bundle filenames.
-    markers: ["EllucianColleagueSelfService"],
+    // EllucianColleagueSelfService string in the bundle filenames. Newer
+    // SCCCD-style deployments don't expose that exact string but ARE
+    // unambiguously Colleague — they pull assets from elluciancloud.com.
+    // Combined with the /Student/Courses path (which is uniquely Colleague),
+    // any of these is a high-confidence match.
+    markers: [
+      "EllucianColleagueSelfService",
+      "elluciancloud.com",
+      "Colleague Self-Service",
+    ],
   },
   {
     platform: "peoplesoft",
@@ -216,6 +230,35 @@ const SUBDOMAIN_PREFIXES = [
   "catalog",
   "web",
 ];
+
+// State-system shared SIS hosts. Many colleges run their SIS on a system-
+// wide domain rather than their own marketing host — Bismarck State's
+// course search lives at studentadmin.connectnd.us (the NDUS shared
+// PeopleSoft), not at any subdomain of bismarckstate.edu. Subdomain
+// enumeration of the college's own domain can never find these.
+//
+// When fingerprint() is called with a stateHint, we ALSO probe every
+// host listed here for the matching state. Per-state arrays keep this
+// surgical — we only probe these hosts when we know they're relevant,
+// not as a global "try every system host for every college."
+//
+// Seeded from the May 2026 spot-check that found 5/10 "custom" colleges
+// were actually templated on system hosts. Extend this list whenever a
+// new state's shared host is identified.
+const STATE_SYSTEM_HOSTS: Record<string, string[]> = {
+  // North Dakota University System — all ND public colleges
+  nd: ["studentadmin.connectnd.us"],
+  // Minnesota State Colleges and Universities — 26 colleges
+  mn: ["eservices.minnstate.edu"],
+  // Colorado Community College System — 13 colleges (Otero, etc.)
+  co: ["erpdnssb.cccs.edu"],
+  // Alabama Community College System — 22 colleges (Drake, etc.)
+  al: ["ssb-prod.ec.accs.edu"],
+  // California — system-by-system, not statewide. SCCCD (Fresno/Reedley/
+  // Clovis), CCCD (Coast — Orange Coast/Coastline/Golden West). Add more
+  // CA systems as their colleges surface in coverage gaps.
+  ca: ["selfservice.scccd.edu", "catalog.cccd.edu"],
+};
 
 // Substrings that, when found in any URL on the college homepage, are a
 // strong signal of which platform the college publishes. URL-based detection
@@ -313,10 +356,20 @@ interface ProbeJob {
   rule: ProbeRule;
 }
 
-function buildProbeJobs(domain: string): ProbeJob[] {
+function buildProbeJobs(domain: string, extraHosts: string[] = []): ProbeJob[] {
   const jobs: ProbeJob[] = [];
   for (const prefix of SUBDOMAIN_PREFIXES) {
     const host = prefix ? `${prefix}.${domain}` : domain;
+    for (const rule of PROBES) {
+      for (const path of rule.paths) {
+        jobs.push({ host, path, rule });
+      }
+    }
+  }
+  // System-host probes: when a stateHint resolves to known shared hosts,
+  // probe them as-is (no prefix multiplication — these are already full
+  // SIS-style hostnames like `studentadmin.connectnd.us`).
+  for (const host of extraHosts) {
     for (const rule of PROBES) {
       for (const path of rule.paths) {
         jobs.push({ host, path, rule });
@@ -470,10 +523,27 @@ function classifyUrl(url: string): Platform[] {
   return matches;
 }
 
-export async function fingerprint(input: string): Promise<FingerprintResult> {
+export interface FingerprintOptions {
+  /**
+   * Two-letter state slug (e.g. "nd", "mn"). When set, the probe matrix
+   * additionally targets that state's known shared SIS hosts. This catches
+   * colleges whose SIS lives on a system-wide domain rather than their own
+   * marketing host — e.g. Bismarck State's PeopleSoft Community Access lives
+   * at studentadmin.connectnd.us, not anywhere under bismarckstate.edu.
+   */
+  stateHint?: string;
+}
+
+export async function fingerprint(
+  input: string,
+  opts: FingerprintOptions = {}
+): Promise<FingerprintResult> {
   const domain = normalizeDomain(input);
   const evidence: string[] = [];
   const notes: string[] = [];
+  const systemHosts = opts.stateHint
+    ? STATE_SYSTEM_HOSTS[opts.stateHint.toLowerCase()] ?? []
+    : [];
 
   // Step 1: hit the bare homepage to look for embedded catalogs and
   // auth-gate redirects. Also tells us if the college's domain even
@@ -596,8 +666,14 @@ export async function fingerprint(input: string): Promise<FingerprintResult> {
   }
 
   // Step 2: probe every (subdomain × path × platform) combo. Concurrency
-  // bounded so we don't accidentally DOS a small college.
-  const jobs = buildProbeJobs(domain);
+  // bounded so we don't accidentally DOS a small college. When a stateHint
+  // is given, also probe that state's known shared SIS hosts as-is.
+  if (systemHosts.length > 0) {
+    notes.push(
+      `state hint "${opts.stateHint}" → additionally probing system hosts: ${systemHosts.join(", ")}`
+    );
+  }
+  const jobs = buildProbeJobs(domain, systemHosts);
   const responses = await pmap(
     jobs,
     async (job) => {
