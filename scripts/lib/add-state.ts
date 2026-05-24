@@ -487,8 +487,16 @@ async function phaseCluster(
 
   for (const c of clusterResult.clusters) {
     const sortedSlugs = [...c.memberSlugs].sort();
+    // Surface the public-access verdict prominently so reviewers don't waste
+    // cycles trying to scrape an SSO-gated portal.
+    const verdict =
+      c.publicGuestAccess === "public-guest-ok"
+        ? `PUBLIC at ${c.publicGuestUrl ?? c.sharedSignal} — adapt LACCD-pattern scraper`
+        : c.publicGuestAccess === "sso-gated"
+          ? `SSO-GATED at ${c.sharedSignal}${c.publicGuestEvidence ? ` (${c.publicGuestEvidence})` : ""} — DROP, no scraper will work without credentials`
+          : `unknown access at ${c.sharedSignal} — investigate before authoring`;
     todos.push(
-      `[fingerprint-cluster] ${c.id} (${c.memberSlugs.length} colleges share ${c.sharedSignal}, ${c.signalKind}): ${sortedSlugs.join(", ")}. → One bespoke scraper covers all ${c.memberSlugs.length}.`,
+      `[fingerprint-cluster] ${c.id} (${c.memberSlugs.length} colleges, ${c.signalKind}: ${verdict}): ${sortedSlugs.join(", ")}.`,
     );
   }
 
