@@ -43,23 +43,19 @@ const azConfig: StateConfig = {
       { scripts: ["scripts/az/scrape-colleague.ts"], runner: "playwright" },
       // Maricopa District (10 colleges via shared classes.sis.maricopa.edu)
       { scripts: ["scripts/az/scrape-maricopa.ts"], runner: "http" },
+      // Diné College — PDF-only schedule (Microsoft Print To PDF output);
+      // parsed via `pdftotext -layout`. Requires poppler-utils on the
+      // runner (apt-get install -y poppler-utils, or `brew install poppler`).
+      { scripts: ["scripts/az/scrape-dine.ts"], runner: "http" },
     ],
-    // Inline prereq text harvested from the scraped Banner SSB + Colleague +
-    // Maricopa sections (15 of 21 AZ colleges covered).
+    // Inline prereq text harvested from every scraped section (16 of 21
+    // AZ colleges covered: 3 Banner SSB + 2 Colleague + 10 Maricopa + Diné).
     prereqs: { source: "aggregate-from-courses" },
     // manual-only: transfers — AZ has no entry in articulation-portals.json
     //   yet. AZ's state system is AZTransfer.com; needs one-time integration.
     // manual-only: programs — scripts/az/scrape-programs.ts wrapper exists
     //   but each of the 4 Acalog catalogs needs manual navoid identification
     //   (auto-discovery finds catoid but not navoids — same as NV/CSN).
-  },
-  documentedCeilings: {
-    courses: [
-      {
-        collegeSlug: "dine-college",
-        reason: "Diné College (Navajo Nation tribal college) publishes course schedules only as semester PDFs (e.g. Fall-26-Course-Schedule-May-20-2026.pdf at www.dinecollege.edu/admissions/course-schedule/). The my.dinecollege.edu portal is SSO-gated via QuickLaunch. No live HTML/JSON schedule. Verified 2026-05-24.",
-      },
-    ],
   },
 };
 
