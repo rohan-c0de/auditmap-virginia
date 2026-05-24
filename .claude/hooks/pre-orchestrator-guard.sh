@@ -42,10 +42,28 @@ if echo "$CMD" | grep -qE '^(pgrep|pkill|tail|head|cat|ls|wc|grep|stat|test|jq|m
   exit 0
 fi
 
-# Determine the git common dir and whether CWD is the main checkout or a
-# linked worktree. `git rev-parse --git-dir` returns ".git" in the main
+# Determine the *effective* CWD that the command will execute in. The
+# hook is spawned by Claude Code in the project root (always the main
+# checkout), so our own `git rev-parse` would always report the main
+# repo — that would false-block legitimate invocations preceded by
+# `cd .claude/worktrees/<name> && ...`. Parse the command string for a
+# leading `cd <path>` and use that as the effective CWD if present.
+EFFECTIVE_CWD=$(echo "$CMD" | /usr/bin/python3 -c '
+import sys, re, os
+cmd = sys.stdin.read().strip()
+m = re.match(r"^\s*\(?\s*cd\s+([^\s;&]+)", cmd)
+print(m.group(1) if m else "")
+' 2>/dev/null || echo "")
+
+# Resolve the effective CWD to absolute, then ask git what kind of
+# checkout it is. `git rev-parse --git-dir` returns ".git" in the main
 # checkout and a path like ".git/worktrees/<name>" in a linked worktree.
-GIT_DIR=$(git rev-parse --git-dir 2>/dev/null || echo "")
+if [ -n "$EFFECTIVE_CWD" ] && [ -d "$EFFECTIVE_CWD" ]; then
+  GIT_DIR=$(cd "$EFFECTIVE_CWD" 2>/dev/null && git rev-parse --git-dir 2>/dev/null || echo "")
+else
+  GIT_DIR=$(git rev-parse --git-dir 2>/dev/null || echo "")
+fi
+
 if [ -z "$GIT_DIR" ]; then
   # Not in a git repo — let the script fail on its own merits.
   exit 0
@@ -53,14 +71,16 @@ fi
 
 case "$GIT_DIR" in
   *worktrees/*)
-    # Running from a linked worktree — exactly what we want.
+    # Will run from a linked worktree — exactly what we want.
     exit 0
     ;;
 esac
 
-# CWD is the main checkout. Derive a suggested worktree command from
-# --state <slug> if present in CMD.
-SLUG=$(echo "$CMD" | grep -oE '(--state|--state=)[[:space:]=]*[a-z]{2}' | grep -oE '[a-z]{2}$' || echo "STATE")
+# Effective CWD is the main checkout. Derive a suggested worktree
+# command from --state <slug> if present in CMD. Use head -1 to defend
+# against the slug regex matching more than one substring on the line.
+SLUG=$(echo "$CMD" | grep -oE '(--state|--state=)[[:space:]=]*[a-z]{2}\b' | grep -oE '[a-z]{2}$' | head -1)
+[ -z "$SLUG" ] && SLUG="STATE"
 SUGGESTED_BRANCH="claude/${SLUG}-auto-add-state"
 SUGGESTED_PATH=".claude/worktrees/${SLUG}-auto-add-state"
 
