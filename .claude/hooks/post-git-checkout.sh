@@ -52,6 +52,31 @@ if [[ "$CMD" =~ git[[:space:]]+checkout[[:space:]]+-b[[:space:]]+([A-Za-z0-9._/-
     exit 0
   fi
 
+  # Second safety check (added 2026-05-24 after PR #524's branch-shift
+  # rescue): don't overwrite a lock pointing to a branch with UNMERGED
+  # commits. When my work is committed and pushed but not yet merged,
+  # another session's `git checkout -b` would otherwise see a clean
+  # tree and silently steal my lock — leading to my next `git commit`
+  # landing on the wrong branch.
+  if [ -f .claude/branch-lock ]; then
+    EXISTING=$(cat .claude/branch-lock 2>/dev/null | tr -d '[:space:]')
+    if [ -n "$EXISTING" ] && [ "$EXISTING" != "$BRANCH" ]; then
+      # Does the locked branch still exist locally?
+      if git rev-parse --verify --quiet "$EXISTING" > /dev/null 2>&1; then
+        UNMERGED=$(git log --oneline "origin/main..$EXISTING" 2>/dev/null | wc -l | tr -d '[:space:]')
+        if [ "$UNMERGED" -gt 0 ]; then
+          echo "⚠️  branch-lock NOT updated to '$BRANCH' — existing lock '$EXISTING' has $UNMERGED unmerged commit(s)." >&2
+          echo "    A parallel session's checkout would otherwise steal the lock and your next commit would land on the wrong branch." >&2
+          echo "    Either:" >&2
+          echo "      a) wait until $EXISTING is merged (auto-overwrite then becomes safe)," >&2
+          echo "      b) finish + stash the work on $EXISTING before the new branch, or" >&2
+          echo "      c) manually override: echo $BRANCH > .claude/branch-lock" >&2
+          exit 0
+        fi
+      fi
+    fi
+  fi
+
   echo "$BRANCH" > .claude/branch-lock
   echo "🔒 branch-lock written: $BRANCH" >&2
 fi
