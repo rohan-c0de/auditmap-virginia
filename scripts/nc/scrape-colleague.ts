@@ -435,7 +435,14 @@ async function scrapeCollege(
         // Exact label match
         if (label === termNameLower) return true;
         // All parts of the search term appear in the label, excluding reporting/CE terms
-        if (termParts.every((part) => label.includes(part)) && !label.includes("ce") && !label.includes("reporting")) return true;
+        // (also reject CE-coded values like "2026CE1" — some colleges' "Spring 2026" labels
+        // map to CE term codes that should not be in the credit catalog).
+        if (
+          termParts.every((part) => label.includes(part)) &&
+          !label.includes("ce") &&
+          !label.includes("reporting") &&
+          !/CE\d*$/i.test(value)
+        ) return true;
         // Match by term code in label
         if (expectedTermCode && label === expectedTermCode.toLowerCase()) return true;
         return false;
