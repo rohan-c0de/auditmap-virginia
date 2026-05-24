@@ -35,10 +35,21 @@ const azConfig: StateConfig = {
     ],
   },
   scrapers: {
-    // manual-only: courses — Phase 2 (course scraper) not yet wired up.
-    // manual-only: transfers — Phase 3 (transfer-equiv) not yet wired up.
-    // manual-only: prereqs — Phase 4.
-    // manual-only: programs — Phase 5+.
+    courses: [
+      // Banner SSB 9 — Cochise, Pima, Coconino (3 colleges via shared template)
+      { scripts: ["scripts/az/scrape-banner-ssb.ts"], runner: "http" },
+      // Colleague Self-Service — Mohave (1 college via Ellucian Cloud)
+      { scripts: ["scripts/az/scrape-colleague.ts"], runner: "playwright" },
+    ],
+    // Inline prereq text harvested from the scraped Banner SSB + Colleague
+    // sections. The other 17 AZ colleges contribute nothing until their
+    // scrapers ship (Maricopa cluster is the highest-value follow-up).
+    prereqs: { source: "aggregate-from-courses" },
+    // manual-only: transfers — AZ has no entry in articulation-portals.json
+    //   yet. AZ's state system is AZTransfer.com; needs one-time integration.
+    // manual-only: programs — scripts/az/scrape-programs.ts wrapper exists
+    //   but each of the 4 Acalog catalogs needs manual navoid identification
+    //   (auto-discovery finds catoid but not navoids — same as NV/CSN).
   },
 };
 
