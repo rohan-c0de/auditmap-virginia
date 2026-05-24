@@ -66,8 +66,13 @@ const HOSTS: Record<string, string> = {
   "george-c-wallace-state-community-college-hanceville": `${BASE}/WSCC`,
   "h-councill-trenholm-state-community-college": `${BASE}/TSCC`,
   "northwest-shoals-community-college": `${BASE}/NWSCC`,
-  "lurleen-b-wallace-community-college": `${BASE}/LBWCC`,
-  "marion-military-institute": `${BASE}/MMI`,
+  // lurleen-b-wallace-community-college moved to OneACCS Banner SSB 9
+  // (scrape-accs-banner-ssb9.ts) — LBWCC's official "Schedule of Classes"
+  // link points to reg-prod.ec.accs.edu/...?mepCode=LBWCC, not this host.
+  // marion-military-institute does not publish a course schedule on either
+  // ACCS cluster; the registrar page has no SIS link at all. Tracked as a
+  // known-blocked ceiling — left out of HOSTS so the scraper doesn't
+  // re-log "no terms" on every run.
   "reid-state-technical-college": `${BASE}/RSTC`,
   "lawson-state-community-college": `${BASE}/LAWSON`,
   "bishop-state-community-college": `${BASE}/BISHOP`,

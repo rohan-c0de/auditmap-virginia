@@ -41,6 +41,10 @@ const COLLEGES: { slug: string; mepCode: string }[] = [
   // Banner SSB 9 host is the authoritative current system per Shelton's
   // own "Schedule of Classes" link.
   { slug: "shelton-state-community-college", mepCode: "SSCC" },
+  // lbwcc.edu's official "Schedule of Classes" link points here
+  // (mepCode=LBWCC on reg-prod), not the Banner 8 ssb-prod host where
+  // an older mapping had it. Moved 2026-05-24.
+  { slug: "lurleen-b-wallace-community-college", mepCode: "LBWCC" },
 ];
 
 async function main() {

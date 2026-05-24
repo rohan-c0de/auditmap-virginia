@@ -30,7 +30,7 @@ const dcConfig: StateConfig = {
   // back to true. The scraper script `scripts/dc/scrape-transfer.ts` is
   // retained for manual use.
   transferSupported: false,
-  popularCourses: [],
+  popularCourses: ["IGED 110C", "IGED 120C", "IGED 130C", "BIOL 111C", "MATH 105C", "PSYC 201C"],
   defaultZip: "20001",
   defaultZipCity: "Washington",
 
