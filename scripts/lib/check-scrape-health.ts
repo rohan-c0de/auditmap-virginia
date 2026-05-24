@@ -28,8 +28,15 @@
  *     --status-out /tmp/health.json
  */
 
-import { existsSync, readdirSync, statSync, writeFileSync } from "node:fs";
-import { join } from "node:path";
+import {
+  appendFileSync,
+  existsSync,
+  mkdirSync,
+  readdirSync,
+  statSync,
+  writeFileSync,
+} from "node:fs";
+import { dirname, join } from "node:path";
 import { execSync } from "node:child_process";
 import { getAllStates } from "../../lib/states/registry";
 import type { ScrapeJob, ScraperCoverage } from "../../lib/states/registry";
@@ -45,6 +52,11 @@ interface JobResult {
   conclusion: string | null; // "success", "failure", "cancelled", or null if missing
   status: Status;
   detail: string;
+  // Per-college presence (set for courses/programs only). Lets downstream
+  // tooling (state-health history, drift triage) reason about per-college
+  // drift instead of just "N of M colleges have data".
+  collegesWithData?: string[];
+  collegesMissing?: string[];
 }
 
 // ---------------------------------------------------------------------------
@@ -68,6 +80,7 @@ const runId = arg("run-id");
 const repo = arg("repo");
 const dataDir = arg("data-dir", false) || "data";
 const statusOut = arg("status-out", false);
+const historyOut = arg("history-out", false);
 
 if (!["courses", "transfers", "prereqs", "programs"].includes(datatype)) {
   console.error(`Invalid --datatype: ${datatype}`);
@@ -158,15 +171,34 @@ function findJobConclusion(matrixId: string, jobs: GhJob[]): string | null {
 // Per-datatype output checks
 // ---------------------------------------------------------------------------
 
-function checkCoursesOutput(state: string): { ok: boolean; detail: string } {
+interface OutputCheck {
+  ok: boolean;
+  detail: string;
+  collegesWithData?: string[];
+  collegesMissing?: string[];
+}
+
+// Cap on how many missing college slugs to inline into the detail string. The
+// full list always goes to JSON; the markdown summary stays scannable.
+const DETAIL_MISSING_CAP = 5;
+
+function formatMissingList(missing: string[]): string {
+  if (missing.length <= DETAIL_MISSING_CAP) return missing.join(", ");
+  const head = missing.slice(0, DETAIL_MISSING_CAP).join(", ");
+  return `${head} (+${missing.length - DETAIL_MISSING_CAP} more)`;
+}
+
+function checkCoursesOutput(state: string): OutputCheck {
   const dir = join(dataDir, state, "courses");
   if (!existsSync(dir)) {
     return { ok: false, detail: "no courses directory" };
   }
-  const colleges = readdirSync(dir).filter((entry) => {
-    const full = join(dir, entry);
-    return statSync(full).isDirectory();
-  });
+  const colleges = readdirSync(dir)
+    .filter((entry) => {
+      const full = join(dir, entry);
+      return statSync(full).isDirectory();
+    })
+    .sort();
   if (colleges.length === 0) {
     return { ok: false, detail: "no college subdirectories" };
   }
@@ -175,6 +207,7 @@ function checkCoursesOutput(state: string): { ok: boolean; detail: string } {
   // section is well over 100). Catches both "no file written" and "wrote
   // [] because parser saw a login redirect."
   const collegesWithData: string[] = [];
+  const collegesMissing: string[] = [];
   for (const college of colleges) {
     const collegeDir = join(dir, college);
     const files = readdirSync(collegeDir).filter((f) => f.endsWith(".json"));
@@ -183,29 +216,33 @@ function checkCoursesOutput(state: string): { ok: boolean; detail: string } {
       return sz > 100;
     });
     if (hasData) collegesWithData.push(college);
+    else collegesMissing.push(college);
   }
   if (collegesWithData.length === 0) {
     return {
       ok: false,
       detail: `${colleges.length} college dir(s) but all course files <100 bytes`,
+      collegesWithData,
+      collegesMissing,
     };
   }
-  if (collegesWithData.length < colleges.length) {
+  if (collegesMissing.length > 0) {
     return {
       ok: true,
-      detail: `${collegesWithData.length}/${colleges.length} colleges have data`,
+      detail: `${collegesWithData.length}/${colleges.length} colleges have data; missing: ${formatMissingList(collegesMissing)}`,
+      collegesWithData,
+      collegesMissing,
     };
   }
   return {
     ok: true,
     detail: `${collegesWithData.length} college(s) with data`,
+    collegesWithData,
+    collegesMissing,
   };
 }
 
-function checkSingleFileOutput(
-  state: string,
-  filename: string
-): { ok: boolean; detail: string } {
+function checkSingleFileOutput(state: string, filename: string): OutputCheck {
   const path = join(dataDir, state, filename);
   if (!existsSync(path)) {
     return { ok: false, detail: `${filename} missing` };
@@ -217,26 +254,49 @@ function checkSingleFileOutput(
   return { ok: true, detail: `${filename} present (${size} bytes)` };
 }
 
-function checkProgramsOutput(state: string): { ok: boolean; detail: string } {
+function checkProgramsOutput(state: string): OutputCheck {
   const dir = join(dataDir, state, "programs");
   if (!existsSync(dir)) {
     return { ok: false, detail: "no programs directory" };
   }
-  const files = readdirSync(dir).filter((f) => f.endsWith(".json"));
+  const files = readdirSync(dir)
+    .filter((f) => f.endsWith(".json"))
+    .sort();
   if (files.length === 0) {
     return { ok: false, detail: "no program JSON files" };
   }
-  const withData = files.filter((f) => statSync(join(dir, f)).size > 100);
-  if (withData.length === 0) {
-    return { ok: false, detail: `${files.length} file(s) but all <100 bytes` };
+  const collegesWithData: string[] = [];
+  const collegesMissing: string[] = [];
+  for (const f of files) {
+    const slug = f.replace(/\.json$/, "");
+    if (statSync(join(dir, f)).size > 100) collegesWithData.push(slug);
+    else collegesMissing.push(slug);
   }
-  return { ok: true, detail: `${withData.length} college(s) with program data` };
+  if (collegesWithData.length === 0) {
+    return {
+      ok: false,
+      detail: `${files.length} file(s) but all <100 bytes`,
+      collegesWithData,
+      collegesMissing,
+    };
+  }
+  if (collegesMissing.length > 0) {
+    return {
+      ok: true,
+      detail: `${collegesWithData.length}/${files.length} colleges with program data; missing: ${formatMissingList(collegesMissing)}`,
+      collegesWithData,
+      collegesMissing,
+    };
+  }
+  return {
+    ok: true,
+    detail: `${collegesWithData.length} college(s) with program data`,
+    collegesWithData,
+    collegesMissing,
+  };
 }
 
-function checkOutput(
-  state: string,
-  scripts: string[]
-): { ok: boolean; detail: string } {
+function checkOutput(state: string, scripts: string[]): OutputCheck {
   if (datatype === "courses") return checkCoursesOutput(state);
   if (datatype === "transfers")
     return checkSingleFileOutput(state, "transfer-equiv.json");
@@ -281,6 +341,8 @@ function classify(declared: DeclaredJob, conclusion: string | null): JobResult {
     conclusion,
     status: out.ok ? "healthy" : "empty",
     detail: out.detail,
+    collegesWithData: out.collegesWithData,
+    collegesMissing: out.collegesMissing,
   };
 }
 
@@ -349,4 +411,44 @@ if (statusOut) {
       2
     )
   );
+}
+
+// ---------------------------------------------------------------------------
+// History append (state-health drift triage; issue #TBD)
+// ---------------------------------------------------------------------------
+//
+// Each cron tick appends one JSON object per declared (state × scraper job).
+// Append-only JSONL so parallel datatype writes don't conflict at the line
+// level. Schema matches JobResult plus run metadata so the file is the
+// canonical time-series of scraper health across all datatypes.
+
+if (historyOut) {
+  const ts = new Date().toISOString();
+  const runUrl = `https://github.com/${repo}/actions/runs/${runId}`;
+  mkdirSync(dirname(historyOut), { recursive: true });
+  const lines = results
+    .map((r) =>
+      JSON.stringify({
+        ts,
+        run_id: runId,
+        run_url: runUrl,
+        datatype: r.datatype,
+        state: r.state,
+        job_index: r.jobIndex,
+        scripts: r.scripts,
+        conclusion: r.conclusion,
+        status: r.status,
+        detail: r.detail,
+        // Per-college missing list (courses/programs only). The full
+        // colleges_with_data array is intentionally NOT persisted — over a
+        // year of cron ticks it would balloon history.jsonl by ~90 MB for no
+        // analytical gain. The denominator and full college list are derived
+        // from data/{state}/institutions.json at read time.
+        ...(r.collegesMissing
+          ? { colleges_missing: r.collegesMissing }
+          : {}),
+      })
+    )
+    .join("\n");
+  appendFileSync(historyOut, lines + "\n");
 }
