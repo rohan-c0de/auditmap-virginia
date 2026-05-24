@@ -36,7 +36,7 @@ const azConfig: StateConfig = {
   },
   scrapers: {
     courses: [
-      // Banner SSB 9 — Cochise, Pima, Coconino (3 colleges via shared template)
+      // Banner SSB 9 — Cochise, Pima, Coconino, Yavapai (4 colleges via shared template)
       { scripts: ["scripts/az/scrape-banner-ssb.ts"], runner: "http" },
       // Colleague Self-Service — Mohave (Ellucian Cloud) + Arizona Western
       // (self-hosted at colss-prod.ec.azwestern.edu).
@@ -47,20 +47,33 @@ const azConfig: StateConfig = {
       // parsed via `pdftotext -layout`. Requires poppler-utils on the
       // runner (apt-get install -y poppler-utils, or `brew install poppler`).
       { scripts: ["scripts/az/scrape-dine.ts"], runner: "http" },
-      // Northland Pioneer College — Jenzabar CMC Portal (ASP.NET WebForms)
-      // at my.npc.edu/CMCPortal/Common/CourseSchedule.aspx. Same template
+      // Jenzabar CMC Portal (ASP.NET WebForms) — Northland Pioneer +
+      // Eastern Arizona. Both expose my.<domain>/CMCPortal/Common/
+      // CourseSchedule.aspx with identical form structure; same template
       // as scripts/or/scrape-columbia-gorge.ts.
-      { scripts: ["scripts/az/scrape-northland-pioneer.ts"], runner: "http" },
+      { scripts: ["scripts/az/scrape-jenzabar-cmc.ts"], runner: "http" },
     ],
-    // Inline prereq text harvested from every scraped section (17 of 21
-    // AZ colleges covered: 3 Banner SSB + 2 Colleague + 10 Maricopa +
-    // Diné + Northland Pioneer).
+    // Inline prereq text harvested from every scraped section (19 of 21
+    // AZ colleges covered: 4 Banner SSB + 2 Colleague + 10 Maricopa +
+    // Diné + 2 Jenzabar CMC).
     prereqs: { source: "aggregate-from-courses" },
     // manual-only: transfers — AZ has no entry in articulation-portals.json
     //   yet. AZ's state system is AZTransfer.com; needs one-time integration.
     // manual-only: programs — scripts/az/scrape-programs.ts wrapper exists
     //   but each of the 4 Acalog catalogs needs manual navoid identification
     //   (auto-discovery finds catoid but not navoids — same as NV/CSN).
+  },
+  documentedCeilings: {
+    courses: [
+      {
+        collegeSlug: "tohono-oodham-community-college",
+        reason: "Tohono O'odham CC's Jenzabar JICS at my.tocc.edu/ICS/Course_Schedules.jnz requires SAML SSO login (StaticPages/SAML/ServiceProvider/Request.aspx redirect). No public guest endpoint. Verified 2026-05-24.",
+      },
+      {
+        collegeSlug: "central-arizona-college",
+        reason: "Central Arizona College has no public class-search system: catalog.centralaz.edu is the Acalog catalog only (course defs, no sections), and my.centralaz.edu / classes.centralaz.edu / schedule.centralaz.edu all return no DNS. The www.centralaz.edu registration page links only to a SAML-authed portal. Verified 2026-05-24.",
+      },
+    ],
   },
 };
 
