@@ -1,0 +1,94 @@
+{
+  "$comment": "Multi-college-district cluster detection output (issue #497). Each cluster represents N colleges that share a SIS host or registrable domain — a single bespoke scraper can cover all members.",
+  "state": "md",
+  "generatedAt": "2026-05-24T02:52:46Z",
+  "summary": {
+    "inputCount": 16,
+    "clusterCount": 0,
+    "clusteredCount": 0,
+    "singletonCount": 16
+  },
+  "clusters": [],
+  "singletons": [
+    {
+      "slug": "allegany",
+      "name": "Allegany College of Maryland",
+      "primaryUrl": "www.allegany.edu"
+    },
+    {
+      "slug": "aacc",
+      "name": "Anne Arundel Community College",
+      "primaryUrl": "www.aacc.edu"
+    },
+    {
+      "slug": "bccc",
+      "name": "Baltimore City Community College",
+      "primaryUrl": "www.bccc.edu"
+    },
+    {
+      "slug": "carroll",
+      "name": "Carroll Community College",
+      "primaryUrl": "www.carrollcc.edu"
+    },
+    {
+      "slug": "cecil",
+      "name": "Cecil College",
+      "primaryUrl": "www.cecil.edu"
+    },
+    {
+      "slug": "chesapeake",
+      "name": "Chesapeake College",
+      "primaryUrl": "www.chesapeake.edu"
+    },
+    {
+      "slug": "csm",
+      "name": "College of Southern Maryland",
+      "primaryUrl": "www.csmd.edu"
+    },
+    {
+      "slug": "ccbc",
+      "name": "Community College of Baltimore County",
+      "primaryUrl": "www.ccbcmd.edu"
+    },
+    {
+      "slug": "frederick",
+      "name": "Frederick Community College",
+      "primaryUrl": "www.frederick.edu"
+    },
+    {
+      "slug": "garrett",
+      "name": "Garrett College",
+      "primaryUrl": "www.garrettcollege.edu"
+    },
+    {
+      "slug": "hagerstown",
+      "name": "Hagerstown Community College",
+      "primaryUrl": "www.hagerstowncc.edu"
+    },
+    {
+      "slug": "harford",
+      "name": "Harford Community College",
+      "primaryUrl": "www.harford.edu"
+    },
+    {
+      "slug": "howardcc",
+      "name": "Howard Community College",
+      "primaryUrl": "www.howardcc.edu"
+    },
+    {
+      "slug": "montgomery",
+      "name": "Montgomery College",
+      "primaryUrl": "www.montgomerycollege.edu"
+    },
+    {
+      "slug": "pgcc",
+      "name": "Prince George's Community College",
+      "primaryUrl": "www.pgcc.edu"
+    },
+    {
+      "slug": "wor-wic",
+      "name": "Wor-Wic Community College",
+      "primaryUrl": "www.worwic.edu"
+    }
+  ]
+}
