@@ -1,8 +1,14 @@
 /**
  * scrape-colleague.ts — AZ Colleague Self-Service colleges.
  *
- * One AZ college (Mohave) runs on Ellucian Colleague Self-Service via
- * Ellucian Cloud. The orchestrator's fingerprint found it directly.
+ * Two AZ colleges run on Ellucian Colleague Self-Service:
+ *   - Mohave Community College — Ellucian Cloud (hosted)
+ *   - Arizona Western College   — self-hosted (colss-prod.ec.azwestern.edu)
+ *
+ * AZ Western's selfservice.azwestern.edu redirects to colss-prod.ec.azwestern.edu,
+ * which is the canonical Colleague Self-Service host. Verified 2026-05-24.
+ * (At first probe the AZW server was returning 502 — Ellucian Cloud transient;
+ * cron will pick it up when it's back. The scraper is wired so it can.)
  *
  * Usage:
  *   npx tsx scripts/az/scrape-colleague.ts
@@ -14,6 +20,7 @@ import { scrapeColleagueState } from "../lib/scrape-colleague";
 
 const HOSTS: Record<string, string> = {
   "mohave-community-college": "https://mohave-ss.colleague.elluciancloud.com",
+  "arizona-western-college": "https://colss-prod.ec.azwestern.edu",
 };
 
 async function main() {
