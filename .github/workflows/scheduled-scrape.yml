@@ -135,6 +135,13 @@ jobs:
         if: matrix.state == 'nc'
         run: pip install --quiet pdfplumber
 
+      - name: Install poppler-utils (AZ scrape-dine.ts shells out to pdftotext)
+        # scripts/az/scrape-dine.ts parses Diné College's per-semester
+        # schedule PDFs via `pdftotext -layout` (poppler-utils package).
+        # The Ubuntu runner doesn't ship poppler-utils by default.
+        if: matrix.state == 'az'
+        run: sudo apt-get install -y --no-install-recommends poppler-utils
+
       - name: Resolve terms
         id: terms
         if: matrix.termSystem != ''
