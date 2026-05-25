@@ -271,14 +271,17 @@ function parseSection(
 
   // Only count course rows that belong to *this* section, not ones nested
   // inside an elective-group modal that's a descendant of this section.
-  // Course code lives in .col-2 a (Cape Cod's compact layout) or .col-3 a
-  // (Bristol's wider layout) — try both.
+  // Course code lives in:
+  //   .col-2 a   — Cape Cod's compact layout
+  //   .col-3 a   — Bristol's wider layout
+  //   .degree-row-item a — Coastal Pines (Drupal-hosted CleanCatalog variant)
   $section.find("article.node--type-class").each((_, el) => {
     const $el = $(el);
     if ($el.parents(".modal").length > 0) return;
     const codeRaw =
       $el.find(".col-2 a").first().text().trim() ||
-      $el.find(".col-3 a").first().text().trim();
+      $el.find(".col-3 a").first().text().trim() ||
+      $el.find(".degree-row-item a").first().text().trim();
     if (!codeRaw) return;
     const split = splitCourseCode(codeRaw);
     if (!split) return;
