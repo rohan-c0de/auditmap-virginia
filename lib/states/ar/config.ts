@@ -2,10 +2,16 @@ import type { StateConfig } from "../registry";
 
 const arConfig: StateConfig = {
   slug: "ar",
-  name: "Ar",
+  name: "Arkansas",
   systemName: "Public 2-year",
-  systemFullName: "Ar Public 2-year Colleges",
-  systemUrl: "",
+  systemFullName: "Arkansas Public 2-year Colleges",
+  // Arkansas has no single community college system. Oversight comes from
+  // the Arkansas Division of Higher Education (ADHE), which also operates
+  // ACTS (the statewide course-transfer common-numbering system). Several
+  // AR community colleges are affiliated with the University of Arkansas
+  // System (UACC-Batesville, -Hope, -Morrilton, -Rich Mountain, Phillips
+  // CC, Cossatot, UAPTC); the rest are independent.
+  systemUrl: "https://adhe.edu/",
   collegeCount: 14,
   seniorWaiver: {
     ageThreshold: 60,
@@ -21,8 +27,8 @@ const arConfig: StateConfig = {
 
   transferSupported: true,
   popularCourses: ["ENGL 1013", "PSYC 2003", "ENGL 1023", "MATH 1203", "BIOL 1544", "PLSC 2003"],
-  defaultZip: "",
-  defaultZipCity: "",
+  defaultZip: "72201",
+  defaultZipCity: "Little Rock",
 
   courseDiscoveryUrl: (_collegeSlug: string, _prefix: string, _number: string) =>
     "https://www.example.edu/",
@@ -31,14 +37,16 @@ const arConfig: StateConfig = {
     "https://www.example.edu/",
 
   branding: {
-    siteName: "Community College Path Ar",
-    tagline: "Search Public 2-year courses across all 14 colleges.",
-    footerText: "Community College Path Ar — Find courses across all 14 Public 2-year colleges.",
-    disclaimer: "This is an independent project and is not affiliated with, endorsed by, or sponsored by Ar Public 2-year Colleges.",
+    siteName: "Community College Path Arkansas",
+    tagline: "Search course schedules across Arkansas's 14 community colleges.",
+    footerText: "Community College Path Arkansas — Find courses across all 14 Arkansas community colleges.",
+    disclaimer: "This is an independent project and is not affiliated with, endorsed by, or sponsored by Arkansas's community colleges, the Arkansas Division of Higher Education (ADHE), or the ACTS Course Transfer System.",
     metaKeywords: [
-      "Ar community college courses",
-      "Public 2-year course search",
-      "Ar Public 2-year Colleges",
+      "Arkansas community college courses",
+      "Arkansas course search",
+      "NWACC NorthWest Arkansas community college",
+      "UACC Batesville Hope Morrilton Rich Mountain",
+      "ACTS Arkansas Course Transfer System",
     ],
   },
   scrapers: {
