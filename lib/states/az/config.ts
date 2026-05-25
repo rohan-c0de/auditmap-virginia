@@ -2,20 +2,34 @@ import type { StateConfig } from "../registry";
 
 const azConfig: StateConfig = {
   slug: "az",
-  name: "Az",
+  name: "Arizona",
   systemName: "Public 2-year",
-  systemFullName: "Az Public 2-year Colleges",
+  systemFullName: "Arizona Public 2-year Colleges",
   systemUrl: "",
   collegeCount: 21,
 
-  // TODO: research senior-waiver statute for Az.
-  // Set to null if no waiver exists, or fill in per the SeniorWaiverConfig shape.
-  seniorWaiver: null,
+  // Arizona has no statewide senior-tuition statute analogous to NV's
+  // NRS 396.540 or AL's § 16-60-114. ARS § 15-1444 gives each community
+  // college district authority to set its own tuition policy, and most
+  // districts (MCCCD, Pima, Cochise, etc.) offer some form of senior
+  // discount — but the age threshold, fee structure, and eligibility
+  // vary per district. The banner explains the patchwork.
+  seniorWaiver: {
+    ageThreshold: 65,
+    legalCitation: "ARS § 15-1444 (district-level authority)",
+    description:
+      "Most Arizona community college districts offer tuition discounts to residents aged 65+ — typically space-available, sometimes free, sometimes reduced rate. Terms vary by district. Contact the registrar at your college for specifics.",
+    bannerTitle: "Arizona Senior Tuition Discounts (by district)",
+    bannerSummary:
+      "Over 65 in Arizona? Most community college districts offer senior tuition discounts — terms vary by district.",
+    bannerDetail:
+      "Arizona has no statewide senior-tuition statute; ARS § 15-1444 lets each community college district set its own policy. In practice most districts (Maricopa, Pima, Cochise, Coconino, etc.) offer some combination of waived or reduced tuition for residents 65+ on a space-available basis. Some districts include fees, others don't. Contact your local college's registrar or financial aid office for the specific terms that apply.",
+  },
 
   transferSupported: true,
-  popularCourses: [],
-  defaultZip: "",
-  defaultZipCity: "",
+  popularCourses: ["ENG 101", "PSY 101", "MAT 142", "BIO 201", "WRT 101", "ENG 102"],
+  defaultZip: "85003",
+  defaultZipCity: "Phoenix",
 
   courseDiscoveryUrl: (_collegeSlug: string, _prefix: string, _number: string) =>
     "https://www.example.edu/",
@@ -24,14 +38,14 @@ const azConfig: StateConfig = {
     "https://www.example.edu/",
 
   branding: {
-    siteName: "Community College Path Az",
-    tagline: "Search Public 2-year courses across all 21 colleges.",
-    footerText: "Community College Path Az — Find courses across all 21 Public 2-year colleges.",
-    disclaimer: "This is an independent project and is not affiliated with, endorsed by, or sponsored by Az Public 2-year Colleges.",
+    siteName: "Community College Path Arizona",
+    tagline: "Search course schedules across Arizona's 21 community colleges.",
+    footerText: "Community College Path Arizona — Find courses across all 21 Arizona community colleges.",
+    disclaimer: "This is an independent project and is not affiliated with, endorsed by, or sponsored by Arizona's community college districts or AZTransfer.com.",
     metaKeywords: [
-      "Az community college courses",
-      "Public 2-year course search",
-      "Az Public 2-year Colleges",
+      "Arizona community college courses",
+      "Arizona course search",
+      "Maricopa Pima Cochise Coconino community college",
     ],
   },
   scrapers: {
