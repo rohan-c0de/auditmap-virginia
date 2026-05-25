@@ -12,7 +12,7 @@ const azConfig: StateConfig = {
   // Set to null if no waiver exists, or fill in per the SeniorWaiverConfig shape.
   seniorWaiver: null,
 
-  transferSupported: false,
+  transferSupported: true,
   popularCourses: [],
   defaultZip: "",
   defaultZipCity: "",
@@ -57,8 +57,12 @@ const azConfig: StateConfig = {
     // AZ colleges covered: 4 Banner SSB + 2 Colleague + 10 Maricopa +
     // Diné + 2 Jenzabar CMC).
     prereqs: { source: "aggregate-from-courses" },
-    // manual-only: transfers — AZ has no entry in articulation-portals.json
-    //   yet. AZ's state system is AZTransfer.com; needs one-time integration.
+    // AZTransfer.com's Course Equivalency Guide (Apple WebObjects) is the
+    // statewide articulation system. Scraper does DeptIndex per college →
+    // ByInstDept per (college, subject) → one row per (CC course × ASU/NAU/UA).
+    transfers: [
+      { scripts: ["scripts/az/scrape-transfer-aztransfer.ts"], runner: "http" },
+    ],
     // manual-only: programs — scripts/az/scrape-programs.ts wrapper exists
     //   but each of the 4 Acalog catalogs needs manual navoid identification
     //   (auto-discovery finds catoid but not navoids — same as NV/CSN).
