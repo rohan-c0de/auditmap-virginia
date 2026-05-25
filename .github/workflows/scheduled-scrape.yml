@@ -501,14 +501,77 @@ jobs:
           jq -r '.markdown' /tmp/triage.json > /tmp/triage-body.md
 
           if [ -z "$existing" ]; then
-            gh issue create \
+            issue_url=$(gh issue create \
               --title "${title}" \
               --body-file /tmp/triage-body.md \
-              --label "scraper-health,automated,triage"
+              --label "scraper-health,automated,triage")
           else
             gh issue edit "$existing" --body-file /tmp/triage-body.md
             issue_state=$(gh issue view "$existing" --json state --jq .state)
             if [ "$issue_state" = "CLOSED" ]; then
               gh issue reopen "$existing" --comment "Reopening — triage found ${actionable} actionable finding(s)."
             fi
+            issue_url="https://github.com/${{ github.repository }}/issues/${existing}"
           fi
+          echo "issue_url=${issue_url}" >> "$GITHUB_OUTPUT"
+          echo "actionable=${actionable}" >> "$GITHUB_OUTPUT"
+        id: triage
+
+      - name: Email triage alert
+        if: steps.triage.outputs.actionable != '' && steps.triage.outputs.actionable != '0'
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+        run: |
+          actionable="${{ steps.triage.outputs.actionable }}"
+          issue_url="${{ steps.triage.outputs.issue_url }}"
+
+          broken=$(jq '[.results[] | select(.classification == "persistent-broken")] | length' /tmp/triage.json)
+          regressions=$(jq '[.results[] | select(.classification == "regression")] | length' /tmp/triage.json)
+          partial=$(jq '[.results[] | select(.classification == "partial-coverage-degraded")] | length' /tmp/triage.json)
+
+          # Build a plain-text summary of what's broken
+          summary=$(jq -r '
+            [.results[] | select(.classification == "persistent-broken" or .classification == "regression" or .classification == "partial-coverage-degraded")]
+            | map("• \(.state | ascii_upcase)/\(.datatype) job \(.job_index): \(.classification) — \(.key_signals | join("; "))")
+            | join("\n")
+          ' /tmp/triage.json)
+
+          subject="⚠️ Scraper triage: ${actionable} finding(s) need attention"
+
+          text="Scraper Health Triage Alert
+
+${actionable} actionable finding(s) from the latest cron run:
+- Persistent-broken: ${broken}
+- Regressions: ${regressions}
+- Partial-coverage: ${partial}
+
+${summary}
+
+View full triage: ${issue_url}
+Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
+          html="<div style=\"font-family: -apple-system, sans-serif; max-width: 560px; margin: 0 auto; padding: 24px;\">
+          <h2 style=\"color: #0d9488;\">Scraper Health Triage</h2>
+          <p><strong>${actionable}</strong> actionable finding(s) from the latest cron run:</p>
+          <ul>
+            <li>🔴 Persistent-broken: <strong>${broken}</strong></li>
+            <li>🟡 Regressions: <strong>${regressions}</strong></li>
+            <li>🟠 Partial-coverage: <strong>${partial}</strong></li>
+          </ul>
+          <pre style=\"background: #f4f4f5; padding: 12px; border-radius: 6px; font-size: 13px; overflow-x: auto;\">${summary}</pre>
+          <p><a href=\"${issue_url}\" style=\"color: #0d9488;\">View full triage →</a></p>
+          <hr style=\"border: none; border-top: 1px solid #eee;\">
+          <p style=\"font-size: 11px; color: #aaa;\">Community College Path · automated alert</p>
+          </div>"
+
+          curl -s -X POST https://api.resend.com/emails \
+            -H "Authorization: Bearer ${RESEND_API_KEY}" \
+            -H "Content-Type: application/json" \
+            -d "$(jq -n \
+              --arg from "Community College Path <notifications@communitycollegepath.com>" \
+              --arg to "rohanuplekar@gmail.com" \
+              --arg subject "$subject" \
+              --arg html "$html" \
+              --arg text "$text" \
+              '{from: $from, to: $to, subject: $subject, html: $html, text: $text}'
+            )"
