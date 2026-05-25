@@ -23,7 +23,7 @@ const kyConfig: StateConfig = {
       "Under KRS 164.284, Kentucky residents aged 65+ may enroll in credit courses at any state-supported postsecondary institution (including the 16 KCTCS colleges) tuition-free on a space-available basis. Fees, books, and other charges still apply. Bring proof of age and residency when you register.",
   },
 
-  transferSupported: false,
+  transferSupported: true,
   popularCourses: ["NAA 100", "ENG 101", "BIO 137", "BIO 139", "MAT 150", "PSY 110"],
   defaultZip: "40202",
   defaultZipCity: "Louisville",
@@ -58,9 +58,17 @@ const kyConfig: StateConfig = {
     prereqs: [
       { scripts: ["scripts/ky/scrape-catalog-prereqs.ts"], runner: "http" },
     ],
-    // manual-only: transfers — no entry in data/articulation-portals.json for KY.
-    //   Fallback options: KYTransfer.org (transfer.ky.gov) state portal, or
-    //   CollegeTransfer.Net per-college lookup.
+    // KY has no statewide articulation portal (knowhow2transfer.org was
+    // decommissioned). Each public 4-year publishes its KCTCS-equivalency
+    // table via CollegeSource TES public view. scrape-transfer-collegesource-tes.ts
+    // solves the math-mode captcha (simple arithmetic — no OCR), walks the
+    // ASP.NET WebForms session per receiver (UK, UofL, EKU, NKU, Morehead, WKU),
+    // and aggregates KCTCS → 4-year mappings. KCTCS uses common course numbers
+    // across all 16 colleges, so each receiver treats KCTCS as a single
+    // sending institution. KSU has no public TES view (omitted).
+    transfers: [
+      { scripts: ["scripts/ky/scrape-transfer-collegesource-tes.ts"], runner: "http" },
+    ],
     programs: [{ scripts: ["scripts/ky/scrape-programs.ts"], runner: "http" }],
   },
 };
