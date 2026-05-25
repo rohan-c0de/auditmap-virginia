@@ -43,7 +43,7 @@ const miConfig: StateConfig = {
       "Michigan has no statewide senior-tuition statute. The 28 community college districts (organized under the Community College Act, MCL 389.21+) set their own tuition policies. Many offer reduced or waived tuition for residents 60+ on a space-available basis, sometimes with fee adjustments. Contact your college's registrar or financial aid office for the specific terms.",
   },
 
-  transferSupported: false,
+  transferSupported: true,
   popularCourses: ["ENG 111", "ENG 1510", "ENG 101", "ENGL 101", "ENGL 121", "ENG 1520"],
   defaultZip: "48933",
   defaultZipCity: "Lansing",
@@ -82,9 +82,10 @@ const miConfig: StateConfig = {
       { scripts: ["scripts/mi/scrape-banner-ssb.ts"], runner: "http" },
     ],
     prereqs: { source: "aggregate-from-courses" },
-    // manual-only: transfers — CollegeTransfer.Net has zero MI in-state targets.
-    // Michigan Transfer Network (michigantransfernetwork.org) or individual
-    // university pages are the realistic path.
+    transfers: [
+      // MiTransfer.org AJAX portal — 5 major MI universities × 28 CCs, ~155 fetches.
+      { scripts: ["scripts/mi/scrape-transfer-mitransfer.ts"], runner: "http" },
+    ],
     // manual-only: programs — Phase 5+.
   },
 };

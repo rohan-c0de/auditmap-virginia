@@ -20,7 +20,7 @@ const ohConfig: StateConfig = {
       "Ohio Revised Code § 3345.27 (Program 60) lets Ohio residents 60+ audit courses at state-assisted institutions tuition-free on a space-available basis. Confirm with each college's registrar.",
   },
 
-  transferSupported: false,
+  transferSupported: true,
   popularCourses: ["ENG 1010", "MATH 1410", "ENG 1020", "PSY 1010", "GEN 1070", "COMM 1010"],
   defaultZip: "43215",
   defaultZipCity: "Columbus",
@@ -54,9 +54,10 @@ const ohConfig: StateConfig = {
       { scripts: ["scripts/oh/scrape-colleague.ts"], runner: "playwright" },
       { scripts: ["scripts/oh/scrape-banner8.ts"], runner: "http" },
     ],
-    // manual-only: transfers — CollegeTransfer.Net has zero OH in-state targets.
-    // OhioTransfer.org / TAG (Transfer Assurance Guides) or individual
-    // university articulation pages are the realistic path.
+    transfers: [
+      // OSU Quick Equivalencies Excel — ~5K mappings across 15 OH CCs, single GET.
+      { scripts: ["scripts/oh/scrape-transfer-osu.ts"], runner: "http" },
+    ],
     prereqs: { source: "aggregate-from-courses" },
     // manual-only: programs — Phase 5+.
   },
