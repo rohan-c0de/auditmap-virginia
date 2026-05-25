@@ -43,6 +43,8 @@ const COLLEAGUE_COLLEGES: Record<string, string> = {
   "passaic": "https://eselfservice.pccc.edu",
   "rcbc": "https://selfservice2019.rcbc.edu",
   "ucnj": "https://ucc-ss.colleague.elluciancloud.com",
+  // Added via coverage-expansion + refingerprint workflow:
+  "ocean": "https://ocean.edu",
 };
 
 type CourseMode = "in-person" | "online" | "hybrid" | "zoom";

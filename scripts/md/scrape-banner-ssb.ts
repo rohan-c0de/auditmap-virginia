@@ -23,6 +23,8 @@ const PAGE_SIZE = 500;
 const BANNER_COLLEGES: Record<string, string> = {
   harford: "https://banner.harford.edu",
   montgomery: "https://b9pubstu.glb.montgomerycollege.edu",
+  // Added via coverage-expansion + refingerprint workflow:
+  bccc: "https://bccc-prod-pxes02.banner.elluciancloud.com:8090",
 };
 
 interface BannerTerm {

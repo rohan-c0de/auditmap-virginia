@@ -19,6 +19,11 @@ import { scrapeColleagueState } from "../lib/scrape-colleague";
 const HOSTS: Record<string, string> = {
   "amarillo-college": "https://acselfservice.actx.edu",
   "odessa-college": "https://sserv.odessa.edu",
+  // Added via coverage-expansion + refingerprint workflow:
+  "college-of-the-mainland": "https://selfserve.com.edu",
+  "galveston-college": "https://gcsis-ssprod.gc.edu",
+  "mclennan-community-college": "https://mymcc.mclennan.edu",
+  "texas-southmost-college": "https://selfservice.tsc.edu",
 };
 
 async function main() {
