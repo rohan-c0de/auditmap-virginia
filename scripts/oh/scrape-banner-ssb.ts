@@ -28,5 +28,10 @@ await scrapeBannerSsbState({
     "cuyahoga-community-college-district": "https://banstup.tri-c.edu",
     "stark-state-college": "https://selfservice-registration.starkstate.edu",
     "terra-state-community-college": "https://banxe.terra.edu",
+    // Added via coverage-expansion workflow: refingerprint captured the
+    // courseSearchUrl https://zanestate.edu/StudentRegistrationSsb/ssb/...
+    // and verified the StudentRegistrationSsb body marker. Unusually,
+    // Banner SSB 9 is at the root domain rather than a subdomain.
+    "zane-state-college": "https://zanestate.edu",
   },
 });
