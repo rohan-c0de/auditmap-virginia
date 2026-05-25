@@ -14,7 +14,7 @@ const ilConfig: StateConfig = {
   seniorWaiver: null,
 
   transferSupported: false,
-  popularCourses: [],
+  popularCourses: ["ENGLISH 101", "BIOLOGY 121", "CHEM 121", "ENG 101", "ENGLISH 102", "SPEECH 101-1"],
   defaultZip: "60601",
   defaultZipCity: "Chicago",
 

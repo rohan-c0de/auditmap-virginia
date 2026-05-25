@@ -11,7 +11,7 @@ const orConfig: StateConfig = {
   seniorWaiver: null,
 
   transferSupported: false,
-  popularCourses: [],
+  popularCourses: ["WR 121Z", "MTH 111Z", "WR 227Z", "COMM 111Z", "PSY 201Z", "WR 115"],
   defaultZip: "97201",
   defaultZipCity: "Portland",
 

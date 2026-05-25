@@ -34,7 +34,7 @@ const miConfig: StateConfig = {
   seniorWaiver: null,
 
   transferSupported: false,
-  popularCourses: [],
+  popularCourses: ["ENG 111", "ENG 1510", "ENG 101", "ENGL 101", "ENGL 121", "ENG 1520"],
   defaultZip: "48933",
   defaultZipCity: "Lansing",
 

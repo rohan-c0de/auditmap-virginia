@@ -16,7 +16,7 @@ const iaConfig: StateConfig = {
   seniorWaiver: null,
 
   transferSupported: false,
-  popularCourses: [],
+  popularCourses: ["ENG 105", "SPC 112", "PSY 111", "SOC 110", "ENG 106", "BIO 168"],
   defaultZip: "50309",
   defaultZipCity: "Des Moines",
 

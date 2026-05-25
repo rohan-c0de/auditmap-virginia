@@ -21,7 +21,7 @@ const ohConfig: StateConfig = {
   },
 
   transferSupported: false,
-  popularCourses: [],
+  popularCourses: ["ENG 1010", "MATH 1410", "ENG 1020", "PSY 1010", "GEN 1070", "COMM 1010"],
   defaultZip: "43215",
   defaultZipCity: "Columbus",
 

@@ -14,7 +14,7 @@ const kyConfig: StateConfig = {
   seniorWaiver: null,
 
   transferSupported: false,
-  popularCourses: [],
+  popularCourses: ["NAA 100", "ENG 101", "BIO 137", "BIO 139", "MAT 150", "PSY 110"],
   defaultZip: "40202",
   defaultZipCity: "Louisville",
 

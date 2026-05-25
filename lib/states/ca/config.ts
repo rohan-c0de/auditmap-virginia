@@ -15,7 +15,7 @@ const caConfig: StateConfig = {
   seniorWaiver: null,
 
   transferSupported: false,
-  popularCourses: [],
+  popularCourses: ["ENGL C1000", "COMM C1000", "STAT C1000", "ENGL C1001", "PSYC C1000", "POLS C1000"],
   defaultZip: "90029",
   defaultZipCity: "Los Angeles",
 
