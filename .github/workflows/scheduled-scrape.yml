@@ -472,3 +472,43 @@ jobs:
           elif [ "$ALL_HEALTHY" = "false" ] && [ "$state" = "CLOSED" ]; then
             gh issue reopen "$existing" --comment "Reopening — at least one ${DT} scraper is failing or producing empty output."
           fi
+
+      - name: Run triage classifier
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npx tsx scripts/lib/triage-scraper-health.ts \
+            --history data/state-health/history.jsonl \
+            --window-days 14 \
+            --out /tmp/triage.json 2>&1
+
+          actionable=$(jq '[.results[] | select(.classification == "persistent-broken" or .classification == "regression" or .classification == "partial-coverage-degraded")] | length' /tmp/triage.json)
+          if [ "$actionable" -eq 0 ]; then
+            echo "No actionable triage findings."
+            exit 0
+          fi
+
+          title="Scraper triage — actionable findings"
+          existing=$(gh issue list \
+            --search "in:title \"${title}\"" \
+            --state all \
+            --limit 5 \
+            --json number,title \
+            --jq ".[] | select(.title == \"${title}\") | .number" \
+            | head -n 1)
+
+          jq -r '.markdown' /tmp/triage.json > /tmp/triage-body.md
+
+          if [ -z "$existing" ]; then
+            gh issue create \
+              --title "${title}" \
+              --body-file /tmp/triage-body.md \
+              --label "scraper-health,automated,triage"
+          else
+            gh issue edit "$existing" --body-file /tmp/triage-body.md
+            issue_state=$(gh issue view "$existing" --json state --jq .state)
+            if [ "$issue_state" = "CLOSED" ]; then
+              gh issue reopen "$existing" --comment "Reopening — triage found ${actionable} actionable finding(s)."
+            fi
+          fi
