@@ -29,7 +29,7 @@ const txConfig: StateConfig = {
       "Texas Education Code § 54.365 lets Texas residents aged 65+ take up to 6 credit hours per semester at any state-funded community college without paying tuition, on a space-available basis. Fees still apply; seats are allocated after regular registration. Contact your college's registrar for the timing.",
   },
 
-  transferSupported: false,
+  transferSupported: true,
   popularCourses: ["ENGL 1301", "MATH 1314", "ENGL 1302", "HIST 1301", "GOVT 2305", "EDUC 1300"],
   defaultZip: "77002",
   defaultZipCity: "Houston",
@@ -114,7 +114,9 @@ const txConfig: StateConfig = {
         runner: "http",
       },
     ],
-    // manual-only: transfers — Phase 3 (transfer-equiv) not yet wired up.
+    transfers: [
+      { scripts: ["scripts/tx/scrape-transfer-tccns.ts"], runner: "http" },
+    ],
     // manual-only: prereqs — Phase 4.
     // manual-only: programs — Phase 5+.
   },

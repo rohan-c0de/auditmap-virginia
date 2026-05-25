@@ -54,7 +54,9 @@ const ohConfig: StateConfig = {
       { scripts: ["scripts/oh/scrape-colleague.ts"], runner: "playwright" },
       { scripts: ["scripts/oh/scrape-banner8.ts"], runner: "http" },
     ],
-    // manual-only: transfers — no articulation portal registered for OH yet.
+    // manual-only: transfers — CollegeTransfer.Net has zero OH in-state targets.
+    // OhioTransfer.org / TAG (Transfer Assurance Guides) or individual
+    // university articulation pages are the realistic path.
     prereqs: { source: "aggregate-from-courses" },
     // manual-only: programs — Phase 5+.
   },

@@ -68,12 +68,9 @@ const ilConfig: StateConfig = {
     // Colleague), then aggregated into data/il/prereqs.json by the unified
     // pipeline. Declaring this sentinel lights up the cron prereq job.
     prereqs: { source: "aggregate-from-courses" },
-    // manual-only: transfers — iTransfer.org's iManage portal (the IL statewide
-    // articulation tool) is behind login at https://imanage.itransfer.org/IAI/;
-    // the public iTransfer pages only describe IAI codes themselves, not the
-    // per-college crosswalk. Realistic path is CollegeTransfer.net (see
-    // scripts/lib/scrape-collegetransfer.ts) with receiver IDs for IL public
-    // universities (UIUC, UIC, ISU, NIU, SIU, etc.). Not yet built.
+    // manual-only: transfers — CollegeTransfer.Net has zero IL in-state targets
+    // (only Indiana universities). Need iTransfer.org (login-gated) or
+    // individual university articulation pages.
     // manual-only: programs — Phase 5+; no state has program scrapers yet.
   },
 };
