@@ -49,6 +49,14 @@ export interface SmartCatalogIqProgramConfig {
   catalogPath?: string;
   /** Programs index path segment, default "programs-of-study". */
   programsPath?: string;
+  /**
+   * When true, the link-follower matches hrefs that START WITH programsRoot
+   * minus its trailing slash — catching sibling paths like
+   * "programs-of-study-business-..." in addition to normal child paths like
+   * "programs-of-study/accounting". Needed for colleges (e.g. gntc) that
+   * organise programs in flat sibling paths rather than subdirectories.
+   */
+  followSiblingPaths?: boolean;
 }
 
 const UA =
@@ -197,10 +205,18 @@ async function discoverLatestCatalog(
 async function discoverProgramPaths(
   baseUrl: string,
   programsRoot: string,
+  followSiblingPaths = false,
 ): Promise<string[]> {
   const visited = new Set<string>();
   const programLinks = new Set<string>();
   const queue: string[] = [programsRoot];
+
+  // When followSiblingPaths is true, match hrefs that start with the root
+  // without its trailing slash — catching sibling paths like
+  // "programs-of-study-business-..." in addition to child paths.
+  const rootPrefix = followSiblingPaths
+    ? programsRoot.replace(/\/$/, "")
+    : programsRoot;
 
   while (queue.length > 0) {
     const path = queue.shift()!;
@@ -217,14 +233,13 @@ async function discoverProgramPaths(
     }
 
     // Otherwise treat as a subject-area page; queue its children.
-    $(`a[href^="${programsRoot}"]`).each((_, el) => {
+    $(`a[href^="${rootPrefix}"]`).each((_, el) => {
       const href = ($(el).attr("href") || "").split("#")[0].split("?")[0];
       if (!href) return;
       if (href === programsRoot) return;
       if (href === programsRoot.replace(/\/$/, "")) return;
       if (visited.has(href)) return;
-      // Avoid runaway: only follow links that look like deeper paths.
-      if (!href.startsWith(programsRoot)) return;
+      if (!href.startsWith(rootPrefix)) return;
       queue.push(href);
     });
     await sleep(80);
@@ -490,7 +505,7 @@ export async function scrapeSmartCatalogIqPrograms(
 
   const programsRoot = `/en/${year}/${catalogPath}/${programsPath}/`;
   console.log(`  [${collegeSlug}] Walking ${programsRoot} for program detail pages...`);
-  const paths = await discoverProgramPaths(baseUrl, programsRoot);
+  const paths = await discoverProgramPaths(baseUrl, programsRoot, config.followSiblingPaths ?? false);
   console.log(`  [${collegeSlug}] Found ${paths.length} program detail pages`);
 
   if (paths.length === 0) {

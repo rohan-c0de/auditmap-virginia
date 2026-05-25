@@ -1,12 +1,19 @@
 /**
- * scrape-programs.ts — scrape degree/program requirements for
- * Wiregrass Georgia Technical College from its Acalog catalog.
+ * scrape-programs.ts — scrape degree/program requirements for GA TCSG
+ * colleges that run on Acalog catalogs.
  *
- * Only 1 of 22 GA TCSG colleges has an Acalog catalog. The rest
- * use SmartCatalogIQ, PDFs, or have no web catalog.
+ * Acalog colleges (2 of 22):
+ *   - wiregrass-tech   → catalog.wiregrass.edu
+ *   - gwinnett-tech    → catalog.gwinnetttech.edu (catoid=19, navoid=3629)
+ *
+ * 13 other TCSG colleges use SmartCatalogIQ — handled by
+ * scripts/ga/scrape-smartcatalogiq-programs.ts. The remaining 7 use
+ * Nimble CMS (4), PDF-only (2), or CleanCatalog (1) — documented as
+ * ceilings in lib/states/ga/config.ts.
  *
  * Usage:
  *   npx tsx scripts/ga/scrape-programs.ts
+ *   npx tsx scripts/ga/scrape-programs.ts --college gwinnett-tech
  */
 
 import * as fs from "fs";
@@ -21,6 +28,15 @@ const COLLEGES: AcalogProgramConfig[] = [
     baseUrl: "https://catalog.wiregrass.edu",
     catoidFallback: 2,
     programNavoids: [53],
+    autoDiscoverCatoid: false,
+  },
+  {
+    // catalog.gwinnetttech.edu is HTTP-only (HTTPS returns connection refused).
+    // catoid=19 is the current catalog; navoid=3629 is "Programs of Study".
+    collegeSlug: "gwinnett-tech",
+    baseUrl: "http://catalog.gwinnetttech.edu",
+    catoidFallback: 19,
+    programNavoids: [3629],
     autoDiscoverCatoid: false,
   },
 ];
