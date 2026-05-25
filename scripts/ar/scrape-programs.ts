@@ -26,7 +26,11 @@
  *   ANC, BRTC, EACC, South Arkansas, SEARK, UACCB — PDF-only catalogs;
  *            6 PDFs of varying layouts.
  *
- * Coverage after this pass: 2 of 14 colleges (14%).
+ * Coverage after this pass: 3 of 14 colleges (21%).
+ *
+ *   southeast-arkansas-college → 2025-2026_Seark_Catalog.pdf (148 pages,
+ *            pdftotext -layout parser). Handled by a separate scraper:
+ *            scripts/ar/scrape-seark-pdf-programs.ts
  *
  * Usage:
  *   npx tsx scripts/ar/scrape-programs.ts

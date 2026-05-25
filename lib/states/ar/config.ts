@@ -91,6 +91,10 @@ const arConfig: StateConfig = {
     // header.
     programs: [
       { scripts: ["scripts/ar/scrape-programs.ts"], runner: "http" },
+      // SEARK: PDF catalog parser — requires pdftotext (poppler-utils).
+      // Produces 43 programs (AAS/TC/CP/AA/AGS/CGS/AAT) from the 148-page
+      // 2025-2026 SEARK catalog PDF at seark.edu.
+      { scripts: ["scripts/ar/scrape-seark-pdf-programs.ts"], runner: "http" },
     ],
   },
   documentedCeilings: {
