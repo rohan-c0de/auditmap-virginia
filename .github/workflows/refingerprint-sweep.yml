@@ -34,7 +34,15 @@ permissions:
 jobs:
   sweep:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    # 300 minutes (5h). Empirical CI runtime on the current 652-college
+    # sweep is ~80 min; the 60-min initial guess (based on ~25-min local
+    # benchmark) was too tight — run 26407355395 hit it at 475/652 and
+    # got cancelled. Generous 5h ceiling absorbs (a) outbound-network
+    # variance to slow college servers, (b) state-count growth toward
+    # all 50 states, and (c) future re-runs that probe more subdomain
+    # patterns. Job exits as soon as the sweep finishes; this is a
+    # ceiling, not a target.
+    timeout-minutes: 300
     steps:
       - uses: actions/checkout@v4
 
@@ -54,7 +62,7 @@ jobs:
           fi
           npx tsx scripts/lib/refingerprint-sweep.ts \
             $STATES_ARG \
-            --concurrency 6 \
+            --concurrency 8 \
             --diff-out /tmp/refingerprint-diff.json
           echo "diff_count=$(jq -r '.diffCount' /tmp/refingerprint-diff.json)" >> "$GITHUB_OUTPUT"
           {
