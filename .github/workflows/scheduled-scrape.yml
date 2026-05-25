@@ -1,5 +1,4 @@
 name: Scheduled scrape (unified)
-
 # Unified scheduled-scrape workflow (issue #59, PR 2; per-state PRs in
 # issue #169). Replaces the VA-only weekly-scrape-va.yml exemplar (#58).
 # Reads StateConfig.scrapers to build its matrix, so adding a state to
