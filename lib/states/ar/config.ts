@@ -78,9 +78,25 @@ const arConfig: StateConfig = {
     // no public ACTS page.
     transfers: [
       { scripts: ["scripts/ar/scrape-transfer-acts-catalogs.ts"], runner: "http" },
+      // ASU-Jonesboro publishes a clean JSON API at asutep.astate.edu/server/
+      // (action dispatcher; no auth, no CAPTCHA). One scraper, all AR sending
+      // CCs, ~14K mappings. Same flow could in principle work from a residential
+      // IP for other universities, but no other AR receiver exposes one.
+      { scripts: ["scripts/ar/scrape-transfer-asu-jonesboro.ts"], runner: "http" },
     ],
     // manual-only: prereqs — aggregated from course-search data; no dedicated catalog scraper.
     // manual-only: programs — Phase 6 wrapper at scripts/ar/scrape-programs.ts needs per-college catalog discovery first.
+  },
+  documentedCeilings: {
+    // HSU (Henderson State) operates its transfer-equivalency tool at
+    // tcet.hsu.edu behind an Azure AD Application Proxy. Unauthenticated
+    // requests get HTTP 500 from the proxy connector before the underlying
+    // app sees them. UAPB (Pine Bluff) was the original ACTS aux page
+    // (acts_information.aspx) but that URL is now 404; UAPB publishes no
+    // public per-course mapping anywhere on uapb.edu. Both would require
+    // registrar contact or staff credentials to close.
+    transfers:
+      "HSU (Henderson State, tcet.hsu.edu) sits behind Azure AD App Proxy — 500 to anonymous; UAPB (Pine Bluff) has no public per-course ACTS table. Both require registrar contact to close. The other 7 AR public 4-years are covered via ATU/UAF/UCA master tables, the UALR/UAFS/SAU/UAM Acalog harvest, and the ASU-Jonesboro JSON API.",
   },
 };
 
