@@ -41,61 +41,58 @@ per state.
 
 ### 2. Grade each state
 
-Apply these grading criteria to each state's collected data. The grades reflect how a real student would experience the state — not how the developer feels about it.
+**Grades are computed by the collector, not by you.** Each state in the output JSON has a `grades` block with five per-dimension grades plus a composite. Your job in this phase is to *read* the grades and surface them clearly to the user — not to re-derive them from the raw counts.
 
-#### Grade A — Fully complete
-All 7 dimensions green:
-- Course coverage: `coveredColleges == collegeCount` (100%)
-- Prereqs: exists, >0 entries, no HTML contamination, scraper wired
-- Transfers: exists, >0 entries, `transferSupported: true`, scraper wired, university count appropriate for state size (1 is fine for single-university states like VT; not fine for states with 5+ public universities)
-- Scorecard: files match `collegeCount`
-- All scrapers declared (no `manual-only` for courses/prereqs/transfers)
-- Config: `seniorWaiver` populated, `popularCourses` non-empty, branding complete
-- Terms: current (within 2 semesters), no suspicious non-credit terms
+Each state's `grades` block looks like:
 
-#### Grade B — Nearly complete
-One minor gap. Examples of "minor":
-- `popularCourses` empty (config-only fix)
-- 1 college missing out of many (>90% coverage)
-- Stale term files lingering alongside current ones
-- Scorecard missing for 1 college
+```jsonc
+"grades": {
+  "courses":   { "grade": "A", "reason": "full coverage (23/23), terms clean" },
+  "prereqs":   { "grade": "A", "reason": "374 entries, wired, clean" },
+  "transfers": { "grade": "D", "reason": "data exists (15483) but scraper not wired — will go stale" },
+  "scorecard": { "grade": "A", "reason": "23/23 scorecards" },
+  "config":    { "grade": "A", "reason": "all config fields populated" },
+  "composite": "D",
+  "limitedBy": "transfers",
+  "ceilingsApplied": []
+}
+```
 
-#### Grade C — Functional but gaps
-Structural gaps that affect the user experience:
-- Transfers or prereqs missing/empty
-- Multiple colleges without course data (but >50% covered)
-- All scrapers `manual-only` (no automated freshness)
-- `seniorWaiver: null` in a state that has a waiver program
+**Composite = worst of the five dimensions.** `limitedBy` names the dimension that produced the composite, so the next fix is always obvious. A state can't earn an A composite while any single dimension is in the gutter.
 
-#### Grade D — Skeleton
-Bootstrap done but major data missing:
-- Courses for <50% of colleges
-- No transfers AND no prereqs
-- Multiple config fields placeholder/null
+**Per-dimension thresholds** (encoded in `collect-audit-data.ts`, summarized here):
 
-#### Grade F — Broken
-Nearly non-functional:
-- <15% course coverage
-- Empty prereqs file
-- Core data files missing or broken
+| Dim | A | B | C | D | F |
+|---|---|---|---|---|---|
+| courses | ≥95% coverage, terms clean | ≥85% OR 1 minor issue | ≥50% | ≥15% | <15% |
+| prereqs | ≥100 entries, no HTML, wired | ≥10 entries, no HTML | HTML contamination OR <10 entries | file empty | no file |
+| transfers | ≥3 universities AND ≥1000 mappings AND wired | ≥2 universities AND ≥500 mappings AND wired | 1 university OR <500 mappings (wired) | data exists but not wired | no data, no ceiling |
+| scorecard | full coverage | ≥80% | ≥50% | <50% | no directory |
+| config | all fields populated | 1 gap | 2 gaps | seniorWaiver placeholder | 4+ gaps |
+
+**Documented ceilings exempt up to B floor.** When a state declares `StateConfig.documentedCeilings.transfers` (e.g. NH: "UNH publishes no public articulation database"), the transfers dimension is capped at B — it can still earn an A on real merit, but it can't drop below B for the documented reason. Same rule for `scorecard`. For `courses`, the documented-college slugs are removed from the coverage denominator. The `ceilingsApplied` array records which exemptions were active.
+
+When the data legitimately shifts a grade, update the expected values in `grade-snapshot.test.ts` in the same commit with a one-line justification.
 
 ### 3. Format the report
 
-Output one line per state, sorted by tier then alphabetically:
+Output one line per state, sorted by composite tier then alphabetically:
 
 ```
-{state} [{tier}] — {one-sentence summary of what's missing or "all green"}
+{state} [{composite}] — limited by {limitedBy}: {reason}  | dims: crs={A} prq={A} trf={D} sc={A} cfg={A}
 ```
 
-End with a summary table:
+End with a tier-distribution table:
 
 ```
 | Tier | Count | States |
 |------|-------|--------|
-| A    | 3     | de, ri, vt |
-| B    | 7     | ct, ga, nc, nh, nv, ny, tn |
+| A    | 9     | ct, de, ga, ky, me, nc, nv, ny, tn |
+| B    | 5     | al, dc, nh, ri, sc |
 ...
 ```
+
+Call out any state where `ceilingsApplied` is non-empty so reviewers know which exemptions are active and *why*.
 
 ### 4. Cross-cutting issues
 
@@ -123,10 +120,17 @@ These are the specific checks that distinguish a deep audit from a surface-level
 
 ## Interpreting results
 
-When presenting to the user, be specific about what's actionable:
-- **Quick wins** (5-15 min): empty `popularCourses`, missing `defaultZip`
-- **Medium effort** (1-2 hr): 1 missing college, HTML cleanup in prereqs, stale term purge
-- **Heavy lift** (3+ hr): missing transfer scraper, multiple colleges need bespoke scrapers
-- **Blocked**: auth-gated colleges, no public articulation portal
+The composite + `limitedBy` tells you *what* to fix; effort estimation is your call. When presenting to the user, group findings by `limitedBy`:
 
-Suggest a prioritized fix order: quick wins first, then B→A transitions, then C→B.
+- **`limitedBy: courses`** — usually heavy: a college needs a bespoke scraper, a Banner SSB host is down, or the SIS is auth-gated. Quick fixes are rare here.
+- **`limitedBy: transfers`** — split by reason:
+  - "not wired" → config-only edit (~5 min per state); wire the existing script to `scrapers.transfers`. Validate the script runs first.
+  - "thin: 1 university" → medium-to-heavy: find a state portal or write a second university scraper.
+  - "no transfer data" → heavy: investigate the state's articulation infrastructure from scratch.
+- **`limitedBy: prereqs`** — usually HTML contamination (medium: regex cleanup pass) or empty file (heavy: need an extractor pass).
+- **`limitedBy: scorecard`** — light: re-run the scorecard fetcher.
+- **`limitedBy: config`** — quick wins: `popularCourses`, `defaultZip`, branding fields are all 1-5 min config edits.
+
+Suggest a prioritized fix order by impact-per-hour: quick `config`/`scorecard` wins first if any, then validated `transfers` cron-wirings, then targeted `courses` gap-fills. Avoid bundling unrelated fixes across states into one PR — each state is its own change.
+
+Ceiling exemptions (`ceilingsApplied`) are not bugs and shouldn't be presented as gaps to fix.
