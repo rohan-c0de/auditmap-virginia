@@ -33,6 +33,7 @@ async function main() {
     "santa-rosa-junior-college":                  "https://reg-prod.santarosajc.elluciancloud.com:8103",
     "sierra-college":                             "https://ss.oci.sierracollege.edu",
     "college-of-the-siskiyous":                   "https://reg-prod.cloud.siskiyous.edu",
+  },
   });
 }
 
