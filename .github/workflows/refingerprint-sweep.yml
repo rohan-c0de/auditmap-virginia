@@ -34,7 +34,12 @@ permissions:
 jobs:
   sweep:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    # 120 (not 60): empirical CI runtime on the current 652-college sweep
+    # is ~80 minutes — the 60-minute initial guess (based on a ~25-min
+    # local run at concurrency 8) was too tight. Run 26407355395 hit the
+    # 60-min limit at 475/652 (73%) and got cancelled. 120 gives headroom
+    # for state-count growth before the next bump becomes necessary.
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
 
@@ -54,7 +59,7 @@ jobs:
           fi
           npx tsx scripts/lib/refingerprint-sweep.ts \
             $STATES_ARG \
-            --concurrency 6 \
+            --concurrency 8 \
             --diff-out /tmp/refingerprint-diff.json
           echo "diff_count=$(jq -r '.diffCount' /tmp/refingerprint-diff.json)" >> "$GITHUB_OUTPUT"
           {
