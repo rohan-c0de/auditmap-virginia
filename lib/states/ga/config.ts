@@ -107,17 +107,20 @@ const gaConfig: StateConfig = {
     programs: [
       // Acalog: wiregrass-tech + gwinnett-tech
       { scripts: ["scripts/ga/scrape-programs.ts"], runner: "http" },
-      // SmartCatalogIQ: 13 TCSG colleges (see scrape-smartcatalogiq-programs.ts
-      // for the full list; three use non-obvious subdomains: gntc, gptc, oftc, sctech)
+      // SmartCatalogIQ: 12 TCSG colleges (see scrape-smartcatalogiq-programs.ts
+      // for the full list; non-obvious subdomains: gntc, gptc, oftc, sctech)
       { scripts: ["scripts/ga/scrape-smartcatalogiq-programs.ts"], runner: "http" },
+      // Nimble CMS: albany-tech, south-ga-tech, southeastern-tech, southern-regional-tech
+      { scripts: ["scripts/ga/scrape-nimble-cms-programs.ts"], runner: "http" },
+      // CleanCatalog (Drupal 11): coastal-pines-tech
+      { scripts: ["scripts/ga/scrape-cleancatalog-programs.ts"], runner: "http" },
+      // PDF-only catalogs: central-ga-tech, north-ga-tech (uses pdftotext)
+      { scripts: ["scripts/ga/scrape-tcsg-pdf-programs.ts"], runner: "http" },
     ],
   },
   documentedCeilings: {
     programs:
-      "Athens Tech's SmartCatalogIQ catalog only publishes general-education requirement pages, not individual degree-plan pages (no h1.degreeTitle). " +
-      "Albany Tech, South GA Tech, Southeastern Tech, and Southern Regional Tech use Nimble CMS embedded catalogs (no public API). " +
-      "Central GA Tech and North GA Tech publish PDF-only catalogs (no structured web catalog). " +
-      "Coastal Pines Tech uses Drupal 11 + CleanCatalog (no existing template).",
+      "Athens Tech's SmartCatalogIQ catalog only publishes general-education requirement pages, not individual degree-plan pages (no h1.degreeTitle) — this is the sole remaining program-data gap among Georgia's 22 TCSG colleges.",
   },
 };
 
