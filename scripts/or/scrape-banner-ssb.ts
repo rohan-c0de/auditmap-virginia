@@ -19,6 +19,7 @@ async function main() {
     "central-oregon-community-college":  "https://reg-prod.cocc.edu",
     "lane-community-college":            "https://my.lanecc.edu",
     "linn-benton-community-college":     "https://banner.linnbenton.edu:8458",
+  },
   });
 }
 

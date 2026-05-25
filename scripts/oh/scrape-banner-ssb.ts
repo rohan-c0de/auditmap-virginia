@@ -34,6 +34,7 @@ async function main() {
     // and verified the StudentRegistrationSsb body marker. Unusually,
     // Banner SSB 9 is at the root domain rather than a subdomain.
     "zane-state-college": "https://zanestate.edu",
+  },
   });
 }
 
