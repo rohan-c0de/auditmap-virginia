@@ -14,13 +14,30 @@ Performs a deep quality audit of one or all states in the registry. The key insi
 Run the bundled collector script. It reads every state's data files and config, outputting structured JSON with all 7 audit dimensions pre-computed:
 
 ```bash
-npx tsx .claude/skills/state-audit/scripts/collect-audit-data.ts [state-slug]
+npx tsx .claude/skills/state-audit/scripts/collect-audit-data.ts [state-slug] [--check-prod]
 ```
 
-- No argument → audits all states in the registry
-- With argument → audits just that state (e.g. `ny`)
+- No positional arg → audits all states in the registry
+- With positional arg → audits just that state (e.g. `ny`)
+- `--check-prod` → for each college with non-empty local data, hits the
+  prod page at `communitycollegepath.com/{state}/college/{slug}` and
+  counts unique course-code mentions in the rendered HTML. Pages with
+  Supabase data have hundreds of matches; pages where the Supabase
+  import skipped the college have 0. Populates `prodCoverage` on each
+  state's result. **Slow** (~2s per college serial, polite to the CDN)
+  — typical state takes 10–30s, NC's 58 colleges ~2 min, CA's 35
+  ~70s. Skip the flag unless you're investigating an import gap.
 
 The script outputs JSON to stdout. Capture it for grading.
+
+**When to use `--check-prod`:** the default audit checks on-disk
+data only. It will count SCKTC as "covered" if `data/ky/courses/
+southcentral-kentucky-community-and-technical-college/*.json` files
+exist, even if Supabase has zero rows and the prod page shows nothing.
+If a user reports "this college page is empty on the live site" or
+you're auditing the gap between "we shipped data" and "users can
+see it", add `--check-prod` and inspect `prodCoverage.missingOnProd`
+per state.
 
 ### 2. Grade each state
 

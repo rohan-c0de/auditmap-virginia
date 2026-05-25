@@ -80,6 +80,28 @@ interface AuditResult {
     scorecard: boolean;
     courseColleges: string[];
   };
+  /**
+   * Optional prod-vs-local coverage check (only populated when --check-prod
+   * is passed). For each college with >0 local sections, fetches
+   * https://communitycollegepath.com/{state}/college/{slug} and counts
+   * course-code occurrences in the rendered HTML. Pages with Supabase data
+   * have hundreds of occurrences; pages where the Supabase import skipped
+   * the college have zero. The audit's `coveredColleges` count reflects
+   * on-disk data only — this dimension surfaces the gap between "we
+   * committed sections to git" and "students can actually find them".
+   * Real-world example: SCKTC in KY had 823 sections on disk but 0 on
+   * prod because its data landed before import-on-merge.yml existed and
+   * no subsequent KY-courses import ever ran.
+   */
+  prodCoverage?: {
+    checked: boolean;
+    /** Slugs with local sections but 0 course codes on the prod page. */
+    missingOnProd: string[];
+    /** Slugs successfully verified on prod (>=20 course-code mentions). */
+    verifiedOnProd: string[];
+    /** Slugs where the prod fetch errored (network / 404 / parse). */
+    fetchErrors: string[];
+  };
 }
 
 function getStates(): string[] {
@@ -408,14 +430,79 @@ function auditState(slug: string): AuditResult {
   };
 }
 
-function main() {
-  const targetSlug = process.argv[2]?.toLowerCase();
+// ---------------------------------------------------------------------------
+// Prod-vs-local coverage check
+// ---------------------------------------------------------------------------
+
+const PROD_BASE = "https://communitycollegepath.com";
+const PROD_COURSE_CODE_RE = /\b[A-Z]{2,5}\s*[0-9]{2,4}\b/g;
+const PROD_COURSE_CODE_THRESHOLD = 20; // pages with real Supabase data have hundreds; empty pages have 0
+
+async function fetchProdCollegeCourseCount(
+  state: string,
+  collegeSlug: string,
+): Promise<{ ok: true; codeCount: number } | { ok: false; error: string }> {
+  const url = `${PROD_BASE}/${state}/college/${collegeSlug}`;
+  try {
+    const res = await fetch(url, {
+      headers: { "User-Agent": "cc-coursemap-audit/1.0" },
+      signal: AbortSignal.timeout(20_000),
+    });
+    if (!res.ok) return { ok: false, error: `HTTP ${res.status}` };
+    const html = await res.text();
+    const matches = html.match(PROD_COURSE_CODE_RE);
+    return { ok: true, codeCount: matches ? new Set(matches).size : 0 };
+  } catch (e) {
+    return { ok: false, error: e instanceof Error ? e.message : String(e) };
+  }
+}
+
+async function checkProdCoverage(
+  state: string,
+  sectionsByCollege: Record<string, number>,
+): Promise<NonNullable<AuditResult["prodCoverage"]>> {
+  const collegesWithLocalData = Object.entries(sectionsByCollege)
+    .filter(([, n]) => n > 0)
+    .map(([slug]) => slug);
+  const missingOnProd: string[] = [];
+  const verifiedOnProd: string[] = [];
+  const fetchErrors: string[] = [];
+  // Serial requests — keeps us polite to the prod CDN and avoids triggering
+  // any rate-limit / WAF. Even on a 58-college state (NC) this is ~58 *
+  // ~2s = ~2 min, acceptable for an audit invocation.
+  for (const slug of collegesWithLocalData) {
+    const r = await fetchProdCollegeCourseCount(state, slug);
+    if (!r.ok) {
+      fetchErrors.push(`${slug}: ${r.error}`);
+    } else if (r.codeCount < PROD_COURSE_CODE_THRESHOLD) {
+      missingOnProd.push(slug);
+    } else {
+      verifiedOnProd.push(slug);
+    }
+  }
+  return { checked: true, missingOnProd, verifiedOnProd, fetchErrors };
+}
+
+// ---------------------------------------------------------------------------
+// Entry point
+// ---------------------------------------------------------------------------
+
+async function main() {
+  const args = process.argv.slice(2);
+  const checkProd = args.includes("--check-prod");
+  const positional = args.filter((a) => !a.startsWith("--"));
+  const targetSlug = positional[0]?.toLowerCase();
   const states = targetSlug ? [targetSlug] : getStates();
 
   const results: AuditResult[] = [];
   for (const slug of states) {
     try {
-      results.push(auditState(slug));
+      const r = auditState(slug);
+      if (checkProd) {
+        // eslint-disable-next-line no-await-in-loop
+        r.prodCoverage = await checkProdCoverage(slug, r.courses.sectionsByCollege);
+      }
+      results.push(r);
     } catch (e) {
       console.error(`Error auditing ${slug}: ${e}`);
     }
