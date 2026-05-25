@@ -57,6 +57,11 @@ const arConfig: StateConfig = {
       { scripts: ["scripts/ar/scrape-ozarka.ts"], runner: "http" },
       { scripts: ["scripts/ar/scrape-npc.ts"], runner: "http" },
       { scripts: ["scripts/ar/scrape-ua-powerbi.ts"], runner: "playwright" },
+      // UACCM (Morrilton) doesn't expose Power BI / Banner / Colleague /
+      // Workday. The only public schedule is an 8-page PDF at
+      // uaccm.edu/courses/crssch.pdf; parsed via `pdftotext -layout`
+      // (requires poppler-utils on the runner).
+      { scripts: ["scripts/ar/scrape-uaccm.ts"], runner: "http" },
     ],
     // AR's ACTS (Arkansas Course Transfer System) statewide portal at
     // acts.adhe.edu is firewalled from most cloud egress IPs. Workaround:
