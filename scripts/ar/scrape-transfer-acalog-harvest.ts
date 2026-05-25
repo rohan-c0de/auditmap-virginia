@@ -73,21 +73,21 @@ interface Receiver {
 }
 
 const RECEIVERS: Receiver[] = [
-  // The actsRegex below is broad on purpose — UALR's catalog uses at least
-  // three phrasings ("ACTS Course Number", "ACTS was", "ACTS Equivalent"),
-  // and the other two universities use yet more variants. We anchor on the
-  // literal "ACTS" prefix and accept any short connective (was/equivalent/
-  // course number/colon/whitespace) before the subject code + 4-digit
-  // number. This catches all observed phrasings while staying tight
-  // enough to avoid false positives (the connector is ≤25 chars and the
-  // subject is a 2-5-letter all-caps prefix).
+  // The actsRegex below is broad on purpose — UALR's catalog alone uses at
+  // least three phrasings ("ACTS Course Number", "ACTS was", "ACTS
+  // Equivalent"), and the other universities use yet more variants:
+  //   • UAFS: "ACTS: ACCT 2003"
+  //   • SAU:  "ACTS Course Equivalent: ACCT 2003"
+  //   • UAM:  "A.C.T.S. Equivalent Course # ENGL 1023"  (dotted!)
+  // We anchor on "ACTS" or "A.C.T.S." then accept any short connective
+  // (≤30 chars) before the subject code + 4-digit number.
   {
     slug: "ualr",
     name: "University of Arkansas at Little Rock",
     host: "catalog.ualr.edu",
     catoid: 36,
     navoid: 4231,
-    actsRegex: /\bACTS\b[^.<>(\n]{0,25}?\b([A-Z]{2,5})\s*(\d{4})\b/,
+    actsRegex: /(?:\bACTS\b|A\.C\.T\.S\.?)[^.<>(\n]{0,30}?\b([A-Z]{2,5})\s*(\d{4})\b/,
   },
   {
     slug: "uafs",
@@ -95,7 +95,7 @@ const RECEIVERS: Receiver[] = [
     host: "catalog.uafs.edu",
     catoid: 9,
     navoid: 371,
-    actsRegex: /\bACTS\b[^.<>(\n]{0,25}?\b([A-Z]{2,5})\s*(\d{4})\b/,
+    actsRegex: /(?:\bACTS\b|A\.C\.T\.S\.?)[^.<>(\n]{0,30}?\b([A-Z]{2,5})\s*(\d{4})\b/,
   },
   {
     slug: "sau",
@@ -103,7 +103,15 @@ const RECEIVERS: Receiver[] = [
     host: "catalog.saumag.edu",
     catoid: 8,
     navoid: 282,
-    actsRegex: /\bACTS\b[^.<>(\n]{0,25}?\b([A-Z]{2,5})\s*(\d{4})\b/,
+    actsRegex: /(?:\bACTS\b|A\.C\.T\.S\.?)[^.<>(\n]{0,30}?\b([A-Z]{2,5})\s*(\d{4})\b/,
+  },
+  {
+    slug: "uam",
+    name: "University of Arkansas at Monticello",
+    host: "catalog.uamont.edu",
+    catoid: 5,
+    navoid: 287,
+    actsRegex: /(?:\bACTS\b|A\.C\.T\.S\.?)[^.<>(\n]{0,30}?\b([A-Z]{2,5})\s*(\d{4})\b/,
   },
 ];
 
