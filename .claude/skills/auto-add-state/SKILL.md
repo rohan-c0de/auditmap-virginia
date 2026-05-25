@@ -276,6 +276,51 @@ The full pipeline (orchestrated by `scripts/lib/add-state.ts`):
     require JavaScript-only interactions you can't reverse-engineer in
     under ~30 minutes.
 
+    **Re-probe THIS run's first-pass deferral verdicts before accepting
+    them — most are wrong.** When the orchestrator (or your initial
+    investigation, or a research subagent) labels a college "WAF-blocked",
+    "PDF only", "PeopleSoft SSO", or "unidentified dashboard", spend 15
+    minutes verifying before adding it to the deferred list. The
+    AR-2026-05-24 / 2026-05-25 session shipped 6 follow-up scrapers; 4 of
+    those colleges had been deferred for reasons that turned out to be
+    wrong on a second look:
+
+    - **Ozarka** ("WAF-blocked POST") — actual blocker was a missing
+      `Submit=View+Courses` form field name. Pure-Node fetch with the
+      right body works, no Playwright needed. 306 sections shipped (#540).
+    - **NPC** ("PeopleSoft SSO only") — PS instance was SSO-only, but the
+      college also publishes a nightly-refreshed structured PDF schedule
+      that `pdftotext -layout` parses cleanly. 402 sections shipped (#541).
+    - **UARM** ("PDF only") — the Quicklinks dropdown on the student-login
+      page links to an embedded Power BI report (same tenant as PCCUA).
+      97 sections shipped via the shared UA-system scraper (#544).
+    - **PCCUA** ("Power BI half-day Playwright DOM scrape") — same Power
+      BI WD_Courses 12-column schema as UACCB; the rich query just needs
+      the visual *focused* (one click) before it fires. 461 sections
+      shipped with a one-line addition (#546).
+
+    **Per-college 15-minute probe checklist:**
+    1. Open the college homepage in a real browser-like fetch — find a
+       "Course Schedules" / "Class Search" / Quicklinks dropdown link.
+       It's often not on the homepage but in a student-portal page.
+    2. If the link goes to `app.powerbi.com/view?r=...`, that's a Power
+       BI embed — try `scripts/ar/scrape-ua-powerbi.ts` as a template
+       (the DAX RLE+dictionary decoder is generic).
+    3. If it goes to a `.cfm` form, try POSTing with the submit-button
+       name included (`Submit=...`); ColdFusion routes off it.
+    4. If it goes to a PDF, check whether `pdftotext -layout` produces
+       clean fixed-width columns (NPC pattern) before deferring.
+    5. If the orchestrator's fingerprint says PeopleSoft SSO, separately
+       probe whether the college publishes a static schedule view on
+       their `.edu` marketing site (often hidden under
+       `/admissions/class-schedules` or similar).
+
+    The **`untouchable-investigator`** agent (see `.claude/agents/`) is
+    purpose-built for exactly this kind of triage and runs all five
+    probes per college in parallel. Use it via Agent with
+    `subagent_type: "untouchable-investigator"` for any college you're
+    about to defer with a non-obvious reason.
+
     **Re-probe before trusting a "PDF-only" / "auth-gated" / "unavailable"
     comment in an existing scraper.** Findings rot — colleges deploy
     Banner SSB 9, swap into Colleague Self-Service, or replace their
