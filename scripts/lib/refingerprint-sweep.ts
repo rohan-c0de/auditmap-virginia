@@ -49,6 +49,14 @@ interface CollegeEntry {
   primaryUrl: string;
   platform: Platform;
   confidence: "high" | "medium" | "low";
+  /**
+   * Specific course-search URL the fingerprinter discovered (e.g.
+   * https://selfservice.cotc.edu/Student/Courses for OH/COTC). Required
+   * for "wire-in" workflow: per-state scrapers consume URLs like this,
+   * not the marketing homepage. Null when the fingerprinter couldn't
+   * identify a usable course-search endpoint.
+   */
+  courseSearchUrl: string | null;
   lastChecked: string; // ISO8601
 }
 
@@ -167,6 +175,7 @@ async function runSweep(tasks: SweepTask[]): Promise<CollegeEntry[]> {
           primaryUrl: t.url,
           platform: result.platform,
           confidence: result.confidence,
+          courseSearchUrl: result.courseSearchUrl,
           lastChecked: new Date().toISOString(),
         });
       } catch (err) {
@@ -177,6 +186,7 @@ async function runSweep(tasks: SweepTask[]): Promise<CollegeEntry[]> {
           primaryUrl: t.url,
           platform: "unknown" as Platform,
           confidence: "low",
+          courseSearchUrl: null,
           lastChecked: new Date().toISOString(),
         });
       }
