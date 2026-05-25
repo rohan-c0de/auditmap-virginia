@@ -19,6 +19,9 @@ import { scrapeBanner8ByHost } from "../lib/scrape-banner-8";
 const HOSTS: Record<string, string> = {
   fgc: "https://my.fgc.edu/PROD",
   cfk: "https://secure.cfk.edu/prod",
+  // Added via coverage-expansion + refingerprint workflow.
+  // FSW courseSearchUrl: https://ssb.fsw.edu/PROD/bwckschd... → /PROD path matches.
+  fsw: "https://ssb.fsw.edu/PROD",
 };
 
 async function main() {

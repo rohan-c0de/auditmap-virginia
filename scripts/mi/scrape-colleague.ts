@@ -42,6 +42,9 @@ const COLLEAGUE_COLLEGES: Record<string, string> = {
   "oakland-community-college": "https://myocc.oaklandcc.edu",
   "schoolcraft-community-college-district": "https://self-service.schoolcraft.edu",
   "st-clair-county-community-college": "https://sc4sss03.sc4.edu",
+  // Added via coverage-expansion + refingerprint workflow:
+  "kellogg-community-college": "https://portal.kellogg.edu",
+  "macomb-community-college": "https://selfservice.macomb.edu",
 };
 
 type CourseMode = "in-person" | "online" | "hybrid" | "zoom";
