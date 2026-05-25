@@ -13,7 +13,10 @@
  */
 import { scrapeBannerSsbState } from "../lib/scrape-banner-ssb";
 
-await scrapeBannerSsbState({
+// Top-level await is not supported with the CJS output format used by the
+// cron runner's esbuild step. Wrap in main() so it compiles cleanly.
+async function main() {
+  await scrapeBannerSsbState({
   state: "ca",
   hosts: {
     "antelope-valley-community-college-district": "https://ssb.avc.edu",
@@ -30,5 +33,7 @@ await scrapeBannerSsbState({
     "santa-rosa-junior-college":                  "https://reg-prod.santarosajc.elluciancloud.com:8103",
     "sierra-college":                             "https://ss.oci.sierracollege.edu",
     "college-of-the-siskiyous":                   "https://reg-prod.cloud.siskiyous.edu",
-  },
-});
+  });
+}
+
+main().catch((e) => { console.error(e); process.exit(1); });

@@ -44,7 +44,9 @@ const nvConfig: StateConfig = {
   },
   scrapers: {
     courses: [
-      { scripts: ["scripts/nv/scrape-peoplesoft.ts"], runner: "playwright" },
+      // termSystem: "banner" causes the cron to pass --term "Spring 2026,Summer 2026"
+      // (or whatever the current+next semesters are) — required by scrape-peoplesoft.ts.
+      { scripts: ["scripts/nv/scrape-peoplesoft.ts"], runner: "playwright", termSystem: "banner" },
     ],
     transfers: [
       { scripts: ["scripts/nv/scrape-nv-transfers.ts"], runner: "http" },

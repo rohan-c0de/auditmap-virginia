@@ -224,38 +224,53 @@ async function selectTermAndSearch(page: Page, termValue: string): Promise<void>
 }
 
 async function extractRowsFromCurrentPage(page: Page): Promise<RawRow[]> {
-  return page.evaluate(() => {
-    // The results table is the one that contains a header row with "Course code".
-    const tables = Array.from(document.querySelectorAll<HTMLTableElement>("table"));
-    const resultsTable = tables.find((t) =>
-      Array.from(t.querySelectorAll("th, td")).some((c) =>
-        /Course\s*code/i.test(c.textContent || "")
-      )
-    );
-    if (!resultsTable) return [];
-    const rows = Array.from(resultsTable.querySelectorAll<HTMLTableRowElement>("tr"));
-    const out: RawRow[] = [];
-    for (const r of rows) {
-      const cells = Array.from(r.querySelectorAll("td")).map((td) =>
-        (td.innerText || td.textContent || "").trim()
-      );
-      // A data row has a course code in cells[2] (cells[0] is Add checkbox, cells[1] is Textbook link)
-      if (cells.length < 10) continue;
-      const code = cells[2];
-      if (!code || !/^[A-Z]{2,4}\s*\d{3,4}/.test(code)) continue;
-      out.push({
-        code,
-        name: cells[3] || "",
-        faculty: cells[4] || "",
-        seats: cells[5] || "",
-        status: cells[6] || "",
-        schedule: cells[7] || "",
-        credits: cells[8] || "",
-        beginDate: cells[9] || "",
+  // page.evaluate can throw "Execution context was destroyed" if a navigation
+  // fires while it's running (transient race on slow CI). Retry up to 3×.
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      await page.waitForLoadState("domcontentloaded", { timeout: 15000 }).catch(() => {});
+      return await page.evaluate(() => {
+        // The results table is the one that contains a header row with "Course code".
+        const tables = Array.from(document.querySelectorAll<HTMLTableElement>("table"));
+        const resultsTable = tables.find((t) =>
+          Array.from(t.querySelectorAll("th, td")).some((c) =>
+            /Course\s*code/i.test(c.textContent || "")
+          )
+        );
+        if (!resultsTable) return [];
+        const rows = Array.from(resultsTable.querySelectorAll<HTMLTableRowElement>("tr"));
+        const out: { code: string; name: string; faculty: string; seats: string; status: string; schedule: string; credits: string; beginDate: string }[] = [];
+        for (const r of rows) {
+          const cells = Array.from(r.querySelectorAll("td")).map((td) =>
+            (td.innerText || td.textContent || "").trim()
+          );
+          // A data row has a course code in cells[2] (cells[0] is Add checkbox, cells[1] is Textbook link)
+          if (cells.length < 10) continue;
+          const code = cells[2];
+          if (!code || !/^[A-Z]{2,4}\s*\d{3,4}/.test(code)) continue;
+          out.push({
+            code,
+            name: cells[3] || "",
+            faculty: cells[4] || "",
+            seats: cells[5] || "",
+            status: cells[6] || "",
+            schedule: cells[7] || "",
+            credits: cells[8] || "",
+            beginDate: cells[9] || "",
+          });
+        }
+        return out;
       });
+    } catch (e) {
+      if (attempt < 2 && /Execution context was destroyed|context/i.test(String(e))) {
+        console.warn(`    extractRows attempt ${attempt + 1} failed (nav race), retrying...`);
+        await new Promise((r) => setTimeout(r, 1500));
+        continue;
+      }
+      throw e;
     }
-    return out;
-  });
+  }
+  return [];
 }
 
 async function goToNextPage(page: Page): Promise<boolean> {
