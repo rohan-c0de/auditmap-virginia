@@ -91,6 +91,18 @@ const COLLEGES: CollegeConfig[] = [
     format: "wd-courses-table",
     defaultCampus: "Mena",
   },
+  {
+    // PCCUA uses the same WD_Courses 12-column table as UACCB / UARM, but
+    // the rich query doesn't fire on initial load — Power BI only sends it
+    // once the corresponding visual is focused. The scraper tabs through
+    // all visuals on the page (see scrapeCollege) so PCCUA's table gets
+    // triggered like the others.
+    slug: "phillips-community-college-of-the-university-of-arkansas",
+    reportUrl:
+      "https://app.powerbi.com/view?r=eyJrIjoiMjFlNmU3NTItODYxNi00Mjk2LTg3MmEtOTM5ZWNkYWM0ODFiIiwidCI6IjhjMWE4N2NiLTgwYjctNDEzZi05YWU4LTU1YzZhNTM3MDYwNCJ9",
+    format: "wd-courses-table",
+    defaultCampus: "Helena",
+  },
 ];
 
 // ---------------------------------------------------------------------------
@@ -421,6 +433,23 @@ async function scrapeCollege(ctx: BrowserContext, cfg: CollegeConfig): Promise<C
   console.log(`\n--- ${cfg.slug} (${cfg.format}) ---`);
   await page.goto(cfg.reportUrl, { waitUntil: "networkidle", timeout: 60_000 });
   await page.waitForTimeout(10_000);
+
+  // PCCUA's report deviates from CCCUA/UACCB/UARM: its rich 12-column
+  // WD_Courses table visual doesn't query on initial load. Power BI only
+  // fires the rich query once that specific visual is focused (e.g., by
+  // tabbing/clicking). For UACCB/UARM/CCCUA this is a no-op (their rich
+  // query already fired), but for PCCUA it's the difference between
+  // shipping 0 sections and shipping all 500.
+  const visuals = await page.$$("visual-container");
+  for (let v = 0; v < visuals.length; v++) {
+    try {
+      await visuals[v].click({ force: true, timeout: 2000 });
+      await page.waitForTimeout(600);
+    } catch {
+      // ignore — some visuals may not be clickable
+    }
+  }
+  await page.waitForTimeout(3000);
 
   // Scroll the grid a few times — virtualized grids only fetch visible rows
   // initially, but for the WD_Courses table the full dataset comes back in
