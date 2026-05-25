@@ -11,12 +11,15 @@
  */
 import { scrapeBannerSsbState } from "../lib/scrape-banner-ssb";
 
-await scrapeBannerSsbState({
+async function main() {
+  await scrapeBannerSsbState({
   state: "or",
   hosts: {
     "chemeketa-community-college":       "https://reg-ss.chemeketa.edu",
     "central-oregon-community-college":  "https://reg-prod.cocc.edu",
     "lane-community-college":            "https://my.lanecc.edu",
     "linn-benton-community-college":     "https://banner.linnbenton.edu:8458",
-  },
-});
+  });
+}
+
+main().catch((e) => { console.error(e); process.exit(1); });

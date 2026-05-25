@@ -22,7 +22,8 @@
  */
 import { scrapeBannerSsbState } from "../lib/scrape-banner-ssb";
 
-await scrapeBannerSsbState({
+async function main() {
+  await scrapeBannerSsbState({
   state: "oh",
   hosts: {
     "cuyahoga-community-college-district": "https://banstup.tri-c.edu",
@@ -33,5 +34,7 @@ await scrapeBannerSsbState({
     // and verified the StudentRegistrationSsb body marker. Unusually,
     // Banner SSB 9 is at the root domain rather than a subdomain.
     "zane-state-college": "https://zanestate.edu",
-  },
-});
+  });
+}
+
+main().catch((e) => { console.error(e); process.exit(1); });
