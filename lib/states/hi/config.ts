@@ -58,7 +58,24 @@ const hiConfig: StateConfig = {
         runner: "http",
       },
     ],
-    // manual-only: transfers — Phase 3 (transfer-equiv) not yet wired up.
+    // UH operates a single statewide Banner SSB articulation database at
+    // www.sis.hawaii.edu/uhdad/CourseTransfer.home covering all 10 UH
+    // campuses (6 CCs as senders × 3 four-years as receivers, plus
+    // hundreds of out-of-state senders). Public guest endpoint, no SSO.
+    // The scraper POSTs one form per (sender, receiver) pair with subj/crse
+    // blank to fetch all equivalencies in one shot.
+    //
+    // NOTE: scraper landed before the first successful run — the live
+    // endpoint was in a Banner maintenance window (HTTP 502) when the
+    // scraper was authored. Parser is structured from the documented
+    // form fields + a Wayback snapshot of the result HTML; the first
+    // cron tick is effectively its acceptance test. The scraper's safety
+    // net refuses to overwrite a non-empty transfer-equiv.json with 0
+    // rows, so a parser bug leaves the existing [] in place rather than
+    // corrupting state.
+    transfers: [
+      { scripts: ["scripts/hi/scrape-transfer-uhdad.ts"], runner: "http" },
+    ],
     // manual-only: prereqs — Phase 4.
     // manual-only: programs — Phase 5+.
   },
