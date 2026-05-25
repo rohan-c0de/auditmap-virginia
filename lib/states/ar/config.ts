@@ -80,7 +80,13 @@ const arConfig: StateConfig = {
       { scripts: ["scripts/ar/scrape-transfer-acts-catalogs.ts"], runner: "http" },
     ],
     // manual-only: prereqs — aggregated from course-search data; no dedicated catalog scraper.
-    // manual-only: programs — Phase 6 wrapper at scripts/ar/scrape-programs.ts needs per-college catalog discovery first.
+    // Programs scraper currently covers 2 of 14 AR colleges (NPC + Northark
+    // via Acalog). Remaining catalogs are mixed (PDF-only, bespoke HTML,
+    // 403-blocked Acalog at NWACC). Follow-ups documented in the scraper
+    // header.
+    programs: [
+      { scripts: ["scripts/ar/scrape-programs.ts"], runner: "http" },
+    ],
   },
 };
 
