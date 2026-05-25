@@ -14,7 +14,7 @@ const msConfig: StateConfig = {
   seniorWaiver: null,
 
   transferSupported: false,
-  popularCourses: [],
+  popularCourses: ["SPT 1113", "ENG 1113", "HPR 2132", "HPR 1132", "BIO 2511", "PSY 1513"],
   defaultZip: "39201",
   defaultZipCity: "Jackson",
 

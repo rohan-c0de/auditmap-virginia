@@ -30,7 +30,7 @@ const txConfig: StateConfig = {
   },
 
   transferSupported: false,
-  popularCourses: [],
+  popularCourses: ["ENGL 1301", "MATH 1314", "ENGL 1302", "HIST 1301", "GOVT 2305", "EDUC 1300"],
   defaultZip: "77002",
   defaultZipCity: "Houston",
 

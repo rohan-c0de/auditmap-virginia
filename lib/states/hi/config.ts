@@ -24,7 +24,7 @@ const hiConfig: StateConfig = {
   },
 
   transferSupported: false,
-  popularCourses: [],
+  popularCourses: ["ENG 1007", "ENG 1005", "ENG 1006", "PHYL 141L5", "PHYL 1415", "SP 1515"],
   defaultZip: "96813",
   defaultZipCity: "Honolulu",
 

@@ -21,7 +21,7 @@ const moConfig: StateConfig = {
   },
 
   transferSupported: false,
-  popularCourses: [],
+  popularCourses: ["ENG 101", "ENGL 101", "PSY 110", "MTH 128", "ENG 102", "PLS 101"],
   defaultZip: "65101",
   defaultZipCity: "Jefferson City",
 

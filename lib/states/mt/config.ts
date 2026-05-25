@@ -13,7 +13,7 @@ const mtConfig: StateConfig = {
   seniorWaiver: null,
 
   transferSupported: false,
-  popularCourses: [],
+  popularCourses: ["COLS 111", "ENGL 101", "NASD 101", "ENGL 306", "ENGL 202", "WRIT 101"],
   defaultZip: "59601",
   defaultZipCity: "Helena",
 
