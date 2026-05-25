@@ -19,7 +19,7 @@ const arConfig: StateConfig = {
       "Under Ark. Code § 6-60-204, Arkansas residents aged 60+ may enroll tuition-free in credit courses at any state-supported institution of higher education on a space-available basis. Fees, books, and other charges still apply. Contact the registrar at your college for the enrollment process.",
   },
 
-  transferSupported: false,
+  transferSupported: true,
   popularCourses: ["ENGL 1013", "PSYC 2003", "ENGL 1023", "MATH 1203", "BIOL 1544", "PLSC 2003"],
   defaultZip: "",
   defaultZipCity: "",
@@ -50,7 +50,22 @@ const arConfig: StateConfig = {
       { scripts: ["scripts/ar/scrape-npc.ts"], runner: "http" },
       { scripts: ["scripts/ar/scrape-ua-powerbi.ts"], runner: "playwright" },
     ],
-    // manual-only: transfers — no statewide articulation portal registered yet (Arkansas's ACTS system).
+    // AR's ACTS (Arkansas Course Transfer System) statewide portal at
+    // acts.adhe.edu is firewalled from most cloud egress IPs. Workaround:
+    // each AR public university publishes its ACTS-equivalency table as a
+    // static HTML catalog page (no captcha, no auth). The aggregator pulls
+    // 3 master tables (ATU, UAF, UCA) directly — fast, no Playwright.
+    //
+    // Because Act 747 of 2011 mandates ACTS common course numbers across
+    // all AR public colleges, one mapping per (ACTS course × receiver)
+    // covers all 22 AR community colleges with no per-CC variation.
+    //
+    // Follow-ups: UALR/UAFS/UAPB/SAU need per-course Acalog harvest;
+    // ASU-Jonesboro/HSU have interactive portals (Playwright); UAM has
+    // no public ACTS page.
+    transfers: [
+      { scripts: ["scripts/ar/scrape-transfer-acts-catalogs.ts"], runner: "http" },
+    ],
     // manual-only: prereqs — aggregated from course-search data; no dedicated catalog scraper.
     // manual-only: programs — Phase 6 wrapper at scripts/ar/scrape-programs.ts needs per-college catalog discovery first.
   },
