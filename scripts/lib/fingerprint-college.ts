@@ -254,10 +254,20 @@ const STATE_SYSTEM_HOSTS: Record<string, string[]> = {
   co: ["erpdnssb.cccs.edu"],
   // Alabama Community College System — 22 colleges (Drake, etc.)
   al: ["ssb-prod.ec.accs.edu"],
-  // California — system-by-system, not statewide. SCCCD (Fresno/Reedley/
-  // Clovis), CCCD (Coast — Orange Coast/Coastline/Golden West). Add more
-  // CA systems as their colleges surface in coverage gaps.
-  ca: ["selfservice.scccd.edu", "catalog.cccd.edu"],
+  // California is intentionally excluded. CA has 117 colleges spread
+  // across 73+ multi-college districts (SCCCD, CCCD, Los Rios, Peralta,
+  // SDCCD, etc.), and the SIS lives per-DISTRICT, not per-state. Adding
+  // a state-wide entry like `selfservice.scccd.edu` causes EVERY CA
+  // college to match SCCCD's host (since Colleague at /Student/Courses
+  // returns 200 + markers regardless of which college is asking),
+  // polluting ~70 colleges with the wrong courseSearchUrl. Discovered
+  // during a wire-in attempt: American River, Berkeley City, Cerritos,
+  // etc. all got fingerprinted as Colleague-at-SCCCD when they're
+  // actually on Los Rios / Peralta / their own districts.
+  //
+  // For CA, rely on per-college homepage harvesting + URL_PATTERN
+  // classification (handled by Steps 1-1b of fingerprint()). The
+  // untouchable-investigator agent picks up the residual.
 };
 
 // Substrings that, when found in any URL on the college homepage, are a
