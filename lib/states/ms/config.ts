@@ -11,7 +11,17 @@ const msConfig: StateConfig = {
   // TODO: research senior-waiver statute for MS. Mississippi does not appear
   // to have a statewide senior tuition waiver statute for community colleges.
   // Individual colleges may offer senior discounts — verify before populating.
-  seniorWaiver: null,
+  seniorWaiver: {
+    ageThreshold: 65,
+    legalCitation: "Miss. Code § 37-29 (district-level authority)",
+    description:
+      "Mississippi has no statewide senior-tuition statute. The 15 community and junior colleges (organized under Miss. Code Title 37 Chapter 29) set their own tuition policies, and most offer reduced or waived tuition for residents 65+ on a space-available basis. Terms vary by college.",
+    bannerTitle: "Mississippi Senior Tuition Discounts (by college)",
+    bannerSummary:
+      "Over 65 in Mississippi? Most community colleges offer senior tuition discounts — terms vary by college.",
+    bannerDetail:
+      "Mississippi has no statewide senior-tuition statute. The 15 community and junior colleges (organized under Miss. Code Title 37 Chapter 29) set their own tuition policies. Most offer reduced or waived tuition for residents 65+ on a space-available basis. Contact your college's registrar or financial aid office for the specific terms.",
+  },
 
   transferSupported: false,
   popularCourses: ["SPT 1113", "ENG 1113", "HPR 2132", "HPR 1132", "BIO 2511", "PSY 1513"],

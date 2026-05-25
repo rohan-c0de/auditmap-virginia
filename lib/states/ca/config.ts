@@ -12,7 +12,17 @@ const caConfig: StateConfig = {
   // districts offer their own audit / senior-adult policies under Education
   // Code §§ 76300, 84810.5. Leaving null until per-college policies are
   // surveyed.
-  seniorWaiver: null,
+  seniorWaiver: {
+    ageThreshold: 60,
+    legalCitation: "Cal. Ed. Code § 76300 (district-level authority)",
+    description:
+      "California has no statewide senior-tuition statute. The California Community Colleges enrollment fee is set under Ed. Code § 76300, and individual districts may waive or reduce it for residents 60+ — terms (age, fees, eligibility) vary by district.",
+    bannerTitle: "California Senior Tuition Discounts (by district)",
+    bannerSummary:
+      "Over 60 in California? Most community college districts offer senior tuition waivers or discounts — terms vary by district.",
+    bannerDetail:
+      "California has no statewide senior-tuition statute. Cal. Ed. Code § 76300 sets the standard enrollment fee, and individual community college districts may waive or reduce it for residents 60+ on a space-available basis. Some districts cover only the enrollment fee; others include health, parking, and other fees. Contact the financial aid or registrar office at your college for the specific terms.",
+  },
 
   transferSupported: false,
   popularCourses: ["ENGL C1000", "COMM C1000", "STAT C1000", "ENGL C1001", "PSYC C1000", "POLS C1000"],

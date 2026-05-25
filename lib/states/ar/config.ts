@@ -7,10 +7,17 @@ const arConfig: StateConfig = {
   systemFullName: "Ar Public 2-year Colleges",
   systemUrl: "",
   collegeCount: 14,
-
-  // TODO: research senior-waiver statute for Ar.
-  // Set to null if no waiver exists, or fill in per the SeniorWaiverConfig shape.
-  seniorWaiver: null,
+  seniorWaiver: {
+    ageThreshold: 60,
+    legalCitation: "Ark. Code § 6-60-204",
+    description:
+      "Arkansas residents aged 60 and older may enroll in credit courses at any Arkansas state-supported institution of higher education, including community colleges, with tuition waived on a space-available basis. Fees may still apply.",
+    bannerTitle: "Arkansas Senior Citizens' Tuition Waiver",
+    bannerSummary:
+      "Over 60 in Arkansas? Tuition is waived at state-supported colleges on a space-available basis.",
+    bannerDetail:
+      "Under Ark. Code § 6-60-204, Arkansas residents aged 60+ may enroll tuition-free in credit courses at any state-supported institution of higher education on a space-available basis. Fees, books, and other charges still apply. Contact the registrar at your college for the enrollment process.",
+  },
 
   transferSupported: false,
   popularCourses: ["ENGL 1013", "PSYC 2003", "ENGL 1023", "MATH 1203", "BIOL 1544", "PLSC 2003"],

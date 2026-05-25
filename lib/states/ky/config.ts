@@ -11,7 +11,17 @@ const kyConfig: StateConfig = {
   // TODO: research senior-waiver statute for KY (KRS 164.284 — Senior
   // Citizens' Higher Education Program is the likely citation; verify
   // the current text and waiver scope before populating).
-  seniorWaiver: null,
+  seniorWaiver: {
+    ageThreshold: 65,
+    legalCitation: "KRS 164.284",
+    description:
+      "Kentucky residents aged 65 and older may enroll in credit courses at any state-supported postsecondary institution, including the Kentucky Community and Technical College System, with tuition waived on a space-available basis. Fees still apply.",
+    bannerTitle: "Kentucky Senior Citizens' Tuition Waiver",
+    bannerSummary:
+      "Over 65 in Kentucky? Tuition is waived at KCTCS colleges on a space-available basis.",
+    bannerDetail:
+      "Under KRS 164.284, Kentucky residents aged 65+ may enroll in credit courses at any state-supported postsecondary institution (including the 16 KCTCS colleges) tuition-free on a space-available basis. Fees, books, and other charges still apply. Bring proof of age and residency when you register.",
+  },
 
   transferSupported: false,
   popularCourses: ["NAA 100", "ENG 101", "BIO 137", "BIO 139", "MAT 150", "PSY 110"],

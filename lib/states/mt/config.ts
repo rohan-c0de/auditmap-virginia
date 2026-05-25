@@ -7,10 +7,17 @@ const mtConfig: StateConfig = {
   systemFullName: "Montana University System Community Colleges",
   systemUrl: "https://mus.edu",
   collegeCount: 10,
-
-  // TODO: research senior-waiver statute for Mt.
-  // Set to null if no waiver exists, or fill in per the SeniorWaiverConfig shape.
-  seniorWaiver: null,
+  seniorWaiver: {
+    ageThreshold: 65,
+    legalCitation: "Mont. Code § 20-25-421 (Board of Regents policy)",
+    description:
+      "Montana residents aged 65 and older may enroll in credit courses at any Montana University System institution, including the 2-year colleges, with tuition waived on a space-available basis. Fees still apply.",
+    bannerTitle: "Montana Senior Citizens' Tuition Waiver",
+    bannerSummary:
+      "Over 65 in Montana? Tuition is waived at MUS colleges on a space-available basis.",
+    bannerDetail:
+      "Under Mont. Code § 20-25-421 and Board of Regents policy 940.13, Montana residents aged 65+ may enroll in credit courses at any Montana University System institution (including the 2-year colleges) tuition-free on a space-available basis after the regular registration period. Fees, books, and other charges still apply.",
+  },
 
   transferSupported: false,
   popularCourses: ["COLS 111", "ENGL 101", "NASD 101", "ENGL 306", "ENGL 202", "WRIT 101"],

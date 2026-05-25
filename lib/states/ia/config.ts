@@ -13,7 +13,17 @@ const iaConfig: StateConfig = {
   // audit policies are set per-college. DMACC, Kirkwood, and Hawkeye each
   // publish their own; surfaced per-institution rather than as a state-wide
   // banner.
-  seniorWaiver: null,
+  seniorWaiver: {
+    ageThreshold: 60,
+    legalCitation: "Iowa Code § 260C (district-level authority)",
+    description:
+      "Iowa has no statewide senior-tuition statute for community colleges. Iowa's 15 community college districts (organized under Iowa Code Ch. 260C) set their own tuition policies, and most offer reduced or waived tuition for residents 60+ on a space-available basis. Terms vary by college.",
+    bannerTitle: "Iowa Senior Tuition Discounts (by college)",
+    bannerSummary:
+      "Over 60 in Iowa? Most community colleges offer senior tuition discounts — terms vary by college.",
+    bannerDetail:
+      "Iowa has no statewide senior-tuition statute. The 15 community college districts (organized under Iowa Code Ch. 260C) set their own tuition policies. Most offer reduced or waived tuition for residents 60+ on a space-available basis, sometimes with fee adjustments. Contact your college's registrar or financial aid office for the specific terms.",
+  },
 
   transferSupported: false,
   popularCourses: ["ENG 105", "SPC 112", "PSY 111", "SOC 110", "ENG 106", "BIO 168"],
