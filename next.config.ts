@@ -16,14 +16,11 @@ const nextConfig: NextConfig = {
   // /api/[state]/prereqs/* handlers actually read the files.
   outputFileTracingIncludes: {
     "/api/[state]/prereqs/**": ["./data/*/prereqs.json"],
-    // Routes that read transfer-equiv.json at runtime via lib/transfer.ts
-    // (or its sitemap helper). Re-included after the blanket exclusion
-    // below so the data ships only to functions that need it.
-    "/api/[state]/transfer/**": ["./data/*/transfer-equiv.json"],
-    "/sitemap/transfer.xml/**": ["./data/*/transfer-equiv.json"],
-    "/[state]/transfer/**": ["./data/*/transfer-equiv.json"],
-    "/[state]/course/[code]/**": ["./data/*/transfer-equiv.json"],
-    "/[state]/schedule/**": ["./data/*/transfer-equiv.json"],
+    // transfer-equiv.json is NOT re-included here despite the blanket
+    // exclusion below. At ~200 MB across all states, bundling it into
+    // serverless functions blew past Vercel's 250 MB cap. Production
+    // reads transfers from Supabase; the local JSON fallback in
+    // lib/transfer.ts is only exercised in local dev (no size cap).
   },
   // `lib/data-freshness.ts` (#401) calls `fs.readdirSync(path.join(
   // "data", state, "courses", collegeSlug))` with dynamic state+slug

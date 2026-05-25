@@ -475,23 +475,36 @@ export async function importTransfersToSupabase(
     is_elective: m.is_elective,
   }));
 
-  // Insert in batches — abort on first failure to limit data loss
+  // Insert in batches with retry — abort after retries exhausted
+  const MAX_RETRIES = 3;
   let totalInserted = 0;
   let aborted = false;
   for (let i = 0; i < rows.length; i += BATCH_SIZE) {
     const batch = rows.slice(i, i + BATCH_SIZE);
-    const { error: insError } = await sb.from("transfers").insert(batch);
-    if (insError) {
-      console.error(
-        `  FATAL: Insert failed for ${state} transfers batch ${i}: ${insError.message}`
-      );
-      console.error(
-        `  WARNING: ${rows.length - totalInserted} rows lost — delete already committed.`
-      );
-      aborted = true;
-      break;
+    let succeeded = false;
+    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+      const { error: insError } = await sb.from("transfers").insert(batch);
+      if (!insError) {
+        succeeded = true;
+        break;
+      }
+      if (attempt < MAX_RETRIES) {
+        console.warn(
+          `  Batch ${i} attempt ${attempt} failed: ${insError.message} — retrying in ${attempt * 2}s...`
+        );
+        await new Promise((r) => setTimeout(r, attempt * 2000));
+      } else {
+        console.error(
+          `  FATAL: Insert failed for ${state} transfers batch ${i} after ${MAX_RETRIES} attempts: ${insError.message}`
+        );
+        console.error(
+          `  WARNING: ${rows.length - totalInserted} rows lost — delete already committed.`
+        );
+        aborted = true;
+      }
     }
-    totalInserted += batch.length;
+    if (aborted) break;
+    if (succeeded) totalInserted += batch.length;
   }
   if (aborted) {
     console.error(`  Aborting remaining transfer batches for ${state}.`);
