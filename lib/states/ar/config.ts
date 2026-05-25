@@ -103,6 +103,16 @@ const arConfig: StateConfig = {
     // registrar contact or staff credentials to close.
     transfers:
       "HSU (Henderson State, tcet.hsu.edu) sits behind Azure AD App Proxy — 500 to anonymous; UAPB (Pine Bluff) has no public per-course ACTS table. Both require registrar contact to close. The other 7 AR public 4-years are covered via ATU/UAF/UCA master tables, the UALR/UAFS/SAU/UAM Acalog harvest, and the ASU-Jonesboro JSON API.",
+    courses: [
+      {
+        collegeSlug: "arkansas-northeastern-college",
+        reason: "ANC's class schedule lives in Jenzabar JICS at myanc.anc.edu/ICS/Course_Schedules.jnz. The portlet is configured to require authentication; anonymous requests get the JICS login shell, not section data. No bypass without credentials. Verified 2026-05-25.",
+      },
+      {
+        collegeSlug: "south-arkansas-college",
+        reason: "SouthArk's class schedule lives in Jenzabar JICS at mycampus.southark.edu/ICS/Course_Schedules.jnz. Same auth-gated configuration as ANC — no public guest endpoint. Verified 2026-05-25.",
+      },
+    ],
   },
 };
 
