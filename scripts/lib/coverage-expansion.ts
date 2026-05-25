@@ -51,6 +51,12 @@ interface BaselineEntry {
   primaryUrl: string;
   platform: string;
   confidence: "high" | "medium" | "low";
+  /** Specific SIS course-search URL discovered during fingerprinting (e.g.
+   *  https://selfservice.cotc.edu/Student/Courses). Required for wire-in
+   *  work since per-state scrapers consume SIS URLs, not the marketing
+   *  homepage. May be missing on older baseline entries written before
+   *  this field was persisted. */
+  courseSearchUrl?: string | null;
   lastChecked: string;
 }
 
