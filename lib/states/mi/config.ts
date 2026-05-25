@@ -82,7 +82,9 @@ const miConfig: StateConfig = {
       { scripts: ["scripts/mi/scrape-banner-ssb.ts"], runner: "http" },
     ],
     prereqs: { source: "aggregate-from-courses" },
-    // manual-only: transfers — no articulation portal registered for MI yet.
+    // manual-only: transfers — CollegeTransfer.Net has zero MI in-state targets.
+    // Michigan Transfer Network (michigantransfernetwork.org) or individual
+    // university pages are the realistic path.
     // manual-only: programs — Phase 5+.
   },
 };
