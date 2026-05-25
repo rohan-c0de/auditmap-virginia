@@ -15,6 +15,27 @@ import * as path from "path";
 
 const ROOT = process.cwd();
 
+export type Grade = "A" | "B" | "C" | "D" | "F";
+export type Dimension = "courses" | "prereqs" | "transfers" | "scorecard" | "config";
+
+export interface GradeResult {
+  grade: Grade;
+  reason: string;
+}
+
+const GRADE_RANK: Record<Grade, number> = { A: 4, B: 3, C: 2, D: 1, F: 0 };
+
+/** Returns the worst (lowest) of two grades. */
+function worse(a: Grade, b: Grade): Grade {
+  return GRADE_RANK[a] <= GRADE_RANK[b] ? a : b;
+}
+
+/** Cap a grade so it cannot drop below B. Used for documented-ceiling exemptions. */
+function capAtB(g: GradeResult, reason: string): GradeResult {
+  if (GRADE_RANK[g.grade] >= GRADE_RANK["B"]) return g;
+  return { grade: "B", reason: `ceiling: ${reason}` };
+}
+
 interface AuditResult {
   slug: string;
   name: string;
@@ -77,8 +98,28 @@ interface AuditResult {
   /** Documented structural ceilings from StateConfig.documentedCeilings. */
   documentedCeilings: {
     transfers: boolean;
+    transfersReason?: string;
     scorecard: boolean;
+    scorecardReason?: string;
     courseColleges: string[];
+  };
+  /**
+   * Deterministic per-dimension grades (A–F) computed by the collector.
+   * Composite = worst of the five dimensions. `limitedBy` names which
+   * dimension produced the composite grade. `ceilingsApplied` records
+   * which documentedCeilings exemptions were used (each caps its
+   * dimension at a B floor — the dimension can still earn A on its own
+   * merits if the data is actually there).
+   */
+  grades: {
+    courses: GradeResult;
+    prereqs: GradeResult;
+    transfers: GradeResult;
+    scorecard: GradeResult;
+    config: GradeResult;
+    composite: Grade;
+    limitedBy: Dimension;
+    ceilingsApplied: Array<{ dimension: Dimension; reason: string }>;
   };
   /**
    * Optional prod-vs-local coverage check (only populated when --check-prod
@@ -177,6 +218,200 @@ function isSuspicious(term: string): boolean {
   const termYear = parseInt(term.substring(0, 4), 10);
   if (termYear > year + 1) return true;
   return false;
+}
+
+// ---------------------------------------------------------------------------
+// Graders — one per dimension, plus composite. Pure functions over the
+// AuditResult sub-objects. Thresholds are documented in SKILL.md and the
+// snapshot test set in grade-snapshot.test.ts.
+// ---------------------------------------------------------------------------
+
+function gradeCourses(
+  courses: AuditResult["courses"],
+  ceilingCourseColleges: string[],
+): GradeResult {
+  // Exempt documented-ceiling colleges from the coverage denominator.
+  const exemptSet = new Set(ceilingCourseColleges);
+  const adjustedTotal = courses.collegeCount - ceilingCourseColleges.length;
+  const adjustedCovered = courses.coveredColleges - courses.missingColleges
+    .filter((s) => exemptSet.has(s))
+    .length;
+  // (If a ceiling slug isn't actually in missingColleges it doesn't change
+  // covered, but the denominator drops — which only helps coverage.)
+  const denom = Math.max(1, adjustedTotal);
+  const coverage = adjustedCovered / denom;
+  const stale = courses.staleTerms.length;
+  const suspicious = courses.suspiciousTerms.length;
+
+  if (coverage < 0.15) {
+    return { grade: "F", reason: `coverage ${(coverage * 100).toFixed(0)}% (${adjustedCovered}/${denom})` };
+  }
+  if (coverage < 0.5) {
+    return { grade: "D", reason: `coverage ${(coverage * 100).toFixed(0)}% (${adjustedCovered}/${denom})` };
+  }
+  if (coverage < 0.85) {
+    return { grade: "C", reason: `coverage ${(coverage * 100).toFixed(0)}% (${adjustedCovered}/${denom})` };
+  }
+  if (coverage < 0.95 || stale > 0 || suspicious > 0) {
+    const bits: string[] = [];
+    if (coverage < 0.95) bits.push(`coverage ${(coverage * 100).toFixed(0)}%`);
+    if (stale > 0) bits.push(`${stale} stale term(s)`);
+    if (suspicious > 0) bits.push(`${suspicious} suspicious term(s)`);
+    return { grade: "B", reason: bits.join("; ") };
+  }
+  return { grade: "A", reason: `full coverage (${adjustedCovered}/${denom}), terms clean` };
+}
+
+function gradeTransfers(
+  transfers: AuditResult["transfers"],
+  ceiling: AuditResult["documentedCeilings"],
+): GradeResult {
+  const wired = transfers.scraperDeclared;
+  const unis = transfers.universityCount;
+  const count = transfers.count;
+  const supported = transfers.transferSupported;
+
+  if (count === 0 && !ceiling.transfers) {
+    return { grade: "F", reason: "no transfer data" };
+  }
+  if (count === 0 && ceiling.transfers) {
+    // Ceiling acknowledged; nothing to grade but ceiling cap will lift to B.
+    return { grade: "F", reason: "no transfer data (ceiling-exempt)" };
+  }
+  if (!wired) {
+    return { grade: "D", reason: `data exists (${count}) but scraper not wired — will go stale` };
+  }
+  if (unis <= 1 || count < 500) {
+    return { grade: "C", reason: `thin: ${unis} university, ${count} mappings` };
+  }
+  if (unis < 3 || count < 1000) {
+    return { grade: "B", reason: `${unis} universities, ${count} mappings` };
+  }
+  if (!supported) {
+    return { grade: "B", reason: `${unis} universities, ${count} mappings, but transferSupported=false` };
+  }
+  return { grade: "A", reason: `${unis} universities, ${count} mappings, wired` };
+}
+
+function gradePrereqs(
+  prereqs: AuditResult["prereqs"],
+  scrapers: AuditResult["scrapers"],
+): GradeResult {
+  if (!prereqs.exists) {
+    return { grade: "F", reason: "no prereqs file" };
+  }
+  if (prereqs.count === 0) {
+    return { grade: "D", reason: "file exists but empty" };
+  }
+  if (prereqs.htmlContaminated > 0) {
+    return { grade: "C", reason: `${prereqs.htmlContaminated} entries have HTML contamination` };
+  }
+  if (prereqs.count < 10) {
+    return { grade: "C", reason: `only ${prereqs.count} entries` };
+  }
+  const wired = scrapers.prereqsWired;
+  if (prereqs.count < 100) {
+    return { grade: "B", reason: `${prereqs.count} entries${wired ? "" : ", not wired"}` };
+  }
+  if (!wired) {
+    return { grade: "B", reason: `${prereqs.count} entries but scraper not wired` };
+  }
+  return { grade: "A", reason: `${prereqs.count} entries, wired, clean` };
+}
+
+function gradeScorecard(
+  scorecard: AuditResult["scorecard"],
+  ceiling: AuditResult["documentedCeilings"],
+): GradeResult {
+  const denom = Math.max(1, scorecard.collegeCount);
+  const coverage = scorecard.files / denom;
+  if (scorecard.files === 0 && !ceiling.scorecard) {
+    return { grade: "F", reason: "no scorecard directory" };
+  }
+  if (scorecard.files === 0 && ceiling.scorecard) {
+    return { grade: "F", reason: "no scorecard (ceiling-exempt)" };
+  }
+  if (coverage < 0.5) {
+    return { grade: "D", reason: `${scorecard.files}/${denom} scorecards (${(coverage * 100).toFixed(0)}%)` };
+  }
+  if (coverage < 0.8) {
+    return { grade: "C", reason: `${scorecard.files}/${denom} scorecards (${(coverage * 100).toFixed(0)}%)` };
+  }
+  if (coverage < 1.0) {
+    return { grade: "B", reason: `${scorecard.files}/${denom} scorecards` };
+  }
+  return { grade: "A", reason: `${scorecard.files}/${denom} scorecards` };
+}
+
+function gradeConfig(config: AuditResult["config"]): GradeResult {
+  // Count gaps. Senior-waiver placeholder is treated as a soft red flag (D).
+  if (config.seniorWaiverPlaceholder) {
+    return { grade: "D", reason: "seniorWaiver placeholder text detected" };
+  }
+  const gaps: string[] = [];
+  if (!config.seniorWaiverSet) gaps.push("seniorWaiver missing");
+  if (config.popularCoursesCount === 0) gaps.push("popularCourses empty");
+  if (!config.defaultZipSet) gaps.push("defaultZip missing");
+  if (!config.brandingComplete) gaps.push(`branding: ${config.brandingGaps.join(", ")}`);
+
+  if (gaps.length === 0) return { grade: "A", reason: "all config fields populated" };
+  if (gaps.length === 1) return { grade: "B", reason: gaps[0] };
+  if (gaps.length === 2) return { grade: "C", reason: gaps.join("; ") };
+  if (gaps.length === 3) return { grade: "D", reason: gaps.join("; ") };
+  return { grade: "F", reason: `skeleton (${gaps.length} gaps): ${gaps.join("; ")}` };
+}
+
+export function computeGrades(r: Omit<AuditResult, "grades">): AuditResult["grades"] {
+  const ceilingsApplied: Array<{ dimension: Dimension; reason: string }> = [];
+
+  // Grade each dimension.
+  let courses = gradeCourses(r.courses, r.documentedCeilings.courseColleges);
+  if (r.documentedCeilings.courseColleges.length > 0) {
+    ceilingsApplied.push({
+      dimension: "courses",
+      reason: `${r.documentedCeilings.courseColleges.length} college(s) exempted from coverage denominator`,
+    });
+  }
+
+  let transfers = gradeTransfers(r.transfers, r.documentedCeilings);
+  if (r.documentedCeilings.transfers && GRADE_RANK[transfers.grade] < GRADE_RANK["B"]) {
+    const reason = r.documentedCeilings.transfersReason || "documented transfer ceiling";
+    transfers = capAtB(transfers, reason);
+    ceilingsApplied.push({ dimension: "transfers", reason });
+  }
+
+  const prereqs = gradePrereqs(r.prereqs, r.scrapers);
+
+  let scorecard = gradeScorecard(r.scorecard, r.documentedCeilings);
+  if (r.documentedCeilings.scorecard && GRADE_RANK[scorecard.grade] < GRADE_RANK["B"]) {
+    const reason = r.documentedCeilings.scorecardReason || "documented scorecard ceiling";
+    scorecard = capAtB(scorecard, reason);
+    ceilingsApplied.push({ dimension: "scorecard", reason });
+  }
+
+  const config = gradeConfig(r.config);
+
+  // Composite = worst dimension. `limitedBy` names that dimension.
+  const dims: Array<[Dimension, GradeResult]> = [
+    ["courses", courses],
+    ["prereqs", prereqs],
+    ["transfers", transfers],
+    ["scorecard", scorecard],
+    ["config", config],
+  ];
+  let composite: Grade = "A";
+  let limitedBy: Dimension = "courses";
+  for (const [name, g] of dims) {
+    const next = worse(composite, g.grade);
+    if (next !== composite) {
+      composite = next;
+      limitedBy = name;
+    } else if (next === g.grade && g.grade !== "A") {
+      // Tie: keep the first one (stable order: courses → prereqs → transfers → scorecard → config).
+    }
+  }
+
+  return { courses, prereqs, transfers, scorecard, config, composite, limitedBy, ceilingsApplied };
 }
 
 function auditState(slug: string): AuditResult {
@@ -344,15 +579,35 @@ function auditState(slug: string): AuditResult {
   // a dimension's gap is a real-world constraint, not unfinished work.
   // The grader treats these as ignored for tier purposes.
   let ceilingTransfers = false;
+  let ceilingTransfersReason: string | undefined;
   let ceilingScorecard = false;
+  let ceilingScorecardReason: string | undefined;
   const ceilingCourseColleges: string[] = [];
   const ceilingBlockMatch = configText.match(
     /documentedCeilings\s*:\s*\{([\s\S]*?)\n\s{0,4}\}/,
   );
   if (ceilingBlockMatch) {
     const body = ceilingBlockMatch[1];
-    ceilingTransfers = /(^|\n)\s*transfers\s*:/.test(body);
-    ceilingScorecard = /(^|\n)\s*scorecard\s*:/.test(body);
+    const transfersReasonMatch = body.match(/(^|\n)\s*transfers\s*:\s*"((?:[^"\\]|\\.)*)"/);
+    const transfersMultiLineMatch = !transfersReasonMatch
+      ? body.match(/(^|\n)\s*transfers\s*:\s*\n?\s*"((?:[^"\\]|\\.)*)"/)
+      : null;
+    if (transfersReasonMatch) {
+      ceilingTransfers = true;
+      ceilingTransfersReason = transfersReasonMatch[2];
+    } else if (transfersMultiLineMatch) {
+      ceilingTransfers = true;
+      ceilingTransfersReason = transfersMultiLineMatch[2];
+    } else if (/(^|\n)\s*transfers\s*:/.test(body)) {
+      ceilingTransfers = true;
+    }
+    const scorecardReasonMatch = body.match(/(^|\n)\s*scorecard\s*:\s*"((?:[^"\\]|\\.)*)"/);
+    if (scorecardReasonMatch) {
+      ceilingScorecard = true;
+      ceilingScorecardReason = scorecardReasonMatch[2];
+    } else if (/(^|\n)\s*scorecard\s*:/.test(body)) {
+      ceilingScorecard = true;
+    }
     const coursesMatch = body.match(/courses\s*:\s*\[([\s\S]*?)\]/);
     if (coursesMatch) {
       const slugs = coursesMatch[1].match(/collegeSlug\s*:\s*"([^"]+)"/g) || [];
@@ -363,7 +618,7 @@ function auditState(slug: string): AuditResult {
     }
   }
 
-  return {
+  const base: Omit<AuditResult, "grades"> = {
     slug,
     name,
     collegeCount,
@@ -424,10 +679,13 @@ function auditState(slug: string): AuditResult {
     },
     documentedCeilings: {
       transfers: ceilingTransfers,
+      ...(ceilingTransfersReason ? { transfersReason: ceilingTransfersReason } : {}),
       scorecard: ceilingScorecard,
+      ...(ceilingScorecardReason ? { scorecardReason: ceilingScorecardReason } : {}),
       courseColleges: ceilingCourseColleges,
     },
   };
+  return { ...base, grades: computeGrades(base) };
 }
 
 // ---------------------------------------------------------------------------
