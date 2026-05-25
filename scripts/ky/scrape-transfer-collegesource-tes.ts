@@ -513,7 +513,7 @@ async function scrapeReceiver(
   extractHiddenFromHtml(searchResult, s);
 
   // 5) Find + click the KCTCS institution link
-  const linkMatch = searchResult.match(/__doPostBack\(&#39;(gdvInstWithEQ\$ctl\d+\$btnCreditFromInstName)&#39;/);
+  let linkMatch = searchResult.match(/__doPostBack\(&#39;(gdvInstWithEQ\$ctl\d+\$btnCreditFromInstName)&#39;/);
   if (!linkMatch) {
     // Receiver may have KCTCS under a different name (e.g. "Kentucky
     // Community College System") — try a broader search.
@@ -531,9 +531,9 @@ async function scrapeReceiver(
     if (!retryMatch) {
       throw new Error("No KCTCS institution link found in search results");
     }
-    linkMatch[1] = retryMatch[1];
+    linkMatch = retryMatch;
   }
-  const kctcsTarget = linkMatch[1];
+  const kctcsTarget = linkMatch![1];
   console.log(`  [5/7] Pick institution → ${kctcsTarget}`);
   await sleep(DELAY_MS);
   const gridPage1 = await httpPost(
