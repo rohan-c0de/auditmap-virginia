@@ -262,8 +262,24 @@ const STATE_SYSTEM_HOSTS: Record<string, string[]> = {
   mn: ["eservices.minnstate.edu"],
   // Colorado Community College System — 13 colleges (Otero, etc.)
   co: ["erpdnssb.cccs.edu"],
-  // Alabama Community College System — 22 colleges (Drake, etc.)
-  al: ["ssb-prod.ec.accs.edu"],
+  // Alabama Community College System — 22 colleges. Two cluster hosts
+  // because ACCS migrated some member colleges from the legacy Banner 8
+  // cluster (`ssb-prod`) to a unified Banner SSB 9 (`reg-prod`) on
+  // 2026-05-24. Both still serve live data, so we probe both during
+  // fingerprinting.
+  //
+  // Detection coverage gap: the Banner 8 host (`ssb-prod`) requires a
+  // per-college code in the path (`/PROD/{CODE}/bwckschd...` — e.g.
+  // CVCC, BISHOP, DRAKE). The generic `/PROD/bwckschd` probe path
+  // returns 503, so colleges on the Banner 8 cluster are only detected
+  // when their homepage links to the full SSB URL. The SSB 9 host
+  // (`reg-prod`) works without the code — its bare `/StudentRegistration
+  // Ssb/ssb/classSearch/classSearch` returns 500 but with the
+  // `StudentRegistrationSsb` body marker, so PROBES correctly tags
+  // banner-ssb-9. Per-college-code probing for the Banner 8 cluster is
+  // a separate enhancement; the per-college code map already lives in
+  // `scripts/al/scrape-accs-banner8.ts` HOSTS if needed.
+  al: ["ssb-prod.ec.accs.edu", "reg-prod.ec.accs.edu"],
   // California is intentionally excluded. CA has 117 colleges spread
   // across 73+ multi-college districts (SCCCD, CCCD, Los Rios, Peralta,
   // SDCCD, etc.), and the SIS lives per-DISTRICT, not per-state. Adding
