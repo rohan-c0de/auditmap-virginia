@@ -48,6 +48,7 @@ const arConfig: StateConfig = {
       { scripts: ["scripts/ar/scrape-eacc.ts"], runner: "playwright" },
       { scripts: ["scripts/ar/scrape-ozarka.ts"], runner: "http" },
       { scripts: ["scripts/ar/scrape-npc.ts"], runner: "http" },
+      { scripts: ["scripts/ar/scrape-ua-powerbi.ts"], runner: "playwright" },
     ],
     // manual-only: transfers — no statewide articulation portal registered yet (Arkansas's ACTS system).
     // manual-only: prereqs — aggregated from course-search data; no dedicated catalog scraper.
