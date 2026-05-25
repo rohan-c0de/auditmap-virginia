@@ -20,6 +20,12 @@ import { scrapeColleagueState } from "../lib/scrape-colleague";
 const HOSTS: Record<string, string> = {
   "eastern-iowa-community-college-district": "https://selfservice.eicc.edu",
   "iowa-western-community-college": "https://iwcc-ss.colleague.elluciancloud.com",
+  // Added via coverage-expansion + refingerprint workflow:
+  "indian-hills-community-college": "https://ss.indianhills.edu",
+  "iowa-central-community-college": "https://selfservice.iowacentral.edu",
+  "kirkwood-community-college": "https://selfservice.kirkwood.edu",
+  "northeast-iowa-community-college": "https://selfserv.nicc.edu",
+  "southeastern-community-college": "https://selfservice.scciowa.edu",
 };
 
 async function main() {

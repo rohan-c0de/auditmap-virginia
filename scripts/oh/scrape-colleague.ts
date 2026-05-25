@@ -19,6 +19,12 @@ import { scrapeColleagueState } from "../lib/scrape-colleague";
 
 const HOSTS: Record<string, string> = {
   "cincinnati-state-technical-and-community-college": "https://selfservice.cincinnatistate.edu",
+  // Added via coverage-expansion + refingerprint workflow:
+  "central-ohio-technical-college": "https://self-service.cotc.edu:8183",
+  "columbus-state-community-college": "https://selfservice.cscc.edu",
+  "hocking-college": "https://hocking.edu",
+  "north-central-state-college": "https://colss-prod.ncscsaas.elluciancloud.com",
+  "washington-state-community-college": "https://selfservice.wscc.edu",
 };
 
 async function main() {

@@ -22,6 +22,9 @@ const BANNER_COLLEGES: Record<string, string> = {
   "lansing-community-college": "https://starnetb.lcc.edu",
   "southwestern-michigan-college": "https://xeprod.swmich.edu",
   "washtenaw-community-college": "https://banner.wccnet.edu",
+  // Added via coverage-expansion + refingerprint workflow:
+  "grand-rapids-community-college": "https://my.grcc.edu",
+  "west-shore-community-college": "https://westshore.edu",
 };
 
 interface BannerTerm {

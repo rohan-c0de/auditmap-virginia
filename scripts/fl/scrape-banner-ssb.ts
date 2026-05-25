@@ -42,6 +42,8 @@ const BANNER_COLLEGES: Record<string, string> = {
   "valencia":     "https://banner.aws.valenciacollege.edu",
   "irsc":         "https://reg-prod.irscsaas.elluciancloud.com:8103",
   "lssc":         "https://banner.lssc.edu",
+  // Added via coverage-expansion + refingerprint workflow:
+  "mdc":          "https://my.mdc.edu",
 };
 
 interface BannerTerm {

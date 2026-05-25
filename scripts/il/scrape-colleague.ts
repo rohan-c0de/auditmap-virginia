@@ -18,6 +18,8 @@ const HOSTS: Record<string, string> = {
   "kankakee-community-college": "https://selfservice.kcc.edu",
   "parkland-college": "https://parkland-ss.colleague.elluciancloud.com",
   "rock-valley-college": "https://colss-prod.ec.rockvalleycollege.edu",
+  // Added via coverage-expansion + refingerprint workflow:
+  "elgin-community-college": "https://selfservice.elgin.edu",
 };
 
 async function main() {
