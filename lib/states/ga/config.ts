@@ -104,7 +104,20 @@ const gaConfig: StateConfig = {
       { scripts: ["scripts/ga/scrape-transfer-usg.ts"], runner: "playwright" },
     ],
     prereqs: { source: "aggregate-from-courses" },
-    programs: [{ scripts: ["scripts/ga/scrape-programs.ts"], runner: "http" }],
+    programs: [
+      // Acalog: wiregrass-tech + gwinnett-tech
+      { scripts: ["scripts/ga/scrape-programs.ts"], runner: "http" },
+      // SmartCatalogIQ: 13 TCSG colleges (see scrape-smartcatalogiq-programs.ts
+      // for the full list; three use non-obvious subdomains: gntc, gptc, oftc, sctech)
+      { scripts: ["scripts/ga/scrape-smartcatalogiq-programs.ts"], runner: "http" },
+    ],
+  },
+  documentedCeilings: {
+    programs:
+      "Athens Tech's SmartCatalogIQ catalog only publishes general-education requirement pages, not individual degree-plan pages (no h1.degreeTitle). " +
+      "Albany Tech, South GA Tech, Southeastern Tech, and Southern Regional Tech use Nimble CMS embedded catalogs (no public API). " +
+      "Central GA Tech and North GA Tech publish PDF-only catalogs (no structured web catalog). " +
+      "Coastal Pines Tech uses Drupal 11 + CleanCatalog (no existing template).",
   },
 };
 
