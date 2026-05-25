@@ -133,15 +133,25 @@ const PROBES: ProbeRule[] = [
       "/Student/Courses/Search",
       "/Student/Student/Courses",
     ],
-    // Colleague's React shell ships a verification-token meta + the
-    // EllucianColleagueSelfService string in the bundle filenames. Newer
-    // SCCCD-style deployments don't expose that exact string but ARE
-    // unambiguously Colleague — they pull assets from elluciancloud.com.
-    // Combined with the /Student/Courses path (which is uniquely Colleague),
-    // any of these is a high-confidence match.
+    // Colleague-specific markers. We deliberately do NOT match on
+    // `elluciancloud.com` alone — that's an Ellucian CDN URL that appears
+    // in non-Colleague pages too (OmniUpdate CMS shells, marketing pages
+    // with links to Ellucian portals). PR-after-#557 investigation found
+    // Las Positas's OmniUpdate-hosted /Student/Courses returns HTTP 200
+    // with a "404 Page not found" body that just happens to include an
+    // elluciancloud.com link — that false-positive made it past the
+    // earlier marker list.
+    //
+    // The two strings below appear in REAL Colleague Self-Service pages
+    // and not (so far observed) in marketing CMS shells:
+    //   - EllucianColleagueSelfService → JS bundle name in classic deploys
+    //   - Colleague Self-Service        → title-text suffix used by newer
+    //                                     SCCCD-style deployments
+    // Acceptable regression: very new SCCCD-style deployments that don't
+    // include either string get classified as `custom`; the
+    // untouchable-investigator agent picks them up.
     markers: [
       "EllucianColleagueSelfService",
-      "elluciancloud.com",
       "Colleague Self-Service",
     ],
   },
@@ -654,6 +664,22 @@ export async function fingerprint(
       // own course-search). Boost to high confidence and evidence the
       // pattern that matched.
       if (resp.status >= 200 && resp.status < 400) {
+        // Colleague auth-gated override (mirrors the Step 2 logic): a
+        // Colleague SPA with `var logInUrl` defined requires authentication.
+        if (
+          platform === "colleague" &&
+          /var\s+logInUrl\s*=/i.test(resp.body)
+        ) {
+          harvestedProbes.push({
+            platform: "auth-gated",
+            url: resp.finalUrl,
+            confidence: "high",
+            evidence: [
+              `Homepage link ${url} → Colleague SPA at ${resp.finalUrl} declares var logInUrl (auth-gated)`,
+            ],
+          });
+          continue;
+        }
         const evidenceList = [
           `homepage link ${url} → ${resp.finalUrl} (HTTP ${resp.status})`,
         ];
@@ -715,6 +741,28 @@ export async function fingerprint(
 
     const match = classifyHit(job.rule, resp);
     if (match) {
+      // Colleague auth-gated override: a Colleague SPA that defines
+      // `var logInUrl = '/Student/Account/Login...'` in its shell HTML
+      // is configured to require login before browsing — anonymous
+      // scrapers never see section data. Reclassify as auth-gated.
+      // See PR-after-#557 untouchable-investigator findings (Mt. San
+      // Jacinto, College of the Canyons, Alvin CC) where the SPA was
+      // technically Colleague but unscrapeable without auth.
+      if (
+        match.platform === "colleague" &&
+        /var\s+logInUrl\s*=/i.test(resp.body)
+      ) {
+        authGatedHit = true;
+        probeMatches.push({
+          platform: "auth-gated",
+          url,
+          confidence: "high",
+          evidence: [
+            `Colleague SPA at ${url} declares var logInUrl — anonymous browsing disabled`,
+          ],
+        });
+        continue;
+      }
       probeMatches.push({ ...match, url });
     }
   }
