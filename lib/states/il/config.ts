@@ -23,7 +23,7 @@ const ilConfig: StateConfig = {
       "Under the Senior Citizen Courses Act (110 ILCS 990), Illinois residents aged 65+ whose prior-year federal adjusted gross income is below the statutory threshold (about $34,000) may enroll in regular credit courses at any public community college tuition-free, on a space-available basis. Fees and books are not waived. Bring your most recent federal tax return when you register.",
   },
 
-  transferSupported: false,
+  transferSupported: true,
   popularCourses: ["ENGLISH 101", "BIOLOGY 121", "CHEM 121", "ENG 101", "ENGLISH 102", "SPEECH 101-1"],
   defaultZip: "60601",
   defaultZipCity: "Chicago",
@@ -68,9 +68,12 @@ const ilConfig: StateConfig = {
     // Colleague), then aggregated into data/il/prereqs.json by the unified
     // pipeline. Declaring this sentinel lights up the cron prereq job.
     prereqs: { source: "aggregate-from-courses" },
-    // manual-only: transfers — CollegeTransfer.Net has zero IL in-state targets
-    // (only Indiana universities). Need iTransfer.org (login-gated) or
-    // individual university articulation pages.
+    transfers: [
+      // NIU CEMG bulk JSON API — ~18K mappings across 41 CCs, single GET.
+      { scripts: ["scripts/il/scrape-transfer-niu.ts"], runner: "http" },
+      // SIU Articulation Portal — ~36K mappings across 39 CCs via POST forms.
+      { scripts: ["scripts/il/scrape-transfer-siu.ts"], runner: "http" },
+    ],
     // manual-only: programs — Phase 5+; no state has program scrapers yet.
   },
 };
