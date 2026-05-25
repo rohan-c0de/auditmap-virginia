@@ -11,7 +11,17 @@ const ilConfig: StateConfig = {
   // TODO: research senior-waiver statute for Illinois.
   // Illinois Public Act 093-0228 waives tuition for seniors 65+ at public CCs,
   // but enrollment is space-available. Verify details before enabling.
-  seniorWaiver: null,
+  seniorWaiver: {
+    ageThreshold: 65,
+    legalCitation: "110 ILCS 990 (Senior Citizen Courses Act)",
+    description:
+      "Illinois residents aged 65 and older with prior year's federal adjusted gross income below the threshold set by the Senior Citizen Courses Act (currently around $34,000) may enroll in regular credit courses at any Illinois public community college tuition-free, on a space-available basis. Fees and books are not waived.",
+    bannerTitle: "Illinois Senior Citizen Courses Act",
+    bannerSummary:
+      "Over 65 in Illinois with limited income? Tuition is free at community colleges on a space-available basis.",
+    bannerDetail:
+      "Under the Senior Citizen Courses Act (110 ILCS 990), Illinois residents aged 65+ whose prior-year federal adjusted gross income is below the statutory threshold (about $34,000) may enroll in regular credit courses at any public community college tuition-free, on a space-available basis. Fees and books are not waived. Bring your most recent federal tax return when you register.",
+  },
 
   transferSupported: false,
   popularCourses: [],

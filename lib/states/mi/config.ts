@@ -31,7 +31,17 @@ const miConfig: StateConfig = {
   // are set per-college. Notable examples: WCCCD Senior Pass, Henry Ford
   // Senior Citizen tuition assistance. Surfaced per-institution rather than
   // as a state-wide banner.
-  seniorWaiver: null,
+  seniorWaiver: {
+    ageThreshold: 60,
+    legalCitation: "MCL 389.21+ (district-level authority)",
+    description:
+      "Michigan has no statewide senior-tuition statute for community colleges. Michigan's 28 community college districts (organized under the Community College Act, MCL 389.21+) set their own tuition policies, and many offer reduced or waived tuition for residents 60+ on a space-available basis. Terms vary by college.",
+    bannerTitle: "Michigan Senior Tuition Discounts (by college)",
+    bannerSummary:
+      "Over 60 in Michigan? Most community colleges offer senior tuition discounts — terms vary by college.",
+    bannerDetail:
+      "Michigan has no statewide senior-tuition statute. The 28 community college districts (organized under the Community College Act, MCL 389.21+) set their own tuition policies. Many offer reduced or waived tuition for residents 60+ on a space-available basis, sometimes with fee adjustments. Contact your college's registrar or financial aid office for the specific terms.",
+  },
 
   transferSupported: false,
   popularCourses: [],
