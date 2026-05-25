@@ -316,7 +316,12 @@ function parseProgramPage(
       }
     });
 
-    if (current && current.courses.length > 0) groups.push(current);
+    // The `as` cast defeats TS's post-callback narrowing of `current` to
+    // `null` (and thus `current && ...` to `never`). The reassignment
+    // inside .each() is invisible to flow analysis at this scope, so the
+    // declared type is the right one to use here.
+    const finalGroup = current as RequirementGroup | null;
+    if (finalGroup && finalGroup.courses.length > 0) groups.push(finalGroup);
   });
 
   if (groups.length === 0) return null;
