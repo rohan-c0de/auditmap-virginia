@@ -26,6 +26,8 @@ import * as path from "node:path";
 const BASE_URL = "https://assist.org";
 const ACADEMIC_YEAR_ID = 76; // 2025-2026
 const DELAY_MS = 1000;
+const MAX_RETRIES = 4;
+const BACKOFF_BASE_MS = 30000; // 30s, 60s, 120s, 240s
 const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36";
 
@@ -98,7 +100,7 @@ async function startSession(): Promise<Session> {
   return { cookies, xsrfToken };
 }
 
-async function apiGet<T>(session: Session, p: string): Promise<T> {
+async function apiGet<T>(session: Session, p: string, retryCount = 0): Promise<T> {
   const resp = await fetch(`${BASE_URL}${p}`, {
     headers: {
       "User-Agent": UA,
@@ -107,6 +109,14 @@ async function apiGet<T>(session: Session, p: string): Promise<T> {
       "X-XSRF-TOKEN": session.xsrfToken,
     },
   });
+
+  if (resp.status === 429 && retryCount < MAX_RETRIES) {
+    const delayMs = BACKOFF_BASE_MS * Math.pow(2, retryCount);
+    console.log(`  [429 rate limit] waiting ${(delayMs / 1000).toFixed(0)}s before retry ${retryCount + 1}/${MAX_RETRIES}`);
+    await sleep(delayMs);
+    return apiGet<T>(session, p, retryCount + 1);
+  }
+
   if (!resp.ok) throw new Error(`${p}: HTTP ${resp.status}`);
   return resp.json() as Promise<T>;
 }
@@ -155,7 +165,19 @@ interface FixtureMeta {
 }
 
 async function main() {
-  console.log("ASSIST.org — Phase 1 articulation explorer\n");
+  console.log("ASSIST.org — Phase 1 articulation explorer (with 429 backoff)\n");
+
+  // Parse CLI args: filter to specific CCs if provided
+  const filterCcs = process.argv.slice(2);
+  const REMAINING_CCS = [
+    "Pasadena City College",
+    "De Anza College",
+    "Long Beach City College",
+    "American River College",
+    "Diablo Valley College",
+    "Orange Coast College",
+    "Fullerton College",
+  ];
 
   // 1. Session
   const session = await startSession();
@@ -166,7 +188,8 @@ async function main() {
   console.log(`Institutions: ${allInsts.length}\n`);
 
   // 3. Resolve target IDs
-  const ccs = TOP_CCS.map((name) => {
+  const ccsToProcess = filterCcs.length > 0 ? filterCcs : REMAINING_CCS;
+  const ccs = ccsToProcess.map((name) => {
     const inst = allInsts.find((i) => i.names[0]?.name === name);
     if (!inst) throw new Error(`CC not found in ASSIST institutions: ${name}`);
     return { name, id: inst.id, slug: slugify(name) };
@@ -181,10 +204,19 @@ async function main() {
 
   fs.mkdirSync(FIXTURES_DIR, { recursive: true });
 
-  // 4. For each (CC, uni) pair: enumerate major agreements, pick up to 3 matching
+  // 4. Load existing index to append
+  const indexPath = path.join(FIXTURES_DIR, "_index.json");
+  let existingIndex: any = { fixtures: [], skipped: [] };
+  if (fs.existsSync(indexPath)) {
+    const indexContent = fs.readFileSync(indexPath, "utf-8");
+    existingIndex = JSON.parse(indexContent);
+    console.log(`Loaded existing index: ${existingIndex.fixtures.length} fixtures, ${existingIndex.skipped.length} skipped\n`);
+  }
+
+  // 5. For each (CC, uni) pair: enumerate major agreements, pick up to 3 matching
   //    patterns, fetch the report, write to fixtures.
-  const fixtures: FixtureMeta[] = [];
-  const skipped: string[] = [];
+  const fixtures: FixtureMeta[] = [...existingIndex.fixtures];
+  const skipped: string[] = [...existingIndex.skipped];
 
   for (const cc of ccs) {
     for (const uni of unis) {
@@ -250,8 +282,7 @@ async function main() {
     }
   }
 
-  // 5. Write index
-  const indexPath = path.join(FIXTURES_DIR, "_index.json");
+  // 6. Write appended index
   fs.writeFileSync(
     indexPath,
     JSON.stringify(
@@ -268,13 +299,15 @@ async function main() {
     ),
   );
 
-  // 6. Summary
+  // 7. Summary
+  const newFixtures = fixtures.length - existingIndex.fixtures.length;
   console.log(`\n=== Summary ===`);
-  console.log(`  Fixtures written: ${fixtures.length}`);
+  console.log(`  New fixtures: ${newFixtures}`);
+  console.log(`  Total fixtures (cumulative): ${fixtures.length}`);
   console.log(`  Total size: ${(fixtures.reduce((s, f) => s + f.sizeBytes, 0) / 1024).toFixed(1)} KB`);
   console.log(`  Avg size: ${(fixtures.reduce((s, f) => s + f.sizeBytes, 0) / fixtures.length / 1024).toFixed(1)} KB`);
   console.log(`  Skipped: ${skipped.length}`);
-  if (skipped.length > 0 && skipped.length <= 20) {
+  if (skipped.length > 0 && skipped.length <= 30) {
     for (const s of skipped) console.log(`    ${s}`);
   }
   console.log(`\n  Index: ${indexPath}`);
