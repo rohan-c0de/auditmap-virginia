@@ -554,68 +554,70 @@ async function scrapeCC(
   const sessionId = await setupSession(ccCode, artId);
   await sleep(300);
 
-  // Step 3: Start from the first course
-  const firstCourseHtml = await retryFetch(
-    `${BASE_URL}/crs-srch.cgi?${sessionId}`,
-    `first-course(${ccCode})`,
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: `CRSID=A&LUp=Go&SI=${ccCode}&RI=All&From_where=precs.cgi`,
-    },
-  );
-
-  if (!firstCourseHtml) {
-    console.log("    Empty response for first course, skipping");
-    return [];
-  }
-
+  // Step 3+4: NJTransfer's `Next` link only walks within the starting-letter
+  // bucket — once we reach the last A-prefixed course, the Next link points
+  // back to the first A course (or disappears), so a single `CRSID=A` search
+  // followed by Next-iteration captures A-prefix data only. To get full
+  // alphabet coverage we restart the search at each letter A–Z.
   const allMappings: TransferMapping[] = [];
   let courseCount = 0;
   const seenCourses = new Set<string>();
+  const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
-  // Parse first course
-  let result = parseCourseEquivalencyPage(firstCourseHtml, ccCode);
-  if (result.ccCourseId) {
+  for (const letter of LETTERS) {
+    if (courseCount >= courseLimit) break;
+
+    const firstCourseHtml = await retryFetch(
+      `${BASE_URL}/crs-srch.cgi?${sessionId}`,
+      `first-course(${ccCode}, ${letter})`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `CRSID=${letter}&LUp=Go&SI=${ccCode}&RI=All&From_where=precs.cgi`,
+      },
+    );
+
+    if (!firstCourseHtml) continue;
+
+    let result = parseCourseEquivalencyPage(firstCourseHtml, ccCode);
+
+    // Skip if no course was found for this letter or NJTransfer fell through
+    // to a course we've already captured under an earlier letter.
+    if (!result.ccCourseId || seenCourses.has(result.ccCourseId)) continue;
+
     seenCourses.add(result.ccCourseId);
     allMappings.push(...result.mappings);
     courseCount++;
-  }
 
-  // Step 4: Follow Next links
-  while (result.nextUrl && courseCount < courseLimit) {
-    await sleep(DELAY_MS);
+    // Iterate within this letter bucket via Next links
+    while (result.nextUrl && courseCount < courseLimit) {
+      await sleep(DELAY_MS);
 
-    const html = await retryFetch(
-      result.nextUrl,
-      `next-course(${ccCode}, #${courseCount})`,
-    );
-
-    if (!html) break;
-
-    result = parseCourseEquivalencyPage(html, ccCode);
-
-    // Detect loop (we've come back to a course we've seen)
-    if (result.ccCourseId && seenCourses.has(result.ccCourseId)) {
-      console.log(
-        `    Reached end of course list after ${courseCount} courses (loop detected at ${result.ccCourseId})`,
+      const html = await retryFetch(
+        result.nextUrl,
+        `next-course(${ccCode}, ${letter}, #${courseCount})`,
       );
-      break;
-    }
 
-    if (result.ccCourseId) {
-      seenCourses.add(result.ccCourseId);
-      allMappings.push(...result.mappings);
-      courseCount++;
+      if (!html) break;
 
-      if (courseCount % 50 === 0) {
-        console.log(
-          `    ${courseCount} courses processed (${allMappings.length} mappings so far)...`,
-        );
+      result = parseCourseEquivalencyPage(html, ccCode);
+
+      // End of bucket: Next link looped back to a course we've already seen
+      if (result.ccCourseId && seenCourses.has(result.ccCourseId)) break;
+
+      if (result.ccCourseId) {
+        seenCourses.add(result.ccCourseId);
+        allMappings.push(...result.mappings);
+        courseCount++;
+
+        if (courseCount % 50 === 0) {
+          console.log(
+            `    ${courseCount} courses processed (${allMappings.length} mappings so far)...`,
+          );
+        }
+      } else {
+        break;
       }
-    } else {
-      // Empty page — likely hit the end
-      break;
     }
   }
 
