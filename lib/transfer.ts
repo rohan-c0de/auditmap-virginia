@@ -251,10 +251,47 @@ export async function getCoursesForUniversity(
   return mappings.filter((m) => m.university === university);
 }
 
-/** Get the list of all universities in the dataset. */
+/** Get the list of all universities in the dataset.
+ *
+ * Performance: previously called loadTransferMappings(state) and pulled every
+ * column of every row just to enumerate distinct universities. For TX (187k
+ * mappings × 13 columns) that walked ~6 MB across ~188 Supabase pages on
+ * every cold render of /tx/transfer — which combined with downstream work
+ * pushed past Vercel's 30s function timeout (observed 15s+ TTFB). Now uses
+ * a column-projected query (just `university, university_name`), keeping
+ * the same pagination but slashing wire payload and JSON parse cost.
+ */
 export async function getUniversities(
   state: string
 ): Promise<{ slug: string; name: string }[]> {
+  try {
+    const seen = new Map<string, string>();
+    let offset = 0;
+    while (true) {
+      const { data, error } = await supabase
+        .from("transfers")
+        .select("university, university_name")
+        .eq("state", state)
+        .range(offset, offset + PAGE_SIZE - 1);
+
+      if (error || !data || data.length === 0) break;
+      for (const row of data) {
+        if (!seen.has(row.university)) {
+          seen.set(row.university, row.university_name);
+        }
+      }
+      if (data.length < PAGE_SIZE) break;
+      offset += PAGE_SIZE;
+    }
+
+    if (seen.size > 0) {
+      return Array.from(seen.entries()).map(([slug, name]) => ({ slug, name }));
+    }
+  } catch {
+    // Supabase unavailable — fall through to local JSON
+  }
+
+  // Fallback: local JSON file
   const mappings = await loadTransferMappings(state);
   const seen = new Map<string, string>();
   for (const m of mappings) {
@@ -282,25 +319,66 @@ export async function getUniversitiesWithCounts(state: string): Promise<
     totalCount: number; // direct + elective (i.e. "transferable" count)
   }[]
 > {
-  const mappings = await loadTransferMappings(state);
+  // Performance: column-projected Supabase query — same reason as
+  // getUniversities. Only pulls the 5 fields we actually inspect, not the
+  // full 13. See that function's comment.
   const map = new Map<
     string,
     { name: string; directCount: number; electiveCount: number }
   >();
 
-  for (const m of mappings) {
-    if (m.univ_course && m.univ_course.includes("*")) continue;
-    if (m.no_credit) continue; // hub page lists only transferable courses
-    if (!map.has(m.university)) {
-      map.set(m.university, {
-        name: m.university_name,
-        directCount: 0,
-        electiveCount: 0,
-      });
+  let usedSupabase = false;
+  try {
+    let offset = 0;
+    while (true) {
+      const { data, error } = await supabase
+        .from("transfers")
+        .select(
+          "university, university_name, univ_course, no_credit, is_elective"
+        )
+        .eq("state", state)
+        .range(offset, offset + PAGE_SIZE - 1);
+
+      if (error || !data || data.length === 0) break;
+      for (const row of data) {
+        if (row.univ_course && row.univ_course.includes("*")) continue;
+        if (row.no_credit) continue;
+        if (!map.has(row.university)) {
+          map.set(row.university, {
+            name: row.university_name,
+            directCount: 0,
+            electiveCount: 0,
+          });
+        }
+        const entry = map.get(row.university)!;
+        if (row.is_elective) entry.electiveCount++;
+        else entry.directCount++;
+      }
+      usedSupabase = true;
+      if (data.length < PAGE_SIZE) break;
+      offset += PAGE_SIZE;
     }
-    const entry = map.get(m.university)!;
-    if (m.is_elective) entry.electiveCount++;
-    else entry.directCount++;
+  } catch {
+    // Supabase unavailable — fall through to local JSON
+  }
+
+  // Fallback: local JSON (Supabase returned nothing usable)
+  if (!usedSupabase || map.size === 0) {
+    const mappings = await loadTransferMappings(state);
+    for (const m of mappings) {
+      if (m.univ_course && m.univ_course.includes("*")) continue;
+      if (m.no_credit) continue;
+      if (!map.has(m.university)) {
+        map.set(m.university, {
+          name: m.university_name,
+          directCount: 0,
+          electiveCount: 0,
+        });
+      }
+      const entry = map.get(m.university)!;
+      if (m.is_elective) entry.electiveCount++;
+      else entry.directCount++;
+    }
   }
 
   return Array.from(map.entries())
