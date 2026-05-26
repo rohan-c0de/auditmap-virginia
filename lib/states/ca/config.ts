@@ -24,7 +24,7 @@ const caConfig: StateConfig = {
       "California has no statewide senior-tuition statute. Cal. Ed. Code § 76300 sets the standard enrollment fee, and individual community college districts may waive or reduce it for residents 60+ on a space-available basis. Some districts cover only the enrollment fee; others include health, parking, and other fees. Contact the financial aid or registrar office at your college for the specific terms.",
   },
 
-  transferSupported: false,
+  transferSupported: true,
   popularCourses: ["ENGL C1000", "COMM C1000", "STAT C1000", "ENGL C1001", "PSYC C1000", "POLS C1000"],
   defaultZip: "90029",
   defaultZipCity: "Los Angeles",
@@ -56,9 +56,12 @@ const caConfig: StateConfig = {
       { scripts: ["scripts/ca/scrape-laccd.ts"], runner: "playwright" },
     ],
     prereqs: { source: "aggregate-from-courses" },
-    // manual-only: transfers — California has no equivalency portal registered
-    //   in data/articulation-portals.json. ASSIST.org is the statewide
-    //   articulation system but requires a bespoke scraper.
+    transfers: [
+      // ASSIST.org — XSRF-protected REST API. v1 covers system-level UCTCA +
+      // CSUTC transferability lists (~145K mappings across 114 CCs). Per-major
+      // course-by-course articulation is a future v2 enhancement.
+      { scripts: ["scripts/ca/scrape-transfer-assist.ts"], runner: "http" },
+    ],
     // manual-only: programs — Phase 5+.
   },
 };
