@@ -219,3 +219,38 @@ export interface CollegePrograms {
   scraped_at: string;
   programs: ProgramRequirement[];
 }
+
+// ASSIST.org articulation types (Phase 3)
+export interface SendingOption {
+  cc_course_prefix: string;
+  cc_course_number: string;
+  cc_course_title: string;
+  cc_course_units: string;
+  conjunction: "AND" | "OR";
+}
+
+export interface ArticulationRequirement {
+  receiving_course_prefix?: string;
+  receiving_course_number?: string;
+  receiving_course_title?: string;
+  receiving_course_units?: string;
+  requirement_label: string;
+  sending_options: SendingOption[] | null; // null if no_articulation_reason is set
+  no_articulation_reason?: string;
+}
+
+export interface ArticulationRequirementGroup {
+  name: string;
+  type: "GE" | "MAJOR" | "ELECTIVE" | "OTHER";
+  requirements: ArticulationRequirement[];
+}
+
+export interface ArticulationAgreement {
+  cc_name: string;
+  cc_slug: string;
+  receiving_institution_name: string;
+  receiving_institution_slug: string;
+  major_name: string;
+  major_slug: string;
+  requirement_groups: ArticulationRequirementGroup[];
+}

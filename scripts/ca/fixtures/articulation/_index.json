@@ -1,760 +1,1023 @@
 {
-  "generatedAt": "2026-05-26T03:36:20.743Z",
+  "generatedAt": "2026-05-26T04:14:28.953Z",
   "academicYearId": 76,
-  "fixtureCount": 50,
-  "totalBytes": 2864630,
+  "fixtureCount": 145,
+  "totalBytes": 9153262,
   "fixtures": [
     {
-      "ccSlug": "east-los-angeles-college",
-      "ccName": "East Los Angeles College",
-      "ccAssistId": 118,
-      "uniSlug": "university-of-california-los-angeles",
-      "uniName": "University of California, Los Angeles",
-      "uniAssistId": 117,
-      "majorLabel": "Computer Science and Engineering/B.S.",
-      "majorPattern": "computer science",
-      "agreementKey": "76/118/to/117/Major/f231a2db-befc-4ea0-1fa1-08ddcb96df9e",
-      "filename": "east-los-angeles-college__university-of-california-los-angeles__computer-science-and-engineering-b-s.json",
-      "sizeBytes": 144563
-    },
-    {
-      "ccSlug": "east-los-angeles-college",
-      "ccName": "East Los Angeles College",
-      "ccAssistId": 118,
-      "uniSlug": "university-of-california-los-angeles",
-      "uniName": "University of California, Los Angeles",
-      "uniAssistId": 117,
-      "majorLabel": "Psychology/B.A.",
-      "majorPattern": "psychology",
-      "agreementKey": "76/118/to/117/Major/4326f498-897c-4aae-1fce-08ddcb96df9e",
-      "filename": "east-los-angeles-college__university-of-california-los-angeles__psychology-b-a.json",
-      "sizeBytes": 86416
-    },
-    {
-      "ccSlug": "east-los-angeles-college",
-      "ccName": "East Los Angeles College",
-      "ccAssistId": 118,
-      "uniSlug": "university-of-california-los-angeles",
-      "uniName": "University of California, Los Angeles",
-      "uniAssistId": 117,
-      "majorLabel": "Business Economics/B.A.",
-      "majorPattern": "(business|economics)",
-      "agreementKey": "76/118/to/117/Major/fee8c832-0108-4517-1f93-08ddcb96df9e",
-      "filename": "east-los-angeles-college__university-of-california-los-angeles__business-economics-b-a.json",
-      "sizeBytes": 44521
-    },
-    {
-      "ccSlug": "east-los-angeles-college",
-      "ccName": "East Los Angeles College",
-      "ccAssistId": 118,
-      "uniSlug": "university-of-california-berkeley",
-      "uniName": "University of California, Berkeley",
-      "uniAssistId": 79,
-      "majorLabel": "Electrical Engineering & Computer Sciences, B.S.",
-      "majorPattern": "computer science",
-      "agreementKey": "76/118/to/79/Major/7d01fb7b-2afa-460e-ace0-08ddbf3f4ee7",
-      "filename": "east-los-angeles-college__university-of-california-berkeley__electrical-engineering-computer-sciences-b-s.json",
-      "sizeBytes": 100627
-    },
-    {
-      "ccSlug": "east-los-angeles-college",
-      "ccName": "East Los Angeles College",
-      "ccAssistId": 118,
-      "uniSlug": "university-of-california-berkeley",
-      "uniName": "University of California, Berkeley",
-      "uniAssistId": 79,
-      "majorLabel": "Psychology, B.A.",
-      "majorPattern": "psychology",
-      "agreementKey": "76/118/to/79/Major/72ebd5bc-b397-4532-ace4-08ddbf3f4ee7",
-      "filename": "east-los-angeles-college__university-of-california-berkeley__psychology-b-a.json",
-      "sizeBytes": 92710
-    },
-    {
-      "ccSlug": "east-los-angeles-college",
-      "ccName": "East Los Angeles College",
-      "ccAssistId": 118,
-      "uniSlug": "university-of-california-berkeley",
-      "uniName": "University of California, Berkeley",
-      "uniAssistId": 79,
-      "majorLabel": "Economics, B.A.",
-      "majorPattern": "(business|economics)",
-      "agreementKey": "76/118/to/79/Major/a7e5abb1-a30f-46eb-acf1-08ddbf3f4ee7",
-      "filename": "east-los-angeles-college__university-of-california-berkeley__economics-b-a.json",
-      "sizeBytes": 49925
-    },
-    {
-      "ccSlug": "east-los-angeles-college",
-      "ccName": "East Los Angeles College",
-      "ccAssistId": 118,
-      "uniSlug": "university-of-california-san-diego",
-      "uniName": "University of California, San Diego",
-      "uniAssistId": 7,
-      "majorLabel": "Mathematics/Computer Science B.S.",
-      "majorPattern": "computer science",
-      "agreementKey": "76/118/to/7/Major/d2dfb7a8-d505-4e70-f33c-08ddd3b241a4",
-      "filename": "east-los-angeles-college__university-of-california-san-diego__mathematics-computer-science-b-s.json",
-      "sizeBytes": 50552
-    },
-    {
-      "ccSlug": "east-los-angeles-college",
-      "ccName": "East Los Angeles College",
-      "ccAssistId": 118,
-      "uniSlug": "university-of-california-san-diego",
-      "uniName": "University of California, San Diego",
-      "uniAssistId": 7,
-      "majorLabel": "Psychology B.S. with a Specialization in Sensation and Perception",
-      "majorPattern": "psychology",
-      "agreementKey": "76/118/to/7/Major/96af8eb7-116f-4384-f32e-08ddd3b241a4",
-      "filename": "east-los-angeles-college__university-of-california-san-diego__psychology-b-s-with-a-specialization-in-sensation-and-perception.json",
-      "sizeBytes": 122750
-    },
-    {
-      "ccSlug": "east-los-angeles-college",
-      "ccName": "East Los Angeles College",
-      "ccAssistId": 118,
-      "uniSlug": "university-of-california-san-diego",
-      "uniName": "University of California, San Diego",
-      "uniAssistId": 7,
-      "majorLabel": "Economics: Joint Major in Mathematics and Economics B.S.",
-      "majorPattern": "(business|economics)",
-      "agreementKey": "76/118/to/7/Major/8c3dd8d8-0037-4465-f308-08ddd3b241a4",
-      "filename": "east-los-angeles-college__university-of-california-san-diego__economics-joint-major-in-mathematics-and-economics-b-s.json",
-      "sizeBytes": 41704
-    },
-    {
-      "ccSlug": "east-los-angeles-college",
-      "ccName": "East Los Angeles College",
-      "ccAssistId": 118,
-      "uniSlug": "san-diego-state-university",
-      "uniName": "San Diego State University",
-      "uniAssistId": 26,
-      "majorLabel": "Computer Science, B.S.",
-      "majorPattern": "computer science",
-      "agreementKey": "76/118/to/26/Major/17a3686b-6292-4a45-f3f9-08ddd3b241a4",
-      "filename": "east-los-angeles-college__san-diego-state-university__computer-science-b-s.json",
-      "sizeBytes": 18950
-    },
-    {
-      "ccSlug": "east-los-angeles-college",
-      "ccName": "East Los Angeles College",
-      "ccAssistId": 118,
-      "uniSlug": "san-diego-state-university",
-      "uniName": "San Diego State University",
-      "uniAssistId": 26,
-      "majorLabel": "Psychology, B.A. -Imperial Valley Campus",
-      "majorPattern": "psychology",
-      "agreementKey": "76/118/to/26/Major/94d81a3a-e2b1-470a-f3a6-08ddd3b241a4",
-      "filename": "east-los-angeles-college__san-diego-state-university__psychology-b-a-imperial-valley-campus.json",
-      "sizeBytes": 8280
-    },
-    {
-      "ccSlug": "east-los-angeles-college",
-      "ccName": "East Los Angeles College",
-      "ccAssistId": 118,
-      "uniSlug": "san-diego-state-university",
-      "uniName": "San Diego State University",
-      "uniAssistId": 26,
-      "majorLabel": "International Business, Italian - Western Europe Emphasis, B.A.",
-      "majorPattern": "(business|economics)",
-      "agreementKey": "76/118/to/26/Major/f7562eb1-9e22-4f71-f3fb-08ddd3b241a4",
-      "filename": "east-los-angeles-college__san-diego-state-university__international-business-italian-western-europe-emphasis-b-a.json",
-      "sizeBytes": 15065
-    },
-    {
-      "ccSlug": "east-los-angeles-college",
-      "ccName": "East Los Angeles College",
-      "ccAssistId": 118,
+      "ccSlug": "american-river-college",
       "uniSlug": "california-state-university-long-beach",
-      "uniName": "California State University, Long Beach",
-      "uniAssistId": 81,
-      "majorLabel": "Computer Science",
-      "majorPattern": "computer science",
-      "agreementKey": "76/118/to/81/Major/0827c64e-650f-4f76-3391-08ddb349963e",
+      "majorLabel": "computer science",
+      "filename": "american-river-college__california-state-university-long-beach__computer-science.json",
+      "sizeBytes": 42049
+    },
+    {
+      "ccSlug": "american-river-college",
+      "uniSlug": "california-state-university-long-beach",
+      "majorLabel": "economics mathematical economics and economic theory",
+      "filename": "american-river-college__california-state-university-long-beach__economics-mathematical-economics-and-economic-theory.json",
+      "sizeBytes": 19907
+    },
+    {
+      "ccSlug": "american-river-college",
+      "uniSlug": "california-state-university-long-beach",
+      "majorLabel": "psychology",
+      "filename": "american-river-college__california-state-university-long-beach__psychology.json",
+      "sizeBytes": 15629
+    },
+    {
+      "ccSlug": "american-river-college",
+      "uniSlug": "san-diego-state-university",
+      "majorLabel": "computer science b s",
+      "filename": "american-river-college__san-diego-state-university__computer-science-b-s.json",
+      "sizeBytes": 39870
+    },
+    {
+      "ccSlug": "american-river-college",
+      "uniSlug": "san-diego-state-university",
+      "majorLabel": "international business russian central europe emphasis b a",
+      "filename": "american-river-college__san-diego-state-university__international-business-russian-central-europe-emphasis-b-a.json",
+      "sizeBytes": 34614
+    },
+    {
+      "ccSlug": "american-river-college",
+      "uniSlug": "san-diego-state-university",
+      "majorLabel": "psychology b a imperial valley campus",
+      "filename": "american-river-college__san-diego-state-university__psychology-b-a-imperial-valley-campus.json",
+      "sizeBytes": 19324
+    },
+    {
+      "ccSlug": "american-river-college",
+      "uniSlug": "university-of-california-berkeley",
+      "majorLabel": "electrical engineering computer sciences b s",
+      "filename": "american-river-college__university-of-california-berkeley__electrical-engineering-computer-sciences-b-s.json",
+      "sizeBytes": 109994
+    },
+    {
+      "ccSlug": "american-river-college",
+      "uniSlug": "university-of-california-berkeley",
+      "majorLabel": "environmental economics and policy b s",
+      "filename": "american-river-college__university-of-california-berkeley__environmental-economics-and-policy-b-s.json",
+      "sizeBytes": 212230
+    },
+    {
+      "ccSlug": "american-river-college",
+      "uniSlug": "university-of-california-berkeley",
+      "majorLabel": "psychology b a",
+      "filename": "american-river-college__university-of-california-berkeley__psychology-b-a.json",
+      "sizeBytes": 103866
+    },
+    {
+      "ccSlug": "american-river-college",
+      "uniSlug": "university-of-california-los-angeles",
+      "majorLabel": "business economics b a",
+      "filename": "american-river-college__university-of-california-los-angeles__business-economics-b-a.json",
+      "sizeBytes": 44509
+    },
+    {
+      "ccSlug": "american-river-college",
+      "uniSlug": "university-of-california-los-angeles",
+      "majorLabel": "linguistics and computer science b a",
+      "filename": "american-river-college__university-of-california-los-angeles__linguistics-and-computer-science-b-a.json",
+      "sizeBytes": 48565
+    },
+    {
+      "ccSlug": "american-river-college",
+      "uniSlug": "university-of-california-los-angeles",
+      "majorLabel": "linguistics and psychology b a",
+      "filename": "american-river-college__university-of-california-los-angeles__linguistics-and-psychology-b-a.json",
+      "sizeBytes": 18259
+    },
+    {
+      "ccSlug": "american-river-college",
+      "uniSlug": "university-of-california-san-diego",
+      "majorLabel": "cse computer science with a specialization in bioinformatics b s",
+      "filename": "american-river-college__university-of-california-san-diego__cse-computer-science-with-a-specialization-in-bioinformatics-b-s.json",
+      "sizeBytes": 74852
+    },
+    {
+      "ccSlug": "american-river-college",
+      "uniSlug": "university-of-california-san-diego",
+      "majorLabel": "economics business economics b s",
+      "filename": "american-river-college__university-of-california-san-diego__economics-business-economics-b-s.json",
+      "sizeBytes": 50063
+    },
+    {
+      "ccSlug": "american-river-college",
+      "uniSlug": "university-of-california-san-diego",
+      "majorLabel": "psychology b s with a specialization in developmental psychology",
+      "filename": "american-river-college__university-of-california-san-diego__psychology-b-s-with-a-specialization-in-developmental-psychology.json",
+      "sizeBytes": 124688
+    },
+    {
+      "ccSlug": "de-anza-college",
+      "uniSlug": "california-state-university-long-beach",
+      "majorLabel": "computer science",
+      "filename": "de-anza-college__california-state-university-long-beach__computer-science.json",
+      "sizeBytes": 50338
+    },
+    {
+      "ccSlug": "de-anza-college",
+      "uniSlug": "california-state-university-long-beach",
+      "majorLabel": "international business",
+      "filename": "de-anza-college__california-state-university-long-beach__international-business.json",
+      "sizeBytes": 41951
+    },
+    {
+      "ccSlug": "de-anza-college",
+      "uniSlug": "california-state-university-long-beach",
+      "majorLabel": "psychology",
+      "filename": "de-anza-college__california-state-university-long-beach__psychology.json",
+      "sizeBytes": 17714
+    },
+    {
+      "ccSlug": "de-anza-college",
+      "uniSlug": "san-diego-state-university",
+      "majorLabel": "computer science b s",
+      "filename": "de-anza-college__san-diego-state-university__computer-science-b-s.json",
+      "sizeBytes": 44353
+    },
+    {
+      "ccSlug": "de-anza-college",
+      "uniSlug": "san-diego-state-university",
+      "majorLabel": "financial services business administration b s",
+      "filename": "de-anza-college__san-diego-state-university__financial-services-business-administration-b-s.json",
+      "sizeBytes": 37151
+    },
+    {
+      "ccSlug": "de-anza-college",
+      "uniSlug": "san-diego-state-university",
+      "majorLabel": "psychology b a imperial valley campus",
+      "filename": "de-anza-college__san-diego-state-university__psychology-b-a-imperial-valley-campus.json",
+      "sizeBytes": 17390
+    },
+    {
+      "ccSlug": "de-anza-college",
+      "uniSlug": "university-of-california-berkeley",
+      "majorLabel": "electrical engineering computer sciences b s",
+      "filename": "de-anza-college__university-of-california-berkeley__electrical-engineering-computer-sciences-b-s.json",
+      "sizeBytes": 131589
+    },
+    {
+      "ccSlug": "de-anza-college",
+      "uniSlug": "university-of-california-berkeley",
+      "majorLabel": "environmental economics and policy b s",
+      "filename": "de-anza-college__university-of-california-berkeley__environmental-economics-and-policy-b-s.json",
+      "sizeBytes": 315786
+    },
+    {
+      "ccSlug": "de-anza-college",
+      "uniSlug": "university-of-california-berkeley",
+      "majorLabel": "psychology b a",
+      "filename": "de-anza-college__university-of-california-berkeley__psychology-b-a.json",
+      "sizeBytes": 106359
+    },
+    {
+      "ccSlug": "de-anza-college",
+      "uniSlug": "university-of-california-los-angeles",
+      "majorLabel": "economics b a",
+      "filename": "de-anza-college__university-of-california-los-angeles__economics-b-a.json",
+      "sizeBytes": 46202
+    },
+    {
+      "ccSlug": "de-anza-college",
+      "uniSlug": "university-of-california-los-angeles",
+      "majorLabel": "linguistics and computer science b a",
+      "filename": "de-anza-college__university-of-california-los-angeles__linguistics-and-computer-science-b-a.json",
+      "sizeBytes": 57136
+    },
+    {
+      "ccSlug": "de-anza-college",
+      "uniSlug": "university-of-california-los-angeles",
+      "majorLabel": "linguistics and psychology b a",
+      "filename": "de-anza-college__university-of-california-los-angeles__linguistics-and-psychology-b-a.json",
+      "sizeBytes": 17391
+    },
+    {
+      "ccSlug": "de-anza-college",
+      "uniSlug": "university-of-california-san-diego",
+      "majorLabel": "cse computer science with a specialization in bioinformatics b s",
+      "filename": "de-anza-college__university-of-california-san-diego__cse-computer-science-with-a-specialization-in-bioinformatics-b-s.json",
+      "sizeBytes": 86321
+    },
+    {
+      "ccSlug": "de-anza-college",
+      "uniSlug": "university-of-california-san-diego",
+      "majorLabel": "economics business economics b s",
+      "filename": "de-anza-college__university-of-california-san-diego__economics-business-economics-b-s.json",
+      "sizeBytes": 52952
+    },
+    {
+      "ccSlug": "de-anza-college",
+      "uniSlug": "university-of-california-san-diego",
+      "majorLabel": "psychology b s with a specialization in social psychology",
+      "filename": "de-anza-college__university-of-california-san-diego__psychology-b-s-with-a-specialization-in-social-psychology.json",
+      "sizeBytes": 143199
+    },
+    {
+      "ccSlug": "diablo-valley-college",
+      "uniSlug": "california-state-university-long-beach",
+      "majorLabel": "computer science",
+      "filename": "diablo-valley-college__california-state-university-long-beach__computer-science.json",
+      "sizeBytes": 38655
+    },
+    {
+      "ccSlug": "diablo-valley-college",
+      "uniSlug": "california-state-university-long-beach",
+      "majorLabel": "economics business economics",
+      "filename": "diablo-valley-college__california-state-university-long-beach__economics-business-economics.json",
+      "sizeBytes": 20460
+    },
+    {
+      "ccSlug": "diablo-valley-college",
+      "uniSlug": "california-state-university-long-beach",
+      "majorLabel": "psychology",
+      "filename": "diablo-valley-college__california-state-university-long-beach__psychology.json",
+      "sizeBytes": 15496
+    },
+    {
+      "ccSlug": "diablo-valley-college",
+      "uniSlug": "san-diego-state-university",
+      "majorLabel": "computer science b s",
+      "filename": "diablo-valley-college__san-diego-state-university__computer-science-b-s.json",
+      "sizeBytes": 35573
+    },
+    {
+      "ccSlug": "diablo-valley-college",
+      "uniSlug": "san-diego-state-university",
+      "majorLabel": "information systems business administration b s",
+      "filename": "diablo-valley-college__san-diego-state-university__information-systems-business-administration-b-s.json",
+      "sizeBytes": 29652
+    },
+    {
+      "ccSlug": "diablo-valley-college",
+      "uniSlug": "san-diego-state-university",
+      "majorLabel": "psychology b a imperial valley campus",
+      "filename": "diablo-valley-college__san-diego-state-university__psychology-b-a-imperial-valley-campus.json",
+      "sizeBytes": 17984
+    },
+    {
+      "ccSlug": "diablo-valley-college",
+      "uniSlug": "university-of-california-berkeley",
+      "majorLabel": "electrical engineering computer sciences b s",
+      "filename": "diablo-valley-college__university-of-california-berkeley__electrical-engineering-computer-sciences-b-s.json",
+      "sizeBytes": 116420
+    },
+    {
+      "ccSlug": "diablo-valley-college",
+      "uniSlug": "university-of-california-berkeley",
+      "majorLabel": "environmental economics and policy b s",
+      "filename": "diablo-valley-college__university-of-california-berkeley__environmental-economics-and-policy-b-s.json",
+      "sizeBytes": 293715
+    },
+    {
+      "ccSlug": "diablo-valley-college",
+      "uniSlug": "university-of-california-berkeley",
+      "majorLabel": "psychology b a",
+      "filename": "diablo-valley-college__university-of-california-berkeley__psychology-b-a.json",
+      "sizeBytes": 97257
+    },
+    {
+      "ccSlug": "diablo-valley-college",
+      "uniSlug": "university-of-california-los-angeles",
+      "majorLabel": "business economics b a",
+      "filename": "diablo-valley-college__university-of-california-los-angeles__business-economics-b-a.json",
+      "sizeBytes": 44635
+    },
+    {
+      "ccSlug": "diablo-valley-college",
+      "uniSlug": "university-of-california-los-angeles",
+      "majorLabel": "linguistics and computer science b a",
+      "filename": "diablo-valley-college__university-of-california-los-angeles__linguistics-and-computer-science-b-a.json",
+      "sizeBytes": 47815
+    },
+    {
+      "ccSlug": "diablo-valley-college",
+      "uniSlug": "university-of-california-los-angeles",
+      "majorLabel": "psychology b a",
+      "filename": "diablo-valley-college__university-of-california-los-angeles__psychology-b-a.json",
+      "sizeBytes": 97520
+    },
+    {
+      "ccSlug": "diablo-valley-college",
+      "uniSlug": "university-of-california-san-diego",
+      "majorLabel": "cse computer science with a specialization in bioinformatics b s",
+      "filename": "diablo-valley-college__university-of-california-san-diego__cse-computer-science-with-a-specialization-in-bioinformatics-b-s.json",
+      "sizeBytes": 72196
+    },
+    {
+      "ccSlug": "diablo-valley-college",
+      "uniSlug": "university-of-california-san-diego",
+      "majorLabel": "mathematics joint major in mathematics and economics b s",
+      "filename": "diablo-valley-college__university-of-california-san-diego__mathematics-joint-major-in-mathematics-and-economics-b-s.json",
+      "sizeBytes": 41106
+    },
+    {
+      "ccSlug": "diablo-valley-college",
+      "uniSlug": "university-of-california-san-diego",
+      "majorLabel": "psychology b s with a specialization in developmental psychology",
+      "filename": "diablo-valley-college__university-of-california-san-diego__psychology-b-s-with-a-specialization-in-developmental-psychology.json",
+      "sizeBytes": 128740
+    },
+    {
+      "ccSlug": "east-los-angeles-college",
+      "uniSlug": "california-state-university-long-beach",
+      "majorLabel": "computer science",
       "filename": "east-los-angeles-college__california-state-university-long-beach__computer-science.json",
-      "sizeBytes": 40963
+      "sizeBytes": 40967
     },
     {
       "ccSlug": "east-los-angeles-college",
-      "ccName": "East Los Angeles College",
-      "ccAssistId": 118,
       "uniSlug": "california-state-university-long-beach",
-      "uniName": "California State University, Long Beach",
-      "uniAssistId": 81,
-      "majorLabel": "Psychology",
-      "majorPattern": "psychology",
-      "agreementKey": "76/118/to/81/Major/48e73ff7-36c9-441e-3369-08ddb349963e",
+      "majorLabel": "economics b s",
+      "filename": "east-los-angeles-college__california-state-university-long-beach__economics-b-s.json",
+      "sizeBytes": 16341
+    },
+    {
+      "ccSlug": "east-los-angeles-college",
+      "uniSlug": "california-state-university-long-beach",
+      "majorLabel": "psychology",
       "filename": "east-los-angeles-college__california-state-university-long-beach__psychology.json",
       "sizeBytes": 14216
     },
     {
       "ccSlug": "east-los-angeles-college",
-      "ccName": "East Los Angeles College",
-      "ccAssistId": 118,
+      "uniSlug": "san-diego-state-university",
+      "majorLabel": "computer science b s",
+      "filename": "east-los-angeles-college__san-diego-state-university__computer-science-b-s.json",
+      "sizeBytes": 18950
+    },
+    {
+      "ccSlug": "east-los-angeles-college",
+      "uniSlug": "san-diego-state-university",
+      "majorLabel": "international business italian western europe emphasis b a",
+      "filename": "east-los-angeles-college__san-diego-state-university__international-business-italian-western-europe-emphasis-b-a.json",
+      "sizeBytes": 15065
+    },
+    {
+      "ccSlug": "east-los-angeles-college",
+      "uniSlug": "san-diego-state-university",
+      "majorLabel": "psychology b a imperial valley campus",
+      "filename": "east-los-angeles-college__san-diego-state-university__psychology-b-a-imperial-valley-campus.json",
+      "sizeBytes": 8280
+    },
+    {
+      "ccSlug": "east-los-angeles-college",
+      "uniSlug": "university-of-california-berkeley",
+      "majorLabel": "economics b a",
+      "filename": "east-los-angeles-college__university-of-california-berkeley__economics-b-a.json",
+      "sizeBytes": 49956
+    },
+    {
+      "ccSlug": "east-los-angeles-college",
+      "uniSlug": "university-of-california-berkeley",
+      "majorLabel": "electrical engineering computer sciences b s",
+      "filename": "east-los-angeles-college__university-of-california-berkeley__electrical-engineering-computer-sciences-b-s.json",
+      "sizeBytes": 100627
+    },
+    {
+      "ccSlug": "east-los-angeles-college",
+      "uniSlug": "university-of-california-berkeley",
+      "majorLabel": "psychology b a",
+      "filename": "east-los-angeles-college__university-of-california-berkeley__psychology-b-a.json",
+      "sizeBytes": 92735
+    },
+    {
+      "ccSlug": "east-los-angeles-college",
+      "uniSlug": "university-of-california-los-angeles",
+      "majorLabel": "business economics b a",
+      "filename": "east-los-angeles-college__university-of-california-los-angeles__business-economics-b-a.json",
+      "sizeBytes": 44521
+    },
+    {
+      "ccSlug": "east-los-angeles-college",
+      "uniSlug": "university-of-california-los-angeles",
+      "majorLabel": "computer science and engineering b s",
+      "filename": "east-los-angeles-college__university-of-california-los-angeles__computer-science-and-engineering-b-s.json",
+      "sizeBytes": 144563
+    },
+    {
+      "ccSlug": "east-los-angeles-college",
+      "uniSlug": "university-of-california-los-angeles",
+      "majorLabel": "psychology b a",
+      "filename": "east-los-angeles-college__university-of-california-los-angeles__psychology-b-a.json",
+      "sizeBytes": 86416
+    },
+    {
+      "ccSlug": "east-los-angeles-college",
+      "uniSlug": "university-of-california-san-diego",
+      "majorLabel": "economics joint major in mathematics and economics b s",
+      "filename": "east-los-angeles-college__university-of-california-san-diego__economics-joint-major-in-mathematics-and-economics-b-s.json",
+      "sizeBytes": 41704
+    },
+    {
+      "ccSlug": "east-los-angeles-college",
+      "uniSlug": "university-of-california-san-diego",
+      "majorLabel": "mathematics computer science b s",
+      "filename": "east-los-angeles-college__university-of-california-san-diego__mathematics-computer-science-b-s.json",
+      "sizeBytes": 50552
+    },
+    {
+      "ccSlug": "east-los-angeles-college",
+      "uniSlug": "university-of-california-san-diego",
+      "majorLabel": "psychology b s with a specialization in sensation and perception",
+      "filename": "east-los-angeles-college__university-of-california-san-diego__psychology-b-s-with-a-specialization-in-sensation-and-perception.json",
+      "sizeBytes": 122750
+    },
+    {
+      "ccSlug": "fullerton-college",
+      "uniSlug": "san-diego-state-university",
+      "majorLabel": "computer science b s",
+      "filename": "fullerton-college__san-diego-state-university__computer-science-b-s.json",
+      "sizeBytes": 29164
+    },
+    {
+      "ccSlug": "fullerton-college",
+      "uniSlug": "university-of-california-berkeley",
+      "majorLabel": "business administration b s",
+      "filename": "fullerton-college__university-of-california-berkeley__business-administration-b-s.json",
+      "sizeBytes": 64194
+    },
+    {
+      "ccSlug": "fullerton-college",
+      "uniSlug": "university-of-california-berkeley",
+      "majorLabel": "electrical engineering computer sciences b s",
+      "filename": "fullerton-college__university-of-california-berkeley__electrical-engineering-computer-sciences-b-s.json",
+      "sizeBytes": 106557
+    },
+    {
+      "ccSlug": "fullerton-college",
+      "uniSlug": "university-of-california-berkeley",
+      "majorLabel": "psychology b a",
+      "filename": "fullerton-college__university-of-california-berkeley__psychology-b-a.json",
+      "sizeBytes": 104846
+    },
+    {
+      "ccSlug": "fullerton-college",
+      "uniSlug": "university-of-california-los-angeles",
+      "majorLabel": "computer science b s",
+      "filename": "fullerton-college__university-of-california-los-angeles__computer-science-b-s.json",
+      "sizeBytes": 146511
+    },
+    {
+      "ccSlug": "fullerton-college",
+      "uniSlug": "university-of-california-los-angeles",
+      "majorLabel": "economics b a",
+      "filename": "fullerton-college__university-of-california-los-angeles__economics-b-a.json",
+      "sizeBytes": 41478
+    },
+    {
+      "ccSlug": "fullerton-college",
+      "uniSlug": "university-of-california-los-angeles",
+      "majorLabel": "linguistics and psychology b a",
+      "filename": "fullerton-college__university-of-california-los-angeles__linguistics-and-psychology-b-a.json",
+      "sizeBytes": 16766
+    },
+    {
+      "ccSlug": "fullerton-college",
+      "uniSlug": "university-of-california-san-diego",
+      "majorLabel": "economics joint major in mathematics and economics b s",
+      "filename": "fullerton-college__university-of-california-san-diego__economics-joint-major-in-mathematics-and-economics-b-s.json",
+      "sizeBytes": 43852
+    },
+    {
+      "ccSlug": "fullerton-college",
+      "uniSlug": "university-of-california-san-diego",
+      "majorLabel": "mathematics computer science b s",
+      "filename": "fullerton-college__university-of-california-san-diego__mathematics-computer-science-b-s.json",
+      "sizeBytes": 49686
+    },
+    {
+      "ccSlug": "fullerton-college",
+      "uniSlug": "university-of-california-san-diego",
+      "majorLabel": "psychology b s with a specialization in sensation and perception",
+      "filename": "fullerton-college__university-of-california-san-diego__psychology-b-s-with-a-specialization-in-sensation-and-perception.json",
+      "sizeBytes": 119995
+    },
+    {
+      "ccSlug": "long-beach-city-college",
       "uniSlug": "california-state-university-long-beach",
-      "uniName": "California State University, Long Beach",
-      "uniAssistId": 81,
-      "majorLabel": "Economics, B.S.",
-      "majorPattern": "(business|economics)",
-      "agreementKey": "76/118/to/81/Major/df0df43f-12d4-41fa-337b-08ddb349963e",
-      "filename": "east-los-angeles-college__california-state-university-long-beach__economics-b-s.json",
-      "sizeBytes": 16341
+      "majorLabel": "computer science",
+      "filename": "long-beach-city-college__california-state-university-long-beach__computer-science.json",
+      "sizeBytes": 45993
     },
     {
-      "ccSlug": "santa-monica-college",
-      "ccName": "Santa Monica College",
-      "ccAssistId": 137,
-      "uniSlug": "university-of-california-los-angeles",
-      "uniName": "University of California, Los Angeles",
-      "uniAssistId": 117,
-      "majorLabel": "Linguistics and Computer Science/B.A.",
-      "majorPattern": "computer science",
-      "agreementKey": "76/137/to/117/Major/a68e1707-c554-4b17-1f75-08ddcb96df9e",
-      "filename": "santa-monica-college__university-of-california-los-angeles__linguistics-and-computer-science-b-a.json",
-      "sizeBytes": 35113
-    },
-    {
-      "ccSlug": "santa-monica-college",
-      "ccName": "Santa Monica College",
-      "ccAssistId": 137,
-      "uniSlug": "university-of-california-los-angeles",
-      "uniName": "University of California, Los Angeles",
-      "uniAssistId": 117,
-      "majorLabel": "Psychology/B.A.",
-      "majorPattern": "psychology",
-      "agreementKey": "76/137/to/117/Major/4326f498-897c-4aae-1fce-08ddcb96df9e",
-      "filename": "santa-monica-college__university-of-california-los-angeles__psychology-b-a.json",
-      "sizeBytes": 74593
-    },
-    {
-      "ccSlug": "santa-monica-college",
-      "ccName": "Santa Monica College",
-      "ccAssistId": 137,
-      "uniSlug": "university-of-california-los-angeles",
-      "uniName": "University of California, Los Angeles",
-      "uniAssistId": 117,
-      "majorLabel": "Business Economics/B.A.",
-      "majorPattern": "(business|economics)",
-      "agreementKey": "76/137/to/117/Major/fee8c832-0108-4517-1f93-08ddcb96df9e",
-      "filename": "santa-monica-college__university-of-california-los-angeles__business-economics-b-a.json",
-      "sizeBytes": 32905
-    },
-    {
-      "ccSlug": "santa-monica-college",
-      "ccName": "Santa Monica College",
-      "ccAssistId": 137,
-      "uniSlug": "university-of-california-berkeley",
-      "uniName": "University of California, Berkeley",
-      "uniAssistId": 79,
-      "majorLabel": "Electrical Engineering & Computer Sciences, B.S.",
-      "majorPattern": "computer science",
-      "agreementKey": "76/137/to/79/Major/7d01fb7b-2afa-460e-ace0-08ddbf3f4ee7",
-      "filename": "santa-monica-college__university-of-california-berkeley__electrical-engineering-computer-sciences-b-s.json",
-      "sizeBytes": 107528
-    },
-    {
-      "ccSlug": "santa-monica-college",
-      "ccName": "Santa Monica College",
-      "ccAssistId": 137,
-      "uniSlug": "university-of-california-berkeley",
-      "uniName": "University of California, Berkeley",
-      "uniAssistId": 79,
-      "majorLabel": "Psychology, B.A.",
-      "majorPattern": "psychology",
-      "agreementKey": "76/137/to/79/Major/72ebd5bc-b397-4532-ace4-08ddbf3f4ee7",
-      "filename": "santa-monica-college__university-of-california-berkeley__psychology-b-a.json",
-      "sizeBytes": 93352
-    },
-    {
-      "ccSlug": "santa-monica-college",
-      "ccName": "Santa Monica College",
-      "ccAssistId": 137,
-      "uniSlug": "university-of-california-berkeley",
-      "uniName": "University of California, Berkeley",
-      "uniAssistId": 79,
-      "majorLabel": "Environmental Economics and Policy, B.S.",
-      "majorPattern": "(business|economics)",
-      "agreementKey": "76/137/to/79/Major/0a3e6ae4-0261-48bd-ace7-08ddbf3f4ee7",
-      "filename": "santa-monica-college__university-of-california-berkeley__environmental-economics-and-policy-b-s.json",
-      "sizeBytes": 217475
-    },
-    {
-      "ccSlug": "santa-monica-college",
-      "ccName": "Santa Monica College",
-      "ccAssistId": 137,
-      "uniSlug": "university-of-california-san-diego",
-      "uniName": "University of California, San Diego",
-      "uniAssistId": 7,
-      "majorLabel": "CSE: Computer Science with a Specialization in Bioinformatics B.S.",
-      "majorPattern": "computer science",
-      "agreementKey": "76/137/to/7/Major/41af6b48-97b8-405b-f350-08ddd3b241a4",
-      "filename": "santa-monica-college__university-of-california-san-diego__cse-computer-science-with-a-specialization-in-bioinformatics-b-s.json",
-      "sizeBytes": 71946
-    },
-    {
-      "ccSlug": "santa-monica-college",
-      "ccName": "Santa Monica College",
-      "ccAssistId": 137,
-      "uniSlug": "university-of-california-san-diego",
-      "uniName": "University of California, San Diego",
-      "uniAssistId": 7,
-      "majorLabel": "Psychology B.S. with a Specialization in Cognitive Psychology",
-      "majorPattern": "psychology",
-      "agreementKey": "76/137/to/7/Major/e3338b2a-be47-454f-f32d-08ddd3b241a4",
-      "filename": "santa-monica-college__university-of-california-san-diego__psychology-b-s-with-a-specialization-in-cognitive-psychology.json",
-      "sizeBytes": 120777
-    },
-    {
-      "ccSlug": "santa-monica-college",
-      "ccName": "Santa Monica College",
-      "ccAssistId": 137,
-      "uniSlug": "university-of-california-san-diego",
-      "uniName": "University of California, San Diego",
-      "uniAssistId": 7,
-      "majorLabel": "Business Economics B.S : Rady School of Management",
-      "majorPattern": "(business|economics)",
-      "agreementKey": "76/137/to/7/Major/7ed43c09-220c-412c-f365-08ddd3b241a4",
-      "filename": "santa-monica-college__university-of-california-san-diego__business-economics-b-s-rady-school-of-management.json",
-      "sizeBytes": 51392
-    },
-    {
-      "ccSlug": "santa-monica-college",
-      "ccName": "Santa Monica College",
-      "ccAssistId": 137,
-      "uniSlug": "san-diego-state-university",
-      "uniName": "San Diego State University",
-      "uniAssistId": 26,
-      "majorLabel": "Computer Science, B.S.",
-      "majorPattern": "computer science",
-      "agreementKey": "76/137/to/26/Major/17a3686b-6292-4a45-f3f9-08ddd3b241a4",
-      "filename": "santa-monica-college__san-diego-state-university__computer-science-b-s.json",
-      "sizeBytes": 34930
-    },
-    {
-      "ccSlug": "santa-monica-college",
-      "ccName": "Santa Monica College",
-      "ccAssistId": 137,
-      "uniSlug": "san-diego-state-university",
-      "uniName": "San Diego State University",
-      "uniAssistId": 26,
-      "majorLabel": "Psychology, B.A. -Imperial Valley Campus",
-      "majorPattern": "psychology",
-      "agreementKey": "76/137/to/26/Major/94d81a3a-e2b1-470a-f3a6-08ddd3b241a4",
-      "filename": "santa-monica-college__san-diego-state-university__psychology-b-a-imperial-valley-campus.json",
-      "sizeBytes": 16901
-    },
-    {
-      "ccSlug": "santa-monica-college",
-      "ccName": "Santa Monica College",
-      "ccAssistId": 137,
-      "uniSlug": "san-diego-state-university",
-      "uniName": "San Diego State University",
-      "uniAssistId": 26,
-      "majorLabel": "International Business , Chinese - Asia Emphasis, B.A.",
-      "majorPattern": "(business|economics)",
-      "agreementKey": "76/137/to/26/Major/4af9c440-f5f6-4930-f3b0-08ddd3b241a4",
-      "filename": "santa-monica-college__san-diego-state-university__international-business-chinese-asia-emphasis-b-a.json",
-      "sizeBytes": 28227
-    },
-    {
-      "ccSlug": "santa-monica-college",
-      "ccName": "Santa Monica College",
-      "ccAssistId": 137,
+      "ccSlug": "long-beach-city-college",
       "uniSlug": "california-state-university-long-beach",
-      "uniName": "California State University, Long Beach",
-      "uniAssistId": 81,
-      "majorLabel": "Computer Science",
-      "majorPattern": "computer science",
-      "agreementKey": "76/137/to/81/Major/0827c64e-650f-4f76-3391-08ddb349963e",
-      "filename": "santa-monica-college__california-state-university-long-beach__computer-science.json",
-      "sizeBytes": 42547
+      "majorLabel": "international business",
+      "filename": "long-beach-city-college__california-state-university-long-beach__international-business.json",
+      "sizeBytes": 42833
     },
     {
-      "ccSlug": "santa-monica-college",
-      "ccName": "Santa Monica College",
-      "ccAssistId": 137,
+      "ccSlug": "long-beach-city-college",
       "uniSlug": "california-state-university-long-beach",
-      "uniName": "California State University, Long Beach",
-      "uniAssistId": 81,
-      "majorLabel": "Psychology",
-      "majorPattern": "psychology",
-      "agreementKey": "76/137/to/81/Major/48e73ff7-36c9-441e-3369-08ddb349963e",
-      "filename": "santa-monica-college__california-state-university-long-beach__psychology.json",
-      "sizeBytes": 12665
+      "majorLabel": "psychology",
+      "filename": "long-beach-city-college__california-state-university-long-beach__psychology.json",
+      "sizeBytes": 17720
     },
     {
-      "ccSlug": "santa-monica-college",
-      "ccName": "Santa Monica College",
-      "ccAssistId": 137,
+      "ccSlug": "long-beach-city-college",
+      "uniSlug": "san-diego-state-university",
+      "majorLabel": "computer science b s",
+      "filename": "long-beach-city-college__san-diego-state-university__computer-science-b-s.json",
+      "sizeBytes": 18949
+    },
+    {
+      "ccSlug": "long-beach-city-college",
+      "uniSlug": "san-diego-state-university",
+      "majorLabel": "international business portuguese western europe emphasis b a",
+      "filename": "long-beach-city-college__san-diego-state-university__international-business-portuguese-western-europe-emphasis-b-a.json",
+      "sizeBytes": 14546
+    },
+    {
+      "ccSlug": "long-beach-city-college",
+      "uniSlug": "san-diego-state-university",
+      "majorLabel": "psychology b a",
+      "filename": "long-beach-city-college__san-diego-state-university__psychology-b-a.json",
+      "sizeBytes": 9589
+    },
+    {
+      "ccSlug": "long-beach-city-college",
+      "uniSlug": "university-of-california-berkeley",
+      "majorLabel": "economics b a",
+      "filename": "long-beach-city-college__university-of-california-berkeley__economics-b-a.json",
+      "sizeBytes": 54740
+    },
+    {
+      "ccSlug": "long-beach-city-college",
+      "uniSlug": "university-of-california-berkeley",
+      "majorLabel": "electrical engineering computer sciences b s",
+      "filename": "long-beach-city-college__university-of-california-berkeley__electrical-engineering-computer-sciences-b-s.json",
+      "sizeBytes": 102330
+    },
+    {
+      "ccSlug": "long-beach-city-college",
+      "uniSlug": "university-of-california-berkeley",
+      "majorLabel": "psychology b a",
+      "filename": "long-beach-city-college__university-of-california-berkeley__psychology-b-a.json",
+      "sizeBytes": 94578
+    },
+    {
+      "ccSlug": "long-beach-city-college",
+      "uniSlug": "university-of-california-los-angeles",
+      "majorLabel": "business economics b a",
+      "filename": "long-beach-city-college__university-of-california-los-angeles__business-economics-b-a.json",
+      "sizeBytes": 34422
+    },
+    {
+      "ccSlug": "long-beach-city-college",
+      "uniSlug": "university-of-california-los-angeles",
+      "majorLabel": "linguistics and computer science b a",
+      "filename": "long-beach-city-college__university-of-california-los-angeles__linguistics-and-computer-science-b-a.json",
+      "sizeBytes": 35093
+    },
+    {
+      "ccSlug": "long-beach-city-college",
+      "uniSlug": "university-of-california-los-angeles",
+      "majorLabel": "psychology b a",
+      "filename": "long-beach-city-college__university-of-california-los-angeles__psychology-b-a.json",
+      "sizeBytes": 66350
+    },
+    {
+      "ccSlug": "long-beach-city-college",
+      "uniSlug": "university-of-california-san-diego",
+      "majorLabel": "cse computer science b s",
+      "filename": "long-beach-city-college__university-of-california-san-diego__cse-computer-science-b-s.json",
+      "sizeBytes": 70665
+    },
+    {
+      "ccSlug": "long-beach-city-college",
+      "uniSlug": "university-of-california-san-diego",
+      "majorLabel": "economics business economics b s",
+      "filename": "long-beach-city-college__university-of-california-san-diego__economics-business-economics-b-s.json",
+      "sizeBytes": 44904
+    },
+    {
+      "ccSlug": "long-beach-city-college",
+      "uniSlug": "university-of-california-san-diego",
+      "majorLabel": "psychology b s with a specialization in developmental psychology",
+      "filename": "long-beach-city-college__university-of-california-san-diego__psychology-b-s-with-a-specialization-in-developmental-psychology.json",
+      "sizeBytes": 103784
+    },
+    {
+      "ccSlug": "mount-san-antonio-college",
       "uniSlug": "california-state-university-long-beach",
-      "uniName": "California State University, Long Beach",
-      "uniAssistId": 81,
-      "majorLabel": "Economics, B.S.",
-      "majorPattern": "(business|economics)",
-      "agreementKey": "76/137/to/81/Major/df0df43f-12d4-41fa-337b-08ddb349963e",
-      "filename": "santa-monica-college__california-state-university-long-beach__economics-b-s.json",
-      "sizeBytes": 17882
-    },
-    {
-      "ccSlug": "mount-san-antonio-college",
-      "ccName": "Mount San Antonio College",
-      "ccAssistId": 62,
-      "uniSlug": "university-of-california-los-angeles",
-      "uniName": "University of California, Los Angeles",
-      "uniAssistId": 117,
-      "majorLabel": "Linguistics and Computer Science/B.A.",
-      "majorPattern": "computer science",
-      "agreementKey": "76/62/to/117/Major/a68e1707-c554-4b17-1f75-08ddcb96df9e",
-      "filename": "mount-san-antonio-college__university-of-california-los-angeles__linguistics-and-computer-science-b-a.json",
-      "sizeBytes": 35050
-    },
-    {
-      "ccSlug": "mount-san-antonio-college",
-      "ccName": "Mount San Antonio College",
-      "ccAssistId": 62,
-      "uniSlug": "university-of-california-los-angeles",
-      "uniName": "University of California, Los Angeles",
-      "uniAssistId": 117,
-      "majorLabel": "Psychology/B.A.",
-      "majorPattern": "psychology",
-      "agreementKey": "76/62/to/117/Major/4326f498-897c-4aae-1fce-08ddcb96df9e",
-      "filename": "mount-san-antonio-college__university-of-california-los-angeles__psychology-b-a.json",
-      "sizeBytes": 75510
-    },
-    {
-      "ccSlug": "mount-san-antonio-college",
-      "ccName": "Mount San Antonio College",
-      "ccAssistId": 62,
-      "uniSlug": "university-of-california-los-angeles",
-      "uniName": "University of California, Los Angeles",
-      "uniAssistId": 117,
-      "majorLabel": "Economics/B.A.",
-      "majorPattern": "(business|economics)",
-      "agreementKey": "76/62/to/117/Major/860b28a8-20a4-418c-1f52-08ddcb96df9e",
-      "filename": "mount-san-antonio-college__university-of-california-los-angeles__economics-b-a.json",
-      "sizeBytes": 29905
-    },
-    {
-      "ccSlug": "mount-san-antonio-college",
-      "ccName": "Mount San Antonio College",
-      "ccAssistId": 62,
-      "uniSlug": "university-of-california-berkeley",
-      "uniName": "University of California, Berkeley",
-      "uniAssistId": 79,
-      "majorLabel": "Electrical Engineering & Computer Sciences, B.S.",
-      "majorPattern": "computer science",
-      "agreementKey": "76/62/to/79/Major/7d01fb7b-2afa-460e-ace0-08ddbf3f4ee7",
-      "filename": "mount-san-antonio-college__university-of-california-berkeley__electrical-engineering-computer-sciences-b-s.json",
-      "sizeBytes": 109695
-    },
-    {
-      "ccSlug": "mount-san-antonio-college",
-      "ccName": "Mount San Antonio College",
-      "ccAssistId": 62,
-      "uniSlug": "university-of-california-berkeley",
-      "uniName": "University of California, Berkeley",
-      "uniAssistId": 79,
-      "majorLabel": "Psychology, B.A.",
-      "majorPattern": "psychology",
-      "agreementKey": "76/62/to/79/Major/72ebd5bc-b397-4532-ace4-08ddbf3f4ee7",
-      "filename": "mount-san-antonio-college__university-of-california-berkeley__psychology-b-a.json",
-      "sizeBytes": 98489
-    },
-    {
-      "ccSlug": "mount-san-antonio-college",
-      "ccName": "Mount San Antonio College",
-      "ccAssistId": 62,
-      "uniSlug": "university-of-california-berkeley",
-      "uniName": "University of California, Berkeley",
-      "uniAssistId": 79,
-      "majorLabel": "Economics, B.A.",
-      "majorPattern": "(business|economics)",
-      "agreementKey": "76/62/to/79/Major/a7e5abb1-a30f-46eb-acf1-08ddbf3f4ee7",
-      "filename": "mount-san-antonio-college__university-of-california-berkeley__economics-b-a.json",
-      "sizeBytes": 51651
-    },
-    {
-      "ccSlug": "mount-san-antonio-college",
-      "ccName": "Mount San Antonio College",
-      "ccAssistId": 62,
-      "uniSlug": "university-of-california-san-diego",
-      "uniName": "University of California, San Diego",
-      "uniAssistId": 7,
-      "majorLabel": "CSE: Computer Science with a Specialization in Bioinformatics B.S.",
-      "majorPattern": "computer science",
-      "agreementKey": "76/62/to/7/Major/41af6b48-97b8-405b-f350-08ddd3b241a4",
-      "filename": "mount-san-antonio-college__university-of-california-san-diego__cse-computer-science-with-a-specialization-in-bioinformatics-b-s.json",
-      "sizeBytes": 75798
-    },
-    {
-      "ccSlug": "mount-san-antonio-college",
-      "ccName": "Mount San Antonio College",
-      "ccAssistId": 62,
-      "uniSlug": "university-of-california-san-diego",
-      "uniName": "University of California, San Diego",
-      "uniAssistId": 7,
-      "majorLabel": "Psychology: Business Psychology B.S.",
-      "majorPattern": "psychology",
-      "agreementKey": "76/62/to/7/Major/ddbad848-255e-4581-f2e6-08ddd3b241a4",
-      "filename": "mount-san-antonio-college__university-of-california-san-diego__psychology-business-psychology-b-s.json",
-      "sizeBytes": 125257
-    },
-    {
-      "ccSlug": "mount-san-antonio-college",
-      "ccName": "Mount San Antonio College",
-      "ccAssistId": 62,
-      "uniSlug": "university-of-california-san-diego",
-      "uniName": "University of California, San Diego",
-      "uniAssistId": 7,
-      "majorLabel": "Business Minor: Rady School of Management",
-      "majorPattern": "(business|economics)",
-      "agreementKey": "76/62/to/7/Major/80e21739-f81c-45ab-f2e0-08ddd3b241a4",
-      "filename": "mount-san-antonio-college__university-of-california-san-diego__business-minor-rady-school-of-management.json",
-      "sizeBytes": 13073
-    },
-    {
-      "ccSlug": "mount-san-antonio-college",
-      "ccName": "Mount San Antonio College",
-      "ccAssistId": 62,
-      "uniSlug": "san-diego-state-university",
-      "uniName": "San Diego State University",
-      "uniAssistId": 26,
-      "majorLabel": "Computer Science, B.S.",
-      "majorPattern": "computer science",
-      "agreementKey": "76/62/to/26/Major/17a3686b-6292-4a45-f3f9-08ddd3b241a4",
-      "filename": "mount-san-antonio-college__san-diego-state-university__computer-science-b-s.json",
-      "sizeBytes": 35073
-    },
-    {
-      "ccSlug": "mount-san-antonio-college",
-      "ccName": "Mount San Antonio College",
-      "ccAssistId": 62,
-      "uniSlug": "san-diego-state-university",
-      "uniName": "San Diego State University",
-      "uniAssistId": 26,
-      "majorLabel": "Psychology, Emphasis in Neuroscience, B.A.",
-      "majorPattern": "psychology",
-      "agreementKey": "76/62/to/26/Major/b9926140-1df4-40d5-f393-08ddd3b241a4",
-      "filename": "mount-san-antonio-college__san-diego-state-university__psychology-emphasis-in-neuroscience-b-a.json",
-      "sizeBytes": 16017
-    },
-    {
-      "ccSlug": "mount-san-antonio-college",
-      "ccName": "Mount San Antonio College",
-      "ccAssistId": 62,
-      "uniSlug": "san-diego-state-university",
-      "uniName": "San Diego State University",
-      "uniAssistId": 26,
-      "majorLabel": "Marketing, General Marketing, Business Administration, B.S.",
-      "majorPattern": "(business|economics)",
-      "agreementKey": "76/62/to/26/Major/bc676b48-c78b-4efd-f3fd-08ddd3b241a4",
-      "filename": "mount-san-antonio-college__san-diego-state-university__marketing-general-marketing-business-administration-b-s.json",
-      "sizeBytes": 19488
-    },
-    {
-      "ccSlug": "mount-san-antonio-college",
-      "ccName": "Mount San Antonio College",
-      "ccAssistId": 62,
-      "uniSlug": "california-state-university-long-beach",
-      "uniName": "California State University, Long Beach",
-      "uniAssistId": 81,
-      "majorLabel": "Computer Science",
-      "majorPattern": "computer science",
-      "agreementKey": "76/62/to/81/Major/0827c64e-650f-4f76-3391-08ddb349963e",
+      "majorLabel": "computer science",
       "filename": "mount-san-antonio-college__california-state-university-long-beach__computer-science.json",
-      "sizeBytes": 45790
+      "sizeBytes": 45794
     },
     {
       "ccSlug": "mount-san-antonio-college",
-      "ccName": "Mount San Antonio College",
-      "ccAssistId": 62,
       "uniSlug": "california-state-university-long-beach",
-      "uniName": "California State University, Long Beach",
-      "uniAssistId": 81,
-      "majorLabel": "Psychology",
-      "majorPattern": "psychology",
-      "agreementKey": "76/62/to/81/Major/48e73ff7-36c9-441e-3369-08ddb349963e",
+      "majorLabel": "economics mathematical economics and economic theory",
+      "filename": "mount-san-antonio-college__california-state-university-long-beach__economics-mathematical-economics-and-economic-theory.json",
+      "sizeBytes": 21747
+    },
+    {
+      "ccSlug": "mount-san-antonio-college",
+      "uniSlug": "california-state-university-long-beach",
+      "majorLabel": "psychology",
       "filename": "mount-san-antonio-college__california-state-university-long-beach__psychology.json",
       "sizeBytes": 17010
     },
     {
       "ccSlug": "mount-san-antonio-college",
-      "ccName": "Mount San Antonio College",
-      "ccAssistId": 62,
+      "uniSlug": "san-diego-state-university",
+      "majorLabel": "computer science b s",
+      "filename": "mount-san-antonio-college__san-diego-state-university__computer-science-b-s.json",
+      "sizeBytes": 35073
+    },
+    {
+      "ccSlug": "mount-san-antonio-college",
+      "uniSlug": "san-diego-state-university",
+      "majorLabel": "marketing general marketing business administration b s",
+      "filename": "mount-san-antonio-college__san-diego-state-university__marketing-general-marketing-business-administration-b-s.json",
+      "sizeBytes": 19488
+    },
+    {
+      "ccSlug": "mount-san-antonio-college",
+      "uniSlug": "san-diego-state-university",
+      "majorLabel": "psychology emphasis in neuroscience b a",
+      "filename": "mount-san-antonio-college__san-diego-state-university__psychology-emphasis-in-neuroscience-b-a.json",
+      "sizeBytes": 16017
+    },
+    {
+      "ccSlug": "mount-san-antonio-college",
+      "uniSlug": "university-of-california-berkeley",
+      "majorLabel": "economics b a",
+      "filename": "mount-san-antonio-college__university-of-california-berkeley__economics-b-a.json",
+      "sizeBytes": 51682
+    },
+    {
+      "ccSlug": "mount-san-antonio-college",
+      "uniSlug": "university-of-california-berkeley",
+      "majorLabel": "electrical engineering computer sciences b s",
+      "filename": "mount-san-antonio-college__university-of-california-berkeley__electrical-engineering-computer-sciences-b-s.json",
+      "sizeBytes": 109695
+    },
+    {
+      "ccSlug": "mount-san-antonio-college",
+      "uniSlug": "university-of-california-berkeley",
+      "majorLabel": "psychology b a",
+      "filename": "mount-san-antonio-college__university-of-california-berkeley__psychology-b-a.json",
+      "sizeBytes": 98514
+    },
+    {
+      "ccSlug": "mount-san-antonio-college",
+      "uniSlug": "university-of-california-los-angeles",
+      "majorLabel": "economics b a",
+      "filename": "mount-san-antonio-college__university-of-california-los-angeles__economics-b-a.json",
+      "sizeBytes": 29905
+    },
+    {
+      "ccSlug": "mount-san-antonio-college",
+      "uniSlug": "university-of-california-los-angeles",
+      "majorLabel": "linguistics and computer science b a",
+      "filename": "mount-san-antonio-college__university-of-california-los-angeles__linguistics-and-computer-science-b-a.json",
+      "sizeBytes": 35050
+    },
+    {
+      "ccSlug": "mount-san-antonio-college",
+      "uniSlug": "university-of-california-los-angeles",
+      "majorLabel": "psychology b a",
+      "filename": "mount-san-antonio-college__university-of-california-los-angeles__psychology-b-a.json",
+      "sizeBytes": 75510
+    },
+    {
+      "ccSlug": "mount-san-antonio-college",
+      "uniSlug": "university-of-california-san-diego",
+      "majorLabel": "business minor rady school of management",
+      "filename": "mount-san-antonio-college__university-of-california-san-diego__business-minor-rady-school-of-management.json",
+      "sizeBytes": 13079
+    },
+    {
+      "ccSlug": "mount-san-antonio-college",
+      "uniSlug": "university-of-california-san-diego",
+      "majorLabel": "cse computer science with a specialization in bioinformatics b s",
+      "filename": "mount-san-antonio-college__university-of-california-san-diego__cse-computer-science-with-a-specialization-in-bioinformatics-b-s.json",
+      "sizeBytes": 75798
+    },
+    {
+      "ccSlug": "mount-san-antonio-college",
+      "uniSlug": "university-of-california-san-diego",
+      "majorLabel": "psychology business psychology b s",
+      "filename": "mount-san-antonio-college__university-of-california-san-diego__psychology-business-psychology-b-s.json",
+      "sizeBytes": 125257
+    },
+    {
+      "ccSlug": "orange-coast-college",
       "uniSlug": "california-state-university-long-beach",
-      "uniName": "California State University, Long Beach",
-      "uniAssistId": 81,
-      "majorLabel": "Economics, Mathematical Economics and Economic Theory",
-      "majorPattern": "(business|economics)",
-      "agreementKey": "76/62/to/81/Major/d68c9878-e672-4647-339a-08ddb349963e",
-      "filename": "mount-san-antonio-college__california-state-university-long-beach__economics-mathematical-economics-and-economic-theory.json",
-      "sizeBytes": 21747
+      "majorLabel": "computer science",
+      "filename": "orange-coast-college__california-state-university-long-beach__computer-science.json",
+      "sizeBytes": 52487
+    },
+    {
+      "ccSlug": "orange-coast-college",
+      "uniSlug": "california-state-university-long-beach",
+      "majorLabel": "economics b s",
+      "filename": "orange-coast-college__california-state-university-long-beach__economics-b-s.json",
+      "sizeBytes": 19322
+    },
+    {
+      "ccSlug": "orange-coast-college",
+      "uniSlug": "california-state-university-long-beach",
+      "majorLabel": "kinesiology sport psychology and leadership",
+      "filename": "orange-coast-college__california-state-university-long-beach__kinesiology-sport-psychology-and-leadership.json",
+      "sizeBytes": 174008
+    },
+    {
+      "ccSlug": "orange-coast-college",
+      "uniSlug": "san-diego-state-university",
+      "majorLabel": "computer science b s",
+      "filename": "orange-coast-college__san-diego-state-university__computer-science-b-s.json",
+      "sizeBytes": 37662
+    },
+    {
+      "ccSlug": "orange-coast-college",
+      "uniSlug": "san-diego-state-university",
+      "majorLabel": "music music entrepreneurship and business track b m",
+      "filename": "orange-coast-college__san-diego-state-university__music-music-entrepreneurship-and-business-track-b-m.json",
+      "sizeBytes": 63763
+    },
+    {
+      "ccSlug": "orange-coast-college",
+      "uniSlug": "san-diego-state-university",
+      "majorLabel": "psychology emphasis in neuroscience b a",
+      "filename": "orange-coast-college__san-diego-state-university__psychology-emphasis-in-neuroscience-b-a.json",
+      "sizeBytes": 17691
+    },
+    {
+      "ccSlug": "orange-coast-college",
+      "uniSlug": "university-of-california-berkeley",
+      "majorLabel": "business administration b s",
+      "filename": "orange-coast-college__university-of-california-berkeley__business-administration-b-s.json",
+      "sizeBytes": 64849
+    },
+    {
+      "ccSlug": "orange-coast-college",
+      "uniSlug": "university-of-california-berkeley",
+      "majorLabel": "computer science b a",
+      "filename": "orange-coast-college__university-of-california-berkeley__computer-science-b-a.json",
+      "sizeBytes": 56889
+    },
+    {
+      "ccSlug": "orange-coast-college",
+      "uniSlug": "university-of-california-berkeley",
+      "majorLabel": "psychology b a",
+      "filename": "orange-coast-college__university-of-california-berkeley__psychology-b-a.json",
+      "sizeBytes": 98626
+    },
+    {
+      "ccSlug": "orange-coast-college",
+      "uniSlug": "university-of-california-los-angeles",
+      "majorLabel": "business economics b a",
+      "filename": "orange-coast-college__university-of-california-los-angeles__business-economics-b-a.json",
+      "sizeBytes": 47684
+    },
+    {
+      "ccSlug": "orange-coast-college",
+      "uniSlug": "university-of-california-los-angeles",
+      "majorLabel": "linguistics and computer science b a",
+      "filename": "orange-coast-college__university-of-california-los-angeles__linguistics-and-computer-science-b-a.json",
+      "sizeBytes": 50823
+    },
+    {
+      "ccSlug": "orange-coast-college",
+      "uniSlug": "university-of-california-los-angeles",
+      "majorLabel": "psychology b a",
+      "filename": "orange-coast-college__university-of-california-los-angeles__psychology-b-a.json",
+      "sizeBytes": 88317
+    },
+    {
+      "ccSlug": "orange-coast-college",
+      "uniSlug": "university-of-california-san-diego",
+      "majorLabel": "cse computer science b s",
+      "filename": "orange-coast-college__university-of-california-san-diego__cse-computer-science-b-s.json",
+      "sizeBytes": 82836
+    },
+    {
+      "ccSlug": "orange-coast-college",
+      "uniSlug": "university-of-california-san-diego",
+      "majorLabel": "international studies economics b a",
+      "filename": "orange-coast-college__university-of-california-san-diego__international-studies-economics-b-a.json",
+      "sizeBytes": 67898
+    },
+    {
+      "ccSlug": "orange-coast-college",
+      "uniSlug": "university-of-california-san-diego",
+      "majorLabel": "psychology b s with a specialization in human health",
+      "filename": "orange-coast-college__university-of-california-san-diego__psychology-b-s-with-a-specialization-in-human-health.json",
+      "sizeBytes": 124519
     },
     {
       "ccSlug": "pasadena-city-college",
-      "ccName": "Pasadena City College",
-      "ccAssistId": 49,
-      "uniSlug": "university-of-california-los-angeles",
-      "uniName": "University of California, Los Angeles",
-      "uniAssistId": 117,
-      "majorLabel": "Linguistics and Computer Science/B.A.",
-      "majorPattern": "computer science",
-      "agreementKey": "76/49/to/117/Major/a68e1707-c554-4b17-1f75-08ddcb96df9e",
-      "filename": "pasadena-city-college__university-of-california-los-angeles__linguistics-and-computer-science-b-a.json",
-      "sizeBytes": 52808
+      "uniSlug": "california-state-university-long-beach",
+      "majorLabel": "computer science",
+      "filename": "pasadena-city-college__california-state-university-long-beach__computer-science.json",
+      "sizeBytes": 41836
     },
     {
       "ccSlug": "pasadena-city-college",
-      "ccName": "Pasadena City College",
-      "ccAssistId": 49,
-      "uniSlug": "university-of-california-los-angeles",
-      "uniName": "University of California, Los Angeles",
-      "uniAssistId": 117,
-      "majorLabel": "Linguistics and Psychology/B.A.",
-      "majorPattern": "psychology",
-      "agreementKey": "76/49/to/117/Major/1b59269c-f004-4252-1f5b-08ddcb96df9e",
-      "filename": "pasadena-city-college__university-of-california-los-angeles__linguistics-and-psychology-b-a.json",
-      "sizeBytes": 18598
+      "uniSlug": "california-state-university-long-beach",
+      "majorLabel": "international business",
+      "filename": "pasadena-city-college__california-state-university-long-beach__international-business.json",
+      "sizeBytes": 41526
     },
     {
       "ccSlug": "pasadena-city-college",
-      "ccName": "Pasadena City College",
-      "ccAssistId": 49,
+      "uniSlug": "california-state-university-long-beach",
+      "majorLabel": "psychology",
+      "filename": "pasadena-city-college__california-state-university-long-beach__psychology.json",
+      "sizeBytes": 17263
+    },
+    {
+      "ccSlug": "pasadena-city-college",
+      "uniSlug": "san-diego-state-university",
+      "majorLabel": "computer science b s",
+      "filename": "pasadena-city-college__san-diego-state-university__computer-science-b-s.json",
+      "sizeBytes": 38016
+    },
+    {
+      "ccSlug": "pasadena-city-college",
+      "uniSlug": "san-diego-state-university",
+      "majorLabel": "international business european languages north atlantic emphasis b a",
+      "filename": "pasadena-city-college__san-diego-state-university__international-business-european-languages-north-atlantic-emphasis-b-a.json",
+      "sizeBytes": 59668
+    },
+    {
+      "ccSlug": "pasadena-city-college",
+      "uniSlug": "san-diego-state-university",
+      "majorLabel": "psychology b a",
+      "filename": "pasadena-city-college__san-diego-state-university__psychology-b-a.json",
+      "sizeBytes": 18957
+    },
+    {
+      "ccSlug": "pasadena-city-college",
+      "uniSlug": "university-of-california-berkeley",
+      "majorLabel": "business administration b s",
+      "filename": "pasadena-city-college__university-of-california-berkeley__business-administration-b-s.json",
+      "sizeBytes": 68150
+    },
+    {
+      "ccSlug": "pasadena-city-college",
+      "uniSlug": "university-of-california-berkeley",
+      "majorLabel": "computer science b a",
+      "filename": "pasadena-city-college__university-of-california-berkeley__computer-science-b-a.json",
+      "sizeBytes": 63735
+    },
+    {
+      "ccSlug": "pasadena-city-college",
+      "uniSlug": "university-of-california-berkeley",
+      "majorLabel": "psychology b a",
+      "filename": "pasadena-city-college__university-of-california-berkeley__psychology-b-a.json",
+      "sizeBytes": 104685
+    },
+    {
+      "ccSlug": "pasadena-city-college",
       "uniSlug": "university-of-california-los-angeles",
-      "uniName": "University of California, Los Angeles",
-      "uniAssistId": 117,
-      "majorLabel": "Business Economics/B.A.",
-      "majorPattern": "(business|economics)",
-      "agreementKey": "76/49/to/117/Major/fee8c832-0108-4517-1f93-08ddcb96df9e",
+      "majorLabel": "business economics b a",
       "filename": "pasadena-city-college__university-of-california-los-angeles__business-economics-b-a.json",
       "sizeBytes": 49476
     },
     {
       "ccSlug": "pasadena-city-college",
-      "ccName": "Pasadena City College",
-      "ccAssistId": 49,
-      "uniSlug": "university-of-california-berkeley",
-      "uniName": "University of California, Berkeley",
-      "uniAssistId": 79,
-      "majorLabel": "Computer Science, B.A.",
-      "majorPattern": "computer science",
-      "agreementKey": "76/49/to/79/Major/18bc32d8-6aa4-47cc-aced-08ddbf3f4ee7",
-      "filename": "pasadena-city-college__university-of-california-berkeley__computer-science-b-a.json",
-      "sizeBytes": 63719
+      "uniSlug": "university-of-california-los-angeles",
+      "majorLabel": "linguistics and computer science b a",
+      "filename": "pasadena-city-college__university-of-california-los-angeles__linguistics-and-computer-science-b-a.json",
+      "sizeBytes": 52808
     },
     {
       "ccSlug": "pasadena-city-college",
-      "ccName": "Pasadena City College",
-      "ccAssistId": 49,
+      "uniSlug": "university-of-california-los-angeles",
+      "majorLabel": "linguistics and psychology b a",
+      "filename": "pasadena-city-college__university-of-california-los-angeles__linguistics-and-psychology-b-a.json",
+      "sizeBytes": 18598
+    },
+    {
+      "ccSlug": "pasadena-city-college",
+      "uniSlug": "university-of-california-san-diego",
+      "majorLabel": "cse computer science b s",
+      "filename": "pasadena-city-college__university-of-california-san-diego__cse-computer-science-b-s.json",
+      "sizeBytes": 80896
+    },
+    {
+      "ccSlug": "pasadena-city-college",
+      "uniSlug": "university-of-california-san-diego",
+      "majorLabel": "economics b s",
+      "filename": "pasadena-city-college__university-of-california-san-diego__economics-b-s.json",
+      "sizeBytes": 49388
+    },
+    {
+      "ccSlug": "pasadena-city-college",
+      "uniSlug": "university-of-california-san-diego",
+      "majorLabel": "psychology b s with a specialization in sensation and perception",
+      "filename": "pasadena-city-college__university-of-california-san-diego__psychology-b-s-with-a-specialization-in-sensation-and-perception.json",
+      "sizeBytes": 124340
+    },
+    {
+      "ccSlug": "santa-monica-college",
+      "uniSlug": "california-state-university-long-beach",
+      "majorLabel": "computer science",
+      "filename": "santa-monica-college__california-state-university-long-beach__computer-science.json",
+      "sizeBytes": 42551
+    },
+    {
+      "ccSlug": "santa-monica-college",
+      "uniSlug": "california-state-university-long-beach",
+      "majorLabel": "economics b s",
+      "filename": "santa-monica-college__california-state-university-long-beach__economics-b-s.json",
+      "sizeBytes": 17882
+    },
+    {
+      "ccSlug": "santa-monica-college",
+      "uniSlug": "california-state-university-long-beach",
+      "majorLabel": "psychology",
+      "filename": "santa-monica-college__california-state-university-long-beach__psychology.json",
+      "sizeBytes": 12665
+    },
+    {
+      "ccSlug": "santa-monica-college",
+      "uniSlug": "san-diego-state-university",
+      "majorLabel": "computer science b s",
+      "filename": "santa-monica-college__san-diego-state-university__computer-science-b-s.json",
+      "sizeBytes": 34930
+    },
+    {
+      "ccSlug": "santa-monica-college",
+      "uniSlug": "san-diego-state-university",
+      "majorLabel": "international business chinese asia emphasis b a",
+      "filename": "santa-monica-college__san-diego-state-university__international-business-chinese-asia-emphasis-b-a.json",
+      "sizeBytes": 28227
+    },
+    {
+      "ccSlug": "santa-monica-college",
+      "uniSlug": "san-diego-state-university",
+      "majorLabel": "psychology b a imperial valley campus",
+      "filename": "santa-monica-college__san-diego-state-university__psychology-b-a-imperial-valley-campus.json",
+      "sizeBytes": 16901
+    },
+    {
+      "ccSlug": "santa-monica-college",
       "uniSlug": "university-of-california-berkeley",
-      "uniName": "University of California, Berkeley",
-      "uniAssistId": 79,
-      "majorLabel": "Psychology, B.A.",
-      "majorPattern": "psychology",
-      "agreementKey": "76/49/to/79/Major/72ebd5bc-b397-4532-ace4-08ddbf3f4ee7",
-      "filename": "pasadena-city-college__university-of-california-berkeley__psychology-b-a.json",
-      "sizeBytes": 104660
+      "majorLabel": "electrical engineering computer sciences b s",
+      "filename": "santa-monica-college__university-of-california-berkeley__electrical-engineering-computer-sciences-b-s.json",
+      "sizeBytes": 107528
+    },
+    {
+      "ccSlug": "santa-monica-college",
+      "uniSlug": "university-of-california-berkeley",
+      "majorLabel": "environmental economics and policy b s",
+      "filename": "santa-monica-college__university-of-california-berkeley__environmental-economics-and-policy-b-s.json",
+      "sizeBytes": 217475
+    },
+    {
+      "ccSlug": "santa-monica-college",
+      "uniSlug": "university-of-california-berkeley",
+      "majorLabel": "psychology b a",
+      "filename": "santa-monica-college__university-of-california-berkeley__psychology-b-a.json",
+      "sizeBytes": 93377
+    },
+    {
+      "ccSlug": "santa-monica-college",
+      "uniSlug": "university-of-california-los-angeles",
+      "majorLabel": "business economics b a",
+      "filename": "santa-monica-college__university-of-california-los-angeles__business-economics-b-a.json",
+      "sizeBytes": 32905
+    },
+    {
+      "ccSlug": "santa-monica-college",
+      "uniSlug": "university-of-california-los-angeles",
+      "majorLabel": "linguistics and computer science b a",
+      "filename": "santa-monica-college__university-of-california-los-angeles__linguistics-and-computer-science-b-a.json",
+      "sizeBytes": 35113
+    },
+    {
+      "ccSlug": "santa-monica-college",
+      "uniSlug": "university-of-california-los-angeles",
+      "majorLabel": "psychology b a",
+      "filename": "santa-monica-college__university-of-california-los-angeles__psychology-b-a.json",
+      "sizeBytes": 74593
+    },
+    {
+      "ccSlug": "santa-monica-college",
+      "uniSlug": "university-of-california-san-diego",
+      "majorLabel": "business economics b s rady school of management",
+      "filename": "santa-monica-college__university-of-california-san-diego__business-economics-b-s-rady-school-of-management.json",
+      "sizeBytes": 51394
+    },
+    {
+      "ccSlug": "santa-monica-college",
+      "uniSlug": "university-of-california-san-diego",
+      "majorLabel": "cse computer science with a specialization in bioinformatics b s",
+      "filename": "santa-monica-college__university-of-california-san-diego__cse-computer-science-with-a-specialization-in-bioinformatics-b-s.json",
+      "sizeBytes": 71946
+    },
+    {
+      "ccSlug": "santa-monica-college",
+      "uniSlug": "university-of-california-san-diego",
+      "majorLabel": "psychology b s with a specialization in cognitive psychology",
+      "filename": "santa-monica-college__university-of-california-san-diego__psychology-b-s-with-a-specialization-in-cognitive-psychology.json",
+      "sizeBytes": 120777
     }
-  ],
-  "skipped": [
-    "pasadena-city-college→university-of-california-berkeley/Business Administration, B.S.: /api/articulation/Agreements?Key=76%2F49%2Fto%2F79%2FMajor%2Fe15195a7-0cc9-4b8c-acf9-08ddbf3f4ee7: HTTP 429",
-    "pasadena-city-college→university-of-california-san-diego/CSE: Computer Science B.S.: /api/articulation/Agreements?Key=76%2F49%2Fto%2F7%2FMajor%2F76ab1c59-2dcf-4c6f-f364-08ddd3b241a4: HTTP 429",
-    "pasadena-city-college→university-of-california-san-diego/Psychology B.S. with a Specialization in Sensation and Perception: /api/articulation/Agreements?Key=76%2F49%2Fto%2F7%2FMajor%2F96af8eb7-116f-4384-f32e-08ddd3b241a4: HTTP 429",
-    "pasadena-city-college→university-of-california-san-diego/Economics B.S.: /api/articulation/Agreements?Key=76%2F49%2Fto%2F7%2FMajor%2Ff88d0bba-50b3-4a66-f2d1-08ddd3b241a4: HTTP 429",
-    "pasadena-city-college→san-diego-state-university/Computer Science, B.S.: /api/articulation/Agreements?Key=76%2F49%2Fto%2F26%2FMajor%2F17a3686b-6292-4a45-f3f9-08ddd3b241a4: HTTP 429",
-    "pasadena-city-college→san-diego-state-university/Psychology, B.A.: /api/articulation/Agreements?Key=76%2F49%2Fto%2F26%2FMajor%2F3b96a806-9a9c-413c-f41b-08ddd3b241a4: HTTP 429",
-    "pasadena-city-college→san-diego-state-university/International Business, European Languages -North Atlantic Emphasis, B.A. : /api/articulation/Agreements?Key=76%2F49%2Fto%2F26%2FMajor%2F0305bd78-3d69-4220-f380-08ddd3b241a4: HTTP 429",
-    "pasadena-city-college→california-state-university-long-beach/Computer Science: /api/articulation/Agreements?Key=76%2F49%2Fto%2F81%2FMajor%2F0827c64e-650f-4f76-3391-08ddb349963e: HTTP 429",
-    "pasadena-city-college→california-state-university-long-beach/Psychology: /api/articulation/Agreements?Key=76%2F49%2Fto%2F81%2FMajor%2F48e73ff7-36c9-441e-3369-08ddb349963e: HTTP 429",
-    "pasadena-city-college→california-state-university-long-beach/International Business: /api/articulation/Agreements?Key=76%2F49%2Fto%2F81%2FMajor%2Fbdc895a9-c2f4-4f71-3348-08ddb349963e: HTTP 429",
-    "de-anza-college→university-of-california-los-angeles/Linguistics and Computer Science/B.A.: /api/articulation/Agreements?Key=76%2F113%2Fto%2F117%2FMajor%2Fa68e1707-c554-4b17-1f75-08ddcb96df9e: HTTP 429",
-    "de-anza-college→university-of-california-los-angeles/Linguistics and Psychology/B.A.: /api/articulation/Agreements?Key=76%2F113%2Fto%2F117%2FMajor%2F1b59269c-f004-4252-1f5b-08ddcb96df9e: HTTP 429",
-    "de-anza-college→university-of-california-los-angeles/Economics/B.A.: /api/articulation/Agreements?Key=76%2F113%2Fto%2F117%2FMajor%2F860b28a8-20a4-418c-1f52-08ddcb96df9e: HTTP 429",
-    "de-anza-college→university-of-california-berkeley/Electrical Engineering & Computer Sciences, B.S.: /api/articulation/Agreements?Key=76%2F113%2Fto%2F79%2FMajor%2F7d01fb7b-2afa-460e-ace0-08ddbf3f4ee7: HTTP 429",
-    "de-anza-college→university-of-california-berkeley/Psychology, B.A.: /api/articulation/Agreements?Key=76%2F113%2Fto%2F79%2FMajor%2F72ebd5bc-b397-4532-ace4-08ddbf3f4ee7: HTTP 429",
-    "de-anza-college→university-of-california-berkeley/Environmental Economics and Policy, B.S.: /api/articulation/Agreements?Key=76%2F113%2Fto%2F79%2FMajor%2F0a3e6ae4-0261-48bd-ace7-08ddbf3f4ee7: HTTP 429",
-    "de-anza-college→university-of-california-san-diego/CSE: Computer Science with a Specialization in Bioinformatics B.S.: /api/articulation/Agreements?Key=76%2F113%2Fto%2F7%2FMajor%2F41af6b48-97b8-405b-f350-08ddd3b241a4: HTTP 429",
-    "de-anza-college→university-of-california-san-diego/Psychology B.S. with a Specialization in Social Psychology: /api/articulation/Agreements?Key=76%2F113%2Fto%2F7%2FMajor%2F1b05378a-2d0d-4a34-f370-08ddd3b241a4: HTTP 429",
-    "de-anza-college→university-of-california-san-diego/Economics: Business Economics B.S.: /api/articulation/Agreements?Key=76%2F113%2Fto%2F7%2FMajor%2Fbc5c83f8-3dff-49ad-f373-08ddd3b241a4: HTTP 429",
-    "de-anza-college→san-diego-state-university/Computer Science, B.S.: /api/articulation/Agreements?Key=76%2F113%2Fto%2F26%2FMajor%2F17a3686b-6292-4a45-f3f9-08ddd3b241a4: HTTP 429",
-    "de-anza-college→san-diego-state-university/Psychology, B.A. -Imperial Valley Campus: /api/articulation/Agreements?Key=76%2F113%2Fto%2F26%2FMajor%2F94d81a3a-e2b1-470a-f3a6-08ddd3b241a4: HTTP 429",
-    "de-anza-college→san-diego-state-university/Financial Services, Business Administration, B.S.: /api/articulation/Agreements?Key=76%2F113%2Fto%2F26%2FMajor%2Fd00c8bd7-5c25-406b-f3dc-08ddd3b241a4: HTTP 429",
-    "de-anza-college→california-state-university-long-beach/Computer Science: /api/articulation/Agreements?Key=76%2F113%2Fto%2F81%2FMajor%2F0827c64e-650f-4f76-3391-08ddb349963e: HTTP 429",
-    "de-anza-college→california-state-university-long-beach/Psychology: /api/articulation/Agreements?Key=76%2F113%2Fto%2F81%2FMajor%2F48e73ff7-36c9-441e-3369-08ddb349963e: HTTP 429",
-    "de-anza-college→california-state-university-long-beach/International Business: /api/articulation/Agreements?Key=76%2F113%2Fto%2F81%2FMajor%2Fbdc895a9-c2f4-4f71-3348-08ddb349963e: HTTP 429",
-    "long-beach-city-college→university-of-california-los-angeles/Linguistics and Computer Science/B.A.: /api/articulation/Agreements?Key=76%2F135%2Fto%2F117%2FMajor%2Fa68e1707-c554-4b17-1f75-08ddcb96df9e: HTTP 429",
-    "long-beach-city-college→university-of-california-los-angeles/Psychology/B.A.: /api/articulation/Agreements?Key=76%2F135%2Fto%2F117%2FMajor%2F4326f498-897c-4aae-1fce-08ddcb96df9e: HTTP 429",
-    "long-beach-city-college→university-of-california-los-angeles/Business Economics/B.A.: /api/articulation/Agreements?Key=76%2F135%2Fto%2F117%2FMajor%2Ffee8c832-0108-4517-1f93-08ddcb96df9e: HTTP 429",
-    "long-beach-city-college→university-of-california-berkeley/Electrical Engineering & Computer Sciences, B.S.: /api/articulation/Agreements?Key=76%2F135%2Fto%2F79%2FMajor%2F7d01fb7b-2afa-460e-ace0-08ddbf3f4ee7: HTTP 429",
-    "long-beach-city-college→university-of-california-berkeley/Psychology, B.A.: /api/articulation/Agreements?Key=76%2F135%2Fto%2F79%2FMajor%2F72ebd5bc-b397-4532-ace4-08ddbf3f4ee7: HTTP 429",
-    "long-beach-city-college→university-of-california-berkeley/Economics, B.A.: /api/articulation/Agreements?Key=76%2F135%2Fto%2F79%2FMajor%2Fa7e5abb1-a30f-46eb-acf1-08ddbf3f4ee7: HTTP 429",
-    "long-beach-city-college→university-of-california-san-diego/CSE: Computer Science B.S.: /api/articulation/Agreements?Key=76%2F135%2Fto%2F7%2FMajor%2F76ab1c59-2dcf-4c6f-f364-08ddd3b241a4: HTTP 429",
-    "long-beach-city-college→university-of-california-san-diego/Psychology B.S. with a Specialization in Developmental Psychology: /api/articulation/Agreements?Key=76%2F135%2Fto%2F7%2FMajor%2Fde3a0b8f-c7ef-4acf-f359-08ddd3b241a4: HTTP 429",
-    "long-beach-city-college→university-of-california-san-diego/Economics: Business Economics B.S.: /api/articulation/Agreements?Key=76%2F135%2Fto%2F7%2FMajor%2Fbc5c83f8-3dff-49ad-f373-08ddd3b241a4: HTTP 429",
-    "long-beach-city-college→san-diego-state-university/Computer Science, B.S.: /api/articulation/Agreements?Key=76%2F135%2Fto%2F26%2FMajor%2F17a3686b-6292-4a45-f3f9-08ddd3b241a4: HTTP 429",
-    "long-beach-city-college→san-diego-state-university/Psychology, B.A.: /api/articulation/Agreements?Key=76%2F135%2Fto%2F26%2FMajor%2F3b96a806-9a9c-413c-f41b-08ddd3b241a4: HTTP 429",
-    "long-beach-city-college→san-diego-state-university/International Business, Portuguese - Western Europe Emphasis, B.A.: /api/articulation/Agreements?Key=76%2F135%2Fto%2F26%2FMajor%2Fd302e30d-c7f2-49ac-f405-08ddd3b241a4: HTTP 429",
-    "long-beach-city-college→california-state-university-long-beach/Computer Science: /api/articulation/Agreements?Key=76%2F135%2Fto%2F81%2FMajor%2F0827c64e-650f-4f76-3391-08ddb349963e: HTTP 429",
-    "long-beach-city-college→california-state-university-long-beach/Psychology: /api/articulation/Agreements?Key=76%2F135%2Fto%2F81%2FMajor%2F48e73ff7-36c9-441e-3369-08ddb349963e: HTTP 429",
-    "long-beach-city-college→california-state-university-long-beach/International Business: /api/articulation/Agreements?Key=76%2F135%2Fto%2F81%2FMajor%2Fbdc895a9-c2f4-4f71-3348-08ddb349963e: HTTP 429",
-    "american-river-college→university-of-california-los-angeles/Linguistics and Computer Science/B.A.: /api/articulation/Agreements?Key=76%2F27%2Fto%2F117%2FMajor%2Fa68e1707-c554-4b17-1f75-08ddcb96df9e: HTTP 429",
-    "american-river-college→university-of-california-los-angeles/Linguistics and Psychology/B.A.: /api/articulation/Agreements?Key=76%2F27%2Fto%2F117%2FMajor%2F1b59269c-f004-4252-1f5b-08ddcb96df9e: HTTP 429",
-    "american-river-college→university-of-california-los-angeles/Business Economics/B.A.: /api/articulation/Agreements?Key=76%2F27%2Fto%2F117%2FMajor%2Ffee8c832-0108-4517-1f93-08ddcb96df9e: HTTP 429",
-    "american-river-college→university-of-california-berkeley/Electrical Engineering & Computer Sciences, B.S.: /api/articulation/Agreements?Key=76%2F27%2Fto%2F79%2FMajor%2F7d01fb7b-2afa-460e-ace0-08ddbf3f4ee7: HTTP 429",
-    "american-river-college→university-of-california-berkeley/Psychology, B.A.: /api/articulation/Agreements?Key=76%2F27%2Fto%2F79%2FMajor%2F72ebd5bc-b397-4532-ace4-08ddbf3f4ee7: HTTP 429",
-    "american-river-college→university-of-california-berkeley/Environmental Economics and Policy, B.S.: /api/articulation/Agreements?Key=76%2F27%2Fto%2F79%2FMajor%2F0a3e6ae4-0261-48bd-ace7-08ddbf3f4ee7: HTTP 429",
-    "american-river-college→university-of-california-san-diego/CSE: Computer Science with a Specialization in Bioinformatics B.S.: /api/articulation/Agreements?Key=76%2F27%2Fto%2F7%2FMajor%2F41af6b48-97b8-405b-f350-08ddd3b241a4: HTTP 429",
-    "american-river-college→university-of-california-san-diego/Psychology B.S. with a Specialization in Developmental Psychology: /api/articulation/Agreements?Key=76%2F27%2Fto%2F7%2FMajor%2Fde3a0b8f-c7ef-4acf-f359-08ddd3b241a4: HTTP 429",
-    "american-river-college→university-of-california-san-diego/Economics: Business Economics B.S.: /api/articulation/Agreements?Key=76%2F27%2Fto%2F7%2FMajor%2Fbc5c83f8-3dff-49ad-f373-08ddd3b241a4: HTTP 429",
-    "american-river-college→san-diego-state-university/Computer Science, B.S.: /api/articulation/Agreements?Key=76%2F27%2Fto%2F26%2FMajor%2F17a3686b-6292-4a45-f3f9-08ddd3b241a4: HTTP 429",
-    "american-river-college→san-diego-state-university/Psychology, B.A. -Imperial Valley Campus: /api/articulation/Agreements?Key=76%2F27%2Fto%2F26%2FMajor%2F94d81a3a-e2b1-470a-f3a6-08ddd3b241a4: HTTP 429",
-    "american-river-college→san-diego-state-university/International Business, Russian - Central Europe Emphasis, B.A. : /api/articulation/Agreements?Key=76%2F27%2Fto%2F26%2FMajor%2Fb1e9afde-5102-45b5-f426-08ddd3b241a4: HTTP 429",
-    "american-river-college→california-state-university-long-beach/Computer Science: /api/articulation/Agreements?Key=76%2F27%2Fto%2F81%2FMajor%2F0827c64e-650f-4f76-3391-08ddb349963e: HTTP 429",
-    "american-river-college→california-state-university-long-beach/Psychology: /api/articulation/Agreements?Key=76%2F27%2Fto%2F81%2FMajor%2F48e73ff7-36c9-441e-3369-08ddb349963e: HTTP 429",
-    "american-river-college→california-state-university-long-beach/Economics, Mathematical Economics and Economic Theory: /api/articulation/Agreements?Key=76%2F27%2Fto%2F81%2FMajor%2Fd68c9878-e672-4647-339a-08ddb349963e: HTTP 429",
-    "diablo-valley-college→university-of-california-los-angeles/Linguistics and Computer Science/B.A.: /api/articulation/Agreements?Key=76%2F114%2Fto%2F117%2FMajor%2Fa68e1707-c554-4b17-1f75-08ddcb96df9e: HTTP 429",
-    "diablo-valley-college→university-of-california-los-angeles/Psychology/B.A.: /api/articulation/Agreements?Key=76%2F114%2Fto%2F117%2FMajor%2F4326f498-897c-4aae-1fce-08ddcb96df9e: HTTP 429",
-    "diablo-valley-college→university-of-california-los-angeles/Business Economics/B.A.: /api/articulation/Agreements?Key=76%2F114%2Fto%2F117%2FMajor%2Ffee8c832-0108-4517-1f93-08ddcb96df9e: HTTP 429",
-    "diablo-valley-college→university-of-california-berkeley/Electrical Engineering & Computer Sciences, B.S.: /api/articulation/Agreements?Key=76%2F114%2Fto%2F79%2FMajor%2F7d01fb7b-2afa-460e-ace0-08ddbf3f4ee7: HTTP 429",
-    "diablo-valley-college→university-of-california-berkeley/Psychology, B.A.: /api/articulation/Agreements?Key=76%2F114%2Fto%2F79%2FMajor%2F72ebd5bc-b397-4532-ace4-08ddbf3f4ee7: HTTP 429",
-    "diablo-valley-college→university-of-california-berkeley/Environmental Economics and Policy, B.S.: /api/articulation/Agreements?Key=76%2F114%2Fto%2F79%2FMajor%2F0a3e6ae4-0261-48bd-ace7-08ddbf3f4ee7: HTTP 429",
-    "diablo-valley-college→university-of-california-san-diego/CSE: Computer Science with a Specialization in Bioinformatics B.S.: /api/articulation/Agreements?Key=76%2F114%2Fto%2F7%2FMajor%2F41af6b48-97b8-405b-f350-08ddd3b241a4: HTTP 429",
-    "diablo-valley-college→university-of-california-san-diego/Psychology B.S. with a Specialization in Developmental Psychology: /api/articulation/Agreements?Key=76%2F114%2Fto%2F7%2FMajor%2Fde3a0b8f-c7ef-4acf-f359-08ddd3b241a4: HTTP 429",
-    "diablo-valley-college→university-of-california-san-diego/Mathematics: Joint Major in Mathematics and Economics B.S.: /api/articulation/Agreements?Key=76%2F114%2Fto%2F7%2FMajor%2F79831297-dd02-4bfa-f34a-08ddd3b241a4: HTTP 429",
-    "diablo-valley-college→san-diego-state-university/Computer Science, B.S.: /api/articulation/Agreements?Key=76%2F114%2Fto%2F26%2FMajor%2F17a3686b-6292-4a45-f3f9-08ddd3b241a4: HTTP 429",
-    "diablo-valley-college→san-diego-state-university/Psychology, B.A. -Imperial Valley Campus: /api/articulation/Agreements?Key=76%2F114%2Fto%2F26%2FMajor%2F94d81a3a-e2b1-470a-f3a6-08ddd3b241a4: HTTP 429",
-    "diablo-valley-college→san-diego-state-university/Information Systems, Business Administration, B.S.: /api/articulation/Agreements?Key=76%2F114%2Fto%2F26%2FMajor%2F3b68371c-acf7-4e11-f39b-08ddd3b241a4: HTTP 429",
-    "diablo-valley-college→california-state-university-long-beach/Computer Science: /api/articulation/Agreements?Key=76%2F114%2Fto%2F81%2FMajor%2F0827c64e-650f-4f76-3391-08ddb349963e: HTTP 429",
-    "diablo-valley-college→california-state-university-long-beach/Psychology: /api/articulation/Agreements?Key=76%2F114%2Fto%2F81%2FMajor%2F48e73ff7-36c9-441e-3369-08ddb349963e: HTTP 429",
-    "diablo-valley-college→california-state-university-long-beach/Economics, Business Economics: /api/articulation/Agreements?Key=76%2F114%2Fto%2F81%2FMajor%2Fc62f10d8-f54a-474e-337a-08ddb349963e: HTTP 429",
-    "orange-coast-college→university-of-california-los-angeles/Linguistics and Computer Science/B.A.: /api/articulation/Agreements?Key=76%2F74%2Fto%2F117%2FMajor%2Fa68e1707-c554-4b17-1f75-08ddcb96df9e: HTTP 429",
-    "orange-coast-college→university-of-california-los-angeles/Psychology/B.A.: /api/articulation/Agreements?Key=76%2F74%2Fto%2F117%2FMajor%2F4326f498-897c-4aae-1fce-08ddcb96df9e: HTTP 429",
-    "orange-coast-college→university-of-california-los-angeles/Business Economics/B.A.: /api/articulation/Agreements?Key=76%2F74%2Fto%2F117%2FMajor%2Ffee8c832-0108-4517-1f93-08ddcb96df9e: HTTP 429",
-    "orange-coast-college→university-of-california-berkeley/Computer Science, B.A.: /api/articulation/Agreements?Key=76%2F74%2Fto%2F79%2FMajor%2F18bc32d8-6aa4-47cc-aced-08ddbf3f4ee7: HTTP 429",
-    "orange-coast-college→university-of-california-berkeley/Psychology, B.A.: /api/articulation/Agreements?Key=76%2F74%2Fto%2F79%2FMajor%2F72ebd5bc-b397-4532-ace4-08ddbf3f4ee7: HTTP 429",
-    "orange-coast-college→university-of-california-berkeley/Business Administration, B.S.: /api/articulation/Agreements?Key=76%2F74%2Fto%2F79%2FMajor%2Fe15195a7-0cc9-4b8c-acf9-08ddbf3f4ee7: HTTP 429",
-    "orange-coast-college→university-of-california-san-diego/CSE: Computer Science B.S.: /api/articulation/Agreements?Key=76%2F74%2Fto%2F7%2FMajor%2F76ab1c59-2dcf-4c6f-f364-08ddd3b241a4: HTTP 429",
-    "orange-coast-college→university-of-california-san-diego/Psychology B.S. with a Specialization in Human Health: /api/articulation/Agreements?Key=76%2F74%2Fto%2F7%2FMajor%2Ff619ca4a-37be-4e9d-f356-08ddd3b241a4: HTTP 429",
-    "orange-coast-college→university-of-california-san-diego/International Studies - Economics B.A.: /api/articulation/Agreements?Key=76%2F74%2Fto%2F7%2FMajor%2F231909a4-b92b-44d3-f31e-08ddd3b241a4: HTTP 429",
-    "orange-coast-college→san-diego-state-university/Computer Science, B.S.: /api/articulation/Agreements?Key=76%2F74%2Fto%2F26%2FMajor%2F17a3686b-6292-4a45-f3f9-08ddd3b241a4: HTTP 429",
-    "orange-coast-college→san-diego-state-university/Psychology, Emphasis in Neuroscience, B.A.: /api/articulation/Agreements?Key=76%2F74%2Fto%2F26%2FMajor%2Fb9926140-1df4-40d5-f393-08ddd3b241a4: HTTP 429",
-    "orange-coast-college→san-diego-state-university/Music, Music Entrepreneurship and Business Track, B.M.: /api/articulation/Agreements?Key=76%2F74%2Fto%2F26%2FMajor%2F1a26efa0-bb84-47b4-f385-08ddd3b241a4: HTTP 429",
-    "orange-coast-college→california-state-university-long-beach/Computer Science: /api/articulation/Agreements?Key=76%2F74%2Fto%2F81%2FMajor%2F0827c64e-650f-4f76-3391-08ddb349963e: HTTP 429",
-    "orange-coast-college→california-state-university-long-beach/Kinesiology, Sport Psychology and Leadership: /api/articulation/Agreements?Key=76%2F74%2Fto%2F81%2FMajor%2Fce6b8893-8156-4ba2-33ba-08ddb349963e: HTTP 429",
-    "orange-coast-college→california-state-university-long-beach/Economics, B.S.: /api/articulation/Agreements?Key=76%2F74%2Fto%2F81%2FMajor%2Fdf0df43f-12d4-41fa-337b-08ddb349963e: HTTP 429",
-    "fullerton-college→university-of-california-los-angeles/Computer Science/B.S.: /api/articulation/Agreements?Key=76%2F134%2Fto%2F117%2FMajor%2F3fc7b07d-4058-4a0a-1f72-08ddcb96df9e: HTTP 429",
-    "fullerton-college→university-of-california-los-angeles/Linguistics and Psychology/B.A.: /api/articulation/Agreements?Key=76%2F134%2Fto%2F117%2FMajor%2F1b59269c-f004-4252-1f5b-08ddcb96df9e: HTTP 429",
-    "fullerton-college→university-of-california-los-angeles/Economics/B.A.: /api/articulation/Agreements?Key=76%2F134%2Fto%2F117%2FMajor%2F860b28a8-20a4-418c-1f52-08ddcb96df9e: HTTP 429",
-    "fullerton-college→university-of-california-berkeley/Electrical Engineering & Computer Sciences, B.S.: /api/articulation/Agreements?Key=76%2F134%2Fto%2F79%2FMajor%2F7d01fb7b-2afa-460e-ace0-08ddbf3f4ee7: HTTP 429",
-    "fullerton-college→university-of-california-berkeley/Psychology, B.A.: /api/articulation/Agreements?Key=76%2F134%2Fto%2F79%2FMajor%2F72ebd5bc-b397-4532-ace4-08ddbf3f4ee7: HTTP 429",
-    "fullerton-college→university-of-california-berkeley/Business Administration, B.S.: /api/articulation/Agreements?Key=76%2F134%2Fto%2F79%2FMajor%2Fe15195a7-0cc9-4b8c-acf9-08ddbf3f4ee7: HTTP 429",
-    "fullerton-college→university-of-california-san-diego/Mathematics/Computer Science B.S.: /api/articulation/Agreements?Key=76%2F134%2Fto%2F7%2FMajor%2Fd2dfb7a8-d505-4e70-f33c-08ddd3b241a4: HTTP 429",
-    "fullerton-college→university-of-california-san-diego/Psychology B.S. with a Specialization in Sensation and Perception: /api/articulation/Agreements?Key=76%2F134%2Fto%2F7%2FMajor%2F96af8eb7-116f-4384-f32e-08ddd3b241a4: HTTP 429",
-    "fullerton-college→university-of-california-san-diego/Economics: Joint Major in Mathematics and Economics B.S.: /api/articulation/Agreements?Key=76%2F134%2Fto%2F7%2FMajor%2F8c3dd8d8-0037-4465-f308-08ddd3b241a4: HTTP 429",
-    "fullerton-college→san-diego-state-university/Computer Science, B.S.: /api/articulation/Agreements?Key=76%2F134%2Fto%2F26%2FMajor%2F17a3686b-6292-4a45-f3f9-08ddd3b241a4: HTTP 429",
-    "fullerton-college→san-diego-state-university/Psychology, Emphasis in Industrial and Organizational Psychology, B.A.: /api/articulation/Agreements?Key=76%2F134%2Fto%2F26%2FMajor%2Fae2888a5-b75f-4e74-f402-08ddd3b241a4: HTTP 429",
-    "fullerton-college→san-diego-state-university/Finance, Business Administration, B.S.: /api/articulation/Agreements?Key=76%2F134%2Fto%2F26%2FMajor%2Faeefeed9-57cf-462a-f41d-08ddd3b241a4: HTTP 429",
-    "fullerton-college→california-state-university-long-beach/Computer Science: /api/articulation/Agreements?Key=76%2F134%2Fto%2F81%2FMajor%2F0827c64e-650f-4f76-3391-08ddb349963e: HTTP 429",
-    "fullerton-college→california-state-university-long-beach/Kinesiology, Sport Psychology and Leadership: /api/articulation/Agreements?Key=76%2F134%2Fto%2F81%2FMajor%2Fce6b8893-8156-4ba2-33ba-08ddb349963e: HTTP 429",
-    "fullerton-college→california-state-university-long-beach/International Business: /api/articulation/Agreements?Key=76%2F134%2Fto%2F81%2FMajor%2Fbdc895a9-c2f4-4f71-3348-08ddb349963e: HTTP 429"
   ]
 }
