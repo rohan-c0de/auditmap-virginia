@@ -25,6 +25,29 @@ if (!supabaseUrl || !supabaseKey) {
 const supabase = createClient(supabaseUrl, supabaseKey);
 const fixturesDir = path.join(process.cwd(), "scripts", "ca", "fixtures", "articulation");
 
+// Map of CC slugs to full names (from ASSIST institutions)
+const CC_NAMES: Record<string, string> = {
+  "american-river-college": "American River College",
+  "de-anza-college": "De Anza College",
+  "diablo-valley-college": "Diablo Valley College",
+  "east-los-angeles-college": "East Los Angeles College",
+  "fullerton-college": "Fullerton College",
+  "long-beach-city-college": "Long Beach City College",
+  "mount-san-antonio-college": "Mount San Antonio College",
+  "orange-coast-college": "Orange Coast College",
+  "pasadena-city-college": "Pasadena City College",
+  "santa-monica-college": "Santa Monica College",
+};
+
+// Map of university slugs to full names
+const UNI_NAMES: Record<string, string> = {
+  "california-state-university-long-beach": "California State University, Long Beach",
+  "san-diego-state-university": "San Diego State University",
+  "university-of-california-berkeley": "University of California, Berkeley",
+  "university-of-california-los-angeles": "University of California, Los Angeles",
+  "university-of-california-san-diego": "University of California, San Diego",
+};
+
 interface ImportResult {
   filename: string;
   ccSlug: string;
@@ -82,8 +105,9 @@ async function main() {
       const majorSlug = majorParts.join("-");
       const majorName = majorParts.map((p) => p.replace(/-/g, " ")).join(" ");
 
-      const ccName = agreement.cc_name;
-      const uniName = agreement.receiving_institution_name;
+      // Get institution names from the mapping (or use parser's major_label as fallback)
+      const ccName = CC_NAMES[ccSlug] || ccSlug;
+      const uniName = UNI_NAMES[uniSlug] || uniSlug;
 
       console.log(`  ${ccSlug} → ${uniSlug} / ${majorSlug}`);
 
@@ -94,10 +118,15 @@ async function main() {
           (sum, g) => sum + g.requirements.length,
           0,
         );
+        // Count total sending options by flattening each requirement's sending array
         const totalOptions = agreement.requirement_groups.reduce(
           (sum, g) =>
             sum +
-            g.requirements.reduce((s, r) => s + (r.sending_options?.length || 0), 0),
+            g.requirements.reduce((s, r) => {
+              // Parser outputs r.sending as array of {conjunction, courses}
+              // Each course in each group becomes one database row
+              return s + (r.sending || []).reduce((cs, sg: any) => cs + (sg.courses?.length || 0), 0);
+            }, 0),
           0,
         );
 
@@ -121,6 +150,7 @@ async function main() {
       } else {
         // Live import
         // 1. Upsert agreement
+        // Note: the agreement_key column is UNIQUE, so we upsert on it
         const { data: agreementData, error: agErr } = await supabase
           .from("assist_agreements")
           .upsert(
@@ -157,8 +187,8 @@ async function main() {
             .from("assist_requirement_groups")
             .insert({
               agreement_id: agreementId,
-              group_name: group.name,
-              group_type: group.type,
+              group_name: group.area, // Parser outputs 'area', not 'name'
+              group_type: group.instruction, // This stores instruction type, not group type
               position: gIdx,
             })
             .select("id")
@@ -172,15 +202,22 @@ async function main() {
           for (let rIdx = 0; rIdx < group.requirements.length; rIdx++) {
             const req = group.requirements[rIdx];
 
+            // Parser outputs receiving_label and receiving_courses array
+            // For database, we need individual course fields or a single course
+            const firstCourse = req.receiving_courses?.[0];
+            const unitsStr = firstCourse
+              ? `${firstCourse.min_units}${firstCourse.max_units && firstCourse.max_units !== firstCourse.min_units ? `-${firstCourse.max_units}` : ''}`
+              : null;
+
             const { data: reqData, error: rErr } = await supabase
               .from("assist_requirements")
               .insert({
                 group_id: groupId,
-                receiving_course_prefix: req.receiving_course_prefix,
-                receiving_course_number: req.receiving_course_number,
-                receiving_course_title: req.receiving_course_title,
-                receiving_course_units: req.receiving_course_units,
-                requirement_label: req.requirement_label,
+                receiving_course_prefix: firstCourse?.prefix || null,
+                receiving_course_number: firstCourse?.number || null,
+                receiving_course_title: firstCourse?.title || null,
+                receiving_course_units: unitsStr,
+                requirement_label: req.receiving_label,
                 position: rIdx,
                 no_articulation_reason: req.no_articulation_reason,
               })
@@ -192,23 +229,35 @@ async function main() {
             totalRequirements++;
 
             // Insert sending options for this requirement
-            if (req.sending_options && req.sending_options.length > 0) {
-              const optionsToInsert = req.sending_options.map((opt, oIdx) => ({
-                requirement_id: requirementId,
-                cc_course_prefix: opt.cc_course_prefix,
-                cc_course_number: opt.cc_course_number,
-                cc_course_title: opt.cc_course_title,
-                cc_course_units: opt.cc_course_units,
-                conjunction: opt.conjunction,
-                position: oIdx,
-              }));
+            // Parser outputs 'sending' as array of {conjunction: "and"|"or", courses: SimpleCourse[]}
+            // Flatten these to individual database rows
+            if (req.sending && req.sending.length > 0) {
+              let optionIndex = 0;
+              const optionsToInsert: any[] = [];
 
-              const { error: oErr } = await supabase
-                .from("assist_sending_options")
-                .insert(optionsToInsert);
+              for (const sendingGroup of req.sending) {
+                for (const course of sendingGroup.courses || []) {
+                  const courseUnits = `${course.min_units}${course.max_units && course.max_units !== course.min_units ? `-${course.max_units}` : ''}`;
+                  optionsToInsert.push({
+                    requirement_id: requirementId,
+                    cc_course_prefix: course.prefix,
+                    cc_course_number: course.number,
+                    cc_course_title: course.title,
+                    cc_course_units: courseUnits,
+                    conjunction: sendingGroup.conjunction === "and" ? "AND" : "OR",
+                    position: optionIndex++,
+                  });
+                }
+              }
 
-              if (oErr) throw new Error(`Sending options insert failed: ${oErr.message}`);
-              totalOptions += optionsToInsert.length;
+              if (optionsToInsert.length > 0) {
+                const { error: oErr } = await supabase
+                  .from("assist_sending_options")
+                  .insert(optionsToInsert);
+
+                if (oErr) throw new Error(`Sending options insert failed: ${oErr.message}`);
+                totalOptions += optionsToInsert.length;
+              }
             }
           }
         }
