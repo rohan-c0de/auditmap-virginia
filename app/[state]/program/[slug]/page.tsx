@@ -49,23 +49,16 @@ type PageProps = {
   params: Promise<{ state: string; slug: string }>;
 };
 
-// Force HTTP 404 (not a cached 200 soft-404) for any (state, slug) pair
-// that's not in the qualifying-program set. See #337. Build cost: one
-// loadProgramData call per (state, PROGRAMS[i]) pair (~22 × ~10 = ~220).
-export const dynamicParams = false;
+// Generate on-demand via ISR. Previously prerendered every (state,
+// qualifying-program) pair, calling getQualifyingProgramSlugs() which runs
+// multiple Supabase subject queries per state. As the courses table grew
+// this work blew past Vercel's build memory ceiling (observed OOM during
+// the 2026-05-26 deploy). Non-qualifying programs will still soft-404 at
+// runtime via the page body's qualifies() guard.
+export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  // Serialize across states — each call iterates every program and runs
-  // multiple subject queries, so a parallel fan-out across 22 states would
-  // saturate Supabase connections at build time.
-  const out: { state: string; slug: string }[] = [];
-  for (const s of getAllStates()) {
-    const slugs = await getQualifyingProgramSlugs(s.slug).catch(
-      () => [] as string[]
-    );
-    for (const slug of slugs) out.push({ state: s.slug, slug });
-  }
-  return out;
+  return [];
 }
 
 function siteUrl() {

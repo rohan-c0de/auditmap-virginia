@@ -15,10 +15,9 @@ import type { Metadata } from "next";
 import {
   loadCoursesBySubject,
   getDistinctSubjects,
-  getSitemapCourseIndex,
 } from "@/lib/courses";
 import { getCurrentTerm, termLabel } from "@/lib/terms";
-import { getAllStates, isValidState } from "@/lib/states/registry";
+import { isValidState } from "@/lib/states/registry";
 import { requireStateConfig } from "@/lib/states/route-helpers";
 import { subjectName } from "@/lib/subjects";
 import { computeCourseAvailabilityProfile } from "@/lib/course-stats";
@@ -48,28 +47,18 @@ type PageProps = {
 // See #337. Prefixes are lowercased to match the canonical URLs Google sees.
 // ---------------------------------------------------------------------------
 
-export const dynamicParams = false;
+// Generate on-demand via ISR. Previously prerendered every (state, subject)
+// pair with ≥5 sections, but that called getCurrentTerm() per state on every
+// build — which triggers the get_term_college_counts RPC that's been timing
+// out since the courses table grew. The fallback N+1 query path then ran for
+// each of ~1,300 pages, accumulating in memory and OOM-ing the Vercel build
+// worker (observed 2026-05-26). The sitemap still lists every valid
+// combination so Google finds them; ISR caches each page for 7 days after
+// first visit, so cold-start latency is paid once per page lifetime.
+export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  const out: { state: string; prefix: string }[] = [];
-  for (const s of getAllStates()) {
-    try {
-      const term = await getCurrentTerm(s.slug);
-      const { subjectSectionCounts } = await getSitemapCourseIndex(
-        term,
-        s.slug
-      );
-      for (const [prefix, count] of subjectSectionCounts) {
-        if (count >= 5) {
-          out.push({ state: s.slug, prefix: prefix.toLowerCase() });
-        }
-      }
-    } catch {
-      // If the catalog can't be loaded for a state at build time, skip it
-      // rather than fail the whole build — the route is non-critical.
-    }
-  }
-  return out;
+  return [];
 }
 
 // ---------------------------------------------------------------------------
