@@ -75,12 +75,16 @@ async function main() {
     try {
       // Parse fixture
       const rawJson = JSON.parse(fs.readFileSync(filepath, "utf-8"));
-      const agreement = parseAssistArticulation(rawJson);
 
       // Extract metadata from filename: cc__uni__major.json
       const [ccSlug, uniSlug, ...majorParts] = filename.replace(".json", "").split("__");
       const majorSlug = majorParts.join("-");
       const majorName = majorParts.map((p) => p.replace(/-/g, " ")).join(" ");
+
+      // Build agreement key from state and slugs
+      const agreementKey = `ca/${ccSlug}/${uniSlug}/${majorSlug}`;
+
+      const agreement = parseAssistArticulation(rawJson, ccSlug, uniSlug, agreementKey);
 
       const ccName = agreement.cc_name;
       const uniName = agreement.receiving_institution_name;
