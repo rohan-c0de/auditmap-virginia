@@ -114,7 +114,9 @@ export interface AssistCourse {
 
 export interface ArticulationAgreement {
   cc_slug: string;
+  cc_name: string;
   university_slug: string;
+  receiving_institution_name: string;
   major_label: string;
   agreement_key: string;
   academic_year: string;
@@ -415,9 +417,15 @@ export function parseAssistArticulation(
     });
   }
 
+  // Extract institution display names (use first name in names array)
+  const ccName = sendingInstitution.names[0]?.name || "Unknown Community College";
+  const uniName = receivingInstitution.names[0]?.name || "Unknown University";
+
   return {
     cc_slug: ccSlug,
+    cc_name: ccName,
     university_slug: universitySlug,
+    receiving_institution_name: uniName,
     major_label: result.name,
     agreement_key: agreementKey,
     academic_year: normalizeAcademicYear(academicYear.code),
