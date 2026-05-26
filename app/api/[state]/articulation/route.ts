@@ -19,9 +19,10 @@ export const revalidate = 86400; // 1 day
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { state: string } }
+  { params }: { params: Promise<{ state: string }> }
 ) {
-  const state = params.state.toLowerCase();
+  const { state: stateParam } = await params;
+  const state = stateParam.toLowerCase();
   const cc = request.nextUrl.searchParams.get("cc");
   const university = request.nextUrl.searchParams.get("university");
 
