@@ -5,7 +5,6 @@ import Link from "next/link";
 import type { TransferMapping } from "@/lib/types";
 import TransferCompare from "./TransferCompare";
 
-import ArticulationBrowser from "./ArticulationBrowser";
 interface Props {
   universities: { slug: string; name: string }[];
   mappings: TransferMapping[];
@@ -18,7 +17,7 @@ interface Props {
   popularCourses: string[];
 }
 
-type ViewMode = "browse" | "compare" | "articulation";
+type ViewMode = "browse" | "compare";
 type GroupMode = "outcome" | "subject";
 
 export default function TransferClient({
@@ -285,16 +284,6 @@ export default function TransferClient({
           }`}
         >
           Compare universities
-        </button>
-        <button
-          onClick={() => setViewMode("articulation")}
-          className={`rounded-md px-4 py-2 text-sm font-medium transition-colors ${
-            viewMode === "articulation"
-              ? "bg-white dark:bg-slate-900 text-gray-900 dark:text-slate-100 shadow-sm"
-              : "text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:hover:text-slate-300"
-          }`}
-        >
-          Per-major pathways
         </button>
       </div>
 
