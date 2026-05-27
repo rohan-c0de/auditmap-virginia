@@ -11,6 +11,7 @@ import {
 import { getCurrentTerm } from "@/lib/terms";
 import CollegeScorecardSection from "./CollegeScorecardSection";
 import CollegeTermSection from "./CollegeTermSection";
+import CollegeContext from "@/components/CollegeContext";
 import TopProgramsSection from "./TopProgramsSection";
 import { buildTransferLookupForCourses } from "@/lib/transfer-scoped";
 import { getAllStates } from "@/lib/states/registry";
@@ -330,6 +331,26 @@ export default async function CollegeDetailPage(props: PageProps) {
           </div>
         </div>
       </section>
+
+      {/* At-a-glance — data-grounded editorial context paragraphs. Renders
+          nothing when fewer than 2 sentences qualify (sparse-data colleges),
+          so we don't get an empty heading. */}
+      <CollegeContext
+        state={state}
+        stateName={config.name}
+        systemName={config.systemName}
+        institution={institution}
+        sections={coursesByTerm[defaultTerm] ?? []}
+        term={defaultTerm}
+        seniorWaiver={
+          config.seniorWaiver
+            ? {
+                ageThreshold: config.seniorWaiver.ageThreshold,
+                legalCitation: config.seniorWaiver.legalCitation,
+              }
+            : null
+        }
+      />
 
       {/* COURSES — immediately after hero (courses-first layout) */}
       <CollegeTermSection
