@@ -14,32 +14,13 @@
     "location": "Wilson Street - Rock Hill",
     "campus": "WS",
     "mode": "in-person",
-    "instructor": "Keever, B",
-    "seats_open": 4,
+    "instructor": "Howle, M",
+    "seats_open": 6,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "york",
-    "term": "2026SU",
-    "course_prefix": "ACR",
-    "course_number": "220",
-    "course_title": "Advanced Air Conditioning",
-    "credits": 4,
-    "crn": "ACR-220-100",
-    "days": "T Th",
-    "start_time": "5:30 PM",
-    "end_time": "6:30 PM",
-    "start_date": "2026-05-18",
-    "location": "Wilson Street - Rock Hill",
-    "campus": "WS",
-    "mode": "in-person",
-    "instructor": "Keever, B",
-    "seats_open": 13,
-    "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ACR 120",
+    "prerequisite_courses": [
+      "ACR 120"
+    ]
   },
   {
     "college_code": "york",
@@ -56,8 +37,8 @@
     "location": "Hybrid - Rock Hill",
     "campus": "HYBRH",
     "mode": "hybrid",
-    "instructor": "Stewart, J, Smith, W",
-    "seats_open": 9,
+    "instructor": "Stewart, J, Freeman, R",
+    "seats_open": 8,
     "seats_total": 10,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -78,7 +59,7 @@
     "campus": "HYBRH",
     "mode": "hybrid",
     "instructor": "Stewart, J, Smith, W",
-    "seats_open": 10,
+    "seats_open": 9,
     "seats_total": 10,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -170,6 +151,147 @@
   {
     "college_code": "york",
     "term": "2026SU",
+    "course_prefix": "ABR",
+    "course_number": "119",
+    "course_title": "Estimating Repairs",
+    "credits": 2,
+    "crn": "ABR-119-100",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-18",
+    "location": "Hybrid - Rock Hill",
+    "campus": "HYBRH",
+    "mode": "hybrid",
+    "instructor": "Stewart, J, Smith, W",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "york",
+    "term": "2026SU",
+    "course_prefix": "AUT",
+    "course_number": "112",
+    "course_title": "Braking Systems",
+    "credits": 4,
+    "crn": "AUT-112-003",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-18",
+    "location": "Hybrid - Rock Hill",
+    "campus": "HYBRH",
+    "mode": "hybrid",
+    "instructor": "Brodfuehrer, M",
+    "seats_open": 9,
+    "seats_total": 20,
+    "prerequisite_text": "AUT 161 and RWR 032",
+    "prerequisite_courses": [
+      "AUT 161",
+      "RWR 032"
+    ]
+  },
+  {
+    "college_code": "york",
+    "term": "2026SU",
+    "course_prefix": "AUT",
+    "course_number": "112",
+    "course_title": "Braking Systems",
+    "credits": 4,
+    "crn": "AUT-112-005",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-18",
+    "location": "Hybrid - Rock Hill",
+    "campus": "HYBRH",
+    "mode": "hybrid",
+    "instructor": "Abercrombie, J",
+    "seats_open": 10,
+    "seats_total": 20,
+    "prerequisite_text": "AUT 161 and RWR 032",
+    "prerequisite_courses": [
+      "AUT 161",
+      "RWR 032"
+    ]
+  },
+  {
+    "college_code": "york",
+    "term": "2026SU",
+    "course_prefix": "AUT",
+    "course_number": "146",
+    "course_title": "Emission Systems",
+    "credits": 3,
+    "crn": "AUT-146-044",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-18",
+    "location": "Hybrid - Rock Hill",
+    "campus": "HYBRH",
+    "mode": "hybrid",
+    "instructor": "Stewart, J, Sigmon, J",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": "AUT 161 and RWR 032",
+    "prerequisite_courses": [
+      "AUT 161",
+      "RWR 032"
+    ]
+  },
+  {
+    "college_code": "york",
+    "term": "2026SU",
+    "course_prefix": "AUT",
+    "course_number": "241",
+    "course_title": "Automotive Air Condition",
+    "credits": 4,
+    "crn": "AUT-241-003",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-18",
+    "location": "Hybrid - Rock Hill",
+    "campus": "HYBRH",
+    "mode": "hybrid",
+    "instructor": "Griffin, B",
+    "seats_open": 11,
+    "seats_total": 27,
+    "prerequisite_text": "AUT 161 and RWR 032",
+    "prerequisite_courses": [
+      "AUT 161",
+      "RWR 032"
+    ]
+  },
+  {
+    "college_code": "york",
+    "term": "2026SU",
+    "course_prefix": "AUT",
+    "course_number": "241",
+    "course_title": "Automotive Air Condition",
+    "credits": 4,
+    "crn": "AUT-241-101",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-18",
+    "location": "Hybrid - Rock Hill",
+    "campus": "HYBRH",
+    "mode": "hybrid",
+    "instructor": "Stewart, J, Sigmon, J",
+    "seats_open": 16,
+    "seats_total": 27,
+    "prerequisite_text": "AUT 161 and RWR 032",
+    "prerequisite_courses": [
+      "AUT 161",
+      "RWR 032"
+    ]
+  },
+  {
+    "college_code": "york",
+    "term": "2026SU",
     "course_prefix": "BCT",
     "course_number": "105",
     "course_title": "Tool Use and Safety",
@@ -182,11 +304,13 @@
     "location": "Wilson Street - Rock Hill",
     "campus": "WS",
     "mode": "in-person",
-    "instructor": "Laney, R",
+    "instructor": "Lackey, K",
     "seats_open": 0,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RWR 032",
+    "prerequisite_courses": [
+      "RWR 032"
+    ]
   },
   {
     "college_code": "york",
@@ -204,7 +328,7 @@
     "campus": "INT",
     "mode": "online",
     "instructor": "Terry, A",
-    "seats_open": 1,
+    "seats_open": 2,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -225,10 +349,12 @@
     "campus": "INT",
     "mode": "online",
     "instructor": "Terry, A",
-    "seats_open": 7,
+    "seats_open": 6,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RWR 032",
+    "prerequisite_courses": [
+      "RWR 032"
+    ]
   },
   {
     "college_code": "york",
@@ -245,11 +371,13 @@
     "location": "Wilson Street - Rock Hill",
     "campus": "WS",
     "mode": "in-person",
-    "instructor": "Keever, B",
-    "seats_open": 0,
+    "instructor": "Laney, R",
+    "seats_open": 2,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RWR 032",
+    "prerequisite_courses": [
+      "RWR 032"
+    ]
   },
   {
     "college_code": "york",
@@ -287,11 +415,13 @@
     "location": "Wilson Street - Rock Hill",
     "campus": "WS",
     "mode": "in-person",
-    "instructor": "Terry, A",
+    "instructor": "Laney, R",
     "seats_open": 0,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RWR 032",
+    "prerequisite_courses": [
+      "RWR 032"
+    ]
   },
   {
     "college_code": "york",
@@ -308,9 +438,30 @@
     "location": "Wilson Street - Rock Hill",
     "campus": "WS",
     "mode": "in-person",
-    "instructor": "Laney, R",
+    "instructor": "Lackey, K",
     "seats_open": 0,
     "seats_total": 15,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "york",
+    "term": "2026SU",
+    "course_prefix": "CWE",
+    "course_number": "113",
+    "course_title": "Cooperative Work Exp I",
+    "credits": 3,
+    "crn": "CWE-113-049",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-18",
+    "location": "Off Campus",
+    "campus": "OFF",
+    "mode": "in-person",
+    "instructor": "Simpson, W, Pool, J",
+    "seats_open": 0,
+    "seats_total": 0,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -329,11 +480,15 @@
     "location": "Hybrid - Rock Hill",
     "campus": "HYBRH",
     "mode": "hybrid",
-    "instructor": null,
-    "seats_open": 10,
+    "instructor": "Clade, J",
+    "seats_open": 4,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EEM 250 or EEM 251 or EEM 221",
+    "prerequisite_courses": [
+      "EEM 250",
+      "EEM 251",
+      "EEM 221"
+    ]
   },
   {
     "college_code": "york",
@@ -350,11 +505,15 @@
     "location": "Hybrid - Rock Hill",
     "campus": "HYBRH",
     "mode": "hybrid",
-    "instructor": null,
-    "seats_open": 11,
+    "instructor": "Ray, E",
+    "seats_open": 10,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EEM 250 or EEM 251 or EEM 221",
+    "prerequisite_courses": [
+      "EEM 250",
+      "EEM 251",
+      "EEM 221"
+    ]
   },
   {
     "college_code": "york",
@@ -363,19 +522,22 @@
     "course_number": "122",
     "course_title": "Dental Office Management",
     "credits": 2,
-    "crn": "DAT-122-010",
+    "crn": "DAT-122-002",
     "days": "F",
     "start_time": "10:00 AM",
-    "end_time": "1:20 PM",
+    "end_time": "1:10 PM",
     "start_date": "2026-05-18",
     "location": "Main Campus - Rock Hill",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 19,
+    "instructor": "Crosby, C",
+    "seats_open": 16,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DAT 105 or DAT 123",
+    "prerequisite_courses": [
+      "DAT 105",
+      "DAT 123"
+    ]
   },
   {
     "college_code": "york",
@@ -392,8 +554,8 @@
     "location": "Main Campus - Rock Hill",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 19,
+    "instructor": "McLaughlin, L",
+    "seats_open": 13,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -413,8 +575,8 @@
     "location": "Main Campus - Rock Hill",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 13,
+    "instructor": "Crosby, C",
+    "seats_open": 6,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -434,8 +596,8 @@
     "location": "Main Campus - Rock Hill",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 13,
+    "instructor": "McLaughlin, L",
+    "seats_open": 6,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -455,11 +617,36 @@
     "location": "Main Campus - Rock Hill",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 13,
+    "instructor": "Peter, K, Moreschi, J, Crosby, C, McLaughlin, L, Midkiff, T, Pressley, V, Crawford, M",
+    "seats_open": 6,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
+  },
+  {
+    "college_code": "york",
+    "term": "2026SU",
+    "course_prefix": "DHM",
+    "course_number": "107",
+    "course_title": "Diesel Equip Serv & Diag",
+    "credits": 3,
+    "crn": "DHM-107-001",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-18",
+    "location": "Hybrid - Rock Hill",
+    "campus": "HYBRH",
+    "mode": "hybrid",
+    "instructor": "Stewart, J",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": "AUT 131 and AUT 133 and AUT 143",
+    "prerequisite_courses": [
+      "AUT 131",
+      "AUT 133",
+      "AUT 143"
+    ]
   },
   {
     "college_code": "york",
@@ -479,8 +666,37 @@
     "instructor": "Stewart, J",
     "seats_open": 10,
     "seats_total": 10,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AUT 131 and AUT 133 and AUT 143",
+    "prerequisite_courses": [
+      "AUT 131",
+      "AUT 133",
+      "AUT 143"
+    ]
+  },
+  {
+    "college_code": "york",
+    "term": "2026SU",
+    "course_prefix": "DHM",
+    "course_number": "108",
+    "course_title": "Diesel Engine Tune-Up",
+    "credits": 2,
+    "crn": "DHM-108-001",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-18",
+    "location": "Hybrid - Rock Hill",
+    "campus": "HYBRH",
+    "mode": "hybrid",
+    "instructor": "Stewart, J",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": "AUT 131 and AUT 133 and AUT 143",
+    "prerequisite_courses": [
+      "AUT 131",
+      "AUT 133",
+      "AUT 143"
+    ]
   },
   {
     "college_code": "york",
@@ -500,8 +716,36 @@
     "instructor": "Stewart, J",
     "seats_open": 10,
     "seats_total": 10,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AUT 131 and AUT 133 and AUT 143",
+    "prerequisite_courses": [
+      "AUT 131",
+      "AUT 133",
+      "AUT 143"
+    ]
+  },
+  {
+    "college_code": "york",
+    "term": "2026SU",
+    "course_prefix": "DHM",
+    "course_number": "125",
+    "course_title": "Diesel Fuel Systems",
+    "credits": 3,
+    "crn": "DHM-125-001",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-18",
+    "location": "Hybrid - Rock Hill",
+    "campus": "HYBRH",
+    "mode": "hybrid",
+    "instructor": "Stewart, J",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": "AUT 131 and AUT 131 and AUT 143",
+    "prerequisite_courses": [
+      "AUT 131",
+      "AUT 143"
+    ]
   },
   {
     "college_code": "york",
@@ -521,8 +765,35 @@
     "instructor": "Stewart, J",
     "seats_open": 10,
     "seats_total": 10,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AUT 131 and AUT 131 and AUT 143",
+    "prerequisite_courses": [
+      "AUT 131",
+      "AUT 143"
+    ]
+  },
+  {
+    "college_code": "york",
+    "term": "2026SU",
+    "course_prefix": "DHM",
+    "course_number": "205",
+    "course_title": "Diesel Engines II",
+    "credits": 3,
+    "crn": "DHM-205-001",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-18",
+    "location": "Hybrid - Rock Hill",
+    "campus": "HYBRH",
+    "mode": "hybrid",
+    "instructor": "Stewart, J",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": "AUT 131 and AUT 131 and AUT 143",
+    "prerequisite_courses": [
+      "AUT 131",
+      "AUT 143"
+    ]
   },
   {
     "college_code": "york",
@@ -542,8 +813,36 @@
     "instructor": "Stewart, J",
     "seats_open": 10,
     "seats_total": 10,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AUT 131 and AUT 131 and AUT 143",
+    "prerequisite_courses": [
+      "AUT 131",
+      "AUT 143"
+    ]
+  },
+  {
+    "college_code": "york",
+    "term": "2026SU",
+    "course_prefix": "DHM",
+    "course_number": "225",
+    "course_title": "Electronic Fuel Systems",
+    "credits": 3,
+    "crn": "DHM-225-001",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-18",
+    "location": "Hybrid - Rock Hill",
+    "campus": "HYBRH",
+    "mode": "hybrid",
+    "instructor": "Stewart, J",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": "AUT 131 and AUT 133 and AUT 143",
+    "prerequisite_courses": [
+      "AUT 131",
+      "AUT 133",
+      "AUT 143"
+    ]
   },
   {
     "college_code": "york",
@@ -561,10 +860,18 @@
     "campus": "HYBRH",
     "mode": "hybrid",
     "instructor": "Mikolajczak, A",
-    "seats_open": 6,
+    "seats_open": 7,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ECD 101 and ECD 105 and ECD 132 and ECD 203 and ENG 101 or ENG 155 and MAT 013",
+    "prerequisite_courses": [
+      "ECD 101",
+      "ECD 105",
+      "ECD 132",
+      "ECD 203",
+      "ENG 101",
+      "ENG 155",
+      "MAT 013"
+    ]
   },
   {
     "college_code": "york",
@@ -582,10 +889,35 @@
     "campus": "INT",
     "mode": "online",
     "instructor": "Terry, A",
-    "seats_open": 0,
+    "seats_open": 5,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RWR 032",
+    "prerequisite_courses": [
+      "RWR 032"
+    ]
+  },
+  {
+    "college_code": "york",
+    "term": "2026SU",
+    "course_prefix": "EGR",
+    "course_number": "110",
+    "course_title": "Intro to Computer Environment",
+    "credits": 3,
+    "crn": "EGR-110-201",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-18",
+    "location": "Internet",
+    "campus": "INT",
+    "mode": "online",
+    "instructor": "Andino, L",
+    "seats_open": 5,
+    "seats_total": 15,
+    "prerequisite_text": "RWR 032",
+    "prerequisite_courses": [
+      "RWR 032"
+    ]
   },
   {
     "college_code": "york",
@@ -602,32 +934,14 @@
     "location": "Hybrid - Rock Hill",
     "campus": "HYBRH",
     "mode": "hybrid",
-    "instructor": null,
-    "seats_open": 10,
+    "instructor": "Ray, E",
+    "seats_open": 7,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "york",
-    "term": "2026SU",
-    "course_prefix": "EEM",
-    "course_number": "251",
-    "course_title": "Programmable Controllers",
-    "credits": 3,
-    "crn": "EEM-251-100",
-    "days": "",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-18",
-    "location": "Hybrid - Rock Hill",
-    "campus": "HYBRH",
-    "mode": "hybrid",
-    "instructor": null,
-    "seats_open": 12,
-    "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EEM 117 or EEM 118",
+    "prerequisite_courses": [
+      "EEM 117",
+      "EEM 118"
+    ]
   },
   {
     "college_code": "york",
@@ -644,11 +958,14 @@
     "location": "Web",
     "campus": "WEB",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 3,
+    "instructor": "Vorndran, A",
+    "seats_open": 0,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RWR 032 and MAT 013",
+    "prerequisite_courses": [
+      "RWR 032",
+      "MAT 013"
+    ]
   },
   {
     "college_code": "york",
@@ -665,11 +982,14 @@
     "location": "Hybrid - Rock Hill",
     "campus": "HYBRH",
     "mode": "hybrid",
-    "instructor": null,
+    "instructor": "Vorndran, A",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RWR 032 and MAT 013",
+    "prerequisite_courses": [
+      "RWR 032",
+      "MAT 013"
+    ]
   },
   {
     "college_code": "york",
@@ -686,11 +1006,14 @@
     "location": "Web",
     "campus": "WEB",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 16,
+    "instructor": "Vorndran, A",
+    "seats_open": 14,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RWR 032 and MAT 013",
+    "prerequisite_courses": [
+      "RWR 032",
+      "MAT 013"
+    ]
   },
   {
     "college_code": "york",
@@ -707,11 +1030,14 @@
     "location": "Hybrid - Rock Hill",
     "campus": "HYBRH",
     "mode": "hybrid",
-    "instructor": null,
+    "instructor": "Streeter, A",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RWR 032 and MAT 013",
+    "prerequisite_courses": [
+      "RWR 032",
+      "MAT 013"
+    ]
   },
   {
     "college_code": "york",
@@ -728,11 +1054,16 @@
     "location": "Hybrid - Rock Hill",
     "campus": "HYBRH",
     "mode": "hybrid",
-    "instructor": null,
-    "seats_open": 10,
+    "instructor": "Hollinger, J",
+    "seats_open": 6,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RWR 032 or MAT 013 or IMT 111 or IMT 114",
+    "prerequisite_courses": [
+      "RWR 032",
+      "MAT 013",
+      "IMT 111",
+      "IMT 114"
+    ]
   },
   {
     "college_code": "york",
@@ -750,10 +1081,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Nichols, T",
-    "seats_open": 17,
+    "seats_open": 14,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MTT 111",
+    "prerequisite_courses": [
+      "MTT 111"
+    ]
   },
   {
     "college_code": "york",
@@ -771,8 +1104,29 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Logan, B",
-    "seats_open": 8,
+    "seats_open": 10,
     "seats_total": 18,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "york",
+    "term": "2026SU",
+    "course_prefix": "MTT",
+    "course_number": "285",
+    "course_title": "Nims Level I Capstone",
+    "credits": 4,
+    "crn": "MTT-285-044",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-18",
+    "location": "Off Campus",
+    "campus": "OFF",
+    "mode": "in-person",
+    "instructor": "McNeill, J",
+    "seats_open": 0,
+    "seats_total": 0,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -791,8 +1145,8 @@
     "location": "Wilson Street - Rock Hill",
     "campus": "WS",
     "mode": "in-person",
-    "instructor": "Laney, R",
-    "seats_open": 1,
+    "instructor": "Lackey, K",
+    "seats_open": 3,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -815,8 +1169,11 @@
     "instructor": "Mazhari, S",
     "seats_open": 6,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAP 122 and MAP 277",
+    "prerequisite_courses": [
+      "MAP 122",
+      "MAP 277"
+    ]
   },
   {
     "college_code": "york",
@@ -836,8 +1193,14 @@
     "instructor": "Mazhari, S",
     "seats_open": 6,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAP 122 and MAP 128 and MAP 130 and MAP 226 and MAP 280",
+    "prerequisite_courses": [
+      "MAP 122",
+      "MAP 128",
+      "MAP 130",
+      "MAP 226",
+      "MAP 280"
+    ]
   },
   {
     "college_code": "york",
@@ -857,8 +1220,14 @@
     "instructor": "Mazhari, S",
     "seats_open": 6,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAP 122 and MAP 128 and MAP 130 and MAP 226 and MAP 265",
+    "prerequisite_courses": [
+      "MAP 122",
+      "MAP 128",
+      "MAP 130",
+      "MAP 226",
+      "MAP 265"
+    ]
   },
   {
     "college_code": "york",
@@ -876,7 +1245,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Gagan, M",
-    "seats_open": 8,
+    "seats_open": 7,
     "seats_total": 16,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -897,10 +1266,15 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Huneycutt, H",
-    "seats_open": 10,
+    "seats_open": 11,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AHS 102 and BIO 112 and MAT 013 and ENG 155",
+    "prerequisite_courses": [
+      "AHS 102",
+      "BIO 112",
+      "MAT 013",
+      "ENG 155"
+    ]
   },
   {
     "college_code": "york",
@@ -918,10 +1292,15 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Clark, O, Newton, R, Williams, A, Kurtz, J, Bennett, T, Tyre, K",
-    "seats_open": 4,
+    "seats_open": 7,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 211 and PSY 201 and BIO 211 and ENG 102",
+    "prerequisite_courses": [
+      "NUR 211",
+      "PSY 201",
+      "BIO 211",
+      "ENG 102"
+    ]
   },
   {
     "college_code": "york",
@@ -939,10 +1318,15 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Clark, O, Newton, R, Williams, A, Kurtz, J, Bennett, T, Tyre, K",
-    "seats_open": 9,
+    "seats_open": 8,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 211 and PSY 201 and BIO 211 and ENG 102",
+    "prerequisite_courses": [
+      "NUR 211",
+      "PSY 201",
+      "BIO 211",
+      "ENG 102"
+    ]
   },
   {
     "college_code": "york",
@@ -959,11 +1343,17 @@
     "location": "Main Campus - Rock Hill",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Mays, E, Clark, O",
-    "seats_open": 1,
+    "instructor": "Mays, E, Clark, O, Aiton, K, Newton, R",
+    "seats_open": 4,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 106 and PNR 121 and PNR 123 and PNR 175 and PNR 150",
+    "prerequisite_courses": [
+      "NUR 106",
+      "PNR 121",
+      "PNR 123",
+      "PNR 175",
+      "PNR 150"
+    ]
   },
   {
     "college_code": "york",
@@ -980,11 +1370,17 @@
     "location": "Main Campus - Rock Hill",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Mays, E, Clark, O",
-    "seats_open": 11,
+    "instructor": "Mays, E, Clark, O, Aiton, K, Newton, R",
+    "seats_open": 7,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 106 and PNR 121 and PNR 123 and PNR 175 and PNR 150",
+    "prerequisite_courses": [
+      "NUR 106",
+      "PNR 121",
+      "PNR 123",
+      "PNR 175",
+      "PNR 150"
+    ]
   },
   {
     "college_code": "york",
@@ -1002,7 +1398,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Deadwyler, J",
-    "seats_open": 1,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1023,7 +1419,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Graham, A, Jadidian, C",
-    "seats_open": 1,
+    "seats_open": 0,
     "seats_total": 14,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1065,7 +1461,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Jadidian, C",
-    "seats_open": 1,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1127,10 +1523,109 @@
     "location": "Off Campus",
     "campus": "OFF",
     "mode": "in-person",
-    "instructor": "Hall, W, Koppelmann, Y",
-    "seats_open": 20,
+    "instructor": "Hall, W, Koppelmann, Y, Brown, W",
+    "seats_open": 3,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SUR 101 and SUR 102 and SUR 103 and SUR 104 and SUR 123 and SUR 125",
+    "prerequisite_courses": [
+      "SUR 101",
+      "SUR 102",
+      "SUR 103",
+      "SUR 104",
+      "SUR 123",
+      "SUR 125"
+    ]
+  },
+  {
+    "college_code": "york",
+    "term": "2026SU",
+    "course_prefix": "TDR",
+    "course_number": "101",
+    "course_title": "Intro to Truck Driver Training",
+    "credits": 5,
+    "crn": "TDR-101-007",
+    "days": "M T W Th",
+    "start_time": "7:00 AM",
+    "end_time": "11:00 AM",
+    "start_date": "2026-07-06",
+    "location": "",
+    "campus": "",
+    "mode": "in-person",
+    "instructor": "Favre, D, Pettus, E, Ross, D",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": "TDR 102",
+    "prerequisite_courses": [
+      "TDR 102"
+    ]
+  },
+  {
+    "college_code": "york",
+    "term": "2026SU",
+    "course_prefix": "TDR",
+    "course_number": "101",
+    "course_title": "Intro to Truck Driver Training",
+    "credits": 5,
+    "crn": "TDR-101-008",
+    "days": "M T W Th",
+    "start_time": "7:00 AM",
+    "end_time": "11:00 AM",
+    "start_date": "2026-05-18",
+    "location": "",
+    "campus": "",
+    "mode": "in-person",
+    "instructor": "Ross, D, Pettus, E, Favre, D",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": "TDR 102",
+    "prerequisite_courses": [
+      "TDR 102"
+    ]
+  },
+  {
+    "college_code": "york",
+    "term": "2026SU",
+    "course_prefix": "TDR",
+    "course_number": "102",
+    "course_title": "Funds of Truck Driver Training",
+    "credits": 4,
+    "crn": "TDR-102-007",
+    "days": "M T W Th",
+    "start_time": "7:00 AM",
+    "end_time": "8:00 AM",
+    "start_date": "2026-07-16",
+    "location": "",
+    "campus": "",
+    "mode": "in-person",
+    "instructor": "Ross, D, Favre, D, Pettus, E",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": "TDR 101",
+    "prerequisite_courses": [
+      "TDR 101"
+    ]
+  },
+  {
+    "college_code": "york",
+    "term": "2026SU",
+    "course_prefix": "TDR",
+    "course_number": "102",
+    "course_title": "Funds of Truck Driver Training",
+    "credits": 4,
+    "crn": "TDR-102-009",
+    "days": "M T W Th",
+    "start_time": "7:00 AM",
+    "end_time": "8:00 AM",
+    "start_date": "2026-06-01",
+    "location": "",
+    "campus": "",
+    "mode": "in-person",
+    "instructor": "Ross, D, Favre, D, Pettus, E",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": "TDR 101",
+    "prerequisite_courses": [
+      "TDR 101"
+    ]
   }
 ]

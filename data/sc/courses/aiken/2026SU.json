@@ -6,7 +6,7 @@
     "course_number": "101",
     "course_title": "Accounting I",
     "credits": 3,
-    "crn": "ACC-101-057",
+    "crn": "ACC-101-067",
     "days": "",
     "start_time": "",
     "end_time": "",
@@ -15,10 +15,12 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Ross, S",
-    "seats_open": 27,
+    "seats_open": 14,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 101",
+    "prerequisite_courses": [
+      "MAT 101"
+    ]
   },
   {
     "college_code": "aiken",
@@ -36,10 +38,58 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Ross, S",
+    "seats_open": 21,
+    "seats_total": 30,
+    "prerequisite_text": "ACC 101",
+    "prerequisite_courses": [
+      "ACC 101"
+    ]
+  },
+  {
+    "college_code": "aiken",
+    "term": "2026SU",
+    "course_prefix": "ACC",
+    "course_number": "150",
+    "course_title": "Payroll Accounting",
+    "credits": 3,
+    "crn": "ACC-150-067",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-11",
+    "location": "",
+    "campus": "",
+    "mode": "online",
+    "instructor": "Ross, S",
     "seats_open": 22,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ACC 101",
+    "prerequisite_courses": [
+      "ACC 101"
+    ]
+  },
+  {
+    "college_code": "aiken",
+    "term": "2026SU",
+    "course_prefix": "ACC",
+    "course_number": "150",
+    "course_title": "Payroll Accounting",
+    "credits": 3,
+    "crn": "ACC-150-080",
+    "days": "T",
+    "start_time": "10:15 AM",
+    "end_time": "12:10 PM",
+    "start_date": "2026-05-11",
+    "location": "",
+    "campus": "",
+    "mode": "in-person",
+    "instructor": "Ross, S",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": "ACC 101",
+    "prerequisite_courses": [
+      "ACC 101"
+    ]
   },
   {
     "college_code": "aiken",
@@ -59,8 +109,10 @@
     "instructor": "Ross, S",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ACC 101",
+    "prerequisite_courses": [
+      "ACC 101"
+    ]
   },
   {
     "college_code": "aiken",
@@ -80,8 +132,10 @@
     "instructor": "Ross, S",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ACC 101",
+    "prerequisite_courses": [
+      "ACC 101"
+    ]
   },
   {
     "college_code": "aiken",
@@ -101,8 +155,10 @@
     "instructor": "Ross, S",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ACC 101",
+    "prerequisite_courses": [
+      "ACC 101"
+    ]
   },
   {
     "college_code": "aiken",
@@ -141,10 +197,12 @@
     "campus": "",
     "mode": "in-person",
     "instructor": "Gunter, W",
-    "seats_open": 7,
+    "seats_open": 4,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ACR 106",
+    "prerequisite_courses": [
+      "ACR 106"
+    ]
   },
   {
     "college_code": "aiken",
@@ -162,10 +220,13 @@
     "campus": "",
     "mode": "online",
     "instructor": "Gunter, W",
-    "seats_open": 7,
+    "seats_open": 4,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ACR 101 and ACR 106",
+    "prerequisite_courses": [
+      "ACR 101",
+      "ACR 106"
+    ]
   },
   {
     "college_code": "aiken",
@@ -183,10 +244,13 @@
     "campus": "",
     "mode": "hybrid",
     "instructor": "Gunter, W",
-    "seats_open": 7,
+    "seats_open": 4,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ACR 101 and ACR 106",
+    "prerequisite_courses": [
+      "ACR 101",
+      "ACR 106"
+    ]
   },
   {
     "college_code": "aiken",
@@ -203,9 +267,9 @@
     "location": "Online Course",
     "campus": "OL",
     "mode": "online",
-    "instructor": "Harbuck, S",
-    "seats_open": 3,
-    "seats_total": 30,
+    "instructor": "Jimenez, S",
+    "seats_open": 4,
+    "seats_total": 35,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -224,9 +288,9 @@
     "location": "Online Course",
     "campus": "OL",
     "mode": "online",
-    "instructor": "Holsonback, T",
-    "seats_open": 19,
-    "seats_total": 30,
+    "instructor": "Holsonback, T, Driesen, C",
+    "seats_open": 6,
+    "seats_total": 35,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -246,10 +310,15 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Wright Whitaker, T",
-    "seats_open": 19,
+    "seats_open": 17,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AHS 163 and AHS 102 and AHS 170 and AHS 141",
+    "prerequisite_courses": [
+      "AHS 163",
+      "AHS 102",
+      "AHS 170",
+      "AHS 141"
+    ]
   },
   {
     "college_code": "aiken",
@@ -267,7 +336,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Wright Whitaker, T",
-    "seats_open": 17,
+    "seats_open": 16,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -288,7 +357,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Wright Whitaker, T",
-    "seats_open": 18,
+    "seats_open": 17,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -308,53 +377,15 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Wright Whitaker, T",
-    "seats_open": 29,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "aiken",
-    "term": "2026SU",
-    "course_prefix": "AHS",
-    "course_number": "151",
-    "course_title": "Health Care Procedures I",
-    "credits": 5,
-    "crn": "AHS-151-440",
-    "days": "M",
-    "start_time": "9:00 AM",
-    "end_time": "1:30 PM",
-    "start_date": "2026-05-11",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
     "instructor": "Wright Whitaker, T, Parks, R",
-    "seats_open": 30,
+    "seats_open": 21,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "aiken",
-    "term": "2026SU",
-    "course_prefix": "AHS",
-    "course_number": "151",
-    "course_title": "Health Care Procedures I",
-    "credits": 5,
-    "crn": "AHS-151-540",
-    "days": "M",
-    "start_time": "9:00 AM",
-    "end_time": "1:30 PM",
-    "start_date": "2026-05-11",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Wright Whitaker, T, Parks, R",
-    "seats_open": 30,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AHS 141 and AHS 107 and BIO 112",
+    "prerequisite_courses": [
+      "AHS 141",
+      "AHS 107",
+      "BIO 112"
+    ]
   },
   {
     "college_code": "aiken",
@@ -374,50 +405,12 @@
     "instructor": "Williams, H",
     "seats_open": null,
     "seats_total": null,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "aiken",
-    "term": "2026SU",
-    "course_prefix": "AHS",
-    "course_number": "179",
-    "course_title": "Cardiac Monitoring Practicum",
-    "credits": 4,
-    "crn": "AHS-179-440",
-    "days": "T",
-    "start_time": "9:00 AM",
-    "end_time": "1:30 PM",
-    "start_date": "2026-05-11",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Williams, H",
-    "seats_open": null,
-    "seats_total": null,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "aiken",
-    "term": "2026SU",
-    "course_prefix": "AHS",
-    "course_number": "179",
-    "course_title": "Cardiac Monitoring Practicum",
-    "credits": 4,
-    "crn": "AHS-179-540",
-    "days": "T",
-    "start_time": "9:00 AM",
-    "end_time": "1:30 PM",
-    "start_date": "2026-05-11",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Williams, H",
-    "seats_open": null,
-    "seats_total": null,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AHS 107 or AHS 141 or BIO 112",
+    "prerequisite_courses": [
+      "AHS 107",
+      "AHS 141",
+      "BIO 112"
+    ]
   },
   {
     "college_code": "aiken",
@@ -435,7 +428,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Andrucci, J",
-    "seats_open": 10,
+    "seats_open": 2,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -456,7 +449,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Sharpe, J",
-    "seats_open": 16,
+    "seats_open": 9,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -519,10 +512,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Sharpe, J",
-    "seats_open": 14,
+    "seats_open": 15,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 101",
+    "prerequisite_courses": [
+      "BIO 101"
+    ]
   },
   {
     "college_code": "aiken",
@@ -542,29 +537,10 @@
     "instructor": "Sharpe, J",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "aiken",
-    "term": "2026SU",
-    "course_prefix": "BIO",
-    "course_number": "102",
-    "course_title": "Biological Science II",
-    "credits": 4,
-    "crn": "BIO-102-177",
-    "days": "",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-11",
-    "location": "Hybrid Course",
-    "campus": "HY",
-    "mode": "hybrid",
-    "instructor": "Sharpe, J",
-    "seats_open": 30,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 101",
+    "prerequisite_courses": [
+      "BIO 101"
+    ]
   },
   {
     "college_code": "aiken",
@@ -583,7 +559,7 @@
     "mode": "online",
     "instructor": "Brammell, G",
     "seats_open": 0,
-    "seats_total": 24,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -603,8 +579,29 @@
     "campus": "HY",
     "mode": "hybrid",
     "instructor": "Logan, B",
-    "seats_open": 0,
+    "seats_open": 3,
     "seats_total": 24,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "aiken",
+    "term": "2026SU",
+    "course_prefix": "BIO",
+    "course_number": "210",
+    "course_title": "Anatomy and Physiology I",
+    "credits": 4,
+    "crn": "BIO-210-067",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-11",
+    "location": "Online Course",
+    "campus": "OL",
+    "mode": "online",
+    "instructor": "Padgett, C",
+    "seats_open": 6,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -624,7 +621,7 @@
     "campus": "HY",
     "mode": "hybrid",
     "instructor": "Logan, B",
-    "seats_open": 6,
+    "seats_open": 2,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -645,7 +642,7 @@
     "campus": "HY",
     "mode": "hybrid",
     "instructor": "Logan, B",
-    "seats_open": 9,
+    "seats_open": 8,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -665,8 +662,8 @@
     "location": "Hybrid Course",
     "campus": "HY",
     "mode": "hybrid",
-    "instructor": "Staff, X",
-    "seats_open": 13,
+    "instructor": "Jordan, K, Logan, B",
+    "seats_open": 6,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -687,10 +684,12 @@
     "campus": "HY",
     "mode": "hybrid",
     "instructor": "Brammell, G",
-    "seats_open": 0,
+    "seats_open": 3,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 210",
+    "prerequisite_courses": [
+      "BIO 210"
+    ]
   },
   {
     "college_code": "aiken",
@@ -708,10 +707,12 @@
     "campus": "HY",
     "mode": "hybrid",
     "instructor": "Brammell, G",
-    "seats_open": 0,
+    "seats_open": 6,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 210",
+    "prerequisite_courses": [
+      "BIO 210"
+    ]
   },
   {
     "college_code": "aiken",
@@ -729,10 +730,12 @@
     "campus": "HY",
     "mode": "hybrid",
     "instructor": "Brammell, G",
-    "seats_open": 11,
+    "seats_open": 4,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 210",
+    "prerequisite_courses": [
+      "BIO 210"
+    ]
   },
   {
     "college_code": "aiken",
@@ -750,10 +753,12 @@
     "campus": "HY",
     "mode": "hybrid",
     "instructor": "Brammell, G",
-    "seats_open": 0,
+    "seats_open": 4,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 210",
+    "prerequisite_courses": [
+      "BIO 210"
+    ]
   },
   {
     "college_code": "aiken",
@@ -771,7 +776,7 @@
     "campus": "HY",
     "mode": "hybrid",
     "instructor": "Nye, J",
-    "seats_open": 5,
+    "seats_open": 8,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -792,7 +797,7 @@
     "campus": "HY",
     "mode": "hybrid",
     "instructor": "Nye, J",
-    "seats_open": 10,
+    "seats_open": 12,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -813,7 +818,7 @@
     "campus": "HY",
     "mode": "hybrid",
     "instructor": "Nye, J",
-    "seats_open": 13,
+    "seats_open": 10,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -826,16 +831,16 @@
     "course_title": "Business Law I",
     "credits": 3,
     "crn": "BUS-121-012",
-    "days": "T Th",
-    "start_time": "10:15 AM",
-    "end_time": "12:10 PM",
+    "days": "M W",
+    "start_time": "12:30 PM",
+    "end_time": "2:25 PM",
     "start_date": "2026-05-11",
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Agbor, J",
     "seats_open": 24,
-    "seats_total": 27,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -855,29 +860,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Agbor, J",
-    "seats_open": 20,
+    "seats_open": 18,
     "seats_total": 27,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "aiken",
-    "term": "2026SU",
-    "course_prefix": "BUS",
-    "course_number": "135",
-    "course_title": "Wage and Salary Administration",
-    "credits": 3,
-    "crn": "BUS-135-013",
-    "days": "T Th",
-    "start_time": "12:30 PM",
-    "end_time": "2:25 PM",
-    "start_date": "2026-05-11",
-    "location": "",
-    "campus": "",
-    "mode": "in-person",
-    "instructor": "Ross, S",
-    "seats_open": 30,
-    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -897,10 +881,14 @@
     "campus": "",
     "mode": "in-person",
     "instructor": "Agbor, J",
-    "seats_open": 8,
+    "seats_open": 6,
     "seats_total": 10,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 101 or SPC 205 or SPC 209",
+    "prerequisite_courses": [
+      "ENG 101",
+      "SPC 205",
+      "SPC 209"
+    ]
   },
   {
     "college_code": "aiken",
@@ -918,10 +906,12 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Ross, S",
-    "seats_open": 18,
+    "seats_open": 14,
     "seats_total": 22,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ACC 101",
+    "prerequisite_courses": [
+      "ACC 101"
+    ]
   },
   {
     "college_code": "aiken",
@@ -938,8 +928,8 @@
     "location": "",
     "campus": "",
     "mode": "online",
-    "instructor": "Staff, X",
-    "seats_open": 25,
+    "instructor": "Key, R",
+    "seats_open": 22,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -960,7 +950,7 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Payne, D",
-    "seats_open": 12,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -980,11 +970,13 @@
     "location": "Online Course",
     "campus": "OL",
     "mode": "online",
-    "instructor": "Payne, D",
-    "seats_open": 20,
+    "instructor": "Payne, D, Wilson, A",
+    "seats_open": 12,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 110",
+    "prerequisite_courses": [
+      "CHM 110"
+    ]
   },
   {
     "college_code": "aiken",
@@ -1002,7 +994,7 @@
     "campus": "",
     "mode": "online",
     "instructor": "Wilson, A",
-    "seats_open": 12,
+    "seats_open": 8,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1044,7 +1036,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Wiggins, C",
-    "seats_open": 0,
+    "seats_open": 4,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1065,29 +1057,8 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Kingery, K",
-    "seats_open": 25,
+    "seats_open": 11,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "aiken",
-    "term": "2026SU",
-    "course_prefix": "CPT",
-    "course_number": "162",
-    "course_title": "Web Page Publishing I",
-    "credits": 3,
-    "crn": "CPT-162-031",
-    "days": "M W",
-    "start_time": "12:00 PM",
-    "end_time": "1:15 PM",
-    "start_date": "2026-05-11",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Kingery, K",
-    "seats_open": 23,
-    "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1128,7 +1099,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Wiggins, C",
-    "seats_open": 17,
+    "seats_open": 12,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1149,10 +1120,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Kingery, K",
-    "seats_open": 21,
+    "seats_open": 17,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CPT 162 or CPT 232",
+    "prerequisite_courses": [
+      "CPT 162",
+      "CPT 232"
+    ]
   },
   {
     "college_code": "aiken",
@@ -1170,7 +1144,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Wiggins, C",
-    "seats_open": 21,
+    "seats_open": 20,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1191,31 +1165,12 @@
     "campus": "OC",
     "mode": "in-person",
     "instructor": "Odom, A, Smith, A",
-    "seats_open": 8,
+    "seats_open": 6,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "aiken",
-    "term": "2026SU",
-    "course_prefix": "ECD",
-    "course_number": "105",
-    "course_title": "Guidance-Classroom Management",
-    "credits": 3,
-    "crn": "ECD-105-067",
-    "days": "",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-11",
-    "location": "Online Course",
-    "campus": "OL",
-    "mode": "online",
-    "instructor": "Espinoza, V",
-    "seats_open": 20,
-    "seats_total": 26,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DAT 122",
+    "prerequisite_courses": [
+      "DAT 122"
+    ]
   },
   {
     "college_code": "aiken",
@@ -1227,13 +1182,13 @@
     "crn": "ECD-106-051",
     "days": "W",
     "start_time": "3:55 PM",
-    "end_time": "5:50 AM",
+    "end_time": "5:50 PM",
     "start_date": "2026-05-11",
     "location": "Hybrid Course",
     "campus": "HY",
     "mode": "hybrid",
     "instructor": "Altman, L",
-    "seats_open": 5,
+    "seats_open": 8,
     "seats_total": 13,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1254,10 +1209,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Altman, L",
-    "seats_open": 20,
+    "seats_open": 18,
     "seats_total": 26,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ECD 101",
+    "prerequisite_courses": [
+      "ECD 101"
+    ]
   },
   {
     "college_code": "aiken",
@@ -1275,10 +1232,12 @@
     "campus": "HY",
     "mode": "hybrid",
     "instructor": "Altman, L",
-    "seats_open": 5,
+    "seats_open": 3,
     "seats_total": 13,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ECD 101",
+    "prerequisite_courses": [
+      "ECD 101"
+    ]
   },
   {
     "college_code": "aiken",
@@ -1296,7 +1255,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Altman, L",
-    "seats_open": 14,
+    "seats_open": 11,
     "seats_total": 26,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1317,10 +1276,12 @@
     "campus": "HY",
     "mode": "hybrid",
     "instructor": "Altman, L",
-    "seats_open": 9,
+    "seats_open": 4,
     "seats_total": 13,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ECD 101",
+    "prerequisite_courses": [
+      "ECD 101"
+    ]
   },
   {
     "college_code": "aiken",
@@ -1380,7 +1341,7 @@
     "campus": "",
     "mode": "in-person",
     "instructor": "Nolan, W",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 18,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1403,8 +1364,10 @@
     "instructor": "Nolan, W",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 102",
+    "prerequisite_courses": [
+      "MAT 102"
+    ]
   },
   {
     "college_code": "aiken",
@@ -1424,8 +1387,10 @@
     "instructor": "Nolan, W, Collier, A",
     "seats_open": 0,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 102",
+    "prerequisite_courses": [
+      "MAT 102"
+    ]
   },
   {
     "college_code": "aiken",
@@ -1442,11 +1407,17 @@
     "location": "",
     "campus": "",
     "mode": "in-person",
-    "instructor": "Nolan, W",
-    "seats_open": 5,
+    "instructor": "Nolan, W, Gunter, W",
+    "seats_open": 4,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 102 or MAT 155 or EEM 201 or EET 113 or EEM 117",
+    "prerequisite_courses": [
+      "MAT 102",
+      "MAT 155",
+      "EEM 201",
+      "EET 113",
+      "EEM 117"
+    ]
   },
   {
     "college_code": "aiken",
@@ -1487,8 +1458,10 @@
     "instructor": "Nolan, W",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 101",
+    "prerequisite_courses": [
+      "MAT 101"
+    ]
   },
   {
     "college_code": "aiken",
@@ -1497,10 +1470,10 @@
     "course_number": "104",
     "course_title": "Emergency Care I",
     "credits": 7,
-    "crn": "EMS-104-040",
-    "days": "T Th",
+    "crn": "EMS-104-041",
+    "days": "T W Th F",
     "start_time": "9:00 AM",
-    "end_time": "3:00 PM",
+    "end_time": "11:00 AM",
     "start_date": "2026-05-11",
     "location": "Main Campus",
     "campus": "MC",
@@ -1508,8 +1481,11 @@
     "instructor": "Heidbreder, M",
     "seats_open": null,
     "seats_total": null,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EMS 110 and EMS 208",
+    "prerequisite_courses": [
+      "EMS 110",
+      "EMS 208"
+    ]
   },
   {
     "college_code": "aiken",
@@ -1519,18 +1495,24 @@
     "course_title": "Basic Emergency Medical Care",
     "credits": 5,
     "crn": "EMS-110-040",
-    "days": "W F",
-    "start_time": "9:00 AM",
-    "end_time": "3:00 PM",
+    "days": "T W Th F",
+    "start_time": "12:00 PM",
+    "end_time": "2:00 PM",
     "start_date": "2026-05-11",
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Heidbreder, M",
-    "seats_open": 18,
+    "seats_open": 6,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 112 or BIO 210 or BIO 211 and EMS 119 and EMS 120",
+    "prerequisite_courses": [
+      "BIO 112",
+      "BIO 210",
+      "BIO 211",
+      "EMS 119",
+      "EMS 120"
+    ]
   },
   {
     "college_code": "aiken",
@@ -1539,9 +1521,9 @@
     "course_number": "208",
     "course_title": "Field Internship I",
     "credits": 1,
-    "crn": "EMS-208-040",
-    "days": "F",
-    "start_time": "9:00 AM",
+    "crn": "EMS-208-041",
+    "days": "T W Th F",
+    "start_time": "2:00 PM",
     "end_time": "3:00 PM",
     "start_date": "2026-05-11",
     "location": "Off Campus",
@@ -1550,8 +1532,11 @@
     "instructor": "Heidbreder, M",
     "seats_open": null,
     "seats_total": null,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EMS 104 and EMS 110",
+    "prerequisite_courses": [
+      "EMS 104",
+      "EMS 110"
+    ]
   },
   {
     "college_code": "aiken",
@@ -1571,8 +1556,10 @@
     "instructor": "Cusey, K",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EGT 123",
+    "prerequisite_courses": [
+      "EGT 123"
+    ]
   },
   {
     "college_code": "aiken",
@@ -1611,50 +1598,8 @@
     "campus": "",
     "mode": "online",
     "instructor": "Adams, A",
-    "seats_open": 15,
+    "seats_open": 9,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "aiken",
-    "term": "2026SU",
-    "course_prefix": "ENG",
-    "course_number": "012",
-    "course_title": "Developmental English Workshop",
-    "credits": 1,
-    "crn": "ENG-012-040",
-    "days": "W",
-    "start_time": "12:30 PM",
-    "end_time": "1:30 PM",
-    "start_date": "2026-05-11",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Green, P",
-    "seats_open": 11,
-    "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "aiken",
-    "term": "2026SU",
-    "course_prefix": "ENG",
-    "course_number": "012",
-    "course_title": "Developmental English Workshop",
-    "credits": 1,
-    "crn": "ENG-012-067",
-    "days": "",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-11",
-    "location": "Online Course",
-    "campus": "OL",
-    "mode": "online",
-    "instructor": "Green, P",
-    "seats_open": 5,
-    "seats_total": 12,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1674,10 +1619,13 @@
     "campus": "HY",
     "mode": "hybrid",
     "instructor": "Pedavoli, A",
-    "seats_open": 19,
+    "seats_open": 4,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RDG 100 or ENG 012",
+    "prerequisite_courses": [
+      "RDG 100",
+      "ENG 012"
+    ]
   },
   {
     "college_code": "aiken",
@@ -1695,10 +1643,13 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Pedavoli, A",
-    "seats_open": 0,
+    "seats_open": 4,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RDG 100 or ENG 012",
+    "prerequisite_courses": [
+      "RDG 100",
+      "ENG 012"
+    ]
   },
   {
     "college_code": "aiken",
@@ -1715,11 +1666,14 @@
     "location": "Online Course",
     "campus": "OL",
     "mode": "online",
-    "instructor": "Green, P",
-    "seats_open": 1,
+    "instructor": "Pedavoli, A",
+    "seats_open": 8,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RDG 100 or ENG 012",
+    "prerequisite_courses": [
+      "RDG 100",
+      "ENG 012"
+    ]
   },
   {
     "college_code": "aiken",
@@ -1736,11 +1690,14 @@
     "location": "Online Course",
     "campus": "OL",
     "mode": "online",
-    "instructor": "Green, P",
-    "seats_open": 20,
+    "instructor": "Hostetler, K",
+    "seats_open": 4,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RDG 100 or ENG 012",
+    "prerequisite_courses": [
+      "RDG 100",
+      "ENG 012"
+    ]
   },
   {
     "college_code": "aiken",
@@ -1757,11 +1714,13 @@
     "location": "Online Course",
     "campus": "OL",
     "mode": "online",
-    "instructor": "Green, P",
-    "seats_open": 14,
+    "instructor": "Attana, K",
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 101",
+    "prerequisite_courses": [
+      "ENG 101"
+    ]
   },
   {
     "college_code": "aiken",
@@ -1780,28 +1739,7 @@
     "mode": "online",
     "instructor": "Pedavoli, A",
     "seats_open": 9,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "aiken",
-    "term": "2026SU",
-    "course_prefix": "ENG",
-    "course_number": "160",
-    "course_title": "Technical Communications",
-    "credits": 3,
-    "crn": "ENG-160-167",
-    "days": "",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-11",
-    "location": "Online Course",
-    "campus": "OL",
-    "mode": "online",
-    "instructor": "Pedavoli, A",
-    "seats_open": 19,
-    "seats_total": 25,
+    "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1823,8 +1761,14 @@
     "instructor": "Driesen, C",
     "seats_open": 5,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HIM 130 or HIM 140 or HIM 216 and HIM 225 and HIM 227",
+    "prerequisite_courses": [
+      "HIM 130",
+      "HIM 140",
+      "HIM 216",
+      "HIM 225",
+      "HIM 227"
+    ]
   },
   {
     "college_code": "aiken",
@@ -1844,8 +1788,14 @@
     "instructor": "Driesen, C",
     "seats_open": 5,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HIM 216 or HIM 130 or HIM 140 and HIM 227 and HIM 141",
+    "prerequisite_courses": [
+      "HIM 216",
+      "HIM 130",
+      "HIM 140",
+      "HIM 227",
+      "HIM 141"
+    ]
   },
   {
     "college_code": "aiken",
@@ -1861,12 +1811,18 @@
     "start_date": "2026-05-11",
     "location": "Online Course",
     "campus": "OL",
-    "mode": "online",
+    "mode": "in-person",
     "instructor": "Driesen, C",
     "seats_open": 5,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HIM 130 and HIM 140 and HIM 216 and HIM 141 and HIM 225",
+    "prerequisite_courses": [
+      "HIM 130",
+      "HIM 140",
+      "HIM 216",
+      "HIM 141",
+      "HIM 225"
+    ]
   },
   {
     "college_code": "aiken",
@@ -1884,7 +1840,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Blackmon, D",
-    "seats_open": 22,
+    "seats_open": 1,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1905,7 +1861,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Blackmon, D",
-    "seats_open": 22,
+    "seats_open": 10,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1926,7 +1882,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Blackmon, D",
-    "seats_open": 20,
+    "seats_open": 4,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1947,29 +1903,8 @@
     "campus": "HY",
     "mode": "hybrid",
     "instructor": "Blackmon, D",
-    "seats_open": 15,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "aiken",
-    "term": "2026SU",
-    "course_prefix": "IMT",
-    "course_number": "112",
-    "course_title": "Hand Tools Operation",
-    "credits": 3,
-    "crn": "IMT-112-040",
-    "days": "F",
-    "start_time": "9:00 AM",
-    "end_time": "10:30 AM",
-    "start_date": "2026-05-11",
-    "location": "",
-    "campus": "",
-    "mode": "in-person",
-    "instructor": "Stribling, C",
-    "seats_open": 0,
-    "seats_total": 0,
+    "seats_open": 24,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1987,9 +1922,9 @@
     "start_date": "2026-05-11",
     "location": "",
     "campus": "",
-    "mode": "in-person",
-    "instructor": "Collins, R",
-    "seats_open": 6,
+    "mode": "hybrid",
+    "instructor": "Pilot, F",
+    "seats_open": 7,
     "seats_total": 18,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2010,8 +1945,29 @@
     "campus": "",
     "mode": "in-person",
     "instructor": "Stribling, C",
-    "seats_open": 4,
+    "seats_open": 3,
     "seats_total": 12,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "aiken",
+    "term": "2026SU",
+    "course_prefix": "IMT",
+    "course_number": "121",
+    "course_title": "Drive Systems",
+    "credits": 2,
+    "crn": "IMT-121-051",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-11",
+    "location": "",
+    "campus": "",
+    "mode": "in-person",
+    "instructor": "Collins, R",
+    "seats_open": 0,
+    "seats_total": 0,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2033,8 +1989,10 @@
     "instructor": "Collins, R",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "IMT 121",
+    "prerequisite_courses": [
+      "IMT 121"
+    ]
   },
   {
     "college_code": "aiken",
@@ -2052,10 +2010,12 @@
     "campus": "",
     "mode": "in-person",
     "instructor": "Collins, R",
-    "seats_open": 9,
+    "seats_open": 12,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "IMT 121",
+    "prerequisite_courses": [
+      "IMT 121"
+    ]
   },
   {
     "college_code": "aiken",
@@ -2072,6 +2032,27 @@
     "location": "",
     "campus": "",
     "mode": "online",
+    "instructor": "Collins, R, Pilot, F",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "aiken",
+    "term": "2026SU",
+    "course_prefix": "IMT",
+    "course_number": "131",
+    "course_title": "Hydraulics and Pneumatics",
+    "credits": 4,
+    "crn": "IMT-131-080",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-11",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "in-person",
     "instructor": "Collins, R",
     "seats_open": 0,
     "seats_total": 0,
@@ -2093,8 +2074,8 @@
     "location": "",
     "campus": "",
     "mode": "in-person",
-    "instructor": "Collins, R, Simpkins, R",
-    "seats_open": 0,
+    "instructor": "Collins, R, Hooker, R",
+    "seats_open": 1,
     "seats_total": 16,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2114,7 +2095,7 @@
     "location": "",
     "campus": "",
     "mode": "in-person",
-    "instructor": "Collins, R, Simpkins, R",
+    "instructor": "Collins, R, Hooker, R",
     "seats_open": 0,
     "seats_total": 0,
     "prerequisite_text": null,
@@ -2136,7 +2117,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Wiggins, C",
-    "seats_open": 21,
+    "seats_open": 20,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2157,10 +2138,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Kingery, K",
-    "seats_open": 22,
+    "seats_open": 19,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CPT 162",
+    "prerequisite_courses": [
+      "CPT 162"
+    ]
   },
   {
     "college_code": "aiken",
@@ -2178,10 +2161,13 @@
     "campus": "",
     "mode": "hybrid",
     "instructor": "Stribling, C",
-    "seats_open": 10,
+    "seats_open": 6,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "IMT 112 and EGR 105",
+    "prerequisite_courses": [
+      "IMT 112",
+      "EGR 105"
+    ]
   },
   {
     "college_code": "aiken",
@@ -2190,17 +2176,17 @@
     "course_number": "101",
     "course_title": "Principles of Management",
     "credits": 3,
-    "crn": "MGT-101-003",
-    "days": "M W",
-    "start_time": "12:30 PM",
-    "end_time": "2:25 PM",
+    "crn": "MGT-101-067",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
     "start_date": "2026-05-11",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
+    "location": "Online Course",
+    "campus": "OL",
+    "mode": "online",
     "instructor": "Agbor, J",
-    "seats_open": 24,
-    "seats_total": 27,
+    "seats_open": 15,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2220,10 +2206,12 @@
     "campus": "",
     "mode": "in-person",
     "instructor": "Agbor, J",
-    "seats_open": 16,
+    "seats_open": 15,
     "seats_total": 27,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MGT 101",
+    "prerequisite_courses": [
+      "MGT 101"
+    ]
   },
   {
     "college_code": "aiken",
@@ -2240,11 +2228,15 @@
     "location": "",
     "campus": "",
     "mode": "online",
-    "instructor": "Lott, K",
-    "seats_open": 7,
+    "instructor": "Agbor, J",
+    "seats_open": 8,
     "seats_total": 10,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BUS 121 and ACC 102 and MKT 101",
+    "prerequisite_courses": [
+      "BUS 121",
+      "ACC 102",
+      "MKT 101"
+    ]
   },
   {
     "college_code": "aiken",
@@ -2262,8 +2254,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Agbor, J",
-    "seats_open": 25,
-    "seats_total": 27,
+    "seats_open": 20,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2303,8 +2295,8 @@
     "location": "Online Course",
     "campus": "OL",
     "mode": "online",
-    "instructor": "Staff, X",
-    "seats_open": 9,
+    "instructor": "Cummings, D",
+    "seats_open": 4,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2325,8 +2317,29 @@
     "campus": "HY",
     "mode": "hybrid",
     "instructor": "Richardson, B",
-    "seats_open": 23,
+    "seats_open": 17,
     "seats_total": 26,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "aiken",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "101",
+    "course_title": "Beginning Algebra",
+    "credits": 3,
+    "crn": "MAT-101-167",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-11",
+    "location": "Online Course",
+    "campus": "OL",
+    "mode": "online",
+    "instructor": "Richardson, B",
+    "seats_open": 3,
+    "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2346,10 +2359,12 @@
     "campus": "HY",
     "mode": "hybrid",
     "instructor": "Dotts, L",
-    "seats_open": 15,
+    "seats_open": 17,
     "seats_total": 26,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 101",
+    "prerequisite_courses": [
+      "MAT 101"
+    ]
   },
   {
     "college_code": "aiken",
@@ -2367,10 +2382,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Dotts, L",
-    "seats_open": 0,
+    "seats_open": 14,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 101",
+    "prerequisite_courses": [
+      "MAT 101"
+    ]
   },
   {
     "college_code": "aiken",
@@ -2388,31 +2405,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Cummings, D",
-    "seats_open": 19,
+    "seats_open": 10,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "aiken",
-    "term": "2026SU",
-    "course_prefix": "MAT",
-    "course_number": "102",
-    "course_title": "Intermediate Algebra",
-    "credits": 3,
-    "crn": "MAT-102-367",
-    "days": "",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-11",
-    "location": "Online Course",
-    "campus": "OL",
-    "mode": "online",
-    "instructor": "Staff, X",
-    "seats_open": 0,
-    "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 101",
+    "prerequisite_courses": [
+      "MAT 101"
+    ]
   },
   {
     "college_code": "aiken",
@@ -2430,10 +2428,12 @@
     "campus": "HY",
     "mode": "hybrid",
     "instructor": "Cummings, D",
-    "seats_open": 19,
+    "seats_open": 17,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 102",
+    "prerequisite_courses": [
+      "MAT 102"
+    ]
   },
   {
     "college_code": "aiken",
@@ -2451,10 +2451,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Rickabaugh, L",
-    "seats_open": 12,
+    "seats_open": 5,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 102",
+    "prerequisite_courses": [
+      "MAT 102"
+    ]
   },
   {
     "college_code": "aiken",
@@ -2474,8 +2476,10 @@
     "instructor": "Barber, C",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 102",
+    "prerequisite_courses": [
+      "MAT 102"
+    ]
   },
   {
     "college_code": "aiken",
@@ -2493,10 +2497,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Cummings, D",
-    "seats_open": 25,
+    "seats_open": 16,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 102",
+    "prerequisite_courses": [
+      "MAT 102"
+    ]
   },
   {
     "college_code": "aiken",
@@ -2514,10 +2520,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Barber, C",
-    "seats_open": 28,
+    "seats_open": 14,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 110",
+    "prerequisite_courses": [
+      "MAT 110"
+    ]
   },
   {
     "college_code": "aiken",
@@ -2535,10 +2543,12 @@
     "campus": "HY",
     "mode": "hybrid",
     "instructor": "Rickabaugh, L",
-    "seats_open": 10,
+    "seats_open": 8,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 101",
+    "prerequisite_courses": [
+      "MAT 101"
+    ]
   },
   {
     "college_code": "aiken",
@@ -2556,10 +2566,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Rickabaugh, L",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 101",
+    "prerequisite_courses": [
+      "MAT 101"
+    ]
   },
   {
     "college_code": "aiken",
@@ -2577,10 +2589,35 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Barber, C",
-    "seats_open": 5,
+    "seats_open": 0,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 101",
+    "prerequisite_courses": [
+      "MAT 101"
+    ]
+  },
+  {
+    "college_code": "aiken",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "120",
+    "course_title": "Probability & Statistics",
+    "credits": 3,
+    "crn": "MAT-120-367",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-11",
+    "location": "Online Course",
+    "campus": "OL",
+    "mode": "online",
+    "instructor": "Barber, C",
+    "seats_open": 9,
+    "seats_total": 28,
+    "prerequisite_text": "MAT 101",
+    "prerequisite_courses": [
+      "MAT 101"
+    ]
   },
   {
     "college_code": "aiken",
@@ -2598,10 +2635,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Barber, C",
-    "seats_open": 22,
+    "seats_open": 16,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 111",
+    "prerequisite_courses": [
+      "MAT 111"
+    ]
   },
   {
     "college_code": "aiken",
@@ -2619,10 +2658,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Cummings, D",
-    "seats_open": 20,
+    "seats_open": 17,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 101",
+    "prerequisite_courses": [
+      "MAT 101"
+    ]
   },
   {
     "college_code": "aiken",
@@ -2640,10 +2681,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Dotts, L",
-    "seats_open": 23,
+    "seats_open": 24,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 101",
+    "prerequisite_courses": [
+      "MAT 101"
+    ]
   },
   {
     "college_code": "aiken",
@@ -2661,10 +2704,14 @@
     "campus": "HY",
     "mode": "hybrid",
     "instructor": "Driesen, C",
-    "seats_open": 9,
+    "seats_open": 8,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MED 107 or MED 112 or MED 114",
+    "prerequisite_courses": [
+      "MED 107",
+      "MED 112",
+      "MED 114"
+    ]
   },
   {
     "college_code": "aiken",
@@ -2684,8 +2731,10 @@
     "instructor": "Wilson, A",
     "seats_open": null,
     "seats_total": null,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 101",
+    "prerequisite_courses": [
+      "MAT 101"
+    ]
   },
   {
     "college_code": "aiken",
@@ -2702,11 +2751,14 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Fortenberry, D",
-    "seats_open": 8,
+    "instructor": "Fortenberry, D, Fowler, D",
+    "seats_open": 0,
     "seats_total": 8,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 265 and NUR 212",
+    "prerequisite_courses": [
+      "NUR 265",
+      "NUR 212"
+    ]
   },
   {
     "college_code": "aiken",
@@ -2724,10 +2776,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Fortenberry, D, Fowler, D",
-    "seats_open": 8,
+    "seats_open": 6,
     "seats_total": 8,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 265 and NUR 212",
+    "prerequisite_courses": [
+      "NUR 265",
+      "NUR 212"
+    ]
   },
   {
     "college_code": "aiken",
@@ -2745,10 +2800,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Stallings, J, Williams, H",
-    "seats_open": 8,
+    "seats_open": 0,
     "seats_total": 8,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 165 or NUR 201",
+    "prerequisite_courses": [
+      "NUR 165",
+      "NUR 201"
+    ]
   },
   {
     "college_code": "aiken",
@@ -2766,10 +2824,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Stallings, J, Williams, H",
-    "seats_open": 8,
+    "seats_open": 4,
     "seats_total": 8,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 165 or NUR 201",
+    "prerequisite_courses": [
+      "NUR 165",
+      "NUR 201"
+    ]
   },
   {
     "college_code": "aiken",
@@ -2786,11 +2847,15 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Fowler, D",
-    "seats_open": 8,
+    "instructor": "Fowler, D, Stallings, J, Williams, H",
+    "seats_open": 0,
     "seats_total": 8,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 165 or NUR 201 or NUR 165 or NUR 211",
+    "prerequisite_courses": [
+      "NUR 165",
+      "NUR 201",
+      "NUR 211"
+    ]
   },
   {
     "college_code": "aiken",
@@ -2807,11 +2872,15 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Fowler, D, Kirkland, S",
-    "seats_open": 8,
+    "instructor": "Fowler, D, Williams, H, Kirkland, E",
+    "seats_open": 4,
     "seats_total": 8,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 165 or NUR 201 or NUR 165 or NUR 211",
+    "prerequisite_courses": [
+      "NUR 165",
+      "NUR 201",
+      "NUR 211"
+    ]
   },
   {
     "college_code": "aiken",
@@ -2822,38 +2891,20 @@
     "credits": 6,
     "crn": "NUR-267-063",
     "days": "M",
-    "start_time": "4:30 PM",
-    "end_time": "7:30 PM",
+    "start_time": "4:00 PM",
+    "end_time": "8:00 PM",
     "start_date": "2026-05-11",
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Williams, H, Stallings, J",
-    "seats_open": 8,
+    "seats_open": 0,
     "seats_total": 8,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "aiken",
-    "term": "2026SU",
-    "course_prefix": "NUR",
-    "course_number": "267",
-    "course_title": "Nur Concepts & Clin Prac IV",
-    "credits": 6,
-    "crn": "NUR-267-065",
-    "days": "M",
-    "start_time": "4:30 PM",
-    "end_time": "7:30 PM",
-    "start_date": "2026-05-11",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Williams, H, Lewis, R",
-    "seats_open": 8,
-    "seats_total": 8,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 265 and NUR 212",
+    "prerequisite_courses": [
+      "NUR 265",
+      "NUR 212"
+    ]
   },
   {
     "college_code": "aiken",
@@ -2871,7 +2922,7 @@
     "campus": "HY",
     "mode": "hybrid",
     "instructor": "Jones, L",
-    "seats_open": 5,
+    "seats_open": 4,
     "seats_total": 10,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2892,7 +2943,7 @@
     "campus": "HY",
     "mode": "hybrid",
     "instructor": "Jones, L",
-    "seats_open": 5,
+    "seats_open": 4,
     "seats_total": 10,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2913,7 +2964,7 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Jones, L",
-    "seats_open": 15,
+    "seats_open": 14,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2934,7 +2985,7 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Jones, L",
-    "seats_open": 16,
+    "seats_open": 14,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2955,7 +3006,7 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Jones, L",
-    "seats_open": 15,
+    "seats_open": 14,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2976,7 +3027,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Jones, L",
-    "seats_open": 16,
+    "seats_open": 14,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2997,7 +3048,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Jones, L",
-    "seats_open": 6,
+    "seats_open": 4,
     "seats_total": 10,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3018,7 +3069,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Wooster, B",
-    "seats_open": 0,
+    "seats_open": 3,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3039,7 +3090,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Wooster, B",
-    "seats_open": 24,
+    "seats_open": 2,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3060,10 +3111,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Williams, J",
-    "seats_open": 25,
+    "seats_open": 13,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 111",
+    "prerequisite_courses": [
+      "MAT 111"
+    ]
   },
   {
     "college_code": "aiken",
@@ -3080,11 +3133,13 @@
     "location": "Online Course",
     "campus": "OL",
     "mode": "online",
-    "instructor": "Williams, J",
-    "seats_open": 26,
+    "instructor": "Williams, J, Wilson, A",
+    "seats_open": 21,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PHY 201",
+    "prerequisite_courses": [
+      "PHY 201"
+    ]
   },
   {
     "college_code": "aiken",
@@ -3143,11 +3198,15 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Fortenberry, D",
-    "seats_open": 8,
+    "instructor": "Fortenberry, D, Fowler, D",
+    "seats_open": 1,
     "seats_total": 8,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PNR 110 and PNR 181 and PNR 121",
+    "prerequisite_courses": [
+      "PNR 110",
+      "PNR 181",
+      "PNR 121"
+    ]
   },
   {
     "college_code": "aiken",
@@ -3164,11 +3223,15 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Fortenberry, D, Johnson, T",
-    "seats_open": 8,
+    "instructor": "Fortenberry, D, Lewis, R",
+    "seats_open": 3,
     "seats_total": 8,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PNR 110 and PNR 181 and PNR 121",
+    "prerequisite_courses": [
+      "PNR 110",
+      "PNR 181",
+      "PNR 121"
+    ]
   },
   {
     "college_code": "aiken",
@@ -3185,11 +3248,15 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Fortenberry, D, Lewis, R",
-    "seats_open": 8,
+    "instructor": "Fortenberry, D",
+    "seats_open": 6,
     "seats_total": 8,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PNR 110 and PNR 181 and PNR 121",
+    "prerequisite_courses": [
+      "PNR 110",
+      "PNR 181",
+      "PNR 121"
+    ]
   },
   {
     "college_code": "aiken",
@@ -3200,17 +3267,20 @@
     "credits": 7,
     "crn": "PNR-138-140",
     "days": "M W",
-    "start_time": "8:30 AM",
-    "end_time": "12:15 PM",
+    "start_time": "1:00 PM",
+    "end_time": "4:45 PM",
     "start_date": "2026-05-11",
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
     "instructor": "McDowell, C",
-    "seats_open": 15,
+    "seats_open": 8,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PNR 128 and PNR 182",
+    "prerequisite_courses": [
+      "PNR 128",
+      "PNR 182"
+    ]
   },
   {
     "college_code": "aiken",
@@ -3221,17 +3291,20 @@
     "credits": 7,
     "crn": "PNR-138-440",
     "days": "M W",
-    "start_time": "8:30 AM",
-    "end_time": "12:15 PM",
+    "start_time": "1:00 PM",
+    "end_time": "4:45 PM",
     "start_date": "2026-05-11",
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "McDowell, C, Lewis, R",
-    "seats_open": 15,
+    "instructor": "McDowell, C",
+    "seats_open": 16,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PNR 128 and PNR 182",
+    "prerequisite_courses": [
+      "PNR 128",
+      "PNR 182"
+    ]
   },
   {
     "college_code": "aiken",
@@ -3242,8 +3315,8 @@
     "credits": 7,
     "crn": "PNR-138-540",
     "days": "M W",
-    "start_time": "8:30 AM",
-    "end_time": "12:15 PM",
+    "start_time": "1:00 PM",
+    "end_time": "4:45 PM",
     "start_date": "2026-05-11",
     "location": "Main Campus",
     "campus": "MC",
@@ -3251,8 +3324,11 @@
     "instructor": "McDowell, C",
     "seats_open": 16,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PNR 128 and PNR 182",
+    "prerequisite_courses": [
+      "PNR 128",
+      "PNR 182"
+    ]
   },
   {
     "college_code": "aiken",
@@ -3263,17 +3339,20 @@
     "credits": 5,
     "crn": "PNR-154-140",
     "days": "M W",
-    "start_time": "1:00 PM",
-    "end_time": "4:00 PM",
+    "start_time": "9:00 AM",
+    "end_time": "12:00 PM",
     "start_date": "2026-05-11",
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Duffie, A",
-    "seats_open": 7,
+    "seats_open": 5,
     "seats_total": 8,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PNR 128 and PNR 182",
+    "prerequisite_courses": [
+      "PNR 128",
+      "PNR 182"
+    ]
   },
   {
     "college_code": "aiken",
@@ -3284,17 +3363,20 @@
     "credits": 5,
     "crn": "PNR-154-440",
     "days": "M W",
-    "start_time": "1:00 PM",
-    "end_time": "4:00 PM",
+    "start_time": "9:00 AM",
+    "end_time": "12:00 PM",
     "start_date": "2026-05-11",
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Duffie, A, Brown, K",
-    "seats_open": 7,
+    "seats_open": 3,
     "seats_total": 8,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PNR 128 and PNR 182",
+    "prerequisite_courses": [
+      "PNR 128",
+      "PNR 182"
+    ]
   },
   {
     "college_code": "aiken",
@@ -3305,8 +3387,8 @@
     "credits": 5,
     "crn": "PNR-154-540",
     "days": "M W",
-    "start_time": "1:00 PM",
-    "end_time": "4:00 PM",
+    "start_time": "9:00 AM",
+    "end_time": "12:00 PM",
     "start_date": "2026-05-11",
     "location": "Main Campus",
     "campus": "MC",
@@ -3314,8 +3396,11 @@
     "instructor": "Duffie, A",
     "seats_open": 8,
     "seats_total": 8,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PNR 128 and PNR 182",
+    "prerequisite_courses": [
+      "PNR 128",
+      "PNR 182"
+    ]
   },
   {
     "college_code": "aiken",
@@ -3327,13 +3412,13 @@
     "crn": "PNR-182-140",
     "days": "W",
     "start_time": "8:30 AM",
-    "end_time": "11:30 AM",
+    "end_time": "12:00 PM",
     "start_date": "2026-05-11",
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Duffie, A",
-    "seats_open": 24,
+    "instructor": "Lewis, R",
+    "seats_open": 11,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3354,28 +3439,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Leslie, P",
-    "seats_open": 14,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "aiken",
-    "term": "2026SU",
-    "course_prefix": "PSY",
-    "course_number": "105",
-    "course_title": "Personal/Interpersonal PSY",
-    "credits": 3,
-    "crn": "PSY-105-167",
-    "days": "",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-11",
-    "location": "Online Course",
-    "campus": "OL",
-    "mode": "online",
-    "instructor": "Leslie, P",
-    "seats_open": 28,
+    "seats_open": 3,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3417,7 +3481,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Leslie, P",
-    "seats_open": 6,
+    "seats_open": 5,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3438,7 +3502,28 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Jones, R",
-    "seats_open": 7,
+    "seats_open": 5,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "aiken",
+    "term": "2026SU",
+    "course_prefix": "PSY",
+    "course_number": "201",
+    "course_title": "General Psychology",
+    "credits": 3,
+    "crn": "PSY-201-367",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-11",
+    "location": "Online Course",
+    "campus": "OL",
+    "mode": "online",
+    "instructor": "Leslie, P",
+    "seats_open": 16,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3459,7 +3544,7 @@
     "campus": "HY",
     "mode": "hybrid",
     "instructor": "Jones, R",
-    "seats_open": 25,
+    "seats_open": 22,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3480,7 +3565,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Jones, R",
-    "seats_open": 11,
+    "seats_open": 3,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3501,8 +3586,8 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Jones, R",
-    "seats_open": 16,
-    "seats_total": 20,
+    "seats_open": 20,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -3522,10 +3607,12 @@
     "campus": "",
     "mode": "online",
     "instructor": "Wilson, A",
-    "seats_open": 2,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 6,
+    "seats_total": 30,
+    "prerequisite_text": "RPT 103",
+    "prerequisite_courses": [
+      "RPT 103"
+    ]
   },
   {
     "college_code": "aiken",
@@ -3543,7 +3630,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Burke, C",
-    "seats_open": 20,
+    "seats_open": 11,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3564,7 +3651,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Greiner, N",
-    "seats_open": 20,
+    "seats_open": 11,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3585,50 +3672,8 @@
     "campus": "OC",
     "mode": "in-person",
     "instructor": "Greiner, N, Burke, C",
-    "seats_open": 9,
+    "seats_open": 0,
     "seats_total": 9,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "aiken",
-    "term": "2026SU",
-    "course_prefix": "RDG",
-    "course_number": "100",
-    "course_title": "Critical Reading",
-    "credits": 3,
-    "crn": "RDG-100-051",
-    "days": "M",
-    "start_time": "10:15 AM",
-    "end_time": "12:10 PM",
-    "start_date": "2026-05-11",
-    "location": "Hybrid Course",
-    "campus": "HY",
-    "mode": "hybrid",
-    "instructor": "Hughey, T",
-    "seats_open": 21,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "aiken",
-    "term": "2026SU",
-    "course_prefix": "RDG",
-    "course_number": "100",
-    "course_title": "Critical Reading",
-    "credits": 3,
-    "crn": "RDG-100-151",
-    "days": "Th",
-    "start_time": "10:15 AM",
-    "end_time": "12:10 PM",
-    "start_date": "2026-05-11",
-    "location": "Hybrid Course",
-    "campus": "HY",
-    "mode": "hybrid",
-    "instructor": "Hughey, T",
-    "seats_open": 24,
-    "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -3648,28 +3693,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Borders, A",
-    "seats_open": 14,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "aiken",
-    "term": "2026SU",
-    "course_prefix": "SOC",
-    "course_number": "101",
-    "course_title": "Introduction to Sociology",
-    "credits": 3,
-    "crn": "SOC-101-167",
-    "days": "",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-11",
-    "location": "Online Course",
-    "campus": "OL",
-    "mode": "online",
-    "instructor": "Borders, A",
-    "seats_open": 29,
+    "seats_open": 4,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3690,10 +3714,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Botts, V",
-    "seats_open": 14,
+    "seats_open": 3,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 101",
+    "prerequisite_courses": [
+      "ENG 101"
+    ]
   },
   {
     "college_code": "aiken",
@@ -3711,10 +3737,14 @@
     "campus": "HY",
     "mode": "hybrid",
     "instructor": "Wilson, A",
-    "seats_open": 15,
+    "seats_open": 7,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 101 or ENG 102 or ENG 160",
+    "prerequisite_courses": [
+      "ENG 101",
+      "ENG 102",
+      "ENG 160"
+    ]
   },
   {
     "college_code": "aiken",
@@ -3734,8 +3764,12 @@
     "instructor": "Wilson, A",
     "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 101 or ENG 102 or ENG 160",
+    "prerequisite_courses": [
+      "ENG 101",
+      "ENG 102",
+      "ENG 160"
+    ]
   },
   {
     "college_code": "aiken",
@@ -3753,10 +3787,14 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Wilson, A",
-    "seats_open": 0,
+    "seats_open": 5,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 101 or ENG 102 or ENG 160",
+    "prerequisite_courses": [
+      "ENG 101",
+      "ENG 102",
+      "ENG 160"
+    ]
   },
   {
     "college_code": "aiken",
@@ -3774,10 +3812,14 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Wilson, A",
-    "seats_open": 17,
+    "seats_open": 9,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 101 or ENG 102 or ENG 160",
+    "prerequisite_courses": [
+      "ENG 101",
+      "ENG 102",
+      "ENG 160"
+    ]
   },
   {
     "college_code": "aiken",
@@ -3795,10 +3837,13 @@
     "campus": "OC",
     "mode": "in-person",
     "instructor": "Mamo, J",
-    "seats_open": 8,
+    "seats_open": 4,
     "seats_total": 10,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SUR 123 and SUR 125",
+    "prerequisite_courses": [
+      "SUR 123",
+      "SUR 125"
+    ]
   },
   {
     "college_code": "aiken",
@@ -3808,7 +3853,7 @@
     "course_title": "Basic Surgical Praticum",
     "credits": 7,
     "crn": "SUR-111-041",
-    "days": "M T W Th F",
+    "days": "",
     "start_time": "",
     "end_time": "",
     "start_date": "2026-05-11",
@@ -3816,10 +3861,13 @@
     "campus": "OC",
     "mode": "in-person",
     "instructor": "Godbee, A, Mamo, J",
-    "seats_open": 3,
+    "seats_open": 5,
     "seats_total": 10,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SUR 123 and SUR 125",
+    "prerequisite_courses": [
+      "SUR 123",
+      "SUR 125"
+    ]
   },
   {
     "college_code": "aiken",
@@ -3829,7 +3877,7 @@
     "course_title": "Advanced Surgical Practicum",
     "credits": 6,
     "crn": "SUR-113-040",
-    "days": "T W Th F",
+    "days": "",
     "start_time": "6:30 AM",
     "end_time": "5:00 PM",
     "start_date": "2026-05-11",
@@ -3837,10 +3885,14 @@
     "campus": "OC",
     "mode": "in-person",
     "instructor": "Mamo, J",
-    "seats_open": 1,
+    "seats_open": 0,
     "seats_total": 10,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SUR 103 and SUR 107 and SUR 110",
+    "prerequisite_courses": [
+      "SUR 103",
+      "SUR 107",
+      "SUR 110"
+    ]
   },
   {
     "college_code": "aiken",
@@ -3850,39 +3902,22 @@
     "course_title": "Advanced Surgical Practicum",
     "credits": 6,
     "crn": "SUR-113-041",
-    "days": "T W Th F",
+    "days": "",
     "start_time": "6:30 AM",
     "end_time": "5:00 PM",
     "start_date": "2026-05-11",
     "location": "Off Campus",
     "campus": "OC",
     "mode": "in-person",
-    "instructor": "Godbee, A, Mamo, J",
-    "seats_open": 3,
+    "instructor": "Mamo, J, Godbee, A",
+    "seats_open": 5,
     "seats_total": 10,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "aiken",
-    "term": "2026SU",
-    "course_prefix": "SUR",
-    "course_number": "115",
-    "course_title": "Terminology for Surgical Techn",
-    "credits": 2,
-    "crn": "SUR-115-040",
-    "days": "",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-11",
-    "location": "Online Course",
-    "campus": "OL",
-    "mode": "in-person",
-    "instructor": "Godbee, A, Mamo, J",
-    "seats_open": 29,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SUR 103 and SUR 107 and SUR 110",
+    "prerequisite_courses": [
+      "SUR 103",
+      "SUR 107",
+      "SUR 110"
+    ]
   },
   {
     "college_code": "aiken",
@@ -3899,11 +3934,15 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Mamo, J",
+    "instructor": "Mamo, J, Godbee, A",
     "seats_open": 4,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SUR 103 and SUR 107 and SUR 110",
+    "prerequisite_courses": [
+      "SUR 103",
+      "SUR 107",
+      "SUR 110"
+    ]
   },
   {
     "college_code": "aiken",
@@ -3921,10 +3960,13 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Godbee, A, Mamo, J",
-    "seats_open": 15,
+    "seats_open": 16,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 101 and MAT 101",
+    "prerequisite_courses": [
+      "BIO 101",
+      "MAT 101"
+    ]
   },
   {
     "college_code": "aiken",
@@ -3942,7 +3984,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Attana, K",
-    "seats_open": 16,
+    "seats_open": 3,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3963,8 +4005,8 @@
     "campus": "",
     "mode": "hybrid",
     "instructor": "Cusey, K",
-    "seats_open": 14,
-    "seats_total": 16,
+    "seats_open": 0,
+    "seats_total": 0,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -3972,22 +4014,24 @@
     "college_code": "aiken",
     "term": "2026SU",
     "course_prefix": "WLD",
-    "course_number": "108",
-    "course_title": "Gas Metal ARC Welding I",
+    "course_number": "111",
+    "course_title": "ARC Welding I",
     "credits": 4,
-    "crn": "WLD-108-151",
+    "crn": "WLD-111-051",
     "days": "",
     "start_time": "",
     "end_time": "",
     "start_date": "2026-05-11",
     "location": "",
     "campus": "",
-    "mode": "hybrid",
-    "instructor": "Staff, X",
-    "seats_open": 15,
-    "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "mode": "online",
+    "instructor": "Cusey, K",
+    "seats_open": 8,
+    "seats_total": 18,
+    "prerequisite_text": "WLD 130",
+    "prerequisite_courses": [
+      "WLD 130"
+    ]
   },
   {
     "college_code": "aiken",
@@ -4005,10 +4049,12 @@
     "campus": "",
     "mode": "hybrid",
     "instructor": "Scheer, M",
-    "seats_open": 3,
-    "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": "WLD 130",
+    "prerequisite_courses": [
+      "WLD 130"
+    ]
   },
   {
     "college_code": "aiken",
@@ -4047,29 +4093,8 @@
     "campus": "",
     "mode": "hybrid",
     "instructor": "Scheer, M",
-    "seats_open": 11,
-    "seats_total": 14,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "aiken",
-    "term": "2026SU",
-    "course_prefix": "WLD",
-    "course_number": "132",
-    "course_title": "Gas Tungsten Arc Welding - Fer",
-    "credits": 4,
-    "crn": "WLD-132-051",
-    "days": "",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-11",
-    "location": "",
-    "campus": "",
-    "mode": "hybrid",
-    "instructor": "Staff, X",
-    "seats_open": 18,
-    "seats_total": 18,
+    "seats_open": 0,
+    "seats_total": 0,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -4088,9 +4113,9 @@
     "location": "",
     "campus": "",
     "mode": "hybrid",
-    "instructor": "Staff, X",
-    "seats_open": 16,
-    "seats_total": 18,
+    "instructor": "Scheer, M",
+    "seats_open": 0,
+    "seats_total": 0,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -4112,8 +4137,13 @@
     "instructor": "Cusey, K",
     "seats_open": 0,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 108 and WLD 120 and WLD 130 and WLD 132",
+    "prerequisite_courses": [
+      "WLD 108",
+      "WLD 120",
+      "WLD 130",
+      "WLD 132"
+    ]
   },
   {
     "college_code": "aiken",
@@ -4131,10 +4161,15 @@
     "campus": "",
     "mode": "online",
     "instructor": "Cusey, K",
-    "seats_open": 11,
+    "seats_open": 1,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 108 and WLD 120 and WLD 130 and WLD 132",
+    "prerequisite_courses": [
+      "WLD 108",
+      "WLD 120",
+      "WLD 130",
+      "WLD 132"
+    ]
   },
   {
     "college_code": "aiken",
@@ -4151,10 +4186,15 @@
     "location": "",
     "campus": "",
     "mode": "hybrid",
-    "instructor": null,
+    "instructor": "Scheer, M",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 101 and WLD 152 and WLD 208 and WLD 225",
+    "prerequisite_courses": [
+      "MAT 101",
+      "WLD 152",
+      "WLD 208",
+      "WLD 225"
+    ]
   }
 ]
