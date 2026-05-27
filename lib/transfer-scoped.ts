@@ -8,6 +8,7 @@
 // loads the entire state catalog (5.7 MB VA, 51 MB NJ/MD).
 
 import { supabase } from "./supabase";
+import { runPooled } from "./concurrency";
 
 // ---------------------------------------------------------------------------
 // In-memory TTL cache + inflight dedup (same pattern as lib/courses.ts)
@@ -143,8 +144,13 @@ export async function buildTransferLookupForCourses(
       }
     }
 
-    const chunkResults = await Promise.all(
-      queries.map(async ({ prefix, numbers }) => {
+    // Concurrency-cap the per-prefix queries — large colleges fan out to
+    // 20+ subject prefixes, and `next build` runs this on many pages in
+    // parallel. Unbounded Promise.all here was a major contributor to
+    // pgbouncer connection-pool exhaustion during deploy. Cap of 5 keeps
+    // peak connections per call modest while staying fast in practice.
+    const chunkResults = await runPooled(
+      queries.map(({ prefix, numbers }) => async () => {
         const { data, error } = await supabase
           .from("transfers")
           .select(
@@ -158,7 +164,8 @@ export async function buildTransferLookupForCourses(
           return [] as TransferRow[];
         }
         return (data ?? []) as TransferRow[];
-      })
+      }),
+      5
     );
 
     return rowsToLookup(chunkResults.flat());

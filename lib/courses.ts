@@ -1,5 +1,6 @@
 import type { CourseSection } from "./types";
 import { supabase } from "./supabase";
+import { runPooled } from "./concurrency";
 
 // ---------------------------------------------------------------------------
 // In-memory cache (server-side, survives across requests in dev/prod)
@@ -299,7 +300,12 @@ export function getUniqueSubjects(courses: CourseSection[]): string[] {
 
 /**
  * Load all courses from all colleges for a given term from Supabase.
- * Uses parallel pagination for speed.
+ *
+ * Internally paginates with bounded concurrency — large states (NJ ~50k rows,
+ * VA ~30k) fan out to 30+ pages, and during `next build` the unbounded
+ * parallelism saturated Supabase's connection pool when multiple pages were
+ * built simultaneously. The cap below trades a small wall-clock cost (sequential
+ * batches of 5 instead of all-at-once) for build resilience.
  */
 export async function loadAllCourses(
   term: string,
@@ -315,32 +321,35 @@ export async function loadAllCourses(
 
     if (countErr || !count || count === 0) return [];
 
-    // Fetch all pages in parallel (much faster than sequential)
     const PAGE_SIZE = 1000;
     const pages = Math.ceil(count / PAGE_SIZE);
-    const promises: Promise<CourseSection[]>[] = [];
 
+    // Build one thunk per page. Each is a closure that performs the actual
+    // Supabase call when invoked — runPooled only starts a thunk when there's
+    // a free slot under the concurrency cap.
+    const tasks: Array<() => Promise<CourseSection[]>> = [];
     for (let i = 0; i < pages; i++) {
       const start = i * PAGE_SIZE;
       const end = start + PAGE_SIZE - 1;
-      promises.push(
-        (async () => {
-          const { data, error } = await supabase
-            .from("courses")
-            .select("*")
-            .eq("term", term)
-            .eq("state", state)
-            .range(start, end);
-          if (error) {
-            console.error(`loadAllCourses page ${i} error:`, error.message);
-            return [];
-          }
-          return (data || []).map(mapRow);
-        })()
-      );
+      tasks.push(async () => {
+        const { data, error } = await supabase
+          .from("courses")
+          .select("*")
+          .eq("term", term)
+          .eq("state", state)
+          .range(start, end);
+        if (error) {
+          console.error(`loadAllCourses page ${i} error:`, error.message);
+          return [];
+        }
+        return (data || []).map(mapRow);
+      });
     }
 
-    const results = await Promise.all(promises);
+    // Concurrency cap of 5 per call. With 3 build workers each running one
+    // loadAllCourses at a time, peak Supabase connections per state is ~15
+    // — well under any pgbouncer pool size in use here.
+    const results = await runPooled(tasks, 5);
     return results.flat();
   });
 }
