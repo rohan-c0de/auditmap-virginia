@@ -15,7 +15,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Jennifer S. Treadway",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -57,7 +57,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Mary C. Roldan",
-    "seats_open": 7,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -77,9 +77,9 @@
     "location": "Henderson County",
     "campus": "F",
     "mode": "zoom",
-    "instructor": null,
-    "seats_open": 19,
-    "seats_total": 25,
+    "instructor": "Sara Pressley Schumacher",
+    "seats_open": 0,
+    "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -98,9 +98,9 @@
     "location": "Henderson County",
     "campus": "F",
     "mode": "zoom",
-    "instructor": null,
-    "seats_open": 25,
-    "seats_total": 25,
+    "instructor": "Anthony J. Baltiero",
+    "seats_open": 24,
+    "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -141,8 +141,8 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "James E. Dennison",
-    "seats_open": 7,
-    "seats_total": 20,
+    "seats_open": 2,
+    "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -162,10 +162,12 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "James E. Dennison",
-    "seats_open": 8,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 6,
+    "seats_total": 25,
+    "prerequisite_text": "ACC 120",
+    "prerequisite_courses": [
+      "ACC 120"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -183,10 +185,12 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Christy M. Lefevers",
-    "seats_open": 13,
+    "seats_open": 8,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ACC 120",
+    "prerequisite_courses": [
+      "ACC 120"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -225,7 +229,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Aaron Bernard",
-    "seats_open": 8,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -246,29 +250,8 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Aaron Bernard",
-    "seats_open": 25,
+    "seats_open": 2,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "blue-ridge",
-    "term": "2026SU",
-    "course_prefix": "ART",
-    "course_number": "111",
-    "course_title": "Art Appreciation",
-    "credits": 3,
-    "crn": "ART-111-421GH",
-    "days": "M",
-    "start_time": "11:00 AM",
-    "end_time": "12:50 PM",
-    "start_date": "2026-06-01",
-    "location": "Transylvania County",
-    "campus": "T",
-    "mode": "in-person",
-    "instructor": "Meredith A. Grissom",
-    "seats_open": 20,
-    "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -288,7 +271,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Kimberly P. English",
-    "seats_open": 23,
+    "seats_open": 21,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -309,8 +292,8 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Rachel D. Vera",
-    "seats_open": 6,
-    "seats_total": 20,
+    "seats_open": 4,
+    "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -330,10 +313,13 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Dayamarali Espinosa",
-    "seats_open": 14,
+    "seats_open": 7,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ASL 181 and ASL 111 and ASL 181",
+    "prerequisite_courses": [
+      "ASL 181",
+      "ASL 111"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -351,7 +337,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Dayamarali Espinosa",
-    "seats_open": 14,
+    "seats_open": 7,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -372,10 +358,12 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Rey M. Castillo, Jr.",
-    "seats_open": 14,
+    "seats_open": 16,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ASL 212",
+    "prerequisite_courses": [
+      "ASL 212"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -393,10 +381,12 @@
     "campus": "F",
     "mode": "in-person",
     "instructor": "Christopher J. Peavy",
-    "seats_open": 15,
+    "seats_open": 13,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "TRN 120",
+    "prerequisite_courses": [
+      "TRN 120"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -416,8 +406,10 @@
     "instructor": "Brian A. Foster",
     "seats_open": 14,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AUB 111",
+    "prerequisite_courses": [
+      "AUB 111"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -435,7 +427,7 @@
     "campus": "F",
     "mode": "in-person",
     "instructor": "Brian A. Foster",
-    "seats_open": 13,
+    "seats_open": 12,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -455,32 +447,13 @@
     "location": "Henderson County",
     "campus": "F",
     "mode": "in-person",
-    "instructor": "Adam L. Riddle",
-    "seats_open": 9,
+    "instructor": "Eric D. Stephens, Adam L. Riddle",
+    "seats_open": 3,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "blue-ridge",
-    "term": "2026SU",
-    "course_prefix": "AUT",
-    "course_number": "183",
-    "course_title": "Engine Performance 2",
-    "credits": 4,
-    "crn": "AUT-183-721",
-    "days": "T Th",
-    "start_time": "8:00 AM",
-    "end_time": "11:15 AM",
-    "start_date": "2026-05-18",
-    "location": "Transylvania County",
-    "campus": "T",
-    "mode": "in-person",
-    "instructor": "Eric D. Stephens",
-    "seats_open": 19,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AUT 181",
+    "prerequisite_courses": [
+      "AUT 181"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -498,7 +471,7 @@
     "campus": "T",
     "mode": "in-person",
     "instructor": "Linda D. Williams",
-    "seats_open": 23,
+    "seats_open": 15,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -519,7 +492,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Linda D. Williams",
-    "seats_open": 3,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -540,7 +513,7 @@
     "campus": "T",
     "mode": "in-person",
     "instructor": "Ashley DeCoux",
-    "seats_open": 29,
+    "seats_open": 19,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -561,7 +534,7 @@
     "campus": "T",
     "mode": "in-person",
     "instructor": "David B. English",
-    "seats_open": 14,
+    "seats_open": 12,
     "seats_total": 16,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -582,10 +555,12 @@
     "campus": "T",
     "mode": "in-person",
     "instructor": "Kathleen M. Abraham",
-    "seats_open": 30,
+    "seats_open": 25,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 111",
+    "prerequisite_courses": [
+      "BIO 111"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -603,7 +578,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "David E. DeViney",
-    "seats_open": 7,
+    "seats_open": 0,
     "seats_total": 18,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -624,8 +599,29 @@
     "campus": "T",
     "mode": "in-person",
     "instructor": "Ashley DeCoux",
-    "seats_open": 14,
+    "seats_open": 7,
     "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "blue-ridge",
+    "term": "2026SU",
+    "course_prefix": "BIO",
+    "course_number": "168",
+    "course_title": "Anatomy and Physiology I",
+    "credits": 4,
+    "crn": "BIO-168-431H",
+    "days": "M",
+    "start_time": "5:30 PM",
+    "end_time": "6:20 PM",
+    "start_date": "2026-06-01",
+    "location": "Transylvania County",
+    "campus": "T",
+    "mode": "in-person",
+    "instructor": "Ashley DeCoux",
+    "seats_open": 0,
+    "seats_total": 0,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -645,10 +641,35 @@
     "campus": "T",
     "mode": "in-person",
     "instructor": "Lauren M. Royal-Woods",
-    "seats_open": 20,
+    "seats_open": 12,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 168",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
+  },
+  {
+    "college_code": "blue-ridge",
+    "term": "2026SU",
+    "course_prefix": "BIO",
+    "course_number": "169",
+    "course_title": "Anatomy and Physiology II",
+    "credits": 4,
+    "crn": "BIO-169-422H",
+    "days": "M",
+    "start_time": "4:00 PM",
+    "end_time": "4:50 PM",
+    "start_date": "2026-06-01",
+    "location": "Transylvania County",
+    "campus": "T",
+    "mode": "in-person",
+    "instructor": "Lauren M. Royal-Woods",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": "BIO 168",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -666,29 +687,8 @@
     "campus": "T",
     "mode": "in-person",
     "instructor": "Kathleen M. Abraham",
-    "seats_open": 22,
+    "seats_open": 8,
     "seats_total": 50,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "blue-ridge",
-    "term": "2026SU",
-    "course_prefix": "BPR",
-    "course_number": "111",
-    "course_title": "Print Reading",
-    "credits": 2,
-    "crn": "BPR-111-701",
-    "days": "M",
-    "start_time": "8:30 AM",
-    "end_time": "11:30 AM",
-    "start_date": "2026-05-18",
-    "location": "Henderson County",
-    "campus": "F",
-    "mode": "in-person",
-    "instructor": "Kevin D. Spradlin",
-    "seats_open": 9,
-    "seats_total": 10,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -708,7 +708,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Brittany P. Padgett",
-    "seats_open": 10,
+    "seats_open": 4,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -729,7 +729,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Nicole B. Hyatt",
-    "seats_open": 25,
+    "seats_open": 15,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -750,8 +750,8 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Anderson T. Ellis",
-    "seats_open": 6,
-    "seats_total": 25,
+    "seats_open": 19,
+    "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -771,7 +771,7 @@
     "campus": "F",
     "mode": "in-person",
     "instructor": "Daniel A. Rickert",
-    "seats_open": 17,
+    "seats_open": 16,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -792,29 +792,8 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Brittany P. Padgett",
-    "seats_open": 3,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "blue-ridge",
-    "term": "2026SU",
-    "course_prefix": "BUS",
-    "course_number": "270",
-    "course_title": "Professional Development",
-    "credits": 3,
-    "crn": "BUS-270-401B",
-    "days": "M T W Th",
-    "start_time": "9:00 AM",
-    "end_time": "12:00 PM",
-    "start_date": "2026-06-08",
-    "location": "Henderson County",
-    "campus": "F",
-    "mode": "in-person",
-    "instructor": "Benjamin R. Kish",
-    "seats_open": 20,
-    "seats_total": 20,
+    "seats_open": 25,
+    "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -834,10 +813,19 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Richard L. Shook, II",
-    "seats_open": 17,
+    "seats_open": 13,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 121 and MAT 171 and DMA 060 and DMA 070 and DMA 080 and DMA 065 and MAT 003 and BSP 4003",
+    "prerequisite_courses": [
+      "MAT 121",
+      "MAT 171",
+      "DMA 060",
+      "DMA 070",
+      "DMA 080",
+      "DMA 065",
+      "MAT 003",
+      "BSP 4003"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -855,7 +843,7 @@
     "campus": "T",
     "mode": "in-person",
     "instructor": "Lukas E. Chaloupka",
-    "seats_open": 14,
+    "seats_open": 13,
     "seats_total": 18,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -876,10 +864,25 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Mary C. Roldan",
-    "seats_open": 16,
+    "seats_open": 13,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 080 (min C) and MAT 080 (min C) and DMA 010 (min C) and DMA 020 (min C) and DMA 030 (min C) and DMA 040 (min C) and DMA 050 (min C) and DMA 060 (min C) and DMA 070 (min C) and DMA 080 (min C) and DMA 010 (min C) and DMA 020 (min C) and DMA 030 (min C) and DMA 040 (min C) and DMA 050 (min C) and DMA 060 (min C) and DMA 070 (min C) and DMA 080 (min C) and MAT 003 (min C) and MAT 045 (min C) and BSP 4003 (min C) and MAT 071 (min C) and MAT 045 (min C) and CHM 130A",
+    "prerequisite_courses": [
+      "MAT 080",
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DMA 040",
+      "DMA 050",
+      "DMA 060",
+      "DMA 070",
+      "DMA 080",
+      "MAT 003",
+      "MAT 045",
+      "BSP 4003",
+      "MAT 071",
+      "CHM 130A"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -897,31 +900,12 @@
     "campus": "F",
     "mode": "in-person",
     "instructor": "Mary C. Roldan",
-    "seats_open": 16,
+    "seats_open": 13,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "blue-ridge",
-    "term": "2026SU",
-    "course_prefix": "CHM",
-    "course_number": "151",
-    "course_title": "General Chemistry I",
-    "credits": 4,
-    "crn": "CHM-151-401H",
-    "days": "Th",
-    "start_time": "9:30 AM",
-    "end_time": "11:50 AM",
-    "start_date": "2026-06-01",
-    "location": "Henderson County",
-    "campus": "F",
-    "mode": "in-person",
-    "instructor": "Mary C. Roldan",
-    "seats_open": 17,
-    "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 130",
+    "prerequisite_courses": [
+      "CHM 130"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -938,11 +922,15 @@
     "location": "Henderson County",
     "campus": "F",
     "mode": "zoom",
-    "instructor": null,
-    "seats_open": 11,
+    "instructor": "Mary C. Roldan",
+    "seats_open": 1,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 045 and CHM 092 or CHM 131",
+    "prerequisite_courses": [
+      "MAT 045",
+      "CHM 092",
+      "CHM 131"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -960,10 +948,35 @@
     "campus": "T",
     "mode": "in-person",
     "instructor": "Lukas E. Chaloupka",
-    "seats_open": 26,
+    "seats_open": 22,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 151",
+    "prerequisite_courses": [
+      "CHM 151"
+    ]
+  },
+  {
+    "college_code": "blue-ridge",
+    "term": "2026SU",
+    "course_prefix": "CHM",
+    "course_number": "152",
+    "course_title": "General Chemistry II",
+    "credits": 4,
+    "crn": "CHM-152-422H",
+    "days": "W",
+    "start_time": "5:30 PM",
+    "end_time": "6:20 PM",
+    "start_date": "2026-06-01",
+    "location": "Transylvania County",
+    "campus": "T",
+    "mode": "in-person",
+    "instructor": "Lukas E. Chaloupka",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": "CHM 151",
+    "prerequisite_courses": [
+      "CHM 151"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -981,7 +994,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Daniel A. Rickert",
-    "seats_open": 6,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1001,29 +1014,8 @@
     "location": "Henderson County",
     "campus": "F",
     "mode": "zoom",
-    "instructor": null,
-    "seats_open": 24,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "blue-ridge",
-    "term": "2026SU",
-    "course_prefix": "CIS",
-    "course_number": "110",
-    "course_title": "Introduction to Computers",
-    "credits": 3,
-    "crn": "CIS-110-403W",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-06-01",
-    "location": "Henderson County",
-    "campus": "F",
-    "mode": "zoom",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "Charles B. McFadden",
+    "seats_open": 4,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1044,7 +1036,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Curtis L. Philon, Garrett L. Gardin",
-    "seats_open": 15,
+    "seats_open": 9,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1065,7 +1057,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Mark C. Beddingfield",
-    "seats_open": 18,
+    "seats_open": 16,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1107,7 +1099,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Joshua W. Bledsoe",
-    "seats_open": 22,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1128,7 +1120,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Joshua W. Bledsoe",
-    "seats_open": 3,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1149,28 +1141,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Laura M. Robinson",
-    "seats_open": 22,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "blue-ridge",
-    "term": "2026SU",
-    "course_prefix": "COM",
-    "course_number": "231",
-    "course_title": "Public Speaking",
-    "credits": 3,
-    "crn": "COM-231-421",
-    "days": "T Th",
-    "start_time": "1:00 PM",
-    "end_time": "2:50 PM",
-    "start_date": "2026-06-01",
-    "location": "Transylvania County",
-    "campus": "T",
-    "mode": "in-person",
-    "instructor": "Joshua W. Bledsoe",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1191,10 +1162,13 @@
     "campus": "F",
     "mode": "in-person",
     "instructor": "Jalisa S. Allen, Nathaniel E. Jones",
-    "seats_open": 9,
+    "seats_open": 10,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -1212,10 +1186,13 @@
     "campus": "F",
     "mode": "in-person",
     "instructor": "Jalisa S. Allen, Nathaniel E. Jones",
-    "seats_open": 14,
+    "seats_open": 15,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -1233,10 +1210,13 @@
     "campus": "F",
     "mode": "in-person",
     "instructor": "Jalisa S. Allen, Nathaniel E. Jones",
-    "seats_open": 9,
+    "seats_open": 10,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -1254,40 +1234,22 @@
     "campus": "F",
     "mode": "in-person",
     "instructor": "Jalisa S. Allen, Nathaniel E. Jones",
-    "seats_open": 9,
+    "seats_open": 10,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "blue-ridge",
     "term": "2026SU",
     "course_prefix": "COS",
-    "course_number": "117",
-    "course_title": "Cosmetology Concepts IV",
-    "credits": 2,
-    "crn": "COS-117-201",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-18",
-    "location": "Henderson County",
-    "campus": "F",
-    "mode": "zoom",
-    "instructor": "Jalisa S. Allen, Nathaniel E. Jones",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "blue-ridge",
-    "term": "2026SU",
-    "course_prefix": "COS",
-    "course_number": "118AB",
+    "course_number": "118",
     "course_title": "Salon IV",
-    "credits": 4,
-    "crn": "COS-118AB-701",
+    "credits": 7,
+    "crn": "COS-118-701",
     "days": "M T W Th",
     "start_time": "9:30 AM",
     "end_time": "12:00 PM",
@@ -1296,10 +1258,13 @@
     "campus": "F",
     "mode": "in-person",
     "instructor": "Jalisa S. Allen, Nathaniel E. Jones",
-    "seats_open": 15,
+    "seats_open": 12,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -1317,8 +1282,8 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Jennifer S. Treadway",
-    "seats_open": 7,
-    "seats_total": 20,
+    "seats_open": 23,
+    "seats_total": 40,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1338,8 +1303,8 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Christopher B. Fant",
-    "seats_open": 0,
-    "seats_total": 25,
+    "seats_open": 6,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1359,7 +1324,28 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Christopher B. Fant",
-    "seats_open": 8,
+    "seats_open": 7,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "blue-ridge",
+    "term": "2026SU",
+    "course_prefix": "ECO",
+    "course_number": "251",
+    "course_title": "Prin of Microeconomics",
+    "credits": 3,
+    "crn": "ECO-251-403W",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-01",
+    "location": "Henderson County",
+    "campus": "F",
+    "mode": "zoom",
+    "instructor": "Christopher B. Fant",
+    "seats_open": 5,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1380,7 +1366,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Christopher B. Fant",
-    "seats_open": 14,
+    "seats_open": 3,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1401,8 +1387,8 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Melanie C. Wilkins",
-    "seats_open": 10,
-    "seats_total": 20,
+    "seats_open": 5,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1422,7 +1408,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Shelah K. Combs",
-    "seats_open": 22,
+    "seats_open": 18,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1443,7 +1429,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Erin R. Rogers",
-    "seats_open": 13,
+    "seats_open": 7,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1464,29 +1450,8 @@
     "campus": "F",
     "mode": "in-person",
     "instructor": "Melanie C. Wilkins",
-    "seats_open": 14,
+    "seats_open": 9,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "blue-ridge",
-    "term": "2026SU",
-    "course_prefix": "EDU",
-    "course_number": "173",
-    "course_title": "Becoming a Prof'l in ECE",
-    "credits": 3,
-    "crn": "EDU-173-401B",
-    "days": "M T W Th",
-    "start_time": "9:00 AM",
-    "end_time": "12:00 PM",
-    "start_date": "2026-06-08",
-    "location": "Henderson County",
-    "campus": "F",
-    "mode": "in-person",
-    "instructor": "Erin R. Rogers",
-    "seats_open": 20,
-    "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1506,10 +1471,13 @@
     "campus": "F",
     "mode": "in-person",
     "instructor": "Carol L. Wheeler",
-    "seats_open": 13,
+    "seats_open": 12,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 171 or MAT 271",
+    "prerequisite_courses": [
+      "MAT 171",
+      "MAT 271"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -1529,8 +1497,10 @@
     "instructor": "Casey V. Elliott",
     "seats_open": 21,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EMS 221",
+    "prerequisite_courses": [
+      "EMS 221"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -1547,11 +1517,14 @@
     "location": "Transylvania County",
     "campus": "T",
     "mode": "in-person",
-    "instructor": "Virginia C. Plyler",
+    "instructor": "Virginia Claire Plyler",
     "seats_open": 21,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EMS 122 and EMS 130",
+    "prerequisite_courses": [
+      "EMS 122",
+      "EMS 130"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -1568,11 +1541,14 @@
     "location": "Transylvania County",
     "campus": "T",
     "mode": "in-person",
-    "instructor": "Virginia C. Plyler",
+    "instructor": "Virginia Claire Plyler",
     "seats_open": 21,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EMS 122 and EMS 130",
+    "prerequisite_courses": [
+      "EMS 122",
+      "EMS 130"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -1589,11 +1565,13 @@
     "location": "Henderson County",
     "campus": "F",
     "mode": "zoom",
-    "instructor": "Sam D. Sonnier",
-    "seats_open": 12,
+    "instructor": "Brandon L. Ward",
+    "seats_open": 1,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -1611,10 +1589,12 @@
     "campus": "T",
     "mode": "in-person",
     "instructor": "Brandon L. Ward",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -1632,10 +1612,12 @@
     "campus": "F",
     "mode": "in-person",
     "instructor": "Sam D. Sonnier",
-    "seats_open": 13,
+    "seats_open": 11,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 045 and ENG 045",
+    "prerequisite_courses": [
+      "ENG 045"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -1652,11 +1634,13 @@
     "location": "Henderson County",
     "campus": "F",
     "mode": "zoom",
-    "instructor": null,
+    "instructor": "James H. Long",
     "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 045 and ENG 045",
+    "prerequisite_courses": [
+      "ENG 045"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -1673,11 +1657,13 @@
     "location": "Henderson County",
     "campus": "F",
     "mode": "zoom",
-    "instructor": null,
+    "instructor": "Cary A. Gardner",
     "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 045 and ENG 045",
+    "prerequisite_courses": [
+      "ENG 045"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -1694,11 +1680,13 @@
     "location": "Henderson County",
     "campus": "F",
     "mode": "zoom",
-    "instructor": null,
-    "seats_open": 6,
+    "instructor": "Rusty L. Roberson",
+    "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 045 and ENG 045",
+    "prerequisite_courses": [
+      "ENG 045"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -1715,11 +1703,36 @@
     "location": "Henderson County",
     "campus": "F",
     "mode": "zoom",
-    "instructor": null,
-    "seats_open": 20,
+    "instructor": "Stephany L. Newberry-Davis",
+    "seats_open": 1,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 045 and ENG 045",
+    "prerequisite_courses": [
+      "ENG 045"
+    ]
+  },
+  {
+    "college_code": "blue-ridge",
+    "term": "2026SU",
+    "course_prefix": "ENG",
+    "course_number": "111",
+    "course_title": "Writing and Inquiry",
+    "credits": 3,
+    "crn": "ENG-111-405W",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-01",
+    "location": "Henderson County",
+    "campus": "F",
+    "mode": "zoom",
+    "instructor": "Cary A. Gardner",
+    "seats_open": 3,
+    "seats_total": 20,
+    "prerequisite_text": "ENG 045 and ENG 045",
+    "prerequisite_courses": [
+      "ENG 045"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -1737,10 +1750,12 @@
     "campus": "T",
     "mode": "in-person",
     "instructor": "Brandon L. Ward",
-    "seats_open": 18,
+    "seats_open": 15,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 045 and ENG 045",
+    "prerequisite_courses": [
+      "ENG 045"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -1758,10 +1773,12 @@
     "campus": "F",
     "mode": "in-person",
     "instructor": "Sam D. Sonnier",
-    "seats_open": 15,
+    "seats_open": 11,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -1778,11 +1795,13 @@
     "location": "Henderson County",
     "campus": "F",
     "mode": "zoom",
-    "instructor": null,
+    "instructor": "James H. Long",
     "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -1799,11 +1818,13 @@
     "location": "Henderson County",
     "campus": "F",
     "mode": "zoom",
-    "instructor": null,
-    "seats_open": 2,
+    "instructor": "Brandon L. Ward",
+    "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -1820,11 +1841,13 @@
     "location": "Henderson County",
     "campus": "F",
     "mode": "zoom",
-    "instructor": null,
-    "seats_open": 18,
+    "instructor": "Rusty L. Roberson",
+    "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -1841,11 +1864,13 @@
     "location": "Henderson County",
     "campus": "F",
     "mode": "zoom",
-    "instructor": null,
-    "seats_open": 20,
+    "instructor": "Rusty L. Roberson",
+    "seats_open": 5,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -1863,10 +1888,14 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Sam D. Sonnier",
-    "seats_open": 15,
+    "seats_open": 12,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 112 or ENG 113 or ENG 114",
+    "prerequisite_courses": [
+      "ENG 112",
+      "ENG 113",
+      "ENG 114"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -1884,7 +1913,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Melanie G. Ashe",
-    "seats_open": 24,
+    "seats_open": 21,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1905,7 +1934,7 @@
     "campus": "T",
     "mode": "in-person",
     "instructor": "Gabriel Al-Shaer",
-    "seats_open": 24,
+    "seats_open": 21,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1926,7 +1955,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Daniel R. Foster",
-    "seats_open": 21,
+    "seats_open": 11,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1947,7 +1976,7 @@
     "campus": "F",
     "mode": "in-person",
     "instructor": "Daniel R. Foster",
-    "seats_open": 18,
+    "seats_open": 16,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1968,7 +1997,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Gabriel Al-Shaer",
-    "seats_open": 19,
+    "seats_open": 10,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1989,7 +2018,7 @@
     "campus": "F",
     "mode": "in-person",
     "instructor": "Rachel A. Meriwether",
-    "seats_open": 11,
+    "seats_open": 9,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2010,7 +2039,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Daniel R. Foster",
-    "seats_open": 15,
+    "seats_open": 4,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2033,8 +2062,10 @@
     "instructor": "Roselia M. Fichera-Lening",
     "seats_open": 17,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "IPP 152",
+    "prerequisite_courses": [
+      "IPP 152"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -2051,8 +2082,8 @@
     "location": "Henderson County",
     "campus": "F",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 18,
+    "instructor": "Christopher J. Peavy",
+    "seats_open": 16,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2073,31 +2104,12 @@
     "campus": "F",
     "mode": "in-person",
     "instructor": "Kevin D. Spradlin",
-    "seats_open": 10,
+    "seats_open": 6,
     "seats_total": 10,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "blue-ridge",
-    "term": "2026SU",
-    "course_prefix": "MAC",
-    "course_number": "114",
-    "course_title": "Intro to Metrology",
-    "credits": 2,
-    "crn": "MAC-114-701",
-    "days": "M",
-    "start_time": "1:00 PM",
-    "end_time": "3:15 PM",
-    "start_date": "2026-05-18",
-    "location": "Henderson County",
-    "campus": "F",
-    "mode": "in-person",
-    "instructor": "Kevin D. Spradlin",
-    "seats_open": 10,
-    "seats_total": 10,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAC 112",
+    "prerequisite_courses": [
+      "MAC 112"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -2117,8 +2129,12 @@
     "instructor": "Faith E. Miller",
     "seats_open": 0,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 143 and MAT 152 and MAT 171",
+    "prerequisite_courses": [
+      "MAT 143",
+      "MAT 152",
+      "MAT 171"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -2136,10 +2152,14 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Hamid Najafi",
-    "seats_open": 9,
+    "seats_open": 1,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 143 and MAT 152 and MAT 171",
+    "prerequisite_courses": [
+      "MAT 143",
+      "MAT 152",
+      "MAT 171"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -2156,8 +2176,8 @@
     "location": "Henderson County",
     "campus": "F",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 18,
+    "instructor": "Marjorie T. Moller",
+    "seats_open": 12,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2177,9 +2197,9 @@
     "location": "Henderson County",
     "campus": "F",
     "mode": "zoom",
-    "instructor": null,
-    "seats_open": 6,
-    "seats_total": 25,
+    "instructor": "Jennifer L. Tracy",
+    "seats_open": 0,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2199,10 +2219,12 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Laura R. Tinney",
-    "seats_open": 19,
+    "seats_open": 8,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 045",
+    "prerequisite_courses": [
+      "MAT 045"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -2220,10 +2242,12 @@
     "campus": "T",
     "mode": "in-person",
     "instructor": "Laura R. Tinney",
-    "seats_open": 24,
+    "seats_open": 22,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 045",
+    "prerequisite_courses": [
+      "MAT 045"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -2241,10 +2265,12 @@
     "campus": "T",
     "mode": "in-person",
     "instructor": "Faith E. Miller",
-    "seats_open": 11,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 17,
+    "seats_total": 50,
+    "prerequisite_text": "MAT 045 and MAT 045",
+    "prerequisite_courses": [
+      "MAT 045"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -2261,11 +2287,13 @@
     "location": "Henderson County",
     "campus": "F",
     "mode": "zoom",
-    "instructor": "Caleb Marsh",
-    "seats_open": 15,
+    "instructor": "David K. Blevins",
+    "seats_open": 2,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 045 and MAT 045",
+    "prerequisite_courses": [
+      "MAT 045"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -2283,10 +2311,12 @@
     "campus": "F",
     "mode": "in-person",
     "instructor": "David K. Blevins",
-    "seats_open": 19,
+    "seats_open": 17,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 045",
+    "prerequisite_courses": [
+      "MAT 045"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -2303,11 +2333,13 @@
     "location": "Henderson County",
     "campus": "F",
     "mode": "zoom",
-    "instructor": null,
-    "seats_open": 8,
+    "instructor": "Jacob T. Winebarger",
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 045",
+    "prerequisite_courses": [
+      "MAT 045"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -2325,10 +2357,12 @@
     "campus": "T",
     "mode": "in-person",
     "instructor": "Laura R. Tinney",
-    "seats_open": 29,
+    "seats_open": 18,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 045",
+    "prerequisite_courses": [
+      "MAT 045"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -2337,19 +2371,21 @@
     "course_number": "172",
     "course_title": "Precalculus Trigonometry",
     "credits": 4,
-    "crn": "MAT-172-421H",
+    "crn": "MAT-172-422H",
     "days": "T",
     "start_time": "3:00 PM",
-    "end_time": "3:50 AM",
+    "end_time": "3:50 PM",
     "start_date": "2026-06-01",
     "location": "Transylvania County",
     "campus": "T",
     "mode": "in-person",
     "instructor": "John B. Norvell",
-    "seats_open": 28,
+    "seats_open": 25,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 171",
+    "prerequisite_courses": [
+      "MAT 171"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -2367,10 +2403,13 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "David K. Blevins",
-    "seats_open": 12,
+    "seats_open": 1,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 172 or MAT 175",
+    "prerequisite_courses": [
+      "MAT 172",
+      "MAT 175"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -2388,10 +2427,12 @@
     "campus": "T",
     "mode": "in-person",
     "instructor": "John B. Norvell",
-    "seats_open": 22,
+    "seats_open": 15,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 271",
+    "prerequisite_courses": [
+      "MAT 271"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -2409,7 +2450,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Nicole B. Hyatt",
-    "seats_open": 13,
+    "seats_open": 10,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2430,7 +2471,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Benjamin A. Hjertmann",
-    "seats_open": 2,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2451,7 +2492,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Benjamin A. Hjertmann",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2471,11 +2512,13 @@
     "location": "Health Sciences Center",
     "campus": "A",
     "mode": "in-person",
-    "instructor": "Christina Savopoulou, David W. Richardson, Jr., Leigh A. Angel",
-    "seats_open": 14,
+    "instructor": "Christina Savopoulou, David W. Richardson, Jr., Leigh A. Angel, Audrey B. Shomper, Neil A. Harchanko",
+    "seats_open": 0,
     "seats_total": 19,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 101",
+    "prerequisite_courses": [
+      "NUR 101"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -2492,11 +2535,16 @@
     "location": "Health Sciences Center",
     "campus": "A",
     "mode": "in-person",
-    "instructor": "Justin D. Hargrave, Lynde Mickey",
-    "seats_open": 7,
+    "instructor": "Lynde Mickey, Neil A. Harchanko, Joy Oliver",
+    "seats_open": 0,
     "seats_total": 40,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 175 or BIO 275 or PSY 241 and NUR 111",
+    "prerequisite_courses": [
+      "BIO 175",
+      "BIO 275",
+      "PSY 241",
+      "NUR 111"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -2513,11 +2561,16 @@
     "location": "Transylvania County",
     "campus": "T",
     "mode": "in-person",
-    "instructor": "Justin D. Hargrave, Lynde Mickey",
-    "seats_open": 31,
+    "instructor": "Lynde Mickey, Karen R. Cochran, Joy Oliver",
+    "seats_open": 28,
     "seats_total": 40,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 175 or BIO 275 or PSY 241 and NUR 111",
+    "prerequisite_courses": [
+      "BIO 175",
+      "BIO 275",
+      "PSY 241",
+      "NUR 111"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -2535,7 +2588,7 @@
     "campus": "A",
     "mode": "in-person",
     "instructor": "Danielle N. Bruckner",
-    "seats_open": 14,
+    "seats_open": 9,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2555,8 +2608,8 @@
     "location": "Henderson County",
     "campus": "F",
     "mode": "zoom",
-    "instructor": null,
-    "seats_open": 23,
+    "instructor": "Kristel D. Phillips",
+    "seats_open": 21,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2577,10 +2630,12 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Eric T. Williamson",
-    "seats_open": 4,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -2598,52 +2653,12 @@
     "campus": "T",
     "mode": "in-person",
     "instructor": "Eric T. Williamson, Jennifer S. Treadway",
-    "seats_open": 30,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "blue-ridge",
-    "term": "2026SU",
-    "course_prefix": "PHY",
-    "course_number": "110",
-    "course_title": "Conceptual Physics",
-    "credits": 3,
-    "crn": "PHY-110-401W",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-06-01",
-    "location": "Henderson County",
-    "campus": "F",
-    "mode": "zoom",
-    "instructor": null,
-    "seats_open": 23,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "blue-ridge",
-    "term": "2026SU",
-    "course_prefix": "PHY",
-    "course_number": "110A",
-    "course_title": "Conceptual Physics Lab",
-    "credits": 1,
-    "crn": "PHY-110A-401W",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-06-01",
-    "location": "Henderson County",
-    "campus": "F",
-    "mode": "zoom",
-    "instructor": null,
-    "seats_open": 23,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 11,
+    "seats_total": 20,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -2661,10 +2676,13 @@
     "campus": "F",
     "mode": "in-person",
     "instructor": "Ethan E. Kilgore",
-    "seats_open": 15,
+    "seats_open": 10,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 171 or MAT 271",
+    "prerequisite_courses": [
+      "MAT 171",
+      "MAT 271"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -2682,7 +2700,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Melissa H. Smith",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2703,7 +2721,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Melissa H. Smith",
-    "seats_open": 12,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2724,8 +2742,29 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Brent A. Adriance",
-    "seats_open": 8,
+    "seats_open": 0,
     "seats_total": 25,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "blue-ridge",
+    "term": "2026SU",
+    "course_prefix": "PSY",
+    "course_number": "150",
+    "course_title": "General Psychology",
+    "credits": 3,
+    "crn": "PSY-150-404W",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-01",
+    "location": "Henderson County",
+    "campus": "F",
+    "mode": "zoom",
+    "instructor": "Matthew L. Belcher",
+    "seats_open": 20,
+    "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2745,7 +2784,7 @@
     "campus": "T",
     "mode": "in-person",
     "instructor": "Cynthia L. Biddle",
-    "seats_open": 28,
+    "seats_open": 25,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2766,10 +2805,12 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Matthew L. Belcher",
-    "seats_open": 2,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -2787,10 +2828,12 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Matthew L. Belcher",
-    "seats_open": 23,
+    "seats_open": 14,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -2808,7 +2851,7 @@
     "campus": "F",
     "mode": "in-person",
     "instructor": "Eric T. Williamson",
-    "seats_open": 21,
+    "seats_open": 17,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2829,7 +2872,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Kimberly A. Kiesewetter",
-    "seats_open": 9,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2850,7 +2893,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Laurel E. Holland",
-    "seats_open": 21,
+    "seats_open": 13,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2871,7 +2914,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Kimberly A. Kiesewetter",
-    "seats_open": 18,
+    "seats_open": 7,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2892,10 +2935,12 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Miroslava C. Vera",
-    "seats_open": 11,
+    "seats_open": 2,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 181",
+    "prerequisite_courses": [
+      "SPA 181"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -2915,8 +2960,11 @@
     "instructor": "Miroslava C. Vera",
     "seats_open": 17,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 182 and SPA 111",
+    "prerequisite_courses": [
+      "SPA 182",
+      "SPA 111"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -2934,7 +2982,7 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Miroslava C. Vera",
-    "seats_open": 11,
+    "seats_open": 2,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2957,8 +3005,11 @@
     "instructor": "Miroslava C. Vera",
     "seats_open": 17,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 111 and SPA 112",
+    "prerequisite_courses": [
+      "SPA 111",
+      "SPA 112"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -2976,10 +3027,13 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Miroslava C. Vera",
-    "seats_open": 18,
+    "seats_open": 12,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 112 and SPA 281",
+    "prerequisite_courses": [
+      "SPA 112",
+      "SPA 281"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -2997,10 +3051,12 @@
     "campus": "F",
     "mode": "zoom",
     "instructor": "Miroslava C. Vera",
-    "seats_open": 18,
+    "seats_open": 13,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 211",
+    "prerequisite_courses": [
+      "SPA 211"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -3020,8 +3076,10 @@
     "instructor": "Chad Bandy",
     "seats_open": 8,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SRV 110",
+    "prerequisite_courses": [
+      "SRV 110"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -3041,8 +3099,10 @@
     "instructor": "Stephanie N. Wooten",
     "seats_open": 2,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SUR 123",
+    "prerequisite_courses": [
+      "SUR 123"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -3059,11 +3119,14 @@
     "location": "Off Campus Locations",
     "campus": "O",
     "mode": "in-person",
-    "instructor": "Penny L. Sindelar",
+    "instructor": "Stephanie N. Wooten",
     "seats_open": 2,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SUR 123 and SUR 134",
+    "prerequisite_courses": [
+      "SUR 123",
+      "SUR 134"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -3080,8 +3143,8 @@
     "location": "Henderson County",
     "campus": "F",
     "mode": "in-person",
-    "instructor": "Adam L. Riddle",
-    "seats_open": 13,
+    "instructor": "Brian P. Johnson",
+    "seats_open": 11,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3093,16 +3156,16 @@
     "course_number": "140",
     "course_title": "Transp Climate Control",
     "credits": 2,
-    "crn": "TRN-140-721",
-    "days": "M W",
+    "crn": "TRN-140-722",
+    "days": "T Th",
     "start_time": "8:00 AM",
     "end_time": "8:45 AM",
     "start_date": "2026-05-18",
     "location": "Transylvania County",
     "campus": "T",
     "mode": "in-person",
-    "instructor": "Eric D. Stephens",
-    "seats_open": 19,
+    "instructor": "Eric D. Stephens, Joshua L. Jones",
+    "seats_open": 18,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3122,11 +3185,13 @@
     "location": "Henderson County",
     "campus": "F",
     "mode": "in-person",
-    "instructor": "Adam L. Riddle",
-    "seats_open": 13,
+    "instructor": "Brian P. Johnson",
+    "seats_open": 11,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "TRN 140",
+    "prerequisite_courses": [
+      "TRN 140"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -3135,19 +3200,21 @@
     "course_number": "140A",
     "course_title": "Transp Climate Cont Lab",
     "credits": 2,
-    "crn": "TRN-140A-721",
-    "days": "M W",
+    "crn": "TRN-140A-722",
+    "days": "T Th",
     "start_time": "10:20 AM",
     "end_time": "11:05 AM",
     "start_date": "2026-05-18",
     "location": "Transylvania County",
     "campus": "T",
     "mode": "in-person",
-    "instructor": "Eric D. Stephens",
-    "seats_open": 19,
+    "instructor": "Eric D. Stephens, Joshua L. Jones",
+    "seats_open": 18,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "TRN 140",
+    "prerequisite_courses": [
+      "TRN 140"
+    ]
   },
   {
     "college_code": "blue-ridge",
@@ -3165,7 +3232,7 @@
     "campus": "F",
     "mode": "in-person",
     "instructor": "Rachel A. Meriwether",
-    "seats_open": 10,
+    "seats_open": 9,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3186,29 +3253,29 @@
     "campus": "O",
     "mode": "in-person",
     "instructor": "Joe D. Shook, Brenda C. Blackburn, Jana W. Hosmer",
-    "seats_open": null,
-    "seats_total": null,
+    "seats_open": 0,
+    "seats_total": 0,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
   {
     "college_code": "blue-ridge",
     "term": "2026SU",
-    "course_prefix": "WLD",
-    "course_number": "141",
-    "course_title": "Symbols & Specifications",
-    "credits": 3,
-    "crn": "WLD-141-711",
-    "days": "T Th",
-    "start_time": "5:30 PM",
-    "end_time": "7:00 PM",
+    "course_prefix": "WBL",
+    "course_number": "112",
+    "course_title": "Work-Based Learning I",
+    "credits": 2,
+    "crn": "WBL-112-701",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
     "start_date": "2026-05-18",
-    "location": "Henderson County",
-    "campus": "F",
+    "location": "Off Campus Locations",
+    "campus": "O",
     "mode": "in-person",
-    "instructor": "Andrew C. Campbell",
-    "seats_open": 15,
-    "seats_total": 15,
+    "instructor": "Brenda C. Blackburn, Joe D. Shook",
+    "seats_open": null,
+    "seats_total": null,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -3228,7 +3295,7 @@
     "campus": "F",
     "mode": "in-person",
     "instructor": "Benjamin Thomas Land",
-    "seats_open": 17,
+    "seats_open": 15,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3248,8 +3315,8 @@
     "location": "Henderson County",
     "campus": "F",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 19,
+    "instructor": "Elizabeth M. Pratt",
+    "seats_open": 18,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3270,7 +3337,7 @@
     "campus": "F",
     "mode": "in-person",
     "instructor": "Andrew C. Campbell",
-    "seats_open": 18,
+    "seats_open": 14,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3291,9 +3358,11 @@
     "campus": "F",
     "mode": "in-person",
     "instructor": "Andrew C. Campbell",
-    "seats_open": 9,
+    "seats_open": 3,
     "seats_total": 14,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 151",
+    "prerequisite_courses": [
+      "WLD 151"
+    ]
   }
 ]

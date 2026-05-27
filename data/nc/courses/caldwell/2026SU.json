@@ -15,7 +15,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Crump, T",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -36,7 +36,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Crump, T",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -57,7 +57,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Crump, T",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -78,7 +78,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Crump, T",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -99,7 +99,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Crump, T, Barnett, H",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -141,8 +141,8 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Sawyer, M",
-    "seats_open": 25,
-    "seats_total": 25,
+    "seats_open": 0,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -162,10 +162,12 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Sawyer, M",
-    "seats_open": 25,
+    "seats_open": 11,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ACC 120",
+    "prerequisite_courses": [
+      "ACC 120"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -183,10 +185,12 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Smith, R",
-    "seats_open": 25,
+    "seats_open": 19,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ACC 120",
+    "prerequisite_courses": [
+      "ACC 120"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -204,7 +208,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Thielemann, T",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -216,16 +220,37 @@
     "course_number": "111",
     "course_title": "Art Appreciation",
     "credits": 3,
-    "crn": "ART-111-680W",
-    "days": "T Th",
-    "start_time": "10:00 AM",
-    "end_time": "11:50 AM",
+    "crn": "ART-111-621",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
     "start_date": "2026-06-02",
-    "location": "Watauga",
-    "campus": "W",
-    "mode": "in-person",
+    "location": "On Line",
+    "campus": "B",
+    "mode": "online",
+    "instructor": "Thielemann, T",
+    "seats_open": 0,
+    "seats_total": 25,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "caldwell",
+    "term": "2026SU",
+    "course_prefix": "ART",
+    "course_number": "111",
+    "course_title": "Art Appreciation",
+    "credits": 3,
+    "crn": "ART-111-622",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-02",
+    "location": "On Line",
+    "campus": "B",
+    "mode": "online",
     "instructor": "Flanigan, M",
-    "seats_open": 25,
+    "seats_open": 3,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -246,8 +271,50 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Treide, R",
-    "seats_open": 25,
+    "seats_open": 14,
     "seats_total": 25,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "caldwell",
+    "term": "2026SU",
+    "course_prefix": "ART",
+    "course_number": "212",
+    "course_title": "Gallery Assistantship I",
+    "credits": 3,
+    "crn": "ART-212-780C",
+    "days": "M W",
+    "start_time": "1:30 PM",
+    "end_time": "4:15 PM",
+    "start_date": "2026-06-02",
+    "location": "Caldwell",
+    "campus": "C",
+    "mode": "in-person",
+    "instructor": "Jensen, K",
+    "seats_open": 5,
+    "seats_total": 10,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "caldwell",
+    "term": "2026SU",
+    "course_prefix": "ART",
+    "course_number": "212",
+    "course_title": "Gallery Assistantship I",
+    "credits": 3,
+    "crn": "ART-212-780W",
+    "days": "M W",
+    "start_time": "1:30 PM",
+    "end_time": "4:15 PM",
+    "start_date": "2026-06-02",
+    "location": "Watauga",
+    "campus": "W",
+    "mode": "in-person",
+    "instructor": "Jensen, K",
+    "seats_open": 6,
+    "seats_total": 10,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -267,7 +334,7 @@
     "campus": "W",
     "mode": "in-person",
     "instructor": "Flanigan, M",
-    "seats_open": 12,
+    "seats_open": 8,
     "seats_total": 12,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -288,10 +355,12 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Hollandsworth, J",
-    "seats_open": 30,
+    "seats_open": 8,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AST 151A",
+    "prerequisite_courses": [
+      "AST 151A"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -309,10 +378,12 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Hollandsworth, J",
-    "seats_open": 30,
+    "seats_open": 8,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AST 151",
+    "prerequisite_courses": [
+      "AST 151"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -330,10 +401,12 @@
     "campus": "TAPS",
     "mode": "in-person",
     "instructor": "Jennings, R",
-    "seats_open": 16,
+    "seats_open": 0,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AUT 181",
+    "prerequisite_courses": [
+      "AUT 181"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -351,7 +424,7 @@
     "campus": "TAPS",
     "mode": "in-person",
     "instructor": "Moore, S",
-    "seats_open": 18,
+    "seats_open": 12,
     "seats_total": 18,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -372,7 +445,7 @@
     "campus": "TAPS",
     "mode": "in-person",
     "instructor": "Moore, S",
-    "seats_open": 18,
+    "seats_open": 14,
     "seats_total": 18,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -393,7 +466,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Williams, L",
-    "seats_open": 30,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -414,7 +487,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Williams, L",
-    "seats_open": 30,
+    "seats_open": 10,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -435,7 +508,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "DeViney, D",
-    "seats_open": 30,
+    "seats_open": 9,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -456,7 +529,49 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Williams, A",
-    "seats_open": 30,
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "caldwell",
+    "term": "2026SU",
+    "course_prefix": "BIO",
+    "course_number": "168",
+    "course_title": "Anatomy and Physiology I",
+    "credits": 4,
+    "crn": "BIO-168-621",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-02",
+    "location": "On Line",
+    "campus": "B",
+    "mode": "online",
+    "instructor": "Williams, A",
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "caldwell",
+    "term": "2026SU",
+    "course_prefix": "BIO",
+    "course_number": "168",
+    "course_title": "Anatomy and Physiology I",
+    "credits": 4,
+    "crn": "BIO-168-622",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-02",
+    "location": "On Line",
+    "campus": "B",
+    "mode": "online",
+    "instructor": "Ray-Osborn, C",
+    "seats_open": 8,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -471,13 +586,13 @@
     "crn": "BIO-168-680C",
     "days": "W",
     "start_time": "10:00 AM",
-    "end_time": "10:50 AM",
+    "end_time": "11:50 AM",
     "start_date": "2026-06-02",
     "location": "Caldwell",
     "campus": "C",
     "mode": "in-person",
     "instructor": "Williams, A",
-    "seats_open": 24,
+    "seats_open": 15,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -498,10 +613,35 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Semo, L",
-    "seats_open": 30,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 168",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
+  },
+  {
+    "college_code": "caldwell",
+    "term": "2026SU",
+    "course_prefix": "BIO",
+    "course_number": "169",
+    "course_title": "Anatomy and Physiology II",
+    "credits": 4,
+    "crn": "BIO-169-621",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-02",
+    "location": "On Line",
+    "campus": "B",
+    "mode": "online",
+    "instructor": "Rhodes, R",
+    "seats_open": 18,
+    "seats_total": 30,
+    "prerequisite_text": "BIO 168",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -519,10 +659,12 @@
     "campus": "C",
     "mode": "in-person",
     "instructor": "Semo, L",
-    "seats_open": 24,
+    "seats_open": 20,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 168",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -540,10 +682,16 @@
     "campus": "B",
     "mode": "online",
     "instructor": "DeViney, D",
-    "seats_open": 30,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 110 or BIO 111 or BIO 163 or BIO 165 or BIO 168",
+    "prerequisite_courses": [
+      "BIO 110",
+      "BIO 111",
+      "BIO 163",
+      "BIO 165",
+      "BIO 168"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -561,7 +709,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Hubner, M",
-    "seats_open": 30,
+    "seats_open": 1,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -582,7 +730,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Hubner, M",
-    "seats_open": 30,
+    "seats_open": 4,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -603,7 +751,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Hubner, M",
-    "seats_open": 30,
+    "seats_open": 2,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -624,10 +772,12 @@
     "campus": "O",
     "mode": "in-person",
     "instructor": "Duncan, S",
-    "seats_open": 8,
+    "seats_open": 1,
     "seats_total": 8,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CVS 161",
+    "prerequisite_courses": [
+      "CVS 161"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -645,10 +795,12 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Duncan, S",
-    "seats_open": 1,
+    "seats_open": 0,
     "seats_total": 1,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CVS 163",
+    "prerequisite_courses": [
+      "CVS 163"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -666,7 +818,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Sherman, S",
-    "seats_open": 30,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -687,8 +839,8 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Chester, D",
-    "seats_open": 25,
-    "seats_total": 25,
+    "seats_open": 0,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -708,8 +860,8 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Lattimore, D",
-    "seats_open": 25,
-    "seats_total": 25,
+    "seats_open": 0,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -728,9 +880,9 @@
     "location": "On Line",
     "campus": "B",
     "mode": "online",
-    "instructor": "Lattimore, D",
-    "seats_open": 25,
-    "seats_total": 25,
+    "instructor": "Chester, D",
+    "seats_open": 1,
+    "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -749,51 +901,9 @@
     "location": "On Line",
     "campus": "B",
     "mode": "online",
-    "instructor": "Petree, W",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "caldwell",
-    "term": "2026SU",
-    "course_prefix": "COM",
-    "course_number": "120",
-    "course_title": "Intro Interpersonal Com",
-    "credits": 3,
-    "crn": "COM-120-680C",
-    "days": "M W",
-    "start_time": "11:00 AM",
-    "end_time": "11:50 AM",
-    "start_date": "2026-06-02",
-    "location": "Caldwell",
-    "campus": "C",
-    "mode": "in-person",
-    "instructor": "Petree, W",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "caldwell",
-    "term": "2026SU",
-    "course_prefix": "COM",
-    "course_number": "120",
-    "course_title": "Intro Interpersonal Com",
-    "credits": 3,
-    "crn": "COM-120-680W",
-    "days": "T Th",
-    "start_time": "11:00 AM",
-    "end_time": "11:50 AM",
-    "start_date": "2026-06-02",
-    "location": "Watauga",
-    "campus": "W",
-    "mode": "in-person",
     "instructor": "Chester, D",
-    "seats_open": 25,
-    "seats_total": 25,
+    "seats_open": 0,
+    "seats_total": 31,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -833,11 +943,36 @@
     "location": "On Line",
     "campus": "B",
     "mode": "online",
-    "instructor": "Chester, D",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "instructor": "Petree, W",
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
+  },
+  {
+    "college_code": "caldwell",
+    "term": "2026SU",
+    "course_prefix": "COM",
+    "course_number": "231",
+    "course_title": "Public Speaking",
+    "credits": 3,
+    "crn": "COM-231-621",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-02",
+    "location": "On Line",
+    "campus": "B",
+    "mode": "online",
+    "instructor": "Petree, W",
+    "seats_open": 15,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -855,7 +990,28 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Wright, H",
-    "seats_open": 40,
+    "seats_open": 13,
+    "seats_total": 40,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "caldwell",
+    "term": "2026SU",
+    "course_prefix": "CIS",
+    "course_number": "110",
+    "course_title": "Introduction to Computers",
+    "credits": 3,
+    "crn": "CIS-110-621",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-02",
+    "location": "On Line",
+    "campus": "B",
+    "mode": "online",
+    "instructor": "Wright, H",
+    "seats_open": 23,
     "seats_total": 40,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -876,10 +1032,12 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Wang, M",
-    "seats_open": 30,
+    "seats_open": 28,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CSC 121",
+    "prerequisite_courses": [
+      "CSC 121"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -897,7 +1055,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Wright, H",
-    "seats_open": 40,
+    "seats_open": 21,
     "seats_total": 40,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -917,11 +1075,14 @@
     "location": "Caldwell",
     "campus": "C",
     "mode": "in-person",
-    "instructor": "Whisnant, A",
-    "seats_open": 40,
+    "instructor": "Whisnant, A, Carnes, S",
+    "seats_open": 7,
     "seats_total": 40,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -938,11 +1099,14 @@
     "location": "Caldwell",
     "campus": "C",
     "mode": "in-person",
-    "instructor": "Rector, L, Whisnant, A, Carnes, S",
-    "seats_open": 40,
+    "instructor": "Rector, L, Whisnant, A, Carnes, S, Moody, C",
+    "seats_open": 6,
     "seats_total": 40,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -954,16 +1118,19 @@
     "crn": "COS-223-680C",
     "days": "F",
     "start_time": "8:00 AM",
-    "end_time": "11:00 AM",
+    "end_time": "12:00 PM",
     "start_date": "2026-06-02",
     "location": "Caldwell",
     "campus": "C",
     "mode": "in-person",
     "instructor": "Carnes, S, Rector, L",
-    "seats_open": 20,
+    "seats_open": 1,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -981,7 +1148,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Teague, A",
-    "seats_open": 30,
+    "seats_open": 18,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1002,7 +1169,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Cooper, E",
-    "seats_open": 30,
+    "seats_open": 14,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1023,7 +1190,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Hyatt, M",
-    "seats_open": 30,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1044,29 +1211,8 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Hyatt, M",
-    "seats_open": 30,
+    "seats_open": 8,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "caldwell",
-    "term": "2026SU",
-    "course_prefix": "EDU",
-    "course_number": "119",
-    "course_title": "Intro to Early Child Education",
-    "credits": 4,
-    "crn": "EDU-119-101",
-    "days": "M W",
-    "start_time": "8:30 AM",
-    "end_time": "11:30 AM",
-    "start_date": "2026-05-18",
-    "location": "Caldwell",
-    "campus": "C",
-    "mode": "in-person",
-    "instructor": "White, A",
-    "seats_open": 25,
-    "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1086,7 +1232,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "White, A",
-    "seats_open": 20,
+    "seats_open": 11,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1107,10 +1253,15 @@
     "campus": "B",
     "mode": "online",
     "instructor": "White, A",
-    "seats_open": 25,
+    "seats_open": 21,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EDU 144 and EDU 145 and PSY 244 and PSY 245",
+    "prerequisite_courses": [
+      "EDU 144",
+      "EDU 145",
+      "PSY 244",
+      "PSY 245"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -1128,8 +1279,31 @@
     "campus": "B",
     "mode": "online",
     "instructor": "White, A",
-    "seats_open": 25,
+    "seats_open": 12,
     "seats_total": 25,
+    "prerequisite_text": "EDU 119",
+    "prerequisite_courses": [
+      "EDU 119"
+    ]
+  },
+  {
+    "college_code": "caldwell",
+    "term": "2026SU",
+    "course_prefix": "ELN",
+    "course_number": "133",
+    "course_title": "Digital Electronics",
+    "credits": 4,
+    "crn": "ELN-133-680C",
+    "days": "M W",
+    "start_time": "12:00 PM",
+    "end_time": "1:50 PM",
+    "start_date": "2026-06-02",
+    "location": "Transportation/Public Services",
+    "campus": "TAPS",
+    "mode": "in-person",
+    "instructor": "McGuire, L",
+    "seats_open": 17,
+    "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1149,10 +1323,13 @@
     "campus": "TAPS",
     "mode": "in-person",
     "instructor": "McGuire, L",
-    "seats_open": 20,
+    "seats_open": 8,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ELC 112 or ELC 131",
+    "prerequisite_courses": [
+      "ELC 112",
+      "ELC 131"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -1170,7 +1347,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Staines, N",
-    "seats_open": 30,
+    "seats_open": 13,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1191,7 +1368,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Greene, D",
-    "seats_open": 20,
+    "seats_open": 0,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1212,7 +1389,28 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Greene, D",
-    "seats_open": 20,
+    "seats_open": 0,
+    "seats_total": 20,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "caldwell",
+    "term": "2026SU",
+    "course_prefix": "ENG",
+    "course_number": "025",
+    "course_title": "College English Skills",
+    "credits": 3,
+    "crn": "ENG-025-622",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-02",
+    "location": "On Line",
+    "campus": "B",
+    "mode": "online",
+    "instructor": "Greene, D",
+    "seats_open": 8,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1233,28 +1431,7 @@
     "campus": "C",
     "mode": "in-person",
     "instructor": "Greene, D",
-    "seats_open": 20,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "caldwell",
-    "term": "2026SU",
-    "course_prefix": "ENG",
-    "course_number": "025",
-    "course_title": "College English Skills",
-    "credits": 3,
-    "crn": "ENG-025-680W",
-    "days": "T Th",
-    "start_time": "10:00 AM",
-    "end_time": "10:50 AM",
-    "start_date": "2026-06-02",
-    "location": "Watauga",
-    "campus": "W",
-    "mode": "in-person",
-    "instructor": "Greene, D",
-    "seats_open": 20,
+    "seats_open": 14,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1275,10 +1452,12 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Hoover, K",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -1296,10 +1475,12 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Hoover, K",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -1316,11 +1497,13 @@
     "location": "On Line",
     "campus": "B",
     "mode": "online",
-    "instructor": "Chapman, J",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "instructor": "Shaut, S",
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -1333,15 +1516,17 @@
     "days": "M T W Th F Sa Su",
     "start_time": "",
     "end_time": "",
-    "start_date": "2026-06-01",
+    "start_date": "2026-06-02",
     "location": "On Line",
     "campus": "B",
     "mode": "online",
     "instructor": "Harrison, K",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 4,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -1359,31 +1544,12 @@
     "campus": "C",
     "mode": "in-person",
     "instructor": "Barnett, H",
-    "seats_open": 25,
+    "seats_open": 14,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "caldwell",
-    "term": "2026SU",
-    "course_prefix": "ENG",
-    "course_number": "111",
-    "course_title": "Writing and Inquiry",
-    "credits": 3,
-    "crn": "ENG-111-680W",
-    "days": "M W",
-    "start_time": "10:00 AM",
-    "end_time": "11:15 AM",
-    "start_date": "2026-06-02",
-    "location": "Watauga",
-    "campus": "W",
-    "mode": "in-person",
-    "instructor": "Shaut, S",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -1401,10 +1567,12 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Shaut, S",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 111 (min C)",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -1422,10 +1590,12 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Shaut, S",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 111 (min C)",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -1442,53 +1612,36 @@
     "location": "On Line",
     "campus": "B",
     "mode": "online",
-    "instructor": "Hoover, K",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "caldwell",
-    "term": "2026SU",
-    "course_prefix": "ENG",
-    "course_number": "112",
-    "course_title": "Writing/Research in the Disc",
-    "credits": 3,
-    "crn": "ENG-112-680C",
-    "days": "M W",
-    "start_time": "8:00 AM",
-    "end_time": "9:15 AM",
-    "start_date": "2026-06-02",
-    "location": "Caldwell",
-    "campus": "C",
-    "mode": "in-person",
-    "instructor": "Barnett, H",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "caldwell",
-    "term": "2026SU",
-    "course_prefix": "ENG",
-    "course_number": "112",
-    "course_title": "Writing/Research in the Disc",
-    "credits": 3,
-    "crn": "ENG-112-680W",
-    "days": "T Th",
-    "start_time": "8:30 AM",
-    "end_time": "9:45 AM",
-    "start_date": "2026-06-02",
-    "location": "Watauga",
-    "campus": "W",
-    "mode": "in-person",
     "instructor": "Shaut, S",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 111 (min C)",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
+  },
+  {
+    "college_code": "caldwell",
+    "term": "2026SU",
+    "course_prefix": "ENG",
+    "course_number": "112",
+    "course_title": "Writing/Research in the Disc",
+    "credits": 3,
+    "crn": "ENG-112-623",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-02",
+    "location": "On Line",
+    "campus": "B",
+    "mode": "online",
+    "instructor": "Barnett, H",
+    "seats_open": 9,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 111 (min C)",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -1506,10 +1659,12 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Hoover, K",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 3,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 112",
+    "prerequisite_courses": [
+      "ENG 112"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -1527,10 +1682,14 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Barnett, H",
-    "seats_open": 25,
+    "seats_open": 17,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 112 or ENG 113 or ENG 114",
+    "prerequisite_courses": [
+      "ENG 112",
+      "ENG 113",
+      "ENG 114"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -1548,7 +1707,7 @@
     "campus": "C",
     "mode": "in-person",
     "instructor": "Johnson, K",
-    "seats_open": 14,
+    "seats_open": 7,
     "seats_total": 14,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1569,7 +1728,7 @@
     "campus": "C",
     "mode": "in-person",
     "instructor": "Johnson, K",
-    "seats_open": 14,
+    "seats_open": 7,
     "seats_total": 14,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1590,7 +1749,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Whitley, R",
-    "seats_open": 30,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1611,7 +1770,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Klamborowski, J",
-    "seats_open": 30,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1632,7 +1791,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Brehun, M",
-    "seats_open": 25,
+    "seats_open": 18,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1653,7 +1812,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Brehun, M",
-    "seats_open": 25,
+    "seats_open": 6,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1674,7 +1833,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Darling, M",
-    "seats_open": 30,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1695,7 +1854,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Chester, D",
-    "seats_open": 30,
+    "seats_open": 7,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1716,7 +1875,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Faucette, M",
-    "seats_open": 30,
+    "seats_open": 17,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1737,10 +1896,12 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Cooper, E",
-    "seats_open": 30,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 35,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -1757,8 +1918,8 @@
     "location": "On Line",
     "campus": "B",
     "mode": "online",
-    "instructor": "Wright, H",
-    "seats_open": 40,
+    "instructor": "Early, J",
+    "seats_open": 29,
     "seats_total": 40,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1766,63 +1927,21 @@
   {
     "college_code": "caldwell",
     "term": "2026SU",
-    "course_prefix": "MAC",
-    "course_number": "122",
-    "course_title": "CNC Turning",
-    "credits": 2,
-    "crn": "MAC-122-680C",
-    "days": "M W",
-    "start_time": "10:00 AM",
-    "end_time": "12:20 PM",
-    "start_date": "2026-06-02",
-    "location": "Transportation/Public Services",
-    "campus": "TAPS",
-    "mode": "in-person",
-    "instructor": "Cavanaugh, J",
-    "seats_open": 15,
-    "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "caldwell",
-    "term": "2026SU",
-    "course_prefix": "MAC",
-    "course_number": "143",
-    "course_title": "Machining Appl III",
-    "credits": 4,
-    "crn": "MAC-143-680C",
-    "days": "M W",
-    "start_time": "1:00 PM",
-    "end_time": "3:50 PM",
-    "start_date": "2026-06-02",
-    "location": "Transportation/Public Services",
-    "campus": "TAPS",
-    "mode": "in-person",
-    "instructor": "Cavanaugh, J",
-    "seats_open": 15,
-    "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "caldwell",
-    "term": "2026SU",
     "course_prefix": "MNT",
-    "course_number": "240",
-    "course_title": "Indust Equip Troubleshoot",
+    "course_number": "165",
+    "course_title": "Mechanical Industrial Systems",
     "credits": 2,
-    "crn": "MNT-240-680C",
-    "days": "M W",
-    "start_time": "3:00 PM",
-    "end_time": "4:50 PM",
+    "crn": "MNT-165-620",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
     "start_date": "2026-06-02",
-    "location": "Transportation/Public Services",
-    "campus": "TAPS",
-    "mode": "in-person",
+    "location": "On Line",
+    "campus": "B",
+    "mode": "online",
     "instructor": "Deal, S",
-    "seats_open": 24,
-    "seats_total": 24,
+    "seats_open": 29,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1842,7 +1961,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Xiong, M",
-    "seats_open": 30,
+    "seats_open": 25,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1863,8 +1982,29 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Powell, M",
-    "seats_open": 25,
-    "seats_total": 25,
+    "seats_open": 2,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "caldwell",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "025",
+    "course_title": "Concepts of Essential Math/Sta",
+    "credits": 3,
+    "crn": "MAT-025-621",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-02",
+    "location": "On Line",
+    "campus": "B",
+    "mode": "online",
+    "instructor": "Powell, M",
+    "seats_open": 16,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1884,7 +2024,7 @@
     "campus": "C",
     "mode": "in-person",
     "instructor": "Rhoney, J",
-    "seats_open": 20,
+    "seats_open": 14,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1926,7 +2066,7 @@
     "campus": "C",
     "mode": "in-person",
     "instructor": "Rhoney, J",
-    "seats_open": 20,
+    "seats_open": 7,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1947,7 +2087,7 @@
     "campus": "W",
     "mode": "in-person",
     "instructor": "Rhoney, J",
-    "seats_open": 20,
+    "seats_open": 15,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1968,8 +2108,29 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Reagan, S",
-    "seats_open": 25,
-    "seats_total": 25,
+    "seats_open": 5,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "caldwell",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "110",
+    "course_title": "Math Measurement & Literacy",
+    "credits": 3,
+    "crn": "MAT-110-621",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-02",
+    "location": "On Line",
+    "campus": "B",
+    "mode": "online",
+    "instructor": "Joyner, F",
+    "seats_open": 18,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1989,10 +2150,12 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Powell, M",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 7,
+    "seats_total": 30,
+    "prerequisite_text": "MAT 035",
+    "prerequisite_courses": [
+      "MAT 035"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -2010,10 +2173,12 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Powell, M",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 11,
+    "seats_total": 30,
+    "prerequisite_text": "MAT 025",
+    "prerequisite_courses": [
+      "MAT 025"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -2031,10 +2196,58 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Rhoney, J",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "MAT 025",
+    "prerequisite_courses": [
+      "MAT 025"
+    ]
+  },
+  {
+    "college_code": "caldwell",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "152",
+    "course_title": "Statistical Methods I",
+    "credits": 4,
+    "crn": "MAT-152-621",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-02",
+    "location": "On Line",
+    "campus": "B",
+    "mode": "online",
+    "instructor": "Winebarger, J",
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "MAT 025",
+    "prerequisite_courses": [
+      "MAT 025"
+    ]
+  },
+  {
+    "college_code": "caldwell",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "152",
+    "course_title": "Statistical Methods I",
+    "credits": 4,
+    "crn": "MAT-152-622",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-02",
+    "location": "On Line",
+    "campus": "B",
+    "mode": "online",
+    "instructor": "Wandler, J",
+    "seats_open": 13,
+    "seats_total": 30,
+    "prerequisite_text": "MAT 025",
+    "prerequisite_courses": [
+      "MAT 025"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -2052,52 +2265,12 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Joyner, F",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "caldwell",
-    "term": "2026SU",
-    "course_prefix": "MAT",
-    "course_number": "171",
-    "course_title": "Precalculus Algebra",
-    "credits": 4,
-    "crn": "MAT-171-780C",
-    "days": "Th",
-    "start_time": "12:00 PM",
-    "end_time": "1:15 PM",
-    "start_date": "2026-06-02",
-    "location": "Caldwell",
-    "campus": "C",
-    "mode": "in-person",
-    "instructor": "Joyner, F",
-    "seats_open": 20,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "caldwell",
-    "term": "2026SU",
-    "course_prefix": "MAT",
-    "course_number": "171",
-    "course_title": "Precalculus Algebra",
-    "credits": 4,
-    "crn": "MAT-171-780W",
-    "days": "Th",
-    "start_time": "12:00 PM",
-    "end_time": "1:15 PM",
-    "start_date": "2026-06-02",
-    "location": "Watauga",
-    "campus": "W",
-    "mode": "in-person",
-    "instructor": "Joyner, F",
-    "seats_open": 20,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 3,
+    "seats_total": 30,
+    "prerequisite_text": "MAT 035",
+    "prerequisite_courses": [
+      "MAT 035"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -2115,7 +2288,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Elder, B",
-    "seats_open": 25,
+    "seats_open": 13,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2136,10 +2309,12 @@
     "campus": "C",
     "mode": "in-person",
     "instructor": "Wilcox, L",
-    "seats_open": 12,
+    "seats_open": 6,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MED 140",
+    "prerequisite_courses": [
+      "MED 140"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -2157,10 +2332,12 @@
     "campus": "O",
     "mode": "in-person",
     "instructor": "Nichols, R",
-    "seats_open": 9,
+    "seats_open": 1,
     "seats_total": 9,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SON 120",
+    "prerequisite_courses": [
+      "SON 120"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -2178,8 +2355,31 @@
     "campus": "O",
     "mode": "in-person",
     "instructor": "Duncan, S",
-    "seats_open": 8,
+    "seats_open": 1,
     "seats_total": 8,
+    "prerequisite_text": "SON 120",
+    "prerequisite_courses": [
+      "SON 120"
+    ]
+  },
+  {
+    "college_code": "caldwell",
+    "term": "2026SU",
+    "course_prefix": "MHA",
+    "course_number": "238",
+    "course_title": "Psychopathology",
+    "credits": 3,
+    "crn": "MHA-238-450",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-02",
+    "location": "On Line",
+    "campus": "B",
+    "mode": "online",
+    "instructor": "Brehun, M",
+    "seats_open": 0,
+    "seats_total": 1,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2199,7 +2399,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Brehun, M",
-    "seats_open": 25,
+    "seats_open": 15,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2220,8 +2420,8 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Butler, J",
-    "seats_open": 25,
-    "seats_total": 25,
+    "seats_open": 0,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2241,7 +2441,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Butler, J",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2262,7 +2462,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Tate-Gibson, C",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2283,8 +2483,29 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Butler, J",
-    "seats_open": 25,
+    "seats_open": 7,
     "seats_total": 25,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "caldwell",
+    "term": "2026SU",
+    "course_prefix": "MUS",
+    "course_number": "162",
+    "course_title": "Applied Music II",
+    "credits": 2,
+    "crn": "MUS-162-680C",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-02",
+    "location": "Caldwell",
+    "campus": "C",
+    "mode": "in-person",
+    "instructor": "Butler, J",
+    "seats_open": 0,
+    "seats_total": 1,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2303,8 +2524,8 @@
     "location": "On Line",
     "campus": "B",
     "mode": "online",
-    "instructor": "Hall, A",
-    "seats_open": 40,
+    "instructor": "Early, J",
+    "seats_open": 24,
     "seats_total": 40,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2325,10 +2546,12 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Deal, L",
-    "seats_open": 15,
+    "seats_open": 0,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NMT 110",
+    "prerequisite_courses": [
+      "NMT 110"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -2339,17 +2562,19 @@
     "credits": 4,
     "crn": "NMT-132-101",
     "days": "T W Th",
-    "start_time": "9:30 AM",
+    "start_time": "9:15 AM",
     "end_time": "11:55 AM",
     "start_date": "2026-06-02",
     "location": "Caldwell",
     "campus": "C",
     "mode": "in-person",
     "instructor": "Deal, L",
-    "seats_open": 15,
+    "seats_open": 0,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NMT 110",
+    "prerequisite_courses": [
+      "NMT 110"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -2366,11 +2591,13 @@
     "location": "Caldwell",
     "campus": "C",
     "mode": "in-person",
-    "instructor": "Wallace, N, Cline, A",
-    "seats_open": 40,
+    "instructor": "Wallace, N, Cline, A, Stein, R",
+    "seats_open": 2,
     "seats_total": 40,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 101",
+    "prerequisite_courses": [
+      "NUR 101"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -2387,11 +2614,13 @@
     "location": "Watauga",
     "campus": "W",
     "mode": "in-person",
-    "instructor": "Wallace, N, Cline, A",
-    "seats_open": 10,
+    "instructor": "Wallace, N, Cline, A, Stein, R",
+    "seats_open": 3,
     "seats_total": 10,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 101",
+    "prerequisite_courses": [
+      "NUR 101"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -2409,10 +2638,12 @@
     "campus": "C",
     "mode": "in-person",
     "instructor": "Patton, C, Martin, L, Owens, P, Cline, A",
-    "seats_open": 24,
+    "seats_open": 8,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 111",
+    "prerequisite_courses": [
+      "NUR 111"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -2430,10 +2661,12 @@
     "campus": "W",
     "mode": "in-person",
     "instructor": "Patton, C, Martin, L, Owens, P, Cline, A",
-    "seats_open": 18,
+    "seats_open": 11,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 111",
+    "prerequisite_courses": [
+      "NUR 111"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -2451,7 +2684,7 @@
     "campus": "C",
     "mode": "online",
     "instructor": "Everhart, D, Cline, A",
-    "seats_open": 50,
+    "seats_open": 13,
     "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2472,7 +2705,7 @@
     "campus": "W",
     "mode": "online",
     "instructor": "Everhart, D, Cline, A",
-    "seats_open": 20,
+    "seats_open": 8,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2493,7 +2726,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Elder, B",
-    "seats_open": 25,
+    "seats_open": 20,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2513,8 +2746,8 @@
     "location": "On Line",
     "campus": "B",
     "mode": "online",
-    "instructor": "Elder, B",
-    "seats_open": 25,
+    "instructor": "Bedford, A",
+    "seats_open": 4,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2535,10 +2768,12 @@
     "campus": "O",
     "mode": "in-person",
     "instructor": "Race, F",
-    "seats_open": 7,
+    "seats_open": 2,
     "seats_total": 7,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "OPH 116",
+    "prerequisite_courses": [
+      "OPH 116"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -2548,18 +2783,21 @@
     "course_title": "Pharm Quality Control",
     "credits": 4,
     "crn": "PTC-120-680C",
-    "days": "T Th",
-    "start_time": "1:00 PM",
-    "end_time": "2:15 PM",
+    "days": "T",
+    "start_time": "9:00 AM",
+    "end_time": "12:50 PM",
     "start_date": "2026-06-02",
     "location": "Caldwell",
     "campus": "C",
     "mode": "in-person",
     "instructor": "Sullins, P",
-    "seats_open": 24,
+    "seats_open": 19,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BPM 110 or BTC 181",
+    "prerequisite_courses": [
+      "BPM 110",
+      "BTC 181"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -2577,7 +2815,7 @@
     "campus": "C",
     "mode": "in-person",
     "instructor": "Bowman, H",
-    "seats_open": 24,
+    "seats_open": 8,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2598,7 +2836,7 @@
     "campus": "C",
     "mode": "in-person",
     "instructor": "Harvey, K",
-    "seats_open": 24,
+    "seats_open": 8,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2619,10 +2857,12 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Hollandsworth, J",
-    "seats_open": 30,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PHY 110A",
+    "prerequisite_courses": [
+      "PHY 110A"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -2640,10 +2880,12 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Hollandsworth, J",
-    "seats_open": 30,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PHY 110",
+    "prerequisite_courses": [
+      "PHY 110"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -2661,7 +2903,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Chaffee, R",
-    "seats_open": 30,
+    "seats_open": 4,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2682,7 +2924,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Garner, E",
-    "seats_open": 30,
+    "seats_open": 1,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2703,7 +2945,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Wolfenbarger, C",
-    "seats_open": 30,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2724,7 +2966,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Garner, E",
-    "seats_open": 30,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2745,7 +2987,7 @@
     "campus": "C",
     "mode": "in-person",
     "instructor": "Hamby, R",
-    "seats_open": 24,
+    "seats_open": 12,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2766,7 +3008,7 @@
     "campus": "W",
     "mode": "in-person",
     "instructor": "Hamby, R",
-    "seats_open": 28,
+    "seats_open": 25,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2787,10 +3029,12 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Hamby, R",
-    "seats_open": 30,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -2808,10 +3052,12 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Hamby, R",
-    "seats_open": 30,
+    "seats_open": 14,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -2829,10 +3075,12 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Hamby, R",
-    "seats_open": 30,
+    "seats_open": 3,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -2850,7 +3098,7 @@
     "campus": "C",
     "mode": "in-person",
     "instructor": "Talbot, J",
-    "seats_open": 19,
+    "seats_open": 4,
     "seats_total": 19,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2871,7 +3119,7 @@
     "campus": "O",
     "mode": "in-person",
     "instructor": "Arrowood, B, Talbot, J",
-    "seats_open": 19,
+    "seats_open": 4,
     "seats_total": 19,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2892,7 +3140,7 @@
     "campus": "C",
     "mode": "in-person",
     "instructor": "Arrowood, B",
-    "seats_open": 19,
+    "seats_open": 4,
     "seats_total": 19,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2913,7 +3161,7 @@
     "campus": "B",
     "mode": "in-person",
     "instructor": "Starnes, K",
-    "seats_open": 30,
+    "seats_open": 12,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2934,7 +3182,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Shiles, C",
-    "seats_open": 30,
+    "seats_open": 2,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2955,7 +3203,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Shiles, C",
-    "seats_open": 30,
+    "seats_open": 25,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2976,7 +3224,7 @@
     "campus": "C",
     "mode": "in-person",
     "instructor": "Shiles, C",
-    "seats_open": 24,
+    "seats_open": 17,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2997,7 +3245,7 @@
     "campus": "W",
     "mode": "in-person",
     "instructor": "Shiles, C",
-    "seats_open": 30,
+    "seats_open": 26,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3018,7 +3266,28 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Errante, C",
-    "seats_open": 30,
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "caldwell",
+    "term": "2026SU",
+    "course_prefix": "SOC",
+    "course_number": "213",
+    "course_title": "Sociology of the Family",
+    "credits": 3,
+    "crn": "SOC-213-621",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-02",
+    "location": "On Line",
+    "campus": "B",
+    "mode": "online",
+    "instructor": "Errante, C",
+    "seats_open": 15,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3039,7 +3308,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Raby, J",
-    "seats_open": 24,
+    "seats_open": 5,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3060,7 +3329,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Raby, J",
-    "seats_open": 24,
+    "seats_open": 6,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3081,10 +3350,13 @@
     "campus": "C",
     "mode": "in-person",
     "instructor": "Johnson, K",
-    "seats_open": 14,
+    "seats_open": 7,
     "seats_total": 14,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "TRN 110 and TRN 120",
+    "prerequisite_courses": [
+      "TRN 110",
+      "TRN 120"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -3102,7 +3374,7 @@
     "campus": "TAPS",
     "mode": "in-person",
     "instructor": "Jennings, R",
-    "seats_open": 16,
+    "seats_open": 2,
     "seats_total": 16,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3123,7 +3395,7 @@
     "campus": "C",
     "mode": "in-person",
     "instructor": "Robert, A",
-    "seats_open": 18,
+    "seats_open": 11,
     "seats_total": 18,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3144,7 +3416,7 @@
     "campus": "C",
     "mode": "in-person",
     "instructor": "Robert, A",
-    "seats_open": 18,
+    "seats_open": 2,
     "seats_total": 18,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3165,10 +3437,14 @@
     "campus": "C",
     "mode": "in-person",
     "instructor": "Hudson, G",
-    "seats_open": 18,
+    "seats_open": 10,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 115 and WLD 121 and WLD 131",
+    "prerequisite_courses": [
+      "WLD 115",
+      "WLD 121",
+      "WLD 131"
+    ]
   },
   {
     "college_code": "caldwell",
@@ -3186,50 +3462,8 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Deal, S",
-    "seats_open": 30,
+    "seats_open": 10,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "caldwell",
-    "term": "2026SU",
-    "course_prefix": "WBL",
-    "course_number": "111H",
-    "course_title": "Work-Based Learning I-HRM",
-    "credits": 1,
-    "crn": "WBL-111H-101",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-18",
-    "location": "Off Campus",
-    "campus": "O",
-    "mode": "in-person",
-    "instructor": "Brossa, T",
-    "seats_open": 20,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "caldwell",
-    "term": "2026SU",
-    "course_prefix": "WBL",
-    "course_number": "111H",
-    "course_title": "Work-Based Learning I-HRM",
-    "credits": 1,
-    "crn": "WBL-111H-900",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-18",
-    "location": "Off Campus",
-    "campus": "O",
-    "mode": "in-person",
-    "instructor": "Brossa, T",
-    "seats_open": 20,
-    "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -3249,7 +3483,7 @@
     "campus": "O",
     "mode": "in-person",
     "instructor": "Hooks, T",
-    "seats_open": 20,
+    "seats_open": 15,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3270,49 +3504,7 @@
     "campus": "O",
     "mode": "in-person",
     "instructor": "Hooks, T",
-    "seats_open": 20,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "caldwell",
-    "term": "2026SU",
-    "course_prefix": "WBL",
-    "course_number": "112H",
-    "course_title": "Work-Based Learning I-Hosp",
-    "credits": 2,
-    "crn": "WBL-112H-101",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-18",
-    "location": "Off Campus",
-    "campus": "O",
-    "mode": "in-person",
-    "instructor": "Brossa, T",
-    "seats_open": 20,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "caldwell",
-    "term": "2026SU",
-    "course_prefix": "WBL",
-    "course_number": "112H",
-    "course_title": "Work-Based Learning I-Hosp",
-    "credits": 2,
-    "crn": "WBL-112H-900",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-18",
-    "location": "Off Campus",
-    "campus": "O",
-    "mode": "in-person",
-    "instructor": "Brossa, T",
-    "seats_open": 20,
+    "seats_open": 17,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3333,7 +3525,7 @@
     "campus": "O",
     "mode": "in-person",
     "instructor": "Hooks, T",
-    "seats_open": 20,
+    "seats_open": 15,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3354,91 +3546,7 @@
     "campus": "O",
     "mode": "in-person",
     "instructor": "Hooks, T",
-    "seats_open": 20,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "caldwell",
-    "term": "2026SU",
-    "course_prefix": "WBL",
-    "course_number": "121H",
-    "course_title": "Work-Based Learning II-Hosp",
-    "credits": 1,
-    "crn": "WBL-121H-101",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-18",
-    "location": "Off Campus",
-    "campus": "O",
-    "mode": "in-person",
-    "instructor": "Brossa, T",
-    "seats_open": 20,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "caldwell",
-    "term": "2026SU",
-    "course_prefix": "WBL",
-    "course_number": "121H",
-    "course_title": "Work-Based Learning II-Hosp",
-    "credits": 1,
-    "crn": "WBL-121H-900",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-18",
-    "location": "Off Campus",
-    "campus": "O",
-    "mode": "in-person",
-    "instructor": "Brossa, T",
-    "seats_open": 20,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "caldwell",
-    "term": "2026SU",
-    "course_prefix": "WBL",
-    "course_number": "121U",
-    "course_title": "Work-Based Learning II-CUL",
-    "credits": 1,
-    "crn": "WBL-121U-101",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-18",
-    "location": "Off Campus",
-    "campus": "O",
-    "mode": "in-person",
-    "instructor": "Hooks, T",
-    "seats_open": 20,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "caldwell",
-    "term": "2026SU",
-    "course_prefix": "WBL",
-    "course_number": "121U",
-    "course_title": "Work-Based Learning II-CUL",
-    "credits": 1,
-    "crn": "WBL-121U-900",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-18",
-    "location": "Off Campus",
-    "campus": "O",
-    "mode": "in-person",
-    "instructor": "Hooks, T",
-    "seats_open": 20,
+    "seats_open": 19,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []

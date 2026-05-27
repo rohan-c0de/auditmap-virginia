@@ -36,7 +36,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Victoria C. Burdo",
-    "seats_open": 7,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -57,7 +57,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Lynn K. Chamberlain",
-    "seats_open": 17,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -78,7 +78,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Lynn K. Chamberlain",
-    "seats_open": 18,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -99,7 +99,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Elizabeth K. Kachmor",
-    "seats_open": 22,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -120,7 +120,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Elizabeth K. Kachmor",
-    "seats_open": 23,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -141,7 +141,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Edward S. Creech",
-    "seats_open": 18,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -162,7 +162,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Edward S. Creech",
-    "seats_open": 22,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -183,10 +183,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Gwendolyn C. Green",
-    "seats_open": 13,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 27,
+    "prerequisite_text": "ACC 120",
+    "prerequisite_courses": [
+      "ACC 120"
+    ]
   },
   {
     "college_code": "johnston",
@@ -204,10 +206,37 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Gwendolyn C. Green",
-    "seats_open": 13,
+    "seats_open": 2,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ACC 115 or ACC 120",
+    "prerequisite_courses": [
+      "ACC 115",
+      "ACC 120"
+    ]
+  },
+  {
+    "college_code": "johnston",
+    "term": "2026SU",
+    "course_prefix": "ACC",
+    "course_number": "149",
+    "course_title": "Intro to ACC Spreadsheets",
+    "credits": 2,
+    "crn": "ACC-149-1A2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "On-Line Course",
+    "campus": "ONLIN",
+    "mode": "in-person",
+    "instructor": "Gwendolyn C. Green",
+    "seats_open": 16,
+    "seats_total": 25,
+    "prerequisite_text": "ACC 115 or ACC 120",
+    "prerequisite_courses": [
+      "ACC 115",
+      "ACC 120"
+    ]
   },
   {
     "college_code": "johnston",
@@ -225,7 +254,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Dazzala T. Cofield",
-    "seats_open": 16,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -246,7 +275,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Dazzala T. Cofield",
-    "seats_open": 24,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -267,7 +296,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Dazzala T. Cofield",
-    "seats_open": 25,
+    "seats_open": 5,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -288,7 +317,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Alexandra N. Morrissette",
-    "seats_open": 25,
+    "seats_open": 11,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -309,28 +338,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Alexandra N. Morrissette",
-    "seats_open": 22,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "johnston",
-    "term": "2026SU",
-    "course_prefix": "ART",
-    "course_number": "111",
-    "course_title": "Art Appreciation",
-    "credits": 3,
-    "crn": "ART-111-1A6",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-20",
-    "location": "On-Line Course",
-    "campus": "ONLIN",
-    "mode": "in-person",
-    "instructor": "Alexandra N. Morrissette",
-    "seats_open": 25,
+    "seats_open": 13,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -351,7 +359,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Brittany Stokes",
-    "seats_open": 16,
+    "seats_open": 4,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -372,7 +380,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "April A. Johnson",
-    "seats_open": 18,
+    "seats_open": 9,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -393,7 +401,7 @@
     "campus": "MAIN",
     "mode": "hybrid",
     "instructor": "Brittany Stokes",
-    "seats_open": 24,
+    "seats_open": 16,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -414,7 +422,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Bethany M. Tilton",
-    "seats_open": 17,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -435,7 +443,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Benjamin E. Novak",
-    "seats_open": 14,
+    "seats_open": 2,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -456,7 +464,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Jarett W. McLamb",
-    "seats_open": 21,
+    "seats_open": 6,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -477,7 +485,7 @@
     "campus": "MAIN",
     "mode": "hybrid",
     "instructor": "David J. Mense",
-    "seats_open": 21,
+    "seats_open": 13,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -498,10 +506,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Lisa D. Draughon",
-    "seats_open": 21,
+    "seats_open": 3,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 111",
+    "prerequisite_courses": [
+      "BIO 111"
+    ]
   },
   {
     "college_code": "johnston",
@@ -519,8 +529,8 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Sharon S. Clark",
-    "seats_open": 16,
-    "seats_total": 25,
+    "seats_open": 0,
+    "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -540,7 +550,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Krystal A. Martineau",
-    "seats_open": 16,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -561,7 +571,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Krystal A. Martineau",
-    "seats_open": 23,
+    "seats_open": 10,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -582,8 +592,8 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Nahel W. Awadallah",
-    "seats_open": 6,
-    "seats_total": 25,
+    "seats_open": 1,
+    "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -603,8 +613,8 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Nahel W. Awadallah",
-    "seats_open": 20,
-    "seats_total": 25,
+    "seats_open": 0,
+    "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -624,8 +634,50 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Victor J. Nasr",
-    "seats_open": 21,
+    "seats_open": 0,
     "seats_total": 25,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "johnston",
+    "term": "2026SU",
+    "course_prefix": "BIO",
+    "course_number": "168",
+    "course_title": "Anatomy and Physiology I",
+    "credits": 4,
+    "crn": "BIO-168-1A4",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "On-Line Course",
+    "campus": "ONLIN",
+    "mode": "in-person",
+    "instructor": "Victor J. Nasr",
+    "seats_open": 2,
+    "seats_total": 25,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "johnston",
+    "term": "2026SU",
+    "course_prefix": "BIO",
+    "course_number": "168",
+    "course_title": "Anatomy and Physiology I",
+    "credits": 4,
+    "crn": "BIO-168-1A5",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "On-Line Course",
+    "campus": "ONLIN",
+    "mode": "in-person",
+    "instructor": "Nahel W. Awadallah",
+    "seats_open": 0,
+    "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -645,7 +697,7 @@
     "campus": "MAIN",
     "mode": "hybrid",
     "instructor": "Shelly B. Watkins",
-    "seats_open": 10,
+    "seats_open": 1,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -666,10 +718,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "David T. Thomas",
-    "seats_open": 6,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 168",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
   },
   {
     "college_code": "johnston",
@@ -687,10 +741,35 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "David T. Thomas",
-    "seats_open": 20,
+    "seats_open": 5,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 168",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
+  },
+  {
+    "college_code": "johnston",
+    "term": "2026SU",
+    "course_prefix": "BIO",
+    "course_number": "169",
+    "course_title": "Anatomy and Physiology II",
+    "credits": 4,
+    "crn": "BIO-169-1A3",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "On-Line Course",
+    "campus": "ONLIN",
+    "mode": "in-person",
+    "instructor": "David T. Thomas",
+    "seats_open": 18,
+    "seats_total": 30,
+    "prerequisite_text": "BIO 168",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
   },
   {
     "college_code": "johnston",
@@ -708,10 +787,16 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Amber Baglio",
-    "seats_open": 5,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 28,
+    "prerequisite_text": "BIO 110 or BIO 111 or BIO 163 or BIO 165 or BIO 168",
+    "prerequisite_courses": [
+      "BIO 110",
+      "BIO 111",
+      "BIO 163",
+      "BIO 165",
+      "BIO 168"
+    ]
   },
   {
     "college_code": "johnston",
@@ -729,10 +814,16 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Amber Baglio",
-    "seats_open": 24,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 28,
+    "prerequisite_text": "BIO 110 or BIO 111 or BIO 163 or BIO 165 or BIO 168",
+    "prerequisite_courses": [
+      "BIO 110",
+      "BIO 111",
+      "BIO 163",
+      "BIO 165",
+      "BIO 168"
+    ]
   },
   {
     "college_code": "johnston",
@@ -750,7 +841,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Kristopher R. Bradshaw",
-    "seats_open": 9,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -771,7 +862,28 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Nicholas I. Ogada",
-    "seats_open": 17,
+    "seats_open": 1,
+    "seats_total": 25,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "johnston",
+    "term": "2026SU",
+    "course_prefix": "BUS",
+    "course_number": "110",
+    "course_title": "Introduction to Business",
+    "credits": 3,
+    "crn": "BUS-110-1A3",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "On-Line Course",
+    "campus": "ONLIN",
+    "mode": "in-person",
+    "instructor": "Kristopher R. Bradshaw",
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -792,7 +904,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Carol L. Fleming",
-    "seats_open": 16,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -812,8 +924,8 @@
     "location": "On-Line Course",
     "campus": "ONLIN",
     "mode": "in-person",
-    "instructor": "Carol L. Fleming",
-    "seats_open": 24,
+    "instructor": "Evans J. Haile",
+    "seats_open": 8,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -834,7 +946,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Nicholas I. Ogada",
-    "seats_open": 14,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -855,7 +967,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Nicholas I. Ogada",
-    "seats_open": 19,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -876,7 +988,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Carol L. Fleming",
-    "seats_open": 21,
+    "seats_open": 9,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -897,7 +1009,28 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Carol L. Fleming",
-    "seats_open": 15,
+    "seats_open": 4,
+    "seats_total": 25,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "johnston",
+    "term": "2026SU",
+    "course_prefix": "BUS",
+    "course_number": "151",
+    "course_title": "People Skills",
+    "credits": 3,
+    "crn": "BUS-151-1A2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "On-Line Course",
+    "campus": "ONLIN",
+    "mode": "in-person",
+    "instructor": "Carol L. Fleming",
+    "seats_open": 16,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -918,7 +1051,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Victoria Ferrell",
-    "seats_open": 18,
+    "seats_open": 13,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -939,7 +1072,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Amanda Carlisle",
-    "seats_open": 8,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -960,7 +1093,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Amanda Carlisle",
-    "seats_open": 23,
+    "seats_open": 2,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -981,10 +1114,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Amanda Carlisle",
-    "seats_open": 8,
+    "seats_open": 1,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 131",
+    "prerequisite_courses": [
+      "CHM 131"
+    ]
   },
   {
     "college_code": "johnston",
@@ -1002,10 +1137,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Amanda Carlisle",
-    "seats_open": 23,
+    "seats_open": 2,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 131",
+    "prerequisite_courses": [
+      "CHM 131"
+    ]
   },
   {
     "college_code": "johnston",
@@ -1023,8 +1160,8 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Abu-Bakarr S. Kuyateh",
-    "seats_open": 8,
-    "seats_total": 25,
+    "seats_open": 1,
+    "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1044,8 +1181,8 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Abu-Bakarr S. Kuyateh",
-    "seats_open": 20,
-    "seats_total": 25,
+    "seats_open": 1,
+    "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1065,7 +1202,7 @@
     "campus": "MAIN",
     "mode": "hybrid",
     "instructor": "Xhensila X. Bishop",
-    "seats_open": 11,
+    "seats_open": 2,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1086,10 +1223,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Rachel L. Davis",
-    "seats_open": 17,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 151",
+    "prerequisite_courses": [
+      "CHM 151"
+    ]
   },
   {
     "college_code": "johnston",
@@ -1107,10 +1246,12 @@
     "campus": "MAIN",
     "mode": "hybrid",
     "instructor": "Brayden Carty",
-    "seats_open": 20,
+    "seats_open": 18,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 151",
+    "prerequisite_courses": [
+      "CHM 151"
+    ]
   },
   {
     "college_code": "johnston",
@@ -1128,10 +1269,12 @@
     "campus": "MAIN",
     "mode": "hybrid",
     "instructor": "Xhensila X. Bishop",
-    "seats_open": 21,
+    "seats_open": 12,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 152",
+    "prerequisite_courses": [
+      "CHM 152"
+    ]
   },
   {
     "college_code": "johnston",
@@ -1149,7 +1292,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Megan C. Rivera",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1170,7 +1313,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Megan C. Rivera",
-    "seats_open": 10,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1191,7 +1334,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Megan C. Rivera",
-    "seats_open": 23,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1212,7 +1355,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Yvette D. Parker",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1233,7 +1376,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Yvette D. Parker",
-    "seats_open": 25,
+    "seats_open": 15,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1254,7 +1397,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Dawit Lakew",
-    "seats_open": 24,
+    "seats_open": 19,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1275,28 +1418,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Cynthia M. Sullivan",
-    "seats_open": 21,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "johnston",
-    "term": "2026SU",
-    "course_prefix": "CJC",
-    "course_number": "111",
-    "course_title": "Intro to Criminal Justice",
-    "credits": 3,
-    "crn": "CJC-111-3A2",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-20",
-    "location": "On-Line Course",
-    "campus": "ONLIN",
-    "mode": "in-person",
-    "instructor": "Joshua K. Legan",
-    "seats_open": 25,
+    "seats_open": 11,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1317,7 +1439,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Cynthia M. Sullivan",
-    "seats_open": 19,
+    "seats_open": 8,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1338,7 +1460,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Rickey L. Parker",
-    "seats_open": 14,
+    "seats_open": 4,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1359,8 +1481,8 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Kerri A. Mercer",
-    "seats_open": 7,
-    "seats_total": 25,
+    "seats_open": 0,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1380,7 +1502,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Kayla Ridgell",
-    "seats_open": 1,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1401,7 +1523,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Raymond Hillan Morrison",
-    "seats_open": 15,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1422,7 +1544,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Maryanna G. Barnes",
-    "seats_open": 23,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1443,7 +1565,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Raymond Hillan Morrison",
-    "seats_open": 22,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1464,8 +1586,8 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Maryanna G. Barnes",
-    "seats_open": 25,
-    "seats_total": 25,
+    "seats_open": 1,
+    "seats_total": 27,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1486,7 +1608,7 @@
     "mode": "in-person",
     "instructor": "James M. Hudson",
     "seats_open": 0,
-    "seats_total": 25,
+    "seats_total": 27,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1507,7 +1629,7 @@
     "mode": "in-person",
     "instructor": "James M. Hudson",
     "seats_open": 0,
-    "seats_total": 25,
+    "seats_total": 27,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1527,8 +1649,8 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Chasity Skusa",
-    "seats_open": 10,
-    "seats_total": 25,
+    "seats_open": 1,
+    "seats_total": 27,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1548,8 +1670,29 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Chasity Skusa",
-    "seats_open": 24,
-    "seats_total": 25,
+    "seats_open": 0,
+    "seats_total": 27,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "johnston",
+    "term": "2026SU",
+    "course_prefix": "COM",
+    "course_number": "231",
+    "course_title": "Public Speaking",
+    "credits": 3,
+    "crn": "COM-231-1A5",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "On-Line Course",
+    "campus": "ONLIN",
+    "mode": "in-person",
+    "instructor": "Maryanna G. Barnes",
+    "seats_open": 0,
+    "seats_total": 27,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1568,11 +1711,14 @@
     "location": "Main Campus",
     "campus": "MAIN",
     "mode": "hybrid",
-    "instructor": null,
-    "seats_open": 8,
+    "instructor": "Kristin R. Hawkins, Valerie D. Bishop, Gwendolyn B. Rouse",
+    "seats_open": 4,
     "seats_total": 44,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "johnston",
@@ -1589,11 +1735,14 @@
     "location": "Main Campus",
     "campus": "MAIN",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 8,
+    "instructor": "Kristin R. Hawkins, Laconnya D. Sinclair",
+    "seats_open": 4,
     "seats_total": 44,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "johnston",
@@ -1611,7 +1760,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Timothy R. Boyd",
-    "seats_open": 16,
+    "seats_open": 4,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1632,7 +1781,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Dawit Lakew",
-    "seats_open": 23,
+    "seats_open": 15,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1653,7 +1802,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Sabrina S. Mozingo",
-    "seats_open": 16,
+    "seats_open": 1,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1674,7 +1823,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Rebecca H. Worley",
-    "seats_open": 16,
+    "seats_open": 4,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1695,7 +1844,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Heath R. Luquire",
-    "seats_open": 20,
+    "seats_open": 11,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1716,7 +1865,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Alan A. Gruver",
-    "seats_open": 17,
+    "seats_open": 7,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1737,10 +1886,12 @@
     "campus": "OC",
     "mode": "in-person",
     "instructor": "Brittany Barefoot",
-    "seats_open": 6,
+    "seats_open": 3,
     "seats_total": 8,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CVS 161",
+    "prerequisite_courses": [
+      "CVS 161"
+    ]
   },
   {
     "college_code": "johnston",
@@ -1758,7 +1909,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Maurika Smutherman",
-    "seats_open": 22,
+    "seats_open": 15,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1779,28 +1930,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Tracy J. Notley",
-    "seats_open": 20,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "johnston",
-    "term": "2026SU",
-    "course_prefix": "DRA",
-    "course_number": "111",
-    "course_title": "Theatre Appreciation",
-    "credits": 3,
-    "crn": "DRA-111-1A2",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-20",
-    "location": "On-Line Course",
-    "campus": "ONLIN",
-    "mode": "in-person",
-    "instructor": "Tracy J. Notley",
-    "seats_open": 23,
+    "seats_open": 9,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1821,7 +1951,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Aaron B. Scott",
-    "seats_open": 3,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1842,7 +1972,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Aaron B. Scott",
-    "seats_open": 17,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1863,7 +1993,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Mohammed S. Partapurwala",
-    "seats_open": 22,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1884,7 +2014,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Mohammed S. Partapurwala",
-    "seats_open": 16,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1905,7 +2035,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Meagan J. McKinnon",
-    "seats_open": 28,
+    "seats_open": 15,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1926,7 +2056,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Carla W. Stafford",
-    "seats_open": 27,
+    "seats_open": 12,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1946,11 +2076,13 @@
     "location": "Main Campus",
     "campus": "MAIN",
     "mode": "hybrid",
-    "instructor": "Brittany J. Baker",
-    "seats_open": 25,
+    "instructor": "Brittany J. Baker, Carson T. Bernett",
+    "seats_open": 16,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EMS 110",
+    "prerequisite_courses": [
+      "EMS 110"
+    ]
   },
   {
     "college_code": "johnston",
@@ -1967,11 +2099,15 @@
     "location": "Main Campus",
     "campus": "MAIN",
     "mode": "hybrid",
-    "instructor": "Brittany J. Baker",
-    "seats_open": 25,
+    "instructor": "Brittany J. Baker, Carson T. Bernett",
+    "seats_open": 16,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EMS 122 and EMS 130 and EMS 160",
+    "prerequisite_courses": [
+      "EMS 122",
+      "EMS 130",
+      "EMS 160"
+    ]
   },
   {
     "college_code": "johnston",
@@ -1989,10 +2125,13 @@
     "campus": "OC",
     "mode": "in-person",
     "instructor": "Shannon Elizabeth Casey Wright",
-    "seats_open": 25,
+    "seats_open": 16,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EMS 121 or EMS 122",
+    "prerequisite_courses": [
+      "EMS 121",
+      "EMS 122"
+    ]
   },
   {
     "college_code": "johnston",
@@ -2009,8 +2148,8 @@
     "location": "On-Line Course",
     "campus": "ONLIN",
     "mode": "in-person",
-    "instructor": "Cara L. Potter",
-    "seats_open": 0,
+    "instructor": "Marissa Dean",
+    "seats_open": 2,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2030,8 +2169,8 @@
     "location": "On-Line Course",
     "campus": "ONLIN",
     "mode": "in-person",
-    "instructor": "Cara L. Potter",
-    "seats_open": 6,
+    "instructor": "Isabella W. Woods",
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2052,7 +2191,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Marissa Dean",
-    "seats_open": 22,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2073,7 +2212,70 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Isabella W. Woods",
-    "seats_open": 24,
+    "seats_open": 1,
+    "seats_total": 25,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "johnston",
+    "term": "2026SU",
+    "course_prefix": "ENG",
+    "course_number": "045",
+    "course_title": "English Skills Support",
+    "credits": 2,
+    "crn": "ENG-045-1A5C",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "On-Line Course",
+    "campus": "ONLIN",
+    "mode": "in-person",
+    "instructor": "Daniel B. Gallagher",
+    "seats_open": 0,
+    "seats_total": 25,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "johnston",
+    "term": "2026SU",
+    "course_prefix": "ENG",
+    "course_number": "045",
+    "course_title": "English Skills Support",
+    "credits": 2,
+    "crn": "ENG-045-1A6C",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "On-Line Course",
+    "campus": "ONLIN",
+    "mode": "in-person",
+    "instructor": "Marissa Dean",
+    "seats_open": 0,
+    "seats_total": 25,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "johnston",
+    "term": "2026SU",
+    "course_prefix": "ENG",
+    "course_number": "045",
+    "course_title": "English Skills Support",
+    "credits": 2,
+    "crn": "ENG-045-1A7C",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "On-Line Course",
+    "campus": "ONLIN",
+    "mode": "in-person",
+    "instructor": "Marissa Dean",
+    "seats_open": 15,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2094,10 +2296,13 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Cameron T. Green",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 045 or ENG 8045",
+    "prerequisite_courses": [
+      "ENG 045",
+      "ENG 8045"
+    ]
   },
   {
     "college_code": "johnston",
@@ -2114,11 +2319,14 @@
     "location": "On-Line Course",
     "campus": "ONLIN",
     "mode": "in-person",
-    "instructor": "Cara L. Potter",
-    "seats_open": 0,
+    "instructor": "Marissa Dean",
+    "seats_open": 2,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 045 or ENG 8045",
+    "prerequisite_courses": [
+      "ENG 045",
+      "ENG 8045"
+    ]
   },
   {
     "college_code": "johnston",
@@ -2136,10 +2344,13 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Cameron T. Green",
-    "seats_open": 5,
+    "seats_open": 2,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 045 or ENG 8045",
+    "prerequisite_courses": [
+      "ENG 045",
+      "ENG 8045"
+    ]
   },
   {
     "college_code": "johnston",
@@ -2156,11 +2367,14 @@
     "location": "On-Line Course",
     "campus": "ONLIN",
     "mode": "in-person",
-    "instructor": "Cara L. Potter",
-    "seats_open": 6,
+    "instructor": "Isabella W. Woods",
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 045 or ENG 8045",
+    "prerequisite_courses": [
+      "ENG 045",
+      "ENG 8045"
+    ]
   },
   {
     "college_code": "johnston",
@@ -2178,10 +2392,13 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Jason L. Morgan",
-    "seats_open": 20,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 045 or ENG 8045",
+    "prerequisite_courses": [
+      "ENG 045",
+      "ENG 8045"
+    ]
   },
   {
     "college_code": "johnston",
@@ -2199,10 +2416,13 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Marissa Dean",
-    "seats_open": 22,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 045 or ENG 8045",
+    "prerequisite_courses": [
+      "ENG 045",
+      "ENG 8045"
+    ]
   },
   {
     "college_code": "johnston",
@@ -2220,10 +2440,13 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Elizabeth H. Barnes",
-    "seats_open": 23,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 045 or ENG 8045",
+    "prerequisite_courses": [
+      "ENG 045",
+      "ENG 8045"
+    ]
   },
   {
     "college_code": "johnston",
@@ -2241,10 +2464,13 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Isabella W. Woods",
-    "seats_open": 24,
+    "seats_open": 1,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 045 or ENG 8045",
+    "prerequisite_courses": [
+      "ENG 045",
+      "ENG 8045"
+    ]
   },
   {
     "college_code": "johnston",
@@ -2262,10 +2488,37 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Elizabeth H. Barnes",
-    "seats_open": 24,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 045 or ENG 8045",
+    "prerequisite_courses": [
+      "ENG 045",
+      "ENG 8045"
+    ]
+  },
+  {
+    "college_code": "johnston",
+    "term": "2026SU",
+    "course_prefix": "ENG",
+    "course_number": "111",
+    "course_title": "Writing and Inquiry",
+    "credits": 3,
+    "crn": "ENG-111-1A5G",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "On-Line Course",
+    "campus": "ONLIN",
+    "mode": "in-person",
+    "instructor": "Daniel B. Gallagher",
+    "seats_open": 0,
+    "seats_total": 25,
+    "prerequisite_text": "ENG 045 or ENG 8045",
+    "prerequisite_courses": [
+      "ENG 045",
+      "ENG 8045"
+    ]
   },
   {
     "college_code": "johnston",
@@ -2283,10 +2536,37 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Paul S. Mills",
-    "seats_open": 19,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 045 or ENG 8045",
+    "prerequisite_courses": [
+      "ENG 045",
+      "ENG 8045"
+    ]
+  },
+  {
+    "college_code": "johnston",
+    "term": "2026SU",
+    "course_prefix": "ENG",
+    "course_number": "111",
+    "course_title": "Writing and Inquiry",
+    "credits": 3,
+    "crn": "ENG-111-1A6G",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "On-Line Course",
+    "campus": "ONLIN",
+    "mode": "in-person",
+    "instructor": "Marissa Dean",
+    "seats_open": 0,
+    "seats_total": 25,
+    "prerequisite_text": "ENG 045 or ENG 8045",
+    "prerequisite_courses": [
+      "ENG 045",
+      "ENG 8045"
+    ]
   },
   {
     "college_code": "johnston",
@@ -2304,10 +2584,61 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "William Schrader",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 045 or ENG 8045",
+    "prerequisite_courses": [
+      "ENG 045",
+      "ENG 8045"
+    ]
+  },
+  {
+    "college_code": "johnston",
+    "term": "2026SU",
+    "course_prefix": "ENG",
+    "course_number": "111",
+    "course_title": "Writing and Inquiry",
+    "credits": 3,
+    "crn": "ENG-111-1A7G",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "On-Line Course",
+    "campus": "ONLIN",
+    "mode": "in-person",
+    "instructor": "Marissa Dean",
+    "seats_open": 15,
+    "seats_total": 25,
+    "prerequisite_text": "ENG 045 or ENG 8045",
+    "prerequisite_courses": [
+      "ENG 045",
+      "ENG 8045"
+    ]
+  },
+  {
+    "college_code": "johnston",
+    "term": "2026SU",
+    "course_prefix": "ENG",
+    "course_number": "111",
+    "course_title": "Writing and Inquiry",
+    "credits": 3,
+    "crn": "ENG-111-1A8",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "On-Line Course",
+    "campus": "ONLIN",
+    "mode": "in-person",
+    "instructor": "Shemika D. Davis",
+    "seats_open": 6,
+    "seats_total": 25,
+    "prerequisite_text": "ENG 045 or ENG 8045",
+    "prerequisite_courses": [
+      "ENG 045",
+      "ENG 8045"
+    ]
   },
   {
     "college_code": "johnston",
@@ -2327,8 +2658,56 @@
     "instructor": "Cameron T. Green",
     "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
+  },
+  {
+    "college_code": "johnston",
+    "term": "2026SU",
+    "course_prefix": "ENG",
+    "course_number": "112",
+    "course_title": "Writing/Research in the Disc",
+    "credits": 3,
+    "crn": "ENG-112-1A11",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "On-Line Course",
+    "campus": "ONLIN",
+    "mode": "in-person",
+    "instructor": "William M. Dean",
+    "seats_open": 1,
+    "seats_total": 25,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
+  },
+  {
+    "college_code": "johnston",
+    "term": "2026SU",
+    "course_prefix": "ENG",
+    "course_number": "112",
+    "course_title": "Writing/Research in the Disc",
+    "credits": 3,
+    "crn": "ENG-112-1A12",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "On-Line Course",
+    "campus": "ONLIN",
+    "mode": "in-person",
+    "instructor": "Shemika D. Davis",
+    "seats_open": 0,
+    "seats_total": 25,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "johnston",
@@ -2345,11 +2724,13 @@
     "location": "On-Line Course",
     "campus": "ONLIN",
     "mode": "in-person",
-    "instructor": "Cameron T. Green",
-    "seats_open": 5,
+    "instructor": "William M. Dean",
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "johnston",
@@ -2367,10 +2748,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Paul S. Mills",
-    "seats_open": 5,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "johnston",
@@ -2388,10 +2771,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Shemika D. Davis",
-    "seats_open": 21,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "johnston",
@@ -2409,10 +2794,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Shemika D. Davis",
-    "seats_open": 22,
+    "seats_open": 1,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "johnston",
@@ -2430,10 +2817,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "William M. Dean",
-    "seats_open": 21,
+    "seats_open": 1,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "johnston",
@@ -2451,10 +2840,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Austin Hart",
-    "seats_open": 21,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "johnston",
@@ -2472,10 +2863,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Suzannah Price",
-    "seats_open": 22,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "johnston",
@@ -2493,10 +2886,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Suzannah Price",
-    "seats_open": 23,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "johnston",
@@ -2513,11 +2908,13 @@
     "location": "On-Line Course",
     "campus": "ONLIN",
     "mode": "in-person",
-    "instructor": "William M. Dean",
-    "seats_open": 23,
+    "instructor": "Cameron T. Green",
+    "seats_open": 16,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "johnston",
@@ -2535,10 +2932,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Susan E. Austin",
-    "seats_open": 23,
+    "seats_open": 11,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 112",
+    "prerequisite_courses": [
+      "ENG 112"
+    ]
   },
   {
     "college_code": "johnston",
@@ -2556,10 +2955,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "William M. Dean",
-    "seats_open": 23,
+    "seats_open": 18,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 112",
+    "prerequisite_courses": [
+      "ENG 112"
+    ]
   },
   {
     "college_code": "johnston",
@@ -2577,10 +2978,14 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "William M. Dean",
-    "seats_open": 24,
+    "seats_open": 13,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 112 or ENG 113 or ENG 114",
+    "prerequisite_courses": [
+      "ENG 112",
+      "ENG 113",
+      "ENG 114"
+    ]
   },
   {
     "college_code": "johnston",
@@ -2598,10 +3003,14 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Susan E. Austin",
-    "seats_open": 16,
+    "seats_open": 1,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 112 or ENG 113 or ENG 114",
+    "prerequisite_courses": [
+      "ENG 112",
+      "ENG 113",
+      "ENG 114"
+    ]
   },
   {
     "college_code": "johnston",
@@ -2619,10 +3028,14 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Susan E. Austin",
-    "seats_open": 24,
+    "seats_open": 17,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 112 or ENG 113 or ENG 114",
+    "prerequisite_courses": [
+      "ENG 112",
+      "ENG 113",
+      "ENG 114"
+    ]
   },
   {
     "college_code": "johnston",
@@ -2640,10 +3053,14 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Susan E. Austin",
-    "seats_open": 24,
+    "seats_open": 10,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 112 or ENG 113 or ENG 114",
+    "prerequisite_courses": [
+      "ENG 112",
+      "ENG 113",
+      "ENG 114"
+    ]
   },
   {
     "college_code": "johnston",
@@ -2661,7 +3078,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Timothy W. Guffey",
-    "seats_open": 25,
+    "seats_open": 22,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2682,7 +3099,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Timothy W. Guffey",
-    "seats_open": 24,
+    "seats_open": 20,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2703,7 +3120,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Ronnie W. Privette",
-    "seats_open": 24,
+    "seats_open": 18,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2724,7 +3141,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Stephen Hildreth",
-    "seats_open": 17,
+    "seats_open": 4,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2745,7 +3162,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Emma J. Bouie",
-    "seats_open": 21,
+    "seats_open": 11,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2766,7 +3183,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Kelly F. Williams",
-    "seats_open": 15,
+    "seats_open": 2,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2787,28 +3204,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Kelly F. Williams",
-    "seats_open": 17,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "johnston",
-    "term": "2026SU",
-    "course_prefix": "HEA",
-    "course_number": "110",
-    "course_title": "Personal Health/Wellness",
-    "credits": 3,
-    "crn": "HEA-110-1A3",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-20",
-    "location": "On-Line Course",
-    "campus": "ONLIN",
-    "mode": "in-person",
-    "instructor": "Kelly F. Williams",
-    "seats_open": 25,
+    "seats_open": 6,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2829,7 +3225,7 @@
     "campus": "MAIN",
     "mode": "hybrid",
     "instructor": "Thomas Allen Lewis",
-    "seats_open": 11,
+    "seats_open": 1,
     "seats_total": 12,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2850,7 +3246,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Ellen N. Thompson",
-    "seats_open": 10,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2871,7 +3267,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Jessica L. Fisher",
-    "seats_open": 20,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2892,7 +3288,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Dustin Williams",
-    "seats_open": 17,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2913,7 +3309,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Dustin Williams",
-    "seats_open": 25,
+    "seats_open": 2,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2934,29 +3330,8 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Linda M. Allen",
-    "seats_open": 20,
+    "seats_open": 9,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "johnston",
-    "term": "2026SU",
-    "course_prefix": "HSC",
-    "course_number": "110",
-    "course_title": "Orientation to Health Careers",
-    "credits": 1,
-    "crn": "HSC-110-1A2",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-20",
-    "location": "On-Line Course",
-    "campus": "ONLIN",
-    "mode": "in-person",
-    "instructor": "Amber S. Powers",
-    "seats_open": 29,
-    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2976,7 +3351,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Ms. Sandy K. Oliver",
-    "seats_open": 1,
+    "seats_open": 2,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2997,7 +3372,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Ms. Sandy K. Oliver",
-    "seats_open": 19,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3018,7 +3393,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Ms. Sandy K. Oliver",
-    "seats_open": 21,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3039,7 +3414,7 @@
     "campus": "MAIN",
     "mode": "hybrid",
     "instructor": "Thomas Allen Lewis",
-    "seats_open": 11,
+    "seats_open": 0,
     "seats_total": 12,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3060,7 +3435,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Jennifer W. Williford",
-    "seats_open": 23,
+    "seats_open": 14,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3081,7 +3456,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Jennifer W. Williford",
-    "seats_open": 22,
+    "seats_open": 16,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3102,7 +3477,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Jennifer W. Williford",
-    "seats_open": 24,
+    "seats_open": 21,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3123,7 +3498,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Jennifer W. Williford",
-    "seats_open": 24,
+    "seats_open": 21,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3144,8 +3519,8 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Rebecca H. Worley",
-    "seats_open": 12,
-    "seats_total": 16,
+    "seats_open": 0,
+    "seats_total": 17,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -3165,7 +3540,49 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Kaite R. Bruce",
-    "seats_open": 1,
+    "seats_open": 0,
+    "seats_total": 16,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "johnston",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "045Q",
+    "course_title": "Math Skills Support-Quant Lit",
+    "credits": 2,
+    "crn": "MAT-045Q-1A2C",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "On-Line Course",
+    "campus": "ONLIN",
+    "mode": "in-person",
+    "instructor": "Kaite R. Bruce",
+    "seats_open": 3,
+    "seats_total": 16,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "johnston",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "045Q",
+    "course_title": "Math Skills Support-Quant Lit",
+    "credits": 2,
+    "crn": "MAT-045Q-1A3C",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "On-Line Course",
+    "campus": "ONLIN",
+    "mode": "in-person",
+    "instructor": "Kaite R. Bruce",
+    "seats_open": 0,
     "seats_total": 16,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3186,8 +3603,8 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Marisa A. Core",
-    "seats_open": 10,
-    "seats_total": 16,
+    "seats_open": 3,
+    "seats_total": 18,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -3207,7 +3624,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Evelyn H. Rando",
-    "seats_open": 1,
+    "seats_open": 2,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3228,7 +3645,49 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Shannon Snipes",
-    "seats_open": 16,
+    "seats_open": 0,
+    "seats_total": 20,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "johnston",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "110",
+    "course_title": "Math Measurement & Literacy",
+    "credits": 3,
+    "crn": "MAT-110-1A3",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "On-Line Course",
+    "campus": "ONLIN",
+    "mode": "in-person",
+    "instructor": "Evelyn H. Rando",
+    "seats_open": 0,
+    "seats_total": 20,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "johnston",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "110",
+    "course_title": "Math Measurement & Literacy",
+    "credits": 3,
+    "crn": "MAT-110-1A4",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "On-Line Course",
+    "campus": "ONLIN",
+    "mode": "in-person",
+    "instructor": "Shannon Snipes",
+    "seats_open": 1,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3249,7 +3708,7 @@
     "campus": "MAIN",
     "mode": "hybrid",
     "instructor": "Evelyn H. Rando",
-    "seats_open": 12,
+    "seats_open": 2,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3270,10 +3729,13 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Larry L. Tingen",
-    "seats_open": 13,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 045 or MAT 7045",
+    "prerequisite_courses": [
+      "MAT 045",
+      "MAT 7045"
+    ]
   },
   {
     "college_code": "johnston",
@@ -3291,10 +3753,13 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Kaite R. Bruce",
-    "seats_open": 10,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 16,
+    "prerequisite_text": "MAT 045 or MAT 7045",
+    "prerequisite_courses": [
+      "MAT 045",
+      "MAT 7045"
+    ]
   },
   {
     "college_code": "johnston",
@@ -3312,10 +3777,37 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Craig S. Carrigee",
-    "seats_open": 23,
+    "seats_open": 2,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 045 or MAT 7045",
+    "prerequisite_courses": [
+      "MAT 045",
+      "MAT 7045"
+    ]
+  },
+  {
+    "college_code": "johnston",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "143",
+    "course_title": "Quantitative Literacy",
+    "credits": 3,
+    "crn": "MAT-143-1A2G",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "On-Line Course",
+    "campus": "ONLIN",
+    "mode": "in-person",
+    "instructor": "Kaite R. Bruce",
+    "seats_open": 3,
+    "seats_total": 16,
+    "prerequisite_text": "MAT 045 or MAT 7045",
+    "prerequisite_courses": [
+      "MAT 045",
+      "MAT 7045"
+    ]
   },
   {
     "college_code": "johnston",
@@ -3333,10 +3825,37 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Benjamin Falero",
-    "seats_open": 24,
+    "seats_open": 4,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 045 or MAT 7045",
+    "prerequisite_courses": [
+      "MAT 045",
+      "MAT 7045"
+    ]
+  },
+  {
+    "college_code": "johnston",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "143",
+    "course_title": "Quantitative Literacy",
+    "credits": 3,
+    "crn": "MAT-143-1A3G",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "On-Line Course",
+    "campus": "ONLIN",
+    "mode": "in-person",
+    "instructor": "Kaite R. Bruce",
+    "seats_open": 0,
+    "seats_total": 16,
+    "prerequisite_text": "MAT 045 or MAT 7045",
+    "prerequisite_courses": [
+      "MAT 045",
+      "MAT 7045"
+    ]
   },
   {
     "college_code": "johnston",
@@ -3354,10 +3873,13 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Catina P. Hayes",
-    "seats_open": 10,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 27,
+    "prerequisite_text": "MAT 045 or MAT 7045",
+    "prerequisite_courses": [
+      "MAT 045",
+      "MAT 7045"
+    ]
   },
   {
     "college_code": "johnston",
@@ -3375,10 +3897,13 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Marisa A. Core",
-    "seats_open": 10,
-    "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 3,
+    "seats_total": 18,
+    "prerequisite_text": "MAT 045 or MAT 7045",
+    "prerequisite_courses": [
+      "MAT 045",
+      "MAT 7045"
+    ]
   },
   {
     "college_code": "johnston",
@@ -3396,10 +3921,13 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Marisa A. Core",
-    "seats_open": 22,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 27,
+    "prerequisite_text": "MAT 045 or MAT 7045",
+    "prerequisite_courses": [
+      "MAT 045",
+      "MAT 7045"
+    ]
   },
   {
     "college_code": "johnston",
@@ -3417,10 +3945,13 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Michael J. Traylor",
-    "seats_open": 10,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 27,
+    "prerequisite_text": "MAT 045 or MAT 7045",
+    "prerequisite_courses": [
+      "MAT 045",
+      "MAT 7045"
+    ]
   },
   {
     "college_code": "johnston",
@@ -3438,10 +3969,13 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Andras Paul",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 27,
+    "prerequisite_text": "MAT 045 or MAT 7045",
+    "prerequisite_courses": [
+      "MAT 045",
+      "MAT 7045"
+    ]
   },
   {
     "college_code": "johnston",
@@ -3459,10 +3993,13 @@
     "campus": "MAIN",
     "mode": "in-person",
     "instructor": "Donald W. Webb",
-    "seats_open": 21,
+    "seats_open": 18,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 045 or MAT 7045",
+    "prerequisite_courses": [
+      "MAT 045",
+      "MAT 7045"
+    ]
   },
   {
     "college_code": "johnston",
@@ -3480,10 +4017,13 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Erin K. Collier",
-    "seats_open": 8,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 2,
+    "seats_total": 26,
+    "prerequisite_text": "MAT 045 or MAT 7045",
+    "prerequisite_courses": [
+      "MAT 045",
+      "MAT 7045"
+    ]
   },
   {
     "college_code": "johnston",
@@ -3501,10 +4041,13 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Rebecca H. Worley",
-    "seats_open": 12,
-    "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 17,
+    "prerequisite_text": "MAT 045 or MAT 7045",
+    "prerequisite_courses": [
+      "MAT 045",
+      "MAT 7045"
+    ]
   },
   {
     "college_code": "johnston",
@@ -3522,10 +4065,13 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Anna P. Humphrey",
-    "seats_open": 22,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 26,
+    "prerequisite_text": "MAT 045 or MAT 7045",
+    "prerequisite_courses": [
+      "MAT 045",
+      "MAT 7045"
+    ]
   },
   {
     "college_code": "johnston",
@@ -3543,10 +4089,13 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Sara McAllister",
-    "seats_open": 11,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 26,
+    "prerequisite_text": "MAT 045 or MAT 7045",
+    "prerequisite_courses": [
+      "MAT 045",
+      "MAT 7045"
+    ]
   },
   {
     "college_code": "johnston",
@@ -3564,10 +4113,13 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Denise A. Williams",
-    "seats_open": 24,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 26,
+    "prerequisite_text": "MAT 045 or MAT 7045",
+    "prerequisite_courses": [
+      "MAT 045",
+      "MAT 7045"
+    ]
   },
   {
     "college_code": "johnston",
@@ -3585,10 +4137,13 @@
     "campus": "MAIN",
     "mode": "in-person",
     "instructor": "Dakota R. Tillery",
-    "seats_open": 21,
+    "seats_open": 13,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 045 or MAT 7045",
+    "prerequisite_courses": [
+      "MAT 045",
+      "MAT 7045"
+    ]
   },
   {
     "college_code": "johnston",
@@ -3606,10 +4161,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Falastein A. Alie",
-    "seats_open": 13,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 27,
+    "prerequisite_text": "MAT 171",
+    "prerequisite_courses": [
+      "MAT 171"
+    ]
   },
   {
     "college_code": "johnston",
@@ -3627,10 +4184,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Falastein A. Alie",
-    "seats_open": 22,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 1,
+    "seats_total": 27,
+    "prerequisite_text": "MAT 171",
+    "prerequisite_courses": [
+      "MAT 171"
+    ]
   },
   {
     "college_code": "johnston",
@@ -3648,10 +4207,12 @@
     "campus": "MAIN",
     "mode": "hybrid",
     "instructor": "Joshua A. Noonan",
-    "seats_open": 20,
+    "seats_open": 15,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 171",
+    "prerequisite_courses": [
+      "MAT 171"
+    ]
   },
   {
     "college_code": "johnston",
@@ -3669,10 +4230,13 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Angelina Y. Knies",
-    "seats_open": 22,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 27,
+    "prerequisite_text": "MAT 171 or MAT 175",
+    "prerequisite_courses": [
+      "MAT 171",
+      "MAT 175"
+    ]
   },
   {
     "college_code": "johnston",
@@ -3690,10 +4254,13 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "John S. Molokach",
-    "seats_open": 19,
+    "seats_open": 2,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 172 or MAT 175",
+    "prerequisite_courses": [
+      "MAT 172",
+      "MAT 175"
+    ]
   },
   {
     "college_code": "johnston",
@@ -3711,10 +4278,13 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Kristen J. Hershberger",
-    "seats_open": 23,
+    "seats_open": 2,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 172 or MAT 175",
+    "prerequisite_courses": [
+      "MAT 172",
+      "MAT 175"
+    ]
   },
   {
     "college_code": "johnston",
@@ -3732,10 +4302,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Kristen J. Hershberger",
-    "seats_open": 20,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 271",
+    "prerequisite_courses": [
+      "MAT 271"
+    ]
   },
   {
     "college_code": "johnston",
@@ -3753,10 +4325,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Jon D. Strickland",
-    "seats_open": 20,
+    "seats_open": 11,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 271",
+    "prerequisite_courses": [
+      "MAT 271"
+    ]
   },
   {
     "college_code": "johnston",
@@ -3774,7 +4348,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Linda M. Allen",
-    "seats_open": 2,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3795,7 +4369,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Linda M. Allen",
-    "seats_open": 19,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3816,7 +4390,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Linda M. Allen",
-    "seats_open": 18,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3837,7 +4411,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Linda M. Allen",
-    "seats_open": 23,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3858,7 +4432,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Linda M. Allen",
-    "seats_open": 25,
+    "seats_open": 15,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3879,7 +4453,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Linda M. Allen",
-    "seats_open": 25,
+    "seats_open": 23,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3900,7 +4474,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Linda M. Allen",
-    "seats_open": 24,
+    "seats_open": 23,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3930,27 +4504,6 @@
     "college_code": "johnston",
     "term": "2026SU",
     "course_prefix": "MED",
-    "course_number": "120",
-    "course_title": "Survey of Med Terminology",
-    "credits": 2,
-    "crn": "MED-120-1A9",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-20",
-    "location": "On-Line Course",
-    "campus": "ONLIN",
-    "mode": "in-person",
-    "instructor": "Amber S. Powers",
-    "seats_open": 30,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "johnston",
-    "term": "2026SU",
-    "course_prefix": "MED",
     "course_number": "121",
     "course_title": "Medical Terminology I",
     "credits": 3,
@@ -3963,7 +4516,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Tiffany N. Ruiz",
-    "seats_open": 14,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3984,7 +4537,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Tiffany N. Ruiz",
-    "seats_open": 19,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4005,10 +4558,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Keita L. Kornegay",
-    "seats_open": 15,
+    "seats_open": 1,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MED 121",
+    "prerequisite_courses": [
+      "MED 121"
+    ]
   },
   {
     "college_code": "johnston",
@@ -4026,10 +4581,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Keita L. Kornegay",
-    "seats_open": 19,
+    "seats_open": 17,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MED 121",
+    "prerequisite_courses": [
+      "MED 121"
+    ]
   },
   {
     "college_code": "johnston",
@@ -4047,7 +4604,7 @@
     "campus": "OC",
     "mode": "in-person",
     "instructor": "Adrienne G. Allen, Amber S. Powers",
-    "seats_open": 14,
+    "seats_open": 9,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4068,7 +4625,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Adrienne G. Allen",
-    "seats_open": 14,
+    "seats_open": 9,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4089,7 +4646,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Amy K. Riker",
-    "seats_open": 15,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4110,7 +4667,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Christopher S. Visi",
-    "seats_open": 15,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4131,7 +4688,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Christopher S. Visi",
-    "seats_open": 20,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4152,7 +4709,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Christopher S. Visi",
-    "seats_open": 24,
+    "seats_open": 10,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4172,8 +4729,8 @@
     "location": "Main Campus",
     "campus": "MAIN",
     "mode": "hybrid",
-    "instructor": "Dedra Whitman Rhodes, Susan C. Pittman, Emily H. Corbett",
-    "seats_open": 0,
+    "instructor": "Dedra Whitman Rhodes, Susan C. Pittman, Emily H. Corbett, Ashley P. Creech",
+    "seats_open": 1,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4193,7 +4750,7 @@
     "location": "Main Campus",
     "campus": "MAIN",
     "mode": "hybrid",
-    "instructor": "Beth P. Walker, April B. Kinsey",
+    "instructor": "Beth P. Walker, April B. Kinsey, Ashley P. Creech",
     "seats_open": 0,
     "seats_total": 20,
     "prerequisite_text": null,
@@ -4215,10 +4772,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "David E. Oliver",
-    "seats_open": 8,
+    "seats_open": 10,
     "seats_total": 19,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NET 125",
+    "prerequisite_courses": [
+      "NET 125"
+    ]
   },
   {
     "college_code": "johnston",
@@ -4236,10 +4795,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "David E. Oliver",
-    "seats_open": 18,
+    "seats_open": 8,
     "seats_total": 19,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NET 125",
+    "prerequisite_courses": [
+      "NET 125"
+    ]
   },
   {
     "college_code": "johnston",
@@ -4257,7 +4818,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Gregory Rasner",
-    "seats_open": 18,
+    "seats_open": 15,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4277,11 +4838,13 @@
     "location": "Main Campus",
     "campus": "MAIN",
     "mode": "hybrid",
-    "instructor": "Victoria D. Morris, Kimberly A. Camin, Kristin M. Mozingo",
-    "seats_open": 5,
+    "instructor": "Victoria D. Morris, Kimberly A. Camin, Kristin M. Mozingo, Jordan Thomas",
+    "seats_open": 0,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 101",
+    "prerequisite_courses": [
+      "NUR 101"
+    ]
   },
   {
     "college_code": "johnston",
@@ -4293,16 +4856,18 @@
     "crn": "NUR-113-4T1M",
     "days": "M T",
     "start_time": "9:00 AM",
-    "end_time": "2:50 PM",
+    "end_time": "12:50 PM",
     "start_date": "2026-05-20",
     "location": "Main Campus",
     "campus": "MAIN",
     "mode": "in-person",
-    "instructor": "Shannon S. Hill, Marjorie Allen, Savannah G. Beasley, Kerry L. Lakin, Chasity A. Hess, Amanda P. Thornton",
-    "seats_open": 55,
+    "instructor": "Shannon S. Hill, Marjorie Allen, Savannah G. Beasley, Kerry L. Lakin, Chasity A. Hess, Amanda P. Thornton, Kristin M. Mozingo, Jordan Thomas, Christina M. Reardon",
+    "seats_open": 8,
     "seats_total": 55,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 111",
+    "prerequisite_courses": [
+      "NUR 111"
+    ]
   },
   {
     "college_code": "johnston",
@@ -4320,7 +4885,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Keita L. Kornegay",
-    "seats_open": 23,
+    "seats_open": 21,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4341,7 +4906,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Keita L. Kornegay",
-    "seats_open": 22,
+    "seats_open": 15,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4362,7 +4927,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Tiffany N. Ruiz",
-    "seats_open": 21,
+    "seats_open": 12,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4383,7 +4948,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Eileen M. Barbour",
-    "seats_open": 15,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4404,7 +4969,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Eileen M. Barbour",
-    "seats_open": 19,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4426,9 +4991,57 @@
     "mode": "in-person",
     "instructor": "John S. Lee",
     "seats_open": 0,
+    "seats_total": 27,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
+  },
+  {
+    "college_code": "johnston",
+    "term": "2026SU",
+    "course_prefix": "PHI",
+    "course_number": "240",
+    "course_title": "Introduction to Ethics",
+    "credits": 3,
+    "crn": "PHI-240-1A10",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "On-Line Course",
+    "campus": "ONLIN",
+    "mode": "in-person",
+    "instructor": "Jerry L. Henderson",
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
+  },
+  {
+    "college_code": "johnston",
+    "term": "2026SU",
+    "course_prefix": "PHI",
+    "course_number": "240",
+    "course_title": "Introduction to Ethics",
+    "credits": 3,
+    "crn": "PHI-240-1A11",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "On-Line Course",
+    "campus": "ONLIN",
+    "mode": "in-person",
+    "instructor": "Jerry L. Henderson",
+    "seats_open": 0,
+    "seats_total": 25,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "johnston",
@@ -4448,8 +5061,10 @@
     "instructor": "John S. Lee",
     "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "johnston",
@@ -4469,8 +5084,10 @@
     "instructor": "John S. Lee",
     "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "johnston",
@@ -4490,8 +5107,10 @@
     "instructor": "John S. Lee",
     "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "johnston",
@@ -4509,10 +5128,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Jerry L. Henderson",
-    "seats_open": 21,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 27,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "johnston",
@@ -4530,10 +5151,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Jerry L. Henderson",
-    "seats_open": 25,
+    "seats_open": 1,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "johnston",
@@ -4551,10 +5174,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Jerry L. Henderson",
-    "seats_open": 24,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "johnston",
@@ -4572,10 +5197,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Jerry L. Henderson",
-    "seats_open": 24,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "johnston",
@@ -4593,10 +5220,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Jerry L. Henderson",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "johnston",
@@ -4614,28 +5243,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Samuel Stuard",
-    "seats_open": 20,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "johnston",
-    "term": "2026SU",
-    "course_prefix": "PHY",
-    "course_number": "110",
-    "course_title": "Conceptual Physics",
-    "credits": 3,
-    "crn": "PHY-110-1A2",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-20",
-    "location": "On-Line Course",
-    "campus": "ONLIN",
-    "mode": "in-person",
-    "instructor": "Samuel Stuard",
-    "seats_open": 23,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4656,7 +5264,7 @@
     "campus": "MAIN",
     "mode": "hybrid",
     "instructor": "Nafisa Amin",
-    "seats_open": 24,
+    "seats_open": 15,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4677,31 +5285,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Samuel Stuard",
-    "seats_open": 20,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "johnston",
-    "term": "2026SU",
-    "course_prefix": "PHY",
-    "course_number": "110A",
-    "course_title": "Conceptual Physics Lab",
-    "credits": 1,
-    "crn": "PHY-110A-1A2",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-20",
-    "location": "On-Line Course",
-    "campus": "ONLIN",
-    "mode": "in-person",
-    "instructor": "Samuel Stuard",
-    "seats_open": 23,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PHY 110",
+    "prerequisite_courses": [
+      "PHY 110"
+    ]
   },
   {
     "college_code": "johnston",
@@ -4719,10 +5308,12 @@
     "campus": "MAIN",
     "mode": "in-person",
     "instructor": "Nafisa Amin",
-    "seats_open": 24,
+    "seats_open": 15,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PHY 110",
+    "prerequisite_courses": [
+      "PHY 110"
+    ]
   },
   {
     "college_code": "johnston",
@@ -4740,7 +5331,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Kyle A. Dvorak",
-    "seats_open": 10,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4761,7 +5352,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Kyle A. Dvorak",
-    "seats_open": 24,
+    "seats_open": 2,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4782,7 +5373,28 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Alondria J. Richardson",
-    "seats_open": 9,
+    "seats_open": 6,
+    "seats_total": 25,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "johnston",
+    "term": "2026SU",
+    "course_prefix": "PSY",
+    "course_number": "118",
+    "course_title": "Interpersonal Psychology",
+    "credits": 3,
+    "crn": "PSY-118-1A2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "On-Line Course",
+    "campus": "ONLIN",
+    "mode": "in-person",
+    "instructor": "Alondria J. Richardson",
+    "seats_open": 12,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4845,7 +5457,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Jennifer M. Ramirez-Morris",
-    "seats_open": 2,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4866,7 +5478,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Misti S. Franklin",
-    "seats_open": 20,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4887,7 +5499,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Misti S. Franklin",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4908,7 +5520,49 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Misti S. Franklin",
-    "seats_open": 22,
+    "seats_open": 0,
+    "seats_total": 25,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "johnston",
+    "term": "2026SU",
+    "course_prefix": "PSY",
+    "course_number": "150",
+    "course_title": "General Psychology",
+    "credits": 3,
+    "crn": "PSY-150-1A7",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "On-Line Course",
+    "campus": "ONLIN",
+    "mode": "in-person",
+    "instructor": "Jennifer M. Ramirez-Morris",
+    "seats_open": 0,
+    "seats_total": 25,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "johnston",
+    "term": "2026SU",
+    "course_prefix": "PSY",
+    "course_number": "150",
+    "course_title": "General Psychology",
+    "credits": 3,
+    "crn": "PSY-150-1A8",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "On-Line Course",
+    "campus": "ONLIN",
+    "mode": "in-person",
+    "instructor": "Misti S. Franklin",
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4929,10 +5583,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Alondria J. Richardson",
-    "seats_open": 4,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "johnston",
@@ -4950,10 +5606,35 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Alondria J. Richardson",
-    "seats_open": 15,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
+  },
+  {
+    "college_code": "johnston",
+    "term": "2026SU",
+    "course_prefix": "PSY",
+    "course_number": "241",
+    "course_title": "Developmental Psych",
+    "credits": 3,
+    "crn": "PSY-241-1A3",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "On-Line Course",
+    "campus": "ONLIN",
+    "mode": "in-person",
+    "instructor": "Alondria J. Richardson",
+    "seats_open": 4,
+    "seats_total": 25,
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "johnston",
@@ -4971,7 +5652,7 @@
     "campus": "MAIN",
     "mode": "in-person",
     "instructor": "Robert P. Blackman",
-    "seats_open": 6,
+    "seats_open": 4,
     "seats_total": 22,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4992,7 +5673,7 @@
     "campus": "MAIN",
     "mode": "in-person",
     "instructor": "Robert P. Blackman",
-    "seats_open": 6,
+    "seats_open": 4,
     "seats_total": 22,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5012,7 +5693,7 @@
     "location": "Other Off Campus Locations",
     "campus": "OC",
     "mode": "in-person",
-    "instructor": "Nancy M. Renfrow, Barbara G. Carter",
+    "instructor": "Nancy M. Renfrow, Barbara G. Carter, Carey Trachian",
     "seats_open": 2,
     "seats_total": 6,
     "prerequisite_text": null,
@@ -5033,8 +5714,8 @@
     "location": "Other Off Campus Locations",
     "campus": "OC",
     "mode": "in-person",
-    "instructor": "Jerri B. Sinclair, Barbara G. Carter",
-    "seats_open": 3,
+    "instructor": "Jerri B. Sinclair, Barbara G. Carter, Carey Trachian",
+    "seats_open": 1,
     "seats_total": 5,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5055,7 +5736,7 @@
     "campus": "OC",
     "mode": "in-person",
     "instructor": "Amanda J. Hurley, Barbara G. Carter",
-    "seats_open": 1,
+    "seats_open": 0,
     "seats_total": 4,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5097,7 +5778,7 @@
     "campus": "OC",
     "mode": "in-person",
     "instructor": "Amy M. Horne, Barbara G. Carter",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 4,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5118,7 +5799,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Larry M. Mitchell",
-    "seats_open": 18,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5139,28 +5820,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Nakia Cummings",
-    "seats_open": 17,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "johnston",
-    "term": "2026SU",
-    "course_prefix": "SEC",
-    "course_number": "110",
-    "course_title": "Security Concepts",
-    "credits": 3,
-    "crn": "SEC-110-1A2",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-20",
-    "location": "On-Line Course",
-    "campus": "ONLIN",
-    "mode": "in-person",
-    "instructor": "Matthew G. Gathercole",
-    "seats_open": 20,
+    "seats_open": 14,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5181,7 +5841,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Larry M. Mitchell",
-    "seats_open": 10,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5202,7 +5862,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Larry M. Mitchell",
-    "seats_open": 21,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5223,7 +5883,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Rebekah Stanton",
-    "seats_open": 14,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5244,49 +5904,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Rebekah Stanton",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "johnston",
-    "term": "2026SU",
-    "course_prefix": "SOC",
-    "course_number": "210",
-    "course_title": "Introduction to Sociology",
-    "credits": 3,
-    "crn": "SOC-210-1A5W",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-20",
-    "location": "On-Line Course",
-    "campus": "ONLIN",
-    "mode": "in-person",
-    "instructor": "Amanda Bylczynski",
-    "seats_open": 24,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "johnston",
-    "term": "2026SU",
-    "course_prefix": "SOC",
-    "course_number": "210",
-    "course_title": "Introduction to Sociology",
-    "credits": 3,
-    "crn": "SOC-210-1A6W",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-20",
-    "location": "On-Line Course",
-    "campus": "ONLIN",
-    "mode": "in-person",
-    "instructor": "Amanda Bylczynski",
-    "seats_open": 24,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5306,11 +5924,13 @@
     "location": "Other Off Campus Locations",
     "campus": "OC",
     "mode": "in-person",
-    "instructor": "Catherine S. Rominski",
-    "seats_open": 7,
+    "instructor": "Catherine S. Rominski, Steven M. Penny",
+    "seats_open": 2,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SON 120",
+    "prerequisite_courses": [
+      "SON 120"
+    ]
   },
   {
     "college_code": "johnston",
@@ -5328,7 +5948,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Madison P. Ragland",
-    "seats_open": 11,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5349,7 +5969,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Juan Bobadilla",
-    "seats_open": 17,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5370,7 +5990,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Jennifer L. Horvath",
-    "seats_open": 24,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5391,7 +6011,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Claudia L. Bownes",
-    "seats_open": 25,
+    "seats_open": 19,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5412,7 +6032,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Joshua K. Sanderson",
-    "seats_open": 24,
+    "seats_open": 21,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5433,10 +6053,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Bryan J. Williamson",
-    "seats_open": 18,
+    "seats_open": 2,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 111",
+    "prerequisite_courses": [
+      "SPA 111"
+    ]
   },
   {
     "college_code": "johnston",
@@ -5454,10 +6076,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Bryan J. Williamson",
-    "seats_open": 22,
+    "seats_open": 15,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 111",
+    "prerequisite_courses": [
+      "SPA 111"
+    ]
   },
   {
     "college_code": "johnston",
@@ -5475,10 +6099,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Alessandra Rush",
-    "seats_open": 19,
+    "seats_open": 5,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 111",
+    "prerequisite_courses": [
+      "SPA 111"
+    ]
   },
   {
     "college_code": "johnston",
@@ -5496,7 +6122,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Madison P. Ragland",
-    "seats_open": 11,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5517,7 +6143,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Juan Bobadilla",
-    "seats_open": 17,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5538,7 +6164,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Jennifer L. Horvath",
-    "seats_open": 24,
+    "seats_open": 2,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5559,7 +6185,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Claudia L. Bownes",
-    "seats_open": 25,
+    "seats_open": 19,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5580,7 +6206,7 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "Joshua K. Sanderson",
-    "seats_open": 24,
+    "seats_open": 21,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5601,10 +6227,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "William B. Otanez",
-    "seats_open": 7,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 1,
+    "seats_total": 27,
+    "prerequisite_text": "SPA 112",
+    "prerequisite_courses": [
+      "SPA 112"
+    ]
   },
   {
     "college_code": "johnston",
@@ -5622,10 +6250,12 @@
     "campus": "ONLIN",
     "mode": "in-person",
     "instructor": "William B. Otanez",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 112",
+    "prerequisite_courses": [
+      "SPA 112"
+    ]
   },
   {
     "college_code": "johnston",
@@ -5642,8 +6272,8 @@
     "location": "On-Line Course",
     "campus": "ONLIN",
     "mode": "in-person",
-    "instructor": "Kenneth A. Robol",
-    "seats_open": 20,
+    "instructor": "Maurika Smutherman",
+    "seats_open": 9,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5664,7 +6294,7 @@
     "campus": "FOURO",
     "mode": "hybrid",
     "instructor": "Jonathan F. Barbour",
-    "seats_open": 5,
+    "seats_open": 0,
     "seats_total": 12,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5685,7 +6315,7 @@
     "campus": "FOURO",
     "mode": "hybrid",
     "instructor": "Kenneth W. Duncan",
-    "seats_open": 4,
+    "seats_open": 1,
     "seats_total": 12,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5706,9 +6336,34 @@
     "campus": "FOURO",
     "mode": "hybrid",
     "instructor": "Calvin J. Jernigan",
-    "seats_open": 10,
+    "seats_open": 7,
     "seats_total": 12,
     "prerequisite_text": null,
     "prerequisite_courses": []
+  },
+  {
+    "college_code": "johnston",
+    "term": "2026SU",
+    "course_prefix": "WLD",
+    "course_number": "261",
+    "course_title": "Certification Practices",
+    "credits": 2,
+    "crn": "WLD-261-4B1Z",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "FOUR OAKS",
+    "campus": "FOURO",
+    "mode": "hybrid",
+    "instructor": "Jonathan F. Barbour",
+    "seats_open": 0,
+    "seats_total": 1,
+    "prerequisite_text": "WLD 115 and WLD 121 and WLD 131",
+    "prerequisite_courses": [
+      "WLD 115",
+      "WLD 121",
+      "WLD 131"
+    ]
   }
 ]

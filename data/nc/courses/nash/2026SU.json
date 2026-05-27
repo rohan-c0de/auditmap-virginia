@@ -15,28 +15,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Holness, B",
-    "seats_open": 15,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "nash",
-    "term": "2026SU",
-    "course_prefix": "ACA",
-    "course_number": "115",
-    "course_title": "Success & Study Skills",
-    "credits": 1,
-    "crn": "ACA-115-OL02",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-26",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Harrell, A",
-    "seats_open": 22,
+    "seats_open": 6,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -57,7 +36,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Holness, B",
-    "seats_open": 16,
+    "seats_open": 9,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -78,7 +57,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Holness, B",
-    "seats_open": 1,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -99,6 +78,48 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Battle, F",
+    "seats_open": 3,
+    "seats_total": 35,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "nash",
+    "term": "2026SU",
+    "course_prefix": "ACA",
+    "course_number": "122",
+    "course_title": "College Transfer Success",
+    "credits": 1,
+    "crn": "ACA-122-OL03",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "in-person",
+    "instructor": "Harrell, A",
+    "seats_open": 7,
+    "seats_total": 35,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "nash",
+    "term": "2026SU",
+    "course_prefix": "ACA",
+    "course_number": "122",
+    "course_title": "College Transfer Success",
+    "credits": 1,
+    "crn": "ACA-122-OL04",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "in-person",
+    "instructor": "Ward, T",
     "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
@@ -120,7 +141,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "LaPointe, N",
-    "seats_open": 18,
+    "seats_open": 5,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -141,10 +162,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "LaPointe, N",
-    "seats_open": 20,
+    "seats_open": 3,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ACC 120",
+    "prerequisite_courses": [
+      "ACC 120"
+    ]
   },
   {
     "college_code": "nash",
@@ -162,7 +185,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Le Chevallier, G",
-    "seats_open": 12,
+    "seats_open": 0,
     "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -183,7 +206,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Grogan, G",
-    "seats_open": 13,
+    "seats_open": 3,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -204,10 +227,12 @@
     "campus": "OFF",
     "mode": "in-person",
     "instructor": "Cook, J",
-    "seats_open": 12,
+    "seats_open": 8,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AUT 163",
+    "prerequisite_courses": [
+      "AUT 163"
+    ]
   },
   {
     "college_code": "nash",
@@ -225,10 +250,12 @@
     "campus": "OFF",
     "mode": "in-person",
     "instructor": "Cook, J",
-    "seats_open": 12,
+    "seats_open": 8,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "TRN 120",
+    "prerequisite_courses": [
+      "TRN 120"
+    ]
   },
   {
     "college_code": "nash",
@@ -246,7 +273,7 @@
     "campus": "OFF",
     "mode": "in-person",
     "instructor": "Cook, J",
-    "seats_open": 12,
+    "seats_open": 10,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -267,7 +294,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Cobb, R",
-    "seats_open": 20,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -288,7 +315,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Cobb, R",
-    "seats_open": 18,
+    "seats_open": 7,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -309,10 +336,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Cobb, R",
-    "seats_open": 20,
+    "seats_open": 15,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 111",
+    "prerequisite_courses": [
+      "BIO 111"
+    ]
   },
   {
     "college_code": "nash",
@@ -330,7 +359,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Edwards, W",
-    "seats_open": 25,
+    "seats_open": 20,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -351,7 +380,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Casady, M",
-    "seats_open": 23,
+    "seats_open": 14,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -372,8 +401,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Awadallah, N",
-    "seats_open": 1,
-    "seats_total": 25,
+    "seats_open": 5,
+    "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -393,10 +422,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Awadallah, N",
-    "seats_open": 3,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 168",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
   },
   {
     "college_code": "nash",
@@ -414,10 +445,16 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Allen, L",
-    "seats_open": 16,
+    "seats_open": 4,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 110 or BIO 111 or BIO 163 or BIO 165 or BIO 168",
+    "prerequisite_courses": [
+      "BIO 110",
+      "BIO 111",
+      "BIO 163",
+      "BIO 165",
+      "BIO 168"
+    ]
   },
   {
     "college_code": "nash",
@@ -435,7 +472,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Gatza, T",
-    "seats_open": 18,
+    "seats_open": 14,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -457,7 +494,7 @@
     "mode": "in-person",
     "instructor": "Shoffner, A",
     "seats_open": 2,
-    "seats_total": 25,
+    "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -477,8 +514,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Douglas, M",
-    "seats_open": 9,
-    "seats_total": 25,
+    "seats_open": 12,
+    "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -498,10 +535,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Hyatt, M",
-    "seats_open": 19,
+    "seats_open": 9,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BUS 110",
+    "prerequisite_courses": [
+      "BUS 110"
+    ]
   },
   {
     "college_code": "nash",
@@ -519,10 +558,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Williams, C",
-    "seats_open": 24,
+    "seats_open": 20,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EGR 125",
+    "prerequisite_courses": [
+      "EGR 125"
+    ]
   },
   {
     "college_code": "nash",
@@ -540,10 +581,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Ariyarathna, R",
-    "seats_open": 17,
+    "seats_open": 3,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 130",
+    "prerequisite_courses": [
+      "CHM 130"
+    ]
   },
   {
     "college_code": "nash",
@@ -561,10 +604,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Ariyarathna, R",
-    "seats_open": 17,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 025 or MAT 035",
+    "prerequisite_courses": [
+      "MAT 025",
+      "MAT 035"
+    ]
   },
   {
     "college_code": "nash",
@@ -582,10 +628,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Williams, R",
-    "seats_open": 22,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 025 or MAT 035",
+    "prerequisite_courses": [
+      "MAT 025",
+      "MAT 035"
+    ]
   },
   {
     "college_code": "nash",
@@ -603,10 +652,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Williams, R",
-    "seats_open": 20,
+    "seats_open": 11,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 151",
+    "prerequisite_courses": [
+      "CHM 151"
+    ]
   },
   {
     "college_code": "nash",
@@ -624,7 +675,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Johnson, J",
-    "seats_open": 26,
+    "seats_open": 3,
     "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -645,7 +696,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Johnson, J",
-    "seats_open": 13,
+    "seats_open": 2,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -665,8 +716,8 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Winstead, C",
-    "seats_open": 19,
+    "instructor": "Cox, R",
+    "seats_open": 9,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -687,7 +738,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Guyette, C",
-    "seats_open": 14,
+    "seats_open": 11,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -708,7 +759,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Winstead, C",
-    "seats_open": 11,
+    "seats_open": 1,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -737,27 +788,6 @@
   {
     "college_code": "nash",
     "term": "2026SU",
-    "course_prefix": "CJC",
-    "course_number": "215",
-    "course_title": "Organization & Administration",
-    "credits": 3,
-    "crn": "CJC-215-OL01",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-26",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Cox, R",
-    "seats_open": 17,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "nash",
-    "term": "2026SU",
     "course_prefix": "COM",
     "course_number": "110",
     "course_title": "Introduction to Communication",
@@ -770,8 +800,8 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "TBA, T",
-    "seats_open": 11,
+    "instructor": "Everhart, A",
+    "seats_open": 1,
     "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -791,8 +821,8 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "TBA, T",
-    "seats_open": 35,
+    "instructor": "Green, C",
+    "seats_open": 0,
     "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -812,11 +842,14 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "TBA, T",
+    "instructor": "Kormos, E",
     "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and DRE 097 and ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "nash",
@@ -833,11 +866,14 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "TBA, T",
-    "seats_open": 8,
+    "instructor": "Kormos, E",
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and DRE 097 and ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "nash",
@@ -855,10 +891,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Hawkins, P",
-    "seats_open": 7,
+    "seats_open": 5,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "nash",
@@ -876,10 +915,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Charles, A",
-    "seats_open": 11,
+    "seats_open": 4,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "nash",
@@ -897,10 +939,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Hawkins, P, Charles, A, Blue, A, Glass, S",
-    "seats_open": 20,
+    "seats_open": 13,
     "seats_total": 36,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "nash",
@@ -918,10 +963,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Pittman, R",
-    "seats_open": 8,
+    "seats_open": 4,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "nash",
@@ -939,10 +987,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Tyson, W",
-    "seats_open": 24,
+    "seats_open": 17,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CSC 151",
+    "prerequisite_courses": [
+      "CSC 151"
+    ]
   },
   {
     "college_code": "nash",
@@ -960,7 +1010,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Johnson, J",
-    "seats_open": 17,
+    "seats_open": 13,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -981,7 +1031,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Hedgepeth, J",
-    "seats_open": 19,
+    "seats_open": 2,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1002,7 +1052,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Quintard, G",
-    "seats_open": 9,
+    "seats_open": 6,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1025,8 +1075,13 @@
     "instructor": "Bookhardt, F",
     "seats_open": 7,
     "seats_total": 14,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CUL 110 and CUL 140 and CUL 110 and CUL 142 and CUL 170",
+    "prerequisite_courses": [
+      "CUL 110",
+      "CUL 140",
+      "CUL 142",
+      "CUL 170"
+    ]
   },
   {
     "college_code": "nash",
@@ -1045,7 +1100,7 @@
     "mode": "in-person",
     "instructor": "Floyd, N",
     "seats_open": 13,
-    "seats_total": 25,
+    "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1064,8 +1119,8 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Brannan, J",
-    "seats_open": 2,
+    "instructor": "Brannan, J, Gatza, T",
+    "seats_open": 0,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1086,7 +1141,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Grogan, G",
-    "seats_open": 16,
+    "seats_open": 12,
     "seats_total": 16,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1106,11 +1161,15 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "TBA, T",
-    "seats_open": 23,
+    "instructor": "Tyson, W",
+    "seats_open": 21,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CIS 110 or CIS 113 or EGR 125",
+    "prerequisite_courses": [
+      "CIS 110",
+      "CIS 113",
+      "EGR 125"
+    ]
   },
   {
     "college_code": "nash",
@@ -1128,8 +1187,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Hyatt, M",
-    "seats_open": 2,
-    "seats_total": 25,
+    "seats_open": 12,
+    "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1149,8 +1208,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Hyatt, M",
-    "seats_open": 18,
-    "seats_total": 25,
+    "seats_open": 13,
+    "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1170,7 +1229,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "York, J",
-    "seats_open": 17,
+    "seats_open": 6,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1191,10 +1250,33 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "York, J",
-    "seats_open": 12,
+    "seats_open": 1,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
+  },
+  {
+    "college_code": "nash",
+    "term": "2026SU",
+    "course_prefix": "EDU",
+    "course_number": "184",
+    "course_title": "Early Child Intro Pract",
+    "credits": 2,
+    "crn": "EDU-184-V01",
+    "days": "M",
+    "start_time": "12:30 PM",
+    "end_time": "2:30 PM",
+    "start_date": "2026-05-26",
+    "location": "Virtual Learning",
+    "campus": "VTL",
+    "mode": "in-person",
+    "instructor": "York, J",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": "EDU 119",
+    "prerequisite_courses": [
+      "EDU 119"
+    ]
   },
   {
     "college_code": "nash",
@@ -1212,7 +1294,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Hoggard, J",
-    "seats_open": 23,
+    "seats_open": 17,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1233,7 +1315,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Daughtridge, E",
-    "seats_open": 12,
+    "seats_open": 10,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1254,7 +1336,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Grogan, G",
-    "seats_open": 8,
+    "seats_open": 3,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1275,7 +1357,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Brantley, M",
-    "seats_open": 6,
+    "seats_open": 3,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1296,7 +1378,7 @@
     "campus": "VTL",
     "mode": "in-person",
     "instructor": "Dawes, C",
-    "seats_open": 0,
+    "seats_open": 3,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1317,7 +1399,28 @@
     "campus": "VTL",
     "mode": "in-person",
     "instructor": "Baker, L",
-    "seats_open": 11,
+    "seats_open": 1,
+    "seats_total": 25,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "nash",
+    "term": "2026SU",
+    "course_prefix": "ENG",
+    "course_number": "025",
+    "course_title": "College English Skills",
+    "credits": 3,
+    "crn": "ENG-025-OL01",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "in-person",
+    "instructor": "Harkins, K",
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1338,10 +1441,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Brantley, M",
-    "seats_open": 5,
+    "seats_open": 1,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 098 and ENG 025",
+    "prerequisite_courses": [
+      "DRE 098",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "nash",
@@ -1361,8 +1467,11 @@
     "instructor": "Brantley, M",
     "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 098 and ENG 025",
+    "prerequisite_courses": [
+      "DRE 098",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "nash",
@@ -1382,8 +1491,11 @@
     "instructor": "Lee, D",
     "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 098 and ENG 025",
+    "prerequisite_courses": [
+      "DRE 098",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "nash",
@@ -1403,8 +1515,35 @@
     "instructor": "Lee, D",
     "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 098 and ENG 025",
+    "prerequisite_courses": [
+      "DRE 098",
+      "ENG 025"
+    ]
+  },
+  {
+    "college_code": "nash",
+    "term": "2026SU",
+    "course_prefix": "ENG",
+    "course_number": "111",
+    "course_title": "Writing and Inquiry",
+    "credits": 3,
+    "crn": "ENG-111-OL04",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "in-person",
+    "instructor": "Dawes, C",
+    "seats_open": 0,
+    "seats_total": 25,
+    "prerequisite_text": "DRE 098 and ENG 025",
+    "prerequisite_courses": [
+      "DRE 098",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "nash",
@@ -1422,10 +1561,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Clapp, G",
-    "seats_open": 4,
+    "seats_open": 3,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "nash",
@@ -1443,31 +1584,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Clapp, G",
-    "seats_open": 23,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "nash",
-    "term": "2026SU",
-    "course_prefix": "ENG",
-    "course_number": "232",
-    "course_title": "American Literature II",
-    "credits": 3,
-    "crn": "ENG-232-OL01",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-26",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Harkins, K",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "nash",
@@ -1484,29 +1606,8 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "TBA, T",
-    "seats_open": 22,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "nash",
-    "term": "2026SU",
-    "course_prefix": "EPT",
-    "course_number": "140",
-    "course_title": "Emergency Management",
-    "credits": 3,
-    "crn": "EPT-140-OL01",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-26",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Stallings, J",
-    "seats_open": 25,
+    "instructor": "Varnell, M",
+    "seats_open": 17,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1527,49 +1628,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Rogers, D",
-    "seats_open": 22,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "nash",
-    "term": "2026SU",
-    "course_prefix": "EPT",
-    "course_number": "220",
-    "course_title": "Terrorism and Emer. Mgt.",
-    "credits": 3,
-    "crn": "EPT-220-OL01",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-26",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Rogers, D",
-    "seats_open": 24,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "nash",
-    "term": "2026SU",
-    "course_prefix": "FIP",
-    "course_number": "120",
-    "course_title": "Intro to Fire Protection",
-    "credits": 3,
-    "crn": "FIP-120-OL01",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-26",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Varnell, M",
-    "seats_open": 25,
+    "seats_open": 20,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1590,49 +1649,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Bissette, J",
-    "seats_open": 22,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "nash",
-    "term": "2026SU",
-    "course_prefix": "FIP",
-    "course_number": "176",
-    "course_title": "HazMat: Operations",
-    "credits": 4,
-    "crn": "FIP-176-OL01",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-26",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Bissette, J",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "nash",
-    "term": "2026SU",
-    "course_prefix": "FIP",
-    "course_number": "220",
-    "course_title": "Fire Fighting Strategies",
-    "credits": 3,
-    "crn": "FIP-220-OL01",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-26",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Stallings, J",
-    "seats_open": 25,
+    "seats_open": 21,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1653,28 +1670,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Varnell, M",
-    "seats_open": 24,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "nash",
-    "term": "2026SU",
-    "course_prefix": "FIP",
-    "course_number": "276",
-    "course_title": "Managing Fire Services",
-    "credits": 3,
-    "crn": "FIP-276-OL01",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-26",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Varnell, M",
-    "seats_open": 25,
+    "seats_open": 23,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1695,7 +1691,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Hildreth, S",
-    "seats_open": 22,
+    "seats_open": 10,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1716,7 +1712,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Strother, B",
-    "seats_open": 38,
+    "seats_open": 15,
     "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1737,7 +1733,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Morgan, Z",
-    "seats_open": 13,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1758,7 +1754,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Morgan, Z",
-    "seats_open": 19,
+    "seats_open": 9,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1779,7 +1775,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Quintard, G",
-    "seats_open": 13,
+    "seats_open": 7,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1800,7 +1796,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Quintard, G",
-    "seats_open": 18,
+    "seats_open": 14,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1821,7 +1817,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Simon, E",
-    "seats_open": 14,
+    "seats_open": 2,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1844,8 +1840,11 @@
     "instructor": "Simon, E",
     "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 and DRE 098",
+    "prerequisite_courses": [
+      "ENG 025",
+      "DRE 098"
+    ]
   },
   {
     "college_code": "nash",
@@ -1863,10 +1862,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Brannan, J",
-    "seats_open": 12,
+    "seats_open": 13,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAC 142 and MAC 142A",
+    "prerequisite_courses": [
+      "MAC 142",
+      "MAC 142A"
+    ]
   },
   {
     "college_code": "nash",
@@ -1884,10 +1886,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Brannan, J",
-    "seats_open": 12,
+    "seats_open": 13,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAC 142",
+    "prerequisite_courses": [
+      "MAC 142"
+    ]
   },
   {
     "college_code": "nash",
@@ -1905,7 +1909,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Umstead, K",
-    "seats_open": 25,
+    "seats_open": 18,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1926,7 +1930,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Craft, B",
-    "seats_open": 13,
+    "seats_open": 1,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1947,7 +1951,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Umstead, K",
-    "seats_open": 15,
+    "seats_open": 7,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1968,7 +1972,28 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Pressley, C",
-    "seats_open": 3,
+    "seats_open": 2,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "nash",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "035",
+    "course_title": "Concepts of Algebra",
+    "credits": 3,
+    "crn": "MAT-035-OL02",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "in-person",
+    "instructor": "Long, K",
+    "seats_open": 5,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1989,10 +2014,14 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Hanson, M",
-    "seats_open": 16,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 025 and DMA 050 and MAT 070",
+    "prerequisite_courses": [
+      "MAT 025",
+      "DMA 050",
+      "MAT 070"
+    ]
   },
   {
     "college_code": "nash",
@@ -2010,10 +2039,14 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Angar, K",
-    "seats_open": 8,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 40,
+    "prerequisite_text": "MAT 025 and DMA 050 and MAT 070",
+    "prerequisite_courses": [
+      "MAT 025",
+      "DMA 050",
+      "MAT 070"
+    ]
   },
   {
     "college_code": "nash",
@@ -2033,8 +2066,57 @@
     "instructor": "Hanson, M",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 035 and DMA 080 and MAT 080 and MAT 110 and MAT 121 and MAT 141 and MAT 142 and MAT 143 and MAT 152 and MAT 172 and MAT 263 and MAT 271 and MAC 152",
+    "prerequisite_courses": [
+      "MAT 035",
+      "DMA 080",
+      "MAT 080",
+      "MAT 110",
+      "MAT 121",
+      "MAT 141",
+      "MAT 142",
+      "MAT 143",
+      "MAT 152",
+      "MAT 172",
+      "MAT 263",
+      "MAT 271",
+      "MAC 152"
+    ]
+  },
+  {
+    "college_code": "nash",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "171",
+    "course_title": "Precalculus Algebra",
+    "credits": 4,
+    "crn": "MAT-171-OL02",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "in-person",
+    "instructor": "Pressley, C",
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "MAT 035 and DMA 080 and MAT 080 and MAT 110 and MAT 121 and MAT 141 and MAT 142 and MAT 143 and MAT 152 and MAT 172 and MAT 263 and MAT 271 and MAC 152",
+    "prerequisite_courses": [
+      "MAT 035",
+      "DMA 080",
+      "MAT 080",
+      "MAT 110",
+      "MAT 121",
+      "MAT 141",
+      "MAT 142",
+      "MAT 143",
+      "MAT 152",
+      "MAT 172",
+      "MAT 263",
+      "MAT 271",
+      "MAC 152"
+    ]
   },
   {
     "college_code": "nash",
@@ -2052,10 +2134,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Pressley, C",
-    "seats_open": 20,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 171",
+    "prerequisite_courses": [
+      "MAT 171"
+    ]
   },
   {
     "college_code": "nash",
@@ -2073,10 +2157,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Moore, T",
-    "seats_open": 27,
+    "seats_open": 18,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 172 or MAT 175",
+    "prerequisite_courses": [
+      "MAT 172",
+      "MAT 175"
+    ]
   },
   {
     "college_code": "nash",
@@ -2094,10 +2181,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Moore, T",
-    "seats_open": 28,
+    "seats_open": 15,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 272",
+    "prerequisite_courses": [
+      "MAT 272"
+    ]
   },
   {
     "college_code": "nash",
@@ -2117,8 +2206,16 @@
     "instructor": "Greer, A",
     "seats_open": 7,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MED 131 and MED 140 and MED 150 and OST 142 and OST 149 and MED 262 and PSY 150",
+    "prerequisite_courses": [
+      "MED 131",
+      "MED 140",
+      "MED 150",
+      "OST 142",
+      "OST 149",
+      "MED 262",
+      "PSY 150"
+    ]
   },
   {
     "college_code": "nash",
@@ -2138,8 +2235,16 @@
     "instructor": "Greer, A",
     "seats_open": 7,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MED 131 and MED 140 and MED 150 and OST 149 and OST 142 and MED 260 and PSY 150",
+    "prerequisite_courses": [
+      "MED 131",
+      "MED 140",
+      "MED 150",
+      "OST 149",
+      "OST 142",
+      "MED 260",
+      "PSY 150"
+    ]
   },
   {
     "college_code": "nash",
@@ -2157,7 +2262,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Daughtridge, E",
-    "seats_open": 12,
+    "seats_open": 10,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2178,7 +2283,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Evans, C",
-    "seats_open": 26,
+    "seats_open": 0,
     "seats_total": 35,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2199,7 +2304,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Hedgepeth, J",
-    "seats_open": 21,
+    "seats_open": 17,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2220,10 +2325,14 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Gates-Daquila, A, Treish, F",
-    "seats_open": 10,
+    "seats_open": 11,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 101 and BIO 169 and NUR 102",
+    "prerequisite_courses": [
+      "NUR 101",
+      "BIO 169",
+      "NUR 102"
+    ]
   },
   {
     "college_code": "nash",
@@ -2241,10 +2350,18 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Pippen, D, Strickland, B, Hamiel, S, Steward, D, Taylor, S",
-    "seats_open": 7,
+    "seats_open": 5,
     "seats_total": 40,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 111 and NUR 114 and NUR 214 and BIO 169 and PSY 150 and MAT 171 and CIS 110",
+    "prerequisite_courses": [
+      "NUR 111",
+      "NUR 114",
+      "NUR 214",
+      "BIO 169",
+      "PSY 150",
+      "MAT 171",
+      "CIS 110"
+    ]
   },
   {
     "college_code": "nash",
@@ -2262,7 +2379,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Strother, B",
-    "seats_open": 45,
+    "seats_open": 29,
     "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2282,11 +2399,13 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "TBA, T",
-    "seats_open": 4,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "instructor": "Henderson, J",
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "nash",
@@ -2304,10 +2423,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Carlson, N",
-    "seats_open": 23,
+    "seats_open": 14,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 171 or MAT 271",
+    "prerequisite_courses": [
+      "MAT 171",
+      "MAT 271"
+    ]
   },
   {
     "college_code": "nash",
@@ -2325,10 +2447,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Samarappuli Gedara, I",
-    "seats_open": 25,
+    "seats_open": 13,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 271 and MAT 272",
+    "prerequisite_courses": [
+      "MAT 271",
+      "MAT 272"
+    ]
   },
   {
     "college_code": "nash",
@@ -2346,10 +2471,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Ruby, G",
-    "seats_open": 19,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "MAT 272 and PHY 251",
+    "prerequisite_courses": [
+      "MAT 272",
+      "PHY 251"
+    ]
   },
   {
     "college_code": "nash",
@@ -2367,7 +2495,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Battle, F",
-    "seats_open": 15,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2409,7 +2537,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Daly, A",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2430,7 +2558,28 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Daly, A",
-    "seats_open": 5,
+    "seats_open": 0,
+    "seats_total": 25,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "nash",
+    "term": "2026SU",
+    "course_prefix": "PSY",
+    "course_number": "150",
+    "course_title": "General Psychology",
+    "credits": 3,
+    "crn": "PSY-150-OL04",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "in-person",
+    "instructor": "Hood, E",
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2451,10 +2600,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Daly, A",
-    "seats_open": 10,
+    "seats_open": 1,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "nash",
@@ -2472,10 +2623,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Daly, A",
-    "seats_open": 24,
+    "seats_open": 15,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "nash",
@@ -2493,10 +2646,16 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Tart, S",
-    "seats_open": 7,
+    "seats_open": 8,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PTA 125 and BIO 169 and COM 231 and PTA 225 and PTA 222",
+    "prerequisite_courses": [
+      "PTA 125",
+      "BIO 169",
+      "COM 231",
+      "PTA 225",
+      "PTA 222"
+    ]
   },
   {
     "college_code": "nash",
@@ -2514,10 +2673,16 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Milks, A",
-    "seats_open": 7,
+    "seats_open": 9,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PTA 125 and BIO 169 and COM 231 and PTA 135 and PTA 225",
+    "prerequisite_courses": [
+      "PTA 125",
+      "BIO 169",
+      "COM 231",
+      "PTA 135",
+      "PTA 225"
+    ]
   },
   {
     "college_code": "nash",
@@ -2535,10 +2700,16 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Tart, S",
-    "seats_open": 7,
+    "seats_open": 8,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PTA 125 and BIO 169 and COM 231 and PTA 135 and PTA 222",
+    "prerequisite_courses": [
+      "PTA 125",
+      "BIO 169",
+      "COM 231",
+      "PTA 135",
+      "PTA 222"
+    ]
   },
   {
     "college_code": "nash",
@@ -2556,7 +2727,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Lewis, B",
-    "seats_open": 18,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2577,7 +2748,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Hedgepeth, J",
-    "seats_open": 23,
+    "seats_open": 20,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2598,10 +2769,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Guy, A",
-    "seats_open": 21,
+    "seats_open": 0,
     "seats_total": 50,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 and DRE 098",
+    "prerequisite_courses": [
+      "ENG 025",
+      "DRE 098"
+    ]
   },
   {
     "college_code": "nash",
@@ -2619,10 +2793,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Guy, A",
-    "seats_open": 22,
+    "seats_open": 8,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 and DRE 098",
+    "prerequisite_courses": [
+      "ENG 025",
+      "DRE 098"
+    ]
   },
   {
     "college_code": "nash",
@@ -2640,52 +2817,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Mason, M",
-    "seats_open": 20,
+    "seats_open": 12,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "nash",
-    "term": "2026SU",
-    "course_prefix": "SPA",
-    "course_number": "112",
-    "course_title": "Elementary Spanish II",
-    "credits": 3,
-    "crn": "SPA-112-OL01G",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-26",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Mason, M",
-    "seats_open": 24,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "nash",
-    "term": "2026SU",
-    "course_prefix": "SPA",
-    "course_number": "211",
-    "course_title": "Intermediate Spanish I",
-    "credits": 3,
-    "crn": "SPA-211-OL01G",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-26",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Mason, M",
-    "seats_open": 24,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 and DRE 098",
+    "prerequisite_courses": [
+      "ENG 025",
+      "DRE 098"
+    ]
   },
   {
     "college_code": "nash",
@@ -2703,7 +2841,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Deans, C",
-    "seats_open": 13,
+    "seats_open": 14,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2724,7 +2862,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Harrell, T",
-    "seats_open": 13,
+    "seats_open": 14,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2768,8 +2906,10 @@
     "instructor": "Quintard, G",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CUL 240",
+    "prerequisite_courses": [
+      "CUL 240"
+    ]
   },
   {
     "college_code": "nash",
@@ -2787,7 +2927,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Selby, D",
-    "seats_open": 13,
+    "seats_open": 14,
     "seats_total": 16,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2807,8 +2947,8 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Selby, D",
-    "seats_open": 9,
+    "instructor": "Griffin, R",
+    "seats_open": 3,
     "seats_total": 12,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2829,10 +2969,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Selby, D",
-    "seats_open": 2,
+    "seats_open": 0,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 131",
+    "prerequisite_courses": [
+      "WLD 131"
+    ]
   },
   {
     "college_code": "nash",
@@ -2850,7 +2992,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Selby, D",
-    "seats_open": 11,
+    "seats_open": 9,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []

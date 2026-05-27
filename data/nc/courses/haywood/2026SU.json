@@ -16,7 +16,7 @@
     "mode": "in-person",
     "instructor": "Hamm, P",
     "seats_open": 0,
-    "seats_total": 20,
+    "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -35,30 +35,9 @@
     "location": "Online Cu Classes",
     "campus": "OL",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 14,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "haywood",
-    "term": "2026SU",
-    "course_prefix": "ACA",
-    "course_number": "115",
-    "course_title": "Success & Study Skills",
-    "credits": 1,
-    "crn": "ACA-115-IN3",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-06-08",
-    "location": "Online Cu Classes",
-    "campus": "OL",
-    "mode": "in-person",
-    "instructor": null,
-    "seats_open": 20,
-    "seats_total": 20,
+    "instructor": "Hamm, P",
+    "seats_open": 6,
+    "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -78,8 +57,8 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Wampler, S",
-    "seats_open": 6,
-    "seats_total": 25,
+    "seats_open": 3,
+    "seats_total": 35,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -99,7 +78,7 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "De Saillan, H",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -120,7 +99,7 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "De Saillan, H",
-    "seats_open": 27,
+    "seats_open": 19,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -141,7 +120,7 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Cusick, D",
-    "seats_open": 4,
+    "seats_open": 0,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -162,7 +141,7 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Roberts, S",
-    "seats_open": 23,
+    "seats_open": 19,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -183,7 +162,7 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Roberts, S",
-    "seats_open": 10,
+    "seats_open": 11,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -204,28 +183,7 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Sherman, J",
-    "seats_open": 20,
-    "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "haywood",
-    "term": "2026SU",
-    "course_prefix": "BIO",
-    "course_number": "169",
-    "course_title": "Anatomy and Physiology II",
-    "credits": 4,
-    "crn": "BIO-169-IN1",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-06-08",
-    "location": "",
-    "campus": "",
-    "mode": "in-person",
-    "instructor": "Sherman, J",
-    "seats_open": 23,
+    "seats_open": 16,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -246,10 +204,17 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Lowe, L",
-    "seats_open": 2,
-    "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "BIO 168 and BIO 169 and BIO 110 or BIO 111 or BIO 163 or BIO 165 or BIO 168",
+    "prerequisite_courses": [
+      "BIO 168",
+      "BIO 169",
+      "BIO 110",
+      "BIO 111",
+      "BIO 163",
+      "BIO 165"
+    ]
   },
   {
     "college_code": "haywood",
@@ -267,7 +232,7 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Carpenter, M",
-    "seats_open": 21,
+    "seats_open": 18,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -309,7 +274,7 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Feilen, C",
-    "seats_open": 24,
+    "seats_open": 11,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -332,8 +297,12 @@
     "instructor": "Magnes, W",
     "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 and BSP 4002 and ENG 025",
+    "prerequisite_courses": [
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "haywood",
@@ -351,10 +320,14 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Feilen, C",
-    "seats_open": 19,
+    "seats_open": 14,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 and BSP 4002 and ENG 025",
+    "prerequisite_courses": [
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "haywood",
@@ -372,7 +345,7 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Dooly, V",
-    "seats_open": 14,
+    "seats_open": 9,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -393,7 +366,7 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Morgan, E",
-    "seats_open": 14,
+    "seats_open": 13,
     "seats_total": 35,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -414,8 +387,8 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Dean, E",
-    "seats_open": 15,
-    "seats_total": 30,
+    "seats_open": 4,
+    "seats_total": 40,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -435,7 +408,7 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Erickson, K",
-    "seats_open": 10,
+    "seats_open": 2,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -456,8 +429,8 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Vetter, A",
-    "seats_open": 0,
-    "seats_total": 20,
+    "seats_open": 4,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -478,9 +451,15 @@
     "mode": "in-person",
     "instructor": "Summerlin, T",
     "seats_open": 0,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_total": 30,
+    "prerequisite_text": "DRE 097 or ENG 002 or BSP 4002 or ENG 025 and ENG 045",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "haywood",
@@ -498,10 +477,43 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Vetter, A",
-    "seats_open": 0,
+    "seats_open": 2,
+    "seats_total": 30,
+    "prerequisite_text": "DRE 097 or ENG 002 or BSP 4002 or ENG 025 and ENG 045",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 045"
+    ]
+  },
+  {
+    "college_code": "haywood",
+    "term": "2026SU",
+    "course_prefix": "ENG",
+    "course_number": "111",
+    "course_title": "Writing and Inquiry",
+    "credits": 3,
+    "crn": "ENG-111-IN3",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-08",
+    "location": "Online Cu Classes",
+    "campus": "OL",
+    "mode": "in-person",
+    "instructor": "Vetter, A",
+    "seats_open": 5,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or ENG 002 or BSP 4002 or ENG 025 and ENG 045",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "haywood",
@@ -520,9 +532,34 @@
     "mode": "in-person",
     "instructor": "Summerlin, T",
     "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
+  },
+  {
+    "college_code": "haywood",
+    "term": "2026SU",
+    "course_prefix": "ENG",
+    "course_number": "112",
+    "course_title": "Writing/Research in the Disc",
+    "credits": 3,
+    "crn": "ENG-112-IN2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-08",
+    "location": "Online Cu Classes",
+    "campus": "OL",
+    "mode": "in-person",
+    "instructor": "Summerlin, T",
+    "seats_open": 15,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "haywood",
@@ -540,10 +577,14 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Dalton, K",
-    "seats_open": 27,
+    "seats_open": 22,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 112 or ENG 113 or ENG 114",
+    "prerequisite_courses": [
+      "ENG 112",
+      "ENG 113",
+      "ENG 114"
+    ]
   },
   {
     "college_code": "haywood",
@@ -560,8 +601,8 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 8,
+    "instructor": "Moreau, C",
+    "seats_open": 5,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -582,7 +623,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Moreau, C",
-    "seats_open": 7,
+    "seats_open": 3,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -596,17 +637,19 @@
     "credits": 4,
     "crn": "FOR-232-01",
     "days": "M T W Th",
-    "start_time": "9:00 AM",
+    "start_time": "8:00 AM",
     "end_time": "9:50 AM",
     "start_date": "2026-07-06",
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Byers, A",
-    "seats_open": 18,
+    "seats_open": 13,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "FOR 131",
+    "prerequisite_courses": [
+      "FOR 131"
+    ]
   },
   {
     "college_code": "haywood",
@@ -624,7 +667,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Hahn, G",
-    "seats_open": 17,
+    "seats_open": 13,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -645,7 +688,7 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Wampler, S",
-    "seats_open": 23,
+    "seats_open": 19,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -666,7 +709,7 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Wampler, S",
-    "seats_open": 17,
+    "seats_open": 1,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -687,10 +730,15 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Phillips, J",
-    "seats_open": 12,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or ENG 002 or BSP 4002 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "haywood",
@@ -708,7 +756,7 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Wampler, S",
-    "seats_open": 19,
+    "seats_open": 10,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -729,10 +777,15 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Phillips, J",
-    "seats_open": 14,
+    "seats_open": 10,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111 and ENG 112 or ENG 113 or ENG 114",
+    "prerequisite_courses": [
+      "ENG 111",
+      "ENG 112",
+      "ENG 113",
+      "ENG 114"
+    ]
   },
   {
     "college_code": "haywood",
@@ -750,10 +803,12 @@
     "campus": "HTC",
     "mode": "in-person",
     "instructor": "Burchfield, D",
-    "seats_open": 12,
+    "seats_open": 6,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ISC 112",
+    "prerequisite_courses": [
+      "ISC 112"
+    ]
   },
   {
     "college_code": "haywood",
@@ -771,8 +826,8 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Burchfield, D",
-    "seats_open": 2,
-    "seats_total": 15,
+    "seats_open": 1,
+    "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -792,7 +847,7 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Gould, K",
-    "seats_open": 17,
+    "seats_open": 13,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -813,28 +868,7 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Horton, L",
-    "seats_open": 9,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "haywood",
-    "term": "2026SU",
-    "course_prefix": "MAT",
-    "course_number": "035",
-    "course_title": "Concepts of Algebra",
-    "credits": 3,
-    "crn": "MAT-035-IN1",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-06-08",
-    "location": "Online Cu Classes",
-    "campus": "OL",
-    "mode": "in-person",
-    "instructor": "Winfree, J",
-    "seats_open": 19,
+    "seats_open": 0,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -855,7 +889,7 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Horton, L",
-    "seats_open": 11,
+    "seats_open": 3,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -876,10 +910,13 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Beamer, T",
-    "seats_open": 0,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 2,
+    "seats_total": 30,
+    "prerequisite_text": "MAT 003 or MAT 025",
+    "prerequisite_courses": [
+      "MAT 003",
+      "MAT 025"
+    ]
   },
   {
     "college_code": "haywood",
@@ -897,10 +934,13 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Beamer, T",
-    "seats_open": 12,
+    "seats_open": 3,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 003 or MAT 025",
+    "prerequisite_courses": [
+      "MAT 003",
+      "MAT 025"
+    ]
   },
   {
     "college_code": "haywood",
@@ -918,10 +958,13 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Winfree, J",
-    "seats_open": 14,
+    "seats_open": 10,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 003 or MAT 035",
+    "prerequisite_courses": [
+      "MAT 003",
+      "MAT 035"
+    ]
   },
   {
     "college_code": "haywood",
@@ -939,10 +982,12 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Winfree, J",
-    "seats_open": 16,
+    "seats_open": 13,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 171",
+    "prerequisite_courses": [
+      "MAT 171"
+    ]
   },
   {
     "college_code": "haywood",
@@ -960,10 +1005,12 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Passmore, A",
-    "seats_open": 17,
+    "seats_open": 19,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MED 121",
+    "prerequisite_courses": [
+      "MED 121"
+    ]
   },
   {
     "college_code": "haywood",
@@ -981,10 +1028,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Arrowood, J",
-    "seats_open": 77,
+    "seats_open": 71,
     "seats_total": 86,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 111",
+    "prerequisite_courses": [
+      "NUR 111"
+    ]
   },
   {
     "college_code": "haywood",
@@ -1044,10 +1093,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Lynch, D",
-    "seats_open": 5,
+    "seats_open": 6,
     "seats_total": 9,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PCF 111",
+    "prerequisite_courses": [
+      "PCF 111"
+    ]
   },
   {
     "college_code": "haywood",
@@ -1064,7 +1115,7 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Kay, I, Sawyer, A",
+    "instructor": "Sawyer, A",
     "seats_open": 0,
     "seats_total": 8,
     "prerequisite_text": null,
@@ -1086,7 +1137,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Wurst, B",
-    "seats_open": 5,
+    "seats_open": 4,
     "seats_total": 8,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1128,7 +1179,7 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Anderson, J",
-    "seats_open": 13,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1149,7 +1200,7 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Parker, J",
-    "seats_open": 30,
+    "seats_open": 14,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1170,10 +1221,12 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Anderson, J",
-    "seats_open": 17,
+    "seats_open": 4,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "haywood",
@@ -1191,7 +1244,7 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Watson, R",
-    "seats_open": 14,
+    "seats_open": 3,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1212,7 +1265,7 @@
     "campus": "OL",
     "mode": "in-person",
     "instructor": "Bond, C",
-    "seats_open": 27,
+    "seats_open": 19,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1232,10 +1285,12 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Johnson, W",
+    "instructor": "Frizzell, D",
     "seats_open": 10,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 115",
+    "prerequisite_courses": [
+      "WLD 115"
+    ]
   }
 ]

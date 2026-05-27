@@ -15,7 +15,7 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Erin L. McCully",
-    "seats_open": 30,
+    "seats_open": 6,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -35,8 +35,8 @@
     "location": "Web-Centered",
     "campus": "WEBCT",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 30,
+    "instructor": "Christopher Akers",
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -57,7 +57,7 @@
     "campus": "WEBCT",
     "mode": "in-person",
     "instructor": "Sharon H. Lauffer",
-    "seats_open": 30,
+    "seats_open": 10,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -78,10 +78,12 @@
     "campus": "WEBCT",
     "mode": "in-person",
     "instructor": "Sharon H. Lauffer",
-    "seats_open": 30,
+    "seats_open": 15,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ACC 120",
+    "prerequisite_courses": [
+      "ACC 120"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -99,7 +101,7 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Gabriela L. Balmaceda",
-    "seats_open": 30,
+    "seats_open": 18,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -107,11 +109,11 @@
   {
     "college_code": "southwestern",
     "term": "2026SU",
-    "course_prefix": "ASL",
-    "course_number": "112",
-    "course_title": "Elementary ASL II",
+    "course_prefix": "ART",
+    "course_number": "115",
+    "course_title": "Art History Survey II",
     "credits": 3,
-    "crn": "ASL-112-WC1",
+    "crn": "ART-115-WC1",
     "days": "",
     "start_time": "",
     "end_time": "",
@@ -119,11 +121,17 @@
     "location": "Web-Centered",
     "campus": "WEBCT",
     "mode": "online",
-    "instructor": "Gabriela L. Balmaceda",
-    "seats_open": 30,
+    "instructor": "Brian P. Kane",
+    "seats_open": 17,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 011 or ENG 025 and ENG 111 and ENG 045",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 011",
+      "ENG 025",
+      "ENG 111",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -141,7 +149,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Julie J. Jacobson",
-    "seats_open": 10,
+    "seats_open": 4,
     "seats_total": 10,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -162,10 +170,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Julie J. Jacobson",
-    "seats_open": 6,
+    "seats_open": 5,
     "seats_total": 6,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ART 240",
+    "prerequisite_courses": [
+      "ART 240"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -183,7 +193,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Brian P. Kane",
-    "seats_open": 8,
+    "seats_open": 2,
     "seats_total": 8,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -206,8 +216,10 @@
     "instructor": "Brian P. Kane",
     "seats_open": 8,
     "seats_total": 8,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ART 283",
+    "prerequisite_courses": [
+      "ART 283"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -225,10 +237,12 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "William M. Anderson",
-    "seats_open": 30,
+    "seats_open": 23,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AST 111",
+    "prerequisite_courses": [
+      "AST 111"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -246,10 +260,17 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "William M. Anderson",
-    "seats_open": 30,
+    "seats_open": 23,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 011 or ENG 025 and ENG 111 and ENG 045 and AST 111A",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 011",
+      "ENG 025",
+      "ENG 111",
+      "ENG 045",
+      "AST 111A"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -267,7 +288,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "David C. Myers",
-    "seats_open": 18,
+    "seats_open": 6,
     "seats_total": 18,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -287,32 +308,17 @@
     "location": "Web-Centered",
     "campus": "WEBCT",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 30,
+    "instructor": "Jeanette C. Reynolds",
+    "seats_open": 18,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "southwestern",
-    "term": "2026SU",
-    "course_prefix": "BIO",
-    "course_number": "120",
-    "course_title": "Introductory Botany",
-    "credits": 4,
-    "crn": "BIO-120-HYS1",
-    "days": "W Th",
-    "start_time": "9:00 AM",
-    "end_time": "11:00 AM",
-    "start_date": "2026-05-26",
-    "location": "Main Campus - Jackson",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Anna L. Goodfellow",
-    "seats_open": 24,
-    "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 011 or ENG 025 and ENG 111 and ENG 045",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 011",
+      "ENG 025",
+      "ENG 111",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -329,11 +335,13 @@
     "location": "Web-Centered",
     "campus": "WEBCT",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 30,
+    "instructor": "Dr. Marvin D. Sigal",
+    "seats_open": 24,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 140",
+    "prerequisite_courses": [
+      "BIO 140"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -350,11 +358,18 @@
     "location": "Web-Centered",
     "campus": "WEBCT",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 30,
+    "instructor": "Dr. Marvin D. Sigal",
+    "seats_open": 24,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 140A and ENG 002 or ENG 011 or ENG 025 and ENG 111 and ENG 045",
+    "prerequisite_courses": [
+      "BIO 140A",
+      "ENG 002",
+      "ENG 011",
+      "ENG 025",
+      "ENG 111",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -372,10 +387,16 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Kenneth J. Adams",
-    "seats_open": 24,
+    "seats_open": 14,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 011 or ENG 025 and ENG 111 and ENG 045",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 011",
+      "ENG 025",
+      "ENG 111",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -392,11 +413,17 @@
     "location": "Web-Centered",
     "campus": "WEBCT",
     "mode": "online",
-    "instructor": "Tba-Howle",
-    "seats_open": 30,
+    "instructor": "Kenneth J. Adams",
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 011 or ENG 025 and ENG 111 and ENG 045",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 011",
+      "ENG 025",
+      "ENG 111",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -414,10 +441,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Kenneth J. Adams",
-    "seats_open": 24,
+    "seats_open": 13,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 168",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -434,11 +463,13 @@
     "location": "Web-Centered",
     "campus": "WEBCT",
     "mode": "online",
-    "instructor": "Tba-Howle",
-    "seats_open": 30,
+    "instructor": "Kenneth J. Adams",
+    "seats_open": 16,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 168",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -455,11 +486,17 @@
     "location": "Web-Centered",
     "campus": "WEBCT",
     "mode": "online",
-    "instructor": "Tba-Howle",
-    "seats_open": 30,
+    "instructor": "Kristy P. Nickles",
+    "seats_open": 2,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 110 or BIO 111 or BIO 163 or BIO 165 or BIO 168",
+    "prerequisite_courses": [
+      "BIO 110",
+      "BIO 111",
+      "BIO 163",
+      "BIO 165",
+      "BIO 168"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -477,29 +514,8 @@
     "campus": "WEBCT",
     "mode": "in-person",
     "instructor": "William G. Clark",
-    "seats_open": 30,
+    "seats_open": 9,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "southwestern",
-    "term": "2026SU",
-    "course_prefix": "BUS",
-    "course_number": "110",
-    "course_title": "Introduction to Business",
-    "credits": 3,
-    "crn": "BUS-110-WM1",
-    "days": "T",
-    "start_time": "9:00 AM",
-    "end_time": "12:00 PM",
-    "start_date": "2026-05-26",
-    "location": "Macon Campus",
-    "campus": "MCN",
-    "mode": "in-person",
-    "instructor": "Steven W. Herren",
-    "seats_open": 16,
-    "seats_total": 16,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -519,7 +535,7 @@
     "campus": "WEBCT",
     "mode": "in-person",
     "instructor": "William G. Clark",
-    "seats_open": 30,
+    "seats_open": 15,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -540,10 +556,12 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Ms. Susan L. Cain",
-    "seats_open": 30,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 20,
+    "seats_total": 60,
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -561,10 +579,12 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Ms. Susan L. Cain",
-    "seats_open": 30,
+    "seats_open": 2,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -582,10 +602,12 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Ms. Susan L. Cain",
-    "seats_open": 30,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -603,7 +625,7 @@
     "campus": "WEBCT",
     "mode": "in-person",
     "instructor": "Larry S. Cline, Jr.",
-    "seats_open": 30,
+    "seats_open": 10,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -624,10 +646,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Jennifer W. Singleton",
-    "seats_open": 21,
+    "seats_open": 0,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -645,10 +670,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Jennifer W. Singleton, Mr. Kenneth R. McCall",
-    "seats_open": 21,
+    "seats_open": 0,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -666,7 +694,7 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Ms. Keri B. Price, Ms. Crystal H. Nichols, Abra U. Brooks",
-    "seats_open": 16,
+    "seats_open": 1,
     "seats_total": 16,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -687,10 +715,12 @@
     "campus": "OFFCM",
     "mode": "online",
     "instructor": "Ms. Crystal H. Nichols, Ms. Keri B. Price, Abra U. Brooks",
-    "seats_open": 16,
+    "seats_open": 1,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DEN 106",
+    "prerequisite_courses": [
+      "DEN 106"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -708,10 +738,16 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Mr. Ernest A. Morgan",
-    "seats_open": 30,
+    "seats_open": 17,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 011 or ENG 025 and ENG 111 and ENG 045",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 011",
+      "ENG 025",
+      "ENG 111",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -731,8 +767,14 @@
     "instructor": "Mr. Ernest A. Morgan",
     "seats_open": 20,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 011 or ENG 025 and ENG 111 and ENG 045",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 011",
+      "ENG 025",
+      "ENG 111",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -750,10 +792,16 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Mr. Ernest A. Morgan",
-    "seats_open": 30,
+    "seats_open": 23,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 011 or ENG 025 and ENG 111 and ENG 045",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 011",
+      "ENG 025",
+      "ENG 111",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -773,8 +821,11 @@
     "instructor": "Robert H. Grover, Mr. Sean P. Moore, Jr., Mr. Dalton A. Drinnon",
     "seats_open": 7,
     "seats_total": 7,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EMS 110 and EMS 120",
+    "prerequisite_courses": [
+      "EMS 110",
+      "EMS 120"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -792,10 +843,14 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Mr. Eric R. Hester, Robert H. Grover",
-    "seats_open": 5,
+    "seats_open": 2,
     "seats_total": 5,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EMS 122 and EMS 130 and EMS 160",
+    "prerequisite_courses": [
+      "EMS 122",
+      "EMS 130",
+      "EMS 160"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -813,10 +868,13 @@
     "campus": "OFFCM",
     "mode": "in-person",
     "instructor": "Mr. Eric R. Hester, Robert H. Grover",
-    "seats_open": 5,
+    "seats_open": 2,
     "seats_total": 5,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EMS 121 or EMS 122",
+    "prerequisite_courses": [
+      "EMS 121",
+      "EMS 122"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -834,8 +892,8 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Mrs. Amy J. Russ",
-    "seats_open": 20,
-    "seats_total": 20,
+    "seats_open": 21,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -855,10 +913,12 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Mrs. Amy J. Russ",
-    "seats_open": 30,
+    "seats_open": 15,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -876,10 +936,16 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Michael W. Park",
-    "seats_open": 30,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 011 or ENG 025 and ENG 111 and ENG 045",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 011",
+      "ENG 025",
+      "ENG 111",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -897,10 +963,16 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Lisa A. Mingus",
-    "seats_open": 20,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 6,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 002 or ENG 011 or ENG 025 and ENG 111 and ENG 045",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 011",
+      "ENG 025",
+      "ENG 111",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -918,31 +990,16 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Ms. Patricia R. Long",
-    "seats_open": 30,
+    "seats_open": 18,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "southwestern",
-    "term": "2026SU",
-    "course_prefix": "ENG",
-    "course_number": "112",
-    "course_title": "Writing/Research in the Disc",
-    "credits": 3,
-    "crn": "ENG-112-HYM1",
-    "days": "T Th",
-    "start_time": "11:00 AM",
-    "end_time": "12:30 PM",
-    "start_date": "2026-05-26",
-    "location": "Macon Campus",
-    "campus": "MCN",
-    "mode": "in-person",
-    "instructor": "Tba-Howle",
-    "seats_open": 28,
-    "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 011 or ENG 025 and ENG 111 and ENG 045",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 011",
+      "ENG 025",
+      "ENG 111",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -960,10 +1017,12 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Michael W. Park",
-    "seats_open": 30,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -981,31 +1040,12 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Michael W. Park",
-    "seats_open": 30,
+    "seats_open": 13,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "southwestern",
-    "term": "2026SU",
-    "course_prefix": "ENG",
-    "course_number": "232",
-    "course_title": "American Literature II",
-    "credits": 3,
-    "crn": "ENG-232-HYM1",
-    "days": "T Th",
-    "start_time": "9:30 AM",
-    "end_time": "11:00 AM",
-    "start_date": "2026-05-26",
-    "location": "Macon Campus",
-    "campus": "MCN",
-    "mode": "in-person",
-    "instructor": "Tba-Howle",
-    "seats_open": 28,
-    "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1023,10 +1063,12 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "John D. Meeks",
-    "seats_open": 30,
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1044,7 +1086,7 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Ms. Penny J. Wells",
-    "seats_open": 20,
+    "seats_open": 1,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1065,31 +1107,14 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Amber C. Sutton",
-    "seats_open": 20,
+    "seats_open": 2,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "southwestern",
-    "term": "2026SU",
-    "course_prefix": "HIS",
-    "course_number": "131",
-    "course_title": "American History I",
-    "credits": 3,
-    "crn": "HIS-131-MD1",
-    "days": "T Th",
-    "start_time": "11:00 AM",
-    "end_time": "1:30 PM",
-    "start_date": "2026-05-26",
-    "location": "Macon Campus",
-    "campus": "MCN",
-    "mode": "in-person",
-    "instructor": "Tba-Howle",
-    "seats_open": 22,
-    "seats_total": 22,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 163 or BIO 166 or BIO 169",
+    "prerequisite_courses": [
+      "BIO 163",
+      "BIO 166",
+      "BIO 169"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1107,10 +1132,16 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Ms. Norrie J. Meus",
-    "seats_open": 30,
+    "seats_open": 22,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 011 or ENG 025 and ENG 111 and ENG 045",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 011",
+      "ENG 025",
+      "ENG 111",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1128,7 +1159,7 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Crystal R. Rhynes",
-    "seats_open": 20,
+    "seats_open": 11,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1149,10 +1180,16 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Michael W. Park",
-    "seats_open": 30,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 011 or ENG 025 and ENG 111 and ENG 045",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 011",
+      "ENG 025",
+      "ENG 111",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1170,10 +1207,16 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Lisa A. Mingus",
-    "seats_open": 30,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 011 or ENG 025 and ENG 111 and ENG 045",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 011",
+      "ENG 025",
+      "ENG 111",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1191,7 +1234,7 @@
     "campus": "WEBCT",
     "mode": "in-person",
     "instructor": "Larry S. Cline, Jr.",
-    "seats_open": 30,
+    "seats_open": 2,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1212,7 +1255,7 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Jennifer K. Barfield",
-    "seats_open": 30,
+    "seats_open": 23,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1233,7 +1276,7 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Margaret V. Moss",
-    "seats_open": 20,
+    "seats_open": 12,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1253,8 +1296,8 @@
     "location": "Web-Centered",
     "campus": "WEBCT",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 20,
+    "instructor": "Margaret V. Moss",
+    "seats_open": 18,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1275,10 +1318,12 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Ms. Esther Izquierdo",
-    "seats_open": 24,
+    "seats_open": 17,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 143",
+    "prerequisite_courses": [
+      "MAT 143"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1295,11 +1340,13 @@
     "location": "Web-Centered",
     "campus": "WEBCT",
     "mode": "online",
-    "instructor": "Ms. Vicki L. Todd",
-    "seats_open": 20,
+    "instructor": "Ms. Amy L. Eilers",
+    "seats_open": 14,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 152",
+    "prerequisite_courses": [
+      "MAT 152"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1317,10 +1364,21 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Alison Carter",
-    "seats_open": 60,
+    "seats_open": 20,
     "seats_total": 60,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 003 or MAT 043 or MAT 025 and MAT 045Q and MAT 143 and ENG 002 or ENG 011 or ENG 025 and ENG 111 and ENG 045",
+    "prerequisite_courses": [
+      "MAT 003",
+      "MAT 043",
+      "MAT 025",
+      "MAT 045Q",
+      "MAT 143",
+      "ENG 002",
+      "ENG 011",
+      "ENG 025",
+      "ENG 111",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1337,41 +1395,31 @@
     "location": "Web-Centered",
     "campus": "WEBCT",
     "mode": "online",
-    "instructor": "Ms. Vicki L. Todd",
-    "seats_open": 30,
+    "instructor": "Ms. Amy L. Eilers",
+    "seats_open": 7,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 003 or MAT 043 or MAT 025 and MAT 045S and MAT 152 and ENG 002 or ENG 011 or ENG 025 and ENG 111 and ENG 045",
+    "prerequisite_courses": [
+      "MAT 003",
+      "MAT 043",
+      "MAT 025",
+      "MAT 045S",
+      "MAT 152",
+      "ENG 002",
+      "ENG 011",
+      "ENG 025",
+      "ENG 111",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "southwestern",
     "term": "2026SU",
     "course_prefix": "MED",
-    "course_number": "270",
-    "course_title": "Symptomatology",
+    "course_number": "121",
+    "course_title": "Medical Terminology I",
     "credits": 3,
-    "crn": "MED-270-HYS1",
-    "days": "",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-26",
-    "location": "Main Campus - Jackson",
-    "campus": "MC",
-    "mode": "online",
-    "instructor": "Jessica A. Bradley",
-    "seats_open": 18,
-    "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "southwestern",
-    "term": "2026SU",
-    "course_prefix": "MED",
-    "course_number": "276",
-    "course_title": "Patient Education",
-    "credits": 2,
-    "crn": "MED-276-WC1",
+    "crn": "MED-121-WC1",
     "days": "",
     "start_time": "",
     "end_time": "",
@@ -1379,11 +1427,34 @@
     "location": "Web-Centered",
     "campus": "WEBCT",
     "mode": "online",
-    "instructor": "Ms. Melissa A. Allison-Brooks",
-    "seats_open": 18,
-    "seats_total": 18,
+    "instructor": "Jessica A. Bradley",
+    "seats_open": 8,
+    "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
+  },
+  {
+    "college_code": "southwestern",
+    "term": "2026SU",
+    "course_prefix": "MED",
+    "course_number": "122",
+    "course_title": "Medical Terminology II",
+    "credits": 3,
+    "crn": "MED-122-WC1",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-23",
+    "location": "Web-Centered",
+    "campus": "WEBCT",
+    "mode": "online",
+    "instructor": "Jessica A. Bradley",
+    "seats_open": 14,
+    "seats_total": 25,
+    "prerequisite_text": "MED 121",
+    "prerequisite_courses": [
+      "MED 121"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1401,10 +1472,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Ashley M. Folse, Ms. Elizabeth S. Brooks",
-    "seats_open": 10,
+    "seats_open": 1,
     "seats_total": 10,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SON 120",
+    "prerequisite_courses": [
+      "SON 120"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1422,10 +1495,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Ashley M. Folse, Ms. Elizabeth S. Brooks",
-    "seats_open": 10,
+    "seats_open": 1,
     "seats_total": 10,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SON 110",
+    "prerequisite_courses": [
+      "SON 110"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1443,10 +1518,16 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Carol Cloer",
-    "seats_open": 30,
+    "seats_open": 14,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 011 or ENG 025 and ENG 111 and ENG 045",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 011",
+      "ENG 025",
+      "ENG 111",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1463,7 +1544,7 @@
     "location": "Main Campus - Jackson",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Michele L. Kussow",
+    "instructor": "Michele L. Kussow, Carly F. Messer",
     "seats_open": 10,
     "seats_total": 10,
     "prerequisite_text": null,
@@ -1484,11 +1565,13 @@
     "location": "Main Campus - Jackson",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Candace D. Threadgill, Ms. Catherine D. Sutton",
-    "seats_open": 21,
+    "instructor": "Candace D. Threadgill, Carly F. Messer, Ms. Carol T. Tucker, Rebekah C. Ledford, Veaceslav Cojan, Sandra E. Ledding",
+    "seats_open": 0,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 101",
+    "prerequisite_courses": [
+      "NUR 101"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1505,11 +1588,13 @@
     "location": "Main Campus - Jackson",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Ms. Carol T. Tucker, Rebekah C. Ledford, Ms. Jacklyn N. Ornelas, Cindy L. Stabel",
-    "seats_open": 35,
+    "instructor": "Ms. Carol T. Tucker, Rebekah C. Ledford, Carly F. Messer, Candace D. Threadgill, Fern M. Aspen, Ms. Jacklyn N. Ornelas, Cindy L. Stabel, Ms. Laura J. Bratcher, Sandra E. Ledding",
+    "seats_open": 3,
     "seats_total": 35,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 111",
+    "prerequisite_courses": [
+      "NUR 111"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1526,8 +1611,8 @@
     "location": "Off-Campus",
     "campus": "OFFCM",
     "mode": "online",
-    "instructor": "Carly F. Messer",
-    "seats_open": 10,
+    "instructor": "Charles B. Tucker, Carly F. Messer, Candace D. Threadgill",
+    "seats_open": 1,
     "seats_total": 10,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1548,10 +1633,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Margaret P. Vos",
-    "seats_open": 9,
+    "seats_open": 2,
     "seats_total": 9,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "OTA 120 and OTA 140",
+    "prerequisite_courses": [
+      "OTA 120",
+      "OTA 140"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1564,15 +1652,19 @@
     "days": "M T W Th F Sa",
     "start_time": "8:30 AM",
     "end_time": "4:30 PM",
-    "start_date": "2026-05-26",
+    "start_date": "2026-06-08",
     "location": "Main Campus - Jackson",
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Anna M. Walls",
-    "seats_open": 9,
+    "seats_open": 2,
     "seats_total": 9,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "OTA 120 and OTA 140 and OTA 130",
+    "prerequisite_courses": [
+      "OTA 120",
+      "OTA 140",
+      "OTA 130"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1590,10 +1682,12 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Margaret P. Vos",
-    "seats_open": 9,
+    "seats_open": 2,
     "seats_total": 9,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "OTA 140",
+    "prerequisite_courses": [
+      "OTA 140"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1611,7 +1705,7 @@
     "campus": "OFFCM",
     "mode": "in-person",
     "instructor": "Margaret P. Vos",
-    "seats_open": 2,
+    "seats_open": 0,
     "seats_total": 2,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1632,7 +1726,7 @@
     "campus": "WEBCT",
     "mode": "in-person",
     "instructor": "Jennifer K. Barfield",
-    "seats_open": 30,
+    "seats_open": 25,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1652,11 +1746,18 @@
     "location": "Web-Centered",
     "campus": "WEBCT",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 30,
+    "instructor": "Dr. Eric T. Williamson",
+    "seats_open": 18,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111 and DRE 098 and DRE 099 and ENG 111 and ENG 002 and BSP 4002 and ENG 011 and DRE 098 or ENG 002 or BSP 4002 or ENG 111",
+    "prerequisite_courses": [
+      "ENG 111",
+      "DRE 098",
+      "DRE 099",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 011"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1674,10 +1775,12 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Dr. Erin Bock",
-    "seats_open": 10,
+    "seats_open": 1,
     "seats_total": 10,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PTA 150",
+    "prerequisite_courses": [
+      "PTA 150"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1695,7 +1798,7 @@
     "campus": "OFFCM",
     "mode": "in-person",
     "instructor": "Ms. Lauren E. Carnes",
-    "seats_open": 10,
+    "seats_open": 1,
     "seats_total": 10,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1716,7 +1819,7 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Ms. Lauren E. Carnes",
-    "seats_open": 10,
+    "seats_open": 1,
     "seats_total": 10,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1737,10 +1840,12 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "William M. Anderson",
-    "seats_open": 30,
+    "seats_open": 20,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PHY 110",
+    "prerequisite_courses": [
+      "PHY 110"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1758,10 +1863,21 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "William M. Anderson",
-    "seats_open": 30,
+    "seats_open": 20,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PHY 110A and MAT 003 or MAT 043 or MAT 025 and MAT 025 or MAT 045 and ENG 002 or ENG 011 or ENG 025 and ENG 111 and ENG 045",
+    "prerequisite_courses": [
+      "PHY 110A",
+      "MAT 003",
+      "MAT 043",
+      "MAT 025",
+      "MAT 045",
+      "ENG 002",
+      "ENG 011",
+      "ENG 025",
+      "ENG 111",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1779,10 +1895,16 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Mr. Ernest A. Morgan",
-    "seats_open": 20,
+    "seats_open": 7,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 011 or ENG 025 and ENG 111 and ENG 045",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 011",
+      "ENG 025",
+      "ENG 111",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1799,11 +1921,13 @@
     "location": "Web-Centered",
     "campus": "WEBCT",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 30,
+    "instructor": "Julie S. Parker",
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1820,11 +1944,13 @@
     "location": "Web-Centered",
     "campus": "WEBCT",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 30,
+    "instructor": "Ms. Patricia R. Long",
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1841,11 +1967,13 @@
     "location": "Web-Centered",
     "campus": "WEBCT",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 30,
+    "instructor": "Julie S. Parker",
+    "seats_open": 19,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1862,11 +1990,13 @@
     "location": "Web-Centered",
     "campus": "WEBCT",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 30,
+    "instructor": "Julie S. Parker",
+    "seats_open": 2,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1884,10 +2014,14 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Ms. Margaret E. Rollins",
-    "seats_open": 15,
+    "seats_open": 0,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RAD 112 and RAD 121 and RAD 161",
+    "prerequisite_courses": [
+      "RAD 112",
+      "RAD 121",
+      "RAD 161"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1904,11 +2038,16 @@
     "location": "Off-Campus",
     "campus": "OFFCM",
     "mode": "in-person",
-    "instructor": "Ms. Jami L. Fletcher",
-    "seats_open": 9,
-    "seats_total": 9,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "instructor": "Ms. Jami L. Fletcher, Ms. Margaret E. Rollins",
+    "seats_open": 0,
+    "seats_total": 15,
+    "prerequisite_text": "RAD 112 and RAD 121 and RAD 161 and RAD 122",
+    "prerequisite_courses": [
+      "RAD 112",
+      "RAD 121",
+      "RAD 161",
+      "RAD 122"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1921,12 +2060,12 @@
     "days": "M T W Th",
     "start_time": "8:00 AM",
     "end_time": "4:30 PM",
-    "start_date": "2026-05-26",
+    "start_date": "2026-06-22",
     "location": "Off-Campus",
     "campus": "OFFCM",
     "mode": "in-person",
-    "instructor": "Ms. Jami L. Fletcher",
-    "seats_open": 15,
+    "instructor": "Ms. Jami L. Fletcher, Ms. Margaret E. Rollins",
+    "seats_open": 0,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1947,10 +2086,12 @@
     "campus": "BRCC",
     "mode": "in-person",
     "instructor": "Mr. Noah B. Jones",
-    "seats_open": 15,
+    "seats_open": 8,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RCP 111",
+    "prerequisite_courses": [
+      "RCP 111"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1968,10 +2109,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Ms. Morgan P. Henry, Gretchen Guelcher",
-    "seats_open": 20,
+    "seats_open": 13,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RCP 111",
+    "prerequisite_courses": [
+      "RCP 111"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -1989,10 +2132,12 @@
     "campus": "BRCC",
     "mode": "in-person",
     "instructor": "Amanda V. Towns",
-    "seats_open": 15,
+    "seats_open": 8,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RCP 111",
+    "prerequisite_courses": [
+      "RCP 111"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -2010,10 +2155,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Ms. Morgan P. Henry, Gretchen Guelcher",
-    "seats_open": 20,
+    "seats_open": 13,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RCP 111",
+    "prerequisite_courses": [
+      "RCP 111"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -2031,10 +2178,16 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Timothy F. Moser",
-    "seats_open": 30,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 011 or ENG 025 and ENG 111 and ENG 045",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 011",
+      "ENG 025",
+      "ENG 111",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -2052,10 +2205,12 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Crystal L. Chemel",
-    "seats_open": 30,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -2073,10 +2228,12 @@
     "campus": "WEBCT",
     "mode": "online",
     "instructor": "Crystal L. Chemel",
-    "seats_open": 30,
+    "seats_open": 10,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 111",
+    "prerequisite_courses": [
+      "SPA 111"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -2094,7 +2251,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Callie M. Hernandez, Ashleigh J. Edgell",
-    "seats_open": 12,
+    "seats_open": 6,
     "seats_total": 12,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2115,7 +2272,7 @@
     "campus": "OFFCM",
     "mode": "in-person",
     "instructor": "Callie M. Hernandez, Ashleigh J. Edgell",
-    "seats_open": 12,
+    "seats_open": 6,
     "seats_total": 12,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2136,7 +2293,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Callie M. Hernandez, Ashleigh J. Edgell",
-    "seats_open": 12,
+    "seats_open": 6,
     "seats_total": 12,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2157,10 +2314,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "David C. Myers",
-    "seats_open": 18,
+    "seats_open": 3,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "TRN 140",
+    "prerequisite_courses": [
+      "TRN 140"
+    ]
   },
   {
     "college_code": "southwestern",
@@ -2178,7 +2337,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "David C. Myers",
-    "seats_open": 18,
+    "seats_open": 3,
     "seats_total": 18,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2199,8 +2358,96 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Christopher H. McMahan",
-    "seats_open": 20,
+    "seats_open": 10,
     "seats_total": 20,
+    "prerequisite_text": "WLD 115 and WLD 121 and WLD 131",
+    "prerequisite_courses": [
+      "WLD 115",
+      "WLD 121",
+      "WLD 131"
+    ]
+  },
+  {
+    "college_code": "southwestern",
+    "term": "2026SU",
+    "course_prefix": "WBL",
+    "course_number": "111",
+    "course_title": "Work-Based Learning I",
+    "credits": 1,
+    "crn": "WBL-111-WC1",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Web-Centered",
+    "campus": "WEBCT",
+    "mode": "in-person",
+    "instructor": "Christopher L. Williams",
+    "seats_open": null,
+    "seats_total": null,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "southwestern",
+    "term": "2026SU",
+    "course_prefix": "WBL",
+    "course_number": "112",
+    "course_title": "Work-Based Learning I",
+    "credits": 2,
+    "crn": "WBL-112-WC1",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Web-Centered",
+    "campus": "WEBCT",
+    "mode": "in-person",
+    "instructor": "Christopher L. Williams",
+    "seats_open": null,
+    "seats_total": null,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "southwestern",
+    "term": "2026SU",
+    "course_prefix": "WBL",
+    "course_number": "114",
+    "course_title": "Work-Based Learning I",
+    "credits": 4,
+    "crn": "WBL-114-WC1",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Web-Centered",
+    "campus": "WEBCT",
+    "mode": "in-person",
+    "instructor": "Christopher L. Williams",
+    "seats_open": null,
+    "seats_total": null,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "southwestern",
+    "term": "2026SU",
+    "course_prefix": "WBL",
+    "course_number": "121",
+    "course_title": "Work-Based Learning II",
+    "credits": 1,
+    "crn": "WBL-121-WC1",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Web-Centered",
+    "campus": "WEBCT",
+    "mode": "in-person",
+    "instructor": "Christopher L. Williams",
+    "seats_open": null,
+    "seats_total": null,
     "prerequisite_text": null,
     "prerequisite_courses": []
   }

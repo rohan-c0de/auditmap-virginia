@@ -14,8 +14,8 @@
     "location": "Mooresville Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "TBA - To be assigned",
-    "seats_open": 23,
+    "instructor": "Kautz, J",
+    "seats_open": 15,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -35,7 +35,7 @@
     "location": "Distance Learning-Main Campus",
     "campus": "DL",
     "mode": "in-person",
-    "instructor": "TBA - To be assigned",
+    "instructor": "Huggins, D",
     "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
@@ -56,8 +56,8 @@
     "location": "Distance Learning-Main Campus",
     "campus": "DL",
     "mode": "in-person",
-    "instructor": "TBA - To be assigned",
-    "seats_open": 5,
+    "instructor": "Roseman, G",
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -77,8 +77,8 @@
     "location": "Distance Learning-Main Campus",
     "campus": "DL",
     "mode": "in-person",
-    "instructor": "TBA - To be assigned",
-    "seats_open": 22,
+    "instructor": "Roseman, G",
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -90,17 +90,59 @@
     "course_number": "122",
     "course_title": "College Transfer Success",
     "credits": 1,
-    "crn": "ACA-122-SJH1",
-    "days": "M",
-    "start_time": "11:00 AM",
-    "end_time": "12:15 PM",
+    "crn": "ACA-122-OJI4",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
     "start_date": "2026-06-01",
-    "location": "Main Campus-Broad St",
-    "campus": "BS",
+    "location": "Distance Learning-Main Campus",
+    "campus": "DL",
     "mode": "in-person",
-    "instructor": "TBA - To be assigned",
-    "seats_open": 24,
-    "seats_total": 25,
+    "instructor": "Gammon, K",
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "mitchell",
+    "term": "2026SU",
+    "course_prefix": "ACA",
+    "course_number": "122",
+    "course_title": "College Transfer Success",
+    "credits": 1,
+    "crn": "ACA-122-OJI5",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-01",
+    "location": "Distance Learning-Main Campus",
+    "campus": "DL",
+    "mode": "in-person",
+    "instructor": "Shoffner, K",
+    "seats_open": 0,
+    "seats_total": 31,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "mitchell",
+    "term": "2026SU",
+    "course_prefix": "ACA",
+    "course_number": "122",
+    "course_title": "College Transfer Success",
+    "credits": 1,
+    "crn": "ACA-122-OJI6",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-01",
+    "location": "Distance Learning-Main Campus",
+    "campus": "DL",
+    "mode": "in-person",
+    "instructor": "Singh, K",
+    "seats_open": 1,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -119,8 +161,29 @@
     "location": "Distance Learning-Main Campus",
     "campus": "DL",
     "mode": "in-person",
-    "instructor": "TBA - To be assigned",
-    "seats_open": 23,
+    "instructor": "Nichols, C",
+    "seats_open": 0,
+    "seats_total": 33,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "mitchell",
+    "term": "2026SU",
+    "course_prefix": "ACC",
+    "course_number": "120",
+    "course_title": "Prin of Financial Accounting",
+    "credits": 4,
+    "crn": "ACC-120-OJI2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-01",
+    "location": "Distance Learning-Main Campus",
+    "campus": "DL",
+    "mode": "in-person",
+    "instructor": "Nichols, C",
+    "seats_open": 14,
     "seats_total": 33,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -140,11 +203,13 @@
     "location": "Distance Learning-Main Campus",
     "campus": "DL",
     "mode": "in-person",
-    "instructor": "Killian, C",
-    "seats_open": 28,
+    "instructor": "Nichols, C",
+    "seats_open": 9,
     "seats_total": 33,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ACC 120",
+    "prerequisite_courses": [
+      "ACC 120"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -183,7 +248,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Quarantiello, D",
-    "seats_open": 16,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -204,8 +269,29 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Colon-Lopez, Y",
-    "seats_open": 20,
-    "seats_total": 30,
+    "seats_open": 0,
+    "seats_total": 34,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "mitchell",
+    "term": "2026SU",
+    "course_prefix": "ART",
+    "course_number": "111",
+    "course_title": "Art Appreciation",
+    "credits": 3,
+    "crn": "ART-111-OJI4",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-01",
+    "location": "Distance Learning-Main Campus",
+    "campus": "DL",
+    "mode": "in-person",
+    "instructor": "Farmer, P",
+    "seats_open": 0,
+    "seats_total": 35,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -225,8 +311,8 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Schmoyer, V",
-    "seats_open": 25,
-    "seats_total": 30,
+    "seats_open": 0,
+    "seats_total": 31,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -246,28 +332,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Schmoyer, V",
-    "seats_open": 25,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "mitchell",
-    "term": "2026SU",
-    "course_prefix": "ART",
-    "course_number": "116",
-    "course_title": "Survey of American Art",
-    "credits": 3,
-    "crn": "ART-116-OJI1",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-06-01",
-    "location": "Distance Learning-Main Campus",
-    "campus": "DL",
-    "mode": "in-person",
-    "instructor": "Colon-Lopez, Y",
-    "seats_open": 29,
+    "seats_open": 9,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -287,9 +352,9 @@
     "location": "Distance Learning-Main Campus",
     "campus": "DL",
     "mode": "in-person",
-    "instructor": "TBA - To be assigned",
-    "seats_open": 17,
-    "seats_total": 30,
+    "instructor": "Maracin, K",
+    "seats_open": 0,
+    "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -308,9 +373,9 @@
     "location": "Distance Learning-Main Campus",
     "campus": "DL",
     "mode": "in-person",
-    "instructor": "TBA - To be assigned",
-    "seats_open": 28,
-    "seats_total": 30,
+    "instructor": "Simmons, L",
+    "seats_open": 0,
+    "seats_total": 33,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -331,7 +396,7 @@
     "mode": "in-person",
     "instructor": "Collins, D",
     "seats_open": 0,
-    "seats_total": 30,
+    "seats_total": 34,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -350,9 +415,9 @@
     "location": "Distance Learning-Main Campus",
     "campus": "DL",
     "mode": "in-person",
-    "instructor": "TBA - To be assigned",
-    "seats_open": 26,
-    "seats_total": 30,
+    "instructor": "Simmons, L",
+    "seats_open": 0,
+    "seats_total": 36,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -371,11 +436,13 @@
     "location": "Distance Learning-Main Campus",
     "campus": "DL",
     "mode": "in-person",
-    "instructor": "TBA - To be assigned",
-    "seats_open": 25,
+    "instructor": "Landrum, M",
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 111",
+    "prerequisite_courses": [
+      "BIO 111"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -392,9 +459,9 @@
     "location": "Distance Learning-Main Campus",
     "campus": "DL",
     "mode": "in-person",
-    "instructor": "TBA - To be assigned",
-    "seats_open": 22,
-    "seats_total": 30,
+    "instructor": "Williams, D",
+    "seats_open": 0,
+    "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -413,9 +480,9 @@
     "location": "Distance Learning-Main Campus",
     "campus": "DL",
     "mode": "in-person",
-    "instructor": "TBA - To be assigned",
-    "seats_open": 19,
-    "seats_total": 30,
+    "instructor": "Williams, D",
+    "seats_open": 0,
+    "seats_total": 69,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -434,11 +501,13 @@
     "location": "Distance Learning-Main Campus",
     "campus": "DL",
     "mode": "in-person",
-    "instructor": "TBA - To be assigned",
-    "seats_open": 18,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "instructor": "Williams, D",
+    "seats_open": 3,
+    "seats_total": 46,
+    "prerequisite_text": "BIO 168",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -455,9 +524,9 @@
     "location": "Distance Learning-Main Campus",
     "campus": "DL",
     "mode": "in-person",
-    "instructor": "TBA - To be assigned",
-    "seats_open": 15,
-    "seats_total": 30,
+    "instructor": "Sherman, S",
+    "seats_open": 4,
+    "seats_total": 63,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -477,7 +546,49 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Champ, T",
-    "seats_open": 13,
+    "seats_open": 0,
+    "seats_total": 33,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "mitchell",
+    "term": "2026SU",
+    "course_prefix": "BUS",
+    "course_number": "110",
+    "course_title": "Introduction to Business",
+    "credits": 3,
+    "crn": "BUS-110-OJI2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-01",
+    "location": "Distance Learning-Main Campus",
+    "campus": "DL",
+    "mode": "in-person",
+    "instructor": "Peddycord, A",
+    "seats_open": 0,
+    "seats_total": 33,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "mitchell",
+    "term": "2026SU",
+    "course_prefix": "BUS",
+    "course_number": "110",
+    "course_title": "Introduction to Business",
+    "credits": 3,
+    "crn": "BUS-110-OJI3",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-01",
+    "location": "Distance Learning-Main Campus",
+    "campus": "DL",
+    "mode": "in-person",
+    "instructor": "Bowser, W, Wise, T",
+    "seats_open": 29,
     "seats_total": 33,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -498,7 +609,28 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Wise, T",
-    "seats_open": 20,
+    "seats_open": 0,
+    "seats_total": 33,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "mitchell",
+    "term": "2026SU",
+    "course_prefix": "BUS",
+    "course_number": "115",
+    "course_title": "Business Law I",
+    "credits": 3,
+    "crn": "BUS-115-OJI2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-01",
+    "location": "Distance Learning-Main Campus",
+    "campus": "DL",
+    "mode": "in-person",
+    "instructor": "Wise, T",
+    "seats_open": 27,
     "seats_total": 33,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -519,7 +651,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Williams, R",
-    "seats_open": 28,
+    "seats_open": 18,
     "seats_total": 33,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -539,8 +671,8 @@
     "location": "Distance Learning-Main Campus",
     "campus": "DL",
     "mode": "in-person",
-    "instructor": "TBA - To be assigned",
-    "seats_open": 17,
+    "instructor": "Champ, T",
+    "seats_open": 2,
     "seats_total": 33,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -560,9 +692,9 @@
     "location": "Distance Learning-Main Campus",
     "campus": "DL",
     "mode": "in-person",
-    "instructor": "TBA - To be assigned",
-    "seats_open": 15,
-    "seats_total": 30,
+    "instructor": "Sherman, S",
+    "seats_open": 0,
+    "seats_total": 33,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -581,9 +713,9 @@
     "location": "Distance Learning-Main Campus",
     "campus": "DL",
     "mode": "in-person",
-    "instructor": "TBA - To be assigned",
-    "seats_open": 28,
-    "seats_total": 30,
+    "instructor": "Sherman, S",
+    "seats_open": 0,
+    "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -603,8 +735,8 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Jordan, C",
-    "seats_open": 15,
-    "seats_total": 25,
+    "seats_open": 0,
+    "seats_total": 29,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -645,8 +777,50 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Scott, H",
-    "seats_open": 11,
+    "seats_open": 0,
     "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "mitchell",
+    "term": "2026SU",
+    "course_prefix": "COM",
+    "course_number": "120",
+    "course_title": "Intro Interpersonal Com",
+    "credits": 3,
+    "crn": "COM-120-OJI3",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-01",
+    "location": "Distance Learning-Main Campus",
+    "campus": "DL",
+    "mode": "in-person",
+    "instructor": "Lail, L",
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "mitchell",
+    "term": "2026SU",
+    "course_prefix": "COM",
+    "course_number": "120",
+    "course_title": "Intro Interpersonal Com",
+    "credits": 3,
+    "crn": "COM-120-OJI4",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-01",
+    "location": "Distance Learning-Main Campus",
+    "campus": "DL",
+    "mode": "in-person",
+    "instructor": "Scott, H",
+    "seats_open": 1,
+    "seats_total": 34,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -666,10 +840,12 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Lail, L",
-    "seats_open": 7,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -687,10 +863,12 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Setvin, T",
-    "seats_open": 17,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -708,10 +886,12 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Lail, L",
-    "seats_open": 18,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -728,11 +908,13 @@
     "location": "Distance Learning-Main Campus",
     "campus": "DL",
     "mode": "in-person",
-    "instructor": "TBA - To be assigned",
-    "seats_open": 24,
+    "instructor": "Setvin, T",
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -750,7 +932,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Lands, J",
-    "seats_open": 25,
+    "seats_open": 19,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -771,8 +953,8 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Gibson, J",
-    "seats_open": 26,
-    "seats_total": 30,
+    "seats_open": 13,
+    "seats_total": 80,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -792,8 +974,8 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Brochu, S",
-    "seats_open": 28,
-    "seats_total": 30,
+    "seats_open": 16,
+    "seats_total": 80,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -813,7 +995,7 @@
     "campus": "FS",
     "mode": "in-person",
     "instructor": "Williams, R",
-    "seats_open": 1,
+    "seats_open": 0,
     "seats_total": 1,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -834,7 +1016,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Partapurwala, M",
-    "seats_open": 6,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -855,7 +1037,28 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Dunlap, B",
-    "seats_open": 17,
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "mitchell",
+    "term": "2026SU",
+    "course_prefix": "ECO",
+    "course_number": "251",
+    "course_title": "Prin of Microeconomics",
+    "credits": 3,
+    "crn": "ECO-251-OJI3",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-01",
+    "location": "Distance Learning-Main Campus",
+    "campus": "DL",
+    "mode": "in-person",
+    "instructor": "Adams, L",
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -876,8 +1079,8 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Carr, C",
-    "seats_open": 18,
-    "seats_total": 30,
+    "seats_open": 1,
+    "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -897,8 +1100,8 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Adams, L",
-    "seats_open": 23,
-    "seats_total": 30,
+    "seats_open": 0,
+    "seats_total": 31,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -918,7 +1121,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Stein, P",
-    "seats_open": 30,
+    "seats_open": 15,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -939,7 +1142,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Fitzgibbons, K",
-    "seats_open": 30,
+    "seats_open": 13,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -960,7 +1163,7 @@
     "campus": "WDB",
     "mode": "in-person",
     "instructor": "Troutman, H",
-    "seats_open": 11,
+    "seats_open": 5,
     "seats_total": 12,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -981,7 +1184,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Shoffner, K",
-    "seats_open": 20,
+    "seats_open": 10,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1002,8 +1205,8 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Ausburn, L",
-    "seats_open": 17,
-    "seats_total": 20,
+    "seats_open": 0,
+    "seats_total": 21,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1023,7 +1226,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Ausburn, L",
-    "seats_open": 20,
+    "seats_open": 0,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1044,8 +1247,8 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Shoffner, K",
-    "seats_open": 20,
-    "seats_total": 20,
+    "seats_open": 0,
+    "seats_total": 21,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1064,51 +1267,9 @@
     "location": "Main Campus-Broad St",
     "campus": "BS",
     "mode": "in-person",
-    "instructor": "Singh, K",
-    "seats_open": 20,
+    "instructor": "Gammon, K",
+    "seats_open": 4,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "mitchell",
-    "term": "2026SU",
-    "course_prefix": "ENG",
-    "course_number": "111",
-    "course_title": "Writing and Inquiry",
-    "credits": 3,
-    "crn": "ENG-111-MJB1",
-    "days": "M W",
-    "start_time": "11:00 AM",
-    "end_time": "11:50 AM",
-    "start_date": "2026-06-01",
-    "location": "Mooresville Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Knudson, L",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "mitchell",
-    "term": "2026SU",
-    "course_prefix": "ENG",
-    "course_number": "111",
-    "course_title": "Writing and Inquiry",
-    "credits": 3,
-    "crn": "ENG-111-MJB2",
-    "days": "T Th",
-    "start_time": "11:00 AM",
-    "end_time": "11:50 AM",
-    "start_date": "2026-06-01",
-    "location": "Mooresville Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Knudson, L",
-    "seats_open": 24,
-    "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1128,8 +1289,8 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Anderson, A",
-    "seats_open": 6,
-    "seats_total": 25,
+    "seats_open": 0,
+    "seats_total": 26,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1149,7 +1310,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Singh, K",
-    "seats_open": 19,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1170,7 +1331,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Anderson, A",
-    "seats_open": 23,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1191,7 +1352,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Ausburn, L",
-    "seats_open": 17,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1212,8 +1373,8 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Childres, M",
-    "seats_open": 25,
-    "seats_total": 25,
+    "seats_open": 0,
+    "seats_total": 26,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1233,71 +1394,8 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Childres, M",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "mitchell",
-    "term": "2026SU",
-    "course_prefix": "ENG",
-    "course_number": "111",
-    "course_title": "Writing and Inquiry",
-    "credits": 3,
-    "crn": "ENG-111-SJB1",
-    "days": "M W",
-    "start_time": "8:00 AM",
-    "end_time": "8:50 AM",
-    "start_date": "2026-06-01",
-    "location": "Main Campus-Broad St",
-    "campus": "BS",
-    "mode": "in-person",
-    "instructor": "Abbate, R",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "mitchell",
-    "term": "2026SU",
-    "course_prefix": "ENG",
-    "course_number": "111",
-    "course_title": "Writing and Inquiry",
-    "credits": 3,
-    "crn": "ENG-111-SJB2",
-    "days": "M W",
-    "start_time": "12:30 PM",
-    "end_time": "1:20 PM",
-    "start_date": "2026-06-01",
-    "location": "Main Campus-Broad St",
-    "campus": "BS",
-    "mode": "in-person",
-    "instructor": "Finch, M",
-    "seats_open": 24,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "mitchell",
-    "term": "2026SU",
-    "course_prefix": "ENG",
-    "course_number": "111",
-    "course_title": "Writing and Inquiry",
-    "credits": 3,
-    "crn": "ENG-111-SJB3",
-    "days": "T Th",
-    "start_time": "8:00 AM",
-    "end_time": "8:50 AM",
-    "start_date": "2026-06-01",
-    "location": "Main Campus-Broad St",
-    "campus": "BS",
-    "mode": "in-person",
-    "instructor": "Gammon, K",
-    "seats_open": 25,
-    "seats_total": 25,
+    "seats_open": 0,
+    "seats_total": 26,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1317,31 +1415,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Knudson, L",
-    "seats_open": 25,
+    "seats_open": 16,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "mitchell",
-    "term": "2026SU",
-    "course_prefix": "ENG",
-    "course_number": "112",
-    "course_title": "Writing/Research in the Disc",
-    "credits": 3,
-    "crn": "ENG-112-MJB2",
-    "days": "M W",
-    "start_time": "11:00 AM",
-    "end_time": "11:50 AM",
-    "start_date": "2026-06-01",
-    "location": "Mooresville Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Abbate, R",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -1360,9 +1439,11 @@
     "mode": "in-person",
     "instructor": "Wike, K",
     "seats_open": 0,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_total": 26,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -1380,10 +1461,12 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Singh, K",
-    "seats_open": 18,
+    "seats_open": 2,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -1401,10 +1484,12 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Wike, K",
-    "seats_open": 17,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 26,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -1422,10 +1507,12 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Summerlin, T",
-    "seats_open": 16,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -1443,10 +1530,12 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Summerlin, T",
-    "seats_open": 22,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -1455,40 +1544,21 @@
     "course_number": "112",
     "course_title": "Writing/Research in the Disc",
     "credits": 3,
-    "crn": "ENG-112-SJB1",
-    "days": "T Th",
-    "start_time": "9:30 AM",
-    "end_time": "10:20 AM",
+    "crn": "ENG-112-OJI6",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
     "start_date": "2026-06-01",
-    "location": "Main Campus-Broad St",
-    "campus": "BS",
+    "location": "Distance Learning-Main Campus",
+    "campus": "DL",
     "mode": "in-person",
     "instructor": "Knudson, L",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "mitchell",
-    "term": "2026SU",
-    "course_prefix": "ENG",
-    "course_number": "112",
-    "course_title": "Writing/Research in the Disc",
-    "credits": 3,
-    "crn": "ENG-112-SJHI",
-    "days": "M",
-    "start_time": "2:00 PM",
-    "end_time": "2:50 PM",
-    "start_date": "2026-06-01",
-    "location": "Main Campus-Broad St",
-    "campus": "BS",
-    "mode": "in-person",
-    "instructor": "Childres, M",
-    "seats_open": 21,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -1506,10 +1576,14 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Pressley, B",
-    "seats_open": 18,
+    "seats_open": 9,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 112 or ENG 113 or ENG 114",
+    "prerequisite_courses": [
+      "ENG 112",
+      "ENG 113",
+      "ENG 114"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -1527,7 +1601,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Gaddy, M",
-    "seats_open": 19,
+    "seats_open": 3,
     "seats_total": 35,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1548,8 +1622,8 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Lackey, C",
-    "seats_open": 15,
-    "seats_total": 30,
+    "seats_open": 0,
+    "seats_total": 31,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1569,7 +1643,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Lackey, C",
-    "seats_open": 29,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1590,29 +1664,8 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Murray, P",
-    "seats_open": 22,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "mitchell",
-    "term": "2026SU",
-    "course_prefix": "HIS",
-    "course_number": "132",
-    "course_title": "American History II",
-    "credits": 3,
-    "crn": "HIS-132-OJI2",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-06-01",
-    "location": "Distance Learning-Main Campus",
-    "campus": "DL",
-    "mode": "in-person",
-    "instructor": "Murray, P",
-    "seats_open": 29,
-    "seats_total": 30,
+    "seats_open": 3,
+    "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1632,10 +1685,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Gammon, K",
-    "seats_open": 23,
+    "seats_open": 4,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -1653,7 +1708,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Vacca, S",
-    "seats_open": 25,
+    "seats_open": 11,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1674,7 +1729,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Nobles, C",
-    "seats_open": 18,
+    "seats_open": 11,
     "seats_total": 18,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1695,7 +1750,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Mohammed Raoof, M",
-    "seats_open": 23,
+    "seats_open": 7,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1716,7 +1771,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Lands, J",
-    "seats_open": 14,
+    "seats_open": 2,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1737,10 +1792,21 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Dorsett, S",
-    "seats_open": 16,
+    "seats_open": 12,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 025 and MAT 003 and BSP 4003 and DMA 010 and DMA 020 and DMA 030 and DMA 040 and DMA 050 and MAT 060 and MAT 070",
+    "prerequisite_courses": [
+      "MAT 025",
+      "MAT 003",
+      "BSP 4003",
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DMA 040",
+      "DMA 050",
+      "MAT 060",
+      "MAT 070"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -1758,10 +1824,13 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Piervincenti, A",
-    "seats_open": 30,
+    "seats_open": 26,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "LEX 120 and LEX 140",
+    "prerequisite_courses": [
+      "LEX 120",
+      "LEX 140"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -1779,7 +1848,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Matyushin, V",
-    "seats_open": 20,
+    "seats_open": 13,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1800,7 +1869,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "DiTolla, M",
-    "seats_open": 23,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1821,7 +1890,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "DiTolla, M",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1842,28 +1911,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Matyushin, V",
-    "seats_open": 24,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "mitchell",
-    "term": "2026SU",
-    "course_prefix": "MAT",
-    "course_number": "035",
-    "course_title": "Concepts of Algebra",
-    "credits": 3,
-    "crn": "MAT-035-OJI2",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-06-01",
-    "location": "Distance Learning-Main Campus",
-    "campus": "DL",
-    "mode": "in-person",
-    "instructor": "Bennis Taleb, Y",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1884,7 +1932,7 @@
     "campus": "BS",
     "mode": "in-person",
     "instructor": "Byrum, R",
-    "seats_open": 19,
+    "seats_open": 12,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1905,7 +1953,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Dimella, T",
-    "seats_open": 23,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1926,7 +1974,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Matyushin, V",
-    "seats_open": 24,
+    "seats_open": 18,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1947,7 +1995,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Leamon-Smith, J",
-    "seats_open": 15,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1968,7 +2016,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Mazaleski, L",
-    "seats_open": 25,
+    "seats_open": 18,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1989,8 +2037,8 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Dimella, T",
-    "seats_open": 8,
-    "seats_total": 30,
+    "seats_open": 0,
+    "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2010,7 +2058,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Steele, T",
-    "seats_open": 15,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2031,7 +2079,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Steele, T",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2052,7 +2100,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Payne, N",
-    "seats_open": 13,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2073,7 +2121,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Payne, N",
-    "seats_open": 28,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2094,7 +2142,7 @@
     "campus": "BS",
     "mode": "in-person",
     "instructor": "Byrum, R",
-    "seats_open": 22,
+    "seats_open": 13,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2115,10 +2163,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Mazaleski, L",
-    "seats_open": 23,
+    "seats_open": 12,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 171",
+    "prerequisite_courses": [
+      "MAT 171"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -2136,10 +2186,12 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Leamon-Smith, J",
-    "seats_open": 24,
+    "seats_open": 7,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 171",
+    "prerequisite_courses": [
+      "MAT 171"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -2157,10 +2209,13 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Benson, K",
-    "seats_open": 27,
+    "seats_open": 7,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 171 or MAT 175",
+    "prerequisite_courses": [
+      "MAT 171",
+      "MAT 175"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -2178,10 +2233,13 @@
     "campus": "BS",
     "mode": "in-person",
     "instructor": "Benson, K",
-    "seats_open": 23,
+    "seats_open": 15,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 172 or MAT 175",
+    "prerequisite_courses": [
+      "MAT 172",
+      "MAT 175"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -2199,7 +2257,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Pearson, K, Russell, L",
-    "seats_open": 25,
+    "seats_open": 3,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2220,10 +2278,20 @@
     "campus": "OFF",
     "mode": "in-person",
     "instructor": "Russell, L",
-    "seats_open": 11,
+    "seats_open": 2,
     "seats_total": 17,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MED 110 or MED 118 or MED 122 or MED 131 or MED 150 or MED 270 and MED 264 and ENG 111 and PSY 150",
+    "prerequisite_courses": [
+      "MED 110",
+      "MED 118",
+      "MED 122",
+      "MED 131",
+      "MED 150",
+      "MED 270",
+      "MED 264",
+      "ENG 111",
+      "PSY 150"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -2241,10 +2309,18 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Russell, L",
-    "seats_open": 11,
+    "seats_open": 2,
     "seats_total": 17,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MED 110 or MED 118 or MED 122 or MED 131 or MED 150 or MED 270 and MED 260 (min C)",
+    "prerequisite_courses": [
+      "MED 110",
+      "MED 118",
+      "MED 122",
+      "MED 131",
+      "MED 150",
+      "MED 270",
+      "MED 260"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -2262,7 +2338,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Pass, T",
-    "seats_open": 15,
+    "seats_open": 10,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2283,7 +2359,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Wilemon, L",
-    "seats_open": 14,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2303,8 +2379,29 @@
     "location": "Distance Learning-Main Campus",
     "campus": "DL",
     "mode": "in-person",
-    "instructor": "Linebarger, A",
-    "seats_open": 20,
+    "instructor": "Holt, P",
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "mitchell",
+    "term": "2026SU",
+    "course_prefix": "MUS",
+    "course_number": "110",
+    "course_title": "Music Appreciation",
+    "credits": 3,
+    "crn": "MUS-110-OJI3",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-01",
+    "location": "Distance Learning-Main Campus",
+    "campus": "DL",
+    "mode": "in-person",
+    "instructor": "TBA - To be assigned",
+    "seats_open": 5,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2325,7 +2422,7 @@
     "campus": "BS",
     "mode": "in-person",
     "instructor": "Pass, T",
-    "seats_open": 13,
+    "seats_open": 5,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2346,8 +2443,8 @@
     "campus": "BS",
     "mode": "in-person",
     "instructor": "Dean, K",
-    "seats_open": 7,
-    "seats_total": 8,
+    "seats_open": 1,
+    "seats_total": 12,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2367,10 +2464,34 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Brown, B",
-    "seats_open": 13,
-    "seats_total": 30,
+    "seats_open": 0,
+    "seats_total": 31,
     "prerequisite_text": null,
     "prerequisite_courses": []
+  },
+  {
+    "college_code": "mitchell",
+    "term": "2026SU",
+    "course_prefix": "MUS",
+    "course_number": "162V",
+    "course_title": "Applied Music II - Voice",
+    "credits": 2,
+    "crn": "MUS-162V-SJB1",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-01",
+    "location": "Main Campus-Broad St",
+    "campus": "BS",
+    "mode": "in-person",
+    "instructor": "Lyles, S",
+    "seats_open": 0,
+    "seats_total": 1,
+    "prerequisite_text": "MUS 161 and MUS 161V",
+    "prerequisite_courses": [
+      "MUS 161",
+      "MUS 161V"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -2388,7 +2509,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Brown, B",
-    "seats_open": 27,
+    "seats_open": 18,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2409,7 +2530,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Lands, J",
-    "seats_open": 17,
+    "seats_open": 10,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2430,10 +2551,35 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Kautz, J",
-    "seats_open": 18,
+    "seats_open": 4,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
+  },
+  {
+    "college_code": "mitchell",
+    "term": "2026SU",
+    "course_prefix": "PHI",
+    "course_number": "215",
+    "course_title": "Philosophical Issues",
+    "credits": 3,
+    "crn": "PHI-215-OJI2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-01",
+    "location": "Distance Learning-Main Campus",
+    "campus": "DL",
+    "mode": "in-person",
+    "instructor": "McKinley, M",
+    "seats_open": 13,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -2451,10 +2597,12 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Kautz, J",
-    "seats_open": 6,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 1,
+    "seats_total": 31,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -2472,10 +2620,12 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Kautz, J",
-    "seats_open": 28,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -2493,7 +2643,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Hurdle, B",
-    "seats_open": 25,
+    "seats_open": 17,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2514,7 +2664,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Davidson, K",
-    "seats_open": 29,
+    "seats_open": 16,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2535,7 +2685,7 @@
     "campus": "OFF",
     "mode": "in-person",
     "instructor": "Gaddy, M",
-    "seats_open": 29,
+    "seats_open": 24,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2556,7 +2706,28 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Roseman, G",
-    "seats_open": 9,
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "mitchell",
+    "term": "2026SU",
+    "course_prefix": "POL",
+    "course_number": "120",
+    "course_title": "American Government",
+    "credits": 3,
+    "crn": "POL-120-OJI2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-01",
+    "location": "Distance Learning-Main Campus",
+    "campus": "DL",
+    "mode": "in-person",
+    "instructor": "Roseman, G",
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2577,7 +2748,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Roseman, G",
-    "seats_open": 26,
+    "seats_open": 11,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2598,7 +2769,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Martin, T",
-    "seats_open": 28,
+    "seats_open": 19,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2619,7 +2790,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "McMiller, T",
-    "seats_open": 10,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2640,7 +2811,49 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Fukami, A",
-    "seats_open": 7,
+    "seats_open": 0,
+    "seats_total": 32,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "mitchell",
+    "term": "2026SU",
+    "course_prefix": "PSY",
+    "course_number": "150",
+    "course_title": "General Psychology",
+    "credits": 3,
+    "crn": "PSY-150-OJI3",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-01",
+    "location": "Distance Learning-Main Campus",
+    "campus": "DL",
+    "mode": "in-person",
+    "instructor": "Cannon, A",
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "mitchell",
+    "term": "2026SU",
+    "course_prefix": "PSY",
+    "course_number": "150",
+    "course_title": "General Psychology",
+    "credits": 3,
+    "crn": "PSY-150-OJI4",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-01",
+    "location": "Distance Learning-Main Campus",
+    "campus": "DL",
+    "mode": "in-person",
+    "instructor": "Williams-Cannon, J",
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2661,7 +2874,7 @@
     "campus": "BS",
     "mode": "in-person",
     "instructor": "Martin, T",
-    "seats_open": 27,
+    "seats_open": 9,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2682,10 +2895,35 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "McMiller, T",
-    "seats_open": 16,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 1,
+    "seats_total": 32,
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
+  },
+  {
+    "college_code": "mitchell",
+    "term": "2026SU",
+    "course_prefix": "PSY",
+    "course_number": "241",
+    "course_title": "Developmental Psych",
+    "credits": 3,
+    "crn": "PSY-241-OJI2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-01",
+    "location": "Distance Learning-Main Campus",
+    "campus": "DL",
+    "mode": "in-person",
+    "instructor": "Cannon, A",
+    "seats_open": 0,
+    "seats_total": 32,
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -2703,10 +2941,12 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Fukami, A",
-    "seats_open": 17,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 1,
+    "seats_total": 31,
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -2724,7 +2964,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Pressley, B",
-    "seats_open": 23,
+    "seats_open": 7,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2766,7 +3006,7 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Patterson, A",
-    "seats_open": 20,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2787,8 +3027,29 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Hollar, J",
-    "seats_open": 19,
+    "seats_open": 0,
     "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "mitchell",
+    "term": "2026SU",
+    "course_prefix": "SOC",
+    "course_number": "210",
+    "course_title": "Introduction to Sociology",
+    "credits": 3,
+    "crn": "SOC-210-OJI4",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-01",
+    "location": "Distance Learning-Main Campus",
+    "campus": "DL",
+    "mode": "in-person",
+    "instructor": "Davis, J",
+    "seats_open": 0,
+    "seats_total": 31,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2808,7 +3069,7 @@
     "campus": "BS",
     "mode": "in-person",
     "instructor": "Hollar, J",
-    "seats_open": 17,
+    "seats_open": 9,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2829,8 +3090,8 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Hollar, J",
-    "seats_open": 23,
-    "seats_total": 30,
+    "seats_open": 0,
+    "seats_total": 33,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2850,10 +3111,12 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Best, T",
-    "seats_open": 24,
+    "seats_open": 7,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 111",
+    "prerequisite_courses": [
+      "SPA 111"
+    ]
   },
   {
     "college_code": "mitchell",
@@ -2871,31 +3134,12 @@
     "campus": "DL",
     "mode": "in-person",
     "instructor": "Best, T",
-    "seats_open": 25,
+    "seats_open": 6,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "mitchell",
-    "term": "2026SU",
-    "course_prefix": "SPA",
-    "course_number": "212",
-    "course_title": "Intermediate Spanish II",
-    "credits": 3,
-    "crn": "SPA-212-OJI1",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-06-01",
-    "location": "Distance Learning-Main Campus",
-    "campus": "DL",
-    "mode": "in-person",
-    "instructor": "Best, T",
-    "seats_open": 30,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 112",
+    "prerequisite_courses": [
+      "SPA 112"
+    ]
   },
   {
     "college_code": "mitchell",

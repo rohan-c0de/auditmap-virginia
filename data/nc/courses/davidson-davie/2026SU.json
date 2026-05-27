@@ -14,8 +14,8 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 1,
+    "instructor": "Kincaid, S",
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -35,7 +35,7 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": null,
+    "instructor": "Kincaid, S",
     "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
@@ -56,8 +56,8 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 1,
+    "instructor": "Ortegon, C",
+    "seats_open": 4,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -77,8 +77,8 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 17,
+    "instructor": "Ortegon, C",
+    "seats_open": 5,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -98,8 +98,8 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 30,
+    "instructor": "Kincaid, S",
+    "seats_open": 17,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -122,8 +122,21 @@
     "instructor": "Carlton, G",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DMA 010 and DMA 020 and DMA 030 and MAT 003 and BSP 4003 and MAT 025 and MAT 7025 and DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "MAT 003",
+      "BSP 4003",
+      "MAT 025",
+      "MAT 7025",
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -141,10 +154,12 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Vest, P",
-    "seats_open": 0,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 16,
+    "seats_total": 45,
+    "prerequisite_text": "ACC 120 (min C)",
+    "prerequisite_courses": [
+      "ACC 120"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -163,7 +178,7 @@
     "mode": "online",
     "instructor": "Frasier, C",
     "seats_open": 0,
-    "seats_total": 30,
+    "seats_total": 33,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -183,8 +198,8 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Lindsey, R",
-    "seats_open": 1,
-    "seats_total": 30,
+    "seats_open": 0,
+    "seats_total": 33,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -204,8 +219,8 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Frasier, C",
-    "seats_open": 0,
-    "seats_total": 30,
+    "seats_open": 3,
+    "seats_total": 33,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -225,8 +240,8 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Lindsey, R",
-    "seats_open": 0,
-    "seats_total": 30,
+    "seats_open": 3,
+    "seats_total": 33,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -246,8 +261,8 @@
     "campus": "001",
     "mode": "in-person",
     "instructor": "Sargent, J, Smith, K",
-    "seats_open": 0,
-    "seats_total": 20,
+    "seats_open": 6,
+    "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -269,8 +284,14 @@
     "instructor": "Hipps, R",
     "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -287,11 +308,17 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": "Hipps, R",
-    "seats_open": 12,
+    "instructor": "Novak, B",
+    "seats_open": 3,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -308,11 +335,17 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": "Felts, J",
-    "seats_open": 4,
+    "instructor": "Hipps, R",
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -332,8 +365,10 @@
     "instructor": "Stevens, P",
     "seats_open": 18,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 111 (min C)",
+    "prerequisite_courses": [
+      "BIO 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -351,10 +386,12 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Stevens, P",
-    "seats_open": 0,
+    "seats_open": 6,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 140",
+    "prerequisite_courses": [
+      "BIO 140"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -372,10 +409,17 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Stevens, P",
-    "seats_open": 0,
+    "seats_open": 6,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025 and BIO 140A",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "BIO 140A"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -393,10 +437,16 @@
     "campus": "008",
     "mode": "online",
     "instructor": "East, D",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -414,10 +464,43 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Tozier, A",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025"
+    ]
+  },
+  {
+    "college_code": "davidson-davie",
+    "term": "2026SU",
+    "course_prefix": "BIO",
+    "course_number": "168",
+    "course_title": "Anatomy and Physiology I",
+    "credits": 4,
+    "crn": "BIO-168-WB",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Online",
+    "campus": "008",
+    "mode": "online",
+    "instructor": "Yeboah, S",
+    "seats_open": 6,
+    "seats_total": 30,
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -437,8 +520,10 @@
     "instructor": "Tozier, A",
     "seats_open": 2,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 168 (min C)",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -477,7 +562,7 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Holman, J",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -498,7 +583,28 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Holman, J",
-    "seats_open": 0,
+    "seats_open": 3,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "davidson-davie",
+    "term": "2026SU",
+    "course_prefix": "BUS",
+    "course_number": "110",
+    "course_title": "Introduction to Business",
+    "credits": 3,
+    "crn": "BUS-110-WC",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Online",
+    "campus": "008",
+    "mode": "online",
+    "instructor": "Crofts, S",
+    "seats_open": 19,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -540,7 +646,28 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Goodman, J",
-    "seats_open": 0,
+    "seats_open": 2,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "davidson-davie",
+    "term": "2026SU",
+    "course_prefix": "BUS",
+    "course_number": "115",
+    "course_title": "Business Law I",
+    "credits": 3,
+    "crn": "BUS-115-WC",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Online",
+    "campus": "008",
+    "mode": "online",
+    "instructor": "Goodman, J",
+    "seats_open": 17,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -561,7 +688,28 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Branscome, M",
-    "seats_open": 1,
+    "seats_open": 3,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "davidson-davie",
+    "term": "2026SU",
+    "course_prefix": "BUS",
+    "course_number": "137",
+    "course_title": "Principles of Management",
+    "credits": 3,
+    "crn": "BUS-137-WB",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Online",
+    "campus": "008",
+    "mode": "online",
+    "instructor": "Crofts, S",
+    "seats_open": 13,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -603,7 +751,7 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Holman, J",
-    "seats_open": 1,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -645,7 +793,7 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Hart, J",
-    "seats_open": 18,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -750,7 +898,7 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Wood, V",
-    "seats_open": 0,
+    "seats_open": 4,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -770,8 +918,29 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 5,
+    "instructor": "Wood, V",
+    "seats_open": 1,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "davidson-davie",
+    "term": "2026SU",
+    "course_prefix": "COM",
+    "course_number": "120",
+    "course_title": "Intro Interpersonal Com",
+    "credits": 3,
+    "crn": "COM-120-WJ",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Online",
+    "campus": "008",
+    "mode": "online",
+    "instructor": "Battle, D",
+    "seats_open": 11,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -793,9 +962,16 @@
     "mode": "online",
     "instructor": "Maynor, S",
     "seats_open": 0,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_total": 33,
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025 and ENG 111",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "ENG 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -813,10 +989,17 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Kelsey, J",
-    "seats_open": 0,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 2,
+    "seats_total": 33,
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025 and ENG 111",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "ENG 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -834,10 +1017,17 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Battle, D",
-    "seats_open": 0,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 2,
+    "seats_total": 33,
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025 and ENG 111",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "ENG 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -855,10 +1045,17 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Kelsey, J",
-    "seats_open": 0,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 1,
+    "seats_total": 33,
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025 and ENG 111",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "ENG 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -878,8 +1075,12 @@
     "instructor": "Battle, D, Howard, R, Hedrick, T",
     "seats_open": 12,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112 and COS 116",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112",
+      "COS 116"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -897,10 +1098,14 @@
     "campus": "001",
     "mode": "in-person",
     "instructor": "Carter, S, Gobble, A, Hedrick, T",
-    "seats_open": 0,
+    "seats_open": 5,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112 and COS 116",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112",
+      "COS 116"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -918,10 +1123,14 @@
     "campus": "001",
     "mode": "in-person",
     "instructor": "Carter, S, Gobble, A, Hedrick, T",
-    "seats_open": 8,
+    "seats_open": 6,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112 and COS 116",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112",
+      "COS 116"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -941,8 +1150,12 @@
     "instructor": "Battle, D, Howard, R, Hedrick, T",
     "seats_open": 12,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112 and COS 115",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112",
+      "COS 115"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -960,10 +1173,14 @@
     "campus": "001",
     "mode": "in-person",
     "instructor": "Carter, S, Gobble, A, Hedrick, T",
-    "seats_open": 0,
+    "seats_open": 5,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112 and COS 115",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112",
+      "COS 115"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -981,10 +1198,14 @@
     "campus": "001",
     "mode": "in-person",
     "instructor": "Carter, S, Gobble, A, Hedrick, T",
-    "seats_open": 8,
+    "seats_open": 6,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112 and COS 115",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112",
+      "COS 115"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1046,8 +1267,10 @@
     "instructor": "Davis, T, Quinichett, C, Hedrick, T",
     "seats_open": 2,
     "seats_total": 14,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 126",
+    "prerequisite_courses": [
+      "COS 126"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1067,8 +1290,10 @@
     "instructor": "Davis, T, Quinichett, C, Hedrick, T",
     "seats_open": 2,
     "seats_total": 14,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 125",
+    "prerequisite_courses": [
+      "COS 125"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1088,8 +1313,11 @@
     "instructor": "Little, Q",
     "seats_open": 5,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DEN 106 and DEN 106 (min C) and DEN 105 (min C)",
+    "prerequisite_courses": [
+      "DEN 106",
+      "DEN 105"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1107,7 +1335,7 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Carr, C",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1128,7 +1356,7 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Carr, C",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1149,7 +1377,7 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Carr, C",
-    "seats_open": 8,
+    "seats_open": 2,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1170,7 +1398,7 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Kincaid, S",
-    "seats_open": 16,
+    "seats_open": 8,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1193,8 +1421,15 @@
     "instructor": "Wilson, J, Lunsford, B, Wells, C",
     "seats_open": 16,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EMS 121 or EMS 122 and EMS 250 and BIO 163 (min C) and BIO 168 (min C) and BIO 169 (min C)",
+    "prerequisite_courses": [
+      "EMS 121",
+      "EMS 122",
+      "EMS 250",
+      "BIO 163",
+      "BIO 168",
+      "BIO 169"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1214,8 +1449,12 @@
     "instructor": "Elliott, T, Lunsford, B, Wells, C",
     "seats_open": 16,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EMS 122 and EMS 130 and EMS 221",
+    "prerequisite_courses": [
+      "EMS 122",
+      "EMS 130",
+      "EMS 221"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1233,8 +1472,8 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Spaugh, K",
-    "seats_open": 6,
-    "seats_total": 15,
+    "seats_open": 0,
+    "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1254,8 +1493,8 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Smith, M",
-    "seats_open": 0,
-    "seats_total": 25,
+    "seats_open": 1,
+    "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1275,8 +1514,8 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Smith, M",
-    "seats_open": 2,
-    "seats_total": 25,
+    "seats_open": 4,
+    "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1298,8 +1537,14 @@
     "instructor": "Broyles, J",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1319,8 +1564,14 @@
     "instructor": "Broyles, J",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1340,8 +1591,14 @@
     "instructor": "Hill, E",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1361,8 +1618,14 @@
     "instructor": "Hill, E",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1382,8 +1645,14 @@
     "instructor": "Jolliff, G",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1403,8 +1672,14 @@
     "instructor": "Jolliff, G",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1424,8 +1699,14 @@
     "instructor": "Williamson, M",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1443,10 +1724,16 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Williamson, M",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1466,8 +1753,14 @@
     "instructor": "Markham, J",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1487,8 +1780,14 @@
     "instructor": "Markham, J",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1508,8 +1807,14 @@
     "instructor": "Allen, K",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1527,10 +1832,16 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Allen, K",
-    "seats_open": 1,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1547,11 +1858,17 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 21,
+    "instructor": "Williamson, M",
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1568,11 +1885,17 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": null,
+    "instructor": "Williamson, M",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1589,11 +1912,17 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 20,
+    "instructor": "Broyles, J",
+    "seats_open": 2,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1610,11 +1939,17 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": null,
+    "instructor": "Broyles, J",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1632,10 +1967,12 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Jolliff, G",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1653,10 +1990,12 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Allen, K",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1674,10 +2013,12 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Broyles, J",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1695,10 +2036,12 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Williamson, M",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1716,10 +2059,12 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Markham, J",
-    "seats_open": 16,
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1737,10 +2082,12 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Hill, E",
-    "seats_open": 1,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 4,
+    "seats_total": 33,
+    "prerequisite_text": "ENG 112",
+    "prerequisite_courses": [
+      "ENG 112"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1758,10 +2105,17 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Bosch, G",
-    "seats_open": 8,
+    "seats_open": 10,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025 and ENG 111",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "ENG 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1779,10 +2133,17 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Bosch, G",
-    "seats_open": 27,
+    "seats_open": 13,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025 and ENG 111",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "ENG 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1800,10 +2161,17 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Bosch, G",
-    "seats_open": 18,
+    "seats_open": 17,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025 and ENG 111",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "ENG 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1821,10 +2189,17 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Hedrick, B",
-    "seats_open": 5,
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025 and ENG 111",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "ENG 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1842,10 +2217,17 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Hedrick, B",
-    "seats_open": 23,
+    "seats_open": 17,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025 and ENG 111",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "ENG 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1863,10 +2245,12 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Watson, H",
-    "seats_open": 16,
+    "seats_open": 17,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HIT 110 (min C)",
+    "prerequisite_courses": [
+      "HIT 110"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1884,7 +2268,7 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Christian, A",
-    "seats_open": 0,
+    "seats_open": 4,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1905,7 +2289,7 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Stewart, L",
-    "seats_open": 22,
+    "seats_open": 16,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1948,9 +2332,16 @@
     "mode": "online",
     "instructor": "Drader, C",
     "seats_open": 0,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_total": 33,
+    "prerequisite_text": "DRE 097 or ENG 002 or BSP 4002 or ENG 025 or ENG 8025 or ENG 111",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "ENG 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1969,9 +2360,16 @@
     "mode": "online",
     "instructor": "Drader, C",
     "seats_open": 0,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_total": 33,
+    "prerequisite_text": "DRE 097 or ENG 002 or BSP 4002 or ENG 025 or ENG 8025 or ENG 111",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "ENG 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -1990,9 +2388,16 @@
     "mode": "online",
     "instructor": "Drader, C",
     "seats_open": 0,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_total": 33,
+    "prerequisite_text": "DRE 097 or ENG 002 or BSP 4002 or ENG 025 or ENG 8025 or ENG 111",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "ENG 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -2010,10 +2415,17 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Hester, J",
-    "seats_open": 6,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 1,
+    "seats_total": 33,
+    "prerequisite_text": "DRE 097 or ENG 002 or BSP 4002 or ENG 025 or ENG 8025 or ENG 111",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "ENG 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -2031,7 +2443,7 @@
     "campus": "001",
     "mode": "in-person",
     "instructor": "Martin, T, Smith, K",
-    "seats_open": 11,
+    "seats_open": 7,
     "seats_total": 18,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2052,8 +2464,8 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Dobbins, R",
-    "seats_open": 5,
-    "seats_total": 15,
+    "seats_open": 0,
+    "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2073,7 +2485,7 @@
     "campus": "001",
     "mode": "in-person",
     "instructor": "Primiano, M",
-    "seats_open": 15,
+    "seats_open": 9,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2094,8 +2506,8 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Coggins, A",
-    "seats_open": 13,
-    "seats_total": 15,
+    "seats_open": 16,
+    "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2115,7 +2527,7 @@
     "campus": "001",
     "mode": "in-person",
     "instructor": "Primiano, M",
-    "seats_open": 14,
+    "seats_open": 13,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2135,8 +2547,8 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 2,
+    "instructor": "Sneed, D",
+    "seats_open": 1,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2156,8 +2568,8 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 2,
+    "instructor": "Sneed, D",
+    "seats_open": 4,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2177,8 +2589,8 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 14,
+    "instructor": "Giron, D",
+    "seats_open": 16,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2198,8 +2610,8 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 3,
+    "instructor": "Giron, D",
+    "seats_open": 2,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2220,7 +2632,7 @@
     "campus": "001",
     "mode": "in-person",
     "instructor": "Hardee, J",
-    "seats_open": 24,
+    "seats_open": 17,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2241,7 +2653,7 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Hardee, J",
-    "seats_open": 0,
+    "seats_open": 3,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2262,7 +2674,7 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Guffey, K",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2283,7 +2695,7 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Eagan, K",
-    "seats_open": 1,
+    "seats_open": 5,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2303,8 +2715,8 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 0,
+    "instructor": "Guffey, K",
+    "seats_open": 1,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2327,8 +2739,21 @@
     "instructor": "Eagan, K",
     "seats_open": 2,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DMA 010 and DMA 020 and DMA 030 and DRE 097 and MAT 003 and ENG 002 and MAT 003 and BSP 4002 and MAT 003 and ENG 025 and MAT 003 and ENG 8025 and BSP 4003 and ENG 002 and BSP 4003 and BSP 4002 and BSP 4003 and ENG 025 and BSP 4003 and ENG 8025 and MAT 025 and ENG 002 and MAT 025 and BSP 4002 and MAT 025 and ENG 025 and MAT 025 and ENG 8025 and MAT 7025 and ENG 002 and MAT 7025 and BSP 4002 and MAT 7025 and ENG 025 and MAT 7025 and ENG 8025",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DRE 097",
+      "MAT 003",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "BSP 4003",
+      "MAT 025",
+      "MAT 7025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -2348,8 +2773,21 @@
     "instructor": "Eagan, K",
     "seats_open": 1,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DMA 010 and DMA 020 and DMA 030 and DRE 097 and MAT 003 and ENG 002 and MAT 003 and BSP 4002 and MAT 003 and ENG 025 and MAT 003 and ENG 8025 and BSP 4003 and ENG 002 and BSP 4003 and BSP 4002 and BSP 4003 and ENG 025 and BSP 4003 and ENG 8025 and MAT 025 and ENG 002 and MAT 025 and BSP 4002 and MAT 025 and ENG 025 and MAT 025 and ENG 8025 and MAT 7025 and ENG 002 and MAT 7025 and BSP 4002 and MAT 7025 and ENG 025 and MAT 7025 and ENG 8025",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DRE 097",
+      "MAT 003",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "BSP 4003",
+      "MAT 025",
+      "MAT 7025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -2369,8 +2807,21 @@
     "instructor": "Hathcock, K",
     "seats_open": 0,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DMA 010 and DMA 020 and DMA 030 and DRE 097 and MAT 003 and ENG 002 and MAT 003 and BSP 4002 and MAT 003 and ENG 025 and MAT 003 and ENG 8025 and BSP 4003 and ENG 002 and BSP 4003 and BSP 4002 and BSP 4003 and ENG 025 and BSP 4003 and ENG 8025 and MAT 025 and ENG 002 and MAT 025 and BSP 4002 and MAT 025 and ENG 025 and MAT 025 and ENG 8025 and MAT 7025 and ENG 002 and MAT 7025 and BSP 4002 and MAT 7025 and ENG 025 and MAT 7025 and ENG 8025",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DRE 097",
+      "MAT 003",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "BSP 4003",
+      "MAT 025",
+      "MAT 7025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -2390,8 +2841,21 @@
     "instructor": "Hathcock, K",
     "seats_open": 0,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DMA 010 and DMA 020 and DMA 030 and DRE 097 and MAT 003 and ENG 002 and MAT 003 and BSP 4002 and MAT 003 and ENG 025 and MAT 003 and ENG 8025 and BSP 4003 and ENG 002 and BSP 4003 and BSP 4002 and BSP 4003 and ENG 025 and BSP 4003 and ENG 8025 and MAT 025 and ENG 002 and MAT 025 and BSP 4002 and MAT 025 and ENG 025 and MAT 025 and ENG 8025 and MAT 7025 and ENG 002 and MAT 7025 and BSP 4002 and MAT 7025 and ENG 025 and MAT 7025 and ENG 8025",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DRE 097",
+      "MAT 003",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "BSP 4003",
+      "MAT 025",
+      "MAT 7025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -2411,8 +2875,21 @@
     "instructor": "Hathcock, K",
     "seats_open": 0,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DMA 010 and DMA 020 and DMA 030 and DRE 097 and MAT 003 and ENG 002 and MAT 003 and BSP 4002 and MAT 003 and ENG 025 and MAT 003 and ENG 8025 and BSP 4003 and ENG 002 and BSP 4003 and BSP 4002 and BSP 4003 and ENG 025 and BSP 4003 and ENG 8025 and MAT 025 and ENG 002 and MAT 025 and BSP 4002 and MAT 025 and ENG 025 and MAT 025 and ENG 8025 and MAT 7025 and ENG 002 and MAT 7025 and BSP 4002 and MAT 7025 and ENG 025 and MAT 7025 and ENG 8025",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DRE 097",
+      "MAT 003",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "BSP 4003",
+      "MAT 025",
+      "MAT 7025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -2430,10 +2907,23 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Hathcock, K",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DMA 010 and DMA 020 and DMA 030 and DRE 097 and MAT 003 and ENG 002 and MAT 003 and BSP 4002 and MAT 003 and ENG 025 and MAT 003 and ENG 8025 and BSP 4003 and ENG 002 and BSP 4003 and BSP 4002 and BSP 4003 and ENG 025 and BSP 4003 and ENG 8025 and MAT 025 and ENG 002 and MAT 025 and BSP 4002 and MAT 025 and ENG 025 and MAT 025 and ENG 8025 and MAT 7025 and ENG 002 and MAT 7025 and BSP 4002 and MAT 7025 and ENG 025 and MAT 7025 and ENG 8025",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DRE 097",
+      "MAT 003",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "BSP 4003",
+      "MAT 025",
+      "MAT 7025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -2453,8 +2943,21 @@
     "instructor": "Klinger, A",
     "seats_open": 0,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DMA 010 and DMA 020 and DMA 030 and DRE 097 and MAT 003 and ENG 002 and MAT 003 and BSP 4002 and MAT 003 and ENG 025 and MAT 003 and ENG 8025 and BSP 4003 and ENG 002 and BSP 4003 and BSP 4002 and BSP 4003 and ENG 025 and BSP 4003 and ENG 8025 and MAT 025 and ENG 002 and MAT 025 and BSP 4002 and MAT 025 and ENG 025 and MAT 025 and ENG 8025 and MAT 7025 and ENG 002 and MAT 7025 and BSP 4002 and MAT 7025 and ENG 025 and MAT 7025 and ENG 8025",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DRE 097",
+      "MAT 003",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "BSP 4003",
+      "MAT 025",
+      "MAT 7025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -2472,10 +2975,23 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Klinger, A",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DMA 010 and DMA 020 and DMA 030 and DRE 097 and MAT 003 and ENG 002 and MAT 003 and BSP 4002 and MAT 003 and ENG 025 and MAT 003 and ENG 8025 and BSP 4003 and ENG 002 and BSP 4003 and BSP 4002 and BSP 4003 and ENG 025 and BSP 4003 and ENG 8025 and MAT 025 and ENG 002 and MAT 025 and BSP 4002 and MAT 025 and ENG 025 and MAT 025 and ENG 8025 and MAT 7025 and ENG 002 and MAT 7025 and BSP 4002 and MAT 7025 and ENG 025 and MAT 7025 and ENG 8025",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DRE 097",
+      "MAT 003",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "BSP 4003",
+      "MAT 025",
+      "MAT 7025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -2495,8 +3011,21 @@
     "instructor": "Klinger, A",
     "seats_open": 0,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DMA 010 and DMA 020 and DMA 030 and DRE 097 and MAT 003 and ENG 002 and MAT 003 and BSP 4002 and MAT 003 and ENG 025 and MAT 003 and ENG 8025 and BSP 4003 and ENG 002 and BSP 4003 and BSP 4002 and BSP 4003 and ENG 025 and BSP 4003 and ENG 8025 and MAT 025 and ENG 002 and MAT 025 and BSP 4002 and MAT 025 and ENG 025 and MAT 025 and ENG 8025 and MAT 7025 and ENG 002 and MAT 7025 and BSP 4002 and MAT 7025 and ENG 025 and MAT 7025 and ENG 8025",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DRE 097",
+      "MAT 003",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "BSP 4003",
+      "MAT 025",
+      "MAT 7025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -2514,10 +3043,91 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Klinger, A",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DMA 010 and DMA 020 and DMA 030 and DRE 097 and MAT 003 and ENG 002 and MAT 003 and BSP 4002 and MAT 003 and ENG 025 and MAT 003 and ENG 8025 and BSP 4003 and ENG 002 and BSP 4003 and BSP 4002 and BSP 4003 and ENG 025 and BSP 4003 and ENG 8025 and MAT 025 and ENG 002 and MAT 025 and BSP 4002 and MAT 025 and ENG 025 and MAT 025 and ENG 8025 and MAT 7025 and ENG 002 and MAT 7025 and BSP 4002 and MAT 7025 and ENG 025 and MAT 7025 and ENG 8025",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DRE 097",
+      "MAT 003",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "BSP 4003",
+      "MAT 025",
+      "MAT 7025"
+    ]
+  },
+  {
+    "college_code": "davidson-davie",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "143",
+    "course_title": "Quantitative Literacy",
+    "credits": 3,
+    "crn": "MAT-143-WG",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Online",
+    "campus": "008",
+    "mode": "online",
+    "instructor": "Mercer, A",
+    "seats_open": 8,
+    "seats_total": 24,
+    "prerequisite_text": "DMA 010 and DMA 020 and DMA 030 and DRE 097 and MAT 003 and ENG 002 and MAT 003 and BSP 4002 and MAT 003 and ENG 025 and MAT 003 and ENG 8025 and BSP 4003 and ENG 002 and BSP 4003 and BSP 4002 and BSP 4003 and ENG 025 and BSP 4003 and ENG 8025 and MAT 025 and ENG 002 and MAT 025 and BSP 4002 and MAT 025 and ENG 025 and MAT 025 and ENG 8025 and MAT 7025 and ENG 002 and MAT 7025 and BSP 4002 and MAT 7025 and ENG 025 and MAT 7025 and ENG 8025",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DRE 097",
+      "MAT 003",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "BSP 4003",
+      "MAT 025",
+      "MAT 7025"
+    ]
+  },
+  {
+    "college_code": "davidson-davie",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "143",
+    "course_title": "Quantitative Literacy",
+    "credits": 3,
+    "crn": "MAT-143-WGR",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Online",
+    "campus": "008",
+    "mode": "online",
+    "instructor": "Mercer, A",
+    "seats_open": 2,
+    "seats_total": 24,
+    "prerequisite_text": "DMA 010 and DMA 020 and DMA 030 and DRE 097 and MAT 003 and ENG 002 and MAT 003 and BSP 4002 and MAT 003 and ENG 025 and MAT 003 and ENG 8025 and BSP 4003 and ENG 002 and BSP 4003 and BSP 4002 and BSP 4003 and ENG 025 and BSP 4003 and ENG 8025 and MAT 025 and ENG 002 and MAT 025 and BSP 4002 and MAT 025 and ENG 025 and MAT 025 and ENG 8025 and MAT 7025 and ENG 002 and MAT 7025 and BSP 4002 and MAT 7025 and ENG 025 and MAT 7025 and ENG 8025",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DRE 097",
+      "MAT 003",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "BSP 4003",
+      "MAT 025",
+      "MAT 7025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -2537,8 +3147,21 @@
     "instructor": "Johnson, G",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DMA 010 and DMA 020 and DMA 030 and DRE 097 and MAT 003 and ENG 002 and MAT 003 and BSP 4002 and MAT 003 and ENG 025 and MAT 003 and ENG 8025 and BSP 4003 and ENG 002 and BSP 4003 and BSP 4002 and BSP 4003 and ENG 025 and BSP 4003 and ENG 8025 and MAT 025 and ENG 002 and MAT 025 and BSP 4002 and MAT 025 and ENG 025 and MAT 025 and ENG 8025 and MAT 7025 and ENG 002 and MAT 7025 and BSP 4002 and MAT 7025 and ENG 025 and MAT 7025 and ENG 8025",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DRE 097",
+      "MAT 003",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "BSP 4003",
+      "MAT 025",
+      "MAT 7025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -2556,10 +3179,23 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Johnson, G",
-    "seats_open": 1,
+    "seats_open": 2,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DMA 010 and DMA 020 and DMA 030 and DRE 097 and MAT 003 and ENG 002 and MAT 003 and BSP 4002 and MAT 003 and ENG 025 and MAT 003 and ENG 8025 and BSP 4003 and ENG 002 and BSP 4003 and BSP 4002 and BSP 4003 and ENG 025 and BSP 4003 and ENG 8025 and MAT 025 and ENG 002 and MAT 025 and BSP 4002 and MAT 025 and ENG 025 and MAT 025 and ENG 8025 and MAT 7025 and ENG 002 and MAT 7025 and BSP 4002 and MAT 7025 and ENG 025 and MAT 7025 and ENG 8025",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DRE 097",
+      "MAT 003",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "BSP 4003",
+      "MAT 025",
+      "MAT 7025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -2577,10 +3213,23 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Johnson, G",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DMA 010 and DMA 020 and DMA 030 and DRE 097 and MAT 003 and ENG 002 and MAT 003 and BSP 4002 and MAT 003 and ENG 025 and MAT 003 and ENG 8025 and BSP 4003 and ENG 002 and BSP 4003 and BSP 4002 and BSP 4003 and ENG 025 and BSP 4003 and ENG 8025 and MAT 025 and ENG 002 and MAT 025 and BSP 4002 and MAT 025 and ENG 025 and MAT 025 and ENG 8025 and MAT 7025 and ENG 002 and MAT 7025 and BSP 4002 and MAT 7025 and ENG 025 and MAT 7025 and ENG 8025",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DRE 097",
+      "MAT 003",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "BSP 4003",
+      "MAT 025",
+      "MAT 7025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -2600,8 +3249,21 @@
     "instructor": "Johnson, G",
     "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DMA 010 and DMA 020 and DMA 030 and DRE 097 and MAT 003 and ENG 002 and MAT 003 and BSP 4002 and MAT 003 and ENG 025 and MAT 003 and ENG 8025 and BSP 4003 and ENG 002 and BSP 4003 and BSP 4002 and BSP 4003 and ENG 025 and BSP 4003 and ENG 8025 and MAT 025 and ENG 002 and MAT 025 and BSP 4002 and MAT 025 and ENG 025 and MAT 025 and ENG 8025 and MAT 7025 and ENG 002 and MAT 7025 and BSP 4002 and MAT 7025 and ENG 025 and MAT 7025 and ENG 8025",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DRE 097",
+      "MAT 003",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "BSP 4003",
+      "MAT 025",
+      "MAT 7025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -2619,10 +3281,23 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Guffey, K",
-    "seats_open": 1,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "DMA 010 and DMA 020 and DMA 030 and DRE 097 and MAT 003 and ENG 002 and MAT 003 and BSP 4002 and MAT 003 and ENG 025 and MAT 003 and ENG 8025 and BSP 4003 and ENG 002 and BSP 4003 and BSP 4002 and BSP 4003 and ENG 025 and BSP 4003 and ENG 8025 and MAT 025 and ENG 002 and MAT 025 and BSP 4002 and MAT 025 and ENG 025 and MAT 025 and ENG 8025 and MAT 7025 and ENG 002 and MAT 7025 and BSP 4002 and MAT 7025 and ENG 025 and MAT 7025 and ENG 8025",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DRE 097",
+      "MAT 003",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "BSP 4003",
+      "MAT 025",
+      "MAT 7025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -2640,10 +3315,91 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Guffey, K",
-    "seats_open": 5,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 4,
+    "seats_total": 30,
+    "prerequisite_text": "DMA 010 and DMA 020 and DMA 030 and DRE 097 and MAT 003 and ENG 002 and MAT 003 and BSP 4002 and MAT 003 and ENG 025 and MAT 003 and ENG 8025 and BSP 4003 and ENG 002 and BSP 4003 and BSP 4002 and BSP 4003 and ENG 025 and BSP 4003 and ENG 8025 and MAT 025 and ENG 002 and MAT 025 and BSP 4002 and MAT 025 and ENG 025 and MAT 025 and ENG 8025 and MAT 7025 and ENG 002 and MAT 7025 and BSP 4002 and MAT 7025 and ENG 025 and MAT 7025 and ENG 8025",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DRE 097",
+      "MAT 003",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "BSP 4003",
+      "MAT 025",
+      "MAT 7025"
+    ]
+  },
+  {
+    "college_code": "davidson-davie",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "152",
+    "course_title": "Statistical Methods I",
+    "credits": 4,
+    "crn": "MAT-152-WE",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Online",
+    "campus": "008",
+    "mode": "online",
+    "instructor": "Mercer, A",
+    "seats_open": 14,
+    "seats_total": 30,
+    "prerequisite_text": "DMA 010 and DMA 020 and DMA 030 and DRE 097 and MAT 003 and ENG 002 and MAT 003 and BSP 4002 and MAT 003 and ENG 025 and MAT 003 and ENG 8025 and BSP 4003 and ENG 002 and BSP 4003 and BSP 4002 and BSP 4003 and ENG 025 and BSP 4003 and ENG 8025 and MAT 025 and ENG 002 and MAT 025 and BSP 4002 and MAT 025 and ENG 025 and MAT 025 and ENG 8025 and MAT 7025 and ENG 002 and MAT 7025 and BSP 4002 and MAT 7025 and ENG 025 and MAT 7025 and ENG 8025",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DRE 097",
+      "MAT 003",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "BSP 4003",
+      "MAT 025",
+      "MAT 7025"
+    ]
+  },
+  {
+    "college_code": "davidson-davie",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "152",
+    "course_title": "Statistical Methods I",
+    "credits": 4,
+    "crn": "MAT-152-WER",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Online",
+    "campus": "008",
+    "mode": "online",
+    "instructor": "Mercer, A",
+    "seats_open": 4,
+    "seats_total": 30,
+    "prerequisite_text": "DMA 010 and DMA 020 and DMA 030 and DRE 097 and MAT 003 and ENG 002 and MAT 003 and BSP 4002 and MAT 003 and ENG 025 and MAT 003 and ENG 8025 and BSP 4003 and ENG 002 and BSP 4003 and BSP 4002 and BSP 4003 and ENG 025 and BSP 4003 and ENG 8025 and MAT 025 and ENG 002 and MAT 025 and BSP 4002 and MAT 025 and ENG 025 and MAT 025 and ENG 8025 and MAT 7025 and ENG 002 and MAT 7025 and BSP 4002 and MAT 7025 and ENG 025 and MAT 7025 and ENG 8025",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DRE 097",
+      "MAT 003",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "BSP 4003",
+      "MAT 025",
+      "MAT 7025"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -2682,7 +3438,7 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Hardee, J",
-    "seats_open": 4,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2703,10 +3459,12 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Bower, P",
-    "seats_open": 19,
+    "seats_open": 14,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 171",
+    "prerequisite_courses": [
+      "MAT 171"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -2724,10 +3482,13 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Bower, P",
-    "seats_open": 22,
+    "seats_open": 18,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 172 or MAT 175",
+    "prerequisite_courses": [
+      "MAT 172",
+      "MAT 175"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -2745,10 +3506,17 @@
     "campus": "999",
     "mode": "in-person",
     "instructor": "Griffey, A",
-    "seats_open": 21,
+    "seats_open": 24,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MED 122 (min C) and MED 131 (min C) and MED 140 (min C) and MED 150 (min C) and MED 272 (min C) and MED 262",
+    "prerequisite_courses": [
+      "MED 122",
+      "MED 131",
+      "MED 140",
+      "MED 150",
+      "MED 272",
+      "MED 262"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -2762,14 +3530,16 @@
     "start_time": "9:00 AM",
     "end_time": "9:50 AM",
     "start_date": "2026-05-27",
-    "location": "Main Davidson Campus",
-    "campus": "001",
+    "location": "Off Campus",
+    "campus": "999",
     "mode": "in-person",
     "instructor": "Griffey, A",
-    "seats_open": 21,
+    "seats_open": 24,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MED 260",
+    "prerequisite_courses": [
+      "MED 260"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -2787,7 +3557,7 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Pettit, T",
-    "seats_open": 7,
+    "seats_open": 3,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2808,10 +3578,19 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Jones, J",
-    "seats_open": 16,
+    "seats_open": 14,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MLT 240 and CHM 130 (min C) and CHM 130A (min C) and CHM 131 (min C) and CHM 131A (min C) and CHM 152 (min C) and MLT 125 (min C) and MLT 220 (min C)",
+    "prerequisite_courses": [
+      "MLT 240",
+      "CHM 130",
+      "CHM 130A",
+      "CHM 131",
+      "CHM 131A",
+      "CHM 152",
+      "MLT 125",
+      "MLT 220"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -2829,10 +3608,13 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Jones, J",
-    "seats_open": 16,
+    "seats_open": 14,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MLT 140 and MLT 130",
+    "prerequisite_courses": [
+      "MLT 140",
+      "MLT 130"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -2871,7 +3653,7 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Schwartz, E",
-    "seats_open": 1,
+    "seats_open": 2,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2891,8 +3673,8 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 24,
+    "instructor": "Durr, S",
+    "seats_open": 4,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2912,11 +3694,17 @@
     "location": "Main Davie Campus",
     "campus": "002",
     "mode": "in-person",
-    "instructor": "Groce, M",
-    "seats_open": 5,
+    "instructor": "Groce, M, Ball, M, Grant, C, Whitlock, K, Turner, B",
+    "seats_open": 6,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 101 and NUR 102 (min B) and PSY 150 (min C) and PSY 241 (min C) and ENG 111",
+    "prerequisite_courses": [
+      "NUR 101",
+      "NUR 102",
+      "PSY 150",
+      "PSY 241",
+      "ENG 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -2933,11 +3721,15 @@
     "location": "Main Davidson Campus",
     "campus": "001",
     "mode": "in-person",
-    "instructor": "Riggins, A",
-    "seats_open": 17,
+    "instructor": "Riggins, A, Watson, H, Beck, D, Hazelwood, J, Stubbs, C, Turner, B",
+    "seats_open": 13,
     "seats_total": 48,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 111 and PSY 241 (min C) and NUR 114 (min B)",
+    "prerequisite_courses": [
+      "NUR 111",
+      "PSY 241",
+      "NUR 114"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -2955,31 +3747,17 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Pickeral, J",
-    "seats_open": 2,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "davidson-davie",
-    "term": "2026SU",
-    "course_prefix": "PED",
-    "course_number": "110",
-    "course_title": "Fit and Well for Life",
-    "credits": 2,
-    "crn": "PED-110-WB",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-27",
-    "location": "Online",
-    "campus": "008",
-    "mode": "online",
-    "instructor": "Pickeral, J",
-    "seats_open": 27,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 4,
+    "seats_total": 45,
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025 and ENG 111",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "ENG 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -2997,10 +3775,12 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Cannon, J",
-    "seats_open": 1,
-    "seats_total": 33,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -3018,10 +3798,35 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Cannon, J",
-    "seats_open": 0,
-    "seats_total": 33,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 1,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
+  },
+  {
+    "college_code": "davidson-davie",
+    "term": "2026SU",
+    "course_prefix": "PHI",
+    "course_number": "240",
+    "course_title": "Introduction to Ethics",
+    "credits": 3,
+    "crn": "PHI-240-WC",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Online",
+    "campus": "008",
+    "mode": "online",
+    "instructor": "Cannon, J",
+    "seats_open": 11,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -3038,8 +3843,8 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 8,
+    "instructor": "Ortegon, C",
+    "seats_open": 9,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3059,11 +3864,18 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 18,
+    "instructor": "Maddox, J",
+    "seats_open": 17,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025 and ENG 111",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "ENG 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -3080,11 +3892,18 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 0,
+    "instructor": "Ford, D",
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025 and ENG 111",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "ENG 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -3101,11 +3920,18 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 0,
+    "instructor": "Ford, D",
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025 and ENG 111",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "ENG 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -3122,11 +3948,18 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 0,
+    "instructor": "Woodall, L",
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025 and ENG 111",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "ENG 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -3143,11 +3976,18 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 0,
+    "instructor": "Bruff, L",
+    "seats_open": 3,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025 and ENG 111",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "ENG 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -3164,11 +4004,18 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 5,
+    "instructor": "Bruff, L",
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025 and ENG 111",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "ENG 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -3185,11 +4032,18 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 30,
+    "instructor": "Woodall, L",
+    "seats_open": 4,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025 and ENG 111",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "ENG 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -3206,11 +4060,13 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 0,
+    "instructor": "Holmes, A",
+    "seats_open": 2,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -3227,11 +4083,13 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 1,
+    "instructor": "Holmes, A",
+    "seats_open": 6,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -3248,11 +4106,13 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 21,
+    "instructor": "Maddox, J",
+    "seats_open": 13,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -3270,10 +4130,12 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Christian, A",
-    "seats_open": 12,
+    "seats_open": 9,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -3293,8 +4155,14 @@
     "instructor": "Everhart, S",
     "seats_open": 1,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RAD 112 and RAD 121 and RAD 161 and RAD 141 and RAD 171",
+    "prerequisite_courses": [
+      "RAD 112",
+      "RAD 121",
+      "RAD 161",
+      "RAD 141",
+      "RAD 171"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -3314,8 +4182,14 @@
     "instructor": "Everhart, S",
     "seats_open": 1,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RAD 112 and RAD 121 and RAD 161 and RAD 122 and RAD 171",
+    "prerequisite_courses": [
+      "RAD 112",
+      "RAD 121",
+      "RAD 161",
+      "RAD 122",
+      "RAD 171"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -3332,11 +4206,17 @@
     "location": "Off Campus",
     "campus": "999",
     "mode": "in-person",
-    "instructor": "Everhart, S",
+    "instructor": "Steinkamp, A, Everhart, S",
     "seats_open": 1,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RAD 112 and RAD 121 and RAD 161 and RAD 122 and RAD 141",
+    "prerequisite_courses": [
+      "RAD 112",
+      "RAD 121",
+      "RAD 161",
+      "RAD 122",
+      "RAD 141"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -3353,8 +4233,8 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 13,
+    "instructor": "Yamouti, H",
+    "seats_open": 9,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3375,7 +4255,7 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Christian, A",
-    "seats_open": 12,
+    "seats_open": 8,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3396,7 +4276,7 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Linton, D",
-    "seats_open": 17,
+    "seats_open": 9,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3438,7 +4318,7 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Linton, D",
-    "seats_open": 1,
+    "seats_open": 6,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3458,8 +4338,8 @@
     "location": "Online",
     "campus": "008",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 4,
+    "instructor": "Campbell, S",
+    "seats_open": 3,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3480,8 +4360,8 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Rosenberger, J",
-    "seats_open": 0,
-    "seats_total": 30,
+    "seats_open": 3,
+    "seats_total": 33,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -3501,8 +4381,8 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Rosenberger, J",
-    "seats_open": 8,
-    "seats_total": 30,
+    "seats_open": 2,
+    "seats_total": 33,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -3522,10 +4402,12 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Richardson, D",
-    "seats_open": 7,
+    "seats_open": 4,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 111",
+    "prerequisite_courses": [
+      "SPA 111"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -3543,10 +4425,12 @@
     "campus": "008",
     "mode": "online",
     "instructor": "Richardson, D",
-    "seats_open": 19,
+    "seats_open": 12,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 112",
+    "prerequisite_courses": [
+      "SPA 112"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -3564,10 +4448,14 @@
     "campus": "002",
     "mode": "in-person",
     "instructor": "Hege, R",
-    "seats_open": 6,
+    "seats_open": 8,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SUR 123 and SUR 122 (min C) and SUR 123 (min C) and SUR 135",
+    "prerequisite_courses": [
+      "SUR 123",
+      "SUR 122",
+      "SUR 135"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -3584,11 +4472,14 @@
     "location": "Main Davie Campus",
     "campus": "002",
     "mode": "in-person",
-    "instructor": "Hege, R",
-    "seats_open": 6,
+    "instructor": "Hege, R, Castillo, J, Edwards, D",
+    "seats_open": 8,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SUR 123 and SUR 134",
+    "prerequisite_courses": [
+      "SUR 123",
+      "SUR 134"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -3606,8 +4497,8 @@
     "campus": "001",
     "mode": "in-person",
     "instructor": "Sargent, J, Smith, K",
-    "seats_open": 0,
-    "seats_total": 20,
+    "seats_open": 6,
+    "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -3627,10 +4518,12 @@
     "campus": "001",
     "mode": "in-person",
     "instructor": "Sargent, J, Smith, K",
-    "seats_open": 0,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 6,
+    "seats_total": 24,
+    "prerequisite_text": "TRN 140",
+    "prerequisite_courses": [
+      "TRN 140"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -3648,10 +4541,12 @@
     "campus": "001",
     "mode": "in-person",
     "instructor": "Barber, L, Smith, K",
-    "seats_open": 13,
+    "seats_open": 11,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "TRN 140",
+    "prerequisite_courses": [
+      "TRN 140"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -3669,7 +4564,7 @@
     "campus": "001",
     "mode": "in-person",
     "instructor": "Barber, L, Smith, K",
-    "seats_open": 13,
+    "seats_open": 11,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3690,7 +4585,7 @@
     "campus": "001",
     "mode": "in-person",
     "instructor": "Watts, W, Smith, K",
-    "seats_open": 8,
+    "seats_open": 7,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3752,9 +4647,30 @@
     "location": "Main Davidson Campus",
     "campus": "001",
     "mode": "in-person",
-    "instructor": "Ring, D",
-    "seats_open": 4,
+    "instructor": "Ring, D, McChesney, E",
+    "seats_open": 9,
     "seats_total": 24,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "davidson-davie",
+    "term": "2026SU",
+    "course_prefix": "WBL",
+    "course_number": "122",
+    "course_title": "Work-Based Learning II",
+    "credits": 2,
+    "crn": "WBL-122-5B",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-28",
+    "location": "Off Campus",
+    "campus": "999",
+    "mode": "in-person",
+    "instructor": "Ring, D, McChesney, E",
+    "seats_open": 2,
+    "seats_total": 5,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -3774,7 +4690,7 @@
     "campus": "001",
     "mode": "in-person",
     "instructor": "Ring, D",
-    "seats_open": 6,
+    "seats_open": 10,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3795,10 +4711,12 @@
     "campus": "002",
     "mode": "in-person",
     "instructor": "Ellis, M, Sizemore, S, Smith, K",
-    "seats_open": 4,
+    "seats_open": 3,
     "seats_total": 14,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 131",
+    "prerequisite_courses": [
+      "WLD 131"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -3816,10 +4734,12 @@
     "campus": "001",
     "mode": "in-person",
     "instructor": "Watts, W, Smith, K",
-    "seats_open": 0,
-    "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 4,
+    "seats_total": 20,
+    "prerequisite_text": "WLD 131",
+    "prerequisite_courses": [
+      "WLD 131"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -3837,10 +4757,12 @@
     "campus": "001",
     "mode": "in-person",
     "instructor": "Watts, W, Smith, K",
-    "seats_open": 0,
-    "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 7,
+    "seats_total": 20,
+    "prerequisite_text": "WLD 131",
+    "prerequisite_courses": [
+      "WLD 131"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -3858,10 +4780,15 @@
     "campus": "002",
     "mode": "in-person",
     "instructor": "Ellis, M, Sizemore, S, Smith, K",
-    "seats_open": 4,
+    "seats_open": 2,
     "seats_total": 14,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 141 and WLD 115 and WLD 121 and WLD 131",
+    "prerequisite_courses": [
+      "WLD 141",
+      "WLD 115",
+      "WLD 121",
+      "WLD 131"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -3879,10 +4806,15 @@
     "campus": "001",
     "mode": "in-person",
     "instructor": "Badgett, S, Smith, K",
-    "seats_open": 2,
+    "seats_open": 0,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 141 and WLD 115 and WLD 121 and WLD 131",
+    "prerequisite_courses": [
+      "WLD 141",
+      "WLD 115",
+      "WLD 121",
+      "WLD 131"
+    ]
   },
   {
     "college_code": "davidson-davie",
@@ -3902,7 +4834,12 @@
     "instructor": "Badgett, S, Smith, K",
     "seats_open": 0,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 141 and WLD 115 and WLD 121 and WLD 131",
+    "prerequisite_courses": [
+      "WLD 141",
+      "WLD 115",
+      "WLD 121",
+      "WLD 131"
+    ]
   }
 ]

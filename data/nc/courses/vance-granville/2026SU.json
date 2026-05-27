@@ -15,7 +15,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Fischer, R",
-    "seats_open": 75,
+    "seats_open": 38,
     "seats_total": 75,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -36,7 +36,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "O'Geary, A",
-    "seats_open": 66,
+    "seats_open": 4,
     "seats_total": 75,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -49,18 +49,21 @@
     "course_title": "HVAC Servicing",
     "credits": 4,
     "crn": "AHR-133-E401",
-    "days": "M T",
-    "start_time": "9:00 AM",
-    "end_time": "2:50 PM",
+    "days": "M T W",
+    "start_time": "5:00 PM",
+    "end_time": "9:00 PM",
     "start_date": "2026-05-26",
-    "location": "VGCC Main Campus",
-    "campus": "MC",
+    "location": "VGCC South Campus",
+    "campus": "SC",
     "mode": "in-person",
-    "instructor": "Tillotson, M",
-    "seats_open": 15,
+    "instructor": "Thompson, C",
+    "seats_open": 4,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AHR 112 or AHR 113",
+    "prerequisite_courses": [
+      "AHR 112",
+      "AHR 113"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -78,7 +81,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Tillotson, M",
-    "seats_open": 15,
+    "seats_open": 8,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -99,7 +102,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Carlson, M",
-    "seats_open": 75,
+    "seats_open": 22,
     "seats_total": 75,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -120,28 +123,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Talley, I",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "vance-granville",
-    "term": "2026SU",
-    "course_prefix": "ART",
-    "course_number": "115",
-    "course_title": "Art History Survey II",
-    "credits": 3,
-    "crn": "ART-115-Z490",
-    "days": "M T W Th F",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-26",
-    "location": "Web (online Courses)",
-    "campus": "WEB",
-    "mode": "in-person",
-    "instructor": "Talley, I",
-    "seats_open": 25,
+    "seats_open": 18,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -162,7 +144,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Gibbs, J",
-    "seats_open": 9,
+    "seats_open": 0,
     "seats_total": 9,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -183,7 +165,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Matthis, G",
-    "seats_open": 23,
+    "seats_open": 2,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -204,7 +186,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Bhattacharya, N",
-    "seats_open": 25,
+    "seats_open": 8,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -225,7 +207,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Christie, M",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -246,7 +228,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Devkota, R",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -266,11 +248,13 @@
     "location": "Web (online Courses)",
     "campus": "WEB",
     "mode": "in-person",
-    "instructor": "Blair, A",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "instructor": "McCusker, K",
+    "seats_open": 11,
+    "seats_total": 50,
+    "prerequisite_text": "BIO 168",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -288,10 +272,14 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Blair, A",
-    "seats_open": 50,
+    "seats_open": 12,
     "seats_total": 50,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 163 or BIO 166 or BIO 169",
+    "prerequisite_courses": [
+      "BIO 163",
+      "BIO 166",
+      "BIO 169"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -309,29 +297,8 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Lyon, R",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "vance-granville",
-    "term": "2026SU",
-    "course_prefix": "BPM",
-    "course_number": "111",
-    "course_title": "Bioprocess Measurements",
-    "credits": 4,
-    "crn": "BPM-111-X480",
-    "days": "W",
-    "start_time": "5:00 PM",
-    "end_time": "8:00 PM",
-    "start_date": "2026-05-26",
-    "location": "VGCC Franklin Campus",
-    "campus": "FC",
-    "mode": "hybrid",
-    "instructor": "Pais, A",
-    "seats_open": 20,
-    "seats_total": 20,
+    "seats_open": 0,
+    "seats_total": 55,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -351,10 +318,12 @@
     "campus": "FC",
     "mode": "hybrid",
     "instructor": "Lyon, R",
-    "seats_open": 20,
+    "seats_open": 15,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BPM 111",
+    "prerequisite_courses": [
+      "BPM 111"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -372,7 +341,7 @@
     "campus": "FC",
     "mode": "hybrid",
     "instructor": "Gravel, C",
-    "seats_open": 15,
+    "seats_open": 4,
     "seats_total": 17,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -393,7 +362,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Pais, A",
-    "seats_open": 25,
+    "seats_open": 22,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -413,8 +382,8 @@
     "location": "VGCC Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Sanders, B",
-    "seats_open": 25,
+    "instructor": "Hann, C",
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -435,8 +404,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Hann, C",
-    "seats_open": 25,
-    "seats_total": 25,
+    "seats_open": 10,
+    "seats_total": 35,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -456,10 +425,12 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Lyon, R",
-    "seats_open": 25,
+    "seats_open": 5,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 131",
+    "prerequisite_courses": [
+      "CHM 131"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -477,10 +448,12 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Lyon, R",
-    "seats_open": 25,
+    "seats_open": 5,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 131A",
+    "prerequisite_courses": [
+      "CHM 131A"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -498,8 +471,8 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Bailey, L",
-    "seats_open": 49,
-    "seats_total": 50,
+    "seats_open": 13,
+    "seats_total": 75,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -519,7 +492,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Hyson, A",
-    "seats_open": 50,
+    "seats_open": 47,
     "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -540,7 +513,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Hyson, A",
-    "seats_open": 50,
+    "seats_open": 39,
     "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -561,7 +534,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Hyson, A",
-    "seats_open": 50,
+    "seats_open": 41,
     "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -582,10 +555,12 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Warner, S",
-    "seats_open": 25,
+    "seats_open": 5,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -603,10 +578,13 @@
     "campus": "WC",
     "mode": "hybrid",
     "instructor": "Nadeau, E",
-    "seats_open": 20,
+    "seats_open": 9,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -617,17 +595,20 @@
     "credits": 4,
     "crn": "COS-115-X470",
     "days": "M",
-    "start_time": "2:30 PM",
-    "end_time": "4:30 PM",
+    "start_time": "2:00 PM",
+    "end_time": "2:50 PM",
     "start_date": "2026-05-26",
     "location": "VGCC Franklin Campus",
     "campus": "FC",
     "mode": "hybrid",
     "instructor": "Gibbs, R",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -647,8 +628,11 @@
     "instructor": "Gregory, R",
     "seats_open": 25,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -666,10 +650,13 @@
     "campus": "WC",
     "mode": "in-person",
     "instructor": "Nadeau, E",
-    "seats_open": 20,
+    "seats_open": 9,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -681,16 +668,19 @@
     "crn": "COS-116-E470",
     "days": "M T W Th",
     "start_time": "8:00 AM",
-    "end_time": "2:00 PM",
+    "end_time": "1:50 PM",
     "start_date": "2026-05-26",
     "location": "VGCC Franklin Campus",
     "campus": "FC",
     "mode": "in-person",
-    "instructor": "Gibbs, R, Williams, Z",
-    "seats_open": 30,
+    "instructor": "Gibbs, R",
+    "seats_open": 11,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -701,17 +691,20 @@
     "credits": 4,
     "crn": "COS-116-E471",
     "days": "M T W Th",
-    "start_time": "2:30 PM",
-    "end_time": "8:30 PM",
+    "start_time": "3:00 PM",
+    "end_time": "9:00 PM",
     "start_date": "2026-05-26",
     "location": "VGCC Franklin Campus",
     "campus": "FC",
     "mode": "in-person",
     "instructor": "Gregory, R",
-    "seats_open": 25,
+    "seats_open": 18,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -728,11 +721,14 @@
     "location": "VGCC Franklin Campus",
     "campus": "FC",
     "mode": "hybrid",
-    "instructor": "Nadeau, E",
-    "seats_open": 20,
+    "instructor": "Coburn, E",
+    "seats_open": 13,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -749,30 +745,9 @@
     "location": "Web (online Courses)",
     "campus": "WEB",
     "mode": "in-person",
-    "instructor": "Garrett, H",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "vance-granville",
-    "term": "2026SU",
-    "course_prefix": "CUL",
-    "course_number": "110",
-    "course_title": "Sanitation & Safety",
-    "credits": 2,
-    "crn": "CUL-110-X400",
-    "days": "M T W Th F",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-26",
-    "location": "VGCC Main Campus",
-    "campus": "MC",
-    "mode": "hybrid",
-    "instructor": "Wilkerson, R",
-    "seats_open": 20,
-    "seats_total": 20,
+    "instructor": "Bailey, L",
+    "seats_open": 22,
+    "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -792,10 +767,15 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Wilkerson, R",
-    "seats_open": 20,
+    "seats_open": 17,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CUL 110 and CUL 140 and CUL 110 and CUL 142 and CUL 170",
+    "prerequisite_courses": [
+      "CUL 110",
+      "CUL 140",
+      "CUL 142",
+      "CUL 170"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -813,7 +793,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Henderson, E",
-    "seats_open": 30,
+    "seats_open": 19,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -834,7 +814,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Carr, C",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -855,7 +835,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Roberson, J",
-    "seats_open": 25,
+    "seats_open": 16,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -876,7 +856,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Roberson, J",
-    "seats_open": 25,
+    "seats_open": 6,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -897,50 +877,8 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Roberson, J",
-    "seats_open": 25,
+    "seats_open": 12,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "vance-granville",
-    "term": "2026SU",
-    "course_prefix": "ELC",
-    "course_number": "112",
-    "course_title": "DC/AC Electricity",
-    "credits": 5,
-    "crn": "ELC-112-E401",
-    "days": "M W",
-    "start_time": "10:00 AM",
-    "end_time": "3:50 PM",
-    "start_date": "2026-05-26",
-    "location": "VGCC Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Durham, A",
-    "seats_open": 15,
-    "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "vance-granville",
-    "term": "2026SU",
-    "course_prefix": "ELC",
-    "course_number": "125",
-    "course_title": "Diagrams and Schematics",
-    "credits": 2,
-    "crn": "ELC-125-E401",
-    "days": "T",
-    "start_time": "10:00 AM",
-    "end_time": "1:50 PM",
-    "start_date": "2026-05-26",
-    "location": "VGCC Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Durham, A",
-    "seats_open": 15,
-    "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -960,29 +898,8 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Frink, F",
-    "seats_open": 20,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "vance-granville",
-    "term": "2026SU",
-    "course_prefix": "ENG",
-    "course_number": "025",
-    "course_title": "College English Skills",
-    "credits": 3,
-    "crn": "ENG-025-Z491",
-    "days": "M T W Th F",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-26",
-    "location": "Web (online Courses)",
-    "campus": "WEB",
-    "mode": "in-person",
-    "instructor": "Holton, R",
-    "seats_open": 20,
-    "seats_total": 20,
+    "seats_open": 0,
+    "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1002,8 +919,8 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Bryan, J",
-    "seats_open": 16,
-    "seats_total": 16,
+    "seats_open": 0,
+    "seats_total": 17,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1023,8 +940,8 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Henderson, C",
-    "seats_open": 20,
-    "seats_total": 20,
+    "seats_open": 3,
+    "seats_total": 31,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1044,10 +961,13 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Bryan, J",
-    "seats_open": 4,
-    "seats_total": 4,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 17,
+    "prerequisite_text": "ENG 025 and ENG 045",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -1065,10 +985,13 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Frink, F",
-    "seats_open": 20,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 28,
+    "prerequisite_text": "ENG 025 and ENG 045",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -1086,10 +1009,13 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Clarke, B",
-    "seats_open": 20,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 23,
+    "prerequisite_text": "ENG 025 and ENG 045",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -1107,10 +1033,13 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Bryan, J",
-    "seats_open": 16,
-    "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 1,
+    "seats_total": 18,
+    "prerequisite_text": "ENG 025 and ENG 045",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -1128,10 +1057,12 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Bryan, J",
-    "seats_open": 20,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 22,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -1149,10 +1080,12 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Dillahunt, M",
-    "seats_open": 20,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 21,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -1170,31 +1103,12 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Clarke, B",
-    "seats_open": 20,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "vance-granville",
-    "term": "2026SU",
-    "course_prefix": "ENG",
-    "course_number": "116",
-    "course_title": "Technical Report Writing",
-    "credits": 3,
-    "crn": "ENG-116-Z490",
-    "days": "M T W Th F",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-26",
-    "location": "Web (online Courses)",
-    "campus": "WEB",
-    "mode": "in-person",
-    "instructor": "Henderson, C",
-    "seats_open": 20,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 1,
+    "seats_total": 22,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -1212,7 +1126,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Watson, M",
-    "seats_open": 25,
+    "seats_open": 3,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1233,7 +1147,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Southerland, P",
-    "seats_open": 25,
+    "seats_open": 3,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1254,7 +1168,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Frederick, C",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1266,16 +1180,16 @@
     "course_number": "245",
     "course_title": "Human Resource Mgmt-Hosp",
     "credits": 3,
-    "crn": "HRM-245-Z400",
-    "days": "W",
-    "start_time": "10:00 AM",
-    "end_time": "1:00 PM",
+    "crn": "HRM-245-X400",
+    "days": "Th",
+    "start_time": "9:00 AM",
+    "end_time": "9:50 AM",
     "start_date": "2026-05-26",
     "location": "VGCC Main Campus",
     "campus": "MC",
-    "mode": "in-person",
+    "mode": "hybrid",
     "instructor": "Wilkerson, R",
-    "seats_open": 20,
+    "seats_open": 18,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1296,10 +1210,16 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Perkinson, K",
-    "seats_open": 25,
+    "seats_open": 22,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 163 and BIO 275 and CHM 130 and CHM 130A and BIO 271",
+    "prerequisite_courses": [
+      "BIO 163",
+      "BIO 275",
+      "CHM 130",
+      "CHM 130A",
+      "BIO 271"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -1317,29 +1237,8 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Bell, S",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "vance-granville",
-    "term": "2026SU",
-    "course_prefix": "HUM",
-    "course_number": "122",
-    "course_title": "Southern Culture",
-    "credits": 3,
-    "crn": "HUM-122-Z490",
-    "days": "M T W Th F",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-26",
-    "location": "Web (online Courses)",
-    "campus": "WEB",
-    "mode": "in-person",
-    "instructor": "Bell, S",
-    "seats_open": 25,
-    "seats_total": 25,
+    "seats_open": 0,
+    "seats_total": 60,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1359,8 +1258,8 @@
     "campus": "SC",
     "mode": "hybrid",
     "instructor": "Bullock, D",
-    "seats_open": 25,
-    "seats_total": 25,
+    "seats_open": 3,
+    "seats_total": 40,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1380,7 +1279,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Debnam, M",
-    "seats_open": 20,
+    "seats_open": 14,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1401,7 +1300,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Debnam, M",
-    "seats_open": 20,
+    "seats_open": 19,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1422,10 +1321,13 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Debnam, M",
-    "seats_open": 20,
+    "seats_open": 15,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "LEX 120 and LEX 271",
+    "prerequisite_courses": [
+      "LEX 120",
+      "LEX 271"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -1443,10 +1345,12 @@
     "campus": "FC",
     "mode": "hybrid",
     "instructor": "Debnam, M",
-    "seats_open": 20,
+    "seats_open": 15,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "LEX 210",
+    "prerequisite_courses": [
+      "LEX 210"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -1464,8 +1368,8 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Dawes, Y",
-    "seats_open": 20,
-    "seats_total": 20,
+    "seats_open": 3,
+    "seats_total": 35,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1485,10 +1389,13 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Dawes, Y",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 33,
+    "prerequisite_text": "MAT 025 and MAT 045M",
+    "prerequisite_courses": [
+      "MAT 025",
+      "MAT 045M"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -1506,10 +1413,13 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Bamigbade, C",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 36,
+    "prerequisite_text": "MAT 025 and MAT 045S",
+    "prerequisite_courses": [
+      "MAT 025",
+      "MAT 045S"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -1527,10 +1437,13 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Alston-Thompson, V",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 28,
+    "prerequisite_text": "MAT 035 and MAT 045P",
+    "prerequisite_courses": [
+      "MAT 035",
+      "MAT 045P"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -1548,10 +1461,13 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Alie, F",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 26,
+    "prerequisite_text": "MAT 035 and MAT 045P",
+    "prerequisite_courses": [
+      "MAT 035",
+      "MAT 045P"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -1569,10 +1485,12 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Alston-Thompson, V",
-    "seats_open": 25,
+    "seats_open": 4,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 171",
+    "prerequisite_courses": [
+      "MAT 171"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -1590,10 +1508,12 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Alie, F",
-    "seats_open": 24,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 29,
+    "prerequisite_text": "MAT 272",
+    "prerequisite_courses": [
+      "MAT 272"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -1611,7 +1531,7 @@
     "campus": "FC",
     "mode": "in-person",
     "instructor": "Kamoru, M",
-    "seats_open": 5,
+    "seats_open": 4,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1632,10 +1552,12 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Randolph, T, Kamoru, M",
-    "seats_open": 5,
+    "seats_open": 4,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MED 260",
+    "prerequisite_courses": [
+      "MED 260"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -1652,8 +1574,8 @@
     "location": "Web (online Courses)",
     "campus": "WEB",
     "mode": "in-person",
-    "instructor": "Randolph, T, Kamoru, M",
-    "seats_open": 5,
+    "instructor": "Kamoru, M",
+    "seats_open": 4,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1673,9 +1595,9 @@
     "location": "Web (online Courses)",
     "campus": "WEB",
     "mode": "in-person",
-    "instructor": "Miller, B",
-    "seats_open": 49,
-    "seats_total": 50,
+    "instructor": "Hill, J",
+    "seats_open": 24,
+    "seats_total": 75,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1695,28 +1617,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Hill, J",
-    "seats_open": 24,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "vance-granville",
-    "term": "2026SU",
-    "course_prefix": "NET",
-    "course_number": "225",
-    "course_title": "Enterprise Networking",
-    "credits": 3,
-    "crn": "NET-225-Z490",
-    "days": "M T W Th F",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-26",
-    "location": "Web (online Courses)",
-    "campus": "WEB",
-    "mode": "in-person",
-    "instructor": "Bailey, L",
-    "seats_open": 25,
+    "seats_open": 9,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1737,8 +1638,29 @@
     "campus": "MC",
     "mode": "hybrid",
     "instructor": "Powell, N",
-    "seats_open": 35,
+    "seats_open": 3,
     "seats_total": 35,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "vance-granville",
+    "term": "2026SU",
+    "course_prefix": "NUR",
+    "course_number": "117",
+    "course_title": "Pharmacology",
+    "credits": 2,
+    "crn": "NUR-117-Z499",
+    "days": "M T W Th F",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Web (online Courses)",
+    "campus": "WEB",
+    "mode": "in-person",
+    "instructor": "Powell, N",
+    "seats_open": 0,
+    "seats_total": 1,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1757,11 +1679,13 @@
     "location": "VGCC Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Parrott, L",
-    "seats_open": 24,
+    "instructor": "Parrott, L, Pacis, Y",
+    "seats_open": 2,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 111",
+    "prerequisite_courses": [
+      "NUR 111"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -1779,10 +1703,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Faulkner, R",
-    "seats_open": 35,
+    "seats_open": 3,
     "seats_total": 35,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 111",
+    "prerequisite_courses": [
+      "NUR 111"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -1800,7 +1726,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Garrett, H",
-    "seats_open": 25,
+    "seats_open": 9,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1821,10 +1747,13 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Garrett, H",
-    "seats_open": 25,
+    "seats_open": 1,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MED 121 or OST 141",
+    "prerequisite_courses": [
+      "MED 121",
+      "OST 141"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -1842,10 +1771,12 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Clark, M",
-    "seats_open": 25,
+    "seats_open": 16,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -1863,10 +1794,12 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Clark, M",
-    "seats_open": 40,
+    "seats_open": 15,
     "seats_total": 40,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -1884,7 +1817,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Fleming, E",
-    "seats_open": 25,
+    "seats_open": 21,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1905,7 +1838,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Fleming, E",
-    "seats_open": 25,
+    "seats_open": 20,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1926,7 +1859,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Fleming, E",
-    "seats_open": 25,
+    "seats_open": 20,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1947,10 +1880,13 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Sourisak, C",
-    "seats_open": 25,
+    "seats_open": 15,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 121 or MAT 171",
+    "prerequisite_courses": [
+      "MAT 121",
+      "MAT 171"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -1968,10 +1904,13 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Ruby, G",
-    "seats_open": 98,
+    "seats_open": 0,
     "seats_total": 100,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 272 and PHY 251",
+    "prerequisite_courses": [
+      "MAT 272",
+      "PHY 251"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -1989,10 +1928,13 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Raskovic, M",
-    "seats_open": 55,
+    "seats_open": 27,
     "seats_total": 55,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 272 and PHY 251",
+    "prerequisite_courses": [
+      "MAT 272",
+      "PHY 251"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -2010,7 +1952,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Farnung, C",
-    "seats_open": 23,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2031,7 +1973,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Polk, K",
-    "seats_open": 25,
+    "seats_open": 2,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2052,8 +1994,8 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "O'Geary, S",
-    "seats_open": 74,
-    "seats_total": 75,
+    "seats_open": 11,
+    "seats_total": 85,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2073,10 +2015,12 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Sparks, J",
-    "seats_open": 75,
+    "seats_open": 48,
     "seats_total": 75,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -2094,10 +2038,12 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Polk, K",
-    "seats_open": 24,
+    "seats_open": 10,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -2115,10 +2061,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Tillotson, M",
-    "seats_open": 15,
+    "seats_open": 5,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AHR 115 or ELC 111",
+    "prerequisite_courses": [
+      "AHR 115",
+      "ELC 111"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -2136,8 +2085,8 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Garmon, K",
-    "seats_open": 49,
-    "seats_total": 50,
+    "seats_open": 10,
+    "seats_total": 60,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2157,7 +2106,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Hurt, L",
-    "seats_open": 25,
+    "seats_open": 10,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2178,7 +2127,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Hurt, L",
-    "seats_open": 25,
+    "seats_open": 15,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2199,7 +2148,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "McElreath, R",
-    "seats_open": 13,
+    "seats_open": 3,
     "seats_total": 13,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2220,7 +2169,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Finch, A",
-    "seats_open": 13,
+    "seats_open": 2,
     "seats_total": 13,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2241,7 +2190,7 @@
     "campus": "FC",
     "mode": "hybrid",
     "instructor": "Gravel, C",
-    "seats_open": 15,
+    "seats_open": 4,
     "seats_total": 17,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2262,10 +2211,13 @@
     "campus": "FC",
     "mode": "in-person",
     "instructor": "Tharrington, N",
-    "seats_open": 17,
-    "seats_total": 17,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 18,
+    "prerequisite_text": "WLD 115 and WLD 121",
+    "prerequisite_courses": [
+      "WLD 115",
+      "WLD 121"
+    ]
   },
   {
     "college_code": "vance-granville",
@@ -2283,7 +2235,7 @@
     "campus": "FC",
     "mode": "in-person",
     "instructor": "Gravel, C",
-    "seats_open": 17,
+    "seats_open": 3,
     "seats_total": 17,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2304,9 +2256,13 @@
     "campus": "FC",
     "mode": "in-person",
     "instructor": "Tharrington, N",
-    "seats_open": 17,
-    "seats_total": 17,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 19,
+    "prerequisite_text": "WLD 115 and WLD 121 and WLD 131",
+    "prerequisite_courses": [
+      "WLD 115",
+      "WLD 121",
+      "WLD 131"
+    ]
   }
 ]
