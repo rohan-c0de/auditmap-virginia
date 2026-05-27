@@ -4,7 +4,8 @@ import { notFound } from "next/navigation";
 import SearchForm from "@/components/SearchForm";
 import StartingSoonCallout from "@/components/StartingSoonCallout";
 import NotifyBanner from "@/components/NotifyBanner";
-import { getNextTerm } from "@/lib/terms";
+import StateContext from "@/components/StateContext";
+import { getCurrentTerm, getNextTerm } from "@/lib/terms";
 import { getAllStates, isValidState } from "@/lib/states/registry";
 import { requireStateConfig } from "@/lib/states/route-helpers";
 import { getArticlesByState, getStateTopicLinks, categoryLabel } from "@/lib/blog";
@@ -43,6 +44,10 @@ export default async function HomePage({ params }: Props) {
   if (!isValidState(state)) notFound();
   const config = requireStateConfig(state);
   const nextTerm = await getNextTerm(state);
+  // Used by <StateContext> to compute statewide insights against the current
+  // term's data — safe to fail through to no insights, since the renderer
+  // skips when fewer than 2 sentences qualify.
+  const currentTerm = await getCurrentTerm(state).catch(() => null);
   const stateArticles = getArticlesByState(state);
   const topicLinks = getStateTopicLinks(state);
   const siteUrl =
@@ -283,6 +288,24 @@ export default async function HomePage({ params }: Props) {
           </p>
         </div>
       </section>
+
+      {/* At-a-glance — data-grounded editorial paragraphs about the state's
+          CC system. Renders nothing when fewer than 2 sentences qualify. */}
+      <StateContext
+        state={state}
+        stateName={config.name}
+        systemName={config.systemName}
+        term={currentTerm}
+        seniorWaiver={
+          config.seniorWaiver
+            ? {
+                ageThreshold: config.seniorWaiver.ageThreshold,
+                legalCitation: config.seniorWaiver.legalCitation,
+                bannerDetail: config.seniorWaiver.bannerDetail,
+              }
+            : null
+        }
+      />
 
       {/* Browse by program — only when at least one program qualifies */}
       {programSlugs.length > 0 && (
