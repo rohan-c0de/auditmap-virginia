@@ -420,9 +420,19 @@ jobs:
             mkdir -p data/state-health
             cat /tmp/history-delta.jsonl >> data/state-health/history.jsonl
             git add data/state-health/history.jsonl
-            git commit -m "chore(state-health): append ${delta_count} ${DT} records from run ${{ github.run_id }}" \
+            # Distinguish "nothing to commit" (another run already pushed this
+            # data — safe to exit 0) from a real commit failure (exit 1).
+            if ! commit_out=$(git commit \
+              -m "chore(state-health): append ${delta_count} ${DT} records from run ${{ github.run_id }}" \
               -m "Run URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
-              || { echo "Nothing to commit"; exit 0; }
+              2>&1); then
+              if git diff --cached --quiet; then
+                echo "Nothing to commit — data already present on main."
+                exit 0
+              fi
+              echo "::error::git commit failed: ${commit_out}" >&2
+              exit 1
+            fi
             if git push origin main; then
               echo "Pushed history append on attempt ${attempt}."
               exit 0
@@ -480,10 +490,13 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          npx tsx scripts/lib/triage-scraper-health.ts \
+          if ! npx tsx scripts/lib/triage-scraper-health.ts \
             --history data/state-health/history.jsonl \
             --window-days 14 \
-            --out /tmp/triage.json 2>&1
+            --out /tmp/triage.json 2>&1; then
+            echo "::warning::triage-scraper-health.ts failed — skipping triage alert"
+            echo '{"results":[],"markdown":"(triage classifier failed)"}' > /tmp/triage.json
+          fi
 
           actionable=$(jq '[.results[] | select(.classification == "persistent-broken" or .classification == "regression" or .classification == "partial-coverage-degraded")] | length' /tmp/triage.json)
           if [ "$actionable" -eq 0 ]; then
