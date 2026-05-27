@@ -20,6 +20,9 @@
  *  - Scorecard cost/earnings with state-median comparison
  */
 
+import fs from "node:fs";
+import path from "node:path";
+import os from "node:os";
 import type { CourseSection, Institution } from "@/lib/types";
 import { computeOfferingProfile } from "@/lib/college-stats";
 import {
@@ -141,11 +144,59 @@ interface StateRankings {
 
 const rankingsCache = new Map<string, Promise<StateRankings | null>>();
 
+// Disk cache lives in the OS temp dir so it's shared across the Next.js
+// build worker processes. During `next build` with 7 parallel workers, the
+// first worker to need rankings for a state pays the Supabase cost and
+// writes the result; every other worker — and every other page on the same
+// worker — reads it back as a synchronous JSON parse.
+//
+// The cache is keyed by state+term and includes a generation timestamp so
+// stale entries from prior builds expire automatically. Failures to read or
+// write the disk cache are non-fatal — we degrade to in-process caching.
+const DISK_CACHE_TTL_MS = 60 * 60 * 1000; // 1 hour
+function rankingsCachePath(state: string, term: string): string {
+  return path.join(os.tmpdir(), `cc-coursemap-rankings-${state}-${term}.json`);
+}
+interface DiskCacheEnvelope {
+  generatedAt: number;
+  data: StateRankings | null;
+}
+function readDiskRankings(
+  state: string,
+  term: string,
+): StateRankings | null | undefined {
+  const file = rankingsCachePath(state, term);
+  try {
+    if (!fs.existsSync(file)) return undefined;
+    const raw = fs.readFileSync(file, "utf-8");
+    const envelope = JSON.parse(raw) as DiskCacheEnvelope;
+    if (Date.now() - envelope.generatedAt > DISK_CACHE_TTL_MS) return undefined;
+    return envelope.data;
+  } catch {
+    return undefined;
+  }
+}
+function writeDiskRankings(
+  state: string,
+  term: string,
+  data: StateRankings | null,
+): void {
+  const file = rankingsCachePath(state, term);
+  try {
+    fs.writeFileSync(
+      file,
+      JSON.stringify({ generatedAt: Date.now(), data } satisfies DiskCacheEnvelope),
+    );
+  } catch {
+    // Disk cache is best-effort — keep going.
+  }
+}
+
 /**
  * Build per-college section/late-start rankings + state-median mode shares
  * for the given state/term. Loads all state courses once and caches the
- * result for the duration of the process — fine for ISR builds since each
- * page rebuild gets a fresh process.
+ * result twice: in-process (this worker) and on disk under the OS temp dir
+ * (shared across all workers in the same `next build` run).
  *
  * Returns null when the state has no course data for the term.
  */
@@ -157,9 +208,21 @@ export async function getStateRankings(
   const existing = rankingsCache.get(key);
   if (existing) return existing;
 
+  // Cross-worker disk cache — synchronous read so we don't even create the
+  // Supabase request when another worker has already computed this state.
+  const fromDisk = readDiskRankings(state, term);
+  if (fromDisk !== undefined) {
+    const resolved = Promise.resolve(fromDisk);
+    rankingsCache.set(key, resolved);
+    return resolved;
+  }
+
   const promise = (async (): Promise<StateRankings | null> => {
     const sections = await loadAllCourses(term, state);
-    if (sections.length === 0) return null;
+    if (sections.length === 0) {
+      writeDiskRankings(state, term, null);
+      return null;
+    }
 
     // Group sections by college_code.
     const byCollege = new Map<string, CourseSection[]>();
@@ -211,7 +274,7 @@ export async function getStateRankings(
         : sorted[mid];
     };
 
-    return {
+    const result: StateRankings = {
       sectionRanks: sectionCounts,
       lateStartRanks: lateStartCounts,
       modeMedians: {
@@ -220,6 +283,8 @@ export async function getStateRankings(
         online: med(modeRows.map((r) => r.online)),
       },
     };
+    writeDiskRankings(state, term, result);
+    return result;
   })();
 
   rankingsCache.set(key, promise);
@@ -232,9 +297,54 @@ export async function getStateRankings(
 
 const transferDestCache = new Map<string, Promise<TransferDestination[]>>();
 
+function transferCachePath(state: string, ccSlug: string): string {
+  return path.join(
+    os.tmpdir(),
+    `cc-coursemap-xferdest-${state}-${ccSlug}.json`,
+  );
+}
+interface TransferCacheEnvelope {
+  generatedAt: number;
+  data: TransferDestination[];
+}
+function readDiskTransferDest(
+  state: string,
+  ccSlug: string,
+): TransferDestination[] | undefined {
+  try {
+    const file = transferCachePath(state, ccSlug);
+    if (!fs.existsSync(file)) return undefined;
+    const envelope = JSON.parse(
+      fs.readFileSync(file, "utf-8"),
+    ) as TransferCacheEnvelope;
+    if (Date.now() - envelope.generatedAt > DISK_CACHE_TTL_MS) return undefined;
+    return envelope.data;
+  } catch {
+    return undefined;
+  }
+}
+function writeDiskTransferDest(
+  state: string,
+  ccSlug: string,
+  data: TransferDestination[],
+): void {
+  try {
+    fs.writeFileSync(
+      transferCachePath(state, ccSlug),
+      JSON.stringify({
+        generatedAt: Date.now(),
+        data,
+      } satisfies TransferCacheEnvelope),
+    );
+  } catch {
+    // best-effort
+  }
+}
+
 /**
  * Top receiving universities for a given CC's course catalog, ordered by
- * mapping count desc. Limited to top 10.
+ * mapping count desc. Limited to top 10. Disk-cached per (state, college)
+ * under the OS temp dir for cross-worker reuse during `next build`.
  *
  * `subjectPrefixes` scopes the aggregation so we don't pull the full state
  * catalog. Pass the prefixes the college actually offers.
@@ -245,6 +355,13 @@ async function loadTopTransferDestinations(
   subjectPrefixes: string[],
 ): Promise<TransferDestination[]> {
   if (subjectPrefixes.length === 0) return [];
+
+  // Disk-cache key is per (state, ccSlug) — we accept slightly stale subject
+  // mixes (a course added between builds) in exchange for sharing the file
+  // across workers. Subject lists change slowly enough that the top-3
+  // destinations are stable.
+  const fromDisk = readDiskTransferDest(state, ccSlug);
+  if (fromDisk !== undefined) return fromDisk;
 
   const key = `${state}:${ccSlug}:${[...subjectPrefixes].sort().join("|")}`;
   const existing = transferDestCache.get(key);
@@ -274,10 +391,12 @@ async function loadTopTransferDestinations(
       tally.set(u, (tally.get(u) ?? 0) + 1);
     }
 
-    return Array.from(tally.entries())
+    const out = Array.from(tally.entries())
       .map(([university, mappingCount]) => ({ university, mappingCount }))
       .sort((a, b) => b.mappingCount - a.mappingCount)
       .slice(0, 10);
+    writeDiskTransferDest(state, ccSlug, out);
+    return out;
   })();
 
   transferDestCache.set(key, promise);
