@@ -14,8 +14,8 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Ziemba-Tolbert, C",
-    "seats_open": 45,
+    "instructor": "Sharpe, S",
+    "seats_open": 0,
     "seats_total": 45,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -35,8 +35,8 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Ziemba-Tolbert, C",
-    "seats_open": 45,
+    "instructor": "Sharpe, S",
+    "seats_open": 0,
     "seats_total": 45,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -56,9 +56,9 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 30,
-    "seats_total": 30,
+    "instructor": "Runge, M",
+    "seats_open": 0,
+    "seats_total": 60,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -77,9 +77,9 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 30,
-    "seats_total": 30,
+    "instructor": "Hearns, A",
+    "seats_open": 4,
+    "seats_total": 45,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -98,9 +98,30 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 30,
-    "seats_total": 30,
+    "instructor": "O'Donnell, B",
+    "seats_open": 1,
+    "seats_total": 45,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "ACA",
+    "course_number": "122",
+    "course_title": "College Transfer Success",
+    "credits": 1,
+    "crn": "ACA-122-D6G",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-08",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "in-person",
+    "instructor": "Morrison, S",
+    "seats_open": 22,
+    "seats_total": 45,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -119,7 +140,28 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
+    "instructor": "Nichols, J",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "ACA",
+    "course_number": "122",
+    "course_title": "Transfer & Career Success",
+    "credits": 1,
+    "crn": "ACA-122-P6C",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-21",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "in-person",
+    "instructor": "McClain, K",
     "seats_open": 0,
     "seats_total": 0,
     "prerequisite_text": null,
@@ -141,7 +183,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Nance, R",
-    "seats_open": 30,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -162,7 +204,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Williams, R",
-    "seats_open": 30,
+    "seats_open": 15,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -183,10 +225,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Nance, R",
-    "seats_open": 30,
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ACC 120",
+    "prerequisite_courses": [
+      "ACC 120"
+    ]
   },
   {
     "college_code": "gaston",
@@ -204,10 +248,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Nance, R",
-    "seats_open": 30,
+    "seats_open": 11,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ACC 120",
+    "prerequisite_courses": [
+      "ACC 120"
+    ]
   },
   {
     "college_code": "gaston",
@@ -225,10 +271,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Barrett, A",
-    "seats_open": 15,
+    "seats_open": 3,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AHR 112 or AHR 113",
+    "prerequisite_courses": [
+      "AHR 112",
+      "AHR 113"
+    ]
   },
   {
     "college_code": "gaston",
@@ -237,7 +286,7 @@
     "course_number": "133",
     "course_title": "HVAC Servicing",
     "credits": 4,
-    "crn": "AHR-133-D02",
+    "crn": "AHR-133-D03",
     "days": "T W Th",
     "start_time": "5:30 PM",
     "end_time": "6:24 PM",
@@ -246,10 +295,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Silver, J",
-    "seats_open": 15,
+    "seats_open": 8,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AHR 112 or AHR 113",
+    "prerequisite_courses": [
+      "AHR 112",
+      "AHR 113"
+    ]
   },
   {
     "college_code": "gaston",
@@ -259,7 +311,7 @@
     "course_title": "HVAC Duct Systems I",
     "credits": 2,
     "crn": "AHR-151-D8A",
-    "days": "",
+    "days": "M T W Th F Sa Su",
     "start_time": "",
     "end_time": "",
     "start_date": "2026-05-26",
@@ -267,7 +319,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Barrett, A",
-    "seats_open": 15,
+    "seats_open": 0,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -288,7 +340,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Barrett, A",
-    "seats_open": 15,
+    "seats_open": 2,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -309,7 +361,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Leagon, W",
-    "seats_open": 15,
+    "seats_open": 0,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -330,8 +382,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Shuford, S",
-    "seats_open": 30,
-    "seats_total": 30,
+    "seats_open": 0,
+    "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -351,8 +403,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Story, J",
-    "seats_open": 30,
-    "seats_total": 30,
+    "seats_open": 9,
+    "seats_total": 60,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -372,8 +424,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Chadwick, B",
-    "seats_open": 30,
-    "seats_total": 30,
+    "seats_open": 0,
+    "seats_total": 40,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -414,8 +466,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Zalevskaya, L",
-    "seats_open": 30,
-    "seats_total": 30,
+    "seats_open": 7,
+    "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -435,8 +487,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Zalevskaya, L",
-    "seats_open": 30,
-    "seats_total": 30,
+    "seats_open": 12,
+    "seats_total": 40,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -456,31 +508,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Felton, T",
-    "seats_open": 15,
+    "seats_open": 0,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "gaston",
-    "term": "2026SU",
-    "course_prefix": "AUT",
-    "course_number": "151A",
-    "course_title": "Brakes Systems Lab",
-    "credits": 1,
-    "crn": "AUT-151A-D8B",
-    "days": "M",
-    "start_time": "5:30 PM",
-    "end_time": "8:28 PM",
-    "start_date": "2026-05-26",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Felton, T",
-    "seats_open": 15,
-    "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AUT 151",
+    "prerequisite_courses": [
+      "AUT 151"
+    ]
   },
   {
     "college_code": "gaston",
@@ -490,27 +523,6 @@
     "course_title": "Brake Systems",
     "credits": 3,
     "crn": "AUT-151-D8A",
-    "days": "",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-26",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Felton, T",
-    "seats_open": 15,
-    "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "gaston",
-    "term": "2026SU",
-    "course_prefix": "AUT",
-    "course_number": "151",
-    "course_title": "Brake Systems",
-    "credits": 3,
-    "crn": "AUT-151-D8B",
     "days": "M T W Th F Sa Su",
     "start_time": "",
     "end_time": "",
@@ -519,10 +531,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Felton, T",
-    "seats_open": 15,
+    "seats_open": 0,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AUT 151A",
+    "prerequisite_courses": [
+      "AUT 151A"
+    ]
   },
   {
     "college_code": "gaston",
@@ -539,9 +553,9 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 30,
-    "seats_total": 30,
+    "instructor": "Whittemore, S",
+    "seats_open": 8,
+    "seats_total": 75,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -560,8 +574,8 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 30,
+    "instructor": "Yavelak, B",
+    "seats_open": 15,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -581,30 +595,9 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Whittemore, S",
-    "seats_open": 30,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "gaston",
-    "term": "2026SU",
-    "course_prefix": "BIO",
-    "course_number": "111",
-    "course_title": "General Biology I",
-    "credits": 4,
-    "crn": "BIO-111-D8B",
-    "days": "M W",
-    "start_time": "9:00 AM",
-    "end_time": "10:50 AM",
-    "start_date": "2026-05-26",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Whittemore, S",
-    "seats_open": 24,
-    "seats_total": 24,
+    "instructor": "Bruch, H",
+    "seats_open": 2,
+    "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -623,9 +616,9 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 30,
-    "seats_total": 30,
+    "instructor": "Landrum, M",
+    "seats_open": 0,
+    "seats_total": 40,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -644,11 +637,13 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Woodson, H",
-    "seats_open": 30,
+    "instructor": "Yavelak, B",
+    "seats_open": 11,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 111",
+    "prerequisite_courses": [
+      "BIO 111"
+    ]
   },
   {
     "college_code": "gaston",
@@ -665,11 +660,13 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 30,
+    "instructor": "Woodson, H",
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 111",
+    "prerequisite_courses": [
+      "BIO 111"
+    ]
   },
   {
     "college_code": "gaston",
@@ -687,8 +684,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Zieverink, J",
-    "seats_open": 30,
-    "seats_total": 30,
+    "seats_open": 15,
+    "seats_total": 45,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -708,7 +705,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "McLaughlin, T",
-    "seats_open": 30,
+    "seats_open": 7,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -729,8 +726,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Williams, P",
-    "seats_open": 30,
-    "seats_total": 30,
+    "seats_open": 0,
+    "seats_total": 60,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -749,9 +746,9 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 30,
-    "seats_total": 30,
+    "instructor": "Zieverink, J",
+    "seats_open": 2,
+    "seats_total": 40,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -771,8 +768,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Zieverink, J",
-    "seats_open": 30,
-    "seats_total": 30,
+    "seats_open": 32,
+    "seats_total": 60,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -792,7 +789,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Davis, W",
-    "seats_open": 24,
+    "seats_open": 7,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -813,7 +810,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Davis, W",
-    "seats_open": 24,
+    "seats_open": 6,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -834,10 +831,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Williams, P",
-    "seats_open": 30,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 3,
+    "seats_total": 60,
+    "prerequisite_text": "BIO 168",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
   },
   {
     "college_code": "gaston",
@@ -854,11 +853,13 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 30,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "instructor": "Zieverink, J",
+    "seats_open": 9,
+    "seats_total": 40,
+    "prerequisite_text": "BIO 168",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
   },
   {
     "college_code": "gaston",
@@ -876,10 +877,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Yavelak, B",
-    "seats_open": 30,
+    "seats_open": 20,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 168",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
   },
   {
     "college_code": "gaston",
@@ -896,32 +899,13 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 24,
-    "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "gaston",
-    "term": "2026SU",
-    "course_prefix": "BIO",
-    "course_number": "169",
-    "course_title": "Anatomy and Physiology II",
-    "credits": 4,
-    "crn": "BIO-169-D8C",
-    "days": "M W",
-    "start_time": "5:30 PM",
-    "end_time": "7:05 PM",
-    "start_date": "2026-06-08",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
     "instructor": "Bruch, H",
-    "seats_open": 24,
+    "seats_open": 12,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 168",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
   },
   {
     "college_code": "gaston",
@@ -939,29 +923,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Williams, P",
-    "seats_open": 60,
-    "seats_total": 60,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "gaston",
-    "term": "2026SU",
-    "course_prefix": "BIO",
-    "course_number": "275",
-    "course_title": "Microbiology",
-    "credits": 4,
-    "crn": "BIO-275-D8B",
-    "days": "T Th",
-    "start_time": "10:00 AM",
-    "end_time": "11:50 AM",
-    "start_date": "2026-06-08",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Yavelak, B",
-    "seats_open": 24,
-    "seats_total": 24,
+    "seats_open": 7,
+    "seats_total": 100,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -981,7 +944,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Witherell, K",
-    "seats_open": 30,
+    "seats_open": 2,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1002,7 +965,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Railton, J",
-    "seats_open": 30,
+    "seats_open": 8,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1023,7 +986,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Grubbs, S",
-    "seats_open": 30,
+    "seats_open": 14,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1044,8 +1007,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Railton, J",
-    "seats_open": 30,
-    "seats_total": 30,
+    "seats_open": 3,
+    "seats_total": 40,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1065,8 +1028,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Railton, J",
-    "seats_open": 30,
-    "seats_total": 30,
+    "seats_open": 12,
+    "seats_total": 40,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1086,7 +1049,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Martin, L",
-    "seats_open": 30,
+    "seats_open": 9,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1107,8 +1070,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Kelledy, S",
-    "seats_open": 30,
-    "seats_total": 30,
+    "seats_open": 16,
+    "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1128,8 +1091,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Kelledy, S",
-    "seats_open": 30,
-    "seats_total": 30,
+    "seats_open": 16,
+    "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1149,7 +1112,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Witherell, K",
-    "seats_open": 30,
+    "seats_open": 5,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1170,7 +1133,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Painter, A",
-    "seats_open": 20,
+    "seats_open": 0,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1191,8 +1154,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Kline, G",
-    "seats_open": 30,
-    "seats_total": 30,
+    "seats_open": 14,
+    "seats_total": 40,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1212,10 +1175,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Brooks, S",
-    "seats_open": 16,
+    "seats_open": 7,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SRV 110",
+    "prerequisite_courses": [
+      "SRV 110"
+    ]
   },
   {
     "college_code": "gaston",
@@ -1233,10 +1198,16 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Brooks, S",
-    "seats_open": 16,
+    "seats_open": 7,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CEG 115 or CIS 110 or CIS 111 or EGR 115 or EGR 125",
+    "prerequisite_courses": [
+      "CEG 115",
+      "CIS 110",
+      "CIS 111",
+      "EGR 115",
+      "EGR 125"
+    ]
   },
   {
     "college_code": "gaston",
@@ -1253,11 +1224,13 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 30,
+    "instructor": "Skeete, Z",
+    "seats_open": 18,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 130",
+    "prerequisite_courses": [
+      "CHM 130"
+    ]
   },
   {
     "college_code": "gaston",
@@ -1274,11 +1247,13 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 30,
+    "instructor": "Skeete, Z",
+    "seats_open": 18,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 130A",
+    "prerequisite_courses": [
+      "CHM 130A"
+    ]
   },
   {
     "college_code": "gaston",
@@ -1296,8 +1271,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Williams, S",
-    "seats_open": 60,
-    "seats_total": 60,
+    "seats_open": 8,
+    "seats_total": 90,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1316,8 +1291,8 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Williams, S",
-    "seats_open": 30,
+    "instructor": "Abdelazeez, A",
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1338,7 +1313,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Abdelazeez, A",
-    "seats_open": 24,
+    "seats_open": 7,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1358,11 +1333,17 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Williams, S",
-    "seats_open": 30,
+    "instructor": "Towolawi, G",
+    "seats_open": 3,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 151 and MAT 161 or MAT 171 or MAT 175 or MAT 271",
+    "prerequisite_courses": [
+      "CHM 151",
+      "MAT 161",
+      "MAT 171",
+      "MAT 175",
+      "MAT 271"
+    ]
   },
   {
     "college_code": "gaston",
@@ -1379,32 +1360,17 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 30,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "gaston",
-    "term": "2026SU",
-    "course_prefix": "CHM",
-    "course_number": "152",
-    "course_title": "General Chemistry II",
-    "credits": 4,
-    "crn": "CHM-152-D7B",
-    "days": "M W",
-    "start_time": "10:00 AM",
-    "end_time": "11:50 AM",
-    "start_date": "2026-07-06",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
     "instructor": "Towolawi, G",
-    "seats_open": 24,
-    "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 9,
+    "seats_total": 30,
+    "prerequisite_text": "CHM 151 and MAT 161 or MAT 171 or MAT 175 or MAT 271",
+    "prerequisite_courses": [
+      "CHM 151",
+      "MAT 161",
+      "MAT 171",
+      "MAT 175",
+      "MAT 271"
+    ]
   },
   {
     "college_code": "gaston",
@@ -1422,52 +1388,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Towolawi, G",
-    "seats_open": 24,
+    "seats_open": 12,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "gaston",
-    "term": "2026SU",
-    "course_prefix": "CHM",
-    "course_number": "251",
-    "course_title": "Organic Chemistry I",
-    "credits": 4,
-    "crn": "CHM-251-D7B",
-    "days": "T Th",
-    "start_time": "10:00 AM",
-    "end_time": "11:50 AM",
-    "start_date": "2026-05-26",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Abdelazeez, A",
-    "seats_open": 24,
-    "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "gaston",
-    "term": "2026SU",
-    "course_prefix": "CHM",
-    "course_number": "252",
-    "course_title": "Organic Chemistry II",
-    "credits": 4,
-    "crn": "CHM-252-D8B",
-    "days": "T Th",
-    "start_time": "10:00 AM",
-    "end_time": "11:50 AM",
-    "start_date": "2026-07-06",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Towolawi, G",
-    "seats_open": 24,
-    "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 152",
+    "prerequisite_courses": [
+      "CHM 152"
+    ]
   },
   {
     "college_code": "gaston",
@@ -1485,7 +1411,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Rudd, A",
-    "seats_open": 30,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1506,7 +1432,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Rudd, A",
-    "seats_open": 30,
+    "seats_open": 1,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1527,7 +1453,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Rudd, A",
-    "seats_open": 30,
+    "seats_open": 6,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1548,7 +1474,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Martin, L",
-    "seats_open": 30,
+    "seats_open": 14,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1560,16 +1486,16 @@
     "course_number": "111",
     "course_title": "Basic PC Literacy",
     "credits": 2,
-    "crn": "CIS-111-D7A",
+    "crn": "CIS-111-D7C",
     "days": "T",
     "start_time": "8:00 AM",
     "end_time": "9:20 AM",
-    "start_date": "2026-05-21",
+    "start_date": "2026-05-26",
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Switzer, J",
-    "seats_open": 20,
+    "seats_open": 0,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1581,16 +1507,16 @@
     "course_number": "111",
     "course_title": "Basic PC Literacy",
     "credits": 2,
-    "crn": "CIS-111-D7B",
+    "crn": "CIS-111-D7D",
     "days": "W",
     "start_time": "5:30 PM",
     "end_time": "6:50 PM",
-    "start_date": "2026-05-21",
+    "start_date": "2026-05-26",
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Switzer, J",
-    "seats_open": 20,
+    "seats_open": 0,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1611,7 +1537,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Hinson, K",
-    "seats_open": 30,
+    "seats_open": 16,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1631,8 +1557,29 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Shaw, C",
-    "seats_open": 30,
+    "instructor": "Human, J",
+    "seats_open": 10,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "CJC",
+    "course_number": "111",
+    "course_title": "Intro to Criminal Justice",
+    "credits": 3,
+    "crn": "CJC-111-D6B",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-08",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "in-person",
+    "instructor": "Rackley, A",
+    "seats_open": 14,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1653,7 +1600,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Human, J",
-    "seats_open": 30,
+    "seats_open": 9,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1674,7 +1621,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Shaw, C",
-    "seats_open": 30,
+    "seats_open": 3,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1695,8 +1642,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Matthews, J",
-    "seats_open": 60,
-    "seats_total": 60,
+    "seats_open": 0,
+    "seats_total": 90,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1716,7 +1663,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Jannat, T",
-    "seats_open": 30,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1737,7 +1684,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Scott, H",
-    "seats_open": 30,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1758,10 +1705,16 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Jones, K",
-    "seats_open": 30,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 1,
+    "seats_total": 40,
+    "prerequisite_text": "ENG 002 or ENG 090 or ENG 111 or DRE 098 or ENG 045",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 090",
+      "ENG 111",
+      "DRE 098",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "gaston",
@@ -1779,10 +1732,43 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Horne Neu, C",
-    "seats_open": 30,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 7,
+    "seats_total": 40,
+    "prerequisite_text": "ENG 002 or ENG 090 or ENG 111 or DRE 098 or ENG 045",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 090",
+      "ENG 111",
+      "DRE 098",
+      "ENG 045"
+    ]
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "COM",
+    "course_number": "231",
+    "course_title": "Public Speaking",
+    "credits": 3,
+    "crn": "COM-231-D6D",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "in-person",
+    "instructor": "Silvera-Roy, S",
+    "seats_open": 3,
+    "seats_total": 40,
+    "prerequisite_text": "ENG 002 or ENG 090 or ENG 111 or DRE 098 or ENG 045",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 090",
+      "ENG 111",
+      "DRE 098",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "gaston",
@@ -1799,11 +1785,14 @@
     "location": "Lincoln Campus",
     "campus": "LC",
     "mode": "in-person",
-    "instructor": "Sinclair, S",
+    "instructor": "Sheppard, N",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "gaston",
@@ -1820,11 +1809,14 @@
     "location": "Lincoln Campus",
     "campus": "LC",
     "mode": "in-person",
-    "instructor": "Staff",
+    "instructor": "Huggins, R",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "gaston",
@@ -1841,11 +1833,14 @@
     "location": "Lincoln Campus",
     "campus": "LC",
     "mode": "in-person",
-    "instructor": "Staff",
+    "instructor": "Sinclair, S",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "gaston",
@@ -1862,11 +1857,14 @@
     "location": "Lincoln Campus",
     "campus": "LC",
     "mode": "in-person",
-    "instructor": "Sinclair, S",
+    "instructor": "Sheppard, N, Rodriguez, J, Edwards, T, Walker, B",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "gaston",
@@ -1883,11 +1881,14 @@
     "location": "Lincoln Campus",
     "campus": "LC",
     "mode": "in-person",
-    "instructor": "Staff",
+    "instructor": "Huggins, R, Cook, S",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "gaston",
@@ -1904,11 +1905,14 @@
     "location": "Lincoln Campus",
     "campus": "LC",
     "mode": "in-person",
-    "instructor": "Staff",
+    "instructor": "Sinclair, S, Smith, S, Edwards, T",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "gaston",
@@ -1947,7 +1951,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Hinson, K",
-    "seats_open": 30,
+    "seats_open": 2,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1967,8 +1971,8 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 30,
+    "instructor": "Kline, G",
+    "seats_open": 14,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1989,7 +1993,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Rudd, A",
-    "seats_open": 30,
+    "seats_open": 17,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2010,7 +2014,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Kelledy, S",
-    "seats_open": 30,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2031,7 +2035,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Kelledy, S",
-    "seats_open": 30,
+    "seats_open": 1,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2052,7 +2056,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Grubbs, S",
-    "seats_open": 30,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2073,8 +2077,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Sowell, M",
-    "seats_open": 30,
-    "seats_total": 30,
+    "seats_open": 25,
+    "seats_total": 60,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2094,7 +2098,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Grubbs, S",
-    "seats_open": 30,
+    "seats_open": 1,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2115,7 +2119,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Grubbs, S",
-    "seats_open": 30,
+    "seats_open": 20,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2136,7 +2140,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Sowell, M",
-    "seats_open": 30,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2157,8 +2161,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Brassell, E",
-    "seats_open": 0,
-    "seats_total": 0,
+    "seats_open": 15,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2178,7 +2182,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Hendricks, G",
-    "seats_open": 30,
+    "seats_open": 22,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2199,8 +2203,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Leagon, W",
-    "seats_open": 15,
-    "seats_total": 15,
+    "seats_open": 7,
+    "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2220,10 +2224,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Leagon, W",
-    "seats_open": 15,
+    "seats_open": 0,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ELC 112 or ELC 131",
+    "prerequisite_courses": [
+      "ELC 112",
+      "ELC 131"
+    ]
   },
   {
     "college_code": "gaston",
@@ -2241,10 +2248,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Leagon, W",
-    "seats_open": 15,
+    "seats_open": 11,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ELC 220",
+    "prerequisite_courses": [
+      "ELC 220"
+    ]
   },
   {
     "college_code": "gaston",
@@ -2262,10 +2271,14 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Parlier, C",
-    "seats_open": 20,
+    "seats_open": 10,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EMS 122 and EMS 130 and EMS 160",
+    "prerequisite_courses": [
+      "EMS 122",
+      "EMS 130",
+      "EMS 160"
+    ]
   },
   {
     "college_code": "gaston",
@@ -2282,11 +2295,14 @@
     "location": "Off Campus",
     "campus": "OC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 15,
+    "instructor": "Wood, J",
+    "seats_open": 5,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EMS 121 or EMS 122",
+    "prerequisite_courses": [
+      "EMS 121",
+      "EMS 122"
+    ]
   },
   {
     "college_code": "gaston",
@@ -2304,10 +2320,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Parlier, C",
-    "seats_open": 20,
+    "seats_open": 11,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EMS 122 and EMS 130",
+    "prerequisite_courses": [
+      "EMS 122",
+      "EMS 130"
+    ]
   },
   {
     "college_code": "gaston",
@@ -2324,8 +2343,8 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 20,
+    "instructor": "Prichard, B",
+    "seats_open": 0,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2345,8 +2364,8 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 20,
+    "instructor": "Dupree, L",
+    "seats_open": 0,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2366,8 +2385,29 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 20,
+    "instructor": "Jarema, C",
+    "seats_open": 1,
+    "seats_total": 20,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "ENG",
+    "course_number": "045",
+    "course_title": "English Skills Support",
+    "credits": 2,
+    "crn": "ENG-045-D6K",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "in-person",
+    "instructor": "Jarema, C",
+    "seats_open": 3,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2387,8 +2427,8 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 20,
+    "instructor": "McCall, E",
+    "seats_open": 5,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2408,11 +2448,16 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 20,
+    "instructor": "Prichard, B",
+    "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 045 and ENG 045",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "gaston",
@@ -2429,11 +2474,16 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 20,
+    "instructor": "Dupree, L",
+    "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 045 and ENG 045",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "gaston",
@@ -2450,11 +2500,16 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 20,
+    "instructor": "Jarema, C",
+    "seats_open": 1,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 045 and ENG 045",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "gaston",
@@ -2471,11 +2526,16 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 27,
+    "instructor": "Domenech, M",
+    "seats_open": 0,
     "seats_total": 27,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 045 and ENG 045",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "gaston",
@@ -2492,11 +2552,16 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 27,
-    "seats_total": 27,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "instructor": "Dobbins, G",
+    "seats_open": 0,
+    "seats_total": 28,
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 045 and ENG 045",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "gaston",
@@ -2513,11 +2578,16 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 27,
-    "seats_total": 27,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "instructor": "Dobbins, G",
+    "seats_open": 0,
+    "seats_total": 28,
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 045 and ENG 045",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "gaston",
@@ -2534,11 +2604,16 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 27,
-    "seats_total": 27,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "instructor": "Dobbins, G",
+    "seats_open": 0,
+    "seats_total": 28,
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 045 and ENG 045",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "gaston",
@@ -2555,11 +2630,68 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 27,
+    "instructor": "Dupree, L",
+    "seats_open": 0,
     "seats_total": 27,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 045 and ENG 045",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 045"
+    ]
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "ENG",
+    "course_number": "111",
+    "course_title": "Writing and Inquiry",
+    "credits": 3,
+    "crn": "ENG-111-D6J",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "in-person",
+    "instructor": "Prichard, B",
+    "seats_open": 0,
+    "seats_total": 28,
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 045 and ENG 045",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 045"
+    ]
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "ENG",
+    "course_number": "111",
+    "course_title": "Writing and Inquiry",
+    "credits": 3,
+    "crn": "ENG-111-D6K",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "in-person",
+    "instructor": "Jarema, C",
+    "seats_open": 1,
+    "seats_total": 20,
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 045 and ENG 045",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "gaston",
@@ -2576,11 +2708,16 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 20,
+    "instructor": "McCall, E",
+    "seats_open": 5,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 and ENG 002 and BSP 4002 and ENG 045 and ENG 045",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "gaston",
@@ -2597,11 +2734,13 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 27,
-    "seats_total": 27,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "instructor": "Thurley, C",
+    "seats_open": 8,
+    "seats_total": 85,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "gaston",
@@ -2618,11 +2757,13 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 27,
-    "seats_total": 27,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "instructor": "Reynolds, J",
+    "seats_open": 0,
+    "seats_total": 28,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "gaston",
@@ -2639,32 +2780,13 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 27,
-    "seats_total": 27,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "gaston",
-    "term": "2026SU",
-    "course_prefix": "ENG",
-    "course_number": "112",
-    "course_title": "Writing/Research in the Disc",
-    "credits": 3,
-    "crn": "ENG-112-D6E",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-07-06",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 27,
-    "seats_total": 27,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "instructor": "Summerlin, T",
+    "seats_open": 0,
+    "seats_total": 28,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "gaston",
@@ -2681,11 +2803,59 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 27,
-    "seats_total": 27,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "instructor": "Domenech, M",
+    "seats_open": 0,
+    "seats_total": 28,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "ENG",
+    "course_number": "112",
+    "course_title": "Writing/Research in the Disc",
+    "credits": 3,
+    "crn": "ENG-112-D6G",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "in-person",
+    "instructor": "Domenech, M",
+    "seats_open": 0,
+    "seats_total": 28,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "ENG",
+    "course_number": "112",
+    "course_title": "Writing/Research in the Disc",
+    "credits": 3,
+    "crn": "ENG-112-D6H",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "in-person",
+    "instructor": "Spencer, S",
+    "seats_open": 0,
+    "seats_total": 28,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "gaston",
@@ -2702,11 +2872,13 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 27,
+    "instructor": "Bogle, F",
+    "seats_open": 6,
     "seats_total": 27,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "gaston",
@@ -2723,11 +2895,13 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
+    "instructor": "Reynolds, J",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "gaston",
@@ -2744,11 +2918,13 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 30,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "instructor": "Bogle, F",
+    "seats_open": 8,
+    "seats_total": 90,
+    "prerequisite_text": "ENG 112",
+    "prerequisite_courses": [
+      "ENG 112"
+    ]
   },
   {
     "college_code": "gaston",
@@ -2765,11 +2941,15 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 30,
+    "instructor": "Bogle, F",
+    "seats_open": 18,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 112 or ENG 113 or ENG 114",
+    "prerequisite_courses": [
+      "ENG 112",
+      "ENG 113",
+      "ENG 114"
+    ]
   },
   {
     "college_code": "gaston",
@@ -2787,8 +2967,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Fowler, K",
-    "seats_open": 60,
-    "seats_total": 60,
+    "seats_open": 4,
+    "seats_total": 40,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2808,8 +2988,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Winkhart, J",
-    "seats_open": 30,
-    "seats_total": 30,
+    "seats_open": 26,
+    "seats_total": 40,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2817,22 +2997,26 @@
     "college_code": "gaston",
     "term": "2026SU",
     "course_prefix": "GSM",
-    "course_number": "227",
-    "course_title": "Adv Repair Technology",
+    "course_number": "125",
+    "course_title": "Barrel Fitting/Alteration",
     "credits": 6,
-    "crn": "GSM-227-D01",
+    "crn": "GSM-125-D01",
     "days": "M T W Th",
     "start_time": "5:30 PM",
-    "end_time": "6:12 PM",
+    "end_time": "6:32 PM",
     "start_date": "2026-05-26",
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Bowen, M",
-    "seats_open": 12,
+    "seats_open": 5,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "GSM 120 and MAC 141 and MAC 142",
+    "prerequisite_courses": [
+      "GSM 120",
+      "MAC 141",
+      "MAC 142"
+    ]
   },
   {
     "college_code": "gaston",
@@ -2850,7 +3034,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Lafemina, B",
-    "seats_open": 30,
+    "seats_open": 1,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2870,30 +3054,9 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Wells, S",
-    "seats_open": 30,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "gaston",
-    "term": "2026SU",
-    "course_prefix": "HEA",
-    "course_number": "112",
-    "course_title": "First Aid & CPR",
-    "credits": 2,
-    "crn": "HEA-112-D7A",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-26",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
     "instructor": "Lafemina, B",
-    "seats_open": 20,
-    "seats_total": 20,
+    "seats_open": 22,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2912,11 +3075,14 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Martineau, L",
-    "seats_open": 20,
+    "instructor": "Wells, S",
+    "seats_open": 15,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HFS 110 and HFS 111",
+    "prerequisite_courses": [
+      "HFS 110",
+      "HFS 111"
+    ]
   },
   {
     "college_code": "gaston",
@@ -2934,8 +3100,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Pruett, J",
-    "seats_open": 30,
-    "seats_total": 30,
+    "seats_open": 10,
+    "seats_total": 60,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2955,7 +3121,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Pruett, J",
-    "seats_open": 30,
+    "seats_open": 12,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2976,8 +3142,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Carver, M",
-    "seats_open": 30,
-    "seats_total": 30,
+    "seats_open": 11,
+    "seats_total": 70,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2997,8 +3163,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Carver, M",
-    "seats_open": 30,
-    "seats_total": 30,
+    "seats_open": 8,
+    "seats_total": 70,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -3018,7 +3184,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Nortey, T",
-    "seats_open": 12,
+    "seats_open": 8,
     "seats_total": 12,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3039,7 +3205,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Nortey, T",
-    "seats_open": 12,
+    "seats_open": 10,
     "seats_total": 12,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3060,10 +3226,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Walker, J",
-    "seats_open": 12,
+    "seats_open": 4,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAC 141 and MAC 142",
+    "prerequisite_courses": [
+      "MAC 141",
+      "MAC 142"
+    ]
   },
   {
     "college_code": "gaston",
@@ -3080,8 +3249,8 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "McSwain, J",
-    "seats_open": 20,
+    "instructor": "Wright, S",
+    "seats_open": 1,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3102,8 +3271,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "McSwain, J",
-    "seats_open": 20,
-    "seats_total": 20,
+    "seats_open": 0,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -3123,8 +3292,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "McSwain, J",
-    "seats_open": 20,
-    "seats_total": 20,
+    "seats_open": 3,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -3143,11 +3312,22 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Dass, F",
-    "seats_open": 30,
+    "instructor": "Wandler, J",
+    "seats_open": 5,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DMA 010 and DMA 020 and DMA 030 and DRE 098 and DMA 010 and DMA 020 and DMA 030 and ENG 002 and DMA 010 and DMA 020 and DMA 030 and BSP 4002 and DMA 025 and DRE 098 and DMA 025 and ENG 002 and DMA 025 and BSP 4002 and MAT 003 and DRE 098 and MAT 003 and ENG 002 and MAT 003 and BSP 4002 and BSP 4003 and DRE 098 and BSP 4003 and ENG 002 and BSP 4003 and BSP 4002 and MAT 045Q",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DRE 098",
+      "ENG 002",
+      "BSP 4002",
+      "DMA 025",
+      "MAT 003",
+      "BSP 4003",
+      "MAT 045Q"
+    ]
   },
   {
     "college_code": "gaston",
@@ -3165,10 +3345,23 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Boone, M",
-    "seats_open": 20,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 2,
+    "seats_total": 30,
+    "prerequisite_text": "DMA 010 and DMA 020 and DMA 030 and DRE 098 and DMA 010 and DMA 020 and DMA 030 and ENG 002 and DMA 010 and DMA 020 and DMA 030 and BSP 4002 and DMA 025 and DRE 098 and DMA 025 and ENG 002 and DMA 025 and BSP 4002 and MAT 003 and DRE 098 and MAT 003 and ENG 002 and MAT 003 and BSP 4002 and BSP 4003 and DRE 098 and BSP 4003 and ENG 002 and BSP 4003 and BSP 4002 and MAT 045 and MAT 048S and MAT 045S",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DRE 098",
+      "ENG 002",
+      "BSP 4002",
+      "DMA 025",
+      "MAT 003",
+      "BSP 4003",
+      "MAT 045",
+      "MAT 048S",
+      "MAT 045S"
+    ]
   },
   {
     "college_code": "gaston",
@@ -3186,10 +3379,23 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Broome, T",
-    "seats_open": 60,
-    "seats_total": 60,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 12,
+    "seats_total": 100,
+    "prerequisite_text": "DMA 010 and DMA 020 and DMA 030 and DRE 098 and DMA 010 and DMA 020 and DMA 030 and ENG 002 and DMA 010 and DMA 020 and DMA 030 and BSP 4002 and DMA 025 and DRE 098 and DMA 025 and ENG 002 and DMA 025 and BSP 4002 and MAT 003 and DRE 098 and MAT 003 and ENG 002 and MAT 003 and BSP 4002 and BSP 4003 and DRE 098 and BSP 4003 and ENG 002 and BSP 4003 and BSP 4002 and MAT 045 and MAT 048S and MAT 045S",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DRE 098",
+      "ENG 002",
+      "BSP 4002",
+      "DMA 025",
+      "MAT 003",
+      "BSP 4003",
+      "MAT 045",
+      "MAT 048S",
+      "MAT 045S"
+    ]
   },
   {
     "college_code": "gaston",
@@ -3206,11 +3412,24 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Dass, F",
-    "seats_open": 20,
+    "instructor": "Boone, M",
+    "seats_open": 1,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DMA 010 and DMA 020 and DMA 030 and DMA 040 and DMA 050 and DMA 010 and DMA 020 and DMA 030 and DMA 045 and DMA 025 and DMA 045 and DMA 025 and DMA 040 and DMA 050 and MAT 121 and MAT 003 and BSP 4003 and MAT 045 and MAT 045P and MAT 045P",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DMA 040",
+      "DMA 050",
+      "DMA 045",
+      "DMA 025",
+      "MAT 121",
+      "MAT 003",
+      "BSP 4003",
+      "MAT 045",
+      "MAT 045P"
+    ]
   },
   {
     "college_code": "gaston",
@@ -3228,10 +3447,23 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Wandler, J",
-    "seats_open": 20,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "DMA 010 and DMA 020 and DMA 030 and DMA 040 and DMA 050 and DMA 010 and DMA 020 and DMA 030 and DMA 045 and DMA 025 and DMA 045 and DMA 025 and DMA 040 and DMA 050 and MAT 121 and MAT 003 and BSP 4003 and MAT 045 and MAT 045P and MAT 045P",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DMA 040",
+      "DMA 050",
+      "DMA 045",
+      "DMA 025",
+      "MAT 121",
+      "MAT 003",
+      "BSP 4003",
+      "MAT 045",
+      "MAT 045P"
+    ]
   },
   {
     "college_code": "gaston",
@@ -3248,32 +3480,24 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Dass, F",
-    "seats_open": 60,
+    "instructor": "Boone, M",
+    "seats_open": 24,
     "seats_total": 60,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "gaston",
-    "term": "2026SU",
-    "course_prefix": "MAT",
-    "course_number": "171",
-    "course_title": "Precalculus Algebra",
-    "credits": 4,
-    "crn": "MAT-171-D8B",
-    "days": "T Th",
-    "start_time": "10:00 AM",
-    "end_time": "11:50 AM",
-    "start_date": "2026-05-26",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Wandler, J",
-    "seats_open": 20,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DMA 010 and DMA 020 and DMA 030 and DMA 040 and DMA 050 and DMA 010 and DMA 020 and DMA 030 and DMA 045 and DMA 025 and DMA 045 and DMA 025 and DMA 040 and DMA 050 and MAT 121 and MAT 003 and BSP 4003 and MAT 045 and MAT 045P and MAT 045P",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DMA 040",
+      "DMA 050",
+      "DMA 045",
+      "DMA 025",
+      "MAT 121",
+      "MAT 003",
+      "BSP 4003",
+      "MAT 045",
+      "MAT 045P"
+    ]
   },
   {
     "college_code": "gaston",
@@ -3291,10 +3515,23 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Wandler, J",
-    "seats_open": 0,
-    "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 6,
+    "seats_total": 60,
+    "prerequisite_text": "DMA 010 and DMA 020 and DMA 030 and DMA 040 and DMA 050 and DMA 010 and DMA 020 and DMA 030 and DMA 045 and DMA 025 and DMA 045 and DMA 025 and DMA 040 and DMA 050 and MAT 121 and MAT 003 and BSP 4003 and MAT 045 and MAT 045P and MAT 045P",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DMA 040",
+      "DMA 050",
+      "DMA 045",
+      "DMA 025",
+      "MAT 121",
+      "MAT 003",
+      "BSP 4003",
+      "MAT 045",
+      "MAT 045P"
+    ]
   },
   {
     "college_code": "gaston",
@@ -3312,31 +3549,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Mabe, J",
-    "seats_open": 30,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "gaston",
-    "term": "2026SU",
-    "course_prefix": "MAT",
-    "course_number": "175",
-    "course_title": "Precalculus",
-    "credits": 5,
-    "crn": "MAT-175-D8B",
-    "days": "M W",
-    "start_time": "10:00 AM",
-    "end_time": "12:10 PM",
-    "start_date": "2026-05-26",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Boone, M",
-    "seats_open": 30,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 5,
+    "seats_total": 50,
+    "prerequisite_text": "MAT 171",
+    "prerequisite_courses": [
+      "MAT 171"
+    ]
   },
   {
     "college_code": "gaston",
@@ -3354,10 +3572,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Boone, M",
-    "seats_open": 40,
-    "seats_total": 40,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 9,
+    "seats_total": 50,
+    "prerequisite_text": "MAT 172 or MAT 175",
+    "prerequisite_courses": [
+      "MAT 172",
+      "MAT 175"
+    ]
   },
   {
     "college_code": "gaston",
@@ -3375,10 +3596,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Cook, T",
-    "seats_open": 30,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 9,
+    "seats_total": 40,
+    "prerequisite_text": "MAT 271",
+    "prerequisite_courses": [
+      "MAT 271"
+    ]
   },
   {
     "college_code": "gaston",
@@ -3396,31 +3619,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Cook, T",
-    "seats_open": 30,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "gaston",
-    "term": "2026SU",
-    "course_prefix": "MEC",
-    "course_number": "180",
-    "course_title": "Engineering Materials",
-    "credits": 3,
-    "crn": "MEC-180-D8A",
-    "days": "",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-26",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 16,
-    "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 3,
+    "seats_total": 50,
+    "prerequisite_text": "MAT 272",
+    "prerequisite_courses": [
+      "MAT 272"
+    ]
   },
   {
     "college_code": "gaston",
@@ -3438,7 +3642,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Gibson, M",
-    "seats_open": 50,
+    "seats_open": 34,
     "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3459,7 +3663,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Fraley, A",
-    "seats_open": 50,
+    "seats_open": 40,
     "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3480,7 +3684,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Gibson, M",
-    "seats_open": 50,
+    "seats_open": 32,
     "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3501,8 +3705,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Thompson, M",
-    "seats_open": 40,
-    "seats_total": 40,
+    "seats_open": 9,
+    "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -3522,10 +3726,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Fraley, A",
-    "seats_open": 50,
+    "seats_open": 20,
     "seats_total": 50,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MED 121",
+    "prerequisite_courses": [
+      "MED 121"
+    ]
   },
   {
     "college_code": "gaston",
@@ -3542,7 +3748,7 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Gibson, M, Thompson, M, Bynum, L, Fraley, A, Hunter, J",
+    "instructor": "Gibson, M, Thompson, M, Bynum, L, Fraley, A",
     "seats_open": 0,
     "seats_total": 0,
     "prerequisite_text": null,
@@ -3563,7 +3769,7 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Gibson, M, Fowler, K",
+    "instructor": "Gibson, M, Fowler, K, Hunter, J",
     "seats_open": 0,
     "seats_total": 0,
     "prerequisite_text": null,
@@ -3606,8 +3812,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Porter, J",
-    "seats_open": 30,
-    "seats_total": 30,
+    "seats_open": 9,
+    "seats_total": 60,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -3627,8 +3833,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Denson, J",
-    "seats_open": 30,
-    "seats_total": 30,
+    "seats_open": 4,
+    "seats_total": 60,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -3669,10 +3875,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Guzman, J",
-    "seats_open": 9,
+    "seats_open": 1,
     "seats_total": 9,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NET 125",
+    "prerequisite_courses": [
+      "NET 125"
+    ]
   },
   {
     "college_code": "gaston",
@@ -3690,10 +3898,12 @@
     "campus": "KC",
     "mode": "in-person",
     "instructor": "Guzman, J",
-    "seats_open": 9,
+    "seats_open": 6,
     "seats_total": 9,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NET 125",
+    "prerequisite_courses": [
+      "NET 125"
+    ]
   },
   {
     "college_code": "gaston",
@@ -3711,10 +3921,12 @@
     "campus": "LC",
     "mode": "in-person",
     "instructor": "Guzman, J",
-    "seats_open": 9,
+    "seats_open": 5,
     "seats_total": 9,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NET 125",
+    "prerequisite_courses": [
+      "NET 125"
+    ]
   },
   {
     "college_code": "gaston",
@@ -3732,29 +3944,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Kline, G",
-    "seats_open": 30,
+    "seats_open": 4,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "gaston",
-    "term": "2026SU",
-    "course_prefix": "NUR",
-    "course_number": "103",
-    "course_title": "Practical Nursing III",
-    "credits": 9,
-    "crn": "NUR-103-D01",
-    "days": "M T",
-    "start_time": "8:30 AM",
-    "end_time": "1:34 AM",
-    "start_date": "2026-05-26",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Staff, Roupas, D",
-    "seats_open": 0,
-    "seats_total": 0,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -3773,11 +3964,36 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff, Roupas, D",
+    "instructor": "Roupas, D, Page, C, Ivester, M, Okon, M",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 101",
+    "prerequisite_courses": [
+      "NUR 101"
+    ]
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "NUR",
+    "course_number": "103",
+    "course_title": "Practical Nursing III",
+    "credits": 9,
+    "crn": "NUR-103-D03",
+    "days": "M T",
+    "start_time": "8:30 AM",
+    "end_time": "1:34 PM",
+    "start_date": "2026-05-26",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "in-person",
+    "instructor": "Roupas, D, Williams, E, Bell, J, Okon, M",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": "NUR 101",
+    "prerequisite_courses": [
+      "NUR 101"
+    ]
   },
   {
     "college_code": "gaston",
@@ -3794,11 +4010,13 @@
     "location": "Lincoln Campus",
     "campus": "LC",
     "mode": "in-person",
-    "instructor": "Staff, Roupas, D",
+    "instructor": "Roupas, D, Heffner, S, Okon, M",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 101",
+    "prerequisite_courses": [
+      "NUR 101"
+    ]
   },
   {
     "college_code": "gaston",
@@ -3815,11 +4033,13 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff, Roupas, D",
+    "instructor": "Roupas, D, Smith, C, Brucia, F, Childers, P",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 111",
+    "prerequisite_courses": [
+      "NUR 111"
+    ]
   },
   {
     "college_code": "gaston",
@@ -3836,32 +4056,19 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff, Roupas, D",
+    "instructor": "Roupas, D, Smithers, B, Stewart, T, Childers, P",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "gaston",
-    "term": "2026SU",
-    "course_prefix": "OST",
-    "course_number": "134",
-    "course_title": "Text Entry & Formatting",
-    "credits": 3,
-    "crn": "OST-134-D6A",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-26",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Painter, A",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111 and PSY 150 and BIO 168 and BIO 169 and ENG 112 or ENG 114 or BIO 275",
+    "prerequisite_courses": [
+      "ENG 111",
+      "PSY 150",
+      "BIO 168",
+      "BIO 169",
+      "ENG 112",
+      "ENG 114",
+      "BIO 275"
+    ]
   },
   {
     "college_code": "gaston",
@@ -3878,8 +4085,8 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Martin, L",
-    "seats_open": 30,
+    "instructor": "Painter, A",
+    "seats_open": 13,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3900,7 +4107,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Martin, L",
-    "seats_open": 30,
+    "seats_open": 12,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3921,10 +4128,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Bynum, L",
-    "seats_open": 30,
+    "seats_open": 14,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "OST 247 and OST 248",
+    "prerequisite_courses": [
+      "OST 247",
+      "OST 248"
+    ]
   },
   {
     "college_code": "gaston",
@@ -3942,10 +4152,14 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Painter, A",
-    "seats_open": 30,
+    "seats_open": 27,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "OST 134 and OST 164 and OST 136 and OST 164",
+    "prerequisite_courses": [
+      "OST 134",
+      "OST 164",
+      "OST 136"
+    ]
   },
   {
     "college_code": "gaston",
@@ -3963,7 +4177,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Martineau, L",
-    "seats_open": 30,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3984,7 +4198,49 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Martineau, L",
-    "seats_open": 30,
+    "seats_open": 17,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "PED",
+    "course_number": "117",
+    "course_title": "Weight Training I",
+    "credits": 1,
+    "crn": "PED-117-D9A",
+    "days": "M W",
+    "start_time": "12:00 PM",
+    "end_time": "2:07 PM",
+    "start_date": "2026-05-26",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "in-person",
+    "instructor": "Martineau, L",
+    "seats_open": 12,
+    "seats_total": 16,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "PED",
+    "course_number": "121",
+    "course_title": "Walk, Jog, Run",
+    "credits": 1,
+    "crn": "PED-121-D6A",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "in-person",
+    "instructor": "Wells, S",
+    "seats_open": 27,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4005,7 +4261,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Martineau, L",
-    "seats_open": 16,
+    "seats_open": 10,
     "seats_total": 16,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4026,10 +4282,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Henderson, J",
-    "seats_open": 30,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 32,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "gaston",
@@ -4047,10 +4305,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Henderson, J",
-    "seats_open": 30,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 32,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "gaston",
@@ -4068,10 +4328,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Henderson, J",
-    "seats_open": 30,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 1,
+    "seats_total": 32,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "gaston",
@@ -4089,10 +4351,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Carlson, N",
-    "seats_open": 30,
+    "seats_open": 6,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PHY 110",
+    "prerequisite_courses": [
+      "PHY 110"
+    ]
   },
   {
     "college_code": "gaston",
@@ -4110,10 +4374,14 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Carlson, N",
-    "seats_open": 30,
+    "seats_open": 7,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DMA 050 or MAT 003 and PHY 110A",
+    "prerequisite_courses": [
+      "DMA 050",
+      "MAT 003",
+      "PHY 110A"
+    ]
   },
   {
     "college_code": "gaston",
@@ -4131,10 +4399,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Cook, T",
-    "seats_open": 30,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 10,
+    "seats_total": 60,
+    "prerequisite_text": "MAT 271",
+    "prerequisite_courses": [
+      "MAT 271"
+    ]
   },
   {
     "college_code": "gaston",
@@ -4152,10 +4422,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Cook, T",
-    "seats_open": 30,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 60,
+    "prerequisite_text": "MAT 272 and PHY 251",
+    "prerequisite_courses": [
+      "MAT 272",
+      "PHY 251"
+    ]
   },
   {
     "college_code": "gaston",
@@ -4173,8 +4446,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Norris, V",
-    "seats_open": 30,
-    "seats_total": 30,
+    "seats_open": 0,
+    "seats_total": 70,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -4194,8 +4467,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Norris, V",
-    "seats_open": 30,
-    "seats_total": 30,
+    "seats_open": 5,
+    "seats_total": 70,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -4215,7 +4488,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Chaney, A",
-    "seats_open": 30,
+    "seats_open": 4,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4235,9 +4508,9 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 0,
-    "seats_total": 0,
+    "instructor": "Chaney, A",
+    "seats_open": 8,
+    "seats_total": 80,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -4257,10 +4530,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Gallo, H",
-    "seats_open": 30,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 12,
+    "seats_total": 60,
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "gaston",
@@ -4278,10 +4553,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Gallo, H",
-    "seats_open": 30,
+    "seats_open": 5,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "gaston",
@@ -4299,10 +4576,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Chaney, A",
-    "seats_open": 30,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 3,
+    "seats_total": 40,
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "gaston",
@@ -4343,8 +4622,10 @@
     "instructor": "Perdue, L, Long, C",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RCP 111",
+    "prerequisite_courses": [
+      "RCP 111"
+    ]
   },
   {
     "college_code": "gaston",
@@ -4362,8 +4643,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Kelly, K",
-    "seats_open": 30,
-    "seats_total": 30,
+    "seats_open": 4,
+    "seats_total": 60,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -4383,7 +4664,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Scott, H",
-    "seats_open": 30,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4405,7 +4686,7 @@
     "mode": "in-person",
     "instructor": "Pardue, E",
     "seats_open": 0,
-    "seats_total": 0,
+    "seats_total": 60,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -4425,8 +4706,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Pardue, E",
-    "seats_open": 30,
-    "seats_total": 30,
+    "seats_open": 10,
+    "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -4446,10 +4727,79 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Kelly, K",
-    "seats_open": 30,
+    "seats_open": 5,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "SON",
+    "course_number": "111BB",
+    "course_title": "Sonographic Physics",
+    "credits": 2,
+    "crn": "SON-111BB-D6A",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "in-person",
+    "instructor": "Niemeyer, B, Cipriano, A",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": "SON 111AB",
+    "prerequisite_courses": [
+      "SON 111AB"
+    ]
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "SON",
+    "course_number": "120",
+    "course_title": "SON Clinical Ed I",
+    "credits": 5,
+    "crn": "SON-120-L41",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Lincoln Campus",
+    "campus": "LC",
+    "mode": "in-person",
+    "instructor": "Niemeyer, B, Cipriano, A",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": "SON 110",
+    "prerequisite_courses": [
+      "SON 110"
+    ]
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "SON",
+    "course_number": "140",
+    "course_title": "Gynecological Sonography",
+    "credits": 2,
+    "crn": "SON-140-L41",
+    "days": "W",
+    "start_time": "8:30 AM",
+    "end_time": "11:10 AM",
+    "start_date": "2026-05-26",
+    "location": "Lincoln Campus",
+    "campus": "LC",
+    "mode": "in-person",
+    "instructor": "Niemeyer, B, Cipriano, A",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": "SON 110",
+    "prerequisite_courses": [
+      "SON 110"
+    ]
   },
   {
     "college_code": "gaston",
@@ -4467,10 +4817,70 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Wallace, S",
-    "seats_open": 60,
+    "seats_open": 1,
     "seats_total": 60,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 090 or ENG 111 or DRE 098 or ENG 045",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 090",
+      "ENG 111",
+      "DRE 098",
+      "ENG 045"
+    ]
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "SPA",
+    "course_number": "111",
+    "course_title": "Elementary Spanish I",
+    "credits": 3,
+    "crn": "SPA-111-D6C",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "in-person",
+    "instructor": "Ragland, M",
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 002 or ENG 090 or ENG 111 or DRE 098 or ENG 045",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 090",
+      "ENG 111",
+      "DRE 098",
+      "ENG 045"
+    ]
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "SPA",
+    "course_number": "111",
+    "course_title": "Elementary Spanish I",
+    "credits": 3,
+    "crn": "SPA-111-D6D",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-08",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "in-person",
+    "instructor": "Richardson, D",
+    "seats_open": 8,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 002 or ENG 090 or ENG 111 or DRE 098 or ENG 045",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 090",
+      "ENG 111",
+      "DRE 098",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "gaston",
@@ -4488,10 +4898,35 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Rodriguez Londono, S",
-    "seats_open": 60,
+    "seats_open": 1,
     "seats_total": 60,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 111",
+    "prerequisite_courses": [
+      "SPA 111"
+    ]
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "SPA",
+    "course_number": "112",
+    "course_title": "Elementary Spanish II",
+    "credits": 3,
+    "crn": "SPA-112-D6C",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-08",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "in-person",
+    "instructor": "Wallace, S",
+    "seats_open": 11,
+    "seats_total": 30,
+    "prerequisite_text": "SPA 111",
+    "prerequisite_courses": [
+      "SPA 111"
+    ]
   },
   {
     "college_code": "gaston",
@@ -4511,8 +4946,10 @@
     "instructor": "Holman, K",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SUR 123",
+    "prerequisite_courses": [
+      "SUR 123"
+    ]
   },
   {
     "college_code": "gaston",
@@ -4532,8 +4969,11 @@
     "instructor": "Holman, K, Powell, B",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SUR 123 and SUR 134",
+    "prerequisite_courses": [
+      "SUR 123",
+      "SUR 134"
+    ]
   },
   {
     "college_code": "gaston",
@@ -4543,7 +4983,7 @@
     "course_title": "Transp Climate Cont Lab",
     "credits": 2,
     "crn": "TRN-140A-D8A",
-    "days": "",
+    "days": "M T W Th F Sa Su",
     "start_time": "",
     "end_time": "",
     "start_date": "2026-05-26",
@@ -4551,10 +4991,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Felton, T",
-    "seats_open": 15,
+    "seats_open": 0,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "TRN 140",
+    "prerequisite_courses": [
+      "TRN 140"
+    ]
   },
   {
     "college_code": "gaston",
@@ -4564,7 +5006,7 @@
     "course_title": "Transp Climate Control",
     "credits": 2,
     "crn": "TRN-140-D8A",
-    "days": "",
+    "days": "M T W Th F Sa Su",
     "start_time": "",
     "end_time": "",
     "start_date": "2026-05-26",
@@ -4572,10 +5014,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Felton, T",
-    "seats_open": 15,
+    "seats_open": 0,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "TRN 140A",
+    "prerequisite_courses": [
+      "TRN 140A"
+    ]
   },
   {
     "college_code": "gaston",
@@ -4622,6 +5066,331 @@
   {
     "college_code": "gaston",
     "term": "2026SU",
+    "course_prefix": "WBL",
+    "course_number": "111",
+    "course_title": "Work-Based Learning I",
+    "credits": 1,
+    "crn": "WBL-111-17",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Off Campus",
+    "campus": "OC",
+    "mode": "in-person",
+    "instructor": "Etters, J, Albright-Jurs, L",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "WBL",
+    "course_number": "111",
+    "course_title": "Work-Based Learning I",
+    "credits": 1,
+    "crn": "WBL-111-18",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Off Campus",
+    "campus": "OC",
+    "mode": "in-person",
+    "instructor": "Etters, J, Gill, A, Skinner, M",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "WBL",
+    "course_number": "111",
+    "course_title": "Work-Based Learning I",
+    "credits": 1,
+    "crn": "WBL-111-19",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Off Campus",
+    "campus": "OC",
+    "mode": "in-person",
+    "instructor": "Etters, J, Guzman, J",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "WBL",
+    "course_number": "111",
+    "course_title": "Work-Based Learning I",
+    "credits": 1,
+    "crn": "WBL-111-D01",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Off Campus",
+    "campus": "OC",
+    "mode": "in-person",
+    "instructor": "Etters, J, Rudisill, D",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "WBL",
+    "course_number": "112",
+    "course_title": "Work-Based Learning I",
+    "credits": 2,
+    "crn": "WBL-112-23",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-11",
+    "location": "Off Campus",
+    "campus": "OC",
+    "mode": "in-person",
+    "instructor": "Etters, J, Carmody, K",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "WBL",
+    "course_number": "115",
+    "course_title": "Work-Based Learning Seminar I",
+    "credits": 1,
+    "crn": "WBL-115-D68",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-08",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "in-person",
+    "instructor": "Etters, J, Rudisill, D",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": "WBL 111 or WBL 112 or WBL 113 or WBL 114",
+    "prerequisite_courses": [
+      "WBL 111",
+      "WBL 112",
+      "WBL 113",
+      "WBL 114"
+    ]
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "WBL",
+    "course_number": "121",
+    "course_title": "Work-Based Learning II",
+    "credits": 1,
+    "crn": "WBL-121-18",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Off Campus",
+    "campus": "OC",
+    "mode": "in-person",
+    "instructor": "Etters, J, Skinner, M, Gill, A",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "WBL",
+    "course_number": "121",
+    "course_title": "Work-Based Learning II",
+    "credits": 1,
+    "crn": "WBL-121-19",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Off Campus",
+    "campus": "OC",
+    "mode": "in-person",
+    "instructor": "Etters, J, Guzman, J",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "WBL",
+    "course_number": "121",
+    "course_title": "Work-Based Learning II",
+    "credits": 1,
+    "crn": "WBL-121-20",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Off Campus",
+    "campus": "OC",
+    "mode": "in-person",
+    "instructor": "Etters, J, Walker, J",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "WBL",
+    "course_number": "121",
+    "course_title": "Work-Based Learning II",
+    "credits": 1,
+    "crn": "WBL-121-D01",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Off Campus",
+    "campus": "OC",
+    "mode": "in-person",
+    "instructor": "Etters, J, Rudisill, D",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "WBL",
+    "course_number": "122",
+    "course_title": "Work-Based Learning II",
+    "credits": 2,
+    "crn": "WBL-122-1",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Off Campus",
+    "campus": "OC",
+    "mode": "in-person",
+    "instructor": "Etters, J, Felton, T",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "WBL",
+    "course_number": "122",
+    "course_title": "Work-Based Learning II",
+    "credits": 2,
+    "crn": "WBL-122-14",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Off Campus",
+    "campus": "OC",
+    "mode": "in-person",
+    "instructor": "Etters, J, Shelor, M",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "WBL",
+    "course_number": "125",
+    "course_title": "Work-Based Learning Seminar II",
+    "credits": 1,
+    "crn": "WBL-125-D6B",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-08",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "in-person",
+    "instructor": "Etters, J, Rudisill, D",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": "WBL 121 or WBL 122 or WBL 123 or WBL 124",
+    "prerequisite_courses": [
+      "WBL 121",
+      "WBL 122",
+      "WBL 123",
+      "WBL 124"
+    ]
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "WBL",
+    "course_number": "131",
+    "course_title": "Work-Based Learning III",
+    "credits": 1,
+    "crn": "WBL-131-19",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Off Campus",
+    "campus": "OC",
+    "mode": "in-person",
+    "instructor": "Etters, J, Guzman, J",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
+    "course_prefix": "WBL",
+    "course_number": "211",
+    "course_title": "Work-Based Learning IV",
+    "credits": 1,
+    "crn": "WBL-211-20",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Off Campus",
+    "campus": "OC",
+    "mode": "in-person",
+    "instructor": "Etters, J, Walker, J",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "gaston",
+    "term": "2026SU",
     "course_prefix": "WLD",
     "course_number": "110",
     "course_title": "Cutting Processes",
@@ -4635,7 +5404,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Price, A",
-    "seats_open": 15,
+    "seats_open": 1,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4655,8 +5424,8 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 15,
+    "instructor": "McCumbee, W",
+    "seats_open": 0,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4677,10 +5446,15 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Price, A",
-    "seats_open": 15,
+    "seats_open": 8,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 110 and WLD 115 and WLD 121 and WLD 141",
+    "prerequisite_courses": [
+      "WLD 110",
+      "WLD 115",
+      "WLD 121",
+      "WLD 141"
+    ]
   },
   {
     "college_code": "gaston",
@@ -4698,10 +5472,15 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Owens, G",
-    "seats_open": 15,
+    "seats_open": 6,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 110 and WLD 115 and WLD 121 and WLD 141",
+    "prerequisite_courses": [
+      "WLD 110",
+      "WLD 115",
+      "WLD 121",
+      "WLD 141"
+    ]
   },
   {
     "college_code": "gaston",
@@ -4719,9 +5498,14 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Owens, G",
-    "seats_open": 15,
+    "seats_open": 11,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 110 and WLD 115 and WLD 121 and WLD 141",
+    "prerequisite_courses": [
+      "WLD 110",
+      "WLD 115",
+      "WLD 121",
+      "WLD 141"
+    ]
   }
 ]

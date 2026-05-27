@@ -14,8 +14,8 @@
     "location": "Online",
     "campus": "ONL",
     "mode": "online",
-    "instructor": "TBA - To Be Announced",
-    "seats_open": 24,
+    "instructor": "Melissa S. Recknor",
+    "seats_open": 0,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -35,8 +35,8 @@
     "location": "Online",
     "campus": "ONL",
     "mode": "online",
-    "instructor": "TBA - To Be Announced",
-    "seats_open": 24,
+    "instructor": "Amanda D. Gregory",
+    "seats_open": 0,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -56,8 +56,29 @@
     "location": "Online",
     "campus": "ONL",
     "mode": "online",
-    "instructor": "TBA - To Be Announced",
-    "seats_open": 24,
+    "instructor": "Amanda L. Inman",
+    "seats_open": 1,
+    "seats_total": 24,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "surry",
+    "term": "2026SU",
+    "course_prefix": "ACA",
+    "course_number": "122",
+    "course_title": "College Transfer Success",
+    "credits": 1,
+    "crn": "ACA-122-I4G",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-18",
+    "location": "Online",
+    "campus": "ONL",
+    "mode": "online",
+    "instructor": "Kayla S. Norman",
+    "seats_open": 0,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -78,7 +99,7 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Tara C. Best",
-    "seats_open": 24,
+    "seats_open": 2,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -99,10 +120,12 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Leslie W. Faistl",
-    "seats_open": 24,
+    "seats_open": 17,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ACC 120",
+    "prerequisite_courses": [
+      "ACC 120"
+    ]
   },
   {
     "college_code": "surry",
@@ -120,10 +143,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Timmy A. Overby",
-    "seats_open": 14,
+    "seats_open": 4,
     "seats_total": 14,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AHR 112 or AHR 113",
+    "prerequisite_courses": [
+      "AHR 112",
+      "AHR 113"
+    ]
   },
   {
     "college_code": "surry",
@@ -141,7 +167,7 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Anna-Olivia Sisk",
-    "seats_open": 24,
+    "seats_open": 2,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -162,7 +188,7 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Anna-Olivia Sisk",
-    "seats_open": 24,
+    "seats_open": 4,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -183,28 +209,7 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Danajean M. Mabry",
-    "seats_open": 24,
-    "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "surry",
-    "term": "2026SU",
-    "course_prefix": "ART",
-    "course_number": "115",
-    "course_title": "Art History Survey II",
-    "credits": 3,
-    "crn": "ART-115-I1G",
-    "days": "",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-18",
-    "location": "Online",
-    "campus": "ONL",
-    "mode": "online",
-    "instructor": "Danajean M. Mabry",
-    "seats_open": 24,
+    "seats_open": 19,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -225,7 +230,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Dakota C. Johnson",
-    "seats_open": 16,
+    "seats_open": 0,
     "seats_total": 16,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -246,7 +251,7 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Michelle B. Kreh",
-    "seats_open": 24,
+    "seats_open": 5,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -266,8 +271,8 @@
     "location": "Online",
     "campus": "ONL",
     "mode": "online",
-    "instructor": "Jeff Jones",
-    "seats_open": 24,
+    "instructor": "Cathy L. Wheeler",
+    "seats_open": 4,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -288,10 +293,12 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Cathy L. Wheeler",
-    "seats_open": 24,
+    "seats_open": 14,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 111",
+    "prerequisite_courses": [
+      "BIO 111"
+    ]
   },
   {
     "college_code": "surry",
@@ -309,31 +316,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Grayson R. Patton",
-    "seats_open": 12,
+    "seats_open": 1,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "surry",
-    "term": "2026SU",
-    "course_prefix": "BIO",
-    "course_number": "168",
-    "course_title": "Anatomy and Physiology I",
-    "credits": 4,
-    "crn": "BIO-168-H10",
-    "days": "",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-18",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "online",
-    "instructor": "Amanda D. Killon-Atwood",
-    "seats_open": 24,
-    "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 110 or BIO 111",
+    "prerequisite_courses": [
+      "BIO 110",
+      "BIO 111"
+    ]
   },
   {
     "college_code": "surry",
@@ -350,11 +339,15 @@
     "location": "Online",
     "campus": "ONL",
     "mode": "online",
-    "instructor": "TBA - To Be Announced",
-    "seats_open": 24,
+    "instructor": "Amanda D. Killon-Atwood",
+    "seats_open": 9,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 111 and CHM 131 or CHM 131A",
+    "prerequisite_courses": [
+      "BIO 111",
+      "CHM 131",
+      "CHM 131A"
+    ]
   },
   {
     "college_code": "surry",
@@ -372,10 +365,12 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Amanda D. Killon-Atwood",
-    "seats_open": 24,
+    "seats_open": 16,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 168",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
   },
   {
     "college_code": "surry",
@@ -393,31 +388,12 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Jess Fender",
-    "seats_open": 24,
+    "seats_open": 10,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "surry",
-    "term": "2026SU",
-    "course_prefix": "BIO",
-    "course_number": "250",
-    "course_title": "Genetics",
-    "credits": 4,
-    "crn": "BIO-250-I1",
-    "days": "",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-18",
-    "location": "Online",
-    "campus": "ONL",
-    "mode": "online",
-    "instructor": "Cathy L. Wheeler",
-    "seats_open": 24,
-    "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 168",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
   },
   {
     "college_code": "surry",
@@ -435,7 +411,7 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "David L. Gardner, Jr.",
-    "seats_open": 24,
+    "seats_open": 0,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -455,30 +431,9 @@
     "location": "Online",
     "campus": "ONL",
     "mode": "online",
-    "instructor": "TBA - To Be Announced",
-    "seats_open": 24,
+    "instructor": "Drew Lyle",
+    "seats_open": 9,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "surry",
-    "term": "2026SU",
-    "course_prefix": "CAR",
-    "course_number": "113",
-    "course_title": "Carpentry III",
-    "credits": 6,
-    "crn": "CAR-113-10",
-    "days": "M T W Th",
-    "start_time": "8:00 AM",
-    "end_time": "9:10 AM",
-    "start_date": "2026-05-18",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Brady J. Tilley",
-    "seats_open": 20,
-    "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -498,10 +453,12 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Dominique J. Walker",
-    "seats_open": 24,
+    "seats_open": 8,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 131",
+    "prerequisite_courses": [
+      "CHM 131"
+    ]
   },
   {
     "college_code": "surry",
@@ -519,7 +476,7 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Brandon M. Walker",
-    "seats_open": 24,
+    "seats_open": 8,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -540,7 +497,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Robin L. Narehood",
-    "seats_open": 24,
+    "seats_open": 17,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -561,10 +518,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Robin L. Narehood",
-    "seats_open": 24,
+    "seats_open": 14,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 151",
+    "prerequisite_courses": [
+      "CHM 151"
+    ]
   },
   {
     "college_code": "surry",
@@ -582,10 +541,13 @@
     "campus": "YC",
     "mode": "in-person",
     "instructor": "Trevor J. Setvin",
-    "seats_open": 24,
+    "seats_open": 0,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 110 or ENG 111",
+    "prerequisite_courses": [
+      "ENG 110",
+      "ENG 111"
+    ]
   },
   {
     "college_code": "surry",
@@ -603,31 +565,13 @@
     "campus": "YC",
     "mode": "in-person",
     "instructor": "Trevor J. Setvin",
-    "seats_open": 24,
+    "seats_open": 3,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "surry",
-    "term": "2026SU",
-    "course_prefix": "CSC",
-    "course_number": "134",
-    "course_title": "C++ Programming",
-    "credits": 3,
-    "crn": "CSC-134-I1",
-    "days": "",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-18",
-    "location": "Online",
-    "campus": "ONL",
-    "mode": "online",
-    "instructor": "Kim White",
-    "seats_open": 24,
-    "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 110 or ENG 111",
+    "prerequisite_courses": [
+      "ENG 110",
+      "ENG 111"
+    ]
   },
   {
     "college_code": "surry",
@@ -645,10 +589,14 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Kerry A. Beasley",
-    "seats_open": 20,
+    "seats_open": 8,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112 and COS 116",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112",
+      "COS 116"
+    ]
   },
   {
     "college_code": "surry",
@@ -666,10 +614,14 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Kerry A. Beasley",
-    "seats_open": 20,
+    "seats_open": 8,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112 and COS 115",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112",
+      "COS 115"
+    ]
   },
   {
     "college_code": "surry",
@@ -687,10 +639,16 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Kerry A. Beasley",
-    "seats_open": 20,
+    "seats_open": 10,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112 and COS 115 and COS 116 and COS 118",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112",
+      "COS 115",
+      "COS 116",
+      "COS 118"
+    ]
   },
   {
     "college_code": "surry",
@@ -708,10 +666,16 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Vickie M. Easter, Wendy H. Billings",
-    "seats_open": 20,
+    "seats_open": 10,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112 and COS 115 and COS 116 and COS 117",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112",
+      "COS 115",
+      "COS 116",
+      "COS 117"
+    ]
   },
   {
     "college_code": "surry",
@@ -729,28 +693,7 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Christopher B. Fant",
-    "seats_open": 24,
-    "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "surry",
-    "term": "2026SU",
-    "course_prefix": "EDU",
-    "course_number": "119",
-    "course_title": "Intro to Early Child Education",
-    "credits": 4,
-    "crn": "EDU-119-I1",
-    "days": "",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-18",
-    "location": "Online",
-    "campus": "ONL",
-    "mode": "online",
-    "instructor": "TBA - To Be Announced",
-    "seats_open": 24,
+    "seats_open": 0,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -771,7 +714,7 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Janet W. Sutphin",
-    "seats_open": 24,
+    "seats_open": 12,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -792,7 +735,7 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Brian T. Sutphin",
-    "seats_open": 24,
+    "seats_open": 6,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -813,28 +756,7 @@
     "campus": "YC",
     "mode": "online",
     "instructor": "Ray Hoots",
-    "seats_open": 22,
-    "seats_total": 22,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "surry",
-    "term": "2026SU",
-    "course_prefix": "ELC",
-    "course_number": "117",
-    "course_title": "Motors and Controls",
-    "credits": 4,
-    "crn": "ELC-117-B10",
-    "days": "T Th",
-    "start_time": "8:30 AM",
-    "end_time": "9:20 AM",
-    "start_date": "2026-05-18",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "John D. Warden",
-    "seats_open": 22,
+    "seats_open": 9,
     "seats_total": 22,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -855,7 +777,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "John D. Warden",
-    "seats_open": 22,
+    "seats_open": 0,
     "seats_total": 22,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -875,9 +797,30 @@
     "location": "Yadkin Center",
     "campus": "YC",
     "mode": "in-person",
-    "instructor": "Rian C. Driver",
-    "seats_open": 22,
+    "instructor": "Ray Hoots, Rian C. Driver",
+    "seats_open": 16,
     "seats_total": 22,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "surry",
+    "term": "2026SU",
+    "course_prefix": "ENG",
+    "course_number": "025",
+    "course_title": "College English Skills",
+    "credits": 3,
+    "crn": "ENG-025-I1G",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-18",
+    "location": "Online",
+    "campus": "ONL",
+    "mode": "online",
+    "instructor": "Angela G. Mounce",
+    "seats_open": 12,
+    "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -897,7 +840,7 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Angela G. Mounce",
-    "seats_open": 24,
+    "seats_open": 3,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -917,11 +860,13 @@
     "location": "Online",
     "campus": "ONL",
     "mode": "online",
-    "instructor": "Darin L. Cozzens",
-    "seats_open": 24,
+    "instructor": "Nicole Patino",
+    "seats_open": 8,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 045",
+    "prerequisite_courses": [
+      "ENG 045"
+    ]
   },
   {
     "college_code": "surry",
@@ -939,10 +884,12 @@
     "campus": "YC",
     "mode": "in-person",
     "instructor": "Jon Thomas",
-    "seats_open": 24,
+    "seats_open": 5,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 045",
+    "prerequisite_courses": [
+      "ENG 045"
+    ]
   },
   {
     "college_code": "surry",
@@ -960,10 +907,12 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Katelyn I. Vause",
-    "seats_open": 24,
+    "seats_open": 2,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 045",
+    "prerequisite_courses": [
+      "ENG 045"
+    ]
   },
   {
     "college_code": "surry",
@@ -981,10 +930,35 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Kayla M. Forrest",
-    "seats_open": 24,
+    "seats_open": 0,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 045",
+    "prerequisite_courses": [
+      "ENG 045"
+    ]
+  },
+  {
+    "college_code": "surry",
+    "term": "2026SU",
+    "course_prefix": "ENG",
+    "course_number": "111",
+    "course_title": "Writing and Inquiry",
+    "credits": 3,
+    "crn": "ENG-111-I3G",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-18",
+    "location": "Online",
+    "campus": "ONL",
+    "mode": "online",
+    "instructor": "Rodney L. Alderman",
+    "seats_open": 5,
+    "seats_total": 24,
+    "prerequisite_text": "ENG 045",
+    "prerequisite_courses": [
+      "ENG 045"
+    ]
   },
   {
     "college_code": "surry",
@@ -1002,10 +976,12 @@
     "campus": "YC",
     "mode": "in-person",
     "instructor": "Darin L. Cozzens",
-    "seats_open": 24,
+    "seats_open": 11,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "surry",
@@ -1023,10 +999,35 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Jon Thomas",
-    "seats_open": 24,
+    "seats_open": 0,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
+  },
+  {
+    "college_code": "surry",
+    "term": "2026SU",
+    "course_prefix": "ENG",
+    "course_number": "112",
+    "course_title": "Writing/Research in the Disc",
+    "credits": 3,
+    "crn": "ENG-112-I2G",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-18",
+    "location": "Online",
+    "campus": "ONL",
+    "mode": "online",
+    "instructor": "Darin L. Cozzens",
+    "seats_open": 11,
+    "seats_total": 24,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "surry",
@@ -1044,10 +1045,12 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Kennette R. Lawrence Thomas",
-    "seats_open": 24,
+    "seats_open": 0,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "surry",
@@ -1065,7 +1068,7 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Katelyn I. Vause",
-    "seats_open": 24,
+    "seats_open": 4,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1086,10 +1089,12 @@
     "campus": "YC",
     "mode": "in-person",
     "instructor": "Katelyn I. Vause",
-    "seats_open": 24,
+    "seats_open": 16,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 112",
+    "prerequisite_courses": [
+      "ENG 112"
+    ]
   },
   {
     "college_code": "surry",
@@ -1107,10 +1112,12 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Kennette R. Lawrence Thomas",
-    "seats_open": 24,
+    "seats_open": 0,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 112",
+    "prerequisite_courses": [
+      "ENG 112"
+    ]
   },
   {
     "college_code": "surry",
@@ -1128,31 +1135,14 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Jon Thomas",
-    "seats_open": 24,
+    "seats_open": 15,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "surry",
-    "term": "2026SU",
-    "course_prefix": "ENG",
-    "course_number": "242",
-    "course_title": "British Literature II",
-    "credits": 3,
-    "crn": "ENG-242-I1G",
-    "days": "",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-18",
-    "location": "Online",
-    "campus": "ONL",
-    "mode": "online",
-    "instructor": "TBA - To Be Announced",
-    "seats_open": 24,
-    "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 112 or ENG 113 or ENG 114",
+    "prerequisite_courses": [
+      "ENG 112",
+      "ENG 113",
+      "ENG 114"
+    ]
   },
   {
     "college_code": "surry",
@@ -1170,7 +1160,7 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Mark A. Tucker",
-    "seats_open": 24,
+    "seats_open": 19,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1191,28 +1181,7 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Rick Shelton",
-    "seats_open": 24,
-    "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "surry",
-    "term": "2026SU",
-    "course_prefix": "HIS",
-    "course_number": "112",
-    "course_title": "World Civilizations II",
-    "credits": 3,
-    "crn": "HIS-112-I1G",
-    "days": "",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-18",
-    "location": "Online",
-    "campus": "ONL",
-    "mode": "online",
-    "instructor": "Drew S. Goodman",
-    "seats_open": 24,
+    "seats_open": 1,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1233,10 +1202,14 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Cory J. Stewart",
-    "seats_open": 24,
+    "seats_open": 0,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 045 or ENG 8045 or ENG 101",
+    "prerequisite_courses": [
+      "ENG 045",
+      "ENG 8045",
+      "ENG 101"
+    ]
   },
   {
     "college_code": "surry",
@@ -1254,31 +1227,14 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Cory J. Stewart",
-    "seats_open": 24,
+    "seats_open": 1,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "surry",
-    "term": "2026SU",
-    "course_prefix": "HIS",
-    "course_number": "237",
-    "course_title": "The American Revolution",
-    "credits": 3,
-    "crn": "HIS-237-I1G",
-    "days": "",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-18",
-    "location": "Online",
-    "campus": "ONL",
-    "mode": "online",
-    "instructor": "Cory J. Stewart",
-    "seats_open": 24,
-    "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 045 or ENG 8045 or ENG 101",
+    "prerequisite_courses": [
+      "ENG 045",
+      "ENG 8045",
+      "ENG 101"
+    ]
   },
   {
     "college_code": "surry",
@@ -1296,7 +1252,28 @@
     "campus": "YC",
     "mode": "in-person",
     "instructor": "Rodney L. Alderman",
-    "seats_open": 24,
+    "seats_open": 2,
+    "seats_total": 24,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "surry",
+    "term": "2026SU",
+    "course_prefix": "HUM",
+    "course_number": "110",
+    "course_title": "Technology and Society",
+    "credits": 3,
+    "crn": "HUM-110-HY2",
+    "days": "M",
+    "start_time": "3:00 PM",
+    "end_time": "3:50 PM",
+    "start_date": "2026-05-18",
+    "location": "Yadkin Center",
+    "campus": "YC",
+    "mode": "in-person",
+    "instructor": "Sarah M. Wright",
+    "seats_open": 7,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1317,7 +1294,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Brian T. Sutphin",
-    "seats_open": 24,
+    "seats_open": 12,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1337,8 +1314,29 @@
     "location": "Yadkin Center",
     "campus": "YC",
     "mode": "in-person",
-    "instructor": "Joy P. Johnston",
-    "seats_open": 24,
+    "instructor": "Drew Lyle",
+    "seats_open": 9,
+    "seats_total": 24,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "surry",
+    "term": "2026SU",
+    "course_prefix": "CIS",
+    "course_number": "110",
+    "course_title": "Introduction to Computers",
+    "credits": 3,
+    "crn": "CIS-110-I1G",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-18",
+    "location": "Online",
+    "campus": "ONL",
+    "mode": "online",
+    "instructor": "Kim White",
+    "seats_open": 5,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1359,7 +1357,7 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Melinda J. Shew",
-    "seats_open": 24,
+    "seats_open": 19,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1373,36 +1371,61 @@
     "credits": 6,
     "crn": "MAC-113-10",
     "days": "M",
-    "start_time": "8:00 AM",
-    "end_time": "11:10 AM",
+    "start_time": "9:00 AM",
+    "end_time": "12:10 PM",
     "start_date": "2026-05-18",
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Paschal R. Dobbins",
-    "seats_open": 12,
+    "seats_open": 2,
     "seats_total": 12,
+    "prerequisite_text": "MAC 112 or MAC 112AB or MAC 112BB",
+    "prerequisite_courses": [
+      "MAC 112",
+      "MAC 112AB",
+      "MAC 112BB"
+    ]
+  },
+  {
+    "college_code": "surry",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "025",
+    "course_title": "Concepts of Essential Math/Sta",
+    "credits": 3,
+    "crn": "MAT-025-DI1",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-18",
+    "location": "Online",
+    "campus": "ONL",
+    "mode": "online",
+    "instructor": "Sara C. McMillen",
+    "seats_open": 10,
+    "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
   {
     "college_code": "surry",
     "term": "2026SU",
-    "course_prefix": "MAC",
-    "course_number": "122",
-    "course_title": "CNC Turning",
-    "credits": 2,
-    "crn": "MAC-122-10",
-    "days": "T Th",
-    "start_time": "1:00 PM",
-    "end_time": "1:40 PM",
+    "course_prefix": "MAT",
+    "course_number": "025",
+    "course_title": "Concepts of Essential Math/Sta",
+    "credits": 3,
+    "crn": "MAT-025-DI2",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
     "start_date": "2026-05-18",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Walter R. Poplin",
-    "seats_open": 12,
-    "seats_total": 12,
+    "location": "Online",
+    "campus": "ONL",
+    "mode": "online",
+    "instructor": "Christian A. Payne",
+    "seats_open": 9,
+    "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1422,7 +1445,7 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Lyndsey J. Haywood",
-    "seats_open": 24,
+    "seats_open": 18,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1443,7 +1466,7 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Lyndsey J. Haywood",
-    "seats_open": 24,
+    "seats_open": 23,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1464,10 +1487,12 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Leah T. Billo",
-    "seats_open": 24,
+    "seats_open": 2,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 025",
+    "prerequisite_courses": [
+      "MAT 025"
+    ]
   },
   {
     "college_code": "surry",
@@ -1485,10 +1510,12 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Lyndsey J. Haywood",
-    "seats_open": 24,
+    "seats_open": 2,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 025",
+    "prerequisite_courses": [
+      "MAT 025"
+    ]
   },
   {
     "college_code": "surry",
@@ -1506,10 +1533,35 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Susan S. Worth",
-    "seats_open": 24,
+    "seats_open": 12,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 025",
+    "prerequisite_courses": [
+      "MAT 025"
+    ]
+  },
+  {
+    "college_code": "surry",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "152",
+    "course_title": "Statistical Methods I",
+    "credits": 4,
+    "crn": "MAT-152-I2",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-18",
+    "location": "Online",
+    "campus": "ONL",
+    "mode": "online",
+    "instructor": "Christian A. Payne",
+    "seats_open": 7,
+    "seats_total": 24,
+    "prerequisite_text": "MAT 025",
+    "prerequisite_courses": [
+      "MAT 025"
+    ]
   },
   {
     "college_code": "surry",
@@ -1527,31 +1579,12 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Sara C. McMillen",
-    "seats_open": 24,
+    "seats_open": 12,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "surry",
-    "term": "2026SU",
-    "course_prefix": "MAT",
-    "course_number": "172",
-    "course_title": "Precalculus Trigonometry",
-    "credits": 4,
-    "crn": "MAT-172-10",
-    "days": "T Th",
-    "start_time": "9:00 AM",
-    "end_time": "11:50 AM",
-    "start_date": "2026-05-18",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Christian A. Payne",
-    "seats_open": 24,
-    "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 035",
+    "prerequisite_courses": [
+      "MAT 035"
+    ]
   },
   {
     "college_code": "surry",
@@ -1569,10 +1602,12 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Leah T. Billo",
-    "seats_open": 24,
+    "seats_open": 8,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 171",
+    "prerequisite_courses": [
+      "MAT 171"
+    ]
   },
   {
     "college_code": "surry",
@@ -1590,10 +1625,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Sara C. McMillen",
-    "seats_open": 24,
+    "seats_open": 15,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 172 or MAT 175",
+    "prerequisite_courses": [
+      "MAT 172",
+      "MAT 175"
+    ]
   },
   {
     "college_code": "surry",
@@ -1611,7 +1649,7 @@
     "campus": "YC",
     "mode": "in-person",
     "instructor": "Frieda F. Eakins",
-    "seats_open": 24,
+    "seats_open": 0,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1632,28 +1670,7 @@
     "campus": "YC",
     "mode": "in-person",
     "instructor": "Frieda F. Eakins",
-    "seats_open": 24,
-    "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "surry",
-    "term": "2026SU",
-    "course_prefix": "MUS",
-    "course_number": "112",
-    "course_title": "Introduction to Jazz",
-    "credits": 3,
-    "crn": "MUS-112-I1G",
-    "days": "",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-18",
-    "location": "Online",
-    "campus": "ONL",
-    "mode": "online",
-    "instructor": "Frieda F. Eakins",
-    "seats_open": 24,
+    "seats_open": 0,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1673,11 +1690,14 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "TBA - To Be Announced",
-    "seats_open": 24,
+    "instructor": "Stacey L. Ward, Molly Pardue, TBA - To Be Announced",
+    "seats_open": 11,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 101 and NUR 117",
+    "prerequisite_courses": [
+      "NUR 101",
+      "NUR 117"
+    ]
   },
   {
     "college_code": "surry",
@@ -1694,11 +1714,13 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "TBA - To Be Announced",
-    "seats_open": 35,
+    "instructor": "Allison Bedsaul, TBA - To Be Announced",
+    "seats_open": 10,
     "seats_total": 35,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 111",
+    "prerequisite_courses": [
+      "NUR 111"
+    ]
   },
   {
     "college_code": "surry",
@@ -1715,11 +1737,13 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "TBA - To Be Announced",
-    "seats_open": 35,
+    "instructor": "Lucinda R. Wilmoth Fallin, Stacey L. Ward, TBA - To Be Announced",
+    "seats_open": 6,
     "seats_total": 35,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 111",
+    "prerequisite_courses": [
+      "NUR 111"
+    ]
   },
   {
     "college_code": "surry",
@@ -1736,8 +1760,8 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "TBA - To Be Announced",
-    "seats_open": 24,
+    "instructor": "Stacey L. Ward, TBA - To Be Announced",
+    "seats_open": 13,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1757,8 +1781,8 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Brady J. Tilley, Brian T. Sutphin",
-    "seats_open": 24,
+    "instructor": "Brian T. Sutphin, Brady J. Tilley",
+    "seats_open": 5,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1778,8 +1802,8 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Brady J. Tilley, Brian T. Sutphin",
-    "seats_open": 24,
+    "instructor": "Brian T. Sutphin, Brady J. Tilley",
+    "seats_open": 7,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1800,10 +1824,12 @@
     "campus": "YC",
     "mode": "in-person",
     "instructor": "Andy Hughes",
-    "seats_open": 24,
+    "seats_open": 0,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "surry",
@@ -1821,10 +1847,12 @@
     "campus": "YC",
     "mode": "in-person",
     "instructor": "Rodney L. Alderman",
-    "seats_open": 24,
+    "seats_open": 0,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "surry",
@@ -1842,28 +1870,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Mark A. Tucker",
-    "seats_open": 24,
-    "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "surry",
-    "term": "2026SU",
-    "course_prefix": "PED",
-    "course_number": "112",
-    "course_title": "Physical Fitness II",
-    "credits": 1,
-    "crn": "PED-112-10",
-    "days": "M T W Th",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-18",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Mark A. Tucker",
-    "seats_open": 24,
+    "seats_open": 23,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1884,28 +1891,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Mark A. Tucker",
-    "seats_open": 24,
-    "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "surry",
-    "term": "2026SU",
-    "course_prefix": "PED",
-    "course_number": "118",
-    "course_title": "Weight Training II",
-    "credits": 1,
-    "crn": "PED-118-10",
-    "days": "M T W Th",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-18",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Mark A. Tucker",
-    "seats_open": 24,
+    "seats_open": 23,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1926,28 +1912,7 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Mark A. Tucker",
-    "seats_open": 24,
-    "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "surry",
-    "term": "2026SU",
-    "course_prefix": "PED",
-    "course_number": "170",
-    "course_title": "Backpacking",
-    "credits": 1,
-    "crn": "PED-170-20",
-    "days": "F",
-    "start_time": "9:00 AM",
-    "end_time": "11:30 AM",
-    "start_date": "2026-06-05",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "TBA - To Be Announced",
-    "seats_open": 24,
+    "seats_open": 13,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1968,7 +1933,7 @@
     "campus": "YC",
     "mode": "in-person",
     "instructor": "Bradford J. Parris",
-    "seats_open": 13,
+    "seats_open": 2,
     "seats_total": 13,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1989,7 +1954,7 @@
     "campus": "YC",
     "mode": "in-person",
     "instructor": "Jess Lawrence",
-    "seats_open": 13,
+    "seats_open": 2,
     "seats_total": 13,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2010,7 +1975,7 @@
     "campus": "YC",
     "mode": "in-person",
     "instructor": "Jess Lawrence",
-    "seats_open": 13,
+    "seats_open": 2,
     "seats_total": 13,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2031,7 +1996,7 @@
     "campus": "YC",
     "mode": "in-person",
     "instructor": "Jess Lawrence",
-    "seats_open": 17,
+    "seats_open": 6,
     "seats_total": 17,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2052,7 +2017,7 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Keith Hawks",
-    "seats_open": 24,
+    "seats_open": 13,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2073,7 +2038,7 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Nyshawna O. Whitehurst",
-    "seats_open": 24,
+    "seats_open": 8,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2094,7 +2059,7 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Catrena H. Whitaker",
-    "seats_open": 24,
+    "seats_open": 0,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2115,7 +2080,7 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Nyshawna O. Whitehurst",
-    "seats_open": 24,
+    "seats_open": 0,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2136,7 +2101,7 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Nyshawna O. Whitehurst",
-    "seats_open": 24,
+    "seats_open": 1,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2157,10 +2122,12 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Heather C. Willard",
-    "seats_open": 24,
+    "seats_open": 1,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "surry",
@@ -2177,11 +2144,13 @@
     "location": "Online",
     "campus": "ONL",
     "mode": "online",
-    "instructor": "TBA - To Be Announced",
-    "seats_open": 24,
+    "instructor": "Heather C. Willard",
+    "seats_open": 1,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "surry",
@@ -2199,10 +2168,12 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Heather C. Willard",
-    "seats_open": 24,
+    "seats_open": 8,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "surry",
@@ -2220,10 +2191,12 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Catrena H. Whitaker",
-    "seats_open": 24,
+    "seats_open": 17,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "surry",
@@ -2241,7 +2214,7 @@
     "campus": "YC",
     "mode": "in-person",
     "instructor": "Kennette R. Lawrence Thomas",
-    "seats_open": 24,
+    "seats_open": 16,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2262,7 +2235,28 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Mecca J. Lowe",
-    "seats_open": 24,
+    "seats_open": 1,
+    "seats_total": 24,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "surry",
+    "term": "2026SU",
+    "course_prefix": "SOC",
+    "course_number": "210",
+    "course_title": "Introduction to Sociology",
+    "credits": 3,
+    "crn": "SOC-210-I2",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-18",
+    "location": "Online",
+    "campus": "ONL",
+    "mode": "online",
+    "instructor": "Mecca J. Lowe",
+    "seats_open": 6,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2283,7 +2277,7 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Mecca J. Lowe",
-    "seats_open": 24,
+    "seats_open": 3,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2304,7 +2298,7 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Suzanna M. Hernandez",
-    "seats_open": 24,
+    "seats_open": 6,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2325,7 +2319,7 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Abbey N. Johnson",
-    "seats_open": 24,
+    "seats_open": 2,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2346,10 +2340,12 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Suzanna M. Hernandez",
-    "seats_open": 24,
+    "seats_open": 5,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 111",
+    "prerequisite_courses": [
+      "SPA 111"
+    ]
   },
   {
     "college_code": "surry",
@@ -2367,10 +2363,12 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Abbey N. Johnson",
-    "seats_open": 24,
+    "seats_open": 5,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 111",
+    "prerequisite_courses": [
+      "SPA 111"
+    ]
   },
   {
     "college_code": "surry",
@@ -2387,8 +2385,8 @@
     "location": "Online",
     "campus": "ONL",
     "mode": "online",
-    "instructor": "TBA - To Be Announced",
-    "seats_open": 24,
+    "instructor": "Stacey V. Tatum",
+    "seats_open": 16,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2409,10 +2407,12 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Suzanna M. Hernandez",
-    "seats_open": 24,
+    "seats_open": 9,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 112",
+    "prerequisite_courses": [
+      "SPA 112"
+    ]
   },
   {
     "college_code": "surry",
@@ -2430,10 +2430,12 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Jonathan E. Dowd",
-    "seats_open": 24,
+    "seats_open": 6,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 112",
+    "prerequisite_courses": [
+      "SPA 112"
+    ]
   },
   {
     "college_code": "surry",
@@ -2451,10 +2453,12 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Jonathan E. Dowd",
-    "seats_open": 24,
+    "seats_open": 17,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 211",
+    "prerequisite_courses": [
+      "SPA 211"
+    ]
   },
   {
     "college_code": "surry",
@@ -2472,7 +2476,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Eli Brown",
-    "seats_open": 18,
+    "seats_open": 4,
     "seats_total": 18,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2493,10 +2497,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Eli Brown",
-    "seats_open": 18,
+    "seats_open": 4,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "TRN 140",
+    "prerequisite_courses": [
+      "TRN 140"
+    ]
   },
   {
     "college_code": "surry",
@@ -2514,10 +2520,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "David N. Bower, III",
-    "seats_open": 24,
+    "seats_open": 22,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "VEN 133",
+    "prerequisite_courses": [
+      "VEN 133"
+    ]
   },
   {
     "college_code": "surry",
@@ -2535,7 +2543,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Sarah Bowman",
-    "seats_open": 20,
+    "seats_open": 17,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2555,8 +2563,8 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Kemper M. Coleman",
-    "seats_open": 20,
+    "instructor": "Kemper M. Coleman, Jay D. Scott",
+    "seats_open": 10,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2576,11 +2584,36 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Kemper M. Coleman",
-    "seats_open": 20,
+    "instructor": "Kemper M. Coleman, Jay D. Scott",
+    "seats_open": 16,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 151AB",
+    "prerequisite_courses": [
+      "WLD 151AB"
+    ]
+  },
+  {
+    "college_code": "surry",
+    "term": "2026SU",
+    "course_prefix": "WLD",
+    "course_number": "151BB",
+    "course_title": "Fabrication I",
+    "credits": 2,
+    "crn": "WLD-151BB-99",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-18",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "in-person",
+    "instructor": "Jay D. Scott",
+    "seats_open": 0,
+    "seats_total": 1,
+    "prerequisite_text": "WLD 151AB",
+    "prerequisite_courses": [
+      "WLD 151AB"
+    ]
   },
   {
     "college_code": "surry",
@@ -2598,10 +2631,14 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Jay D. Scott",
-    "seats_open": 20,
+    "seats_open": 12,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 115 and WLD 121 and WLD 131",
+    "prerequisite_courses": [
+      "WLD 115",
+      "WLD 121",
+      "WLD 131"
+    ]
   },
   {
     "college_code": "surry",
@@ -2618,11 +2655,14 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Kemper M. Coleman",
-    "seats_open": 20,
+    "instructor": "Kemper M. Coleman, Jay D. Scott",
+    "seats_open": 14,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 110 and WLD 121",
+    "prerequisite_courses": [
+      "WLD 110",
+      "WLD 121"
+    ]
   },
   {
     "college_code": "surry",
@@ -2640,7 +2680,7 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "David L. Gardner, Jr.",
-    "seats_open": 24,
+    "seats_open": 0,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2661,8 +2701,71 @@
     "campus": "ONL",
     "mode": "online",
     "instructor": "Janet W. Sutphin",
-    "seats_open": 24,
+    "seats_open": 9,
     "seats_total": 24,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "surry",
+    "term": "2026SU",
+    "course_prefix": "WBL",
+    "course_number": "111",
+    "course_title": "Work-Based Learning I",
+    "credits": 1,
+    "crn": "WBL-111-10",
+    "days": "M T W Th F",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-18",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "in-person",
+    "instructor": "Rachel Wilson",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "surry",
+    "term": "2026SU",
+    "course_prefix": "WBL",
+    "course_number": "112",
+    "course_title": "Work-Based Learning I",
+    "credits": 2,
+    "crn": "WBL-112-10",
+    "days": "M T W Th F",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-18",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "in-person",
+    "instructor": "Rachel Wilson",
+    "seats_open": 0,
+    "seats_total": 0,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "surry",
+    "term": "2026SU",
+    "course_prefix": "WBL",
+    "course_number": "131",
+    "course_title": "Work-Based Learning III",
+    "credits": 1,
+    "crn": "WBL-131-10",
+    "days": "M T W Th F",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-18",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "in-person",
+    "instructor": "Rachel Wilson",
+    "seats_open": 0,
+    "seats_total": 0,
     "prerequisite_text": null,
     "prerequisite_courses": []
   }

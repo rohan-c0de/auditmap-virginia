@@ -15,7 +15,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Ko, E",
-    "seats_open": 0,
+    "seats_open": 3,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -36,7 +36,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Libby, J",
-    "seats_open": 0,
+    "seats_open": 4,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -57,7 +57,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Milliken, M",
-    "seats_open": 23,
+    "seats_open": 4,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -78,7 +78,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Ko, E",
-    "seats_open": 30,
+    "seats_open": 23,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -99,7 +99,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Mason, C",
-    "seats_open": 9,
+    "seats_open": 4,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -120,10 +120,12 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Mason, C",
-    "seats_open": 15,
+    "seats_open": 14,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ACC 120",
+    "prerequisite_courses": [
+      "ACC 120"
+    ]
   },
   {
     "college_code": "sampson",
@@ -141,10 +143,13 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Borgelin, N",
-    "seats_open": 16,
+    "seats_open": 14,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ACC 115 or ACC 120",
+    "prerequisite_courses": [
+      "ACC 115",
+      "ACC 120"
+    ]
   },
   {
     "college_code": "sampson",
@@ -162,10 +167,13 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Mason, C",
-    "seats_open": 11,
+    "seats_open": 9,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ACC 115 or ACC 120",
+    "prerequisite_courses": [
+      "ACC 115",
+      "ACC 120"
+    ]
   },
   {
     "college_code": "sampson",
@@ -183,7 +191,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Watson, H",
-    "seats_open": 16,
+    "seats_open": 11,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -204,7 +212,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Stroud, L",
-    "seats_open": 12,
+    "seats_open": 2,
     "seats_total": 12,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -225,7 +233,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Stone, D",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 16,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -246,7 +254,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Pollard, M",
-    "seats_open": 11,
+    "seats_open": 8,
     "seats_total": 16,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -267,10 +275,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "McLamb, D",
-    "seats_open": 6,
+    "seats_open": 4,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AHR 112 and AHR 113",
+    "prerequisite_courses": [
+      "AHR 112",
+      "AHR 113"
+    ]
   },
   {
     "college_code": "sampson",
@@ -288,10 +299,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Stone, D",
-    "seats_open": 5,
+    "seats_open": 4,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AHR 114",
+    "prerequisite_courses": [
+      "AHR 114"
+    ]
   },
   {
     "college_code": "sampson",
@@ -309,8 +322,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "McLamb, D",
-    "seats_open": 0,
-    "seats_total": 16,
+    "seats_open": 6,
+    "seats_total": 18,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -330,7 +343,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Matthews, L",
-    "seats_open": 5,
+    "seats_open": 6,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -351,7 +364,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Watson, H",
-    "seats_open": 20,
+    "seats_open": 8,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -393,7 +406,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Watson, H",
-    "seats_open": 15,
+    "seats_open": 10,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -414,29 +427,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Stroud, L",
-    "seats_open": 19,
+    "seats_open": 9,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "sampson",
-    "term": "2026SU",
-    "course_prefix": "ARC",
-    "course_number": "112",
-    "course_title": "Constr Matls & Methods",
-    "credits": 4,
-    "crn": "ARC-112-1HY01",
-    "days": "M T W",
-    "start_time": "8:30 AM",
-    "end_time": "10:55 AM",
-    "start_date": "2026-05-14",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Garcia Colin, C",
-    "seats_open": 10,
-    "seats_total": 12,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -477,8 +469,8 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "King, J",
-    "seats_open": 0,
-    "seats_total": 25,
+    "seats_open": 4,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -498,8 +490,8 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "King, J",
-    "seats_open": 0,
-    "seats_total": 25,
+    "seats_open": 2,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -519,8 +511,8 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "King, J",
-    "seats_open": 3,
-    "seats_total": 25,
+    "seats_open": 5,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -540,7 +532,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Shillady, L",
-    "seats_open": 0,
+    "seats_open": 3,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -560,29 +552,8 @@
     "location": "Curriculum Web Courses",
     "campus": "CUWB",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 18,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "sampson",
-    "term": "2026SU",
-    "course_prefix": "BIO",
-    "course_number": "111",
-    "course_title": "General Biology I",
-    "credits": 4,
-    "crn": "BIO-111-1IN03",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-14",
-    "location": "Curriculum Web Courses",
-    "campus": "CUWB",
-    "mode": "in-person",
-    "instructor": null,
-    "seats_open": 30,
+    "instructor": "Burns, P",
+    "seats_open": 6,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -603,10 +574,12 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Adams, B",
-    "seats_open": 17,
+    "seats_open": 15,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 111",
+    "prerequisite_courses": [
+      "BIO 111"
+    ]
   },
   {
     "college_code": "sampson",
@@ -624,7 +597,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Adams, B",
-    "seats_open": 3,
+    "seats_open": 1,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -644,8 +617,8 @@
     "location": "Curriculum Web Courses",
     "campus": "CUWB",
     "mode": "in-person",
-    "instructor": "Brake, N",
-    "seats_open": 21,
+    "instructor": "Adams, B",
+    "seats_open": 8,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -666,31 +639,12 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Brake, N",
-    "seats_open": 7,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "sampson",
-    "term": "2026SU",
-    "course_prefix": "BIO",
-    "course_number": "169",
-    "course_title": "Anatomy and Physiology II",
-    "credits": 4,
-    "crn": "BIO-169-1IN02",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-14",
-    "location": "Curriculum Web Courses",
-    "campus": "CUWB",
-    "mode": "in-person",
-    "instructor": null,
-    "seats_open": 25,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 12,
+    "seats_total": 40,
+    "prerequisite_text": "BIO 168",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
   },
   {
     "college_code": "sampson",
@@ -729,7 +683,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Grady, B",
-    "seats_open": 5,
+    "seats_open": 4,
     "seats_total": 12,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -750,7 +704,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Grady, B",
-    "seats_open": 8,
+    "seats_open": 5,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -770,8 +724,8 @@
     "location": "Curriculum Web Courses",
     "campus": "CUWB",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 1,
+    "instructor": "Gay, F",
+    "seats_open": 5,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -791,8 +745,8 @@
     "location": "Curriculum Web Courses",
     "campus": "CUWB",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 13,
+    "instructor": "Ammons, M",
+    "seats_open": 6,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -834,29 +788,8 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Borgelin, N",
-    "seats_open": 10,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "sampson",
-    "term": "2026SU",
-    "course_prefix": "BUS",
-    "course_number": "115",
-    "course_title": "Business Law I",
-    "credits": 3,
-    "crn": "BUS-115-1IN02",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-14",
-    "location": "Curriculum Web Courses",
-    "campus": "CUWB",
-    "mode": "in-person",
-    "instructor": "Borgelin, N",
-    "seats_open": 26,
-    "seats_total": 30,
+    "seats_open": 6,
+    "seats_total": 35,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -876,7 +809,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Gainey, E",
-    "seats_open": 2,
+    "seats_open": 6,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -897,7 +830,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Gainey, E",
-    "seats_open": 23,
+    "seats_open": 22,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -918,7 +851,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Huskey, L",
-    "seats_open": 3,
+    "seats_open": 7,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -938,8 +871,8 @@
     "location": "Curriculum Web Courses",
     "campus": "CUWB",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 15,
+    "instructor": "Huskey, L",
+    "seats_open": 19,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -959,8 +892,8 @@
     "location": "Curriculum Web Courses",
     "campus": "CUWB",
     "mode": "in-person",
-    "instructor": "Huskey, L",
-    "seats_open": 18,
+    "instructor": "Borgelin, N",
+    "seats_open": 13,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -981,10 +914,13 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Duffy, B",
-    "seats_open": 8,
+    "seats_open": 5,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 and MAT 025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "MAT 025"
+    ]
   },
   {
     "college_code": "sampson",
@@ -1002,7 +938,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Pope, M",
-    "seats_open": 0,
+    "seats_open": 5,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1023,7 +959,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Wiggins, R",
-    "seats_open": 3,
+    "seats_open": 10,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1035,16 +971,16 @@
     "course_number": "110",
     "course_title": "Introduction to Computers",
     "credits": 3,
-    "crn": "CIS-110-5IN03",
+    "crn": "CIS-110-1IN04",
     "days": "M T W Th F Sa Su",
     "start_time": "",
     "end_time": "",
-    "start_date": "2026-06-16",
+    "start_date": "2026-05-14",
     "location": "Curriculum Web Courses",
     "campus": "CUWB",
     "mode": "in-person",
-    "instructor": "Pope, M",
-    "seats_open": 30,
+    "instructor": "Cable, G",
+    "seats_open": 10,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1064,9 +1000,9 @@
     "location": "Curriculum Web Courses",
     "campus": "CUWB",
     "mode": "in-person",
-    "instructor": "Garcia Colin, C",
-    "seats_open": 4,
-    "seats_total": 10,
+    "instructor": "Hatcher, D",
+    "seats_open": 2,
+    "seats_total": 12,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1086,8 +1022,8 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Garcia Colin, C",
-    "seats_open": 3,
-    "seats_total": 25,
+    "seats_open": 8,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1106,8 +1042,8 @@
     "location": "Curriculum Web Courses",
     "campus": "CUWB",
     "mode": "in-person",
-    "instructor": "Garcia Colin, C",
-    "seats_open": 3,
+    "instructor": "Grady, B",
+    "seats_open": 5,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1128,7 +1064,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Rogers, J",
-    "seats_open": 0,
+    "seats_open": 3,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1149,7 +1085,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Rogers, J",
-    "seats_open": 0,
+    "seats_open": 3,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1170,7 +1106,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Rohlf, B",
-    "seats_open": 10,
+    "seats_open": 4,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1191,7 +1127,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Rogers, J",
-    "seats_open": 0,
+    "seats_open": 3,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1212,7 +1148,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Rohlf, B",
-    "seats_open": 7,
+    "seats_open": 6,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1253,11 +1189,14 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Shirley, P, West, S",
+    "instructor": "West, S, Shirley, P",
     "seats_open": 11,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "sampson",
@@ -1277,8 +1216,11 @@
     "instructor": "Shirley, P, West, S, Jones, L",
     "seats_open": 11,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "sampson",
@@ -1318,7 +1260,7 @@
     "mode": "in-person",
     "instructor": "Garcia Colin, C",
     "seats_open": 1,
-    "seats_total": 10,
+    "seats_total": 13,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1337,11 +1279,18 @@
     "location": "Curriculum Web Courses",
     "campus": "CUWB",
     "mode": "in-person",
-    "instructor": "Garcia Colin, C",
+    "instructor": "Hatcher, D",
     "seats_open": 5,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ARC 112 and MAT 110 and ARC 112 and MAT 121 and ARC 112 and MAT 171 and CAR 112 and MAT 110 and CAR 112 and MAT 121 and CAR 112 and MAT 171 and CST 112 and MAT 110 and CST 112 and MAT 121 and CST 112 and MAT 171",
+    "prerequisite_courses": [
+      "ARC 112",
+      "MAT 110",
+      "MAT 121",
+      "MAT 171",
+      "CAR 112",
+      "CST 112"
+    ]
   },
   {
     "college_code": "sampson",
@@ -1359,7 +1308,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Tyree, R",
-    "seats_open": 4,
+    "seats_open": 12,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1380,10 +1329,14 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Chestnutt, C",
-    "seats_open": 10,
+    "seats_open": 9,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CTI 110 and CTI 120 and CTS 115",
+    "prerequisite_courses": [
+      "CTI 110",
+      "CTI 120",
+      "CTS 115"
+    ]
   },
   {
     "college_code": "sampson",
@@ -1401,7 +1354,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Martin, A",
-    "seats_open": 9,
+    "seats_open": 6,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1422,7 +1375,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Huskey, L",
-    "seats_open": 11,
+    "seats_open": 6,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1443,7 +1396,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Huskey, L",
-    "seats_open": 18,
+    "seats_open": 16,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1464,7 +1417,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Carter, S",
-    "seats_open": 20,
+    "seats_open": 18,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1484,8 +1437,8 @@
     "location": "Curriculum Web Courses",
     "campus": "CUWB",
     "mode": "in-person",
-    "instructor": "Freeman-Sankey, J",
-    "seats_open": 24,
+    "instructor": "Avery, C",
+    "seats_open": 20,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1506,10 +1459,15 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Freeman-Sankey, J",
-    "seats_open": 24,
+    "seats_open": 25,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111 and MAT 143 and ENG 111 and MAT 152 and ENG 111 and MAT 171",
+    "prerequisite_courses": [
+      "ENG 111",
+      "MAT 143",
+      "MAT 152",
+      "MAT 171"
+    ]
   },
   {
     "college_code": "sampson",
@@ -1527,7 +1485,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Carter, S",
-    "seats_open": 20,
+    "seats_open": 18,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1548,7 +1506,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Freeman-Sankey, J",
-    "seats_open": 2,
+    "seats_open": 0,
     "seats_total": 2,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1569,10 +1527,18 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Carter, S",
-    "seats_open": 3,
+    "seats_open": 5,
     "seats_total": 10,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EDU 119 and EDU 144 and EDU 145 and EDU 146 and EDU 151 and EDU 119 and PSY 244 and PSY 245 and EDU 146 and EDU 151 and EDU 119 and EDU 144 and PSY 245 and EDU 146 and EDU 151 and EDU 119 and PSY 244 and EDU 145 and EDU 146 and EDU 151",
+    "prerequisite_courses": [
+      "EDU 119",
+      "EDU 144",
+      "EDU 145",
+      "EDU 146",
+      "EDU 151",
+      "PSY 244",
+      "PSY 245"
+    ]
   },
   {
     "college_code": "sampson",
@@ -1590,10 +1556,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Sandlin, A",
-    "seats_open": 3,
+    "seats_open": 6,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ELC 112",
+    "prerequisite_courses": [
+      "ELC 112"
+    ]
   },
   {
     "college_code": "sampson",
@@ -1632,10 +1600,13 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Gregory, J",
-    "seats_open": 9,
+    "seats_open": 10,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ELC 113 and ELC 114",
+    "prerequisite_courses": [
+      "ELC 113",
+      "ELC 114"
+    ]
   },
   {
     "college_code": "sampson",
@@ -1655,8 +1626,11 @@
     "instructor": "Matthews, L",
     "seats_open": 8,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ELC 113 and ELC 114",
+    "prerequisite_courses": [
+      "ELC 113",
+      "ELC 114"
+    ]
   },
   {
     "college_code": "sampson",
@@ -1676,8 +1650,11 @@
     "instructor": "Matthews, L",
     "seats_open": 0,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ELC 112 and ELC 117",
+    "prerequisite_courses": [
+      "ELC 112",
+      "ELC 117"
+    ]
   },
   {
     "college_code": "sampson",
@@ -1695,10 +1672,16 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Gregory, J",
-    "seats_open": 2,
+    "seats_open": 4,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ELC 111 or ELC 112 or ELC 131 or ELC 138 and ELC 117",
+    "prerequisite_courses": [
+      "ELC 111",
+      "ELC 112",
+      "ELC 131",
+      "ELC 138",
+      "ELC 117"
+    ]
   },
   {
     "college_code": "sampson",
@@ -1715,11 +1698,14 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Vansell, T",
-    "seats_open": 22,
+    "instructor": "Vansell, T, Magill, A",
+    "seats_open": 21,
     "seats_total": 22,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EMS 121 or EMS 122",
+    "prerequisite_courses": [
+      "EMS 121",
+      "EMS 122"
+    ]
   },
   {
     "college_code": "sampson",
@@ -1737,7 +1723,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Magill, A",
-    "seats_open": 9,
+    "seats_open": 8,
     "seats_total": 10,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1757,11 +1743,14 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 22,
+    "instructor": "Newcomb, T, Magill, A",
+    "seats_open": 21,
     "seats_total": 22,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EMS 122 and EMS 130",
+    "prerequisite_courses": [
+      "EMS 122",
+      "EMS 130"
+    ]
   },
   {
     "college_code": "sampson",
@@ -1778,11 +1767,14 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 22,
+    "instructor": "Newcomb, T, Magill, A",
+    "seats_open": 21,
     "seats_total": 22,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EMS 122 and EMS 130",
+    "prerequisite_courses": [
+      "EMS 122",
+      "EMS 130"
+    ]
   },
   {
     "college_code": "sampson",
@@ -1800,7 +1792,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Magill, A",
-    "seats_open": 9,
+    "seats_open": 8,
     "seats_total": 10,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1821,7 +1813,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Frazier, J",
-    "seats_open": 15,
+    "seats_open": 13,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1842,7 +1834,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Frazier, J",
-    "seats_open": 0,
+    "seats_open": 5,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1863,7 +1855,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Bass, M",
-    "seats_open": 12,
+    "seats_open": 5,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1884,10 +1876,12 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Summerlin, T",
-    "seats_open": 0,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 2,
+    "seats_total": 25,
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "sampson",
@@ -1905,10 +1899,12 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Honeycutt, B",
-    "seats_open": 0,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 4,
+    "seats_total": 25,
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "sampson",
@@ -1926,10 +1922,35 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Summerlin, T",
-    "seats_open": 1,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 5,
+    "seats_total": 25,
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
+  },
+  {
+    "college_code": "sampson",
+    "term": "2026SU",
+    "course_prefix": "ENG",
+    "course_number": "111",
+    "course_title": "Writing and Inquiry",
+    "credits": 3,
+    "crn": "ENG-111-1IN04",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-14",
+    "location": "Curriculum Web Courses",
+    "campus": "CUWB",
+    "mode": "in-person",
+    "instructor": "Frazier, J",
+    "seats_open": 17,
+    "seats_total": 25,
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "sampson",
@@ -1947,10 +1968,12 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Frazier, J",
-    "seats_open": 0,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 2,
+    "seats_total": 25,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "sampson",
@@ -1968,31 +1991,12 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Frazier, J",
-    "seats_open": 3,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "sampson",
-    "term": "2026SU",
-    "course_prefix": "ENG",
-    "course_number": "232",
-    "course_title": "American Literature II",
-    "credits": 3,
-    "crn": "ENG-232-1IN02",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-14",
-    "location": "Curriculum Web Courses",
-    "campus": "CUWB",
-    "mode": "in-person",
-    "instructor": "Fleming, W",
-    "seats_open": 24,
+    "seats_open": 1,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "sampson",
@@ -2010,10 +2014,14 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Carraway, L",
-    "seats_open": 1,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 112 or ENG 113 or ENG 114",
+    "prerequisite_courses": [
+      "ENG 112",
+      "ENG 113",
+      "ENG 114"
+    ]
   },
   {
     "college_code": "sampson",
@@ -2031,10 +2039,14 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Bruce, M",
-    "seats_open": 17,
+    "seats_open": 15,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 112 or ENG 113 or ENG 114",
+    "prerequisite_courses": [
+      "ENG 112",
+      "ENG 113",
+      "ENG 114"
+    ]
   },
   {
     "college_code": "sampson",
@@ -2052,7 +2064,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Borgelin, N",
-    "seats_open": 23,
+    "seats_open": 25,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2072,11 +2084,13 @@
     "location": "Curriculum Web Courses",
     "campus": "CUWB",
     "mode": "in-person",
-    "instructor": "Huskey, L",
+    "instructor": "Borgelin, N",
     "seats_open": 14,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ACC 120",
+    "prerequisite_courses": [
+      "ACC 120"
+    ]
   },
   {
     "college_code": "sampson",
@@ -2093,8 +2107,8 @@
     "location": "Curriculum Web Courses",
     "campus": "CUWB",
     "mode": "in-person",
-    "instructor": "Brisson, J",
-    "seats_open": 17,
+    "instructor": "Knowles, T",
+    "seats_open": 15,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2115,8 +2129,8 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Knowles, T",
-    "seats_open": 0,
-    "seats_total": 25,
+    "seats_open": 6,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2157,29 +2171,8 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Butler, K",
-    "seats_open": 14,
+    "seats_open": 12,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "sampson",
-    "term": "2026SU",
-    "course_prefix": "MAT",
-    "course_number": "025",
-    "course_title": "Concepts of Essential Math/Sta",
-    "credits": 3,
-    "crn": "MAT-025-1BL01",
-    "days": "M W",
-    "start_time": "11:30 AM",
-    "end_time": "1:00 PM",
-    "start_date": "2026-05-14",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": null,
-    "seats_open": 20,
-    "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2198,8 +2191,8 @@
     "location": "Curriculum Web Courses",
     "campus": "CUWB",
     "mode": "in-person",
-    "instructor": "Ezzell, M",
-    "seats_open": 6,
+    "instructor": "Spell, N",
+    "seats_open": 1,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2220,7 +2213,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Butler, A",
-    "seats_open": 0,
+    "seats_open": 3,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2240,8 +2233,8 @@
     "location": "Curriculum Web Courses",
     "campus": "CUWB",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 19,
+    "instructor": "Butler, A",
+    "seats_open": 9,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2261,11 +2254,14 @@
     "location": "Curriculum Web Courses",
     "campus": "CUWB",
     "mode": "in-person",
-    "instructor": "Butler, A",
-    "seats_open": 0,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "instructor": "Ezzell, M",
+    "seats_open": 5,
+    "seats_total": 30,
+    "prerequisite_text": "MAT 025 and ENG 025",
+    "prerequisite_courses": [
+      "MAT 025",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "sampson",
@@ -2282,11 +2278,14 @@
     "location": "Curriculum Web Courses",
     "campus": "CUWB",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 16,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "instructor": "Ezzell, M",
+    "seats_open": 7,
+    "seats_total": 30,
+    "prerequisite_text": "MAT 025 and ENG 025",
+    "prerequisite_courses": [
+      "MAT 025",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "sampson",
@@ -2303,11 +2302,14 @@
     "location": "Curriculum Web Courses",
     "campus": "CUWB",
     "mode": "in-person",
-    "instructor": "Ezzell, M",
-    "seats_open": 4,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "instructor": "Eavenson, J",
+    "seats_open": 1,
+    "seats_total": 27,
+    "prerequisite_text": "MAT 025 and MAT 152",
+    "prerequisite_courses": [
+      "MAT 025",
+      "MAT 152"
+    ]
   },
   {
     "college_code": "sampson",
@@ -2325,10 +2327,13 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Ezzell, M",
-    "seats_open": 16,
+    "seats_open": 15,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 171 or MAT 175 and MAT 171",
+    "prerequisite_courses": [
+      "MAT 171",
+      "MAT 175"
+    ]
   },
   {
     "college_code": "sampson",
@@ -2346,7 +2351,28 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Avery, E",
-    "seats_open": 0,
+    "seats_open": 4,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "sampson",
+    "term": "2026SU",
+    "course_prefix": "MED",
+    "course_number": "121",
+    "course_title": "Medical Terminology I",
+    "credits": 3,
+    "crn": "MED-121-1IN02",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-14",
+    "location": "Curriculum Web Courses",
+    "campus": "CUWB",
+    "mode": "in-person",
+    "instructor": "Avery, E",
+    "seats_open": 21,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2409,8 +2435,8 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Bradshaw, C",
-    "seats_open": 5,
-    "seats_total": 25,
+    "seats_open": 1,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2430,7 +2456,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Bradshaw, C",
-    "seats_open": 17,
+    "seats_open": 21,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2450,7 +2476,7 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Brown, A, Jones, L",
+    "instructor": "Brown, A, Jones, L, Bradshaw, R",
     "seats_open": 0,
     "seats_total": 20,
     "prerequisite_text": null,
@@ -2472,8 +2498,8 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Jones, L",
-    "seats_open": 10,
-    "seats_total": 20,
+    "seats_open": 1,
+    "seats_total": 10,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2493,7 +2519,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Tyree, R",
-    "seats_open": 2,
+    "seats_open": 3,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2513,11 +2539,13 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Avendano, R, Oliver, N, Cashwell, K, Callahan, M",
-    "seats_open": 8,
+    "instructor": "Avendano, R, Oliver, N, Cashwell, K, Callahan, M, Testerman, H, Hope, S",
+    "seats_open": 9,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 101",
+    "prerequisite_courses": [
+      "NUR 101"
+    ]
   },
   {
     "college_code": "sampson",
@@ -2534,11 +2562,15 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Ammons, J, Miller, V, Callahan, M, Daughtry, S, Williams, M",
-    "seats_open": 18,
+    "instructor": "Ammons, J, Miller, V, Callahan, M, Daughtry, S, Testerman, H, Mallard, B, Hall, R, Cashwell, K, Hope, S",
+    "seats_open": 5,
     "seats_total": 50,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 111 and NUR 112 and NUR 113",
+    "prerequisite_courses": [
+      "NUR 111",
+      "NUR 112",
+      "NUR 113"
+    ]
   },
   {
     "college_code": "sampson",
@@ -2556,7 +2588,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Hayes, B",
-    "seats_open": 0,
+    "seats_open": 6,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2577,29 +2609,8 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Hayes, B",
-    "seats_open": 2,
+    "seats_open": 7,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "sampson",
-    "term": "2026SU",
-    "course_prefix": "PAD",
-    "course_number": "254",
-    "course_title": "Grant Writing",
-    "credits": 3,
-    "crn": "PAD-254-1IN01",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-14",
-    "location": "Curriculum Web Courses",
-    "campus": "CUWB",
-    "mode": "in-person",
-    "instructor": "Turlington, L",
-    "seats_open": 14,
-    "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2619,10 +2630,12 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Smith, T",
-    "seats_open": 6,
+    "seats_open": 2,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "sampson",
@@ -2640,7 +2653,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Burgin, S",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2661,7 +2674,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Burgin, S",
-    "seats_open": 0,
+    "seats_open": 3,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2681,8 +2694,8 @@
     "location": "Curriculum Web Courses",
     "campus": "CUWB",
     "mode": "in-person",
-    "instructor": "Burgin, S",
-    "seats_open": 0,
+    "instructor": "Dammer, S",
+    "seats_open": 9,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2702,8 +2715,8 @@
     "location": "Curriculum Web Courses",
     "campus": "CUWB",
     "mode": "in-person",
-    "instructor": "Burgin, S",
-    "seats_open": 17,
+    "instructor": "Dammer, S",
+    "seats_open": 11,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2724,10 +2737,12 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Burgin, S",
-    "seats_open": 1,
-    "seats_total": 27,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 6,
+    "seats_total": 30,
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "sampson",
@@ -2745,7 +2760,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Chestnutt, C",
-    "seats_open": 10,
+    "seats_open": 8,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2766,7 +2781,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Gravis, L",
-    "seats_open": 3,
+    "seats_open": 5,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2787,7 +2802,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Carraway, L",
-    "seats_open": 11,
+    "seats_open": 6,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2808,7 +2823,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Carraway, L",
-    "seats_open": 5,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2829,7 +2844,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Williams, J",
-    "seats_open": 12,
+    "seats_open": 5,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2850,7 +2865,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Willoughby, P",
-    "seats_open": 0,
+    "seats_open": 4,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2871,7 +2886,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Willoughby, P",
-    "seats_open": 25,
+    "seats_open": 16,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2892,10 +2907,12 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Williams, J",
-    "seats_open": 19,
+    "seats_open": 20,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 111",
+    "prerequisite_courses": [
+      "SPA 111"
+    ]
   },
   {
     "college_code": "sampson",
@@ -2913,10 +2930,12 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Willoughby, P",
-    "seats_open": 1,
+    "seats_open": 4,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 111",
+    "prerequisite_courses": [
+      "SPA 111"
+    ]
   },
   {
     "college_code": "sampson",
@@ -2934,10 +2953,12 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Willoughby, P",
-    "seats_open": 26,
+    "seats_open": 15,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 111",
+    "prerequisite_courses": [
+      "SPA 111"
+    ]
   },
   {
     "college_code": "sampson",
@@ -2955,31 +2976,12 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": "Williams, J",
-    "seats_open": 18,
+    "seats_open": 5,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "sampson",
-    "term": "2026SU",
-    "course_prefix": "SPA",
-    "course_number": "211",
-    "course_title": "Intermediate Spanish I",
-    "credits": 3,
-    "crn": "SPA-211-1IN02",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-14",
-    "location": "Curriculum Web Courses",
-    "campus": "CUWB",
-    "mode": "in-person",
-    "instructor": "Arevalo, J",
-    "seats_open": 28,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 112",
+    "prerequisite_courses": [
+      "SPA 112"
+    ]
   },
   {
     "college_code": "sampson",
@@ -2997,7 +2999,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Odum, D",
-    "seats_open": 8,
+    "seats_open": 9,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3018,28 +3020,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Odum, D",
-    "seats_open": 9,
-    "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "sampson",
-    "term": "2026SU",
-    "course_prefix": "WBL",
-    "course_number": "121",
-    "course_title": "Work-Based Learning II",
-    "credits": 1,
-    "crn": "WBL-121-1TR01",
-    "days": "M T W Th F Sa",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-14",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Odum, D",
-    "seats_open": 15,
+    "seats_open": 6,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3060,7 +3041,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Odum, D",
-    "seats_open": 14,
+    "seats_open": 13,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3083,8 +3064,12 @@
     "instructor": "Odum, D",
     "seats_open": 15,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WBL 121 or WBL 122 or WBL 123",
+    "prerequisite_courses": [
+      "WBL 121",
+      "WBL 122",
+      "WBL 123"
+    ]
   },
   {
     "college_code": "sampson",
@@ -3104,29 +3089,12 @@
     "instructor": "Odum, D",
     "seats_open": 14,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "sampson",
-    "term": "2026SU",
-    "course_prefix": "WBL",
-    "course_number": "212",
-    "course_title": "Work-Based Learning IV",
-    "credits": 2,
-    "crn": "WBL-212-1TR01",
-    "days": "M T W Th F Sa",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-14",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Odum, D",
-    "seats_open": 15,
-    "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WBL 121 or WBL 122 or WBL 123",
+    "prerequisite_courses": [
+      "WBL 121",
+      "WBL 122",
+      "WBL 123"
+    ]
   },
   {
     "college_code": "sampson",
@@ -3143,8 +3111,8 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Sessoms, J",
-    "seats_open": 5,
+    "instructor": "Shatley, C",
+    "seats_open": 6,
     "seats_total": 10,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3165,7 +3133,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Sessoms, J, Smith, J",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 7,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3186,10 +3154,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Sessoms, J, Smith, J",
-    "seats_open": 2,
+    "seats_open": 3,
     "seats_total": 4,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 115",
+    "prerequisite_courses": [
+      "WLD 115"
+    ]
   },
   {
     "college_code": "sampson",
@@ -3207,7 +3177,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Staley, M",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 5,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3230,8 +3200,10 @@
     "instructor": "Sessoms, J, Smith, J",
     "seats_open": 4,
     "seats_total": 5,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 121",
+    "prerequisite_courses": [
+      "WLD 121"
+    ]
   },
   {
     "college_code": "sampson",
@@ -3248,11 +3220,13 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": null,
+    "instructor": "Staley, M",
     "seats_open": 1,
     "seats_total": 5,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 121",
+    "prerequisite_courses": [
+      "WLD 121"
+    ]
   },
   {
     "college_code": "sampson",
@@ -3269,8 +3243,8 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Shatley, C",
-    "seats_open": 2,
+    "instructor": "Shatley, C, Sessoms, J",
+    "seats_open": 5,
     "seats_total": 10,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3290,8 +3264,8 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Shatley, C",
-    "seats_open": 5,
+    "instructor": "Shatley, C, Staley, M",
+    "seats_open": 4,
     "seats_total": 5,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3311,7 +3285,7 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Shatley, C",
+    "instructor": "Sessoms, J",
     "seats_open": 4,
     "seats_total": 5,
     "prerequisite_text": null,
@@ -3335,8 +3309,10 @@
     "instructor": "Sessoms, J, Smith, J",
     "seats_open": 4,
     "seats_total": 5,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 131",
+    "prerequisite_courses": [
+      "WLD 131"
+    ]
   },
   {
     "college_code": "sampson",
@@ -3353,9 +3329,32 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Shatley, C",
+    "instructor": "Shatley, C, Staley, M",
     "seats_open": 4,
     "seats_total": 5,
+    "prerequisite_text": "WLD 131",
+    "prerequisite_courses": [
+      "WLD 131"
+    ]
+  },
+  {
+    "college_code": "sampson",
+    "term": "2026SU",
+    "course_prefix": "WLD",
+    "course_number": "141",
+    "course_title": "Symbols & Specifications",
+    "credits": 3,
+    "crn": "WLD-141-1IN02",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-14",
+    "location": "Curriculum Web Courses",
+    "campus": "CUWB",
+    "mode": "in-person",
+    "instructor": "Shatley, C",
+    "seats_open": 7,
+    "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -3375,7 +3374,7 @@
     "campus": "CUWB",
     "mode": "in-person",
     "instructor": null,
-    "seats_open": 10,
+    "seats_open": 15,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3398,29 +3397,12 @@
     "instructor": "Shatley, C",
     "seats_open": 3,
     "seats_total": 5,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "sampson",
-    "term": "2026SU",
-    "course_prefix": "WLD",
-    "course_number": "221",
-    "course_title": "GMAW (MIG) Pipe",
-    "credits": 3,
-    "crn": "WLD-221-1BL01",
-    "days": "M T W Th",
-    "start_time": "1:00 PM",
-    "end_time": "4:25 PM",
-    "start_date": "2026-05-14",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Staley, M",
-    "seats_open": 5,
-    "seats_total": 5,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 110 and WLD 115 and WLD 121",
+    "prerequisite_courses": [
+      "WLD 110",
+      "WLD 115",
+      "WLD 121"
+    ]
   },
   {
     "college_code": "sampson",
@@ -3437,11 +3419,13 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Shatley, C",
-    "seats_open": 2,
+    "instructor": "Staley, M",
+    "seats_open": 1,
     "seats_total": 3,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 132",
+    "prerequisite_courses": [
+      "WLD 132"
+    ]
   },
   {
     "college_code": "sampson",
@@ -3461,8 +3445,10 @@
     "instructor": "Sessoms, J, Smith, J",
     "seats_open": 3,
     "seats_total": 5,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 151",
+    "prerequisite_courses": [
+      "WLD 151"
+    ]
   },
   {
     "college_code": "sampson",
@@ -3480,9 +3466,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Staley, M",
-    "seats_open": 3,
+    "seats_open": 1,
     "seats_total": 5,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 115 and WLD 121 and WLD 131",
+    "prerequisite_courses": [
+      "WLD 115",
+      "WLD 121",
+      "WLD 131"
+    ]
   }
 ]

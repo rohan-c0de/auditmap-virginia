@@ -14,7 +14,7 @@
     "location": "Web",
     "campus": "WEB",
     "mode": "online",
-    "instructor": "Glauner, D",
+    "instructor": "Glauner, D, Beard, S",
     "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
@@ -35,7 +35,7 @@
     "location": "Web",
     "campus": "WEB",
     "mode": "online",
-    "instructor": "Simmons, L",
+    "instructor": "Simmons, L, Gagne, D",
     "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
@@ -57,7 +57,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Thomas, M",
-    "seats_open": 10,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -78,7 +78,49 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Beard, S",
-    "seats_open": 26,
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "ACA",
+    "course_number": "122",
+    "course_title": "College Transfer Success",
+    "credits": 1,
+    "crn": "ACA-122-OAB5",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Beard, S",
+    "seats_open": 1,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "ACA",
+    "course_number": "122",
+    "course_title": "College Transfer Success",
+    "credits": 1,
+    "crn": "ACA-122-OAB6",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Simmons, L",
+    "seats_open": 1,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -119,7 +161,7 @@
     "location": "Web",
     "campus": "WEB",
     "mode": "online",
-    "instructor": "Luszcz, W",
+    "instructor": "Misenheimer, K",
     "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
@@ -149,6 +191,27 @@
   {
     "college_code": "south-piedmont",
     "term": "2026SU",
+    "course_prefix": "ACC",
+    "course_number": "120",
+    "course_title": "Prin of Financial Accounting",
+    "credits": 4,
+    "crn": "ACC-120-OAB4",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Lemenny, D",
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
     "course_prefix": "AGR",
     "course_number": "121",
     "course_title": "Biological Pest Mgmt",
@@ -162,7 +225,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Talton, H",
-    "seats_open": 28,
+    "seats_open": 24,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -183,7 +246,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Vazquez, J",
-    "seats_open": 26,
+    "seats_open": 22,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -204,10 +267,14 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Adams, A",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -225,10 +292,14 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Van Voorhis, M",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -245,11 +316,15 @@
     "location": "Web",
     "campus": "WEB",
     "mode": "online",
-    "instructor": "Finch, M",
-    "seats_open": 0,
+    "instructor": "Schenning, B",
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -267,10 +342,14 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Raper, A",
-    "seats_open": 0,
+    "seats_open": 4,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -288,10 +367,14 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Robertson, D",
-    "seats_open": 7,
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -309,10 +392,14 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Adams, A",
-    "seats_open": 24,
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -330,10 +417,39 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Lykens, S",
-    "seats_open": 28,
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 025",
+      "ENG 8025"
+    ]
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "ART",
+    "course_number": "111",
+    "course_title": "Art Appreciation",
+    "credits": 3,
+    "crn": "ART-111-OAB9",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Lykens, S",
+    "seats_open": 2,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 002 or ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -351,7 +467,7 @@
     "campus": "HS",
     "mode": "hybrid",
     "instructor": "Baumgartner, W",
-    "seats_open": 8,
+    "seats_open": 7,
     "seats_total": 10,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -372,10 +488,13 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Jones, G",
-    "seats_open": 0,
+    "seats_open": 3,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 025 or MAT 035",
+    "prerequisite_courses": [
+      "MAT 025",
+      "MAT 035"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -393,10 +512,38 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Roush, D",
-    "seats_open": 22,
+    "seats_open": 3,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 025 or MAT 035",
+    "prerequisite_courses": [
+      "MAT 025",
+      "MAT 035"
+    ]
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "BIO",
+    "course_number": "111",
+    "course_title": "General Biology I",
+    "credits": 4,
+    "crn": "BIO-111-NMD1",
+    "days": "W",
+    "start_time": "9:00 AM",
+    "end_time": "11:45 AM",
+    "start_date": "2026-06-10",
+    "location": "Off Camp-Union",
+    "campus": "9000",
+    "mode": "in-person",
+    "instructor": "Moore, C",
+    "seats_open": 20,
+    "seats_total": 20,
+    "prerequisite_text": "MAT 003 or MAT 025 or MAT 035",
+    "prerequisite_courses": [
+      "MAT 003",
+      "MAT 025",
+      "MAT 035"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -413,11 +560,15 @@
     "location": "Web",
     "campus": "WEB",
     "mode": "online",
-    "instructor": "Dennis, J",
+    "instructor": "Arulmani, P",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 003 or MAT 025 or MAT 035",
+    "prerequisite_courses": [
+      "MAT 003",
+      "MAT 025",
+      "MAT 035"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -435,10 +586,14 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Moore, C",
-    "seats_open": 14,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 003 or MAT 025 or MAT 035",
+    "prerequisite_courses": [
+      "MAT 003",
+      "MAT 025",
+      "MAT 035"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -456,10 +611,39 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "McCall, S",
-    "seats_open": 4,
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 003 or MAT 025 or MAT 035",
+    "prerequisite_courses": [
+      "MAT 003",
+      "MAT 025",
+      "MAT 035"
+    ]
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "BIO",
+    "course_number": "111",
+    "course_title": "General Biology I",
+    "credits": 4,
+    "crn": "BIO-111-OAB4",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Morse, K",
+    "seats_open": 27,
+    "seats_total": 30,
+    "prerequisite_text": "MAT 003 or MAT 025 or MAT 035",
+    "prerequisite_courses": [
+      "MAT 003",
+      "MAT 025",
+      "MAT 035"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -477,10 +661,35 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Davros, N",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 111 (min C)",
+    "prerequisite_courses": [
+      "BIO 111"
+    ]
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "BIO",
+    "course_number": "112",
+    "course_title": "General Biology II",
+    "credits": 4,
+    "crn": "BIO-112-OAB2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Neelakantan, U",
+    "seats_open": 7,
+    "seats_total": 30,
+    "prerequisite_text": "BIO 111 (min C)",
+    "prerequisite_courses": [
+      "BIO 111"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -498,10 +707,14 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Wolfe, E",
-    "seats_open": 0,
+    "seats_open": 6,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 003 or MAT 025 or MAT 035",
+    "prerequisite_courses": [
+      "MAT 003",
+      "MAT 025",
+      "MAT 035"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -519,10 +732,14 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Stevens, C",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 003 or MAT 025 or MAT 035",
+    "prerequisite_courses": [
+      "MAT 003",
+      "MAT 025",
+      "MAT 035"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -542,8 +759,12 @@
     "instructor": "Reischman, G",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 003 or MAT 025 or MAT 035",
+    "prerequisite_courses": [
+      "MAT 003",
+      "MAT 025",
+      "MAT 035"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -563,8 +784,87 @@
     "instructor": "Alkhayer, K",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 003 or MAT 025 or MAT 035",
+    "prerequisite_courses": [
+      "MAT 003",
+      "MAT 025",
+      "MAT 035"
+    ]
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "BIO",
+    "course_number": "168",
+    "course_title": "Anatomy and Physiology I",
+    "credits": 4,
+    "crn": "BIO-168-OAB4",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Alkhayer, K",
+    "seats_open": 5,
+    "seats_total": 30,
+    "prerequisite_text": "MAT 003 or MAT 025 or MAT 035",
+    "prerequisite_courses": [
+      "MAT 003",
+      "MAT 025",
+      "MAT 035"
+    ]
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "BIO",
+    "course_number": "168",
+    "course_title": "Anatomy and Physiology I",
+    "credits": 4,
+    "crn": "BIO-168-OAB5",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Dennis, J",
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "MAT 003 or MAT 025 or MAT 035",
+    "prerequisite_courses": [
+      "MAT 003",
+      "MAT 025",
+      "MAT 035"
+    ]
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "BIO",
+    "course_number": "168",
+    "course_title": "Anatomy and Physiology I",
+    "credits": 4,
+    "crn": "BIO-168-OAB6",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Neelakantan, U",
+    "seats_open": 16,
+    "seats_total": 30,
+    "prerequisite_text": "MAT 003 or MAT 025 or MAT 035",
+    "prerequisite_courses": [
+      "MAT 003",
+      "MAT 025",
+      "MAT 035"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -582,10 +882,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Stevens, C",
-    "seats_open": 0,
+    "seats_open": 3,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 168 (min C)",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -603,10 +905,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Wolfe, E",
-    "seats_open": 2,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 168 (min C)",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -624,10 +928,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Reischman, G",
-    "seats_open": 0,
+    "seats_open": 4,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 168 (min C)",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -645,10 +951,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Stevens, C",
-    "seats_open": 0,
+    "seats_open": 5,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 168 (min C)",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -665,11 +973,36 @@
     "location": "Web",
     "campus": "WEB",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 2,
+    "instructor": "Patterson, J",
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 168 (min C)",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "BIO",
+    "course_number": "169",
+    "course_title": "Anatomy and Physiology II",
+    "credits": 4,
+    "crn": "BIO-169-OAB6",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Dennis, J",
+    "seats_open": 16,
+    "seats_total": 30,
+    "prerequisite_text": "BIO 168 (min C)",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -687,10 +1020,14 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Alfarone, P",
-    "seats_open": 0,
+    "seats_open": 3,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 163 (min C) and BIO 166 (min C) and BIO 169 (min C)",
+    "prerequisite_courses": [
+      "BIO 163",
+      "BIO 166",
+      "BIO 169"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -707,11 +1044,15 @@
     "location": "Web",
     "campus": "WEB",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 0,
+    "instructor": "Alfarone, P",
+    "seats_open": 4,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 163 (min C) and BIO 166 (min C) and BIO 169 (min C)",
+    "prerequisite_courses": [
+      "BIO 163",
+      "BIO 166",
+      "BIO 169"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -728,11 +1069,15 @@
     "location": "Web",
     "campus": "WEB",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 19,
+    "instructor": "Wolfe, E",
+    "seats_open": 5,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 163 (min C) and BIO 166 (min C) and BIO 169 (min C)",
+    "prerequisite_courses": [
+      "BIO 163",
+      "BIO 166",
+      "BIO 169"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -750,7 +1095,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Moore, C",
-    "seats_open": 2,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -779,6 +1124,27 @@
   {
     "college_code": "south-piedmont",
     "term": "2026SU",
+    "course_prefix": "BIO",
+    "course_number": "275",
+    "course_title": "Microbiology",
+    "credits": 4,
+    "crn": "BIO-275-OAB3",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Miller, K",
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
     "course_prefix": "BUS",
     "course_number": "110",
     "course_title": "Introduction to Business",
@@ -792,7 +1158,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "McLaughlin, L",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -813,7 +1179,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Peters, S",
-    "seats_open": 8,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -855,7 +1221,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Zullo, L",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -876,7 +1242,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Bateh, E",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -897,7 +1263,28 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Carpenter, A",
-    "seats_open": 4,
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "BUS",
+    "course_number": "137",
+    "course_title": "Principles of Management",
+    "credits": 3,
+    "crn": "BUS-137-OAB4",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Bateh, E",
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -918,7 +1305,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Konda, D",
-    "seats_open": 26,
+    "seats_open": 24,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -941,8 +1328,11 @@
     "instructor": "Koohang, A",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 025 or MAT 035",
+    "prerequisite_courses": [
+      "MAT 025",
+      "MAT 035"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -962,8 +1352,59 @@
     "instructor": "Kapkiai, L",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 025 or MAT 035",
+    "prerequisite_courses": [
+      "MAT 025",
+      "MAT 035"
+    ]
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "CHM",
+    "course_number": "151",
+    "course_title": "General Chemistry I",
+    "credits": 4,
+    "crn": "CHM-151-OAB3",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Cominotti, M",
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "MAT 025 or MAT 035",
+    "prerequisite_courses": [
+      "MAT 025",
+      "MAT 035"
+    ]
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "CHM",
+    "course_number": "151",
+    "course_title": "General Chemistry I",
+    "credits": 4,
+    "crn": "CHM-151-OAB4",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Risley, K",
+    "seats_open": 8,
+    "seats_total": 30,
+    "prerequisite_text": "MAT 025 or MAT 035",
+    "prerequisite_courses": [
+      "MAT 025",
+      "MAT 035"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -981,10 +1422,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Cominotti, M",
-    "seats_open": 2,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 151 (min C)",
+    "prerequisite_courses": [
+      "CHM 151"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -1002,10 +1445,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Cominotti, M",
-    "seats_open": 30,
+    "seats_open": 12,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 151 (min C)",
+    "prerequisite_courses": [
+      "CHM 151"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -1065,7 +1510,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Evanoff, J",
-    "seats_open": 1,
+    "seats_open": 3,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1086,7 +1531,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Evanoff, J",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1107,7 +1552,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Konda, D",
-    "seats_open": 13,
+    "seats_open": 3,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1128,7 +1573,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Konda, D",
-    "seats_open": 23,
+    "seats_open": 2,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1149,8 +1594,8 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Baucom, C",
-    "seats_open": 13,
-    "seats_total": 30,
+    "seats_open": 3,
+    "seats_total": 35,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1170,7 +1615,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Pierce, L",
-    "seats_open": 22,
+    "seats_open": 5,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1191,7 +1636,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Williams, B",
-    "seats_open": 26,
+    "seats_open": 15,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1212,7 +1657,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Mintz, B",
-    "seats_open": 13,
+    "seats_open": 7,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1233,7 +1678,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Miller, S",
-    "seats_open": 24,
+    "seats_open": 21,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1254,8 +1699,8 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Pierce, L",
-    "seats_open": 13,
-    "seats_total": 30,
+    "seats_open": 2,
+    "seats_total": 35,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1275,7 +1720,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Zollars, S",
-    "seats_open": 24,
+    "seats_open": 17,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1296,7 +1741,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Hensley, L",
-    "seats_open": 26,
+    "seats_open": 22,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1316,8 +1761,8 @@
     "location": "Web",
     "campus": "WEB",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 28,
+    "instructor": "Ingani, J",
+    "seats_open": 24,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1338,10 +1783,13 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Hooks, H",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -1359,10 +1807,13 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Hooks, H",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -1382,8 +1833,12 @@
     "instructor": "Campbell, T",
     "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -1403,8 +1858,12 @@
     "instructor": "Campbell, T",
     "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -1422,10 +1881,14 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Gardner, I",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -1443,10 +1906,14 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Campbell, T",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -1463,11 +1930,15 @@
     "location": "Web",
     "campus": "WEB",
     "mode": "online",
-    "instructor": "Hyatt, A",
-    "seats_open": 0,
+    "instructor": "Bjorklund, A",
+    "seats_open": 1,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -1487,8 +1958,37 @@
     "instructor": "Bjorklund, A",
     "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 025",
+      "ENG 8025"
+    ]
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "COM",
+    "course_number": "231",
+    "course_title": "Public Speaking",
+    "credits": 3,
+    "crn": "COM-231-OMB7",
+    "days": "Th",
+    "start_time": "6:00 PM",
+    "end_time": "8:45 PM",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "in-person",
+    "instructor": "Campbell, T",
+    "seats_open": 1,
+    "seats_total": 20,
+    "prerequisite_text": "ENG 002 or ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -1506,10 +2006,14 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Gardner, I",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -1527,10 +2031,14 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Gardner, I",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 002 or ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 002",
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -1548,7 +2056,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Essenmacher, R",
-    "seats_open": 15,
+    "seats_open": 10,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1569,7 +2077,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Evanoff, J",
-    "seats_open": 21,
+    "seats_open": 8,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1590,7 +2098,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Martin, M",
-    "seats_open": 25,
+    "seats_open": 22,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1610,8 +2118,8 @@
     "location": "Web",
     "campus": "WEB",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 24,
+    "instructor": "Poindexter, A",
+    "seats_open": 19,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1632,7 +2140,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Bergan, N",
-    "seats_open": 0,
+    "seats_open": 3,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1674,7 +2182,28 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Chea, C",
-    "seats_open": 18,
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "ECO",
+    "course_number": "251",
+    "course_title": "Prin of Microeconomics",
+    "credits": 3,
+    "crn": "ECO-251-OAB4",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Ardalani, Z",
+    "seats_open": 1,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1737,7 +2266,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Adams, L",
-    "seats_open": 20,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1757,8 +2286,8 @@
     "location": "Web",
     "campus": "WEB",
     "mode": "online",
-    "instructor": "Wheeler, R, Horne, C",
-    "seats_open": 7,
+    "instructor": "Wheeler, R",
+    "seats_open": 5,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1778,9 +2307,30 @@
     "location": "Web",
     "campus": "WEB",
     "mode": "online",
-    "instructor": "Silas, T, Horne, C",
-    "seats_open": 19,
+    "instructor": "Silas, T",
+    "seats_open": 16,
     "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "EMS",
+    "course_number": "125",
+    "course_title": "EMS Instructor Methodology",
+    "credits": 3,
+    "crn": "EMS-125-OAB1C",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Floto, C",
+    "seats_open": 19,
+    "seats_total": 40,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1799,7 +2349,7 @@
     "location": "Web",
     "campus": "WEB",
     "mode": "online",
-    "instructor": "Luther, S",
+    "instructor": "Cummings, M",
     "seats_open": 0,
     "seats_total": 20,
     "prerequisite_text": null,
@@ -1842,7 +2392,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Smith, C",
-    "seats_open": 14,
+    "seats_open": 1,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1863,7 +2413,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Silvoy, S",
-    "seats_open": 19,
+    "seats_open": 3,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1884,7 +2434,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Silvoy, S",
-    "seats_open": 20,
+    "seats_open": 1,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1905,10 +2455,12 @@
     "campus": "WC",
     "mode": "hybrid",
     "instructor": "Chaney, K",
-    "seats_open": 1,
+    "seats_open": 5,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -1926,10 +2478,12 @@
     "campus": "WC",
     "mode": "hybrid",
     "instructor": "Chaney, K",
-    "seats_open": 9,
+    "seats_open": 3,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -1947,10 +2501,12 @@
     "campus": "WC",
     "mode": "hybrid",
     "instructor": "Edwards, C",
-    "seats_open": 12,
+    "seats_open": 2,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -1968,10 +2524,12 @@
     "campus": "WC",
     "mode": "hybrid",
     "instructor": "Edwards, C",
-    "seats_open": 16,
+    "seats_open": 6,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -1989,10 +2547,12 @@
     "campus": "WC",
     "mode": "hybrid",
     "instructor": "Popoff, D",
-    "seats_open": 3,
+    "seats_open": 2,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2010,10 +2570,12 @@
     "campus": "WC",
     "mode": "hybrid",
     "instructor": "Popoff, D",
-    "seats_open": 8,
+    "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2033,8 +2595,10 @@
     "instructor": "Harper, K",
     "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2054,8 +2618,10 @@
     "instructor": "Chicosky, J",
     "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2075,8 +2641,10 @@
     "instructor": "Efird, V",
     "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2096,8 +2664,10 @@
     "instructor": "Efird, V",
     "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2117,8 +2687,10 @@
     "instructor": "Harlow, J",
     "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2136,10 +2708,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Girard, M",
-    "seats_open": 10,
+    "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2157,10 +2731,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Edwards, C",
-    "seats_open": 17,
+    "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2178,10 +2754,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Watkins, M",
-    "seats_open": 12,
+    "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2199,10 +2777,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Watkins, M",
-    "seats_open": 20,
+    "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2220,10 +2800,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Chicosky, J",
-    "seats_open": 2,
+    "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2241,10 +2823,12 @@
     "campus": "WC",
     "mode": "hybrid",
     "instructor": "Frailly, T",
-    "seats_open": 0,
+    "seats_open": 3,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111 (min C)",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2264,8 +2848,10 @@
     "instructor": "Frailly, T",
     "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111 (min C)",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2283,10 +2869,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Arnold, R",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111 (min C)",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2306,8 +2894,10 @@
     "instructor": "Arnold, R",
     "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111 (min C)",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2327,8 +2917,10 @@
     "instructor": "Morrison, R",
     "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111 (min C)",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2348,8 +2940,79 @@
     "instructor": "Walsh, B",
     "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111 (min C)",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "ENG",
+    "course_number": "112",
+    "course_title": "Writing/Research in the Disc",
+    "credits": 3,
+    "crn": "ENG-112-OAB5",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Lowman, K",
+    "seats_open": 0,
+    "seats_total": 20,
+    "prerequisite_text": "ENG 111 (min C)",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "ENG",
+    "course_number": "112",
+    "course_title": "Writing/Research in the Disc",
+    "credits": 3,
+    "crn": "ENG-112-OAB6",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Chaney, K",
+    "seats_open": 0,
+    "seats_total": 20,
+    "prerequisite_text": "ENG 111 (min C)",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "ENG",
+    "course_number": "112",
+    "course_title": "Writing/Research in the Disc",
+    "credits": 3,
+    "crn": "ENG-112-OAB7",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Davis, W",
+    "seats_open": 3,
+    "seats_total": 20,
+    "prerequisite_text": "ENG 111 (min C)",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2367,10 +3030,14 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Brown, R",
-    "seats_open": 30,
+    "seats_open": 9,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 112 and ENG 112 or ENG 113 or ENG 114",
+    "prerequisite_courses": [
+      "ENG 112",
+      "ENG 113",
+      "ENG 114"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2388,8 +3055,33 @@
     "campus": "WC",
     "mode": "hybrid",
     "instructor": "Frailly, T",
-    "seats_open": 26,
+    "seats_open": 19,
     "seats_total": 26,
+    "prerequisite_text": "ENG 112 or ENG 113 or ENG 114",
+    "prerequisite_courses": [
+      "ENG 112",
+      "ENG 113",
+      "ENG 114"
+    ]
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "FIP",
+    "course_number": "276",
+    "course_title": "Managing Fire Services",
+    "credits": 3,
+    "crn": "FIP-276-OAB1",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Yates, C",
+    "seats_open": 28,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2411,8 +3103,13 @@
     "instructor": "Coulson, D",
     "seats_open": 1,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 098 or ENG 002 or ENG 025 or BSP 4002",
+    "prerequisite_courses": [
+      "DRE 098",
+      "ENG 002",
+      "ENG 025",
+      "BSP 4002"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2430,10 +3127,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Coulson, D",
-    "seats_open": 14,
+    "seats_open": 9,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "FRE 111 (min C)",
+    "prerequisite_courses": [
+      "FRE 111"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2453,8 +3152,11 @@
     "instructor": "Hart, A",
     "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 025 and MAT 035",
+    "prerequisite_courses": [
+      "MAT 025",
+      "MAT 035"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2463,7 +3165,7 @@
     "course_number": "112",
     "course_title": "World Civilizations II",
     "credits": 3,
-    "crn": "HIS-112-MFE1Y",
+    "crn": "HIS-112-MFE3Y",
     "days": "T",
     "start_time": "6:00 PM",
     "end_time": "8:45 PM",
@@ -2472,31 +3174,12 @@
     "campus": "WC",
     "mode": "hybrid",
     "instructor": "Wyatt, C",
-    "seats_open": 26,
-    "seats_total": 52,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "south-piedmont",
-    "term": "2026SU",
-    "course_prefix": "HIS",
-    "course_number": "112",
-    "course_title": "World Civilizations II",
-    "credits": 3,
-    "crn": "HIS-112-MFE2Y",
-    "days": "T",
-    "start_time": "6:00 PM",
-    "end_time": "8:45 PM",
-    "start_date": "2026-06-30",
-    "location": "O C H",
-    "campus": "WC",
-    "mode": "hybrid",
-    "instructor": "Wyatt, C",
-    "seats_open": 26,
-    "seats_total": 52,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 26,
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2516,8 +3199,10 @@
     "instructor": "Millard, D",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2537,8 +3222,10 @@
     "instructor": "Lawson, D",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2556,10 +3243,35 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Thompson, K",
-    "seats_open": 9,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "HIS",
+    "course_number": "131",
+    "course_title": "American History I",
+    "credits": 3,
+    "crn": "HIS-131-OAB4",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Kaiser, J",
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2577,10 +3289,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Thompson, K",
-    "seats_open": 2,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2598,10 +3312,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Cummings, J",
-    "seats_open": 7,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2619,10 +3335,14 @@
     "campus": "WC",
     "mode": "hybrid",
     "instructor": "Popoff, D",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 or ENG 8025 or ACA 122",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025",
+      "ACA 122"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2640,10 +3360,14 @@
     "campus": "WC",
     "mode": "hybrid",
     "instructor": "Brown, R",
-    "seats_open": 20,
+    "seats_open": 3,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 or ENG 8025 or ACA 122",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025",
+      "ACA 122"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2661,10 +3385,14 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Walsh, B",
-    "seats_open": 17,
+    "seats_open": 11,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 or ENG 8025 or ACA 122",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025",
+      "ACA 122"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2682,7 +3410,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Spencer, W",
-    "seats_open": 7,
+    "seats_open": 2,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2703,8 +3431,29 @@
     "campus": "HS",
     "mode": "hybrid",
     "instructor": "Baumgartner, W",
-    "seats_open": 10,
+    "seats_open": 8,
     "seats_total": 10,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "025",
+    "course_title": "Concepts of Essential Math/Sta",
+    "credits": 3,
+    "crn": "MAT-025-OAB1",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Ross, L",
+    "seats_open": 9,
+    "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2724,7 +3473,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Taylor, M",
-    "seats_open": 10,
+    "seats_open": 3,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2745,7 +3494,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Nagy-Lup, F",
-    "seats_open": 6,
+    "seats_open": 4,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2765,8 +3514,8 @@
     "location": "O C H",
     "campus": "WC",
     "mode": "hybrid",
-    "instructor": null,
-    "seats_open": 9,
+    "instructor": "Condrey, V",
+    "seats_open": 2,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2787,7 +3536,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Nagy-Lup, F",
-    "seats_open": 4,
+    "seats_open": 0,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2808,10 +3557,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Nagy-Lup, F",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 025",
+    "prerequisite_courses": [
+      "MAT 025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2829,10 +3580,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Nagy-Lup, F",
-    "seats_open": 6,
+    "seats_open": 4,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 025",
+    "prerequisite_courses": [
+      "MAT 025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2850,10 +3603,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Nagy-Lup, F",
-    "seats_open": 6,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 025",
+    "prerequisite_courses": [
+      "MAT 025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2871,10 +3626,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Taylor, M",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 025",
+    "prerequisite_courses": [
+      "MAT 025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2892,10 +3649,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Taylor, M",
-    "seats_open": 10,
+    "seats_open": 3,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 025",
+    "prerequisite_courses": [
+      "MAT 025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2915,8 +3674,10 @@
     "instructor": "Taylor, M",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 025",
+    "prerequisite_courses": [
+      "MAT 025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2934,10 +3695,35 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Condrey, V",
-    "seats_open": 15,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 025",
+    "prerequisite_courses": [
+      "MAT 025"
+    ]
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "152",
+    "course_title": "Statistical Methods I",
+    "credits": 4,
+    "crn": "MAT-152-OAB3",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Oriowo, O",
+    "seats_open": 4,
+    "seats_total": 30,
+    "prerequisite_text": "MAT 025",
+    "prerequisite_courses": [
+      "MAT 025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2954,11 +3740,13 @@
     "location": "O C H",
     "campus": "WC",
     "mode": "hybrid",
-    "instructor": "Grosso, V",
-    "seats_open": 9,
+    "instructor": "Condrey, V",
+    "seats_open": 2,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 035",
+    "prerequisite_courses": [
+      "MAT 035"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2975,11 +3763,13 @@
     "location": "O C H",
     "campus": "WC",
     "mode": "hybrid",
-    "instructor": "Grosso, V",
-    "seats_open": 0,
+    "instructor": "Condrey, V",
+    "seats_open": 3,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 035",
+    "prerequisite_courses": [
+      "MAT 035"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -2997,10 +3787,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Jones, P",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 035",
+    "prerequisite_courses": [
+      "MAT 035"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3018,10 +3810,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Nagy-Lup, F",
-    "seats_open": 4,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 035",
+    "prerequisite_courses": [
+      "MAT 035"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3041,8 +3835,10 @@
     "instructor": "Nagy-Lup, F",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 035",
+    "prerequisite_courses": [
+      "MAT 035"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3060,10 +3856,35 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Taylor, M",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 035",
+    "prerequisite_courses": [
+      "MAT 035"
+    ]
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "171",
+    "course_title": "Precalculus Algebra",
+    "credits": 4,
+    "crn": "MAT-171-OAB3",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Belk, C",
+    "seats_open": 8,
+    "seats_total": 30,
+    "prerequisite_text": "MAT 035",
+    "prerequisite_courses": [
+      "MAT 035"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3081,10 +3902,35 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Holl-Cross, C",
-    "seats_open": 1,
+    "seats_open": 5,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 171 (min C)",
+    "prerequisite_courses": [
+      "MAT 171"
+    ]
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "172",
+    "course_title": "Precalculus Trigonometry",
+    "credits": 4,
+    "crn": "MAT-172-OAB2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Jansen, N",
+    "seats_open": 22,
+    "seats_total": 30,
+    "prerequisite_text": "MAT 171 (min C)",
+    "prerequisite_courses": [
+      "MAT 171"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3102,10 +3948,37 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Holl-Cross, C",
-    "seats_open": 4,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 172 or MAT 175",
+    "prerequisite_courses": [
+      "MAT 172",
+      "MAT 175"
+    ]
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "271",
+    "course_title": "Calculus I",
+    "credits": 4,
+    "crn": "MAT-271-OAB2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Bellardini, N",
+    "seats_open": 14,
+    "seats_total": 30,
+    "prerequisite_text": "MAT 172 or MAT 175",
+    "prerequisite_courses": [
+      "MAT 172",
+      "MAT 175"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3123,10 +3996,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Condrey, V",
-    "seats_open": 20,
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 271 (min C)",
+    "prerequisite_courses": [
+      "MAT 271"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3144,10 +4019,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Bellardini, N",
-    "seats_open": 22,
+    "seats_open": 7,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 272 (min C)",
+    "prerequisite_courses": [
+      "MAT 272"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3165,10 +4042,13 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Lloyd, B",
-    "seats_open": 0,
+    "seats_open": 4,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3186,10 +4066,37 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Mundie, C",
+    "seats_open": 4,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "MED",
+    "course_number": "121",
+    "course_title": "Medical Terminology I",
+    "credits": 3,
+    "crn": "MED-121-OAJ1",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-25",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Mundie, C",
     "seats_open": 26,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3207,31 +4114,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Lloyd, B",
-    "seats_open": 29,
+    "seats_open": 23,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "south-piedmont",
-    "term": "2026SU",
-    "course_prefix": "MED",
-    "course_number": "122",
-    "course_title": "Medical Terminology II",
-    "credits": 3,
-    "crn": "MED-122-OAJ2",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-06-25",
-    "location": "Web",
-    "campus": "WEB",
-    "mode": "online",
-    "instructor": "Mundie, C",
-    "seats_open": 30,
-    "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MED 121",
+    "prerequisite_courses": [
+      "MED 121"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3249,7 +4137,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Zullo, L",
-    "seats_open": 25,
+    "seats_open": 10,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3272,8 +4160,11 @@
     "instructor": "Hall, R",
     "seats_open": 0,
     "seats_total": 26,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3291,10 +4182,13 @@
     "campus": "WC",
     "mode": "hybrid",
     "instructor": "Hall, R",
-    "seats_open": 0,
+    "seats_open": 4,
     "seats_total": 26,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3303,7 +4197,7 @@
     "course_number": "110",
     "course_title": "Music Appreciation",
     "credits": 3,
-    "crn": "MUS-110-MFD1Y",
+    "crn": "MUS-110-MFD3Y",
     "days": "Th",
     "start_time": "6:00 PM",
     "end_time": "8:45 PM",
@@ -3312,31 +4206,13 @@
     "campus": "WC",
     "mode": "hybrid",
     "instructor": "Hall, R",
-    "seats_open": 24,
-    "seats_total": 48,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "south-piedmont",
-    "term": "2026SU",
-    "course_prefix": "MUS",
-    "course_number": "110",
-    "course_title": "Music Appreciation",
-    "credits": 3,
-    "crn": "MUS-110-MFD2Y",
-    "days": "Th",
-    "start_time": "6:00 PM",
-    "end_time": "8:45 PM",
-    "start_date": "2026-05-28",
-    "location": "O C H",
-    "campus": "WC",
-    "mode": "hybrid",
-    "instructor": "Hall, R",
-    "seats_open": 24,
-    "seats_total": 48,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 1,
+    "seats_total": 26,
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3356,8 +4232,11 @@
     "instructor": "Stow, N",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3377,8 +4256,11 @@
     "instructor": "Stow, N",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3395,11 +4277,38 @@
     "location": "Web",
     "campus": "WEB",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 27,
+    "instructor": "Melvin, W",
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "MUS",
+    "course_number": "110",
+    "course_title": "Music Appreciation",
+    "credits": 3,
+    "crn": "MUS-110-OAB4",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "McFarland-Weidman, A",
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3417,10 +4326,13 @@
     "campus": "WC",
     "mode": "hybrid",
     "instructor": "Monaghan, S",
-    "seats_open": 16,
+    "seats_open": 6,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 101 and NUR 103AB",
+    "prerequisite_courses": [
+      "NUR 101",
+      "NUR 103AB"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3437,11 +4349,13 @@
     "location": "Web",
     "campus": "WEB",
     "mode": "online",
-    "instructor": "Gee, N",
-    "seats_open": 35,
+    "instructor": "Gee, N, Norris, J, Bramlett, C, Brening, E",
+    "seats_open": 18,
     "seats_total": 40,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 111",
+    "prerequisite_courses": [
+      "NUR 111"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3458,9 +4372,76 @@
     "location": "O C H",
     "campus": "WC",
     "mode": "hybrid",
-    "instructor": "Gee, N, Walden, B",
-    "seats_open": 7,
+    "instructor": "Gee, N, Walden, B, Medlin, K",
+    "seats_open": 1,
     "seats_total": 16,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "OST",
+    "course_number": "288",
+    "course_title": "Medical Office Admin Capstone",
+    "credits": 3,
+    "crn": "OST-288-OSB1N",
+    "days": "W",
+    "start_time": "6:00 PM",
+    "end_time": "8:40 PM",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "in-person",
+    "instructor": "Slade, S",
+    "seats_open": 0,
+    "seats_total": 1,
+    "prerequisite_text": "OST 148 or HMT 210 and OST 243",
+    "prerequisite_courses": [
+      "OST 148",
+      "HMT 210",
+      "OST 243"
+    ]
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "PAD",
+    "course_number": "251",
+    "course_title": "Public Finance & Budgeting",
+    "credits": 3,
+    "crn": "PAD-251-OAB1",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Thomas, D",
+    "seats_open": 28,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "PAD",
+    "course_number": "252",
+    "course_title": "Public Policy Analysis",
+    "credits": 3,
+    "crn": "PAD-252-OAB1",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Baucom, C",
+    "seats_open": 28,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -3482,8 +4463,10 @@
     "instructor": "Didonato, A",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3503,8 +4486,33 @@
     "instructor": "Didonato, A",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "PHI",
+    "course_number": "240",
+    "course_title": "Introduction to Ethics",
+    "credits": 3,
+    "crn": "PHI-240-OAJ1",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-25",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Didonato, A",
+    "seats_open": 27,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3524,8 +4532,35 @@
     "instructor": "Gugsa, S",
     "seats_open": 2,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 171 or MAT 271",
+    "prerequisite_courses": [
+      "MAT 171",
+      "MAT 271"
+    ]
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "PHY",
+    "course_number": "151",
+    "course_title": "College Physics I",
+    "credits": 4,
+    "crn": "PHY-151-OAB2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Lundeen, A",
+    "seats_open": 10,
+    "seats_total": 30,
+    "prerequisite_text": "MAT 171 or MAT 271",
+    "prerequisite_courses": [
+      "MAT 171",
+      "MAT 271"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3543,10 +4578,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Gugsa, S",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 271",
+    "prerequisite_courses": [
+      "MAT 271"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3564,10 +4601,13 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Weatherly, N",
-    "seats_open": 12,
+    "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3585,10 +4625,13 @@
     "campus": "WC",
     "mode": "hybrid",
     "instructor": "McAlhaney, J",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 26,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3608,8 +4651,11 @@
     "instructor": "Olson, M",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3629,8 +4675,11 @@
     "instructor": "Olson, M",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3648,10 +4697,13 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Held, Z",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3669,10 +4721,37 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Argeny, S",
-    "seats_open": 15,
+    "seats_open": 1,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "PSY",
+    "course_number": "150",
+    "course_title": "General Psychology",
+    "credits": 3,
+    "crn": "PSY-150-OAB5",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Coulson, D",
+    "seats_open": 5,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3690,10 +4769,13 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Ryback, J",
-    "seats_open": 1,
+    "seats_open": 6,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3713,8 +4795,10 @@
     "instructor": "Ryback, J",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3734,8 +4818,11 @@
     "instructor": "Henderson-Adams, C",
     "seats_open": 3,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3755,8 +4842,11 @@
     "instructor": "Calabria, C",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3776,8 +4866,35 @@
     "instructor": "Carter, E",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "SOC",
+    "course_number": "210",
+    "course_title": "Introduction to Sociology",
+    "credits": 3,
+    "crn": "SOC-210-OAB3",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Hayes, K",
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3795,8 +4912,32 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Calabria, C",
-    "seats_open": 6,
+    "seats_open": 0,
     "seats_total": 30,
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "SON",
+    "course_number": "110AB",
+    "course_title": "Intro to Sonography",
+    "credits": 1,
+    "crn": "SON-110AB-MCB1",
+    "days": "T",
+    "start_time": "9:00 AM",
+    "end_time": "10:50 AM",
+    "start_date": "2026-06-02",
+    "location": "O C H",
+    "campus": "WC",
+    "mode": "in-person",
+    "instructor": "Autry, B",
+    "seats_open": 0,
+    "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -3816,10 +4957,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "McCraw, A",
-    "seats_open": 16,
+    "seats_open": 5,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SON 111AB",
+    "prerequisite_courses": [
+      "SON 111AB"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3837,10 +4980,12 @@
     "campus": "WC",
     "mode": "in-person",
     "instructor": "McCraw, A",
-    "seats_open": 15,
+    "seats_open": 5,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SON 120",
+    "prerequisite_courses": [
+      "SON 120"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3857,11 +5002,13 @@
     "location": "Web",
     "campus": "WEB",
     "mode": "online",
-    "instructor": "Autry, B",
-    "seats_open": 15,
+    "instructor": "Williams, J",
+    "seats_open": 5,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SON 241",
+    "prerequisite_courses": [
+      "SON 241"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3881,8 +5028,11 @@
     "instructor": "Rivera, P",
     "seats_open": 0,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3902,8 +5052,11 @@
     "instructor": "Rivera, P",
     "seats_open": 0,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3922,9 +5075,12 @@
     "mode": "online",
     "instructor": "Ragland, M",
     "seats_open": 0,
-    "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_total": 24,
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3942,10 +5098,61 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Krueger, S",
-    "seats_open": 4,
+    "seats_open": 0,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "SPA",
+    "course_number": "111",
+    "course_title": "Elementary Spanish I",
+    "credits": 3,
+    "crn": "SPA-111-OAB5",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Nino, D",
+    "seats_open": 0,
+    "seats_total": 24,
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "SPA",
+    "course_number": "111",
+    "course_title": "Elementary Spanish I",
+    "credits": 3,
+    "crn": "SPA-111-OAB6",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Web",
+    "campus": "WEB",
+    "mode": "online",
+    "instructor": "Rivera, P",
+    "seats_open": 1,
+    "seats_total": 24,
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3964,9 +5171,11 @@
     "mode": "online",
     "instructor": "Ragland, M",
     "seats_open": 0,
-    "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_total": 24,
+    "prerequisite_text": "SPA 111 (min C)",
+    "prerequisite_courses": [
+      "SPA 111"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -3986,8 +5195,10 @@
     "instructor": "Nicosia, T",
     "seats_open": 0,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 111 (min C)",
+    "prerequisite_courses": [
+      "SPA 111"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -4004,20 +5215,22 @@
     "location": "Web",
     "campus": "WEB",
     "mode": "online",
-    "instructor": "Nino, D",
+    "instructor": "Bobadilla, J",
     "seats_open": 0,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 111 (min C)",
+    "prerequisite_courses": [
+      "SPA 111"
+    ]
   },
   {
     "college_code": "south-piedmont",
     "term": "2026SU",
     "course_prefix": "SPA",
-    "course_number": "181",
-    "course_title": "Spanish Lab 1",
-    "credits": 1,
-    "crn": "SPA-181-OAB1",
+    "course_number": "112",
+    "course_title": "Elementary Spanish II",
+    "credits": 3,
+    "crn": "SPA-112-OAB4",
     "days": "M T W Th F Sa Su",
     "start_time": "",
     "end_time": "",
@@ -4025,11 +5238,13 @@
     "location": "Web",
     "campus": "WEB",
     "mode": "online",
-    "instructor": "Ragland, M",
-    "seats_open": 22,
+    "instructor": "Nicosia, T",
+    "seats_open": 17,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 111 (min C)",
+    "prerequisite_courses": [
+      "SPA 111"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -4047,10 +5262,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Ragland, M",
-    "seats_open": 24,
+    "seats_open": 23,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 111",
+    "prerequisite_courses": [
+      "SPA 111"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -4068,10 +5285,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Nino, D",
-    "seats_open": 16,
+    "seats_open": 0,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 112",
+    "prerequisite_courses": [
+      "SPA 112"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -4089,10 +5308,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Rivera, P",
-    "seats_open": 23,
+    "seats_open": 21,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 212",
+    "prerequisite_courses": [
+      "SPA 212"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -4110,10 +5331,12 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Nino, D",
-    "seats_open": 24,
+    "seats_open": 21,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 211",
+    "prerequisite_courses": [
+      "SPA 211"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -4131,7 +5354,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Benavent, L",
-    "seats_open": 28,
+    "seats_open": 26,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4161,27 +5384,6 @@
     "college_code": "south-piedmont",
     "term": "2026SU",
     "course_prefix": "SPI",
-    "course_number": "221",
-    "course_title": "Consecutive Interp I",
-    "credits": 3,
-    "crn": "SPI-221-OAB1",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-27",
-    "location": "Web",
-    "campus": "WEB",
-    "mode": "online",
-    "instructor": "Korda, N",
-    "seats_open": 26,
-    "seats_total": 26,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "south-piedmont",
-    "term": "2026SU",
-    "course_prefix": "SPI",
     "course_number": "241",
     "course_title": "Legal Interpreting I",
     "credits": 3,
@@ -4194,7 +5396,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Korda, N",
-    "seats_open": 26,
+    "seats_open": 22,
     "seats_total": 26,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4236,7 +5438,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Korda, N",
-    "seats_open": 26,
+    "seats_open": 23,
     "seats_total": 26,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4257,10 +5459,15 @@
     "campus": "WC",
     "mode": "in-person",
     "instructor": "Roy, A",
-    "seats_open": 7,
+    "seats_open": 6,
     "seats_total": 10,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SUR 110 and SUR 111 and SUR 123 and SUR 123AB",
+    "prerequisite_courses": [
+      "SUR 110",
+      "SUR 111",
+      "SUR 123",
+      "SUR 123AB"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -4278,10 +5485,15 @@
     "campus": "WC",
     "mode": "in-person",
     "instructor": "Roy, A",
-    "seats_open": 7,
+    "seats_open": 6,
     "seats_total": 10,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SUR 122AB and SUR 110 and SUR 111 and SUR 122",
+    "prerequisite_courses": [
+      "SUR 122AB",
+      "SUR 110",
+      "SUR 111",
+      "SUR 122"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -4299,7 +5511,7 @@
     "campus": "HS",
     "mode": "hybrid",
     "instructor": "Baumgartner, W",
-    "seats_open": 9,
+    "seats_open": 8,
     "seats_total": 10,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4341,7 +5553,7 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Davis, J",
-    "seats_open": 11,
+    "seats_open": 1,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4392,6 +5604,27 @@
     "college_code": "south-piedmont",
     "term": "2026SU",
     "course_prefix": "WBL",
+    "course_number": "111E",
+    "course_title": "Work-Based Learning I",
+    "credits": 1,
+    "crn": "WBL-111E-900",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Off Camp-Union",
+    "campus": "9000",
+    "mode": "in-person",
+    "instructor": "Davis, J",
+    "seats_open": 19,
+    "seats_total": 20,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "WBL",
     "course_number": "111I",
     "course_title": "Work-Based Learning I",
     "credits": 1,
@@ -4413,6 +5646,69 @@
     "college_code": "south-piedmont",
     "term": "2026SU",
     "course_prefix": "WBL",
+    "course_number": "111K",
+    "course_title": "Work-Based Learning I",
+    "credits": 1,
+    "crn": "WBL-111K-900",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Off Camp-Union",
+    "campus": "9000",
+    "mode": "in-person",
+    "instructor": "Davis, J",
+    "seats_open": 20,
+    "seats_total": 20,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "WBL",
+    "course_number": "111O",
+    "course_title": "Work-Based Learning I",
+    "credits": 1,
+    "crn": "WBL-111O-900",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Off Camp-Union",
+    "campus": "9000",
+    "mode": "in-person",
+    "instructor": "Davis, J",
+    "seats_open": 20,
+    "seats_total": 20,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "WBL",
+    "course_number": "111T",
+    "course_title": "Work-Based Learning I",
+    "credits": 1,
+    "crn": "WBL-111T-900",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Off Camp-Union",
+    "campus": "9000",
+    "mode": "in-person",
+    "instructor": "Davis, J",
+    "seats_open": 19,
+    "seats_total": 20,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "WBL",
     "course_number": "111V",
     "course_title": "Work-Based Learning I",
     "credits": 1,
@@ -4425,7 +5721,28 @@
     "campus": "9000",
     "mode": "in-person",
     "instructor": "Davis, J",
-    "seats_open": 20,
+    "seats_open": 15,
+    "seats_total": 20,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "south-piedmont",
+    "term": "2026SU",
+    "course_prefix": "WBL",
+    "course_number": "111W",
+    "course_title": "Work-Based Learning I",
+    "credits": 1,
+    "crn": "WBL-111W-900",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-27",
+    "location": "Off Camp-Union",
+    "campus": "9000",
+    "mode": "in-person",
+    "instructor": "Davis, J",
+    "seats_open": 19,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4446,10 +5763,15 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Davis, J",
-    "seats_open": 20,
+    "seats_open": 17,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WBL 111 or WBL 112 or WBL 113 or WBL 114",
+    "prerequisite_courses": [
+      "WBL 111",
+      "WBL 112",
+      "WBL 113",
+      "WBL 114"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -4467,10 +5789,15 @@
     "campus": "WEB",
     "mode": "online",
     "instructor": "Davis, J",
-    "seats_open": 20,
+    "seats_open": 15,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WBL 111 or WBL 112 or WBL 113 or WBL 114",
+    "prerequisite_courses": [
+      "WBL 111",
+      "WBL 112",
+      "WBL 113",
+      "WBL 114"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -4490,8 +5817,13 @@
     "instructor": "Davis, J",
     "seats_open": 20,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WBL 121 or WBL 122 or WBL 123 or WBL 124",
+    "prerequisite_courses": [
+      "WBL 121",
+      "WBL 122",
+      "WBL 123",
+      "WBL 124"
+    ]
   },
   {
     "college_code": "south-piedmont",
@@ -4511,7 +5843,11 @@
     "instructor": "Tyson, M, Fleming, B",
     "seats_open": 5,
     "seats_total": 10,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 115 and WLD 121 and WLD 131",
+    "prerequisite_courses": [
+      "WLD 115",
+      "WLD 121",
+      "WLD 131"
+    ]
   }
 ]

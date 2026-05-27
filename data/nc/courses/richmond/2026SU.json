@@ -15,7 +15,7 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Tonya C. Chavis",
-    "seats_open": 0,
+    "seats_open": 4,
     "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -36,6 +36,27 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Crystal R. Shaw",
+    "seats_open": 1,
+    "seats_total": 32,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "richmond",
+    "term": "2026SU",
+    "course_prefix": "ACA",
+    "course_number": "122",
+    "course_title": "Transfer & Career Success",
+    "credits": 1,
+    "crn": "ACA-122-W3",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "online",
+    "instructor": "Emily W. Jarrell",
     "seats_open": 7,
     "seats_total": 32,
     "prerequisite_text": null,
@@ -57,7 +78,28 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "James O. Murr",
-    "seats_open": 7,
+    "seats_open": 2,
+    "seats_total": 32,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "richmond",
+    "term": "2026SU",
+    "course_prefix": "ACC",
+    "course_number": "120",
+    "course_title": "Prin of Financial Accounting",
+    "credits": 4,
+    "crn": "ACC-120-W2",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "online",
+    "instructor": "James O. Murr",
+    "seats_open": 21,
     "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -77,11 +119,13 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "online",
-    "instructor": "James O. Murr",
-    "seats_open": 21,
+    "instructor": "Wendy B. Pope-Gossage",
+    "seats_open": 22,
     "seats_total": 32,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ACC 120",
+    "prerequisite_courses": [
+      "ACC 120"
+    ]
   },
   {
     "college_code": "richmond",
@@ -128,6 +172,27 @@
   {
     "college_code": "richmond",
     "term": "2026SU",
+    "course_prefix": "ART",
+    "course_number": "111",
+    "course_title": "Art Appreciation",
+    "credits": 3,
+    "crn": "ART-111-W3",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "online",
+    "instructor": "Elizabeth A. Hardig-Degraff",
+    "seats_open": 6,
+    "seats_total": 32,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "richmond",
+    "term": "2026SU",
     "course_prefix": "BIO",
     "course_number": "110",
     "course_title": "Principles of Biology",
@@ -141,7 +206,7 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Kayla C. Taylor, Ashley L. Curtis",
-    "seats_open": 20,
+    "seats_open": 15,
     "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -162,7 +227,7 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Kayla C. Taylor, Ashley L. Curtis",
-    "seats_open": 21,
+    "seats_open": 6,
     "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -183,7 +248,7 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Lori A. Frear",
-    "seats_open": 25,
+    "seats_open": 19,
     "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -225,7 +290,28 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Quentin K. Locklear",
-    "seats_open": 6,
+    "seats_open": 2,
+    "seats_total": 32,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "richmond",
+    "term": "2026SU",
+    "course_prefix": "BIO",
+    "course_number": "165",
+    "course_title": "Anatomy and Physiology I",
+    "credits": 4,
+    "crn": "BIO-165-W2",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "online",
+    "instructor": "Qunna D. Morrow",
+    "seats_open": 19,
     "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -246,10 +332,12 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Lori A. Frear",
-    "seats_open": 0,
-    "seats_total": 32,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 5,
+    "seats_total": 36,
+    "prerequisite_text": "BIO 165",
+    "prerequisite_courses": [
+      "BIO 165"
+    ]
   },
   {
     "college_code": "richmond",
@@ -267,10 +355,12 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Mirian Watts",
-    "seats_open": 8,
-    "seats_total": 32,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 9,
+    "seats_total": 36,
+    "prerequisite_text": "BIO 165",
+    "prerequisite_courses": [
+      "BIO 165"
+    ]
   },
   {
     "college_code": "richmond",
@@ -288,8 +378,8 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Natalie L. Thompson",
-    "seats_open": 0,
-    "seats_total": 32,
+    "seats_open": 5,
+    "seats_total": 31,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -309,7 +399,7 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Natalie L. Thompson",
-    "seats_open": 18,
+    "seats_open": 5,
     "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -330,8 +420,8 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Lori D. McLaughlin",
-    "seats_open": 14,
-    "seats_total": 32,
+    "seats_open": 1,
+    "seats_total": 40,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -351,8 +441,8 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Amber M. Webster",
-    "seats_open": 9,
-    "seats_total": 32,
+    "seats_open": 3,
+    "seats_total": 35,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -372,7 +462,7 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Kelley N. Beam",
-    "seats_open": 15,
+    "seats_open": 7,
     "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -393,10 +483,15 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Mary Anne Evans, Matthew F. Evans",
-    "seats_open": 8,
-    "seats_total": 32,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 40,
+    "prerequisite_text": "MAT 143 or MAT 152 or MAT 171 or MAT 271",
+    "prerequisite_courses": [
+      "MAT 143",
+      "MAT 152",
+      "MAT 171",
+      "MAT 271"
+    ]
   },
   {
     "college_code": "richmond",
@@ -414,10 +509,12 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Mary Anne Evans, Matthew F. Evans",
-    "seats_open": 25,
+    "seats_open": 17,
     "seats_total": 32,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 151",
+    "prerequisite_courses": [
+      "CHM 151"
+    ]
   },
   {
     "college_code": "richmond",
@@ -435,10 +532,12 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Mary Anne Evans, Matthew F. Evans",
-    "seats_open": 17,
+    "seats_open": 9,
     "seats_total": 32,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 152",
+    "prerequisite_courses": [
+      "CHM 152"
+    ]
   },
   {
     "college_code": "richmond",
@@ -456,10 +555,12 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Mary Anne Evans, Matthew F. Evans",
-    "seats_open": 29,
+    "seats_open": 12,
     "seats_total": 32,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 251",
+    "prerequisite_courses": [
+      "CHM 251"
+    ]
   },
   {
     "college_code": "richmond",
@@ -477,7 +578,7 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Lara J. Nosser",
-    "seats_open": 16,
+    "seats_open": 6,
     "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -519,8 +620,8 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Lara J. Nosser",
-    "seats_open": 5,
-    "seats_total": 32,
+    "seats_open": 0,
+    "seats_total": 40,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -540,7 +641,7 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Shelby M. Flynn",
-    "seats_open": 27,
+    "seats_open": 22,
     "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -561,7 +662,7 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Michael A. Fairley",
-    "seats_open": 20,
+    "seats_open": 18,
     "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -582,8 +683,8 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Lewis D. Adams",
-    "seats_open": 3,
-    "seats_total": 32,
+    "seats_open": 1,
+    "seats_total": 40,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -603,7 +704,7 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Lewis D. Adams",
-    "seats_open": 20,
+    "seats_open": 7,
     "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -624,7 +725,7 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Sheila A. Regan",
-    "seats_open": 13,
+    "seats_open": 16,
     "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -645,8 +746,29 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Sheila A. Regan",
-    "seats_open": 25,
+    "seats_open": 18,
     "seats_total": 32,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "richmond",
+    "term": "2026SU",
+    "course_prefix": "EDU",
+    "course_number": "151",
+    "course_title": "Creative Activities",
+    "credits": 3,
+    "crn": "EDU-151-W1",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "online",
+    "instructor": "Sheila A. Regan",
+    "seats_open": 2,
+    "seats_total": 3,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -666,7 +788,7 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Sheila A. Regan",
-    "seats_open": 11,
+    "seats_open": 16,
     "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -687,7 +809,7 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Krystal O. Harris",
-    "seats_open": 9,
+    "seats_open": 8,
     "seats_total": 10,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -708,10 +830,14 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Trinity R. Stanley",
-    "seats_open": 11,
+    "seats_open": 6,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EUS 110 and ELC 112 and ELC 131",
+    "prerequisite_courses": [
+      "EUS 110",
+      "ELC 112",
+      "ELC 131"
+    ]
   },
   {
     "college_code": "richmond",
@@ -729,31 +855,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Trinity R. Stanley",
-    "seats_open": 9,
-    "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "richmond",
-    "term": "2026SU",
-    "course_prefix": "EUS",
-    "course_number": "215",
-    "course_title": "Lg High Volt Power Trans II",
-    "credits": 3,
-    "crn": "EUS-215-01",
-    "days": "M T W Th",
-    "start_time": "8:20 AM",
-    "end_time": "10:45 AM",
-    "start_date": "2026-05-26",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Richard J. Boles",
     "seats_open": 7,
-    "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_total": 20,
+    "prerequisite_text": "EUS 110",
+    "prerequisite_courses": [
+      "EUS 110"
+    ]
   },
   {
     "college_code": "richmond",
@@ -771,10 +878,14 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Austin J. Webster",
-    "seats_open": 6,
+    "seats_open": 9,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EUS 130 and ELC 117 and ELN 231",
+    "prerequisite_courses": [
+      "EUS 130",
+      "ELC 117",
+      "ELN 231"
+    ]
   },
   {
     "college_code": "richmond",
@@ -791,11 +902,14 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Charles B. Terry",
-    "seats_open": 11,
+    "instructor": "Richard J. Boles",
+    "seats_open": 17,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EUS 110 and EUS 130",
+    "prerequisite_courses": [
+      "EUS 110",
+      "EUS 130"
+    ]
   },
   {
     "college_code": "richmond",
@@ -813,10 +927,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Richard J. Boles",
-    "seats_open": 6,
+    "seats_open": 10,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EUS 130",
+    "prerequisite_courses": [
+      "EUS 130"
+    ]
   },
   {
     "college_code": "richmond",
@@ -834,10 +950,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Austin J. Webster",
-    "seats_open": 9,
+    "seats_open": 8,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EUS 130",
+    "prerequisite_courses": [
+      "EUS 130"
+    ]
   },
   {
     "college_code": "richmond",
@@ -857,8 +975,11 @@
     "instructor": "James A. Saiz, II",
     "seats_open": 14,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ELC 112 and ELC 131",
+    "prerequisite_courses": [
+      "ELC 112",
+      "ELC 131"
+    ]
   },
   {
     "college_code": "richmond",
@@ -875,11 +996,14 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Charles B. Terry",
-    "seats_open": 10,
+    "instructor": "Austin J. Webster",
+    "seats_open": 11,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ELC 112 and ELC 131",
+    "prerequisite_courses": [
+      "ELC 112",
+      "ELC 131"
+    ]
   },
   {
     "college_code": "richmond",
@@ -897,10 +1021,14 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Joseph C. Wincklhofer, III",
-    "seats_open": 9,
+    "seats_open": 8,
     "seats_total": 10,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EMS 122 and EMS 130 and EMS 160",
+    "prerequisite_courses": [
+      "EMS 122",
+      "EMS 130",
+      "EMS 160"
+    ]
   },
   {
     "college_code": "richmond",
@@ -918,31 +1046,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Joseph C. Wincklhofer, III",
-    "seats_open": 9,
+    "seats_open": 8,
     "seats_total": 10,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "richmond",
-    "term": "2026SU",
-    "course_prefix": "ENG",
-    "course_number": "025",
-    "course_title": "College English Skills",
-    "credits": 3,
-    "crn": "ENG-025-H1",
-    "days": "T Th",
-    "start_time": "10:00 AM",
-    "end_time": "11:30 AM",
-    "start_date": "2026-05-26",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Althea J. Hunsucker",
-    "seats_open": 16,
-    "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EMS 121 or EMS 122",
+    "prerequisite_courses": [
+      "EMS 121",
+      "EMS 122"
+    ]
   },
   {
     "college_code": "richmond",
@@ -981,8 +1091,8 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Tery F. Davis",
-    "seats_open": 11,
-    "seats_total": 16,
+    "seats_open": 1,
+    "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1002,10 +1112,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Althea J. Hunsucker",
-    "seats_open": 19,
+    "seats_open": 18,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "richmond",
@@ -1023,10 +1135,12 @@
     "campus": "SCOT",
     "mode": "in-person",
     "instructor": "Jamie E. Sadler",
-    "seats_open": 18,
+    "seats_open": 21,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "richmond",
@@ -1044,10 +1158,12 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Charles E. Dickerson",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "richmond",
@@ -1065,10 +1181,35 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Charles E. Dickerson",
-    "seats_open": 12,
+    "seats_open": 2,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
+  },
+  {
+    "college_code": "richmond",
+    "term": "2026SU",
+    "course_prefix": "ENG",
+    "course_number": "111",
+    "course_title": "Writing and Inquiry",
+    "credits": 3,
+    "crn": "ENG-111-W3",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "online",
+    "instructor": "Charles E. Dickerson",
+    "seats_open": 13,
+    "seats_total": 28,
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "richmond",
@@ -1086,10 +1227,12 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Charles E. Dickerson",
-    "seats_open": 1,
-    "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 7,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "richmond",
@@ -1107,10 +1250,12 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Althea J. Hunsucker",
-    "seats_open": 1,
-    "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 6,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "richmond",
@@ -1127,11 +1272,13 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 0,
-    "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "instructor": "Althea J. Hunsucker",
+    "seats_open": 3,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "richmond",
@@ -1148,11 +1295,13 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 8,
-    "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "instructor": "Althea J. Hunsucker",
+    "seats_open": 4,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "richmond",
@@ -1170,10 +1319,12 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Jamie E. Sadler",
-    "seats_open": 24,
+    "seats_open": 22,
     "seats_total": 32,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 112",
+    "prerequisite_courses": [
+      "ENG 112"
+    ]
   },
   {
     "college_code": "richmond",
@@ -1191,7 +1342,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Mr. Jacob Goodwin",
-    "seats_open": 27,
+    "seats_open": 24,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1212,7 +1363,7 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Julie D. Layne",
-    "seats_open": 18,
+    "seats_open": 7,
     "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1233,7 +1384,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Mr. Jacob Goodwin",
-    "seats_open": 26,
+    "seats_open": 25,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1253,8 +1404,8 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "online",
-    "instructor": "Mr. Jacob Goodwin",
-    "seats_open": 22,
+    "instructor": "Julie D. Layne",
+    "seats_open": 15,
     "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1275,7 +1426,7 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Amanda M. McKenzie",
-    "seats_open": 3,
+    "seats_open": 0,
     "seats_total": 40,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1296,7 +1447,7 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Amanda M. McKenzie",
-    "seats_open": 2,
+    "seats_open": 1,
     "seats_total": 36,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1317,8 +1468,8 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Amanda M. McKenzie",
-    "seats_open": 12,
-    "seats_total": 32,
+    "seats_open": 10,
+    "seats_total": 40,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1338,8 +1489,8 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Kimberly M. Goard",
-    "seats_open": 2,
-    "seats_total": 32,
+    "seats_open": 1,
+    "seats_total": 36,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1359,8 +1510,8 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Kimberly M. Goard",
-    "seats_open": 19,
-    "seats_total": 32,
+    "seats_open": 4,
+    "seats_total": 36,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1380,7 +1531,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Warren L. Barber",
-    "seats_open": 26,
+    "seats_open": 23,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1401,7 +1552,28 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Warren L. Barber",
-    "seats_open": 1,
+    "seats_open": 2,
+    "seats_total": 32,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "richmond",
+    "term": "2026SU",
+    "course_prefix": "CIS",
+    "course_number": "110",
+    "course_title": "Introduction to Computers",
+    "credits": 3,
+    "crn": "CIS-110-W2",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "online",
+    "instructor": "Warren L. Barber",
+    "seats_open": 13,
     "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1421,7 +1593,7 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Sebrina R. Cropper",
+    "instructor": "James I. Allred",
     "seats_open": 18,
     "seats_total": 20,
     "prerequisite_text": null,
@@ -1442,8 +1614,8 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 0,
+    "instructor": "Julia P. Parks",
+    "seats_open": 1,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1463,8 +1635,8 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 19,
+    "instructor": "Sebrina R. Cropper",
+    "seats_open": 2,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1485,7 +1657,7 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Shari N. Brockington",
-    "seats_open": 17,
+    "seats_open": 11,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1505,11 +1677,13 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Holli H. Brown",
-    "seats_open": 14,
+    "instructor": "Sebrina R. Cropper",
+    "seats_open": 16,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 025",
+    "prerequisite_courses": [
+      "MAT 025"
+    ]
   },
   {
     "college_code": "richmond",
@@ -1527,10 +1701,12 @@
     "campus": "SCOT",
     "mode": "in-person",
     "instructor": "Shari N. Brockington",
-    "seats_open": 20,
+    "seats_open": 19,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 025",
+    "prerequisite_courses": [
+      "MAT 025"
+    ]
   },
   {
     "college_code": "richmond",
@@ -1548,10 +1724,12 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Holli H. Brown",
-    "seats_open": 0,
-    "seats_total": 32,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 1,
+    "seats_total": 40,
+    "prerequisite_text": "MAT 025",
+    "prerequisite_courses": [
+      "MAT 025"
+    ]
   },
   {
     "college_code": "richmond",
@@ -1569,10 +1747,12 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Michelle B. Chappell",
-    "seats_open": 11,
-    "seats_total": 32,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 4,
+    "seats_total": 40,
+    "prerequisite_text": "MAT 025",
+    "prerequisite_courses": [
+      "MAT 025"
+    ]
   },
   {
     "college_code": "richmond",
@@ -1590,10 +1770,12 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Molly A. Hayes",
-    "seats_open": 16,
+    "seats_open": 9,
     "seats_total": 32,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 025",
+    "prerequisite_courses": [
+      "MAT 025"
+    ]
   },
   {
     "college_code": "richmond",
@@ -1611,10 +1793,12 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "James I. Allred",
-    "seats_open": 25,
+    "seats_open": 6,
     "seats_total": 32,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 035",
+    "prerequisite_courses": [
+      "MAT 035"
+    ]
   },
   {
     "college_code": "richmond",
@@ -1632,10 +1816,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Michelle B. Chappell",
-    "seats_open": 15,
+    "seats_open": 14,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 171",
+    "prerequisite_courses": [
+      "MAT 171"
+    ]
   },
   {
     "college_code": "richmond",
@@ -1655,8 +1841,10 @@
     "instructor": "Shari N. Brockington",
     "seats_open": 19,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 171",
+    "prerequisite_courses": [
+      "MAT 171"
+    ]
   },
   {
     "college_code": "richmond",
@@ -1674,10 +1862,13 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "James I. Allred",
-    "seats_open": 26,
+    "seats_open": 20,
     "seats_total": 32,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 172 or MAT 175",
+    "prerequisite_courses": [
+      "MAT 172",
+      "MAT 175"
+    ]
   },
   {
     "college_code": "richmond",
@@ -1695,8 +1886,8 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Madelyn C. Chappell",
-    "seats_open": 8,
-    "seats_total": 32,
+    "seats_open": 2,
+    "seats_total": 40,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1716,7 +1907,7 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Madelyn C. Chappell",
-    "seats_open": 22,
+    "seats_open": 19,
     "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1737,10 +1928,13 @@
     "campus": "SCOT",
     "mode": "in-person",
     "instructor": "Jessica W. Brigman, Vanessa Revels",
-    "seats_open": 22,
+    "seats_open": 10,
     "seats_total": 22,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 101 and NUR 102",
+    "prerequisite_courses": [
+      "NUR 101",
+      "NUR 102"
+    ]
   },
   {
     "college_code": "richmond",
@@ -1757,11 +1951,23 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Dana M. Diaz, Dora S. Privette, Robert L. Player, Gina H. Stocks",
-    "seats_open": 44,
+    "instructor": "Dana M. Diaz, Robert L. Player, Gina H. Stocks, Tierra C. Davis, Giovanna A. Pratt",
+    "seats_open": 21,
     "seats_total": 55,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 111 and BIO 163 or BIO 165 or BIO 166 and BIO 275 and ENG 111 and ENG 112 and HUM 115 and MAT 143 and PSY 150 and PSY 241",
+    "prerequisite_courses": [
+      "NUR 111",
+      "BIO 163",
+      "BIO 165",
+      "BIO 166",
+      "BIO 275",
+      "ENG 111",
+      "ENG 112",
+      "HUM 115",
+      "MAT 143",
+      "PSY 150",
+      "PSY 241"
+    ]
   },
   {
     "college_code": "richmond",
@@ -1779,10 +1985,12 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Morris D. Carter, II",
-    "seats_open": 19,
+    "seats_open": 7,
     "seats_total": 32,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "richmond",
@@ -1800,7 +2008,7 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Gary P. Aycock",
-    "seats_open": 24,
+    "seats_open": 14,
     "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1821,10 +2029,12 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Jordan W. Watkins",
-    "seats_open": 30,
+    "seats_open": 24,
     "seats_total": 32,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PHY 110",
+    "prerequisite_courses": [
+      "PHY 110"
+    ]
   },
   {
     "college_code": "richmond",
@@ -1842,10 +2052,12 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Jordan W. Watkins",
-    "seats_open": 30,
+    "seats_open": 24,
     "seats_total": 32,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PHY 110A",
+    "prerequisite_courses": [
+      "PHY 110A"
+    ]
   },
   {
     "college_code": "richmond",
@@ -1863,10 +2075,13 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Jordan W. Watkins",
-    "seats_open": 27,
+    "seats_open": 7,
     "seats_total": 32,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 171 or MAT 271",
+    "prerequisite_courses": [
+      "MAT 171",
+      "MAT 271"
+    ]
   },
   {
     "college_code": "richmond",
@@ -1884,10 +2099,12 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Jordan W. Watkins",
-    "seats_open": 27,
+    "seats_open": 22,
     "seats_total": 32,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PHY 151",
+    "prerequisite_courses": [
+      "PHY 151"
+    ]
   },
   {
     "college_code": "richmond",
@@ -1905,7 +2122,7 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Catelin M. Jones-May",
-    "seats_open": 14,
+    "seats_open": 9,
     "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1926,8 +2143,8 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Amy D. Williams",
-    "seats_open": 1,
-    "seats_total": 32,
+    "seats_open": 5,
+    "seats_total": 40,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1947,8 +2164,8 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Amy D. Williams",
-    "seats_open": 11,
-    "seats_total": 32,
+    "seats_open": 7,
+    "seats_total": 40,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1970,8 +2187,10 @@
     "instructor": "Amy D. Williams",
     "seats_open": 1,
     "seats_total": 32,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "richmond",
@@ -1989,10 +2208,12 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Tarrah B. Dawkins",
-    "seats_open": 21,
+    "seats_open": 9,
     "seats_total": 32,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "richmond",
@@ -2010,10 +2231,12 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Tarrah B. Dawkins",
-    "seats_open": 24,
+    "seats_open": 23,
     "seats_total": 32,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "richmond",
@@ -2031,7 +2254,7 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Morris D. Carter, II",
-    "seats_open": 20,
+    "seats_open": 11,
     "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2052,7 +2275,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Tiffany G. Covington",
-    "seats_open": 24,
+    "seats_open": 21,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2073,7 +2296,7 @@
     "campus": "SCOT",
     "mode": "in-person",
     "instructor": "Tiffany G. Covington",
-    "seats_open": 16,
+    "seats_open": 14,
     "seats_total": 22,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2115,8 +2338,50 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Angelia G. Adams",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 40,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "richmond",
+    "term": "2026SU",
+    "course_prefix": "SOC",
+    "course_number": "210",
+    "course_title": "Introduction to Sociology",
+    "credits": 3,
+    "crn": "SOC-210-W3",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "online",
+    "instructor": "Angelia G. Adams",
+    "seats_open": 12,
+    "seats_total": 40,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "richmond",
+    "term": "2026SU",
+    "course_prefix": "SOC",
+    "course_number": "225",
+    "course_title": "Social Diversity",
+    "credits": 3,
+    "crn": "SOC-225-W1",
+    "days": "",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Main Campus",
+    "campus": "MC",
+    "mode": "online",
+    "instructor": "Tiffany G. Covington",
+    "seats_open": 18,
+    "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2136,7 +2401,7 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Tiffany G. Covington",
-    "seats_open": 10,
+    "seats_open": 6,
     "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2157,7 +2422,7 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Will H. Albertsen",
-    "seats_open": 25,
+    "seats_open": 20,
     "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2178,10 +2443,12 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Will H. Albertsen",
-    "seats_open": 23,
+    "seats_open": 17,
     "seats_total": 32,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 111",
+    "prerequisite_courses": [
+      "SPA 111"
+    ]
   },
   {
     "college_code": "richmond",
@@ -2199,10 +2466,12 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Will H. Albertsen",
-    "seats_open": 28,
+    "seats_open": 20,
     "seats_total": 32,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 112",
+    "prerequisite_courses": [
+      "SPA 112"
+    ]
   },
   {
     "college_code": "richmond",
@@ -2220,10 +2489,92 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Lori D. McLaughlin",
-    "seats_open": 3,
+    "seats_open": 2,
     "seats_total": 3,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EDU 119 and EDU 131 and EDU 144 and EDU 145 and EDU 146 and EDU 151 and EDU 153 and EDU 221 and EDU 271 and EDU 280 and ACC 120 and ACC 121 and HMT 110 and HMT 210 and HMT 211 and HMT 220 and MED 118 and MED 121 and MED 122 and ACC 120 and BUS 110 and BUS 115 and BUS 137 and CIS 110 and CIS 111 and ECO 252 and MKT 120 and ACC 120 and ACC 121 and ACC 129 and ACC 220 and BUS 115 and CIS 110 and ECO 251 and AHR 110 and AHR 111 and AHR 112 and AHR 113 and AHR 114 and AHR 130 and AHR 211 and AHR 212 and AHR 213 and CSC 153 and CTS 120 and CTS 220 and ELC 131 and ELN 131 and ELN 133 and ELN 232 and CTI 110 and CTI 120 and CTS 115 and CTS 120 and NET 125 and SEC 110 and SEC 160 and CTI 110 and CTI 120 and CTS 115 and CTS 120 and CTS 155 and CTS 220 and SEC 110 and CTI 110 and CTI 120 and CSC 151 and CSC 153 and CTS 115 and CTS 120 and DBA 120 and CTI 110 and CTI 120 and CTS 115 and CTS 120 and DBA 120 and HBI 110 and ATR 112 and CIS 110 and DFT 151 and ELC 112 and ELC 131 and ELC 117 and ELC 213 and ELN 260 and HYD 110 and ISC 112 and MEC 130 and PHY 131 and PHY 151 and EME 111 and EME 112 and GIS 110 and GIS 111 and PAD 151 and HSE 110 and HSE 112 and HSE 123 and HSE 125 and HSE 210 and HSE 225 and PSY 150 and PSY 241 and SOC 213 and WBL 115",
+    "prerequisite_courses": [
+      "EDU 119",
+      "EDU 131",
+      "EDU 144",
+      "EDU 145",
+      "EDU 146",
+      "EDU 151",
+      "EDU 153",
+      "EDU 221",
+      "EDU 271",
+      "EDU 280",
+      "ACC 120",
+      "ACC 121",
+      "HMT 110",
+      "HMT 210",
+      "HMT 211",
+      "HMT 220",
+      "MED 118",
+      "MED 121",
+      "MED 122",
+      "BUS 110",
+      "BUS 115",
+      "BUS 137",
+      "CIS 110",
+      "CIS 111",
+      "ECO 252",
+      "MKT 120",
+      "ACC 129",
+      "ACC 220",
+      "ECO 251",
+      "AHR 110",
+      "AHR 111",
+      "AHR 112",
+      "AHR 113",
+      "AHR 114",
+      "AHR 130",
+      "AHR 211",
+      "AHR 212",
+      "AHR 213",
+      "CSC 153",
+      "CTS 120",
+      "CTS 220",
+      "ELC 131",
+      "ELN 131",
+      "ELN 133",
+      "ELN 232",
+      "CTI 110",
+      "CTI 120",
+      "CTS 115",
+      "NET 125",
+      "SEC 110",
+      "SEC 160",
+      "CTS 155",
+      "CSC 151",
+      "DBA 120",
+      "HBI 110",
+      "ATR 112",
+      "DFT 151",
+      "ELC 112",
+      "ELC 117",
+      "ELC 213",
+      "ELN 260",
+      "HYD 110",
+      "ISC 112",
+      "MEC 130",
+      "PHY 131",
+      "PHY 151",
+      "EME 111",
+      "EME 112",
+      "GIS 110",
+      "GIS 111",
+      "PAD 151",
+      "HSE 110",
+      "HSE 112",
+      "HSE 123",
+      "HSE 125",
+      "HSE 210",
+      "HSE 225",
+      "PSY 150",
+      "PSY 241",
+      "SOC 213",
+      "WBL 115"
+    ]
   },
   {
     "college_code": "richmond",
@@ -2241,10 +2592,92 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Jamison S. Sears",
-    "seats_open": 23,
+    "seats_open": 19,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EDU 119 and EDU 131 and EDU 144 and EDU 145 and EDU 146 and EDU 151 and EDU 153 and EDU 221 and EDU 271 and EDU 280 and ACC 120 and ACC 121 and HMT 110 and HMT 210 and HMT 211 and HMT 220 and MED 118 and MED 121 and MED 122 and ACC 120 and BUS 110 and BUS 115 and BUS 137 and CIS 110 and CIS 111 and ECO 252 and MKT 120 and ACC 120 and ACC 121 and ACC 129 and ACC 220 and BUS 115 and CIS 110 and ECO 251 and AHR 110 and AHR 111 and AHR 112 and AHR 113 and AHR 114 and AHR 130 and AHR 211 and AHR 212 and AHR 213 and CSC 153 and CTS 120 and CTS 220 and ELC 131 and ELN 131 and ELN 133 and ELN 232 and CTI 110 and CTI 120 and CTS 115 and CTS 120 and NET 125 and SEC 110 and SEC 160 and CTI 110 and CTI 120 and CTS 115 and CTS 120 and CTS 155 and CTS 220 and SEC 110 and CTI 110 and CTI 120 and CSC 151 and CSC 153 and CTS 115 and CTS 120 and DBA 120 and CTI 110 and CTI 120 and CTS 115 and CTS 120 and DBA 120 and HBI 110 and ATR 112 and CIS 110 and DFT 151 and ELC 112 and ELC 131 and ELC 117 and ELC 213 and ELN 260 and HYD 110 and ISC 112 and MEC 130 and PHY 131 and PHY 151 and EME 111 and EME 112 and GIS 110 and GIS 111 and PAD 151 and HSE 110 and HSE 112 and HSE 123 and HSE 125 and HSE 210 and HSE 225 and PSY 150 and PSY 241 and SOC 213 and WBL 115",
+    "prerequisite_courses": [
+      "EDU 119",
+      "EDU 131",
+      "EDU 144",
+      "EDU 145",
+      "EDU 146",
+      "EDU 151",
+      "EDU 153",
+      "EDU 221",
+      "EDU 271",
+      "EDU 280",
+      "ACC 120",
+      "ACC 121",
+      "HMT 110",
+      "HMT 210",
+      "HMT 211",
+      "HMT 220",
+      "MED 118",
+      "MED 121",
+      "MED 122",
+      "BUS 110",
+      "BUS 115",
+      "BUS 137",
+      "CIS 110",
+      "CIS 111",
+      "ECO 252",
+      "MKT 120",
+      "ACC 129",
+      "ACC 220",
+      "ECO 251",
+      "AHR 110",
+      "AHR 111",
+      "AHR 112",
+      "AHR 113",
+      "AHR 114",
+      "AHR 130",
+      "AHR 211",
+      "AHR 212",
+      "AHR 213",
+      "CSC 153",
+      "CTS 120",
+      "CTS 220",
+      "ELC 131",
+      "ELN 131",
+      "ELN 133",
+      "ELN 232",
+      "CTI 110",
+      "CTI 120",
+      "CTS 115",
+      "NET 125",
+      "SEC 110",
+      "SEC 160",
+      "CTS 155",
+      "CSC 151",
+      "DBA 120",
+      "HBI 110",
+      "ATR 112",
+      "DFT 151",
+      "ELC 112",
+      "ELC 117",
+      "ELC 213",
+      "ELN 260",
+      "HYD 110",
+      "ISC 112",
+      "MEC 130",
+      "PHY 131",
+      "PHY 151",
+      "EME 111",
+      "EME 112",
+      "GIS 110",
+      "GIS 111",
+      "PAD 151",
+      "HSE 110",
+      "HSE 112",
+      "HSE 123",
+      "HSE 125",
+      "HSE 210",
+      "HSE 225",
+      "PSY 150",
+      "PSY 241",
+      "SOC 213",
+      "WBL 115"
+    ]
   },
   {
     "college_code": "richmond",
@@ -2262,10 +2695,92 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Amanda M. McKenzie",
-    "seats_open": 5,
+    "seats_open": 4,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EDU 119 and EDU 131 and EDU 144 and EDU 145 and EDU 146 and EDU 151 and EDU 153 and EDU 221 and EDU 271 and EDU 280 and ACC 120 and ACC 121 and HMT 110 and HMT 210 and HMT 211 and HMT 220 and MED 118 and MED 121 and MED 122 and ACC 120 and BUS 110 and BUS 115 and BUS 137 and CIS 110 and CIS 111 and ECO 252 and MKT 120 and ACC 120 and ACC 121 and ACC 129 and ACC 220 and BUS 115 and CIS 110 and ECO 251 and AHR 110 and AHR 111 and AHR 112 and AHR 113 and AHR 114 and AHR 130 and AHR 211 and AHR 212 and AHR 213 and CSC 153 and CTS 120 and CTS 220 and ELC 131 and ELN 131 and ELN 133 and ELN 232 and CTI 110 and CTI 120 and CTS 115 and CTS 120 and NET 125 and SEC 110 and SEC 160 and CTI 110 and CTI 120 and CTS 115 and CTS 120 and CTS 155 and CTS 220 and SEC 110 and CTI 110 and CTI 120 and CSC 151 and CSC 153 and CTS 115 and CTS 120 and DBA 120 and CTI 110 and CTI 120 and CTS 115 and CTS 120 and DBA 120 and HBI 110 and ATR 112 and CIS 110 and DFT 151 and ELC 112 and ELC 131 and ELC 117 and ELC 213 and ELN 260 and HYD 110 and ISC 112 and MEC 130 and PHY 131 and PHY 151 and EME 111 and EME 112 and GIS 110 and GIS 111 and PAD 151 and HSE 110 and HSE 112 and HSE 123 and HSE 125 and HSE 210 and HSE 225 and PSY 150 and PSY 241 and SOC 213 and WBL 115",
+    "prerequisite_courses": [
+      "EDU 119",
+      "EDU 131",
+      "EDU 144",
+      "EDU 145",
+      "EDU 146",
+      "EDU 151",
+      "EDU 153",
+      "EDU 221",
+      "EDU 271",
+      "EDU 280",
+      "ACC 120",
+      "ACC 121",
+      "HMT 110",
+      "HMT 210",
+      "HMT 211",
+      "HMT 220",
+      "MED 118",
+      "MED 121",
+      "MED 122",
+      "BUS 110",
+      "BUS 115",
+      "BUS 137",
+      "CIS 110",
+      "CIS 111",
+      "ECO 252",
+      "MKT 120",
+      "ACC 129",
+      "ACC 220",
+      "ECO 251",
+      "AHR 110",
+      "AHR 111",
+      "AHR 112",
+      "AHR 113",
+      "AHR 114",
+      "AHR 130",
+      "AHR 211",
+      "AHR 212",
+      "AHR 213",
+      "CSC 153",
+      "CTS 120",
+      "CTS 220",
+      "ELC 131",
+      "ELN 131",
+      "ELN 133",
+      "ELN 232",
+      "CTI 110",
+      "CTI 120",
+      "CTS 115",
+      "NET 125",
+      "SEC 110",
+      "SEC 160",
+      "CTS 155",
+      "CSC 151",
+      "DBA 120",
+      "HBI 110",
+      "ATR 112",
+      "DFT 151",
+      "ELC 112",
+      "ELC 117",
+      "ELC 213",
+      "ELN 260",
+      "HYD 110",
+      "ISC 112",
+      "MEC 130",
+      "PHY 131",
+      "PHY 151",
+      "EME 111",
+      "EME 112",
+      "GIS 110",
+      "GIS 111",
+      "PAD 151",
+      "HSE 110",
+      "HSE 112",
+      "HSE 123",
+      "HSE 125",
+      "HSE 210",
+      "HSE 225",
+      "PSY 150",
+      "PSY 241",
+      "SOC 213",
+      "WBL 115"
+    ]
   },
   {
     "college_code": "richmond",
@@ -2283,9 +2798,94 @@
     "campus": "MC",
     "mode": "online",
     "instructor": "Jamison S. Sears",
-    "seats_open": 17,
+    "seats_open": 11,
     "seats_total": 32,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EDU 119 and EDU 131 and EDU 144 and EDU 145 and EDU 146 and EDU 151 and EDU 153 and EDU 221 and EDU 271 and EDU 280 and ACC 120 and ACC 121 and HMT 110 and HMT 210 and HMT 211 and HMT 220 and MED 118 and MED 121 and MED 122 and HSE 110 and HSE 112 and HSE 123 and HSE 125 and HSE 210 and HSE 225 and PSY 150 and PSY 241 and SOC 213 and ACC 120 and BUS 110 and BUS 115 and BUS 137 and CIS 110 and CIS 111 and ECO 252 and MKT 120 and ACC 120 and ACC 121 and ACC 129 and ACC 220 and BUS 115 and CIS 110 and ECO 251 and AHR 110 and AHR 111 and AHR 112 and AHR 113 and AHR 114 and AHR 130 and AHR 211 and AHR 212 and AHR 213 and CSC 153 and CTS 120 and CTS 220 and ELC 131 and ELN 131 and ELN 133 and ELN 232 and CTI 110 and CTI 120 and CTS 115 and CTS 120 and NET 125 and SEC 110 and SEC 160 and CTI 110 and CTI 120 and CTS 115 and CTS 120 and CTS 155 and CTS 220 and SEC 110 and CTI 110 and CTI 120 and CSC 151 and CSC 153 and CTS 115 and CTS 120 and DBA 120 and CTI 110 and CTI 120 and CTS 115 and CTS 120 and DBA 120 and HBI 110 and ATR 112 and CIS 110 and DFT 151 and ELC 112 and ELC 131 and ELC 117 and ELC 213 and ELN 260 and HYD 110 and ISC 112 and MEC 130 and PHY 131 and PHY 151 and EME 111 and EME 112 and GIS 110 and GIS 111 and PAD 151 and WBL 111 or WBL 112 or WBL 113 or WBL 114",
+    "prerequisite_courses": [
+      "EDU 119",
+      "EDU 131",
+      "EDU 144",
+      "EDU 145",
+      "EDU 146",
+      "EDU 151",
+      "EDU 153",
+      "EDU 221",
+      "EDU 271",
+      "EDU 280",
+      "ACC 120",
+      "ACC 121",
+      "HMT 110",
+      "HMT 210",
+      "HMT 211",
+      "HMT 220",
+      "MED 118",
+      "MED 121",
+      "MED 122",
+      "HSE 110",
+      "HSE 112",
+      "HSE 123",
+      "HSE 125",
+      "HSE 210",
+      "HSE 225",
+      "PSY 150",
+      "PSY 241",
+      "SOC 213",
+      "BUS 110",
+      "BUS 115",
+      "BUS 137",
+      "CIS 110",
+      "CIS 111",
+      "ECO 252",
+      "MKT 120",
+      "ACC 129",
+      "ACC 220",
+      "ECO 251",
+      "AHR 110",
+      "AHR 111",
+      "AHR 112",
+      "AHR 113",
+      "AHR 114",
+      "AHR 130",
+      "AHR 211",
+      "AHR 212",
+      "AHR 213",
+      "CSC 153",
+      "CTS 120",
+      "CTS 220",
+      "ELC 131",
+      "ELN 131",
+      "ELN 133",
+      "ELN 232",
+      "CTI 110",
+      "CTI 120",
+      "CTS 115",
+      "NET 125",
+      "SEC 110",
+      "SEC 160",
+      "CTS 155",
+      "CSC 151",
+      "DBA 120",
+      "HBI 110",
+      "ATR 112",
+      "DFT 151",
+      "ELC 112",
+      "ELC 117",
+      "ELC 213",
+      "ELN 260",
+      "HYD 110",
+      "ISC 112",
+      "MEC 130",
+      "PHY 131",
+      "PHY 151",
+      "EME 111",
+      "EME 112",
+      "GIS 110",
+      "GIS 111",
+      "PAD 151",
+      "WBL 111",
+      "WBL 112",
+      "WBL 113",
+      "WBL 114"
+    ]
   }
 ]

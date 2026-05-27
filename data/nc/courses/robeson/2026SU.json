@@ -15,8 +15,8 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Jones, J",
-    "seats_open": 2,
-    "seats_total": 28,
+    "seats_open": 0,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -36,8 +36,8 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Jones, J",
-    "seats_open": 25,
-    "seats_total": 28,
+    "seats_open": 2,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -57,8 +57,8 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Lowery, C",
-    "seats_open": 15,
-    "seats_total": 28,
+    "seats_open": 0,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -78,8 +78,29 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Lowery, C",
-    "seats_open": 28,
-    "seats_total": 28,
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "robeson",
+    "term": "2026SU",
+    "course_prefix": "ACA",
+    "course_number": "122",
+    "course_title": "College Transfer Success",
+    "credits": 1,
+    "crn": "ACA-122-O4",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Virtual Classrooms",
+    "campus": "999",
+    "mode": "online",
+    "instructor": "Johnson, S",
+    "seats_open": 3,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -99,8 +120,8 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Lowery, V",
-    "seats_open": 17,
-    "seats_total": 28,
+    "seats_open": 13,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -120,8 +141,8 @@
     "campus": "999",
     "mode": "in-person",
     "instructor": "Lowery, V",
-    "seats_open": 21,
-    "seats_total": 28,
+    "seats_open": 9,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -141,10 +162,37 @@
     "campus": "01",
     "mode": "in-person",
     "instructor": "Smith, R",
-    "seats_open": 2,
+    "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AHR 110 or AHR 113",
+    "prerequisite_courses": [
+      "AHR 110",
+      "AHR 113"
+    ]
+  },
+  {
+    "college_code": "robeson",
+    "term": "2026SU",
+    "course_prefix": "AHR",
+    "course_number": "114",
+    "course_title": "Heat Pump Technology",
+    "credits": 4,
+    "crn": "AHR-114-LCN1",
+    "days": "W",
+    "start_time": "5:00 PM",
+    "end_time": "9:00 PM",
+    "start_date": "2026-05-19",
+    "location": "Lumberton Correctional Inst",
+    "campus": "05",
+    "mode": "in-person",
+    "instructor": "Bartlack, J",
+    "seats_open": 13,
+    "seats_total": 20,
+    "prerequisite_text": "AHR 110 or AHR 113",
+    "prerequisite_courses": [
+      "AHR 110",
+      "AHR 113"
+    ]
   },
   {
     "college_code": "robeson",
@@ -164,8 +212,12 @@
     "instructor": "Smith, R",
     "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AHR 111 or ELC 111 or ELC 112",
+    "prerequisite_courses": [
+      "AHR 111",
+      "ELC 111",
+      "ELC 112"
+    ]
   },
   {
     "college_code": "robeson",
@@ -183,10 +235,13 @@
     "campus": "01",
     "mode": "in-person",
     "instructor": "Hunt, V",
-    "seats_open": 4,
+    "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AHR 112 or AHR 113",
+    "prerequisite_courses": [
+      "AHR 112",
+      "AHR 113"
+    ]
   },
   {
     "college_code": "robeson",
@@ -205,7 +260,7 @@
     "mode": "online",
     "instructor": "Thompson, S",
     "seats_open": 0,
-    "seats_total": 28,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -225,8 +280,8 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Thompson, S",
-    "seats_open": 7,
-    "seats_total": 28,
+    "seats_open": 6,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -246,8 +301,8 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Thompson, S",
-    "seats_open": 28,
-    "seats_total": 28,
+    "seats_open": 6,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -267,8 +322,29 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Thompson, S",
-    "seats_open": 28,
-    "seats_total": 28,
+    "seats_open": 6,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "robeson",
+    "term": "2026SU",
+    "course_prefix": "ART",
+    "course_number": "111",
+    "course_title": "Art Appreciation",
+    "credits": 3,
+    "crn": "ART-111-O5",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Virtual Classrooms",
+    "campus": "999",
+    "mode": "online",
+    "instructor": "Thomas, V",
+    "seats_open": 15,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -288,10 +364,12 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Gavasci, D",
-    "seats_open": 14,
-    "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 2,
+    "seats_total": 30,
+    "prerequisite_text": "AST 151",
+    "prerequisite_courses": [
+      "AST 151"
+    ]
   },
   {
     "college_code": "robeson",
@@ -309,10 +387,16 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Gavasci, D",
-    "seats_open": 14,
-    "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 2,
+    "seats_total": 30,
+    "prerequisite_text": "DRE 097 or ENG 002 or ENG 111 or ENG 025 and AST 151A",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "ENG 111",
+      "ENG 025",
+      "AST 151A"
+    ]
   },
   {
     "college_code": "robeson",
@@ -330,10 +414,43 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Thomas, J",
-    "seats_open": 20,
+    "seats_open": 6,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or ENG 002 or ENG 110 or ENG 111 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "ENG 110",
+      "ENG 111",
+      "ENG 025"
+    ]
+  },
+  {
+    "college_code": "robeson",
+    "term": "2026SU",
+    "course_prefix": "BIO",
+    "course_number": "163",
+    "course_title": "Basic Anat & Physiology",
+    "credits": 5,
+    "crn": "BIO-163-O1",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Virtual Classrooms",
+    "campus": "999",
+    "mode": "online",
+    "instructor": "Thomas, J",
+    "seats_open": 17,
+    "seats_total": 30,
+    "prerequisite_text": "DRE 097 or ENG 002 or ENG 110 or ENG 111 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "ENG 110",
+      "ENG 111",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "robeson",
@@ -351,10 +468,17 @@
     "campus": "01",
     "mode": "in-person",
     "instructor": "Kilgore, C",
-    "seats_open": 15,
+    "seats_open": 3,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 110 or ENG 111 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 110",
+      "ENG 111",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "robeson",
@@ -372,10 +496,17 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Kilgore, C",
-    "seats_open": 16,
-    "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 110 or ENG 111 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 110",
+      "ENG 111",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "robeson",
@@ -393,31 +524,17 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Payton, B",
-    "seats_open": 28,
-    "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "robeson",
-    "term": "2026SU",
-    "course_prefix": "BIO",
-    "course_number": "169",
-    "course_title": "Anatomy and Physiology II",
-    "credits": 4,
-    "crn": "BIO-169-BD1",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-26",
-    "location": "Main Campus",
-    "campus": "01",
-    "mode": "in-person",
-    "instructor": "Payton, B",
-    "seats_open": 21,
-    "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "DRE 097 or DRE 098 or ENG 002 or ENG 110 or ENG 111 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 110",
+      "ENG 111",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "robeson",
@@ -435,10 +552,12 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Adams, U",
-    "seats_open": 7,
+    "seats_open": 3,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 168",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
   },
   {
     "college_code": "robeson",
@@ -456,10 +575,35 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Adams, U",
-    "seats_open": 24,
+    "seats_open": 0,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 168",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
+  },
+  {
+    "college_code": "robeson",
+    "term": "2026SU",
+    "course_prefix": "BIO",
+    "course_number": "169",
+    "course_title": "Anatomy and Physiology II",
+    "credits": 4,
+    "crn": "BIO-169-O3",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Virtual Classrooms",
+    "campus": "999",
+    "mode": "online",
+    "instructor": "Payton, B",
+    "seats_open": 15,
+    "seats_total": 30,
+    "prerequisite_text": "BIO 168",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
   },
   {
     "college_code": "robeson",
@@ -477,7 +621,7 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Thomas, J",
-    "seats_open": 24,
+    "seats_open": 2,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -498,7 +642,7 @@
     "campus": "01",
     "mode": "in-person",
     "instructor": "Worriax, H",
-    "seats_open": 10,
+    "seats_open": 11,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -518,9 +662,9 @@
     "location": "",
     "campus": "",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 19,
-    "seats_total": 28,
+    "instructor": "Allen, L",
+    "seats_open": 3,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -540,8 +684,8 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Brown, T",
-    "seats_open": 6,
-    "seats_total": 28,
+    "seats_open": 3,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -561,8 +705,8 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Brown, T",
-    "seats_open": 28,
-    "seats_total": 28,
+    "seats_open": 12,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -581,9 +725,30 @@
     "location": "Virtual Classrooms",
     "campus": "999",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 14,
-    "seats_total": 28,
+    "instructor": "Wood, C",
+    "seats_open": 13,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "robeson",
+    "term": "2026SU",
+    "course_prefix": "BUS",
+    "course_number": "137",
+    "course_title": "Principles of Management",
+    "credits": 3,
+    "crn": "BUS-137-O2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Virtual Classrooms",
+    "campus": "999",
+    "mode": "online",
+    "instructor": "Wood, C",
+    "seats_open": 13,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -602,30 +767,9 @@
     "location": "Virtual Classrooms",
     "campus": "999",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 17,
+    "instructor": "Barfield, J",
+    "seats_open": 6,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "robeson",
-    "term": "2026SU",
-    "course_prefix": "CHM",
-    "course_number": "090",
-    "course_title": "Chemistry Concepts",
-    "credits": 4,
-    "crn": "CHM-090-HYD1",
-    "days": "T",
-    "start_time": "9:00 AM",
-    "end_time": "11:40 AM",
-    "start_date": "2026-05-26",
-    "location": "Virtual Classrooms",
-    "campus": "999",
-    "mode": "in-person",
-    "instructor": "McDougald, M",
-    "seats_open": 24,
-    "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -645,10 +789,17 @@
     "campus": "999",
     "mode": "online",
     "instructor": "McDougald, M",
-    "seats_open": 27,
+    "seats_open": 16,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DMA 010 or DMA 020 or DMA 030 or MAT 003 or MAT 025 or MAT 035",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "MAT 003",
+      "MAT 025",
+      "MAT 035"
+    ]
   },
   {
     "college_code": "robeson",
@@ -666,10 +817,25 @@
     "campus": "999",
     "mode": "online",
     "instructor": "McDougald, M",
-    "seats_open": 12,
-    "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 3,
+    "seats_total": 30,
+    "prerequisite_text": "DMA 080 or DMA 065 or MAT 035 or MAT 143 or MAT 152 or MAT 171 or MAT 161 or CHM 090 or DRE 097 or DRE 098 or ENG 002 or ENG 025 or ENG 110 or ENG 111",
+    "prerequisite_courses": [
+      "DMA 080",
+      "DMA 065",
+      "MAT 035",
+      "MAT 143",
+      "MAT 152",
+      "MAT 171",
+      "MAT 161",
+      "CHM 090",
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025",
+      "ENG 110",
+      "ENG 111"
+    ]
   },
   {
     "college_code": "robeson",
@@ -687,10 +853,25 @@
     "campus": "999",
     "mode": "online",
     "instructor": "McDougald, M",
-    "seats_open": 28,
-    "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 21,
+    "seats_total": 30,
+    "prerequisite_text": "DMA 080 or DMA 065 or MAT 035 or MAT 143 or MAT 152 or MAT 171 or MAT 161 or CHM 090 or DRE 097 or DRE 098 or ENG 002 or ENG 025 or ENG 110 or ENG 111",
+    "prerequisite_courses": [
+      "DMA 080",
+      "DMA 065",
+      "MAT 035",
+      "MAT 143",
+      "MAT 152",
+      "MAT 171",
+      "MAT 161",
+      "CHM 090",
+      "DRE 097",
+      "DRE 098",
+      "ENG 002",
+      "ENG 025",
+      "ENG 110",
+      "ENG 111"
+    ]
   },
   {
     "college_code": "robeson",
@@ -707,11 +888,38 @@
     "location": "Virtual Classrooms",
     "campus": "999",
     "mode": "online",
-    "instructor": "Skusa, C",
-    "seats_open": 6,
+    "instructor": "Green, C",
+    "seats_open": 0,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111 or ENG 110",
+    "prerequisite_courses": [
+      "ENG 111",
+      "ENG 110"
+    ]
+  },
+  {
+    "college_code": "robeson",
+    "term": "2026SU",
+    "course_prefix": "COM",
+    "course_number": "231",
+    "course_title": "Public Speaking",
+    "credits": 3,
+    "crn": "COM-231-O2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Virtual Classrooms",
+    "campus": "999",
+    "mode": "online",
+    "instructor": "Green, C",
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 111 or ENG 110",
+    "prerequisite_courses": [
+      "ENG 111",
+      "ENG 110"
+    ]
   },
   {
     "college_code": "robeson",
@@ -729,10 +937,12 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Allen, L",
-    "seats_open": 20,
+    "seats_open": 10,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CIS 110",
+    "prerequisite_courses": [
+      "CIS 110"
+    ]
   },
   {
     "college_code": "robeson",
@@ -750,10 +960,14 @@
     "campus": "01",
     "mode": "in-person",
     "instructor": "Elliott, C",
-    "seats_open": 12,
+    "seats_open": 11,
     "seats_total": 40,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112 and COS 116",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112",
+      "COS 116"
+    ]
   },
   {
     "college_code": "robeson",
@@ -771,10 +985,14 @@
     "campus": "01",
     "mode": "in-person",
     "instructor": "Oxendine, C",
-    "seats_open": 12,
+    "seats_open": 11,
     "seats_total": 40,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112 and COS 115",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112",
+      "COS 115"
+    ]
   },
   {
     "college_code": "robeson",
@@ -792,7 +1010,7 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Monteiro, H",
-    "seats_open": 22,
+    "seats_open": 9,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -813,7 +1031,7 @@
     "campus": "999",
     "mode": "online",
     "instructor": "McLean, D",
-    "seats_open": 23,
+    "seats_open": 15,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -834,28 +1052,7 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Lanier, J",
-    "seats_open": 23,
-    "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "robeson",
-    "term": "2026SU",
-    "course_prefix": "CJC",
-    "course_number": "170",
-    "course_title": "Critical Incident Mgmt Pub Saf",
-    "credits": 3,
-    "crn": "CJC-170-MO1",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-26",
-    "location": "Virtual Classrooms",
-    "campus": "999",
-    "mode": "online",
-    "instructor": "Lewis, S",
-    "seats_open": 27,
+    "seats_open": 16,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -876,7 +1073,7 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Monteiro, H",
-    "seats_open": 20,
+    "seats_open": 10,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -897,7 +1094,7 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Monteiro, H",
-    "seats_open": 26,
+    "seats_open": 21,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -918,7 +1115,7 @@
     "campus": "999",
     "mode": "online",
     "instructor": "McLean, D",
-    "seats_open": 26,
+    "seats_open": 23,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -939,7 +1136,7 @@
     "campus": "01",
     "mode": "in-person",
     "instructor": "Linebarger, R",
-    "seats_open": 5,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -959,11 +1156,22 @@
     "location": "Virtual Classrooms",
     "campus": "999",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 15,
+    "instructor": "Davis, M",
+    "seats_open": 3,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 or ENG 110 or ENG 111 or MAT 025 or MAT 035 or MAT 045 or MAT 110 or MAT 143 or MAT 152 or MAT 171",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 110",
+      "ENG 111",
+      "MAT 025",
+      "MAT 035",
+      "MAT 045",
+      "MAT 110",
+      "MAT 143",
+      "MAT 152",
+      "MAT 171"
+    ]
   },
   {
     "college_code": "robeson",
@@ -981,10 +1189,24 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Davis, M",
-    "seats_open": 25,
+    "seats_open": 16,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DMA 050 or MAT 003 or MAT 025 or MAT 035 or MAT 110 or MAT 143 or MAT 152 or MAT 171 or DRE 097 or ENG 002 or ENG 110 or ENG 111 or ENG 025",
+    "prerequisite_courses": [
+      "DMA 050",
+      "MAT 003",
+      "MAT 025",
+      "MAT 035",
+      "MAT 110",
+      "MAT 143",
+      "MAT 152",
+      "MAT 171",
+      "DRE 097",
+      "ENG 002",
+      "ENG 110",
+      "ENG 111",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "robeson",
@@ -1002,8 +1224,8 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Chavis-Harris, P",
-    "seats_open": 19,
-    "seats_total": 28,
+    "seats_open": 13,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1017,13 +1239,13 @@
     "crn": "ELC-128-D1",
     "days": "M",
     "start_time": "11:00 AM",
-    "end_time": "1:10 PM",
+    "end_time": "1:15 PM",
     "start_date": "2026-05-26",
     "location": "Main Campus",
     "campus": "01",
     "mode": "in-person",
     "instructor": "Levinson, M",
-    "seats_open": 8,
+    "seats_open": 7,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1036,15 +1258,15 @@
     "course_title": "Intro to PLC",
     "credits": 3,
     "crn": "ELC-128-D2",
-    "days": "M T",
+    "days": "M",
     "start_time": "11:00 AM",
-    "end_time": "1:10 PM",
+    "end_time": "1:15 PM",
     "start_date": "2026-05-26",
     "location": "Main Campus",
     "campus": "01",
     "mode": "in-person",
     "instructor": "McKnight, M",
-    "seats_open": 10,
+    "seats_open": 7,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1067,8 +1289,13 @@
     "instructor": "Worriax, H",
     "seats_open": 12,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ELC 111 or ELC 112 or ELC 131 or ELC 138",
+    "prerequisite_courses": [
+      "ELC 111",
+      "ELC 112",
+      "ELC 131",
+      "ELC 138"
+    ]
   },
   {
     "college_code": "robeson",
@@ -1086,7 +1313,7 @@
     "campus": "01",
     "mode": "in-person",
     "instructor": "Levinson, M",
-    "seats_open": 14,
+    "seats_open": 12,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1107,7 +1334,7 @@
     "campus": "01",
     "mode": "in-person",
     "instructor": "McKnight, M",
-    "seats_open": 18,
+    "seats_open": 15,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1123,12 +1350,12 @@
     "days": "M",
     "start_time": "5:00 PM",
     "end_time": "9:20 PM",
-    "start_date": "2026-05-26",
+    "start_date": "2026-05-19",
     "location": "Lumberton Correctional Inst",
     "campus": "05",
     "mode": "in-person",
     "instructor": "Bartlack, J",
-    "seats_open": 20,
+    "seats_open": 17,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1149,7 +1376,7 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Byrd, T",
-    "seats_open": 28,
+    "seats_open": 26,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1170,7 +1397,7 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Byrd, T",
-    "seats_open": 28,
+    "seats_open": 23,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1191,7 +1418,7 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Muhammad, A",
-    "seats_open": 7,
+    "seats_open": 0,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1211,9 +1438,9 @@
     "location": "Virtual Classrooms",
     "campus": "999",
     "mode": "online",
-    "instructor": "Lofton, S",
-    "seats_open": 27,
-    "seats_total": 28,
+    "instructor": "Hernandez, S",
+    "seats_open": 3,
+    "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1233,8 +1460,8 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Lofton, S",
-    "seats_open": 7,
-    "seats_total": 28,
+    "seats_open": 0,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1254,10 +1481,12 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Hernandez, S",
-    "seats_open": 6,
+    "seats_open": 0,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "robeson",
@@ -1275,10 +1504,12 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Hernandez, S",
-    "seats_open": 28,
+    "seats_open": 0,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "robeson",
@@ -1296,10 +1527,12 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Hernandez, S",
-    "seats_open": 28,
+    "seats_open": 0,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "robeson",
@@ -1317,10 +1550,12 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Goldberg, A",
-    "seats_open": 23,
+    "seats_open": 9,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "robeson",
@@ -1338,10 +1573,12 @@
     "campus": "999",
     "mode": "online",
     "instructor": "McDowell, D",
-    "seats_open": 16,
+    "seats_open": 0,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "robeson",
@@ -1359,31 +1596,12 @@
     "campus": "999",
     "mode": "online",
     "instructor": "McDowell, D",
-    "seats_open": 26,
+    "seats_open": 1,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "robeson",
-    "term": "2026SU",
-    "course_prefix": "ENG",
-    "course_number": "112",
-    "course_title": "Writing/Research in the Disc",
-    "credits": 3,
-    "crn": "ENG-112-O3",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-26",
-    "location": "Virtual Classrooms",
-    "campus": "999",
-    "mode": "online",
-    "instructor": "McDowell, D",
-    "seats_open": 26,
-    "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "robeson",
@@ -1401,10 +1619,12 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Goldberg, A",
-    "seats_open": 18,
+    "seats_open": 11,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "robeson",
@@ -1422,8 +1642,8 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Muhammad, A",
-    "seats_open": 9,
-    "seats_total": 28,
+    "seats_open": 4,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1444,9 +1664,13 @@
     "mode": "online",
     "instructor": "Lofton, S",
     "seats_open": 0,
-    "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_total": 30,
+    "prerequisite_text": "ENG 112 or ENG 113 or ENG 114",
+    "prerequisite_courses": [
+      "ENG 112",
+      "ENG 113",
+      "ENG 114"
+    ]
   },
   {
     "college_code": "robeson",
@@ -1463,11 +1687,15 @@
     "location": "Virtual Classrooms",
     "campus": "999",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 25,
-    "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "instructor": "Lofton, S",
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 112 or ENG 113 or ENG 114",
+    "prerequisite_courses": [
+      "ENG 112",
+      "ENG 113",
+      "ENG 114"
+    ]
   },
   {
     "college_code": "robeson",
@@ -1485,8 +1713,29 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Lowery, C",
+    "seats_open": 9,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "robeson",
+    "term": "2026SU",
+    "course_prefix": "HSC",
+    "course_number": "110",
+    "course_title": "Orientation to Health Careers",
+    "credits": 1,
+    "crn": "HSC-110-O2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Virtual Classrooms",
+    "campus": "999",
+    "mode": "online",
+    "instructor": "Richardson, B",
     "seats_open": 17,
-    "seats_total": 28,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1506,10 +1755,15 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Brisson, J",
-    "seats_open": 19,
-    "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "DRE 097 or ENG 002 or ENG 111 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "ENG 111",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "robeson",
@@ -1527,10 +1781,41 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Brisson, J",
-    "seats_open": 12,
+    "seats_open": 3,
+    "seats_total": 30,
+    "prerequisite_text": "DRE 097 or ENG 002 or ENG 111 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "ENG 111",
+      "ENG 025"
+    ]
+  },
+  {
+    "college_code": "robeson",
+    "term": "2026SU",
+    "course_prefix": "HIS",
+    "course_number": "131",
+    "course_title": "American History I",
+    "credits": 3,
+    "crn": "HIS-131-O2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Virtual Classrooms",
+    "campus": "999",
+    "mode": "online",
+    "instructor": "Watkins, T",
+    "seats_open": 14,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or ENG 002 or ENG 111 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "ENG 111",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "robeson",
@@ -1548,10 +1833,15 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Brisson, J",
-    "seats_open": 20,
+    "seats_open": 16,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 098 or ENG 002 or ENG 111 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 098",
+      "ENG 002",
+      "ENG 111",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "robeson",
@@ -1569,8 +1859,8 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Allen, L",
-    "seats_open": 4,
-    "seats_total": 28,
+    "seats_open": 1,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1589,9 +1879,9 @@
     "location": "Virtual Classrooms",
     "campus": "999",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 27,
-    "seats_total": 28,
+    "instructor": "Stubbs, W",
+    "seats_open": 5,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1610,9 +1900,9 @@
     "location": "Virtual Classrooms",
     "campus": "999",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 10,
-    "seats_total": 28,
+    "instructor": "Stubbs, W",
+    "seats_open": 4,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1632,7 +1922,28 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Wood, C",
-    "seats_open": 8,
+    "seats_open": 4,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "robeson",
+    "term": "2026SU",
+    "course_prefix": "MKT",
+    "course_number": "223",
+    "course_title": "Customer Experience",
+    "credits": 3,
+    "crn": "MKT-223-O2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Virtual Classrooms",
+    "campus": "999",
+    "mode": "online",
+    "instructor": "Wood, C",
+    "seats_open": 2,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1653,8 +1964,8 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Conner, C",
-    "seats_open": 21,
-    "seats_total": 28,
+    "seats_open": 2,
+    "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1674,8 +1985,8 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Conner, C",
-    "seats_open": 28,
-    "seats_total": 28,
+    "seats_open": 9,
+    "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1695,8 +2006,29 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Chavis, V",
-    "seats_open": 4,
+    "seats_open": 0,
     "seats_total": 28,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "robeson",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "110",
+    "course_title": "Math Measurement & Literacy",
+    "credits": 3,
+    "crn": "MAT-110-O2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Virtual Classrooms",
+    "campus": "999",
+    "mode": "online",
+    "instructor": "Conner, C",
+    "seats_open": 16,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1716,10 +2048,37 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Chavis, V",
-    "seats_open": 13,
-    "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 6,
+    "seats_total": 30,
+    "prerequisite_text": "MAT 025 and MAT 045Q",
+    "prerequisite_courses": [
+      "MAT 025",
+      "MAT 045Q"
+    ]
+  },
+  {
+    "college_code": "robeson",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "143",
+    "course_title": "Quantitative Literacy",
+    "credits": 3,
+    "crn": "MAT-143-O2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Virtual Classrooms",
+    "campus": "999",
+    "mode": "online",
+    "instructor": "Chavis, V",
+    "seats_open": 10,
+    "seats_total": 30,
+    "prerequisite_text": "MAT 025 and MAT 045Q",
+    "prerequisite_courses": [
+      "MAT 025",
+      "MAT 045Q"
+    ]
   },
   {
     "college_code": "robeson",
@@ -1737,10 +2096,13 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Chavis, V",
-    "seats_open": 15,
-    "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 6,
+    "seats_total": 30,
+    "prerequisite_text": "MAT 025 and MAT 045Q",
+    "prerequisite_courses": [
+      "MAT 025",
+      "MAT 045Q"
+    ]
   },
   {
     "college_code": "robeson",
@@ -1758,10 +2120,39 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Deese, C",
-    "seats_open": 11,
-    "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "MAT 035 and MAT 045P or MAT 7045",
+    "prerequisite_courses": [
+      "MAT 035",
+      "MAT 045P",
+      "MAT 7045"
+    ]
+  },
+  {
+    "college_code": "robeson",
+    "term": "2026SU",
+    "course_prefix": "MAT",
+    "course_number": "171",
+    "course_title": "Precalculus Algebra",
+    "credits": 4,
+    "crn": "MAT-171-O2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Virtual Classrooms",
+    "campus": "999",
+    "mode": "online",
+    "instructor": "Deese, C",
+    "seats_open": 16,
+    "seats_total": 30,
+    "prerequisite_text": "MAT 035 and MAT 045P or MAT 7045",
+    "prerequisite_courses": [
+      "MAT 035",
+      "MAT 045P",
+      "MAT 7045"
+    ]
   },
   {
     "college_code": "robeson",
@@ -1779,10 +2170,12 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Deese, C",
-    "seats_open": 15,
-    "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 8,
+    "seats_total": 30,
+    "prerequisite_text": "MAT 171",
+    "prerequisite_courses": [
+      "MAT 171"
+    ]
   },
   {
     "college_code": "robeson",
@@ -1800,7 +2193,7 @@
     "campus": "01",
     "mode": "in-person",
     "instructor": "Worriax, H",
-    "seats_open": 12,
+    "seats_open": 13,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1821,8 +2214,29 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Norris, L",
-    "seats_open": 13,
+    "seats_open": 0,
     "seats_total": 28,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "robeson",
+    "term": "2026SU",
+    "course_prefix": "MED",
+    "course_number": "120",
+    "course_title": "Survey of Med Terminology",
+    "credits": 2,
+    "crn": "MED-120-O2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Virtual Classrooms",
+    "campus": "999",
+    "mode": "online",
+    "instructor": "Norris, L",
+    "seats_open": 5,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1842,8 +2256,8 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Atkinson, J",
-    "seats_open": 9,
-    "seats_total": 28,
+    "seats_open": 0,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1863,8 +2277,8 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Crouch, B",
-    "seats_open": 27,
-    "seats_total": 28,
+    "seats_open": 0,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1883,11 +2297,15 @@
     "location": "Main Campus",
     "campus": "01",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 40,
+    "instructor": "Caison, S, Lovette, D, Hedgpeth, M, Britt, M, Altman, J, Hunt, A, Collins, B, Gerald, C, Barton, E",
+    "seats_open": 4,
     "seats_total": 40,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 101 and BIO 169 and PSY 150",
+    "prerequisite_courses": [
+      "NUR 101",
+      "BIO 169",
+      "PSY 150"
+    ]
   },
   {
     "college_code": "robeson",
@@ -1904,11 +2322,13 @@
     "location": "Main Campus",
     "campus": "01",
     "mode": "in-person",
-    "instructor": "Herndon, C",
-    "seats_open": 50,
+    "instructor": "Herndon, C, Oxendine, C, Britt, M, Hedgpeth, M",
+    "seats_open": 25,
     "seats_total": 50,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 111",
+    "prerequisite_courses": [
+      "NUR 111"
+    ]
   },
   {
     "college_code": "robeson",
@@ -1925,8 +2345,8 @@
     "location": "Virtual Classrooms",
     "campus": "999",
     "mode": "online",
-    "instructor": "Britt, M",
-    "seats_open": 50,
+    "instructor": "Britt, M, Hedgpeth, M",
+    "seats_open": 42,
     "seats_total": 50,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1946,8 +2366,8 @@
     "location": "Main Campus",
     "campus": "01",
     "mode": "in-person",
-    "instructor": "Locklear, K",
-    "seats_open": 15,
+    "instructor": "Locklear, K, Williams-Jones, T, Jacobs, R, Britt, M, Hedgpeth, M, Russell, C",
+    "seats_open": 0,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1967,8 +2387,8 @@
     "location": "Main Campus",
     "campus": "01",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 15,
+    "instructor": "Williams-Jones, T, Locklear, K, Jacobs, R, Britt, M, Hedgpeth, M",
+    "seats_open": 8,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1988,11 +2408,14 @@
     "location": "Virtual Classrooms",
     "campus": "999",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 22,
+    "instructor": "Woolard, A",
+    "seats_open": 19,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "OST 247 and OST 248",
+    "prerequisite_courses": [
+      "OST 247",
+      "OST 248"
+    ]
   },
   {
     "college_code": "robeson",
@@ -2009,11 +2432,14 @@
     "location": "Virtual Classrooms",
     "campus": "999",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 17,
+    "instructor": "Woolard, A",
+    "seats_open": 14,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "OST 247 and OST 248",
+    "prerequisite_courses": [
+      "OST 247",
+      "OST 248"
+    ]
   },
   {
     "college_code": "robeson",
@@ -2030,11 +2456,14 @@
     "location": "Virtual Classrooms",
     "campus": "999",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 23,
+    "instructor": "Brown, T",
+    "seats_open": 18,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "OST 148 or HMT 210",
+    "prerequisite_courses": [
+      "OST 148",
+      "HMT 210"
+    ]
   },
   {
     "college_code": "robeson",
@@ -2052,10 +2481,12 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Henderson, J",
-    "seats_open": 15,
-    "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "robeson",
@@ -2073,8 +2504,8 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Lowery, C",
-    "seats_open": 17,
-    "seats_total": 28,
+    "seats_open": 9,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2094,29 +2525,8 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Lowery, C",
-    "seats_open": 25,
-    "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "robeson",
-    "term": "2026SU",
-    "course_prefix": "PED",
-    "course_number": "120",
-    "course_title": "Walking for Fitness",
-    "credits": 1,
-    "crn": "PED-120-O1",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-26",
-    "location": "Virtual Classrooms",
-    "campus": "999",
-    "mode": "online",
-    "instructor": "Windley, K",
-    "seats_open": 27,
-    "seats_total": 28,
+    "seats_open": 12,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2136,10 +2546,12 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Gavasci, D",
-    "seats_open": 26,
+    "seats_open": 14,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PHY 110",
+    "prerequisite_courses": [
+      "PHY 110"
+    ]
   },
   {
     "college_code": "robeson",
@@ -2157,10 +2569,15 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Gavasci, D",
-    "seats_open": 26,
+    "seats_open": 14,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or ENG 002 or ENG 111 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "ENG 111",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "robeson",
@@ -2178,10 +2595,15 @@
     "campus": "999",
     "mode": "online",
     "instructor": "McMasters, C",
-    "seats_open": 20,
-    "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 4,
+    "seats_total": 30,
+    "prerequisite_text": "DRE 097 or ENG 002 or ENG 111 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "ENG 111",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "robeson",
@@ -2199,8 +2621,29 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Sobers, T",
-    "seats_open": 20,
+    "seats_open": 13,
     "seats_total": 28,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "robeson",
+    "term": "2026SU",
+    "course_prefix": "PSY",
+    "course_number": "118",
+    "course_title": "Interpersonal Psychology",
+    "credits": 3,
+    "crn": "PSY-118-O2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Virtual Classrooms",
+    "campus": "999",
+    "mode": "online",
+    "instructor": "Sobers, T",
+    "seats_open": 17,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2220,10 +2663,15 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Hinson, J",
-    "seats_open": 4,
+    "seats_open": 0,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or ENG 002 or ENG 111 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "ENG 111",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "robeson",
@@ -2241,10 +2689,15 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Hinson, J",
-    "seats_open": 24,
+    "seats_open": 0,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or ENG 002 or ENG 111 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "ENG 111",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "robeson",
@@ -2262,10 +2715,15 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Hinson, J",
-    "seats_open": 28,
+    "seats_open": 0,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or ENG 002 or ENG 111 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "ENG 111",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "robeson",
@@ -2283,10 +2741,15 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Hinson, J",
-    "seats_open": 28,
+    "seats_open": 0,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or ENG 002 or ENG 111 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "ENG 111",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "robeson",
@@ -2304,10 +2767,12 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Russ, V",
-    "seats_open": 18,
+    "seats_open": 8,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "robeson",
@@ -2325,10 +2790,12 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Russ, V",
-    "seats_open": 28,
-    "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 14,
+    "seats_total": 30,
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "robeson",
@@ -2346,10 +2813,16 @@
     "campus": "01",
     "mode": "in-person",
     "instructor": "Ward, C",
-    "seats_open": 13,
+    "seats_open": 1,
     "seats_total": 13,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RAD 112 and RAD 121 and RAD 161 and RAD 141 and RAD 171",
+    "prerequisite_courses": [
+      "RAD 112",
+      "RAD 121",
+      "RAD 161",
+      "RAD 141",
+      "RAD 171"
+    ]
   },
   {
     "college_code": "robeson",
@@ -2361,16 +2834,21 @@
     "crn": "RAD-141-D1",
     "days": "M",
     "start_time": "8:10 AM",
-    "end_time": "12:20 PM",
+    "end_time": "12:10 PM",
     "start_date": "2026-05-26",
     "location": "Main Campus",
     "campus": "01",
     "mode": "in-person",
     "instructor": "Hester, W",
-    "seats_open": 13,
+    "seats_open": 1,
     "seats_total": 13,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RAD 121 and RAD 161 and RAD 122 and RAD 171",
+    "prerequisite_courses": [
+      "RAD 121",
+      "RAD 161",
+      "RAD 122",
+      "RAD 171"
+    ]
   },
   {
     "college_code": "robeson",
@@ -2388,10 +2866,16 @@
     "campus": "11",
     "mode": "in-person",
     "instructor": "Hester, W",
-    "seats_open": 13,
+    "seats_open": 1,
     "seats_total": 13,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RAD 112 and RAD 121 and RAD 161 and RAD 122 and RAD 141",
+    "prerequisite_courses": [
+      "RAD 112",
+      "RAD 121",
+      "RAD 161",
+      "RAD 122",
+      "RAD 141"
+    ]
   },
   {
     "college_code": "robeson",
@@ -2409,10 +2893,37 @@
     "campus": "999",
     "mode": "online",
     "instructor": "West, J",
-    "seats_open": 13,
-    "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 8,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
+  },
+  {
+    "college_code": "robeson",
+    "term": "2026SU",
+    "course_prefix": "REL",
+    "course_number": "110",
+    "course_title": "World Religions",
+    "credits": 3,
+    "crn": "REL-110-O2",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Virtual Classrooms",
+    "campus": "999",
+    "mode": "online",
+    "instructor": "West, J",
+    "seats_open": 11,
+    "seats_total": 30,
+    "prerequisite_text": "ENG 025 or ENG 8025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 8025"
+    ]
   },
   {
     "college_code": "robeson",
@@ -2423,14 +2934,14 @@
     "credits": 2,
     "crn": "RCP-115-D1",
     "days": "T",
-    "start_time": "9:00 AM",
-    "end_time": "11:45 AM",
-    "start_date": "2026-05-19",
+    "start_time": "8:00 AM",
+    "end_time": "11:10 AM",
+    "start_date": "2026-05-26",
     "location": "Main Campus",
     "campus": "01",
     "mode": "in-person",
     "instructor": "Heustess, K",
-    "seats_open": 12,
+    "seats_open": 5,
     "seats_total": 12,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2446,12 +2957,12 @@
     "days": "M",
     "start_time": "8:00 AM",
     "end_time": "9:50 AM",
-    "start_date": "2026-05-19",
+    "start_date": "2026-05-26",
     "location": "Main Campus",
     "campus": "01",
     "mode": "in-person",
     "instructor": "Miray, D",
-    "seats_open": 12,
+    "seats_open": 5,
     "seats_total": 12,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2467,15 +2978,19 @@
     "days": "F",
     "start_time": "6:00 AM",
     "end_time": "2:00 PM",
-    "start_date": "2026-05-19",
+    "start_date": "2026-05-26",
     "location": "Clinicals",
     "campus": "11",
     "mode": "in-person",
     "instructor": "Miray, D, Heustess, K",
-    "seats_open": 12,
+    "seats_open": 5,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RCP 110 and RCP 111 and RCP 133",
+    "prerequisite_courses": [
+      "RCP 110",
+      "RCP 111",
+      "RCP 133"
+    ]
   },
   {
     "college_code": "robeson",
@@ -2487,16 +3002,24 @@
     "crn": "RCP-210-D1",
     "days": "M",
     "start_time": "10:00 AM",
-    "end_time": "11:50 AM",
+    "end_time": "11:30 AM",
     "start_date": "2026-05-26",
     "location": "Main Campus",
     "campus": "01",
     "mode": "in-person",
     "instructor": "Miray, D",
-    "seats_open": 12,
+    "seats_open": 5,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RCP 110 and RCP 111 and RCP 114 and RCP 133 and RCP 115 and RCP 142 and RCP 122",
+    "prerequisite_courses": [
+      "RCP 110",
+      "RCP 111",
+      "RCP 114",
+      "RCP 133",
+      "RCP 115",
+      "RCP 142",
+      "RCP 122"
+    ]
   },
   {
     "college_code": "robeson",
@@ -2514,10 +3037,15 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Thomas, J",
-    "seats_open": 6,
-    "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 30,
+    "prerequisite_text": "DRE 097 or ENG 002 or ENG 111 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "ENG 111",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "robeson",
@@ -2535,10 +3063,41 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Brisson, J",
-    "seats_open": 28,
-    "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 5,
+    "seats_total": 30,
+    "prerequisite_text": "DRE 097 or ENG 002 or ENG 111 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "ENG 111",
+      "ENG 025"
+    ]
+  },
+  {
+    "college_code": "robeson",
+    "term": "2026SU",
+    "course_prefix": "SOC",
+    "course_number": "210",
+    "course_title": "Introduction to Sociology",
+    "credits": 3,
+    "crn": "SOC-210-O3",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-26",
+    "location": "Virtual Classrooms",
+    "campus": "999",
+    "mode": "online",
+    "instructor": "Ferguson, B",
+    "seats_open": 9,
+    "seats_total": 30,
+    "prerequisite_text": "DRE 097 or ENG 002 or ENG 111 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "ENG 111",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "robeson",
@@ -2556,10 +3115,15 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Nall, A",
-    "seats_open": 22,
+    "seats_open": 15,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or ENG 002 or ENG 111 or ENG 025",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "ENG 111",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "robeson",
@@ -2577,10 +3141,12 @@
     "campus": "999",
     "mode": "online",
     "instructor": "Nall, A",
-    "seats_open": 23,
-    "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 22,
+    "seats_total": 30,
+    "prerequisite_text": "SPA 112",
+    "prerequisite_courses": [
+      "SPA 112"
+    ]
   },
   {
     "college_code": "robeson",
@@ -2598,10 +3164,12 @@
     "campus": "01",
     "mode": "in-person",
     "instructor": "Coleman, R, Collins, K",
-    "seats_open": 18,
+    "seats_open": 4,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SUR 123",
+    "prerequisite_courses": [
+      "SUR 123"
+    ]
   },
   {
     "college_code": "robeson",
@@ -2619,10 +3187,13 @@
     "campus": "11",
     "mode": "in-person",
     "instructor": "Collins, K, Coleman, R",
-    "seats_open": 18,
+    "seats_open": 4,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SUR 123 and SUR 134",
+    "prerequisite_courses": [
+      "SUR 123",
+      "SUR 134"
+    ]
   },
   {
     "college_code": "robeson",
@@ -2642,8 +3213,10 @@
     "instructor": "Dyson, J",
     "seats_open": 0,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 132",
+    "prerequisite_courses": [
+      "WLD 132"
+    ]
   },
   {
     "college_code": "robeson",
@@ -2663,7 +3236,11 @@
     "instructor": "Dyson, J",
     "seats_open": 0,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 115 and WLD 121 and WLD 131",
+    "prerequisite_courses": [
+      "WLD 115",
+      "WLD 121",
+      "WLD 131"
+    ]
   }
 ]

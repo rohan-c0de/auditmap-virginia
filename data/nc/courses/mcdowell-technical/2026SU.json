@@ -15,7 +15,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Jaynes, S",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -36,7 +36,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Morris, D",
-    "seats_open": 25,
+    "seats_open": 17,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -57,7 +57,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Wright, D",
-    "seats_open": 25,
+    "seats_open": 11,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -78,10 +78,12 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Wright, D",
-    "seats_open": 25,
+    "seats_open": 21,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ACC 220",
+    "prerequisite_courses": [
+      "ACC 220"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -99,10 +101,13 @@
     "campus": "MC",
     "mode": "hybrid",
     "instructor": "Wilson, D",
-    "seats_open": 25,
+    "seats_open": 16,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AHR 110 or AHR 113",
+    "prerequisite_courses": [
+      "AHR 110",
+      "AHR 113"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -120,10 +125,12 @@
     "campus": "MC",
     "mode": "hybrid",
     "instructor": "Wilson, D",
-    "seats_open": 25,
+    "seats_open": 19,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AHR 110",
+    "prerequisite_courses": [
+      "AHR 110"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -141,7 +148,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Wilson, D",
-    "seats_open": 25,
+    "seats_open": 21,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -162,7 +169,28 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Jerome, R",
-    "seats_open": 25,
+    "seats_open": 0,
+    "seats_total": 25,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "mcdowell-technical",
+    "term": "2026SU",
+    "course_prefix": "ART",
+    "course_number": "111",
+    "course_title": "Art Appreciation",
+    "credits": 3,
+    "crn": "ART-111-H50",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-23",
+    "location": "Online Classes",
+    "campus": "WEB",
+    "mode": "in-person",
+    "instructor": "Jerome, R",
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -182,11 +210,13 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "DeWeese, T",
+    "seats_open": 15,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AUT 181",
+    "prerequisite_courses": [
+      "AUT 181"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -203,32 +233,13 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "DeWeese, T",
+    "seats_open": 16,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "mcdowell-technical",
-    "term": "2026SU",
-    "course_prefix": "BIO",
-    "course_number": "111",
-    "course_title": "General Biology I",
-    "credits": 4,
-    "crn": "BIO-111-C20",
-    "days": "M W",
-    "start_time": "1:30 PM",
-    "end_time": "4:30 PM",
-    "start_date": "2026-05-18",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "hybrid",
-    "instructor": "Getty, R",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AUT 181",
+    "prerequisite_courses": [
+      "AUT 181"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -246,7 +257,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Snyder, A",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -267,10 +278,12 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Snyder, A",
-    "seats_open": 25,
+    "seats_open": 12,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 111",
+    "prerequisite_courses": [
+      "BIO 111"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -288,10 +301,12 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Watson, S",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 168",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -309,7 +324,7 @@
     "campus": "MC",
     "mode": "hybrid",
     "instructor": "Getty, R",
-    "seats_open": 25,
+    "seats_open": 14,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -330,7 +345,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Cross, E",
-    "seats_open": 25,
+    "seats_open": 2,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -351,7 +366,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Cross, E",
-    "seats_open": 25,
+    "seats_open": 6,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -372,28 +387,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Hollifield, R",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "mcdowell-technical",
-    "term": "2026SU",
-    "course_prefix": "CCT",
-    "course_number": "289",
-    "course_title": "Cyber Crime Capstone Project",
-    "credits": 3,
-    "crn": "CCT-289-C26",
-    "days": "M W",
-    "start_time": "4:30 PM",
-    "end_time": "7:30 PM",
-    "start_date": "2026-05-18",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "hybrid",
-    "instructor": "Hollifield, R",
-    "seats_open": 25,
+    "seats_open": 19,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -414,7 +408,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Buchanan, A",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -435,7 +429,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Pearson, R",
-    "seats_open": 25,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -456,7 +450,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Thomas, S",
-    "seats_open": 25,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -477,7 +471,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Thomas, S",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -498,10 +492,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Snyder, C, Hollifield, J",
-    "seats_open": 25,
+    "seats_open": 10,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -511,7 +508,7 @@
     "course_title": "Salon III",
     "credits": 4,
     "crn": "COS-116-B01",
-    "days": "M T W Th F Sa Su",
+    "days": "M T W Th",
     "start_time": "9:52 AM",
     "end_time": "2:40 PM",
     "start_date": "2026-05-18",
@@ -519,10 +516,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Snyder, C, Hollifield, J",
-    "seats_open": 25,
+    "seats_open": 9,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "COS 111 and COS 112",
+    "prerequisite_courses": [
+      "COS 111",
+      "COS 112"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -540,7 +540,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Smith, J",
-    "seats_open": 25,
+    "seats_open": 18,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -561,7 +561,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Smith, J",
-    "seats_open": 10,
+    "seats_open": 3,
     "seats_total": 10,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -582,28 +582,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Teale, W",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "mcdowell-technical",
-    "term": "2026SU",
-    "course_prefix": "CSC",
-    "course_number": "151",
-    "course_title": "JAVA Programming",
-    "credits": 3,
-    "crn": "CSC-151-C50",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-18",
-    "location": "Online Classes",
-    "campus": "WEB",
-    "mode": "in-person",
-    "instructor": "Hollifield, R, Teale, W",
-    "seats_open": 25,
+    "seats_open": 13,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -624,7 +603,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Hollifield, R",
-    "seats_open": 25,
+    "seats_open": 6,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -645,7 +624,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Pearson, R",
-    "seats_open": 25,
+    "seats_open": 13,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -666,7 +645,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Cross, E",
-    "seats_open": 25,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -687,7 +666,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Cross, E",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -708,7 +687,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Dowdle, K",
-    "seats_open": 25,
+    "seats_open": 21,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -729,7 +708,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Dowdle, K",
-    "seats_open": 25,
+    "seats_open": 8,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -750,7 +729,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Dowdle, K",
-    "seats_open": 25,
+    "seats_open": 15,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -771,7 +750,7 @@
     "campus": "MC",
     "mode": "hybrid",
     "instructor": "Buchanan, A",
-    "seats_open": 25,
+    "seats_open": 21,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -792,10 +771,12 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Buchanan, A",
-    "seats_open": 25,
+    "seats_open": 19,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -813,10 +794,17 @@
     "campus": "MC",
     "mode": "hybrid",
     "instructor": "McFarland, K",
-    "seats_open": 25,
+    "seats_open": 19,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or ENG 002 or BSP 4002 or ENG 025 or ENG 8025 and ENG 045",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -834,10 +822,17 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Jones, H",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DRE 097 or ENG 002 or BSP 4002 or ENG 025 or ENG 8025 and ENG 045",
+    "prerequisite_courses": [
+      "DRE 097",
+      "ENG 002",
+      "BSP 4002",
+      "ENG 025",
+      "ENG 8025",
+      "ENG 045"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -855,10 +850,12 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "McFarland, K",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -876,10 +873,12 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Jones, H",
-    "seats_open": 25,
+    "seats_open": 2,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 112",
+    "prerequisite_courses": [
+      "ENG 112"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -897,7 +896,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Perry, R",
-    "seats_open": 25,
+    "seats_open": 21,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -918,10 +917,12 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Perry, R",
-    "seats_open": 25,
+    "seats_open": 20,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "GRD 241",
+    "prerequisite_courses": [
+      "GRD 241"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -939,28 +940,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Stevens, M",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "mcdowell-technical",
-    "term": "2026SU",
-    "course_prefix": "HIS",
-    "course_number": "112",
-    "course_title": "World Civilizations II",
-    "credits": 3,
-    "crn": "HIS-112-C50",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-18",
-    "location": "Online Classes",
-    "campus": "WEB",
-    "mode": "in-person",
-    "instructor": "Stevens, M",
-    "seats_open": 25,
+    "seats_open": 20,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -981,28 +961,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Stevens, M",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "mcdowell-technical",
-    "term": "2026SU",
-    "course_prefix": "HIS",
-    "course_number": "132",
-    "course_title": "American History II",
-    "credits": 3,
-    "crn": "HIS-132-C50",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-18",
-    "location": "Online Classes",
-    "campus": "WEB",
-    "mode": "in-person",
-    "instructor": "Dillard, J",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1023,7 +982,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Huskins, J",
-    "seats_open": 25,
+    "seats_open": 19,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1044,7 +1003,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Butner, J",
-    "seats_open": 25,
+    "seats_open": 23,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1065,10 +1024,14 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Huskins, J",
-    "seats_open": 25,
+    "seats_open": 21,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 163 or BIO 166 or BIO 169",
+    "prerequisite_courses": [
+      "BIO 163",
+      "BIO 166",
+      "BIO 169"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -1086,7 +1049,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Jones, H",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1107,7 +1070,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Butner, J",
-    "seats_open": 25,
+    "seats_open": 10,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1128,7 +1091,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Smith, N",
-    "seats_open": 25,
+    "seats_open": 15,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1149,28 +1112,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Smith, N",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "mcdowell-technical",
-    "term": "2026SU",
-    "course_prefix": "MAT",
-    "course_number": "110",
-    "course_title": "Math Measurement & Literacy",
-    "credits": 3,
-    "crn": "MAT-110-C50",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-18",
-    "location": "Online Classes",
-    "campus": "WEB",
-    "mode": "in-person",
-    "instructor": "Smith, N",
-    "seats_open": 25,
+    "seats_open": 18,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1185,16 +1127,41 @@
     "crn": "MAT-121-C35",
     "days": "M W",
     "start_time": "3:30 PM",
-    "end_time": "5:50 AM",
+    "end_time": "5:50 PM",
     "start_date": "2026-05-18",
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Culp, J",
-    "seats_open": 25,
+    "seats_open": 23,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DMA 010 or DMA 020 or DMA 030 or DMA 040 or DMA 050 or DMA 060 or DMA 070 or DMA 080 or DMA 025 or DMA 040 or DMA 050 or DMA 060 or DMA 070 or DMA 080 or DMA 025 or DMA 045 or DMA 060 or DMA 070 or DMA 080 or DMA 010 or DMA 020 or DMA 030 or DMA 045 or DMA 065 or MAT 003 or BSP 4003 or MAT 035 or MAT 7035 or MAT 110 or MAT 143 or MAT 152 or MAT 171 or MAT 175 or DMA 010 or DMA 030 or DMA 040 or DMA 050 or DMA 065 or DMA 025 or DMA 045 or DMA 065 or DMA 010 or DMA 020 or DMA 030 or DMA 045 or DMA 060 or DMA 070 or DMA 080 or DMA 025 or DMA 040 or DMA 050 or DMA 065 or MAT 003 or MAT 021 or MAT 003 or MAT 043 or MAT 003 or MAT 052 or MAT 003 or MAT 071",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DMA 040",
+      "DMA 050",
+      "DMA 060",
+      "DMA 070",
+      "DMA 080",
+      "DMA 025",
+      "DMA 045",
+      "DMA 065",
+      "MAT 003",
+      "BSP 4003",
+      "MAT 035",
+      "MAT 7035",
+      "MAT 110",
+      "MAT 143",
+      "MAT 152",
+      "MAT 171",
+      "MAT 175",
+      "MAT 021",
+      "MAT 043",
+      "MAT 052",
+      "MAT 071"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -1212,10 +1179,30 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Smith, N",
-    "seats_open": 25,
+    "seats_open": 1,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DMA 010 or DMA 020 or DMA 030 or DMA 040 or DMA 050 or DMA 025 or DMA 040 or DMA 050 or MAT 003 or BSP 4003 or MAT 025 or MAT 7025 or MAT 110 or MAT 121 or MAT 152 or MAT 171 or MAT 175 or MAT 003 or MAT 021 or MAT 003 or MAT 043 or MAT 003 or MAT 052 or MAT 003 or MAT 071",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DMA 040",
+      "DMA 050",
+      "DMA 025",
+      "MAT 003",
+      "BSP 4003",
+      "MAT 025",
+      "MAT 7025",
+      "MAT 110",
+      "MAT 121",
+      "MAT 152",
+      "MAT 171",
+      "MAT 175",
+      "MAT 021",
+      "MAT 043",
+      "MAT 052",
+      "MAT 071"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -1233,10 +1220,31 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Culp, J",
-    "seats_open": 25,
+    "seats_open": 6,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DMA 010 or DMA 020 or DMA 030 or DMA 040 or DMA 050 or DMA 025 or DMA 040 or DMA 050 or DMA 025 or DMA 045 or DMA 010 or DMA 020 or DMA 030 or DMA 045 or MAT 003 or BSP 4003 or MAT 025 or MAT 7025 or MAT 110 or MAT 121 or MAT 143 or MAT 171 or MAT 175 or MAT 003 or MAT 021 or MAT 003 or MAT 043 or MAT 003 or MAT 052 or MAT 003 or MAT 071",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DMA 040",
+      "DMA 050",
+      "DMA 025",
+      "DMA 045",
+      "MAT 003",
+      "BSP 4003",
+      "MAT 025",
+      "MAT 7025",
+      "MAT 110",
+      "MAT 121",
+      "MAT 143",
+      "MAT 171",
+      "MAT 175",
+      "MAT 021",
+      "MAT 043",
+      "MAT 052",
+      "MAT 071"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -1254,10 +1262,35 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Smith, N",
-    "seats_open": 25,
+    "seats_open": 12,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DMA 010 or DMA 020 or DMA 030 or DMA 040 or DMA 050 or DMA 060 or DMA 070 or DMA 080 or DMA 025 or DMA 040 or DMA 050 or DMA 060 or DMA 070 or DMA 080 or DMA 025 or DMA 045 or DMA 060 or DMA 070 or DMA 080 or DMA 010 or DMA 020 or DMA 030 or DMA 045 or DMA 065 or MAT 003 or BSP 4003 or MAT 035 or MAT 7035 or MAT 110 or MAT 143 or MAT 152 or MAT 121 or MAT 175 or DMA 010 or DMA 030 or DMA 040 or DMA 050 or DMA 065 or DMA 025 or DMA 045 or DMA 065 or DMA 010 or DMA 020 or DMA 030 or DMA 045 or DMA 060 or DMA 070 or DMA 080 or DMA 025 or DMA 040 or DMA 050 or DMA 065 or MAT 003 or MAT 021 or MAT 003 or MAT 043 or MAT 003 or MAT 052 or MAT 003 or MAT 071",
+    "prerequisite_courses": [
+      "DMA 010",
+      "DMA 020",
+      "DMA 030",
+      "DMA 040",
+      "DMA 050",
+      "DMA 060",
+      "DMA 070",
+      "DMA 080",
+      "DMA 025",
+      "DMA 045",
+      "DMA 065",
+      "MAT 003",
+      "BSP 4003",
+      "MAT 035",
+      "MAT 7035",
+      "MAT 110",
+      "MAT 143",
+      "MAT 152",
+      "MAT 121",
+      "MAT 175",
+      "MAT 021",
+      "MAT 043",
+      "MAT 052",
+      "MAT 071"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -1275,10 +1308,12 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Smith, N",
-    "seats_open": 25,
+    "seats_open": 15,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 171",
+    "prerequisite_courses": [
+      "MAT 171"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -1296,10 +1331,13 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Culp, J",
-    "seats_open": 25,
+    "seats_open": 13,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 172 or MAT 175",
+    "prerequisite_courses": [
+      "MAT 172",
+      "MAT 175"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -1308,19 +1346,21 @@
     "course_number": "272",
     "course_title": "Calculus II",
     "credits": 4,
-    "crn": "MAT-272-C50",
+    "crn": "MAT-272-G50",
     "days": "M T W Th F Sa Su",
     "start_time": "",
     "end_time": "",
-    "start_date": "2026-05-18",
+    "start_date": "2026-06-02",
     "location": "Online Classes",
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Culp, J",
-    "seats_open": 25,
+    "seats_open": 16,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 271",
+    "prerequisite_courses": [
+      "MAT 271"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -1338,10 +1378,12 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Culp, J",
-    "seats_open": 25,
+    "seats_open": 12,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 272",
+    "prerequisite_courses": [
+      "MAT 272"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -1359,7 +1401,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Huskins, J",
-    "seats_open": 25,
+    "seats_open": 15,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1380,10 +1422,12 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Huskins, J",
-    "seats_open": 25,
+    "seats_open": 15,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MED 121",
+    "prerequisite_courses": [
+      "MED 121"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -1401,7 +1445,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Walsh, T",
-    "seats_open": 25,
+    "seats_open": 21,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1414,7 +1458,7 @@
     "course_title": "Music Appreciation",
     "credits": 3,
     "crn": "MUS-110-C50",
-    "days": "T W Th F Sa Su",
+    "days": "M T W Th F Sa Su",
     "start_time": "",
     "end_time": "",
     "start_date": "2026-05-18",
@@ -1422,7 +1466,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Griffin Garcia, T",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1442,9 +1486,9 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Jornigan, S",
-    "seats_open": 10,
-    "seats_total": 10,
+    "instructor": "Jornigan, S, Lonon, P",
+    "seats_open": 1,
+    "seats_total": 13,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1463,11 +1507,13 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Wakefield, D",
-    "seats_open": 25,
+    "instructor": "Wakefield, D, Huffman, R",
+    "seats_open": 4,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 101",
+    "prerequisite_courses": [
+      "NUR 101"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -1484,11 +1530,13 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": "Epley, C",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "instructor": "Epley, C, Huffman, R, Wakefield, D",
+    "seats_open": 2,
+    "seats_total": 34,
+    "prerequisite_text": "NUR 111",
+    "prerequisite_courses": [
+      "NUR 111"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -1506,10 +1554,18 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Pearson, R",
-    "seats_open": 25,
+    "seats_open": 22,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ISC 121 and ISC 130 and ISC 210 and OMT 112 and ISC 121 and ISC 131 and ISC 210 and OMT 112 and ISC 121 and ISC 132 and ISC 210 and OMT 112 and ISC 121 and ISC 221 and ISC 210 and OMT 112",
+    "prerequisite_courses": [
+      "ISC 121",
+      "ISC 130",
+      "ISC 210",
+      "OMT 112",
+      "ISC 131",
+      "ISC 132",
+      "ISC 221"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -1527,10 +1583,13 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Johnson, R",
-    "seats_open": 25,
+    "seats_open": 24,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "OST 247 and OST 248",
+    "prerequisite_courses": [
+      "OST 247",
+      "OST 248"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -1548,7 +1607,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Pearson, R",
-    "seats_open": 25,
+    "seats_open": 8,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1569,7 +1628,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Taylor, W",
-    "seats_open": 25,
+    "seats_open": 10,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1590,10 +1649,12 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Jerome, R",
-    "seats_open": 25,
+    "seats_open": 20,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PHO 110",
+    "prerequisite_courses": [
+      "PHO 110"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -1611,10 +1672,12 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Jerome, R",
-    "seats_open": 25,
+    "seats_open": 22,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PHO 110",
+    "prerequisite_courses": [
+      "PHO 110"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -1623,19 +1686,22 @@
     "course_number": "151",
     "course_title": "College Physics I",
     "credits": 4,
-    "crn": "PHY-151-C50",
+    "crn": "PHY-151-G50",
     "days": "M T W Th F Sa Su",
     "start_time": "",
     "end_time": "",
-    "start_date": "2026-05-18",
+    "start_date": "2026-06-02",
     "location": "Online Classes",
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Hill, J",
-    "seats_open": 25,
+    "seats_open": 19,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 171 or MAT 271",
+    "prerequisite_courses": [
+      "MAT 171",
+      "MAT 271"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -1644,19 +1710,21 @@
     "course_number": "251",
     "course_title": "General Physics I",
     "credits": 4,
-    "crn": "PHY-251-C50",
+    "crn": "PHY-251-G50",
     "days": "M T W Th F Sa Su",
     "start_time": "",
     "end_time": "",
-    "start_date": "2026-05-18",
+    "start_date": "2026-06-02",
     "location": "Online Classes",
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Hill, J",
-    "seats_open": 25,
+    "seats_open": 15,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 271",
+    "prerequisite_courses": [
+      "MAT 271"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -1665,19 +1733,22 @@
     "course_number": "252",
     "course_title": "General Physics II",
     "credits": 4,
-    "crn": "PHY-252-C50",
+    "crn": "PHY-252-G50",
     "days": "M T W Th F Sa Su",
     "start_time": "",
     "end_time": "",
-    "start_date": "2026-05-18",
+    "start_date": "2026-06-02",
     "location": "Online Classes",
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Hill, J",
-    "seats_open": 25,
+    "seats_open": 16,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 272 and PHY 251",
+    "prerequisite_courses": [
+      "MAT 272",
+      "PHY 251"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -1695,7 +1766,28 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Dulaney, K",
-    "seats_open": 25,
+    "seats_open": 0,
+    "seats_total": 25,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "mcdowell-technical",
+    "term": "2026SU",
+    "course_prefix": "PSY",
+    "course_number": "150",
+    "course_title": "General Psychology",
+    "credits": 3,
+    "crn": "PSY-150-C51",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-18",
+    "location": "Online Classes",
+    "campus": "WEB",
+    "mode": "in-person",
+    "instructor": "Dulaney, K",
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1716,10 +1808,12 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Dulaney, K",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -1737,10 +1831,14 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Wilson, D",
-    "seats_open": 25,
+    "seats_open": 19,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "AHR 110 or AHR 111 or ELC 111",
+    "prerequisite_courses": [
+      "AHR 110",
+      "AHR 111",
+      "ELC 111"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -1758,7 +1856,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Dillard, J",
-    "seats_open": 25,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1779,7 +1877,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Dillard, J",
-    "seats_open": 25,
+    "seats_open": 13,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1800,7 +1898,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Abernathy, E",
-    "seats_open": 25,
+    "seats_open": 13,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1821,10 +1919,12 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Abernathy, E",
-    "seats_open": 25,
+    "seats_open": 11,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 111",
+    "prerequisite_courses": [
+      "SPA 111"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -1842,10 +1942,12 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Mendoza, E",
-    "seats_open": 25,
+    "seats_open": 15,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 112",
+    "prerequisite_courses": [
+      "SPA 112"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -1862,11 +1964,13 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "McCraw, D",
+    "seats_open": 16,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "TRN 140",
+    "prerequisite_courses": [
+      "TRN 140"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -1883,11 +1987,13 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "DeWeese, T",
+    "seats_open": 15,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "TRN 140",
+    "prerequisite_courses": [
+      "TRN 140"
+    ]
   },
   {
     "college_code": "mcdowell-technical",
@@ -1904,8 +2010,8 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "McCraw, D",
+    "seats_open": 15,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1925,8 +2031,8 @@
     "location": "Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": null,
-    "seats_open": 25,
+    "instructor": "DeWeese, T",
+    "seats_open": 15,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1947,7 +2053,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Duncan, A",
-    "seats_open": 25,
+    "seats_open": 24,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1968,7 +2074,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Duncan, A",
-    "seats_open": 25,
+    "seats_open": 24,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1989,28 +2095,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Duncan, A",
-    "seats_open": 25,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "mcdowell-technical",
-    "term": "2026SU",
-    "course_prefix": "WBL",
-    "course_number": "131",
-    "course_title": "Work-Based Learning III",
-    "credits": 1,
-    "crn": "WBL-131-B11",
-    "days": "",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-18",
-    "location": "Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Duncan, A",
-    "seats_open": 25,
+    "seats_open": 21,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2031,7 +2116,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Duncan, A",
-    "seats_open": 25,
+    "seats_open": 20,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2052,7 +2137,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Duncan, A",
-    "seats_open": 25,
+    "seats_open": 24,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2073,7 +2158,7 @@
     "campus": "WEB",
     "mode": "in-person",
     "instructor": "Teale, W",
-    "seats_open": 25,
+    "seats_open": 18,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
