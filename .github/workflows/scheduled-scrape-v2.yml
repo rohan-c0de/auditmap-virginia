@@ -233,7 +233,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        state: ${{ fromJSON(needs.plan.outputs.states) }}
+        state: ${{ fromJSON(needs.plan.outputs.states).states }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
