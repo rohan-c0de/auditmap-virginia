@@ -73,6 +73,7 @@ const ncConfig: StateConfig = {
   },
 
   transferSupported: true,
+  prerenderAtBuild: true, // High Search Console traffic; pre-render at build (#702)
   popularCourses: ["ENG 111", "MAT 171", "BIO 111", "HIS 111", "PSY 150", "ECO 251"],
   defaultZip: "27601",
   defaultZipCity: "Raleigh",

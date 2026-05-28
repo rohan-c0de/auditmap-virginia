@@ -41,6 +41,7 @@ const tnConfig: StateConfig = {
   },
 
   transferSupported: true,
+  prerenderAtBuild: true, // High Search Console traffic; pre-render at build (#702)
   // Transfer data sourced from UTK's public transfer course equivalency tool
   // at bannerssb.utk.edu (10k+ mappings across all 13 TBR CCs). Additional
   // universities (APSU, MTSU, etc.) are added incrementally by running
