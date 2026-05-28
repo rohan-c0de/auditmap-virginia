@@ -109,16 +109,32 @@ interface RawRow {
 const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 
 function jenzabarTermToStandard(value: string, label: string): string | null {
-  const v = value.match(/(\d{4})\s*;\s*(FA|SP|SU|WI|FALL|SPRING|SUMMER|WINTER)/i);
   const map: Record<string, string> = {
     FA: "FA", FALL: "FA",
     SP: "SP", SPRING: "SP",
     SU: "SU", SUMMER: "SU",
     WI: "WI", WINTER: "WI",
   };
+  // Format 1: value embeds the term name. e.g. "2026;FA" or "2026;FALL"
+  const v = value.match(/(\d{4})\s*;\s*(FA|SP|SU|WI|FALL|SPRING|SUMMER|WINTER)/i);
   if (v) return `${v[1]}${map[v[2].toUpperCase()] ?? v[2].slice(0, 2).toUpperCase()}`;
+  // Format 2: label is "Fall 2026" or similar.
   const l = label.match(/(Fall|Spring|Summer|Winter|FA|SP|SU|WI)\s+(\d{4})/i);
   if (l) return `${l[2]}${map[l[1].toUpperCase()] ?? l[1].slice(0, 2).toUpperCase()}`;
+  // Format 3: label is "{academic-year} - {Term}". e.g.
+  // "2026-2027 - Fall" (NCMC) or "2026/27 - Summer". Use the FIRST year
+  // in the academic-year range as the calendar-year prefix — this is
+  // consistent with how Fall is named everywhere else (Fall 2026 = the
+  // Fall semester at the start of AY 2026-2027). Summer is ambiguous
+  // (some schools call AY 2026-2027 Summer "Summer 2026", others "2027"),
+  // but the dominant convention at the schools using this format is the
+  // starting calendar year.
+  const ay = label.match(
+    /(\d{4})(?:[-/]\d{2,4})?\s*-\s*(Fall|Spring|Summer|Winter|FA|SP|SU|WI)/i
+  );
+  if (ay) {
+    return `${ay[1]}${map[ay[2].toUpperCase()] ?? ay[2].slice(0, 2).toUpperCase()}`;
+  }
   return null;
 }
 
