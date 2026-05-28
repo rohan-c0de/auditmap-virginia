@@ -41,8 +41,16 @@ async function run(
 async function main() {
   console.log("UT program scraper");
   // snow-college (courseleaf)
+  //
+  // Snow's CourseLeaf catalog uses /programs/ rather than the template
+  // default /programs-study/. Verified via curl 2026-05-28:
+  //   https://catalog.snow.edu/programs/ → 200 with full degree list.
   await run("snow-college", () =>
-    scrapeCourseleafPrograms({ collegeSlug: "snow-college", baseUrl: "https://catalog.snow.edu" }),
+    scrapeCourseleafPrograms({
+      collegeSlug: "snow-college",
+      baseUrl: "https://catalog.snow.edu",
+      programIndexPath: "/programs/",
+    }),
   );
 }
 
