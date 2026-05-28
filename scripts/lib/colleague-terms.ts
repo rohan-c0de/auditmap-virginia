@@ -174,7 +174,15 @@ function matchCandidates(
  * year + season can't be unambiguously extracted.
  */
 function canonicalize(code: string): string | null {
-  const m = code.toLowerCase().match(/(\d{2,4})\s*(sp|su|fa|wi)/);
+  // Accept whitespace OR a single forward slash between year and season:
+  // Glen Oaks (MI) and Kellogg (MI) use codes like "26/SU" and "26/FL".
+  //
+  // Season aliases — some Colleague installs use the alternate codes
+  //   SM (Summer), FL (Fall), WN (Winter)
+  // rather than the more common SU/FA/WI. Glen Oaks's term StartDates
+  // confirmed which is which (26/SM starts 2026-05-18, 26/FL starts
+  // 2026-08-24, 27/WN starts 2027-01-11).
+  const m = code.toLowerCase().match(/(\d{2,4})[\s/]*(sp|su|sm|fa|fl|wi|wn)\b/);
   if (!m) return null;
   let year = m[1];
   if (year.length === 2) {
@@ -184,7 +192,12 @@ function canonicalize(code: string): string | null {
   } else if (year.length === 3) {
     return null;
   }
-  return `${year}${m[2].toUpperCase()}`;
+  const seasonAlias: Record<string, string> = {
+    sp: "SP", su: "SU", sm: "SU",
+    fa: "FA", fl: "FA",
+    wi: "WI", wn: "WI",
+  };
+  return `${year}${seasonAlias[m[2]]}`;
 }
 
 /**

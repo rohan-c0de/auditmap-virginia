@@ -302,7 +302,12 @@ async function scrapeCollege(
   slug: string,
   baseUrl: string,
   termName: string,
-  context: BrowserContext
+  context: BrowserContext,
+  // Native dropdown value as discovered by resolveCollegeTerms() — e.g.
+  // "26/FL" for Glen Oaks's Fall 2026 option. When provided we try this
+  // first; useful for sites whose codes don't fit the standard YYYYSP
+  // mold the rest of the matching logic assumes.
+  termCodeHint?: string,
 ): Promise<CourseSection[]> {
   console.log(`\nScraping ${slug} (${baseUrl}) for ${termName}...`);
 
@@ -390,7 +395,11 @@ async function scrapeCollege(
       (t) => {
         const label = t.label.toLowerCase();
         const value = t.value;
-        // Exact term code match first (highest priority)
+        // Caller-provided hint takes highest priority — bypasses our
+        // YYYYSP assumption entirely for sites like Glen Oaks (26/FL)
+        // and Kellogg (26/FA) whose dropdown values use slash codes.
+        if (termCodeHint && value === termCodeHint) return true;
+        // Exact term code match (2nd priority)
         if (expectedTermCode && value === expectedTermCode) return true;
         // Exact label match
         if (label === termNameLower) return true;
@@ -658,9 +667,9 @@ async function main() {
   });
 
   for (const [slug, baseUrl] of targets) {
-    let termNames: string[];
+    let termPairs: Array<{ name: string; code: string | undefined }>;
     if (overrideTermNames) {
-      termNames = overrideTermNames;
+      termPairs = overrideTermNames.map((n) => ({ name: n, code: undefined }));
     } else {
       const discovered = await resolveCollegeTerms(baseUrl, { freezeContext: { state: "mi", slug } });
       if (discovered.length === 0) {
@@ -668,12 +677,12 @@ async function main() {
         await sleep(DELAY_MS);
         continue;
       }
-      termNames = discovered.map((t) => t.name);
-      console.log(`\n--- ${slug}: discovered ${termNames.length} term(s): ${termNames.join(", ")} ---`);
+      termPairs = discovered.map((t) => ({ name: t.name, code: t.code }));
+      console.log(`\n--- ${slug}: discovered ${termPairs.length} term(s): ${termPairs.map((p) => p.name).join(", ")} ---`);
     }
 
-    for (const currentTermName of termNames) {
-      const sections = await scrapeCollege(slug, baseUrl, currentTermName, context);
+    for (const { name: currentTermName, code: currentTermCode } of termPairs) {
+      const sections = await scrapeCollege(slug, baseUrl, currentTermName, context, currentTermCode);
 
       if (sections.length > 0) {
         const termCode = sections[0].term;
