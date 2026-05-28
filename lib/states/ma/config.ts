@@ -78,6 +78,7 @@ const maConfig: StateConfig = {
         runner: "http",
       },
       { scripts: ["scripts/ma/scrape-colleague.ts"], runner: "playwright" },
+      { scripts: ["scripts/ma/scrape-jenzabar-webforms.ts"], runner: "playwright" },
     ],
     transfers: [{ scripts: ["scripts/ma/scrape-masstransfer.ts"], runner: "http" }],
     prereqs: [
