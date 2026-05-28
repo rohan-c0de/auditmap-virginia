@@ -168,6 +168,11 @@ const txConfig: StateConfig = {
       // Wharton County — all six are Imperva-gated; the scraper acquires
       // WAF cookies via headless Chromium once per base URL.
       { scripts: ["scripts/tx/scrape-acalog-prereqs.ts"], runner: "playwright" },
+      // Two more TX colleges publish their catalog via CourseLeaf (not
+      // Acalog). San Jacinto uses subject-roll-up pages with
+      // <div class="courseblock"> blocks; Grayson uses per-course detail
+      // pages. The scraper handles both layouts.
+      { scripts: ["scripts/tx/scrape-courseleaf-prereqs.ts"], runner: "http" },
     ],
     // manual-only: programs — Phase 5+.
   },
