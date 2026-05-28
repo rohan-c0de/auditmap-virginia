@@ -135,14 +135,16 @@ jobs:
         if: matrix.state == 'nc'
         run: pip install --quiet pdfplumber
 
-      - name: Install poppler-utils (AZ/AR/ME/WV scrapers shell out to pdftotext)
+      - name: Install poppler-utils (AZ/AR/ME/SC/WV scrapers shell out to pdftotext)
         # scripts/az/scrape-dine.ts — Diné College PDF schedule
         # scripts/ar/scrape-uaccm.ts — UACCM PDF schedule
         # scripts/ar/scrape-seark-pdf-programs.ts — SEARK PDF catalog
         # scripts/me/scrape-catalog-prereqs.ts — Maine MCCS college catalogs
+        # scripts/sc/scrape-northeastern-pdf.ts — Northeastern Technical College PDF schedule
+        # scripts/sc/scrape-williamsburg-pdf.ts — Williamsburg Technical College PDF schedule
         # scripts/wv/scrape-eastern-wv.ts — Eastern WV PDF schedule
         # The Ubuntu runner doesn't ship poppler-utils by default.
-        if: matrix.state == 'az' || matrix.state == 'ar' || matrix.state == 'me' || matrix.state == 'wv'
+        if: matrix.state == 'az' || matrix.state == 'ar' || matrix.state == 'me' || matrix.state == 'sc' || matrix.state == 'wv'
         run: sudo apt-get install -y --no-install-recommends poppler-utils
 
       - name: Resolve terms
