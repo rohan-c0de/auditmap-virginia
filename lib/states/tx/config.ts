@@ -146,6 +146,15 @@ const txConfig: StateConfig = {
         scripts: ["scripts/tx/scrape-collin.ts"],
         runner: "http",
       },
+      // Clarendon College — bespoke ASP.NET WebForms class search at
+      // ci.clarendoncollege.edu. Sparse data: dept, course nbr, type,
+      // section, title, credits, status, instructor — no CRN, no meeting
+      // days/times, no seats. Course-identity + instructor data still has
+      // planner value. ~205 sections per cron tick.
+      {
+        scripts: ["scripts/tx/scrape-clarendon.ts"],
+        runner: "playwright",
+      },
     ],
     transfers: [
       { scripts: ["scripts/tx/scrape-transfer-tccns.ts"], runner: "http" },
