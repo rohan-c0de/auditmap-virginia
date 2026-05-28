@@ -171,6 +171,7 @@ import caConfig from "./ca/config";
 import nvConfig from "./nv/config";
 import azConfig from "./az/config";
 import arConfig from "./ar/config";
+import nmConfig from "./nm/config";
 import sdConfig from "./sd/config";
 
 const ALL_CONFIGS: StateConfig[] = [
@@ -209,6 +210,7 @@ const ALL_CONFIGS: StateConfig[] = [
   nvConfig,
   azConfig,
   arConfig,
+  nmConfig,
   sdConfig,
 ];
 
