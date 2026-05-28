@@ -47,6 +47,7 @@ const scConfig: StateConfig = {
   },
 
   transferSupported: true,
+  prerenderAtBuild: true, // High Search Console traffic; pre-render at build (#702)
   popularCourses: ["ENG 101", "MAT 110", "BIO 101", "HIS 101", "PSY 201", "ECO 210"],
   defaultZip: "29201",
   defaultZipCity: "Columbia",

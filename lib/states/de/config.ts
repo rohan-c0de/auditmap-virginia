@@ -21,6 +21,7 @@ const deConfig: StateConfig = {
   },
 
   transferSupported: true,
+  prerenderAtBuild: true, // High Search Console traffic; pre-render at build (#702)
   popularCourses: ["ENG 111", "MAT 153", "BIO 120", "HIS 111", "PSY 121", "ECO 251"],
   defaultZip: "19901",
   defaultZipCity: "Dover",

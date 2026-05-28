@@ -21,6 +21,7 @@ const ctConfig: StateConfig = {
   },
 
   transferSupported: true,
+  prerenderAtBuild: true, // High Search Console traffic; pre-render at build (#702)
   popularCourses: ["ENG 101", "MAT 137", "BIO 111", "PSY 111", "HIS 101", "SOC 101"],
   defaultZip: "06103",
   defaultZipCity: "Hartford",
