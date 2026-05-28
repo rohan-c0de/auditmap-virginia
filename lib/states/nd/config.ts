@@ -86,7 +86,11 @@ const ndConfig: StateConfig = {
       // Single PeopleSoft cluster covers all 5 NDUS community colleges.
       { scripts: ["scripts/nd/scrape-ndus.ts"], runner: "playwright" },
     ],
-    prereqs: { source: "aggregate-from-courses" },
+    prereqs: [
+      // BSC (CourseLeaf) + WSC (Acalog) — NDUS CCN means one prereq dict
+      // covers all 5 NDUS CCs. DCB/NDSCS Cleancatalog deferred (WAF-blocked).
+      { scripts: ["scripts/nd/scrape-catalog-prereqs.ts"], runner: "http" },
+    ],
     // manual-only: transfers — no statewide articulation portal registered yet.
     //   Candidates to investigate: TransferND / Dakota Transfer (ndus.edu).
     // manual-only: programs — Phase 6 found no templated catalog on any college.
