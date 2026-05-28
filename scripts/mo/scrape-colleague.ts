@@ -9,6 +9,7 @@
  *
  *   east-central-college                 → selfservice.eastcentral.edu
  *   ozarks-technical-community-college   → central.otc.edu
+ *   st-charles-community-college         → sccconnection.stchas.edu
  *
  * Hosts confirmed against each college's public /Student/Courses page.
  * (Auto-add-state's fingerprinter originally classified OTC as Banner
@@ -34,6 +35,7 @@ import { scrapeColleagueState } from "../lib/scrape-colleague";
 const HOSTS: Record<string, string> = {
   "east-central-college": "https://selfservice.eastcentral.edu",
   "ozarks-technical-community-college": "https://central.otc.edu",
+  "st-charles-community-college": "https://sccconnection.stchas.edu",
 };
 
 async function main() {

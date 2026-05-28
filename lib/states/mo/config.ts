@@ -46,10 +46,20 @@ const moConfig: StateConfig = {
     ],
   },
   scrapers: {
-    // Two of MO's six scrapable colleges are wired; jefferson-college and
-    // MCC-Kansas-City need re-fingerprint (see scripts/mo/scrape-colleague.ts).
+    // 7 of 13 MCCA colleges wired:
+    //   Colleague (3): east-central, ozarks-tech, st-charles
+    //   Jenzabar ICS (2): crowder, mineral-area
+    //   Already have data (2): jefferson, metro-kc (scraped during auto-add-state)
+    // Deferred — SSO-gated or blocked:
+    //   saint-louis: Ellucian Experience SSO-gated (former Banner SSB 9 path returns 404)
+    //   moberly-area: my.macc.edu login-gated
+    //   state-technical: mytech.statetechmo.edu login-gated
+    //   state-fair: Cloudflare challenge wall
+    //   three-rivers: SSO-gated
+    //   north-central-missouri: SiteLock captcha
     courses: [
       { scripts: ["scripts/mo/scrape-colleague.ts"], runner: "playwright" },
+      { scripts: ["scripts/mo/scrape-jenzabar.ts"], runner: "playwright" },
     ],
     // manual-only: transfers — no articulation portal registered for MO yet.
     prereqs: { source: "aggregate-from-courses" },
