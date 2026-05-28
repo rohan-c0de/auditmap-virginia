@@ -19,7 +19,10 @@ const orConfig: StateConfig = {
       "Oregon has no statewide senior-tuition statute. The 17 community college districts (organized under ORS Chapter 341) set their own tuition policies. Most offer reduced or waived tuition for residents 62+ on a space-available basis. Contact your college's registrar or financial aid office for the specific terms.",
   },
 
-  transferSupported: false,
+  transferSupported: true,
+  universityAliases: [
+    { slug: "oregon-state", names: ["OSU", "Oregon State University", "Oregon State"] },
+  ],
   popularCourses: ["WR 121Z", "MTH 111Z", "WR 227Z", "COMM 111Z", "PSY 201Z", "WR 115"],
   defaultZip: "97201",
   defaultZipCity: "Portland",
@@ -50,8 +53,8 @@ const orConfig: StateConfig = {
       { scripts: ["scripts/or/scrape-columbia-gorge.ts"], runner: "http" },
       { scripts: ["scripts/or/scrape-colleague.ts"], runner: "playwright" },
     ],
+    transfers: [{ scripts: ["scripts/or/scrape-transfer-osu.ts"], runner: "http" }],
     prereqs: { source: "aggregate-from-courses" },
-    // manual-only: transfers — Oregon uses CCN (Common Course Numbering) rather than a per-course equivalency portal.
     // manual-only: programs — Phase 5+.
   },
 };
