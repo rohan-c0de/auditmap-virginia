@@ -55,6 +55,14 @@ const nmConfig: StateConfig = {
         scripts: ["scripts/nm/scrape-campusnexus.ts"],
         runner: "http",
       },
+      {
+        // SIPI publishes its term schedule as a PDF hosted on edl.io, linked
+        // from the homepage. PDF download + `pdftotext -layout` parsing — no
+        // browser needed. Requires poppler-utils on the runner (already
+        // installed for SC PDF scrapers; see commit e83abf1).
+        scripts: ["scripts/nm/scrape-sipi-pdf.ts"],
+        runner: "http",
+      },
     ],
     // manual-only: transfers — no NM state articulation portal registered yet.
     // manual-only: prereqs — Phase 4 catalog-prereq scrapers deferred.
