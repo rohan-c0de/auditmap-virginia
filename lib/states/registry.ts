@@ -171,6 +171,7 @@ import caConfig from "./ca/config";
 import nvConfig from "./nv/config";
 import azConfig from "./az/config";
 import arConfig from "./ar/config";
+import nmConfig from "./nm/config";
 
 const ALL_CONFIGS: StateConfig[] = [
   vaConfig,
@@ -208,6 +209,7 @@ const ALL_CONFIGS: StateConfig[] = [
   nvConfig,
   azConfig,
   arConfig,
+  nmConfig,
 ];
 
 const configs: Record<string, StateConfig> = Object.fromEntries(
