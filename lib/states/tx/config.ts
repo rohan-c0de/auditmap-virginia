@@ -120,6 +120,21 @@ const txConfig: StateConfig = {
         scripts: ["scripts/tx/scrape-banner-ssb.ts"],
         runner: "http",
       },
+      // Panola College — standard Jenzabar StudentRegistration portlet
+      // (public Everyone.jnz path, uses #stuRegTermSelect). Driven by the
+      // shared template at scripts/lib/scrape-jenzabar.ts.
+      {
+        scripts: ["scripts/tx/scrape-jenzabar.ts"],
+        runner: "playwright",
+      },
+      // Paris Jr, NCTC, Texarkana — Jenzabar ASP.NET WebForms variant
+      // (`pg0$V$ddlTerm` + `pg0$V$btnSearch`, letter-chunk pager). Driven
+      // by a new shared template at scripts/lib/scrape-jenzabar-webforms.ts
+      // that generalizes the existing bespoke Kilgore scraper.
+      {
+        scripts: ["scripts/tx/scrape-jenzabar-webforms.ts"],
+        runner: "playwright",
+      },
     ],
     transfers: [
       { scripts: ["scripts/tx/scrape-transfer-tccns.ts"], runner: "http" },
