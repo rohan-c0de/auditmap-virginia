@@ -71,6 +71,7 @@ const paConfig: StateConfig = {
     // Westmoreland) — each needs its own scraper. Tracked in #100.
     courses: [
       { scripts: ["scripts/pa/scrape-banner-ssb.ts"], runner: "http" },
+      { scripts: ["scripts/pa/scrape-banner-8.ts"], runner: "http" },
     ],
     transfers: [
       { scripts: ["scripts/pa/scrape-transfer.ts"], runner: "http" },
