@@ -113,6 +113,39 @@ const txConfig: StateConfig = {
         scripts: ["scripts/tx/scrape-howard.ts"],
         runner: "http",
       },
+      // Vernon College + Victoria College — two standalone Banner SSB 9
+      // instances with public guest access. Vernon serves SSB at the root
+      // domain (www.vernoncollege.edu) rather than the usual subdomain.
+      {
+        scripts: ["scripts/tx/scrape-banner-ssb.ts"],
+        runner: "http",
+      },
+      // Panola College — standard Jenzabar StudentRegistration portlet
+      // (public Everyone.jnz path, uses #stuRegTermSelect). Driven by the
+      // shared template at scripts/lib/scrape-jenzabar.ts.
+      {
+        scripts: ["scripts/tx/scrape-jenzabar.ts"],
+        runner: "playwright",
+      },
+      // Paris Jr, NCTC, Texarkana — Jenzabar ASP.NET WebForms variant
+      // (`pg0$V$ddlTerm` + `pg0$V$btnSearch`, letter-chunk pager). Driven
+      // by a new shared template at scripts/lib/scrape-jenzabar-webforms.ts
+      // that generalizes the existing bespoke Kilgore scraper.
+      {
+        scripts: ["scripts/tx/scrape-jenzabar-webforms.ts"],
+        runner: "playwright",
+      },
+      // Collin County Community College District — a custom Azure App
+      // Service REST API at coursebook-collin-api.azurewebsites.net/sections
+      // powers the public class-schedule SPA. Workday-flavored JSON; no
+      // auth, paginated 10 items/page (server caps explicit pageSize to
+      // 0), ~195 pages, ~1,948 sections. 86% of sections expose a
+      // prerequisite sentence in the Description field, so the scraper
+      // captures prereq_text + prereq_courses inline.
+      {
+        scripts: ["scripts/tx/scrape-collin.ts"],
+        runner: "http",
+      },
     ],
     transfers: [
       { scripts: ["scripts/tx/scrape-transfer-tccns.ts"], runner: "http" },
