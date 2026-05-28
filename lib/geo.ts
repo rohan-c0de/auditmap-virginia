@@ -40,6 +40,7 @@ import caZipcodes from "@/data/ca/zipcodes.json";
 import nvZipcodes from "@/data/nv/zipcodes.json";
 import azZipcodes from "@/data/az/zipcodes.json";
 import arZipcodes from "@/data/ar/zipcodes.json";
+import laZipcodes from "@/data/la/zipcodes.json";
 import nmZipcodes from "@/data/nm/zipcodes.json";
 import sdZipcodes from "@/data/sd/zipcodes.json";
 
@@ -81,6 +82,7 @@ const ZIP_REGISTRY: Record<string, Record<string, ZipEntry>> = {
   nv: nvZipcodes as Record<string, ZipEntry>,
   az: azZipcodes as Record<string, ZipEntry>,
   ar: arZipcodes as Record<string, ZipEntry>,
+  la: laZipcodes as Record<string, ZipEntry>,
   nm: nmZipcodes as Record<string, ZipEntry>,
   sd: sdZipcodes as Record<string, ZipEntry>,
 };
