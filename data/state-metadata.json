@@ -413,6 +413,23 @@
       "defaultZipCity": "Charleston",
       "seniorWaiver": null
     },
+    "mn": {
+      "fullName": "Minnesota",
+      "fipsCode": "27",
+      "systemName": "Minnesota State",
+      "systemFullName": "Minnesota State Colleges and Universities",
+      "systemUrl": "https://www.minnstate.edu/",
+      "defaultZip": "55101",
+      "defaultZipCity": "Saint Paul",
+      "seniorWaiver": {
+        "ageThreshold": 62,
+        "legalCitation": "Minn. Stat. § 135A.51",
+        "description": "Minnesota residents aged 62+ may take courses at state colleges and universities for an administrative fee with regular tuition waived, on a space-available basis.",
+        "bannerTitle": "MN Senior Citizen Education Program",
+        "bannerSummary": "Over 62 in Minnesota? Tuition is waived at state colleges (small admin fee applies).",
+        "bannerDetail": "Minnesota law allows residents aged 62+ to take courses at Minnesota State colleges and universities; for-credit enrollment costs $20/credit administrative fee, and audit enrollment is free, on a space-available basis."
+      }
+    },
     "sd": {
       "fullName": "South Dakota",
       "fipsCode": "46",
