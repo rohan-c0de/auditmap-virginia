@@ -376,6 +376,23 @@
       "defaultZipCity": "Montpelier",
       "seniorWaiver": null
     },
+    "wa": {
+      "fullName": "Washington",
+      "fipsCode": "53",
+      "systemName": "SBCTC",
+      "systemFullName": "Washington State Board for Community and Technical Colleges",
+      "systemUrl": "https://www.sbctc.edu/",
+      "defaultZip": "98101",
+      "defaultZipCity": "Seattle",
+      "seniorWaiver": {
+        "ageThreshold": 60,
+        "legalCitation": "RCW 28B.50.265",
+        "description": "Washington residents aged 60+ may audit community and technical college courses on a space-available basis with tuition waived; a nominal registration fee (typically $5 per quarter) applies.",
+        "bannerTitle": "Washington Senior Tuition Waiver",
+        "bannerSummary": "Over 60 in Washington? Audit community college courses tuition-free on a space-available basis.",
+        "bannerDetail": "Washington law (RCW 28B.50.265) allows residents aged 60+ to audit credit and noncredit courses at any of the 33 SBCTC community and technical colleges on a space-available basis. Tuition is waived; a small registration fee (typically $5 per quarter) applies. Each college sets its own enrollment procedure."
+      }
+    },
     "wv": {
       "fullName": "West Virginia",
       "fipsCode": "54",
