@@ -422,6 +422,20 @@
       "defaultZip": "57104",
       "defaultZipCity": "Sioux Falls",
       "seniorWaiver": null
+    },
+    "ut": {
+      "fullName": "Utah",
+      "fipsCode": "49",
+      "systemName": "USHE",
+      "systemFullName": "Utah System of Higher Education (community colleges)",
+      "systemUrl": "https://ushe.edu/",
+      "defaultZip": "84130",
+      "defaultZipCity": "Salt Lake City",
+      "seniorWaiver": {
+        "ageThreshold": 62,
+        "legalCitation": "Utah Code 53B-8-104",
+        "description": "Utah residents aged 62 and older may enroll in courses at Utah's public colleges and universities tuition-free on a space-available basis (lab fees and other course fees still apply)."
+      }
     }
   },
   "fipsCodes": {
