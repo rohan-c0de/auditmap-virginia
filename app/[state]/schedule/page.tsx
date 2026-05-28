@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import ScheduleClient from "./ScheduleClient";
-import { getAllStates } from "@/lib/states/registry";
 import { requireStateConfig } from "@/lib/states/route-helpers";
 import { getUniversities } from "@/lib/transfer";
 import { getAvailableTermsForDisplay } from "@/lib/terms";
@@ -9,9 +8,13 @@ type Props = {
   params: Promise<{ state: string }>;
 };
 
-export function generateStaticParams() {
-  return getAllStates().map((s) => ({ state: s.slug }));
-}
+// Schedule pages are noindex and fully client-driven — no SEO benefit from
+// static generation. At build time, large states (TX: 20k+ sections, 90MB
+// transfers) saturate the Supabase connection pool when multiple pages are
+// generated in parallel, causing statement timeouts that kill the entire
+// build. Force-dynamic avoids the build-time query load entirely; the page
+// renders on first request and is then edge-cached per Vercel's defaults.
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { state } = await params;
