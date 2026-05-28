@@ -100,45 +100,36 @@ async function loadStateTransferDestinations(
   if (existing) return existing;
 
   const promise = (async () => {
-    // We only need a destination tally, so request a thin projection. The
-    // table is keyed on (state, cc_prefix, cc_number, university); the read
-    // is sequential-on-state with a small projection, which Postgres handles
-    // comfortably for the per-state row counts we see in production.
-    const PAGE_SIZE = 1000;
-    const tally = new Map<string, number>();
-    let total = 0;
-    let from = 0;
+    // Single GROUP BY RPC instead of a sequential paginated while-loop scan.
+    // The old approach fetched transfers in pages of 1000, requiring 50–100
+    // round trips for large states (IL, CA, TX, NJ). During parallel next build
+    // those sequential scans saturated the connection pool and caused
+    // statement_timeout errors across unrelated queries. Migration 016 adds the
+    // get_state_transfer_destinations RPC backed by idx_transfers_state_university.
+    const { data, error } = await supabase.rpc(
+      "get_state_transfer_destinations",
+      { p_state: state },
+    );
 
-    while (true) {
-      const { data, error } = await supabase
-        .from("transfers")
-        .select("university, univ_course")
-        .eq("state", state)
-        .range(from, from + PAGE_SIZE - 1);
+    if (error || !data || data.length === 0) {
       if (error) {
         console.warn(
           `loadStateTransferDestinations error for ${state}:`,
           error.message,
         );
-        break;
       }
-      const rows = data ?? [];
-      if (rows.length === 0) break;
-      for (const row of rows) {
-        if (row.univ_course && row.univ_course.includes("*")) continue;
-        const u = row.university;
-        if (!u) continue;
-        tally.set(u, (tally.get(u) ?? 0) + 1);
-        total += 1;
-      }
-      if (rows.length < PAGE_SIZE) break;
-      from += PAGE_SIZE;
+      return { destinations: [] as StateInsightTransferDest[], total: 0 };
     }
 
-    const destinations = Array.from(tally.entries())
-      .map(([university, mappingCount]) => ({ university, mappingCount }))
-      .sort((a, b) => b.mappingCount - a.mappingCount)
-      .slice(0, 5);
+    const destinations = (data as { university: string; mapping_count: string | number }[]).map(
+      (row) => ({
+        university: row.university,
+        mappingCount: Number(row.mapping_count),
+      }),
+    );
+    const total = Number(
+      (data as { total_count: string | number }[])[0]?.total_count ?? 0,
+    );
 
     return { destinations, total };
   })();

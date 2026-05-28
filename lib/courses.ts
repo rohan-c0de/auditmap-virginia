@@ -64,30 +64,33 @@ export async function loadCoursesForCollege(
 
     const PAGE_SIZE = 1000;
     const pages = Math.ceil(count / PAGE_SIZE);
-    const promises: Promise<CourseSection[]>[] = [];
 
+    // Concurrency-cap page fetches (same pattern as loadAllCourses). The
+    // college page loads courses for every term simultaneously; without a cap,
+    // 4 terms × 3 pages × 3 build workers = 36 concurrent Supabase queries
+    // from this one function alone, which saturates the connection pool and
+    // causes statement_timeout on other queries.
+    const tasks: Array<() => Promise<CourseSection[]>> = [];
     for (let i = 0; i < pages; i++) {
       const start = i * PAGE_SIZE;
       const end = start + PAGE_SIZE - 1;
-      promises.push(
-        (async () => {
-          const { data, error } = await supabase
-            .from("courses")
-            .select("*")
-            .eq("college_code", collegeSlug)
-            .eq("term", term)
-            .eq("state", state)
-            .range(start, end);
-          if (error) {
-            console.error(`loadCoursesForCollege page ${i} error:`, error.message);
-            return [];
-          }
-          return (data || []).map(mapRow);
-        })()
-      );
+      tasks.push(async () => {
+        const { data, error } = await supabase
+          .from("courses")
+          .select("*")
+          .eq("college_code", collegeSlug)
+          .eq("term", term)
+          .eq("state", state)
+          .range(start, end);
+        if (error) {
+          console.error(`loadCoursesForCollege page ${i} error:`, error.message);
+          return [];
+        }
+        return (data || []).map(mapRow);
+      });
     }
 
-    const results = await Promise.all(promises);
+    const results = await runPooled(tasks, 5);
     return results.flat();
   });
 }
