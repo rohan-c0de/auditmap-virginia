@@ -50,7 +50,7 @@ const ndConfig: StateConfig = {
       "North Dakota law permits residents aged 65+ to audit courses at NDUS public colleges and universities tuition-free, space permitting. Contact the registrar at each college for application steps. Tribal colleges are outside NDUS and have their own tuition policies.",
   },
 
-  transferSupported: false,
+  transferSupported: true,
   popularCourses: ["ENGL 110", "MATH 103", "PSYC 111", "BIOL 150", "HIST 103", "COMM 110"],
   defaultZip: "58501",
   defaultZipCity: "Bismarck",
@@ -91,8 +91,11 @@ const ndConfig: StateConfig = {
       // covers all 5 NDUS CCs. DCB/NDSCS Cleancatalog deferred (WAF-blocked).
       { scripts: ["scripts/nd/scrape-catalog-prereqs.ts"], runner: "http" },
     ],
-    // manual-only: transfers — no statewide articulation portal registered yet.
-    //   Candidates to investigate: TransferND / Dakota Transfer (ndus.edu).
+    transfers: [
+      // GERTA PDF → gen-ed 1:1 transfers (CCN). Major-specific transfers
+      // would require per-receiver TES (CollegeSource) scraping — deferred.
+      { scripts: ["scripts/nd/scrape-transfer-gerta.ts"], runner: "http" },
+    ],
     // manual-only: programs — Phase 6 found no templated catalog on any college.
   },
 };
