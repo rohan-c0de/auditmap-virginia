@@ -434,7 +434,7 @@
     "campus": "Main",
     "mode": "online",
     "instructor": null,
-    "seats_open": 0,
+    "seats_open": -1,
     "seats_total": 0,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -790,7 +790,7 @@
     "campus": "Community College",
     "mode": "in-person",
     "instructor": "Fernaundra L Ferguson",
-    "seats_open": 1,
+    "seats_open": -1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -811,7 +811,7 @@
     "campus": "Community College",
     "mode": "in-person",
     "instructor": "Fernaundra L Ferguson",
-    "seats_open": 8,
+    "seats_open": 6,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -832,7 +832,7 @@
     "campus": "Community College",
     "mode": "in-person",
     "instructor": "Jamell Stallings",
-    "seats_open": 0,
+    "seats_open": -2,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1322,7 +1322,7 @@
     "campus": "Main",
     "mode": "online",
     "instructor": null,
-    "seats_open": 0,
+    "seats_open": -1,
     "seats_total": 0,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1387,27 +1387,6 @@
     "instructor": "Shana M Wilson",
     "seats_open": -6,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "udc-cc",
-    "term": "2026SU",
-    "course_prefix": "GMCT",
-    "course_number": "001",
-    "course_title": "OPERATIONS MANAGEMENT",
-    "credits": 3,
-    "crn": "33122",
-    "days": "",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "",
-    "location": "",
-    "campus": "Main",
-    "mode": "online",
-    "instructor": null,
-    "seats_open": 0,
-    "seats_total": 1,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1616,7 +1595,7 @@
     "campus": "Main",
     "mode": "online",
     "instructor": null,
-    "seats_open": 0,
+    "seats_open": -1,
     "seats_total": 0,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1637,7 +1616,7 @@
     "campus": "Main",
     "mode": "online",
     "instructor": null,
-    "seats_open": 0,
+    "seats_open": -1,
     "seats_total": 0,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1658,7 +1637,7 @@
     "campus": "Main",
     "mode": "online",
     "instructor": null,
-    "seats_open": 0,
+    "seats_open": -1,
     "seats_total": 0,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1679,7 +1658,7 @@
     "campus": "Main",
     "mode": "online",
     "instructor": null,
-    "seats_open": 0,
+    "seats_open": -1,
     "seats_total": 0,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1700,7 +1679,7 @@
     "campus": "Main",
     "mode": "online",
     "instructor": null,
-    "seats_open": 0,
+    "seats_open": -1,
     "seats_total": 0,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1721,7 +1700,7 @@
     "campus": "Main",
     "mode": "online",
     "instructor": null,
-    "seats_open": 0,
+    "seats_open": -1,
     "seats_total": 0,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1847,7 +1826,7 @@
     "campus": "Main",
     "mode": "online",
     "instructor": null,
-    "seats_open": 0,
+    "seats_open": -1,
     "seats_total": 0,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1868,7 +1847,7 @@
     "campus": "Main",
     "mode": "online",
     "instructor": null,
-    "seats_open": 0,
+    "seats_open": -1,
     "seats_total": 0,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2015,7 +1994,7 @@
     "campus": "Community College",
     "mode": "in-person",
     "instructor": "Patricia George",
-    "seats_open": 1,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": "IGED 110C (min D) or IGED 110 (min D) or English 111C (min D) or English 111 (min D)",
     "prerequisite_courses": [
@@ -2365,7 +2344,7 @@
     "campus": "Community College",
     "mode": "in-person",
     "instructor": "William A Taylor",
-    "seats_open": 11,
+    "seats_open": 10,
     "seats_total": 25,
     "prerequisite_text": "IGED 120C (min D) or IGED 120 (min D) or MATH 101 (min D) or MATH 101C (min D) or MATH 105C (min D) or MATH 105 (min D)",
     "prerequisite_courses": [
@@ -2722,7 +2701,7 @@
     "campus": "Law School",
     "mode": "in-person",
     "instructor": null,
-    "seats_open": 1,
+    "seats_open": 0,
     "seats_total": 5,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2785,8 +2764,8 @@
     "campus": "Law School",
     "mode": "in-person",
     "instructor": "Debra R Cohen",
-    "seats_open": 14,
-    "seats_total": 14,
+    "seats_open": 1,
+    "seats_total": 10,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -3704,7 +3683,7 @@
     "course_title": "Clinical Practicum Level 4(A)",
     "credits": 3,
     "crn": "33124",
-    "days": "MTuWThF",
+    "days": "TuWThF",
     "start_time": "9:00 AM",
     "end_time": "5:00 PM",
     "start_date": "2026-05-18",
@@ -3842,7 +3821,7 @@
     "campus": "Main",
     "mode": "online",
     "instructor": null,
-    "seats_open": 0,
+    "seats_open": -1,
     "seats_total": 0,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3863,7 +3842,7 @@
     "campus": "Main",
     "mode": "online",
     "instructor": null,
-    "seats_open": 0,
+    "seats_open": -1,
     "seats_total": 0,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3905,7 +3884,7 @@
     "campus": "Main",
     "mode": "online",
     "instructor": null,
-    "seats_open": 0,
+    "seats_open": -1,
     "seats_total": 0,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3926,7 +3905,7 @@
     "campus": "Main",
     "mode": "online",
     "instructor": null,
-    "seats_open": 0,
+    "seats_open": -1,
     "seats_total": 0,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3947,7 +3926,7 @@
     "campus": "Main",
     "mode": "online",
     "instructor": null,
-    "seats_open": 0,
+    "seats_open": -2,
     "seats_total": 0,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3968,7 +3947,7 @@
     "campus": "Workforce Development",
     "mode": "in-person",
     "instructor": "Michelle Roberts",
-    "seats_open": 6,
+    "seats_open": 8,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4010,7 +3989,7 @@
     "campus": "Workforce Development",
     "mode": "in-person",
     "instructor": "Ingrid Wright-Rich",
-    "seats_open": 8,
+    "seats_open": 6,
     "seats_total": 8,
     "prerequisite_text": "WDHA 100H (min 1)",
     "prerequisite_courses": [
@@ -4033,7 +4012,7 @@
     "campus": "Workforce Development",
     "mode": "in-person",
     "instructor": "William Watson",
-    "seats_open": 2,
+    "seats_open": 0,
     "seats_total": 12,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4075,7 +4054,7 @@
     "campus": "Workforce Development",
     "mode": "in-person",
     "instructor": "Jeffrey Palacios",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 12,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4188,7 +4167,7 @@
     "campus": "Workforce Development",
     "mode": "in-person",
     "instructor": "Ashley A Jones",
-    "seats_open": 3,
+    "seats_open": 0,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4209,7 +4188,7 @@
     "campus": "Workforce Development",
     "mode": "in-person",
     "instructor": "Maria d Arese",
-    "seats_open": 7,
+    "seats_open": 6,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4406,7 +4385,7 @@
     "campus": "Workforce Development",
     "mode": "online",
     "instructor": "Sylvia Harris",
-    "seats_open": 5,
+    "seats_open": 4,
     "seats_total": 12,
     "prerequisite_text": "WHAD 100 (min C)",
     "prerequisite_courses": [
@@ -4429,7 +4408,7 @@
     "campus": "Workforce Development",
     "mode": "in-person",
     "instructor": "Daniel M Hall",
-    "seats_open": 1,
+    "seats_open": 0,
     "seats_total": 11,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4641,7 +4620,7 @@
     "campus": "Workforce Development",
     "mode": "in-person",
     "instructor": "Erica J Gleaton",
-    "seats_open": 2,
+    "seats_open": 1,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4683,7 +4662,7 @@
     "campus": "Workforce Development",
     "mode": "in-person",
     "instructor": "Marvin Henry",
-    "seats_open": 3,
+    "seats_open": 2,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
