@@ -232,7 +232,14 @@
       "systemUrl": "https://hed.nm.gov/",
       "defaultZip": "87501",
       "defaultZipCity": "Santa Fe",
-      "seniorWaiver": null
+      "seniorWaiver": {
+        "ageThreshold": 65,
+        "legalCitation": "NMSA 1978 § 21-21D (Senior Citizens Reduced Tuition Act; impl. 5.7.19 NMAC)",
+        "description": "New Mexico residents aged 65+ pay $5.00 per credit hour for up to 10 credit hours per semester at NM post-secondary degree-granting institutions, on a space-available basis.",
+        "bannerTitle": "New Mexico Senior Citizens Reduced Tuition",
+        "bannerSummary": "Age 65+ in New Mexico? Pay $5 per credit hour, up to 10 credits per semester.",
+        "bannerDetail": "Under the Senior Citizens Reduced Tuition Act (NMSA 1978 § 21-21D, implemented by 5.7.19 NMAC), New Mexico residents who reach age 65 by the census date may register at the reduced rate of $5.00 per credit hour for up to 10 credit hours per semester, on a space-available basis."
+      }
     },
     "nv": {
       "fullName": "Nevada",
