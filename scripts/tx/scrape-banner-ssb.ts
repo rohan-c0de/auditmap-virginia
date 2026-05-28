@@ -6,6 +6,13 @@
  * guest-open (HTTP 200, no redirect to login) on 2026-05-28:
  *
  *   victoria-college   → https://xe-stu.victoriacollege.edu
+ *   laredo-college     → https://reg-prod.laredo.elluciancloud.com:8103
+ *                        (Laredo runs Banner SSB at a non-standard port on
+ *                        the Ellucian Cloud hostname. Homepage nav links
+ *                        directly to /StudentRegistrationSsb/ssb/term/
+ *                        termSelection?mode=search at this host:port. The
+ *                        port comes through verbatim in the Banner JSON API
+ *                        endpoints, so the shared template works as-is.)
  *
  * (Vernon College was originally fingerprinted as Banner SSB at
  * www.vernoncollege.edu/StudentRegistrationSsb/... — that path is actually
@@ -29,6 +36,7 @@ async function main() {
     state: "tx",
     hosts: {
       "victoria-college": "https://xe-stu.victoriacollege.edu",
+      "laredo-college": "https://reg-prod.laredo.elluciancloud.com:8103",
     },
   });
 }
