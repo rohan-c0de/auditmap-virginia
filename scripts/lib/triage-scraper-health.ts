@@ -100,9 +100,7 @@ function getDeclaredScrapers(): DeclaredScraper[] {
       continue;
     }
 
-    const scrapers = (st as any).scrapers as
-      | Record<string, Array<{ scripts: string[] }>>
-      | undefined;
+    const scrapers = (st as { scrapers?: Record<string, Array<{ scripts: string[] }>> }).scrapers;
     if (!scrapers) continue;
 
     for (const [datatype, jobs] of Object.entries(scrapers)) {

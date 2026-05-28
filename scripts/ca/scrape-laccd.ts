@@ -411,7 +411,7 @@ async function search(
 
 async function extractResults(page: Page): Promise<RawSection[]> {
   return page.evaluate(() => {
-    const sections: any[] = [];
+    const sections: RawSection[] = [];
     const courseTitles: string[] = [];
     for (let i = 0; ; i++) {
       const el = document.getElementById(`win0divSSR_CLSRSLT_WRK_GROUPBOX2GP$${i}`);

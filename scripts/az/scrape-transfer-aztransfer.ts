@@ -216,17 +216,17 @@ async function scrapeDept(
 
   // The data table has class="RESULTS" on its <th> cells. Find the first
   // table whose first header is "<CC> Course".
-  // Use `any` for the cheerio capture; the generic in `Cheerio<any>` confuses
-  // TS narrowing inside the each() callback below.
-  let targetTable: any = null;
+  type CheerioSel = ReturnType<cheerio.CheerioAPI>;
+  let targetTable: CheerioSel | null = null;
   $("table").each((_, t) => {
     if (targetTable) return;
     const firstTh = $(t).find("th.RESULTS").first().text().trim();
-    if (/Course$/.test(firstTh)) targetTable = $(t);
+    if (/Course$/.test(firstTh)) targetTable = $(t) as CheerioSel;
   });
   if (!targetTable) return out;
+  const tableSel: CheerioSel = targetTable;
 
-  targetTable.find("tr").each((_: number, tr: any) => {
+  tableSel.find("tr").each((_: number, tr) => {
     const tds = $(tr).find("td");
     if (tds.length < 4) return;
     // Course cell is td[0]; <br/> separates code-credits from title.

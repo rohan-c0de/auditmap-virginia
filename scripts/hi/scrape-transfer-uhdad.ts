@@ -171,13 +171,14 @@ function parseResults(
   const out: TransferMapping[] = [];
 
   // Find the results table — typically class "datadisplaytable" in Banner.
-  let table: any = null;
+  type CheerioSel = ReturnType<cheerio.CheerioAPI>;
+  let table: CheerioSel | null = null;
   $("table").each((_, t) => {
     if (table) return;
     const klass = $(t).attr("class") || "";
     const summary = $(t).attr("summary") || "";
     if (/datadisplay|results|coursetransfer/i.test(klass + " " + summary)) {
-      table = $(t);
+      table = $(t) as CheerioSel;
     }
   });
   // Fallback: largest table by row count.
@@ -187,16 +188,17 @@ function parseResults(
       const rows = $(t).find("tr").length;
       if (rows > maxRows) {
         maxRows = rows;
-        table = $(t);
+        table = $(t) as CheerioSel;
       }
     });
   }
   if (!table) return out;
+  const tableSel: CheerioSel = table;
 
   // Determine column indices from the header row.
-  const headerCells = table.find("tr").first().find("th, td");
+  const headerCells = tableSel.find("tr").first().find("th, td");
   const headers: string[] = [];
-  headerCells.each((_: number, c: any) => {
+  headerCells.each((_: number, c) => {
     headers.push($(c).text().replace(/\s+/g, " ").trim().toLowerCase());
   });
 
@@ -221,12 +223,12 @@ function parseResults(
   const recvTitleIdx = headers.lastIndexOf("title");
   const recvCredIdx = headers.lastIndexOf("credits");
 
-  table.find("tr").slice(1).each((_: number, tr: any) => {
+  tableSel.find("tr").slice(1).each((_: number, tr) => {
     const tds = $(tr).find("td");
     if (tds.length < 4) return;
 
     const cells: string[] = [];
-    tds.each((_: number, c: any) => {
+    tds.each((_: number, c) => {
       cells.push($(c).text().replace(/\s+/g, " ").trim());
     });
 
