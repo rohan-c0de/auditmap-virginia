@@ -62,16 +62,17 @@ const paConfig: StateConfig = {
     { slug: "bloomsburg", names: ["Bloomsburg", "Bloomsburg University"] },
   ],
   scrapers: {
-    // Covers 2 of 15 PA CCs via the shared Banner SSB 9 template:
-    // Delaware County (DCCC) + Harrisburg Area (HACC). The remaining 13
-    // colleges run on Workday (Bucks), Jenzabar (CCBC, Penn Highlands),
-    // Coursedog catalog (LCCC, Northampton), Acalog (Reading), various
-    // SSO-gated portals (CCAC, MC3, Penn College, Thaddeus Stevens), or
-    // custom HTML (Butler, Central PA, CCP, Lancaster, Luzerne, Northern PA,
-    // Westmoreland) — each needs its own scraper. Tracked in #100.
+    // Covers 7 of 15 PA CCs across three SIS platforms: Banner SSB 9
+    // (DCCC, HACC), Banner 8 (CCP), and Colleague Self-Service (CCAC,
+    // Luzerne, MC3, RACC). The remaining 8 colleges run on Workday
+    // (Bucks), Jenzabar JICS behind SAML (CCBC, Penn Highlands),
+    // Coursedog catalog only (LCCC, Northampton), or custom HTML
+    // (Butler, Central PA, Lancaster, Northern PA, Westmoreland).
+    // Penn College and Thaddeus Stevens remain SSO-gated.
     courses: [
       { scripts: ["scripts/pa/scrape-banner-ssb.ts"], runner: "http" },
       { scripts: ["scripts/pa/scrape-banner-8.ts"], runner: "http" },
+      { scripts: ["scripts/pa/scrape-colleague.ts"], runner: "playwright" },
     ],
     transfers: [
       { scripts: ["scripts/pa/scrape-transfer.ts"], runner: "http" },
