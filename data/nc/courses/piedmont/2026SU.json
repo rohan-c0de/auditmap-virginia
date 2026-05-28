@@ -14,8 +14,50 @@
     "location": "Distance Learning/Online",
     "campus": "DLON",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 3,
+    "instructor": "Turner, S",
+    "seats_open": 0,
+    "seats_total": 34,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "piedmont",
+    "term": "2026SU",
+    "course_prefix": "ACA",
+    "course_number": "122",
+    "course_title": "Transfer & Career Success",
+    "credits": 1,
+    "crn": "ACA-122-72",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "Distance Learning/Online",
+    "campus": "DLON",
+    "mode": "in-person",
+    "instructor": "Turner, S",
+    "seats_open": 2,
+    "seats_total": 34,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "piedmont",
+    "term": "2026SU",
+    "course_prefix": "ACC",
+    "course_number": "120",
+    "course_title": "Prin of Financial Accounting",
+    "credits": 4,
+    "crn": "ACC-120-71",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "Distance Learning/Online",
+    "campus": "DLON",
+    "mode": "in-person",
+    "instructor": "Cox, L",
+    "seats_open": 30,
     "seats_total": 34,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -35,8 +77,8 @@
     "location": "Distance Learning/Online",
     "campus": "DLON",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 25,
+    "instructor": "Waller, A",
+    "seats_open": 15,
     "seats_total": 34,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -57,7 +99,7 @@
     "campus": "DLON",
     "mode": "in-person",
     "instructor": "Hester, K",
-    "seats_open": 24,
+    "seats_open": 5,
     "seats_total": 34,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -79,7 +121,7 @@
     "mode": "in-person",
     "instructor": "Saunders, C",
     "seats_open": 0,
-    "seats_total": 25,
+    "seats_total": 36,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -98,8 +140,29 @@
     "location": "Distance Learning/Online",
     "campus": "DLON",
     "mode": "in-person",
-    "instructor": "Staff",
+    "instructor": "Desimone, S",
     "seats_open": 2,
+    "seats_total": 34,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "piedmont",
+    "term": "2026SU",
+    "course_prefix": "BIO",
+    "course_number": "168",
+    "course_title": "Anatomy and Physiology I",
+    "credits": 4,
+    "crn": "BIO-168-72",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "Distance Learning/Online",
+    "campus": "DLON",
+    "mode": "in-person",
+    "instructor": "Haskins, J",
+    "seats_open": 4,
     "seats_total": 34,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -119,11 +182,13 @@
     "location": "Distance Learning/Online",
     "campus": "DLON",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 9,
+    "instructor": "Desimone, S",
+    "seats_open": 1,
     "seats_total": 34,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 168",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
   },
   {
     "college_code": "piedmont",
@@ -141,7 +206,7 @@
     "campus": "DLON",
     "mode": "in-person",
     "instructor": "Currin, K",
-    "seats_open": 32,
+    "seats_open": 20,
     "seats_total": 34,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -162,7 +227,7 @@
     "campus": "DLON",
     "mode": "in-person",
     "instructor": "Saunders, C",
-    "seats_open": 29,
+    "seats_open": 8,
     "seats_total": 34,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -182,9 +247,9 @@
     "location": "Distance Learning/Online",
     "campus": "DLON",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 7,
-    "seats_total": 25,
+    "instructor": "Nosser, L",
+    "seats_open": 2,
+    "seats_total": 32,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -204,8 +269,29 @@
     "campus": "DLON",
     "mode": "in-person",
     "instructor": "Bottoms, J",
-    "seats_open": 26,
+    "seats_open": 20,
     "seats_total": 34,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "piedmont",
+    "term": "2026SU",
+    "course_prefix": "DFT",
+    "course_number": "154",
+    "course_title": "Intro Solid Modeling",
+    "credits": 3,
+    "crn": "DFT-154-71",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "Distance Learning/Online",
+    "campus": "DLON",
+    "mode": "in-person",
+    "instructor": "Davis, C",
+    "seats_open": 19,
+    "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -224,8 +310,8 @@
     "location": "Distance Learning/Online",
     "campus": "DLON",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 25,
+    "instructor": "Dee, S",
+    "seats_open": 12,
     "seats_total": 34,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -245,8 +331,8 @@
     "location": "Distance Learning/Online",
     "campus": "DLON",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 29,
+    "instructor": "Dee, S",
+    "seats_open": 19,
     "seats_total": 34,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -267,10 +353,12 @@
     "campus": "DLON",
     "mode": "in-person",
     "instructor": "Smith, M",
-    "seats_open": 26,
-    "seats_total": 34,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 10,
+    "seats_total": 42,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "piedmont",
@@ -289,9 +377,34 @@
     "mode": "in-person",
     "instructor": "Hicks, B",
     "seats_open": 5,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_total": 32,
+    "prerequisite_text": "ENG 045",
+    "prerequisite_courses": [
+      "ENG 045"
+    ]
+  },
+  {
+    "college_code": "piedmont",
+    "term": "2026SU",
+    "course_prefix": "ENG",
+    "course_number": "111",
+    "course_title": "Writing and Inquiry",
+    "credits": 3,
+    "crn": "ENG-111-72",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "Distance Learning/Online",
+    "campus": "DLON",
+    "mode": "in-person",
+    "instructor": "Smith, M",
+    "seats_open": 6,
+    "seats_total": 32,
+    "prerequisite_text": "ENG 045",
+    "prerequisite_courses": [
+      "ENG 045"
+    ]
   },
   {
     "college_code": "piedmont",
@@ -309,10 +422,12 @@
     "campus": "DLON",
     "mode": "in-person",
     "instructor": "Hicks, B",
-    "seats_open": 12,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 5,
+    "seats_total": 40,
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "piedmont",
@@ -330,10 +445,12 @@
     "campus": "DLON",
     "mode": "in-person",
     "instructor": "Smith, M",
-    "seats_open": 22,
+    "seats_open": 11,
     "seats_total": 34,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 112",
+    "prerequisite_courses": [
+      "ENG 112"
+    ]
   },
   {
     "college_code": "piedmont",
@@ -351,10 +468,14 @@
     "campus": "DLON",
     "mode": "in-person",
     "instructor": "Fry, C",
-    "seats_open": 30,
+    "seats_open": 21,
     "seats_total": 34,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 112 or ENG 113 or ENG 114",
+    "prerequisite_courses": [
+      "ENG 112",
+      "ENG 113",
+      "ENG 114"
+    ]
   },
   {
     "college_code": "piedmont",
@@ -372,7 +493,7 @@
     "campus": "PERCO",
     "mode": "in-person",
     "instructor": "Riggan, S",
-    "seats_open": 5,
+    "seats_open": 3,
     "seats_total": 5,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -393,10 +514,12 @@
     "campus": "PERCO",
     "mode": "in-person",
     "instructor": "Riggan, S",
-    "seats_open": 4,
+    "seats_open": 3,
     "seats_total": 5,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "GSM 101",
+    "prerequisite_courses": [
+      "GSM 101"
+    ]
   },
   {
     "college_code": "piedmont",
@@ -416,8 +539,10 @@
     "instructor": "Riggan, S",
     "seats_open": 4,
     "seats_total": 5,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "GSM 101",
+    "prerequisite_courses": [
+      "GSM 101"
+    ]
   },
   {
     "college_code": "piedmont",
@@ -435,10 +560,12 @@
     "campus": "PERCO",
     "mode": "in-person",
     "instructor": "Riggan, S",
-    "seats_open": 5,
+    "seats_open": 4,
     "seats_total": 5,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "GSM 102",
+    "prerequisite_courses": [
+      "GSM 102"
+    ]
   },
   {
     "college_code": "piedmont",
@@ -458,8 +585,10 @@
     "instructor": "Moore, A",
     "seats_open": 5,
     "seats_total": 5,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "GSM 102",
+    "prerequisite_courses": [
+      "GSM 102"
+    ]
   },
   {
     "college_code": "piedmont",
@@ -479,8 +608,10 @@
     "instructor": "Moore, A",
     "seats_open": 5,
     "seats_total": 5,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "GSM 103",
+    "prerequisite_courses": [
+      "GSM 103"
+    ]
   },
   {
     "college_code": "piedmont",
@@ -498,10 +629,12 @@
     "campus": "PERCO",
     "mode": "in-person",
     "instructor": "Moore, A",
-    "seats_open": 5,
+    "seats_open": 4,
     "seats_total": 5,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "GSM 103",
+    "prerequisite_courses": [
+      "GSM 103"
+    ]
   },
   {
     "college_code": "piedmont",
@@ -521,8 +654,10 @@
     "instructor": "Moore, A",
     "seats_open": 5,
     "seats_total": 5,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "GSM 204",
+    "prerequisite_courses": [
+      "GSM 204"
+    ]
   },
   {
     "college_code": "piedmont",
@@ -542,8 +677,10 @@
     "instructor": "Moore, A",
     "seats_open": 5,
     "seats_total": 5,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "GSM 204",
+    "prerequisite_courses": [
+      "GSM 204"
+    ]
   },
   {
     "college_code": "piedmont",
@@ -561,7 +698,7 @@
     "campus": "DLON",
     "mode": "in-person",
     "instructor": "Sherman, M",
-    "seats_open": 27,
+    "seats_open": 16,
     "seats_total": 34,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -582,8 +719,8 @@
     "campus": "DLON",
     "mode": "in-person",
     "instructor": "Sherman, M",
-    "seats_open": 17,
-    "seats_total": 34,
+    "seats_open": 0,
+    "seats_total": 42,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -603,7 +740,7 @@
     "campus": "DLON",
     "mode": "in-person",
     "instructor": "Bottoms, J",
-    "seats_open": 22,
+    "seats_open": 4,
     "seats_total": 42,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -624,8 +761,8 @@
     "campus": "DLON",
     "mode": "in-person",
     "instructor": "Carter, A",
-    "seats_open": 20,
-    "seats_total": 34,
+    "seats_open": 0,
+    "seats_total": 42,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -645,10 +782,12 @@
     "campus": "DLON",
     "mode": "in-person",
     "instructor": "McGinnis, B",
-    "seats_open": 20,
+    "seats_open": 9,
     "seats_total": 34,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 045S",
+    "prerequisite_courses": [
+      "MAT 045S"
+    ]
   },
   {
     "college_code": "piedmont",
@@ -665,32 +804,13 @@
     "location": "Distance Learning/Online",
     "campus": "DLON",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 25,
+    "instructor": "Cantrell-McCowan, K",
+    "seats_open": 12,
     "seats_total": 34,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "piedmont",
-    "term": "2026SU",
-    "course_prefix": "MAT",
-    "course_number": "172",
-    "course_title": "Precalculus Trigonometry",
-    "credits": 4,
-    "crn": "MAT-172-71",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-05-20",
-    "location": "Distance Learning/Online",
-    "campus": "DLON",
-    "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 34,
-    "seats_total": 34,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 045P",
+    "prerequisite_courses": [
+      "MAT 045P"
+    ]
   },
   {
     "college_code": "piedmont",
@@ -708,10 +828,12 @@
     "campus": "PERCO",
     "mode": "in-person",
     "instructor": "Benyamin, L",
-    "seats_open": 10,
-    "seats_total": 10,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": null,
+    "seats_total": null,
+    "prerequisite_text": "SON 120",
+    "prerequisite_courses": [
+      "SON 120"
+    ]
   },
   {
     "college_code": "piedmont",
@@ -729,10 +851,12 @@
     "campus": "PERCO",
     "mode": "in-person",
     "instructor": "Benyamin, L",
-    "seats_open": 10,
-    "seats_total": 10,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 0,
+    "seats_total": 11,
+    "prerequisite_text": "SON 110",
+    "prerequisite_courses": [
+      "SON 110"
+    ]
   },
   {
     "college_code": "piedmont",
@@ -742,18 +866,20 @@
     "course_title": "Practical Nursing II",
     "credits": 10,
     "crn": "NUR-102-91P",
-    "days": "M T W",
+    "days": "M T",
     "start_time": "9:00 AM",
     "end_time": "11:30 AM",
-    "start_date": "2026-05-20",
+    "start_date": "2026-05-18",
     "location": "Person County Campus",
     "campus": "PERCO",
     "mode": "in-person",
-    "instructor": "Wilson, H, Nwanguma, S, Woods, D, Compton, J",
-    "seats_open": 47,
+    "instructor": "Wilson, H, Nwanguma, S, Woods, D, Compton, J, Stroud, P",
+    "seats_open": 20,
     "seats_total": 48,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 101",
+    "prerequisite_courses": [
+      "NUR 101"
+    ]
   },
   {
     "college_code": "piedmont",
@@ -766,15 +892,17 @@
     "days": "M T",
     "start_time": "5:30 PM",
     "end_time": "8:20 PM",
-    "start_date": "2026-05-20",
+    "start_date": "2026-05-18",
     "location": "Caswell County Campus",
     "campus": "CASCO",
     "mode": "in-person",
-    "instructor": "Hatcher, P",
-    "seats_open": 50,
+    "instructor": "King, C, Rogers, A, Wilson, H, Nwanguma, S",
+    "seats_open": 36,
     "seats_total": 50,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 111",
+    "prerequisite_courses": [
+      "NUR 111"
+    ]
   },
   {
     "college_code": "piedmont",
@@ -783,7 +911,7 @@
     "course_number": "212",
     "course_title": "Health System Concepts",
     "credits": 5,
-    "crn": "NUR-212-71",
+    "crn": "NUR-212-61P",
     "days": "M T W Th F Sa Su",
     "start_time": "",
     "end_time": "",
@@ -791,11 +919,13 @@
     "location": "Distance Learning/Online",
     "campus": "DLON",
     "mode": "in-person",
-    "instructor": "Wilson, H, Nwanguma, S, Hatcher, P",
-    "seats_open": 24,
-    "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "instructor": "Wilson, H, Nwanguma, S, Stroud, P",
+    "seats_open": 0,
+    "seats_total": 26,
+    "prerequisite_text": "NUR 111",
+    "prerequisite_courses": [
+      "NUR 111"
+    ]
   },
   {
     "college_code": "piedmont",
@@ -812,11 +942,18 @@
     "location": "Caswell County Campus",
     "campus": "CASCO",
     "mode": "in-person",
-    "instructor": "Hatcher, P, Wilson, H, Nwanguma, S",
-    "seats_open": null,
-    "seats_total": null,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "instructor": "Wilson, H, Nwanguma, S, Rogers, A",
+    "seats_open": 12,
+    "seats_total": 24,
+    "prerequisite_text": "NUR 111 and NUR 112 and NUR 113 and NUR 114 and NUR 211 and NUR 212",
+    "prerequisite_courses": [
+      "NUR 111",
+      "NUR 112",
+      "NUR 113",
+      "NUR 114",
+      "NUR 211",
+      "NUR 212"
+    ]
   },
   {
     "college_code": "piedmont",
@@ -834,10 +971,12 @@
     "campus": "DLON",
     "mode": "in-person",
     "instructor": "Fry, C",
-    "seats_open": 29,
+    "seats_open": 19,
     "seats_total": 34,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "piedmont",
@@ -854,8 +993,8 @@
     "location": "Distance Learning/Online",
     "campus": "DLON",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 32,
+    "instructor": "Holloway, R",
+    "seats_open": 27,
     "seats_total": 34,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -876,7 +1015,28 @@
     "campus": "DLON",
     "mode": "in-person",
     "instructor": "Brooks, A",
-    "seats_open": 2,
+    "seats_open": 0,
+    "seats_total": 34,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "piedmont",
+    "term": "2026SU",
+    "course_prefix": "PSY",
+    "course_number": "150",
+    "course_title": "General Psychology",
+    "credits": 3,
+    "crn": "PSY-150-72",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-05-20",
+    "location": "Distance Learning/Online",
+    "campus": "DLON",
+    "mode": "in-person",
+    "instructor": "Bradsher, N",
+    "seats_open": 1,
     "seats_total": 34,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -897,10 +1057,12 @@
     "campus": "DLON",
     "mode": "in-person",
     "instructor": "Brooks, A",
-    "seats_open": 16,
-    "seats_total": 34,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 2,
+    "seats_total": 42,
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "piedmont",
@@ -917,8 +1079,8 @@
     "location": "Distance Learning/Online",
     "campus": "DLON",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 25,
+    "instructor": "Adams, A",
+    "seats_open": 11,
     "seats_total": 34,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -938,8 +1100,8 @@
     "location": "Distance Learning/Online",
     "campus": "DLON",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 22,
+    "instructor": "Adams, A",
+    "seats_open": 13,
     "seats_total": 34,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -959,8 +1121,8 @@
     "location": "Distance Learning/Online",
     "campus": "DLON",
     "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 29,
+    "instructor": "Albertsen, W",
+    "seats_open": 18,
     "seats_total": 34,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1002,7 +1164,7 @@
     "campus": "CASCO",
     "mode": "in-person",
     "instructor": "Bernard, L",
-    "seats_open": 9,
+    "seats_open": 4,
     "seats_total": 10,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1038,13 +1200,13 @@
     "crn": "WLD-110-92P",
     "days": "M T",
     "start_time": "5:00 PM",
-    "end_time": "9:30 PM",
+    "end_time": "8:30 PM",
     "start_date": "2026-05-20",
     "location": "Person County Campus",
     "campus": "PERCO",
     "mode": "in-person",
     "instructor": "Harris, J",
-    "seats_open": 4,
+    "seats_open": 3,
     "seats_total": 5,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1086,7 +1248,7 @@
     "campus": "PERCO",
     "mode": "in-person",
     "instructor": "Harris, J",
-    "seats_open": 3,
+    "seats_open": 1,
     "seats_total": 5,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1107,7 +1269,7 @@
     "campus": "PERCO",
     "mode": "in-person",
     "instructor": "Harris, J",
-    "seats_open": 4,
+    "seats_open": 2,
     "seats_total": 5,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1172,8 +1334,10 @@
     "instructor": "Harris, J",
     "seats_open": 5,
     "seats_total": 5,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 121AB",
+    "prerequisite_courses": [
+      "WLD 121AB"
+    ]
   },
   {
     "college_code": "piedmont",
@@ -1185,13 +1349,13 @@
     "crn": "WLD-141-91C",
     "days": "M T",
     "start_time": "5:00 PM",
-    "end_time": "9:30 PM",
+    "end_time": "8:30 PM",
     "start_date": "2026-05-20",
     "location": "Caswell County Campus",
     "campus": "CASCO",
     "mode": "in-person",
     "instructor": "Wilkins, M",
-    "seats_open": 7,
+    "seats_open": 4,
     "seats_total": 10,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1214,8 +1378,12 @@
     "instructor": "Harris, J",
     "seats_open": 5,
     "seats_total": 5,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 115 and WLD 121 and WLD 131",
+    "prerequisite_courses": [
+      "WLD 115",
+      "WLD 121",
+      "WLD 131"
+    ]
   },
   {
     "college_code": "piedmont",
@@ -1235,50 +1403,12 @@
     "instructor": "Harris, J",
     "seats_open": 5,
     "seats_total": 5,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "piedmont",
-    "term": "2026SU",
-    "course_prefix": "WBL",
-    "course_number": "111",
-    "course_title": "Work-Based Learning I",
-    "credits": 1,
-    "crn": "WBL-111-03P",
-    "days": "M T W Th F",
-    "start_time": "6:00 PM",
-    "end_time": "8:00 PM",
-    "start_date": "2026-05-20",
-    "location": "Person County Campus",
-    "campus": "PERCO",
-    "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 10,
-    "seats_total": 10,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "piedmont",
-    "term": "2026SU",
-    "course_prefix": "WBL",
-    "course_number": "111",
-    "course_title": "Work-Based Learning I",
-    "credits": 1,
-    "crn": "WBL-111-04P",
-    "days": "M T W Th F",
-    "start_time": "6:00 PM",
-    "end_time": "8:00 PM",
-    "start_date": "2026-05-20",
-    "location": "Person County Campus",
-    "campus": "PERCO",
-    "mode": "in-person",
-    "instructor": "Staff",
-    "seats_open": 11,
-    "seats_total": 11,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 115 and WLD 121 and WLD 131",
+    "prerequisite_courses": [
+      "WLD 115",
+      "WLD 121",
+      "WLD 131"
+    ]
   },
   {
     "college_code": "piedmont",
@@ -1295,9 +1425,30 @@
     "location": "Person County Campus",
     "campus": "PERCO",
     "mode": "in-person",
-    "instructor": "Staff",
+    "instructor": "Davis, C",
     "seats_open": 10,
     "seats_total": 10,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "piedmont",
+    "term": "2026SU",
+    "course_prefix": "WBL",
+    "course_number": "111",
+    "course_title": "Work-Based Learning I",
+    "credits": 1,
+    "crn": "WBL-111-06P",
+    "days": "M T W Th F",
+    "start_time": "6:00 PM",
+    "end_time": "8:00 PM",
+    "start_date": "2026-05-20",
+    "location": "Person County Campus",
+    "campus": "PERCO",
+    "mode": "in-person",
+    "instructor": "Davis, C",
+    "seats_open": 0,
+    "seats_total": 1,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -1317,7 +1468,7 @@
     "campus": "CASCO",
     "mode": "in-person",
     "instructor": "Bernard, L",
-    "seats_open": 6,
+    "seats_open": 4,
     "seats_total": 6,
     "prerequisite_text": null,
     "prerequisite_courses": []
