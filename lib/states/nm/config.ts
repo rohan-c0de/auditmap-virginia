@@ -8,9 +8,16 @@ const nmConfig: StateConfig = {
   systemUrl: "https://hed.nm.gov/",
   collegeCount: 12,
 
-  // TODO: research senior-waiver statute for NM.
-  // Set to null if no waiver exists, or fill in per the SeniorWaiverConfig shape.
-  seniorWaiver: null,
+  seniorWaiver: {
+    ageThreshold: 65,
+    legalCitation: "NMSA 1978 § 21-21D (Senior Citizens Reduced Tuition Act; impl. 5.7.19 NMAC)",
+    description:
+      "New Mexico residents aged 65+ pay $5.00 per credit hour for up to 10 credit hours per semester at NM post-secondary degree-granting institutions, on a space-available basis.",
+    bannerTitle: "New Mexico Senior Citizens Reduced Tuition",
+    bannerSummary: "Age 65+ in New Mexico? Pay $5 per credit hour, up to 10 credits per semester.",
+    bannerDetail:
+      "Under the Senior Citizens Reduced Tuition Act (NMSA 1978 § 21-21D, implemented by 5.7.19 NMAC), New Mexico residents who reach age 65 by the census date may register at the reduced rate of $5.00 per credit hour for up to 10 credit hours per semester, on a space-available basis.",
+  },
 
   transferSupported: false,
   popularCourses: [],
@@ -38,6 +45,14 @@ const nmConfig: StateConfig = {
     courses: [
       {
         scripts: ["scripts/nm/scrape-banner8.ts"],
+        runner: "http",
+      },
+      {
+        // SENMC Anthology/CampusNexus Student portal.
+        // Despite jQuery DataTables on the result page, the data is rendered
+        // server-side via an ASP.NET WebForms postback (no AJAX endpoint), so
+        // this scraper uses direct undici HTTP requests — no browser needed.
+        scripts: ["scripts/nm/scrape-campusnexus.ts"],
         runner: "http",
       },
     ],
