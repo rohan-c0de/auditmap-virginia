@@ -795,7 +795,11 @@ export async function scrapeColleagueCollege(
       }
 
       const termCode = sections[0].term;
-      const fileTermCode = termCode.replace(/[\\/]/g, "-");
+      // Normalize short-form codes like "26/FA" → "2026FA" so filenames
+      // match the canonical format used by the importer and term resolver.
+      const fileTermCode = termCode.match(/^(\d{2})[\/\-]([A-Z]+)$/)
+        ? `20${termCode.replace(/[\/\-]/, "")}`
+        : termCode.replace(/[\\/]/g, "-");
       if (!opts.dryRun) {
         const outDir = path.join(
           process.cwd(),
