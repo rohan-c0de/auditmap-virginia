@@ -31,6 +31,11 @@ async function main() {
     hosts: {
       dccc: "https://prod-xe-web-a.dccc.edu",
       hacc: "https://banxeappprod.hacc.edu",
+      // LCCC was not surfaced by the auto-add-state fingerprinter because
+      // the host sits on a non-canonical subdomain (`banwebssprod`, outside
+      // the prefix list of bannerss/selfservice/ssb). The link is on
+      // lccc.edu/course-and-text-book-search/.
+      lccc: "https://banwebssprod.lccc.edu",
     },
     collegeFilter,
     noImport,
