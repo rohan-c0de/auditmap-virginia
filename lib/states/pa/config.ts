@@ -62,8 +62,17 @@ const paConfig: StateConfig = {
     { slug: "bloomsburg", names: ["Bloomsburg", "Bloomsburg University"] },
   ],
   scrapers: {
-    // manual-only: courses — PASSHE / state-system public course search
-    // is inconsistent across 14 colleges; no unified scraper. Tracked in #100.
+    // Covers 2 of 15 PA CCs via the shared Banner SSB 9 template:
+    // Delaware County (DCCC) + Harrisburg Area (HACC). The remaining 13
+    // colleges run on Workday (Bucks), Jenzabar (CCBC, Penn Highlands),
+    // Coursedog catalog (LCCC, Northampton), Acalog (Reading), various
+    // SSO-gated portals (CCAC, MC3, Penn College, Thaddeus Stevens), or
+    // custom HTML (Butler, Central PA, CCP, Lancaster, Luzerne, Northern PA,
+    // Westmoreland) — each needs its own scraper. Tracked in #100.
+    courses: [
+      { scripts: ["scripts/pa/scrape-banner-ssb.ts"], runner: "http" },
+      { scripts: ["scripts/pa/scrape-banner-8.ts"], runner: "http" },
+    ],
     transfers: [
       { scripts: ["scripts/pa/scrape-transfer.ts"], runner: "http" },
       { scripts: ["scripts/pa/scrape-pitt-tes.ts"], runner: "http" },

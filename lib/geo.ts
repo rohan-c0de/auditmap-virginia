@@ -41,6 +41,10 @@ import nvZipcodes from "@/data/nv/zipcodes.json";
 import azZipcodes from "@/data/az/zipcodes.json";
 import arZipcodes from "@/data/ar/zipcodes.json";
 import mnZipcodes from "@/data/mn/zipcodes.json";
+import laZipcodes from "@/data/la/zipcodes.json";
+import nmZipcodes from "@/data/nm/zipcodes.json";
+import sdZipcodes from "@/data/sd/zipcodes.json";
+import utZipcodes from "@/data/ut/zipcodes.json";
 
 type ZipEntry = { lat: number; lng: number; city: string };
 
@@ -81,6 +85,10 @@ const ZIP_REGISTRY: Record<string, Record<string, ZipEntry>> = {
   az: azZipcodes as Record<string, ZipEntry>,
   ar: arZipcodes as Record<string, ZipEntry>,
   mn: mnZipcodes as Record<string, ZipEntry>,
+  la: laZipcodes as Record<string, ZipEntry>,
+  nm: nmZipcodes as Record<string, ZipEntry>,
+  sd: sdZipcodes as Record<string, ZipEntry>,
+  ut: utZipcodes as Record<string, ZipEntry>,
 };
 
 function loadZipData(state: string): Record<string, ZipEntry> {

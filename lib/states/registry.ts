@@ -128,6 +128,19 @@ export interface StateConfig {
      *  or descriptive prose pages with no structured curriculum. */
     programs?: string;
   };
+  /**
+   * Build-time SSG priority. When true, this state's per-college pages
+   * (and any other route opting into the same flag) are pre-rendered at
+   * build time. When false/undefined, pages render on demand via ISR
+   * on the first visit and cache for the route's `revalidate` window.
+   *
+   * Tier this against actual Search Console traffic, not population —
+   * see #702 for the analysis. Promote a state when its `/[state]/college/`
+   * clicks consistently land in the top quartile across 90-day windows.
+   * Demoting is fine too if a previously hot state's traffic drops; the
+   * route remains functional under ISR.
+   */
+  prerenderAtBuild?: boolean;
 }
 
 // ---------------------------------------------------------------------------
@@ -172,6 +185,10 @@ import nvConfig from "./nv/config";
 import azConfig from "./az/config";
 import arConfig from "./ar/config";
 import mnConfig from "./mn/config";
+import laConfig from "./la/config";
+import nmConfig from "./nm/config";
+import sdConfig from "./sd/config";
+import utConfig from "./ut/config";
 
 const ALL_CONFIGS: StateConfig[] = [
   vaConfig,
@@ -210,6 +227,10 @@ const ALL_CONFIGS: StateConfig[] = [
   azConfig,
   arConfig,
   mnConfig,
+  laConfig,
+  nmConfig,
+  sdConfig,
+  utConfig,
 ];
 
 const configs: Record<string, StateConfig> = Object.fromEntries(
@@ -264,4 +285,17 @@ export function hasPrereqsCoverage(slug: string): boolean {
 export function hasProgramsCoverage(slug: string): boolean {
   const cfg = configs[slug];
   return (cfg?.scrapers?.programs ?? []).length > 0;
+}
+
+/**
+ * Returns the slugs whose pages should be pre-rendered at build time
+ * (`prerenderAtBuild: true` in the StateConfig). All other states' pages
+ * defer to ISR-on-demand rendering.
+ *
+ * Tracked separately from `getAllStates()` so build-time iteration
+ * (`generateStaticParams`) doesn't have to re-check the flag at every
+ * call site. See #702 for the SSG-priority rationale.
+ */
+export function getPrerenderStates(): StateConfig[] {
+  return ALL_CONFIGS.filter((c) => c.prerenderAtBuild === true);
 }
