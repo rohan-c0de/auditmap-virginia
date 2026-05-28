@@ -626,18 +626,24 @@ async function maybeRunCli(): Promise<void> {
     process.exit(1);
   }
   const institutions = JSON.parse(fs.default.readFileSync(instPath, "utf8"));
-  const colleges: ClusterInput[] = institutions
-    .map((inst: any) => {
+  type InstitutionRow = {
+    id?: string;
+    college_slug?: string;
+    name: string;
+    audit_policy?: { source_url?: string };
+  };
+  const colleges: ClusterInput[] = (institutions as InstitutionRow[])
+    .map((inst): ClusterInput | null => {
       const src = inst.audit_policy?.source_url || "";
       const host = normalizeHost(src);
       if (!host) return null;
       return {
-        slug: inst.college_slug || inst.id,
+        slug: inst.college_slug || inst.id || "",
         name: inst.name,
         primaryUrl: host,
       };
     })
-    .filter((x: any) => x !== null);
+    .filter((x): x is ClusterInput => x !== null);
 
   console.error(`Clustering ${colleges.length} colleges for ${state.toUpperCase()}...`);
 

@@ -86,7 +86,7 @@ describe("lookupAnswer dispatch", () => {
   it("unknown intent with field-of-study-like raw query falls back to pathway lookup", async () => {
     const lookupPathwayMock = vi.mocked(lookupPathway);
     lookupPathwayMock.mockResolvedValueOnce({
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
       type: "pathway",
       status: "found-related",
       university: null,

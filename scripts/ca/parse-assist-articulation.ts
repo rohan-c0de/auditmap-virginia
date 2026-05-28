@@ -210,7 +210,7 @@ function mapInstructionType(
  * Extract the N value from NFrom* instruction types.
  * ASSIST encodes this as a property on the instruction object; we look for it.
  */
-function extractNFromInstruction(instruction: any): number | undefined {
+function extractNFromInstruction(instruction: unknown): number | undefined {
   // The N value is typically encoded as a property on the instruction
   // For now, we return undefined and let the requirement group handle default N=1
   // Phase 2 may need to inspect the instruction object more carefully
@@ -266,7 +266,7 @@ function toSimpleCourse(course: AssistCourse): SimpleCourse {
  * @returns Parsed ArticulationAgreement, or throws if structure is invalid
  */
 export function parseAssistArticulation(
-  rawResponse: any,
+  rawResponse: { isSuccessful?: boolean; result?: AssistArticulationResult } & Record<string, unknown>,
   ccSlug: string,
   universitySlug: string,
   agreementKey: string

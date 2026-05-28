@@ -245,7 +245,7 @@ console.log(`Total deduped records: ${all.length}`);
 
 const statusCounts = all.reduce<Record<string, number>>(
   (acc, r) => ({ ...acc, [r.status]: (acc[r.status] ?? 0) + 1 }),
-  {} as any
+  {}
 );
 console.log(`Status distribution: ${JSON.stringify(statusCounts)}`);
 

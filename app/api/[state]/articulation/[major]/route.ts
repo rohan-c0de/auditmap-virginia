@@ -87,13 +87,40 @@ export async function GET(
 
     if (grErr) throw grErr;
 
+    type SendingOption = {
+      cc_course_prefix: string | null;
+      cc_course_number: string | null;
+      cc_course_title: string | null;
+      cc_course_units: number | null;
+      conjunction: string | null;
+      position: number | null;
+    };
+    type Requirement = {
+      id: string;
+      receiving_course_prefix: string | null;
+      receiving_course_number: string | null;
+      receiving_course_title: string | null;
+      receiving_course_units: number | null;
+      requirement_label: string | null;
+      position: number | null;
+      no_articulation_reason: string | null;
+      assist_sending_options: SendingOption[] | null;
+    };
+    type RequirementGroup = {
+      id: string;
+      group_name: string | null;
+      group_type: string | null;
+      position: number | null;
+      assist_requirements: Requirement[] | null;
+    };
+
     // 3. Construct response
-    const requirementGroups = (groups || []).map((g: any) => ({
+    const requirementGroups = ((groups || []) as RequirementGroup[]).map((g) => ({
       name: g.group_name,
       type: g.group_type,
       requirements: (g.assist_requirements || [])
-        .sort((a: any, b: any) => (a.position || 0) - (b.position || 0))
-        .map((r: any) => ({
+        .sort((a, b) => (a.position || 0) - (b.position || 0))
+        .map((r) => ({
           receiving_course_prefix: r.receiving_course_prefix,
           receiving_course_number: r.receiving_course_number,
           receiving_course_title: r.receiving_course_title,
@@ -102,8 +129,8 @@ export async function GET(
           sending_options: r.no_articulation_reason
             ? null
             : (r.assist_sending_options || [])
-                .sort((a: any, b: any) => (a.position || 0) - (b.position || 0))
-                .map((opt: any) => ({
+                .sort((a, b) => (a.position || 0) - (b.position || 0))
+                .map((opt) => ({
                   cc_course_prefix: opt.cc_course_prefix,
                   cc_course_number: opt.cc_course_number,
                   cc_course_title: opt.cc_course_title,
@@ -132,7 +159,7 @@ export async function GET(
         },
       }
     );
-  } catch (err: any) {
+  } catch (err) {
     console.error("articulation detail query error:", err);
     return NextResponse.json(
       { error: "Failed to fetch agreement" },

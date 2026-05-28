@@ -247,7 +247,6 @@ async function fetchWithCookies(url: string, s: SessionCookies, opts: RequestIni
   if (s.jar.size > 0) headers.set("Cookie", cookieHeader(s));
   const r = await fetch(url, { ...opts, headers, redirect: "follow" });
   // Node fetch surfaces multiple Set-Cookies as getSetCookie()
-  // @ts-ignore
   const setCookies = typeof r.headers.getSetCookie === "function" ? r.headers.getSetCookie() : r.headers.get("set-cookie");
   if (setCookies) absorbSetCookie(s, setCookies);
   return r;

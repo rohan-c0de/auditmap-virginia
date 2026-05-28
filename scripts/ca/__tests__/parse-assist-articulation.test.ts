@@ -26,7 +26,8 @@ interface FixtureMetadata {
   filename: string;
 }
 
-let fixtures: Array<{ metadata: FixtureMetadata; data: any }> = [];
+type FixtureData = { result: { articulations: string } };
+const fixtures: Array<{ metadata: FixtureMetadata; data: FixtureData }> = [];
 
 beforeAll(() => {
   const fixtureDir = path.join(__dirname, "../fixtures/articulation");
@@ -144,7 +145,7 @@ describe("parseAssistArticulation", () => {
 
     for (const { metadata, data } of fixtures) {
       const articulations = JSON.parse(data.result.articulations);
-      if (articulations.some((a: any) => a.articulation.type === "Series")) {
+      if (articulations.some((a: { articulation: { type?: string; sendingArticulation?: { items?: Array<{ courseConjunction?: string }> } } }) => a.articulation.type === "Series")) {
         found = true;
 
         const parsed = parseAssistArticulation(
@@ -181,7 +182,7 @@ describe("parseAssistArticulation", () => {
 
     for (const { metadata, data } of fixtures) {
       const articulations = JSON.parse(data.result.articulations);
-      if (articulations.some((a: any) => a.articulation.type === "Requirement")) {
+      if (articulations.some((a: { articulation: { type?: string; sendingArticulation?: { items?: Array<{ courseConjunction?: string }> } } }) => a.articulation.type === "Requirement")) {
         found = true;
 
         const parsed = parseAssistArticulation(
@@ -219,8 +220,8 @@ describe("parseAssistArticulation", () => {
 
     for (const { metadata, data } of fixtures) {
       const articulations = JSON.parse(data.result.articulations);
-      const hasOr = articulations.some((a: any) => {
-        return a.articulation.sendingArticulation.items.some((item: any) => item.courseConjunction === "Or");
+      const hasOr = articulations.some((a: { articulation: { type?: string; sendingArticulation?: { items?: Array<{ courseConjunction?: string }> } } }) => {
+        return a.articulation.sendingArticulation?.items?.some((item) => item.courseConjunction === "Or") ?? false;
       });
 
       if (hasOr) {

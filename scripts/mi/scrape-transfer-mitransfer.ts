@@ -220,8 +220,8 @@ async function main() {
         const rows = parseRows(html, ccSlug, univ);
         allMappings.push(...rows);
         ccTotal += rows.length;
-      } catch (err: any) {
-        console.error(`  ${ccSlug} → ${univ.slug}: FAILED — ${err.message}`);
+      } catch (err) {
+        console.error(`  ${ccSlug} → ${univ.slug}: FAILED — ${(err as Error).message}`);
       }
       await sleep(DELAY_MS);
     }

@@ -188,7 +188,7 @@ function parseLine(
   // Parse times
   let startTime = "";
   let endTime = "";
-  let inferredMode = "";
+  const inferredMode = "";
   if (times && times !== "TBA") {
     const tm = times.match(TIME_RE);
     if (tm) {

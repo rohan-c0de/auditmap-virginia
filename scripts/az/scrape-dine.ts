@@ -304,7 +304,7 @@ function parseRest(
   // Title is everything up to the credits marker; the instructor name
   // comes after credits and before the time. Heuristic: take everything
   // after credits, before the first time anchor, as instructor.
-  let title = titleAndInstructor.trim();
+  const title = titleAndInstructor.trim();
   let instructor: string | null = null;
   if (credMatch && credMatch.index !== undefined) {
     const afterCred = beforeTimeNoOnline.slice(credMatch.index + credMatch[0].length).trim();
