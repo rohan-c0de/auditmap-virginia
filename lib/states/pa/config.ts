@@ -62,17 +62,23 @@ const paConfig: StateConfig = {
     { slug: "bloomsburg", names: ["Bloomsburg", "Bloomsburg University"] },
   ],
   scrapers: {
-    // Covers 7 of 15 PA CCs across three SIS platforms: Banner SSB 9
-    // (DCCC, HACC), Banner 8 (CCP), and Colleague Self-Service (CCAC,
-    // Luzerne, MC3, RACC). The remaining 8 colleges run on Workday
-    // (Bucks), Jenzabar JICS behind SAML (CCBC, Penn Highlands),
-    // Coursedog catalog only (LCCC, Northampton), or custom HTML
-    // (Butler, Central PA, Lancaster, Northern PA, Westmoreland).
-    // Penn College and Thaddeus Stevens remain SSO-gated.
+    // Covers 10 of 15 PA CCs across five SIS platforms: Banner SSB 9
+    // (DCCC, HACC, LCCC), Banner 8 (CCP), Colleague Self-Service
+    // (CCAC, Luzerne, MC3, RACC), CampusNexus / Anthology
+    // (Westmoreland), and a static JSON dump (Northampton).
+    //
+    // The 5 colleges still without scrapers are:
+    //   - bucks         Workday Student (no template; needs investigation)
+    //   - butler        Ellucian Experience SSO portal only (no public SIS)
+    //   - ccbc          Jenzabar JICS behind SAML
+    //   - pa-highlands  Jenzabar JICS behind SAML
+    //   - penn-college  SSO-gated (Penn State affiliate)
     courses: [
       { scripts: ["scripts/pa/scrape-banner-ssb.ts"], runner: "http" },
       { scripts: ["scripts/pa/scrape-banner-8.ts"], runner: "http" },
       { scripts: ["scripts/pa/scrape-colleague.ts"], runner: "playwright" },
+      { scripts: ["scripts/pa/scrape-northampton.ts"], runner: "http" },
+      { scripts: ["scripts/pa/scrape-westmoreland.ts"], runner: "http" },
     ],
     transfers: [
       { scripts: ["scripts/pa/scrape-transfer.ts"], runner: "http" },
