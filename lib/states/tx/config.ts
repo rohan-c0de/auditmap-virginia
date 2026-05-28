@@ -135,6 +135,17 @@ const txConfig: StateConfig = {
         scripts: ["scripts/tx/scrape-jenzabar-webforms.ts"],
         runner: "playwright",
       },
+      // Collin County Community College District — a custom Azure App
+      // Service REST API at coursebook-collin-api.azurewebsites.net/sections
+      // powers the public class-schedule SPA. Workday-flavored JSON; no
+      // auth, paginated 10 items/page (server caps explicit pageSize to
+      // 0), ~195 pages, ~1,948 sections. 86% of sections expose a
+      // prerequisite sentence in the Description field, so the scraper
+      // captures prereq_text + prereq_courses inline.
+      {
+        scripts: ["scripts/tx/scrape-collin.ts"],
+        runner: "http",
+      },
     ],
     transfers: [
       { scripts: ["scripts/tx/scrape-transfer-tccns.ts"], runner: "http" },
