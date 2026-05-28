@@ -113,6 +113,13 @@ const txConfig: StateConfig = {
         scripts: ["scripts/tx/scrape-howard.ts"],
         runner: "http",
       },
+      // Vernon College + Victoria College — two standalone Banner SSB 9
+      // instances with public guest access. Vernon serves SSB at the root
+      // domain (www.vernoncollege.edu) rather than the usual subdomain.
+      {
+        scripts: ["scripts/tx/scrape-banner-ssb.ts"],
+        runner: "http",
+      },
     ],
     transfers: [
       { scripts: ["scripts/tx/scrape-transfer-tccns.ts"], runner: "http" },

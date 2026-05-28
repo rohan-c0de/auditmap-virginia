@@ -38,6 +38,8 @@ import caInstitutions from "@/data/ca/institutions.json";
 import nvInstitutions from "@/data/nv/institutions.json";
 import azInstitutions from "@/data/az/institutions.json";
 import arInstitutions from "@/data/ar/institutions.json";
+import nmInstitutions from "@/data/nm/institutions.json";
+import sdInstitutions from "@/data/sd/institutions.json";
 import utInstitutions from "@/data/ut/institutions.json";
 
 // Double-cast via `unknown` because the JSON-inferred types narrow some fields
@@ -81,6 +83,8 @@ const REGISTRY: Record<string, Institution[]> = {
   nv: nvInstitutions as unknown as Institution[],
   az: azInstitutions as unknown as Institution[],
   ar: arInstitutions as unknown as Institution[],
+  nm: nmInstitutions as unknown as Institution[],
+  sd: sdInstitutions as unknown as Institution[],
   ut: utInstitutions as unknown as Institution[],
 };
 
