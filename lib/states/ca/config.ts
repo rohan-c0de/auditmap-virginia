@@ -54,6 +54,10 @@ const caConfig: StateConfig = {
       // LACCD cluster: one bespoke scraper covers all 9 Los Angeles CC District
       // colleges via shared PS Community Access (mycollege-guest.laccd.edu).
       { scripts: ["scripts/ca/scrape-laccd.ts"], runner: "playwright" },
+      // De Anza College (Foothill-De Anza CCD). The combined FHDA portal is
+      // SSO-gated, but each campus publishes a public schedule on its own
+      // domain — De Anza at deanza.edu/schedule/listings.html.
+      { scripts: ["scripts/ca/scrape-deanza.ts"], runner: "http" },
     ],
     prereqs: { source: "aggregate-from-courses" },
     transfers: [
