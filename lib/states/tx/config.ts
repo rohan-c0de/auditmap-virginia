@@ -150,7 +150,16 @@ const txConfig: StateConfig = {
     transfers: [
       { scripts: ["scripts/tx/scrape-transfer-tccns.ts"], runner: "http" },
     ],
-    // manual-only: prereqs — Phase 4.
+    prereqs: [
+      // Six TX colleges publish their course catalog via Acalog but don't
+      // expose a public class-section endpoint. The Acalog detail pages
+      // embed a Prerequisites sentence — that's enough to enrich the
+      // semester planner's prereq chain for these colleges' courses.
+      // Brazosport, Dallas, Midland, Tyler Jr, Lamar State Orange,
+      // Wharton County — all six are Imperva-gated; the scraper acquires
+      // WAF cookies via headless Chromium once per base URL.
+      { scripts: ["scripts/tx/scrape-acalog-prereqs.ts"], runner: "playwright" },
+    ],
     // manual-only: programs — Phase 5+.
   },
 };
