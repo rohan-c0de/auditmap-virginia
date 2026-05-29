@@ -2,8 +2,11 @@
  * scrape-programs.ts — degree/program requirements for SD.
  *
  * Coverage:
- * - Southeast Technical College — Acalog (catalog.southeast.edu,
- *   catoid=22, 2026-2027). Scraped via the shared Acalog template.
+ * - Southeast Technical College — Acalog (catalog.southeasttech.edu,
+ *   catoid=35, 2026-2027). Scraped via the shared Acalog template.
+ *   NOT catalog.southeast.edu — that's a different "Southeast Community
+ *   College" in Nebraska. The orchestrator's programs discovery in #701
+ *   confused them; do not regress.
  *
  * Deferred (no template fit):
  * - Western Dakota Technical College — catalog is PDF only
@@ -59,9 +62,9 @@ async function main() {
   await run("southeast-technical-college", () =>
     scrapeAcalogPrograms({
       collegeSlug: "southeast-technical-college",
-      baseUrl: "https://catalog.southeast.edu",
-      catoidFallback: 22,
-      programNavoids: [2845, 2750],
+      baseUrl: "https://catalog.southeasttech.edu",
+      catoidFallback: 35,
+      programNavoids: [27253],
       autoDiscoverCatoid: true,
     }),
   );

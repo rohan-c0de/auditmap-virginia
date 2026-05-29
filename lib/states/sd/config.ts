@@ -78,7 +78,12 @@ const sdConfig: StateConfig = {
       // place. Per-institution scrapers for the other 5 universities are
       // possible long-term but would each require bespoke work.
     ],
-    prereqs: { source: "aggregate-from-courses" },
+    prereqs: [
+      {
+        scripts: ["scripts/sd/scrape-catalog-prereqs.ts"],
+        runner: "http",
+      },
+    ],
     programs: [
       {
         scripts: ["scripts/sd/scrape-programs.ts"],
