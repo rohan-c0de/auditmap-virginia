@@ -6,8 +6,11 @@
     "node": "^22.0.0 || ^24.0.0"
   },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "build:css": "tailwindcss -i ./app/tailwind.source.css -o ./app/globals.css --minify",
+    "dev:css": "tailwindcss -i ./app/tailwind.source.css -o ./app/globals.css --watch",
+    "dev:next": "next dev",
+    "dev": "npm run build:css && concurrently --names \"css,next\" --prefix-colors \"cyan,green\" --kill-others-on-fail \"npm:dev:css\" \"npm:dev:next\"",
+    "build": "npm run build:css && next build",
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
@@ -64,13 +67,14 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
+    "@tailwindcss/cli": "^4.3.0",
     "@tailwindcss/typography": "^0.5.19",
     "@types/leaflet": "^1.9.21",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "cheerio": "^1.2.0",
+    "concurrently": "^9.2.1",
     "eslint": "^9",
     "eslint-config-next": "16.2.1",
     "playwright": "^1.58.2",
