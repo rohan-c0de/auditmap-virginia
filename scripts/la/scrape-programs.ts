@@ -41,9 +41,10 @@ async function run(
 
 async function main() {
   console.log("LA program scraper");
-  // nunez-community-college (courseleaf)
+  // nunez-community-college (courseleaf) — Nunez uses /programs/ not the
+  // default /programs-study/.
   await run("nunez-community-college", () =>
-    scrapeCourseleafPrograms({ collegeSlug: "nunez-community-college", baseUrl: "https://catalog.nunez.edu" }),
+    scrapeCourseleafPrograms({ collegeSlug: "nunez-community-college", baseUrl: "https://catalog.nunez.edu", programIndexPath: "/programs/" }),
   );
 
   // fletcher-technical-community-college (acalog)
@@ -51,20 +52,22 @@ async function main() {
     scrapeAcalogPrograms({ collegeSlug: "fletcher-technical-community-college", baseUrl: "https://catalog.fletcher.edu", catoidFallback: 0, programNavoids: [], autoDiscoverCatoid: true, useSearchDiscovery: true }),
   );
 
-  // south-louisiana-community-college (acalog) — catoidFallback=22 confirmed
-  // by manual probe; auto-discovery is intermittent on this catalog.
+  // south-louisiana-community-college (acalog) — programs listed under
+  // navoid=10083 ("Programs"). Probed manually 2026-05-29.
   await run("south-louisiana-community-college", () =>
-    scrapeAcalogPrograms({ collegeSlug: "south-louisiana-community-college", baseUrl: "https://catalog.solacc.edu", catoidFallback: 22, programNavoids: [], autoDiscoverCatoid: false, useSearchDiscovery: true }),
+    scrapeAcalogPrograms({ collegeSlug: "south-louisiana-community-college", baseUrl: "https://catalog.solacc.edu", catoidFallback: 22, programNavoids: [10083], autoDiscoverCatoid: false }),
   );
 
-  // louisiana-delta-community-college (acalog) — catoidFallback=3 confirmed.
+  // louisiana-delta-community-college (acalog) — programs at navoid=46 ("All Programs").
   await run("louisiana-delta-community-college", () =>
-    scrapeAcalogPrograms({ collegeSlug: "louisiana-delta-community-college", baseUrl: "https://catalog.ladelta.edu", catoidFallback: 3, programNavoids: [], autoDiscoverCatoid: false, useSearchDiscovery: true }),
+    scrapeAcalogPrograms({ collegeSlug: "louisiana-delta-community-college", baseUrl: "https://catalog.ladelta.edu", catoidFallback: 3, programNavoids: [46], autoDiscoverCatoid: false }),
   );
 
-  // baton-rouge-community-college (acalog) — catoidFallback=3 confirmed.
+  // baton-rouge-community-college (acalog) — navoid=76 ("Programs A-Z") has
+  // 61 preview_program.php links; navoid=85 ("Programs of Study") is a
+  // navigation parent with no direct program poids.
   await run("baton-rouge-community-college", () =>
-    scrapeAcalogPrograms({ collegeSlug: "baton-rouge-community-college", baseUrl: "https://catalog.mybrcc.edu", catoidFallback: 3, programNavoids: [], autoDiscoverCatoid: false, useSearchDiscovery: true }),
+    scrapeAcalogPrograms({ collegeSlug: "baton-rouge-community-college", baseUrl: "https://catalog.mybrcc.edu", catoidFallback: 3, programNavoids: [76], autoDiscoverCatoid: false }),
   );
 }
 
