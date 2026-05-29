@@ -14,7 +14,7 @@ const laConfig: StateConfig = {
   // any single citation. Leave null until a system-wide statute is found.
   seniorWaiver: null,
 
-  transferSupported: false,
+  transferSupported: true,
   popularCourses: ["ENGL 1010", "MATH 1100", "BIOL 1010", "PSYC 2000", "HIST 1010"],
   defaultZip: "70806",
   defaultZipCity: "Baton Rouge",
@@ -57,9 +57,13 @@ const laConfig: StateConfig = {
       },
     ],
     prereqs: { source: "aggregate-from-courses" },
-    // manual-only: transfers — Louisiana Board of Regents publishes annual
-    // articulation PDFs at laregents.edu but no registered API portal yet.
-    // Add to data/articulation-portals.json once researched.
+    transfers: [
+      // Louisiana Board of Regents publishes the statewide Master Course
+      // Articulation Matrix as an annual Excel file at laregents.edu/matrix-
+      // archive/. Most recent "Final Approved" version is AY 2021-2022.
+      // Covers all 11 LCTCS senders × 16 LSU/UL/SU public-system receivers.
+      { scripts: ["scripts/la/scrape-regents-matrix.ts"], runner: "http" },
+    ],
     // manual-only: programs — Phase 6 wrapper at scripts/la/scrape-programs.ts
     // discovered 4 catalogs (Nunez courseleaf; Fletcher/SLCC/Delta acalog).
     // Operator must validate URLs + fill per-college config before running.
