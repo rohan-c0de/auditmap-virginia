@@ -8,10 +8,12 @@ const sdConfig: StateConfig = {
   systemUrl: "https://www.boardofregents.sd.gov/",
   collegeCount: 6,
 
-  // South Dakota has no statewide senior tuition-waiver statute. Two of the
-  // four state technical colleges (Southeast Tech, Western Dakota Tech) offer
-  // local senior-citizen discounts at the registrar's discretion. Verify with
-  // each college before relying on this entry.
+  // No statewide senior tuition-waiver statute in SD. Verified 2026-05-29:
+  // Southeast Tech (southeasttech.edu/costs-financial-aid) and Western Dakota
+  // Tech (wdt.edu/paying-for-school/cost) publish full tuition schedules with
+  // no senior-citizen discount, audit waiver, or age-based reduction. Lake
+  // Area Tech and Mitchell Tech cost pages were unreachable for direct
+  // verification but their published catalogs contain no such policy.
   seniorWaiver: null,
 
   transferSupported: false,
@@ -68,10 +70,17 @@ const sdConfig: StateConfig = {
     // CollegeTransfer.Net was suggested as a fallback; needs per-college
     // SourceInstitutionIds.
     prereqs: { source: "aggregate-from-courses" },
-    // manual-only: programs — Phase 6 discovered 2 catalog hits
-    // (southeast-technical-college: acalog, western-dakota-technical-college:
-    // courseleaf). Wrapper at scripts/sd/scrape-programs.ts; needs catalog
-    // year + per-college config before it can run.
+    programs: [
+      {
+        scripts: ["scripts/sd/scrape-programs.ts"],
+        runner: "http",
+      },
+      // manual-only: western-dakota-technical-college — catalog is PDF only.
+      // manual-only: lake-area-technical-college, oglala-lakota-college,
+      // sisseton-wahpeton-college — no public templated programs catalog.
+      // manual-only: mitchell-technical-college — Coursedog course descriptions
+      // ingested at data/sd/coursedog-catalog/ but no program-requirement data.
+    ],
   },
 };
 
