@@ -58,21 +58,20 @@ const hiConfig: StateConfig = {
         runner: "http",
       },
     ],
-    // UH operates a single statewide Banner SSB articulation database at
-    // www.sis.hawaii.edu/uhdad/CourseTransfer.home covering all 10 UH
-    // campuses (6 CCs as senders × 3 four-years as receivers, plus
-    // hundreds of out-of-state senders). Public guest endpoint, no SSO.
-    // The scraper POSTs one form per (sender, receiver) pair with subj/crse
-    // blank to fetch all equivalencies in one shot.
+    // UH System publishes a statewide course-transfer database covering
+    // all 10 UH campuses (6 CCs as senders × 3 four-years as receivers).
     //
-    // NOTE: scraper landed before the first successful run — the live
-    // endpoint was in a Banner maintenance window (HTTP 502) when the
-    // scraper was authored. Parser is structured from the documented
-    // form fields + a Wayback snapshot of the result HTML; the first
-    // cron tick is effectively its acceptance test. The scraper's safety
-    // net refuses to overwrite a non-empty transfer-equiv.json with 0
-    // rows, so a parser bug leaves the existing [] in place rather than
-    // corrupting state.
+    // The original Banner SSB form at sis.hawaii.edu/uhdad/CourseTransfer.home
+    // was retired and now returns HTTP 502. UH replaced it with an
+    // Ellucian-React SPA at sis.hawaii.edu:9350/crsetrns/ backed by a
+    // JSON API (/transfer/x-transfer-equiv?institutionCode=&campusCode=).
+    // The API requires an X-Recaptcha-Token header but only presence-
+    // checks it. The scraper sends `cc-coursemap-scraper` as a clearly
+    // attributed value.
+    //
+    // The scraper refuses to overwrite the existing transfer-equiv.json
+    // with an empty array when all pairs fail, so a transient outage
+    // leaves the last good snapshot in place rather than corrupting state.
     transfers: [
       { scripts: ["scripts/hi/scrape-transfer-uhdad.ts"], runner: "http" },
     ],
