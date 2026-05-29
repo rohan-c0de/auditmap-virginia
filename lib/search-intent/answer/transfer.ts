@@ -28,6 +28,7 @@ import type {
   TransferEquivalency,
 } from "./types";
 import { courseExists, resolveUniversity } from "./validate";
+import { makeNoAnswer } from "./no-answer";
 import { subjectName } from "../../subjects";
 
 const MAX_ALTERNATIVES = 5;
@@ -48,18 +49,16 @@ export async function lookupTransfer(
       const msg = destName
         ? `Showing ${name} courses — pick one to check if it transfers to ${destName}.`
         : `Showing ${name} courses — pick one to check transfer equivalency.`;
-      return {
-        type: "none",
+      return makeNoAnswer({
         reason: "missing-entity",
         message: msg,
-      };
+      });
     }
-    return {
-      type: "none",
+    return makeNoAnswer({
       reason: "missing-entity",
       message:
         "Which course are you asking about? Try 'Does ENG 111 transfer to GMU?'",
-    };
+    });
   }
 
   // Validate course exists in this state.

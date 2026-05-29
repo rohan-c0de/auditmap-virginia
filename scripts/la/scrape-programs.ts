@@ -61,9 +61,8 @@ async function main() {
   // louisiana-delta-community-college (acalog) — catalog.ladelta.edu is behind
   // AWS WAF JS-challenge; plain fetch returns a 1.9 KB challenge page. Use
   // Playwright so headless Chromium solves the challenge automatically.
-  // navoid=46 ("All Programs") has an empty textcontainer — likely a framed
-  // or deferred-JS rendering. search_advanced.php works via Playwright and
-  // returns poids correctly, so useSearchDiscovery is the reliable path here.
+  // navoid=46 ("All Programs") has an empty textcontainer in the gateway theme;
+  // search_advanced.php works via Playwright and returns poids correctly.
   await run("louisiana-delta-community-college", () =>
     scrapeAcalogPrograms({ collegeSlug: "louisiana-delta-community-college", baseUrl: "https://catalog.ladelta.edu", catoidFallback: 3, programNavoids: [], autoDiscoverCatoid: false, useSearchDiscovery: true, usePlaywright: true }),
   );

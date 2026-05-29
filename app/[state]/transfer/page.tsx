@@ -5,14 +5,13 @@ import {
   loadTransferMappingsByUniversity,
   getUniversities,
   getUniversitiesWithCounts,
+  TRANSFER_HUB_MAX_CLIENT_MAPPINGS,
 } from "@/lib/transfer";
 import { loadAllCourses } from "@/lib/courses";
 import { getCurrentTerm } from "@/lib/terms";
 import { getAllStates } from "@/lib/states/registry";
 import { requireStateConfig } from "@/lib/states/route-helpers";
 import TransferClient from "./TransferClient";
-import TransferCoverageSection from "./TransferCoverageSection";
-import { loadTransferCoverage } from "@/lib/transfer-coverage";
 
 // Render on demand — some states' transfer data exceeds Vercel's ISR size limit
 export const dynamic = "force-dynamic";
@@ -49,8 +48,16 @@ export default async function TransferPage({ params }: Props) {
   // The client fetches other universities on demand via
   // /api/{state}/transfer/mappings?university=X, reducing the initial
   // HTML from ~7 MB (full state dataset) to ~500 KB.
+  // Cap the server-side fetch to TRANSFER_HUB_MAX_CLIENT_MAPPINGS. The
+  // initial payload is trimmed to this size client-side anyway, and for
+  // large states (CA csu-system = 99K rows) the uncapped fetch took ~50s
+  // and tripped Vercel's serverless function timeout (issue #777).
   const mappings = defaultUni
-    ? await loadTransferMappingsByUniversity(state, defaultUni)
+    ? await loadTransferMappingsByUniversity(
+        state,
+        defaultUni,
+        TRANSFER_HUB_MAX_CLIENT_MAPPINGS,
+      )
     : [];
 
   // Get course availability for current term (matches what course search shows)
@@ -138,10 +145,6 @@ export default async function TransferPage({ params }: Props) {
 
       {/* Browse transfer pathways by university — hub-page directory */}
       <BrowseTransferHubs state={state} />
-
-      {/* Per-receiver coverage map (currently CA only — loader returns null
-          for states without a transfer-coverage.json file). */}
-      <TransferCoverageSectionWrapper state={state} systemName={config.systemName} />
     </div>
   );
 }
@@ -152,18 +155,6 @@ export default async function TransferPage({ params }: Props) {
 // university's pathway. Only shows universities meeting the thin-content
 // guard (>= 10 transferable courses).
 // ---------------------------------------------------------------------------
-async function TransferCoverageSectionWrapper({
-  state,
-  systemName,
-}: {
-  state: string;
-  systemName: string;
-}) {
-  const coverage = await loadTransferCoverage(state);
-  if (!coverage) return null;
-  return <TransferCoverageSection coverage={coverage} systemName={systemName} />;
-}
-
 async function BrowseTransferHubs({ state }: { state: string }) {
   const universities = await getUniversitiesWithCounts(state);
   const eligible = universities.filter((u) => u.totalCount >= 10);
