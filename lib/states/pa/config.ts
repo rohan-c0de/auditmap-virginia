@@ -67,9 +67,17 @@ const paConfig: StateConfig = {
     // (CCAC, Luzerne, MC3, RACC), CampusNexus / Anthology
     // (Westmoreland), and a static JSON dump (Northampton).
     //
-    // The 5 colleges still without scrapers are:
-    //   - bucks         Workday Student (no template; needs investigation)
-    //   - butler        Ellucian Experience SSO portal only (no public SIS)
+    // The 5 colleges still without scrapers are permanent gaps —
+    // each was probed end-to-end and confirmed auth-only:
+    //   - bucks         Workday Student — 14 endpoints probed
+    //                   2026-05-28 (Workday /d/inst/, /d/anon/, /d/guest/,
+    //                   CXS catalog APIs, all SIS sibling subdomains,
+    //                   PDF + Acalog + Coursedog + SmartCatalogIQ
+    //                   tenants); every public-looking path JS-redirects
+    //                   to authgwy/bucks/login.htmld
+    //   - butler        Ellucian Experience SSO portal only — 17+ SIS
+    //                   probes all DNS-dead; only public link is to
+    //                   experience.elluciancloud.com/bccc564/
     //   - ccbc          Jenzabar JICS behind SAML
     //   - pa-highlands  Jenzabar JICS behind SAML
     //   - penn-college  SSO-gated (Penn State affiliate)
