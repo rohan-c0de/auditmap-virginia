@@ -352,6 +352,40 @@ async function scrapeCC(
 }
 
 // ---------------------------------------------------------------------------
+// Incremental save — each CC's results are written to a per-CC JSON file
+// so a crash at CC #20 doesn't lose CCs 1–19.
+// ---------------------------------------------------------------------------
+
+const PARTIAL_DIR = path.join(process.cwd(), "data", "ny", ".step-partial");
+
+function savePartial(slug: string, mappings: TransferMapping[]): void {
+  fs.mkdirSync(PARTIAL_DIR, { recursive: true });
+  const file = path.join(PARTIAL_DIR, `${slug}.json`);
+  fs.writeFileSync(file, JSON.stringify(mappings));
+  console.log(`  saved ${mappings.length} mappings to ${file}`);
+}
+
+function loadAllPartials(): TransferMapping[] {
+  if (!fs.existsSync(PARTIAL_DIR)) return [];
+  const all: TransferMapping[] = [];
+  for (const f of fs.readdirSync(PARTIAL_DIR).filter((f) => f.endsWith(".json"))) {
+    try {
+      const data = JSON.parse(fs.readFileSync(path.join(PARTIAL_DIR, f), "utf8"));
+      all.push(...data);
+    } catch {}
+  }
+  return all;
+}
+
+function clearPartials(): void {
+  if (!fs.existsSync(PARTIAL_DIR)) return;
+  for (const f of fs.readdirSync(PARTIAL_DIR)) {
+    fs.unlinkSync(path.join(PARTIAL_DIR, f));
+  }
+  fs.rmdirSync(PARTIAL_DIR);
+}
+
+// ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
 
@@ -359,6 +393,7 @@ async function main(): Promise<void> {
   const args = process.argv.slice(2);
   const ccFlag = args.indexOf("--cc");
   const noImport = args.includes("--no-import");
+  const resume = args.includes("--resume");
 
   let targetCCs: Array<[string, { instId: string; name: string }]>;
   if (ccFlag >= 0) {
@@ -372,22 +407,42 @@ async function main(): Promise<void> {
     targetCCs = Object.entries(SOURCE_CCS);
   }
 
+  // --resume: skip CCs that already have a partial file from a prior run
+  const alreadyDone = new Set<string>();
+  if (resume && fs.existsSync(PARTIAL_DIR)) {
+    for (const f of fs.readdirSync(PARTIAL_DIR).filter((f) => f.endsWith(".json"))) {
+      alreadyDone.add(f.replace(".json", ""));
+    }
+    if (alreadyDone.size > 0) {
+      console.log(`Resuming — ${alreadyDone.size} CC(s) already scraped: ${[...alreadyDone].join(", ")}`);
+    }
+  }
+
   console.log(`Scraping ${targetCCs.length} SUNY CC(s) from STEP`);
   console.log(`  concurrency=${CONCURRENCY}, delay=${DELAY_MS}ms`);
 
-  const allMappings: TransferMapping[] = [];
   const start = Date.now();
+  let completed = 0;
 
   for (const [slug, info] of targetCCs) {
+    if (alreadyDone.has(slug)) {
+      completed++;
+      continue;
+    }
     try {
       const m = await scrapeCC(slug, info);
-      allMappings.push(...m);
+      savePartial(slug, m);
+      completed++;
+      console.log(`  [${completed}/${targetCCs.length}] cumulative CCs done`);
     } catch (e) {
       console.error(`\n  FATAL on ${slug}: ${e}`);
     }
   }
 
   const elapsed = Math.round((Date.now() - start) / 1000);
+
+  // Assemble final output from all partial files
+  const allMappings = loadAllPartials();
   console.log(`\nTotal raw mappings: ${allMappings.length} in ${elapsed}s`);
 
   // Dedupe by (cc_prefix, cc_number, university, univ_course)
@@ -425,13 +480,16 @@ async function main(): Promise<void> {
     try {
       existing = JSON.parse(fs.readFileSync(outPath, "utf8"));
     } catch {}
-    // Keep CUNY data (anything without a suny- slug)
     existing = existing.filter((m) => !m.university.startsWith("suny-"));
   }
 
   const merged = [...existing, ...deduped];
   fs.writeFileSync(outPath, JSON.stringify(merged, null, 2) + "\n");
   console.log(`\nWritten ${merged.length} total mappings (${existing.length} CUNY + ${deduped.length} SUNY) to ${outPath}`);
+
+  // Clean up partial files after successful merge
+  clearPartials();
+  console.log(`Cleaned up partial files`);
 
   if (!noImport) {
     try {
