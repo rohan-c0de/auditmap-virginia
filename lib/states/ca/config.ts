@@ -58,6 +58,10 @@ const caConfig: StateConfig = {
       // SSO-gated, but each campus publishes a public schedule on its own
       // domain — De Anza at deanza.edu/schedule/listings.html.
       { scripts: ["scripts/ca/scrape-deanza.ts"], runner: "http" },
+      // Los Rios CCD cluster: four colleges (ARC, CRC, SCC, FLC) share a
+      // centralized API at hub.losrios.edu/classSearch. One scraper fetches all
+      // four via per-college schedule page discovery.
+      { scripts: ["scripts/ca/scrape-losrios.ts"], runner: "http" },
     ],
     prereqs: { source: "aggregate-from-courses" },
     transfers: [
