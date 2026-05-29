@@ -61,3 +61,6 @@ next-env.d.ts
 # to block commits/pushes that target a different branch than the one
 # Claude deliberately created in this session.
 .claude/branch-lock
+
+# Tailwind CLI compiled output — source is app/tailwind.source.css
+app/globals.css
