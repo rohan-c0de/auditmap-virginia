@@ -249,7 +249,11 @@ function parseProgramPage(
   programPath: string,
 ): ProgramRequirement[] {
   const $ = cheerio.load(html);
-  const programTitle = $("h1.page-title").first().text().trim();
+  // Support both class="page-title" (most catalogs) and id="page-title"
+  // (e.g. Nunez CC uses <h1 id="page-title">).
+  const programTitle =
+    ($("h1.page-title").first().text().trim() ||
+      $("h1#page-title").first().text().trim());
   if (!programTitle) return [];
 
   const catalogUrl = new URL(programPath, baseUrl).toString();
