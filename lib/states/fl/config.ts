@@ -82,6 +82,11 @@ const flConfig: StateConfig = {
       // a public Coursedog catalog. Sections are auth-gated but the catalog
       // gives course-level prereqs feeding into prereqs.json.
       { scripts: ["scripts/fl/scrape-coursedog.ts"], runner: "playwright" },
+      // St. Petersburg College — custom paginated JSON API at
+      // classes.spcollege.edu. ~4.7k sections per term plus prereq
+      // text embedded in course descriptions (~60% coverage). See
+      // scrape-spcollege.ts header for the API shape.
+      { scripts: ["scripts/fl/scrape-spcollege.ts"], runner: "http" },
     ],
     transfers: [
       // SCNS flat-file dump — single 80 MB download, no auth, covers all
