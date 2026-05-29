@@ -11,6 +11,7 @@ import { lookupEligibility } from "./eligibility";
 import { lookupPathway } from "./pathway";
 import { lookupPrereqs } from "./prereqs";
 import { lookupTransfer } from "./transfer";
+import { makeNoAnswer } from "./no-answer";
 
 export type { Answer, SourceCitation } from "./types";
 
@@ -124,11 +125,10 @@ export async function lookupAnswer(
     case "eligibility":
       return lookupEligibility(intent, state);
     case "course":
-      return {
-        type: "none",
+      return makeNoAnswer({
         reason: "intent-not-supported",
         message: "Use the course search results below.",
-      };
+      });
     case "unknown":
       return lookupUnknown(intent.raw, state);
   }
@@ -167,12 +167,11 @@ async function lookupUnknown(raw: string, state: string): Promise<Answer> {
       return pathwayAnswer;
     }
   }
-  return {
-    type: "none",
+  return makeNoAnswer({
     reason: "out-of-scope",
     message:
       "I'm not sure what you're asking. Try a course code (like ENG 111), 'prereqs for BIO 256', or 'does ENG 111 transfer to GMU'.",
-  };
+  });
 }
 
 const FIELD_STOP_WORDS = new Set([
