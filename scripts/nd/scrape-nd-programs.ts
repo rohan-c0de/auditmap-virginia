@@ -151,76 +151,58 @@ async function scrapeBscPrograms(): Promise<Program[]> {
 
 const WSC_BASE = "https://catalog.willistonstate.edu";
 const WSC_CATOID = 1;
-
-interface AcalogProgram {
-  name: string;
-  navoid: string;
-}
-
-async function discoverWscPrograms(): Promise<AcalogProgram[]> {
-  // List programs page — typically at a high-level navoid
-  const html = await retryFetch(
-    `${WSC_BASE}/content.php?catoid=${WSC_CATOID}&navoid=1`,
-    "wsc-programs-index"
-  );
-  if (!html) return [];
-
-  const programs: AcalogProgram[] = [];
-  const seen = new Set<string>();
-
-  // Look for program links in Acalog's navigation structure
-  // Pattern: <a href=".../navoid=NNN...">Program Name</a>
-  const linkMatches = html.matchAll(
-    /href="[^"]*navoid=(\d+)[^"]*"[^>]*>([^<]+(?:Associate|Degree|Program|Major)[^<]*)<\/a>/gi
-  );
-
-  for (const match of linkMatches) {
-    const navoid = match[1];
-    const name = match[2].trim();
-
-    // Filter out nav items that aren't programs
-    if (
-      /^(course|content|program|degree|major)/i.test(name) &&
-      !seen.has(name)
-    ) {
-      seen.add(name);
-      programs.push({ name, navoid });
-    }
-  }
-
-  return programs;
-}
+const WSC_PROGRAMS_NAVOID = 20; // Academic Programs page
 
 async function scrapeWscPrograms(): Promise<Program[]> {
   console.log("\n── WSC (Acalog) ──────────────────────────");
 
-  const discovered = await discoverWscPrograms();
-  console.log(`  Discovered ${discovered.length} potential programs`);
+  // Fetch the Academic Programs page which lists all programs in a table
+  const html = await retryFetch(
+    `${WSC_BASE}/content.php?catoid=${WSC_CATOID}&navoid=${WSC_PROGRAMS_NAVOID}`,
+    "wsc-programs"
+  );
+  if (!html) return [];
 
   const programs: Program[] = [];
   const seen = new Set<string>();
 
-  for (const prog of discovered) {
-    if (seen.has(prog.name)) continue;
-    seen.add(prog.name);
+  // Extract program links from table: <a href="preview_program.php?catoid=1&poid=\d+">Program Name</a>
+  // Programs are listed in a table after the header row
+  const programMatches = html.matchAll(
+    /<a href="preview_program\.php\?catoid=\d+&poid=\d+"[^>]*>([^<]+)<\/a>/gi
+  );
 
-    // Classify degree type by name heuristic
+  for (const match of programMatches) {
+    const name = match[1].trim();
+
+    if (seen.has(name)) continue;
+    seen.add(name);
+
+    // Classify degree type by name parsing
     let degrees: string[] = [];
-    if (prog.name.toLowerCase().includes("certificate")) {
+    const nameLower = name.toLowerCase();
+
+    // Check for explicit degree types in the name (e.g., "Liberal Arts - AA")
+    if (nameLower.includes(" - aa")) {
+      degrees = ["AA"];
+    } else if (nameLower.includes(" - as")) {
+      degrees = ["AS"];
+    } else if (nameLower.includes("certificate")) {
       degrees = ["Cert"];
-    } else if (prog.name.toLowerCase().includes("diploma")) {
+    } else if (nameLower.includes("diploma")) {
       degrees = ["Dipl"];
     } else {
-      degrees = ["AA", "AS"]; // Default for community college
+      // Default for WSC: most programs are AAS or dual AA/AS
+      degrees = ["AAS"];
     }
 
-    const slug = prog.name
+    const slug = name
       .toLowerCase()
       .replace(/\s+/g, "-")
       .replace(/[^a-z0-9-]/g, "");
 
     programs.push({
-      name: prog.name,
+      name,
       category: "Academic Program",
       degrees,
       slug,
