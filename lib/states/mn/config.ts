@@ -72,8 +72,18 @@ const mnConfig: StateConfig = {
         runner: "http",
       },
     ],
-    // manual-only: prereqs — eservices results don't include prereq text; needs catalog scraper follow-up.
-    // manual-only: programs — discover-programs found no public catalog matches; needs college-by-college investigation.
+    prereqs: [
+      {
+        scripts: ["scripts/mn/scrape-catalog-prereqs.ts"],
+        runner: "http",
+      },
+    ],
+    programs: [
+      {
+        scripts: ["scripts/mn/scrape-programs-acalog.ts"],
+        runner: "http",
+      },
+    ],
   },
 };
 

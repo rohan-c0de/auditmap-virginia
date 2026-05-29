@@ -255,8 +255,8 @@ function parseScIqDetail(html: string): { prefix: string; number: string; text: 
   const prefix = codeMatch[1].toUpperCase();
   const number = codeMatch[2];
 
-  // Prereq block: <h2>\n\t\tPrerequisite\n\t</h2>... up to next <div class="sc_..." or <h2.
-  const m = html.match(/<h2>\s*Prerequisite(?:\(s\))?\s*<\/h2>([\s\S]*?)(?:<div\s+class="sc_|<h2>|<\/section)/i);
+  // Prereq block. Hennepin uses <h2>, Normandale uses <h3>.
+  const m = html.match(/<h[23]>\s*Prerequisite(?:\(s\))?\s*<\/h[23]>([\s\S]*?)(?:<div\s+class="sc_|<h[23]>|<\/section)/i);
   if (!m) return null;
   // The captured text may contain <a> tags wrapping course codes (with no space, e.g. ENGL0921).
   // Normalize "ENGL0921" → "ENGL 0921" so extractCourseCodes can parse them.
