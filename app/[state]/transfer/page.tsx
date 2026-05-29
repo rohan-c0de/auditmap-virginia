@@ -7,8 +7,6 @@ import {
   getUniversitiesWithCounts,
   TRANSFER_HUB_MAX_CLIENT_MAPPINGS,
 } from "@/lib/transfer";
-import { loadCoursesByPrefixes } from "@/lib/courses";
-import { getCurrentTerm } from "@/lib/terms";
 import { getAllStates } from "@/lib/states/registry";
 import { requireStateConfig } from "@/lib/states/route-helpers";
 import TransferClient from "./TransferClient";
@@ -60,37 +58,15 @@ export default async function TransferPage({ params }: Props) {
       )
     : [];
 
-  // Course availability for current term: build a {prefix-number → {colleges,
-  // totalSections}} map by fetching only the courses whose prefixes appear in
-  // the (capped) mappings, projected to (prefix, number, college_code). For
-  // small states the cost is negligible; for the largest (CA: 220 prefixes,
-  // 31K sections) we skip the map entirely and pass {} — the page still
-  // renders mappings, the client filters/sorts work, and the "available
-  // this term" indicator is the only thing that goes dark. That's a far
-  // better failure mode than the whole page 500-ing on a Vercel timeout.
-  // Issue #777.
-  const neededPrefixes = Array.from(new Set(mappings.map((m) => m.cc_prefix)));
-  const neededKeys = new Set<string>();
-  for (const m of mappings) {
-    neededKeys.add(`${m.cc_prefix}-${m.cc_number}`);
-  }
-  const PREFIX_SOFT_LIMIT = 180; // Tested OK at this size; CA at 220 cliffs.
+  // Course-availability map: temporarily passed empty. Building it
+  // server-side (even with the IN-query narrowing in #786) was tripping
+  // Vercel's ~15s streaming timeout for CA/TX/MI/TN/NJ/MD due to cold-start
+  // variance. The visible cost is that the "available this term" badge
+  // doesn't appear on course rows — filters/sorts still work, mappings
+  // still render. Proper fix tracked separately: build-time aggregation
+  // cache (data/{state}/course-availability-{term}.json), same pattern as
+  // the transfer-universities cache in #781. Issue #777.
   const courseAvailability: Record<string, { colleges: string[]; totalSections: number }> = {};
-  if (neededPrefixes.length > 0 && neededPrefixes.length <= PREFIX_SOFT_LIMIT) {
-    const term = await getCurrentTerm(state);
-    const narrowedCourses = await loadCoursesByPrefixes(neededPrefixes, term, state);
-    for (const c of narrowedCourses) {
-      const key = `${c.course_prefix}-${c.course_number}`;
-      if (!neededKeys.has(key)) continue;
-      if (!courseAvailability[key]) {
-        courseAvailability[key] = { colleges: [], totalSections: 0 };
-      }
-      courseAvailability[key].totalSections++;
-      if (!courseAvailability[key].colleges.includes(c.college_code)) {
-        courseAvailability[key].colleges.push(c.college_code);
-      }
-    }
-  }
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com";
 
