@@ -16,7 +16,7 @@ const sdConfig: StateConfig = {
   // verification but their published catalogs contain no such policy.
   seniorWaiver: null,
 
-  transferSupported: false,
+  transferSupported: true,
   popularCourses: [
     "ENGL 101",
     "MATH 101",
@@ -66,9 +66,18 @@ const sdConfig: StateConfig = {
       // catalog is ingested separately at data/sd/coursedog-catalog/; the
       // course-section schedule is also SSO-gated.
     ],
-    // manual-only: transfers — no registered articulation portal for SD.
-    // CollegeTransfer.Net was suggested as a fallback; needs per-college
-    // SourceInstitutionIds.
+    transfers: [
+      {
+        scripts: ["scripts/sd/scrape-transfer-usd.ts"],
+        runner: "http",
+      },
+      // manual-only: SDSU, SDSMT, BHSU, NSU, DSU — the SD Board of Regents
+      // partners with Transferology for these five, but Transferology blocks
+      // unauthenticated access (HTTP 403 on system pages). USD runs its own
+      // public calculator (scraped here) which covers all 6 SD CCs in one
+      // place. Per-institution scrapers for the other 5 universities are
+      // possible long-term but would each require bespoke work.
+    ],
     prereqs: { source: "aggregate-from-courses" },
     programs: [
       {
