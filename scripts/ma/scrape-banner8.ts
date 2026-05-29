@@ -10,6 +10,7 @@
  * Covered:
  *   gcc       Greenfield Community College    my.gcc.mass.edu/PROD
  *   middlesex Middlesex Community College     middlenet.middlesex.mass.edu/PROD
+ *   bristol   Bristol Community College       selfservice.bristolcc.edu/PROD
  *
  * Not covered (probed but unusable publicly):
  *   massasoit — banner.massasoit.mass.edu is SSO-gated (Microsoft SAML)
@@ -56,6 +57,11 @@ const COLLEGES: CollegeEndpoint[] = [
   {
     slug: "middlesex",
     baseUrl: "https://middlenet.middlesex.mass.edu",
+    prodPath: "/PROD",
+  },
+  {
+    slug: "bristol",
+    baseUrl: "https://selfservice.bristolcc.edu",
     prodPath: "/PROD",
   },
 ];
