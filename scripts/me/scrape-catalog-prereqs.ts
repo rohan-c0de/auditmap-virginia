@@ -383,6 +383,33 @@ async function main() {
     sorted[key] = merged[key];
   }
 
+  // Safety net: refuse to clobber a non-empty existing prereqs.json with
+  // an empty object. This catches the all-PDFs-failed mode (e.g. CI
+  // missing pdftotext, or every WordPress catalog host returning 5xx
+  // simultaneously) where the per-college try/catch silently swallows
+  // every error and we'd otherwise overwrite hundreds of good entries
+  // with `{}`. Per CLAUDE.md invariant — don't ship placeholder data.
+  if (Object.keys(sorted).length === 0 && fs.existsSync(outPath)) {
+    let existing: Record<string, PrereqEntry> = {};
+    try {
+      existing = JSON.parse(fs.readFileSync(outPath, "utf-8"));
+    } catch {
+      /* existing file is malformed — treat as empty */
+    }
+    if (Object.keys(existing).length > 0) {
+      console.error(
+        `\n✗ Refusing to overwrite ${Object.keys(existing).length}-entry ${outPath} with empty data.`,
+      );
+      console.error(
+        `  Every college's PDF either failed to download or failed to parse — see ⚠ lines above.`,
+      );
+      console.error(
+        `  Existing data left untouched. Investigate and re-run after fixing root cause.`,
+      );
+      process.exit(1);
+    }
+  }
+
   fs.writeFileSync(outPath, JSON.stringify(sorted, null, 2));
   console.log(`\n✓ Wrote ${Object.keys(sorted).length} prereqs to ${outPath}`);
 }
