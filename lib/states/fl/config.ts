@@ -87,6 +87,15 @@ const flConfig: StateConfig = {
       // text embedded in course descriptions (~60% coverage). See
       // scrape-spcollege.ts header for the API shape.
       { scripts: ["scripts/fl/scrape-spcollege.ts"], runner: "http" },
+      // Eastern Florida State College — ColdFusion form at
+      // webapps.easternflorida.edu/schedule_search/. Capped at 100
+      // results per query so the scraper iterates over the 238
+      // subject-prefix values from the search form's <select>.
+      { scripts: ["scripts/fl/scrape-easternflorida.ts"], runner: "http" },
+      // Broward College — FCCSC servlet at mybc.broward.edu. Requires
+      // a JSESSIONID + F5/Volterra WAF cookie from a GET to the JSP,
+      // then one POST per (term, subject prefix). 131 prefixes.
+      { scripts: ["scripts/fl/scrape-broward.ts"], runner: "http" },
     ],
     transfers: [
       // SCNS flat-file dump — single 80 MB download, no auth, covers all
