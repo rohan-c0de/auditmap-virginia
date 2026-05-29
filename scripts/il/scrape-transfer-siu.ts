@@ -255,8 +255,8 @@ async function main() {
       allMappings.push(...mappings);
       if (mappings.length > 0) successSlugs.push(matchedSlug);
       console.log(`  ${matchedSlug}: ${mappings.length} mappings`);
-    } catch (err: any) {
-      console.error(`  ${matchedSlug}: FAILED — ${err.message}`);
+    } catch (err) {
+      console.error(`  ${matchedSlug}: FAILED — ${(err as Error).message}`);
     }
 
     await sleep(DELAY_MS);

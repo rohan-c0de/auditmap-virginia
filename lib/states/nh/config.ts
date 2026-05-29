@@ -27,6 +27,7 @@ const nhConfig: StateConfig = {
   // Keene as a destination. Accepting that limited coverage rather
   // than hide real data behind the flag.
   transferSupported: true,
+  prerenderAtBuild: true, // High Search Console traffic; pre-render at build (#702)
   popularCourses: ["ENGL 101", "MATH 120", "BIOL 105", "PSYC 101", "HIST 101", "SOCI 101"],
   defaultZip: "03101",
   defaultZipCity: "Manchester",

@@ -1,6 +1,7 @@
-// @ts-nocheck — Import script property names diverge from parser types;
-// this is a dev-only tool (not bundled into the app). Proper type alignment
-// is tracked as a follow-up.
+/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-explicit-any */
+// @ts-nocheck — Import-script property names diverge from parser types
+// (snake_case Supabase columns vs camelCase parser interfaces). Dev-only tool,
+// not bundled into the app. Realigning types is tracked as a follow-up.
 /**
  * import-assist-articulation.ts — Import CA ASSIST.org fixtures into Supabase
  *

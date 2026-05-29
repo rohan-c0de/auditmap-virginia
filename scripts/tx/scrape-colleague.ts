@@ -24,6 +24,21 @@ const HOSTS: Record<string, string> = {
   "galveston-college": "https://gcsis-ssprod.gc.edu",
   "mclennan-community-college": "https://mymcc.mclennan.edu",
   "texas-southmost-college": "https://selfservice.tsc.edu",
+  // TX Phase A — verified guest-open Colleague Self-Service hosts.
+  "alvin-community-college": "https://self-service.alvincollege.edu",
+  // Vernon was fingerprinted as Banner SSB but
+  // www.vernoncollege.edu/StudentRegistrationSsb is the website's 404 page
+  // served at HTTP 200, not a real Banner endpoint. The college's actual
+  // SIS is Ellucian Colleague Cloud.
+  "vernon-college": "https://vernon-ss.colleague.elluciancloud.com",
+  // TX Phase D — Del Mar's actual SIS turned out to be Colleague at
+  // colss-prod.ec.delmar.edu (Phase C had treated Del Mar as Coursedog-
+  // only because that's where its catalog lives; the live class schedule
+  // is a separate Colleague host the fingerprinter never probed).
+  "del-mar-college": "https://colss-prod.ec.delmar.edu",
+  // Austin CCD's selfservice.austincc.edu is auth-gated
+  // (redirects /Student/Courses → /Account/Login). Deferred — needs an
+  // alternate guest endpoint or catalog-only import.
 };
 
 async function main() {

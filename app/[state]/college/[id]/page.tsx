@@ -14,7 +14,7 @@ import CollegeTermSection from "./CollegeTermSection";
 import CollegeContext from "@/components/CollegeContext";
 import TopProgramsSection from "./TopProgramsSection";
 import { buildTransferLookupForCourses } from "@/lib/transfer-scoped";
-import { getAllStates } from "@/lib/states/registry";
+import { getPrerenderStates } from "@/lib/states/registry";
 import { requireStateConfig } from "@/lib/states/route-helpers";
 import { getTopInstructors } from "@/lib/instructors";
 import { computeOfferingProfile } from "@/lib/college-stats";
@@ -74,13 +74,25 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
   };
 }
 
-// Force HTTP 404 (not a cached 200 soft-404) for any (state, college-id) pair
-// not in `loadInstitutions`. `generateStaticParams` already enumerates every
-// valid pair at build time, so this is zero extra build cost. See #337.
-export const dynamicParams = false;
+// Sparse SSG (#702): pre-render only the colleges whose state config sets
+// `prerenderAtBuild: true`. Everything else renders on demand via ISR
+// (24h `revalidate` below) on the first visit and serves from the CDN
+// thereafter.
+//
+// Invalid (state, id) pairs still return a true HTTP 404 because the page
+// body calls `notFound()` after the in-memory `institutions.find()` miss.
+// Switching `dynamicParams` to `true` does not weaken the 404 guarantee
+// the previous `false` setting offered; it only lets Next.js reach the
+// page handler before bailing. The handler is a synchronous array lookup,
+// so the per-invalid-request CPU cost is negligible.
+//
+// State priority is set on each StateConfig rather than hardcoded here —
+// see CLAUDE.md invariant #1. To promote a state into the build-time
+// tier, set `prerenderAtBuild: true` in `lib/states/{slug}/config.ts`.
+export const dynamicParams = true;
 
 export function generateStaticParams() {
-  return getAllStates().flatMap((config) =>
+  return getPrerenderStates().flatMap((config) =>
     loadInstitutions(config.slug).map((i) => ({ state: config.slug, id: i.id }))
   );
 }

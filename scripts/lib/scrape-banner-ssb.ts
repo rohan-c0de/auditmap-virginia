@@ -160,11 +160,20 @@ export interface ScraperHooks {
   ) => string;
 }
 
+/**
+ * Per-host config when the Banner SSB app is mounted at a non-standard
+ * web-app context. Most institutions use the canonical
+ * `/StudentRegistrationSsb` context, but some (e.g. Snow College uses
+ * `/StudentRegistrationSelfService`) need this override. When you pass
+ * a plain string, the default `StudentRegistrationSsb` context is used.
+ */
+export type BannerHostConfig = string | { baseUrl: string; appContext: string };
+
 export interface ScrapeStateOptions {
   /** State slug — lowercase 2-letter code (used as the `data/{state}/...` directory). */
   state: string;
-  /** Map of college slug → Banner SSB base URL (no trailing slash). */
-  hosts: Record<string, string>;
+  /** Map of college slug → Banner SSB host config (base URL, plus app context if non-default). */
+  hosts: Record<string, BannerHostConfig>;
   /** When true, only scrape this college slug; when omitted, scrape all hosts. */
   collegeFilter?: string;
   /** When true, skip the Supabase import after scraping. */
@@ -340,10 +349,16 @@ export function parsePrereqHtml(
 // Banner API helpers
 // ---------------------------------------------------------------------------
 
-export async function getTerms(baseUrl: string, mepCode?: string): Promise<BannerTerm[]> {
+const DEFAULT_APP_CONTEXT = "StudentRegistrationSsb";
+
+export async function getTerms(
+  baseUrl: string,
+  mepCode?: string,
+  appContext: string = DEFAULT_APP_CONTEXT
+): Promise<BannerTerm[]> {
   const mep = mepCode ? `&mepCode=${mepCode}` : "";
   const res = await fetch(
-    `${baseUrl}/StudentRegistrationSsb/ssb/classSearch/getTerms?searchTerm=&offset=1&max=30${mep}`
+    `${baseUrl}/${appContext}/ssb/classSearch/getTerms?searchTerm=&offset=1&max=30${mep}`
   );
   return res.json();
 }
@@ -351,11 +366,12 @@ export async function getTerms(baseUrl: string, mepCode?: string): Promise<Banne
 export async function initSession(
   baseUrl: string,
   termCode: string,
-  mepCode?: string
+  mepCode?: string,
+  appContext: string = DEFAULT_APP_CONTEXT
 ): Promise<string> {
   const mep = mepCode ? `?mepCode=${mepCode}` : "";
   const res1 = await fetch(
-    `${baseUrl}/StudentRegistrationSsb/ssb/classSearch/classSearch${mep}`,
+    `${baseUrl}/${appContext}/ssb/classSearch/classSearch${mep}`,
     { redirect: "manual" }
   );
   const setCookies = res1.headers.getSetCookie?.() || [];
@@ -363,7 +379,7 @@ export async function initSession(
 
   const mepAmp = mepCode ? `&mepCode=${mepCode}` : "";
   await fetch(
-    `${baseUrl}/StudentRegistrationSsb/ssb/term/search?mode=search${mepAmp}`,
+    `${baseUrl}/${appContext}/ssb/term/search?mode=search${mepAmp}`,
     {
       method: "POST",
       headers: {
@@ -381,13 +397,14 @@ export async function buildSubjectMap(
   baseUrl: string,
   termCode: string,
   cookies: string,
-  mepCode?: string
+  mepCode?: string,
+  appContext: string = DEFAULT_APP_CONTEXT
 ): Promise<Map<string, string>> {
   const map = new Map<string, string>();
   const mep = mepCode ? `&mepCode=${mepCode}` : "";
   try {
     const res = await fetch(
-      `${baseUrl}/StudentRegistrationSsb/ssb/classSearch/get_subject?term=${termCode}&offset=1&max=500${mep}`,
+      `${baseUrl}/${appContext}/ssb/classSearch/get_subject?term=${termCode}&offset=1&max=500${mep}`,
       { headers: { Cookie: cookies } }
     );
     const subjects: { code: string; description: string }[] = await res.json();
@@ -406,14 +423,15 @@ export async function searchSections(
   termCode: string,
   cookies: string,
   log?: (msg: string) => void,
-  mepCode?: string
+  mepCode?: string,
+  appContext: string = DEFAULT_APP_CONTEXT
 ): Promise<BannerSection[]> {
   const all: BannerSection[] = [];
   let offset = 0;
   const mep = mepCode ? `&mepCode=${mepCode}` : "";
 
   while (true) {
-    const url = `${baseUrl}/StudentRegistrationSsb/ssb/searchResults/searchResults?txt_term=${termCode}&pageOffset=${offset}&pageMaxSize=${PAGE_SIZE}&sortColumn=subjectDescription&sortDirection=asc${mep}`;
+    const url = `${baseUrl}/${appContext}/ssb/searchResults/searchResults?txt_term=${termCode}&pageOffset=${offset}&pageMaxSize=${PAGE_SIZE}&sortColumn=subjectDescription&sortDirection=asc${mep}`;
     const res = await fetch(url, { headers: { Cookie: cookies } });
     const data = await res.json();
 
@@ -435,7 +453,8 @@ export async function fetchPrerequisites(
   cookies: string,
   subjectMap: Map<string, string>,
   log?: (msg: string) => void,
-  mepCode?: string
+  mepCode?: string,
+  appContext: string = DEFAULT_APP_CONTEXT
 ): Promise<Map<string, PrereqInfo>> {
   const courseMap = new Map<string, string>();
   for (const s of sections) {
@@ -455,7 +474,7 @@ export async function fetchPrerequisites(
       batch.map(async ([courseKey, crn]) => {
         try {
           const res = await fetch(
-            `${baseUrl}/StudentRegistrationSsb/ssb/searchResults/getSectionPrerequisites?term=${termCode}&courseReferenceNumber=${crn}${mepCode ? `&mepCode=${mepCode}` : ""}`,
+            `${baseUrl}/${appContext}/ssb/searchResults/getSectionPrerequisites?term=${termCode}&courseReferenceNumber=${crn}${mepCode ? `&mepCode=${mepCode}` : ""}`,
             { headers: { Cookie: cookies } }
           );
           const html = await res.text();
@@ -553,12 +572,20 @@ export interface ScrapeCollegeOptions {
    * to all Banner SSB API URLs.
    */
   mepCode?: string;
+  /**
+   * Web-app context path. Defaults to "StudentRegistrationSsb" (the
+   * canonical Ellucian deployment). Snow College's instance is mounted
+   * at "/StudentRegistrationSelfService" instead; set this to override.
+   * No leading or trailing slash.
+   */
+  appContext?: string;
 }
 
 export async function scrapeBannerSsbCollege(
   opts: ScrapeCollegeOptions
 ): Promise<ScrapeCollegeResult> {
   const { state, slug, baseUrl, hooks = {}, dryRun = false, silent = false, mepCode } = opts;
+  const appContext = opts.appContext ?? DEFAULT_APP_CONTEXT;
   const log = silent ? () => {} : (m: string) => console.log(m);
   const result: ScrapeCollegeResult = {
     slug,
@@ -573,7 +600,7 @@ export async function scrapeBannerSsbCollege(
   let terms: BannerTerm[];
   try {
     log("  Fetching available terms...");
-    terms = await getTerms(baseUrl, mepCode);
+    terms = await getTerms(baseUrl, mepCode, appContext);
   } catch (e) {
     const msg = `Could not connect to ${baseUrl}: ${e}`;
     log(`  ERROR: ${msg}`);
@@ -610,11 +637,11 @@ export async function scrapeBannerSsbCollege(
     log(`\n  Scraping ${term.description} (${term.code} → ${standardTerm})...`);
 
     try {
-      const cookies = await initSession(baseUrl, term.code, mepCode);
-      const subjectMap = await buildSubjectMap(baseUrl, term.code, cookies, mepCode);
+      const cookies = await initSession(baseUrl, term.code, mepCode, appContext);
+      const subjectMap = await buildSubjectMap(baseUrl, term.code, cookies, mepCode, appContext);
       log(`  Built subject map: ${subjectMap.size} subjects`);
 
-      const sections = await searchSections(baseUrl, term.code, cookies, log, mepCode);
+      const sections = await searchSections(baseUrl, term.code, cookies, log, mepCode, appContext);
       if (sections.length === 0) {
         log(`  No sections found for ${term.description}`);
         continue;
@@ -627,7 +654,8 @@ export async function scrapeBannerSsbCollege(
         cookies,
         subjectMap,
         log,
-        mepCode
+        mepCode,
+        appContext
       );
       log(`  Found prerequisites for ${prereqs.size} courses (Banner)`);
 
@@ -681,27 +709,31 @@ export async function scrapeBannerSsbState(
     process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
   }
 
-  const targets: Array<[string, string]> = opts.collegeFilter
+  const normalize = (cfg: BannerHostConfig): { baseUrl: string; appContext?: string } =>
+    typeof cfg === "string" ? { baseUrl: cfg } : cfg;
+
+  const targets: Array<[string, ReturnType<typeof normalize>]> = opts.collegeFilter
     ? (() => {
-        const baseUrl = opts.hosts[opts.collegeFilter];
-        if (!baseUrl) {
+        const cfg = opts.hosts[opts.collegeFilter];
+        if (!cfg) {
           const known = Object.keys(opts.hosts).join(", ");
           throw new Error(
             `Unknown college: ${opts.collegeFilter}. Known: ${known}`
           );
         }
-        return [[opts.collegeFilter, baseUrl]];
+        return [[opts.collegeFilter, normalize(cfg)]];
       })()
-    : Object.entries(opts.hosts);
+    : Object.entries(opts.hosts).map(([slug, cfg]) => [slug, normalize(cfg)] as [string, ReturnType<typeof normalize>]);
 
   const results: ScrapeCollegeResult[] = [];
   let grandTotal = 0;
 
-  for (const [slug, baseUrl] of targets) {
+  for (const [slug, { baseUrl, appContext }] of targets) {
     const r = await scrapeBannerSsbCollege({
       state: opts.state,
       slug,
       baseUrl,
+      appContext,
       hooks: opts.hooks,
     });
     results.push(r);

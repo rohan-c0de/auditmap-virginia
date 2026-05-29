@@ -49,7 +49,7 @@ export default function TransferClient({
   useEffect(() => {
     if (mappingsCache[selectedUniversity] || pendingFetches.current.has(selectedUniversity)) return;
     pendingFetches.current.add(selectedUniversity);
-    setLoadingUniversity(true);
+    Promise.resolve().then(() => setLoadingUniversity(true));
     fetch(`/api/${state}/transfer/mappings?university=${encodeURIComponent(selectedUniversity)}`)
       .then((r) => r.json())
       .then((data: { mappings: TransferMapping[] }) => {

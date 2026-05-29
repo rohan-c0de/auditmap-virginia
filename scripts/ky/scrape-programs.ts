@@ -17,6 +17,7 @@ import * as cheerio from "cheerio";
 import { scrapeCourseleafPrograms } from "../lib/scrape-courseleaf-programs.js";
 import { applyProgramMatching } from "../../lib/programs/matcher.js";
 import type { CourseleafProgramConfig } from "../lib/scrape-courseleaf-programs.js";
+import type { ProgramRequirement } from "../../lib/types.js";
 
 const BASE = "https://catalog.kctcs.edu";
 const INDEX = "/programs-of-study/";
@@ -55,7 +56,7 @@ async function main() {
   }));
 
   let totalPrograms = 0;
-  const allPrograms: any[] = [];
+  const allPrograms: ProgramRequirement[] = [];
 
   for (const config of configs) {
     const label = config.programIndexPath!.replace(INDEX, "").replace(/\/$/, "");

@@ -73,7 +73,7 @@ export default function CollegeTermSection({
   useEffect(() => {
     if (coursesByTerm[currentTerm] || pendingFetches.current.has(currentTerm)) return;
     pendingFetches.current.add(currentTerm);
-    setLoadingTerm(true);
+    Promise.resolve().then(() => setLoadingTerm(true));
     fetch(`/api/${state}/college/${id}/courses?term=${encodeURIComponent(currentTerm)}`)
       .then((r) => r.json())
       .then((data: { courses: CourseSection[] }) => {

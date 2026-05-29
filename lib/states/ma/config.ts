@@ -28,6 +28,7 @@ const maConfig: StateConfig = {
   // the ones whose scheduling systems are SSO-gated (Massasoit, Cape Cod,
   // QCC, Roxbury, MassBay).
   transferSupported: true,
+  prerenderAtBuild: true, // High Search Console traffic; pre-render at build (#702)
   popularCourses: ["ENG 101", "MAT 128", "BIO 110", "PSY 101", "HIS 101", "SOC 101"],
   defaultZip: "02108",
   defaultZipCity: "Boston",
@@ -77,6 +78,7 @@ const maConfig: StateConfig = {
         runner: "http",
       },
       { scripts: ["scripts/ma/scrape-colleague.ts"], runner: "playwright" },
+      { scripts: ["scripts/ma/scrape-jenzabar-webforms.ts"], runner: "playwright" },
     ],
     transfers: [{ scripts: ["scripts/ma/scrape-masstransfer.ts"], runner: "http" }],
     prereqs: [

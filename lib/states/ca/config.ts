@@ -54,6 +54,10 @@ const caConfig: StateConfig = {
       // LACCD cluster: one bespoke scraper covers all 9 Los Angeles CC District
       // colleges via shared PS Community Access (mycollege-guest.laccd.edu).
       { scripts: ["scripts/ca/scrape-laccd.ts"], runner: "playwright" },
+      // De Anza College (Foothill-De Anza CCD). The combined FHDA portal is
+      // SSO-gated, but each campus publishes a public schedule on its own
+      // domain — De Anza at deanza.edu/schedule/listings.html.
+      { scripts: ["scripts/ca/scrape-deanza.ts"], runner: "http" },
     ],
     prereqs: { source: "aggregate-from-courses" },
     transfers: [
@@ -61,6 +65,16 @@ const caConfig: StateConfig = {
       // CSUTC transferability lists (~145K mappings across 114 CCs). Per-major
       // course-by-course articulation is a future v2 enhancement.
       { scripts: ["scripts/ca/scrape-transfer-assist.ts"], runner: "http" },
+      // ASSIST.org per-receiver coverage map — Phase A only. Indexes which
+      // major-level transfer agreements exist for each (CC × receiving
+      // institution) pair across all 63 UC / CSU / independent receivers.
+      // Output: data/ca/transfer-coverage.json. Phase B (per-major detail
+      // fetch) is intentionally NOT wired here because the ASSIST
+      // articulation-detail endpoint rate-limits aggressively (see
+      // scrape-assist-receivers.ts:phaseB header note).
+      // manual-only: monthly cadence; ~5 min runtime; coverage is stable
+      // across an academic year (ID 76 = 2025-26).
+      { scripts: ["scripts/ca/scrape-assist-receivers.ts"], runner: "http" },
     ],
     // manual-only: programs — Phase 5+.
   },

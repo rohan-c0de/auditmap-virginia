@@ -138,7 +138,7 @@ export default async function StateProgramsIndexPage(props: PageProps) {
     <>
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
+
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }}
       />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

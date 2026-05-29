@@ -132,11 +132,33 @@ function matchCandidates(
   for (const cand of candidates) {
     const nameLc = cand.name.toLowerCase();
     const codeLc = cand.code.toLowerCase();
+    // 2-digit-year variant: convert "2026SU" → "26SU". CCAC and other
+    // PA Colleague installs return codes like this.
+    const codeShort = codeLc.replace(/^(20)(\d{2})/, "$2");
+    // Canonical {YYYY}{SEASON} extracted from the candidate.
+    const candYearSeason = canonicalize(codeLc);
     for (const t of active) {
       if (seen.has(t.Code)) continue;
+      const desc = t.Description.toLowerCase();
+      const tCode = t.Code.toLowerCase();
+      // (a) Description includes "spring 2026" or similar — covers most
+      //     standard sites and multi-college sites like VSC.
+      // (b) Code starts with the candidate's 4-digit standard code
+      //     ("2026SP*") — catches odd-description sites that keep
+      //     conventional codes plus mini-session variants
+      //     (2026SP2/2026SP3).
+      // (c) Code starts with the 2-digit-year variant ("26SP*") — catches
+      //     CCAC-style sites returning short codes.
+      // (d) Canonical year+season extracted from both match — fallback
+      //     when description has a weird format like "Summer Semester
+      //     2026" (CCAC) or "Spring 25-26" (FDTC).
       if (
-        t.Description.toLowerCase().includes(nameLc) ||
-        t.Code.toLowerCase().startsWith(codeLc)
+        desc.includes(nameLc) ||
+        tCode.startsWith(codeLc) ||
+        tCode.startsWith(codeShort) ||
+        (candYearSeason && canonicalize(tCode) === candYearSeason) ||
+        (candYearSeason &&
+          extractYearSeasonFromDescription(desc) === candYearSeason)
       ) {
         seen.add(t.Code);
         out.push({ candidate: cand, active: t });
@@ -144,6 +166,57 @@ function matchCandidates(
     }
   }
   return out;
+}
+
+/**
+ * Normalize a code like "2026sp", "26sp", "v26sp", or "2026sp2" to a
+ * canonical "{4-year}{2-season}" form, e.g. "2026SP". Returns null if
+ * year + season can't be unambiguously extracted.
+ */
+function canonicalize(code: string): string | null {
+  // Accept whitespace OR a single forward slash between year and season:
+  // Glen Oaks (MI) and Kellogg (MI) use codes like "26/SU" and "26/FL".
+  //
+  // Season aliases — some Colleague installs use the alternate codes
+  //   SM (Summer), FL (Fall), WN (Winter)
+  // rather than the more common SU/FA/WI. Glen Oaks's term StartDates
+  // confirmed which is which (26/SM starts 2026-05-18, 26/FL starts
+  // 2026-08-24, 27/WN starts 2027-01-11).
+  const m = code.toLowerCase().match(/(\d{2,4})[\s/]*(sp|su|sm|fa|fl|wi|wn)\b/);
+  if (!m) return null;
+  let year = m[1];
+  if (year.length === 2) {
+    // Heuristic: 2-digit years 50-99 → 19xx, 00-49 → 20xx.
+    const n = parseInt(year, 10);
+    year = n >= 50 ? `19${year}` : `20${year}`;
+  } else if (year.length === 3) {
+    return null;
+  }
+  const seasonAlias: Record<string, string> = {
+    sp: "SP", su: "SU", sm: "SU",
+    fa: "FA", fl: "FA",
+    wi: "WI", wn: "WI",
+  };
+  return `${year}${seasonAlias[m[2]]}`;
+}
+
+/**
+ * Pull a canonical year+season out of a description like
+ * "Summer Semester 2026" or "Spring 25-26 15-WK Term".
+ */
+function extractYearSeasonFromDescription(desc: string): string | null {
+  const seasonMap: Record<string, string> = {
+    spring: "SP",
+    summer: "SU",
+    fall: "FA",
+    winter: "WI",
+  };
+  const seasonMatch = desc.match(/(spring|summer|fall|winter)/);
+  if (!seasonMatch) return null;
+  const season = seasonMap[seasonMatch[1]];
+  const yearMatch = desc.match(/\b(20\d{2})\b/);
+  if (!yearMatch) return null;
+  return `${yearMatch[1]}${season}`;
 }
 
 export interface CollegeTerm {

@@ -383,7 +383,7 @@ function parsePrograms(text: string): Program[] {
 async function main() {
   const args = process.argv.slice(2);
   const pdfIdx = args.indexOf("--pdf");
-  let pdfPath = pdfIdx >= 0 ? args[pdfIdx + 1] : "/tmp/seark-cat.pdf";
+  const pdfPath = pdfIdx >= 0 ? args[pdfIdx + 1] : "/tmp/seark-cat.pdf";
 
   // Download the PDF if it doesn't exist
   if (!fs.existsSync(pdfPath)) {

@@ -26,6 +26,7 @@ const meConfig: StateConfig = {
   // is retained manual-only for out-of-state use if the in-state rule
   // is ever relaxed.
   transferSupported: true,
+  prerenderAtBuild: true, // High Search Console traffic; pre-render at build (#702)
   popularCourses: ["ENG 101", "MAT 101", "BIO 101", "PSY 101", "HIS 101", "SOC 101"],
   defaultZip: "04101",
   defaultZipCity: "Portland",

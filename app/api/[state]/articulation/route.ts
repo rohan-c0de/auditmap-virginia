@@ -48,7 +48,7 @@ export async function GET(
     // Deduplicate by slug (in case same major appears multiple times)
     const uniqueMajors = Array.from(
       new Map(
-        (agreements || []).map((a: any) => [a.major_slug, { name: a.major_name, slug: a.major_slug }])
+        ((agreements || []) as Array<{ major_name: string; major_slug: string }>).map((a) => [a.major_slug, { name: a.major_name, slug: a.major_slug }])
       ).values()
     ) as MajorOption[];
 
@@ -60,7 +60,7 @@ export async function GET(
         },
       }
     );
-  } catch (err: any) {
+  } catch (err) {
     console.error("articulation majors query error:", err);
     return NextResponse.json(
       { error: "Failed to fetch majors" },

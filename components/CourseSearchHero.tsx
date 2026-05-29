@@ -98,14 +98,14 @@ export default function CourseSearchHero({
     if (stored && states.some((s) => s.slug === stored)) {
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setSelectedState(stored);
-      // eslint-disable-next-line react-hooks/set-state-in-effect
+
       setIsAuto(false);
       return;
     }
     if (geoState && states.some((s) => s.slug === geoState)) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
+
       setSelectedState(geoState);
-      // eslint-disable-next-line react-hooks/set-state-in-effect
+
       setIsAuto(true);
     }
   }, [states, geoState]);

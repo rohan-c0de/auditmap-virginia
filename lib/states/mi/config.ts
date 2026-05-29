@@ -80,6 +80,7 @@ const miConfig: StateConfig = {
     courses: [
       { scripts: ["scripts/mi/scrape-colleague.ts"], runner: "playwright" },
       { scripts: ["scripts/mi/scrape-banner-ssb.ts"], runner: "http" },
+      { scripts: ["scripts/mi/scrape-jenzabar-webforms.ts"], runner: "playwright" },
     ],
     prereqs: { source: "aggregate-from-courses" },
     transfers: [

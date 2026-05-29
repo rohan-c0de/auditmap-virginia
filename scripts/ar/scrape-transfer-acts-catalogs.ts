@@ -182,21 +182,23 @@ function parseGenericTable(html: string, source: Source): TransferMapping[] {
 
   // Find the first table that contains "ACTS" in any cell — guards against
   // catalog templates with multiple unrelated tables.
-  let targetTable: any = null;
+  type CheerioSel = ReturnType<cheerio.CheerioAPI>;
+  let targetTable: CheerioSel | null = null;
   $("table").each((_, t) => {
     if (targetTable) return;
     const txt = $(t).text();
     if (/ACTS/i.test(txt) && $(t).find("tr").length >= 5) {
-      targetTable = $(t);
+      targetTable = $(t) as CheerioSel;
     }
   });
   if (!targetTable) return out;
+  const tableSel: CheerioSel = targetTable;
 
-  const rows = targetTable.find("tr").toArray();
+  const rows = tableSel.find("tr").toArray();
   // Use the first row's cells to figure out column order.
   if (rows.length < 2) return out;
   const headerCells: string[] = [];
-  $(rows[0]).find("th, td").each((_: number, c: any) => {
+  $(rows[0]).find("th, td").each((_: number, c) => {
     headerCells.push($(c).text().replace(/\s+/g, " ").trim().toLowerCase());
   });
 
@@ -226,7 +228,7 @@ function parseGenericTable(html: string, source: Source): TransferMapping[] {
   for (const tr of rows.slice(1)) {
     const cells = $(tr).find("td").toArray();
     if (cells.length < 4) continue;
-    const texts = cells.map((c: any) => $(c).text().replace(/\s+/g, " ").trim());
+    const texts = cells.map((c) => $(c).text().replace(/\s+/g, " ").trim());
 
     let actsCode: string;
     let actsTitle: string;

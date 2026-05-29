@@ -206,7 +206,7 @@ async function main() {
 
   // 4. Load existing index to append
   const indexPath = path.join(FIXTURES_DIR, "_index.json");
-  let existingIndex: any = { fixtures: [], skipped: [] };
+  let existingIndex: { fixtures: FixtureMeta[]; skipped: string[] } = { fixtures: [], skipped: [] };
   if (fs.existsSync(indexPath)) {
     const indexContent = fs.readFileSync(indexPath, "utf-8");
     existingIndex = JSON.parse(indexContent);
@@ -228,8 +228,8 @@ async function main() {
           `/api/agreements?receivingInstitutionId=${uni.id}&sendingInstitutionId=${cc.id}&academicYearId=${ACADEMIC_YEAR_ID}&categoryCode=major`,
         );
         majors = resp.reports ?? [];
-      } catch (err: any) {
-        skipped.push(`${cc.slug}→${uni.slug}: agreements list error ${err.message}`);
+      } catch (err) {
+        skipped.push(`${cc.slug}→${uni.slug}: agreements list error ${(err as Error).message}`);
         await sleep(DELAY_MS);
         continue;
       }
@@ -254,7 +254,7 @@ async function main() {
         const filepath = path.join(FIXTURES_DIR, filename);
 
         try {
-          const report = await apiGet<any>(
+          const report = await apiGet<unknown>(
             session,
             `/api/articulation/Agreements?Key=${encodeURIComponent(match.key)}`,
           );
@@ -274,8 +274,8 @@ async function main() {
             sizeBytes: body.length,
           });
           console.log(`      ✓ ${match.label} (${body.length} bytes) → ${filename}`);
-        } catch (err: any) {
-          skipped.push(`${cc.slug}→${uni.slug}/${match.label}: ${err.message}`);
+        } catch (err) {
+          skipped.push(`${cc.slug}→${uni.slug}/${match.label}: ${(err as Error).message}`);
         }
         await sleep(DELAY_MS);
       }

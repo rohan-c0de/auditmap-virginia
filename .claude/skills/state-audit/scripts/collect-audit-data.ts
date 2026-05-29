@@ -365,7 +365,7 @@ export function computeGrades(r: Omit<AuditResult, "grades">): AuditResult["grad
   const ceilingsApplied: Array<{ dimension: Dimension; reason: string }> = [];
 
   // Grade each dimension.
-  let courses = gradeCourses(r.courses, r.documentedCeilings.courseColleges);
+  const courses = gradeCourses(r.courses, r.documentedCeilings.courseColleges);
   if (r.documentedCeilings.courseColleges.length > 0) {
     ceilingsApplied.push({
       dimension: "courses",
@@ -757,7 +757,7 @@ async function main() {
     try {
       const r = auditState(slug);
       if (checkProd) {
-        // eslint-disable-next-line no-await-in-loop
+         
         r.prodCoverage = await checkProdCoverage(slug, r.courses.sectionsByCollege);
       }
       results.push(r);

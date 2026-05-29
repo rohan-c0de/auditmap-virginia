@@ -287,8 +287,8 @@ async function main() {
           });
           total++;
         }
-      } catch (err: any) {
-        errors.push(`${cc.ourSlug}/${lt.code}: ${err.message}`);
+      } catch (err) {
+        errors.push(`${cc.ourSlug}/${lt.code}: ${(err as Error).message}`);
       }
       await sleep(DELAY_MS);
     }

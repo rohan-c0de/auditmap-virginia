@@ -113,11 +113,67 @@ const txConfig: StateConfig = {
         scripts: ["scripts/tx/scrape-howard.ts"],
         runner: "http",
       },
+      // Vernon College + Victoria College — two standalone Banner SSB 9
+      // instances with public guest access. Vernon serves SSB at the root
+      // domain (www.vernoncollege.edu) rather than the usual subdomain.
+      {
+        scripts: ["scripts/tx/scrape-banner-ssb.ts"],
+        runner: "http",
+      },
+      // Panola College — standard Jenzabar StudentRegistration portlet
+      // (public Everyone.jnz path, uses #stuRegTermSelect). Driven by the
+      // shared template at scripts/lib/scrape-jenzabar.ts.
+      {
+        scripts: ["scripts/tx/scrape-jenzabar.ts"],
+        runner: "playwright",
+      },
+      // Paris Jr, NCTC, Texarkana — Jenzabar ASP.NET WebForms variant
+      // (`pg0$V$ddlTerm` + `pg0$V$btnSearch`, letter-chunk pager). Driven
+      // by a new shared template at scripts/lib/scrape-jenzabar-webforms.ts
+      // that generalizes the existing bespoke Kilgore scraper.
+      {
+        scripts: ["scripts/tx/scrape-jenzabar-webforms.ts"],
+        runner: "playwright",
+      },
+      // Collin County Community College District — a custom Azure App
+      // Service REST API at coursebook-collin-api.azurewebsites.net/sections
+      // powers the public class-schedule SPA. Workday-flavored JSON; no
+      // auth, paginated 10 items/page (server caps explicit pageSize to
+      // 0), ~195 pages, ~1,948 sections. 86% of sections expose a
+      // prerequisite sentence in the Description field, so the scraper
+      // captures prereq_text + prereq_courses inline.
+      {
+        scripts: ["scripts/tx/scrape-collin.ts"],
+        runner: "http",
+      },
+      // Clarendon College — bespoke ASP.NET WebForms class search at
+      // ci.clarendoncollege.edu. Sparse data: dept, course nbr, type,
+      // section, title, credits, status, instructor — no CRN, no meeting
+      // days/times, no seats. Course-identity + instructor data still has
+      // planner value. ~205 sections per cron tick.
+      {
+        scripts: ["scripts/tx/scrape-clarendon.ts"],
+        runner: "playwright",
+      },
     ],
     transfers: [
       { scripts: ["scripts/tx/scrape-transfer-tccns.ts"], runner: "http" },
     ],
-    // manual-only: prereqs — Phase 4.
+    prereqs: [
+      // Six TX colleges publish their course catalog via Acalog but don't
+      // expose a public class-section endpoint. The Acalog detail pages
+      // embed a Prerequisites sentence — that's enough to enrich the
+      // semester planner's prereq chain for these colleges' courses.
+      // Brazosport, Dallas, Midland, Tyler Jr, Lamar State Orange,
+      // Wharton County — all six are Imperva-gated; the scraper acquires
+      // WAF cookies via headless Chromium once per base URL.
+      { scripts: ["scripts/tx/scrape-acalog-prereqs.ts"], runner: "playwright" },
+      // Two more TX colleges publish their catalog via CourseLeaf (not
+      // Acalog). San Jacinto uses subject-roll-up pages with
+      // <div class="courseblock"> blocks; Grayson uses per-course detail
+      // pages. The scraper handles both layouts.
+      { scripts: ["scripts/tx/scrape-courseleaf-prereqs.ts"], runner: "http" },
+    ],
     // manual-only: programs — Phase 5+.
   },
 };
