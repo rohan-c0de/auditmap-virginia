@@ -395,6 +395,12 @@ async function main(): Promise<void> {
   const noImport = args.includes("--no-import");
   const resume = args.includes("--resume");
 
+  if (args.includes("--cleanup")) {
+    clearPartials();
+    console.log("Cleaned up partial files");
+    return;
+  }
+
   let targetCCs: Array<[string, { instId: string; name: string }]>;
   if (ccFlag >= 0) {
     const slug = args[ccFlag + 1];
@@ -487,9 +493,9 @@ async function main(): Promise<void> {
   fs.writeFileSync(outPath, JSON.stringify(merged, null, 2) + "\n");
   console.log(`\nWritten ${merged.length} total mappings (${existing.length} CUNY + ${deduped.length} SUNY) to ${outPath}`);
 
-  // Clean up partial files after successful merge
-  clearPartials();
-  console.log(`Cleaned up partial files`);
+  // Partials are kept so a working-tree reset can't destroy hours of scrape
+  // data. Run with --cleanup after the data is safely committed.
+  console.log(`Partials retained in ${PARTIAL_DIR} — run with --cleanup after committing`);
 
   if (!noImport) {
     try {
