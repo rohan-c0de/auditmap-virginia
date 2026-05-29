@@ -35,6 +35,9 @@
  */
 
 import * as cheerio from "cheerio";
+// AnyNode is exported from domhandler (cheerio's underlying DOM lib) but
+// isn't re-exported as `cheerio.AnyNode` in cheerio 1.2 — import directly.
+import type { AnyNode } from "domhandler";
 import * as fs from "fs";
 import * as path from "path";
 
@@ -262,7 +265,7 @@ interface ParsedCard {
   classSection: string;
 }
 
-function parseCard($: cheerio.CheerioAPI, article: cheerio.AnyNode, term: TermSpec): ParsedCard | null {
+function parseCard($: cheerio.CheerioAPI, article: AnyNode, term: TermSpec): ParsedCard | null {
   const $a = $(article);
 
   // Subject + number + title
