@@ -187,8 +187,9 @@ function parseAcalogDetail(html: string): { prefix: string; number: string; text
   if (!titleMatch) return null;
   const prefix = titleMatch[1].toUpperCase();
   const number = titleMatch[2];
+  // Match optional leading "Course " (anokatech) and trailing punctuation.
   const m = html.match(
-    /<strong>\s*Pre[-\s]?[Rr]equisite(?:s|\(s\))?\s*:?\s*<\/strong>\s*([\s\S]*?)(?:<br\s*\/?>\s*<br|<\/p>|<strong>)/i,
+    /<strong>\s*(?:Course\s+)?Pre[-\s]?[Rr]equisite(?:s|\(s\))?\s*:?\s*<\/strong>\s*([\s\S]*?)(?:<br\s*\/?>\s*<br|<\/p>|<strong>)/i,
   );
   if (!m) return null;
   const text = decodeText(m[1]).replace(/[.;,]\s*$/, "").trim();
@@ -199,10 +200,27 @@ function parseAcalogDetail(html: string): { prefix: string; number: string; text
 async function scrapeAcalog(c: CollegeCatalog, maxPages: number): Promise<Record<string, PrereqEntry>> {
   console.log(`  [${c.slug}] Acalog catoid=${c.catoid} navoid=${c.navoid}`);
   const allCoids = new Set<string>();
+  let consecutiveEmpty = 0;
   for (let cpage = 1; cpage <= maxPages; cpage++) {
-    const html = await retryFetch(acalogListUrl(c, cpage), `${c.slug} list(${cpage})`);
-    const coids = extractAcalogCoids(html);
-    if (coids.length === 0) break;
+    let html = await retryFetch(acalogListUrl(c, cpage), `${c.slug} list(${cpage})`);
+    let coids = extractAcalogCoids(html);
+    // AWS WAF Bot Control returns a 1991-byte challenge page on the first
+    // request after a cold start or rate-limit cooldown. If we get an
+    // empty list page, warm up again and retry once.
+    if (coids.length === 0 && cpage === 1) {
+      console.log(`    page 1 empty — re-warming session and retrying`);
+      await sleep(3000);
+      await warmupSession(c.baseUrl!);
+      await sleep(1000);
+      html = await retryFetch(acalogListUrl(c, cpage), `${c.slug} list(${cpage}) retry`);
+      coids = extractAcalogCoids(html);
+    }
+    if (coids.length === 0) {
+      consecutiveEmpty++;
+      if (consecutiveEmpty >= 2) break;
+      continue;
+    }
+    consecutiveEmpty = 0;
     for (const coid of coids) allCoids.add(coid);
     await sleep(100);
   }
@@ -230,8 +248,9 @@ async function scrapeAcalog(c: CollegeCatalog, maxPages: number): Promise<Record
 // ----------------------------------------------------------------------
 
 function parseScIqDetail(html: string): { prefix: string; number: string; text: string; courses: string[] } | null {
-  // <h1>\n\t<span>ACCT1102</span> Principles of Accounting I\n</h1>
-  const codeMatch = html.match(/<h1[^>]*>\s*<span>\s*([A-Z]{2,5})(\d{3,4}[A-Z]?)\s*<\/span>/);
+  // <h1>\n\t<span>ACCT1102</span> Principles of Accounting I\n</h1>  (Hennepin)
+  // <h1>\n\t<span>ACCT 1051</span> Accounting Basics\n</h1>           (Normandale, space)
+  const codeMatch = html.match(/<h1[^>]*>\s*<span>\s*([A-Z]{2,5})[-\s]?(\d{3,4}[A-Z]?)\s*<\/span>/);
   if (!codeMatch) return null;
   const prefix = codeMatch[1].toUpperCase();
   const number = codeMatch[2];
@@ -298,7 +317,8 @@ async function discoverScIqCourseUrls(c: CollegeCatalog): Promise<string[]> {
   // `<prefix><number>` (e.g. acct1102) — distinguish from level pages
   // which end in just digits (e.g. /1000).
   const courseUrls = new Set<string>();
-  const isCourseUrl = (u: string) => /\/[a-z]{2,5}\d{3,4}[a-z]?$/i.test(u);
+  // Course URL formats: /acct1051 (Hennepin) or /acct-1051 (Normandale)
+  const isCourseUrl = (u: string) => /\/[a-z]{2,5}-?\d{3,4}[a-z]?$/i.test(u);
   for (const lvl of levelUrls) {
     if (isCourseUrl(lvl)) {
       courseUrls.add(lvl);
