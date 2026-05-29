@@ -47,12 +47,19 @@ const laConfig: StateConfig = {
         scripts: ["scripts/la/scrape-lctcs-banner-ssb.ts"],
         runner: "http",
       },
+      // Northshore Technical CC — the 12th LCTCS college, not on the
+      // shared Banner SSB host. Coursedog catalog gives course metadata
+      // + 23 prereqs; the aggregator merges into prereqs.json. No
+      // section data is available publicly (LoLA SSO).
+      {
+        scripts: ["scripts/la/scrape-coursedog.ts"],
+        runner: "playwright",
+      },
     ],
+    prereqs: { source: "aggregate-from-courses" },
     // manual-only: transfers — Louisiana Board of Regents publishes annual
     // articulation PDFs at laregents.edu but no registered API portal yet.
     // Add to data/articulation-portals.json once researched.
-    // manual-only: prereqs — aggregated inline from Banner SSB course data
-    // by scripts/lib/aggregate-prereqs.ts (no separate catalog scrape).
     // manual-only: programs — Phase 6 wrapper at scripts/la/scrape-programs.ts
     // discovered 4 catalogs (Nunez courseleaf; Fletcher/SLCC/Delta acalog).
     // Operator must validate URLs + fill per-college config before running.
