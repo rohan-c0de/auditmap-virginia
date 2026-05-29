@@ -60,18 +60,14 @@ const utConfig: StateConfig = {
     //   tools at transferut.com but they don't expose a public API; see
     //   the manual TODOs in the PR description for the fallback path.
     prereqs: { source: "aggregate-from-courses" },
-    // programs — Snow College's CourseLeaf catalog scraped via
-    //   scripts/ut/scrape-programs.ts (119 programs across 7 award
-    //   types). SLCC's catalog platform was not detected by the
-    //   Phase-6 probe and remains in the documentedCeilings.programs
-    //   gap below.
+    // programs — Snow College (CourseLeaf) + Salt Lake Community
+    //   College (Acalog) both scraped via scripts/ut/scrape-programs.ts.
+    //   119 Snow programs + 132 SLCC programs.
     programs: [{ scripts: ["scripts/ut/scrape-programs.ts"], runner: "http" }],
   },
   documentedCeilings: {
     transfers:
       "Utah's transfer portal (transferut.com) doesn't expose a public API. SLCC and Snow publish individual course-equivalency tables on their registrar sites but these are not machine-readable. Tracking as a known ceiling rather than substituting placeholder data.",
-    programs:
-      "Salt Lake Community College's catalog platform was not detected by the Phase-6 auto-discovery probe (acalog / courseleaf / smartcatalogiq / coursedog / cleancatalog all returned no match across the 5 candidate URLs). Snow College's CourseLeaf catalog is fully scraped; SLCC programs remain a gap pending separate investigation.",
   },
 };
 

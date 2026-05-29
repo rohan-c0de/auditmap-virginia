@@ -2,7 +2,7 @@
   "college_slug": "snow-college",
   "catalog_year": "",
   "catalog_url": "https://catalog.snow.edu/programs/",
-  "scraped_at": "2026-05-28T22:04:07.903Z",
+  "scraped_at": "2026-05-29T19:32:11.198Z",
   "programs": [
     {
       "title": "Accounting (AS) — Certificate",
@@ -52,67 +52,6 @@
       "matched_program_slug": "accounting"
     },
     {
-      "title": "Advanced Networking and Cybersecurity (Certificate) — Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.snow.edu/programs/advanced-networking-cer/",
-      "total_credits": 20,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 20,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CIS",
-              "number": "1600",
-              "title": "Introduction to Networks",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "1605",
-              "title": "Switching, Routing, and Wireless Essentials",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "2320",
-              "title": "Penetration Test Fundamentals",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "2410",
-              "title": "Cybersecurity System Analyst",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "2600",
-              "title": "Scaling Networks in the Enterprise",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "2605",
-              "title": "Wide Area Networking Fundamentals",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "computer-science"
-    },
-    {
       "title": "Advanced Emergency Medical Technician (Certificate) — Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -131,6 +70,74 @@
               "number": "1200",
               "title": "AEMT - Advanced Emergency Medical Technician",
               "credits": 6,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Agribusiness (AS) — Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.snow.edu/programs/agribusiness-as/",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "AGBS",
+              "number": "1010",
+              "title": "Fundamentals of Animal Science",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AGBS",
+              "number": "1200",
+              "title": "Agribusiness Foundations",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AGBS",
+              "number": "2020",
+              "title": "Introduction to Agricultural Economics",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "1060",
+              "title": "QuickBooks for Small Business",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACCT",
+              "number": "2010",
+              "title": "Financial Accounting",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AGBS",
+              "number": "2030",
+              "title": "Managerial Analysis & Decision Making",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AGBS",
+              "number": "1830",
+              "title": "Agriculture Computer Applications and Direct Marketing",
+              "credits": 0,
               "or_alternatives": []
             }
           ]
@@ -340,72 +347,65 @@
       "matched_program_slug": null
     },
     {
-      "title": "Agribusiness (AS) — Certificate",
+      "title": "Advanced Networking and Cybersecurity (Certificate) — Certificate",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.snow.edu/programs/agribusiness-as/",
-      "total_credits": null,
+      "catalog_url": "https://catalog.snow.edu/programs/advanced-networking-cer/",
+      "total_credits": 20,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "Recommended Course Sequence",
-          "credits_required": null,
+          "credits_required": 20,
           "choose_n": null,
           "courses": [
             {
-              "prefix": "AGBS",
-              "number": "1010",
-              "title": "Fundamentals of Animal Science",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AGBS",
-              "number": "1200",
-              "title": "Agribusiness Foundations",
+              "prefix": "CIS",
+              "number": "1600",
+              "title": "Introduction to Networks",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "AGBS",
-              "number": "2020",
-              "title": "Introduction to Agricultural Economics",
-              "credits": 0,
+              "prefix": "CIS",
+              "number": "1605",
+              "title": "Switching, Routing, and Wireless Essentials",
+              "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "BUS",
-              "number": "1060",
-              "title": "QuickBooks for Small Business",
-              "credits": 0,
+              "prefix": "CIS",
+              "number": "2320",
+              "title": "Penetration Test Fundamentals",
+              "credits": 4,
               "or_alternatives": []
             },
             {
-              "prefix": "ACCT",
-              "number": "2010",
-              "title": "Financial Accounting",
-              "credits": 0,
+              "prefix": "CIS",
+              "number": "2410",
+              "title": "Cybersecurity System Analyst",
+              "credits": 4,
               "or_alternatives": []
             },
             {
-              "prefix": "AGBS",
-              "number": "2030",
-              "title": "Managerial Analysis & Decision Making",
-              "credits": 0,
+              "prefix": "CIS",
+              "number": "2600",
+              "title": "Scaling Networks in the Enterprise",
+              "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "AGBS",
-              "number": "1830",
-              "title": "Agriculture Computer Applications and Direct Marketing",
-              "credits": 0,
+              "prefix": "CIS",
+              "number": "2605",
+              "title": "Wide Area Networking Fundamentals",
+              "credits": 3,
               "or_alternatives": []
             }
           ]
         }
       ],
-      "matched_program_slug": null
+      "matched_program_slug": "computer-science"
     },
     {
       "title": "Agribusiness (AAS) — Associate of Science",
@@ -1150,32 +1150,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Business (AS) — Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.snow.edu/programs/business-as/",
-      "total_credits": null,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BUS",
-              "number": "1010",
-              "title": "Introduction to Business",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "business-administration"
-    },
-    {
       "title": "Biology (AS) — Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -1221,6 +1195,32 @@
         }
       ],
       "matched_program_slug": "biology"
+    },
+    {
+      "title": "Business (AS) — Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.snow.edu/programs/business-as/",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BUS",
+              "number": "1010",
+              "title": "Introduction to Business",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "business-administration"
     },
     {
       "title": "Business (ASB) — Associate of Science",
@@ -1591,60 +1591,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Chemical Engineering (AS) — Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.snow.edu/programs/chemical-engineering-as/",
-      "total_credits": null,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CHEM",
-              "number": "1210",
-              "title": "Principles of Chemistry I PS",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHEM",
-              "number": "1215",
-              "title": "Principles of Chemistry Lab I",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHEM",
-              "number": "1220",
-              "title": "Principles of Chemistry II PS",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHEM",
-              "number": "1225",
-              "title": "Principles of Chemistry Lab II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "1210",
-              "title": "Calculus I",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "engineering"
-    },
-    {
       "title": "Chemistry (AS) — Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -1704,6 +1650,67 @@
         }
       ],
       "matched_program_slug": null
+    },
+    {
+      "title": "Child Development (AS) — Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.snow.edu/programs/child-development-as/",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "HFST",
+              "number": "1500",
+              "title": "Human Development SS (same as PSY 1100)",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HFST",
+              "number": "2500",
+              "title": "Early Childhood Development",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HFST",
+              "number": "2610",
+              "title": "Guidance of Young Children",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HFST",
+              "number": "2400",
+              "title": "Family Relations SS",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HFST",
+              "number": "2620",
+              "title": "Creative Experiences for Children",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HFST",
+              "number": "2120",
+              "title": "Foods & Nutrition for Children",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "early-childhood-education"
     },
     {
       "title": "Childcare Management (AAS) — Associate of Science",
@@ -1893,10 +1900,10 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Child Development (AS) — Certificate",
+      "title": "Chemical Engineering (AS) — Certificate",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.snow.edu/programs/child-development-as/",
+      "catalog_url": "https://catalog.snow.edu/programs/chemical-engineering-as/",
       "total_credits": null,
       "gpa_minimum": 2,
       "description": null,
@@ -1907,51 +1914,44 @@
           "choose_n": null,
           "courses": [
             {
-              "prefix": "HFST",
-              "number": "1500",
-              "title": "Human Development SS (same as PSY 1100)",
-              "credits": 3,
+              "prefix": "CHEM",
+              "number": "1210",
+              "title": "Principles of Chemistry I PS",
+              "credits": 4,
               "or_alternatives": []
             },
             {
-              "prefix": "HFST",
-              "number": "2500",
-              "title": "Early Childhood Development",
-              "credits": 3,
+              "prefix": "CHEM",
+              "number": "1215",
+              "title": "Principles of Chemistry Lab I",
+              "credits": 1,
               "or_alternatives": []
             },
             {
-              "prefix": "HFST",
-              "number": "2610",
-              "title": "Guidance of Young Children",
+              "prefix": "CHEM",
+              "number": "1220",
+              "title": "Principles of Chemistry II PS",
               "credits": 0,
               "or_alternatives": []
             },
             {
-              "prefix": "HFST",
-              "number": "2400",
-              "title": "Family Relations SS",
+              "prefix": "CHEM",
+              "number": "1225",
+              "title": "Principles of Chemistry Lab II",
               "credits": 0,
               "or_alternatives": []
             },
             {
-              "prefix": "HFST",
-              "number": "2620",
-              "title": "Creative Experiences for Children",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HFST",
-              "number": "2120",
-              "title": "Foods & Nutrition for Children",
+              "prefix": "MATH",
+              "number": "1210",
+              "title": "Calculus I",
               "credits": 0,
               "or_alternatives": []
             }
           ]
         }
       ],
-      "matched_program_slug": "early-childhood-education"
+      "matched_program_slug": "engineering"
     },
     {
       "title": "Civil and Environmental Engineering (AS) — Certificate",
@@ -2683,6 +2683,74 @@
       "matched_program_slug": "business-administration"
     },
     {
+      "title": "Construction Technology (Certificate) — Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.snow.edu/programs/construction-technology-cer/",
+      "total_credits": 30,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 30,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "TECO",
+              "number": "1030",
+              "title": "Construction Print Reading",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TECO",
+              "number": "1040",
+              "title": "Advanced Carpentry Concepts",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TECO",
+              "number": "1050",
+              "title": "Interior Finishes",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TECO",
+              "number": "1060",
+              "title": "Exterior Finishes",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TECO",
+              "number": "1205",
+              "title": "Cabinet Making",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TECO",
+              "number": "1405",
+              "title": "Introduction to Woodworking",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TECO",
+              "number": "1440",
+              "title": "Fundamentals of Fine Woodworking",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Cosmetology (Certificate) — Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -2798,74 +2866,6 @@
               "prefix": "TECS",
               "number": "2950",
               "title": "Cosmetology/Hair Design/Barbering Advanced Theory and Practice",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Construction Technology (Certificate) — Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.snow.edu/programs/construction-technology-cer/",
-      "total_credits": 30,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 30,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "TECO",
-              "number": "1030",
-              "title": "Construction Print Reading",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TECO",
-              "number": "1040",
-              "title": "Advanced Carpentry Concepts",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TECO",
-              "number": "1050",
-              "title": "Interior Finishes",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TECO",
-              "number": "1060",
-              "title": "Exterior Finishes",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TECO",
-              "number": "1205",
-              "title": "Cabinet Making",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TECO",
-              "number": "1405",
-              "title": "Introduction to Woodworking",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TECO",
-              "number": "1440",
-              "title": "Fundamentals of Fine Woodworking",
               "credits": 3,
               "or_alternatives": []
             }
@@ -4096,6 +4096,53 @@
       "matched_program_slug": "business-administration"
     },
     {
+      "title": "Family & Consumer Science Education (AS) — Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.snow.edu/programs/family-consumer-science-educ-as/",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "HFST",
+              "number": "1140",
+              "title": "Introductory Sewing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HFST",
+              "number": "1240",
+              "title": "Introductory Foods",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HFST",
+              "number": "1245",
+              "title": "Introductory Foods Lab",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "1210",
+              "title": "Personal & Consumer Finance SS",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Exercise Science (AS) — Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -4156,53 +4203,6 @@
               "number": "2425",
               "title": "Human Physiology Lab",
               "credits": 1,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Family & Consumer Science Education (AS) — Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.snow.edu/programs/family-consumer-science-educ-as/",
-      "total_credits": null,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "HFST",
-              "number": "1140",
-              "title": "Introductory Sewing",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HFST",
-              "number": "1240",
-              "title": "Introductory Foods",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HFST",
-              "number": "1245",
-              "title": "Introductory Foods Lab",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "1210",
-              "title": "Personal & Consumer Finance SS",
-              "credits": 0,
               "or_alternatives": []
             }
           ]
@@ -4663,60 +4663,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Geology (AS) — Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.snow.edu/programs/geology-as/",
-      "total_credits": null,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "GEO",
-              "number": "1010",
-              "title": "Survey of Geology PSand Survey of Geology Lab LB",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "GEO",
-              "number": "1110",
-              "title": "Physical Geology PSand Physical Geology Lab LB",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "GEO",
-              "number": "1220",
-              "title": "Historical Geologyand Historical Geology Lab",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHEM",
-              "number": "1210",
-              "title": "Principles of Chemistry I PS",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "1210",
-              "title": "Calculus I",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Health Professions (AS Meta-Major) — Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -4825,10 +4771,10 @@
       "matched_program_slug": "history"
     },
     {
-      "title": "Humanities (AA Meta-Major) — Certificate",
+      "title": "Geology (AS) — Certificate",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.snow.edu/programs/humanities-aa/",
+      "catalog_url": "https://catalog.snow.edu/programs/geology-as/",
       "total_credits": null,
       "gpa_minimum": 2,
       "description": null,
@@ -4839,72 +4785,37 @@
           "choose_n": null,
           "courses": [
             {
-              "prefix": "ARTH",
-              "number": "2710",
-              "title": "Art History Survey I",
+              "prefix": "GEO",
+              "number": "1010",
+              "title": "Survey of Geology PSand Survey of Geology Lab LB",
               "credits": 0,
               "or_alternatives": []
             },
             {
-              "prefix": "ARTH",
-              "number": "2720",
-              "title": "Art History Survey II",
+              "prefix": "GEO",
+              "number": "1110",
+              "title": "Physical Geology PSand Physical Geology Lab LB",
               "credits": 0,
               "or_alternatives": []
             },
             {
-              "prefix": "ENGL",
-              "number": "2510",
-              "title": "American Literature I HU",
+              "prefix": "GEO",
+              "number": "1220",
+              "title": "Historical Geologyand Historical Geology Lab",
               "credits": 0,
               "or_alternatives": []
             },
             {
-              "prefix": "ENGL",
-              "number": "2520",
-              "title": "American Literature II HU",
+              "prefix": "CHEM",
+              "number": "1210",
+              "title": "Principles of Chemistry I PS",
               "credits": 0,
               "or_alternatives": []
             },
             {
-              "prefix": "ENGL",
-              "number": "2610",
-              "title": "British Literature I HU",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENGL",
-              "number": "2620",
-              "title": "British Literature II HU",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENGL",
-              "number": "2700",
-              "title": "Introduction to Critical Literature/Theory",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHIL",
-              "number": "1000",
-              "title": "Introduction to Philosophy HU",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHIL",
-              "number": "1250",
-              "title": "Reasoning and Rational Decision-Making HU",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHIL",
-              "number": "2050",
-              "title": "Ethics and Values HU",
+              "prefix": "MATH",
+              "number": "1210",
+              "title": "Calculus I",
               "credits": 0,
               "or_alternatives": []
             }
@@ -5038,6 +4949,95 @@
       "matched_program_slug": null
     },
     {
+      "title": "Humanities (AA Meta-Major) — Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.snow.edu/programs/humanities-aa/",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ARTH",
+              "number": "2710",
+              "title": "Art History Survey I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ARTH",
+              "number": "2720",
+              "title": "Art History Survey II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENGL",
+              "number": "2510",
+              "title": "American Literature I HU",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENGL",
+              "number": "2520",
+              "title": "American Literature II HU",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENGL",
+              "number": "2610",
+              "title": "British Literature I HU",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENGL",
+              "number": "2620",
+              "title": "British Literature II HU",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENGL",
+              "number": "2700",
+              "title": "Introduction to Critical Literature/Theory",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHIL",
+              "number": "1000",
+              "title": "Introduction to Philosophy HU",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHIL",
+              "number": "1250",
+              "title": "Reasoning and Rational Decision-Making HU",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHIL",
+              "number": "2050",
+              "title": "Ethics and Values HU",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "HVACR Technician (Certificate) — Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -5112,74 +5112,6 @@
               "number": "2500",
               "title": "Sheet Metal",
               "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Industrial Technology (AAS) — Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.snow.edu/programs/industrial-technology-aas/",
-      "total_credits": null,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BUS",
-              "number": "1170",
-              "title": "Human Relations in Organizations SS",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AT",
-              "number": "1715",
-              "title": "Applied Technical Math",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "1010",
-              "title": "Introduction to Business",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "1020",
-              "title": "Computer Technology and Applications",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "1060",
-              "title": "QuickBooks for Small Business",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "1270",
-              "title": "Strategic Selling IE",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "1300",
-              "title": "Social Media Marketing",
-              "credits": 0,
               "or_alternatives": []
             }
           ]
@@ -5270,87 +5202,66 @@
       "matched_program_slug": "computer-science"
     },
     {
-      "title": "Machining Technology (Certificate) — Certificate",
+      "title": "Industrial Technology (AAS) — Certificate",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.snow.edu/programs/machining-technology-cer/",
-      "total_credits": 30,
+      "catalog_url": "https://catalog.snow.edu/programs/industrial-technology-aas/",
+      "total_credits": null,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "Recommended Course Sequence",
-          "credits_required": 30,
+          "credits_required": null,
           "choose_n": null,
           "courses": [
             {
-              "prefix": "TEMT",
-              "number": "1000",
-              "title": "Manufacturing Fundamentals",
-              "credits": 3,
+              "prefix": "BUS",
+              "number": "1170",
+              "title": "Human Relations in Organizations SS",
+              "credits": 0,
               "or_alternatives": []
             },
             {
-              "prefix": "TEMT",
-              "number": "1100",
-              "title": "Mill Concepts",
-              "credits": 3,
+              "prefix": "AT",
+              "number": "1715",
+              "title": "Applied Technical Math",
+              "credits": 0,
               "or_alternatives": []
             },
             {
-              "prefix": "TEMT",
-              "number": "1150",
-              "title": "CNC Mill Concepts",
-              "credits": 3,
+              "prefix": "BUS",
+              "number": "1010",
+              "title": "Introduction to Business",
+              "credits": 0,
               "or_alternatives": []
             },
             {
-              "prefix": "TEMT",
-              "number": "1200",
-              "title": "Lathe Concepts",
-              "credits": 3,
+              "prefix": "BUS",
+              "number": "1020",
+              "title": "Computer Technology and Applications",
+              "credits": 0,
               "or_alternatives": []
             },
             {
-              "prefix": "TEMT",
-              "number": "1250",
-              "title": "CNC Lathe Concepts",
-              "credits": 3,
+              "prefix": "BUS",
+              "number": "1060",
+              "title": "QuickBooks for Small Business",
+              "credits": 0,
               "or_alternatives": []
             },
             {
-              "prefix": "TEMT",
+              "prefix": "BUS",
+              "number": "1270",
+              "title": "Strategic Selling IE",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
               "number": "1300",
-              "title": "CNC Mill Programming",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TEMT",
-              "number": "1350",
-              "title": "CNC Lathe Programming",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TEMT",
-              "number": "1565",
-              "title": "Advanced Print Reading",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TEMT",
-              "number": "2000",
-              "title": "Process Control",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TEMT",
-              "number": "2300",
-              "title": "Multi-Axis",
-              "credits": 3,
+              "title": "Social Media Marketing",
+              "credits": 0,
               "or_alternatives": []
             }
           ]
@@ -5584,44 +5495,93 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Mathematics (AS) — Certificate",
+      "title": "Machining Technology (Certificate) — Certificate",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.snow.edu/programs/mathematics-as/",
-      "total_credits": null,
+      "catalog_url": "https://catalog.snow.edu/programs/machining-technology-cer/",
+      "total_credits": 30,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "Recommended Course Sequence",
-          "credits_required": null,
+          "credits_required": 30,
           "choose_n": null,
           "courses": [
             {
-              "prefix": "MATH",
-              "number": "1210",
-              "title": "Calculus I",
-              "credits": 5,
+              "prefix": "TEMT",
+              "number": "1000",
+              "title": "Manufacturing Fundamentals",
+              "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "MATH",
-              "number": "1220",
-              "title": "Calculus II",
-              "credits": 0,
+              "prefix": "TEMT",
+              "number": "1100",
+              "title": "Mill Concepts",
+              "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "MATH",
-              "number": "2270",
-              "title": "Linear Algebra",
-              "credits": 0,
+              "prefix": "TEMT",
+              "number": "1150",
+              "title": "CNC Mill Concepts",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEMT",
+              "number": "1200",
+              "title": "Lathe Concepts",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEMT",
+              "number": "1250",
+              "title": "CNC Lathe Concepts",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEMT",
+              "number": "1300",
+              "title": "CNC Mill Programming",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEMT",
+              "number": "1350",
+              "title": "CNC Lathe Programming",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEMT",
+              "number": "1565",
+              "title": "Advanced Print Reading",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEMT",
+              "number": "2000",
+              "title": "Process Control",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEMT",
+              "number": "2300",
+              "title": "Multi-Axis",
+              "credits": 3,
               "or_alternatives": []
             }
           ]
         }
       ],
-      "matched_program_slug": "mathematics"
+      "matched_program_slug": null
     },
     {
       "title": "Mechanical and Industrial Engineering (AS) — Certificate",
@@ -5664,10 +5624,10 @@
       "matched_program_slug": "engineering"
     },
     {
-      "title": "Music (AS) — Certificate",
+      "title": "Mathematics (AS) — Certificate",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.snow.edu/programs/music-as/",
+      "catalog_url": "https://catalog.snow.edu/programs/mathematics-as/",
       "total_credits": null,
       "gpa_minimum": 2,
       "description": null,
@@ -5678,23 +5638,30 @@
           "choose_n": null,
           "courses": [
             {
-              "prefix": "MUSC",
-              "number": "1110",
-              "title": "Music Theory I",
-              "credits": 3,
+              "prefix": "MATH",
+              "number": "1210",
+              "title": "Calculus I",
+              "credits": 5,
               "or_alternatives": []
             },
             {
-              "prefix": "MUSC",
-              "number": "1130",
-              "title": "Sight Singing/Ear Training I",
-              "credits": 1,
+              "prefix": "MATH",
+              "number": "1220",
+              "title": "Calculus II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MATH",
+              "number": "2270",
+              "title": "Linear Algebra",
+              "credits": 0,
               "or_alternatives": []
             }
           ]
         }
       ],
-      "matched_program_slug": null
+      "matched_program_slug": "mathematics"
     },
     {
       "title": "Medical Assisant (Certificate) — Certificate",
@@ -5799,6 +5766,86 @@
               "number": "1910",
               "title": "Medical Assistant Externship II",
               "credits": 2,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Music (AS) — Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.snow.edu/programs/music-as/",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MUSC",
+              "number": "1110",
+              "title": "Music Theory I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "1130",
+              "title": "Sight Singing/Ear Training I",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Nail Technician (Certificate) — Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.snow.edu/programs/nail-technology-cer/",
+      "total_credits": 9,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 9,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "TENT",
+              "number": "1110",
+              "title": "Nail Technician I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TENT",
+              "number": "1200",
+              "title": "Nail Technician II Clinical",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TENT",
+              "number": "1600",
+              "title": "Advanced Techniques Class/Lab",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TENT",
+              "number": "1610",
+              "title": "Nail Technician Business Basics",
+              "credits": 1,
               "or_alternatives": []
             }
           ]
@@ -6064,45 +6111,45 @@
       "matched_program_slug": null
     },
     {
-      "title": "Nail Technician (Certificate) — Certificate",
+      "title": "Natural Resources (AS) — Certificate",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.snow.edu/programs/nail-technology-cer/",
-      "total_credits": 9,
+      "catalog_url": "https://catalog.snow.edu/programs/natural-resources-as/",
+      "total_credits": null,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "Recommended Course Sequence",
-          "credits_required": 9,
+          "credits_required": null,
           "choose_n": null,
           "courses": [
             {
-              "prefix": "TENT",
-              "number": "1110",
-              "title": "Nail Technician I",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TENT",
-              "number": "1200",
-              "title": "Nail Technician II Clinical",
+              "prefix": "NR",
+              "number": "1010",
+              "title": "Introduction to Natural Resources",
               "credits": 2,
               "or_alternatives": []
             },
             {
-              "prefix": "TENT",
-              "number": "1600",
-              "title": "Advanced Techniques Class/Lab",
-              "credits": 2,
+              "prefix": "BIOL",
+              "number": "1010",
+              "title": "General Biology LSand General Biology Lab LB",
+              "credits": 0,
               "or_alternatives": []
             },
             {
-              "prefix": "TENT",
+              "prefix": "BIOL",
+              "number": "1420",
+              "title": "Environmental Biology LSand Environmental Biology Lab LB",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIOL",
               "number": "1610",
-              "title": "Nail Technician Business Basics",
-              "credits": 1,
+              "title": "Biology I LSand Biology I Laboratory LB",
+              "credits": 0,
               "or_alternatives": []
             }
           ]
@@ -6345,79 +6392,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Natural Resources (AS) — Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.snow.edu/programs/natural-resources-as/",
-      "total_credits": null,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "NR",
-              "number": "1010",
-              "title": "Introduction to Natural Resources",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIOL",
-              "number": "1010",
-              "title": "General Biology LSand General Biology Lab LB",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIOL",
-              "number": "1420",
-              "title": "Environmental Biology LSand Environmental Biology Lab LB",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIOL",
-              "number": "1610",
-              "title": "Biology I LSand Biology I Laboratory LB",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Networking and Cybersecurity (AAS) — Associate of Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.snow.edu/programs/networking-cybersecurity-aas/",
-      "total_credits": 60,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 60,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "MATH",
-              "number": "1050",
-              "title": "College Algebra MA",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "computer-science"
-    },
-    {
       "title": "Networking and Cybersecurity (Certificate) — Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -6457,6 +6431,32 @@
               "number": "2310",
               "title": "Cybersecurity Essentials",
               "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "computer-science"
+    },
+    {
+      "title": "Networking and Cybersecurity (AAS) — Associate of Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.snow.edu/programs/networking-cybersecurity-aas/",
+      "total_credits": 60,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 60,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MATH",
+              "number": "1050",
+              "title": "College Algebra MA",
+              "credits": 0,
               "or_alternatives": []
             }
           ]
@@ -6856,6 +6856,46 @@
       "matched_program_slug": null
     },
     {
+      "title": "Outdoor Leadership and Entrepreneurship (AS) — Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.snow.edu/programs/outdoor-leadershipentrepren-as/",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "OLE",
+              "number": "1000",
+              "title": "Introduction to Outdoor Leadership SS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OLE",
+              "number": "1010",
+              "title": "Outdoor Leadership Business & Careers IE",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OLE",
+              "number": "2000",
+              "title": "Outdoor Skills IE",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Outdoor Leadership (Certificate) — Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -6937,46 +6977,6 @@
               "number": "2750",
               "title": "River/Water Technical Leadership",
               "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Outdoor Leadership and Entrepreneurship (AS) — Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.snow.edu/programs/outdoor-leadershipentrepren-as/",
-      "total_credits": null,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "OLE",
-              "number": "1000",
-              "title": "Introduction to Outdoor Leadership SS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OLE",
-              "number": "1010",
-              "title": "Outdoor Leadership Business & Careers IE",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OLE",
-              "number": "2000",
-              "title": "Outdoor Skills IE",
-              "credits": 3,
               "or_alternatives": []
             }
           ]
@@ -7224,6 +7224,39 @@
       "matched_program_slug": null
     },
     {
+      "title": "Phlebotomy (Certificate) — Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.snow.edu/programs/phlebotomy-cer/",
+      "total_credits": 3,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "TEPH",
+              "number": "1010",
+              "title": "Phlebotomy I",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEPH",
+              "number": "1020",
+              "title": "Phlebotomy II",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Physical Education Teaching (AS) — Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -7256,39 +7289,6 @@
               "number": "1020",
               "title": "Scientific Foundations of Nutrition LS",
               "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Phlebotomy (Certificate) — Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.snow.edu/programs/phlebotomy-cer/",
-      "total_credits": 3,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 3,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "TEPH",
-              "number": "1010",
-              "title": "Phlebotomy I",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TEPH",
-              "number": "1020",
-              "title": "Phlebotomy II",
-              "credits": 1,
               "or_alternatives": []
             }
           ]
@@ -7574,6 +7574,177 @@
       "matched_program_slug": null
     },
     {
+      "title": "Precision Agriculture (Certificate) — Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.snow.edu/programs/precision-agriculture-cer/",
+      "total_credits": 28,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 28,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "AGTM",
+              "number": "2900",
+              "title": "Farm Safety",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AGBS",
+              "number": "1997",
+              "title": "Agriculture Internship I",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AGTM",
+              "number": "1210",
+              "title": "Small Engines Power Systems",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AGTM",
+              "number": "1000",
+              "title": "Introduction to Plant Science",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AGTM",
+              "number": "1050",
+              "title": "Farm Machinery Maintenance, Management and Operation",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AGTM",
+              "number": "1330",
+              "title": "Agricultural Chemicals and Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AGBS",
+              "number": "1830",
+              "title": "Agriculture Computer Applications and Direct Marketing",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AGTM",
+              "number": "2600",
+              "title": "Drones in Agriculture and Associated Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AGBS",
+              "number": "2020",
+              "title": "Introduction to Agricultural Economics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AGBS",
+              "number": "2030",
+              "title": "Managerial Analysis & Decision Making",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AGTM",
+              "number": "2500",
+              "title": "Irrigation Systems Equipment Maintenance and Repair",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Pre-Veterinary (AS) — Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.snow.edu/programs/preveterinary-as/",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BIOL",
+              "number": "1610",
+              "title": "Biology I LS",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIOL",
+              "number": "1615",
+              "title": "Biology I Laboratory LB",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AGBS",
+              "number": "2200",
+              "title": "Anatomy & Physiology of Domestic Animals IE",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AGBS",
+              "number": "2205",
+              "title": "Anatomy & Physiology of Domestic Animals Lab IE",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHEM",
+              "number": "1110",
+              "title": "Elementary Chemistry PS",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHEM",
+              "number": "1115",
+              "title": "Elementary Chemistry Lab LB",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHEM",
+              "number": "1210",
+              "title": "Principles of Chemistry I PS",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHEM",
+              "number": "1215",
+              "title": "Principles of Chemistry Lab I",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Pre-Engineering (APE) — Associate of Science",
       "credential": "AS",
       "program_code": null,
@@ -7850,177 +8021,6 @@
         }
       ],
       "matched_program_slug": "engineering"
-    },
-    {
-      "title": "Precision Agriculture (Certificate) — Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.snow.edu/programs/precision-agriculture-cer/",
-      "total_credits": 28,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 28,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "AGTM",
-              "number": "2900",
-              "title": "Farm Safety",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AGBS",
-              "number": "1997",
-              "title": "Agriculture Internship I",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AGTM",
-              "number": "1210",
-              "title": "Small Engines Power Systems",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AGTM",
-              "number": "1000",
-              "title": "Introduction to Plant Science",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AGTM",
-              "number": "1050",
-              "title": "Farm Machinery Maintenance, Management and Operation",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AGTM",
-              "number": "1330",
-              "title": "Agricultural Chemicals and Applications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AGBS",
-              "number": "1830",
-              "title": "Agriculture Computer Applications and Direct Marketing",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AGTM",
-              "number": "2600",
-              "title": "Drones in Agriculture and Associated Computer Applications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AGBS",
-              "number": "2020",
-              "title": "Introduction to Agricultural Economics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AGBS",
-              "number": "2030",
-              "title": "Managerial Analysis & Decision Making",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AGTM",
-              "number": "2500",
-              "title": "Irrigation Systems Equipment Maintenance and Repair",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Pre-Veterinary (AS) — Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.snow.edu/programs/preveterinary-as/",
-      "total_credits": null,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BIOL",
-              "number": "1610",
-              "title": "Biology I LS",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIOL",
-              "number": "1615",
-              "title": "Biology I Laboratory LB",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AGBS",
-              "number": "2200",
-              "title": "Anatomy & Physiology of Domestic Animals IE",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AGBS",
-              "number": "2205",
-              "title": "Anatomy & Physiology of Domestic Animals Lab IE",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHEM",
-              "number": "1110",
-              "title": "Elementary Chemistry PS",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHEM",
-              "number": "1115",
-              "title": "Elementary Chemistry Lab LB",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHEM",
-              "number": "1210",
-              "title": "Principles of Chemistry I PS",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHEM",
-              "number": "1215",
-              "title": "Principles of Chemistry Lab I",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
     },
     {
       "title": "Psychology (AS) — Certificate",
@@ -8547,46 +8547,6 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Social Work (AS) — Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.snow.edu/programs/social-work-as/",
-      "total_credits": null,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "SW",
-              "number": "1010",
-              "title": "Social Work as a Profession",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SW",
-              "number": "2100",
-              "title": "Understanding Human Behavior and the Social Environment",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SW",
-              "number": "2400",
-              "title": "Diverse Populations",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Social Sciences (AS Meta-Major) — Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -8674,6 +8634,46 @@
               "prefix": "POLS",
               "number": "2100",
               "title": "Introduction to International Relations",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Social Work (AS) — Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.snow.edu/programs/social-work-as/",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "SW",
+              "number": "1010",
+              "title": "Social Work as a Profession",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SW",
+              "number": "2100",
+              "title": "Understanding Human Behavior and the Social Environment",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SW",
+              "number": "2400",
+              "title": "Diverse Populations",
               "credits": 3,
               "or_alternatives": []
             }
@@ -9442,179 +9442,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Welding Technology (Certificate) — Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.snow.edu/programs/welding-technology-cer/",
-      "total_credits": 30,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 30,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "TEWT",
-              "number": "1000",
-              "title": "Introduction to Welding and Cutting",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TEWT",
-              "number": "1010",
-              "title": "Measurement Systems",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TEWT",
-              "number": "1111",
-              "title": "Shielded Metal Arc Welding (SMAW) I",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TEWT",
-              "number": "1112",
-              "title": "Shielded Metal Arc Welding (SMAW) II",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TEWT",
-              "number": "1211",
-              "title": "Gas Tungsten Arc Welding (GTAW) I",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TEWT",
-              "number": "1212",
-              "title": "Gas Tungsten Arc Welding (GTAW) II",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TEWT",
-              "number": "1311",
-              "title": "Gas Metal Arc Welding (GMAW) I",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TEWT",
-              "number": "1411",
-              "title": "Flux Cored Arc Welding (FCAW) I",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TEWT",
-              "number": "1020",
-              "title": "Welding Symbols/Print Reading",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TEWT",
-              "number": "1070",
-              "title": "Weld Inspection & Testing",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TEWT",
-              "number": "1312",
-              "title": "Gas Metal Arc Welding (GMAW) II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TEWT",
-              "number": "1412",
-              "title": "Flux Cored Arc Welding (FCAW) II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TEWT",
-              "number": "1610",
-              "title": "Metal Fabrication I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TEWT",
-              "number": "1615",
-              "title": "Metal Fabrication II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TEWT",
-              "number": "2100",
-              "title": "Specialized Shielded Metal Arc Welding (SMAW) I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TEWT",
-              "number": "2110",
-              "title": "Specialized Shielded Metal Arc Welding (SMAW) II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TEWT",
-              "number": "2200",
-              "title": "Specialized Gas Tungsten Arc Welding (GTAW) I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TEWT",
-              "number": "2210",
-              "title": "Specialized Gas Tungsten Arc Welding (GTAW) II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TEWT",
-              "number": "2300",
-              "title": "Specialized Gas Metal Arc Welding (GMAW) I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TEWT",
-              "number": "2310",
-              "title": "Specialized Gas Metal Arc Welding (GMAW) II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TEWT",
-              "number": "2400",
-              "title": "Specialized Flux Cored Arc Welding (FCAW) I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TEWT",
-              "number": "2410",
-              "title": "Specialized Flux Cored Welding (FCAW) II",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "welding"
-    },
-    {
       "title": "Visual and Performing Arts (AS Meta-Majors) — Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -9994,6 +9821,179 @@
         }
       ],
       "matched_program_slug": null
+    },
+    {
+      "title": "Welding Technology (Certificate) — Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.snow.edu/programs/welding-technology-cer/",
+      "total_credits": 30,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 30,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "TEWT",
+              "number": "1000",
+              "title": "Introduction to Welding and Cutting",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEWT",
+              "number": "1010",
+              "title": "Measurement Systems",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEWT",
+              "number": "1111",
+              "title": "Shielded Metal Arc Welding (SMAW) I",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEWT",
+              "number": "1112",
+              "title": "Shielded Metal Arc Welding (SMAW) II",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEWT",
+              "number": "1211",
+              "title": "Gas Tungsten Arc Welding (GTAW) I",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEWT",
+              "number": "1212",
+              "title": "Gas Tungsten Arc Welding (GTAW) II",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEWT",
+              "number": "1311",
+              "title": "Gas Metal Arc Welding (GMAW) I",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEWT",
+              "number": "1411",
+              "title": "Flux Cored Arc Welding (FCAW) I",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEWT",
+              "number": "1020",
+              "title": "Welding Symbols/Print Reading",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEWT",
+              "number": "1070",
+              "title": "Weld Inspection & Testing",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEWT",
+              "number": "1312",
+              "title": "Gas Metal Arc Welding (GMAW) II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEWT",
+              "number": "1412",
+              "title": "Flux Cored Arc Welding (FCAW) II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEWT",
+              "number": "1610",
+              "title": "Metal Fabrication I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEWT",
+              "number": "1615",
+              "title": "Metal Fabrication II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEWT",
+              "number": "2100",
+              "title": "Specialized Shielded Metal Arc Welding (SMAW) I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEWT",
+              "number": "2110",
+              "title": "Specialized Shielded Metal Arc Welding (SMAW) II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEWT",
+              "number": "2200",
+              "title": "Specialized Gas Tungsten Arc Welding (GTAW) I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEWT",
+              "number": "2210",
+              "title": "Specialized Gas Tungsten Arc Welding (GTAW) II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEWT",
+              "number": "2300",
+              "title": "Specialized Gas Metal Arc Welding (GMAW) I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEWT",
+              "number": "2310",
+              "title": "Specialized Gas Metal Arc Welding (GMAW) II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEWT",
+              "number": "2400",
+              "title": "Specialized Flux Cored Arc Welding (FCAW) I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEWT",
+              "number": "2410",
+              "title": "Specialized Flux Cored Welding (FCAW) II",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "welding"
     },
     {
       "title": "Writing and Rhetoric (Certificate) — Certificate",
