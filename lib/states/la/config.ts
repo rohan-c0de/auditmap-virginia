@@ -53,9 +53,15 @@ const laConfig: StateConfig = {
     // Add to data/articulation-portals.json once researched.
     // manual-only: prereqs — aggregated inline from Banner SSB course data
     // by scripts/lib/aggregate-prereqs.ts (no separate catalog scrape).
-    // manual-only: programs — Phase 6 wrapper at scripts/la/scrape-programs.ts
-    // discovered 4 catalogs (Nunez courseleaf; Fletcher/SLCC/Delta acalog).
-    // Operator must validate URLs + fill per-college config before running.
+    programs: [
+      // 5 LA colleges have public catalogs (Fletcher/SLCC/Delta/BRCC = acalog,
+      // Nunez = courseleaf). Currently only Fletcher's search-discovery path
+      // yields parseable programs (83 programs, 33 matched). The other 4 are
+      // wired but return 0: Nunez courseleaf needs a non-default URL pattern;
+      // SLCC/Delta/BRCC need per-catalog programNavoids (search_advanced.php
+      // returns empty for those instances). Follow-up to discover navoids.
+      { scripts: ["scripts/la/scrape-programs.ts"], runner: "http" },
+    ],
   },
 };
 

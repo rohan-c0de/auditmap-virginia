@@ -48,17 +48,23 @@ async function main() {
 
   // fletcher-technical-community-college (acalog)
   await run("fletcher-technical-community-college", () =>
-    scrapeAcalogPrograms({ collegeSlug: "fletcher-technical-community-college", baseUrl: "https://catalog.fletcher.edu", catoidFallback: 0, programNavoids: [], autoDiscoverCatoid: true }),
+    scrapeAcalogPrograms({ collegeSlug: "fletcher-technical-community-college", baseUrl: "https://catalog.fletcher.edu", catoidFallback: 0, programNavoids: [], autoDiscoverCatoid: true, useSearchDiscovery: true }),
   );
 
-  // south-louisiana-community-college (acalog)
+  // south-louisiana-community-college (acalog) — catoidFallback=22 confirmed
+  // by manual probe; auto-discovery is intermittent on this catalog.
   await run("south-louisiana-community-college", () =>
-    scrapeAcalogPrograms({ collegeSlug: "south-louisiana-community-college", baseUrl: "https://catalog.south.edu", catoidFallback: 0, programNavoids: [], autoDiscoverCatoid: true }),
+    scrapeAcalogPrograms({ collegeSlug: "south-louisiana-community-college", baseUrl: "https://catalog.solacc.edu", catoidFallback: 22, programNavoids: [], autoDiscoverCatoid: false, useSearchDiscovery: true }),
   );
 
-  // louisiana-delta-community-college (acalog)
+  // louisiana-delta-community-college (acalog) — catoidFallback=3 confirmed.
   await run("louisiana-delta-community-college", () =>
-    scrapeAcalogPrograms({ collegeSlug: "louisiana-delta-community-college", baseUrl: "https://catalog.louisiana.edu", catoidFallback: 0, programNavoids: [], autoDiscoverCatoid: true }),
+    scrapeAcalogPrograms({ collegeSlug: "louisiana-delta-community-college", baseUrl: "https://catalog.ladelta.edu", catoidFallback: 3, programNavoids: [], autoDiscoverCatoid: false, useSearchDiscovery: true }),
+  );
+
+  // baton-rouge-community-college (acalog) — catoidFallback=3 confirmed.
+  await run("baton-rouge-community-college", () =>
+    scrapeAcalogPrograms({ collegeSlug: "baton-rouge-community-college", baseUrl: "https://catalog.mybrcc.edu", catoidFallback: 3, programNavoids: [], autoDiscoverCatoid: false, useSearchDiscovery: true }),
   );
 }
 
