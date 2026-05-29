@@ -172,3 +172,17 @@ Cost: 5–10 minutes. Catches: the things the other two checks miss — interact
 ## Environment quirks
 
 **This is NOT the Next.js you know.** Next 16 has breaking changes vs. training-data-era Next.js. Before writing routing, caching, or server-component code, read the relevant page in `node_modules/next/dist/docs/`. Heed deprecation notices.
+
+**CSS is compiled by the Tailwind CLI, not by Turbopack's PostCSS plugin.** `app/tailwind.source.css` is the file you edit (Tailwind v4 directives, `@plugin`, `@theme inline`, etc.); `app/globals.css` is its compiled output (gitignored). `npm run dev` runs the CLI in `--watch` mode alongside `next dev` via `concurrently`; `npm run build` compiles once then runs `next build`. Layout still imports `./globals.css` so nothing downstream needs to change.
+
+This setup exists because Turbopack's PostCSS worker has a recurring IPC bug with `@tailwindcss/postcss` on this codebase: any `@import "tailwindcss";` in `globals.css` causes the worker subprocess to die during init, every route returns 500 after an ~84-second timeout, and `/var/folders/.../next-panic-*.log` shows `Failed to write app endpoint / [project]/app/globals.css [app-client] (css) / failed to receive message / unexpected end of file / evaluate_webpack_loader failed`. Confirmed against:
+
+  - Tailwind 4.2.2 and 4.3.0 (both fail)
+  - Next 16.2.1 and 16.2.6 (both fail)
+  - Node 22 LTS and Node 25 (both fail — `.nvmrc`/`engines` still pin to LTS to match Vercel, but Node version isn't the cause)
+  - Fresh `.next` cache, raised file-descriptor limit, `--webpack` mode (none help)
+  - Bare globals.css with nothing but `@import "tailwindcss";` (panic still fires; not project-specific code)
+
+Upstream ([vercel/next.js#78407](https://github.com/vercel/next.js/issues/78407) was a related "hangs on large codebases" fix in April 2025, but the bug resurfaced — six open 2026 discussions report the same `failed to receive message` trace, e.g. [#79567](https://github.com/vercel/next.js/discussions/79567), [#89489](https://github.com/vercel/next.js/discussions/89489), [#90859](https://github.com/vercel/next.js/discussions/90859)). Bypassing Turbopack's PostCSS entirely is the only reliable unblock until the upstream fix lands.
+
+**Implication when adding a new Tailwind feature:** if you need to edit `globals.css`, edit `tailwind.source.css` instead — your change won't show up otherwise. The compiled `globals.css` is rewritten on every `dev:css` watcher tick or `build:css` invocation.

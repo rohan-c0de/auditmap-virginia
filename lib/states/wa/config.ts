@@ -21,6 +21,9 @@ const waConfig: StateConfig = {
   },
 
   transferSupported: true,
+  universityAliases: [
+    { slug: "university-of-washington", names: ["UW", "University of Washington", "UW Seattle"] },
+  ],
   popularCourses: ["ENGL& 101", "MATH& 141", "PSYC& 100", "BIOL& 160", "CMST& 220"],
   defaultZip: "98101",
   defaultZipCity: "Seattle",
@@ -51,9 +54,7 @@ const waConfig: StateConfig = {
       // separate WordPress site — deferred).
       { scripts: ["scripts/wa/scrape-ctclink.ts"], runner: "http" },
     ],
-    // manual-only: transfers — WA DTA (Direct Transfer Agreement) is a
-    // statewide policy framework, not a structured public API; no transfer
-    // portal scraper wired yet.
+    transfers: [{ scripts: ["scripts/wa/scrape-transfer-uw.ts"], runner: "http" }],
     prereqs: { source: "aggregate-from-courses" },
     // manual-only: programs — Phase 5+.
   },

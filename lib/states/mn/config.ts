@@ -20,10 +20,23 @@ const mnConfig: StateConfig = {
       "Minnesota's Senior Citizen Education Program (Minn. Stat. § 135A.51) lets residents aged 62+ enroll in Minnesota State courses on a space-available basis with tuition waived. Audit registration is free; for-credit enrollment is $20/credit. Activity fees still apply.",
   },
 
-  transferSupported: false,
+  // 2026-05: enabled after scripts/mn/scrape-transfers.ts populated
+  // data/mn/transfer-equiv.json with 6,167 mappings from 23 MnSCU CCs
+  // to the 7 MnSCU 4-year universities, scraped from
+  // eservices.minnstate.edu's equivalentSubmit endpoint.
+  transferSupported: true,
   popularCourses: ["ENGL 1101", "MATH 1100", "BIOL 1100", "PSYC 1100", "HIST 1100", "ECON 1100"],
   defaultZip: "55101",
   defaultZipCity: "Saint Paul",
+  universityAliases: [
+    { slug: "bemidji-state-university", names: ["Bemidji State University", "BSU"] },
+    { slug: "minnesota-state-university-mankato", names: ["Minnesota State University, Mankato", "MSU Mankato", "Mankato State"] },
+    { slug: "minnesota-state-university-moorhead", names: ["Minnesota State University Moorhead", "MSU Moorhead", "MSUM"] },
+    { slug: "st-cloud-state-university", names: ["St. Cloud State University", "SCSU"] },
+    { slug: "winona-state-university", names: ["Winona State University", "WSU"] },
+    { slug: "southwest-minnesota-state-university", names: ["Southwest Minnesota State University", "SMSU"] },
+    { slug: "metro-state-university", names: ["Metropolitan State University", "Metro State"] },
+  ],
 
   courseDiscoveryUrl: (_collegeSlug: string, _prefix: string, _number: string) =>
     "https://eservices.minnstate.edu/registration/search/basic.html",
@@ -53,7 +66,12 @@ const mnConfig: StateConfig = {
         runner: "http",
       },
     ],
-    // manual-only: transfers — no MN state articulation portal registered yet.
+    transfers: [
+      {
+        scripts: ["scripts/mn/scrape-transfers.ts"],
+        runner: "http",
+      },
+    ],
     // manual-only: prereqs — eservices results don't include prereq text; needs catalog scraper follow-up.
     // manual-only: programs — discover-programs found no public catalog matches; needs college-by-college investigation.
   },

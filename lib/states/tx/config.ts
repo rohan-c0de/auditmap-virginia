@@ -155,6 +155,15 @@ const txConfig: StateConfig = {
         scripts: ["scripts/tx/scrape-clarendon.ts"],
         runner: "playwright",
       },
+      // Lone Star College System (~93k students). Guest auto-POST to
+      // PS Classic CommunityAccess CLASS_SEARCH. Per (campus, subject) loop;
+      // PS Classic enforces a 250-section result cap so the scraper splits
+      // over-limit queries by catalog-nbr halves (≤1999 / ≥2000). 8 campuses,
+      // ~172 subjects → ~1,400 queries / term, ~8h headless run.
+      {
+        scripts: ["scripts/tx/scrape-lsc.ts"],
+        runner: "playwright",
+      },
     ],
     transfers: [
       { scripts: ["scripts/tx/scrape-transfer-tccns.ts"], runner: "http" },
