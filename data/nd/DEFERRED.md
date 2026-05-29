@@ -11,9 +11,11 @@ The following tribal colleges have their SIS platforms out of scope for Phase 1 
 
 ## Future Work (Phases 2–3)
 
-1. **Fall 2026 Course Scrape** (~1.5 hr wall-clock)
-   - Re-run all 5 NDUS CC scrapers for Fall 2026 term
-   - Trivial re-run of existing scripts with term code `2640` → `2026FA`
+1. **Fall 2026 Course Scrape** (attempted 2026-05-29, PS stability blocker)
+   - Attempted re-run of all 5 NDUS CC scrapers for Fall 2026 term (term code `2710` → `2026FA`)
+   - **Status**: Failed at BSC [3/88] AGEC — PeopleSoft search endpoint became unstable (5 consecutive failures)
+   - This is a known PS Community Access stability pattern; can be retried later or manual college supplement
+   - Spring 2026 is complete and committed; Fall 2026 can be re-attempted if PS stabilizes or deferred to manual term supplement
 
 2. **Cleancatalog Prereqs** (Dakota College at Bottineau, NDSCS; ~1.5 hrs)
    - Both colleges use Cleancatalog; currently Cloudflare WAF-blocked on direct HTTP
