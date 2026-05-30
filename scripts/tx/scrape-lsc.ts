@@ -368,12 +368,26 @@ function rawToSection(r: RawSection, opts: { campusName: string; term: string })
 // ---------------------------------------------------------------------------
 
 // PS Classic supports only C(ontains)/E(xact)/G(reater-or-equal)/T(less-or-equal)
-// on the catalog-nbr field — no "begins with". Split by halves of the LSC
-// catalog range: ≤1999 captures 1XXX freshman courses, ≥2000 captures 2XXX
-// sophomore courses (LSC catalog rarely goes higher).
+// on the catalog-nbr field — no "begins with", no range AND-ing. Tier 1
+// fallback splits by the obvious ≤1999 / ≥2000 halves.
 const CATALOG_SPLITS: Array<{ op: string; nbr: string; label: string }> = [
   { op: "T", nbr: "1999", label: "L1" },
   { op: "G", nbr: "2000", label: "L2" },
+];
+
+// Tier 2 fallback — when catalog-level is still over-limit (typical for the
+// continuing-ed ABEAC / ENGLC subjects), split further by INSTRUCTION_MODE.
+// The mode field is independent of catalog-nbr, so we can stack both filters
+// (catalog level + mode) for a quarter-or-finer slice. 8 modes × 2 levels =
+// 16 sub-queries per truly over-limit subject (worst case).
+const INSTRUCTION_MODES: Array<{ code: string; label: string }> = [
+  { code: "P",  label: "F2F" },        // In Person - Face to Face
+  { code: "H",  label: "Hybrid" },     // Hybrid - In Person & Online
+  { code: "FL", label: "Hyflex" },     // Hyflex in Person or Virtually
+  { code: "OA", label: "OnlineAsync" }, // Online Asynchronous
+  { code: "OS", label: "OnlineSync" },  // Online Synchronous
+  { code: "OL", label: "Online" },      // Online (legacy)
+  { code: "I",  label: "Indep" },       // Independent Study
 ];
 
 async function runOneQuery(
@@ -382,6 +396,7 @@ async function runOneQuery(
   campusCode: string,
   subject: string,
   catalogLevel: { op: string; nbr: string; label: string } | null,
+  modeCode: string | null = null,
 ): Promise<RawSection[]> {
   // Order matters: every onchange-postback resets chgFldArr_win0 on the
   // server side, so fields set with no postback (subject, catalog nbr) MUST
@@ -403,6 +418,14 @@ async function runOneQuery(
     }, catalogLevel);
     await sleep(1500);
   }
+  if (modeCode) {
+    await page.evaluate((code) => {
+      const el = document.getElementById("SSR_CLSRCH_WRK_INSTRUCTION_MODE$1") as HTMLSelectElement;
+      el.value = code;
+      el.dispatchEvent(new Event("change", { bubbles: true }));
+    }, modeCode);
+    await sleep(1500);
+  }
   // Subject last — dispatching change fires PS's inline onchange handler
   // which calls submitAction_win0 (an async ICAJAX postback). Wait long
   // enough for that to drain before clicking Search, otherwise the postback
@@ -415,7 +438,8 @@ async function runOneQuery(
   // "#ICSave" inside the ptModFrame_0 iframe.
   await dismissModalIfPresent(page);
   const state = await detectResultState(page);
-  console.log(`      [${subject}@${campusCode}${catalogLevel ? `/${catalogLevel.label}` : ""}] state=${state}`);
+  const tag = `${subject}@${campusCode}${catalogLevel ? `/${catalogLevel.label}` : ""}${modeCode ? `/m=${modeCode}` : ""}`;
+  console.log(`      [${tag}] state=${state}`);
   if (state === "results") return extractSections(page);
   if (state === "over-limit") throw new Error("OVER_LIMIT");
   // Debug: dump page text snippet when in unexpected state.
@@ -441,24 +465,7 @@ async function searchSubjectAtCampus(
 ): Promise<CourseSection[]> {
   const sections: CourseSection[] = [];
   const seenCRNs = new Set<string>();
-  const tryQuery = async (level: { op: string; nbr: string; label: string } | null) => {
-    await clickNewSearch(page);
-    let raw: RawSection[];
-    try {
-      raw = await runOneQuery(page, strm, campus.code, subject, level);
-    } catch (e) {
-      if ((e as Error).message === "OVER_LIMIT") {
-        if (level === null) {
-          for (const lvl of CATALOG_SPLITS) {
-            await tryQuery(lvl);
-          }
-          return;
-        }
-        console.warn(`    ⚠ over-limit even at split ${level.label} for ${subject}@${campus.code}, dropping`);
-        return;
-      }
-      throw e;
-    }
+  const ingest = (raw: RawSection[]) => {
     for (const r of raw) {
       if (!r.classNbr || seenCRNs.has(r.classNbr)) continue;
       seenCRNs.add(r.classNbr);
@@ -466,7 +473,42 @@ async function searchSubjectAtCampus(
       if (s) sections.push(s);
     }
   };
-  await tryQuery(null);
+  // Tier 3 (deepest): catalog-level AND instruction-mode.
+  const tryWithMode = async (level: { op: string; nbr: string; label: string }) => {
+    for (const mode of INSTRUCTION_MODES) {
+      await clickNewSearch(page);
+      try {
+        ingest(await runOneQuery(page, strm, campus.code, subject, level, mode.code));
+      } catch (e) {
+        if ((e as Error).message === "OVER_LIMIT") {
+          console.warn(`    ⚠ over-limit even at ${level.label}/m=${mode.code} for ${subject}@${campus.code}, dropping`);
+          continue;
+        }
+        throw e;
+      }
+    }
+  };
+  // Tier 2: catalog-level only. Falls back to tier 3 if still over-limit.
+  const tryAtLevel = async (level: { op: string; nbr: string; label: string }) => {
+    await clickNewSearch(page);
+    try {
+      ingest(await runOneQuery(page, strm, campus.code, subject, level));
+    } catch (e) {
+      if ((e as Error).message === "OVER_LIMIT") {
+        await tryWithMode(level);
+        return;
+      }
+      throw e;
+    }
+  };
+  // Tier 1: no catalog filter. Falls back to per-level tier 2.
+  await clickNewSearch(page);
+  try {
+    ingest(await runOneQuery(page, strm, campus.code, subject, null));
+  } catch (e) {
+    if ((e as Error).message !== "OVER_LIMIT") throw e;
+    for (const lvl of CATALOG_SPLITS) await tryAtLevel(lvl);
+  }
   return sections;
 }
 
