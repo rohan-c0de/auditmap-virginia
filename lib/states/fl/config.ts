@@ -96,6 +96,20 @@ const flConfig: StateConfig = {
       // a JSESSIONID + F5/Volterra WAF cookie from a GET to the JSP,
       // then one POST per (term, subject prefix). 131 prefixes.
       { scripts: ["scripts/fl/scrape-broward.ts"], runner: "http" },
+      // Miami Dade College — PeopleSoft "Community Access" class search
+      // at findclasses.mdc.edu/psc/PMYM1J/CUSTOMER/SA/...
+      // Playwright-driven because PS Class Search is a JS-heavy form
+      // with a ">100 sections" confirmation modal. 198 subjects × 2
+      // terms. ~50k students; all 8 MDC campuses are bucketed under
+      // one slug for now (per-campus split deferred — the result-DOM
+      // campus field reads empty with current selectors). Required
+      // tricks for this PS deployment, documented in the scraper:
+      //   • use psc/ (not psp/) so the form isn't wrapped in an iframe
+      //   • Course Number ≤ 9999 as a no-op 2nd criterion
+      //   • set value FIRST then operator-by-label (reverse loses op)
+      //   • fixed sleeps, not networkidle waits
+      //   • recycle the page every 10 subjects (AJAX state degrades)
+      { scripts: ["scripts/fl/scrape-mdc.ts"], runner: "playwright" },
     ],
     transfers: [
       // SCNS flat-file dump — single 80 MB download, no auth, covers all
