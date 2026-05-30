@@ -46,20 +46,23 @@ const moConfig: StateConfig = {
     ],
   },
   scrapers: {
-    // 7 of 13 MCCA colleges wired:
+    // 8 of 13 MCCA colleges wired:
     //   Colleague (3): east-central, ozarks-tech, st-charles
     //   Jenzabar ICS (2): crowder, mineral-area
+    //   Banner 8 (1): state-fair (starssb.sfccmo.edu/PROD — added 2026-05-30
+    //     after #456 re-baseline; original sweep's Cloudflare default-UA
+    //     challenge made it look custom)
     //   Already have data (2): jefferson, metro-kc (scraped during auto-add-state)
     // Deferred — SSO-gated or blocked:
     //   saint-louis: Ellucian Experience SSO-gated (former Banner SSB 9 path returns 404)
     //   moberly-area: my.macc.edu login-gated
     //   state-technical: mytech.statetechmo.edu login-gated
-    //   state-fair: Cloudflare challenge wall
     //   three-rivers: SSO-gated
     //   north-central-missouri: SiteLock captcha
     courses: [
       { scripts: ["scripts/mo/scrape-colleague.ts"], runner: "playwright" },
       { scripts: ["scripts/mo/scrape-jenzabar.ts"], runner: "playwright" },
+      { scripts: ["scripts/mo/scrape-banner8.ts"], runner: "http" },
     ],
     transfers: [
       // MDHEWD's statewide CORE 42 course database (annual public .xlsx at

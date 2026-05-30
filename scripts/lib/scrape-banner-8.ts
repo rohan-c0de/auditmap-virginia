@@ -484,6 +484,54 @@ export function parseBanner8Html(
 }
 
 // ---------------------------------------------------------------------------
+// Section file writes — merge by CRN when multiple Banner term codes map to
+// the same standard term file.
+//
+// Some Banner 8 instances expose multiple parallel term codes for what's
+// conceptually one semester (e.g. SFCC publishes "Fall 2026" 202620 AND
+// "MHPC/Fall 2026" 202615 — a satellite-campus calendar — both of which map
+// to standardTerm "2026FA"). The scraper loops terms sequentially, so without
+// merging, the second pass would silently overwrite the first.
+//
+// Strategy: read any existing file, concatenate the new sections, dedupe by
+// CRN (last write wins — sections from a later pass are freshest). The first
+// pass after a fresh `rm -rf data/.../<slug>/` writes from a blank slate; all
+// later passes merge.
+//
+// Side effect: re-running the scraper on an existing data dir without removal
+// will still produce correct output, because (a) CRNs are stable within a
+// term and (b) dedup keeps the freshest copy.
+// ---------------------------------------------------------------------------
+
+function writeSectionsMerging(outFile: string, sections: CourseSection[]): {
+  written: number;
+  merged: boolean;
+} {
+  let existing: CourseSection[] = [];
+  if (fs.existsSync(outFile)) {
+    try {
+      const raw = fs.readFileSync(outFile, "utf8");
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed)) existing = parsed as CourseSection[];
+    } catch {
+      // Corrupt file → treat as empty; the new sections will replace it.
+    }
+  }
+  const merged = existing.length > 0;
+  const seenCrns = new Set<string>();
+  const out: CourseSection[] = [];
+  // Iterate NEW first so a CRN appearing in both passes keeps the new copy.
+  for (const s of [...sections, ...existing]) {
+    const key = s.crn || `${s.course_prefix} ${s.course_number} ${s.term}`;
+    if (seenCrns.has(key)) continue;
+    seenCrns.add(key);
+    out.push(s);
+  }
+  fs.writeFileSync(outFile, JSON.stringify(out, null, 2));
+  return { written: out.length, merged };
+}
+
+// ---------------------------------------------------------------------------
 // Per-host orchestration (one Banner 8 instance per college)
 // ---------------------------------------------------------------------------
 
@@ -608,8 +656,9 @@ export async function scrapeBanner8College(
 
     if (!opts.dryRun) {
       const outFile = path.join(outDir, `${standardTerm}.json`);
-      fs.writeFileSync(outFile, JSON.stringify(sections, null, 2));
-      log(`    → ${sections.length} sections written to ${standardTerm}.json`);
+      const { written, merged } = writeSectionsMerging(outFile, sections);
+      const tag = merged ? ` (merged → ${written} total)` : "";
+      log(`    → ${sections.length} sections written to ${standardTerm}.json${tag}`);
     } else {
       log(`    → ${sections.length} sections (dry-run, not written)`);
     }
@@ -789,9 +838,10 @@ export async function scrapeBanner8SharedInstance(
         }
         if (!opts.dryRun) {
           const outFile = path.join(outDir, `${standardTerm}.json`);
-          fs.writeFileSync(outFile, JSON.stringify(sections, null, 2));
+          const { written, merged } = writeSectionsMerging(outFile, sections);
+          const tag = merged ? ` (merged → ${written} total)` : "";
           console.log(
-            `    → ${sections.length} sections written to ${standardTerm}.json`
+            `    → ${sections.length} sections written to ${standardTerm}.json${tag}`
           );
         } else {
           console.log(
