@@ -13,6 +13,10 @@ import TransferClient from "./TransferClient";
 
 // Render on demand — some states' transfer data exceeds Vercel's ISR size limit
 export const dynamic = "force-dynamic";
+// Bump function timeout above the default 15s. Even after the perf fixes in
+// #781 / #786 / #787, cold-start variance on Vercel was tipping TX/NY/MI
+// over the default cap. 60s is the Pro tier ceiling for serverless. Issue #777.
+export const maxDuration = 60;
 
 type Props = {
   params: Promise<{ state: string }>;
