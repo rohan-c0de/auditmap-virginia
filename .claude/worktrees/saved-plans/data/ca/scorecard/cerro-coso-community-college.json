@@ -1,0 +1,46 @@
+{
+  "unitid": 111896,
+  "schoolName": "Cerro Coso Community College",
+  "state": "CA",
+  "city": "Ridgecrest",
+  "schoolUrl": "https://cerrocoso.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-23T07:21:39.876Z",
+  "size": 3171,
+  "shareFirstGeneration": 0.5128504673,
+  "cost": {
+    "tuitionInState": 1384,
+    "tuitionOutOfState": 11254,
+    "attendanceAcademicYear": 25300,
+    "avgNetPricePublic": 18306,
+    "bookSupply": 1062,
+    "roomBoardOffCampus": 24192,
+    "netPriceByIncome": {
+      "0_30000": 18595,
+      "30001_48000": 13761,
+      "48001_75000": 17054,
+      "75001_110000": 21891,
+      "110001_plus": null
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.1547,
+    "federalLoanRate": 0.0135,
+    "medianDebtCompleters": null
+  },
+  "completion": {
+    "completionRate150nt": 0.2468,
+    "completionRate200nt": 0.2956,
+    "transferRate": 0.1329,
+    "retentionRateFullTime": 0.2735,
+    "retentionRatePartTime": 0.1547
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 34963,
+    "median1YrAfterCompletion": null,
+    "percentile25_10YrsAfterEntry": 15774,
+    "percentile75_10YrsAfterEntry": 56453,
+    "shareEarningAboveHsGrad": 0.5
+  }
+}

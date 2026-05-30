@@ -1,0 +1,46 @@
+{
+  "unitid": 223898,
+  "schoolName": "Cisco College",
+  "state": "TX",
+  "city": "Cisco",
+  "schoolUrl": "https://www.cisco.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-16T15:39:41.514Z",
+  "size": 1620,
+  "shareFirstGeneration": 0.4435933148,
+  "cost": {
+    "tuitionInState": 4710,
+    "tuitionOutOfState": 7140,
+    "attendanceAcademicYear": 17469,
+    "avgNetPricePublic": 9624,
+    "bookSupply": 1339,
+    "roomBoardOffCampus": 5661,
+    "netPriceByIncome": {
+      "0_30000": 8287,
+      "30001_48000": 9069,
+      "48001_75000": 10586,
+      "75001_110000": 13228,
+      "110001_plus": 15838
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2582,
+    "federalLoanRate": 0.0643,
+    "medianDebtCompleters": 9500
+  },
+  "completion": {
+    "completionRate150nt": 0.2981,
+    "completionRate200nt": 0.3364,
+    "transferRate": 0.2312,
+    "retentionRateFullTime": 0.6677,
+    "retentionRatePartTime": 0.358
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 39092,
+    "median1YrAfterCompletion": 23918,
+    "percentile25_10YrsAfterEntry": 20411,
+    "percentile75_10YrsAfterEntry": 58874,
+    "shareEarningAboveHsGrad": 0.548
+  }
+}

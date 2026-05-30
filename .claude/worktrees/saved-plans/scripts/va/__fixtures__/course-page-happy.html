@@ -1,0 +1,85 @@
+<!--
+  Synthetic VCCS course page fixture for scrapeSections() tests.
+
+  Mirrors the structure of a real courses.vccs.edu course detail page:
+  https://courses.vccs.edu/colleges/<slug>/courses/ENG111-CollegeCompositionI
+
+  The selectors here match the ones in scripts/va/scrape-vccs.ts. If the
+  upstream site's DOM changes, those tests should start failing — but in
+  practice that's caught at scrape time by the empty-output health check
+  rather than here. These fixtures are about regressing the parser, not
+  drift detection.
+-->
+<html>
+<body>
+  <div class="credits">3 credits</div>
+
+  <div class="endtext">
+    Designed to help students develop college-level writing skills.
+    Prerequisite: Placement into <a href="/courses/ENF003">ENF 003</a> or higher.
+    Lecture 3 hours per week.
+  </div>
+
+  <div id="schedule">
+    <!-- Past term — should be ignored when targetTerm is "Spring 2026" -->
+    <div class="card">
+      <div class="card-header">
+        <a class="card-link"><h4>Fall 2025</h4></a>
+      </div>
+      <table class="table">
+        <tbody>
+          <tr class="vevent">
+            <td>99999</td>
+            <td>001</td>
+            <td>3</td>
+            <td><div class="days"><span class="s">M</span></div></td>
+            <td><div class="times">9:00 AM - 9:50 AM</div></td>
+            <td>08/26/2025</td>
+            <td>Annandale</td>
+            <td><span title="In-Person Course">P</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Target term — both rows should parse -->
+    <div class="card">
+      <div class="card-header">
+        <a class="card-link"><h4>Spring 2026 ➔</h4></a>
+      </div>
+      <table class="table">
+        <tbody>
+          <!-- In-person, MWF morning -->
+          <tr class="vevent">
+            <td>70056</td>
+            <td>001</td>
+            <td>3</td>
+            <td>
+              <div class="days">
+                <span class="s">M</span>
+                <span class="s">W</span>
+                <span class="s">F</span>
+              </div>
+            </td>
+            <td><div class="times">9:00 AM - 9:50 AM</div></td>
+            <td>01/12/2026</td>
+            <td>Annandale</td>
+            <td><span title="In-Person Course">P</span></td>
+          </tr>
+          <!-- Online async, TBA times, no days -->
+          <tr class="vevent">
+            <td>70057</td>
+            <td>002</td>
+            <td>3</td>
+            <td><div class="days"></div></td>
+            <td><div class="times">TBA</div></td>
+            <td>01/12/2026</td>
+            <td>Distance Learning</td>
+            <td><span title="Worldwide Online">WW</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

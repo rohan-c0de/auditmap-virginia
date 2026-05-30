@@ -1,0 +1,46 @@
+{
+  "unitid": 204945,
+  "schoolName": "Owens Community College",
+  "state": "OH",
+  "city": "Perrysburg",
+  "schoolUrl": "https://www.owens.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-13T02:14:35.592Z",
+  "size": 4361,
+  "shareFirstGeneration": 0.4428790984,
+  "cost": {
+    "tuitionInState": 5870,
+    "tuitionOutOfState": 10502,
+    "attendanceAcademicYear": 14436,
+    "avgNetPricePublic": 10369,
+    "bookSupply": 1880,
+    "roomBoardOffCampus": 6272,
+    "netPriceByIncome": {
+      "0_30000": 8214,
+      "30001_48000": 8300,
+      "48001_75000": 11058,
+      "75001_110000": 12514,
+      "110001_plus": 13629
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.224,
+    "federalLoanRate": 0.2289,
+    "medianDebtCompleters": 16667
+  },
+  "completion": {
+    "completionRate150nt": 0.3511,
+    "completionRate200nt": 0.362,
+    "transferRate": 0.1755,
+    "retentionRateFullTime": 0.6,
+    "retentionRatePartTime": 0.4902
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 37275,
+    "median1YrAfterCompletion": 48168,
+    "percentile25_10YrsAfterEntry": 19291,
+    "percentile75_10YrsAfterEntry": 56978,
+    "shareEarningAboveHsGrad": 0.559
+  }
+}

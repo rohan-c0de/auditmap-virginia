@@ -1,0 +1,46 @@
+{
+  "unitid": 101240,
+  "schoolName": "Gadsden State Community College",
+  "state": "AL",
+  "city": "Gadsden",
+  "schoolUrl": "www.gadsdenstate.edu/",
+  "ownership": 1,
+  "predominantDegree": 1,
+  "fetchedAt": "2026-05-13T02:12:15.677Z",
+  "size": 3548,
+  "shareFirstGeneration": 0.5149544863,
+  "cost": {
+    "tuitionInState": 4272,
+    "tuitionOutOfState": 7368,
+    "attendanceAcademicYear": 10189,
+    "avgNetPricePublic": 3515,
+    "bookSupply": 1600,
+    "roomBoardOffCampus": 4500,
+    "netPriceByIncome": {
+      "0_30000": 3438,
+      "30001_48000": 2617,
+      "48001_75000": 5330,
+      "75001_110000": 6081,
+      "110001_plus": 8944
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.4634,
+    "federalLoanRate": 0,
+    "medianDebtCompleters": null
+  },
+  "completion": {
+    "completionRate150nt": 0.3824,
+    "completionRate200nt": 0.3862,
+    "transferRate": 0.1024,
+    "retentionRateFullTime": 0.6245,
+    "retentionRatePartTime": 0.3681
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 32937,
+    "median1YrAfterCompletion": 37458,
+    "percentile25_10YrsAfterEntry": 17231,
+    "percentile75_10YrsAfterEntry": 51839,
+    "shareEarningAboveHsGrad": 0.473
+  }
+}

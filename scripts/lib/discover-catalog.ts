@@ -12,15 +12,22 @@ const UA =
  *
  * Returns the `catoid` of the `selected` option, or the first non-archived
  * option if none is selected. Falls back to `fallback` on any error.
+ *
+ * For catalogs behind a WAF that returns 202 + JS challenge on bare fetch
+ * (Imperva, etc.), callers can pass `wafCookies` — a `Cookie:`-header
+ * string acquired via Playwright — so the discovery request inherits the
+ * already-cleared session. Without this, WAF-protected catalogs silently
+ * fall back to the configured `fallback`, which may be stale.
  */
 export async function discoverAcalogCatoid(
   baseUrl: string,
-  fallback: number
+  fallback: number,
+  wafCookies?: string
 ): Promise<number> {
   try {
-    const resp = await fetch(`${baseUrl}/index.php`, {
-      headers: { "User-Agent": UA },
-    });
+    const headers: Record<string, string> = { "User-Agent": UA };
+    if (wafCookies) headers["Cookie"] = wafCookies;
+    const resp = await fetch(`${baseUrl}/index.php`, { headers });
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     const html = await resp.text();
 

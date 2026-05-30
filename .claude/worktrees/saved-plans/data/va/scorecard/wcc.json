@@ -1,0 +1,46 @@
+{
+  "unitid": 234377,
+  "schoolName": "Wytheville Community College",
+  "state": "VA",
+  "city": "Wytheville",
+  "schoolUrl": "www.wcc.vccs.edu/",
+  "ownership": 1,
+  "predominantDegree": 1,
+  "fetchedAt": "2026-05-13T02:15:08.223Z",
+  "size": 1255,
+  "shareFirstGeneration": 0.4707207207,
+  "cost": {
+    "tuitionInState": 5007,
+    "tuitionOutOfState": 11445,
+    "attendanceAcademicYear": 12111,
+    "avgNetPricePublic": 4622,
+    "bookSupply": 1600,
+    "roomBoardOffCampus": 3000,
+    "netPriceByIncome": {
+      "0_30000": 3647,
+      "30001_48000": 4328,
+      "48001_75000": 5405,
+      "75001_110000": 8706,
+      "110001_plus": null
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.3832,
+    "federalLoanRate": 0.0264,
+    "medianDebtCompleters": 7500
+  },
+  "completion": {
+    "completionRate150nt": 0.4737,
+    "completionRate200nt": 0.4691,
+    "transferRate": 0.0769,
+    "retentionRateFullTime": 0.726,
+    "retentionRatePartTime": 0.4634
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 34303,
+    "median1YrAfterCompletion": 34417,
+    "percentile25_10YrsAfterEntry": 18495,
+    "percentile75_10YrsAfterEntry": 51565,
+    "shareEarningAboveHsGrad": 0.495
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "unitid": 230861,
+  "schoolName": "Community College of Vermont",
+  "state": "VT",
+  "city": "Montpelier",
+  "schoolUrl": "www.ccv.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-13T02:15:08.662Z",
+  "size": 2841,
+  "shareFirstGeneration": 0.5074090705,
+  "cost": {
+    "tuitionInState": 6920,
+    "tuitionOutOfState": 13640,
+    "attendanceAcademicYear": 21123,
+    "avgNetPricePublic": 13696,
+    "bookSupply": 1000,
+    "roomBoardOffCampus": 14247,
+    "netPriceByIncome": {
+      "0_30000": 12373,
+      "30001_48000": 12719,
+      "48001_75000": 14430,
+      "75001_110000": 18658,
+      "110001_plus": 20373
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.295,
+    "federalLoanRate": 0.0368,
+    "medianDebtCompleters": 10491
+  },
+  "completion": {
+    "completionRate150nt": 0.1963,
+    "completionRate200nt": 0.2981,
+    "transferRate": 0.243,
+    "retentionRateFullTime": 0.4899,
+    "retentionRatePartTime": 0.3258
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 36234,
+    "median1YrAfterCompletion": 34293,
+    "percentile25_10YrsAfterEntry": 17441,
+    "percentile75_10YrsAfterEntry": 56454,
+    "shareEarningAboveHsGrad": 0.521
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "unitid": 202222,
+  "schoolName": "Columbus State Community College",
+  "state": "OH",
+  "city": "Columbus",
+  "schoolUrl": "https://www.cscc.edu/",
+  "ownership": 1,
+  "predominantDegree": 1,
+  "fetchedAt": "2026-05-13T02:14:32.652Z",
+  "size": 17549,
+  "shareFirstGeneration": 0.4379317351,
+  "cost": {
+    "tuitionInState": 5488,
+    "tuitionOutOfState": 11224,
+    "attendanceAcademicYear": 13381,
+    "avgNetPricePublic": 8400,
+    "bookSupply": 2000,
+    "roomBoardOffCampus": 8640,
+    "netPriceByIncome": {
+      "0_30000": 6777,
+      "30001_48000": 7161,
+      "48001_75000": 8643,
+      "75001_110000": 11660,
+      "110001_plus": 12985
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2596,
+    "federalLoanRate": 0.1798,
+    "medianDebtCompleters": 8749
+  },
+  "completion": {
+    "completionRate150nt": null,
+    "completionRate200nt": null,
+    "transferRate": null,
+    "retentionRateFullTime": null,
+    "retentionRatePartTime": null
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 39435,
+    "median1YrAfterCompletion": null,
+    "percentile25_10YrsAfterEntry": 19965,
+    "percentile75_10YrsAfterEntry": 58491,
+    "shareEarningAboveHsGrad": 0.575
+  }
+}

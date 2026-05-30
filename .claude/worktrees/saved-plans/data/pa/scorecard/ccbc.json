@@ -1,0 +1,46 @@
+{
+  "unitid": 211079,
+  "schoolName": "Community College of Beaver County",
+  "state": "PA",
+  "city": "Monaca",
+  "schoolUrl": "https://www.ccbc.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-13T02:14:38.720Z",
+  "size": 1247,
+  "shareFirstGeneration": 0.4003436426,
+  "cost": {
+    "tuitionInState": 7500,
+    "tuitionOutOfState": 20700,
+    "attendanceAcademicYear": 12556,
+    "avgNetPricePublic": 6937,
+    "bookSupply": 600,
+    "roomBoardOffCampus": 11700,
+    "netPriceByIncome": {
+      "0_30000": 4392,
+      "30001_48000": 5476,
+      "48001_75000": 7098,
+      "75001_110000": 10463,
+      "110001_plus": 12204
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2781,
+    "federalLoanRate": 0.2045,
+    "medianDebtCompleters": 14923
+  },
+  "completion": {
+    "completionRate150nt": 0.1243,
+    "completionRate200nt": 0.25,
+    "transferRate": 0.284,
+    "retentionRateFullTime": 0.5366,
+    "retentionRatePartTime": 0.4653
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 45090,
+    "median1YrAfterCompletion": 44714,
+    "percentile25_10YrsAfterEntry": 27222,
+    "percentile75_10YrsAfterEntry": 71536,
+    "shareEarningAboveHsGrad": 0.624
+  }
+}

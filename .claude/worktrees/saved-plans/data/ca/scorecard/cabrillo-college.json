@@ -1,0 +1,46 @@
+{
+  "unitid": 110334,
+  "schoolName": "Cabrillo College",
+  "state": "CA",
+  "city": "Aptos",
+  "schoolUrl": "https://www.cabrillo.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-23T07:21:37.832Z",
+  "size": 8002,
+  "shareFirstGeneration": 0.5075718016,
+  "cost": {
+    "tuitionInState": 1270,
+    "tuitionOutOfState": 9862,
+    "attendanceAcademicYear": 24966,
+    "avgNetPricePublic": 15843,
+    "bookSupply": 2250,
+    "roomBoardOffCampus": 25281,
+    "netPriceByIncome": {
+      "0_30000": 14656,
+      "30001_48000": 14911,
+      "48001_75000": 17780,
+      "75001_110000": 19252,
+      "110001_plus": null
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2441,
+    "federalLoanRate": 0.0133,
+    "medianDebtCompleters": 14380
+  },
+  "completion": {
+    "completionRate150nt": 0.3804,
+    "completionRate200nt": 0.4544,
+    "transferRate": 0.0954,
+    "retentionRateFullTime": 0.7343,
+    "retentionRatePartTime": 0.5492
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 44114,
+    "median1YrAfterCompletion": 41541,
+    "percentile25_10YrsAfterEntry": 22686,
+    "percentile75_10YrsAfterEntry": 70453,
+    "shareEarningAboveHsGrad": 0.58
+  }
+}

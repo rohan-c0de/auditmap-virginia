@@ -1,0 +1,46 @@
+{
+  "unitid": 225520,
+  "schoolName": "Howard College",
+  "state": "TX",
+  "city": "Big Spring",
+  "schoolUrl": "https://www.howardcollege.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-16T15:39:44.485Z",
+  "size": 1611,
+  "shareFirstGeneration": 0.5141811528,
+  "cost": {
+    "tuitionInState": 2766,
+    "tuitionOutOfState": 6716,
+    "attendanceAcademicYear": 13858,
+    "avgNetPricePublic": 6147,
+    "bookSupply": 1690,
+    "roomBoardOffCampus": 9313,
+    "netPriceByIncome": {
+      "0_30000": 4301,
+      "30001_48000": 6056,
+      "48001_75000": 7068,
+      "75001_110000": 9934,
+      "110001_plus": 12329
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2369,
+    "federalLoanRate": 0.087,
+    "medianDebtCompleters": 9500
+  },
+  "completion": {
+    "completionRate150nt": 0.3507,
+    "completionRate200nt": 0.3975,
+    "transferRate": 0.0795,
+    "retentionRateFullTime": 0.7061,
+    "retentionRatePartTime": 0.4884
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 38382,
+    "median1YrAfterCompletion": 40190,
+    "percentile25_10YrsAfterEntry": 20950,
+    "percentile75_10YrsAfterEntry": 57845,
+    "shareEarningAboveHsGrad": 0.553
+  }
+}

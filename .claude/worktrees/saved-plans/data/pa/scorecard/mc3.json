@@ -1,0 +1,46 @@
+{
+  "unitid": 214111,
+  "schoolName": "Montgomery County Community College",
+  "state": "PA",
+  "city": "Blue Bell",
+  "schoolUrl": "www.mc3.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-13T02:14:42.103Z",
+  "size": 7301,
+  "shareFirstGeneration": 0.4310221587,
+  "cost": {
+    "tuitionInState": 6690,
+    "tuitionOutOfState": 17250,
+    "attendanceAcademicYear": 16233,
+    "avgNetPricePublic": 11124,
+    "bookSupply": 1300,
+    "roomBoardOffCampus": 14580,
+    "netPriceByIncome": {
+      "0_30000": 7881,
+      "30001_48000": 9250,
+      "48001_75000": 11837,
+      "75001_110000": 14073,
+      "110001_plus": 16169
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2904,
+    "federalLoanRate": 0.225,
+    "medianDebtCompleters": 12349
+  },
+  "completion": {
+    "completionRate150nt": 0.2787,
+    "completionRate200nt": 0.2956,
+    "transferRate": 0.1887,
+    "retentionRateFullTime": 0.6707,
+    "retentionRatePartTime": 0.5
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 46108,
+    "median1YrAfterCompletion": 39186,
+    "percentile25_10YrsAfterEntry": 24260,
+    "percentile75_10YrsAfterEntry": 69180,
+    "shareEarningAboveHsGrad": 0.653
+  }
+}

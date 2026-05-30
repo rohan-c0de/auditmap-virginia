@@ -1,0 +1,46 @@
+{
+  "unitid": 170790,
+  "schoolName": "Macomb Community College",
+  "state": "MI",
+  "city": "Warren",
+  "schoolUrl": "www.macomb.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-13T02:13:32.578Z",
+  "size": 13876,
+  "shareFirstGeneration": 0.4866837388,
+  "cost": {
+    "tuitionInState": 3660,
+    "tuitionOutOfState": 8370,
+    "attendanceAcademicYear": 11912,
+    "avgNetPricePublic": 1618,
+    "bookSupply": 1008,
+    "roomBoardOffCampus": 12888,
+    "netPriceByIncome": {
+      "0_30000": -353,
+      "30001_48000": -112,
+      "48001_75000": 2521,
+      "75001_110000": 8336,
+      "110001_plus": 10658
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.3368,
+    "federalLoanRate": 0.0887,
+    "medianDebtCompleters": 6000
+  },
+  "completion": {
+    "completionRate150nt": 0.1797,
+    "completionRate200nt": 0.2229,
+    "transferRate": 0.315,
+    "retentionRateFullTime": 0.613,
+    "retentionRatePartTime": 0.5559
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 41596,
+    "median1YrAfterCompletion": 41044,
+    "percentile25_10YrsAfterEntry": 21143,
+    "percentile75_10YrsAfterEntry": 63899,
+    "shareEarningAboveHsGrad": 0.589
+  }
+}

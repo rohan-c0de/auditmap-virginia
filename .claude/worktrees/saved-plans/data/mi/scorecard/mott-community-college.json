@@ -1,0 +1,46 @@
+{
+  "unitid": 169275,
+  "schoolName": "Mott Community College",
+  "state": "MI",
+  "city": "Flint",
+  "schoolUrl": "https://www.mcc.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-13T02:13:27.860Z",
+  "size": 5251,
+  "shareFirstGeneration": 0.4028740056,
+  "cost": {
+    "tuitionInState": 6845,
+    "tuitionOutOfState": 11460,
+    "attendanceAcademicYear": 15460,
+    "avgNetPricePublic": 5687,
+    "bookSupply": 2220,
+    "roomBoardOffCampus": 24000,
+    "netPriceByIncome": {
+      "0_30000": 3748,
+      "30001_48000": 4954,
+      "48001_75000": 7088,
+      "75001_110000": 9921,
+      "110001_plus": 12083
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.4209,
+    "federalLoanRate": 0.2544,
+    "medianDebtCompleters": 13000
+  },
+  "completion": {
+    "completionRate150nt": 0.3189,
+    "completionRate200nt": 0.255,
+    "transferRate": 0.1417,
+    "retentionRateFullTime": 0.5975,
+    "retentionRatePartTime": 0.4682
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 32538,
+    "median1YrAfterCompletion": 37461,
+    "percentile25_10YrsAfterEntry": 15045,
+    "percentile75_10YrsAfterEntry": 52285,
+    "shareEarningAboveHsGrad": 0.462
+  }
+}

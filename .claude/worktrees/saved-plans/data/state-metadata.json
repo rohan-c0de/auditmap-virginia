@@ -1,0 +1,565 @@
+{
+  "$comment": "Per-state metadata used by scripts/lib/bootstrap-state.ts to generate Phase 1 files for new states. Complete coverage for the 17 states currently shipping; for unknown states, bootstrap-state falls back to placeholder values and flags the entry as a manual TODO in the orchestrator's summary. Add a new entry here when you ship a new state to extend autonomous coverage.",
+  "states": {
+    "al": {
+      "fullName": "Alabama",
+      "fipsCode": "01",
+      "systemName": "ACCS",
+      "systemFullName": "Alabama Community College System",
+      "systemUrl": "https://www.accs.edu/",
+      "defaultZip": "35203",
+      "defaultZipCity": "Birmingham",
+      "seniorWaiver": null
+    },
+    "co": {
+      "fullName": "Colorado",
+      "fipsCode": "08",
+      "systemName": "CCCS",
+      "systemFullName": "Colorado Community College System",
+      "systemUrl": "https://cccs.edu/",
+      "defaultZip": "80202",
+      "defaultZipCity": "Denver",
+      "seniorWaiver": null
+    },
+    "ct": {
+      "fullName": "Connecticut",
+      "fipsCode": "09",
+      "systemName": "CT State CC",
+      "systemFullName": "CT State Community College",
+      "systemUrl": "https://www.ctstate.edu/",
+      "defaultZip": "06103",
+      "defaultZipCity": "Hartford",
+      "seniorWaiver": {
+        "ageThreshold": 62,
+        "legalCitation": "Conn. Gen. Stat. § 10a-77",
+        "description": "Connecticut residents aged 62+ may have tuition and fees waived at public colleges on a space-available basis.",
+        "bannerTitle": "Connecticut Senior Tuition Waiver",
+        "bannerSummary": "Over 62 in Connecticut? Tuition and fees may be waived for public-college courses.",
+        "bannerDetail": "Connecticut law allows residents aged 62+ to enroll in public-college credit courses on a space-available basis with tuition and fees waived."
+      }
+    },
+    "dc": {
+      "fullName": "District of Columbia",
+      "fipsCode": "11",
+      "systemName": "UDC-CC",
+      "systemFullName": "Community College of the District of Columbia",
+      "systemUrl": "https://www.udc.edu/cc/",
+      "defaultZip": "20002",
+      "defaultZipCity": "Washington",
+      "seniorWaiver": null
+    },
+    "de": {
+      "fullName": "Delaware",
+      "fipsCode": "10",
+      "systemName": "DTCC",
+      "systemFullName": "Delaware Technical Community College",
+      "systemUrl": "https://www.dtcc.edu/",
+      "defaultZip": "19801",
+      "defaultZipCity": "Wilmington",
+      "seniorWaiver": {
+        "ageThreshold": 60,
+        "legalCitation": "14 Del. C. § 9105",
+        "description": "Delaware residents aged 60+ may take credit courses at DTCC tuition-free on a space-available basis.",
+        "bannerTitle": "Delaware Senior Tuition Waiver",
+        "bannerSummary": "Over 60 in Delaware? DTCC tuition may be waived on a space-available basis.",
+        "bannerDetail": "Delaware law allows residents aged 60+ to enroll in DTCC credit courses on a space-available basis at no cost."
+      }
+    },
+    "fl": {
+      "fullName": "Florida",
+      "fipsCode": "12",
+      "systemName": "FCS",
+      "systemFullName": "Florida College System",
+      "systemUrl": "https://www.fldoe.org/schools/higher-ed/fl-college-system/",
+      "defaultZip": "33132",
+      "defaultZipCity": "Miami",
+      "seniorWaiver": {
+        "ageThreshold": 60,
+        "legalCitation": "FL Stat. § 1009.26(4)",
+        "description": "Florida residents aged 60 and older may have tuition and fees waived at Florida College System institutions for credit courses on a space-available basis.",
+        "bannerTitle": "Florida Senior Tuition Waiver",
+        "bannerSummary": "Over 60 in Florida? Tuition and fees may be waived at FCS colleges for space-available enrollment.",
+        "bannerDetail": "Florida law allows residents aged 60+ to attend Florida College System credit courses with tuition and fees waived on a space-available basis. Each college sets its own policy on which fees are waivable."
+      }
+    },
+    "ga": {
+      "fullName": "Georgia",
+      "fipsCode": "13",
+      "systemName": "TCSG",
+      "systemFullName": "Technical College System of Georgia",
+      "systemUrl": "https://www.tcsg.edu/",
+      "defaultZip": "30303",
+      "defaultZipCity": "Atlanta",
+      "seniorWaiver": {
+        "ageThreshold": 62,
+        "legalCitation": "O.C.G.A. § 20-3-661",
+        "description": "Georgia residents aged 62+ may attend public colleges tuition-free on a space-available basis.",
+        "bannerTitle": "Georgia Senior 62+ Program",
+        "bannerSummary": "Over 62 in Georgia? Public college tuition may be waived.",
+        "bannerDetail": "Georgia law allows residents aged 62+ to attend any unit of the University System of Georgia or TCSG without paying tuition or mandatory fees, on a space-available basis."
+      }
+    },
+    "ia": {
+      "fullName": "Iowa",
+      "fipsCode": "19",
+      "systemName": "Iowa Community Colleges",
+      "systemFullName": "Iowa Community Colleges (managed by the Iowa Department of Education)",
+      "systemUrl": "https://educate.iowa.gov/higher-ed/community-colleges",
+      "defaultZip": "50309",
+      "defaultZipCity": "Des Moines",
+      "seniorWaiver": null
+    },
+    "ky": {
+      "fullName": "Kentucky",
+      "fipsCode": "21",
+      "systemName": "KCTCS",
+      "systemFullName": "Kentucky Community and Technical College System",
+      "systemUrl": "https://kctcs.edu/",
+      "defaultZip": "40202",
+      "defaultZipCity": "Louisville",
+      "seniorWaiver": null
+    },
+    "la": {
+      "fullName": "Louisiana",
+      "fipsCode": "22",
+      "systemName": "LCTCS",
+      "systemFullName": "Louisiana Community and Technical College System",
+      "systemUrl": "https://www.lctcs.edu/",
+      "defaultZip": "70806",
+      "defaultZipCity": "Baton Rouge",
+      "seniorWaiver": null
+    },
+    "ma": {
+      "fullName": "Massachusetts",
+      "fipsCode": "25",
+      "systemName": "MA Comm Colleges",
+      "systemFullName": "Massachusetts Community Colleges",
+      "systemUrl": "https://www.mass.edu/forstuteachers/communitycolleges.asp",
+      "defaultZip": "02108",
+      "defaultZipCity": "Boston",
+      "seniorWaiver": {
+        "ageThreshold": 60,
+        "legalCitation": "Mass. Gen. Laws ch. 15A, § 19",
+        "description": "Massachusetts residents aged 60+ may attend state-supported college courses tuition-free on a space-available basis.",
+        "bannerTitle": "MA Senior Tuition Waiver",
+        "bannerSummary": "Over 60 in Massachusetts? Tuition may be waived at state colleges.",
+        "bannerDetail": "Massachusetts law allows residents aged 60+ to enroll in state-supported college courses on a space-available basis without paying tuition; some fees still apply."
+      }
+    },
+    "md": {
+      "fullName": "Maryland",
+      "fipsCode": "24",
+      "systemName": "MD Comm Colleges",
+      "systemFullName": "Maryland Community Colleges",
+      "systemUrl": "https://mdacc.org/",
+      "defaultZip": "21201",
+      "defaultZipCity": "Baltimore",
+      "seniorWaiver": {
+        "ageThreshold": 60,
+        "legalCitation": "Md. Code Ann., Educ. § 16-106",
+        "description": "Maryland residents aged 60+ retired from active employment may have tuition waived at community colleges.",
+        "bannerTitle": "Maryland Senior Tuition Waiver",
+        "bannerSummary": "Over 60 and retired in Maryland? Tuition may be waived at community colleges.",
+        "bannerDetail": "Maryland law allows residents aged 60+ retired from active employment (per the statute's definition) to enroll in community college credit courses with tuition waived."
+      }
+    },
+    "me": {
+      "fullName": "Maine",
+      "fipsCode": "23",
+      "systemName": "MCCS",
+      "systemFullName": "Maine Community College System",
+      "systemUrl": "https://www.mccs.me.edu/",
+      "defaultZip": "04101",
+      "defaultZipCity": "Portland",
+      "seniorWaiver": {
+        "ageThreshold": 65,
+        "legalCitation": "20-A M.R.S. § 12716",
+        "description": "Maine residents aged 65+ may take credit courses at MCCS colleges with tuition waived on a space-available basis.",
+        "bannerTitle": "Maine Senior Tuition Waiver",
+        "bannerSummary": "Over 65 in Maine? MCCS tuition may be waived for space-available courses.",
+        "bannerDetail": "Maine law waives community-college tuition for residents 65+ who enroll on a space-available basis. Course fees and books are not included."
+      }
+    },
+    "ms": {
+      "fullName": "Mississippi",
+      "fipsCode": "28",
+      "systemName": "MCCB",
+      "systemFullName": "Mississippi Community College Board",
+      "systemUrl": "https://www.mccb.edu/",
+      "defaultZip": "39201",
+      "defaultZipCity": "Jackson",
+      "seniorWaiver": null
+    },
+    "mo": {
+      "fullName": "Missouri",
+      "fipsCode": "29",
+      "systemName": "MCCA",
+      "systemFullName": "Missouri Community College Association",
+      "systemUrl": "https://www.mccatoday.org/",
+      "defaultZip": "65101",
+      "defaultZipCity": "Jefferson City",
+      "seniorWaiver": {
+        "ageThreshold": 65,
+        "legalCitation": "Missouri Revised Statutes § 173.270",
+        "description": "Missouri residents 65 and older may enroll in courses at state-supported colleges tuition-free on a space-available basis. Regular fees may still apply.",
+        "bannerTitle": "Missouri Senior Citizen Tuition Waiver",
+        "bannerSummary": "Age 65+ in Missouri? Enroll tuition-free at state-supported colleges on a space-available basis.",
+        "bannerDetail": "Missouri Revised Statutes § 173.270 lets Missouri residents 65+ enroll in courses at state-supported colleges tuition-free on a space-available basis. Confirm with each college's registrar."
+      }
+    },
+    "nc": {
+      "fullName": "North Carolina",
+      "fipsCode": "37",
+      "systemName": "NCCCS",
+      "systemFullName": "North Carolina Community College System",
+      "systemUrl": "https://www.nccommunitycolleges.edu/",
+      "defaultZip": "27601",
+      "defaultZipCity": "Raleigh",
+      "seniorWaiver": null
+    },
+    "nh": {
+      "fullName": "New Hampshire",
+      "fipsCode": "33",
+      "systemName": "CCSNH",
+      "systemFullName": "Community College System of New Hampshire",
+      "systemUrl": "https://www.ccsnh.edu/",
+      "defaultZip": "03301",
+      "defaultZipCity": "Concord",
+      "seniorWaiver": null
+    },
+    "nj": {
+      "fullName": "New Jersey",
+      "fipsCode": "34",
+      "systemName": "NJCCC",
+      "systemFullName": "New Jersey Council of County Colleges",
+      "systemUrl": "https://www.njcommunitycolleges.org/",
+      "defaultZip": "08608",
+      "defaultZipCity": "Trenton",
+      "seniorWaiver": {
+        "ageThreshold": 65,
+        "legalCitation": "N.J.S.A. 18A:62-3",
+        "description": "New Jersey residents aged 65+ may attend NJ community colleges tuition-free on a space-available basis.",
+        "bannerTitle": "NJ Senior Tuition Waiver",
+        "bannerSummary": "Over 65 in NJ? Community college tuition may be waived.",
+        "bannerDetail": "New Jersey law allows residents aged 65+ to enroll in NJ community college credit courses tuition-free on a space-available basis."
+      }
+    },
+    "nm": {
+      "fullName": "New Mexico",
+      "fipsCode": "35",
+      "systemName": "NM Community Colleges",
+      "systemFullName": "New Mexico Community Colleges",
+      "systemUrl": "https://hed.nm.gov/",
+      "defaultZip": "87501",
+      "defaultZipCity": "Santa Fe",
+      "seniorWaiver": {
+        "ageThreshold": 65,
+        "legalCitation": "NMSA 1978 § 21-21D (Senior Citizens Reduced Tuition Act; impl. 5.7.19 NMAC)",
+        "description": "New Mexico residents aged 65+ pay $5.00 per credit hour for up to 10 credit hours per semester at NM post-secondary degree-granting institutions, on a space-available basis.",
+        "bannerTitle": "New Mexico Senior Citizens Reduced Tuition",
+        "bannerSummary": "Age 65+ in New Mexico? Pay $5 per credit hour, up to 10 credits per semester.",
+        "bannerDetail": "Under the Senior Citizens Reduced Tuition Act (NMSA 1978 § 21-21D, implemented by 5.7.19 NMAC), New Mexico residents who reach age 65 by the census date may register at the reduced rate of $5.00 per credit hour for up to 10 credit hours per semester, on a space-available basis."
+      }
+    },
+    "nv": {
+      "fullName": "Nevada",
+      "fipsCode": "32",
+      "systemName": "NSHE",
+      "systemFullName": "Nevada System of Higher Education",
+      "systemUrl": "https://nshe.nevada.edu/",
+      "defaultZip": "89101",
+      "defaultZipCity": "Las Vegas",
+      "seniorWaiver": {
+        "ageThreshold": 62,
+        "legalCitation": "NRS 396.540",
+        "description": "Nevada residents aged 62+ may register for classes at NSHE institutions on a space-available basis with fees waived.",
+        "bannerTitle": "Nevada Senior Citizens' Fee Waiver",
+        "bannerSummary": "Over 62 in Nevada? Registration fees may be waived at NSHE colleges.",
+        "bannerDetail": "Nevada law (NRS 396.540) allows residents aged 62+ to register for credit courses at NSHE institutions on a space-available basis with registration fees waived."
+      }
+    },
+    "mi": {
+      "fullName": "Michigan",
+      "fipsCode": "26",
+      "systemName": "MCCA",
+      "systemFullName": "Michigan Community College Association",
+      "systemUrl": "https://www.mcca.org/",
+      "defaultZip": "48933",
+      "defaultZipCity": "Lansing",
+      "seniorWaiver": null
+    },
+    "ny": {
+      "fullName": "New York",
+      "fipsCode": "36",
+      "systemName": "SUNY/CUNY CC",
+      "systemFullName": "SUNY and CUNY Community Colleges",
+      "systemUrl": "https://www.suny.edu/attend/academics/community-colleges/",
+      "defaultZip": "10007",
+      "defaultZipCity": "New York",
+      "seniorWaiver": {
+        "ageThreshold": 60,
+        "legalCitation": "Per-college policy (NYS Higher Ed Law § 6304)",
+        "description": "Many NY community colleges (including all CUNY CCs) waive tuition for residents 60+ auditing courses on a space-available basis.",
+        "bannerTitle": "NY Senior Audit Program",
+        "bannerSummary": "Over 60 in NY? Many community colleges waive tuition for course audits.",
+        "bannerDetail": "Most NY public community colleges, including all 7 CUNY CCs, allow residents 60+ to audit credit courses tuition-free on a space-available basis. Verify with each college."
+      }
+    },
+    "oh": {
+      "fullName": "Ohio",
+      "fipsCode": "39",
+      "systemName": "OACC",
+      "systemFullName": "Ohio Association of Community Colleges",
+      "systemUrl": "https://www.ohiocommunitycolleges.org/",
+      "defaultZip": "43215",
+      "defaultZipCity": "Columbus",
+      "seniorWaiver": {
+        "ageThreshold": 60,
+        "legalCitation": "Ohio Revised Code § 3345.27 (Program 60)",
+        "description": "Ohio residents 60+ may audit courses at state-supported colleges tuition-free on a space-available basis.",
+        "bannerTitle": "Ohio Program 60",
+        "bannerSummary": "Over 60 in Ohio? You can audit classes at state-supported colleges tuition-free.",
+        "bannerDetail": "Ohio Revised Code § 3345.27 (Program 60) lets Ohio residents 60+ audit courses at state-assisted institutions tuition-free on a space-available basis. Confirm with each college's registrar."
+      }
+    },
+    "or": {
+      "fullName": "Oregon",
+      "fipsCode": "41",
+      "systemName": "Oregon CCs",
+      "systemFullName": "Oregon Community Colleges",
+      "systemUrl": "https://www.occa17.com/",
+      "defaultZip": "97201",
+      "defaultZipCity": "Portland",
+      "seniorWaiver": null
+    },
+    "pa": {
+      "fullName": "Pennsylvania",
+      "fipsCode": "42",
+      "systemName": "PA Comm Colleges",
+      "systemFullName": "Pennsylvania Community Colleges",
+      "systemUrl": "https://pacommunitycolleges.org/",
+      "defaultZip": "19103",
+      "defaultZipCity": "Philadelphia",
+      "seniorWaiver": null
+    },
+    "ri": {
+      "fullName": "Rhode Island",
+      "fipsCode": "44",
+      "systemName": "CCRI",
+      "systemFullName": "Community College of Rhode Island",
+      "systemUrl": "https://www.ccri.edu/",
+      "defaultZip": "02903",
+      "defaultZipCity": "Providence",
+      "seniorWaiver": null
+    },
+    "sc": {
+      "fullName": "South Carolina",
+      "fipsCode": "45",
+      "systemName": "SC Tech",
+      "systemFullName": "South Carolina Technical College System",
+      "systemUrl": "https://www.sctechsystem.edu/",
+      "defaultZip": "29201",
+      "defaultZipCity": "Columbia",
+      "seniorWaiver": {
+        "ageThreshold": 60,
+        "legalCitation": "S.C. Code Ann. § 59-111-310",
+        "description": "South Carolina residents aged 60+ may attend public colleges tuition-free on a space-available basis.",
+        "bannerTitle": "SC Senior Tuition Waiver",
+        "bannerSummary": "Over 60 in SC? Public college tuition may be waived.",
+        "bannerDetail": "South Carolina law allows residents aged 60+ not employed full-time to attend public colleges tuition-free on a space-available basis."
+      }
+    },
+    "tn": {
+      "fullName": "Tennessee",
+      "fipsCode": "47",
+      "systemName": "TBR",
+      "systemFullName": "Tennessee Board of Regents Community Colleges",
+      "systemUrl": "https://www.tbr.edu/",
+      "defaultZip": "37219",
+      "defaultZipCity": "Nashville",
+      "seniorWaiver": {
+        "ageThreshold": 60,
+        "legalCitation": "Tenn. Code Ann. § 49-7-113",
+        "description": "Tennessee residents aged 60+ disabled or 65+ may audit public-college courses with tuition waived.",
+        "bannerTitle": "TN Senior Audit Waiver",
+        "bannerSummary": "Over 60 disabled or 65+ in TN? Audit tuition may be waived.",
+        "bannerDetail": "Tennessee law allows residents 60+ who are permanently disabled or 65+ to audit public-college courses tuition-free on a space-available basis."
+      }
+    },
+    "va": {
+      "fullName": "Virginia",
+      "fipsCode": "51",
+      "systemName": "VCCS",
+      "systemFullName": "Virginia Community College System",
+      "systemUrl": "https://www.vccs.edu/",
+      "defaultZip": "22030",
+      "defaultZipCity": "Fairfax",
+      "seniorWaiver": {
+        "ageThreshold": 60,
+        "legalCitation": "Virginia Code § 23.1-638",
+        "description": "Virginia law allows residents aged 60+ to sit in on classes at public colleges and universities at no cost, space permitting.",
+        "bannerTitle": "Virginia Senior Audit Program",
+        "bannerSummary": "Over 60 in Virginia? You may be eligible to audit college courses for free.",
+        "bannerDetail": "Virginia law allows residents aged 60+ to sit in on classes at public colleges and universities at no cost, space permitting."
+      }
+    },
+    "vt": {
+      "fullName": "Vermont",
+      "fipsCode": "50",
+      "systemName": "CCV",
+      "systemFullName": "Community College of Vermont",
+      "systemUrl": "https://ccv.edu/",
+      "defaultZip": "05602",
+      "defaultZipCity": "Montpelier",
+      "seniorWaiver": null
+    },
+    "wa": {
+      "fullName": "Washington",
+      "fipsCode": "53",
+      "systemName": "SBCTC",
+      "systemFullName": "Washington State Board for Community and Technical Colleges",
+      "systemUrl": "https://www.sbctc.edu/",
+      "defaultZip": "98101",
+      "defaultZipCity": "Seattle",
+      "seniorWaiver": {
+        "ageThreshold": 60,
+        "legalCitation": "RCW 28B.50.265",
+        "description": "Washington residents aged 60+ may audit community and technical college courses on a space-available basis with tuition waived; a nominal registration fee (typically $5 per quarter) applies.",
+        "bannerTitle": "Washington Senior Tuition Waiver",
+        "bannerSummary": "Over 60 in Washington? Audit community college courses tuition-free on a space-available basis.",
+        "bannerDetail": "Washington law (RCW 28B.50.265) allows residents aged 60+ to audit credit and noncredit courses at any of the 33 SBCTC community and technical colleges on a space-available basis. Tuition is waived; a small registration fee (typically $5 per quarter) applies. Each college sets its own enrollment procedure."
+      }
+    },
+    "wv": {
+      "fullName": "West Virginia",
+      "fipsCode": "54",
+      "systemName": "WVCTCS",
+      "systemFullName": "West Virginia Community and Technical College System",
+      "systemUrl": "https://www.wvctcs.org/",
+      "defaultZip": "25301",
+      "defaultZipCity": "Charleston",
+      "seniorWaiver": null
+    },
+    "wy": {
+      "fullName": "Wyoming",
+      "fipsCode": "56",
+      "systemName": "WCCC",
+      "systemFullName": "Wyoming Community College Commission",
+      "systemUrl": "https://www.communitycolleges.wy.edu/",
+      "defaultZip": "82001",
+      "defaultZipCity": "Cheyenne",
+      "seniorWaiver": null
+    },
+    "mn": {
+      "fullName": "Minnesota",
+      "fipsCode": "27",
+      "systemName": "Minnesota State",
+      "systemFullName": "Minnesota State Colleges and Universities",
+      "systemUrl": "https://www.minnstate.edu/",
+      "defaultZip": "55101",
+      "defaultZipCity": "Saint Paul",
+      "seniorWaiver": {
+        "ageThreshold": 62,
+        "legalCitation": "Minn. Stat. § 135A.51",
+        "description": "Minnesota residents aged 62+ may take courses at state colleges and universities for an administrative fee with regular tuition waived, on a space-available basis.",
+        "bannerTitle": "MN Senior Citizen Education Program",
+        "bannerSummary": "Over 62 in Minnesota? Tuition is waived at state colleges (small admin fee applies).",
+        "bannerDetail": "Minnesota law allows residents aged 62+ to take courses at Minnesota State colleges and universities; for-credit enrollment costs $20/credit administrative fee, and audit enrollment is free, on a space-available basis."
+      }
+    },
+    "nd": {
+      "fullName": "North Dakota",
+      "fipsCode": "38",
+      "systemName": "NDUS",
+      "systemFullName": "North Dakota University System",
+      "systemUrl": "https://ndus.edu/",
+      "defaultZip": "58501",
+      "defaultZipCity": "Bismarck",
+      "seniorWaiver": {
+        "ageThreshold": 65,
+        "legalCitation": "N.D.C.C. § 15-10-19.1",
+        "description": "North Dakota law permits residents aged 65+ to audit courses at North Dakota University System institutions tuition-free on a space-available basis.",
+        "bannerTitle": "North Dakota Senior Audit Program",
+        "bannerSummary": "Over 65 in North Dakota? You may be eligible to audit NDUS courses tuition-free.",
+        "bannerDetail": "North Dakota law permits residents aged 65+ to audit courses at North Dakota University System institutions tuition-free on a space-available basis."
+      }
+    },
+    "sd": {
+      "fullName": "South Dakota",
+      "fipsCode": "46",
+      "systemName": "SD Technical & Tribal Colleges",
+      "systemFullName": "South Dakota Technical Colleges & Tribal Colleges",
+      "systemUrl": "https://www.boardofregents.sd.gov/",
+      "defaultZip": "57104",
+      "defaultZipCity": "Sioux Falls",
+      "seniorWaiver": null
+    },
+    "ut": {
+      "fullName": "Utah",
+      "fipsCode": "49",
+      "systemName": "USHE",
+      "systemFullName": "Utah System of Higher Education (community colleges)",
+      "systemUrl": "https://ushe.edu/",
+      "defaultZip": "84130",
+      "defaultZipCity": "Salt Lake City",
+      "seniorWaiver": {
+        "ageThreshold": 62,
+        "legalCitation": "Utah Code 53B-8-104",
+        "description": "Utah residents aged 62 and older may enroll in courses at Utah's public colleges and universities tuition-free on a space-available basis (lab fees and other course fees still apply)."
+      }
+    }
+  },
+  "fipsCodes": {
+    "al": "01",
+    "ak": "02",
+    "az": "04",
+    "ar": "05",
+    "ca": "06",
+    "co": "08",
+    "ct": "09",
+    "de": "10",
+    "dc": "11",
+    "fl": "12",
+    "ga": "13",
+    "hi": "15",
+    "id": "16",
+    "il": "17",
+    "in": "18",
+    "ia": "19",
+    "ks": "20",
+    "ky": "21",
+    "la": "22",
+    "me": "23",
+    "md": "24",
+    "ma": "25",
+    "mi": "26",
+    "mn": "27",
+    "ms": "28",
+    "mo": "29",
+    "mt": "30",
+    "ne": "31",
+    "nv": "32",
+    "nh": "33",
+    "nj": "34",
+    "nm": "35",
+    "ny": "36",
+    "nc": "37",
+    "nd": "38",
+    "oh": "39",
+    "ok": "40",
+    "or": "41",
+    "pa": "42",
+    "ri": "44",
+    "sc": "45",
+    "sd": "46",
+    "tn": "47",
+    "tx": "48",
+    "ut": "49",
+    "vt": "50",
+    "va": "51",
+    "wa": "53",
+    "wv": "54",
+    "wi": "55",
+    "wy": "56"
+  }
+}

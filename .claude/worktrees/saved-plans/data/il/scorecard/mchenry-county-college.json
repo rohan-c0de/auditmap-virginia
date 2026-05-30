@@ -1,0 +1,46 @@
+{
+  "unitid": 147004,
+  "schoolName": "McHenry County College",
+  "state": "IL",
+  "city": "Crystal Lake",
+  "schoolUrl": "www.mchenry.edu/",
+  "ownership": 1,
+  "predominantDegree": 1,
+  "fetchedAt": "2026-05-16T19:36:07.369Z",
+  "size": 4691,
+  "shareFirstGeneration": 0.4843391902,
+  "cost": {
+    "tuitionInState": 4162,
+    "tuitionOutOfState": 14399,
+    "attendanceAcademicYear": 12345,
+    "avgNetPricePublic": 7042,
+    "bookSupply": 1400,
+    "roomBoardOffCampus": 12090,
+    "netPriceByIncome": {
+      "0_30000": 5609,
+      "30001_48000": 6383,
+      "48001_75000": 7761,
+      "75001_110000": 10497,
+      "110001_plus": 12345
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.1127,
+    "federalLoanRate": 0.0148,
+    "medianDebtCompleters": 6260
+  },
+  "completion": {
+    "completionRate150nt": 0.3684,
+    "completionRate200nt": 0.4264,
+    "transferRate": 0.1974,
+    "retentionRateFullTime": 0.7143,
+    "retentionRatePartTime": 0.4688
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 45143,
+    "median1YrAfterCompletion": 30467,
+    "percentile25_10YrsAfterEntry": 27448,
+    "percentile75_10YrsAfterEntry": 65865,
+    "shareEarningAboveHsGrad": 0.577
+  }
+}

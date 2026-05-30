@@ -1,0 +1,46 @@
+{
+  "unitid": 186469,
+  "schoolName": "Salem Community College",
+  "state": "NJ",
+  "city": "Carneys Point",
+  "schoolUrl": "https://www.salemcc.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-13T02:14:22.271Z",
+  "size": 910,
+  "shareFirstGeneration": 0.4953488372,
+  "cost": {
+    "tuitionInState": 6360,
+    "tuitionOutOfState": 10260,
+    "attendanceAcademicYear": 17857,
+    "avgNetPricePublic": 10816,
+    "bookSupply": 2000,
+    "roomBoardOffCampus": 10000,
+    "netPriceByIncome": {
+      "0_30000": 9845,
+      "30001_48000": 8997,
+      "48001_75000": 11702,
+      "75001_110000": 14568,
+      "110001_plus": 16712
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.3951,
+    "federalLoanRate": 0.121,
+    "medianDebtCompleters": 9500
+  },
+  "completion": {
+    "completionRate150nt": 0.4012,
+    "completionRate200nt": 0.4096,
+    "transferRate": 0.1018,
+    "retentionRateFullTime": 0.6595,
+    "retentionRatePartTime": 0.5522
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 38020,
+    "median1YrAfterCompletion": 36523,
+    "percentile25_10YrsAfterEntry": 20593,
+    "percentile75_10YrsAfterEntry": 63867,
+    "shareEarningAboveHsGrad": 0.532
+  }
+}

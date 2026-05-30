@@ -1,0 +1,46 @@
+{
+  "unitid": 101028,
+  "schoolName": "Chattahoochee Valley Community College",
+  "state": "AL",
+  "city": "Phenix City",
+  "schoolUrl": "https://www.cv.edu/",
+  "ownership": 1,
+  "predominantDegree": 1,
+  "fetchedAt": "2026-05-13T02:12:14.041Z",
+  "size": 1110,
+  "shareFirstGeneration": 0.4302670623,
+  "cost": {
+    "tuitionInState": 5100,
+    "tuitionOutOfState": 8970,
+    "attendanceAcademicYear": 12600,
+    "avgNetPricePublic": 4244,
+    "bookSupply": 1008,
+    "roomBoardOffCampus": 11200,
+    "netPriceByIncome": {
+      "0_30000": 3275,
+      "30001_48000": 5181,
+      "48001_75000": 5474,
+      "75001_110000": 4845,
+      "110001_plus": 7261
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.4025,
+    "federalLoanRate": 0.2605,
+    "medianDebtCompleters": 10500
+  },
+  "completion": {
+    "completionRate150nt": 0.3605,
+    "completionRate200nt": 0.3874,
+    "transferRate": 0.25,
+    "retentionRateFullTime": 0.5215,
+    "retentionRatePartTime": 0.2742
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 36438,
+    "median1YrAfterCompletion": 38963,
+    "percentile25_10YrsAfterEntry": 20404,
+    "percentile75_10YrsAfterEntry": 52873,
+    "shareEarningAboveHsGrad": 0.519
+  }
+}

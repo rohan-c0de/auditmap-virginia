@@ -1,0 +1,67 @@
+[
+  {
+    "id": "ccri",
+    "name": "Community College of Rhode Island",
+    "system": "CCRI",
+    "college_slug": "ccri",
+    "campuses": [
+      {
+        "name": "Knight Campus (Warwick)",
+        "lat": 41.7071,
+        "lng": -71.4495,
+        "address": "400 East Ave, Warwick, RI 02886"
+      },
+      {
+        "name": "Flanagan Campus (Lincoln)",
+        "lat": 41.9158,
+        "lng": -71.4435,
+        "address": "1762 Louisquisset Pike, Lincoln, RI 02865"
+      },
+      {
+        "name": "Liston Campus (Providence)",
+        "lat": 41.8196,
+        "lng": -71.415,
+        "address": "One Hilton St, Providence, RI 02905"
+      },
+      {
+        "name": "Newport County Campus",
+        "lat": 41.517,
+        "lng": -71.2877,
+        "address": "1 John H. Chafee Blvd, Newport, RI 02840"
+      }
+    ],
+    "audit_policy": {
+      "allowed": true,
+      "cost_model": "free_for_seniors",
+      "cost_note": "RI residents 60+ may audit courses tuition-free on a space-available basis.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 60,
+          "cost": "free",
+          "notes": "RI residents aged 60+ may audit credit courses tuition-free on a space-available basis per RIGL §16-57-4.",
+          "source_url": "https://www.ccri.edu"
+        }
+      },
+      "restrictions": [
+        "Space-available basis only",
+        "Some fees may still apply"
+      ],
+      "application_process": {
+        "steps": [
+          "Apply online at ccri.edu",
+          "Register as a non-degree student",
+          "Register for courses during open enrollment"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "",
+        "contact_email": "",
+        "contact_phone": ""
+      },
+      "source_url": "https://ccri.edu"
+    },
+    "unitid": 217475
+  }
+]

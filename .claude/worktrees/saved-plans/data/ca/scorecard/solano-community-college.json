@@ -1,0 +1,46 @@
+{
+  "unitid": 123563,
+  "schoolName": "Solano Community College",
+  "state": "CA",
+  "city": "Fairfield",
+  "schoolUrl": "welcome.solano.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-23T07:21:34.289Z",
+  "size": 8061,
+  "shareFirstGeneration": 0.484508547,
+  "cost": {
+    "tuitionInState": 1172,
+    "tuitionOutOfState": 9812,
+    "attendanceAcademicYear": 13143,
+    "avgNetPricePublic": 4669,
+    "bookSupply": 1062,
+    "roomBoardOffCampus": 22086,
+    "netPriceByIncome": {
+      "0_30000": 3624,
+      "30001_48000": 3465,
+      "48001_75000": 5904,
+      "75001_110000": 8594,
+      "110001_plus": 6228
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2286,
+    "federalLoanRate": 0.0166,
+    "medianDebtCompleters": 12000
+  },
+  "completion": {
+    "completionRate150nt": null,
+    "completionRate200nt": null,
+    "transferRate": null,
+    "retentionRateFullTime": null,
+    "retentionRatePartTime": null
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 44170,
+    "median1YrAfterCompletion": 36724,
+    "percentile25_10YrsAfterEntry": 19907,
+    "percentile75_10YrsAfterEntry": 72096,
+    "shareEarningAboveHsGrad": 0.589
+  }
+}

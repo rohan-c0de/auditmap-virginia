@@ -1,0 +1,46 @@
+{
+  "unitid": 123527,
+  "schoolName": "San Bernardino Valley College",
+  "state": "CA",
+  "city": "San Bernardino",
+  "schoolUrl": "www.valleycollege.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-23T07:22:14.697Z",
+  "size": 12234,
+  "shareFirstGeneration": 0.5953674578,
+  "cost": {
+    "tuitionInState": 1196,
+    "tuitionOutOfState": 14382,
+    "attendanceAcademicYear": 22678,
+    "avgNetPricePublic": 18943,
+    "bookSupply": 1380,
+    "roomBoardOffCampus": 20000,
+    "netPriceByIncome": {
+      "0_30000": 18446,
+      "30001_48000": 18753,
+      "48001_75000": 20058,
+      "75001_110000": 20743,
+      "110001_plus": 21390
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2486,
+    "federalLoanRate": 0.0062,
+    "medianDebtCompleters": null
+  },
+  "completion": {
+    "completionRate150nt": 0.2785,
+    "completionRate200nt": 0.2756,
+    "transferRate": 0.0815,
+    "retentionRateFullTime": 0.8109,
+    "retentionRatePartTime": 0.2745
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 39676,
+    "median1YrAfterCompletion": 52907,
+    "percentile25_10YrsAfterEntry": 19215,
+    "percentile75_10YrsAfterEntry": 61347,
+    "shareEarningAboveHsGrad": 0.487
+  }
+}
