@@ -1,0 +1,48 @@
+[
+  {
+    "id": "ilisagvik-college",
+    "name": "Ilisagvik College",
+    "system": "Public 2-year",
+    "college_slug": "ilisagvik-college",
+    "campuses": [
+      {
+        "name": "Ilisagvik College (Barrow)",
+        "lat": 71.324702,
+        "lng": -156.679486,
+        "address": "100 Stevenson Street, Barrow, AK 99723"
+      }
+    ],
+    "audit_policy": {
+      "allowed": true,
+      "cost_model": "varies",
+      "cost_note": "Audit-policy details for Ilisagvik College have not yet been verified — confirm with the registrar (907-852-1768) before relying on this entry.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": false,
+          "age_threshold": null,
+          "cost": "",
+          "notes": "Alaska has no statutory senior tuition waiver that binds Ilisagvik (a tribally-controlled college). The University of Alaska's 60+ reduction under AS 14.40.130 does not apply here. Confirm any college-specific policy with the registrar.",
+          "source_url": ""
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Apply online at ilisagvik.edu",
+          "Register as a non-degree / audit student",
+          "Register for courses during open enrollment"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "",
+        "contact_email": "",
+        "contact_phone": ""
+      },
+      "restrictions": [
+        "Verify all restrictions with the college before enrolling"
+      ],
+      "last_verified": "2026-05-30",
+      "source_url": "https://ilisagvik.edu"
+    }
+  }
+]

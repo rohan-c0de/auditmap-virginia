@@ -1,6 +1,16 @@
 {
   "$comment": "Per-state metadata used by scripts/lib/bootstrap-state.ts to generate Phase 1 files for new states. Complete coverage for the 17 states currently shipping; for unknown states, bootstrap-state falls back to placeholder values and flags the entry as a manual TODO in the orchestrator's summary. Add a new entry here when you ship a new state to extend autonomous coverage.",
   "states": {
+    "ak": {
+      "fullName": "Alaska",
+      "fipsCode": "02",
+      "systemName": "Tribal CC",
+      "systemFullName": "Alaska community colleges",
+      "systemUrl": "https://www.ilisagvik.edu/",
+      "defaultZip": "99723",
+      "defaultZipCity": "Utqiagvik",
+      "seniorWaiver": null
+    },
     "al": {
       "fullName": "Alabama",
       "fipsCode": "01",
