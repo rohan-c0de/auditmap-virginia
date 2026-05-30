@@ -1,0 +1,46 @@
+{
+  "unitid": 104160,
+  "schoolName": "Arizona Western College",
+  "state": "AZ",
+  "city": "Yuma",
+  "schoolUrl": "https://www.azwestern.edu/",
+  "ownership": 1,
+  "predominantDegree": 1,
+  "fetchedAt": "2026-05-24T14:51:25.222Z",
+  "size": 6374,
+  "shareFirstGeneration": 0.6107646866,
+  "cost": {
+    "tuitionInState": 3060,
+    "tuitionOutOfState": 9870,
+    "attendanceAcademicYear": 15868,
+    "avgNetPricePublic": 8983,
+    "bookSupply": 2000,
+    "roomBoardOffCampus": 5580,
+    "netPriceByIncome": {
+      "0_30000": 8405,
+      "30001_48000": 8611,
+      "48001_75000": 11164,
+      "75001_110000": 12404,
+      "110001_plus": null
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.4072,
+    "federalLoanRate": 0.005,
+    "medianDebtCompleters": 4826
+  },
+  "completion": {
+    "completionRate150nt": 0.2023,
+    "completionRate200nt": 0.2901,
+    "transferRate": 0.0934,
+    "retentionRateFullTime": 0.6709,
+    "retentionRatePartTime": 0.5047
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 36857,
+    "median1YrAfterCompletion": 29550,
+    "percentile25_10YrsAfterEntry": 21521,
+    "percentile75_10YrsAfterEntry": 55402,
+    "shareEarningAboveHsGrad": 0.493
+  }
+}

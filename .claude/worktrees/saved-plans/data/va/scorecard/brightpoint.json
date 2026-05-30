@@ -1,0 +1,46 @@
+{
+  "unitid": 232450,
+  "schoolName": "Brightpoint Community College",
+  "state": "VA",
+  "city": "Chester",
+  "schoolUrl": "https://www.brightpoint.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-13T02:15:00.441Z",
+  "size": 5792,
+  "shareFirstGeneration": 0.4151495449,
+  "cost": {
+    "tuitionInState": 5082,
+    "tuitionOutOfState": 11520,
+    "attendanceAcademicYear": 12196,
+    "avgNetPricePublic": 5490,
+    "bookSupply": 1470,
+    "roomBoardOffCampus": 9970,
+    "netPriceByIncome": {
+      "0_30000": 4150,
+      "30001_48000": 4803,
+      "48001_75000": 6376,
+      "75001_110000": 8764,
+      "110001_plus": 11669
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2252,
+    "federalLoanRate": 0.0328,
+    "medianDebtCompleters": 9500
+  },
+  "completion": {
+    "completionRate150nt": 0.3834,
+    "completionRate200nt": 0.42,
+    "transferRate": 0.1768,
+    "retentionRateFullTime": 0.6825,
+    "retentionRatePartTime": 0.4316
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 41223,
+    "median1YrAfterCompletion": 33567,
+    "percentile25_10YrsAfterEntry": 22526,
+    "percentile75_10YrsAfterEntry": 61976,
+    "shareEarningAboveHsGrad": 0.6
+  }
+}

@@ -1,0 +1,73 @@
+[
+  {
+    "id": "dtcc",
+    "name": "Delaware Technical Community College",
+    "system": "Del Tech",
+    "college_slug": "dtcc",
+    "campuses": [
+      {
+        "name": "Owens Campus",
+        "lat": 38.6797,
+        "lng": -75.3838,
+        "address": "21179 College Drive, Georgetown, DE 19947"
+      },
+      {
+        "name": "Terry Campus",
+        "lat": 39.1452,
+        "lng": -75.5195,
+        "address": "100 Campus Drive, Dover, DE 19904"
+      },
+      {
+        "name": "Stanton Campus",
+        "lat": 39.6877,
+        "lng": -75.6641,
+        "address": "400 Stanton-Christiana Rd, Newark, DE 19713"
+      },
+      {
+        "name": "George Campus",
+        "lat": 39.7458,
+        "lng": -75.5488,
+        "address": "333 N Shipley St, Wilmington, DE 19801"
+      }
+    ],
+    "audit_policy": {
+      "allowed": true,
+      "cost_model": "tuition_free_for_seniors",
+      "cost_note": "Delaware residents aged 62+ may audit courses tuition-free on a space-available basis. Fees may still apply. Standard tuition applies to all other audit students.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 62,
+          "cost": "free",
+          "notes": "Delaware Code Title 14, §9009A allows Delaware residents aged 62+ to audit courses at Del Tech tuition-free on a space-available basis. Fees may still apply.",
+          "source_url": "https://www.dtcc.edu"
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Complete an admissions application at www.dtcc.edu.",
+          "Contact the campus Registrar's Office to request audit enrollment.",
+          "Register for the course during the normal enrollment period.",
+          "Confirm audit status with the registrar before the add/drop deadline.",
+          "Senior audit students (62+) must provide proof of age and Delaware residency."
+        ],
+        "timing": "Register during the normal enrollment period. Audit requests should be submitted before the add/drop deadline.",
+        "form_url": "https://www.dtcc.edu/admissions",
+        "contact_email": "info@dtcc.edu",
+        "contact_phone": "302-857-1000"
+      },
+      "restrictions": [
+        "Instructor approval may be required for audit enrollment",
+        "Audit students do not receive grades or academic credit",
+        "Space availability may limit audit enrollment",
+        "Some courses may not be available for audit",
+        "Senior tuition waiver applies to tuition only; fees may still apply"
+      ],
+      "last_verified": "2026-04-05",
+      "source_url": "https://www.dtcc.edu"
+    },
+    "unitid": 130907
+  }
+]

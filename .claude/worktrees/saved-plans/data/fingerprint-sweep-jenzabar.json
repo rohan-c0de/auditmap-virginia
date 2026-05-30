@@ -1,0 +1,552 @@
+{
+  "$comment": "Per-college jenzabar URLs recovered from sweep re-runs. Use this when building/validating scripts/lib/scrape-jenzabar.ts so we never need to re-sweep the same states. States covered grow as we re-sweep — do not assume completeness; check the swept[] list.",
+  "generatedAt": "2026-05-09",
+  "swept": [
+    "ks",
+    "mi",
+    "sd",
+    "il",
+    "or",
+    "tx",
+    "ia",
+    "mo"
+  ],
+  "jenzabarColleges": {
+    "ks": [
+      {
+        "slug": "allen-county-community-college",
+        "name": "Allen County Community College",
+        "primaryUrl": "allencc.edu",
+        "courseSearchUrl": "https://accportal.jenzabarcloud.com/ICS/Admissions/Admissions_Homepage.jnz?portlet=J1_FormFlow_-_Forms&amp;screen=FormView&amp;form=cdd1b7e4-bea0-466a-a0c4-1f36c4482fbf",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://accportal.jenzabarcloud.com/ICS/Admissions/Admissions_Homepage.jnz?portlet=J1_FormFlow_-_Forms&amp;screen=FormView&amp;form=cdd1b7e4-bea0-466a-a0c4-1f36c4482fbf → https://accportal.jenzabarcloud.com/ICS/Admissions/Admissions_Homepage.jnz?portlet=J1_FormFlow_-_Forms&amp;screen=FormView&amp;form=cdd1b7e4-bea0-466a-a0c4-1f36c4482fbf (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "login-gated",
+        "publicSearchUrl": null
+      },
+      {
+        "slug": "cowley-county-community-college",
+        "name": "Cowley County Community College",
+        "primaryUrl": "cowley.edu",
+        "courseSearchUrl": "https://mycc.cowley.edu/ICS/Admissions/",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://mycc.cowley.edu/ICS/Admissions/ → https://mycc.cowley.edu/ICS/Admissions/ (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "unreachable",
+        "publicSearchUrl": null
+      },
+      {
+        "slug": "dodge-city-community-college",
+        "name": "Dodge City Community College",
+        "primaryUrl": "dc3.edu",
+        "courseSearchUrl": "https://conqs.dc3.edu/ICS/Admissions/",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://conqs.dc3.edu/ICS/Admissions/ → https://conqs.dc3.edu/ICS/Admissions/ (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "unreachable",
+        "publicSearchUrl": null
+      },
+      {
+        "slug": "flint-hills-technical-college",
+        "name": "Flint Hills Technical College",
+        "primaryUrl": "fhtc.edu",
+        "courseSearchUrl": "https://my.fhtc.edu/ICS/Careers/",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://my.fhtc.edu/ICS/Careers/ → https://my.fhtc.edu/ICS/Careers/ (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "login-gated",
+        "publicSearchUrl": null
+      },
+      {
+        "slug": "fort-scott-community-college",
+        "name": "Fort Scott Community College",
+        "primaryUrl": "fortscott.edu",
+        "courseSearchUrl": "https://my.fortscott.edu/ICS/Course_Schedule.jnz",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://my.fortscott.edu/ICS/Course_Schedule.jnz → https://my.fortscott.edu/ICS/Course_Schedule.jnz (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "StudentRegistrationPortlet",
+        "publicSearchUrl": "https://my.fortscott.edu/ICS/Course_Schedule.jnz"
+      },
+      {
+        "slug": "labette-community-college",
+        "name": "Labette Community College",
+        "primaryUrl": "labette.edu",
+        "courseSearchUrl": "https://redzone.labette.edu/ICS/Admissions/Admission_Information.jnz?portlet=Apply_Online_2.0",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://redzone.labette.edu/ICS/Admissions/Admission_Information.jnz?portlet=Apply_Online_2.0 → https://redzone.labette.edu/ICS/Admissions/Admission_Information.jnz?portlet=Apply_Online_2.0 (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "unreachable",
+        "publicSearchUrl": null
+      },
+      {
+        "slug": "neosho-county-community-college",
+        "name": "Neosho County Community College",
+        "primaryUrl": "neosho.edu",
+        "courseSearchUrl": "https://web.neosho.edu/ICS/Guest_Home.jnz?portlet=Course_Schedules&screen=Advanced+Course+Search&screenType=next",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://web.neosho.edu/ICS/Guest_Home.jnz?portlet=Course_Schedules&screen=Advanced+Course+Search&screenType=next → https://web.neosho.edu/ICS/Guest_Home.jnz?portlet=Course_Schedules&screen=Advanced+Course+Search&screenType=next (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "Course_Schedules",
+        "publicSearchUrl": "https://my.neosho.edu/ICS/Guest_Home.jnz?portlet=Course_Schedules&screen=Advanced+Course+Search&screenType=next"
+      }
+    ],
+    "mi": [
+      {
+        "slug": "bay-de-noc-community-college",
+        "name": "Bay de Noc Community College",
+        "primaryUrl": "baycollege.edu",
+        "courseSearchUrl": "https://mybay.baycollege.edu/ICS/Apply/",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://mybay.baycollege.edu/ICS/Apply/ → https://mybay.baycollege.edu/ICS/Apply/ (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "unreachable",
+        "publicSearchUrl": null
+      },
+      {
+        "slug": "gogebic-community-college",
+        "name": "Gogebic Community College",
+        "primaryUrl": "gogebic.edu",
+        "courseSearchUrl": "https://gccics.gogebic.edu/ICS/",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://gccics.gogebic.edu/ICS/ → https://gccics.gogebic.edu/ICS/ (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "unreachable",
+        "publicSearchUrl": null
+      },
+      {
+        "slug": "keweenaw-bay-ojibwa-community-college",
+        "name": "Keweenaw Bay Ojibwa Community College",
+        "primaryUrl": "kbocc.edu",
+        "courseSearchUrl": "https://my.kbocc.edu/ICS/Financial_Aid/",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://my.kbocc.edu/ICS/Financial_Aid/ → https://my.kbocc.edu/ICS/Financial_Aid/ (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "login-gated",
+        "publicSearchUrl": null
+      },
+      {
+        "slug": "kirtland-community-college",
+        "name": "Kirtland Community College",
+        "primaryUrl": "kirtland.edu",
+        "courseSearchUrl": "https://my.kirtland.edu/ICS/",
+        "confidence": "high",
+        "evidence": [
+          "HTTP 200 at https://my.kirtland.edu/ICS/",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "login-gated",
+        "publicSearchUrl": null
+      },
+      {
+        "slug": "montcalm-community-college",
+        "name": "Montcalm Community College",
+        "primaryUrl": "montcalm.edu",
+        "courseSearchUrl": "https://my.montcalm.edu/ICS/Academics/?portlet=Student_Registration&amp;screen=StudentRegistrationPortlet_CourseSearchView&amp;screenType=next",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://my.montcalm.edu/ICS/Academics/?portlet=Student_Registration&amp;screen=StudentRegistrationPortlet_CourseSearchView&amp;screenType=next → https://my.montcalm.edu/ICS/Academics/?portlet=Student_Registration&amp;screen=StudentRegistrationPortlet_CourseSearchView&amp;screenType=next (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "login-gated",
+        "publicSearchUrl": null
+      },
+      {
+        "slug": "north-central-michigan-college",
+        "name": "North Central Michigan College",
+        "primaryUrl": "ncmich.edu",
+        "courseSearchUrl": "https://my.ncmich.edu/ICS/Schedule.jnz?portlet=AddDrop_Courses&amp;screen=Advanced+Course+Search&amp;screenType=next",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://my.ncmich.edu/ICS/Schedule.jnz?portlet=AddDrop_Courses&amp;screen=Advanced+Course+Search&amp;screenType=next → https://my.ncmich.edu/ICS/Schedule.jnz?portlet=AddDrop_Courses&amp;screen=Advanced+Course+Search&amp;screenType=next (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "login-gated",
+        "publicSearchUrl": null
+      }
+    ],
+    "sd": [
+      {
+        "slug": "lake-area-technical-college",
+        "name": "Lake Area Technical College",
+        "primaryUrl": "lakeareatech.edu",
+        "courseSearchUrl": "https://my.lakeareatech.edu/ICS/",
+        "confidence": "high",
+        "evidence": [
+          "HTTP 200 at https://my.lakeareatech.edu/ICS/",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "login-gated",
+        "publicSearchUrl": null
+      },
+      {
+        "slug": "sisseton-wahpeton-college",
+        "name": "Sisseton Wahpeton College",
+        "primaryUrl": "swcollege.edu",
+        "courseSearchUrl": "https://my.swcollege.edu/ICS/",
+        "confidence": "high",
+        "evidence": [
+          "HTTP 200 at https://my.swcollege.edu/ICS/",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "login-gated",
+        "publicSearchUrl": null
+      },
+      {
+        "slug": "southeast-technical-college",
+        "name": "Southeast Technical College",
+        "primaryUrl": "southeasttech.edu",
+        "courseSearchUrl": "https://my.southeasttech.edu/ICS/Admissions/Course_Schedule.jnz",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://stinet.southeasttech.edu/ICS/Admissions/Course_Schedule.jnz → https://my.southeasttech.edu/ICS/Admissions/Course_Schedule.jnz (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "YearBased",
+        "publicSearchUrl": "https://my.southeasttech.edu/ICS/Admissions/Course_Schedule.jnz"
+      },
+      {
+        "slug": "western-dakota-technical-college",
+        "name": "Western Dakota Technical College",
+        "primaryUrl": "wdt.edu",
+        "courseSearchUrl": "https://my.wdt.edu/ICS/Portal_Homepage.jnz",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://my.wdt.edu/ICS/Portal_Homepage.jnz → https://my.wdt.edu/ICS/Portal_Homepage.jnz (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "login-gated",
+        "publicSearchUrl": null
+      }
+    ],
+    "il": [
+      {
+        "slug": "john-a-logan-college",
+        "name": "John A Logan College",
+        "primaryUrl": "jalc.edu",
+        "courseSearchUrl": "https://my.jalc.edu/ICS/Admissions/APPLY_NOW.jnz",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://my.jalc.edu/ICS/Admissions/APPLY_NOW.jnz → https://my.jalc.edu/ICS/Admissions/APPLY_NOW.jnz (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "login-gated",
+        "publicSearchUrl": null
+      },
+      {
+        "slug": "richland-community-college",
+        "name": "Richland Community College",
+        "primaryUrl": "richland.edu",
+        "courseSearchUrl": "https://jics.richland.edu/ICS/Academic/Interactive_Course_Search.jnz",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://jics.richland.edu/ICS/Academic/Interactive_Course_Search.jnz → https://jics.richland.edu/ICS/Academic/Interactive_Course_Search.jnz (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "unreachable",
+        "publicSearchUrl": null
+      },
+      {
+        "slug": "southeastern-illinois-college",
+        "name": "Southeastern Illinois College",
+        "primaryUrl": "sic.edu",
+        "courseSearchUrl": "https://my.sic.edu/ICS/",
+        "confidence": "high",
+        "evidence": [
+          "HTTP 200 at https://my.sic.edu/ICS/",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "login-gated",
+        "publicSearchUrl": null
+      },
+      {
+        "slug": "spoon-river-college",
+        "name": "Spoon River College",
+        "primaryUrl": "src.edu",
+        "courseSearchUrl": "https://portal.src.edu/ICS/",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://portal.src.edu/ICS/ → https://portal.src.edu/ICS/ (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "login-gated",
+        "publicSearchUrl": null
+      }
+    ],
+    "or": [
+      {
+        "slug": "klamath-community-college",
+        "name": "Klamath Community College",
+        "primaryUrl": "klamathcc.edu",
+        "courseSearchUrl": "https://mykcc.klamathcc.edu/ICS/Academics/",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://mykcc.klamathcc.edu/ICS/Academics/ → https://mykcc.klamathcc.edu/ICS/Academics/ (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "unreachable",
+        "publicSearchUrl": null
+      },
+      {
+        "slug": "southwestern-oregon-community-college",
+        "name": "Southwestern Oregon Community College",
+        "primaryUrl": "socc.edu",
+        "courseSearchUrl": "https://mylakerlink.socc.edu/ICS/Administrative_Services/Faculty_and_Staff_Directory/",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://mylakerlink.socc.edu/ICS/Administrative_Services/Faculty_and_Staff_Directory/ → https://mylakerlink.socc.edu/ICS/Administrative_Services/Faculty_and_Staff_Directory/ (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "unreachable",
+        "publicSearchUrl": null
+      },
+      {
+        "slug": "tillamook-bay-community-college",
+        "name": "Tillamook Bay Community College",
+        "primaryUrl": "tillamookbaycc.edu",
+        "courseSearchUrl": "https://tbcportal.jenzabarcloud.com/ICS/Staff_and_Faculty_Directory.jnz",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://tbcportal.jenzabarcloud.com/ICS/Staff_and_Faculty_Directory.jnz → https://tbcportal.jenzabarcloud.com/ICS/Staff_and_Faculty_Directory.jnz (HTTP 200)"
+        ],
+        "publicPortlet": "unreachable",
+        "publicSearchUrl": null
+      },
+      {
+        "slug": "treasure-valley-community-college",
+        "name": "Treasure Valley Community College",
+        "primaryUrl": "tvcc.cc",
+        "courseSearchUrl": "https://my.tvcc.cc/ICS/Help/",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://my.tvcc.cc/ICS/Help/ → https://my.tvcc.cc/ICS/Help/ (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "login-gated",
+        "publicSearchUrl": null
+      }
+    ],
+    "tx": [
+      {
+        "slug": "hill-college",
+        "name": "Hill College",
+        "primaryUrl": "hillcollege.edu",
+        "courseSearchUrl": "https://myhc.hillcollege.edu/ICS/",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://myhc.hillcollege.edu/ICS/ → https://myhc.hillcollege.edu/ICS/ (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "unreachable",
+        "publicSearchUrl": null
+      },
+      {
+        "slug": "midland-college",
+        "name": "Midland College",
+        "primaryUrl": "midland.edu",
+        "courseSearchUrl": "https://mymcportal.midland.edu/ICS/Course_Search.jnz?portlet=Course_Search&amp;screen=Advanced+Course+Search&amp;screenType=next",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://mymcportal.midland.edu/ICS/Course_Search.jnz?portlet=Course_Search&amp;screen=Advanced+Course+Search&amp;screenType=next → https://mymcportal.midland.edu/ICS/Course_Search.jnz?portlet=Course_Search&amp;screen=Advanced+Course+Search&amp;screenType=next (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "unreachable",
+        "publicSearchUrl": null
+      },
+      {
+        "slug": "north-central-texas-college",
+        "name": "North Central Texas College",
+        "primaryUrl": "nctc.edu",
+        "courseSearchUrl": "https://my.nctc.edu/ICS/Academics/Academics_Homepage.jnz?portlet=AddDrop_Courses&screen=Advanced+Course+Search&screenType=next",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://my.nctc.edu/ICS/Academics/Academics_Homepage.jnz?portlet=AddDrop_Courses&screen=Advanced+Course+Search&screenType=next → https://my.nctc.edu/ICS/Academics/Academics_Homepage.jnz?portlet=AddDrop_Courses&screen=Advanced+Course+Search&screenType=next (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "login-gated",
+        "publicSearchUrl": null
+      },
+      {
+        "slug": "northeast-texas-community-college",
+        "name": "Northeast Texas Community College",
+        "primaryUrl": "ntcc.edu",
+        "courseSearchUrl": "https://myeagle.ntcc.edu/ICS/Find_Courses/",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://myeagle.ntcc.edu/ICS/Find_Courses/ → https://myeagle.ntcc.edu/ICS/Find_Courses/ (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "unreachable",
+        "publicSearchUrl": null
+      },
+      {
+        "slug": "panola-college",
+        "name": "Panola College",
+        "primaryUrl": "panola.edu",
+        "courseSearchUrl": "https://pctportal.jenzabarcloud.com/ICS/Admissions/",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://pctportal.jenzabarcloud.com/ICS/Admissions/ → https://pctportal.jenzabarcloud.com/ICS/Admissions/ (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "login-gated",
+        "publicSearchUrl": null
+      },
+      {
+        "slug": "paris-junior-college",
+        "name": "Paris Junior College",
+        "primaryUrl": "parisjc.edu",
+        "courseSearchUrl": "https://mypjc.parisjc.edu/ICS/General_Forms.jnz?portlet=General_Forms&amp;screen=FormView&amp;screenType=change&amp;form=b76def1d-d215-47b8-9dfc-b07a076cd83d",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://mypjc.parisjc.edu/ICS/General_Forms.jnz?portlet=General_Forms&amp;screen=FormView&amp;screenType=change&amp;form=b76def1d-d215-47b8-9dfc-b07a076cd83d → https://mypjc.parisjc.edu/ICS/General_Forms.jnz?portlet=General_Forms&amp;screen=FormView&amp;screenType=change&amp;form=b76def1d-d215-47b8-9dfc-b07a076cd83d (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "unreachable",
+        "publicSearchUrl": null
+      },
+      {
+        "slug": "ranger-college",
+        "name": "Ranger College",
+        "primaryUrl": "rangercollege.edu",
+        "courseSearchUrl": "https://rctportal.jenzabarcloud.com/ICS/",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://rctportal.jenzabarcloud.com/ICS/ → https://rctportal.jenzabarcloud.com/ICS/ (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "unreachable",
+        "publicSearchUrl": null
+      },
+      {
+        "slug": "texarkana-college",
+        "name": "Texarkana College",
+        "primaryUrl": "texarkanacollege.edu",
+        "courseSearchUrl": "https://my.texarkanacollege.edu/ICS/Home.jnz?portlet=Course_Search&screen=Advanced+Course+Search&screenType=next",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://my.texarkanacollege.edu/ICS/Home.jnz?portlet=Course_Search&screen=Advanced+Course+Search&screenType=next → https://my.texarkanacollege.edu/ICS/Home.jnz?portlet=Course_Search&screen=Advanced+Course+Search&screenType=next (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "login-gated",
+        "publicSearchUrl": null
+      }
+    ],
+    "ia": [
+      {
+        "slug": "ellsworth-community-college",
+        "name": "Ellsworth Community College",
+        "primaryUrl": "ecc.iavalley.edu",
+        "courseSearchUrl": "https://pawpass.iavalley.edu/ICS/Apply/",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://pawpass.iavalley.edu/ICS/Apply/ → https://pawpass.iavalley.edu/ICS/Apply/ (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "unreachable",
+        "publicSearchUrl": null
+      },
+      {
+        "slug": "marshalltown-community-college",
+        "name": "Marshalltown Community College",
+        "primaryUrl": "mcc.iavalley.edu",
+        "courseSearchUrl": "https://pawpass.iavalley.edu/ICS/Apply/",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://pawpass.iavalley.edu/ICS/Apply/ → https://pawpass.iavalley.edu/ICS/Apply/ (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "unreachable",
+        "publicSearchUrl": null
+      },
+      {
+        "slug": "southwestern-community-college",
+        "name": "Southwestern Community College",
+        "primaryUrl": "swcciowa.edu",
+        "courseSearchUrl": "https://swcciowa.edu/ICS/",
+        "confidence": "high",
+        "evidence": [
+          "HTTP 200 at https://you.swcciowa.edu/ICS//",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "login-gated",
+        "publicSearchUrl": null
+      }
+    ],
+    "mo": [
+      {
+        "slug": "crowder-college",
+        "name": "Crowder College",
+        "primaryUrl": "crowder.edu",
+        "courseSearchUrl": "https://my.crowder.edu/ICS/Academics/Public.jnz?portlet=Course_Schedules",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://my.crowder.edu/ICS/Academics/Public.jnz?portlet=Course_Schedules → https://my.crowder.edu/ICS/Academics/Public.jnz?portlet=Course_Schedules (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "login-gated",
+        "publicSearchUrl": null
+      },
+      {
+        "slug": "mineral-area-college",
+        "name": "Mineral Area College",
+        "primaryUrl": "mineralarea.edu",
+        "courseSearchUrl": "https://my.mineralarea.edu/ICS/Admissions/Public.jnz?portlet=Course_Schedules&amp;screen=Advanced+Course+Search&amp;screenType=next",
+        "confidence": "high",
+        "evidence": [
+          "homepage link https://my.mineralarea.edu/ICS/Admissions/Public.jnz?portlet=Course_Schedules&amp;screen=Advanced+Course+Search&amp;screenType=next → https://my.mineralarea.edu/ICS/Admissions/Public.jnz?portlet=Course_Schedules&amp;screen=Advanced+Course+Search&amp;screenType=next (HTTP 200)",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "login-gated",
+        "publicSearchUrl": null
+      },
+      {
+        "slug": "moberly-area-community-college",
+        "name": "Moberly Area Community College",
+        "primaryUrl": "macc.edu",
+        "courseSearchUrl": "https://my.macc.edu/ICS/",
+        "confidence": "high",
+        "evidence": [
+          "HTTP 200 at https://my.macc.edu/ICS/",
+          "body contains marker: Jenzabar"
+        ],
+        "publicPortlet": "login-gated",
+        "publicSearchUrl": null
+      }
+    ]
+  },
+  "recon": {
+    "generatedAt": "2026-05-09",
+    "probedCount": 39,
+    "summary": "Probed each colleges /ICS/Course_Schedule.jnz, /Academics/Course_Schedule.jnz, /Admissions/Course_Schedule.jnz, and /Guest_Home.jnz?portlet=Course_Schedules paths across www/my/web/portal subdomains. Classified by which course-search portlet renders without auth.",
+    "publicPortletCounts": {
+      "Course_Schedules": 1,
+      "StudentRegistrationPortlet": 1,
+      "YearBased": 1,
+      "login-gated": 20,
+      "unreachable": 16
+    },
+    "publicScrapeableRate": "3 of 39 (7%)",
+    "conclusion": "Do NOT build a jenzabar template. The 51-college sweep number reflects JICS presence, not scrapeable course schedules. Only ~7% expose a public course-search portlet, and the 3 public ones each run a different portlet type (Course_Schedules / StudentRegistrationPortlet / YearBased) — meaning even a template would not be a single template, it would be 3 sub-templates each covering 1-2 colleges. Build the bespoke KCTCS PeopleSoft scraper for KY (16 colleges, 1 state, single instance) instead."
+  }
+}

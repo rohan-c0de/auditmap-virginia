@@ -1,11 +1,38 @@
 "use client";
 
+import { Suspense } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import SemesterPlanner from "@/components/SemesterPlanner";
 
 interface PlannerClientProps {
   state: string;
   systemName?: string;
+}
+
+/** Reads ?targets= and ?name= from the URL so /plan/[id]'s 'Duplicate'
+ *  button can hand off a pre-populated draft. Lives in its own component
+ *  because Next 16 requires useSearchParams() under a Suspense boundary. */
+function PlannerWithParams({ state }: { state: string }) {
+  const params = useSearchParams();
+  // ?targets=BIOL+1010,MATH+1100 — '+' decoded as space by URL parsing.
+  // Split on comma, trim, drop empties. Length-limited so a pathological
+  // URL can't OOM the planner.
+  const rawTargets = params.get("targets") ?? "";
+  const initialTargets = rawTargets
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .slice(0, 100);
+  const initialName = (params.get("name") ?? "").slice(0, 200) || undefined;
+
+  return (
+    <SemesterPlanner
+      state={state}
+      initialTargets={initialTargets.length > 0 ? initialTargets : undefined}
+      initialName={initialName}
+    />
+  );
 }
 
 export default function PlannerClient({ state, systemName }: PlannerClientProps) {
@@ -36,7 +63,10 @@ export default function PlannerClient({ state, systemName }: PlannerClientProps)
           </p>
         </div>
 
-        <SemesterPlanner state={state} />
+        {/* Suspense boundary required by Next 16 for useSearchParams. */}
+        <Suspense fallback={<SemesterPlanner state={state} />}>
+          <PlannerWithParams state={state} />
+        </Suspense>
       </main>
     </div>
   );

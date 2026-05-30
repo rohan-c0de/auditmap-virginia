@@ -335,7 +335,12 @@ async function scrapeCollege(
 
   let catoid = config.catoid;
   try {
-    const discovered = await discoverAcalogCatoid(config.base, config.catoid);
+    // Thread the WAF cookies (acquired above) into discovery so the catoid
+    // dropdown parse works on Imperva-protected catalogs too. Without this,
+    // discovery silently falls back to the configured `catoid`, which may
+    // point at an archived (or wrong) catalog year for WAF catalogs.
+    const cookies = wafCookies.get(config.base);
+    const discovered = await discoverAcalogCatoid(config.base, config.catoid, cookies);
     if (discovered > 0) catoid = discovered;
   } catch {
     // fall through to fallback

@@ -1,0 +1,46 @@
+{
+  "unitid": 101301,
+  "schoolName": "George C Wallace State Community College-Selma",
+  "state": "AL",
+  "city": "Selma",
+  "schoolUrl": "https://www.wccs.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-13T02:12:17.183Z",
+  "size": 855,
+  "shareFirstGeneration": 0.5125881168,
+  "cost": {
+    "tuitionInState": 4740,
+    "tuitionOutOfState": 8610,
+    "attendanceAcademicYear": 19175,
+    "avgNetPricePublic": 9272,
+    "bookSupply": 7400,
+    "roomBoardOffCampus": 11000,
+    "netPriceByIncome": {
+      "0_30000": 8948,
+      "30001_48000": 10148,
+      "48001_75000": 11516,
+      "75001_110000": null,
+      "110001_plus": null
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.3773,
+    "federalLoanRate": 0,
+    "medianDebtCompleters": null
+  },
+  "completion": {
+    "completionRate150nt": 0.4064,
+    "completionRate200nt": 0.4302,
+    "transferRate": 0.137,
+    "retentionRateFullTime": 0.6261,
+    "retentionRatePartTime": 0.3636
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 31598,
+    "median1YrAfterCompletion": 35882,
+    "percentile25_10YrsAfterEntry": 15581,
+    "percentile75_10YrsAfterEntry": 49326,
+    "shareEarningAboveHsGrad": 0.393
+  }
+}

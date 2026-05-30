@@ -1,0 +1,46 @@
+{
+  "unitid": 123341,
+  "schoolName": "Sierra College",
+  "state": "CA",
+  "city": "Rocklin",
+  "schoolUrl": "https://www.sierracollege.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-23T07:22:13.780Z",
+  "size": 14122,
+  "shareFirstGeneration": 0.4471715755,
+  "cost": {
+    "tuitionInState": 1446,
+    "tuitionOutOfState": 1446,
+    "attendanceAcademicYear": 17002,
+    "avgNetPricePublic": 7245,
+    "bookSupply": 1792,
+    "roomBoardOffCampus": 25933,
+    "netPriceByIncome": {
+      "0_30000": 5042,
+      "30001_48000": 7302,
+      "48001_75000": 9663,
+      "75001_110000": 12648,
+      "110001_plus": 13386
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.216,
+    "federalLoanRate": 0.0179,
+    "medianDebtCompleters": 10500
+  },
+  "completion": {
+    "completionRate150nt": 0.4203,
+    "completionRate200nt": 0.446,
+    "transferRate": 0.114,
+    "retentionRateFullTime": 0.7233,
+    "retentionRatePartTime": 0.4613
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 45294,
+    "median1YrAfterCompletion": 30747,
+    "percentile25_10YrsAfterEntry": 20983,
+    "percentile75_10YrsAfterEntry": 71159,
+    "shareEarningAboveHsGrad": 0.549
+  }
+}

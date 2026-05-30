@@ -8,6 +8,7 @@ import {
   getAvailableTerms,
   trimCoursesForClient,
 } from "@/lib/courses";
+import { runPooled } from "@/lib/concurrency";
 import { getCurrentTerm } from "@/lib/terms";
 import CollegeScorecardSection from "./CollegeScorecardSection";
 import CollegeTermSection from "./CollegeTermSection";
@@ -112,13 +113,23 @@ export default async function CollegeDetailPage(props: PageProps) {
   // Load courses for every term this college has data in. Doing this server-
   // side lets the client switch terms via the URL without triggering a fresh
   // server render, which would force the whole page out of ISR.
+  //
+  // Concurrency note: each loadCoursesForCollege call internally fires
+  // (count + N paginated fetches) capped at runPooled(..., 5). With ~4-6
+  // terms fanned out at once via a naked Promise.all, peak parallelism per
+  // college page was 4-6 × ~5 = ~20-30 simultaneous Supabase queries. Stack
+  // that across the build's 3 worker processes and pgbouncer saturates,
+  // producing the statement_timeout cascade visible on PRs #823 / #824 /
+  // #825 / #826. Cap term-fan-out to 2 to keep peak in-flight queries per
+  // page render at ~10.
   const allTerms = await getAvailableTerms(state);
   const termCoursePairs: { term: string; courses: CourseSection[] }[] =
-    await Promise.all(
-      allTerms.map(async (t) => ({
+    await runPooled(
+      allTerms.map((t) => async () => ({
         term: t,
         courses: await loadCoursesForCollege(institution.college_slug, t, state),
-      }))
+      })),
+      2,
     );
   const termsWithData = termCoursePairs
     .filter((p) => p.courses.length > 0)
@@ -151,9 +162,13 @@ export default async function CollegeDetailPage(props: PageProps) {
   > = {};
   const courseListingUrlByTerm: Record<string, string> = {};
 
+  // Same fan-out concern as the first Promise.all above: each iteration
+  // fires isDataStale (1 query) + getTopInstructors (1 query) per term;
+  // unbounded across N terms × 3 build workers × the parent loop's already
+  // running queries piles onto pgbouncer. Cap to 2.
   const union: CourseSection[] = [];
-  await Promise.all(
-    termsWithData.map(async (t) => {
+  await runPooled(
+    termsWithData.map((t) => async () => {
       const courses =
         termCoursePairs.find((p) => p.term === t)?.courses ?? [];
       // Only ship the default term's courses in the initial RSC payload.
@@ -179,7 +194,8 @@ export default async function CollegeDetailPage(props: PageProps) {
       // every course the college offers, regardless of which term
       // the user has selected.
       union.push(...courses);
-    })
+    }),
+    2,
   );
 
   // Shared transfer lookup, scoped to the union of courses across all terms

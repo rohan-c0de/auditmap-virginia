@@ -164,6 +164,16 @@ const txConfig: StateConfig = {
         scripts: ["scripts/tx/scrape-lsc.ts"],
         runner: "playwright",
       },
+      // Cisco College — Power Campus "CC4" widget at
+      // admin.cisco.edu/cc4/web_course_avail.html. One PXwidget AJAX call
+      // per term returns every section as a fixed-16-column HTML table
+      // (Course ID, Term, Title, Days, Times, Dates, Location, Instructor,
+      // Credits, Limit, Enrolled, Campus, Short ID, Notes). ~650 sections
+      // / term, ~1 min per term × 5 terms = ~5 min total run.
+      {
+        scripts: ["scripts/tx/scrape-cisco.ts"],
+        runner: "playwright",
+      },
     ],
     transfers: [
       { scripts: ["scripts/tx/scrape-transfer-tccns.ts"], runner: "http" },

@@ -1,0 +1,46 @@
+{
+  "unitid": 203881,
+  "schoolName": "Marion Technical College",
+  "state": "OH",
+  "city": "Marion",
+  "schoolUrl": "www.mtc.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-13T02:14:29.709Z",
+  "size": 1475,
+  "shareFirstGeneration": 0.5040214477,
+  "cost": {
+    "tuitionInState": 6595,
+    "tuitionOutOfState": 11225,
+    "attendanceAcademicYear": 13026,
+    "avgNetPricePublic": 7417,
+    "bookSupply": 900,
+    "roomBoardOffCampus": 6000,
+    "netPriceByIncome": {
+      "0_30000": 6554,
+      "30001_48000": 6511,
+      "48001_75000": 7476,
+      "75001_110000": 10928,
+      "110001_plus": 13026
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2261,
+    "federalLoanRate": 0.0798,
+    "medianDebtCompleters": 8300
+  },
+  "completion": {
+    "completionRate150nt": null,
+    "completionRate200nt": null,
+    "transferRate": null,
+    "retentionRateFullTime": null,
+    "retentionRatePartTime": null
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 41495,
+    "median1YrAfterCompletion": 43998,
+    "percentile25_10YrsAfterEntry": 23062,
+    "percentile75_10YrsAfterEntry": 59326,
+    "shareEarningAboveHsGrad": 0.532
+  }
+}

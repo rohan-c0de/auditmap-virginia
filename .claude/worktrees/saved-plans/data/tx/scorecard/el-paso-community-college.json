@@ -1,0 +1,46 @@
+{
+  "unitid": 224642,
+  "schoolName": "El Paso Community College",
+  "state": "TX",
+  "city": "El Paso",
+  "schoolUrl": "www.epcc.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-16T15:39:42.919Z",
+  "size": 24214,
+  "shareFirstGeneration": 0.4874906045,
+  "cost": {
+    "tuitionInState": 4080,
+    "tuitionOutOfState": 6630,
+    "attendanceAcademicYear": 13337,
+    "avgNetPricePublic": 3206,
+    "bookSupply": 1291,
+    "roomBoardOffCampus": 10179,
+    "netPriceByIncome": {
+      "0_30000": 2509,
+      "30001_48000": 2792,
+      "48001_75000": 5298,
+      "75001_110000": 7892,
+      "110001_plus": 9353
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.3655,
+    "federalLoanRate": 0.0162,
+    "medianDebtCompleters": 6566
+  },
+  "completion": {
+    "completionRate150nt": 0.2417,
+    "completionRate200nt": 0.2722,
+    "transferRate": 0.1299,
+    "retentionRateFullTime": 0.6268,
+    "retentionRatePartTime": 0.5188
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 35212,
+    "median1YrAfterCompletion": 24582,
+    "percentile25_10YrsAfterEntry": 19704,
+    "percentile75_10YrsAfterEntry": 55562,
+    "shareEarningAboveHsGrad": 0.471
+  }
+}

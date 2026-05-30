@@ -1,0 +1,46 @@
+{
+  "unitid": 165194,
+  "schoolName": "Cape Cod Community College",
+  "state": "MA",
+  "city": "West Barnstable",
+  "schoolUrl": "www.capecod.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-13T02:13:08.061Z",
+  "size": 2911,
+  "shareFirstGeneration": 0.4132302405,
+  "cost": {
+    "tuitionInState": 6000,
+    "tuitionOutOfState": 10944,
+    "attendanceAcademicYear": 15053,
+    "avgNetPricePublic": 8296,
+    "bookSupply": 1200,
+    "roomBoardOffCampus": 14700,
+    "netPriceByIncome": {
+      "0_30000": 8253,
+      "30001_48000": 5991,
+      "48001_75000": 7089,
+      "75001_110000": 10381,
+      "110001_plus": 14779
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.3364,
+    "federalLoanRate": 0.0975,
+    "medianDebtCompleters": 12000
+  },
+  "completion": {
+    "completionRate150nt": 0.223,
+    "completionRate200nt": 0.2765,
+    "transferRate": 0.1463,
+    "retentionRateFullTime": 0.6875,
+    "retentionRatePartTime": 0.5372
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 43670,
+    "median1YrAfterCompletion": 42250,
+    "percentile25_10YrsAfterEntry": 23811,
+    "percentile75_10YrsAfterEntry": 63744,
+    "shareEarningAboveHsGrad": 0.573
+  }
+}

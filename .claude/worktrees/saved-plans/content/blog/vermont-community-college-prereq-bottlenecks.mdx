@@ -1,0 +1,105 @@
+Vermont's community college system looks different from every other state we've indexed — because structurally, it is. In 2022, Vermont merged four institutions (Community College of Vermont, Johnson State College, Lyndon State College, and Castleton University) into a single entity: Vermont State University. For community-college-level students, the practical successor to the original Community College of Vermont is now part of VTSU, and the prerequisite data reflects that consolidated catalog.
+
+This means Vermont's dataset is smaller than any other state we've covered: 101 courses with explicit prerequisites. That's roughly one-fifth of New Hampshire's 592 indexed courses, and a fraction of the 500+ course datasets we see in Southern states like Tennessee or North Carolina. The small size is worth naming directly: it reflects the genuine scale of Vermont's community college sector, not a data gap. Vermont is a small state with a small higher-education system, and the merged institution serves that population.
+
+With 101 courses, the patterns that emerge from the data are still meaningful — but they should be read with appropriate scale awareness. A "top bottleneck" gating 15 downstream courses in Vermont is structurally similar to a bottleneck gating 60 courses in a larger system; the proportion of the curriculum affected may be comparable even if the absolute numbers differ.
+
+## The numbers
+
+| Metric | Value |
+|---|---|
+| Courses with explicit prereqs | 101 |
+| Chains reaching depth 3 or more | 16 |
+| Maximum chain depth | 5 |
+| Top bottleneck courses (tied) | CIS 1100 and MAT 0310 |
+| Downstream courses gated by each | 15 |
+
+The maximum chain depth of 5 is the same as Connecticut's CT-State system and one step deeper than Virginia's VCCS (max 4). It's three steps shallower than New Hampshire's CCSNH (max 8). Vermont and New Hampshire are natural comparisons — two small New England systems, both serving a relatively rural student population, both operating at a scale well below the larger multi-campus systems in the mid-Atlantic and South.
+
+The 16 deep chains (depth 3 or more) out of 101 total courses represents about 16% of the indexed catalog — a meaningful proportion. By comparison, CCSNH shows about 13% of its 592 courses at depth 3 or more. Vermont's proportion is actually slightly higher than New Hampshire's, which tells you that while Vermont's catalog is small, the courses that do have prerequisites tend to be genuinely sequenced rather than isolated one-step requirements.
+
+## The bottleneck courses
+
+| Course | Downstream courses gated |
+|---|---|
+| CIS 1100 | 15 |
+| MAT 0310 | 15 |
+| MAT 1020 | 11 |
+| CIS 1350 | 10 |
+| ENG 1061 | 9 |
+| ACC 2121 | 8 |
+| AHS 1205 | 8 |
+| CIS 2120 | 7 |
+| ART 1210 | 5 |
+| ART 1011 | 5 |
+
+The tied top position — CIS 1100 and MAT 0310 both gating 15 downstream courses — is unusual. Most systems show a single dominant bottleneck (typically English composition or developmental math). Vermont's tied structure suggests two parallel gateway sequences with roughly equal weight in the curriculum.
+
+CIS 1100 is a foundational computer information systems course — likely Introduction to Programming or Introduction to Computer Science. It gates 15 downstream courses, which in a 101-course dataset is a substantial fraction. CIS 1350 (gating 10) and CIS 2120 (gating 7) sit further into the CIS sequence, which means the technology curriculum runs a clear multi-step ladder.
+
+MAT 0310 is developmental math — pre-college level mathematics, the entry point of the math sequence for students who don't place into college-level math. It gates 15 courses, followed by MAT 1020 (11 downstream), suggesting the math ladder runs MAT 0310 → MAT 1020 → further math-dependent courses. The developmental math placement effect is the same here as in any other system: students who place at MAT 0310 face an additional course (or more) before they can access the college-level math curriculum.
+
+ENG 1061 at 9 downstream courses is Vermont's English composition bottleneck. At 9, the reach is more limited than in most systems — Connecticut's ENG 0930 gates 200 courses; Tennessee's ENGL 1010 gates 64 — which reflects both the smaller catalog and potentially a curriculum structure where not all courses require English composition as a prerequisite.
+
+AHS 1205 gating 8 courses points toward the Allied Health Sciences sequence, where clinical and health-sciences courses tend to be sequenced prerequisites for each other. ART 1210 and ART 1011 both gating 5 courses each flags a visual arts sequence as one of the areas with chained prerequisites — which becomes more visible in the deepest chains below.
+
+ACC 2121 gating 8 downstream courses shows that accounting follows the same sequential pattern here as in every other system: Accounting I unlocks Accounting II, which unlocks the rest of the accounting curriculum.
+
+## The deepest chains
+
+**Chemistry — 5 levels deep (tied for deepest in the catalog):**
+```
+CHE 2042 ← CHE 2041 ← CHE 1032 ← CHE 1031 ← MAT 1020 ← MAT 0310
+```
+
+The deepest chain in Vermont's catalog runs from developmental math through the full chemistry sequence. MAT 0310 (developmental math) → MAT 1020 (college-level math) → CHE 1031 (General Chemistry I) → CHE 1032 (General Chemistry II) → CHE 2041 (Organic Chemistry I) → CHE 2042 (Organic Chemistry II). A student who places into MAT 0310 and wants Organic Chemistry II faces five prerequisite steps. In practice, that's likely three or more semesters of sequential coursework before reaching CHE 2042.
+
+**Mathematics — 5 levels deep:**
+```
+MAT 2532 ← MAT 1531 ← MAT 1330 ← MAT 1230 ← MAT 1020 ← MAT 0310
+```
+
+The math chain runs the full ladder: MAT 0310 → MAT 1020 → MAT 1230 → MAT 1330 → MAT 1531 → MAT 2532. This is likely Developmental Math → College Algebra → Precalculus → Calculus I → Calculus II → Calculus III or Differential Equations. Five steps, likely spanning three or four semesters for a student who starts at MAT 0310 (assuming at least one math course per semester).
+
+**Physics — 5 levels deep:**
+```
+PHY 1042 ← PHY 1041 ← MAT 1330 ← MAT 1230 ← MAT 1020 ← MAT 0310
+```
+
+The physics chain joins the math ladder at MAT 1330 (Calculus I or Precalculus): a student needs MAT 0310 → MAT 1020 → MAT 1230 → MAT 1330 before they can start PHY 1041, and then must take PHY 1041 before PHY 1042. The math-to-physics dependency is standard, but for students starting at developmental math, the runway to Physics II is five steps long.
+
+**Computer Information Systems — 4 levels deep:**
+```
+CIS 2235 ← CIS 2230 ← CIS 2120 ← CIS 1350 ← CIS 1100
+CIS 2265 ← CIS 2230 ← CIS 2120 ← CIS 1350 ← CIS 1100
+CIS 2350 ← CIS 2245 ← CIS 2120 ← CIS 1350 ← CIS 1100
+CIS 2460 ← CIS 2245 ← CIS 2120 ← CIS 1350 ← CIS 1100
+```
+
+Four terminal CIS courses each sit at depth 4, all rooted at CIS 1100. The CIS ladder runs CIS 1100 → CIS 1350 → CIS 2120 → (CIS 2230 or CIS 2245) → terminal courses. A student who starts with CIS 1100 and takes one CIS course per semester reaches the depth-4 courses in their fourth or fifth semester. The CIS sequence in Vermont is one of the most consistently structured parts of the catalog — four separate endpoints, all sharing the same first four steps.
+
+## What the merger means for planning
+
+Vermont's 2022 institutional merger is the structural context that makes this catalog unusual. Students who knew "CCV" as their institution now navigate Vermont State University's catalog, which encompasses what were formerly multiple separate colleges with their own course numbering and prerequisite structures.
+
+This is the closest parallel in our dataset to Connecticut's CT-State merger, where several community colleges merged into a single system. [Connecticut's CT-State](/blog/connecticut-community-college-prereq-bottlenecks) produces a different data profile — 635 indexed courses with prereqs, max depth 5, a much larger English bottleneck — but the merger dynamic is similar. Merged systems create catalog consolidation challenges: prerequisite requirements that were consistent within a single institution may have been harmonized (or not) across the merged entity.
+
+For Vermont students, the practical implication is to verify that course-level prerequisites reflect the current VTSU catalog rather than legacy CCV, Johnson, or Lyndon catalogs. The data we've indexed reflects the current state, but if you're using older materials (a degree plan from 2021, an advisor's notes from before the merger, a friend's experience at the pre-merger CCV), cross-check against the current VTSU catalog before committing to a sequence.
+
+## How Vermont compares to peer systems
+
+Vermont and New Hampshire are natural comparisons: two small New England states, both with a single consolidated community-college-level institution, both serving students in small cities and rural areas.
+
+[CCSNH (New Hampshire)](/blog/new-hampshire-community-college-prereq-bottlenecks) indexes 592 courses with prereqs vs. Vermont's 101 — nearly six times as many. CCSNH's maximum chain depth is 8 vs. Vermont's 5. CCSNH's top bottleneck (MATH 092C) gates 38 downstream courses; Vermont's top bottlenecks gate 15 each. In every absolute measure, New Hampshire's catalog is larger and deeper. But the structural pattern is similar: a small New England system where most courses have limited prerequisite chains, with specific program sequences (clinical programs in NH, chemistry and CIS in VT) producing the deepest chains.
+
+The math pattern — developmental math sitting at the base of the deepest STEM chains — is consistent across both states. A student who places into developmental math at Vermont State faces the same basic dynamic as at CCSNH: the placement level sets the starting point on a multi-step ladder that determines which STEM courses are accessible and when.
+
+[Virginia's VCCS](/blog/virginia-community-college-prereq-bottlenecks) is the shallowest multi-college system we've indexed at max depth 4, one step shallower than Vermont. VCCS's 292 courses with prerequisites represent a much larger catalog than Vermont's 101, but the chains are shorter. The comparison highlights that chain depth and catalog size don't move together — you can have a large system with shallow chains (Virginia) or a small system with moderate chain depth (Vermont).
+
+For students at Vermont State University planning a STEM sequence, the takeaway from this data is specific: your entry point in the math ladder (MAT 0310 vs. MAT 1020 vs. higher) determines how many semesters separate you from the terminal chemistry, physics, or calculus courses. The hub article on [why four-semester plans take six](/blog/prerequisite-chains-why-four-semester-plans-take-six) explains the general mechanics — the Vermont data shows those mechanics playing out in a smaller catalog, with the same structural consequences for students who start below college-level math.
+
+<ProductCallout
+  text="Community College Path indexes prerequisite data across Vermont's community colleges. Search for any course to see its full prerequisite chain before you register."
+  feature="courses"
+  label="Check Vermont Course Prerequisites"
+/>

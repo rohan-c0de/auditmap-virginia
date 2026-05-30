@@ -1,0 +1,46 @@
+{
+  "unitid": 147800,
+  "schoolName": "Oakton College",
+  "state": "IL",
+  "city": "Des Plaines",
+  "schoolUrl": "www.oakton.edu/",
+  "ownership": 1,
+  "predominantDegree": 1,
+  "fetchedAt": "2026-05-16T19:36:09.337Z",
+  "size": 6072,
+  "shareFirstGeneration": 0.4335060449,
+  "cost": {
+    "tuitionInState": 3985,
+    "tuitionOutOfState": 12462,
+    "attendanceAcademicYear": 11431,
+    "avgNetPricePublic": 5183,
+    "bookSupply": 1410,
+    "roomBoardOffCampus": 8994,
+    "netPriceByIncome": {
+      "0_30000": 3847,
+      "30001_48000": 5084,
+      "48001_75000": 7235,
+      "75001_110000": 9496,
+      "110001_plus": 11431
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.1903,
+    "federalLoanRate": 0.0034,
+    "medianDebtCompleters": 5250
+  },
+  "completion": {
+    "completionRate150nt": 0.3696,
+    "completionRate200nt": 0.3548,
+    "transferRate": 0.2506,
+    "retentionRateFullTime": 0.6897,
+    "retentionRatePartTime": 0.5317
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 47852,
+    "median1YrAfterCompletion": 41151,
+    "percentile25_10YrsAfterEntry": 24249,
+    "percentile75_10YrsAfterEntry": 73719,
+    "shareEarningAboveHsGrad": 0.66
+  }
+}

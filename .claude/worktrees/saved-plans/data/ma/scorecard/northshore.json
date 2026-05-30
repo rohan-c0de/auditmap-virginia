@@ -1,0 +1,46 @@
+{
+  "unitid": 167312,
+  "schoolName": "North Shore Community College",
+  "state": "MA",
+  "city": "Danvers",
+  "schoolUrl": "www.northshore.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-13T02:13:11.381Z",
+  "size": 4393,
+  "shareFirstGeneration": 0.5212981744,
+  "cost": {
+    "tuitionInState": 5352,
+    "tuitionOutOfState": 10920,
+    "attendanceAcademicYear": 15896,
+    "avgNetPricePublic": 9000,
+    "bookSupply": 1600,
+    "roomBoardOffCampus": 13750,
+    "netPriceByIncome": {
+      "0_30000": 8622,
+      "30001_48000": 7550,
+      "48001_75000": 8987,
+      "75001_110000": 9966,
+      "110001_plus": 13158
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.32,
+    "federalLoanRate": 0.1043,
+    "medianDebtCompleters": 9000
+  },
+  "completion": {
+    "completionRate150nt": 0.1778,
+    "completionRate200nt": 0.2244,
+    "transferRate": 0.1689,
+    "retentionRateFullTime": 0.6086,
+    "retentionRatePartTime": 0.4456
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 45391,
+    "median1YrAfterCompletion": 40704,
+    "percentile25_10YrsAfterEntry": 23689,
+    "percentile75_10YrsAfterEntry": 69477,
+    "shareEarningAboveHsGrad": 0.617
+  }
+}

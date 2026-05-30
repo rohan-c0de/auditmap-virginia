@@ -1,0 +1,46 @@
+{
+  "unitid": 222576,
+  "schoolName": "Amarillo College",
+  "state": "TX",
+  "city": "Amarillo",
+  "schoolUrl": "https://www.actx.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-16T15:39:39.687Z",
+  "size": 7399,
+  "shareFirstGeneration": 0.4882697947,
+  "cost": {
+    "tuitionInState": 2136,
+    "tuitionOutOfState": 4704,
+    "attendanceAcademicYear": 10854,
+    "avgNetPricePublic": 4600,
+    "bookSupply": 2072,
+    "roomBoardOffCampus": 8171,
+    "netPriceByIncome": {
+      "0_30000": 3856,
+      "30001_48000": 4129,
+      "48001_75000": 5556,
+      "75001_110000": 6328,
+      "110001_plus": 8143
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.4405,
+    "federalLoanRate": 0.1245,
+    "medianDebtCompleters": 15000
+  },
+  "completion": {
+    "completionRate150nt": 0.3227,
+    "completionRate200nt": 0.368,
+    "transferRate": 0.1021,
+    "retentionRateFullTime": 0.6778,
+    "retentionRatePartTime": 0.4459
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 41302,
+    "median1YrAfterCompletion": 43488,
+    "percentile25_10YrsAfterEntry": 22290,
+    "percentile75_10YrsAfterEntry": 62056,
+    "shareEarningAboveHsGrad": 0.572
+  }
+}

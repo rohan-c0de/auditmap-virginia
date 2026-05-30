@@ -1,0 +1,46 @@
+{
+  "unitid": 117724,
+  "schoolName": "Los Angeles Trade Technical College",
+  "state": "CA",
+  "city": "Los Angeles",
+  "schoolUrl": "www.lattc.edu/",
+  "ownership": 1,
+  "predominantDegree": 1,
+  "fetchedAt": "2026-05-23T07:21:57.558Z",
+  "size": 9998,
+  "shareFirstGeneration": 0.612590799,
+  "cost": {
+    "tuitionInState": 1238,
+    "tuitionOutOfState": 10572,
+    "attendanceAcademicYear": 20457,
+    "avgNetPricePublic": 12323,
+    "bookSupply": 1062,
+    "roomBoardOffCampus": 25407,
+    "netPriceByIncome": {
+      "0_30000": 11716,
+      "30001_48000": 12210,
+      "48001_75000": 14008,
+      "75001_110000": 16399,
+      "110001_plus": 17270
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.3193,
+    "federalLoanRate": 0.013,
+    "medianDebtCompleters": 10500
+  },
+  "completion": {
+    "completionRate150nt": 0.3475,
+    "completionRate200nt": 0.3175,
+    "transferRate": 0.089,
+    "retentionRateFullTime": 0.6475,
+    "retentionRatePartTime": 0.3171
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 35233,
+    "median1YrAfterCompletion": 32209,
+    "percentile25_10YrsAfterEntry": 14787,
+    "percentile75_10YrsAfterEntry": 59191,
+    "shareEarningAboveHsGrad": 0.514
+  }
+}

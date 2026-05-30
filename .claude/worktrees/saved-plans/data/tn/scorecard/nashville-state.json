@@ -1,0 +1,46 @@
+{
+  "unitid": 221184,
+  "schoolName": "Nashville State Community College",
+  "state": "TN",
+  "city": "Nashville",
+  "schoolUrl": "https://www.nscc.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-13T02:14:55.260Z",
+  "size": 5653,
+  "shareFirstGeneration": 0.4709806538,
+  "cost": {
+    "tuitionInState": 4730,
+    "tuitionOutOfState": 17714,
+    "attendanceAcademicYear": 14385,
+    "avgNetPricePublic": 6777,
+    "bookSupply": 1442,
+    "roomBoardOffCampus": 12512,
+    "netPriceByIncome": {
+      "0_30000": 6326,
+      "30001_48000": 5974,
+      "48001_75000": 7746,
+      "75001_110000": 9688,
+      "110001_plus": 12195
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.3298,
+    "federalLoanRate": 0.0583,
+    "medianDebtCompleters": 9595
+  },
+  "completion": {
+    "completionRate150nt": 0.1846,
+    "completionRate200nt": 0.2004,
+    "transferRate": 0.1514,
+    "retentionRateFullTime": 0.4412,
+    "retentionRatePartTime": 0.4684
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 38519,
+    "median1YrAfterCompletion": 34662,
+    "percentile25_10YrsAfterEntry": 19748,
+    "percentile75_10YrsAfterEntry": 57206,
+    "shareEarningAboveHsGrad": 0.552
+  }
+}

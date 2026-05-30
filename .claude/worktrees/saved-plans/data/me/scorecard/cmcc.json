@@ -1,0 +1,46 @@
+{
+  "unitid": 161077,
+  "schoolName": "Central Maine Community College",
+  "state": "ME",
+  "city": "Auburn",
+  "schoolUrl": "https://www.cmcc.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-13T02:13:21.289Z",
+  "size": 2952,
+  "shareFirstGeneration": 0.4681571816,
+  "cost": {
+    "tuitionInState": 4140,
+    "tuitionOutOfState": 7020,
+    "attendanceAcademicYear": 15063,
+    "avgNetPricePublic": 6975,
+    "bookSupply": 1400,
+    "roomBoardOffCampus": 7112,
+    "netPriceByIncome": {
+      "0_30000": 5470,
+      "30001_48000": 5970,
+      "48001_75000": 8105,
+      "75001_110000": 9482,
+      "110001_plus": 11672
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.3543,
+    "federalLoanRate": 0.1434,
+    "medianDebtCompleters": 12000
+  },
+  "completion": {
+    "completionRate150nt": 0.3031,
+    "completionRate200nt": 0.3395,
+    "transferRate": 0.1695,
+    "retentionRateFullTime": 0.5682,
+    "retentionRatePartTime": 0.3102
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 42448,
+    "median1YrAfterCompletion": 39555,
+    "percentile25_10YrsAfterEntry": 26707,
+    "percentile75_10YrsAfterEntry": 60852,
+    "shareEarningAboveHsGrad": 0.595
+  }
+}

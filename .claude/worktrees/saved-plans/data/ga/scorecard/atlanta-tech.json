@@ -1,0 +1,46 @@
+{
+  "unitid": 138840,
+  "schoolName": "Atlanta Technical College",
+  "state": "GA",
+  "city": "Atlanta",
+  "schoolUrl": "https://atlantatech.edu/",
+  "ownership": 1,
+  "predominantDegree": 1,
+  "fetchedAt": "2026-05-13T02:12:41.010Z",
+  "size": 3875,
+  "shareFirstGeneration": 0.484984985,
+  "cost": {
+    "tuitionInState": 3382,
+    "tuitionOutOfState": 5950,
+    "attendanceAcademicYear": 9197,
+    "avgNetPricePublic": -914,
+    "bookSupply": 2740,
+    "roomBoardOffCampus": 8496,
+    "netPriceByIncome": {
+      "0_30000": -1731,
+      "30001_48000": -1264,
+      "48001_75000": 462,
+      "75001_110000": 5413,
+      "110001_plus": 7293
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.5886,
+    "federalLoanRate": 0.4037,
+    "medianDebtCompleters": 9500
+  },
+  "completion": {
+    "completionRate150nt": 0.4874,
+    "completionRate200nt": 0.48,
+    "transferRate": 0.084,
+    "retentionRateFullTime": 0.6488,
+    "retentionRatePartTime": 0.4289
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 30350,
+    "median1YrAfterCompletion": 31118,
+    "percentile25_10YrsAfterEntry": 14500,
+    "percentile75_10YrsAfterEntry": 48443,
+    "shareEarningAboveHsGrad": 0.371
+  }
+}

@@ -1,0 +1,22 @@
+name: Data integrity
+
+on:
+  pull_request:
+    paths:
+      - "data/**"
+      - "scripts/check-data-integrity.ts"
+      - ".github/workflows/data-integrity.yml"
+  push:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - run: npm ci
+      - run: npm run check:data

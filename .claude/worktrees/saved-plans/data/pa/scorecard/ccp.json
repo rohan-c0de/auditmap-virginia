@@ -1,0 +1,46 @@
+{
+  "unitid": 215239,
+  "schoolName": "Community College of Philadelphia",
+  "state": "PA",
+  "city": "Philadelphia",
+  "schoolUrl": "https://www.ccp.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-13T02:14:39.368Z",
+  "size": 11948,
+  "shareFirstGeneration": 0.5541367666,
+  "cost": {
+    "tuitionInState": 4632,
+    "tuitionOutOfState": 12744,
+    "attendanceAcademicYear": 19172,
+    "avgNetPricePublic": 11911,
+    "bookSupply": 2400,
+    "roomBoardOffCampus": 10800,
+    "netPriceByIncome": {
+      "0_30000": 10728,
+      "30001_48000": 11339,
+      "48001_75000": 13144,
+      "75001_110000": 17032,
+      "110001_plus": 18795
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.5715,
+    "federalLoanRate": 0.2969,
+    "medianDebtCompleters": 10750
+  },
+  "completion": {
+    "completionRate150nt": 0.2444,
+    "completionRate200nt": 0.2426,
+    "transferRate": 0.1197,
+    "retentionRateFullTime": 0.5992,
+    "retentionRatePartTime": 0.4024
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 40852,
+    "median1YrAfterCompletion": 33314,
+    "percentile25_10YrsAfterEntry": 20601,
+    "percentile75_10YrsAfterEntry": 61228,
+    "shareEarningAboveHsGrad": 0.567
+  }
+}

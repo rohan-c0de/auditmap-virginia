@@ -1,0 +1,18 @@
+{
+  "$comment": "Multi-college-district cluster detection output (issue #497). Each cluster represents N colleges that share a SIS host or registrable domain — a single bespoke scraper can cover all members.",
+  "state": "sd",
+  "generatedAt": "2026-05-28T20:32:14.156Z",
+  "summary": {
+    "inputCount": 1,
+    "clusterCount": 0,
+    "clusteredCount": 0,
+    "singletonCount": 1
+  },
+  "clusters": [],
+  "singletons": [
+    {
+      "slug": "oglala-lakota-college",
+      "primaryUrl": "olc.edu"
+    }
+  ]
+}

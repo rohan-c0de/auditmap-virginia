@@ -1,0 +1,46 @@
+{
+  "unitid": 105525,
+  "schoolName": "Pima Community College",
+  "state": "AZ",
+  "city": "Tucson",
+  "schoolUrl": "www.pima.edu/",
+  "ownership": 1,
+  "predominantDegree": 1,
+  "fetchedAt": "2026-05-24T14:51:29.189Z",
+  "size": 14242,
+  "shareFirstGeneration": 0.4776079734,
+  "cost": {
+    "tuitionInState": 2442,
+    "tuitionOutOfState": 7758,
+    "attendanceAcademicYear": 9851,
+    "avgNetPricePublic": 3405,
+    "bookSupply": 1920,
+    "roomBoardOffCampus": 11542,
+    "netPriceByIncome": {
+      "0_30000": 2605,
+      "30001_48000": 2850,
+      "48001_75000": 4552,
+      "75001_110000": 7865,
+      "110001_plus": 9615
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.3451,
+    "federalLoanRate": 0.0865,
+    "medianDebtCompleters": 7000
+  },
+  "completion": {
+    "completionRate150nt": 0.276,
+    "completionRate200nt": 0.2722,
+    "transferRate": 0.1614,
+    "retentionRateFullTime": 0.6764,
+    "retentionRatePartTime": 0.5147
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 39810,
+    "median1YrAfterCompletion": 41028,
+    "percentile25_10YrsAfterEntry": 22093,
+    "percentile75_10YrsAfterEntry": 60052,
+    "shareEarningAboveHsGrad": 0.559
+  }
+}

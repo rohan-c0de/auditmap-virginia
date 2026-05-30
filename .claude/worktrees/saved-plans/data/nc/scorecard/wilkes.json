@@ -1,0 +1,46 @@
+{
+  "unitid": 199926,
+  "schoolName": "Wilkes Community College",
+  "state": "NC",
+  "city": "Wilkesboro",
+  "schoolUrl": "www.wilkescc.edu/",
+  "ownership": 1,
+  "predominantDegree": 1,
+  "fetchedAt": "2026-05-13T02:14:11.380Z",
+  "size": 1355,
+  "shareFirstGeneration": 0.4842436975,
+  "cost": {
+    "tuitionInState": 2572,
+    "tuitionOutOfState": 8716,
+    "attendanceAcademicYear": 9844,
+    "avgNetPricePublic": -264,
+    "bookSupply": 702,
+    "roomBoardOffCampus": 12291,
+    "netPriceByIncome": {
+      "0_30000": -1444,
+      "30001_48000": -992,
+      "48001_75000": 1679,
+      "75001_110000": 4528,
+      "110001_plus": 6653
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.4546,
+    "federalLoanRate": 0,
+    "medianDebtCompleters": 7625
+  },
+  "completion": {
+    "completionRate150nt": 0.5536,
+    "completionRate200nt": 0.5714,
+    "transferRate": 0.0607,
+    "retentionRateFullTime": 0.6865,
+    "retentionRatePartTime": 0.5963
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 34728,
+    "median1YrAfterCompletion": 34672,
+    "percentile25_10YrsAfterEntry": 18574,
+    "percentile75_10YrsAfterEntry": 48863,
+    "shareEarningAboveHsGrad": 0.447
+  }
+}

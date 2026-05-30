@@ -1,0 +1,131 @@
+{
+  "$comment": "Multi-college-district cluster detection output (issue #497). Each cluster represents N colleges that share a SIS host or registrable domain — a single bespoke scraper can cover all members.",
+  "state": "ga",
+  "generatedAt": "2026-05-24T02:52:10Z",
+  "summary": {
+    "inputCount": 22,
+    "clusterCount": 1,
+    "clusteredCount": 5,
+    "singletonCount": 17
+  },
+  "clusters": [
+    {
+      "id": "experience-elluciancloud-com",
+      "sharedSignal": "experience.elluciancloud.com",
+      "signalKind": "shared-sis-host",
+      "memberSlugs": [
+        "augusta-tech",
+        "chattahoochee-tech",
+        "ga-piedmont-tech",
+        "north-ga-tech",
+        "south-ga-tech"
+      ],
+      "evidence": {
+        "augusta-tech": [
+          "experience.elluciancloud.com"
+        ],
+        "chattahoochee-tech": [
+          "experience.elluciancloud.com"
+        ],
+        "ga-piedmont-tech": [
+          "experience.elluciancloud.com"
+        ],
+        "north-ga-tech": [
+          "experience.elluciancloud.com"
+        ],
+        "south-ga-tech": [
+          "experience.elluciancloud.com"
+        ]
+      },
+      "publicGuestAccess": "sso-gated",
+      "publicGuestEvidence": "redirected to https://experience.elluciancloud.com/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL (HTTP 404)"
+    }
+  ],
+  "singletons": [
+    {
+      "slug": "albany-tech",
+      "name": "Albany Technical College",
+      "primaryUrl": "www.albanytech.edu"
+    },
+    {
+      "slug": "athens-tech",
+      "name": "Athens Technical College",
+      "primaryUrl": "www.athenstech.edu"
+    },
+    {
+      "slug": "atlanta-tech",
+      "name": "Atlanta Technical College",
+      "primaryUrl": "www.atlantatech.edu"
+    },
+    {
+      "slug": "central-ga-tech",
+      "name": "Central Georgia Technical College",
+      "primaryUrl": "www.centralgatech.edu"
+    },
+    {
+      "slug": "coastal-pines-tech",
+      "name": "Coastal Pines Technical College",
+      "primaryUrl": "www.coastalpines.edu"
+    },
+    {
+      "slug": "columbus-tech",
+      "name": "Columbus Technical College",
+      "primaryUrl": "www.columbustech.edu"
+    },
+    {
+      "slug": "ga-northwestern-tech",
+      "name": "Georgia Northwestern Technical College",
+      "primaryUrl": "www.gntc.edu"
+    },
+    {
+      "slug": "gwinnett-tech",
+      "name": "Gwinnett Technical College",
+      "primaryUrl": "www.gwinnetttech.edu"
+    },
+    {
+      "slug": "lanier-tech",
+      "name": "Lanier Technical College",
+      "primaryUrl": "www.laniertech.edu"
+    },
+    {
+      "slug": "oconee-fall-line-tech",
+      "name": "Oconee Fall Line Technical College",
+      "primaryUrl": "www.oftc.edu"
+    },
+    {
+      "slug": "ogeechee-tech",
+      "name": "Ogeechee Technical College",
+      "primaryUrl": "www.ogeecheetech.edu"
+    },
+    {
+      "slug": "savannah-tech",
+      "name": "Savannah Technical College",
+      "primaryUrl": "www.savannahtech.edu"
+    },
+    {
+      "slug": "southeastern-tech",
+      "name": "Southeastern Technical College",
+      "primaryUrl": "www.southeasterntech.edu"
+    },
+    {
+      "slug": "southern-crescent-tech",
+      "name": "Southern Crescent Technical College",
+      "primaryUrl": "www.sctech.edu"
+    },
+    {
+      "slug": "southern-regional-tech",
+      "name": "Southern Regional Technical College",
+      "primaryUrl": "www.southernregional.edu"
+    },
+    {
+      "slug": "west-ga-tech",
+      "name": "West Georgia Technical College",
+      "primaryUrl": "www.westgatech.edu"
+    },
+    {
+      "slug": "wiregrass-tech",
+      "name": "Wiregrass Georgia Technical College",
+      "primaryUrl": "www.wiregrass.edu"
+    }
+  ]
+}

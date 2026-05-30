@@ -1,0 +1,46 @@
+{
+  "unitid": 117788,
+  "schoolName": "Los Angeles City College",
+  "state": "CA",
+  "city": "Los Angeles",
+  "schoolUrl": "www.lacc.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-23T07:21:58.536Z",
+  "size": 11198,
+  "shareFirstGeneration": 0.5897435897,
+  "cost": {
+    "tuitionInState": 1238,
+    "tuitionOutOfState": 10572,
+    "attendanceAcademicYear": 18924,
+    "avgNetPricePublic": 10261,
+    "bookSupply": 1062,
+    "roomBoardOffCampus": 25407,
+    "netPriceByIncome": {
+      "0_30000": 9814,
+      "30001_48000": 10076,
+      "48001_75000": 11783,
+      "75001_110000": 14784,
+      "110001_plus": null
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2624,
+    "federalLoanRate": 0.044,
+    "medianDebtCompleters": 12750
+  },
+  "completion": {
+    "completionRate150nt": 0.2919,
+    "completionRate200nt": 0.2872,
+    "transferRate": 0.0838,
+    "retentionRateFullTime": 0.6681,
+    "retentionRatePartTime": 0.2717
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 36190,
+    "median1YrAfterCompletion": 63680,
+    "percentile25_10YrsAfterEntry": 15299,
+    "percentile75_10YrsAfterEntry": 60161,
+    "shareEarningAboveHsGrad": 0.48
+  }
+}

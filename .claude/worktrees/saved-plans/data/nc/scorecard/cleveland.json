@@ -1,0 +1,46 @@
+{
+  "unitid": 198321,
+  "schoolName": "Cleveland Community College",
+  "state": "NC",
+  "city": "Shelby",
+  "schoolUrl": "www.clevelandcc.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-13T02:13:51.136Z",
+  "size": 1097,
+  "shareFirstGeneration": 0.4858757062,
+  "cost": {
+    "tuitionInState": 2602,
+    "tuitionOutOfState": 8746,
+    "attendanceAcademicYear": 5565,
+    "avgNetPricePublic": 995,
+    "bookSupply": 1200,
+    "roomBoardOffCampus": 2700,
+    "netPriceByIncome": {
+      "0_30000": 498,
+      "30001_48000": 1600,
+      "48001_75000": 1676,
+      "75001_110000": 3987,
+      "110001_plus": null
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.5206,
+    "federalLoanRate": 0,
+    "medianDebtCompleters": null
+  },
+  "completion": {
+    "completionRate150nt": 0.3152,
+    "completionRate200nt": 0.1346,
+    "transferRate": 0,
+    "retentionRateFullTime": 0.2016,
+    "retentionRatePartTime": 0.3902
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 33755,
+    "median1YrAfterCompletion": 32277,
+    "percentile25_10YrsAfterEntry": 18172,
+    "percentile75_10YrsAfterEntry": 49874,
+    "shareEarningAboveHsGrad": 0.42
+  }
+}
