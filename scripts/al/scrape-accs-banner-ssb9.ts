@@ -45,6 +45,10 @@ const COLLEGES: { slug: string; mepCode: string }[] = [
   // (mepCode=LBWCC on reg-prod), not the Banner 8 ssb-prod host where
   // an older mapping had it. Moved 2026-05-24.
   { slug: "lurleen-b-wallace-community-college", mepCode: "LBWCC" },
+  // wallacestate.edu's "Find Classes" link points here (mepCode=WSCC on
+  // reg-prod). Previously mapped to ssb-prod.ec.accs.edu/PROD/WSCC, which
+  // now returns 503. Same migration pattern as LBWCC. Moved 2026-05-30.
+  { slug: "george-c-wallace-state-community-college-hanceville", mepCode: "WSCC" },
 ];
 
 async function main() {
