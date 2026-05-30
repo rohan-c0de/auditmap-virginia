@@ -119,6 +119,11 @@ const flConfig: StateConfig = {
       // at classes.hccfl.edu/api/courseSection?term=26/FA. One JSON blob
       // per term, no auth, no pagination. ~5.9k sections across 2 terms.
       { scripts: ["scripts/fl/scrape-hccfl.ts"], runner: "http" },
+      // Palm Beach State College — custom ASP.NET WebForms app at
+      // studentcoursesearch.palmbeachstate.edu. One GET+POST per
+      // (term wildcard, subject prefix). CRN extracted from detail
+      // page link in each row. ~30k students, Palm Beach County.
+      { scripts: ["scripts/fl/scrape-palmbeachstate.ts"], runner: "http" },
     ],
     transfers: [
       // SCNS flat-file dump — single 80 MB download, no auth, covers all
