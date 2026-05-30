@@ -1,18 +1,23 @@
 /**
  * scrape-palmbeachstate.ts — Palm Beach State College course search
  *
- * PBSC uses a custom ASP.NET WebForms course-search application at
+ * PBSC uses a custom ASP.NET WebForms course-search app at
  *   https://studentcoursesearch.palmbeachstate.edu/Default.aspx
  *
  * Strategy: GET the page to obtain a fresh __VIEWSTATE session token,
- * then POST with the "Full Term" selection for each term. The form
- * supports selecting multiple terms + filtering by subject, but the
- * simplest reliable approach is one POST per (term, subject) with
- * __VIEWSTATE from the immediately preceding GET.
+ * then POST once per (term, subject). The term listBox uses wildcard
+ * values like "Fall%2026%" to select all Fall 2026 sessions at once.
  *
- * Term values use URL-encoded patterns:
- *   Summer 2026: "Summer%2026%" (all summer sessions)
- *   Fall 2026:   "Fall%2026%"   (all fall sessions)
+ * Table structure per row (course_section_id in the first cell link):
+ *   0: <a href="CourseDetail.aspx?course_section_id=NNNNN">Select</a>
+ *   1: Term name (e.g. "2026 Fall Express A")
+ *   2: Materials icon (skip)
+ *   3: "PREFIX NNNN-SS - Title" (e.g. "MAC 1105-101 - College Algebra")
+ *   4: Location / building+room
+ *   5: Dates nested table (or empty for online) — "M/D/Y - M/D/Y"
+ *   6: Days (e.g. "Tues/Thurs") — or Delivery Mode for online sections
+ *   7: Time range — or Credits for online sections
+ *   8+: credits, instructor, status (variable depending on row type)
  *
  * Usage:
  *   npx tsx scripts/fl/scrape-palmbeachstate.ts
@@ -22,19 +27,17 @@
 
 import * as fs from "fs";
 import * as path from "path";
-import * as cheerio from "cheerio";
 
 const BASE_URL = "https://studentcoursesearch.palmbeachstate.edu/Default.aspx";
 const COLLEGE_SLUG = "palmbeachstate";
 const DATA_DIR = path.join(process.cwd(), "data", "fl", "courses", COLLEGE_SLUG);
 
-// Term values from the listBoxTerm <select>
+// listBoxTerm values — the % wildcard matches all sessions for the term
 const TERM_MAP: Record<string, { value: string; file: string }> = {
-  "Summer 2026": { value: "Summer%2526%2525", file: "2026SU" },
-  "Fall 2026":   { value: "Fall%2526%2525",   file: "2026FA" },
+  "Summer 2026": { value: "Summer%2026%", file: "2026SU" },
+  "Fall 2026":   { value: "Fall%2026%",   file: "2026FA" },
 };
 
-// All subjects from PBSC's dropdown (captured 2026-05-30)
 const PBSC_SUBJECTS = [
   "ACG","ACR","AER","AMH","AML","ANT","APA","ARC","ARH","ART","AST","AVO",
   "BAN","BCA","BCN","BCT","BCV","BOT","BSC","BUL",
@@ -51,8 +54,7 @@ const PBSC_SUBJECTS = [
   "PAS","PET","PGY","PHI","PHT","PHY","PLA","PMT","POS","PRN","PSY",
   "RAD","RCP","REL","RET","RTE","RTV",
   "SCE","SLS","SON","SPC","SPN","SSE","STA","STS","SYG",
-  "THE","TSM",
-  "VIC","WOH",
+  "THE","TSM","VIC","WOH",
 ];
 
 interface CourseSection {
@@ -86,235 +88,234 @@ function parseArgs() {
     else if (args[i] === "--subject" && args[i + 1]) { subjectFilter = args[i + 1].toUpperCase(); i++; }
   }
   if (!termArg) termArg = "Summer 2026,Fall 2026";
-  return {
-    terms: termArg.split(",").map(t => t.trim()).filter(Boolean),
-    subjectFilter,
-  };
+  return { terms: termArg.split(",").map(t => t.trim()).filter(Boolean), subjectFilter };
 }
 
-async function sleep(ms: number) { return new Promise(r => setTimeout(r, ms)); }
+function sleep(ms: number) { return new Promise(r => setTimeout(r, ms)); }
 
-interface FormTokens {
-  viewstate: string;
-  viewstateGenerator: string;
-  eventValidation: string;
-  cookieHeader: string;
+function stripTags(html: string): string {
+  return html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 }
 
-async function getFormTokens(): Promise<FormTokens> {
-  const res = await fetch(BASE_URL, {
-    headers: {
-      "User-Agent": "Mozilla/5.0 (compatible; community-college-path/1.0)",
-      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-      "Accept-Encoding": "identity",
-    },
-  });
-  if (!res.ok) throw new Error(`GET ${BASE_URL} -> ${res.status}`);
-  const html = await res.text();
-  const $ = cheerio.load(html);
-  const cookieHeader = res.headers.get("set-cookie") || "";
-  return {
-    viewstate: $("#__VIEWSTATE").val() as string || "",
-    viewstateGenerator: $("#__VIEWSTATEGENERATOR").val() as string || "",
-    eventValidation: $("#__EVENTVALIDATION").val() as string || "",
-    cookieHeader,
-  };
-}
-
-function normalizeDays(raw: string): string {
-  // PBSC uses "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" or abbreviated
+function parseDays(raw: string): string {
   const map: Record<string, string> = {
-    "mon": "Mo", "tue": "Tu", "wed": "We", "thu": "Th", "fri": "Fr", "sat": "Sa", "sun": "Su",
-    "m": "Mo", "t": "Tu", "w": "We", "r": "Th", "f": "Fr", "s": "Sa", "u": "Su",
+    mon: "Mo", tue: "Tu", wed: "We", thu: "Th", fri: "Fr", sat: "Sa", sun: "Su",
+    monday: "Mo", tuesday: "Tu", wednesday: "We", thursday: "Th", friday: "Fr", saturday: "Sa", sunday: "Su",
   };
-  return raw.toLowerCase().split(/[,\s/]+/).map(d => map[d] || "").join("");
+  return raw.toLowerCase().split(/[/,\s]+/).map(d => map[d.trim()] || "").join("");
 }
 
-function normalizeTime(raw: string): string {
-  const m = raw.trim().match(/^(\d{1,2}):(\d{2})\s*(AM|PM|am|pm)$/i);
+function parseTime(raw: string): { start: string; end: string } {
+  const m = raw.trim().match(/^(\d{1,2}:\d{2}\s*[AP]M)\s*-\s*(\d{1,2}:\d{2}\s*[AP]M)$/i);
+  if (m) return { start: m[1].replace(" ", ""), end: m[2].replace(" ", "") };
+  return { start: "", end: "" };
+}
+
+function parseDate(raw: string): string {
+  const m = raw.match(/(\d{1,2})\/(\d{1,2})\/(\d{4})/);
   if (!m) return "";
-  return `${m[1]}:${m[2]}${m[3].toUpperCase()}`;
+  return `${m[3]}-${m[1].padStart(2, "0")}-${m[2].padStart(2, "0")}`;
 }
 
-function detectMode(location: string, format: string): string {
-  const l = (location + " " + format).toLowerCase();
-  if (l.includes("online") || l.includes("web")) return "online";
-  if (l.includes("hybrid")) return "hybrid";
-  return "in-person";
+function parseRow(cells: string[], crn: string, fileTermCode: string): CourseSection | null {
+  if (cells.length < 4 || !crn) return null;
+
+  // Cell 3: "PREFIX NNNN-SS - Title" or "PREFIX NNNN - Title"
+  const titleCell = cells[3] || "";
+  const courseMatch = titleCell.match(/^([A-Z]{2,5})\s+(\d{3,4}[A-Z]?)(?:-\S+)?\s*[-–]\s*(.+)$/);
+  if (!courseMatch) return null;
+  const prefix = courseMatch[1];
+  const number = courseMatch[2];
+  const title = courseMatch[3].trim();
+
+  const location = stripTags(cells[4] || "");
+  const datesRaw = stripTags(cells[5] || "");
+  const daysRaw = stripTags(cells[6] || "");
+  const timesRaw = stripTags(cells[7] || "");
+  const creditsRaw = stripTags(cells[8] || cells[7] || "3");
+  const instructorRaw = stripTags(cells[9] || cells[8] || "");
+  const statusRaw = stripTags(cells[10] || cells[9] || "");
+
+  // Determine mode: if daysRaw is a delivery-mode string (Online/Hybrid), shift columns
+  const isOnline = /online|web/i.test(daysRaw) || /online/i.test(location);
+  const isHybrid = /hybrid/i.test(daysRaw);
+  let mode = "in-person";
+  if (isOnline) mode = "online";
+  else if (isHybrid) mode = "hybrid";
+
+  const days = isOnline ? "" : parseDays(daysRaw);
+  const timeStr = isOnline ? "" : timesRaw;
+  const { start, end } = parseTime(timeStr);
+
+  // Start date from dates cell (e.g. "8/21/2026 - 10/10/2026")
+  const startDate = parseDate(datesRaw);
+
+  // Credits: look for first numeric-like value in creditsRaw
+  const creditsMatch = creditsRaw.match(/(\d+(?:\.\d+)?)/);
+  const credits = creditsMatch ? Math.round(parseFloat(creditsMatch[1])) : 3;
+
+  // Instructor
+  let instructor: string | null = instructorRaw || null;
+  if (instructor && /tba|staff|^$/i.test(instructor.trim())) instructor = null;
+
+  // Seats open from status ("Open" / "Closed" / "N Seats Available")
+  let seatsOpen: number | null = null;
+  if (/open/i.test(statusRaw)) seatsOpen = 1;
+  else if (/closed/i.test(statusRaw)) seatsOpen = 0;
+  const seatsMatch = statusRaw.match(/(\d+)/);
+  if (seatsMatch) seatsOpen = parseInt(seatsMatch[1], 10);
+
+  // Campus: extract from location — parenthetical city name or first word
+  const campusMatch = location.match(/\(([^)]+)\)/);
+  const campus = campusMatch ? campusMatch[1] : location.split(/[\s/]/)[0] || "";
+
+  return {
+    college_code: COLLEGE_SLUG,
+    term: fileTermCode,
+    course_prefix: prefix,
+    course_number: number,
+    course_title: title,
+    credits,
+    crn,
+    days,
+    start_time: start,
+    end_time: end,
+    start_date: startDate,
+    location,
+    campus,
+    mode,
+    instructor,
+    seats_open: seatsOpen,
+    seats_total: null,
+    prerequisite_text: null,
+    prerequisite_courses: [],
+  };
 }
 
-function parseTable($: cheerio.CheerioAPI, fileTermCode: string): CourseSection[] {
+function parseHtml(html: string, fileTermCode: string): CourseSection[] {
   const sections: CourseSection[] = [];
-  // Results table has id="datatable" or class "table"
-  const table = $("#datatable, table.table").first();
-  if (!table.length) return sections;
-
-  const headers: string[] = [];
-  table.find("thead tr th").each((_, th) => {
-    headers.push($(th).text().trim().toLowerCase());
-  });
-
-  table.find("tbody tr").each((_, row) => {
-    const cells: string[] = [];
-    $(row).find("td").each((_, td) => cells.push($(td).text().trim()));
-    if (cells.length < 5) return;
-
-    // Header order (typical PBSC): CRN, Subject, Course, Section, Title, Credits,
-    //   Days, Time, Location, Campus, Instructor, Seats Avail, Seats Total, Term
-    const get = (key: string) => {
-      const idx = headers.indexOf(key);
-      return idx >= 0 ? cells[idx] || "" : "";
-    };
-
-    const crn = get("crn") || cells[0];
-    const subject = get("subject") || cells[1];
-    const courseNum = get("course") || cells[2];
-    const title = get("title") || cells[4] || "";
-    const creditsRaw = get("credits") || get("credit hours") || cells[5] || "3";
-    const days = normalizeDays(get("days") || cells[6] || "");
-    const timeRaw = get("time") || cells[7] || "";
-    const [startTime, endTime] = timeRaw.includes("-")
-      ? timeRaw.split("-").map(t => normalizeTime(t.trim()))
-      : ["", ""];
-    const location = get("location") || get("room") || cells[8] || "";
-    const campus = get("campus") || cells[9] || "";
-    const instructor = get("instructor") || get("faculty") || cells[10] || null;
-    const seatsOpen = parseInt(get("seats avail") || get("open") || cells[11] || "0", 10);
-    const seatsTotal = parseInt(get("seats total") || get("capacity") || cells[12] || "0", 10);
-
-    if (!crn || !subject || !courseNum) return;
-
-    sections.push({
-      college_code: COLLEGE_SLUG,
-      term: fileTermCode,
-      course_prefix: subject.trim(),
-      course_number: courseNum.trim(),
-      course_title: title.trim(),
-      credits: Math.round(parseFloat(creditsRaw)) || 3,
-      crn: crn.trim(),
-      days,
-      start_time: startTime,
-      end_time: endTime,
-      start_date: "",
-      location: location.trim(),
-      campus: campus.trim(),
-      mode: detectMode(location, ""),
-      instructor: instructor && instructor !== "TBA" && instructor !== "Staff" ? instructor.trim() : null,
-      seats_open: isNaN(seatsOpen) ? null : seatsOpen,
-      seats_total: isNaN(seatsTotal) ? null : seatsTotal,
-      prerequisite_text: null,
-      prerequisite_courses: [],
-    });
-  });
-
+  // Each row: <tr><td><a href='CourseDetail.aspx?course_section_id=NNNN'>Select</a></td>...
+  const rowPattern = /<tr><td><a href='CourseDetail\.aspx\?course_section_id=(\d+)'[^>]*>Select<\/a><\/td>(.*?)<\/tr>/gs;
+  for (const match of html.matchAll(rowPattern)) {
+    const crn = match[1];
+    const rowHtml = match[2];
+    // Split into cells
+    const cellMatches = [...rowHtml.matchAll(/<td[^>]*>(.*?)<\/td>/gs)];
+    const cells = [""].concat(cellMatches.map(m => m[1])); // 0=select placeholder, 1+=real cells
+    const section = parseRow(cells, crn, fileTermCode);
+    if (section) sections.push(section);
+  }
   return sections;
 }
 
-async function searchTerm(
-  termName: string,
-  fileTermCode: string,
+async function getTokensAndCookies(): Promise<{
+  viewstate: string;
+  viewstateGen: string;
+  eventVal: string;
+  cookie: string;
+}> {
+  const res = await fetch(BASE_URL, {
+    headers: {
+      "User-Agent": "Mozilla/5.0 (compatible; community-college-path/1.0)",
+      "Accept-Encoding": "identity",
+    },
+  });
+  const html = await res.text();
+  const vs = html.match(/id="__VIEWSTATE" value="([^"]+)"/)?.[1] || "";
+  const vsg = html.match(/id="__VIEWSTATEGENERATOR" value="([^"]+)"/)?.[1] || "";
+  const ev = html.match(/id="__EVENTVALIDATION" value="([^"]+)"/)?.[1] || "";
+  const setCookie = res.headers.get("set-cookie") || "";
+  const sessionCookie = setCookie.match(/ASP\.NET_SessionId=[^;]+/)?.[0] || "";
+  return { viewstate: vs, viewstateGen: vsg, eventVal: ev, cookie: sessionCookie };
+}
+
+async function postSearch(
   termValue: string,
+  subject: string,
+  tokens: ReturnType<typeof getTokensAndCookies> extends Promise<infer T> ? T : never,
+): Promise<string> {
+  const body = new URLSearchParams({
+    __VIEWSTATE: tokens.viewstate,
+    __VIEWSTATEGENERATOR: tokens.viewstateGen,
+    __EVENTVALIDATION: tokens.eventVal,
+    "ctl00$ContentPlaceHolder1$listBoxTerm": termValue,
+    "ctl00$ContentPlaceHolder1$ddlSubject": subject,
+    "ctl00$ContentPlaceHolder1$Button1": "Search",
+  });
+  const res = await fetch(BASE_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "User-Agent": "Mozilla/5.0 (compatible; community-college-path/1.0)",
+      "Accept-Encoding": "identity",
+      "Referer": BASE_URL,
+      ...(tokens.cookie ? { Cookie: tokens.cookie } : {}),
+    },
+    body: body.toString(),
+  });
+  return res.text();
+}
+
+async function scrapeTerm(
+  termName: string,
+  termValue: string,
+  fileTermCode: string,
   subjectFilter: string | null,
 ): Promise<CourseSection[]> {
   const subjects = subjectFilter ? [subjectFilter] : PBSC_SUBJECTS;
-  const allSections: CourseSection[] = [];
-
-  console.log(`\n  ${termName} — ${subjects.length} subjects`);
+  const sections: CourseSection[] = [];
+  console.log(`\n  ${termName} (${termValue}) — ${subjects.length} subjects`);
 
   for (let si = 0; si < subjects.length; si++) {
     const subject = subjects[si];
     process.stdout.write(`  [${si + 1}/${subjects.length}] ${subject.padEnd(6)} `);
-
     try {
-      // Fresh VIEWSTATE per request to avoid MAC validation errors
-      const tokens = await getFormTokens();
+      const tokens = await getTokensAndCookies();
+      const html = await postSearch(termValue, subject, tokens);
 
-      const body = new URLSearchParams({
-        "__VIEWSTATE": tokens.viewstate,
-        "__VIEWSTATEGENERATOR": tokens.viewstateGenerator,
-        "__EVENTVALIDATION": tokens.eventValidation,
-        "ctl00$ContentPlaceHolder1$listBoxTerm": termValue,
-        "ctl00$ContentPlaceHolder1$ddlSubject": subject,
-        "ctl00$ContentPlaceHolder1$Button1": "Search",
-      });
-
-      const headers: Record<string, string> = {
-        "Content-Type": "application/x-www-form-urlencoded",
-        "User-Agent": "Mozilla/5.0 (compatible; community-college-path/1.0)",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "Accept-Encoding": "identity",
-        "Referer": BASE_URL,
-      };
-      if (tokens.cookieHeader) {
-        // Extract ASP.NET session cookie
-        const sessMatch = tokens.cookieHeader.match(/ASP\.NET_SessionId=[^;]+/);
-        if (sessMatch) headers["Cookie"] = sessMatch[0];
-      }
-
-      const res = await fetch(BASE_URL, {
-        method: "POST",
-        headers,
-        body: body.toString(),
-      });
-
-      const html = await res.text();
-      const $ = cheerio.load(html);
-
-      // Check for server error
-      if (html.includes("Server Error") || html.includes("ViewStateException")) {
-        console.log("→ viewstate error (retry)");
-        await sleep(500);
-        si--;
+      if (html.includes("ViewStateException") || html.includes("Server Error")) {
+        console.log("→ viewstate error");
+        await sleep(1000);
         continue;
       }
 
-      const sections = parseTable($, fileTermCode);
-      allSections.push(...sections);
-      console.log(`→ ${sections.length}`);
+      const parsed = parseHtml(html, fileTermCode);
+      sections.push(...parsed);
+      console.log(`→ ${parsed.length}`);
 
-      // Partial save every 20 subjects
-      if ((si + 1) % 20 === 0 && allSections.length > 0) {
+      if ((si + 1) % 20 === 0 && sections.length > 0) {
         if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
         fs.writeFileSync(
           path.join(DATA_DIR, `${fileTermCode}.partial.json`),
-          JSON.stringify(allSections, null, 2) + "\n",
+          JSON.stringify(sections, null, 2) + "\n",
         );
       }
-
-      await sleep(400);
+      await sleep(300);
     } catch (err) {
-      console.log(`→ error: ${(err as Error).message?.slice(0, 60)}`);
+      console.log(`→ err: ${(err as Error).message?.slice(0, 60)}`);
     }
   }
-
-  return allSections;
+  return sections;
 }
 
 async function main() {
   const { terms, subjectFilter } = parseArgs();
-  console.log(`\nPalm Beach State College — ${terms.length} term(s)`);
+  console.log(`\nPalm Beach State College — ${terms.join(", ")}`);
   if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
   let total = 0;
-
   for (const termName of terms) {
     const cfg = TERM_MAP[termName];
-    if (!cfg) {
-      console.error(`Unknown term: "${termName}". Available: ${Object.keys(TERM_MAP).join(", ")}`);
-      process.exit(1);
-    }
-    const sections = await searchTerm(termName, cfg.file, cfg.value, subjectFilter);
+    if (!cfg) { console.error(`Unknown term: ${termName}`); process.exit(1); }
+    const sections = await scrapeTerm(termName, cfg.value, cfg.file, subjectFilter);
     if (sections.length > 0) {
       const p = path.join(DATA_DIR, `${cfg.file}.json`);
       fs.writeFileSync(p, JSON.stringify(sections, null, 2) + "\n");
       const partial = path.join(DATA_DIR, `${cfg.file}.partial.json`);
       if (fs.existsSync(partial)) fs.unlinkSync(partial);
-      console.log(`\n  ${termName}: ${sections.length} sections`);
-    } else {
-      console.log(`\n  ${termName}: 0 sections (check table selectors)`);
     }
+    console.log(`\n  ${termName}: ${sections.length} sections`);
     total += sections.length;
   }
-
   console.log(`\nDone! ${total} sections total\n`);
 }
 
