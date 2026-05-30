@@ -74,6 +74,12 @@ const caConfig: StateConfig = {
       // rows to their college. Peralta's PeopleSoft is SSO-gated (Oracle
       // Identity Cloud) so this is the only public source.
       { scripts: ["scripts/ca/scrape-peralta.ts"], runner: "http" },
+      // Contra Costa CCD cluster: three colleges (Contra Costa, Diablo Valley,
+      // Los Medanos) share the district's ASP.NET WebForms search at
+      // webapps.4cd.edu/apps/courseschedulesearch/search-course.aspx. The
+      // scraper paginates via __doPostBack + VIEWSTATE; one (college, term)
+      // takes ~30s–5min depending on size.
+      { scripts: ["scripts/ca/scrape-4cd.ts"], runner: "http" },
     ],
     prereqs: { source: "aggregate-from-courses" },
     transfers: [
