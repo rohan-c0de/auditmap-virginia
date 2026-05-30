@@ -69,6 +69,11 @@ export default async function AccountPage() {
           null,
         authProvider: profile?.auth_provider ?? null,
         defaultState: profile?.default_state ?? null,
+        // PR 3 seat-watch. Defaults to true on the profile row (per
+        // migration 019), so when the column is null on legacy rows
+        // we still treat the user as opted-in until they opt out.
+        seatNotificationsEnabled:
+          profile?.seat_notifications_enabled ?? true,
       }}
       savedSchedules={schedules ?? []}
       savedCourses={courses ?? []}
