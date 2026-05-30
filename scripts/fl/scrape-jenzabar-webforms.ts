@@ -17,6 +17,12 @@
  * and the optional X suffix is a sub-session. We target the
  * non-suffixed "full term" values to avoid duplication.
  *
+ * NOTE: This scraper currently fails with a networkidle timeout because
+ * the shared template uses waitUntil:"networkidle" and Chipola's JICS
+ * keeps persistent background connections. Template modification needed
+ * to add a waitStrategy option. Deferred — Chipola is a small college
+ * (~2k students) and not worth template surgery now.
+ *
  * Usage:
  *   npx tsx scripts/fl/scrape-jenzabar-webforms.ts
  *   npx tsx scripts/fl/scrape-jenzabar-webforms.ts --college=chipola
