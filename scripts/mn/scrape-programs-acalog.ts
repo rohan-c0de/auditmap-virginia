@@ -20,11 +20,11 @@ import type { AcalogProgramConfig } from "../lib/scrape-acalog-programs.js";
 
 const COLLEGES: AcalogProgramConfig[] = [
   { collegeSlug: "anoka-technical-college", baseUrl: "https://catalog.anokatech.edu", catoidFallback: 6, programNavoids: [292], autoDiscoverCatoid: true },
-  { collegeSlug: "anoka-ramsey-community-college", baseUrl: "https://catalog.anokaramsey.edu", catoidFallback: 3, programNavoids: [141], autoDiscoverCatoid: true },
-  { collegeSlug: "century-college", baseUrl: "https://catalog.century.edu", catoidFallback: 23, programNavoids: [1602], autoDiscoverCatoid: true },
-  { collegeSlug: "dakota-county-technical-college", baseUrl: "https://catalog.dctc.edu", catoidFallback: 2, programNavoids: [43], autoDiscoverCatoid: true },
-  { collegeSlug: "inver-hills-community-college", baseUrl: "https://catalog.inverhills.edu", catoidFallback: 2, programNavoids: [40], autoDiscoverCatoid: true },
-  { collegeSlug: "saint-paul-college", baseUrl: "https://catalog.saintpaul.edu", catoidFallback: 5, programNavoids: [224], autoDiscoverCatoid: true },
+  { collegeSlug: "anoka-ramsey-community-college", baseUrl: "https://catalog.anokaramsey.edu", catoidFallback: 3, programNavoids: [141], autoDiscoverCatoid: true, usePlaywright: true },
+  { collegeSlug: "century-college", baseUrl: "https://catalog.century.edu", catoidFallback: 23, programNavoids: [1602], autoDiscoverCatoid: true, usePlaywright: true },
+  { collegeSlug: "dakota-county-technical-college", baseUrl: "https://catalog.dctc.edu", catoidFallback: 2, programNavoids: [43], autoDiscoverCatoid: true, usePlaywright: true },
+  { collegeSlug: "inver-hills-community-college", baseUrl: "https://catalog.inverhills.edu", catoidFallback: 2, programNavoids: [40], autoDiscoverCatoid: false, usePlaywright: true },
+  { collegeSlug: "saint-paul-college", baseUrl: "https://catalog.saintpaul.edu", catoidFallback: 5, programNavoids: [224], autoDiscoverCatoid: true, usePlaywright: true },
 ];
 
 async function main() {

@@ -32,6 +32,7 @@
  */
 import * as fs from "fs";
 import * as path from "path";
+import { chromium, type BrowserContext } from "playwright";
 
 const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
@@ -76,30 +77,72 @@ const COLLEGES: CollegeCatalog[] = [
 
 const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 
-async function retryFetch(url: string, label: string, attempts = 3): Promise<string> {
+// ---------------------------------------------------------------------------
+// AWS WAF cookie acquisition via headless Chromium
+// ---------------------------------------------------------------------------
+
+const wafCookies = new Map<string, string>();
+
+async function acquireWafCookies(baseUrl: string): Promise<string> {
+  const cached = wafCookies.get(baseUrl);
+  if (cached) return cached;
+
+  console.log(`  Acquiring WAF cookies via headless browser: ${baseUrl}`);
+  const browser = await chromium.launch({ headless: true });
+  try {
+    const ctx = await browser.newContext({ userAgent: UA });
+    const page = await ctx.newPage();
+    await page.goto(baseUrl, { waitUntil: "networkidle", timeout: 30_000 });
+    const html = await page.content();
+    if (html.length < 5_000 && html.includes("awswaf")) {
+      await page.waitForNavigation({ timeout: 15_000 }).catch(() => {});
+    }
+    const cookies = await ctx.cookies();
+    const cookieStr = cookies.map((c) => `${c.name}=${c.value}`).join("; ");
+    wafCookies.set(baseUrl, cookieStr);
+    console.log(`  WAF cookies acquired (${cookies.length} cookies)`);
+    return cookieStr;
+  } finally {
+    await browser.close();
+  }
+}
+
+function isWafChallenge(html: string): boolean {
+  return html.length < 5_000 && html.includes("awswaf");
+}
+
+async function retryFetch(url: string, label: string, attempts = 3, baseUrl?: string): Promise<string> {
   let lastErr: unknown;
-  // Acalog catalogs sit behind AWS WAF Bot Control — needs full Chrome-like
-  // header set + Referer matching the catalog origin or it returns an
-  // empty JS-challenge page.
   for (let i = 0; i < attempts; i++) {
     try {
       const u = new URL(url);
       const referer = `${u.protocol}//${u.host}/`;
-      const res = await fetch(url, {
-        headers: {
-          "User-Agent": UA,
-          Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-          "Accept-Language": "en-US,en;q=0.9",
-          "Accept-Encoding": "gzip, deflate, br",
-          Referer: referer,
-          "Sec-Fetch-Dest": "document",
-          "Sec-Fetch-Mode": "navigate",
-          "Sec-Fetch-Site": "same-origin",
-          "Sec-Fetch-User": "?1",
-          "Upgrade-Insecure-Requests": "1",
-        },
-      });
-      if (res.ok) return await res.text();
+      const headers: Record<string, string> = {
+        "User-Agent": UA,
+        Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Accept-Encoding": "gzip, deflate, br",
+        Referer: referer,
+        "Sec-Fetch-Dest": "document",
+        "Sec-Fetch-Mode": "navigate",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-User": "?1",
+        "Upgrade-Insecure-Requests": "1",
+      };
+      if (baseUrl) {
+        const cookies = wafCookies.get(baseUrl);
+        if (cookies) headers["Cookie"] = cookies;
+      }
+      const res = await fetch(url, { headers });
+      if (res.ok) {
+        const text = await res.text();
+        if (isWafChallenge(text) && baseUrl && i === 0) {
+          console.log(`  WAF challenge on ${label}, acquiring cookies via browser...`);
+          await acquireWafCookies(baseUrl);
+          continue;
+        }
+        return text;
+      }
       if (res.status >= 500) lastErr = new Error(`HTTP ${res.status}`);
       else return "";
     } catch (e) {
@@ -183,13 +226,15 @@ function extractCourseCodes(text: string, excludeOwn?: string): string[] {
 }
 
 function parseAcalogDetail(html: string): { prefix: string; number: string; text: string; courses: string[] } | null {
-  const titleMatch = html.match(/<title>\s*([A-Z]{2,5})\s*(\d{3,4}[A-Z]?)\s*-/);
+  // Title may use &nbsp; as separator (Anoka-Ramsey) or plain space.
+  const titleMatch = html.match(/<title>\s*([A-Z]{2,5})\s*(?:&nbsp;)?\s*(\d{3,4}[A-Z]?)\s*(?:&nbsp;)?\s*-/);
   if (!titleMatch) return null;
   const prefix = titleMatch[1].toUpperCase();
   const number = titleMatch[2];
-  // Match optional leading "Course " (anokatech) and trailing punctuation.
+  // Anoka-Ramsey adds "(must have a grade of C or better) or Corequisite(s):"
+  // after "Prerequisite(s)" — allow arbitrary text between the keyword and </strong>.
   const m = html.match(
-    /<strong>\s*(?:Course\s+)?Pre[-\s]?[Rr]equisite(?:s|\(s\))?\s*:?\s*<\/strong>\s*([\s\S]*?)(?:<br\s*\/?>\s*<br|<\/p>|<strong>)/i,
+    /<strong>\s*(?:Course\s+)?Pre[-\s]?[Rr]equisite(?:s|\(s\))?[^<]*<\/strong>\s*([\s\S]*?)(?:<br\s*\/?>\s*<br|<\/p>|<strong>)/i,
   );
   if (!m) return null;
   const text = decodeText(m[1]).replace(/[.;,]\s*$/, "").trim();
@@ -199,22 +244,22 @@ function parseAcalogDetail(html: string): { prefix: string; number: string; text
 
 async function scrapeAcalog(c: CollegeCatalog, maxPages: number): Promise<Record<string, PrereqEntry>> {
   console.log(`  [${c.slug}] Acalog catoid=${c.catoid} navoid=${c.navoid}`);
+  const base = c.baseUrl!;
+
+  // Pre-acquire WAF cookies: probe the catalog index; if challenged, solve via browser.
+  try {
+    const probe = await fetch(base, { headers: { "User-Agent": UA } });
+    const probeText = await probe.text();
+    if (isWafChallenge(probeText)) await acquireWafCookies(base);
+  } catch {
+    await acquireWafCookies(base);
+  }
+
   const allCoids = new Set<string>();
   let consecutiveEmpty = 0;
   for (let cpage = 1; cpage <= maxPages; cpage++) {
-    let html = await retryFetch(acalogListUrl(c, cpage), `${c.slug} list(${cpage})`);
-    let coids = extractAcalogCoids(html);
-    // AWS WAF Bot Control returns a 1991-byte challenge page on the first
-    // request after a cold start or rate-limit cooldown. If we get an
-    // empty list page, warm up again and retry once.
-    if (coids.length === 0 && cpage === 1) {
-      console.log(`    page 1 empty — re-warming session and retrying`);
-      await sleep(3000);
-      await warmupSession(c.baseUrl!);
-      await sleep(1000);
-      html = await retryFetch(acalogListUrl(c, cpage), `${c.slug} list(${cpage}) retry`);
-      coids = extractAcalogCoids(html);
-    }
+    const html = await retryFetch(acalogListUrl(c, cpage), `${c.slug} list(${cpage})`, 3, base);
+    const coids = extractAcalogCoids(html);
     if (coids.length === 0) {
       consecutiveEmpty++;
       if (consecutiveEmpty >= 2) break;
@@ -230,7 +275,7 @@ async function scrapeAcalog(c: CollegeCatalog, maxPages: number): Promise<Record
   const out: Record<string, PrereqEntry> = {};
   let done = 0;
   await pmap(coidList, CONCURRENCY, async (coid) => {
-    const html = await retryFetch(acalogDetailUrl(c, coid), `${c.slug} coid=${coid}`);
+    const html = await retryFetch(acalogDetailUrl(c, coid), `${c.slug} coid=${coid}`, 3, base);
     const parsed = parseAcalogDetail(html);
     if (parsed) {
       const key = `${parsed.prefix} ${parsed.number}`;
@@ -361,19 +406,6 @@ async function scrapeSmartCatalogIq(c: CollegeCatalog): Promise<Record<string, P
 // Main
 // ----------------------------------------------------------------------
 
-/**
- * Warm up the WAF session by hitting the catalog index page once. AWS
- * WAF Bot Control returns a 1991-byte challenge HTML on the first
- * content request unless the client has issued an index.php request
- * recently from the same origin.
- */
-async function warmupSession(baseUrl: string): Promise<void> {
-  try {
-    await retryFetch(`${baseUrl}/index.php`, `${baseUrl} warmup`);
-  } catch {
-    /* non-fatal */
-  }
-}
 
 async function main() {
   const args = process.argv.slice(2);
@@ -406,8 +438,6 @@ async function main() {
 
   for (const c of targets) {
     try {
-      // Warm up WAF session for Acalog instances before each college.
-      if (c.platform === "acalog" && c.baseUrl) await warmupSession(c.baseUrl);
       const partial = c.platform === "acalog" ? await scrapeAcalog(c, maxPages) : await scrapeSmartCatalogIq(c);
       for (const [k, v] of Object.entries(partial)) {
         // First writer wins (MnSCU common course codes mean values should match)
