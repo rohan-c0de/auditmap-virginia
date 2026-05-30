@@ -53,10 +53,16 @@ const akConfig: StateConfig = {
     // manual-only: transfers — Alaska has no registered articulation portal
     // and Ilisagvik (one CC, tribal-controlled) doesn't publish bulk transfer
     // equivalencies. Skip until a data source is identified.
-    // The Empower SIS section payload exposes credit/seat data but no
-    // prerequisite text, so there's nothing for the aggregator to flatten.
-    // manual-only: prereqs — Ilisagvik's catalog PDF carries prereq text;
-    // a follow-up PDF parser would surface that data.
+    // Empower SIS sections don't expose prerequisite text, so we scrape the
+    // catalog (CleanCatalog at catalog.ilisagvik.edu) for the `field-pr`
+    // block on each course detail page. Pantheon rate-limits raw fetch and
+    // IP-bans aggressively; the scraper uses Playwright with a 1.5s delay.
+    prereqs: [
+      {
+        scripts: ["scripts/ak/scrape-catalog-prereqs.ts"],
+        runner: "playwright",
+      },
+    ],
     // catalog.ilisagvik.edu runs CleanCatalog; the wrapper script discovers
     // degrees via the platform's /degrees index.
     programs: [
