@@ -162,9 +162,9 @@ export default async function MajorPlanPage(props: PageProps) {
               </div>
             ))}
           </div>
-          <p className="mt-3 text-xs text-gray-400 dark:text-slate-500">
-            College-wide figures for {plan.collegeName} from the federal College
-            Scorecard — not specific to this program.
+          <p className="mt-3 text-[10px] text-gray-400 dark:text-slate-500">
+            Source: federal College Scorecard ({sc!.fetchedAt ? new Date(sc!.fetchedAt).getFullYear() : "recent"}).
+            {" "}College-wide — not specific to this program.
           </p>
         </section>
       )}
