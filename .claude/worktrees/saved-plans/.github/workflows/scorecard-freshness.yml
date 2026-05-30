@@ -1,0 +1,26 @@
+name: Scorecard freshness
+
+on:
+  pull_request:
+    paths:
+      - "data/*/scorecard/**"
+      - "scripts/check-scorecard-freshness.ts"
+      - ".github/workflows/scorecard-freshness.yml"
+  push:
+    branches: [main]
+  # Monthly sanity check so the freshness window doesn't expire silently
+  # between PRs touching scorecard data.
+  schedule:
+    - cron: "0 9 1 * *" # 09:00 UTC on the 1st of every month
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - run: npm ci
+      - run: npm run check:scorecard

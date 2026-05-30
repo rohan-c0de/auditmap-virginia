@@ -1,0 +1,31 @@
+<!--
+  Drift fixture #1: a course page whose only schedule card is for a term
+  that does NOT match the caller's targetTerm. scrapeSections() must
+  return an empty array — not silently produce stale rows for an old term.
+-->
+<html>
+<body>
+  <div class="credits">3 credits</div>
+  <div id="schedule">
+    <div class="card">
+      <div class="card-header">
+        <a class="card-link"><h4>Fall 2024</h4></a>
+      </div>
+      <table class="table">
+        <tbody>
+          <tr class="vevent">
+            <td>50001</td>
+            <td>001</td>
+            <td>3</td>
+            <td><div class="days"><span class="s">Tu</span><span class="s">Th</span></div></td>
+            <td><div class="times">2:00 PM - 3:15 PM</div></td>
+            <td>08/26/2024</td>
+            <td>Annandale</td>
+            <td><span title="In-Person Course">P</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

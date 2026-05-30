@@ -1,0 +1,46 @@
+{
+  "unitid": 228608,
+  "schoolName": "Temple College",
+  "state": "TX",
+  "city": "Temple",
+  "schoolUrl": "www.templejc.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-16T15:39:51.228Z",
+  "size": 3178,
+  "shareFirstGeneration": 0.4645346453,
+  "cost": {
+    "tuitionInState": 3000,
+    "tuitionOutOfState": 7224,
+    "attendanceAcademicYear": 14200,
+    "avgNetPricePublic": 10682,
+    "bookSupply": 2000,
+    "roomBoardOffCampus": 14400,
+    "netPriceByIncome": {
+      "0_30000": 10262,
+      "30001_48000": 10031,
+      "48001_75000": 11563,
+      "75001_110000": 11898,
+      "110001_plus": 11571
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.3474,
+    "federalLoanRate": 0.2101,
+    "medianDebtCompleters": 12813
+  },
+  "completion": {
+    "completionRate150nt": 0.316,
+    "completionRate200nt": 0.2901,
+    "transferRate": 0.16,
+    "retentionRateFullTime": 0.6785,
+    "retentionRatePartTime": 0.3792
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 38678,
+    "median1YrAfterCompletion": 43896,
+    "percentile25_10YrsAfterEntry": 20659,
+    "percentile75_10YrsAfterEntry": 58799,
+    "shareEarningAboveHsGrad": 0.62
+  }
+}

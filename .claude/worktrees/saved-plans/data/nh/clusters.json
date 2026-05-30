@@ -1,0 +1,42 @@
+{
+  "$comment": "Multi-college-district cluster detection output (issue #497). Each cluster represents N colleges that share a SIS host or registrable domain — a single bespoke scraper can cover all members.",
+  "state": "nh",
+  "generatedAt": "2026-05-24T03:02:36.074Z",
+  "summary": {
+    "inputCount": 7,
+    "clusterCount": 0,
+    "clusteredCount": 0,
+    "singletonCount": 7
+  },
+  "clusters": [],
+  "singletons": [
+    {
+      "slug": "gbcc",
+      "primaryUrl": "greatbay.edu"
+    },
+    {
+      "slug": "lrcc",
+      "primaryUrl": "lrcc.edu"
+    },
+    {
+      "slug": "mccnh",
+      "primaryUrl": "mccnh.edu"
+    },
+    {
+      "slug": "nashuacc",
+      "primaryUrl": "nashuacc.edu"
+    },
+    {
+      "slug": "nhti",
+      "primaryUrl": "nhti.edu"
+    },
+    {
+      "slug": "rvcc",
+      "primaryUrl": "rivervalley.edu"
+    },
+    {
+      "slug": "wmcc",
+      "primaryUrl": "wmcc.edu"
+    }
+  ]
+}

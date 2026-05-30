@@ -121,10 +121,7 @@ export interface PlanSequence {
   prereqCoverage: number;
   /** Credit ceiling used when packing courses into a term. */
   creditsPerTerm: number;
-  /**
-   * True when the full sequence exceeded MAX_DISPLAY_TERMS and was truncated.
-   * The UI should show a "talk to an advisor" note rather than a 35-term list.
-   */
+  /** True when the full sequence exceeded MAX_DISPLAY_TERMS and was truncated. */
   truncated: boolean;
 }
 
@@ -343,13 +340,7 @@ function rank(s: TransferStatus): number {
 const TERM_CREDIT_CAP = 16;
 /** Below this prereq coverage the ordering is noise — show only the checklist. */
 const SEQUENCE_MIN_COVERAGE = 0.25;
-/**
- * Max terms to display. Programs with very long prereq chains (e.g. a
- * 200-credit catalog entry, or a heavily chained technical sequence) can
- * produce 15–35 terms, which is worse than useless. Cap at 8 and surface a
- * "talk to an advisor" note — found via the national sweep (NY herkimer: 35
- * terms; GA aviation: 15 terms; SD parsed totalCredits=219).
- */
+/** Maximum terms to show — prevents 35-term sequences on over-prereqed programs. */
 const MAX_DISPLAY_TERMS = 8;
 
 /**

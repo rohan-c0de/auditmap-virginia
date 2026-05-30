@@ -1,0 +1,46 @@
+{
+  "unitid": 121901,
+  "schoolName": "Riverside City College",
+  "state": "CA",
+  "city": "Riverside",
+  "schoolUrl": "www.rcc.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-23T07:22:08.558Z",
+  "size": 18346,
+  "shareFirstGeneration": 0.5571788413,
+  "cost": {
+    "tuitionInState": 1428,
+    "tuitionOutOfState": 12498,
+    "attendanceAcademicYear": 16911,
+    "avgNetPricePublic": 8377,
+    "bookSupply": 1454,
+    "roomBoardOffCampus": 26740,
+    "netPriceByIncome": {
+      "0_30000": 6931,
+      "30001_48000": 7371,
+      "48001_75000": 10221,
+      "75001_110000": 12755,
+      "110001_plus": 13880
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.3426,
+    "federalLoanRate": 0.0098,
+    "medianDebtCompleters": 8000
+  },
+  "completion": {
+    "completionRate150nt": 0.3659,
+    "completionRate200nt": 0.3831,
+    "transferRate": 0.0819,
+    "retentionRateFullTime": 0.7035,
+    "retentionRatePartTime": 0.4549
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 41091,
+    "median1YrAfterCompletion": 29382,
+    "percentile25_10YrsAfterEntry": 20998,
+    "percentile75_10YrsAfterEntry": 63424,
+    "shareEarningAboveHsGrad": 0.569
+  }
+}

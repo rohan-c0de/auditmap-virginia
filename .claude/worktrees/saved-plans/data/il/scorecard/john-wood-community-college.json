@@ -1,0 +1,46 @@
+{
+  "unitid": 146278,
+  "schoolName": "John Wood Community College",
+  "state": "IL",
+  "city": "Quincy",
+  "schoolUrl": "www.jwcc.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-16T19:36:02.508Z",
+  "size": 1371,
+  "shareFirstGeneration": 0.4661432777,
+  "cost": {
+    "tuitionInState": 5700,
+    "tuitionOutOfState": 9300,
+    "attendanceAcademicYear": 15845,
+    "avgNetPricePublic": 7050,
+    "bookSupply": 2200,
+    "roomBoardOffCampus": 9000,
+    "netPriceByIncome": {
+      "0_30000": 5899,
+      "30001_48000": 6580,
+      "48001_75000": 8900,
+      "75001_110000": 10777,
+      "110001_plus": null
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.3987,
+    "federalLoanRate": 0.1206,
+    "medianDebtCompleters": 8029
+  },
+  "completion": {
+    "completionRate150nt": 0.4894,
+    "completionRate200nt": 0.4775,
+    "transferRate": 0.1702,
+    "retentionRateFullTime": 0.6377,
+    "retentionRatePartTime": 0.5517
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 38631,
+    "median1YrAfterCompletion": 32756,
+    "percentile25_10YrsAfterEntry": 23915,
+    "percentile75_10YrsAfterEntry": 56187,
+    "shareEarningAboveHsGrad": 0.54
+  }
+}

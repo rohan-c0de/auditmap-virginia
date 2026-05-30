@@ -56,12 +56,8 @@ interface CourseSection {
   prerequisite_courses: string[];
 }
 
-// Season → standard suffix used by every other state's scraper.
 const SEASON_SUFFIX: Record<string, string> = {
-  fall: "FA",
-  spring: "SP",
-  summer: "SU",
-  winter: "WI",
+  fall: "FA", spring: "SP", summer: "SU", winter: "WI",
 };
 
 function parseTerm(label: string): { code: string; year: number } | null {
@@ -73,10 +69,8 @@ function parseTerm(label: string): { code: string; year: number } | null {
   const endYear = parseInt(m[2], 10);
   const season = m[3].toLowerCase();
   const year = season === "fall" ? startYear : endYear;
-  const suffix = SEASON_SUFFIX[season] ?? season.toUpperCase().slice(0, 2);
-  // Emit standard YYYYFA/YYYYSP/YYYYSU codes so the planner's section lookup
-  // matches — previously emitted "fall-2026" style which nothing else reads.
-  return { code: `${year}${suffix}`, year };
+  // Standard YYYYFA/YYYYSP/YYYYSU codes — matches every other state's format.
+  return { code: `${year}${SEASON_SUFFIX[season] ?? season.toUpperCase().slice(0,2)}`, year };
 }
 
 function parseCourseCode(raw: string): {

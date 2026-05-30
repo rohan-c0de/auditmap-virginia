@@ -1,0 +1,46 @@
+{
+  "unitid": 125028,
+  "schoolName": "Ventura College",
+  "state": "CA",
+  "city": "Ventura",
+  "schoolUrl": "www.venturacollege.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-23T07:22:16.132Z",
+  "size": 10150,
+  "shareFirstGeneration": 0.5665634675,
+  "cost": {
+    "tuitionInState": 1426,
+    "tuitionOutOfState": 9615,
+    "attendanceAcademicYear": 9306,
+    "avgNetPricePublic": -982,
+    "bookSupply": 1062,
+    "roomBoardOffCampus": 22086,
+    "netPriceByIncome": {
+      "0_30000": -1913,
+      "30001_48000": -2393,
+      "48001_75000": 524,
+      "75001_110000": 4165,
+      "110001_plus": 6577
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2622,
+    "federalLoanRate": 0.0079,
+    "medianDebtCompleters": 13876
+  },
+  "completion": {
+    "completionRate150nt": 0.3846,
+    "completionRate200nt": 0.4775,
+    "transferRate": 0.0722,
+    "retentionRateFullTime": 0.7431,
+    "retentionRatePartTime": 0.3667
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 43430,
+    "median1YrAfterCompletion": 50638,
+    "percentile25_10YrsAfterEntry": 23425,
+    "percentile75_10YrsAfterEntry": 66769,
+    "shareEarningAboveHsGrad": 0.605
+  }
+}

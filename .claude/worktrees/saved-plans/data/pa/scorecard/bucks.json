@@ -1,0 +1,46 @@
+{
+  "unitid": 211307,
+  "schoolName": "Bucks County Community College",
+  "state": "PA",
+  "city": "Newtown",
+  "schoolUrl": "www.bucks.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-13T02:14:37.345Z",
+  "size": 5289,
+  "shareFirstGeneration": 0.4724637681,
+  "cost": {
+    "tuitionInState": 5683,
+    "tuitionOutOfState": 13963,
+    "attendanceAcademicYear": 11688,
+    "avgNetPricePublic": 6389,
+    "bookSupply": 1700,
+    "roomBoardOffCampus": 8100,
+    "netPriceByIncome": {
+      "0_30000": 3725,
+      "30001_48000": 4534,
+      "48001_75000": 6371,
+      "75001_110000": 10516,
+      "110001_plus": 11581
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2371,
+    "federalLoanRate": 0.1004,
+    "medianDebtCompleters": 12000
+  },
+  "completion": {
+    "completionRate150nt": 0.3232,
+    "completionRate200nt": 0.3252,
+    "transferRate": 0.2195,
+    "retentionRateFullTime": 0.751,
+    "retentionRatePartTime": 0.5179
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 47324,
+    "median1YrAfterCompletion": 33535,
+    "percentile25_10YrsAfterEntry": 27775,
+    "percentile75_10YrsAfterEntry": 72979,
+    "shareEarningAboveHsGrad": 0.672
+  }
+}

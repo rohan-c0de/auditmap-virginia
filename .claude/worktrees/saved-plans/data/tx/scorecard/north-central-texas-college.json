@@ -1,0 +1,46 @@
+{
+  "unitid": 224110,
+  "schoolName": "North Central Texas College",
+  "state": "TX",
+  "city": "Gainesville",
+  "schoolUrl": "https://www.nctc.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-16T15:39:42.486Z",
+  "size": 5863,
+  "shareFirstGeneration": 0.4257005378,
+  "cost": {
+    "tuitionInState": 3600,
+    "tuitionOutOfState": 5739,
+    "attendanceAcademicYear": 10200,
+    "avgNetPricePublic": 6587,
+    "bookSupply": 1680,
+    "roomBoardOffCampus": 11200,
+    "netPriceByIncome": {
+      "0_30000": 5439,
+      "30001_48000": 5505,
+      "48001_75000": 7059,
+      "75001_110000": 8250,
+      "110001_plus": 10096
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2143,
+    "federalLoanRate": 0.2032,
+    "medianDebtCompleters": 11250
+  },
+  "completion": {
+    "completionRate150nt": 0.3493,
+    "completionRate200nt": 0.4038,
+    "transferRate": 0.2819,
+    "retentionRateFullTime": 0.6604,
+    "retentionRatePartTime": 0.5204
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 45809,
+    "median1YrAfterCompletion": 40516,
+    "percentile25_10YrsAfterEntry": 25028,
+    "percentile75_10YrsAfterEntry": 66759,
+    "shareEarningAboveHsGrad": 0.598
+  }
+}

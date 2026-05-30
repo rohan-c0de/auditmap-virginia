@@ -1,0 +1,46 @@
+{
+  "unitid": 172200,
+  "schoolName": "Schoolcraft Community College District",
+  "state": "MI",
+  "city": "Livonia",
+  "schoolUrl": "https://www.schoolcraft.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-13T02:13:26.507Z",
+  "size": 7511,
+  "shareFirstGeneration": 0.4256217738,
+  "cost": {
+    "tuitionInState": 4736,
+    "tuitionOutOfState": 8142,
+    "attendanceAcademicYear": 12048,
+    "avgNetPricePublic": 2260,
+    "bookSupply": 1840,
+    "roomBoardOffCampus": 12248,
+    "netPriceByIncome": {
+      "0_30000": 1083,
+      "30001_48000": 991,
+      "48001_75000": 3900,
+      "75001_110000": 5100,
+      "110001_plus": null
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2807,
+    "federalLoanRate": 0.0752,
+    "medianDebtCompleters": 10500
+  },
+  "completion": {
+    "completionRate150nt": null,
+    "completionRate200nt": null,
+    "transferRate": null,
+    "retentionRateFullTime": null,
+    "retentionRatePartTime": null
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 42722,
+    "median1YrAfterCompletion": 41790,
+    "percentile25_10YrsAfterEntry": 22218,
+    "percentile75_10YrsAfterEntry": 64896,
+    "shareEarningAboveHsGrad": 0.579
+  }
+}

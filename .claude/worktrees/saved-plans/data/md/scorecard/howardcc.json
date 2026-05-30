@@ -1,0 +1,46 @@
+{
+  "unitid": 162779,
+  "schoolName": "Howard Community College",
+  "state": "MD",
+  "city": "Columbia",
+  "schoolUrl": "www.howardcc.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-13T02:13:19.324Z",
+  "size": 6649,
+  "shareFirstGeneration": 0.3873409013,
+  "cost": {
+    "tuitionInState": 4080,
+    "tuitionOutOfState": 9624,
+    "attendanceAcademicYear": 16774,
+    "avgNetPricePublic": 11133,
+    "bookSupply": 2400,
+    "roomBoardOffCampus": 24498,
+    "netPriceByIncome": {
+      "0_30000": 9714,
+      "30001_48000": 9924,
+      "48001_75000": 12198,
+      "75001_110000": 14104,
+      "110001_plus": 15881
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2678,
+    "federalLoanRate": 0.0739,
+    "medianDebtCompleters": 10500
+  },
+  "completion": {
+    "completionRate150nt": 0.2402,
+    "completionRate200nt": 0.3289,
+    "transferRate": 0.2598,
+    "retentionRateFullTime": 0.6876,
+    "retentionRatePartTime": 0.4851
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 49020,
+    "median1YrAfterCompletion": 50859,
+    "percentile25_10YrsAfterEntry": 25196,
+    "percentile75_10YrsAfterEntry": 77530,
+    "shareEarningAboveHsGrad": 0.673
+  }
+}

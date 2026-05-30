@@ -1,0 +1,153 @@
+{
+  "$comment": "Multi-college-district cluster detection output (issue #497). Each cluster represents N colleges that share a SIS host or registrable domain — a single bespoke scraper can cover all members.",
+  "state": "wa",
+  "generatedAt": "2026-05-28T20:35:34.420Z",
+  "summary": {
+    "inputCount": 32,
+    "clusterCount": 1,
+    "clusteredCount": 2,
+    "singletonCount": 30
+  },
+  "clusters": [
+    {
+      "id": "spokane-edu",
+      "sharedSignal": "spokane.edu",
+      "signalKind": "registrable-domain",
+      "memberSlugs": [
+        "spokane-community-college",
+        "spokane-falls-community-college"
+      ],
+      "evidence": {
+        "spokane-community-college": [
+          "scc.spokane.edu"
+        ],
+        "spokane-falls-community-college": [
+          "sfcc.spokane.edu"
+        ]
+      },
+      "publicGuestAccess": "unknown"
+    }
+  ],
+  "singletons": [
+    {
+      "slug": "bellevue-college",
+      "primaryUrl": "bellevuecollege.edu"
+    },
+    {
+      "slug": "bellingham-technical-college",
+      "primaryUrl": "btc.edu"
+    },
+    {
+      "slug": "pierce-college-district",
+      "primaryUrl": "pierce.ctc.edu"
+    },
+    {
+      "slug": "big-bend-community-college",
+      "primaryUrl": "bigbend.edu"
+    },
+    {
+      "slug": "centralia-college",
+      "primaryUrl": "centralia.edu"
+    },
+    {
+      "slug": "clark-college",
+      "primaryUrl": "clark.edu"
+    },
+    {
+      "slug": "columbia-basin-college",
+      "primaryUrl": "columbiabasin.edu"
+    },
+    {
+      "slug": "edmonds-college",
+      "primaryUrl": "edmonds.edu"
+    },
+    {
+      "slug": "grays-harbor-college",
+      "primaryUrl": "ghc.edu"
+    },
+    {
+      "slug": "green-river-college",
+      "primaryUrl": "greenriver.edu"
+    },
+    {
+      "slug": "lake-washington-institute-of-technology",
+      "primaryUrl": "lwtech.edu"
+    },
+    {
+      "slug": "lower-columbia-college",
+      "primaryUrl": "lowercolumbia.edu"
+    },
+    {
+      "slug": "north-seattle-college",
+      "primaryUrl": "northseattle.edu"
+    },
+    {
+      "slug": "south-seattle-college",
+      "primaryUrl": "southseattle.edu"
+    },
+    {
+      "slug": "seattle-central-college",
+      "primaryUrl": "seattlecentral.edu"
+    },
+    {
+      "slug": "skagit-valley-college",
+      "primaryUrl": "skagit.edu"
+    },
+    {
+      "slug": "tacoma-community-college",
+      "primaryUrl": "tacomacc.edu"
+    },
+    {
+      "slug": "wenatchee-valley-college",
+      "primaryUrl": "wvc.edu"
+    },
+    {
+      "slug": "yakima-valley-college",
+      "primaryUrl": "yvcc.edu"
+    },
+    {
+      "slug": "cascadia-college",
+      "primaryUrl": "cascadia.edu"
+    },
+    {
+      "slug": "south-puget-sound-community-college",
+      "primaryUrl": "spscc.edu"
+    },
+    {
+      "slug": "clover-park-technical-college",
+      "primaryUrl": "cptc.edu"
+    },
+    {
+      "slug": "everett-community-college",
+      "primaryUrl": "everettcc.edu"
+    },
+    {
+      "slug": "renton-technical-college",
+      "primaryUrl": "rtc.edu"
+    },
+    {
+      "slug": "whatcom-community-college",
+      "primaryUrl": "whatcom.edu"
+    },
+    {
+      "slug": "northwest-indian-college",
+      "primaryUrl": "nwic.edu"
+    },
+    {
+      "slug": "shoreline-community-college",
+      "primaryUrl": "shoreline.edu"
+    },
+    {
+      "slug": "olympic-college",
+      "primaryUrl": "olympic.edu"
+    },
+    {
+      "slug": "peninsula-college",
+      "primaryUrl": "pencol.edu"
+    },
+    {
+      "slug": "walla-walla-community-college",
+      "primaryUrl": "wwcc.edu"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+[
+  {
+    "id": "ccv",
+    "name": "Community College of Vermont",
+    "system": "VSCS",
+    "college_slug": "ccv",
+    "campuses": [
+      {
+        "name": "Bennington",
+        "lat": 42.8782,
+        "lng": -73.1968,
+        "address": "324 Main Street, Bennington, VT 05201"
+      },
+      {
+        "name": "Brattleboro",
+        "lat": 42.8509,
+        "lng": -72.5579,
+        "address": "41 Harmony Place, Brattleboro, VT 05301"
+      },
+      {
+        "name": "Middlebury",
+        "lat": 44.0154,
+        "lng": -73.1673,
+        "address": "3 Court St, Middlebury, VT 05753"
+      },
+      {
+        "name": "Montpelier",
+        "lat": 44.2629,
+        "lng": -72.5799,
+        "address": "660 Elm Street, Montpelier, VT 05602"
+      },
+      {
+        "name": "Morrisville",
+        "lat": 44.5603,
+        "lng": -72.5978,
+        "address": "197 Harrel Street, Morrisville, VT 05661"
+      },
+      {
+        "name": "Newport",
+        "lat": 44.9362,
+        "lng": -72.2051,
+        "address": "100 Main Street, Newport, VT 05855"
+      },
+      {
+        "name": "Rutland",
+        "lat": 43.6106,
+        "lng": -72.9726,
+        "address": "60 West Street, Rutland, VT 05701"
+      },
+      {
+        "name": "Springfield",
+        "lat": 43.2981,
+        "lng": -72.4823,
+        "address": "307 South Street, Springfield, VT 05156"
+      },
+      {
+        "name": "St. Albans",
+        "lat": 44.8109,
+        "lng": -73.084,
+        "address": "97 N Main Street, St. Albans, VT 05478"
+      },
+      {
+        "name": "St. Johnsbury",
+        "lat": 44.4191,
+        "lng": -72.015,
+        "address": "1302 Main Street, St. Johnsbury, VT 05819"
+      },
+      {
+        "name": "Upper Valley",
+        "lat": 43.6494,
+        "lng": -72.3193,
+        "address": "145 Billings Farm Road, White River Junction, VT 05001"
+      },
+      {
+        "name": "Winooski",
+        "lat": 44.4924,
+        "lng": -73.1857,
+        "address": "1 Abenaki Way, Winooski, VT 05404"
+      }
+    ],
+    "audit_policy": {
+      "allowed": true,
+      "cost_model": "free_for_seniors",
+      "cost_note": "VT residents 65+ may audit courses tuition-free on a space-available basis.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "Vermont residents aged 65+ may audit credit courses tuition-free on a space-available basis.",
+          "source_url": "https://ccv.edu"
+        }
+      },
+      "restrictions": [
+        "Space-available basis only",
+        "Some fees may still apply"
+      ],
+      "application_process": {
+        "steps": [
+          "Apply online at ccv.edu",
+          "Register as a non-degree student",
+          "Register for courses"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "",
+        "contact_email": "",
+        "contact_phone": ""
+      },
+      "source_url": "https://ccv.edu"
+    },
+    "unitid": 230861
+  }
+]

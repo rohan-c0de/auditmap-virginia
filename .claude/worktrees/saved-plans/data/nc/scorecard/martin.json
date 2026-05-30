@@ -1,0 +1,46 @@
+{
+  "unitid": 198905,
+  "schoolName": "Martin Community College",
+  "state": "NC",
+  "city": "Williamston",
+  "schoolUrl": "www.martincc.edu/",
+  "ownership": 1,
+  "predominantDegree": 1,
+  "fetchedAt": "2026-05-13T02:13:59.072Z",
+  "size": 313,
+  "shareFirstGeneration": 0.5414364641,
+  "cost": {
+    "tuitionInState": 2523,
+    "tuitionOutOfState": 8667,
+    "attendanceAcademicYear": 11275,
+    "avgNetPricePublic": 2676,
+    "bookSupply": 1500,
+    "roomBoardOffCampus": 10326,
+    "netPriceByIncome": {
+      "0_30000": 1924,
+      "30001_48000": 4637,
+      "48001_75000": 3720,
+      "75001_110000": null,
+      "110001_plus": null
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2259,
+    "federalLoanRate": 0,
+    "medianDebtCompleters": null
+  },
+  "completion": {
+    "completionRate150nt": 0.3929,
+    "completionRate200nt": 0.4688,
+    "transferRate": 0.1071,
+    "retentionRateFullTime": 0.7609,
+    "retentionRatePartTime": 0.5294
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 26016,
+    "median1YrAfterCompletion": 28131,
+    "percentile25_10YrsAfterEntry": 13138,
+    "percentile75_10YrsAfterEntry": 38307,
+    "shareEarningAboveHsGrad": 0.302
+  }
+}

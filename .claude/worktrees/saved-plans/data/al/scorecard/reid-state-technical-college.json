@@ -1,0 +1,46 @@
+{
+  "unitid": 101994,
+  "schoolName": "Reid State Technical College",
+  "state": "AL",
+  "city": "Evergreen",
+  "schoolUrl": "www.rstc.edu/",
+  "ownership": 1,
+  "predominantDegree": 1,
+  "fetchedAt": "2026-05-13T02:12:21.835Z",
+  "size": 416,
+  "shareFirstGeneration": 0.5903225806,
+  "cost": {
+    "tuitionInState": 5454,
+    "tuitionOutOfState": 9324,
+    "attendanceAcademicYear": 10739,
+    "avgNetPricePublic": 1739,
+    "bookSupply": 1400,
+    "roomBoardOffCampus": 7200,
+    "netPriceByIncome": {
+      "0_30000": 735,
+      "30001_48000": 1178,
+      "48001_75000": 5387,
+      "75001_110000": 5773,
+      "110001_plus": null
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.5,
+    "federalLoanRate": 0,
+    "medianDebtCompleters": null
+  },
+  "completion": {
+    "completionRate150nt": 0.589,
+    "completionRate200nt": 0.5946,
+    "transferRate": 0,
+    "retentionRateFullTime": 0.6329,
+    "retentionRatePartTime": 0.4286
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 28982,
+    "median1YrAfterCompletion": 35385,
+    "percentile25_10YrsAfterEntry": 15362,
+    "percentile75_10YrsAfterEntry": 48258,
+    "shareEarningAboveHsGrad": 0.361
+  }
+}

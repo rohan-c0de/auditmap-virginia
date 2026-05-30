@@ -1,0 +1,46 @@
+{
+  "unitid": 226107,
+  "schoolName": "Lamar State College-Orange",
+  "state": "TX",
+  "city": "Orange",
+  "schoolUrl": "https://www.lsco.edu/",
+  "ownership": 1,
+  "predominantDegree": 1,
+  "fetchedAt": "2026-05-16T15:39:45.453Z",
+  "size": 1391,
+  "shareFirstGeneration": 0.521631644,
+  "cost": {
+    "tuitionInState": 3540,
+    "tuitionOutOfState": 17280,
+    "attendanceAcademicYear": 7264,
+    "avgNetPricePublic": 1655,
+    "bookSupply": 1000,
+    "roomBoardOffCampus": 9486,
+    "netPriceByIncome": {
+      "0_30000": 384,
+      "30001_48000": 2693,
+      "48001_75000": 1836,
+      "75001_110000": 4534,
+      "110001_plus": 7264
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.222,
+    "federalLoanRate": 0.1034,
+    "medianDebtCompleters": 10959
+  },
+  "completion": {
+    "completionRate150nt": 0.3692,
+    "completionRate200nt": 0.3755,
+    "transferRate": 0.1215,
+    "retentionRateFullTime": 0.692,
+    "retentionRatePartTime": 0.4933
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 36587,
+    "median1YrAfterCompletion": 41501,
+    "percentile25_10YrsAfterEntry": 17889,
+    "percentile75_10YrsAfterEntry": 58709,
+    "shareEarningAboveHsGrad": 0.517
+  }
+}

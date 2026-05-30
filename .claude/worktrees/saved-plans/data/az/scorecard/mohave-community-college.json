@@ -1,0 +1,46 @@
+{
+  "unitid": 105206,
+  "schoolName": "Mohave Community College",
+  "state": "AZ",
+  "city": "Kingman",
+  "schoolUrl": "https://www.mohave.edu/",
+  "ownership": 1,
+  "predominantDegree": 1,
+  "fetchedAt": "2026-05-24T14:51:27.612Z",
+  "size": 3216,
+  "shareFirstGeneration": 0.5360896987,
+  "cost": {
+    "tuitionInState": 2208,
+    "tuitionOutOfState": 7968,
+    "attendanceAcademicYear": 11837,
+    "avgNetPricePublic": 5974,
+    "bookSupply": 720,
+    "roomBoardOffCampus": 7280,
+    "netPriceByIncome": {
+      "0_30000": 5421,
+      "30001_48000": 5597,
+      "48001_75000": 8117,
+      "75001_110000": 9464,
+      "110001_plus": null
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.3607,
+    "federalLoanRate": 0.0834,
+    "medianDebtCompleters": 9700
+  },
+  "completion": {
+    "completionRate150nt": 0.3818,
+    "completionRate200nt": 0.3448,
+    "transferRate": 0.0727,
+    "retentionRateFullTime": 0.4928,
+    "retentionRatePartTime": 0.3808
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 35522,
+    "median1YrAfterCompletion": 48456,
+    "percentile25_10YrsAfterEntry": 19358,
+    "percentile75_10YrsAfterEntry": 55127,
+    "shareEarningAboveHsGrad": 0.492
+  }
+}

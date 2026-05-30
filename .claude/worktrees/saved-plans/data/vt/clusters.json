@@ -1,0 +1,18 @@
+{
+  "$comment": "Multi-college-district cluster detection output (issue #497). Each cluster represents N colleges that share a SIS host or registrable domain — a single bespoke scraper can cover all members.",
+  "state": "vt",
+  "generatedAt": "2026-05-24T03:02:44.035Z",
+  "summary": {
+    "inputCount": 1,
+    "clusterCount": 0,
+    "clusteredCount": 0,
+    "singletonCount": 1
+  },
+  "clusters": [],
+  "singletons": [
+    {
+      "slug": "ccv",
+      "primaryUrl": "ccv.edu"
+    }
+  ]
+}
