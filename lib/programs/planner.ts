@@ -121,6 +121,11 @@ export interface PlanSequence {
   prereqCoverage: number;
   /** Credit ceiling used when packing courses into a term. */
   creditsPerTerm: number;
+  /**
+   * True when the full sequence exceeded MAX_DISPLAY_TERMS and was truncated.
+   * The UI should show a "talk to an advisor" note rather than a 35-term list.
+   */
+  truncated: boolean;
 }
 
 // ── helpers ───────────────────────────────────────────────────────────────
@@ -338,6 +343,14 @@ function rank(s: TransferStatus): number {
 const TERM_CREDIT_CAP = 16;
 /** Below this prereq coverage the ordering is noise — show only the checklist. */
 const SEQUENCE_MIN_COVERAGE = 0.25;
+/**
+ * Max terms to display. Programs with very long prereq chains (e.g. a
+ * 200-credit catalog entry, or a heavily chained technical sequence) can
+ * produce 15–35 terms, which is worse than useless. Cap at 8 and surface a
+ * "talk to an advisor" note — found via the national sweep (NY herkimer: 35
+ * terms; GA aviation: 15 terms; SD parsed totalCredits=219).
+ */
+const MAX_DISPLAY_TERMS = 8;
 
 /**
  * Order a program's courses into credit-capped terms using recorded
@@ -425,9 +438,13 @@ export function buildSequence(
     }
   }
 
+  const truncated = terms.length > MAX_DISPLAY_TERMS;
   return {
-    terms: terms.map((t, i) => ({ index: i + 1, courses: t.courses, credits: t.credits })),
+    terms: terms
+      .slice(0, MAX_DISPLAY_TERMS)
+      .map((t, i) => ({ index: i + 1, courses: t.courses, credits: t.credits })),
     prereqCoverage: coverage,
     creditsPerTerm: TERM_CREDIT_CAP,
+    truncated,
   };
 }
