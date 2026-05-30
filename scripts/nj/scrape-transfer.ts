@@ -196,8 +196,11 @@ const BASE_URL = "https://njtransfer.org/artweb";
 const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
 
-// Delay between requests to avoid stressing the server
-const DELAY_MS = 800;
+// Delay between requests to avoid stressing the server.
+// 800ms was causing timeouts on the 6h CI ceiling (19 CCs × 26 letters × 800ms→~5h57m).
+// Reduced to 200ms after profiling and local testing with njtransfer.org (handles it fine).
+// See issue #671 (NJ transfers timeout / cancelled) and PR #590 (A-Z loop).
+const DELAY_MS = 200;
 // Max courses per CC (safety limit to prevent infinite loops)
 const MAX_COURSES_PER_CC = 2000;
 
