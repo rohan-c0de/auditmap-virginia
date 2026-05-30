@@ -40,9 +40,9 @@ import type { SmartCatalogIqProgramConfig } from "../lib/scrape-smartcatalogiq-p
 import type { CourseleafProgramConfig } from "../lib/scrape-courseleaf-programs.js";
 
 const CLEAN_CATALOG: CleanCatalogProgramConfig[] = [
-  { collegeSlug: "clinton-cc", baseUrl: "https://catalog.clinton.edu" },
-  { collegeSlug: "columbia-greene-cc", baseUrl: "https://catalog.columbiagreene.edu" },
-  { collegeSlug: "corning-cc", baseUrl: "https://corning.cleancatalog.net" },
+  { collegeSlug: "clinton-cc", baseUrl: "https://catalog.clinton.edu", catalogYear: "2025-2026" },
+  { collegeSlug: "columbia-greene-cc", baseUrl: "https://catalog.columbiagreene.edu", catalogYear: "2025-2026" },
+  { collegeSlug: "corning-cc", baseUrl: "https://corning.cleancatalog.net", catalogYear: "2025-2026" },
 ];
 
 const SCIQ: SmartCatalogIqProgramConfig[] = [
