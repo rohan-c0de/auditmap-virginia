@@ -87,6 +87,30 @@ const flConfig: StateConfig = {
       // text embedded in course descriptions (~60% coverage). See
       // scrape-spcollege.ts header for the API shape.
       { scripts: ["scripts/fl/scrape-spcollege.ts"], runner: "http" },
+      // Eastern Florida State College — ColdFusion form at
+      // webapps.easternflorida.edu/schedule_search/. Capped at 100
+      // results per query so the scraper iterates over the 238
+      // subject-prefix values from the search form's <select>.
+      { scripts: ["scripts/fl/scrape-easternflorida.ts"], runner: "http" },
+      // Broward College — FCCSC servlet at mybc.broward.edu. Requires
+      // a JSESSIONID + F5/Volterra WAF cookie from a GET to the JSP,
+      // then one POST per (term, subject prefix). 131 prefixes.
+      { scripts: ["scripts/fl/scrape-broward.ts"], runner: "http" },
+      // Miami Dade College — PeopleSoft "Community Access" class search
+      // at findclasses.mdc.edu/psc/PMYM1J/CUSTOMER/SA/...
+      // Playwright-driven because PS Class Search is a JS-heavy form
+      // with a ">100 sections" confirmation modal. 198 subjects × 2
+      // terms. ~50k students. ~25% of sections carry a campus
+      // (Kendall/Wolfson/Hialeah/Medical/Padron/Homestead/North) derived
+      // from the location prefix; the rest stay empty since the
+      // result-DOM has no campus column. Required tricks documented in
+      // the scraper:
+      //   • use psc/ (not psp/) so the form isn't wrapped in an iframe
+      //   • Course Number ≤ 9999 as a no-op 2nd criterion
+      //   • set value FIRST then operator-by-label (reverse loses op)
+      //   • fixed sleeps, not networkidle waits
+      //   • recycle the page every 10 subjects (AJAX state degrades)
+      { scripts: ["scripts/fl/scrape-mdc.ts"], runner: "playwright" },
     ],
     transfers: [
       // SCNS flat-file dump — single 80 MB download, no auth, covers all
