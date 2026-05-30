@@ -42,7 +42,11 @@ import type { CourseleafProgramConfig } from "../lib/scrape-courseleaf-programs.
 const CLEAN_CATALOG: CleanCatalogProgramConfig[] = [
   { collegeSlug: "clinton-cc", baseUrl: "https://catalog.clinton.edu" },
   { collegeSlug: "columbia-greene-cc", baseUrl: "https://catalog.columbiagreene.edu" },
-  { collegeSlug: "corning-cc", baseUrl: "https://corning.cleancatalog.net" },
+  {
+    collegeSlug: "corning-cc",
+    baseUrl: "https://corning.cleancatalog.net",
+    indexPaths: ["/degrees-certificates"],
+  },
 ];
 
 const SCIQ: SmartCatalogIqProgramConfig[] = [
@@ -50,21 +54,32 @@ const SCIQ: SmartCatalogIqProgramConfig[] = [
     collegeSlug: "suny-adirondack",
     baseUrl: "https://sunyacc.smartcatalogiq.com",
     catalogYear: "25-26",
+    // Non-standard: catalog path is the year-specific segment, not "catalog"
+    catalogPath: "college-catalog-2025-2026",
+    programsPath: "academic-programs",
   },
   {
     collegeSlug: "finger-lakes-cc",
     baseUrl: "https://flcc.smartcatalogiq.com",
     catalogYear: "2025-2026",
+    programsPath: "degree-and-certificate-programs",
   },
   {
     collegeSlug: "rockland-cc",
     baseUrl: "https://sunyrockland.smartcatalogiq.com",
     catalogYear: "2025-2026",
+    programsPath: "degrees-and-certificates",
   },
 ];
 
 const COURSELEAF: CourseleafProgramConfig[] = [
-  { collegeSlug: "fit", baseUrl: "https://catalog.fitnyc.edu" },
+  {
+    collegeSlug: "fit",
+    baseUrl: "https://catalog.fitnyc.edu",
+    // FIT publishes associate + certificate offerings under /undergraduate/
+    // rather than the CourseLeaf default /programs-study/.
+    programIndexPath: "/undergraduate/",
+  },
 ];
 
 async function main() {
