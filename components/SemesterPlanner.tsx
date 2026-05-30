@@ -1,6 +1,9 @@
 "use client";
 
 import { Fragment, useState, useCallback, useMemo, useEffect, useRef } from "react";
+import { createClient } from "@/lib/supabase/client";
+import { useAuth } from "@/lib/hooks/useAuth";
+import { track } from "@/lib/analytics";
 
 // ---------------------------------------------------------------------------
 // Types
@@ -21,6 +24,13 @@ interface PlanCourse {
 
 interface SemesterPlannerProps {
   state: string;
+  /** Pre-populate the planner with these target courses. Used by /plan/[id]
+   *  to hydrate a saved plan; also lets a user "Duplicate to edit" a saved
+   *  plan by sending them to /[state]/plan with the same targets seeded. */
+  initialTargets?: string[];
+  /** Pre-fill the name field for the save dialog. Used by /plan/[id]
+   *  "Duplicate" flow to seed the new plan with the source plan's name. */
+  initialName?: string;
 }
 
 // ---------------------------------------------------------------------------
@@ -455,11 +465,22 @@ function SemesterColumn({
 // Main component
 // ---------------------------------------------------------------------------
 
-export default function SemesterPlanner({ state }: SemesterPlannerProps) {
+export default function SemesterPlanner({
+  state,
+  initialTargets,
+  initialName,
+}: SemesterPlannerProps) {
   const [allCourses, setAllCourses] = useState<PrereqEntry[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [targets, setTargets] = useState<string[]>([]);
+  const [targets, setTargets] = useState<string[]>(initialTargets ?? []);
+
+  // Save-plan state — mirrors ScheduleResults exactly: idle → saving → saved,
+  // reverts after 3s. Auth gating via openLoginModal() if not signed in.
+  const { user, openLoginModal } = useAuth();
+  const [saveStatus, setSaveStatus] = useState<"idle" | "saving" | "saved">(
+    "idle",
+  );
 
   // Fetch all courses on mount
   useEffect(() => {
@@ -577,7 +598,7 @@ export default function SemesterPlanner({ state }: SemesterPlannerProps) {
 
       {/* Plan summary */}
       {plan.length > 0 && (
-        <div className="flex items-center gap-4 text-sm">
+        <div className="flex items-center gap-4 text-sm flex-wrap">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-900/40 flex items-center justify-center">
               <span className="text-sm font-bold text-teal-700 dark:text-teal-300">{totalSemesters}</span>
@@ -600,6 +621,70 @@ export default function SemesterPlanner({ state }: SemesterPlannerProps) {
             {targets.length} target{targets.length !== 1 ? "s" : ""} +{" "}
             {totalCourses - targets.length} prerequisite{totalCourses - targets.length !== 1 ? "s" : ""}
           </span>
+
+          {/* Save plan button — mirrors components/schedule/ScheduleResults.tsx
+              pattern: openLoginModal() when not signed in; idle/saving/saved
+              state; emerald confirmation, reverts after 3s. */}
+          <div className="ml-auto">
+            <button
+              type="button"
+              onClick={async () => {
+                if (!user) { openLoginModal(); return; }
+                setSaveStatus("saving");
+                try {
+                  const supabase = createClient();
+                  // Default name = comma-joined target codes, or fall back to
+                  // initialName when this is a "Duplicate to edit" flow.
+                  const fallback = targets.length > 0
+                    ? targets.join(", ")
+                    : "My Plan";
+                  const name = initialName?.trim() || fallback;
+                  const { error } = await supabase.from("saved_plans").insert({
+                    user_id: user.id,
+                    state,
+                    name,
+                    target_courses: targets,
+                    plan_data: { semesters },
+                  });
+                  if (error) throw error;
+                  setSaveStatus("saved");
+                  track("plan_save", {
+                    state,
+                    targets: targets.length,
+                    courses: totalCourses,
+                    semesters: totalSemesters,
+                  });
+                  setTimeout(() => setSaveStatus("idle"), 3000);
+                } catch {
+                  setSaveStatus("idle");
+                }
+              }}
+              disabled={saveStatus === "saving" || saveStatus === "saved"}
+              className={`inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-medium transition ${
+                saveStatus === "saved"
+                  ? "border-emerald-300 dark:border-emerald-700 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400"
+                  : "border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-600 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-700"
+              }`}
+            >
+              {saveStatus === "saved" ? (
+                <>
+                  <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                  Saved
+                </>
+              ) : saveStatus === "saving" ? (
+                "Saving..."
+              ) : (
+                <>
+                  <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                  </svg>
+                  {user ? "Save plan" : "Sign in to save"}
+                </>
+              )}
+            </button>
+          </div>
         </div>
       )}
 
