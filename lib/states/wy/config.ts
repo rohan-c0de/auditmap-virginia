@@ -42,16 +42,21 @@ const wyConfig: StateConfig = {
       // a non-canonical subdomain (selfservice.*, www2.*, fremontpeak.*,
       // nwccdss.*). The fingerprinter missed all of them because it only
       // probes the standard selfservice./selfserv./ssb. patterns.
-      //
-      // DEFERRED-scrapers: central-wyoming-college (Cloudflare WAF on
-      // www.cwc.edu/course-search/, all SIS subdomains NXDOMAIN) and
-      // northwest-college (nwc.edu links to third-party wyclass.org event
-      // aggregator, no self-hosted SIS endpoint found). Both need Playwright
-      // re-investigation as a follow-up.
       {
         scripts: ["scripts/wy/scrape-colleague.ts"],
         runner: "http",
       },
+      // Northwest College (Powell) — Colleague Self-Service is SSO-gated, but
+      // the college runs a public JSON course API at area10.nwc.edu. Bespoke
+      // scraper hits GetScheduleDownload?term=... — no auth.
+      {
+        scripts: ["scripts/wy/scrape-northwest-college.ts"],
+        runner: "http",
+      },
+      // DEFERRED-scrapers: central-wyoming-college — Colleague host
+      // central-ss.colleague.elluciancloud.com is 100% SAML-SSO-gated (tenant
+      // domain central.edu); schedule data lives only in Google Docs
+      // spreadsheets. No machine-readable public endpoint. Genuine gap.
     ],
     prereqs: { source: "aggregate-from-courses" },
     // manual-only: transfers — Wyoming has no registered articulation portal
