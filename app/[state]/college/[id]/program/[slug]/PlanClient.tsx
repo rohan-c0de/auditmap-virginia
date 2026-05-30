@@ -214,7 +214,7 @@ export default function PlanClient({ plan, transferHref }: Props) {
       </div>
 
       {view === "sequence" && plan.sequence ? (
-        <SequenceView terms={plan.sequence.terms} uni={uni} coverage={plan.sequence.prereqCoverage} truncated={plan.sequence.truncated} catalogUrl={plan.program.catalogUrl} state={plan.state} collegeSlug={plan.collegeSlug} term={plan.term} />
+        <SequenceView terms={plan.sequence.terms} uni={uni} coverage={plan.sequence.prereqCoverage} truncated={plan.sequence.truncated} catalogUrl={plan.program.catalogUrl} />
       ) : (
         /* Requirement groups */
         <div className="space-y-6">
@@ -240,7 +240,7 @@ export default function PlanClient({ plan, transferHref }: Props) {
               ) : (
                 <ul className="divide-y divide-gray-100 dark:divide-slate-800">
                   {g.courses.map((c) => (
-                    <CourseRow key={c.code} course={c} uni={uni} catalogUrl={plan.program.catalogUrl} state={plan.state} collegeSlug={plan.collegeSlug} term={plan.term} />
+                    <CourseRow key={c.code} course={c} uni={uni} catalogUrl={plan.program.catalogUrl} />
                   ))}
                 </ul>
               )}
@@ -288,18 +288,12 @@ function SequenceView({
   coverage,
   truncated,
   catalogUrl,
-  state,
-  collegeSlug,
-  term,
 }: {
   terms: PlanTerm[];
   uni: string;
   coverage: number;
   truncated: boolean;
   catalogUrl: string;
-  state: string;
-  collegeSlug: string;
-  term: string;
 }) {
   return (
     <div className="space-y-4">
@@ -329,7 +323,7 @@ function SequenceView({
           </header>
           <ul className="divide-y divide-gray-100 dark:divide-slate-800">
             {t.courses.map((c) => (
-              <CourseRow key={c.code} course={c} uni={uni} catalogUrl={catalogUrl} state={state} collegeSlug={collegeSlug} term={term} />
+              <CourseRow key={c.code} course={c} uni={uni} catalogUrl={catalogUrl} />
             ))}
           </ul>
         </section>
@@ -361,78 +355,7 @@ function NotListedLabel({ catalogUrl }: { catalogUrl: string }) {
   );
 }
 
-/** Bell button: inserts a seat_watches row for this course.
- *  Only shown when the course has 0 sections (the case where the student
- *  most wants to know when it opens up). Auth-gated — opens login modal. */
-function SeatWatchButton({
-  state,
-  collegeSlug,
-  courseCode,
-  term,
-}: {
-  state: string;
-  collegeSlug: string;
-  courseCode: string;
-  term: string;
-}) {
-  const { user, openLoginModal } = useAuth();
-  const [status, setStatus] = useState<"idle" | "watching" | "done">("idle");
-
-  if (status === "done") {
-    return (
-      <span className="text-[10px] text-teal-600 dark:text-teal-400 flex items-center gap-1">
-        <svg className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-        </svg>
-        Watching
-      </span>
-    );
-  }
-
-  return (
-    <button
-      type="button"
-      onClick={async () => {
-        if (!user) { openLoginModal(); return; }
-        if (status !== "idle") return;
-        setStatus("watching");
-        try {
-          const supabase = createClient();
-          await supabase.from("seat_watches").upsert(
-            { user_id: user.id, state, college_slug: collegeSlug, course_code: courseCode, term },
-            { onConflict: "user_id,state,college_slug,course_code,term", ignoreDuplicates: true },
-          );
-          setStatus("done");
-        } catch {
-          setStatus("idle");
-        }
-      }}
-      className="text-[10px] text-gray-400 dark:text-slate-500 hover:text-teal-600 dark:hover:text-teal-400 flex items-center gap-1 transition-colors"
-      title={user ? "Notify me when this course has open seats" : "Sign in to get notified"}
-    >
-      <svg className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
-      </svg>
-      {status === "watching" ? "Saving…" : "Notify me"}
-    </button>
-  );
-}
-
-function CourseRow({
-  course,
-  uni,
-  catalogUrl,
-  state,
-  collegeSlug,
-  term,
-}: {
-  course: PlanCourse;
-  uni: string;
-  catalogUrl: string;
-  state: string;
-  collegeSlug: string;
-  term: string;
-}) {
+function CourseRow({ course, uni, catalogUrl }: { course: PlanCourse; uni: string; catalogUrl: string }) {
   const t = uni === "__all__" ? null : course.transfers[uni];
   const creditLabel = course.credits != null ? ` · ${course.credits} credit${course.credits === 1 ? "" : "s"}` : "";
   return (
@@ -448,23 +371,15 @@ function CourseRow({
             {creditLabel}
           </div>
         </div>
-        {/* Availability — with notify button when not offered. */}
+        {/* The two things that matter, on the right. */}
         {course.sectionsThisTerm > 0 ? (
           <span className="shrink-0 text-xs font-medium text-teal-700 dark:text-teal-400">
             Open this term
           </span>
         ) : (
-          <div className="shrink-0 flex flex-col items-end gap-1">
-            <span className="text-xs text-gray-400 dark:text-slate-500">
-              Not offered this term
-            </span>
-            <SeatWatchButton
-              state={state}
-              collegeSlug={collegeSlug}
-              courseCode={course.code}
-              term={term}
-            />
-          </div>
+          <span className="shrink-0 text-xs text-gray-400 dark:text-slate-500">
+            Not offered this term
+          </span>
         )}
       </div>
 
