@@ -74,6 +74,15 @@
       ],
       "notes": "Statewide CORE 42 gen-ed transfer core, published as an annual public .xlsx. Self-join on the MOTR common course number yields CC→4-year equivalencies for all 13 MO public universities. ~188 MOTR (gen-ed) courses, not major-specific. Privates in the file (Avila, Lindenwood, etc.) excluded."
     },
+    "mt": {
+      "type": "state-portal-flatfile",
+      "name": "Montana University System Common Course Numbering (CCN)",
+      "url": "https://ccn.mus.edu/",
+      "scripts": [
+        "scripts/mt/scrape-transfer-ccn.ts"
+      ],
+      "notes": "Public CCN matrix (server-rendered HTML). Common-numbered courses transfer between MUS campuses keeping the same code, so equivalencies are identity maps. Emits a pair for each course offered at both a 2-year sender and one of the six 4-year MUS universities. In-state by construction."
+    },
     "nc": {
       "type": "state-portal",
       "name": "UNC System CNS",
