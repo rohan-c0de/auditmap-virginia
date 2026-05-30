@@ -93,6 +93,13 @@
       "scripts": ["scripts/nj/scrape-transfer.ts"],
       "notes": "State-mandated CGI app. All 19 NJ community college campuses → major NJ universities."
     },
+    "nm": {
+      "type": "state-portal-flatfile",
+      "name": "NMHED Common Course Numbering System (CCNS)",
+      "url": "https://ccns.nmhed.us/",
+      "scripts": ["scripts/nm/scrape-transfer-ccns.ts"],
+      "notes": "Statewide CCNS public JSON API. Self-join on the common course number yields CC→4-year equivalencies for the six NM public universities (UNM, NMSU, NMHU, ENMU, NM Tech, WNMU). All in-state by construction. NTU + IAIA (mixed tribal) excluded."
+    },
     "ny": {
       "type": "state-portal",
       "name": "CUNY T-Rex (Transfer Explorer)",
