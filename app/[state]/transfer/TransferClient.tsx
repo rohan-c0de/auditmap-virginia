@@ -38,9 +38,14 @@ export default function TransferClient({
   const [groupMode, setGroupMode] = useState<GroupMode>("outcome");
 
   // Cache of per-university mappings. Seeded with the server-rendered
-  // default university's data; other universities are fetched on demand.
+  // default university's data when present; for the largest states the
+  // server now ships `initialMappings = []` and the default university's
+  // data is fetched on mount via the same on-demand path (issue #777).
   const [mappingsCache, setMappingsCache] = useState<Record<string, TransferMapping[]>>(
-    () => ({ [defaultUniversity]: initialMappings })
+    () =>
+      initialMappings.length > 0
+        ? { [defaultUniversity]: initialMappings }
+        : {}
   );
   const [loadingUniversity, setLoadingUniversity] = useState(false);
   // Tracks which universities have been requested to avoid duplicate fetches.

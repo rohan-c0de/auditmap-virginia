@@ -5,7 +5,6 @@ import {
   loadTransferMappingsByUniversity,
   getUniversities,
   getUniversitiesWithCounts,
-  TRANSFER_HUB_MAX_CLIENT_MAPPINGS,
 } from "@/lib/transfer";
 import { getAllStates } from "@/lib/states/registry";
 import { requireStateConfig } from "@/lib/states/route-helpers";
@@ -50,17 +49,14 @@ export default async function TransferPage({ params }: Props) {
   // The client fetches other universities on demand via
   // /api/{state}/transfer/mappings?university=X, reducing the initial
   // HTML from ~7 MB (full state dataset) to ~500 KB.
-  // Cap the server-side fetch to TRANSFER_HUB_MAX_CLIENT_MAPPINGS. The
-  // initial payload is trimmed to this size client-side anyway, and for
-  // large states (CA csu-system = 99K rows) the uncapped fetch took ~50s
-  // and tripped Vercel's serverless function timeout (issue #777).
-  const mappings = defaultUni
-    ? await loadTransferMappingsByUniversity(
-        state,
-        defaultUni,
-        TRANSFER_HUB_MAX_CLIENT_MAPPINGS,
-      )
-    : [];
+  // Skip server-side mapping fetch entirely. Even capped at 2500 rows,
+  // the RSC payload was hitting 3-4 MB for large states (CA/TX/MI/TN/NY),
+  // and Vercel's stream took 15+ seconds to deliver it — the browser was
+  // bailing with "Connection closed". TransferClient already has a lazy
+  // fetch path via /api/{state}/transfer/mappings that runs on mount when
+  // the seeded cache is empty. Brief loading state replaces the page-wide
+  // 500. Issue #777.
+  const mappings: Awaited<ReturnType<typeof loadTransferMappingsByUniversity>> = [];
 
   // Course-availability map: temporarily passed empty. Building it
   // server-side (even with the IN-query narrowing in #786) was tripping
