@@ -174,6 +174,16 @@ const txConfig: StateConfig = {
         scripts: ["scripts/tx/scrape-cisco.ts"],
         runner: "playwright",
       },
+      // Frank Phillips College — per-term, per-campus PDF schedules from
+      // fpctx.edu/student-resources/. Each PDF is text-extractable (no OCR
+      // needed); pdftotext -layout preserves the 12-column schema (Course
+      // Code, Section, Course Name, Credits, Days, Times, Building/Room,
+      // Faculty Last+First, Dates). Summer PDFs use an 11-column variant
+      // with merged Faculty Name. URLs are pinned per term in TERM_PDFS.
+      {
+        scripts: ["scripts/tx/scrape-frank-phillips.ts"],
+        runner: "http",
+      },
     ],
     transfers: [
       { scripts: ["scripts/tx/scrape-transfer-tccns.ts"], runner: "http" },
