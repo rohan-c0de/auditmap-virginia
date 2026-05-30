@@ -150,6 +150,10 @@ const nyConfig: StateConfig = {
       { scripts: ["scripts/ny/scrape-catalog-prereqs.ts"], runner: "playwright" },
       // SUNY Acalog (10 CCs):
       { scripts: ["scripts/ny/scrape-suny-acalog-prereqs.ts"], runner: "playwright" },
+      // Nassau CC (OmniUpdate HTML):
+      { scripts: ["scripts/ny/scrape-nassau-prereqs.ts"], runner: "http" },
+      // FIT (CourseLeaf):
+      { scripts: ["scripts/ny/scrape-fit-prereqs.ts"], runner: "http" },
     ],
     programs: [
       // CUNY (Coursedog):
@@ -158,6 +162,8 @@ const nyConfig: StateConfig = {
       { scripts: ["scripts/ny/scrape-suny-acalog-programs.ts"], runner: "playwright" },
       // SUNY Clean Catalog + SCIQ + CourseLeaf (partial coverage):
       { scripts: ["scripts/ny/scrape-suny-other-programs.ts"], runner: "http" },
+      // MVCC (OmniUpdate):
+      { scripts: ["scripts/ny/scrape-mvcc-programs.ts"], runner: "http" },
     ],
   },
 };

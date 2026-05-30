@@ -104,6 +104,62 @@ export async function sendVerificationEmail(
 /**
  * Send a notification that new term schedules are available.
  */
+/**
+ * Notify a user that a watched course now has open seats (or newly opened).
+ */
+export async function sendSeatOpenedNotification(
+  email: string,
+  state: string,
+  courseCode: string,
+  courseTitle: string,
+  collegeSlug: string,
+  seatsOpen: number,
+  term: string,
+  planPageUrl: string,
+): Promise<void> {
+  const siteUrl = getSiteUrl();
+  let stateName: string;
+  try {
+    stateName = getStateConfig(state).name;
+  } catch {
+    stateName = state.toUpperCase();
+  }
+
+  const html = `
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"></head>
+<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 520px; margin: 0 auto; padding: 24px; color: #1a1a1a;">
+  <div style="text-align: center; margin-bottom: 24px;">
+    <span style="font-size: 20px; font-weight: 700; color: #0d9488;">Community College Path</span>
+  </div>
+  <h1 style="font-size: 20px; margin-bottom: 12px;">Seats opened in ${courseCode}</h1>
+  <p style="font-size: 15px; line-height: 1.5; color: #444;">
+    <strong>${courseCode}${courseTitle ? ` — ${courseTitle}` : ""}</strong> at ${collegeSlug.replace(/-/g, " ")} (${stateName})
+    now has <strong>${seatsOpen} open seat${seatsOpen === 1 ? "" : "s"}</strong> for ${term}.
+  </p>
+  <div style="text-align: center; margin: 28px 0;">
+    <a href="${planPageUrl}" style="display: inline-block; background: #0d9488; color: #fff; padding: 12px 28px; border-radius: 6px; text-decoration: none; font-size: 15px; font-weight: 600;">
+      View your plan
+    </a>
+  </div>
+  <p style="font-size: 13px; color: #888; text-align: center;">
+    <a href="${siteUrl}/account" style="color: #888;">Manage seat alerts</a>
+  </p>
+</body>
+</html>`;
+
+  const text = `Seats opened in ${courseCode}\n\n${courseCode}${courseTitle ? ` — ${courseTitle}` : ""} at ${collegeSlug} now has ${seatsOpen} open seat${seatsOpen === 1 ? "" : "s"} for ${term}.\n\nView your plan: ${planPageUrl}\n\nManage seat alerts: ${siteUrl}/account`;
+
+  await getResend().emails.send({
+    from: FROM_ADDRESS,
+    to: email,
+    subject: `Seats open: ${courseCode} — Community College Path`,
+    html,
+    text,
+  });
+}
+
 export async function sendNewTermNotification(
   email: string,
   state: string,
