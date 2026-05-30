@@ -19,6 +19,7 @@ import { isValidState } from "@/lib/states/registry";
 import { requireStateConfig } from "@/lib/states/route-helpers";
 import { loadInstitutions } from "@/lib/institutions";
 import { buildMajorPlan } from "@/lib/programs/planner";
+import { getScorecard, formatDollar, formatPercent } from "@/lib/scorecard";
 import { termLabel } from "@/lib/terms";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PlanClient from "./PlanClient";
@@ -62,6 +63,21 @@ export default async function MajorPlanPage(props: PageProps) {
   const collegeHref = `/${state}/college/${id}`;
   const transferHref = `/${state}/transfer`;
 
+  // College-wide outcomes (federal Scorecard) — context, NOT program-specific.
+  const sc = getScorecard(state, id);
+  const outcomeTiles: { label: string; value: string }[] = [];
+  if (sc) {
+    if (sc.cost.tuitionInState != null)
+      outcomeTiles.push({ label: "In-state tuition / yr", value: formatDollar(sc.cost.tuitionInState) });
+    if (sc.completion.completionRate150nt != null)
+      outcomeTiles.push({ label: "Graduate on time", value: formatPercent(sc.completion.completionRate150nt) });
+    const earn = sc.earnings.median1YrAfterCompletion ?? sc.earnings.median10YrsAfterEntry;
+    if (earn != null)
+      outcomeTiles.push({ label: "Median earnings after", value: formatDollar(earn) });
+    if (sc.earnings.shareEarningAboveHsGrad != null)
+      outcomeTiles.push({ label: "Earn above HS-grad wage", value: formatPercent(sc.earnings.shareEarningAboveHsGrad) });
+  }
+
   return (
     <main className="mx-auto max-w-3xl px-4 py-8">
       <Breadcrumbs
@@ -101,6 +117,23 @@ export default async function MajorPlanPage(props: PageProps) {
           </p>
         )}
       </header>
+
+      {outcomeTiles.length > 0 && (
+        <section className="mb-6 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800/50 p-4">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {outcomeTiles.map((t) => (
+              <div key={t.label}>
+                <div className="text-lg font-bold text-gray-900 dark:text-slate-100">{t.value}</div>
+                <div className="text-xs text-gray-500 dark:text-slate-400">{t.label}</div>
+              </div>
+            ))}
+          </div>
+          <p className="mt-3 text-xs text-gray-400 dark:text-slate-500">
+            College-wide figures for {plan.collegeName} from the federal College
+            Scorecard — not specific to this program.
+          </p>
+        </section>
+      )}
 
       <PlanClient plan={plan} transferHref={transferHref} />
     </main>
