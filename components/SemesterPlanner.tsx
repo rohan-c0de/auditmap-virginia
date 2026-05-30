@@ -1,6 +1,9 @@
 "use client";
 
 import { Fragment, useState, useCallback, useMemo, useEffect, useRef } from "react";
+import { createClient } from "@/lib/supabase/client";
+import { useAuth } from "@/lib/hooks/useAuth";
+import { track } from "@/lib/analytics";
 
 // ---------------------------------------------------------------------------
 // Types
@@ -19,8 +22,25 @@ interface PlanCourse {
   isTarget: boolean; // was this explicitly selected by the user?
 }
 
+/** Per-course seat summary returned by /api/{state}/sections-for-courses */
+interface SeatSummary {
+  course_code: string;
+  section_count: number;
+  total_seats_open: number | null;
+  total_seats_total: number | null;
+  scraped_at: string | null;
+  is_stale: boolean;
+}
+
 interface SemesterPlannerProps {
   state: string;
+  /** Pre-populate the planner with these target courses. Used by /plan/[id]
+   *  to hydrate a saved plan; also lets a user "Duplicate to edit" a saved
+   *  plan by sending them to /[state]/plan with the same targets seeded. */
+  initialTargets?: string[];
+  /** Pre-fill the name field for the save dialog. Used by /plan/[id]
+   *  "Duplicate" flow to seed the new plan with the source plan's name. */
+  initialName?: string;
 }
 
 // ---------------------------------------------------------------------------
@@ -337,13 +357,62 @@ function FlowStyles() {
   );
 }
 
+/** A small pill that displays current seat availability for a course in the
+ *  plan. Same emerald/amber/red color scheme as components/schedule/
+ *  ScheduleResults.tsx's section badge, plus a 'not offered this term'
+ *  state and a 'stale' visual cue when scraped_at is >3 days old. */
+function SeatBadge({ seats }: { seats: SeatSummary }) {
+  if (seats.section_count === 0) {
+    return (
+      <span
+        className="text-[9px] px-1.5 py-0.5 rounded-full border border-slate-200 dark:border-slate-600 text-slate-400 dark:text-slate-500"
+        title="Not offered this term"
+      >
+        —
+      </span>
+    );
+  }
+  const open = seats.total_seats_open ?? 0;
+  const color =
+    open === 0
+      ? "border-red-300 dark:border-red-700 bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-400"
+      : open <= 10
+        ? "border-amber-300 dark:border-amber-700 bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400"
+        : "border-emerald-300 dark:border-emerald-700 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400";
+  // Stale: dim the color with reduced opacity. Keeps the at-a-glance
+  // signal but flags reduced confidence per the 3-day staleness convention.
+  const staleClass = seats.is_stale ? "opacity-60" : "";
+  const tooltip = (() => {
+    const parts = [
+      `${open} seat${open === 1 ? "" : "s"} open`,
+      seats.total_seats_total != null ? `${seats.total_seats_total} total` : null,
+      `${seats.section_count} section${seats.section_count === 1 ? "" : "s"}`,
+      seats.scraped_at
+        ? `as of ${new Date(seats.scraped_at).toLocaleDateString("en-US", { month: "short", day: "numeric" })}`
+        : null,
+      seats.is_stale ? "(data may be outdated)" : null,
+    ];
+    return parts.filter(Boolean).join(" · ");
+  })();
+  return (
+    <span
+      className={`text-[9px] px-1.5 py-0.5 rounded-full border font-medium ${color} ${staleClass}`}
+      title={tooltip}
+    >
+      {open === 0 ? "Full" : open}
+    </span>
+  );
+}
+
 /** A single course node in the flowchart */
 function CourseNode({
   course,
   onRemove,
+  seats,
 }: {
   course: PlanCourse;
   onRemove?: (code: string) => void;
+  seats?: SeatSummary;
 }) {
   const [hover, setHover] = useState(false);
 
@@ -372,6 +441,7 @@ function CourseNode({
         `}
       >
         {course.code}
+        {seats && <SeatBadge seats={seats} />}
         {course.isTarget && (
           <span className="text-[8px] font-black px-1 py-0.5 rounded bg-teal-200/60 dark:bg-teal-700/60 text-teal-600 dark:text-teal-300 uppercase">
             target
@@ -418,11 +488,13 @@ function SemesterColumn({
   courses,
   isLast,
   onRemove,
+  seatsByCode,
 }: {
   semester: number;
   courses: PlanCourse[];
   isLast: boolean;
   onRemove: (code: string) => void;
+  seatsByCode: Map<string, SeatSummary>;
 }) {
   return (
     <div className="flex flex-col items-center gap-1.5 shrink-0">
@@ -444,6 +516,7 @@ function SemesterColumn({
             key={course.code}
             course={course}
             onRemove={course.isTarget ? onRemove : undefined}
+            seats={seatsByCode.get(course.code)}
           />
         ))}
       </div>
@@ -455,11 +528,30 @@ function SemesterColumn({
 // Main component
 // ---------------------------------------------------------------------------
 
-export default function SemesterPlanner({ state }: SemesterPlannerProps) {
+export default function SemesterPlanner({
+  state,
+  initialTargets,
+  initialName,
+}: SemesterPlannerProps) {
   const [allCourses, setAllCourses] = useState<PrereqEntry[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [targets, setTargets] = useState<string[]>([]);
+  const [targets, setTargets] = useState<string[]>(initialTargets ?? []);
+
+  // Save-plan state — mirrors ScheduleResults exactly: idle → saving → saved,
+  // reverts after 3s. Auth gating via openLoginModal() if not signed in.
+  const { user, openLoginModal } = useAuth();
+  const [saveStatus, setSaveStatus] = useState<"idle" | "saving" | "saved">(
+    "idle",
+  );
+
+  // Seat-availability data for every course in the current plan. Fetched
+  // from /api/{state}/sections-for-courses whenever the set of course codes
+  // changes. A Map keyed by 'BIOL 1010' style so SemesterColumn can index it.
+  const [seatsByCode, setSeatsByCode] = useState<Map<string, SeatSummary>>(
+    () => new Map(),
+  );
+  const [anyStale, setAnyStale] = useState(false);
 
   // Fetch all courses on mount
   useEffect(() => {
@@ -490,6 +582,51 @@ export default function SemesterPlanner({ state }: SemesterPlannerProps) {
     if (targets.length === 0) return [];
     return buildPlan(targets, lookup);
   }, [targets, lookup]);
+
+  // Stable key for the current plan's course codes — used to gate the
+  // seat-fetch effect so it only re-runs when the set of courses actually
+  // changes, not on every render. Sorted so order-independent.
+  const planCodesKey = useMemo(() => {
+    return plan.map((c) => c.code).sort().join("|");
+  }, [plan]);
+
+  // Fetch seat availability for every course in the plan. Debounced via the
+  // key so rapid target add/remove doesn't fire a request per keystroke.
+  useEffect(() => {
+    const codes = planCodesKey.split("|").filter(Boolean);
+    if (codes.length === 0) {
+      setSeatsByCode(new Map());
+      setAnyStale(false);
+      return;
+    }
+    let cancelled = false;
+    const handle = setTimeout(async () => {
+      try {
+        const param = codes.map((c) => c.replace(/ /g, "+")).join(",");
+        const res = await fetch(
+          `/api/${state}/sections-for-courses?codes=${encodeURIComponent(param)}`,
+        );
+        if (!res.ok) return;
+        const data = (await res.json()) as { courses: SeatSummary[] };
+        if (cancelled) return;
+        const next = new Map<string, SeatSummary>();
+        let stale = false;
+        for (const s of data.courses ?? []) {
+          next.set(s.course_code, s);
+          if (s.is_stale) stale = true;
+        }
+        setSeatsByCode(next);
+        setAnyStale(stale);
+      } catch {
+        // Non-fatal — the planner still works without seat data, badges
+        // just don't render.
+      }
+    }, 250);
+    return () => {
+      cancelled = true;
+      clearTimeout(handle);
+    };
+  }, [planCodesKey, state]);
 
   // Group plan by semester
   const semesters = useMemo(() => {
@@ -577,7 +714,7 @@ export default function SemesterPlanner({ state }: SemesterPlannerProps) {
 
       {/* Plan summary */}
       {plan.length > 0 && (
-        <div className="flex items-center gap-4 text-sm">
+        <div className="flex items-center gap-4 text-sm flex-wrap">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-900/40 flex items-center justify-center">
               <span className="text-sm font-bold text-teal-700 dark:text-teal-300">{totalSemesters}</span>
@@ -600,12 +737,85 @@ export default function SemesterPlanner({ state }: SemesterPlannerProps) {
             {targets.length} target{targets.length !== 1 ? "s" : ""} +{" "}
             {totalCourses - targets.length} prerequisite{totalCourses - targets.length !== 1 ? "s" : ""}
           </span>
+
+          {/* Save plan button — mirrors components/schedule/ScheduleResults.tsx
+              pattern: openLoginModal() when not signed in; idle/saving/saved
+              state; emerald confirmation, reverts after 3s. */}
+          <div className="ml-auto">
+            <button
+              type="button"
+              onClick={async () => {
+                if (!user) { openLoginModal(); return; }
+                setSaveStatus("saving");
+                try {
+                  const supabase = createClient();
+                  // Default name = comma-joined target codes, or fall back to
+                  // initialName when this is a "Duplicate to edit" flow.
+                  const fallback = targets.length > 0
+                    ? targets.join(", ")
+                    : "My Plan";
+                  const name = initialName?.trim() || fallback;
+                  const { error } = await supabase.from("saved_plans").insert({
+                    user_id: user.id,
+                    state,
+                    name,
+                    target_courses: targets,
+                    plan_data: { semesters },
+                  });
+                  if (error) throw error;
+                  setSaveStatus("saved");
+                  track("plan_save", {
+                    state,
+                    targets: targets.length,
+                    courses: totalCourses,
+                    semesters: totalSemesters,
+                  });
+                  setTimeout(() => setSaveStatus("idle"), 3000);
+                } catch {
+                  setSaveStatus("idle");
+                }
+              }}
+              disabled={saveStatus === "saving" || saveStatus === "saved"}
+              className={`inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-medium transition ${
+                saveStatus === "saved"
+                  ? "border-emerald-300 dark:border-emerald-700 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400"
+                  : "border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-600 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-700"
+              }`}
+            >
+              {saveStatus === "saved" ? (
+                <>
+                  <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                  Saved
+                </>
+              ) : saveStatus === "saving" ? (
+                "Saving..."
+              ) : (
+                <>
+                  <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                  </svg>
+                  {user ? "Save plan" : "Sign in to save"}
+                </>
+              )}
+            </button>
+          </div>
         </div>
       )}
 
       {/* Semester flowchart */}
       {semesters.length > 0 ? (
         <>
+          {/* Stale-data banner — matches the 3-day staleness convention used by
+              app/[state]/college/[id]/CollegeTermSection.tsx. Reduces user
+              confidence in seat counts when the underlying scrape is old. */}
+          {anyStale && (
+            <div className="rounded-lg border border-amber-200 dark:border-amber-800/50 bg-amber-50 dark:bg-amber-900/20 px-4 py-2 text-xs text-amber-800 dark:text-amber-300">
+              Seat counts shown may be outdated (last updated more than 3 days
+              ago for one or more courses).
+            </div>
+          )}
           <FlowStyles />
           <div className="overflow-x-auto pb-3 -mx-1 px-1">
             <div className="flex items-start">
@@ -617,6 +827,7 @@ export default function SemesterPlanner({ state }: SemesterPlannerProps) {
                     courses={courses}
                     isLast={idx === semesters.length - 1}
                     onRemove={removeTarget}
+                    seatsByCode={seatsByCode}
                   />
                 </Fragment>
               ))}

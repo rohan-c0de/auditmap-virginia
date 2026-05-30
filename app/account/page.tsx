@@ -29,6 +29,7 @@ export default async function AccountPage() {
     { data: schedules },
     { data: courses },
     { data: transfers },
+    { data: plans },
   ] = await Promise.all([
     supabase
       .from("saved_schedules")
@@ -43,6 +44,11 @@ export default async function AccountPage() {
     supabase
       .from("saved_transfers")
       .select("id, state, name, selected_courses, selected_universities, filters, created_at")
+      .eq("user_id", user.id)
+      .order("created_at", { ascending: false }),
+    supabase
+      .from("saved_plans")
+      .select("id, state, name, target_courses, created_at")
       .eq("user_id", user.id)
       .order("created_at", { ascending: false }),
   ]);
@@ -67,6 +73,7 @@ export default async function AccountPage() {
       savedSchedules={schedules ?? []}
       savedCourses={courses ?? []}
       savedTransfers={transfers ?? []}
+      savedPlans={plans ?? []}
     />
   );
 }

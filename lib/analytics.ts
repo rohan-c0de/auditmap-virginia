@@ -31,6 +31,10 @@ export type AnalyticsEvent =
   | "schedule_build_submit"
   | "schedule_results_view"
   | "schedule_save"
+  // Planner
+  | "plan_save"
+  | "plan_delete"
+  | "plan_duplicate"
   // Saved items
   | "course_bookmark_add"
   | "course_bookmark_remove"
