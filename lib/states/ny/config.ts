@@ -145,8 +145,20 @@ const nyConfig: StateConfig = {
       { scripts: ["scripts/ny/scrape-transfer-trex.ts"], runner: "http" },
       { scripts: ["scripts/ny/scrape-transfer-step.ts"], runner: "http" },
     ],
-    prereqs: [{ scripts: ["scripts/ny/scrape-catalog-prereqs.ts"], runner: "playwright" }],
-    programs: [{ scripts: ["scripts/ny/scrape-programs.ts"], runner: "playwright" }],
+    prereqs: [
+      // CUNY (Coursedog):
+      { scripts: ["scripts/ny/scrape-catalog-prereqs.ts"], runner: "playwright" },
+      // SUNY Acalog (10 CCs):
+      { scripts: ["scripts/ny/scrape-suny-acalog-prereqs.ts"], runner: "playwright" },
+    ],
+    programs: [
+      // CUNY (Coursedog):
+      { scripts: ["scripts/ny/scrape-programs.ts"], runner: "playwright" },
+      // SUNY Acalog (10 CCs):
+      { scripts: ["scripts/ny/scrape-suny-acalog-programs.ts"], runner: "playwright" },
+      // SUNY Clean Catalog + SCIQ + CourseLeaf (partial coverage):
+      { scripts: ["scripts/ny/scrape-suny-other-programs.ts"], runner: "http" },
+    ],
   },
 };
 
