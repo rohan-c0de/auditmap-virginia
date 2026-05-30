@@ -45,12 +45,9 @@ const nyConfig: StateConfig = {
   },
 
   transferSupported: true,
-  // Transfer data comes from CUNY Transfer Explorer (T-Rex) at
-  // explorer.cuny.edu, scraped by scripts/ny/scrape-transfer-trex.ts. Covers
-  // CC-to-senior-college mappings for the 11 CUNY senior colleges plus a
-  // handful of specialized institutions (Graduate Center, SPS, SLU, Macaulay).
-  // SUNY transfer pathway data (suny.edu/attend/apply-to-suny/transfer-students)
-  // would also live here when SUNY colleges are added in a future phase.
+  // Transfer data from two systems:
+  //   1. CUNY Transfer Explorer (T-Rex) — explorer.cuny.edu → 14 CUNY senior colleges
+  //   2. SUNY STEP — step.transfer.suny.edu → ~28 SUNY 4-year campuses
 
   popularCourses: ["ENG 101", "MAT 150", "BIO 100", "HIS 101", "PSY 100", "SPE 100"],
   defaultZip: "10007",
@@ -99,7 +96,10 @@ const nyConfig: StateConfig = {
   ],
   scrapers: {
     courses: [{ scripts: ["scripts/ny/scrape-cuny.ts"], runner: "http" }],
-    transfers: [{ scripts: ["scripts/ny/scrape-transfer-trex.ts"], runner: "http" }],
+    transfers: [
+      { scripts: ["scripts/ny/scrape-transfer-trex.ts"], runner: "http" },
+      { scripts: ["scripts/ny/scrape-transfer-step.ts"], runner: "http" },
+    ],
     prereqs: [{ scripts: ["scripts/ny/scrape-catalog-prereqs.ts"], runner: "playwright" }],
     programs: [{ scripts: ["scripts/ny/scrape-programs.ts"], runner: "playwright" }],
   },

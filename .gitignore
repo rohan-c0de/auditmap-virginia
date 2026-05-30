@@ -62,5 +62,8 @@ next-env.d.ts
 # Claude deliberately created in this session.
 .claude/branch-lock
 
+# SUNY STEP scraper incremental saves (cleared after successful merge)
+data/ny/.step-partial/
+
 # Tailwind CLI compiled output — source is app/tailwind.source.css
 app/globals.css
