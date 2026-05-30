@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import { termLabel } from "@/lib/term-label";
 import type { MajorPlan, PlanCourse, PlanTerm, TransferStatus } from "@/lib/programs/planner";
 
 interface Props {
@@ -9,17 +10,20 @@ interface Props {
   transferHref: string;
 }
 
+// Plain-language transfer verdicts. The precise receiving-course code (e.g.
+// "MGNT 0XXX") is kept on hover, not in the always-visible label — a first-gen
+// student reads "Counts as an elective", an advisor can hover for the code.
 const STATUS_PILL: Record<TransferStatus, { label: string; cls: string }> = {
   direct: {
     label: "Transfers",
     cls: "bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 ring-emerald-200 dark:ring-emerald-800",
   },
   elective: {
-    label: "Elective credit",
+    label: "Counts as an elective",
     cls: "bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 ring-amber-200 dark:ring-amber-800",
   },
   "no-credit": {
-    label: "No credit",
+    label: "Won't transfer",
     cls: "bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-400 ring-rose-200 dark:ring-rose-800",
   },
 };
@@ -97,33 +101,33 @@ export default function PlanClient({ plan, transferHref }: Props) {
       <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
         <SummaryStat
           n={summary.direct}
-          label={uni === "__all__" ? "transfer somewhere" : "transfer directly"}
+          label={uni === "__all__" ? "transfer to a school" : "transfer directly"}
           cls="text-emerald-700 dark:text-emerald-400"
         />
         {uni !== "__all__" && summary.elective > 0 && (
           <SummaryStat
             n={summary.elective}
-            label="as elective credit"
+            label="count as electives"
             cls="text-amber-700 dark:text-amber-400"
           />
         )}
         {uni !== "__all__" && summary.noCredit > 0 && (
           <SummaryStat
             n={summary.noCredit}
-            label="don't transfer"
+            label="won't transfer"
             cls="text-rose-700 dark:text-rose-400"
           />
         )}
         {summary.unknown > 0 && (
           <SummaryStat
             n={summary.unknown}
-            label="no transfer data"
+            label="not listed yet"
             cls="text-gray-500 dark:text-slate-400"
           />
         )}
         <SummaryStat
           n={plan.totals.offeredThisTerm}
-          label={`offered this term (${plan.term})`}
+          label={`open this term (${termLabel(plan.term)})`}
           cls="text-teal-700 dark:text-teal-400"
         />
       </div>
@@ -272,48 +276,55 @@ function SummaryStat({ n, label, cls }: { n: number; label: string; cls: string 
 
 function CourseRow({ course, uni }: { course: PlanCourse; uni: string }) {
   const t = uni === "__all__" ? null : course.transfers[uni];
+  const creditLabel = course.credits != null ? ` · ${course.credits} credit${course.credits === 1 ? "" : "s"}` : "";
   return (
-    <li className="flex flex-wrap items-center gap-x-3 gap-y-1 px-4 py-2.5">
-      <span className="font-mono text-sm font-semibold text-gray-900 dark:text-slate-100">
-        {course.code}
-      </span>
-      <span className="min-w-0 flex-1 truncate text-sm text-gray-600 dark:text-slate-300">
-        {course.title}
-      </span>
-
-      {/* Transfer pill */}
-      {uni === "__all__" ? (
-        course.acceptingCount > 0 ? (
-          <span
-            className={`${PILL_BASE} bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 ring-emerald-200 dark:ring-emerald-800`}
-          >
-            ✓ {course.acceptingCount} school{course.acceptingCount === 1 ? "" : "s"}
+    <li className="px-4 py-3">
+      {/* Lead with the human name; code + credits are secondary. */}
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <div className="text-sm font-medium text-gray-900 dark:text-slate-100">
+            {course.title || course.code}
+          </div>
+          <div className="font-mono text-xs text-gray-400 dark:text-slate-500">
+            {course.code}
+            {creditLabel}
+          </div>
+        </div>
+        {/* The two things that matter, on the right. */}
+        {course.sectionsThisTerm > 0 ? (
+          <span className="shrink-0 text-xs font-medium text-teal-700 dark:text-teal-400">
+            Open this term
           </span>
         ) : (
-          <span className={`${PILL_BASE} ${PILL_MUTED}`}>no transfer data</span>
-        )
-      ) : t ? (
-        <span
-          className={`${PILL_BASE} ${STATUS_PILL[t.status].cls}`}
-          title={t.univCourse ? `→ ${t.univCourse}` : undefined}
-        >
-          {STATUS_PILL[t.status].label}
-          {t.status !== "no-credit" && t.univCourse ? ` → ${t.univCourse}` : ""}
-        </span>
-      ) : (
-        <span className={`${PILL_BASE} ${PILL_MUTED}`}>no transfer data</span>
-      )}
+          <span className="shrink-0 text-xs text-gray-400 dark:text-slate-500">
+            Not offered this term
+          </span>
+        )}
+      </div>
 
-      {/* Section availability */}
-      {course.sectionsThisTerm > 0 ? (
-        <span className="text-xs text-teal-700 dark:text-teal-400">
-          {course.sectionsThisTerm} section{course.sectionsThisTerm === 1 ? "" : "s"}
-        </span>
-      ) : (
-        <span className="text-xs text-gray-400 dark:text-slate-500">
-          not offered this term
-        </span>
-      )}
+      {/* Transfer verdict — plain language, precise code on hover. */}
+      <div className="mt-1.5">
+        {uni === "__all__" ? (
+          course.acceptingCount > 0 ? (
+            <span
+              className={`${PILL_BASE} bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 ring-emerald-200 dark:ring-emerald-800`}
+            >
+              Transfers to {course.acceptingCount} school{course.acceptingCount === 1 ? "" : "s"}
+            </span>
+          ) : (
+            <span className={`${PILL_BASE} ${PILL_MUTED}`}>Transfer not listed</span>
+          )
+        ) : t ? (
+          <span
+            className={`${PILL_BASE} ${STATUS_PILL[t.status].cls}`}
+            title={t.univCourse ? `Receiving course: ${t.univCourse}` : undefined}
+          >
+            {STATUS_PILL[t.status].label}
+          </span>
+        ) : (
+          <span className={`${PILL_BASE} ${PILL_MUTED}`}>Transfer not listed</span>
+        )}
+      </div>
     </li>
   );
 }

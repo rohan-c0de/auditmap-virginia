@@ -25,6 +25,29 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import PlanClient from "./PlanClient";
 
 export const revalidate = 86400; // 1 day
+
+// Plain-English, jargon-free description of what each credential is. Coarse on
+// purpose (robust to AA/AS/AAS catalog quirks) — the goal is a first-gen
+// student understanding "what am I looking at", not a precise taxonomy.
+const CREDENTIAL_BLURB: Record<string, string> = {
+  AS: "An associate degree — designed to transfer to a 4-year school. About 2 years full-time.",
+  AA: "An associate degree — designed to transfer to a 4-year school. About 2 years full-time.",
+  AAS: "An applied associate degree — built to start a career. About 2 years full-time.",
+  certificate: "A certificate — a shorter, focused credential (less than a full degree).",
+  diploma: "A diploma — a focused, career-oriented credential.",
+};
+
+/** Prefer the credential token embedded in the catalog title; fall back to the
+ *  structured field. AAS is checked before AS so "...AAS" isn't read as "AS". */
+function resolveCredential(title: string, credential: string): string {
+  const t = title.toUpperCase();
+  if (/\bAAS\b/.test(t)) return "AAS";
+  if (/\bAS\b/.test(t)) return "AS";
+  if (/\bAA\b/.test(t)) return "AA";
+  if (/certificate/i.test(title)) return "certificate";
+  if (/diploma/i.test(title)) return "diploma";
+  return credential;
+}
 export const dynamicParams = true;
 
 interface PageProps {
@@ -63,6 +86,11 @@ export default async function MajorPlanPage(props: PageProps) {
   const collegeHref = `/${state}/college/${id}`;
   const transferHref = `/${state}/transfer`;
 
+  // Plain-language credential help. The catalog title is the more reliable
+  // signal (e.g. GA titles embed "...AAS" while the credential field may say
+  // "AS"), so read the token from the title first, then fall back to the field.
+  const credentialBlurb = CREDENTIAL_BLURB[resolveCredential(plan.program.title, plan.program.credential)] ?? "";
+
   // College-wide outcomes (federal Scorecard) — context, NOT program-specific.
   const sc = getScorecard(state, id);
   const outcomeTiles: { label: string; value: string }[] = [];
@@ -93,13 +121,12 @@ export default async function MajorPlanPage(props: PageProps) {
         ]}
       />
 
-      <header className="mb-6 mt-4">
+      <header className="mb-5 mt-4">
         <p className="text-sm font-medium uppercase tracking-wide text-blue-600 dark:text-blue-400">
-          Transfer plan
+          Your plan for this degree
         </p>
         <h1 className="mt-1 text-2xl font-bold text-gray-900 dark:text-slate-100 sm:text-3xl">
-          {plan.program.title}{" "}
-          <span className="text-gray-400 dark:text-slate-500">({plan.program.credential})</span>
+          {plan.program.title}
         </h1>
         <p className="mt-1 text-gray-600 dark:text-slate-300">
           at{" "}
@@ -107,12 +134,19 @@ export default async function MajorPlanPage(props: PageProps) {
             {plan.collegeName}
           </a>
           {plan.program.totalCredits ? ` · ${plan.program.totalCredits} credits` : ""}
-          {plan.term ? ` · sections shown for ${termLabel(plan.term)}` : ""}
+        </p>
+        {credentialBlurb && (
+          <p className="mt-2 text-sm text-gray-500 dark:text-slate-400">{credentialBlurb}</p>
+        )}
+        <p className="mt-3 rounded-md bg-blue-50 dark:bg-blue-950/30 px-3 py-2 text-sm text-gray-700 dark:text-slate-300">
+          Every course this degree needs — pick the school you want to transfer to and
+          see which ones count there, plus what&apos;s open to register for now
+          {plan.term ? ` (${termLabel(plan.term)})` : ""}.
         </p>
         {plan.program.catalogUrl && (
-          <p className="mt-1 text-xs text-gray-400 dark:text-slate-500">
+          <p className="mt-2 text-xs text-gray-400 dark:text-slate-500">
             <a href={plan.program.catalogUrl} className="underline" rel="nofollow">
-              Official catalog →
+              See the official catalog →
             </a>
           </p>
         )}
