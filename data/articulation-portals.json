@@ -211,6 +211,15 @@
         "scripts/vt/scrape-transfer.ts"
       ],
       "notes": "VT has a single community college (CCV); CT.Net coverage is its primary articulation source."
+    },
+    "wv": {
+      "type": "per-receiver",
+      "name": "Marshall University transfer-equivalency tool",
+      "url": "https://mubert.marshall.edu/transfer/",
+      "scripts": [
+        "scripts/wv/scrape-transfer-marshall.ts"
+      ],
+      "notes": "Marshall's public equivalencies.php?school=<ID> tables cover 8 of 9 WV CCs (Pierpont absent). Single receiver. WVU = DegreeWorks SPA (XHR); Fairmont/Shepherd = CollegeSource TES public view (403s non-browser). WV HEPC statewide layer is outcomes-based, not course-level. Documented follow-ups to add WVU."
     }
   },
   "fallback": {
