@@ -121,6 +121,8 @@ export interface PlanSequence {
   prereqCoverage: number;
   /** Credit ceiling used when packing courses into a term. */
   creditsPerTerm: number;
+  /** True when the full sequence exceeded MAX_DISPLAY_TERMS and was truncated. */
+  truncated: boolean;
 }
 
 // ── helpers ───────────────────────────────────────────────────────────────
@@ -338,6 +340,8 @@ function rank(s: TransferStatus): number {
 const TERM_CREDIT_CAP = 16;
 /** Below this prereq coverage the ordering is noise — show only the checklist. */
 const SEQUENCE_MIN_COVERAGE = 0.25;
+/** Maximum terms to show — prevents 35-term sequences on over-prereqed programs. */
+const MAX_DISPLAY_TERMS = 8;
 
 /**
  * Order a program's courses into credit-capped terms using recorded
@@ -425,9 +429,13 @@ export function buildSequence(
     }
   }
 
+  const truncated = terms.length > MAX_DISPLAY_TERMS;
   return {
-    terms: terms.map((t, i) => ({ index: i + 1, courses: t.courses, credits: t.credits })),
+    terms: terms
+      .slice(0, MAX_DISPLAY_TERMS)
+      .map((t, i) => ({ index: i + 1, courses: t.courses, credits: t.credits })),
     prereqCoverage: coverage,
     creditsPerTerm: TERM_CREDIT_CAP,
+    truncated,
   };
 }
