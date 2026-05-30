@@ -19,7 +19,7 @@ const mtConfig: StateConfig = {
       "Under Mont. Code § 20-25-421 and Board of Regents policy 940.13, Montana residents aged 65+ may enroll in credit courses at any Montana University System institution (including the 2-year colleges) tuition-free on a space-available basis after the regular registration period. Fees, books, and other charges still apply.",
   },
 
-  transferSupported: false,
+  transferSupported: true,
   popularCourses: ["COLS 111", "ENGL 101", "NASD 101", "ENGL 306", "ENGL 202", "WRIT 101"],
   defaultZip: "59601",
   defaultZipCity: "Helena",
@@ -48,7 +48,16 @@ const mtConfig: StateConfig = {
       { scripts: ["scripts/mt/scrape-cdkc.ts"], runner: "http" },
     ],
     prereqs: { source: "aggregate-from-courses" },
-    // manual-only: transfers — no articulation portal identified.
+    transfers: [
+      // Montana University System Common Course Numbering (CCN) matrix at
+      // ccn.mus.edu — a public server-rendered HTML grid of every common-
+      // numbered course and which MUS campuses offer it. The scraper
+      // paginates the grid and, for each course offered at both a 2-year
+      // sender and a 4-year campus, emits an identity equivalency (CCN keeps
+      // the same course code statewide) for the six MUS universities.
+      // In-state by construction. ~1,300 mappings.
+      { scripts: ["scripts/mt/scrape-transfer-ccn.ts"], runner: "http" },
+    ],
     // manual-only: programs — Phase 5+.
   },
 };
