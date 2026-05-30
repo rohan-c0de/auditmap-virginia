@@ -185,13 +185,20 @@ async function setSubject(page: Page, subjectCode: string): Promise<void> {
 }
 
 // MDC's PS requires "at least 2 search criteria". Subject alone is rejected;
-// add Catalog Nbr ≥ 1 as a no-op second criterion that matches every section.
-async function setCatalogNbrGteOne(page: Page): Promise<void> {
-  await page.locator("select[id^='SSR_CLSRCH_WRK_SSR_EXACT_MATCH1']").first().selectOption("G");
-  await page.waitForLoadState("networkidle", { timeout: 3000 }).catch(() => {});
-  await page.locator("input[id^='SSR_CLSRCH_WRK_CATALOG_NBR']").first().fill("1");
-  await page.keyboard.press("Tab");
-  await page.waitForLoadState("networkidle", { timeout: 3000 }).catch(() => {});
+// add "Course Number ≤ 9999" as a no-op second criterion (matches everything).
+// ORDER MATTERS: fill the value FIRST via native typing, THEN switch the
+// operator dropdown by label. The reverse order (operator first) loses the
+// operator change to an AJAX re-render, leaving "is exactly" + value, which
+// returns 0 results.
+async function setCatalogNbrLteAll(page: Page): Promise<void> {
+  const catInput = page.locator("input[id^='SSR_CLSRCH_WRK_CATALOG_NBR']").first();
+  await catInput.click();
+  await catInput.type("9999", { delay: 30 });
+  await catInput.press("Tab");
+  await page.waitForLoadState("networkidle", { timeout: 5000 }).catch(() => {});
+  await page.locator("select[id^='SSR_CLSRCH_WRK_SSR_EXACT_MATCH1']").first()
+    .selectOption({ label: "less than or equal to" });
+  await page.waitForLoadState("networkidle", { timeout: 5000 }).catch(() => {});
 }
 
 async function clickSearch(page: Page): Promise<SearchOutcome> {
@@ -251,7 +258,7 @@ async function search(page: Page, subjectCode: string, termCode: string): Promis
   try {
     await applyCommonCriteria(page, termCode);
     await setSubject(page, subjectCode);
-    await setCatalogNbrGteOne(page);
+    await setCatalogNbrLteAll(page);
     const out = await clickSearch(page);
     consecutiveSearchFailures = 0;
     return out;
