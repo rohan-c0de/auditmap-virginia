@@ -351,12 +351,27 @@ function parseCredits(sectionType: string): number {
   return m ? Math.round(parseFloat(m[1])) : 3;
 }
 
+// MDC's PS result table has no campus column, but the room field's first
+// hyphen-separated chunk usually IS the campus
+// ("Kendall-Bldg 15, Room R446-00" → "Kendall"). About 25% of sections
+// get a campus this way; TBA-room sections stay empty.
+const MDC_KNOWN_CAMPUSES = new Set([
+  "Kendall", "Wolfson", "Hialeah", "Medical", "Padron", "Homestead",
+  "North", "West", "Online", "MDC Online",
+]);
+function deriveCampusFromRoom(room: string): string {
+  const first = (room || "").split(/\n/)[0] || "";
+  const prefix = first.split(/[-,]/)[0]?.trim() ?? "";
+  return MDC_KNOWN_CAMPUSES.has(prefix) ? prefix : "";
+}
+
 function rawToSection(raw: RawSection, fileTermCode: string): CourseSection | null {
   if (!raw.classNbr) return null;
   const { prefix, number, title } = parseCourseTitle(raw.courseTitle);
   const { days, startTime, endTime } = parseDayTime(raw.dayTime);
   const startDate = parseDates(raw.dates);
-  const mode = determineMode(raw.instrMethod, raw.room, raw.campus);
+  const campus = raw.campus || deriveCampusFromRoom(raw.room);
+  const mode = determineMode(raw.instrMethod, raw.room, campus);
   const credits = parseCredits(raw.sectionType);
   let instructor: string | null = raw.instructor || null;
   if (instructor && (instructor.toLowerCase() === "staff" || instructor === "-")) instructor = null;
@@ -373,7 +388,7 @@ function rawToSection(raw: RawSection, fileTermCode: string): CourseSection | nu
     end_time: endTime,
     start_date: startDate,
     location: raw.room,
-    campus: raw.campus,
+    campus,
     mode,
     instructor,
     seats_open: raw.isOpen ? 1 : 0,
