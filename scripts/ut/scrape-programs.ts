@@ -13,6 +13,7 @@
 import * as fs from "fs";
 import * as path from "path";
 import { applyProgramMatching } from "../../lib/programs/matcher.js";
+import { scrapeAcalogPrograms } from "../lib/scrape-acalog-programs.js";
 import { scrapeCourseleafPrograms } from "../lib/scrape-courseleaf-programs.js";
 
 async function run(
@@ -50,6 +51,33 @@ async function main() {
       collegeSlug: "snow-college",
       baseUrl: "https://catalog.snow.edu",
       programIndexPath: "/programs/",
+    }),
+  );
+
+  // salt-lake-community-college (acalog)
+  //
+  // The Phase-6 auto-discovery probe missed SLCC's catalog because it
+  // tried `salt.edu` (wrong domain — SLCC is `slcc.edu`). Manually
+  // verified 2026-05-29 that catalog.slcc.edu is Acalog: the
+  // `/preview_program.php` URL redirects to `index.php?catoid=28` and
+  // the sidebar exposes nav links `?navoid=9697` (Degrees and
+  // Certificates) + `?navoid=9720` (Programs Listed Alphabetically).
+  //
+  // catoid is pinned to 28 (current catalog as of probe). Auto-discover
+  // returned an old archive (catoid=3) whose navoid IDs don't match the
+  // ones used by the live current catalog. The navoids 9697 + 9720
+  // were sampled from catoid=28's sidebar nav, so they must be paired
+  // with that catoid.
+  // 9720 is the comprehensive alphabetical index — preferred. 9697 is
+  // also included so degree/certificate groupings the alphabetical
+  // index sometimes skips are picked up.
+  await run("salt-lake-community-college", () =>
+    scrapeAcalogPrograms({
+      collegeSlug: "salt-lake-community-college",
+      baseUrl: "https://catalog.slcc.edu",
+      catoidFallback: 28,
+      programNavoids: [9720, 9697],
+      autoDiscoverCatoid: false,
     }),
   );
 }

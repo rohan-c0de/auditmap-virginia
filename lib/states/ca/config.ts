@@ -62,6 +62,24 @@ const caConfig: StateConfig = {
       // centralized API at hub.losrios.edu/classSearch. One scraper fetches all
       // four via per-college schedule page discovery.
       { scripts: ["scripts/ca/scrape-losrios.ts"], runner: "http" },
+      // San Diego CCD cluster: three credit colleges (City, Mesa, Miramar)
+      // share the public mws-api.sdccd.edu endpoint. One call per term
+      // returns every section across the district; CAMPUS field routes the
+      // row to its college. Continuing-ed (sdcce.edu, career=ce) excluded.
+      { scripts: ["scripts/ca/scrape-sdccd.ts"], runner: "http" },
+      // Peralta CCD cluster: four colleges (Berkeley City, Alameda, Laney,
+      // Merritt) share a HubSpot HubDB-backed React class search. Public
+      // GraphQL endpoint at <college>.edu/_hcms/api/searchFilterGraphql
+      // returns the district's full classes collection; CAMPUS field routes
+      // rows to their college. Peralta's PeopleSoft is SSO-gated (Oracle
+      // Identity Cloud) so this is the only public source.
+      { scripts: ["scripts/ca/scrape-peralta.ts"], runner: "http" },
+      // Contra Costa CCD cluster: three colleges (Contra Costa, Diablo Valley,
+      // Los Medanos) share the district's ASP.NET WebForms search at
+      // webapps.4cd.edu/apps/courseschedulesearch/search-course.aspx. The
+      // scraper paginates via __doPostBack + VIEWSTATE; one (college, term)
+      // takes ~30s–5min depending on size.
+      { scripts: ["scripts/ca/scrape-4cd.ts"], runner: "http" },
     ],
     prereqs: { source: "aggregate-from-courses" },
     transfers: [

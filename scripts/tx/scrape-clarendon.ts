@@ -116,8 +116,22 @@ async function submitSearchForTerm(
   // either grouped by campus (with "Campus : X" header rows) or flattened.
   // The flat response is more consistent across runs; we go with it and
   // accept the campus field is unknown.
-  await page.selectOption("#ddlTermList", termValue);
-  await sleep(500);
+  // The selectOption fires ddlTermList's onchange __doPostBack which
+  // triggers a full ASP.NET page navigation. The previous `sleep(500)`
+  // raced with that navigation under CI load: the *next* page.evaluate()
+  // intermittently failed with `Execution context was destroyed, most
+  // likely because of a navigation` (run 26630520569, 2026-05-29).
+  // `waitForLoadState` alone doesn't help because it can resolve from
+  // the *current* (pre-postback) network-idle state before the postback
+  // actually starts. Use the Promise.all + waitForNavigation pattern so
+  // we capture the navigation triggered by selectOption itself.
+  await Promise.all([
+    page
+      .waitForNavigation({ waitUntil: "networkidle", timeout: NAV_TIMEOUT })
+      .catch(() => {}),
+    page.selectOption("#ddlTermList", termValue),
+  ]);
+  await sleep(200);
 
   // Force-submit because the visible submit button is reported off-screen
   // headless. Inject a hidden btnsearch=Search so the server-side handler

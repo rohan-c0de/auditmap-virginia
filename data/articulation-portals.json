@@ -5,7 +5,9 @@
     "ct": {
       "type": "per-receiver",
       "name": "Per-receiver (CCSU, SCSU, ECSU)",
-      "scripts": ["scripts/ct/scrape-transfer-all.ts"],
+      "scripts": [
+        "scripts/ct/scrape-transfer-all.ts"
+      ],
       "notes": "Orchestrator runs CCSU, SCSU, and ECSU adapters sequentially. CT does not have a centralized state portal."
     },
     "de": {
@@ -21,7 +23,9 @@
       "type": "state-portal-flatfile",
       "name": "SCNS / FloridaShines",
       "url": "https://flscns.fldoe.org/",
-      "scripts": ["scripts/fl/scrape-scns-flatfile.ts"],
+      "scripts": [
+        "scripts/fl/scrape-scns-flatfile.ts"
+      ],
       "notes": "Statewide course numbering system. By FL Stat. § 1007.24, courses with the same prefix + 3-digit number + lab code at any FL public institution are equivalent. One ~80MB POST yields the entire system; algorithmic mapping replaces per-receiver scraping. Covers all 28 FCS colleges × 12 SUS universities."
     },
     "ga": {
@@ -39,21 +43,54 @@
       "type": "state-portal",
       "name": "MassTransfer",
       "url": "https://www.mass.edu/masstransfer/equivalencies/",
-      "scripts": ["scripts/ma/scrape-masstransfer.ts"],
+      "scripts": [
+        "scripts/ma/scrape-masstransfer.ts"
+      ],
       "notes": "Mass DHE state portal. One scrape yields ~45k mappings across all 15 MA community colleges × 14 receivers."
     },
     "md": {
       "type": "state-portal",
       "name": "ARTSYS",
       "url": "https://artsys.usmd.edu/",
-      "scripts": ["scripts/md/scrape-transfer-artsys.ts"],
+      "scripts": [
+        "scripts/md/scrape-transfer-artsys.ts"
+      ],
       "notes": "USM Articulation System (Quottly-powered). Covers all 16 MD community colleges to top transfer destinations."
     },
     "me": {
       "type": "collegetransfer-net",
       "name": "CollegeTransfer.Net",
-      "scripts": ["scripts/me/scrape-transfer.ts"],
+      "scripts": [
+        "scripts/me/scrape-transfer.ts"
+      ],
       "notes": "ME's 7 MCCS colleges feed CollegeTransfer.Net. Free tier rate-limits at ~5 source institutions per run; merge-preserve."
+    },
+    "mo": {
+      "type": "state-portal-flatfile",
+      "name": "MDHEWD CORE 42 course database",
+      "url": "https://dhewd.mo.gov/core42.php",
+      "scripts": [
+        "scripts/mo/scrape-transfer-core42.ts"
+      ],
+      "notes": "Statewide CORE 42 gen-ed transfer core, published as an annual public .xlsx. Self-join on the MOTR common course number yields CC→4-year equivalencies for all 13 MO public universities. ~188 MOTR (gen-ed) courses, not major-specific. Privates in the file (Avila, Lindenwood, etc.) excluded."
+    },
+    "ms": {
+      "type": "per-receiver",
+      "name": "University of Mississippi transfer-equivalency tables",
+      "url": "https://olemiss.edu/registrar/transfer-equivalencies/community-colleges",
+      "scripts": [
+        "scripts/ms/scrape-transfer-olemiss.ts"
+      ],
+      "notes": "Ole Miss publishes static per-CC course-equivalency HTML tables for all 15 MS community colleges. Single receiver (one-university coverage). MSU is behind a Banner Extensibility XHR; USM/JSU publish nothing course-level — documented follow-up to add MSU."
+    },
+    "mt": {
+      "type": "state-portal-flatfile",
+      "name": "Montana University System Common Course Numbering (CCN)",
+      "url": "https://ccn.mus.edu/",
+      "scripts": [
+        "scripts/mt/scrape-transfer-ccn.ts"
+      ],
+      "notes": "Public CCN matrix (server-rendered HTML). Common-numbered courses transfer between MUS campuses keeping the same code, so equivalencies are identity maps. Emits a pair for each course offered at both a 2-year sender and one of the six 4-year MUS universities. In-state by construction."
     },
     "nc": {
       "type": "state-portal",
@@ -70,13 +107,6 @@
       ],
       "notes": "UNC System Course Numbering System covers in-system universities. Per-receiver scripts cover the private/independent destinations CNS doesn't include."
     },
-    "ok": {
-      "type": "state-portal",
-      "name": "Oklahoma Course Equivalency Project (OCEP)",
-      "url": "https://vita.okhighered.org/CourseSearch/",
-      "scripts": ["scripts/ok/scrape-transfer-ocep.ts"],
-      "notes": "Run by the Oklahoma State Regents for Higher Education. Covers OK two-year colleges ↔ OK senior institutions. Public landing: https://okhighered.org/transfer-students/course-transfer/. The referenced script is currently a stub; once a real OCEP scraper is implemented, the orchestrator will start producing OK transfer data automatically."
-    },
     "nh": {
       "type": "mixed",
       "name": "CollegeTransfer.Net + Keene direct",
@@ -90,27 +120,53 @@
       "type": "state-portal",
       "name": "NJTransfer.org",
       "url": "https://njtransfer.org/",
-      "scripts": ["scripts/nj/scrape-transfer.ts"],
+      "scripts": [
+        "scripts/nj/scrape-transfer.ts"
+      ],
       "notes": "State-mandated CGI app. All 19 NJ community college campuses → major NJ universities."
+    },
+    "nm": {
+      "type": "state-portal-flatfile",
+      "name": "NMHED Common Course Numbering System (CCNS)",
+      "url": "https://ccns.nmhed.us/",
+      "scripts": [
+        "scripts/nm/scrape-transfer-ccns.ts"
+      ],
+      "notes": "Statewide CCNS public JSON API. Self-join on the common course number yields CC→4-year equivalencies for the six NM public universities (UNM, NMSU, NMHU, ENMU, NM Tech, WNMU). All in-state by construction. NTU + IAIA (mixed tribal) excluded."
     },
     "ny": {
       "type": "state-portal",
       "name": "CUNY T-Rex (Transfer Explorer)",
       "url": "https://explorer.cuny.edu/",
-      "scripts": ["scripts/ny/scrape-transfer-trex.ts"],
+      "scripts": [
+        "scripts/ny/scrape-transfer-trex.ts"
+      ],
       "notes": "CUNY 7 community colleges → CUNY senior colleges + a few post-bac specialty institutions."
+    },
+    "ok": {
+      "type": "state-portal",
+      "name": "Oklahoma Course Equivalency Project (OCEP)",
+      "url": "https://vita.okhighered.org/CourseSearch/",
+      "scripts": [
+        "scripts/ok/scrape-transfer-ocep.ts"
+      ],
+      "notes": "Run by the Oklahoma State Regents for Higher Education. Covers OK two-year colleges ↔ OK senior institutions. Public landing: https://okhighered.org/transfer-students/course-transfer/. The referenced script is currently a stub; once a real OCEP scraper is implemented, the orchestrator will start producing OK transfer data automatically."
     },
     "pa": {
       "type": "collegetransfer-net",
       "name": "PA TRAC (CollegeTransfer.Net-backed)",
       "url": "https://collegetransfer.pa.gov/",
-      "scripts": ["scripts/pa/scrape-transfer.ts"],
+      "scripts": [
+        "scripts/pa/scrape-transfer.ts"
+      ],
       "notes": "PA TRAC is a CT.Net-powered branded interface. Same OData v2 API as DE/ME/NH."
     },
     "ri": {
       "type": "tes-public-view",
       "name": "TES Public View (URI + RIC)",
-      "scripts": ["scripts/ri/scrape-transfer.ts"],
+      "scripts": [
+        "scripts/ri/scrape-transfer.ts"
+      ],
       "notes": "CCRI uses Transfer Evaluation System Public View at URI and RIC. RI does not have a unified state portal."
     },
     "sc": {
@@ -151,8 +207,19 @@
     "vt": {
       "type": "collegetransfer-net",
       "name": "CollegeTransfer.Net (CCV)",
-      "scripts": ["scripts/vt/scrape-transfer.ts"],
+      "scripts": [
+        "scripts/vt/scrape-transfer.ts"
+      ],
       "notes": "VT has a single community college (CCV); CT.Net coverage is its primary articulation source."
+    },
+    "wv": {
+      "type": "per-receiver",
+      "name": "Marshall University transfer-equivalency tool",
+      "url": "https://mubert.marshall.edu/transfer/",
+      "scripts": [
+        "scripts/wv/scrape-transfer-marshall.ts"
+      ],
+      "notes": "Marshall's public equivalencies.php?school=<ID> tables cover 8 of 9 WV CCs (Pierpont absent). Single receiver. WVU = DegreeWorks SPA (XHR); Fairmont/Shepherd = CollegeSource TES public view (403s non-browser). WV HEPC statewide layer is outcomes-based, not course-level. Documented follow-ups to add WVU."
     }
   },
   "fallback": {

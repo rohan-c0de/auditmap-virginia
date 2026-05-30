@@ -100,10 +100,11 @@ const flConfig: StateConfig = {
       // at findclasses.mdc.edu/psc/PMYM1J/CUSTOMER/SA/...
       // Playwright-driven because PS Class Search is a JS-heavy form
       // with a ">100 sections" confirmation modal. 198 subjects × 2
-      // terms. ~50k students; all 8 MDC campuses are bucketed under
-      // one slug for now (per-campus split deferred — the result-DOM
-      // campus field reads empty with current selectors). Required
-      // tricks for this PS deployment, documented in the scraper:
+      // terms. ~50k students. ~25% of sections carry a campus
+      // (Kendall/Wolfson/Hialeah/Medical/Padron/Homestead/North) derived
+      // from the location prefix; the rest stay empty since the
+      // result-DOM has no campus column. Required tricks documented in
+      // the scraper:
       //   • use psc/ (not psp/) so the form isn't wrapped in an iframe
       //   • Course Number ≤ 9999 as a no-op 2nd criterion
       //   • set value FIRST then operator-by-label (reverse loses op)

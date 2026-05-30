@@ -15,7 +15,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Vandevelde, D",
-    "seats_open": 13,
+    "seats_open": 16,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -36,7 +36,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Fisher, W",
-    "seats_open": 0,
+    "seats_open": 4,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -57,7 +57,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Wilmoth, A",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -78,7 +78,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Keyes, E",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -99,7 +99,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Cancelli, A",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -120,7 +120,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Anderson, A",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -141,7 +141,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Roddy, C",
-    "seats_open": 8,
+    "seats_open": 9,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -162,28 +162,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Myrick, S",
-    "seats_open": 3,
-    "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "coastal-carolina",
-    "term": "2026SU",
-    "course_prefix": "ACA",
-    "course_number": "122",
-    "course_title": "College Transfer Success",
-    "credits": 1,
-    "crn": "ACA-122-12TW",
-    "days": "",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-06-02",
-    "location": "Online",
-    "campus": "OL",
-    "mode": "online",
-    "instructor": null,
-    "seats_open": 27,
+    "seats_open": 0,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -204,7 +183,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Phillips-Dezalia, R",
-    "seats_open": 12,
+    "seats_open": 10,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -246,7 +225,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Watkins, T",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -269,8 +248,10 @@
     "instructor": "Watkins, T",
     "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ACC 120",
+    "prerequisite_courses": [
+      "ACC 120"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -311,8 +292,12 @@
     "instructor": "Heck, D",
     "seats_open": 9,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ARC 111 and MAT 121 and ARC 111 and MAT 171",
+    "prerequisite_courses": [
+      "ARC 111",
+      "MAT 121",
+      "MAT 171"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -351,7 +336,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Pylypiw, D",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -372,7 +357,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Berdeau, A",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -393,7 +378,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Pylypiw, D",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -414,7 +399,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Berdeau, A",
-    "seats_open": 0,
+    "seats_open": 4,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -435,7 +420,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Kameenui, N",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -456,7 +441,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Kameenui, N",
-    "seats_open": 4,
+    "seats_open": 0,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -479,8 +464,10 @@
     "instructor": "Briggs, N",
     "seats_open": 0,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -500,8 +487,10 @@
     "instructor": "Barca, L",
     "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -519,10 +508,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Sosnicki, B, Stallard, M",
-    "seats_open": 1,
+    "seats_open": 2,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -540,10 +531,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Barca, L",
-    "seats_open": 1,
+    "seats_open": 6,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -561,10 +554,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Smith, M, Clowett, A",
-    "seats_open": 1,
+    "seats_open": 3,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 and MAT 025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "MAT 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -582,10 +578,13 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Poe, A",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 and MAT 025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "MAT 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -603,10 +602,13 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Poe, A",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 and MAT 025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "MAT 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -626,8 +628,10 @@
     "instructor": "Reinhart, G",
     "seats_open": 0,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 111",
+    "prerequisite_courses": [
+      "BIO 111"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -645,10 +649,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Poe, A",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -668,8 +674,10 @@
     "instructor": "Jones, H, McNair, A, Jackson, A",
     "seats_open": 0,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -687,10 +695,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Jones, H, McNair, A, Jackson, A",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -710,8 +720,10 @@
     "instructor": "McNair, A, Jackson, A",
     "seats_open": 0,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -729,10 +741,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Valore, J, Alicea, A",
-    "seats_open": 2,
+    "seats_open": 5,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -750,10 +764,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Doiron, J",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -773,8 +789,10 @@
     "instructor": "Doiron, J",
     "seats_open": 0,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -792,10 +810,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Valore, J, Alicea, A",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 168",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -813,10 +833,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Horne, D",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIO 168",
+    "prerequisite_courses": [
+      "BIO 168"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -834,7 +856,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Smith, M",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 18,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -876,7 +898,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Fisher, W",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -897,7 +919,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Macri, C",
-    "seats_open": 15,
+    "seats_open": 13,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -939,7 +961,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Sutton, S",
-    "seats_open": 3,
+    "seats_open": 4,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -981,7 +1003,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Wisely, J",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1023,7 +1045,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Dhakal, B",
-    "seats_open": 4,
+    "seats_open": 6,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1044,7 +1066,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Dhakal, B",
-    "seats_open": 2,
+    "seats_open": 3,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1065,7 +1087,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Kilpatrick, K",
-    "seats_open": 9,
+    "seats_open": 11,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1086,7 +1108,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Kilpatrick, K",
-    "seats_open": 12,
+    "seats_open": 9,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1109,8 +1131,11 @@
     "instructor": "Dhakal, B",
     "seats_open": 8,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 130A and MAT 025",
+    "prerequisite_courses": [
+      "CHM 130A",
+      "MAT 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -1130,8 +1155,10 @@
     "instructor": "Dhakal, B",
     "seats_open": 8,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 130",
+    "prerequisite_courses": [
+      "CHM 130"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -1149,10 +1176,14 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Yakupkovic, J",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 and CHM 090 or MAT 171",
+    "prerequisite_courses": [
+      "ENG 025",
+      "CHM 090",
+      "MAT 171"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -1172,8 +1203,12 @@
     "instructor": "Dupuis, D",
     "seats_open": 0,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 and CHM 090 or MAT 171",
+    "prerequisite_courses": [
+      "ENG 025",
+      "CHM 090",
+      "MAT 171"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -1191,10 +1226,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Dupuis, D",
-    "seats_open": 0,
+    "seats_open": 4,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHM 151",
+    "prerequisite_courses": [
+      "CHM 151"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -1212,7 +1249,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Weidert, J",
-    "seats_open": 21,
+    "seats_open": 22,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1254,7 +1291,7 @@
     "campus": "CL",
     "mode": "in-person",
     "instructor": "Saunders McClung, L",
-    "seats_open": 10,
+    "seats_open": 11,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1275,7 +1312,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Saunders McClung, L",
-    "seats_open": 22,
+    "seats_open": 23,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1317,7 +1354,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Saunders McClung, L",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1338,7 +1375,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Weidert, J",
-    "seats_open": 0,
+    "seats_open": 6,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1380,7 +1417,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Barr, C",
-    "seats_open": 10,
+    "seats_open": 12,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1401,7 +1438,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Donato, M",
-    "seats_open": 0,
+    "seats_open": 7,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1422,7 +1459,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Donato, M",
-    "seats_open": 20,
+    "seats_open": 9,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1443,10 +1480,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Pitts, E",
-    "seats_open": 7,
+    "seats_open": 8,
     "seats_total": 22,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -1464,10 +1503,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Saunders McClung, L",
-    "seats_open": 10,
+    "seats_open": 9,
     "seats_total": 22,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -1485,10 +1526,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Pitts, E",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 22,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -1506,10 +1549,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Barr, C",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 22,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -1527,10 +1572,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Catalano, M",
-    "seats_open": 1,
+    "seats_open": 0,
     "seats_total": 22,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -1550,8 +1597,10 @@
     "instructor": "Leonard, Y",
     "seats_open": 14,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CIS 115",
+    "prerequisite_courses": [
+      "CIS 115"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -1571,8 +1620,10 @@
     "instructor": "Decoursey, M",
     "seats_open": 5,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CIS 115",
+    "prerequisite_courses": [
+      "CIS 115"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -1590,7 +1641,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Tollefsrud, D",
-    "seats_open": 2,
+    "seats_open": 4,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1611,7 +1662,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "White, T",
-    "seats_open": 11,
+    "seats_open": 12,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1632,7 +1683,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "White, T",
-    "seats_open": 5,
+    "seats_open": 6,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1653,7 +1704,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "White, T",
-    "seats_open": 13,
+    "seats_open": 14,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1718,8 +1769,10 @@
     "instructor": "Blackburn, E, McCaffrey, W",
     "seats_open": 3,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DEN 106",
+    "prerequisite_courses": [
+      "DEN 106"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -1760,8 +1813,11 @@
     "instructor": "Bruton, S, Ward, N, Ghee, L, Richardson, M, Crawford, V, Orr, B",
     "seats_open": 3,
     "seats_total": 22,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DEN 130 and DEN 141",
+    "prerequisite_courses": [
+      "DEN 130",
+      "DEN 141"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -1781,8 +1837,11 @@
     "instructor": "Bruton, S, Ghee, L, Crowell, J, Ward, N, Richardson, M, Orr, B, Crawford, V, Rose, R",
     "seats_open": 3,
     "seats_total": 22,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "DEN 131 and DEN 140",
+    "prerequisite_courses": [
+      "DEN 131",
+      "DEN 140"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -1800,7 +1859,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Martinez, R",
-    "seats_open": 1,
+    "seats_open": 2,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1823,8 +1882,11 @@
     "instructor": "Crump, K",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 and MAT 025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "MAT 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -1844,8 +1906,11 @@
     "instructor": "Crump, K",
     "seats_open": 0,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 and MAT 025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "MAT 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -1863,10 +1928,13 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Canell, R",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 and MAT 025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "MAT 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -1886,8 +1954,11 @@
     "instructor": "Canell, R",
     "seats_open": 1,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 and MAT 025",
+    "prerequisite_courses": [
+      "ENG 025",
+      "MAT 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -1926,7 +1997,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Chartier, B",
-    "seats_open": 7,
+    "seats_open": 8,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1968,7 +2039,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Myrick, S",
-    "seats_open": 16,
+    "seats_open": 15,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1989,10 +2060,13 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Laurent, K",
-    "seats_open": 3,
+    "seats_open": 6,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025 or ENG 102",
+    "prerequisite_courses": [
+      "ENG 025",
+      "ENG 102"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2031,10 +2105,15 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Myrick, S",
-    "seats_open": 7,
+    "seats_open": 8,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EDU 144 and EDU 145 and PSY 244 and PSY 245",
+    "prerequisite_courses": [
+      "EDU 144",
+      "EDU 145",
+      "PSY 244",
+      "PSY 245"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2054,8 +2133,10 @@
     "instructor": "Maready, J",
     "seats_open": 1,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ELC 114",
+    "prerequisite_courses": [
+      "ELC 114"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2075,8 +2156,10 @@
     "instructor": "Maready, J",
     "seats_open": 1,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ELC 117",
+    "prerequisite_courses": [
+      "ELC 117"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2096,8 +2179,14 @@
     "instructor": "Maready, J",
     "seats_open": 1,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ELC 111 or ELC 112 or ELC 131 or ELC 138 and ELC 117",
+    "prerequisite_courses": [
+      "ELC 111",
+      "ELC 112",
+      "ELC 131",
+      "ELC 138",
+      "ELC 117"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2159,8 +2248,10 @@
     "instructor": "Sokoloski, J",
     "seats_open": 7,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ELN 133",
+    "prerequisite_courses": [
+      "ELN 133"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2180,8 +2271,12 @@
     "instructor": "Tracewell, J, Himes, B",
     "seats_open": 26,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EMS 122 and EMS 130 and EMS 160",
+    "prerequisite_courses": [
+      "EMS 122",
+      "EMS 130",
+      "EMS 160"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2201,8 +2296,11 @@
     "instructor": "Tracewell, J, Himes, B",
     "seats_open": 26,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EMS 121 or EMS 122",
+    "prerequisite_courses": [
+      "EMS 121",
+      "EMS 122"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2222,8 +2320,11 @@
     "instructor": "Tracewell, J, Himes, B",
     "seats_open": 26,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "EMS 122 and EMS 130",
+    "prerequisite_courses": [
+      "EMS 122",
+      "EMS 130"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2304,7 +2405,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "French, K",
-    "seats_open": 5,
+    "seats_open": 6,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2325,7 +2426,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Adams, T",
-    "seats_open": 3,
+    "seats_open": 4,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2346,7 +2447,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Ketchum, C",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2379,27 +2480,6 @@
     "course_number": "025",
     "course_title": "College English Skills",
     "credits": 3,
-    "crn": "ENG-025-07T",
-    "days": "M T W Th",
-    "start_time": "9:30 AM",
-    "end_time": "10:45 AM",
-    "start_date": "2026-06-02",
-    "location": "Coastal Carolina Main Campus",
-    "campus": "MC",
-    "mode": "in-person",
-    "instructor": "Lavin, S",
-    "seats_open": 12,
-    "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
-  },
-  {
-    "college_code": "coastal-carolina",
-    "term": "2026SU",
-    "course_prefix": "ENG",
-    "course_number": "025",
-    "course_title": "College English Skills",
-    "credits": 3,
     "crn": "ENG-025-08TP",
     "days": "M W",
     "start_time": "5:30 PM",
@@ -2409,7 +2489,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Adcock, H",
-    "seats_open": 2,
+    "seats_open": 0,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2430,7 +2510,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Ketchum, C",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2451,7 +2531,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": null,
-    "seats_open": 11,
+    "seats_open": 7,
     "seats_total": 15,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2495,8 +2575,10 @@
     "instructor": "Adcock, R",
     "seats_open": 12,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2516,8 +2598,10 @@
     "instructor": "Adcock, R",
     "seats_open": 13,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2537,8 +2621,10 @@
     "instructor": "Rogalski, A",
     "seats_open": 5,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2558,8 +2644,10 @@
     "instructor": "Adcock, H",
     "seats_open": 13,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2577,10 +2665,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Hunter, B",
-    "seats_open": 9,
+    "seats_open": 11,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2598,10 +2688,12 @@
     "campus": "MCAS",
     "mode": "in-person",
     "instructor": "Mellon, S",
-    "seats_open": 5,
+    "seats_open": 7,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2621,8 +2713,10 @@
     "instructor": "Adcock, H",
     "seats_open": 0,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2642,8 +2736,10 @@
     "instructor": "Hunter, B",
     "seats_open": 0,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2661,10 +2757,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Pitts, E",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2682,10 +2780,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Primina, Y",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2703,10 +2803,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Lavin, S",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2724,10 +2826,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Cancelli, A",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2747,8 +2851,10 @@
     "instructor": "Mellon, S",
     "seats_open": 0,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2768,8 +2874,10 @@
     "instructor": "Bracewell, C",
     "seats_open": 7,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2787,10 +2895,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Rogalski, A",
-    "seats_open": 12,
+    "seats_open": 13,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2810,8 +2920,10 @@
     "instructor": "Adams, T",
     "seats_open": 7,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2831,8 +2943,10 @@
     "instructor": "Hunter, B",
     "seats_open": 9,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2849,11 +2963,13 @@
     "location": "Coastal Carolina Main Campus",
     "campus": "MC",
     "mode": "in-person",
-    "instructor": null,
+    "instructor": "Lavin, S",
     "seats_open": 14,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2873,8 +2989,10 @@
     "instructor": null,
     "seats_open": 19,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2892,10 +3010,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Adcock, R",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2915,8 +3035,10 @@
     "instructor": "French, K",
     "seats_open": 0,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2934,10 +3056,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Bracewell, C",
-    "seats_open": 0,
+    "seats_open": 3,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2955,10 +3079,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Willis, U",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2976,10 +3102,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Cancelli, A",
-    "seats_open": 0,
+    "seats_open": 4,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -2997,10 +3125,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Vogan, A",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -3018,10 +3148,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Kukuchka, N",
-    "seats_open": 0,
+    "seats_open": 3,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -3041,8 +3173,10 @@
     "instructor": "Cancelli, A",
     "seats_open": 0,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -3059,11 +3193,13 @@
     "location": "Online",
     "campus": "OL",
     "mode": "online",
-    "instructor": null,
-    "seats_open": 18,
+    "instructor": "Vogan, A",
+    "seats_open": 9,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -3083,8 +3219,10 @@
     "instructor": "French, K",
     "seats_open": 0,
     "seats_total": 22,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 112",
+    "prerequisite_courses": [
+      "ENG 112"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -3102,10 +3240,14 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Adams, T",
-    "seats_open": 12,
+    "seats_open": 10,
     "seats_total": 22,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 112 or ENG 113 or ENG 114",
+    "prerequisite_courses": [
+      "ENG 112",
+      "ENG 113",
+      "ENG 114"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -3125,8 +3267,12 @@
     "instructor": "Pitts, E",
     "seats_open": 5,
     "seats_total": 22,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 112 or ENG 113 or ENG 114",
+    "prerequisite_courses": [
+      "ENG 112",
+      "ENG 113",
+      "ENG 114"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -3167,8 +3313,10 @@
     "instructor": "Rardin, J, Hobbs, N",
     "seats_open": 21,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "FIP 220",
+    "prerequisite_courses": [
+      "FIP 220"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -3188,8 +3336,10 @@
     "instructor": "Vandevelde, D",
     "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -3209,8 +3359,10 @@
     "instructor": "Vandevelde, D",
     "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -3249,7 +3401,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Lewis, C",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3270,7 +3422,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Floyd, E",
-    "seats_open": 0,
+    "seats_open": 3,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3291,7 +3443,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Lewis, C",
-    "seats_open": 1,
+    "seats_open": 4,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3312,7 +3464,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Lewis, C",
-    "seats_open": 0,
+    "seats_open": 10,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3333,7 +3485,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Bartlone, S",
-    "seats_open": 21,
+    "seats_open": 6,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3377,8 +3529,10 @@
     "instructor": "Hurley, W",
     "seats_open": 4,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "TRN 120",
+    "prerequisite_courses": [
+      "TRN 120"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -3398,8 +3552,10 @@
     "instructor": "Hunter, A",
     "seats_open": 11,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -3419,8 +3575,10 @@
     "instructor": "Fickling, E",
     "seats_open": 1,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -3438,10 +3596,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Jeffries, J",
-    "seats_open": 1,
+    "seats_open": 2,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -3461,8 +3621,10 @@
     "instructor": "Corzine, N",
     "seats_open": 21,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -3480,10 +3642,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Corzine, N",
-    "seats_open": 7,
+    "seats_open": 9,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -3503,8 +3667,10 @@
     "instructor": "Corzine, N",
     "seats_open": 21,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -3524,8 +3690,10 @@
     "instructor": "Fickling, E",
     "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -3545,8 +3713,10 @@
     "instructor": "Jeffries, J",
     "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -3564,10 +3734,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Andrews, K",
-    "seats_open": 7,
+    "seats_open": 8,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -3585,10 +3757,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Andrews, K",
-    "seats_open": 2,
-    "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 4,
+    "seats_total": 28,
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -3606,10 +3780,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Corzine, N",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -3629,8 +3805,10 @@
     "instructor": "Chappell-McCart, A",
     "seats_open": 12,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -3690,7 +3868,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Rice, D",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3711,7 +3889,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Rice, D",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3774,7 +3952,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Kachmor, E",
-    "seats_open": 4,
+    "seats_open": 5,
     "seats_total": 22,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3795,7 +3973,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Cabradillia, B",
-    "seats_open": 9,
+    "seats_open": 11,
     "seats_total": 22,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3816,7 +3994,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Downs, L",
-    "seats_open": 13,
+    "seats_open": 15,
     "seats_total": 22,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3858,7 +4036,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Downs, L",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3879,7 +4057,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Cabradillia, B",
-    "seats_open": 0,
+    "seats_open": 5,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3900,7 +4078,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Blue, P",
-    "seats_open": 0,
+    "seats_open": 3,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3921,7 +4099,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Decampo, J",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3942,7 +4120,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Humphrey, A",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3963,7 +4141,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Cummings, N",
-    "seats_open": 14,
+    "seats_open": 8,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4005,7 +4183,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Decoursey, M",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4026,10 +4204,14 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Kachmor, E",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CIS 110 or CIS 111 or OST 137",
+    "prerequisite_courses": [
+      "CIS 110",
+      "CIS 111",
+      "OST 137"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4049,8 +4231,10 @@
     "instructor": "Cabradillia, B",
     "seats_open": 17,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CTS 115",
+    "prerequisite_courses": [
+      "CTS 115"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4068,7 +4252,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Ehlers, G",
-    "seats_open": 12,
+    "seats_open": 14,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4089,7 +4273,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Ehlers, G",
-    "seats_open": 12,
+    "seats_open": 13,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4110,7 +4294,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Ehlers, G",
-    "seats_open": 10,
+    "seats_open": 12,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4131,7 +4315,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Ehlers, G",
-    "seats_open": 14,
+    "seats_open": 16,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4152,7 +4336,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Fisher, W",
-    "seats_open": 20,
+    "seats_open": 21,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4173,7 +4357,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Fisher, W",
-    "seats_open": 8,
+    "seats_open": 9,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4194,7 +4378,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Wainaina, D",
-    "seats_open": 17,
+    "seats_open": 18,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4215,7 +4399,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Wainaina, D",
-    "seats_open": 15,
+    "seats_open": 17,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4236,7 +4420,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Susa, R",
-    "seats_open": 0,
+    "seats_open": 4,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4257,7 +4441,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Duffy-Stermon, M",
-    "seats_open": 0,
+    "seats_open": 4,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4341,7 +4525,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Fedah, E",
-    "seats_open": 5,
+    "seats_open": 7,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4362,7 +4546,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Hercula, L",
-    "seats_open": 6,
+    "seats_open": 8,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -4383,10 +4567,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Karn, S",
-    "seats_open": 0,
+    "seats_open": 6,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 025 and ENG 025",
+    "prerequisite_courses": [
+      "MAT 025",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4404,10 +4591,13 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Nie, Z",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 025 and ENG 025",
+    "prerequisite_courses": [
+      "MAT 025",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4425,10 +4615,13 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Nie, Z",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 025 and ENG 025",
+    "prerequisite_courses": [
+      "MAT 025",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4446,10 +4639,13 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Devitt-Ryder, R",
-    "seats_open": 0,
+    "seats_open": 3,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 025 and ENG 025",
+    "prerequisite_courses": [
+      "MAT 025",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4467,10 +4663,13 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Karn, S",
-    "seats_open": 3,
+    "seats_open": 2,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 025 and ENG 025",
+    "prerequisite_courses": [
+      "MAT 025",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4488,10 +4687,13 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Karn, S",
-    "seats_open": 4,
+    "seats_open": 3,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 025 and ENG 025",
+    "prerequisite_courses": [
+      "MAT 025",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4511,8 +4713,11 @@
     "instructor": "Devitt-Ryder, R",
     "seats_open": 15,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 025 and ENG 025",
+    "prerequisite_courses": [
+      "MAT 025",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4530,10 +4735,14 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Hercula, L",
-    "seats_open": 11,
+    "seats_open": 12,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 143 or MAT 171 and ENG 025",
+    "prerequisite_courses": [
+      "MAT 143",
+      "MAT 171",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4551,10 +4760,14 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Schiefelbein, F",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 143 or MAT 171 and ENG 025",
+    "prerequisite_courses": [
+      "MAT 143",
+      "MAT 171",
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4574,8 +4787,10 @@
     "instructor": "Kelley, M",
     "seats_open": 10,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 035",
+    "prerequisite_courses": [
+      "MAT 035"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4595,8 +4810,10 @@
     "instructor": "Kelley, M",
     "seats_open": 3,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 035",
+    "prerequisite_courses": [
+      "MAT 035"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4614,10 +4831,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Ashley, S",
-    "seats_open": 0,
+    "seats_open": 4,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 035",
+    "prerequisite_courses": [
+      "MAT 035"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4637,8 +4856,10 @@
     "instructor": "Keyes, E",
     "seats_open": 0,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 035",
+    "prerequisite_courses": [
+      "MAT 035"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4656,10 +4877,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Kelley, M",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 035",
+    "prerequisite_courses": [
+      "MAT 035"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4677,10 +4900,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Ashley, S",
-    "seats_open": 5,
+    "seats_open": 6,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 035",
+    "prerequisite_courses": [
+      "MAT 035"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4698,10 +4923,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Ashley, S",
-    "seats_open": 16,
+    "seats_open": 18,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 171",
+    "prerequisite_courses": [
+      "MAT 171"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4721,8 +4948,10 @@
     "instructor": "Schiefelbein, F",
     "seats_open": 5,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 171",
+    "prerequisite_courses": [
+      "MAT 171"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4740,10 +4969,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "White, B",
-    "seats_open": 2,
+    "seats_open": 3,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 171",
+    "prerequisite_courses": [
+      "MAT 171"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4763,8 +4994,11 @@
     "instructor": "Nie, Z",
     "seats_open": 18,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 172 or MAT 175",
+    "prerequisite_courses": [
+      "MAT 172",
+      "MAT 175"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4782,10 +5016,13 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "White, B",
-    "seats_open": 9,
+    "seats_open": 10,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 172 or MAT 175",
+    "prerequisite_courses": [
+      "MAT 172",
+      "MAT 175"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4805,8 +5042,10 @@
     "instructor": "Schiefelbein, F",
     "seats_open": 0,
     "seats_total": 15,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 271",
+    "prerequisite_courses": [
+      "MAT 271"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4826,8 +5065,10 @@
     "instructor": "Schiefelbein, F",
     "seats_open": 5,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 271",
+    "prerequisite_courses": [
+      "MAT 271"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4847,8 +5088,12 @@
     "instructor": "Wade, E",
     "seats_open": 10,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MLT 120 and MLT 125 and MLT 240",
+    "prerequisite_courses": [
+      "MLT 120",
+      "MLT 125",
+      "MLT 240"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4868,8 +5113,10 @@
     "instructor": "Schmidt, J",
     "seats_open": 19,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4889,8 +5136,10 @@
     "instructor": "Spear, H",
     "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4910,8 +5159,10 @@
     "instructor": "Spear, H",
     "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4929,10 +5180,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Spear, H",
-    "seats_open": 0,
+    "seats_open": 12,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4950,10 +5203,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Schmidt, J",
-    "seats_open": 23,
+    "seats_open": 12,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4971,10 +5226,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Schmidt, J",
-    "seats_open": 2,
+    "seats_open": 3,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -4992,10 +5249,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Schmidt, J",
-    "seats_open": 10,
+    "seats_open": 11,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5015,8 +5274,10 @@
     "instructor": "Blue, P",
     "seats_open": 3,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NOS 110",
+    "prerequisite_courses": [
+      "NOS 110"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5036,8 +5297,10 @@
     "instructor": "Downs, L",
     "seats_open": 0,
     "seats_total": 19,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NOS 110",
+    "prerequisite_courses": [
+      "NOS 110"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5057,8 +5320,10 @@
     "instructor": "Blue, P",
     "seats_open": 3,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NET 125",
+    "prerequisite_courses": [
+      "NET 125"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5078,8 +5343,21 @@
     "instructor": "Dennis, B, Duty, E, Hyatt, K, Jones, D, Sawyer, F, Trott, A, Thompson, J",
     "seats_open": 4,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 111 and NUR 112 and NUR 117 and NUR 118 and NUR 211 and ART 111 and ART 114 and ART 115 and MUS 110 and MUS 112 and PHI 215 and PHI 240",
+    "prerequisite_courses": [
+      "NUR 111",
+      "NUR 112",
+      "NUR 117",
+      "NUR 118",
+      "NUR 211",
+      "ART 111",
+      "ART 114",
+      "ART 115",
+      "MUS 110",
+      "MUS 112",
+      "PHI 215",
+      "PHI 240"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5099,8 +5377,21 @@
     "instructor": "Dennis, B, Duty, E, Hyatt, K, Jones, D, Sawyer, F, Trott, A, Thompson, J",
     "seats_open": 5,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "NUR 111 and NUR 112 and NUR 117 and NUR 118 and NUR 211 and ART 111 and ART 114 and ART 115 and MUS 110 and MUS 112 and PHI 215 and PHI 240",
+    "prerequisite_courses": [
+      "NUR 111",
+      "NUR 112",
+      "NUR 117",
+      "NUR 118",
+      "NUR 211",
+      "ART 111",
+      "ART 114",
+      "ART 115",
+      "MUS 110",
+      "MUS 112",
+      "PHI 215",
+      "PHI 240"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5120,8 +5411,10 @@
     "instructor": "Willis, T",
     "seats_open": 2,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "OST 131",
+    "prerequisite_courses": [
+      "OST 131"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5139,7 +5432,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Willis, T",
-    "seats_open": 18,
+    "seats_open": 19,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5183,8 +5476,11 @@
     "instructor": "Parker, A",
     "seats_open": 6,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MED 121 or OST 141",
+    "prerequisite_courses": [
+      "MED 121",
+      "OST 141"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5244,10 +5540,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Willis, T",
-    "seats_open": 10,
+    "seats_open": 11,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "OST 134 or OST 136",
+    "prerequisite_courses": [
+      "OST 134",
+      "OST 136"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5267,8 +5566,11 @@
     "instructor": null,
     "seats_open": 25,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "OST 134 or OST 136",
+    "prerequisite_courses": [
+      "OST 134",
+      "OST 136"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5288,8 +5590,11 @@
     "instructor": "Parker, A",
     "seats_open": 4,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "OST 148 or HMT 210",
+    "prerequisite_courses": [
+      "OST 148",
+      "HMT 210"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5307,7 +5612,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Parker, A",
-    "seats_open": 6,
+    "seats_open": 7,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5330,8 +5635,10 @@
     "instructor": "Hegger, I",
     "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5349,10 +5656,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Hegger, I",
-    "seats_open": 13,
+    "seats_open": 14,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5370,10 +5679,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Rice, D",
-    "seats_open": 21,
+    "seats_open": 23,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5391,10 +5702,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Rice, D",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5414,8 +5727,10 @@
     "instructor": "Hegger, I",
     "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5435,8 +5750,10 @@
     "instructor": "Hegger, I",
     "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 111",
+    "prerequisite_courses": [
+      "ENG 111"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5454,7 +5771,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Floyd, E",
-    "seats_open": 14,
+    "seats_open": 16,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5475,7 +5792,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Floyd, E",
-    "seats_open": 1,
+    "seats_open": 2,
     "seats_total": 10,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5498,8 +5815,10 @@
     "instructor": "Floyd, E",
     "seats_open": 2,
     "seats_total": 5,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PED 117",
+    "prerequisite_courses": [
+      "PED 117"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5517,10 +5836,14 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Paudel, D",
-    "seats_open": 1,
+    "seats_open": 3,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PHY 110A and ENG 025 and MAT 025",
+    "prerequisite_courses": [
+      "PHY 110A",
+      "ENG 025",
+      "MAT 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5538,10 +5861,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Paudel, D",
-    "seats_open": 1,
+    "seats_open": 3,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PHY 110",
+    "prerequisite_courses": [
+      "PHY 110"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5559,10 +5884,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Paudel, D",
-    "seats_open": 7,
+    "seats_open": 10,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MAT 271",
+    "prerequisite_courses": [
+      "MAT 271"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5580,7 +5907,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Moore, S",
-    "seats_open": 0,
+    "seats_open": 3,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5601,7 +5928,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Moore, S",
-    "seats_open": 1,
+    "seats_open": 0,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -5624,8 +5951,10 @@
     "instructor": "Moore, S",
     "seats_open": 13,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5645,8 +5974,10 @@
     "instructor": "Carpenter, S",
     "seats_open": 19,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5666,8 +5997,10 @@
     "instructor": "Anders, S",
     "seats_open": 9,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5685,10 +6018,12 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Anders, S",
-    "seats_open": 11,
+    "seats_open": 12,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5708,8 +6043,10 @@
     "instructor": "Leverentz, K",
     "seats_open": 0,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5727,10 +6064,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Carpenter, S",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5750,8 +6089,10 @@
     "instructor": "Farner, M",
     "seats_open": 0,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5769,10 +6110,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Rios, J",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5790,10 +6133,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Bowman, S",
-    "seats_open": 0,
-    "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "seats_open": 7,
+    "seats_total": 25,
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5811,10 +6156,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Rios, J",
-    "seats_open": 23,
+    "seats_open": 12,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5832,10 +6179,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Howard, J",
-    "seats_open": 13,
+    "seats_open": 14,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5853,10 +6202,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Anders, S",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5876,8 +6227,10 @@
     "instructor": "Anders, S",
     "seats_open": 18,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5897,8 +6250,10 @@
     "instructor": "Phillips-Dezalia, R",
     "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5916,10 +6271,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Phillips-Dezalia, R",
-    "seats_open": 2,
+    "seats_open": 5,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5939,8 +6296,10 @@
     "instructor": "Leverentz, K",
     "seats_open": 0,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5958,10 +6317,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Leverentz, K",
-    "seats_open": 0,
+    "seats_open": 3,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSY 150",
+    "prerequisite_courses": [
+      "PSY 150"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -5981,8 +6342,10 @@
     "instructor": "Hegger, I",
     "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -6002,8 +6365,10 @@
     "instructor": "Decoursey, M",
     "seats_open": 14,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CIS 115",
+    "prerequisite_courses": [
+      "CIS 115"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -6042,7 +6407,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Lancaster, K",
-    "seats_open": 19,
+    "seats_open": 20,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -6084,7 +6449,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Lancaster, K",
-    "seats_open": 0,
+    "seats_open": 3,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -6105,7 +6470,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Weatherly, J",
-    "seats_open": 0,
+    "seats_open": 3,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -6147,7 +6512,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Anderson, A",
-    "seats_open": 16,
+    "seats_open": 15,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -6168,7 +6533,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Rowe, K",
-    "seats_open": 0,
+    "seats_open": 4,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -6191,8 +6556,10 @@
     "instructor": "Lancaster, K",
     "seats_open": 0,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -6212,8 +6579,10 @@
     "instructor": "Lancaster, K",
     "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -6233,8 +6602,10 @@
     "instructor": "Carpenter, S",
     "seats_open": 0,
     "seats_total": 28,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -6254,8 +6625,10 @@
     "instructor": "Lowman, S",
     "seats_open": 15,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -6273,10 +6646,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Lentz, M",
-    "seats_open": 0,
+    "seats_open": 3,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -6294,10 +6669,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Lowman, S",
-    "seats_open": 3,
+    "seats_open": 4,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -6317,8 +6694,10 @@
     "instructor": "Sandoval, J",
     "seats_open": 11,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -6338,8 +6717,10 @@
     "instructor": "Sandoval, J",
     "seats_open": 11,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENG 025",
+    "prerequisite_courses": [
+      "ENG 025"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -6359,8 +6740,10 @@
     "instructor": "Lowman, S",
     "seats_open": 24,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 111",
+    "prerequisite_courses": [
+      "SPA 111"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -6380,8 +6763,10 @@
     "instructor": "Sandoval, J",
     "seats_open": 8,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 111",
+    "prerequisite_courses": [
+      "SPA 111"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -6399,10 +6784,12 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Lentz, M",
-    "seats_open": 4,
+    "seats_open": 3,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SPA 111",
+    "prerequisite_courses": [
+      "SPA 111"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -6422,8 +6809,10 @@
     "instructor": "Webber, A, Winters, S",
     "seats_open": 5,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SUR 123",
+    "prerequisite_courses": [
+      "SUR 123"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -6443,8 +6832,11 @@
     "instructor": "Webber, A, Winters, S, McNeill, A, Peterson, C",
     "seats_open": 5,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "SUR 123 and SUR 134",
+    "prerequisite_courses": [
+      "SUR 123",
+      "SUR 134"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -6527,8 +6919,10 @@
     "instructor": "Potter, G",
     "seats_open": 2,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "TRN 140",
+    "prerequisite_courses": [
+      "TRN 140"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -6546,10 +6940,13 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Torres-Guerra, G",
-    "seats_open": 2,
+    "seats_open": 3,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 115 or WLD 116",
+    "prerequisite_courses": [
+      "WLD 115",
+      "WLD 116"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -6569,8 +6966,11 @@
     "instructor": "Simeone, R",
     "seats_open": 3,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 115 or WLD 116",
+    "prerequisite_courses": [
+      "WLD 115",
+      "WLD 116"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -6588,10 +6988,14 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Torres-Guerra, G",
-    "seats_open": 2,
+    "seats_open": 3,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 115 and WLD 121 and WLD 131",
+    "prerequisite_courses": [
+      "WLD 115",
+      "WLD 121",
+      "WLD 131"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -6611,8 +7015,12 @@
     "instructor": "Simeone, R",
     "seats_open": 3,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WLD 115 and WLD 121 and WLD 131",
+    "prerequisite_courses": [
+      "WLD 115",
+      "WLD 121",
+      "WLD 131"
+    ]
   },
   {
     "college_code": "coastal-carolina",
@@ -6630,7 +7038,7 @@
     "campus": "MC",
     "mode": "in-person",
     "instructor": "Torres-Guerra, G",
-    "seats_open": 2,
+    "seats_open": 3,
     "seats_total": 12,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -6735,7 +7143,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Hager-Alvarado, N",
-    "seats_open": 11,
+    "seats_open": 12,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []

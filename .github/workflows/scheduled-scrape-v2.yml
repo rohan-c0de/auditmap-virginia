@@ -138,7 +138,10 @@ jobs:
       - name: Install poppler-utils (pdftotext used by PDF scrapers in multiple states)
         # Several states have PDF scrapers that shell out to pdftotext.
         # Install unconditionally so new PDF scrapers don't need a YAML edit.
-        run: sudo apt-get install -y --no-install-recommends poppler-utils
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends poppler-utils
+          command -v pdftotext || (echo "pdftotext not found after install" && exit 1)
 
       - name: Resolve terms
         id: terms

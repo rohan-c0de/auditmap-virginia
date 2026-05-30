@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { countRealCourses, programSlug, PLAN_MIN_COURSES } from "@/lib/programs/plan-shared";
 import type { ProgramRequirement } from "@/lib/types";
 import type { Institution } from "@/lib/types";
 
@@ -18,11 +19,14 @@ export type AvailabilityRecord = Record<string, number>;
 function ProgramCard({
   program,
   state,
+  collegeId,
   defaultOpen,
   availability,
 }: {
   program: ProgramRequirement;
   state: string;
+  /** When set, render a link to this program's transfer-validated plan. */
+  collegeId?: string;
   defaultOpen?: boolean;
   availability?: AvailabilityRecord;
 }) {
@@ -32,6 +36,11 @@ function ProgramCard({
     program.credential === "other"
       ? ""
       : ` (${program.credential.toUpperCase()})`;
+
+  const planHref =
+    collegeId && countRealCourses(program) >= PLAN_MIN_COURSES
+      ? `/${state}/college/${collegeId}/program/${programSlug(program)}`
+      : null;
 
   return (
     <div className="rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900">
@@ -81,6 +90,17 @@ function ProgramCard({
           />
         </svg>
       </button>
+
+      {planHref && (
+        <div className="border-t border-gray-100 dark:border-slate-800 px-4 py-2">
+          <Link
+            href={planHref}
+            className="inline-flex items-center text-xs font-medium text-teal-700 dark:text-teal-400 hover:underline"
+          >
+            See transfer plan — which courses transfer &amp; what&apos;s offered &rarr;
+          </Link>
+        </div>
+      )}
 
       {open && (
         <div className="border-t border-gray-200 dark:border-slate-700 px-4 py-3 space-y-4">
@@ -297,10 +317,12 @@ export default function ProgramRequirements({
 
 export function ProgramList({
   state,
+  collegeId,
   programs,
   availability,
 }: {
   state: string;
+  collegeId?: string;
   programs: ProgramRequirement[];
   availability?: AvailabilityRecord;
 }) {
@@ -339,7 +361,13 @@ export function ProgramList({
             {progs
               .sort((a, b) => a.title.localeCompare(b.title))
               .map((prog, pi) => (
-                <ProgramCard key={pi} program={prog} state={state} availability={availability} />
+                <ProgramCard
+                  key={pi}
+                  program={prog}
+                  state={state}
+                  collegeId={collegeId}
+                  availability={availability}
+                />
               ))}
           </div>
         </section>

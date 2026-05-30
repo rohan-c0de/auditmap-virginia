@@ -23,7 +23,7 @@ const msConfig: StateConfig = {
       "Mississippi has no statewide senior-tuition statute. The 15 community and junior colleges (organized under Miss. Code Title 37 Chapter 29) set their own tuition policies. Most offer reduced or waived tuition for residents 65+ on a space-available basis. Contact your college's registrar or financial aid office for the specific terms.",
   },
 
-  transferSupported: false,
+  transferSupported: true,
   popularCourses: ["SPT 1113", "ENG 1113", "HPR 2132", "HPR 1132", "BIO 2511", "PSY 1513"],
   defaultZip: "39201",
   defaultZipCity: "Jackson",
@@ -50,8 +50,15 @@ const msConfig: StateConfig = {
     // remain fingerprinted but unscrapped pending wrapper work for the
     // mixed-platform mix (Colleague, Banner SSB 9, Jenzabar, custom).
     courses: [{ scripts: ["scripts/ms/scrape-banner8.ts"], runner: "http" }],
-    // manual-only: transfers — Mississippi runs MTAG (Mississippi Transfer
-    //   Agreement Guide) — check as a potential source for articulation data.
+    transfers: [
+      // University of Mississippi publishes public per-CC course-equivalency
+      // tables (olemiss.edu/registrar/transfer-equivalencies) covering all 15
+      // MS community colleges. One receiver for now — Mississippi State's data
+      // is behind a Banner Extensibility XHR; USM/JSU publish nothing
+      // course-level (they defer to MATT / transcript eval). Adding MSU is a
+      // documented follow-up to lift MS above single-university coverage.
+      { scripts: ["scripts/ms/scrape-transfer-olemiss.ts"], runner: "http" },
+    ],
     prereqs: [{ scripts: ["scripts/ms/scrape-catalog-prereqs.ts"], runner: "playwright" }],
     programs: [{ scripts: ["scripts/ms/scrape-programs.ts"], runner: "http" }],
   },

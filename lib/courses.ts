@@ -358,6 +358,62 @@ export async function loadAllCourses(
 }
 
 /**
+ * Slim section shape used only for the transfer-page courseAvailability
+ * aggregation. Avoids hauling the full ~30-column CourseSection wire
+ * payload for tens of thousands of rows when all we need is "how many
+ * sections + which colleges teach this CC course?". Issue #777.
+ */
+export interface CourseAvailabilityRow {
+  course_prefix: string;
+  course_number: string;
+  college_code: string;
+}
+
+/**
+ * Load slim availability rows for a specific set of subject prefixes.
+ * Returns only (prefix, number, college_code) — see CourseAvailabilityRow.
+ *
+ * For the transfer page's courseAvailability map: ~50-200 distinct CC
+ * prefixes vs the full 48K-row state catalog, with ~85% wire-payload
+ * reduction from column projection. Issue #777.
+ */
+export async function loadCoursesByPrefixes(
+  prefixes: string[],
+  term: string,
+  state: string,
+): Promise<CourseAvailabilityRow[]> {
+  if (prefixes.length === 0) return [];
+  const distinct = Array.from(new Set(prefixes)).sort();
+  return cached(
+    `coursesByPrefixes:${state}:${term}:${distinct.join("|")}`,
+    async () => {
+      const PAGE_SIZE = 1000;
+      const allData: CourseAvailabilityRow[] = [];
+      let offset = 0;
+      while (true) {
+        const { data, error } = await supabase
+          .from("courses")
+          .select("course_prefix, course_number, college_code")
+          .eq("state", state)
+          .eq("term", term)
+          .in("course_prefix", distinct)
+          .range(offset, offset + PAGE_SIZE - 1);
+
+        if (error) {
+          console.error("loadCoursesByPrefixes error:", error.message);
+          return [];
+        }
+        if (!data || data.length === 0) break;
+        allData.push(...(data as CourseAvailabilityRow[]));
+        if (data.length < PAGE_SIZE) break;
+        offset += PAGE_SIZE;
+      }
+      return allData;
+    },
+  );
+}
+
+/**
  * Load all sections for a single course (prefix + number) across the state.
  * Targeted query — pulls ~10–100 rows instead of the full ~30k state catalog.
  * Used by the course detail pSEO pages to keep CPU + origin transfer small.

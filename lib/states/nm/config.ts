@@ -19,7 +19,7 @@ const nmConfig: StateConfig = {
       "Under the Senior Citizens Reduced Tuition Act (NMSA 1978 § 21-21D, implemented by 5.7.19 NMAC), New Mexico residents who reach age 65 by the census date may register at the reduced rate of $5.00 per credit hour for up to 10 credit hours per semester, on a space-available basis.",
   },
 
-  transferSupported: false,
+  transferSupported: true,
   popularCourses: [],
   defaultZip: "87501",
   defaultZipCity: "Santa Fe",
@@ -64,7 +64,15 @@ const nmConfig: StateConfig = {
         runner: "http",
       },
     ],
-    // manual-only: transfers — no NM state articulation portal registered yet.
+    transfers: [
+      // NM Higher Education Department's statewide Common Course Numbering
+      // System (CCNS) exposes a public JSON API at ccns.nmhed.us covering all
+      // public + tribal institutions. The scraper self-joins on the common
+      // course number to emit CC→4-year equivalencies for the six public
+      // universities (UNM, NMSU, NMHU, ENMU, NM Tech, WNMU). All in-state by
+      // construction. ~8,800 mappings.
+      { scripts: ["scripts/nm/scrape-transfer-ccns.ts"], runner: "http" },
+    ],
     // manual-only: prereqs — Phase 4 catalog-prereq scrapers deferred.
     // manual-only: programs — Phase 6 catalog discovery yielded no templated catalogs.
   },

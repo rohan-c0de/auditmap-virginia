@@ -18,35 +18,33 @@ import type {
   CollegeEligibility,
   EligibilityAnswer,
 } from "./types";
+import { makeNoAnswer } from "./no-answer";
 
 export async function lookupEligibility(
   intent: EligibilityIntent,
   state: string,
 ): Promise<Answer> {
   if (!isValidState(state)) {
-    return {
-      type: "none",
+    return makeNoAnswer({
       reason: "no-state-data",
       message: `We don't have data for state "${state}".`,
-    };
+    });
   }
 
   if (intent.topic === "veteran") {
-    return {
-      type: "none",
+    return makeNoAnswer({
       reason: "no-state-data",
       message:
         "We don't track veteran-specific tuition data. Contact your state's Department of Veterans Services or your college's veteran-services office.",
-    };
+    });
   }
 
   const institutions = loadInstitutions(state);
   if (institutions.length === 0) {
-    return {
-      type: "none",
+    return makeNoAnswer({
       reason: "no-state-data",
       message: `We don't have audit-policy data for ${state.toUpperCase()} yet.`,
-    };
+    });
   }
 
   const cfg = getStateConfig(state);
