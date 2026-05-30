@@ -1,18 +1,16 @@
 import type { StateConfig } from "../registry";
 
-// CUNY Global Class Search is a single public search endpoint that covers all
-// 26 CUNY institutions (senior + community). v1 scrapes only the 7 community
-// colleges; SUNY community colleges (30) remain a separate Phase 2 target and
-// will be added to this same "ny" state slug when implemented.
+// NY covers TWO community-college systems: CUNY (7 NYC institutions) and
+// SUNY (30 statewide community colleges). Phase 1 scraped only the 7 CUNY
+// CCs; Phase 2 (#794) adds 16 SUNY CCs across Banner SSB, Colleague
+// Self-Service, and bespoke HTML platforms.
 //
-// The scraper uses https://globalsearch.cuny.edu/CFGlobalSearchTool/ — a
-// JSP/ColdFusion wrapper around CUNYfirst (PeopleSoft Campus Solutions) that
-// returns HTML. Per-college registrar pages below are fallbacks for linking
-// users to official course listings. CFSearchToolController accepts Base64-
-// encoded params (CRN, term, institution) but requires a server-side session
-// (JSESSIONID cookie) — without it the params are ignored and the search form
-// is returned. Deep-linking is therefore not possible via a static URL.
+// CUNY course search runs through https://globalsearch.cuny.edu/CFGlobalSearchTool/
+// — a JSP/ColdFusion wrapper around CUNYfirst (PeopleSoft Campus Solutions)
+// that returns HTML. SUNY CCs each run their own SIS, so per-college URLs
+// below point to each institution's actual class-search endpoint.
 const COLLEGE_REGISTRAR_URLS: Record<string, string> = {
+  // CUNY (Phase 1):
   "bmcc": "https://www.bmcc.cuny.edu/registrar/academics-classes-registration/class-search/",
   "bronx-cc": "https://www.bcc.cuny.edu/academics/registrar/",
   "guttman-cc": "https://guttman.cuny.edu/students/registrar/",
@@ -20,6 +18,41 @@ const COLLEGE_REGISTRAR_URLS: Record<string, string> = {
   "kingsborough-cc": "https://www.kbcc.cuny.edu/registrar/",
   "laguardia-cc": "https://www.laguardia.edu/registrar/",
   "queensborough-cc": "https://www.qcc.cuny.edu/registrar/",
+  // SUNY CCs — Banner SSB 9 (canonical banner.<domain>):
+  "suny-adirondack": "https://banner.sunyacc.edu/StudentRegistrationSsb/ssb/term/termSelection?mode=search",
+  "jefferson-cc": "https://banner.sunyjefferson.edu/StudentRegistrationSsb/ssb/term/termSelection?mode=search",
+  "columbia-greene-cc": "https://banner.sunycgcc.edu/StudentRegistrationSsb/ssb/term/termSelection?mode=search",
+  "dutchess-cc": "https://banner.sunydutchess.edu/StudentRegistrationSsb/ssb/term/termSelection?mode=search",
+  "rockland-cc": "https://banner.sunyrockland.edu/StudentRegistrationSsb/ssb/term/termSelection?mode=search",
+  "corning-cc": "https://banner.corning-cc.edu/StudentRegistrationSsb/ssb/term/termSelection?mode=search",
+  "suny-broome-cc": "https://banner.sunybroome.edu/StudentRegistrationSsb/ssb/term/termSelection?mode=search",
+  "suny-ulster": "https://banner.sunyulster.edu/StudentRegistrationSsb/ssb/term/termSelection?mode=search",
+  // SUNY CCs — Banner SSB 9 (non-canonical subdomains):
+  "monroe-cc": "https://bannerp.monroecc.edu/StudentRegistrationSsb/ssb/term/termSelection?mode=search",
+  "nassau-cc": "https://banner.ncc.edu/StudentRegistrationSsb/ssb/term/termSelection?mode=search",
+  "suffolk-cc": "https://lighthouse.sunysuffolk.edu/StudentRegistrationSsb/ssb/term/termSelection?mode=search",
+  "suny-schenectady": "https://banprod.sunysccc.edu/StudentRegistrationSsb/ssb/term/termSelection?mode=search",
+  // SUNY CCs — Colleague Self-Service:
+  "finger-lakes-cc": "https://selfservice.flcc.edu/Student/Courses",
+  "onondaga-cc": "https://colss-prod.ec.sunyocc.edu/Student/Courses",
+  // SUNY CCs — bespoke HTML schedules:
+  "cayuga-cc": "https://www.cayuga-cc.edu/academics/schedule-of-classes/",
+  "herkimer-cc": "https://herkimer.edu/academics/course-schedule/fall/",
+  // SUNY CCs — Phase 2b (course data not yet scraped; registrar links only):
+  "clinton-cc": "https://web.clinton.edu/registrar/",
+  "north-country-cc": "https://www.nccc.edu/registration/index.html",
+  "hudson-valley-cc": "https://www.hvcc.edu/academics/catalog/",
+  "suny-orange": "https://sunyorange.edu/registrar/",
+  "fmcc": "https://fmcc.edu/programs-offerings-2/courses-class-schedules",
+  "genesee-cc": "https://www.genesee.edu/academics/course-finder/",
+  "mvcc": "https://www2.mvcc.edu/courses/",
+  "tompkins-cortland-cc": "https://www.tompkinscortland.edu/students",
+  "jamestown-cc": "https://www.sunyjcc.edu/courses",
+  "erie-cc": "https://wd5-student.myworkdaysite.com/ecc/SUNYErie",
+  "suny-niagara": "https://sunyniagara.edu/",
+  "suny-sullivan": "https://sunysullivan.edu/",
+  "westchester-cc": "https://www.sunywcc.edu/academics/",
+  "fit": "https://www.fitnyc.edu/academics/",
 };
 
 const GLOBAL_SEARCH_URL = "https://globalsearch.cuny.edu/CFGlobalSearchTool/search.jsp";
@@ -27,10 +60,10 @@ const GLOBAL_SEARCH_URL = "https://globalsearch.cuny.edu/CFGlobalSearchTool/sear
 const nyConfig: StateConfig = {
   slug: "ny",
   name: "New York",
-  systemName: "CUNY",
-  systemFullName: "The City University of New York",
-  systemUrl: "https://www.cuny.edu",
-  collegeCount: 7,
+  systemName: "CUNY + SUNY",
+  systemFullName: "The City University of New York (CUNY) and State University of New York (SUNY) community-college systems",
+  systemUrl: "https://www.suny.edu",
+  collegeCount: 37,
 
   seniorWaiver: {
     ageThreshold: 60,
@@ -66,18 +99,22 @@ const nyConfig: StateConfig = {
   branding: {
     siteName: "Community College Path New York",
     tagline:
-      "Search CUNY community college courses across New York City and plan your schedule.",
+      "Search CUNY and SUNY community college courses across New York and plan your schedule.",
     footerText:
-      "Community College Path New York \u2014 Find courses across CUNY community colleges.",
+      "Community College Path New York \u2014 Find courses across CUNY and SUNY community colleges.",
     disclaimer:
-      "This is an independent project and is not affiliated with, endorsed by, or sponsored by The City University of New York (CUNY).",
+      "This is an independent project and is not affiliated with, endorsed by, or sponsored by The City University of New York (CUNY) or the State University of New York (SUNY).",
     metaKeywords: [
       "CUNY community college courses",
+      "SUNY community college courses",
       "CUNY class search",
+      "SUNY class search",
       "New York community college schedule",
       "NYC community college courses near me",
+      "SUNY senior citizen tuition waiver",
       "CUNY senior citizen tuition waiver",
       "City University of New York",
+      "State University of New York",
     ],
   },
   universityAliases: [
@@ -95,7 +132,15 @@ const nyConfig: StateConfig = {
     { slug: "purchase", names: ["Purchase", "SUNY Purchase"] },
   ],
   scrapers: {
-    courses: [{ scripts: ["scripts/ny/scrape-cuny.ts"], runner: "http" }],
+    courses: [
+      // CUNY (Phase 1):
+      { scripts: ["scripts/ny/scrape-cuny.ts"], runner: "http" },
+      // SUNY CCs (Phase 2): 12 Banner SSB + 2 Colleague + 2 bespoke = 16 colleges
+      { scripts: ["scripts/ny/scrape-suny-banner-ssb.ts"], runner: "http" },
+      { scripts: ["scripts/ny/scrape-suny-colleague.ts"], runner: "playwright" },
+      { scripts: ["scripts/ny/scrape-herkimer.ts"], runner: "http" },
+      { scripts: ["scripts/ny/scrape-cayuga.ts"], runner: "http" },
+    ],
     transfers: [
       { scripts: ["scripts/ny/scrape-transfer-trex.ts"], runner: "http" },
       { scripts: ["scripts/ny/scrape-transfer-step.ts"], runner: "http" },
