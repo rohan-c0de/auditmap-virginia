@@ -16,7 +16,7 @@ import type { AcalogProgramConfig } from "../lib/scrape-acalog-programs.js";
 
 const COLLEGES: AcalogProgramConfig[] = [
   {
-    collegeSlug: "ctstate",
+    collegeSlug: "ct-state",
     baseUrl: "https://catalog.ctstate.edu",
     catoidFallback: 24,
     programNavoids: [2935],
