@@ -234,7 +234,13 @@ export function parseRequisiteDisplayText(items: RequisiteItem[]): {
     if (!item.DisplayText) continue;
     const dt = item.DisplayText;
 
-    const courseRegex = /([A-Z]{2,4})-(\d{3,4}[A-Z]*)/g;
+    // Course codes appear with one of three separators across Colleague
+    // instances: hyphen "BIOL-111" (most), asterisk "MATH*0900" (Casper,
+    // LCCC), or a plain space "ENGL 1011" (Western Wyoming). Accept any so
+    // every instance parses — without all three, some yield 0 prereqs even
+    // though requisites are present. The 4-char-uppercase + 3-4-digit shape
+    // keeps the space variant from matching prose like "ACT English 18".
+    const courseRegex = /([A-Z]{2,4})[-* ](\d{3,4}[A-Z]*)/g;
     let match;
     const coursesInItem: string[] = [];
     while ((match = courseRegex.exec(dt)) !== null) {
