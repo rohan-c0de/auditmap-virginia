@@ -18,6 +18,9 @@ interface AccountUser {
   avatarUrl: string | null;
   authProvider: string | null;
   defaultState: string | null;
+  /** PR 3 seat-watch: per-user opt-out toggle. Defaults to true on the
+   *  profile row; the dashboard renders a switch next to defaultState. */
+  seatNotificationsEnabled: boolean;
 }
 
 interface SavedSchedule {
@@ -142,6 +145,9 @@ export default function AccountDashboard({
   const router = useRouter();
   const { signOut } = useAuth();
   const [defaultState, setDefaultState] = useState(user.defaultState ?? "");
+  const [seatNotificationsEnabled, setSeatNotificationsEnabled] = useState(
+    user.seatNotificationsEnabled,
+  );
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
   const [deleting, setDeleting] = useState(false);
@@ -168,6 +174,7 @@ export default function AccountDashboard({
       .from("profiles")
       .update({
         default_state: defaultState || null,
+        seat_notifications_enabled: seatNotificationsEnabled,
         updated_at: new Date().toISOString(),
       })
       .eq("id", user.id);
@@ -300,6 +307,26 @@ export default function AccountDashboard({
           >
             {saved ? "Saved!" : saving ? "Saving..." : "Save"}
           </button>
+        </div>
+
+        {/* Seat-watch notifications toggle (PR 3) */}
+        <div className="mt-4 pt-4 border-t border-gray-100 dark:border-slate-700">
+          <label className="flex items-start gap-3 cursor-pointer">
+            <input
+              type="checkbox"
+              checked={seatNotificationsEnabled}
+              onChange={(e) => setSeatNotificationsEnabled(e.target.checked)}
+              className="mt-0.5 h-4 w-4 rounded border-gray-300 text-teal-600 focus:ring-teal-500"
+            />
+            <span className="flex-1">
+              <span className="block text-sm font-medium text-gray-700 dark:text-slate-300">
+                Email me when a seat opens in a course on one of my plans
+              </span>
+              <span className="block text-xs text-gray-500 dark:text-slate-400 mt-0.5">
+                At most one email per day. Click &quot;Save&quot; above to apply.
+              </span>
+            </span>
+          </label>
         </div>
       </section>
 
