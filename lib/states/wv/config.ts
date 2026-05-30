@@ -23,7 +23,7 @@ const wvConfig: StateConfig = {
   // No transfer data yet — Phase 3. WV does not appear to run a unified
   // state articulation portal; expect a per-receiving-university or
   // CollegeTransfer.Net approach.
-  transferSupported: false,
+  transferSupported: true,
   popularCourses: ["ENGL 101", "MATH 121", "BIOL 101", "PSYC 101", "HIST 101", "SOCI 101"],
   defaultZip: "25301",
   defaultZipCity: "Charleston",
@@ -68,8 +68,15 @@ const wvConfig: StateConfig = {
     // PDFs don't carry prereqs, but the aggregator is harmless for an empty
     // state and lights up automatically once colleges with prereqs land.
     prereqs: { source: "aggregate-from-courses" },
-    // manual-only: transfers — no WV statewide articulation portal; future
-    // work is per-receiving-university or CollegeTransfer.Net (WVU, Marshall).
+    transfers: [
+      // No WV statewide articulation portal (HEPC's is outcomes-based, not
+      // course-level). Marshall University publishes a public equivalency tool
+      // (mubert.marshall.edu/transfer) covering 8 of WV's 9 CCs. Single
+      // receiver for now — WVU's data is behind a DegreeWorks SPA and
+      // Fairmont/Shepherd's CollegeSource TES public view 403s non-browser
+      // clients; both are documented follow-ups.
+      { scripts: ["scripts/wv/scrape-transfer-marshall.ts"], runner: "http" },
+    ],
     // manual-only: programs — Phase 5+.
   },
 };
