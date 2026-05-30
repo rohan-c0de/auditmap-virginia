@@ -51,13 +51,22 @@ const SLUG = "lone-star-college-system";
 const COLLEGE_CODE = SLUG;
 const COURSES_DIR = path.join(process.cwd(), "data", "tx", "courses", SLUG);
 
+// Checkpoints are written to a STABLE path outside any git worktree. A prior
+// 10-hour run died when its worktree was pruned mid-run (a parallel session's
+// cleanup) and the next checkpoint write hit ENOENT. /tmp survives worktree
+// pruning and session archival, so it is the source of truth during a run;
+// the worktree COURSES_DIR copy is mirrored best-effort and refreshed at the
+// end for the PR.
+const STABLE_DIR = "/tmp/lsc-progress";
+
 const ENTRY_URL = "https://campus.lonestar.edu/classsearch.htm";
 const SEARCH_URL =
   "https://campus.lonestar.edu/psc/csprd/EMPLOYEE/SA/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL";
 
 const NAV_TIMEOUT = 60_000;
 const POSTBACK_WAIT = 2500;
-const SEARCH_WAIT = 8_000;
+const SEARCH_TIMEOUT = 15_000; // max poll for a definitive outcome (fresh results render <8s; a stuck Modify-path large subject bails here and the fresh-reload retry recovers it)
+const MODIFY_WAIT = 4_000; // "Modify Search" in-place postback back to criteria
 const PER_QUERY_DELAY = 200;
 
 // PS Classic strm code → human file code.
@@ -184,36 +193,99 @@ async function setValueNoPostback(page: Page, id: string, val: string): Promise<
   }, { id, val });
 }
 
-async function clickSearch(page: Page): Promise<void> {
+// Click Search, then POLL for a definitive outcome instead of a fixed sleep.
+// Large result sets (near the 250 cap, e.g. BIOL/ENGL) render slower than any
+// safe fixed wait — a fixed sleep + immediate detect saw the still-rendering
+// page as "criteria" and silently dropped the whole subject. Polling returns
+// as soon as the table, the over-limit banner, or the no-results message
+// appears (fast for small subjects, patient for big ones), dismissing the
+// session-timeout modal if it interrupts.
+async function clickSearchAndDetect(
+  page: Page,
+): Promise<"results" | "over-limit" | "no-classes" | "criteria"> {
   await page.evaluate(() => {
     (document.getElementById("CLASS_SRCH_WRK2_SSR_PB_CLASS_SRCH") as HTMLInputElement).click();
   });
-  await sleep(SEARCH_WAIT);
+  const deadline = Date.now() + SEARCH_TIMEOUT;
+  let last: "results" | "over-limit" | "no-classes" | "criteria" = "criteria";
+  // Date.now() is unavailable in workflow scripts but fine in a plain tsx run.
+  while (Date.now() < deadline) {
+    await sleep(1000);
+    await dismissModalIfPresent(page);
+    last = await detectResultState(page);
+    if (last === "results" || last === "over-limit" || last === "no-classes") return last;
+  }
+  return last; // "criteria" — genuinely stuck
 }
 
 async function dismissModalIfPresent(page: Page): Promise<void> {
-  // The modal lives in an iframe named ptModFrame_0; OK button id is the
-  // literal "#ICSave" (which means we need a double-escape in querySelector).
-  for (let i = 0; i < 4; i++) {
-    const handled = await page.evaluate(() => {
-      const f = document.querySelector('iframe[name="ptModFrame_0"]') as HTMLIFrameElement | null;
-      if (!f) return false;
-      const doc = f.contentDocument;
-      if (!doc) return false;
-      const btn = doc.getElementById("#ICSave") as HTMLInputElement | null;
-      if (!btn) return false;
-      btn.click();
-      return true;
-    });
-    if (!handled) return;
-    await sleep(5000);
+  // PS pops a confirmation modal — "Your search will return over 50 classes,
+  // would you like to continue?" — for any subject with >50 sections, plus a
+  // periodic "Student SS Warning" session-timeout modal. Both live in an
+  // iframe named ptModFrame_0 with an OK button whose id is the literal
+  // "#ICSave". Reaching into iframe.contentDocument from page.evaluate is
+  // unreliable in headless Chromium (it silently no-ops), which previously
+  // left big subjects like BIOL stuck behind an undismissed modal. Use
+  // Playwright's native frame API + an attribute selector instead.
+  for (let i = 0; i < 5; i++) {
+    const frame = page.frames().find((f) => f.name() === "ptModFrame_0");
+    if (!frame) return;
+    const ok = frame.locator('[id="#ICSave"]');
+    if ((await ok.count().catch(() => 0)) === 0) return;
+    await ok.click({ timeout: 5000 }).catch(() => { /* modal may have closed */ });
+    await sleep(3000);
   }
 }
 
-async function clickNewSearch(page: Page): Promise<void> {
-  // PS Classic puts "New Search" / "Modify Search" links somewhere — easier
-  // to just navigate fresh to the search GBL.
+// Fresh-load the criteria form and set the three constant fields (term,
+// career, campus) ONCE per campus. Within a campus we never reload or re-set
+// these — we return to criteria via the in-place "Modify Search" button,
+// which retains them (verified empirically 2026-05-29).
+async function setupCampus(page: Page, strm: string, campusCode: string): Promise<void> {
   await gotoClassSearch(page);
+  await selectAndPostback(page, "CLASS_SRCH_WRK2_STRM$35$", strm);
+  await selectAndPostback(page, "SSR_CLSRCH_WRK_ACAD_CAREER$2", "CR");
+  await selectAndPostback(page, "SSR_CLSRCH_WRK_CAMPUS$0", campusCode);
+}
+
+// Ensure we're on the criteria-entry form. Over-limit responses already land
+// there (subject field present). A results page does not — click the in-place
+// "Modify Search" button (retains term/career/campus) rather than reloading.
+async function ensureOnCriteria(page: Page): Promise<void> {
+  const has = await page.$('#SSR_CLSRCH_WRK_SUBJECT_SRCH\\$4');
+  if (has) return;
+  await page.evaluate(() => {
+    const b = document.getElementById("CLASS_SRCH_WRK2_SSR_PB_MODIFY") as HTMLInputElement | null;
+    if (b) b.click();
+  });
+  await sleep(MODIFY_WAIT);
+  await page.waitForSelector('#SSR_CLSRCH_WRK_SUBJECT_SRCH\\$4', { timeout: 20_000 });
+}
+
+// Blank the narrowing fields (catalog-nbr + instruction-mode) so a prior
+// subject's split filters don't leak into the next subject. Modify Search
+// retains everything, so this must run before each fresh subject.
+async function clearNarrowing(page: Page): Promise<void> {
+  await page.evaluate(() => {
+    const nbr = document.getElementById("SSR_CLSRCH_WRK_CATALOG_NBR$5") as HTMLInputElement | null;
+    if (nbr && nbr.value) { nbr.value = ""; nbr.dispatchEvent(new Event("change", { bubbles: true })); }
+    const mode = document.getElementById("SSR_CLSRCH_WRK_INSTRUCTION_MODE$1") as HTMLSelectElement | null;
+    if (mode && mode.value) { mode.value = ""; mode.dispatchEvent(new Event("change", { bubbles: true })); }
+  });
+  await sleep(1200);
+}
+
+// Self-heal: re-set any of the three constant fields that drifted over a long
+// per-campus run (session churn occasionally clears one). Cheap (3 reads).
+async function verifyContext(page: Page, strm: string, campusCode: string): Promise<void> {
+  const ctx = await page.evaluate(() => ({
+    term: (document.getElementById("CLASS_SRCH_WRK2_STRM$35$") as HTMLSelectElement | null)?.value,
+    career: (document.getElementById("SSR_CLSRCH_WRK_ACAD_CAREER$2") as HTMLSelectElement | null)?.value,
+    campus: (document.getElementById("SSR_CLSRCH_WRK_CAMPUS$0") as HTMLSelectElement | null)?.value,
+  }));
+  if (ctx.term !== strm) await selectAndPostback(page, "CLASS_SRCH_WRK2_STRM$35$", strm);
+  if (ctx.career !== "CR") await selectAndPostback(page, "SSR_CLSRCH_WRK_ACAD_CAREER$2", "CR");
+  if (ctx.campus !== campusCode) await selectAndPostback(page, "SSR_CLSRCH_WRK_CAMPUS$0", campusCode);
 }
 
 // ---------------------------------------------------------------------------
@@ -231,12 +303,23 @@ interface RawSection {
   courseHeader: string;
 }
 
+// Result states:
+//   results    — section rows present
+//   over-limit — >250 cap hit; caller splits further
+//   no-classes — server confirmed zero matches (genuine empty: do NOT retry)
+//   criteria   — back on the entry form with no result/empty message, i.e. the
+//                search did not execute (subject dropped by an ICAJAX race) —
+//                this is a transient failure the caller should retry.
 async function detectResultState(page: Page): Promise<"results" | "over-limit" | "no-classes" | "criteria"> {
   return page.evaluate(() => {
     const txt = document.body.innerText;
     if (/MTG_CLASS_NBR/.test(document.body.innerHTML)) return "results";
     if (txt.includes("exceed the maximum limit")) return "over-limit";
-    if (/no classes (found|match)/i.test(txt) || txt.includes("Your search returned no classes")) return "no-classes";
+    if (
+      /no classes (found|match)/i.test(txt) ||
+      txt.includes("Your search returned no classes") ||
+      /returns? no results that match/i.test(txt)
+    ) return "no-classes";
     return "criteria";
   });
 }
@@ -398,61 +481,68 @@ async function runOneQuery(
   catalogLevel: { op: string; nbr: string; label: string } | null,
   modeCode: string | null = null,
 ): Promise<RawSection[]> {
-  // Order matters: every onchange-postback resets chgFldArr_win0 on the
-  // server side, so fields set with no postback (subject, catalog nbr) MUST
-  // come AFTER the postback-triggering fields. Set subject LAST.
-  await selectAndPostback(page, "CLASS_SRCH_WRK2_STRM$35$", strm);
-  await selectAndPostback(page, "SSR_CLSRCH_WRK_ACAD_CAREER$2", "CR");
-  await selectAndPostback(page, "SSR_CLSRCH_WRK_CAMPUS$0", campusCode);
-  // Leave Open Classes Only checked (default Y). Unchecking it triggers a
-  // PS modal warning when results would exceed 250 — easier to keep on and
-  // accept that we miss closed/full sections.
-  if (catalogLevel) {
-    await page.evaluate(({ op, nbr }) => {
-      const opEl = document.getElementById("SSR_CLSRCH_WRK_SSR_EXACT_MATCH1$5") as HTMLSelectElement;
-      opEl.value = op;
-      opEl.dispatchEvent(new Event("change", { bubbles: true }));
-      const nbrEl = document.getElementById("SSR_CLSRCH_WRK_CATALOG_NBR$5") as HTMLInputElement;
-      nbrEl.value = nbr;
-      nbrEl.dispatchEvent(new Event("change", { bubbles: true }));
-    }, catalogLevel);
-    await sleep(1500);
-  }
-  if (modeCode) {
-    await page.evaluate((code) => {
-      const el = document.getElementById("SSR_CLSRCH_WRK_INSTRUCTION_MODE$1") as HTMLSelectElement;
-      el.value = code;
-      el.dispatchEvent(new Event("change", { bubbles: true }));
-    }, modeCode);
-    await sleep(1500);
-  }
-  // Subject last — dispatching change fires PS's inline onchange handler
-  // which calls submitAction_win0 (an async ICAJAX postback). Wait long
-  // enough for that to drain before clicking Search, otherwise the postback
-  // races the click and the form is re-rendered without subject.
-  await setValueNoPostback(page, "SSR_CLSRCH_WRK_SUBJECT_SRCH$4", subject);
-  await sleep(2000);
-  await clickSearch(page);
-  // Dismiss the PS "Student SS Warning" modal if it appears (over-limit or
-  // session-timeout warning). The OK button is rendered with the literal id
-  // "#ICSave" inside the ptModFrame_0 iframe.
-  await dismissModalIfPresent(page);
-  const state = await detectResultState(page);
+  // term / career / campus are set ONCE per campus by setupCampus and retained
+  // across subjects via Modify Search. Each attempt returns to the criteria
+  // form, clears the prior subject's narrowing, self-heals drifted context,
+  // then sets this query's narrowing + subject. Subject is set LAST: its
+  // onchange fires an ICAJAX postback, and any postback-triggering field set
+  // afterward would reset chgFldArr_win0 and drop the subject from the submit.
+  //
+  // A "criteria" result means the search didn't execute (the subject onchange
+  // postback raced the search click and the subject was dropped — observed on
+  // the 3rd+ in-place iteration). We retry it once with a longer settle before
+  // giving up. "no-classes" is a confirmed empty set and is NOT retried.
   const tag = `${subject}@${campusCode}${catalogLevel ? `/${catalogLevel.label}` : ""}${modeCode ? `/m=${modeCode}` : ""}`;
-  console.log(`      [${tag}] state=${state}`);
-  if (state === "results") return extractSections(page);
-  if (state === "over-limit") throw new Error("OVER_LIMIT");
-  // Debug: dump page text snippet when in unexpected state.
-  if (process.env.LSC_DEBUG) {
-    const snippet = await page.evaluate(() => ({
-      bodyText: document.body.innerText.substring(0, 1000),
-      subjectVal: (document.getElementById("SSR_CLSRCH_WRK_SUBJECT_SRCH$4") as HTMLSelectElement)?.value,
-      campusVal: (document.getElementById("SSR_CLSRCH_WRK_CAMPUS$0") as HTMLSelectElement)?.value,
-      careerVal: (document.getElementById("SSR_CLSRCH_WRK_ACAD_CAREER$2") as HTMLSelectElement)?.value,
-      termVal: (document.getElementById("CLASS_SRCH_WRK2_STRM$35$") as HTMLSelectElement)?.value,
-      icState: (document.getElementById("ICStateNum") as HTMLInputElement)?.value,
-    }));
-    console.log("      DEBUG:", JSON.stringify(snippet, null, 2).substring(0, 800));
+  const MAX_ATTEMPTS = 2;
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    const settle = attempt === 1 ? 2000 : 4000;
+    // Attempt 1 uses the fast in-place path (Modify Search retains term/career/
+    // campus). The >50-results confirmation modal is reliably dismissed on a
+    // FRESH form but intermittently sticks when reached via Modify Search for
+    // large subjects — so attempt 2 does a full fresh reload + campus re-setup,
+    // which is the proven path (BIOL@CF=181 works fresh). Net: fast for the
+    // many small subjects, reliable for the ~15-30 large ones per campus.
+    if (attempt === 1) {
+      await ensureOnCriteria(page);
+      await clearNarrowing(page);
+      await verifyContext(page, strm, campusCode);
+    } else {
+      await setupCampus(page, strm, campusCode);
+    }
+    // Leave Open Classes Only checked (default Y). Unchecking it triggers a PS
+    // modal warning when results would exceed 250 — easier to keep on and
+    // accept that we miss closed/full sections.
+    if (catalogLevel) {
+      await page.evaluate(({ op, nbr }) => {
+        const opEl = document.getElementById("SSR_CLSRCH_WRK_SSR_EXACT_MATCH1$5") as HTMLSelectElement;
+        opEl.value = op;
+        opEl.dispatchEvent(new Event("change", { bubbles: true }));
+        const nbrEl = document.getElementById("SSR_CLSRCH_WRK_CATALOG_NBR$5") as HTMLInputElement;
+        nbrEl.value = nbr;
+        nbrEl.dispatchEvent(new Event("change", { bubbles: true }));
+      }, catalogLevel);
+      await sleep(1500);
+    }
+    if (modeCode) {
+      await page.evaluate((code) => {
+        const el = document.getElementById("SSR_CLSRCH_WRK_INSTRUCTION_MODE$1") as HTMLSelectElement;
+        el.value = code;
+        el.dispatchEvent(new Event("change", { bubbles: true }));
+      }, modeCode);
+      await sleep(1500);
+    }
+    await setValueNoPostback(page, "SSR_CLSRCH_WRK_SUBJECT_SRCH$4", subject);
+    await sleep(settle);
+    const state = await clickSearchAndDetect(page);
+    console.log(`      [${tag}] state=${state}${attempt > 1 ? ` (retry ${attempt})` : ""}`);
+    if (state === "results") return extractSections(page);
+    if (state === "over-limit") throw new Error("OVER_LIMIT");
+    if (state === "no-classes") return [];
+    // state === "criteria": transient failure. Retry unless out of attempts.
+    if (attempt === MAX_ATTEMPTS) {
+      console.warn(`    ⚠ ${tag} stuck on criteria after ${MAX_ATTEMPTS} attempts — skipping`);
+      return [];
+    }
   }
   return [];
 }
@@ -473,10 +563,10 @@ async function searchSubjectAtCampus(
       if (s) sections.push(s);
     }
   };
-  // Tier 3 (deepest): catalog-level AND instruction-mode.
+  // Tier 3 (deepest): catalog-level AND instruction-mode. runOneQuery returns
+  // to the criteria form in-place (Modify Search) — no full reload needed.
   const tryWithMode = async (level: { op: string; nbr: string; label: string }) => {
     for (const mode of INSTRUCTION_MODES) {
-      await clickNewSearch(page);
       try {
         ingest(await runOneQuery(page, strm, campus.code, subject, level, mode.code));
       } catch (e) {
@@ -490,7 +580,6 @@ async function searchSubjectAtCampus(
   };
   // Tier 2: catalog-level only. Falls back to tier 3 if still over-limit.
   const tryAtLevel = async (level: { op: string; nbr: string; label: string }) => {
-    await clickNewSearch(page);
     try {
       ingest(await runOneQuery(page, strm, campus.code, subject, level));
     } catch (e) {
@@ -502,7 +591,6 @@ async function searchSubjectAtCampus(
     }
   };
   // Tier 1: no catalog filter. Falls back to per-level tier 2.
-  await clickNewSearch(page);
   try {
     ingest(await runOneQuery(page, strm, campus.code, subject, null));
   } catch (e) {
@@ -519,11 +607,42 @@ async function searchSubjectAtCampus(
 async function main() {
   const args = parseArgs();
   fs.mkdirSync(COURSES_DIR, { recursive: true });
+  fs.mkdirSync(STABLE_DIR, { recursive: true });
   const outPath = path.join(COURSES_DIR, `${args.termFile}.json`);
+  // Source-of-truth checkpoint files live in STABLE_DIR (survives worktree
+  // pruning). The worktree copy is mirrored best-effort.
+  const stableData = path.join(STABLE_DIR, `${args.termFile}.json`);
+  const stableProg = path.join(STABLE_DIR, `${args.termFile}.progress.json`);
 
-  console.log(`LSC scraper — term ${args.strm} (${args.termFile}) → ${outPath}`);
+  console.log(`LSC scraper — term ${args.strm} (${args.termFile})`);
+  console.log(`  checkpoint: ${stableData}`);
+  console.log(`  worktree:   ${outPath}`);
   if (args.campusFilter) console.log(`  campus filter: ${args.campusFilter.join(",")}`);
   if (args.subjectsFilter) console.log(`  subject filter: ${args.subjectsFilter.join(",")}`);
+
+  // Resume: seed sections + completed (campus|subject) pairs from a prior run.
+  const allSections: CourseSection[] = [];
+  const seenAcrossCampuses = new Set<string>(); // crn-level dedupe
+  const completedPairs = new Set<string>();
+  if (fs.existsSync(stableData) && fs.existsSync(stableProg)) {
+    try {
+      for (const s of JSON.parse(fs.readFileSync(stableData, "utf-8")) as CourseSection[]) {
+        if (s.crn && !seenAcrossCampuses.has(s.crn)) { seenAcrossCampuses.add(s.crn); allSections.push(s); }
+      }
+      for (const k of JSON.parse(fs.readFileSync(stableProg, "utf-8")) as string[]) completedPairs.add(k);
+      console.log(`→ resumed: ${allSections.length} sections, ${completedPairs.size} pairs done`);
+    } catch (e) {
+      console.warn(`→ resume failed (${(e as Error).message}); starting fresh`);
+    }
+  }
+
+  const writeCheckpoint = () => {
+    const json = JSON.stringify(allSections, null, 2);
+    fs.writeFileSync(stableData, json);
+    fs.writeFileSync(stableProg, JSON.stringify(Array.from(completedPairs), null, 2));
+    // Mirror into the worktree; ignore failure if the dir was pruned.
+    try { fs.writeFileSync(outPath, json); } catch { /* worktree gone — stable copy is canonical */ }
+  };
 
   const browser: Browser = await chromium.launch({ headless: !args.headed });
   const ctx = await browser.newContext({
@@ -546,12 +665,17 @@ async function main() {
       ? CAMPUS_CODES.filter((c) => args.campusFilter!.includes(c.code))
       : CAMPUS_CODES;
 
-    const allSections: CourseSection[] = [];
-    const seenAcrossCampuses = new Set<string>(); // crn-level dedupe
     let queries = 0;
     for (const campus of targetCampuses) {
-      console.log(`\n=== ${campus.name} (${campus.code}) ===`);
-      for (const subj of targetSubjects) {
+      // Skip a campus entirely if every subject is already done (resume).
+      const remaining = targetSubjects.filter((s) => !completedPairs.has(`${campus.code}|${s.code}`));
+      if (remaining.length === 0) { console.log(`\n=== ${campus.name} (${campus.code}) — all done, skip ===`); continue; }
+
+      console.log(`\n=== ${campus.name} (${campus.code}) — ${remaining.length} subjects ===`);
+      // Set term + career + campus ONCE for this campus.
+      await setupCampus(page, args.strm, campus.code);
+
+      for (const subj of remaining) {
         if (queries >= args.maxQueries) break;
         queries++;
         try {
@@ -566,14 +690,21 @@ async function main() {
           if (added > 0) console.log(`  ${subj.code}: +${added} (${found.length} raw)`);
         } catch (e) {
           console.error(`  ${subj.code}@${campus.code} failed:`, (e as Error).message);
+          // A hard failure may have left us on an unknown page — re-establish
+          // the campus context so the next subject starts clean.
+          try { await setupCampus(page, args.strm, campus.code); } catch { /* best effort */ }
         }
+        completedPairs.add(`${campus.code}|${subj.code}`);
+        writeCheckpoint();
         await sleep(PER_QUERY_DELAY);
       }
       if (queries >= args.maxQueries) break;
     }
 
-    fs.writeFileSync(outPath, JSON.stringify(allSections, null, 2));
-    console.log(`\n✓ wrote ${allSections.length} sections (${queries} queries) → ${outPath}`);
+    writeCheckpoint();
+    console.log(`\n✓ wrote ${allSections.length} sections (${queries} queries this run)`);
+    console.log(`  → ${stableData}`);
+    console.log(`  → ${outPath}`);
   } finally {
     await browser.close();
   }
