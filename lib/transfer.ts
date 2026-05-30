@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import type { TransferMapping, TransferMappingClient } from "./types";
 import { supabase } from "./supabase";
+import { cached } from "./courses";
 
 /**
  * Hard cap on mappings passed to the client on a single transfer-hub page.
@@ -345,6 +346,28 @@ export async function getUniversitiesWithCounts(state: string): Promise<
     directCount: number;
     electiveCount: number;
     totalCount: number; // direct + elective (i.e. "transferable" count)
+  }[]
+> {
+  // Memoize per state — this function is the heaviest read in the codebase
+  // (paginates the full transfers table for the state) and gets called 3×
+  // per transfer-hub page during static prerender: once in
+  // generateStaticParams, once in generateMetadata, once in the page handler.
+  // Without dedup, a build that renders ~100 transfer-hub pages fires 300+
+  // identical paginations and reliably hits Supabase's statement_timeout.
+  // The cache lives in-process so it survives the whole build cycle for a
+  // given Vercel worker.
+  return cached(`universities-with-counts:${state}`, () =>
+    _getUniversitiesWithCounts(state),
+  );
+}
+
+async function _getUniversitiesWithCounts(state: string): Promise<
+  {
+    slug: string;
+    name: string;
+    directCount: number;
+    electiveCount: number;
+    totalCount: number;
   }[]
 > {
   // Performance: column-projected Supabase query — same reason as

@@ -16,7 +16,12 @@ interface CacheEntry<T> {
 const cache = new Map<string, CacheEntry<unknown>>();
 const inflight = new Map<string, Promise<unknown>>();
 
-async function cached<T>(key: string, fn: () => Promise<T>): Promise<T> {
+/** In-memory cache + concurrent-call dedup. Exported so other modules can
+ *  share the same cache keyspace and avoid repeated full-table paginations
+ *  during static prerender (see lib/transfer.ts getUniversitiesWithCounts,
+ *  which gets called 3× per transfer-hub page — generateStaticParams,
+ *  generateMetadata, page handler). */
+export async function cached<T>(key: string, fn: () => Promise<T>): Promise<T> {
   const entry = cache.get(key) as CacheEntry<T> | undefined;
   if (entry && entry.expires > Date.now()) return entry.data;
 
