@@ -154,6 +154,8 @@ const nyConfig: StateConfig = {
       { scripts: ["scripts/ny/scrape-nassau-prereqs.ts"], runner: "http" },
       // FIT (CourseLeaf):
       { scripts: ["scripts/ny/scrape-fit-prereqs.ts"], runner: "http" },
+      // FMCC + Sullivan + Schenectady (PDF catalogs):
+      { scripts: ["scripts/ny/scrape-suny-pdf-prereqs.ts"], runner: "http" },
     ],
     programs: [
       // CUNY (Coursedog):
