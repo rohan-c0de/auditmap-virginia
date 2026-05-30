@@ -152,7 +152,7 @@ function parseArgs() {
 function sleep(ms: number): Promise<void> { return new Promise((r) => setTimeout(r, ms)); }
 
 let consecutiveSearchFailures = 0;
-const MAX_CONSECUTIVE_SEARCH_FAILURES = 5;
+const MAX_CONSECUTIVE_SEARCH_FAILURES = 12;
 
 // Pattern is sensitive to wait choices: networkidle and isVisible both
 // stall against PS's persistent background AJAX. Use fixed sleeps after
@@ -383,6 +383,12 @@ function rawToSection(raw: RawSection, fileTermCode: string): CourseSection | nu
   };
 }
 
+// Recycle the page (close + open fresh) every N subjects. PS's per-tab
+// AJAX state degrades over time and after ~15-20 subject changes
+// selectOption starts failing with "did not find some options" because the
+// dropdown is mid-render. A fresh page resets all that.
+const PAGE_RECYCLE_INTERVAL = 10;
+
 async function scrapeTerm(
   browser: Browser,
   termName: string,
@@ -390,10 +396,11 @@ async function scrapeTerm(
   fileTermCode: string,
   subjectFilter: string | null,
 ): Promise<{ sections: CourseSection[]; tooLarge: string[] }> {
-  const page = await browser.newPage();
+  let page = await browser.newPage();
   page.setDefaultTimeout(NAV_TIMEOUT);
   const sections: CourseSection[] = [];
   const tooLarge: string[] = [];
+  let subjectsSincePageOpen = 0;
   try {
     console.log(`\nMDC - ${termName} (PS ${psTermCode})`);
     const subjects = subjectFilter ? [subjectFilter] : MDC_SUBJECTS;
@@ -401,6 +408,16 @@ async function scrapeTerm(
 
     for (let si = 0; si < subjects.length; si++) {
       const subjectCode = subjects[si];
+
+      // Recycle page periodically.
+      if (subjectsSincePageOpen >= PAGE_RECYCLE_INTERVAL) {
+        try { await page.close(); } catch {}
+        page = await browser.newPage();
+        page.setDefaultTimeout(NAV_TIMEOUT);
+        subjectsSincePageOpen = 0;
+      }
+      subjectsSincePageOpen++;
+
       process.stdout.write(`  [${si + 1}/${subjects.length}] ${subjectCode.padEnd(6)} `);
 
       let outcome: SearchOutcome = "failed";
@@ -413,6 +430,14 @@ async function scrapeTerm(
           break;
         }
         if (outcome !== "failed") break;
+      }
+
+      // If we hit "failed", force-recycle the page so next subject starts clean.
+      if (outcome === "failed") {
+        try { await page.close(); } catch {}
+        page = await browser.newPage();
+        page.setDefaultTimeout(NAV_TIMEOUT);
+        subjectsSincePageOpen = 0;
       }
 
       if (outcome === "exceeds-400") {
@@ -431,8 +456,8 @@ async function scrapeTerm(
         console.log(`-> ${kept}`);
       }
 
-      // Incremental save every 25 subjects so a crash mid-run preserves work.
-      if ((si + 1) % 25 === 0 && sections.length > 0) {
+      // Incremental save every 5 subjects so a crash mid-run preserves work.
+      if ((si + 1) % 5 === 0 && sections.length > 0) {
         if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
         const tmpPath = path.join(DATA_DIR, `${fileTermCode}.partial.json`);
         fs.writeFileSync(tmpPath, JSON.stringify(sections, null, 2) + "\n");
