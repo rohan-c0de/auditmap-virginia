@@ -13,6 +13,8 @@ import CollegeScorecardSection from "./CollegeScorecardSection";
 import CollegeTermSection from "./CollegeTermSection";
 import CollegeContext from "@/components/CollegeContext";
 import TopProgramsSection from "./TopProgramsSection";
+import { loadCollegePrograms } from "@/lib/programs/requirements";
+import { countRealCourses, PLAN_MIN_COURSES } from "@/lib/programs/plan-shared";
 import { buildTransferLookupForCourses } from "@/lib/transfer-scoped";
 import { getPrerenderStates } from "@/lib/states/registry";
 import { requireStateConfig } from "@/lib/states/route-helpers";
@@ -131,6 +133,13 @@ export default async function CollegeDetailPage(props: PageProps) {
     : (termsWithData[termsWithData.length - 1] ?? preferredTerm);
 
   const collegeSlug = institution.college_slug;
+
+  // How many of this college's programs have enough real courses to render a
+  // transfer plan? Gates the "Plan a degree" call-to-action so it never points
+  // at a programs page with no actual plans.
+  const plannableCount = (await loadCollegePrograms(state, collegeSlug)).filter(
+    (p) => countRealCourses(p) >= PLAN_MIN_COURSES,
+  ).length;
 
   // Build per-term maps for the client wrapper. Only the terms that actually
   // have data are shipped.
@@ -343,6 +352,28 @@ export default async function CollegeDetailPage(props: PageProps) {
           </div>
         </div>
       </section>
+
+      {/* Plan-a-degree call-to-action — the planner's main entry point from a
+          college page. Gated so it only shows when real plans exist. */}
+      {plannableCount > 0 && (
+        <Link
+          href={`/${state}/college/${id}/programs`}
+          className="group mt-6 flex items-center justify-between gap-4 rounded-xl border border-teal-200 dark:border-teal-900 bg-teal-50 dark:bg-teal-950/40 px-5 py-4 transition hover:bg-teal-100 dark:hover:bg-teal-900/40"
+        >
+          <div>
+            <p className="text-sm font-semibold text-teal-800 dark:text-teal-300">
+              Plan a degree at {institution.name}
+            </p>
+            <p className="mt-0.5 text-sm text-gray-600 dark:text-slate-300">
+              Pick a program and see every course it needs — which ones transfer
+              to the school you want, and what&rsquo;s open to register for now.
+            </p>
+          </div>
+          <span className="shrink-0 text-teal-700 dark:text-teal-300 group-hover:translate-x-0.5 transition-transform">
+            &rarr;
+          </span>
+        </Link>
+      )}
 
       {/* At-a-glance — data-grounded editorial context paragraphs. Renders
           nothing when fewer than 2 sentences qualify (sparse-data colleges),
