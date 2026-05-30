@@ -156,7 +156,12 @@ export default async function CollegeProgramsPage(props: PageProps) {
       </header>
 
       {programs.length > 0 && (
-        <ProgramList state={state} programs={programs} availability={availability} />
+        <ProgramList
+          state={state}
+          collegeId={id}
+          programs={programs}
+          availability={availability}
+        />
       )}
 
       <div className="mt-10 pt-6 border-t border-gray-200 dark:border-slate-700">
