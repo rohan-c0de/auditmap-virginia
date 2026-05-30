@@ -32,8 +32,6 @@ const STATUS_PILL: Record<TransferStatus, { label: string; cls: string }> = {
 
 const PILL_BASE =
   "inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-medium ring-1 ring-inset";
-const PILL_MUTED =
-  "bg-gray-50 dark:bg-slate-800 text-gray-400 dark:text-slate-500 ring-gray-200 dark:ring-slate-700";
 
 export default function PlanClient({ plan, transferHref }: Props) {
   const [uni, setUni] = useState<string>(plan.universities[0]?.slug ?? "__all__");
@@ -96,7 +94,12 @@ export default function PlanClient({ plan, transferHref }: Props) {
         </select>
         {plan.universities.length === 0 && (
           <p className="mt-2 text-sm text-gray-500 dark:text-slate-400">
-            No transfer equivalencies are recorded for this program yet.
+            Transfer equivalencies aren&apos;t on record for this program.{" "}
+            {plan.program.catalogUrl ? (
+              <a href={plan.program.catalogUrl} className="underline text-blue-600 dark:text-blue-400" rel="nofollow" target="_blank">
+                The college catalog is the authoritative source →
+              </a>
+            ) : "Check the college catalog directly."}
           </p>
         )}
       </div>
@@ -211,7 +214,7 @@ export default function PlanClient({ plan, transferHref }: Props) {
       </div>
 
       {view === "sequence" && plan.sequence ? (
-        <SequenceView terms={plan.sequence.terms} uni={uni} coverage={plan.sequence.prereqCoverage} truncated={plan.sequence.truncated} />
+        <SequenceView terms={plan.sequence.terms} uni={uni} coverage={plan.sequence.prereqCoverage} truncated={plan.sequence.truncated} catalogUrl={plan.program.catalogUrl} />
       ) : (
         /* Requirement groups */
         <div className="space-y-6">
@@ -237,7 +240,7 @@ export default function PlanClient({ plan, transferHref }: Props) {
               ) : (
                 <ul className="divide-y divide-gray-100 dark:divide-slate-800">
                   {g.courses.map((c) => (
-                    <CourseRow key={c.code} course={c} uni={uni} />
+                    <CourseRow key={c.code} course={c} uni={uni} catalogUrl={plan.program.catalogUrl} />
                   ))}
                 </ul>
               )}
@@ -284,11 +287,13 @@ function SequenceView({
   uni,
   coverage,
   truncated,
+  catalogUrl,
 }: {
   terms: PlanTerm[];
   uni: string;
   coverage: number;
   truncated: boolean;
+  catalogUrl: string;
 }) {
   return (
     <div className="space-y-4">
@@ -318,7 +323,7 @@ function SequenceView({
           </header>
           <ul className="divide-y divide-gray-100 dark:divide-slate-800">
             {t.courses.map((c) => (
-              <CourseRow key={c.code} course={c} uni={uni} />
+              <CourseRow key={c.code} course={c} uni={uni} catalogUrl={catalogUrl} />
             ))}
           </ul>
         </section>
@@ -335,7 +340,22 @@ function SummaryStat({ n, label, cls }: { n: number; label: string; cls: string 
   );
 }
 
-function CourseRow({ course, uni }: { course: PlanCourse; uni: string }) {
+function NotListedLabel({ catalogUrl }: { catalogUrl: string }) {
+  return catalogUrl ? (
+    <a
+      href={catalogUrl}
+      rel="nofollow"
+      target="_blank"
+      className="text-[10px] text-gray-400 dark:text-slate-500 underline underline-offset-2 hover:text-blue-600 dark:hover:text-blue-400"
+    >
+      Not on record — check the catalog
+    </a>
+  ) : (
+    <span className="text-[10px] text-gray-400 dark:text-slate-500">Not on record</span>
+  );
+}
+
+function CourseRow({ course, uni, catalogUrl }: { course: PlanCourse; uni: string; catalogUrl: string }) {
   const t = uni === "__all__" ? null : course.transfers[uni];
   const creditLabel = course.credits != null ? ` · ${course.credits} credit${course.credits === 1 ? "" : "s"}` : "";
   return (
@@ -373,7 +393,7 @@ function CourseRow({ course, uni }: { course: PlanCourse; uni: string }) {
               Transfers to {course.acceptingCount} school{course.acceptingCount === 1 ? "" : "s"}
             </span>
           ) : (
-            <span className={`${PILL_BASE} ${PILL_MUTED}`}>Transfer not listed</span>
+            <NotListedLabel catalogUrl={catalogUrl} />
           )
         ) : t ? (
           <span
@@ -383,7 +403,7 @@ function CourseRow({ course, uni }: { course: PlanCourse; uni: string }) {
             {STATUS_PILL[t.status].label}
           </span>
         ) : (
-          <span className={`${PILL_BASE} ${PILL_MUTED}`}>Transfer not listed</span>
+          <NotListedLabel catalogUrl={catalogUrl} />
         )}
       </div>
     </li>
