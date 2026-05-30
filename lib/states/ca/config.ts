@@ -67,6 +67,13 @@ const caConfig: StateConfig = {
       // returns every section across the district; CAMPUS field routes the
       // row to its college. Continuing-ed (sdcce.edu, career=ce) excluded.
       { scripts: ["scripts/ca/scrape-sdccd.ts"], runner: "http" },
+      // Peralta CCD cluster: four colleges (Berkeley City, Alameda, Laney,
+      // Merritt) share a HubSpot HubDB-backed React class search. Public
+      // GraphQL endpoint at <college>.edu/_hcms/api/searchFilterGraphql
+      // returns the district's full classes collection; CAMPUS field routes
+      // rows to their college. Peralta's PeopleSoft is SSO-gated (Oracle
+      // Identity Cloud) so this is the only public source.
+      { scripts: ["scripts/ca/scrape-peralta.ts"], runner: "http" },
     ],
     prereqs: { source: "aggregate-from-courses" },
     transfers: [
