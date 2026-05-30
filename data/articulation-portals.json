@@ -74,6 +74,15 @@
       ],
       "notes": "Statewide CORE 42 gen-ed transfer core, published as an annual public .xlsx. Self-join on the MOTR common course number yields CC→4-year equivalencies for all 13 MO public universities. ~188 MOTR (gen-ed) courses, not major-specific. Privates in the file (Avila, Lindenwood, etc.) excluded."
     },
+    "ms": {
+      "type": "per-receiver",
+      "name": "University of Mississippi transfer-equivalency tables",
+      "url": "https://olemiss.edu/registrar/transfer-equivalencies/community-colleges",
+      "scripts": [
+        "scripts/ms/scrape-transfer-olemiss.ts"
+      ],
+      "notes": "Ole Miss publishes static per-CC course-equivalency HTML tables for all 15 MS community colleges. Single receiver (one-university coverage). MSU is behind a Banner Extensibility XHR; USM/JSU publish nothing course-level — documented follow-up to add MSU."
+    },
     "mt": {
       "type": "state-portal-flatfile",
       "name": "Montana University System Common Course Numbering (CCN)",
