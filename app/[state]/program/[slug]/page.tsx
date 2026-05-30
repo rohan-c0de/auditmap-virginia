@@ -23,6 +23,7 @@ import {
   PROGRAMS,
 } from "@/lib/programs";
 import { loadProgramAcrossColleges, checkCourseAvailability } from "@/lib/programs/requirements";
+import { countRealCourses, programSlug, PLAN_MIN_COURSES } from "@/lib/programs/plan-shared";
 import { computeCourseAvailabilityProfile } from "@/lib/course-stats";
 import SectionHeading from "@/components/SectionHeading";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -134,6 +135,18 @@ export default async function ProgramPage(props: PageProps) {
     for (const [slug, av] of results) {
       availabilityByCollege[slug] = av;
     }
+  }
+
+  // Map each college (by institution id) to the slug of its best plannable
+  // program for this category, so the table can link straight to a real plan.
+  // Prefer a transfer-oriented degree (AS/AA/AAS) over a certificate.
+  const planSlugByCollegeId = new Map<string, string>();
+  for (const { college, programs } of requirementEntries) {
+    const plannable = programs.filter((p) => countRealCourses(p) >= PLAN_MIN_COURSES);
+    if (plannable.length === 0) continue;
+    const best =
+      plannable.find((p) => ["AS", "AA", "AAS"].includes(p.credential)) ?? plannable[0];
+    planSlugByCollegeId.set(college.id, programSlug(best));
   }
 
   const url = siteUrl();
@@ -363,9 +376,15 @@ export default async function ProgramPage(props: PageProps) {
         )}
 
         <section className="mb-10">
-          <SectionHeading id="colleges" className="text-xl font-semibold text-gray-900 dark:text-slate-100 mb-4">
+          <SectionHeading id="colleges" className="text-xl font-semibold text-gray-900 dark:text-slate-100 mb-1">
             Colleges offering {program.name}
           </SectionHeading>
+          {planSlugByCollegeId.size > 0 && (
+            <p className="mb-4 text-sm text-gray-600 dark:text-slate-400">
+              Pick a college to see its full plan — every required course, which
+              ones transfer to the school you want, and what&rsquo;s open now.
+            </p>
+          )}
           <div className="rounded-xl border border-gray-200 dark:border-slate-700 overflow-hidden bg-white dark:bg-slate-900">
             <table className="w-full text-left text-sm">
               <thead className="bg-gray-50 dark:bg-slate-800 text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400">
@@ -411,6 +430,16 @@ export default async function ProgramPage(props: PageProps) {
                         >
                           {c.collegeName}
                         </Link>
+                        {planSlugByCollegeId.has(c.collegeId) && (
+                          <div className="mt-0.5">
+                            <Link
+                              href={`/${state}/college/${c.collegeId}/program/${planSlugByCollegeId.get(c.collegeId)}`}
+                              className="text-xs font-medium text-gray-500 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 hover:underline"
+                            >
+                              See the full plan &rarr;
+                            </Link>
+                          </div>
+                        )}
                       </td>
                       <td className="px-4 py-2.5 text-right text-gray-900 dark:text-slate-100">
                         {c.sectionCount}
