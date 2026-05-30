@@ -191,6 +191,7 @@ import sdConfig from "./sd/config";
 import utConfig from "./ut/config";
 import waConfig from "./wa/config";
 import ndConfig from "./nd/config";
+import wyConfig from "./wy/config";
 
 const ALL_CONFIGS: StateConfig[] = [
   vaConfig,
@@ -235,6 +236,7 @@ const ALL_CONFIGS: StateConfig[] = [
   utConfig,
   waConfig,
   ndConfig,
+  wyConfig,
 ];
 
 const configs: Record<string, StateConfig> = Object.fromEntries(
