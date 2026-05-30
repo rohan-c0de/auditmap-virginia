@@ -111,6 +111,14 @@ const flConfig: StateConfig = {
       //   • fixed sleeps, not networkidle waits
       //   • recycle the page every 10 subjects (AJAX state degrades)
       { scripts: ["scripts/fl/scrape-mdc.ts"], runner: "playwright" },
+      // Daytona State College — PeopleSoft "Community Access" at
+      // csprd.daytonastate.edu (site DSCGUEST). Same quirks as MDC's
+      // PS deployment; see scrape-daytonastate.ts header.
+      { scripts: ["scripts/fl/scrape-daytonastate.ts"], runner: "playwright" },
+      // Hillsborough Community College (Tampa) — simple public REST API
+      // at classes.hccfl.edu/api/courseSection?term=26/FA. One JSON blob
+      // per term, no auth, no pagination. ~5.9k sections across 2 terms.
+      { scripts: ["scripts/fl/scrape-hccfl.ts"], runner: "http" },
     ],
     transfers: [
       // SCNS flat-file dump — single 80 MB download, no auth, covers all
