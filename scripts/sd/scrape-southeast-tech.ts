@@ -56,6 +56,10 @@ interface CourseSection {
   prerequisite_courses: string[];
 }
 
+const SEASON_SUFFIX: Record<string, string> = {
+  fall: "FA", spring: "SP", summer: "SU", winter: "WI",
+};
+
 function parseTerm(label: string): { code: string; year: number } | null {
   const m = label.match(
     /^(\d{4})-(\d{4}) School Year - (Fall|Spring|Summer|Winter) Term/i,
@@ -65,7 +69,8 @@ function parseTerm(label: string): { code: string; year: number } | null {
   const endYear = parseInt(m[2], 10);
   const season = m[3].toLowerCase();
   const year = season === "fall" ? startYear : endYear;
-  return { code: `${season}-${year}`, year };
+  // Standard YYYYFA/YYYYSP/YYYYSU codes — matches every other state's format.
+  return { code: `${year}${SEASON_SUFFIX[season] ?? season.toUpperCase().slice(0,2)}`, year };
 }
 
 function parseCourseCode(raw: string): {
