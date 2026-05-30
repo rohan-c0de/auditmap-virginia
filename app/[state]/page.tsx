@@ -6,7 +6,7 @@ import StartingSoonCallout from "@/components/StartingSoonCallout";
 import NotifyBanner from "@/components/NotifyBanner";
 import StateContext from "@/components/StateContext";
 import { getCurrentTerm, getNextTerm } from "@/lib/terms";
-import { getAllStates, isValidState } from "@/lib/states/registry";
+import { getAllStates, hasPrereqsCoverage, isValidState } from "@/lib/states/registry";
 import { requireStateConfig } from "@/lib/states/route-helpers";
 import { getArticlesByState, getStateTopicLinks, categoryLabel } from "@/lib/blog";
 import { getQualifyingProgramSlugs, getProgramBySlug } from "@/lib/programs";
@@ -252,6 +252,24 @@ export default async function HomePage({ params }: Props) {
                 Build a weekly schedule across multiple colleges and spot conflicts before you register.
               </p>
             </Link>
+            {/* Degree-path planner card (PR after the sticky-loop sequence).
+                Gated by prereq coverage — same condition as the header nav —
+                so the link only appears when the planner has real data to
+                map. Also acts as an internal link that helps the /[state]/plan
+                page get indexed by Google. */}
+            {hasPrereqsCoverage(state) && (
+              <Link
+                href={`/${state}/plan`}
+                className="group rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 transition hover:border-teal-300 dark:hover:border-teal-700 hover:shadow-sm"
+              >
+                <h3 className="font-semibold text-gray-900 dark:text-slate-100 group-hover:text-teal-600 transition-colors mb-1">
+                  Course Planner
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-slate-400">
+                  Pick courses you want to take and we&apos;ll sequence the prerequisites into semesters. Save your plan and we&apos;ll email you when seats open.
+                </p>
+              </Link>
+            )}
             <Link
               href={`/${state}/colleges`}
               className="group rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 transition hover:border-teal-300 dark:hover:border-teal-700 hover:shadow-sm"
