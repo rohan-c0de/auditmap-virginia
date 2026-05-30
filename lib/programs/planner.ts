@@ -23,6 +23,7 @@ import * as path from "path";
 import { loadCollegePrograms } from "@/lib/programs/requirements";
 import { loadTransferMappings } from "@/lib/transfer";
 import { loadInstitutions } from "@/lib/institutions";
+import { loadPrereqs } from "@/lib/prereqs";
 import { getCurrentTerm } from "@/lib/terms";
 import {
   isRealCourse,
@@ -98,6 +99,28 @@ export interface MajorPlan {
     listedCourses: number;
     offeredThisTerm: number;
   };
+  /**
+   * Suggested term-by-term ordering (Phase 2). Null when prereq coverage is
+   * too thin for the ordering to mean anything — the UI then shows only the
+   * requirement checklist. This is a *suggestion* from recorded prerequisites,
+   * not an official advising sequence.
+   */
+  sequence: PlanSequence | null;
+}
+
+export interface PlanTerm {
+  /** 1-based term position. */
+  index: number;
+  courses: PlanCourse[];
+  credits: number;
+}
+
+export interface PlanSequence {
+  terms: PlanTerm[];
+  /** Fraction of sequenced courses that had any recorded prerequisite data. */
+  prereqCoverage: number;
+  /** Credit ceiling used when packing courses into a term. */
+  creditsPerTerm: number;
 }
 
 // ── helpers ───────────────────────────────────────────────────────────────
@@ -281,6 +304,8 @@ export async function buildMajorPlan(
     .map(([slugU, v]) => ({ slug: slugU, name: v.name, accepts: v.accepts }))
     .sort((a, b) => b.accepts - a.accepts || a.name.localeCompare(b.name));
 
+  const sequence = buildSequence(groups, loadPrereqs(state));
+
   return {
     state,
     collegeId,
@@ -298,10 +323,111 @@ export async function buildMajorPlan(
     groups,
     universities,
     totals: { listedCourses, offeredThisTerm },
+    sequence,
   };
 }
 
 /** direct beats elective beats no-credit when a course maps multiple ways. */
 function rank(s: TransferStatus): number {
   return s === "direct" ? 0 : s === "elective" ? 1 : 2;
+}
+
+// ── Phase 2: suggested term-by-term sequence ────────────────────────────────
+
+/** Credits packed into one term before opening the next. */
+const TERM_CREDIT_CAP = 16;
+/** Below this prereq coverage the ordering is noise — show only the checklist. */
+const SEQUENCE_MIN_COVERAGE = 0.25;
+
+/**
+ * Order a program's courses into credit-capped terms using recorded
+ * prerequisites *among the program's own courses*. Returns null when there's
+ * too little prereq signal for the ordering to be meaningful. Cycle-safe.
+ *
+ * Honesty: this is a suggestion derived from `prereqs.json`, not an official
+ * advising sequence. External prereqs (placement tests, gen-eds outside the
+ * program) don't create ordering edges here — only intra-program dependencies.
+ */
+export function buildSequence(
+  groups: PlanGroup[],
+  prereqs: Map<string, { text: string; courses: string[] }>,
+): PlanSequence | null {
+  // For "choose N" groups, sequence only N representatives (a student takes N).
+  const seen = new Set<string>();
+  const courses: PlanCourse[] = [];
+  for (const g of groups) {
+    if (g.unenumerated) continue;
+    const take =
+      g.chooseN && g.chooseN < g.courses.length ? g.chooseN : g.courses.length;
+    for (const c of g.courses.slice(0, take)) {
+      if (!seen.has(c.code)) {
+        seen.add(c.code);
+        courses.push(c);
+      }
+    }
+  }
+  if (courses.length === 0) return null;
+
+  const S = new Set(courses.map((c) => c.code));
+  const coverage = courses.filter((c) => prereqs.has(c.code)).length / courses.length;
+
+  // Intra-program edges only.
+  const intra = new Map<string, string[]>();
+  let edgeCount = 0;
+  for (const c of courses) {
+    const deps = (prereqs.get(c.code)?.courses ?? []).filter(
+      (d) => S.has(d) && d !== c.code,
+    );
+    intra.set(c.code, deps);
+    edgeCount += deps.length;
+  }
+  if (coverage < SEQUENCE_MIN_COVERAGE || edgeCount < 2) return null;
+
+  // Longest dependency depth per course (cycle-safe memoized DFS).
+  const depth = new Map<string, number>();
+  const visiting = new Set<string>();
+  const computeDepth = (code: string): number => {
+    const cached = depth.get(code);
+    if (cached !== undefined) return cached;
+    if (visiting.has(code)) return 0; // defensive: break any cycle
+    visiting.add(code);
+    const deps = intra.get(code) ?? [];
+    const d = deps.length === 0 ? 0 : Math.max(...deps.map(computeDepth)) + 1;
+    visiting.delete(code);
+    depth.set(code, d);
+    return d;
+  };
+  for (const c of courses) computeDepth(c.code);
+
+  const ordered = [...courses].sort(
+    (a, b) =>
+      computeDepth(a.code) - computeDepth(b.code) || a.code.localeCompare(b.code),
+  );
+
+  // Greedy credit-capped packing that never puts a course before its prereq.
+  const termOf = new Map<string, number>();
+  const terms: { courses: PlanCourse[]; credits: number }[] = [];
+  for (const c of ordered) {
+    const deps = intra.get(c.code) ?? [];
+    const minTerm =
+      deps.length === 0 ? 0 : Math.max(...deps.map((d) => termOf.get(d) ?? 0)) + 1;
+    const cr = c.credits ?? 3;
+    let t = minTerm;
+    for (;;) {
+      if (t >= terms.length) terms.push({ courses: [], credits: 0 });
+      if (terms[t].courses.length === 0 || terms[t].credits + cr <= TERM_CREDIT_CAP) {
+        terms[t].courses.push(c);
+        terms[t].credits += cr;
+        termOf.set(c.code, t);
+        break;
+      }
+      t += 1;
+    }
+  }
+
+  return {
+    terms: terms.map((t, i) => ({ index: i + 1, courses: t.courses, credits: t.credits })),
+    prereqCoverage: coverage,
+    creditsPerTerm: TERM_CREDIT_CAP,
+  };
 }

@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import type { MajorPlan, PlanCourse, TransferStatus } from "@/lib/programs/planner";
+import type { MajorPlan, PlanCourse, PlanTerm, TransferStatus } from "@/lib/programs/planner";
 
 interface Props {
   plan: MajorPlan;
@@ -31,6 +31,7 @@ const PILL_MUTED =
 
 export default function PlanClient({ plan, transferHref }: Props) {
   const [uni, setUni] = useState<string>(plan.universities[0]?.slug ?? "__all__");
+  const [view, setView] = useState<"requirements" | "sequence">("requirements");
 
   const allCourses = useMemo(
     () => plan.groups.flatMap((g) => g.courses),
@@ -140,43 +141,123 @@ export default function PlanClient({ plan, transferHref }: Props) {
         </Link>
       </p>
 
-      {/* Requirement groups */}
-      <div className="space-y-6">
-        {plan.groups.map((g, i) => (
-          <section
-            key={`${g.name}-${i}`}
-            className="rounded-lg border border-gray-200 dark:border-slate-700"
-          >
-            <header className="flex items-baseline justify-between border-b border-gray-100 dark:border-slate-800 bg-gray-50 dark:bg-slate-800 px-4 py-2">
-              <h3 className="font-semibold text-gray-900 dark:text-slate-100">{g.name}</h3>
-              {g.creditsRequired != null && (
-                <span className="text-xs text-gray-500 dark:text-slate-400">
-                  {g.creditsRequired} credits
-                </span>
+      {/* View toggle — only when a meaningful sequence is available */}
+      {plan.sequence && (
+        <div className="flex items-center gap-1 rounded-lg bg-gray-100 dark:bg-slate-800 p-1 w-fit">
+          <ToggleButton active={view === "requirements"} onClick={() => setView("requirements")}>
+            By requirement
+          </ToggleButton>
+          <ToggleButton active={view === "sequence"} onClick={() => setView("sequence")}>
+            Suggested sequence
+          </ToggleButton>
+        </div>
+      )}
+
+      {view === "sequence" && plan.sequence ? (
+        <SequenceView terms={plan.sequence.terms} uni={uni} coverage={plan.sequence.prereqCoverage} />
+      ) : (
+        /* Requirement groups */
+        <div className="space-y-6">
+          {plan.groups.map((g, i) => (
+            <section
+              key={`${g.name}-${i}`}
+              className="rounded-lg border border-gray-200 dark:border-slate-700"
+            >
+              <header className="flex items-baseline justify-between border-b border-gray-100 dark:border-slate-800 bg-gray-50 dark:bg-slate-800 px-4 py-2">
+                <h3 className="font-semibold text-gray-900 dark:text-slate-100">{g.name}</h3>
+                {g.creditsRequired != null && (
+                  <span className="text-xs text-gray-500 dark:text-slate-400">
+                    {g.creditsRequired} credits
+                  </span>
+                )}
+              </header>
+              {g.unenumerated ? (
+                <p className="px-4 py-3 text-sm text-gray-500 dark:text-slate-400">
+                  This requirement is satisfied by a choice of courses the catalog
+                  doesn&apos;t list individually
+                  {g.chooseN ? ` (choose ${g.chooseN})` : ""}.
+                </p>
+              ) : (
+                <ul className="divide-y divide-gray-100 dark:divide-slate-800">
+                  {g.courses.map((c) => (
+                    <CourseRow key={c.code} course={c} uni={uni} />
+                  ))}
+                </ul>
               )}
-            </header>
-            {g.unenumerated ? (
-              <p className="px-4 py-3 text-sm text-gray-500 dark:text-slate-400">
-                This requirement is satisfied by a choice of courses the catalog
-                doesn&apos;t list individually
-                {g.chooseN ? ` (choose ${g.chooseN})` : ""}.
-              </p>
-            ) : (
-              <ul className="divide-y divide-gray-100 dark:divide-slate-800">
-                {g.courses.map((c) => (
-                  <CourseRow key={c.code} course={c} uni={uni} />
-                ))}
-              </ul>
-            )}
-          </section>
-        ))}
-      </div>
+            </section>
+          ))}
+        </div>
+      )}
 
       <p className="text-xs text-gray-400 dark:text-slate-500">
         Transfer outcomes reflect recorded course-to-course equivalencies and may
         not capture every agreement. Confirm with your advisor and the receiving
         university before enrolling.
       </p>
+    </div>
+  );
+}
+
+function ToggleButton({
+  active,
+  onClick,
+  children,
+}: {
+  active: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={`rounded-md px-3 py-1.5 text-sm font-medium transition ${
+        active
+          ? "bg-white dark:bg-slate-900 text-gray-900 dark:text-slate-100 shadow-sm"
+          : "text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:hover:text-slate-300"
+      }`}
+    >
+      {children}
+    </button>
+  );
+}
+
+function SequenceView({
+  terms,
+  uni,
+  coverage,
+}: {
+  terms: PlanTerm[];
+  uni: string;
+  coverage: number;
+}) {
+  return (
+    <div className="space-y-4">
+      <p className="text-sm text-gray-600 dark:text-slate-300">
+        A suggested order to take these courses, based on recorded prerequisites
+        ({Math.round(coverage * 100)}% of courses have prerequisite data). This is
+        a starting point — your advisor sets the official sequence.
+      </p>
+      {terms.map((t) => (
+        <section
+          key={t.index}
+          className="rounded-lg border border-gray-200 dark:border-slate-700"
+        >
+          <header className="flex items-baseline justify-between border-b border-gray-100 dark:border-slate-800 bg-gray-50 dark:bg-slate-800 px-4 py-2">
+            <h3 className="font-semibold text-gray-900 dark:text-slate-100">
+              Term {t.index}
+            </h3>
+            <span className="text-xs text-gray-500 dark:text-slate-400">
+              {t.credits} credits
+            </span>
+          </header>
+          <ul className="divide-y divide-gray-100 dark:divide-slate-800">
+            {t.courses.map((c) => (
+              <CourseRow key={c.code} course={c} uni={uni} />
+            ))}
+          </ul>
+        </section>
+      ))}
     </div>
   );
 }
