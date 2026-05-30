@@ -20,7 +20,7 @@ const moConfig: StateConfig = {
       "Missouri Revised Statutes § 173.270 lets Missouri residents 65+ enroll in courses at state-supported colleges tuition-free on a space-available basis. Confirm with each college's registrar.",
   },
 
-  transferSupported: false,
+  transferSupported: true,
   popularCourses: ["ENG 101", "ENGL 101", "PSY 110", "MTH 128", "ENG 102", "PLS 101"],
   defaultZip: "65101",
   defaultZipCity: "Jefferson City",
@@ -61,7 +61,15 @@ const moConfig: StateConfig = {
       { scripts: ["scripts/mo/scrape-colleague.ts"], runner: "playwright" },
       { scripts: ["scripts/mo/scrape-jenzabar.ts"], runner: "playwright" },
     ],
-    // manual-only: transfers — no articulation portal registered for MO yet.
+    transfers: [
+      // MDHEWD's statewide CORE 42 course database (annual public .xlsx at
+      // dhewd.mo.gov) maps every public institution's course to a shared MOTR
+      // common number. The scraper self-joins on the MOTR number to emit
+      // CC→4-year equivalencies for all 13 MO public universities. Gen-ed
+      // core only (~188 MOTR courses), not major-specific. In-state by
+      // construction. ~8,800 mappings. Re-scrape swaps the SOURCE_URL year.
+      { scripts: ["scripts/mo/scrape-transfer-core42.ts"], runner: "http" },
+    ],
     prereqs: { source: "aggregate-from-courses" },
     // manual-only: programs — Phase 5+.
   },
