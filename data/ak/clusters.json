@@ -1,0 +1,18 @@
+{
+  "$comment": "Multi-college-district cluster detection output (issue #497). Each cluster represents N colleges that share a SIS host or registrable domain — a single bespoke scraper can cover all members.",
+  "state": "ak",
+  "generatedAt": "2026-05-30T20:03:27.769Z",
+  "summary": {
+    "inputCount": 1,
+    "clusterCount": 0,
+    "clusteredCount": 0,
+    "singletonCount": 1
+  },
+  "clusters": [],
+  "singletons": [
+    {
+      "slug": "ilisagvik-college",
+      "primaryUrl": "ilisagvik.edu"
+    }
+  ]
+}
