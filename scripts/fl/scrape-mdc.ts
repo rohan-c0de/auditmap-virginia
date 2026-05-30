@@ -154,15 +154,14 @@ function sleep(ms: number): Promise<void> { return new Promise((r) => setTimeout
 let consecutiveSearchFailures = 0;
 const MAX_CONSECUTIVE_SEARCH_FAILURES = 5;
 
+// Pattern is sensitive to wait choices: networkidle and isVisible both
+// stall against PS's persistent background AJAX. Use fixed sleeps after
+// each interaction — that's the rhythm the end-to-end probe proved works.
 async function navigateToSearch(page: Page): Promise<boolean> {
   try {
-    await page.goto(PS_URL, { waitUntil: "networkidle", timeout: NAV_TIMEOUT });
-    await sleep(1200);
-    return await page
-      .locator("select[id^='CLASS_SRCH_WRK2_STRM']")
-      .first()
-      .isVisible({ timeout: 10_000 })
-      .catch(() => false);
+    await page.goto(PS_URL, { waitUntil: "domcontentloaded", timeout: NAV_TIMEOUT });
+    await sleep(1500);
+    return true;
   } catch (err) {
     console.error(`    ⚠ Nav failed: ${(err as Error).message}`);
     return false;
@@ -170,44 +169,33 @@ async function navigateToSearch(page: Page): Promise<boolean> {
 }
 
 async function applyCommonCriteria(page: Page, termCode: string): Promise<void> {
-  const instSel = page.locator("select[id^='CLASS_SRCH_WRK2_INSTITUTION']").first();
-  if ((await instSel.inputValue().catch(() => "")) !== INSTITUTION) {
-    await instSel.selectOption(INSTITUTION);
-    await page.waitForLoadState("networkidle", { timeout: 10000 }).catch(() => {});
-  }
+  // MDC01 is preselected on every page load — skip institution-set.
   await page.locator("select[id^='CLASS_SRCH_WRK2_STRM']").first().selectOption(termCode);
-  await page.waitForLoadState("networkidle", { timeout: 10000 }).catch(() => {});
+  await sleep(1500);
 }
 
 async function setSubject(page: Page, subjectCode: string): Promise<void> {
   await page.locator("select[id^='SSR_CLSRCH_WRK_SUBJECT_SRCH']").first().selectOption(subjectCode);
-  await page.waitForLoadState("networkidle", { timeout: 5000 }).catch(() => {});
+  await sleep(1500);
 }
 
 // MDC's PS requires "at least 2 search criteria". Subject alone is rejected;
 // add "Course Number ≤ 9999" as a no-op second criterion (matches everything).
-// ORDER MATTERS: fill the value FIRST via native typing, THEN switch the
-// operator dropdown by label. The reverse order (operator first) loses the
-// operator change to an AJAX re-render, leaving "is exactly" + value, which
-// returns 0 results.
+// ORDER MATTERS: native-type the value FIRST, THEN switch the operator
+// dropdown by label. Reverse order loses the operator change to an AJAX
+// re-render, leaving "is exactly" + value (returns 0 results).
 async function setCatalogNbrLteAll(page: Page): Promise<void> {
   const catInput = page.locator("input[id^='SSR_CLSRCH_WRK_CATALOG_NBR']").first();
   await catInput.click();
   await catInput.type("9999", { delay: 30 });
   await catInput.press("Tab");
-  await page.waitForLoadState("networkidle", { timeout: 5000 }).catch(() => {});
+  await sleep(1500);
   await page.locator("select[id^='SSR_CLSRCH_WRK_SSR_EXACT_MATCH1']").first()
     .selectOption({ label: "less than or equal to" });
-  await page.waitForLoadState("networkidle", { timeout: 5000 }).catch(() => {});
+  await sleep(1500);
 }
 
 async function clickSearch(page: Page): Promise<SearchOutcome> {
-  const openOnly = page.locator("input[id^='SSR_CLSRCH_WRK_SSR_OPEN_ONLY$chk']").first();
-  if (await openOnly.isChecked().catch(() => false)) {
-    await openOnly.uncheck();
-    await page.waitForLoadState("networkidle", { timeout: 3000 }).catch(() => {});
-  }
-
   await page.click("#CLASS_SRCH_WRK2_SSR_PB_CLASS_SRCH");
 
   await page.waitForFunction(
@@ -218,8 +206,7 @@ async function clickSearch(page: Page): Promise<SearchOutcome> {
         text.includes("search returns no results") ||
         text.includes("no results that match") ||
         text.includes("would you like to continue") ||
-        text.includes("will exceed the maximum") ||
-        text.includes("Select at least 2 search criteria")
+        text.includes("will exceed the maximum")
       );
     },
     { timeout: SEARCH_WAIT }
