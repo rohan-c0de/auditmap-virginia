@@ -140,6 +140,18 @@ const flConfig: StateConfig = {
       // template (template now falls back to domcontentloaded on
       // networkidle timeout — JICS keeps background AJAX alive).
       { scripts: ["scripts/fl/scrape-jenzabar-webforms.ts"], runner: "playwright" },
+      // College of Central Florida (Ocala) — Jenzabar CX 1.10 public
+      // CGI gateway at register.cf.edu:9040/cgi-bin/public/crscat.cgi.
+      // Two-step flow: POST setopt.cgi to set (prog,sess,yr) into the
+      // session cookie; POST crscat.cgi with department=<code> for
+      // sections. ~16k students.
+      { scripts: ["scripts/fl/scrape-cf.ts"], runner: "http" },
+      // Seminole State College — public catalog drill-down at
+      // www.seminolestate.edu/catalog/courses (A-Z → 3-letter prefix
+      // → courseSlug). Each course page has one or more
+      // <table class="course-listing"> tables (one per session)
+      // with section rows. ~30k students.
+      { scripts: ["scripts/fl/scrape-seminolestate.ts"], runner: "http" },
     ],
     transfers: [
       // SCNS flat-file dump — single 80 MB download, no auth, covers all
