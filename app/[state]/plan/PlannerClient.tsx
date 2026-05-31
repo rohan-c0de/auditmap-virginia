@@ -8,6 +8,9 @@ import SemesterPlanner from "@/components/SemesterPlanner";
 interface PlannerClientProps {
   state: string;
   systemName?: string;
+  /** Full state name for the H1 search-intent phrase. Falls back to the
+   *  state slug uppercased when not passed (older callers). */
+  stateName?: string;
 }
 
 /** Reads ?targets= and ?name= from the URL so /plan/[id]'s 'Duplicate'
@@ -35,7 +38,14 @@ function PlannerWithParams({ state }: { state: string }) {
   );
 }
 
-export default function PlannerClient({ state, systemName }: PlannerClientProps) {
+export default function PlannerClient({
+  state,
+  systemName,
+  stateName,
+}: PlannerClientProps) {
+  // Header phrase: use stateName when supplied (search-intent shape);
+  // fall back to the state slug uppercased so older callers don't break.
+  const stateLabel = stateName ?? state.toUpperCase();
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-900">
       {/* Header */}
@@ -53,13 +63,17 @@ export default function PlannerClient({ state, systemName }: PlannerClientProps)
       {/* Main content */}
       <main className="max-w-3xl mx-auto px-4 py-8">
         <div className="mb-8">
+          {/* H1 leads with state + 'Course Planner' — the search-intent
+              phrase. The previous H1 ('Semester Planner') buried both. */}
           <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
-            Semester Planner
+            {stateLabel} Community College Course Planner
           </h1>
           <p className="mt-2 text-sm text-slate-500 dark:text-slate-400 max-w-xl">
-            Add the courses you want to take and the planner will automatically
-            map out all prerequisites into a semester-by-semester sequence.
-            Take courses in the listed order to satisfy all requirements.
+            Add the courses you want to take at any {stateLabel} community
+            college. We&apos;ll automatically map out the prerequisites into
+            a semester-by-semester sequence so you know exactly what to take
+            and when. Save your plan and we&apos;ll email you when a seat
+            opens.
           </p>
         </div>
 

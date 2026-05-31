@@ -46,6 +46,15 @@ const mtConfig: StateConfig = {
       { scripts: ["scripts/mt/scrape-banner8.ts"], runner: "http" },
       { scripts: ["scripts/mt/scrape-skc.ts"], runner: "http" },
       { scripts: ["scripts/mt/scrape-cdkc.ts"], runner: "http" },
+      // little-big-horn-college: Jenzabar ICS via direct HTTP POST (no browser
+      // needed — no EVENTVALIDATION, session cookie + VIEWSTATE sufficient).
+      // cloudram.lbhc.edu/ICS — non-canonical host; uses GUID term IDs.
+      { scripts: ["scripts/mt/scrape-lbhc.ts"], runner: "http" },
+      // flathead-valley-community-college: bespoke ASP schedule pages at
+      // elements.fvcc.edu/Schedules/{term}/{campus}.asp — plain HTML tables,
+      // no auth. Terms discovered by probing candidate dirs directly (the
+      // top-level index only lists past terms).
+      { scripts: ["scripts/mt/scrape-fvcc.ts"], runner: "http" },
     ],
     prereqs: { source: "aggregate-from-courses" },
     transfers: [

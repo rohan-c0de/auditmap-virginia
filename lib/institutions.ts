@@ -47,6 +47,7 @@ import waInstitutions from "@/data/wa/institutions.json";
 import coInstitutions from "@/data/co/institutions.json";
 import ndInstitutions from "@/data/nd/institutions.json";
 import wyInstitutions from "@/data/wy/institutions.json";
+import akInstitutions from "@/data/ak/institutions.json";
 import idInstitutions from "@/data/id/institutions.json";
 
 // Double-cast via `unknown` because the JSON-inferred types narrow some fields
@@ -99,6 +100,7 @@ const REGISTRY: Record<string, Institution[]> = {
   co: coInstitutions as unknown as Institution[],
   nd: ndInstitutions as unknown as Institution[],
   wy: wyInstitutions as unknown as Institution[],
+  ak: akInstitutions as unknown as Institution[],
   id: idInstitutions as unknown as Institution[],
 };
 

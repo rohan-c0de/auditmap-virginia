@@ -192,6 +192,7 @@ import utConfig from "./ut/config";
 import waConfig from "./wa/config";
 import ndConfig from "./nd/config";
 import wyConfig from "./wy/config";
+import akConfig from "./ak/config";
 import idConfig from "./id/config";
 
 const ALL_CONFIGS: StateConfig[] = [
@@ -238,6 +239,7 @@ const ALL_CONFIGS: StateConfig[] = [
   waConfig,
   ndConfig,
   wyConfig,
+  akConfig,
   idConfig,
 ];
 
