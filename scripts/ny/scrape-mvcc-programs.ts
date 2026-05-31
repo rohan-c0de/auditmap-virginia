@@ -22,6 +22,7 @@ import * as fs from "fs";
 import * as path from "path";
 import * as cheerio from "cheerio";
 import { applyProgramMatching } from "../../lib/programs/matcher.js";
+import type { ProgramCredential, ProgramRequirement } from "../../lib/types.js";
 
 const BASE = "https://catalog.mvcc.edu/current/programs";
 const UA = "Mozilla/5.0 (compatible; CommunityCollegePathBot/1.0)";
@@ -50,13 +51,13 @@ function htmlToText(raw: string): string {
     .trim();
 }
 
-function detectCredential(title: string): string {
+function detectCredential(title: string): ProgramCredential {
   const t = title.toLowerCase();
   if (t.includes("a.a.s") || t.includes("associate in applied science")) return "AAS";
   if (t.includes("a.s.") || t.includes("associate in science")) return "AS";
   if (t.includes("a.a.") || t.includes("associate in arts")) return "AA";
-  if (t.includes("certificate")) return "Certificate";
-  return "Associate";
+  if (t.includes("certificate")) return "certificate";
+  return "other";
 }
 
 const BOILERPLATE = /^(none|not applicable|n\/a|no prerequisites?)\s*\.?\s*$/i;
@@ -92,15 +93,7 @@ async function main() {
     console.log(`  Loaded ${Object.keys(prereqs).length} existing prereqs`);
   }
 
-  const programs: Array<{
-    title: string;
-    credential: string;
-    catalog_url: string;
-    total_credits: number | null;
-    description: string;
-    requirement_groups: Array<{ name: string; courses: string[] }>;
-    matched_program_slug: string | null;
-  }> = [];
+  const programs: ProgramRequirement[] = [];
 
   let prereqsAdded = 0;
   const toProcess = limit > 0 ? unique.slice(0, limit) : unique;
@@ -172,11 +165,29 @@ async function main() {
       programs.push({
         title,
         credential,
+        program_code: null,
         catalog_url: url,
         total_credits: null,
+        gpa_minimum: null,
         description: "",
         requirement_groups: courseCodes.size > 0
-          ? [{ name: "Required Courses", courses: Array.from(courseCodes).sort() }]
+          ? [
+              {
+                name: "Required Courses",
+                credits_required: null,
+                choose_n: null,
+                courses: Array.from(courseCodes).sort().map((code) => {
+                  const m = code.match(/^([A-Z]{2,5})\s+([A-Z0-9]+)$/);
+                  return {
+                    prefix: m ? m[1] : code,
+                    number: m ? m[2] : "",
+                    title: "",
+                    credits: null,
+                    or_alternatives: [],
+                  };
+                }),
+              },
+            ]
           : [],
         matched_program_slug: null,
       });
