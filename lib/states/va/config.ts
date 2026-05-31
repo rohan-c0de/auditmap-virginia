@@ -63,7 +63,11 @@ const vaConfig: StateConfig = {
   scrapers: {
     // manual-only: courses — VA PeopleSoft scraper consistently exceeds the 6h GitHub Actions timeout; run manually when needed.
     // manual-only: transfers — disabled alongside courses to avoid partial-refresh drift.
-    // manual-only: prereqs — disabled alongside courses.
+    // Prereqs aggregate from committed course-section prerequisite_text
+    // (data/va/prereqs.json, 302 parsed chains; 4,227 sections carry prereq
+    // text). This reads already-committed data — it does NOT run the heavy
+    // PeopleSoft scraper — so it's safe on cron despite courses being manual-only.
+    prereqs: { source: "aggregate-from-courses" },
     // manual-only: programs — disabled alongside courses.
   },
 };
