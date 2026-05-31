@@ -215,9 +215,11 @@ async function fetchCategory(numCd: string, yr: string, org: string, title: stri
 function parseCategoryHtml(html: string, fileTermCode: string): CourseSection[] {
   const sections: CourseSection[] = [];
 
-  // Pass 1: find course headers "CODE <A...>...</A> TITLE" with positions
+  // Pass 1: find course headers. Each course's title link carries the code
+  // as CRS_NUM=ABC1234, and the human title sits between the </A> and "Ref#":
+  //   ...CRS_NUM=ACG2001&TERM_YR=2026" ...>ACCT 1 PRIN</...>Ref#
   const headers: Array<{ pos: number; prefix: string; number: string; title: string }> = [];
-  const headerRe = /([A-Z]{3})(\d{4})\s*<A\s+href="[^"]*SR109[^"]*"[^>]*>[\s\S]*?<\/A>\s*([A-Za-z0-9][A-Za-z0-9 &/.\-]*?)\s*</gi;
+  const headerRe = /CRS_NUM=([A-Z]{3})(\d{3,4})&TERM_YR[^"]*"[^>]*>([\s\S]*?)Ref#/gi;
   for (const m of html.matchAll(headerRe)) {
     headers.push({ pos: m.index!, prefix: m[1], number: m[2], title: decode(m[3]).slice(0, 60) });
   }
