@@ -23,10 +23,15 @@ import * as path from "path";
 const BASE = "https://schedule.wvm.edu/data";
 const DATA_DIR = path.join(process.cwd(), "data", "ca", "courses");
 
+// WVM's schedule.wvm.edu/data endpoint requires these exact static codes
+// (one URL per term) and has no "current term" query param. Bump the list
+// by hand each year (next: 2027SP = "202730", 2027SU = "202750",
+// 2027FA = "202770"). The per-line `term-hardcode-allowed:` markers below
+// exempt each literal from check:scraper-terms.
 const TERMS = [
-  { code: "202630", fileTerm: "2026SP", name: "Spring 2026" },
-  { code: "202650", fileTerm: "2026SU", name: "Summer 2026" },
-  { code: "202670", fileTerm: "2026FA", name: "Fall 2026" },
+  { code: "202630", fileTerm: "2026SP", name: "Spring 2026" },  // term-hardcode-allowed: WVM has no current-term param
+  { code: "202650", fileTerm: "2026SU", name: "Summer 2026" },  // term-hardcode-allowed: WVM has no current-term param
+  { code: "202670", fileTerm: "2026FA", name: "Fall 2026" },    // term-hardcode-allowed: WVM has no current-term param
 ];
 
 const CAMPUS_TO_SLUG: Record<string, string> = {
