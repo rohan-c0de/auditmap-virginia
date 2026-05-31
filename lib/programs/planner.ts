@@ -29,12 +29,35 @@ import {
   isRealCourse,
   countRealCourses,
   programSlug,
+  resolveProgramBySlug,
   PLAN_MIN_COURSES,
 } from "@/lib/programs/plan-shared";
 import type { RequiredCourse } from "@/lib/types";
 
 // Re-export the pure helpers so existing `@/lib/programs/planner` imports work.
 export { isRealCourse, countRealCourses, programSlug, PLAN_MIN_COURSES };
+
+/**
+ * Resolve a possibly-legacy program slug to the current canonical slug, for the
+ * redirect path. Returns the canonical slug only when it differs from the
+ * requested one AND the target program is actually plannable (so we never
+ * redirect into another 404). Used by the detail page when an exact-slug
+ * lookup misses — e.g. a URL minted before a re-scrape reformatted the title.
+ */
+export async function resolveCanonicalProgramSlug(
+  state: string,
+  collegeId: string,
+  slug: string,
+): Promise<string | null> {
+  const institution = loadInstitutions(state).find((i) => i.id === collegeId);
+  if (!institution) return null;
+  const programs = await loadCollegePrograms(state, institution.college_slug);
+  const resolved = resolveProgramBySlug(programs, slug);
+  if (!resolved || !resolved.isLegacy) return null;
+  if (countRealCourses(resolved.program) < PLAN_MIN_COURSES) return null;
+  if (resolved.canonicalSlug === slug) return null;
+  return resolved.canonicalSlug;
+}
 
 export type TransferStatus = "direct" | "elective" | "no-credit";
 

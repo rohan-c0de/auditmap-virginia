@@ -28,7 +28,7 @@ on:
       datatype:
         description: "Which import(s) to run"
         type: choice
-        options: [both, courses, transfers]
+        options: [both, courses, transfers, programs]
         default: both
 
 permissions:
@@ -76,12 +76,24 @@ jobs:
           echo "Importing state=$state, datatype=$dt"
 
       - name: Import courses
-        if: steps.args.outputs.datatype != 'transfers'
+        if: steps.args.outputs.datatype != 'transfers' && steps.args.outputs.datatype != 'programs'
         run: npx tsx scripts/import-courses.ts ${{ steps.args.outputs.flag }}
 
       - name: Import transfers
-        if: steps.args.outputs.datatype != 'courses'
+        if: steps.args.outputs.datatype != 'courses' && steps.args.outputs.datatype != 'programs'
         run: npx tsx scripts/import-transfers.ts ${{ steps.args.outputs.flag }}
+
+      # Programs (degree/certificate requirements) power the Degree-Path Planner
+      # at /{state}/college/{id}/program/{slug}. Before this step existed, program
+      # JSON landed in the repo on merge but never reached Supabase — and the
+      # JSON files are NOT traced into the Vercel function bundle (only
+      # data/*/prereqs.json is, per next.config.ts). So buildMajorPlan's
+      # Supabase-first read got nothing and the file fallback hit ENOENT,
+      # 404-ing every program detail page in every state. This wires the
+      # existing import-programs.ts into the same merge path as courses/transfers.
+      - name: Import programs
+        if: steps.args.outputs.datatype == 'both' || steps.args.outputs.datatype == 'programs'
+        run: npx tsx scripts/import-programs.ts ${{ steps.args.outputs.flag }}
 
       # Vercel auto-deploys on push to main, but that build races this import
       # workflow. The build typically finishes ~5 min after merge while the
