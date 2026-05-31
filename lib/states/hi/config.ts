@@ -23,7 +23,9 @@ const hiConfig: StateConfig = {
       "University of Hawaiʻi Board of Regents Policy 6.205 lets Hawaiʻi residents aged 60+ enroll in regular UH credit courses without paying tuition, on a space-available basis. Some fees still apply, and seats are allocated after regular registration — contact your campus registrar for the timing.",
   },
 
-  transferSupported: false,
+  // Transfer data: 15,649 in-state equivalencies across the 3 UH-system
+  // 4-years (Hilo, Mānoa, West Oʻahu), scraped via scrape-transfer-uhdad.ts.
+  transferSupported: true,
   popularCourses: ["ENG 1007", "ENG 1005", "ENG 1006", "PHYL 141L5", "PHYL 1415", "SP 1515"],
   defaultZip: "96813",
   defaultZipCity: "Honolulu",
