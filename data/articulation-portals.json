@@ -39,6 +39,15 @@
       ],
       "notes": "USG (University System of Georgia) state portal plus per-receiver scrapers for UGA / GSU / GaTech."
     },
+    "ia": {
+      "type": "per-receiver",
+      "name": "Iowa State University TRANSIT reverse-lookup API",
+      "url": "https://transit.iastate.edu/reverse_transfer_credit_lookup",
+      "scripts": [
+        "scripts/ia/scrape-transfer-transit.ts"
+      ],
+      "notes": "ISU's public TRANSIT tool exposes a Laravel JSON API. Iterates all ISU subjects, batches course listings, queries which Iowa CC courses transfer to each ISU course. Single receiver (ISU). Covers all 17 IA community colleges. No login needed."
+    },
     "ma": {
       "type": "state-portal",
       "name": "MassTransfer",

@@ -303,9 +303,10 @@ async function phaseA(
           majorCount: reports.length,
           majors: reports.map((r) => ({ label: r.label, key: r.key })),
         });
-      } catch (err: any) {
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : String(err);
         errors.push(
-          `${item.cc.ourSlug}/${item.receiver.code.trim()}: ${err.message}`,
+          `${item.cc.ourSlug}/${item.receiver.code.trim()}: ${msg}`,
         );
       }
       done++;
@@ -394,8 +395,9 @@ async function phaseB(
         );
         fs.writeFileSync(out, text);
         fetched++;
-      } catch (err: any) {
-        errors.push(`${filename}: ${err.message}`);
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : String(err);
+        errors.push(`${filename}: ${msg}`);
       }
       processed++;
       if (processed % 250 === 0) {

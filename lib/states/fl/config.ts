@@ -140,6 +140,45 @@ const flConfig: StateConfig = {
       // template (template now falls back to domcontentloaded on
       // networkidle timeout — JICS keeps background AJAX alive).
       { scripts: ["scripts/fl/scrape-jenzabar-webforms.ts"], runner: "playwright" },
+      // College of Central Florida (Ocala) — Jenzabar CX 1.10 public
+      // CGI gateway at register.cf.edu:9040/cgi-bin/public/crscat.cgi.
+      // Two-step flow: POST setopt.cgi to set (prog,sess,yr) into the
+      // session cookie; POST crscat.cgi with department=<code> for
+      // sections. ~16k students.
+      { scripts: ["scripts/fl/scrape-cf.ts"], runner: "http" },
+      // Seminole State College — public catalog drill-down at
+      // www.seminolestate.edu/catalog/courses (A-Z → 3-letter prefix
+      // → courseSlug). Each course page has one or more
+      // <table class="course-listing"> tables (one per session)
+      // with section rows. ~30k students.
+      { scripts: ["scripts/fl/scrape-seminolestate.ts"], runner: "http" },
+      // Santa Fe College (Gainesville) — Ellucian/SunGard eSfcc servlet
+      // at epublic.sfcollege.edu. Stage-1 form (SR1098) is stateful JS,
+      // but Stage-2 category pages (SR1099P) are plain GETs keyed by
+      // ORG_CD. 87 category codes captured 2026-05-31; refresh from the
+      // iframe category links if SF adds subjects. ~16k students.
+      { scripts: ["scripts/fl/scrape-santafe.ts"], runner: "http" },
+      // not-scrapable: fscj — PeopleSoft Campus Solutions at
+      //   csprd.fscj.edu with no guest realm provisioned. Investigated
+      //   2026-06: tried both `csprdguest` and `FSCJGUEST` site names —
+      //   both return a 62-byte "Site name is not valid" body. The
+      //   `COMMUNITY_ACCESS.CLASS_SEARCH.GBL` page on the main realm
+      //   redirects to login (`cmd=login&errorPg=ckreq`). No Banner or
+      //   alternate SIS subdomain exists at fscj.edu, and no PDF
+      //   schedule on the academics page. Only the Coursedog course
+      //   catalog (scrape-coursedog.ts above) yields public data; that
+      //   gives course descriptions + prereqs but never sections.
+      //   Revisit if FSCJ ever provisions csprd_guest.
+      // not-scrapable: pensacolastate — migrated to Workday Student
+      //   (wd501.myworkday.com/pensacolastate). Investigated 2026-06:
+      //   Workday Student has no public guest class-search by design —
+      //   this is an architectural property of the platform, not a
+      //   config gap. The `pensacolastate.edu/course-search/` WordPress
+      //   form POSTs to a JS widget that calls Workday client-side and
+      //   returns nothing without auth. No Banner / Colleague endpoint
+      //   exists anywhere on pensacolastate.edu. Revisit only if PSC
+      //   enables Workday's public "find-courses" task (some Workday
+      //   institutions do, this one does not).
     ],
     transfers: [
       // SCNS flat-file dump — single 80 MB download, no auth, covers all

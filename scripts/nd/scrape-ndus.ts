@@ -271,7 +271,21 @@ async function clickSearch(page: Page): Promise<SearchOutcome> {
 
 async function extractResults(page: Page): Promise<RawSection[]> {
   return page.evaluate(() => {
-    const sections: any[] = [];
+    // RawSection isn't visible inside the browser context here, but the
+    // shape matches it exactly — TS narrows the return on the outer side
+    // via the function signature.
+    const sections: Array<{
+      courseTitle: string;
+      classNbr: string;
+      sectionType: string;
+      dayTime: string;
+      campus: string;
+      room: string;
+      instructor: string;
+      dates: string;
+      instrMethod: string;
+      isOpen: boolean;
+    }> = [];
     const courseTitles: string[] = [];
     for (let i = 0; ; i++) {
       const el = document.getElementById(`win0divSSR_CLSRSLT_WRK_GROUPBOX2GP$${i}`);

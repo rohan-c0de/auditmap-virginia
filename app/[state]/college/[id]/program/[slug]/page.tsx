@@ -13,12 +13,12 @@
  * never opts into dynamic rendering (cf. the college page's searchParams note).
  */
 
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { isValidState } from "@/lib/states/registry";
 import { requireStateConfig } from "@/lib/states/route-helpers";
 import { loadInstitutions } from "@/lib/institutions";
-import { buildMajorPlan } from "@/lib/programs/planner";
+import { buildMajorPlan, resolveCanonicalProgramSlug } from "@/lib/programs/planner";
 import { getScorecard, formatDollar, formatPercent } from "@/lib/scorecard";
 import { termLabel } from "@/lib/terms";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -81,7 +81,15 @@ export default async function MajorPlanPage(props: PageProps) {
   if (!institution) notFound();
 
   const plan = await buildMajorPlan(state, id, slug);
-  if (!plan) notFound();
+  if (!plan) {
+    // The exact slug didn't resolve. It may be a legacy URL minted before a
+    // re-scrape reformatted the program title (which changes programSlug).
+    // Recover SEO/bookmark equity by redirecting to the current canonical slug
+    // when we can unambiguously identify the program; otherwise 404.
+    const canonical = await resolveCanonicalProgramSlug(state, id, slug).catch(() => null);
+    if (canonical) redirect(`/${state}/college/${id}/program/${canonical}`);
+    notFound();
+  }
 
   const collegeHref = `/${state}/college/${id}`;
   const transferHref = `/${state}/transfer`;

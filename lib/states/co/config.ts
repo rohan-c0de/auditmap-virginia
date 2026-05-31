@@ -53,11 +53,19 @@ const coConfig: StateConfig = {
         runner: "playwright",
       },
     ],
-    // GT Pathways (Guaranteed Transfer) is the CO articulation framework
-    // run by CDHE at highered.colorado.gov, but no public API / GraphQL
-    // endpoint is documented. Transfer-equiv left empty until a portal
-    // or per-college receiver scraper lands.
-    // manual-only: transfers — Phase 3 (transfer-equiv) not yet wired up.
+    // manual-only: transfers — hard ceiling. Investigated 2026-05-30 as part
+    // of the transfer cold-start sweep (issue #804). All high-enrollment CO
+    // receivers are login-gated:
+    //   CU Boulder / CU System → transferology.com (login wall, no bulk export)
+    //   Colorado State → transferweb.colostate.edu (login / CAS)
+    //   UCCS, MSU Denver, UNC, Fort Lewis → same Transferology or no public tool
+    // CDHE's GT Pathways (Guaranteed Transfer) framework at highered.colorado.gov
+    // maps gen-ed CATEGORY guarantees (GT-CO1, GT-MA1, etc.), NOT course-to-course
+    // equivalencies — useless for our model. Colorado Mesa (DegreeWorks SPA) and
+    // CSU Global (CollegeSource TES) are public but give thin, lopsided coverage
+    // with no statewide signal. Documenting as a ceiling rather than shipping
+    // weak one-receiver data. Revisit if CDHE ever publishes a public API or
+    // CU/CSU opens guest access to their equivalency tools.
     // CCCS Banner 8 section descriptions do not include prerequisite text,
     // so the aggregator will yield 0 entries. Catalog-based prereq sources
     // (Acalog at catalog.cncc.edu / catalog.pueblocc.edu, SmartCatalogIQ

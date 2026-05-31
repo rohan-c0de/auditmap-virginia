@@ -29,7 +29,7 @@ const utConfig: StateConfig = {
       "Utah Code 53B-8-104 allows residents aged 62+ to enroll in credit courses at Utah's public colleges and universities tuition-free on a space-available basis. Lab fees and course fees still apply; confirm exact eligibility and registration timing with the campus registrar.",
   },
 
-  transferSupported: false,
+  transferSupported: true,
   popularCourses: ["ENGL 1010", "MATH 1010", "BIOL 1010", "PSY 1010", "HIST 1700", "COMM 1010"],
   defaultZip: "84130",
   defaultZipCity: "Salt Lake City",
@@ -55,19 +55,14 @@ const utConfig: StateConfig = {
   },
   scrapers: {
     courses: [{ scripts: ["scripts/ut/scrape-banner-ssb.ts"], runner: "http" }],
-    // manual-only: transfers — no statewide articulation portal registered
-    //   in data/articulation-portals.json. Utah does have USHE's transfer
-    //   tools at transferut.com but they don't expose a public API; see
-    //   the manual TODOs in the PR description for the fallback path.
+    transfers: [
+      { scripts: ["scripts/ut/scrape-transfer.ts"], runner: "http" },
+    ],
     prereqs: { source: "aggregate-from-courses" },
     // programs — Snow College (CourseLeaf) + Salt Lake Community
     //   College (Acalog) both scraped via scripts/ut/scrape-programs.ts.
     //   119 Snow programs + 132 SLCC programs.
     programs: [{ scripts: ["scripts/ut/scrape-programs.ts"], runner: "http" }],
-  },
-  documentedCeilings: {
-    transfers:
-      "Utah's transfer portal (transferut.com) doesn't expose a public API. SLCC and Snow publish individual course-equivalency tables on their registrar sites but these are not machine-readable. Tracking as a known ceiling rather than substituting placeholder data.",
   },
 };
 
