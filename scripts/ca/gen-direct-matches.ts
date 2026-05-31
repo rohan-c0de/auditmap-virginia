@@ -44,7 +44,8 @@ for (const file of files) {
 
   let parsed: ReturnType<typeof parseAssistArticulation>;
   try {
-    parsed = parseAssistArticulation(raw as Parameters<typeof parseAssistArticulation>[0]);
+    const agreementKey = file.replace(".json", "");
+    parsed = parseAssistArticulation(raw as Parameters<typeof parseAssistArticulation>[0], ccSlug, uniSlug, agreementKey);
   } catch { skipped++; continue; }
 
   for (const group of parsed.requirement_groups ?? []) {
