@@ -140,6 +140,29 @@ const flConfig: StateConfig = {
       // template (template now falls back to domcontentloaded on
       // networkidle timeout — JICS keeps background AJAX alive).
       { scripts: ["scripts/fl/scrape-jenzabar-webforms.ts"], runner: "playwright" },
+      // College of Central Florida (Ocala) — Jenzabar CX 1.10 public
+      // CGI gateway at register.cf.edu:9040/cgi-bin/public/crscat.cgi.
+      // Two-step flow: POST setopt.cgi to set (prog,sess,yr) into the
+      // session cookie; POST crscat.cgi with department=<code> for
+      // sections. ~16k students.
+      { scripts: ["scripts/fl/scrape-cf.ts"], runner: "http" },
+      // Seminole State College — public catalog drill-down at
+      // www.seminolestate.edu/catalog/courses (A-Z → 3-letter prefix
+      // → courseSlug). Each course page has one or more
+      // <table class="course-listing"> tables (one per session)
+      // with section rows. ~30k students.
+      { scripts: ["scripts/fl/scrape-seminolestate.ts"], runner: "http" },
+      // Santa Fe College (Gainesville) — Ellucian/SunGard eSfcc servlet
+      // at epublic.sfcollege.edu. Stage-1 form (SR1098) is stateful JS,
+      // but Stage-2 category pages (SR1099P) are plain GETs keyed by
+      // ORG_CD. 87 category codes captured 2026-05-31; refresh from the
+      // iframe category links if SF adds subjects. ~16k students.
+      { scripts: ["scripts/fl/scrape-santafe.ts"], runner: "http" },
+      // manual-only: fscj — Workday for sections (auth-gated); only the
+      //   Coursedog course catalog is public (already scraped above).
+      // manual-only: pensacolastate — no public section data; the
+      //   coursesearch page is a WordPress content search over syllabus
+      //   PDFs (section codes only, no times/instructors/seats).
     ],
     transfers: [
       // SCNS flat-file dump — single 80 MB download, no auth, covers all
