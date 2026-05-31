@@ -89,7 +89,10 @@ const ACADEMIC_YEAR_ID = 76; // 2025-2026
 const DATA_DIR = path.join(process.cwd(), "data", "ca");
 const INST_FILE = path.join(DATA_DIR, "institutions.json");
 const COVERAGE_FILE = path.join(DATA_DIR, "transfer-coverage.json");
-const FIXTURES_DIR = path.join(
+// FIXTURES_DIR can be overridden via env var so a detached long-running
+// Phase B can write to a stable absolute path (e.g. /tmp/...) that survives
+// session-level worktree cleanup. Defaults to the in-repo location.
+const FIXTURES_DIR = process.env.ASSIST_FIXTURES_DIR ?? path.join(
   process.cwd(),
   "scripts",
   "ca",

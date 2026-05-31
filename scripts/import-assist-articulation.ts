@@ -165,8 +165,8 @@ async function main() {
             .from("assist_requirement_groups")
             .insert({
               agreement_id: agreementId,
-              group_name: group.name,
-              group_type: group.type,
+              group_name: group.name ?? group.area ?? group.instruction ?? `Group ${gIdx + 1}`,
+              group_type: group.type ?? group.instruction ?? null,
               position: gIdx,
             })
             .select("id")
