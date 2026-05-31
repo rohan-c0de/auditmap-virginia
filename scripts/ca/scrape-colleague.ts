@@ -1,12 +1,8 @@
 /**
  * California — Colleague Self-Service scrape
  *
- * Calls the shared template at scripts/lib/scrape-colleague.ts for the 12
- * California CCs that auto-add-state successfully scraped via Ellucian
- * Colleague Self-Service (36,234 sections combined). Five additional CA
- * colleges fingerprinted as Colleague but had no terms discoverable at
- * scrape time (modesto, shasta, chaffey, lassen, napa-valley) — they remain
- * as TODOs.
+ * Calls the shared template at scripts/lib/scrape-colleague.ts for
+ * California CCs reachable via public Colleague Self-Service endpoints.
  *
  * Usage:
  *   npx tsx scripts/ca/scrape-colleague.ts
@@ -27,6 +23,23 @@ const HOSTS: Record<string, string> = {
   "victor-valley-college":      "https://vvc-ss.colleague.elluciancloud.com",
   "yuba-college":               "https://yc-self-service.yccd.edu",
   "woodland-community-college": "https://wcc-self-service.yccd.edu",
+  // SCCCD (4)
+  "fresno-city-college":        "https://selfservice.scccd.edu",
+  "reedley-college":            "https://selfservice.scccd.edu",
+  "clovis-community-college":   "https://selfservice.scccd.edu",
+  "madera-community-college":   "https://selfservice.scccd.edu",
+  // SBCCD (2)
+  "crafton-hills-college":      "https://colss-prod.ec.sbccd.edu",
+  "san-bernardino-valley-college": "https://colss-prod.ec.sbccd.edu",
+  // Yosemite CCD (2)
+  "columbia-college":           "https://selfservice.yosemite.edu",
+  "modesto-junior-college":     "https://selfservice.yosemite.edu",
+  // Singletons
+  "butte-college":              "https://selfservice.butte.edu",
+  "chaffey-college":            "https://colss-prod.ec.chaffey.edu",
+  "college-of-the-canyons":     "https://selfservice.canyons.edu",
+  "el-camino-community-college-district": "https://selfservice.elcamino.edu",
+  "napa-valley-college":        "https://colss-prod.ec.napavalley.edu",
 };
 
 async function main() {
