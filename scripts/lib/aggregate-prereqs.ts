@@ -159,24 +159,33 @@ function aggregateState(state: string): number {
     sorted[key] = prereqs[key];
   }
 
-  // Safety net: refuse to overwrite a non-empty prereqs.json with zero
-  // entries. This catches the ME-style mistake where someone runs the
-  // aggregator against a state whose prereqs come from a catalog scraper
-  // (not from section inline text) — sections have no prereq_text, so
-  // aggregation yields 0 entries and would clobber 948 catalog-sourced
-  // entries. Pass --force to override (e.g. for genuine resets).
+  // Safety net: refuse to overwrite a healthy prereqs.json with a rebuild
+  // that drops below 50% of the existing entry count. Aggregation re-derives
+  // prereqs from course-section `prerequisite_text` + coursedog-catalog files.
+  // That source can be far thinner than the committed file when:
+  //   - a dedicated catalog/Coursedog scraper wrote a richer prereqs.json this
+  //     same run but emits per-college catalog files for only some colleges
+  //     (NV: 1322 entries from 4 colleges, but only 1 catalog file on disk →
+  //     re-aggregation yields 339 and would clobber it), or
+  //   - an upstream AWS-WAF challenge gutted the catalog input this tick
+  //     (TX/NY May-2026 regressions), or
+  //   - sections simply carry no prereq_text (the original ME 0-entry case).
+  // 50% mirrors scrape-diff.ts's ABORT_RATIO so the aggregator and the diff
+  // agree on what "looks broken" means. Pass --force for genuine resets.
   const newCount = Object.keys(sorted).length;
-  if (newCount === 0 && fs.existsSync(outPath)) {
+  if (fs.existsSync(outPath) && !process.argv.includes("--force")) {
     let existingCount = 0;
     try {
       const existing = JSON.parse(fs.readFileSync(outPath, "utf-8"));
       existingCount = existing && typeof existing === "object" ? Object.keys(existing).length : 0;
     } catch { /* unreadable — treat as empty */ }
-    if (existingCount > 0 && !process.argv.includes("--force")) {
+    if (existingCount > 0 && newCount < existingCount * 0.5) {
       console.error(
-        `  REFUSED to overwrite ${outPath}: aggregation produced 0 entries ` +
-          `but the existing file has ${existingCount}. This state likely uses ` +
-          `a catalog-based prereq scraper — check StateConfig.scrapers.prereqs. ` +
+        `  REFUSED to overwrite ${outPath}: aggregation produced ${newCount} ` +
+          `entries but the existing file has ${existingCount} (< 50%). The ` +
+          `dedicated catalog scraper's output or a WAF-degraded catalog likely ` +
+          `differs from section-derived aggregation — check ` +
+          `StateConfig.scrapers.prereqs and scraper health. ` +
           `Re-run with --force to overwrite anyway.`,
       );
       return existingCount;
