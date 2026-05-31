@@ -148,8 +148,11 @@ function discoverProgramPaths(
 function parseCredential(awardText: string): ProgramCredential {
   const t = awardText.toLowerCase();
   if (/applied\s+science/.test(t)) return "AAS";
-  if (/associate\s+of\s+arts/.test(t)) return "AA";
-  if (/associate\s+of\s+science/.test(t)) return "AS";
+  // California uses "Associate in Arts/Science" — match both "of" and "in"
+  if (/associate\s+(?:of|in)\s+arts/.test(t)) return "AA";
+  if (/associate\s+(?:of|in)\s+science/.test(t)) return "AS";
+  if (/\baa-?t\b/.test(t)) return "AA";
+  if (/\bas-?t\b/.test(t)) return "AS";
   if (/career\s+studies\s+certificate/.test(t)) return "certificate";
   if (/diploma/.test(t)) return "diploma";
   if (/certificate/.test(t)) return "certificate";
@@ -201,7 +204,9 @@ function parsePlanGrid(
     const $courseLink = $code.find("a.bubblelink.code").first();
     if (!$courseLink.length) return;
     const codeText = $courseLink.text().trim();
-    const m = codeText.match(/^([A-Z]{2,5})\s+(\d{3,4}[A-Z]?)/);
+    // Course codes may use a space ("ENG 101") or a hyphen ("DDGT-120") between
+    // prefix and number — California catalogs commonly use the hyphenated form.
+    const m = codeText.match(/^([A-Z]{2,5})[\s-]+(\d{2,4}[A-Z]?)/);
     if (!m) return;
     const [, prefix, number] = m;
 
@@ -370,7 +375,14 @@ function parseProgramPage(
         re: /Associate of (?:Applied Science|Arts|Science)\s+Degree/gi,
         rank: 4,
       },
+      // California catalogs use "Associate in" instead of "Associate of"
+      { re: /Associate in (?:Applied Science|Arts|Science)(?:\s+for Transfer)?/gi, rank: 4 },
       { re: /Associate of (?:Applied Science|Arts|Science)/gi, rank: 3 },
+      // CA "AS-T", "AA-T" transfer degrees and "A.A./A.S." shorthand
+      { re: /Associate Degree for Transfer/gi, rank: 3 },
+      { re: /A\.?[AS]\.?(?:-T)?\s+Degree/gi, rank: 3 },
+      // CA "Certificate of Achievement" / "Certificate of Specialization" / etc.
+      { re: /Certificate of (?:Achievement|Specialization|Competency|Career Skills|Performance)/gi, rank: 2 },
       { re: /Career Studies Certificate/gi, rank: 2 },
       { re: /Certificate of Completion/gi, rank: 2 },
       { re: /Diploma/gi, rank: 1 },
