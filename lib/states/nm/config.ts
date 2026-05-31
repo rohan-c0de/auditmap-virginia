@@ -20,7 +20,7 @@ const nmConfig: StateConfig = {
   },
 
   transferSupported: true,
-  popularCourses: [],
+  popularCourses: ["ENGL 1110", "ENGL 1120", "MATH 1130", "MATH 1350", "PSYC 1110", "COMM 1130"],
   defaultZip: "87501",
   defaultZipCity: "Santa Fe",
 
