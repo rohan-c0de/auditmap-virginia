@@ -112,7 +112,8 @@ function parseTimeRange(raw: string): { start: string; end: string } {
 }
 
 // Parse day letters from span.days elements: <span class="on">M</span> etc.
-function parseDays($: cheerio.CheerioAPI, el: cheerio.AnyNode): string {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function parseDays($: cheerio.CheerioAPI, el: any): string {
   const daySpans = $(el).find("span.days span.on");
   if (daySpans.length === 0) return "";
   return daySpans

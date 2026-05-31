@@ -49,7 +49,7 @@ const wiConfig: StateConfig = {
     courses: [
       {
         scripts: ["scripts/wi/scrape-cvtc.ts"],
-        runner: "tsx",
+        runner: "http",
       },
     ],
     // manual-only: transfers — No WI articulation portal registered. CollegeTransfer.Net fallback available.
