@@ -59,6 +59,10 @@ const wiConfig: StateConfig = {
         scripts: ["scripts/wi/scrape-ntc.ts"],
         runner: "http",
       },
+      {
+        scripts: ["scripts/wi/scrape-swtc.ts"],
+        runner: "http",
+      },
     ],
     // manual-only: transfers — No WI articulation portal registered. CollegeTransfer.Net fallback available.
     // manual-only: prereqs — Coursedog catalog data for Nicolet Area TC at data/wi/coursedog-catalog/; aggregate into prereqs.json manually.
