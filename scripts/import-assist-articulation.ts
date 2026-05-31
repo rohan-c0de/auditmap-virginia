@@ -27,7 +27,12 @@ if (!supabaseUrl || !supabaseKey) {
 }
 
 const supabase = createClient(supabaseUrl, supabaseKey);
-const fixturesDir = path.join(process.cwd(), "scripts", "ca", "fixtures", "articulation");
+// Override via ASSIST_FIXTURES_DIR so a Phase B run that wrote to a
+// different (e.g. gitignored) directory can be imported without moving
+// files. Defaults to the spike fixtures dir for back-compat.
+const fixturesDir =
+  process.env.ASSIST_FIXTURES_DIR ??
+  path.join(process.cwd(), "scripts", "ca", "fixtures", "articulation");
 
 interface ImportResult {
   filename: string;
