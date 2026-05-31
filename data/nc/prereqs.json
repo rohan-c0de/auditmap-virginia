@@ -393,6 +393,12 @@
       "AHR 113"
     ]
   },
+  "AHR 172": {
+    "text": "AHR 114",
+    "courses": [
+      "AHR 114"
+    ]
+  },
   "AHR 180A": {
     "text": "AHR 180",
     "courses": [
@@ -469,6 +475,12 @@
       "AHR 130"
     ]
   },
+  "AHR 247": {
+    "text": "AHR 110",
+    "courses": [
+      "AHR 110"
+    ]
+  },
   "AHR 250": {
     "text": "AHR 114 or AHR 133 and AHR 112",
     "courses": [
@@ -500,6 +512,12 @@
     "text": "ELC 112",
     "courses": [
       "ELC 112"
+    ]
+  },
+  "ANS 141": {
+    "text": "ANS 140",
+    "courses": [
+      "ANS 140"
     ]
   },
   "ANS 142": {
@@ -741,8 +759,9 @@
     ]
   },
   "ARC 212": {
-    "text": "ARC 111 and ARC 112",
+    "text": "ARC 221 and ARC 111 and ARC 112",
     "courses": [
+      "ARC 221",
       "ARC 111",
       "ARC 112"
     ]
@@ -1972,6 +1991,18 @@
       "ENG 025"
     ]
   },
+  "BIO 108": {
+    "text": "BIO 108L",
+    "courses": [
+      "BIO 108L"
+    ]
+  },
+  "BIO 108L": {
+    "text": "BIO 108",
+    "courses": [
+      "BIO 108"
+    ]
+  },
   "BIO 110": {
     "text": "DRE 098 and ENG 090 and ENG 090A and RED 090 and ENG 002 and ENG 025",
     "courses": [
@@ -2084,6 +2115,12 @@
       "BSP 4002",
       "ENG 025",
       "ENG 8025"
+    ]
+  },
+  "BIO 160": {
+    "text": "ENG 025",
+    "courses": [
+      "ENG 025"
     ]
   },
   "BIO 163": {
@@ -2547,6 +2584,12 @@
       "BPT 231"
     ]
   },
+  "BPT 255": {
+    "text": "BPT 132",
+    "courses": [
+      "BPT 132"
+    ]
+  },
   "BPT 260": {
     "text": "BPT 131",
     "courses": [
@@ -2928,10 +2971,13 @@
     ]
   },
   "CCT 121": {
-    "text": "NOS 110 and CTI 120",
+    "text": "CTI 110 and NET 125 and NOS 120 and CTS 120 or CTI 115",
     "courses": [
-      "NOS 110",
-      "CTI 120"
+      "CTI 110",
+      "NET 125",
+      "NOS 120",
+      "CTS 120",
+      "CTI 115"
     ]
   },
   "CCT 240": {
@@ -3452,6 +3498,12 @@
       "CJC 111"
     ]
   },
+  "CJC 120": {
+    "text": "CJC 111",
+    "courses": [
+      "CJC 111"
+    ]
+  },
   "CJC 121": {
     "text": "DRE 097 and ENG 002 and BSP 4002 and ENG 025 and ENG 8025 and ENG 111",
     "courses": [
@@ -3497,13 +3549,20 @@
     ]
   },
   "CJC 144": {
-    "text": "CJC 115 and CJC 245",
+    "text": "CJC 115 and CJC 145 and CJC 111",
     "courses": [
       "CJC 115",
-      "CJC 245"
+      "CJC 145",
+      "CJC 111"
     ]
   },
   "CJC 145": {
+    "text": "CJC 111",
+    "courses": [
+      "CJC 111"
+    ]
+  },
+  "CJC 146": {
     "text": "CJC 111",
     "courses": [
       "CJC 111"
@@ -3518,6 +3577,12 @@
       "ENG 025",
       "ENG 8025",
       "ENG 111"
+    ]
+  },
+  "CJC 161": {
+    "text": "CJC 111",
+    "courses": [
+      "CJC 111"
     ]
   },
   "CJC 162": {
@@ -3634,6 +3699,18 @@
       "ENG 111"
     ]
   },
+  "CJC 240": {
+    "text": "CJC 111",
+    "courses": [
+      "CJC 111"
+    ]
+  },
+  "CJC 245": {
+    "text": "CJC 111",
+    "courses": [
+      "CJC 111"
+    ]
+  },
   "CJC 246": {
     "text": "CJC 245",
     "courses": [
@@ -3644,6 +3721,13 @@
     "text": "BIO 110",
     "courses": [
       "BIO 110"
+    ]
+  },
+  "CJC 251": {
+    "text": "CJC 111 and MAT 045S",
+    "courses": [
+      "CJC 111",
+      "MAT 045S"
     ]
   },
   "CJC 252": {
@@ -3658,6 +3742,12 @@
       "CJC 111",
       "CJC 221",
       "CJC 231"
+    ]
+  },
+  "CJC 264": {
+    "text": "CJC 111",
+    "courses": [
+      "CJC 111"
     ]
   },
   "CMT 112": {
@@ -4216,6 +4306,13 @@
       "CS 122"
     ]
   },
+  "CS 320": {
+    "text": "CS 222 and MAT 205",
+    "courses": [
+      "CS 222",
+      "MAT 205"
+    ]
+  },
   "CSC 111": {
     "text": "CTI 120",
     "courses": [
@@ -4223,9 +4320,22 @@
     ]
   },
   "CSC 114": {
-    "text": "CSC 113",
+    "text": "CSC 121 or MAT 152 or MAT 171 or MAT 263",
     "courses": [
-      "CSC 113"
+      "CSC 121",
+      "MAT 152",
+      "MAT 171",
+      "MAT 263"
+    ]
+  },
+  "CSC 115": {
+    "text": "CSC 112 or CSC 121 or MAT 152 or MAT 171 or MAT 263",
+    "courses": [
+      "CSC 112",
+      "CSC 121",
+      "MAT 152",
+      "MAT 171",
+      "MAT 263"
     ]
   },
   "CSC 118": {
@@ -4264,6 +4374,12 @@
     ]
   },
   "CSC 122": {
+    "text": "CSC 121",
+    "courses": [
+      "CSC 121"
+    ]
+  },
+  "CSC 128": {
     "text": "CSC 121",
     "courses": [
       "CSC 121"
@@ -4350,6 +4466,13 @@
     "courses": [
       "CSC 115",
       "CSC 221"
+    ]
+  },
+  "CSC 162": {
+    "text": "CSC 121 or CSC 112",
+    "courses": [
+      "CSC 121",
+      "CSC 112"
     ]
   },
   "CSC 174": {
@@ -5154,6 +5277,12 @@
       "CVS 163"
     ]
   },
+  "CYS 312": {
+    "text": "CYS 231",
+    "courses": [
+      "CYS 231"
+    ]
+  },
   "CYT 220": {
     "text": "CYT 210 and CYT 212 and CYT 214 and CYT 216 and CYT 222 and CYT 224 and CYT 226 and CYT 236 and CYT 238",
     "courses": [
@@ -5321,6 +5450,12 @@
       "DEA 111"
     ]
   },
+  "DEA 133": {
+    "text": "DEA 111",
+    "courses": [
+      "DEA 111"
+    ]
+  },
   "DEA 134": {
     "text": "DEA 133",
     "courses": [
@@ -5345,11 +5480,23 @@
       "DEA 213"
     ]
   },
+  "DEA 215": {
+    "text": "DEA 111",
+    "courses": [
+      "DEA 111"
+    ]
+  },
   "DEA 220": {
     "text": "DEA 112 and DEA 212",
     "courses": [
       "DEA 112",
       "DEA 212"
+    ]
+  },
+  "DEA 221": {
+    "text": "DEA 111",
+    "courses": [
+      "DEA 111"
     ]
   },
   "DEA 230": {
@@ -6291,6 +6438,12 @@
     "text": "Take EDU-119 - Must be completed prior to taking this course.,<br>Take EDU-234 - Must be taken either prior to or at the same time as this course.",
     "courses": []
   },
+  "EDU 235": {
+    "text": "EDU 119",
+    "courses": [
+      "EDU 119"
+    ]
+  },
   "EDU 238": {
     "text": "EDU 206",
     "courses": [
@@ -6780,12 +6933,6 @@
       "ELC 113"
     ]
   },
-  "ELC 125": {
-    "text": "ELC 112",
-    "courses": [
-      "ELC 112"
-    ]
-  },
   "ELC 128": {
     "text": "ENG 110 or ENG 111 or ELC 112 or ELC 117 or ELC 131 or ELC 125",
     "courses": [
@@ -6924,9 +7071,10 @@
     ]
   },
   "ELN 132": {
-    "text": "ELC 131",
+    "text": "BMT 113 or ELN 131",
     "courses": [
-      "ELC 131"
+      "BMT 113",
+      "ELN 131"
     ]
   },
   "ELN 133": {
@@ -7449,6 +7597,13 @@
       "ENG 111"
     ]
   },
+  "ENG 235": {
+    "text": "ENG 113 and ENG 112 (min C)",
+    "courses": [
+      "ENG 113",
+      "ENG 112"
+    ]
+  },
   "ENG 241": {
     "text": "ENG 112 or ENG 113 or ENG 114 and DRE 098 and DRE 099 and ENG 111 and ENG 002 and BSP 4002 and ENG 011 and DRE 098 or ENG 002 or BSP 4002 or ENG 111",
     "courses": [
@@ -7523,6 +7678,12 @@
     "text": "MAT 143",
     "courses": [
       "MAT 143"
+    ]
+  },
+  "ENT 135": {
+    "text": "MUS 111",
+    "courses": [
+      "MUS 111"
     ]
   },
   "ENT 231": {
@@ -7649,6 +7810,14 @@
       "EQU 111"
     ]
   },
+  "ESL 463": {
+    "text": "EDU 312 and ESL 360 and ESL 361 and ESL 361",
+    "courses": [
+      "EDU 312",
+      "ESL 360",
+      "ESL 361"
+    ]
+  },
   "ESS 220": {
     "text": "ESS 220L",
     "courses": [
@@ -7746,6 +7915,12 @@
     "courses": [
       "EUS 215",
       "EUS 235"
+    ]
+  },
+  "EVX 120": {
+    "text": "TRN 120",
+    "courses": [
+      "TRN 120"
     ]
   },
   "FA 130": {
@@ -8207,6 +8382,12 @@
       "GRA 153"
     ]
   },
+  "GRA 161": {
+    "text": "GRA 151",
+    "courses": [
+      "GRA 151"
+    ]
+  },
   "GRA 162": {
     "text": "GRA 152",
     "courses": [
@@ -8232,6 +8413,12 @@
     "courses": [
       "GRA 151",
       "GRD 151"
+    ]
+  },
+  "GRA 256": {
+    "text": "GRA 255",
+    "courses": [
+      "GRA 255"
     ]
   },
   "GRA 257": {
@@ -9009,6 +9196,13 @@
       "HOR 161"
     ]
   },
+  "HOR 152": {
+    "text": "HOR 162 and HOR 166",
+    "courses": [
+      "HOR 162",
+      "HOR 166"
+    ]
+  },
   "HOR 161": {
     "text": "HOR 160",
     "courses": [
@@ -9517,16 +9711,52 @@
       "ICT 234"
     ]
   },
+  "ICV 112": {
+    "text": "ICV 111",
+    "courses": [
+      "ICV 111"
+    ]
+  },
+  "ICV 118": {
+    "text": "ICV 111",
+    "courses": [
+      "ICV 111"
+    ]
+  },
+  "ICV 120": {
+    "text": "ICV 111",
+    "courses": [
+      "ICV 111"
+    ]
+  },
   "ICV 125": {
     "text": "ICV 111",
     "courses": [
       "ICV 111"
     ]
   },
+  "ICV 212": {
+    "text": "ICV 112",
+    "courses": [
+      "ICV 112"
+    ]
+  },
   "ICV 218": {
     "text": "ICV 118",
     "courses": [
       "ICV 118"
+    ]
+  },
+  "ICV 219": {
+    "text": "ICV 113",
+    "courses": [
+      "ICV 113"
+    ]
+  },
+  "ICV 220": {
+    "text": "ICV 130",
+    "courses": [
+      "ICV 130"
     ]
   },
   "ICV 230": {
@@ -9547,6 +9777,14 @@
       "ENG 002",
       "RED 090",
       "DRE 097"
+    ]
+  },
+  "INT 220": {
+    "text": "ECO 151 or ECO 251 or ECO 252",
+    "courses": [
+      "ECO 151",
+      "ECO 251",
+      "ECO 252"
     ]
   },
   "INT 230": {
@@ -10036,12 +10274,6 @@
     "text": "Take All: LSG-123 and HOR-161 - Must be completed prior to taking this course.",
     "courses": []
   },
-  "MAC 111": {
-    "text": "MAC 114",
-    "courses": [
-      "MAC 114"
-    ]
-  },
   "MAC 111BB": {
     "text": "MAC 111AB",
     "courses": [
@@ -10383,7 +10615,7 @@
     ]
   },
   "MAT 045P": {
-    "text": "MAT 171 or MAT 175 and MAT 171",
+    "text": "MAT 171 or MAT 175 and MAT 171 and MAT 171 and MAT 171",
     "courses": [
       "MAT 171",
       "MAT 175"
@@ -10864,6 +11096,12 @@
       "MAT 110"
     ]
   },
+  "MED 250": {
+    "text": "MED 150",
+    "courses": [
+      "MED 150"
+    ]
+  },
   "MED 260": {
     "text": "MED 110 or MED 118 or MED 122 or MED 131 or MED 150 or MED 270 and MED 264 and ENG 111 and PSY 150",
     "courses": [
@@ -10929,6 +11167,20 @@
     "text": "MED 122",
     "courses": [
       "MED 122"
+    ]
+  },
+  "MED 276": {
+    "text": "MED 131 and MED 150 and MED 240",
+    "courses": [
+      "MED 131",
+      "MED 150",
+      "MED 240"
+    ]
+  },
+  "MFA 533": {
+    "text": "MFA 526",
+    "courses": [
+      "MFA 526"
     ]
   },
   "MFA 598": {
@@ -11491,6 +11743,12 @@
     "courses": [
       "MTH 110",
       "MTH 125"
+    ]
+  },
+  "MTH 120AB": {
+    "text": "MTH 110",
+    "courses": [
+      "MTH 110"
     ]
   },
   "MTH 120BB": {
@@ -12227,6 +12485,12 @@
       "CTS 115"
     ]
   },
+  "NMT 110A": {
+    "text": "NMT 110",
+    "courses": [
+      "NMT 110"
+    ]
+  },
   "NMT 126": {
     "text": "NMT 110",
     "courses": [
@@ -12254,6 +12518,13 @@
   "NMT 212": {
     "text": "NMT 132",
     "courses": [
+      "NMT 132"
+    ]
+  },
+  "NMT 212A": {
+    "text": "NMT 212 and NMT 132",
+    "courses": [
+      "NMT 212",
       "NMT 132"
     ]
   },
@@ -12552,6 +12823,15 @@
       "PHI 240"
     ]
   },
+  "NUR 114AB": {
+    "text": "NUR 111 and NUR 211 and BIO 169 and PSY 150",
+    "courses": [
+      "NUR 111",
+      "NUR 211",
+      "BIO 169",
+      "PSY 150"
+    ]
+  },
   "NUR 117": {
     "text": "BIO 168 and NUR 111 and PSY 150",
     "courses": [
@@ -12818,6 +13098,20 @@
       "PSY 202",
       "HSC 209",
       "NUR 304C"
+    ]
+  },
+  "NUR 304A": {
+    "text": "NUR 305 and PSY 202 and NUR 304AC",
+    "courses": [
+      "NUR 305",
+      "PSY 202",
+      "NUR 304AC"
+    ]
+  },
+  "NUR 304AC": {
+    "text": "NUR 304A",
+    "courses": [
+      "NUR 304A"
     ]
   },
   "NUR 304C": {
@@ -13214,10 +13508,12 @@
     ]
   },
   "OST 249": {
-    "text": "OST 247 and OST 248",
+    "text": "OST 247 and OST 248 and MED 122 or OST 142",
     "courses": [
       "OST 247",
-      "OST 248"
+      "OST 248",
+      "MED 122",
+      "OST 142"
     ]
   },
   "OST 250": {
@@ -13464,6 +13760,42 @@
     "courses": [
       "OTA 260",
       "OTA 261"
+    ]
+  },
+  "OTD 622": {
+    "text": "OTD 610 and OTD 611 and OTD 615 and OTD 617",
+    "courses": [
+      "OTD 610",
+      "OTD 611",
+      "OTD 615",
+      "OTD 617"
+    ]
+  },
+  "OTD 624": {
+    "text": "OTD 610 and OTD 611 and OTD 615 and OTD 617",
+    "courses": [
+      "OTD 610",
+      "OTD 611",
+      "OTD 615",
+      "OTD 617"
+    ]
+  },
+  "OTD 625": {
+    "text": "OTD 610 and OTD 611 and OTD 615 and OTD 617",
+    "courses": [
+      "OTD 610",
+      "OTD 611",
+      "OTD 615",
+      "OTD 617"
+    ]
+  },
+  "OTD 629": {
+    "text": "OTD 610 and OTD 611 and OTD 615 and OTD 617",
+    "courses": [
+      "OTD 610",
+      "OTD 611",
+      "OTD 615",
+      "OTD 617"
     ]
   },
   "PBT 100": {
@@ -13737,6 +14069,12 @@
       "DMA 030",
       "MAT 003",
       "BSP 4003"
+    ]
+  },
+  "PHM 150": {
+    "text": "PHM 118",
+    "courses": [
+      "PHM 118"
     ]
   },
   "PHM 155": {
@@ -14041,10 +14379,11 @@
     ]
   },
   "PHY 131": {
-    "text": "MAT 121 or MAT 171",
+    "text": "MAT 121 or MAT 171 and ENG 025",
     "courses": [
       "MAT 121",
-      "MAT 171"
+      "MAT 171",
+      "ENG 025"
     ]
   },
   "PHY 133": {
@@ -15303,16 +15642,34 @@
       "ENG 180"
     ]
   },
+  "RTT 130": {
+    "text": "RTT 151",
+    "courses": [
+      "RTT 151"
+    ]
+  },
   "RTT 151": {
     "text": "RTT 120",
     "courses": [
       "RTT 120"
     ]
   },
+  "RTT 161": {
+    "text": "RTT 151",
+    "courses": [
+      "RTT 151"
+    ]
+  },
   "RTT 222": {
     "text": "RTT 221",
     "courses": [
       "RTT 221"
+    ]
+  },
+  "RTT 230": {
+    "text": "RTT 161",
+    "courses": [
+      "RTT 161"
     ]
   },
   "RTT 231": {
@@ -15322,11 +15679,38 @@
       "RTT 233"
     ]
   },
+  "RTT 232": {
+    "text": "RTT 222 and RTT 239 and RTT 222 and RTT 241 and RTT 222 and RTT 243 and RTT 222 and RTT 244 and RTT 231 and RTT 239 and RTT 231 and RTT 241 and RTT 231 and RTT 243 and RTT 231 and RTT 244 and RTT 234 and RTT 239 and RTT 234 and RTT 241 and RTT 234 and RTT 243 and RTT 234 and RTT 244",
+    "courses": [
+      "RTT 222",
+      "RTT 239",
+      "RTT 241",
+      "RTT 243",
+      "RTT 244",
+      "RTT 231",
+      "RTT 234"
+    ]
+  },
+  "RTT 238": {
+    "text": "RTT 161",
+    "courses": [
+      "RTT 161"
+    ]
+  },
   "RTT 239": {
     "text": "RTT 238 or RTT 240",
     "courses": [
       "RTT 238",
       "RTT 240"
+    ]
+  },
+  "RTT 246": {
+    "text": "RTT 239 or RTT 241 or RTT 243 or RTT 244",
+    "courses": [
+      "RTT 239",
+      "RTT 241",
+      "RTT 243",
+      "RTT 244"
     ]
   },
   "RUS 111": {
@@ -15437,12 +15821,6 @@
       "NET 125"
     ]
   },
-  "SEC 185": {
-    "text": "CTI 120",
-    "courses": [
-      "CTI 120"
-    ]
-  },
   "SEC 210": {
     "text": "CTI 140 and NET 125 and NOS 120",
     "courses": [
@@ -15521,6 +15899,13 @@
     "text": "SGD 116",
     "courses": [
       "SGD 116"
+    ]
+  },
+  "SGD 125": {
+    "text": "SGD 112 and SGD 113",
+    "courses": [
+      "SGD 112",
+      "SGD 113"
     ]
   },
   "SGD 126": {
@@ -16143,6 +16528,13 @@
       "SPE 217"
     ]
   },
+  "SPE 334": {
+    "text": "SPE 216 or SPE 217",
+    "courses": [
+      "SPE 216",
+      "SPE 217"
+    ]
+  },
   "SPE 338": {
     "text": "EDU 238",
     "courses": [
@@ -16184,6 +16576,23 @@
       "SPE 521",
       "SPE 526",
       "SPE 527"
+    ]
+  },
+  "SPE 533": {
+    "text": "SPE 521 or SPE 526 or SPE 527",
+    "courses": [
+      "SPE 521",
+      "SPE 526",
+      "SPE 527"
+    ]
+  },
+  "SPE 534": {
+    "text": "SPE 521 or SPE 526 or SPE 527 or EDU 215",
+    "courses": [
+      "SPE 521",
+      "SPE 526",
+      "SPE 527",
+      "EDU 215"
     ]
   },
   "SPE 542": {
@@ -16936,6 +17345,13 @@
       "VMT 216"
     ]
   },
+  "VMT 217": {
+    "text": "VMT 115 (min C) and VMT 216 (min C)",
+    "courses": [
+      "VMT 115",
+      "VMT 216"
+    ]
+  },
   "VMT 221": {
     "text": "VMT 213 (min C) and VMT 216 (min C) and VMT 221L",
     "courses": [
@@ -16948,6 +17364,20 @@
     "text": "VMT 221",
     "courses": [
       "VMT 221"
+    ]
+  },
+  "VMT 222": {
+    "text": "VMT 213 (min C) and VMT 216 (min C) and VMT 222L",
+    "courses": [
+      "VMT 213",
+      "VMT 216",
+      "VMT 222L"
+    ]
+  },
+  "VMT 222L": {
+    "text": "VMT 222",
+    "courses": [
+      "VMT 222"
     ]
   },
   "VMT 320": {
@@ -17000,6 +17430,18 @@
     "text": "VMT 330",
     "courses": [
       "VMT 330"
+    ]
+  },
+  "VMT 355": {
+    "text": "VMT 115 (min C) and VMT 209 (min C) and VMT 216 (min C) and VMT 213 (min C) and VMT 221 (min C) and VMT 222 (min C) and VMT 313 (min C)",
+    "courses": [
+      "VMT 115",
+      "VMT 209",
+      "VMT 216",
+      "VMT 213",
+      "VMT 221",
+      "VMT 222",
+      "VMT 313"
     ]
   },
   "VMT 415": {
@@ -17516,6 +17958,12 @@
     "courses": [
       "WEB 110",
       "CTI 110"
+    ]
+  },
+  "WEB 120": {
+    "text": "WEB 111",
+    "courses": [
+      "WEB 111"
     ]
   },
   "WEB 125": {
