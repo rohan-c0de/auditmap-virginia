@@ -141,44 +141,53 @@ async function fetchCourses(termId: string, sess: Session): Promise<string[]> {
 
 function parseSectionsHtml(html: string, fileTermCode: string, courseId: string): CourseSection[] {
   const sections: CourseSection[] = [];
-  // Extract prefix + number from courseId: "ACG2021Financial Accounting" → "ACG", "2021"
-  const idMatch = courseId.match(/^([A-Z]{2,5})(\d{3,4}[A-Z]?)(.+)$/);
+  // courseId format: "<PREFIX><NUMBER><Title>" with no separators, e.g. "ACG2021Financial Accounting"
+  // We need to split on the boundary between number and title (first uppercase letter
+  // after the digits, but the title might start with any letter).
+  const idMatch = courseId.match(/^([A-Z]{2,5})(\d{3,4}[A-Z]?)([A-Za-z].*)$/);
   if (!idMatch) return sections;
   const [, prefix, number, title] = idMatch;
 
-  // Each section row has class containing "course-section" or sits in a table row
-  // Pattern: look for blocks with section number + days/times
-  const blockPattern = /<div class="tcc-row[^"]*"[^>]*>(.*?)<\/div>\s*<\/div>/gs;
+  // Each section is wrapped in:
+  //   <div id="CourseSectionResult" data-coursesectionid="COURSE_SECTION_DEFINITION-3-140523" ...>
+  //     <div class="courseSectionDetailsSummary tcc-row">
+  //       <div class="tcc-col courseSectionId-col">013</div>
+  //       <div class="tcc-col deliveryMode-col">Closed</div>
+  //       <div class="tcc-col startTime-col">9:00 AM</div>
+  //       <div class="tcc-col endTime-col">10:50 AM</div>
+  //       <div class="tcc-col room-col">Online</div>
+  //       <div class="tcc-col meetingPattern-col tcc-row">M W F</div>
+  //     </div>
+  //   </div>
+  const blockPattern =
+    /<div\s+id="CourseSectionResult"\s+data-coursesectionid="([^"]+)"[^>]*>([\s\S]*?)<\/div>\s*<\/div>\s*<\/div>/g;
   for (const m of html.matchAll(blockPattern)) {
-    const block = m[1];
-    const text = stripTags(block);
+    const sectionId = m[1];
+    const block = m[2];
 
-    // Section number — look for "Sect #" cell or div
-    const sectMatch = block.match(/courseSectionId-col[^>]*>([^<]+)</);
-    const sectNum = sectMatch ? sectMatch[1].trim() : "";
+    const grab = (col: string): string => {
+      const r = new RegExp(`<div class="tcc-col ${col}[^"]*">([^<]*)<`);
+      const x = block.match(r);
+      return x ? x[1].trim() : "";
+    };
 
-    // CRN — often the section ID itself
-    const crnMatch = block.match(/section-?id[^>]*>([^<]+)</) || block.match(/data-sectionid="([^"]+)"/);
+    const sectNum = grab("courseSectionId-col");
+    const status = grab("deliveryMode-col");        // "Open" / "Closed" / "Waitlist"
+    const startTime = grab("startTime-col");
+    const endTime = grab("endTime-col");
+    const room = grab("room-col");
+    // meetingPattern-col is followed by inner text after the div tag
+    const dpMatch = block.match(/meetingPattern-col[^>]*>([\s\S]*?)<\/div>/);
+    const daysRaw = dpMatch ? stripTags(dpMatch[1]) : "";
 
-    // Days / Time
-    const dayMatch = block.match(/days?-col[^>]*>([^<]+)</);
-    const startMatch = block.match(/startTime-col[^>]*>([^<]+)</);
-    const endMatch = block.match(/endTime-col[^>]*>([^<]+)</);
-    const roomMatch = block.match(/room-col[^>]*>([^<]+)</);
-    const modeMatch = block.match(/deliveryMode-col[^>]*>([^<]+)</);
-    const instructorMatch = block.match(/instructor[^>]*>([^<]+)</);
+    if (!sectNum) continue;
 
-    const days = dayMatch ? normDays(dayMatch[1].trim()) : "";
-    const startTime = startMatch ? normTime(startMatch[1].trim()) : "";
-    const endTime = endMatch ? normTime(endMatch[1].trim()) : "";
-    const location = roomMatch ? roomMatch[1].trim() : "";
-    const deliveryMode = modeMatch ? modeMatch[1].trim() : "";
-    const instructor = instructorMatch ? instructorMatch[1].trim() : null;
+    const isOnline = /online|web/i.test(room) || /^online$/i.test(daysRaw);
+    const isHybrid = /hybrid/i.test(room);
 
-    const isOnline = /online|web/i.test(deliveryMode) || /online/i.test(location);
-    const isHybrid = /hybrid/i.test(deliveryMode);
-
-    if (!sectNum && !crnMatch) continue;
+    let seatsOpen: number | null = null;
+    if (/open/i.test(status)) seatsOpen = 1;
+    else if (/closed|wait/i.test(status)) seatsOpen = 0;
 
     sections.push({
       college_code: COLLEGE_SLUG,
@@ -187,57 +196,40 @@ function parseSectionsHtml(html: string, fileTermCode: string, courseId: string)
       course_number: number,
       course_title: title.trim(),
       credits: 3,
-      crn: crnMatch ? crnMatch[1].trim() : `${prefix}${number}-${sectNum}`,
-      days,
-      start_time: startTime,
-      end_time: endTime,
+      crn: `${prefix}${number}-${sectNum}`,
+      days: isOnline ? "" : normDays(daysRaw),
+      start_time: normTime(startTime),
+      end_time: normTime(endTime),
       start_date: "",
-      location,
+      location: room,
       campus: "",
       mode: isOnline ? "online" : isHybrid ? "hybrid" : "in-person",
-      instructor: instructor && !/tba|staff/i.test(instructor) ? instructor : null,
-      seats_open: null,
+      instructor: null,
+      seats_open: seatsOpen,
       seats_total: null,
       prerequisite_text: null,
       prerequisite_courses: [],
     });
   }
-
-  // Fallback: if structured selectors failed, parse rows by looking for section ids
-  if (sections.length === 0) {
-    for (const m of html.matchAll(/data-sectionid="([^"]+)"/g)) {
-      sections.push({
-        college_code: COLLEGE_SLUG,
-        term: fileTermCode,
-        course_prefix: prefix,
-        course_number: number,
-        course_title: title.trim(),
-        credits: 3,
-        crn: m[1],
-        days: "",
-        start_time: "",
-        end_time: "",
-        start_date: "",
-        location: "",
-        campus: "",
-        mode: "in-person",
-        instructor: null,
-        seats_open: null,
-        seats_total: null,
-        prerequisite_text: null,
-        prerequisite_courses: [],
-      });
-    }
-  }
-
   return sections;
 }
 
 async function fetchSections(courseId: string, termId: string, fileTermCode: string, sess: Session): Promise<CourseSection[]> {
-  const params = new URLSearchParams();
-  params.append("filters[AcademicPeriods][]", termId);
-  params.append("courseid", courseId);
-  const html = await postForm(SECTIONS_URL, params, sess);
+  // TCC server is picky: spaces in courseid must be %20 (not + as URLSearchParams encodes).
+  const body = `filters[AcademicPeriods][]=${termId}&courseid=${encodeURIComponent(courseId)}`;
+  const res = await fetch(SECTIONS_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "X-Requested-With": "XMLHttpRequest",
+      "Referer": SEARCH_PAGE,
+      "User-Agent": "Mozilla/5.0 (compatible; community-college-path/1.0)",
+      "Accept-Encoding": "identity",
+      ...(sess.cookie ? { Cookie: sess.cookie } : {}),
+    },
+    body,
+  });
+  const html = await res.text();
   return parseSectionsHtml(html, fileTermCode, courseId);
 }
 
