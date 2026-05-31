@@ -379,7 +379,13 @@ async function scrapeCollege(
   console.log(`  URL: ${url}`);
 
   try {
-    await page.goto(url, { waitUntil: "networkidle", timeout: NAV_TIMEOUT });
+    // Try `networkidle` first (cleaner), but fall back to `domcontentloaded`
+    // when the portal keeps background AJAX alive (Chipola's JICS does this).
+    try {
+      await page.goto(url, { waitUntil: "networkidle", timeout: NAV_TIMEOUT });
+    } catch {
+      await page.goto(url, { waitUntil: "domcontentloaded", timeout: NAV_TIMEOUT });
+    }
     await sleep(1500);
   } catch (e) {
     const msg = `goto failed: ${e}`;
@@ -413,7 +419,11 @@ async function scrapeCollege(
 
     try {
       // Fresh page-load per term — ASP.NET ViewState makes multi-term reuse unreliable.
-      await page.goto(url, { waitUntil: "networkidle", timeout: NAV_TIMEOUT });
+      try {
+        await page.goto(url, { waitUntil: "networkidle", timeout: NAV_TIMEOUT });
+      } catch {
+        await page.goto(url, { waitUntil: "domcontentloaded", timeout: NAV_TIMEOUT });
+      }
       await sleep(1200);
       await selectTermAndSearch(page, term.value);
 
