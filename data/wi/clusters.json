@@ -1,0 +1,74 @@
+{
+  "$comment": "Multi-college-district cluster detection output (issue #497). Each cluster represents N colleges that share a SIS host or registrable domain — a single bespoke scraper can cover all members.",
+  "state": "wi",
+  "generatedAt": "2026-05-31T01:48:04.935Z",
+  "summary": {
+    "inputCount": 15,
+    "clusterCount": 0,
+    "clusteredCount": 0,
+    "singletonCount": 15
+  },
+  "clusters": [],
+  "singletons": [
+    {
+      "slug": "madison-area-technical-college",
+      "primaryUrl": "madisoncollege.edu"
+    },
+    {
+      "slug": "blackhawk-technical-college",
+      "primaryUrl": "blackhawk.edu"
+    },
+    {
+      "slug": "fox-valley-technical-college",
+      "primaryUrl": "fvtc.edu"
+    },
+    {
+      "slug": "gateway-technical-college",
+      "primaryUrl": "gtc.edu"
+    },
+    {
+      "slug": "lakeshore-technical-college",
+      "primaryUrl": "gotoltc.edu"
+    },
+    {
+      "slug": "mid-state-technical-college",
+      "primaryUrl": "mstc.edu"
+    },
+    {
+      "slug": "northcentral-technical-college",
+      "primaryUrl": "ntc.edu"
+    },
+    {
+      "slug": "northeast-wisconsin-technical-college",
+      "primaryUrl": "nwtc.edu"
+    },
+    {
+      "slug": "southwest-wisconsin-technical-college",
+      "primaryUrl": "swtc.edu"
+    },
+    {
+      "slug": "chippewa-valley-technical-college",
+      "primaryUrl": "cvtc.edu"
+    },
+    {
+      "slug": "waukesha-county-technical-college",
+      "primaryUrl": "wctc.edu"
+    },
+    {
+      "slug": "western-technical-college",
+      "primaryUrl": "westerntc.edu"
+    },
+    {
+      "slug": "milwaukee-area-technical-college",
+      "primaryUrl": "matc.edu"
+    },
+    {
+      "slug": "northwood-technical-college",
+      "primaryUrl": "northwoodtech.edu"
+    },
+    {
+      "slug": "moraine-park-technical-college",
+      "primaryUrl": "morainepark.edu"
+    }
+  ]
+}
