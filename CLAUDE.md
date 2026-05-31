@@ -91,7 +91,7 @@ CLAUDE.md is always in context; every line here costs per-session tokens. Keep i
 WT=$(scripts/new-pr-worktree.sh <slug>)   # creates .claude/worktrees/<slug> on claude/<slug> off origin/main,
 cd "$WT"                                    # copies .env.local, seeds branch-lock. Then scrape/commit/push HERE.
 ```
-The main checkout stays on `main` and is read-only / coordination only. The `pre-worktree-guard.sh` hook blocks `checkout -b` / branch-switch / `reset --hard` / `clean -f` in the main checkout — if you hit it, you forgot to make a worktree; don't bypass, make one. Inside the worktree the same commands are safe.
+The main checkout stays on `main` and is read-only / coordination only. The `pre-worktree-guard.sh` hook blocks `checkout -b` / branch-switch / `reset --hard` / `clean -f` in the main checkout — if you hit it, you forgot to make a worktree; don't bypass, make one. Inside the worktree the same commands are safe. The hook also blocks **foreign worktree removal** (`git worktree remove <path>` or `rm -rf <path>` where `<path>` is another session's `.claude/worktrees/<slug>`) — that's what aborted my own scrape mid-run on 2026-05-31. Self-removal (caller's cwd is the target) is allowed. Run the suite with `bash .claude/hooks/test-pre-worktree-guard.sh` (18 cases).
 
 **Before touching any file, always confirm which branch you're on and whether a worktree is active.**
 
