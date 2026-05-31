@@ -25,7 +25,7 @@ const iaConfig: StateConfig = {
       "Iowa has no statewide senior-tuition statute. The 15 community college districts (organized under Iowa Code Ch. 260C) set their own tuition policies. Most offer reduced or waived tuition for residents 60+ on a space-available basis, sometimes with fee adjustments. Contact your college's registrar or financial aid office for the specific terms.",
   },
 
-  transferSupported: false,
+  transferSupported: true,
   popularCourses: ["ENG 105", "SPC 112", "PSY 111", "SOC 110", "ENG 106", "BIO 168"],
   defaultZip: "50309",
   defaultZipCity: "Des Moines",
@@ -54,7 +54,14 @@ const iaConfig: StateConfig = {
     courses: [
       { scripts: ["scripts/ia/scrape-colleague.ts"], runner: "playwright" },
     ],
-    // manual-only: transfers — no articulation portal registered for IA yet.
+    transfers: [
+      // Iowa State University's TRANSIT tool (transit.iastate.edu) exposes a
+      // public reverse-lookup JSON API. The scraper iterates all ISU subjects,
+      // fetches course listings, and queries which Iowa 2-year CC courses
+      // transfer to each ISU course. Single receiver (ISU); covers all 17 IA
+      // community colleges. No login or browser needed (http runner).
+      { scripts: ["scripts/ia/scrape-transfer-transit.ts"], runner: "http" },
+    ],
     prereqs: { source: "aggregate-from-courses" },
     // manual-only: programs — Phase 5+.
   },
