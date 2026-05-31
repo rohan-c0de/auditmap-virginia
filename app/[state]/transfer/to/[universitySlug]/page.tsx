@@ -9,7 +9,7 @@ import {
   TRANSFER_HUB_MAX_CLIENT_MAPPINGS,
 } from "@/lib/transfer";
 import { loadInstitutions } from "@/lib/institutions";
-import { getAllStates, isValidState } from "@/lib/states/registry";
+import { isValidState } from "@/lib/states/registry";
 import { requireStateConfig } from "@/lib/states/route-helpers";
 import { subjectName } from "@/lib/subjects";
 import type { TransferMapping } from "@/lib/types";
@@ -22,12 +22,7 @@ import { getBlogRecommendations } from "@/lib/blog-recommendations";
 export const revalidate = 86400;
 
 // Only serve pre-generated (state, university) combos. Any slug not in
-// generateStaticParams returns a proper HTTP 404 instead of Next.js's default
-// 200+notFound-ui behavior for on-demand renders. The set of valid URLs is
-// finite and enumerated below, so we don't need ISR-on-demand for this route.
-export const dynamicParams = false;
-
-// Thin-content guard: only pre-generate + render pages for universities
+// Thin-content guard: only render pages for universities
 // with at least this many transferable (direct + elective) courses.
 const MIN_TRANSFERABLE = 10;
 
@@ -35,29 +30,8 @@ type PageProps = {
   params: Promise<{ state: string; universitySlug: string }>;
 };
 
-// ---------------------------------------------------------------------------
-// Static params — one page per (state, university) where transferSupported
-// and the university has >= MIN_TRANSFERABLE transferable mappings.
-// ---------------------------------------------------------------------------
-
 export async function generateStaticParams() {
-  const params: { state: string; universitySlug: string }[] = [];
-
-  for (const stateConfig of getAllStates()) {
-    if (!stateConfig.transferSupported) continue;
-
-    try {
-      const universities = await getUniversitiesWithCounts(stateConfig.slug);
-      for (const u of universities) {
-        if (u.totalCount < MIN_TRANSFERABLE) continue;
-        params.push({ state: stateConfig.slug, universitySlug: u.slug });
-      }
-    } catch {
-      // Skip state if transfer data loading fails
-    }
-  }
-
-  return params;
+  return [];
 }
 
 // ---------------------------------------------------------------------------

@@ -17,7 +17,6 @@ import TopProgramsSection from "./TopProgramsSection";
 import { loadCollegePrograms } from "@/lib/programs/requirements";
 import { countRealCourses, PLAN_MIN_COURSES } from "@/lib/programs/plan-shared";
 import { buildTransferLookupForCourses } from "@/lib/transfer-scoped";
-import { getPrerenderStates } from "@/lib/states/registry";
 import { requireStateConfig } from "@/lib/states/route-helpers";
 import { getTopInstructors } from "@/lib/instructors";
 import { computeOfferingProfile } from "@/lib/college-stats";
@@ -95,9 +94,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
 export const dynamicParams = true;
 
 export function generateStaticParams() {
-  return getPrerenderStates().flatMap((config) =>
-    loadInstitutions(config.slug).map((i) => ({ state: config.slug, id: i.id }))
-  );
+  return [];
 }
 
 export default async function CollegeDetailPage(props: PageProps) {
