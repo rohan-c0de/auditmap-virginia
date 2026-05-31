@@ -50,6 +50,7 @@ import utZipcodes from "@/data/ut/zipcodes.json";
 import waZipcodes from "@/data/wa/zipcodes.json";
 import wyZipcodes from "@/data/wy/zipcodes.json";
 import akZipcodes from "@/data/ak/zipcodes.json";
+import idZipcodes from "@/data/id/zipcodes.json";
 
 type ZipEntry = { lat: number; lng: number; city: string };
 
@@ -99,6 +100,7 @@ const ZIP_REGISTRY: Record<string, Record<string, ZipEntry>> = {
   wa: waZipcodes as Record<string, ZipEntry>,
   wy: wyZipcodes as Record<string, ZipEntry>,
   ak: akZipcodes as Record<string, ZipEntry>,
+  id: idZipcodes as Record<string, ZipEntry>,
 };
 
 function loadZipData(state: string): Record<string, ZipEntry> {
