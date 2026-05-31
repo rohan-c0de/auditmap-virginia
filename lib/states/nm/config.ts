@@ -73,7 +73,9 @@ const nmConfig: StateConfig = {
       // construction. ~8,800 mappings.
       { scripts: ["scripts/nm/scrape-transfer-ccns.ts"], runner: "http" },
     ],
-    // manual-only: prereqs — Phase 4 catalog-prereq scrapers deferred.
+    // Prereqs aggregated from course-search prerequisite_text + coursedog-catalog
+    // (data/nm/prereqs.json, 213 parsed chains). Refreshed from committed courses.
+    prereqs: { source: "aggregate-from-courses" },
     // manual-only: programs — Phase 6 catalog discovery yielded no templated catalogs.
   },
 };

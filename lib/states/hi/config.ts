@@ -75,7 +75,9 @@ const hiConfig: StateConfig = {
     transfers: [
       { scripts: ["scripts/hi/scrape-transfer-uhdad.ts"], runner: "http" },
     ],
-    // manual-only: prereqs — Phase 4.
+    // Prereqs aggregated from course-search prerequisite_text (data/hi/prereqs.json,
+    // 418 parsed chains). No dedicated catalog scraper; refreshed from committed courses.
+    prereqs: { source: "aggregate-from-courses" },
     // manual-only: programs — Phase 5+.
   },
 };
