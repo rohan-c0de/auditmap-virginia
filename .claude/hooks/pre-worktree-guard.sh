@@ -34,6 +34,80 @@ PAYLOAD_CWD=$(echo "$PAYLOAD" | /usr/bin/python3 -c "import sys,json; print(json
 
 [ -z "$CMD" ] && exit 0
 
+# --- Foreign-worktree removal guard ----------------------------------------
+# Block deleting another session's worktree dir — either via `git worktree
+# remove <path>` or `rm -rf <path>` where <path> sits under .claude/worktrees/
+# and isn't the caller's own worktree. (Sessions cleaning up THEIR OWN merged
+# worktree are fine; the cwd test allows that.)
+#
+# Foreign removal silently aborts whatever scrape/build that session is running
+# — exact failure mode that wiped my ia-co-v2 worktree mid-scrape on 2026-05-31.
+#
+# Conservative match: requires both a worktree-removal verb AND a path that
+# looks like .claude/worktrees/<name>. Won't catch hand-crafted obfuscations
+# (e.g. cd .claude/worktrees && rm -rf foo) — fine, that's not what's happening
+# accidentally; the common-case foot-gun is the explicit form.
+extract_wt_target() {
+  # Pull the first .claude/worktrees/<name> argument from the command.
+  echo "$CMD" | grep -oE '(\.claude/worktrees|\.claude/worktrees/[A-Za-z0-9._-]+)' 2>/dev/null | head -1 || true
+}
+
+is_foreign_rm=0
+op_foreign=""
+if echo "$CMD" | grep -Eq 'git[[:space:]]+worktree[[:space:]]+remove[[:space:]]+'; then
+  is_foreign_rm=1; op_foreign="git-worktree-remove"
+fi
+# `rm -rf` / `rm -fr` / `rm -Rf` against a worktree path
+if echo "$CMD" | grep -Eq 'rm[[:space:]]+(-[a-zA-Z]*[rR][a-zA-Z]*[fF]|-[a-zA-Z]*[fF][a-zA-Z]*[rR])[a-zA-Z]*[[:space:]]+[^&|;]*\.claude/worktrees'; then
+  is_foreign_rm=1; op_foreign="rm-rf-worktree"
+fi
+
+if [ "$is_foreign_rm" -eq 1 ]; then
+  wt_target="$(extract_wt_target)"
+  # Self-removal is allowed when the caller's cwd IS that worktree (cleaning up
+  # own merged work). Compare on the trailing .claude/worktrees/<slug> segment
+  # so it's robust to whichever worktree this hook copy lives in — both
+  # PAYLOAD_CWD and wt_target reduce to the same canonical suffix when they
+  # point at the same place.
+  if [ -n "$wt_target" ] && [ -n "$PAYLOAD_CWD" ]; then
+    # Strip everything up to and including ".claude/worktrees/" from each, then
+    # take the first path segment (the slug). Match = self-removal.
+    target_slug=$(echo "$wt_target" | sed -E 's#^.*\.claude/worktrees/##' | cut -d/ -f1)
+    cwd_slug=$(echo "$PAYLOAD_CWD" | sed -E 's#^.*\.claude/worktrees/##' | cut -d/ -f1)
+    # cwd_slug must also have come from inside .claude/worktrees/ — guard against
+    # main-checkout cwd accidentally matching (sed would just echo the input).
+    case "$PAYLOAD_CWD" in
+      *"/.claude/worktrees/"*)
+        if [ -n "$target_slug" ] && [ "$target_slug" = "$cwd_slug" ]; then
+          exit 0
+        fi
+        ;;
+    esac
+  fi
+  # Reached here = foreign removal. Build a printable absolute path for the
+  # error message (best-effort; only used in the message).
+  case "$wt_target" in
+    /*) wt_abs="$wt_target" ;;
+    *)  wt_abs="$REPO_ROOT/$wt_target" ;;
+  esac
+  cat >&2 <<EOF
+╔══════════════════════════════════════════════════════════════════════════════
+║  🛑 FOREIGN WORKTREE REMOVAL — BLOCKED ($op_foreign)
+║
+║  Command: $CMD
+║
+║  This would delete $wt_target — which belongs to another session that is
+║  almost certainly mid-task. Foreign removal aborts that session's scrape /
+║  build / commit with a confusing ENOENT and loses work.
+║
+║  If THIS session owns that worktree, run the command from INSIDE it:
+║      cd $wt_abs && git worktree remove .
+║  Otherwise leave it alone — the other session will clean up when done.
+╚══════════════════════════════════════════════════════════════════════════════
+EOF
+  exit 2
+fi
+
 # --- Is this a guarded operation at all? -----------------------------------
 # Branch creation, HEAD-switching, or tree-nuking. Exclude file-level checkout.
 is_guarded=0
