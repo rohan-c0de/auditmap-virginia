@@ -1,11 +1,8 @@
 /**
  * California — Banner SSB 9 scrape
  *
- * Thin wrapper around the shared Banner SSB 9 template for the 14 California
- * community colleges that auto-add-state successfully scraped via Banner
- * Self-Service Banner 9 (48,610 sections combined). Three additional CA
- * colleges fingerprinted as Banner SSB 9 (butte, glendale, ohlone) but the
- * scrape returned 0 sections — they remain as TODOs for follow-up.
+ * Thin wrapper around the shared Banner SSB 9 template for the California
+ * community colleges reachable via public Banner Self-Service 9 endpoints.
  *
  * Usage:
  *   npx tsx scripts/ca/scrape-banner-ssb.ts
@@ -33,6 +30,21 @@ async function main() {
     "santa-rosa-junior-college":                  "https://reg-prod.santarosajc.elluciancloud.com:8103",
     "sierra-college":                             "https://ss.oci.sierracollege.edu",
     "college-of-the-siskiyous":                   "https://reg-prod.cloud.siskiyous.edu",
+    // Coast CCD (3)
+    "coastline-community-college":                "https://reg-prod.ec.cccd.edu",
+    "golden-west-college":                        "https://reg-prod.ec.cccd.edu",
+    "orange-coast-college":                       "https://reg-prod.ec.cccd.edu",
+    // NOCCCD (2)
+    "cypress-college":                            "https://ssb.nocccd.edu",
+    "fullerton-college":                          "https://ssb.nocccd.edu",
+    // Ventura CCD (3)
+    "moorpark-college":                           "https://ssb.vcccd.edu",
+    "oxnard-college":                             "https://ssb.vcccd.edu",
+    "ventura-college":                            "https://ssb.vcccd.edu",
+    // Singletons
+    "gavilan-college":                            "https://reg-prod.ec.gavilan.edu",
+    "pasadena-city-college":                      "https://reg-prod.ec.pasadena.edu",
+    "porterville-college":                        "https://reg-prod.ec.kccd.edu",
   },
   });
 }
