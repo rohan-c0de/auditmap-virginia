@@ -82,7 +82,16 @@ Before adding a new rule, recommendation, or reminder anywhere in this repo, ask
 
 CLAUDE.md is always in context; every line here costs per-session tokens. Keep it tight. Use skills and code comments for the bulky stuff.
 
-## Git — branch and worktree awareness
+## Git — ONE PR = ONE WORKTREE (non-negotiable)
+
+**The repo root is shared by ~17 concurrent Claude sessions. Never create a branch, scrape, or commit PR work in the main checkout.** Doing so races every other session: your commits dangle (cherry-pick rescues), the shared `.claude/branch-lock` gets overwritten ("expected someone-else's-branch"), and your freshly-scraped data files get reverted to HEAD mid-run. On 2026-05-30 this silently wiped 3,512 just-scraped IA transfer rows to `[]` between scrape and commit. A worktree has its own HEAD, index, and files — it is immune.
+
+**Start every unit of PR work with a worktree, then stay inside it:**
+```bash
+WT=$(scripts/new-pr-worktree.sh <slug>)   # creates .claude/worktrees/<slug> on claude/<slug> off origin/main,
+cd "$WT"                                    # copies .env.local, seeds branch-lock. Then scrape/commit/push HERE.
+```
+The main checkout stays on `main` and is read-only / coordination only. The `pre-worktree-guard.sh` hook blocks `checkout -b` / branch-switch / `reset --hard` / `clean -f` in the main checkout — if you hit it, you forgot to make a worktree; don't bypass, make one. Inside the worktree the same commands are safe.
 
 **Before touching any file, always confirm which branch you're on and whether a worktree is active.**
 
