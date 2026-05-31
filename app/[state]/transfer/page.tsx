@@ -24,9 +24,7 @@ type Props = {
 };
 
 export function generateStaticParams() {
-  return getAllStates()
-    .filter((s) => s.transferSupported)
-    .map((s) => ({ state: s.slug }));
+  return [];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
