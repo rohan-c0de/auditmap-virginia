@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
     // causes "Timed out acquiring connection" / statement_timeout errors
     // that kill the build. Cap to 2 so total concurrency stays under the
     // pool limit even with 3 workers (3 × 2 = 6 pages at once).
-    staticGenerationMaxConcurrency: 2,
+    staticGenerationMaxConcurrency: 4,
   },
   // Explicitly bundle every state's prereqs.json into the serverless
   // functions that PARSE it — only the API routes need the file content.
