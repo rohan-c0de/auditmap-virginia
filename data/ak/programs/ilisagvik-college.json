@@ -1,7 +1,8 @@
 {
   "college_slug": "ilisagvik-college",
+  "catalog_year": "2026-2027",
   "catalog_url": "https://catalog.ilisagvik.edu/degrees",
-  "scraped_at": "2026-05-30T20:11:01.932Z",
+  "scraped_at": "2026-05-31T03:11:46.941Z",
   "programs": [
     {
       "title": "Accounting Technician I",
@@ -10,7 +11,7 @@
       "catalog_url": "https://catalog.ilisagvik.edu/accounting/certificate/accounting-technician-i",
       "total_credits": 15,
       "gpa_minimum": 2,
-      "description": null,
+      "description": "In addition, the accounting program offers students the opportunity to take courses that satisfy nearly all of the general core requirements of a four-year college. This track is recommended for students who wish to earn an associate degree, but who plan to continue their education and earn a bachelor’s degree.\n\nCourses are offered at varying times of day in order to allow students to pursue their career goals on either a full-time or part-time basis.",
       "requirement_groups": [
         {
           "name": "Course Requirements",
@@ -51,37 +52,23 @@
       "matched_program_slug": "accounting"
     },
     {
-      "title": "Pre-Nursing",
+      "title": "Accounting Technician II",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.ilisagvik.edu/allied-health/certificate/pre-nursing",
-      "total_credits": 28,
+      "catalog_url": "https://catalog.ilisagvik.edu/accounting/certificate/accounting-technician-ii",
+      "total_credits": 24,
       "gpa_minimum": 2,
-      "description": null,
+      "description": "In addition, the accounting program offers students the opportunity to take courses that satisfy nearly all of the general core requirements of a four-year college. This track is recommended for students who wish to earn an associate degree, but who plan to continue their education and earn a bachelor’s degree.\n\nCourses are offered at varying times of day in order to allow students to pursue their career goals on either a full-time or part-time basis.",
       "requirement_groups": [
         {
-          "name": "General Education Coursework",
-          "credits_required": 3,
+          "name": "Humanities/Social Sciences",
+          "credits_required": 6,
           "choose_n": null,
           "courses": [
             {
-              "prefix": "ENGL",
-              "number": "111",
-              "title": "Introduction to Academic Writing",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Math/Science/Technology",
-          "credits_required": 3,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "MATH",
-              "number": "105",
-              "title": "College Algebra",
+              "prefix": "ECON",
+              "number": "121",
+              "title": "Microeconomics",
               "credits": 3,
               "or_alternatives": []
             }
@@ -89,67 +76,34 @@
         },
         {
           "name": "Major Coursework",
-          "credits_required": 22,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BIOL",
-              "number": "211",
-              "title": "Human Anatomy and Physiology I",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIOL",
-              "number": "212",
-              "title": "Human Anatomy and Physiology II",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHEM",
-              "number": "103",
-              "title": "Basic General Chemistry",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSY",
-              "number": "150",
-              "title": "Lifespan Development",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HLTH",
-              "number": "204",
-              "title": "Medical Terminology",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "nursing"
-    },
-    {
-      "title": "Business Specialist I",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.ilisagvik.edu/business-management/certificate/business-specialist-i",
-      "total_credits": 15,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Course Requirements",
-          "credits_required": 15,
+          "credits_required": 18,
           "choose_n": null,
           "courses": [
             {
               "prefix": "ACC",
               "number": "101",
               "title": "Principles of Accounting I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACC",
+              "number": "114",
+              "title": "Payroll Accounting",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACC",
+              "number": "201",
+              "title": "Principles of Accounting II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACC",
+              "number": "245",
+              "title": "Computerized Accounting",
               "credits": 3,
               "or_alternatives": []
             },
@@ -161,16 +115,16 @@
               "or_alternatives": []
             },
             {
-              "prefix": "BUS",
-              "number": "155",
-              "title": "Human Relations",
-              "credits": 3,
+              "prefix": "DATA",
+              "number": "140",
+              "title": "Computer Spreadsheets",
+              "credits": 1,
               "or_alternatives": []
             }
           ]
         }
       ],
-      "matched_program_slug": "business-administration"
+      "matched_program_slug": "accounting"
     },
     {
       "title": "Medical Coding Specialist",
@@ -179,7 +133,7 @@
       "catalog_url": "https://catalog.ilisagvik.edu/allied-health/certificate/medical-coding-specialist",
       "total_credits": 30,
       "gpa_minimum": 2,
-      "description": null,
+      "description": "Allied Health Division offers various courses of study that prepare students for health careers. In addition to academic offerings, IỊisaġvik College collaborates with the Arctic Slope Native Association and the North Slope Borough in offering internship experience. Some programs will be offered as employment opportunities become available, for example, the Dental Assistant Trainee program and the Certified Nurse Aide and Personal Care Attendant training programs.\n\nStudents must meet general admission requirements. Allied Health courses may require separate admission requirements and acceptance.",
       "requirement_groups": [
         {
           "name": "Math/Science/Technology",
@@ -255,88 +209,13 @@
       "matched_program_slug": null
     },
     {
-      "title": "Accounting Technician II",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.ilisagvik.edu/accounting/certificate/accounting-technician-ii",
-      "total_credits": 24,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Humanities/Social Sciences",
-          "credits_required": 6,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ECON",
-              "number": "121",
-              "title": "Microeconomics",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Major Coursework",
-          "credits_required": 18,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ACC",
-              "number": "101",
-              "title": "Principles of Accounting I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACC",
-              "number": "114",
-              "title": "Payroll Accounting",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACC",
-              "number": "201",
-              "title": "Principles of Accounting II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACC",
-              "number": "245",
-              "title": "Computerized Accounting",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "151",
-              "title": "Introduction to Business",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "DATA",
-              "number": "140",
-              "title": "Computer Spreadsheets",
-              "credits": 1,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "accounting"
-    },
-    {
       "title": "Allied Health",
       "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.ilisagvik.edu/allied-health/certificate/allied-health",
       "total_credits": 24,
       "gpa_minimum": 2,
-      "description": null,
+      "description": "Allied Health Division offers various courses of study that prepare students for health careers. In addition to academic offerings, IỊisaġvik College collaborates with the Arctic Slope Native Association and the North Slope Borough in offering internship experience. Some programs will be offered as employment opportunities become available, for example, the Dental Assistant Trainee program and the Certified Nurse Aide and Personal Care Attendant training programs.\n\nStudents must meet general admission requirements. Allied Health courses may require separate admission requirements and acceptance.",
       "requirement_groups": [
         {
           "name": "Major Coursework",
@@ -503,13 +382,53 @@
       "matched_program_slug": null
     },
     {
-      "title": "Construction Technology I",
+      "title": "Business Specialist I",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.ilisagvik.edu/construction-technology/certificate/construction-technology-i",
-      "total_credits": 3,
+      "catalog_url": "https://catalog.ilisagvik.edu/business-management/certificate/business-specialist-i",
+      "total_credits": 15,
       "gpa_minimum": 2,
-      "description": null,
+      "description": "IỊisaġvik College offers a number of business-related programs of study to prepare participants for employment at many different levels. The various programs offer students a career ladder approach to business and office-related careers. The programs vary in length, but all coursework ultimately counts toward an Associate ofApplied Science degree, which certifies the highest level of employment readiness offered by IỊisaġvik College.\n\nThe Associate of Applied Science Degree in Business andManagement provides students with the knowledge and tools to succeed as mid-level managers in a business environment or as an entrepreneur. The program emphasizes how Iñupiaq values fit into management practices and how such values help create a positive management environment. This program also uses the career ladder approach, so that:",
+      "requirement_groups": [
+        {
+          "name": "Course Requirements",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACC",
+              "number": "101",
+              "title": "Principles of Accounting I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "151",
+              "title": "Introduction to Business",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "155",
+              "title": "Human Relations",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Pre-Nursing",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.ilisagvik.edu/allied-health/certificate/pre-nursing",
+      "total_credits": 28,
+      "gpa_minimum": 2,
+      "description": "Allied Health Division offers various courses of study that prepare students for health careers. In addition to academic offerings, IỊisaġvik College collaborates with the Arctic Slope Native Association and the North Slope Borough in offering internship experience. Some programs will be offered as employment opportunities become available, for example, the Dental Assistant Trainee program and the Certified Nurse Aide and Personal Care Attendant training programs.\n\nStudents must meet general admission requirements. Allied Health courses may require separate admission requirements and acceptance.",
       "requirement_groups": [
         {
           "name": "General Education Coursework",
@@ -517,93 +436,133 @@
           "choose_n": null,
           "courses": [
             {
-              "prefix": "BUS",
-              "number": "105",
-              "title": "Business Math",
+              "prefix": "ENGL",
+              "number": "111",
+              "title": "Introduction to Academic Writing",
               "credits": 3,
               "or_alternatives": []
-            },
+            }
+          ]
+        },
+        {
+          "name": "Math/Science/Technology",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
             {
               "prefix": "MATH",
               "number": "105",
               "title": "College Algebra",
               "credits": 3,
               "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "107",
-              "title": "Functions for Calculus",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MTHC",
-              "number": "101",
-              "title": "Math for Carpenters",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MTHE",
-              "number": "101",
-              "title": "Math for Electricians",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MTHP",
-              "number": "101",
-              "title": "Math for Plumbers",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MTHT",
-              "number": "101",
-              "title": "Applied Construction Trades Math",
-              "credits": 1,
-              "or_alternatives": []
             }
           ]
         },
         {
-          "name": "Electives Any BMT, CARP, CTT, ELEC, HEO, PMB, WMT not taken above and/or",
-          "credits_required": 0,
+          "name": "Major Coursework",
+          "credits_required": 22,
           "choose_n": null,
           "courses": [
             {
-              "prefix": "IT",
-              "number": "100",
-              "title": "Introduction to Online Learning",
-              "credits": 1,
+              "prefix": "BIOL",
+              "number": "211",
+              "title": "Human Anatomy and Physiology I",
+              "credits": 4,
               "or_alternatives": []
             },
             {
-              "prefix": "SAFE",
-              "number": "110",
-              "title": "40-Hour HAZWOPER",
-              "credits": 1,
+              "prefix": "BIOL",
+              "number": "212",
+              "title": "Human Anatomy and Physiology II",
+              "credits": 4,
               "or_alternatives": []
             },
             {
-              "prefix": "SAFE",
-              "number": "119",
-              "title": "Field Safety",
-              "credits": 2,
+              "prefix": "CHEM",
+              "number": "103",
+              "title": "Basic General Chemistry",
+              "credits": 4,
               "or_alternatives": []
             },
             {
-              "prefix": "SAFE",
-              "number": "132",
-              "title": "30-Hour Maritime Industry Safety & Health Standards",
-              "credits": 1,
+              "prefix": "PSY",
+              "number": "150",
+              "title": "Lifespan Development",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HLTH",
+              "number": "204",
+              "title": "Medical Terminology",
+              "credits": 3,
               "or_alternatives": []
             }
           ]
         }
       ],
-      "matched_program_slug": null
+      "matched_program_slug": "nursing"
+    },
+    {
+      "title": "Business Specialist II",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.ilisagvik.edu/business-management/certificate/business-specialist-ii",
+      "total_credits": 21,
+      "gpa_minimum": 2,
+      "description": "IỊisaġvik College offers a number of business-related programs of study to prepare participants for employment at many different levels. The various programs offer students a career ladder approach to business and office-related careers. The programs vary in length, but all coursework ultimately counts toward an Associate ofApplied Science degree, which certifies the highest level of employment readiness offered by IỊisaġvik College.\n\nThe Associate of Applied Science Degree in Business andManagement provides students with the knowledge and tools to succeed as mid-level managers in a business environment or as an entrepreneur. The program emphasizes how Iñupiaq values fit into management practices and how such values help create a positive management environment. This program also uses the career ladder approach, so that:",
+      "requirement_groups": [
+        {
+          "name": "Humanities/Social Sciences",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ECON",
+              "number": "121",
+              "title": "Microeconomics",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Major Coursework",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACC",
+              "number": "101",
+              "title": "Principles of Accounting I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "151",
+              "title": "Introduction to Business",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "155",
+              "title": "Human Relations",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "254",
+              "title": "Introduction to Organization Management",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "business-administration"
     },
     {
       "title": "Entrepreneurship and Small Business Management Specialist II",
@@ -612,7 +571,7 @@
       "catalog_url": "https://catalog.ilisagvik.edu/business-management/certificate/entrepreneurship-and-small-business-management-specialist-ii",
       "total_credits": 21,
       "gpa_minimum": 2,
-      "description": null,
+      "description": "IỊisaġvik College offers a number of business-related programs of study to prepare participants for employment at many different levels. The various programs offer students a career ladder approach to business and office-related careers. The programs vary in length, but all coursework ultimately counts toward an Associate ofApplied Science degree, which certifies the highest level of employment readiness offered by IỊisaġvik College.\n\nThe Associate of Applied Science Degree in Business andManagement provides students with the knowledge and tools to succeed as mid-level managers in a business environment or as an entrepreneur. The program emphasizes how Iñupiaq values fit into management practices and how such values help create a positive management environment. This program also uses the career ladder approach, so that:",
       "requirement_groups": [
         {
           "name": "Major Coursework",
@@ -674,30 +633,16 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Business Specialist II",
+      "title": "Entrepreneurship and Small Business Management Specialist I",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.ilisagvik.edu/business-management/certificate/business-specialist-ii",
-      "total_credits": 21,
+      "catalog_url": "https://catalog.ilisagvik.edu/business-management/certificate/entrepreneurship-and-small-business-management-specialist-i",
+      "total_credits": 15,
       "gpa_minimum": 2,
-      "description": null,
+      "description": "IỊisaġvik College offers a number of business-related programs of study to prepare participants for employment at many different levels. The various programs offer students a career ladder approach to business and office-related careers. The programs vary in length, but all coursework ultimately counts toward an Associate ofApplied Science degree, which certifies the highest level of employment readiness offered by IỊisaġvik College.\n\nThe Associate of Applied Science Degree in Business andManagement provides students with the knowledge and tools to succeed as mid-level managers in a business environment or as an entrepreneur. The program emphasizes how Iñupiaq values fit into management practices and how such values help create a positive management environment. This program also uses the career ladder approach, so that:",
       "requirement_groups": [
         {
-          "name": "Humanities/Social Sciences",
-          "credits_required": 6,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ECON",
-              "number": "121",
-              "title": "Microeconomics",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Major Coursework",
+          "name": "Course Requirements",
           "credits_required": 15,
           "choose_n": null,
           "courses": [
@@ -716,16 +661,9 @@
               "or_alternatives": []
             },
             {
-              "prefix": "BUS",
-              "number": "155",
-              "title": "Human Relations",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "254",
-              "title": "Introduction to Organization Management",
+              "prefix": "ESBM",
+              "number": "152",
+              "title": "Entrepreneurship",
               "credits": 3,
               "or_alternatives": []
             }
@@ -735,38 +673,17 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Indigenous Human Services",
+      "title": "Education I",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.ilisagvik.edu/indigenous-human-services/certificate/indigenous-human-services",
-      "total_credits": 20,
+      "catalog_url": "https://catalog.ilisagvik.edu/education/certificate/education-i",
+      "total_credits": 5,
       "gpa_minimum": 2,
-      "description": null,
+      "description": "The Education Associate of Arts degree is derived from the National Association for the Education ofYoung Children (NAEYC) Accreditation Standards and input gathered through the 2012 Uqautchim Uglua Gathering.\n\nThe certificate program serves as a stepping stone to the degree program in that all coursework applied to the Certificate I and II will count toward the degree. The purpose of the certificate program in Education is to give students the opportunity to explore the discipline as well as recognize and celebrate milestones toward completion of the degree.",
       "requirement_groups": [
         {
-          "name": "General Education Coursework",
-          "credits_required": 6,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "COMM",
-              "number": "131",
-              "title": "Fundamentals of Oral Communications: Group Context",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENGL",
-              "number": "111",
-              "title": "Introduction to Academic Writing",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
           "name": "Math/Science/Technology",
-          "credits_required": 5,
+          "credits_required": 2,
           "choose_n": null,
           "courses": [
             {
@@ -786,43 +703,50 @@
           ]
         },
         {
-          "name": "Humanities/Social Science",
+          "name": "Humanities/Social Sciences Complete ONE of the following:",
           "credits_required": 3,
           "choose_n": null,
           "courses": [
             {
-              "prefix": "PSY",
-              "number": "101",
-              "title": "Introduction to Psychology",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Complete TWO of the following:",
-          "credits_required": 6,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "HUMS",
-              "number": "210",
-              "title": "Crisis Intervention and Grief Counseling",
+              "prefix": "ANTH",
+              "number": "100",
+              "title": "Individuals, Society, and Culture",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "HUMS",
-              "number": "215",
-              "title": "Individual Interviewing and Assessment",
+              "prefix": "ANTH",
+              "number": "242",
+              "title": "Native Cultures of Alaska",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "SWK",
-              "number": "103",
-              "title": "Social Work in Human Services",
+              "prefix": "HIST",
+              "number": "115",
+              "title": "Alaska, Land, and its People",
               "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ANS",
+              "number": "239",
+              "title": "Native American/Alaska Native Children’s Literature",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ANS",
+              "number": "240",
+              "title": "Alaska Natives in Film",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SSC",
+              "number": "218",
+              "title": "Topics in the Social Sciences",
+              "credits": 1,
               "or_alternatives": []
             }
           ]
@@ -837,7 +761,7 @@
       "catalog_url": "https://catalog.ilisagvik.edu/education/certificate/education-ii",
       "total_credits": 27,
       "gpa_minimum": 2,
-      "description": null,
+      "description": "The Education Associate of Arts degree is derived from the National Association for the Education ofYoung Children (NAEYC) Accreditation Standards and input gathered through the 2012 Uqautchim Uglua Gathering.\n\nThe certificate program serves as a stepping stone to the degree program in that all coursework applied to the Certificate I and II will count toward the degree. The purpose of the certificate program in Education is to give students the opportunity to explore the discipline as well as recognize and celebrate milestones toward completion of the degree.",
       "requirement_groups": [
         {
           "name": "General Education Coursework",
@@ -941,13 +865,643 @@
       "matched_program_slug": null
     },
     {
+      "title": "Construction Technology II",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.ilisagvik.edu/construction-technology/certificate/construction-technology-ii",
+      "total_credits": 9,
+      "gpa_minimum": 2,
+      "description": "The Construction Technology program offers training inCarpentry, Electrical, CDL/Heavy Equipment Operations,Industrial Safety, CDL/Heavy Truck Operations, Plumbing, Scaffolding, Pipeline Insulation, Pipefitting, and Welding.The degree, certificates, and endorsements within the program are designed to prepare students to enter the workforce or to provide those currently employed with the opportunity to upgrade their skill level. IỊisaġvik College uses the National Center for Construction Education and Research (NCCER) curricula, which are nationally recognized for craft training. NCCER maintains a NationalRegistry that provides transcripts, certifications and wallet cards to students who successfully complete all required course work. Check the current year schedule to find out which classes are being offered in the spring and fall semesters for that year.\n\nStudents must comply with the prerequisite drug testing policy and complete an ACCUPLACER math test (per course prerequisites) to be accepted into these programs.Students must be in good physical condition. They should be able to tolerate confined spaces and heights. Students are expected to be able to read and understand task descriptions, safety manuals, and safety and warning signs. Students must also be able to give and receive oral safety warnings, instructions, and task assignments. Those registering for the complete program have priority enrollment. Students are urged to apply as early as possible for this program. Enrollment is limited and the training is in heavy demand. Students who are put on the waitlist for the semester in which they applied are given preference in the following semester.",
+      "requirement_groups": [
+        {
+          "name": "Math/Science/Technology",
+          "credits_required": 1,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "IT",
+              "number": "100",
+              "title": "Introduction to Online Learning",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Complete at least THREE credits:",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "IT",
+              "number": "117",
+              "title": "Intro to Personal Computers",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "IT",
+              "number": "118",
+              "title": "Introduction to MS Office",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "IT",
+              "number": "119",
+              "title": "Internet Use and Security: IC3 Module 3",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "IT",
+              "number": "130",
+              "title": "Computer Word-Processing",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "IT",
+              "number": "140",
+              "title": "Comp. Spreadsheets A,B,C",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Complete at least THREE credits:",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BUS",
+              "number": "105",
+              "title": "Business Math",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MATH",
+              "number": "105",
+              "title": "College Algebra",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MATH",
+              "number": "107",
+              "title": "Functions for Calculus",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MTHC",
+              "number": "101",
+              "title": "Math for Carpenters",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MTHE",
+              "number": "101",
+              "title": "Math for Electricians",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MTHP",
+              "number": "101",
+              "title": "Math for Plumbers",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MTHT",
+              "number": "101",
+              "title": "Applied Construction Trades Math",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Certificate Safety Requirement Complete at least ONE credit",
+          "credits_required": 1,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "SAFE",
+              "number": "132",
+              "title": "30-Hour Maritime Industry Safety & Health Standards",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SAFE",
+              "number": "133",
+              "title": "30-Hour Construction Safety & Health Standards",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SAFE",
+              "number": "134",
+              "title": "30-Hour General Industry Safety & Health Standards",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Electives Any BMT, CARP, CTT, ELEC, HEO, PMB, WMT not taken above and/or",
+          "credits_required": 1,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "SAFE",
+              "number": "110",
+              "title": "40-Hour HAZWOPER",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SAFE",
+              "number": "119",
+              "title": "Field Safety",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SAFE",
+              "number": "132",
+              "title": "30-Hour Maritime Industry Safety & Health Standards",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Indigenous Human Services",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.ilisagvik.edu/indigenous-human-services/certificate/indigenous-human-services",
+      "total_credits": 20,
+      "gpa_minimum": 2,
+      "description": "The Indigenous Human Services program combines a discipline-specific human services course of study with Iñupiaq language and culture courses to prepare graduates for entry-level positions with local health care agencies.While the program was primarily designed to meet regional needs in cultural context, students from other regions should consult their advisor, as some of the Iñupiaq course work may be substituted with other indigenous language/culture course work relevant to the student’s background. This degree provides a foundation for careers in counseling, social work, and psychology.",
+      "requirement_groups": [
+        {
+          "name": "General Education Coursework",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "COMM",
+              "number": "131",
+              "title": "Fundamentals of Oral Communications: Group Context",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENGL",
+              "number": "111",
+              "title": "Introduction to Academic Writing",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Math/Science/Technology",
+          "credits_required": 5,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "IT",
+              "number": "100",
+              "title": "Introduction to Online Learning",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "LS",
+              "number": "101",
+              "title": "Library Information and Research",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Humanities/Social Science",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "PSY",
+              "number": "101",
+              "title": "Introduction to Psychology",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Complete TWO of the following:",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "HUMS",
+              "number": "210",
+              "title": "Crisis Intervention and Grief Counseling",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HUMS",
+              "number": "215",
+              "title": "Individual Interviewing and Assessment",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SWK",
+              "number": "103",
+              "title": "Social Work in Human Services",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Data Analysis I",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.ilisagvik.edu/information-technology/certificate/data-analysis-i",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": "Information technology (IT) is the use of computers to create, process, store, and exchange electronic data and information. IT is frequently used within the context of business operations as opposed to personal or entertainment technologies. An information technology system (IT system) is generally an information system, a communications system, or, more specifically speaking, a computer system–including all hardware, software, and associated equipment–operated by a limited group of IT users.\n\nIḷisaġvik College’s Information Technology program currently offers multiple pathways to earn certificates and a degree which should help students gain entry to technical positions, earn industry-recognized certification and/or goon to pursue further education in computer science, technical support and/or design. The degree offers the flexibility to earn technical knowledge and take elective courses in their field of interest (e.g., Allied Health,Business, Education, Construction Technology).",
+      "requirement_groups": [
+        {
+          "name": "Course Requirements",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "DATA",
+              "number": "127",
+              "title": "Presenting Data Effectively",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DATA",
+              "number": "140",
+              "title": "Computer Spreadsheets",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DATA",
+              "number": "180",
+              "title": "Database Design Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Information Technology Support Specialist I",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.ilisagvik.edu/information-technology/certificate/information-technology-support-specialist-i",
+      "total_credits": 17,
+      "gpa_minimum": 2,
+      "description": "Information technology (IT) is the use of computers to create, process, store, and exchange electronic data and information. IT is frequently used within the context of business operations as opposed to personal or entertainment technologies. An information technology system (IT system) is generally an information system, a communications system, or, more specifically speaking, a computer system–including all hardware, software, and associated equipment–operated by a limited group of IT users.\n\nIḷisaġvik College’s Information Technology program currently offers multiple pathways to earn certificates and a degree which should help students gain entry to technical positions, earn industry-recognized certification and/or goon to pursue further education in computer science, technical support and/or design. The degree offers the flexibility to earn technical knowledge and take elective courses in their field of interest (e.g., Allied Health,Business, Education, Construction Technology).",
+      "requirement_groups": [
+        {
+          "name": "Course Requirements",
+          "credits_required": 17,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BUS",
+              "number": "151",
+              "title": "Introduction to Business",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "IT",
+              "number": "101",
+              "title": "Keyboarding Skills",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "IT",
+              "number": "117",
+              "title": "Intro to Personal Computers",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "IT",
+              "number": "118",
+              "title": "Introduction to MS Office",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "IT",
+              "number": "119",
+              "title": "Internet Use and Security: IC3 Module 3",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "IT",
+              "number": "292",
+              "title": "Introduction to PC Hardware and Troubleshooting",
+              "credits": 4,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "computer-science"
+    },
+    {
+      "title": "Data Analysis II",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.ilisagvik.edu/information-technology/certificate/data-analysis-ii",
+      "total_credits": 24,
+      "gpa_minimum": 2,
+      "description": "Information technology (IT) is the use of computers to create, process, store, and exchange electronic data and information. IT is frequently used within the context of business operations as opposed to personal or entertainment technologies. An information technology system (IT system) is generally an information system, a communications system, or, more specifically speaking, a computer system–including all hardware, software, and associated equipment–operated by a limited group of IT users.\n\nIḷisaġvik College’s Information Technology program currently offers multiple pathways to earn certificates and a degree which should help students gain entry to technical positions, earn industry-recognized certification and/or goon to pursue further education in computer science, technical support and/or design. The degree offers the flexibility to earn technical knowledge and take elective courses in their field of interest (e.g., Allied Health,Business, Education, Construction Technology).",
+      "requirement_groups": [
+        {
+          "name": "General Education Coursework",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "COMM",
+              "number": "131",
+              "title": "Fundamentals of Oral Communications: Group Context",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Major Coursework",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "DATA",
+              "number": "127",
+              "title": "Presenting Data Effectively",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DATA",
+              "number": "140",
+              "title": "Computer Spreadsheets",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DATA",
+              "number": "180",
+              "title": "Database Design Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DATA",
+              "number": "227",
+              "title": "Introduction to Programming",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "STAT",
+              "number": "200",
+              "title": "Elementary Probability and Statistics",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Complete THREE credits from the following:",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BUS",
+              "number": "151",
+              "title": "Introduction to Business",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIM",
+              "number": "110",
+              "title": "Intro to Health Information Management",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "IT",
+              "number": "220",
+              "title": "Introduction to Project Planning & Scheduling",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "IT",
+              "number": "221",
+              "title": "Microsoft Project",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHIL",
+              "number": "101",
+              "title": "Introduction to Logic",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Iñupiaq Culture and Language I",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.ilisagvik.edu/inupiaq-studies/certificate/inupiaq-culture-and-language-i",
+      "total_credits": 15,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Course Requirements",
+          "credits_required": 8,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "COMM",
+              "number": "131",
+              "title": "Fundamentals of Oral Communications: Group Context",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "IT",
+              "number": "101",
+              "title": "Keyboarding Skills",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "LS",
+              "number": "101",
+              "title": "Library Information and Research",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Complete SEVEN credits of the following:",
+          "credits_required": 7,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ART",
+              "number": "105",
+              "title": "Beginning Drawing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ART",
+              "number": "113",
+              "title": "Introduction to Painting",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Information Technology Support Specialist II",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.ilisagvik.edu/information-technology/certificate/information-technology-support-specialist-ii",
+      "total_credits": 27,
+      "gpa_minimum": 2,
+      "description": "Information technology (IT) is the use of computers to create, process, store, and exchange electronic data and information. IT is frequently used within the context of business operations as opposed to personal or entertainment technologies. An information technology system (IT system) is generally an information system, a communications system, or, more specifically speaking, a computer system–including all hardware, software, and associated equipment–operated by a limited group of IT users.\n\nIḷisaġvik College’s Information Technology program currently offers multiple pathways to earn certificates and a degree which should help students gain entry to technical positions, earn industry-recognized certification and/or goon to pursue further education in computer science, technical support and/or design. The degree offers the flexibility to earn technical knowledge and take elective courses in their field of interest (e.g., Allied Health,Business, Education, Construction Technology).",
+      "requirement_groups": [
+        {
+          "name": "General Education Coursework",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "COMM",
+              "number": "131",
+              "title": "Fundamentals of Oral Communications: Group Context",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Major Coursework",
+          "credits_required": 21,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BUS",
+              "number": "151",
+              "title": "Introduction to Business",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "IT",
+              "number": "101",
+              "title": "Keyboarding Skills",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "IT",
+              "number": "117",
+              "title": "Intro to Personal Computers",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "IT",
+              "number": "118",
+              "title": "Introduction to MS Office",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "IT",
+              "number": "119",
+              "title": "Internet Use and Security: IC3 Module 3",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "IT",
+              "number": "291",
+              "title": "Network Installation and Maintenance",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "IT",
+              "number": "292",
+              "title": "Introduction to PC Hardware and Troubleshooting",
+              "credits": 4,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "computer-science"
+    },
+    {
       "title": "Liberal Arts",
       "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.ilisagvik.edu/liberal-arts/certificate/liberal-arts",
       "total_credits": 21,
       "gpa_minimum": 2,
-      "description": null,
+      "description": "The Liberal Arts Associate of Arts degree offers students an opportunity to explore a variety of disciplines, focus on specific interests, or take specialized courses required for their anticipated baccalaureate programs. The program incorporates the history, values, traditions, and knowledge systems of the Iñupiat to enhance student learning. The AA degree is usually considered a transfer degree and can serve as the freshman and sophomore years at four-year colleges and universities. Students wishing to transfer are strongly urged to meet with their academic advisors early in their first year. The AA degree is also an excellent preparation for many career fields. The general education portion of the Associate of Arts degree consists of core courses providing a base of knowledge in several domains.\n\nUpon successful completion of the Associate of Arts degree, graduates will be able to:",
       "requirement_groups": [
         {
           "name": "General Education Coursework",
@@ -1149,102 +1703,13 @@
       "matched_program_slug": "liberal-arts"
     },
     {
-      "title": "Iñupiaq Culture and Language II",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.ilisagvik.edu/inupiaq-studies/certificate/inupiaq-culture-and-language-ii",
-      "total_credits": 27,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "General Education Coursework",
-          "credits_required": 6,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "COMM",
-              "number": "131",
-              "title": "Fundamentals of Oral Communications: Group Context",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENGL",
-              "number": "111",
-              "title": "Introduction to Academic Writing",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Math/Science/Technology",
-          "credits_required": 2,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "IT",
-              "number": "100",
-              "title": "Introduction to Online Learning",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "LS",
-              "number": "101",
-              "title": "Library Information and Research",
-              "credits": 1,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Humanities/Social Science",
-          "credits_required": 3,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ANTH",
-              "number": "100",
-              "title": "Individuals, Society, and Culture",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Complete SIXTEEN credits of the following:",
-          "credits_required": 16,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ART",
-              "number": "105",
-              "title": "Beginning Drawing",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ART",
-              "number": "113",
-              "title": "Introduction to Painting",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Medical Office Management II",
       "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.ilisagvik.edu/office-management/certificate/medical-office-management-ii",
       "total_credits": 24,
       "gpa_minimum": 2,
-      "description": null,
+      "description": "IỊisaġvik College offers a number of business-related programs of study to prepare participants for employment at many different levels. The Office Management program is designed to provide students with the necessary skills to seek promotional advances from general office and clerical work to beginning-level Administrative Assistant toward management in an office environment.\n\nAll students must meet the College’s general admissions requirements.",
       "requirement_groups": [
         {
           "name": "General Education Coursework",
@@ -1334,87 +1799,19 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Iñupiaq Culture and Language I",
+      "title": "Medical Office Management I",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.ilisagvik.edu/inupiaq-studies/certificate/inupiaq-culture-and-language-i",
+      "catalog_url": "https://catalog.ilisagvik.edu/office-management/certificate/medical-office-management-i",
       "total_credits": 15,
       "gpa_minimum": 2,
-      "description": null,
+      "description": "IỊisaġvik College offers a number of business-related programs of study to prepare participants for employment at many different levels. The Office Management program is designed to provide students with the necessary skills to seek promotional advances from general office and clerical work to beginning-level Administrative Assistant toward management in an office environment.\n\nAll students must meet the College’s general admissions requirements.",
       "requirement_groups": [
         {
           "name": "Course Requirements",
-          "credits_required": 8,
+          "credits_required": 15,
           "choose_n": null,
           "courses": [
-            {
-              "prefix": "COMM",
-              "number": "131",
-              "title": "Fundamentals of Oral Communications: Group Context",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "IT",
-              "number": "101",
-              "title": "Keyboarding Skills",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "LS",
-              "number": "101",
-              "title": "Library Information and Research",
-              "credits": 1,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Complete SEVEN credits of the following:",
-          "credits_required": 7,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ART",
-              "number": "105",
-              "title": "Beginning Drawing",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ART",
-              "number": "113",
-              "title": "Introduction to Painting",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Office Management I",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.ilisagvik.edu/office-management/certificate/office-management-i",
-      "total_credits": 16,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Course Requirements",
-          "credits_required": 16,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BUS",
-              "number": "105",
-              "title": "Business Math",
-              "credits": 3,
-              "or_alternatives": []
-            },
             {
               "prefix": "BUS",
               "number": "106",
@@ -1424,15 +1821,15 @@
             },
             {
               "prefix": "BUS",
-              "number": "108",
-              "title": "Ten Key Mastery",
-              "credits": 1,
+              "number": "109",
+              "title": "Business English",
+              "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "BUS",
-              "number": "109",
-              "title": "Business English",
+              "prefix": "HLTH",
+              "number": "204",
+              "title": "Medical Terminology",
               "credits": 3,
               "or_alternatives": []
             },
@@ -1462,7 +1859,7 @@
       "catalog_url": "https://catalog.ilisagvik.edu/office-management/certificate/office-management-ii",
       "total_credits": 27,
       "gpa_minimum": 2,
-      "description": null,
+      "description": "IỊisaġvik College offers a number of business-related programs of study to prepare participants for employment at many different levels. The Office Management program is designed to provide students with the necessary skills to seek promotional advances from general office and clerical work to beginning-level Administrative Assistant toward management in an office environment.\n\nAll students must meet the College’s general admissions requirements.",
       "requirement_groups": [
         {
           "name": "General Education Coursework",
@@ -1572,6 +1969,121 @@
               "number": "209",
               "title": "Using Microsoft Outlook",
               "credits": 2,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Office Management I",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.ilisagvik.edu/office-management/certificate/office-management-i",
+      "total_credits": 16,
+      "gpa_minimum": 2,
+      "description": "IỊisaġvik College offers a number of business-related programs of study to prepare participants for employment at many different levels. The Office Management program is designed to provide students with the necessary skills to seek promotional advances from general office and clerical work to beginning-level Administrative Assistant toward management in an office environment.\n\nAll students must meet the College’s general admissions requirements.",
+      "requirement_groups": [
+        {
+          "name": "Course Requirements",
+          "credits_required": 16,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BUS",
+              "number": "105",
+              "title": "Business Math",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "106",
+              "title": "Time Management",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "108",
+              "title": "Ten Key Mastery",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "109",
+              "title": "Business English",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "IT",
+              "number": "101",
+              "title": "Keyboarding Skills",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "IT",
+              "number": "118",
+              "title": "Introduction to MS Office",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Tribal Emergency Management",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.ilisagvik.edu/tribal-emergency-management/certificate/tribal-emergency-management",
+      "total_credits": 15,
+      "gpa_minimum": 2,
+      "description": "This is the overview course for learning about emergency management in Tribal communities. It addresses historical and current concepts, policies, and doctrine that guide disaster preparedness, response, recovery, and mitigation in American Indian and Alaska Native communities. It introduces common challenges for tribal emergency management professionals and programs.\n\nTEM-110 introduces students to how sovereign Tribal Nations can use incident management structures like the Incident Command System (ICS) to coordinate response to disruptive events like emergencies and disasters. It will offer generalized principles of incident management but will also provide other examples of structures used in existing tribal emergency management programs.",
+      "requirement_groups": [
+        {
+          "name": "Coursework Requirements",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "TEM",
+              "number": "100",
+              "title": "Introduction to Tribal Emergency Management",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEM",
+              "number": "110",
+              "title": "Incident Management Structures in Tribal Emergency Management",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEM",
+              "number": "120",
+              "title": "Planning in Tribal Emergency Management",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEM",
+              "number": "200",
+              "title": "Tribal Emergency Operations Centers (TEOC)",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TEM",
+              "number": "250",
+              "title": "Historic and Cultural Protection and Preservation",
+              "credits": 3,
               "or_alternatives": []
             }
           ]
