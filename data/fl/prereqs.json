@@ -1105,6 +1105,10 @@
       "ENC 0022"
     ]
   },
+  "AMH 2010H": {
+    "text": "Prerequisite Appropriate score on the college placement test or Admission to Honors College or Permission of the Program",
+    "courses": []
+  },
   "AMH 2020": {
     "text": "ENC 1101 (min C)REA 0017 (min C) or REA 0017 (min C*) or REA 0011 (min C) or REA 0011 (min C*) or REA 0019 (min C) or REA 0019 (min C*) and ENC 0025 (min C) or ENC 0025 (min C*) or ENC 0021 (min C) or ENC 0021 (min C*) or ENC 0022 (min C) or ENC 0022 (min C*)",
     "courses": [
@@ -1136,10 +1140,12 @@
     ]
   },
   "AML 2010": {
-    "text": "ENC 1102 (min C) or ENC 1102 (min Z) or ENC 1102H (min C)",
+    "text": "Prerequisite ENC 1101 with a minimum grade of C or Prerequisite ENC 1101H with a minimum grade of C or Prerequisite IDS 1101H with a minimum grade of C or Prerequisite IDS 1111H with a minimum grade o…",
     "courses": [
-      "ENC 1102",
-      "ENC 1102H"
+      "ENC 1101",
+      "ENC 1101H",
+      "IDS 1101H",
+      "IDS 1111H"
     ]
   },
   "AML 2020": {
@@ -1206,9 +1212,11 @@
     ]
   },
   "ANT 2410": {
-    "text": "ENC1101",
+    "text": "Prerequisite ENC 0025 and Prerequisite REA 0017) or Prerequisite EAP 1695 or Prerequisite appropriate score on the college placement test",
     "courses": [
-      "ENC1101"
+      "ENC 0025",
+      "REA 0017",
+      "EAP 1695"
     ]
   },
   "ANT 2511": {
@@ -1240,11 +1248,25 @@
       "CGS 1570"
     ]
   },
+  "APA 2501": {
+    "text": "Prerequisite: ACG 2021 Financial Accounting with a grade of &ldquo;C&rdquo; or higher",
+    "courses": [
+      "ACG 2021"
+    ]
+  },
   "ARC 1301C": {
     "text": "ARH 2060 (min C) and EGN 1110C (min C)",
     "courses": [
       "ARH 2060",
       "EGN 1110C"
+    ]
+  },
+  "ARC 2201": {
+    "text": "Prerequisite ARC 1301C with a minimum grade of C or Prerequisite ARC 1701 with a minimum grade of C or Prerequisite ARC 1702 with a minimum grade of C",
+    "courses": [
+      "ARC 1301C",
+      "ARC 1701",
+      "ARC 1702"
     ]
   },
   "ARC 2303C": {
@@ -1288,15 +1310,17 @@
     ]
   },
   "ARH 2050": {
-    "text": "ENC 1101 (min C)",
+    "text": "Prerequisite ENC 0025 or Prerequisite EAP 1695) or Prerequisite appropriate score on the college placement test",
     "courses": [
-      "ENC 1101"
+      "ENC 0025",
+      "EAP 1695"
     ]
   },
   "ARH 2051": {
-    "text": "ENC 1101 (min C)",
+    "text": "Prerequisite ENC 0025 or Prerequisite EAP 1695 or Prerequisite appropriate score on the college placement test",
     "courses": [
-      "ENC 1101"
+      "ENC 0025",
+      "EAP 1695"
     ]
   },
   "ARR 0005C": {
@@ -1417,6 +1441,12 @@
       "ART 1300C"
     ]
   },
+  "ART 1330C": {
+    "text": "Prerequisite ART 1300C with a minimum grade of C",
+    "courses": [
+      "ART 1300C"
+    ]
+  },
   "ART 1751C": {
     "text": "ART 1750C (min D)",
     "courses": [
@@ -1440,6 +1470,12 @@
     "text": "DIG 2300C (min C)",
     "courses": [
       "DIG 2300C"
+    ]
+  },
+  "ART 2400C": {
+    "text": "Prerequisite ART 1300C with a minimum grade of C",
+    "courses": [
+      "ART 1300C"
     ]
   },
   "ART 2401C": {
@@ -1654,6 +1690,25 @@
       "ASL 1140C"
     ]
   },
+  "ASL 1150C": {
+    "text": "Prerequisite ASL 1140C with a minimum grade of C",
+    "courses": [
+      "ASL 1140C"
+    ]
+  },
+  "ASL 1160C": {
+    "text": "Prerequisite ASL 1150C with a minimum grade of C and Pre- or Co-requisite ASL 1510 with a minimum grade of C) and (Prerequisite EAP 1695 or Appropriate score on the college placement test or ((Prerequ…",
+    "courses": [
+      "ASL 1150C",
+      "ASL 1510",
+      "EAP 1695",
+      "ENC 0025",
+      "ENC 0027",
+      "ENC 0056",
+      "REA 0017",
+      "REA 0056"
+    ]
+  },
   "ASL 1210": {
     "text": "ASL1130",
     "courses": [
@@ -1692,6 +1747,16 @@
       "ASL 1150"
     ]
   },
+  "ASL 2210C": {
+    "text": "Prerequisite ASL 1160C with a minimum grade of C and Prerequisite ASL 1510 with a minimum grade of C) and ((Prerequisite ENC 0025 and Prerequisite REA 0017) or Prerequisite EAP 1695 or (Prerequisite a…",
+    "courses": [
+      "ASL 1160C",
+      "ASL 1510",
+      "ENC 0025",
+      "REA 0017",
+      "EAP 1695"
+    ]
+  },
   "AST 1002": {
     "text": "MAT 0024 (min S.) or MAT 0027 (min S.) or MAT 0028 (min S.) or MAT 0014 (min C.) or MAT 0055 (min S.) or MAT 1033 (min C) or MAC 1105 (min C) or MAC 1105C (min C) or MAC 1114 (min C) or MAC 1140 (min C) or MGF 1106 (min C) or MGF 1107 (min C) or STA 2023 (min C)",
     "courses": [
@@ -1715,6 +1780,172 @@
     "courses": [
       "AST 1002",
       "MAC 1105"
+    ]
+  },
+  "AST 1003": {
+    "text": "Prerequisite ENC 0025 and Prerequisite REA 0017 and Prerequisite MAT 0028",
+    "courses": [
+      "ENC 0025",
+      "REA 0017",
+      "MAT 0028"
+    ]
+  },
+  "AST 1022L": {
+    "text": "Prerequisite AST 1004",
+    "courses": [
+      "AST 1004"
+    ]
+  },
+  "ATE 1412C": {
+    "text": "Prerequisite ATE 1110 with a minimum grade of C and Prerequisite ATE 1110L with a minimum grade of C",
+    "courses": [
+      "ATE 1110",
+      "ATE 1110L"
+    ]
+  },
+  "ATE 1654L": {
+    "text": "Prerequisite ATE 1650L with a minimum grade of C and Prerequisite ATE 1110 with a minimum grade of C and Pre- or Co-requisite ATE 1944 with a minimum grade of C",
+    "courses": [
+      "ATE 1650L",
+      "ATE 1110",
+      "ATE 1944"
+    ]
+  },
+  "ATE 1671L": {
+    "text": "Prerequisite ATE 2651L with a minimum grade of C",
+    "courses": [
+      "ATE 2651L"
+    ]
+  },
+  "ATE 1944": {
+    "text": "Prerequisite ATE 1943 with a minimum grade of C and Pre- or Co-requisite ATE 1654L with a minimum grade of C",
+    "courses": [
+      "ATE 1943",
+      "ATE 1654L"
+    ]
+  },
+  "ATE 2611": {
+    "text": "Prerequisite ATE 2651L with a minimum grade of C and Pre- or Co-requisite ATE 1211 with a minimum grade of C",
+    "courses": [
+      "ATE 2651L",
+      "ATE 1211"
+    ]
+  },
+  "ATE 2612": {
+    "text": "Prerequisite ATE 2631 with a minimum grade of C and Pre- or Co-requisite ATE 1211 with a minimum grade of C and Pre- or Co-requisite ATE 2638 with a minimum grade of C",
+    "courses": [
+      "ATE 2631",
+      "ATE 1211",
+      "ATE 2638"
+    ]
+  },
+  "ATE 2634": {
+    "text": "Prerequisite ATE 1211 with a minimum grade of C",
+    "courses": [
+      "ATE 1211"
+    ]
+  },
+  "ATE 2638": {
+    "text": "Prerequisite Any College-level BSC or ZOO and Prerequisite ATE 1211 with a minimum grade of C and Pre- or Co-requisite ATE 2638L",
+    "courses": [
+      "ATE 1211",
+      "ATE 2638L"
+    ]
+  },
+  "ATE 2639": {
+    "text": "Prerequisite ATE 2638 with a minimum grade of C and Pre- or Co-requisite ATE 2639L with a minimum grade of C",
+    "courses": [
+      "ATE 2638",
+      "ATE 2639L"
+    ]
+  },
+  "ATE 2639L": {
+    "text": "Prerequisite ATE 2638L with a minimum grade of C and Pre- or Co-requisite ATE 2639 with a minimum grade of C",
+    "courses": [
+      "ATE 2638L",
+      "ATE 2639"
+    ]
+  },
+  "ATE 2651L": {
+    "text": "Prerequisite ATE 1211 with a minimum grade of C and Prerequisite ATE 1311L with a minimum grade of C and Prerequisite ATE 1654L with a minimum grade of C and Pre- or Co-requisite ATE 2611 with a minim…",
+    "courses": [
+      "ATE 1211",
+      "ATE 1311L",
+      "ATE 1654L",
+      "ATE 2611",
+      "ATE 2631"
+    ]
+  },
+  "ATE 2653L": {
+    "text": "Prerequisite ATE 2651L with a minimum grade of C",
+    "courses": [
+      "ATE 2651L"
+    ]
+  },
+  "ATE 2661": {
+    "text": "Prerequisite ATE 1636 with a minimum grade of C",
+    "courses": [
+      "ATE 1636"
+    ]
+  },
+  "ATE 2945": {
+    "text": "Prerequisite ATE 1944 with a minimum grade of C and Pre- or Co-requisite ATE 2651L with a minimum grade of C",
+    "courses": [
+      "ATE 1944",
+      "ATE 2651L"
+    ]
+  },
+  "ATE 2946": {
+    "text": "Prerequisite ATE 2945 with a minimum grade of C and Pre- or Co-requisite ATE 2639L with a minimum grade of C and Pre- or Co-requisite ATE 2653L with a minimum grade of C",
+    "courses": [
+      "ATE 2945",
+      "ATE 2639L",
+      "ATE 2653L"
+    ]
+  },
+  "ATE 3344": {
+    "text": "Prerequisite ATE 3052 with a minimum grade of C and (Admission to Veterinary Technology (Bachelor of Applied Science) (VETTC-BAS) or Admission to Veterinary Practice Management (Certificate with Finan…",
+    "courses": [
+      "ATE 3052"
+    ]
+  },
+  "ATE 3515": {
+    "text": "Prerequisite ATE 3052 with a minimum grade of C",
+    "courses": [
+      "ATE 3052"
+    ]
+  },
+  "ATE 4317": {
+    "text": "Prerequisite ATE 3052 with a minimum grade of C",
+    "courses": [
+      "ATE 3052"
+    ]
+  },
+  "ATE 4637": {
+    "text": "Prerequisite ATE 3615 with a minimum grade of C",
+    "courses": [
+      "ATE 3615"
+    ]
+  },
+  "ATE 4850": {
+    "text": "Prerequisite ATE 3052 with a minimum grade of C",
+    "courses": [
+      "ATE 3052"
+    ]
+  },
+  "ATE 4854": {
+    "text": "Prerequisite ATE 3052 with a minimum grade of C and (Admission to Veterinary Practice Management (Certificate with Financial Aid Eligibility) (VETTC-CT) or Admission to Veterinary Technology (Bachelor…",
+    "courses": [
+      "ATE 3052"
+    ]
+  },
+  "ATE 4940": {
+    "text": "Prerequisite ATE 3052 with a minimum grade of C and Prerequisite ATE 3515 with a minimum grade of C and Prerequisite ATE 3615 with a minimum grade of C and Prerequisite ATE 4854 with a minimum grade o…",
+    "courses": [
+      "ATE 3052",
+      "ATE 3515",
+      "ATE 3615",
+      "ATE 4854"
     ]
   },
   "ATF 1100L": {
@@ -2033,9 +2264,10 @@
     ]
   },
   "BCH 4024": {
-    "text": "CHM2211C",
+    "text": "Prerequisite CHM 2211 with a minimum grade of C and Prerequisite PCB 3063 with a minimum grade of C",
     "courses": [
-      "CHM2211C"
+      "CHM 2211",
+      "PCB 3063"
     ]
   },
   "BCH 4052": {
@@ -2091,6 +2323,12 @@
       "BCN 1001"
     ]
   },
+  "BCN 1596": {
+    "text": "Prerequisite REA 0007",
+    "courses": [
+      "REA 0007"
+    ]
+  },
   "BCN 1757": {
     "text": "BCN 1001 (min C)",
     "courses": [
@@ -2102,6 +2340,10 @@
     "courses": [
       "BCN 1001"
     ]
+  },
+  "BCN 2054C": {
+    "text": "Prerequisite Any college-level math course with an MAC, MAT, MGF, or STA prefix with a minimum grade of \"C",
+    "courses": []
   },
   "BCN 2272": {
     "text": "BCN 1001 (min C)",
@@ -2139,6 +2381,14 @@
       "BCN 1001"
     ]
   },
+  "BCT 1770": {
+    "text": "Prerequisite ARC 2461C with a minimum grade of C and ((Prerequisite BCN 1272 with a minimum grade of C or Prerequisite BCN 1251C with a minimum grade of C) or Permission of the Program )",
+    "courses": [
+      "ARC 2461C",
+      "BCN 1272",
+      "BCN 1251C"
+    ]
+  },
   "BCT 2743": {
     "text": "BCN 1001 (min C)",
     "courses": [
@@ -2156,6 +2406,13 @@
     "courses": [
       "BCV0603C",
       "BCV0640C"
+    ]
+  },
+  "BME 2930": {
+    "text": "Prerequisite ETS 1412C with a minimum grade of C and Pre- or Co-requisite ETS 2424C with a minimum grade of C",
+    "courses": [
+      "ETS 1412C",
+      "ETS 2424C"
     ]
   },
   "BOT 3015": {
@@ -2252,6 +2509,12 @@
     "text": "ENC 0027 (min C) or ENC 1101 (min C)",
     "courses": [
       "ENC 0027",
+      "ENC 1101"
+    ]
+  },
+  "BSC 1083": {
+    "text": "Prerequisite ENC 1101 with a minimum grade of C",
+    "courses": [
       "ENC 1101"
     ]
   },
@@ -2372,6 +2635,15 @@
       "BSC 1085C"
     ]
   },
+  "BSC 1930": {
+    "text": "Prerequisite ENC 0025 and Prerequisite REA 0017 and Prerequisite MAT 0028) or (Prerequisite EAP 1695 and Prerequisite MAT 0028) or Prerequisite appropriate score on the college placement test",
+    "courses": [
+      "ENC 0025",
+      "REA 0017",
+      "MAT 0028",
+      "EAP 1695"
+    ]
+  },
   "BSC 1942": {
     "text": "CHM2045C and BSC2419C",
     "courses": [
@@ -2426,16 +2698,18 @@
     ]
   },
   "BSC 2011L": {
-    "text": "BSC 2010C (min C) or BSC 2010 (min C) and BSC 2010L (min C)",
+    "text": "Prerequisite BSC 2010 and Prerequisite BSC 2010L) or (Prerequisite BSC 2010CH and Pre- or Co-requisite BSC 2011)",
     "courses": [
-      "BSC 2010C",
       "BSC 2010",
-      "BSC 2010L"
+      "BSC 2010L",
+      "BSC 2010C",
+      "BSC 2011"
     ]
   },
   "BSC 2085": {
-    "text": "BSC 2085L (min D)",
+    "text": "Prerequisite ENC 1101 with a minimum grade of C and Pre- or Co-requisite BSC 2085L",
     "courses": [
+      "ENC 1101",
       "BSC 2085L"
     ]
   },
@@ -2507,18 +2781,44 @@
       "BSC2093C"
     ]
   },
-  "BSC 2419C": {
-    "text": "MCB2010C and CHM1025C and BSC2427C",
+  "BSC 2250C": {
+    "text": "Prerequisite ENC 0025 and Prerequisite REA 0017 and Prerequisite MAT 0028) or (Prerequisite EAP 1695 and Prerequisite MAT 0028) or Prerequisite satisfactory score on the SPC Placement Test",
     "courses": [
-      "MCB2010C",
-      "CHM1025C",
-      "BSC2427C"
+      "ENC 0025",
+      "REA 0017",
+      "MAT 0028",
+      "EAP 1695"
+    ]
+  },
+  "BSC 2362": {
+    "text": "Prerequisite ENC 0025 and Prerequisite REA 0017 and Prerequisite MAT 0018) or (Prerequisite EAP 1695 and Prerequisite MAT 0028) or Appropriate scores on the SPC Placement Test or Permission of the Pro…",
+    "courses": [
+      "ENC 0025",
+      "REA 0017",
+      "MAT 0018",
+      "EAP 1695",
+      "MAT 0028"
+    ]
+  },
+  "BSC 2419C": {
+    "text": "Prerequisite BSC 2426C with a minimum grade of C or (Prerequisite MCB 2010 with a minimum grade of C and (Prerequisite MCB 2010L with a minimum grade of C or Prerequisite MCB 2010CH with a minimum gra…",
+    "courses": [
+      "BSC 2426C",
+      "MCB 2010",
+      "MCB 2010L",
+      "MCB 2010C",
+      "MCB 3020",
+      "MCB 3020L",
+      "MCB 3020C"
     ]
   },
   "BSC 2426C": {
-    "text": "BSC 2010C (min C)",
+    "text": "Prerequisite BSC 2010 with a minimum grade of C and (Prerequisite BSC 2010L with a minimum grade of C or Prerequisite BSC 2010CH with a minimum grade of C) ) and Pre- or Co-requisite BSC 2420 with a m…",
     "courses": [
-      "BSC 2010C"
+      "BSC 2010",
+      "BSC 2010L",
+      "BSC 2010C",
+      "BSC 2420"
     ]
   },
   "BSC 2427C": {
@@ -2527,6 +2827,16 @@
       "MAC1105",
       "MAC1105C",
       "BSC1421C"
+    ]
+  },
+  "BSC 2435": {
+    "text": "Prerequisite BSC 2010 with a minimum grade of C and (Prerequisite BSC 2010L with a minimum grade of C or Prerequisite BSC 2010CH with a minimum grade of C) ) and (Pre- or Co-requisite BSC 2420 with a …",
+    "courses": [
+      "BSC 2010",
+      "BSC 2010L",
+      "BSC 2010C",
+      "BSC 2420",
+      "PCB 2061C"
     ]
   },
   "BSC 2932": {
@@ -2544,6 +2854,52 @@
       "BSC PERMT"
     ]
   },
+  "BSC 3017": {
+    "text": "Prerequisite BSC 2011 with a minimum grade of C and Prerequisite BSC 2011L with a minimum grade of C",
+    "courses": [
+      "BSC 2011",
+      "BSC 2011L"
+    ]
+  },
+  "BSC 3052": {
+    "text": "Prerequisite PCB 3043 with a minimum grade of C and Prerequisite PCB 3043L with a minimum grade of C",
+    "courses": [
+      "PCB 3043",
+      "PCB 3043L"
+    ]
+  },
+  "BSC 3312C": {
+    "text": "Prerequisite BSC 2011 with a minimum grade of C and Prerequisite BSC 2011L with a minimum grade of C",
+    "courses": [
+      "BSC 2011",
+      "BSC 2011L"
+    ]
+  },
+  "BSC 3453C": {
+    "text": "Prerequisite PCB 3063 with a minimum grade of C and Prerequisite PCB 3063L with a minimum grade of C) and (Prerequisite PCB 3043 with a minimum grade of C and Prerequisite PCB 3043L with a minimum gra…",
+    "courses": [
+      "PCB 3063",
+      "PCB 3063L",
+      "PCB 3043",
+      "PCB 3043L",
+      "MCB 3020",
+      "MCB 3020L"
+    ]
+  },
+  "BSC 3931": {
+    "text": "Prerequisites may vary according to topic",
+    "courses": []
+  },
+  "BSC 3931L": {
+    "text": "Prerequisites may vary according to topic",
+    "courses": []
+  },
+  "BSC 4905C": {
+    "text": "Prerequisite BSC 3017 with a minimum grade of C and Permission of the Program",
+    "courses": [
+      "BSC 3017"
+    ]
+  },
   "BSC 4910": {
     "text": "BSC 2011 (min C) and BSC 2011L (min C) and CHM 1046 (min C) and CHM 1046L (min C)",
     "courses": [
@@ -2551,6 +2907,12 @@
       "BSC 2011L",
       "CHM 1046",
       "CHM 1046L"
+    ]
+  },
+  "BSC 4940": {
+    "text": "Prerequisite BSC 3017 with a minimum grade of C",
+    "courses": [
+      "BSC 3017"
     ]
   },
   "BUL 2241": {
@@ -2574,6 +2936,12 @@
       "CTS 2321C"
     ]
   },
+  "CAI 2511": {
+    "text": "Prerequisite COP 1044 with a minimum grade of C",
+    "courses": [
+      "COP 1044"
+    ]
+  },
   "CAI 2800": {
     "text": "CAI 1000 (min C)",
     "courses": [
@@ -2594,6 +2962,12 @@
       "CAP2140C"
     ]
   },
+  "CAP 2762": {
+    "text": "Prerequisite CTS 2450 with a minimum grade of C",
+    "courses": [
+      "CTS 2450"
+    ]
+  },
   "CAP 3052": {
     "text": "GRA 3102 (min C)",
     "courses": [
@@ -2612,6 +2986,12 @@
     "text": "COP 3710 (min D)",
     "courses": [
       "COP 3710"
+    ]
+  },
+  "CAP 4770": {
+    "text": "Prerequisite ISM 4545 with a minimum grade of C",
+    "courses": [
+      "ISM 4545"
     ]
   },
   "CAP 4774": {
@@ -2677,6 +3057,12 @@
     "text": "CCJ1020",
     "courses": [
       "CCJ1020"
+    ]
+  },
+  "CCJ 2720": {
+    "text": "Prerequisite CCJ 1020",
+    "courses": [
+      "CCJ 1020"
     ]
   },
   "CCJ 2932": {
@@ -2767,6 +3153,18 @@
       "CEN4802C"
     ]
   },
+  "CEN 4031": {
+    "text": "Prerequisite COP 3035 with a minimum grade of C",
+    "courses": [
+      "COP 3035"
+    ]
+  },
+  "CEN 4722": {
+    "text": "Prerequisite ISM 3232 with a minimum grade of C",
+    "courses": [
+      "ISM 3232"
+    ]
+  },
   "CEN 4930C": {
     "text": "CEN 4025C (min C)",
     "courses": [
@@ -2795,6 +3193,18 @@
       "EET 1084C"
     ]
   },
+  "CET 1114C": {
+    "text": "Prerequisite EET 1084C with a minimum grade of C",
+    "courses": [
+      "EET 1084C"
+    ]
+  },
+  "CET 1172C": {
+    "text": "Prerequisite CET 1171C with a minimum grade of C",
+    "courses": [
+      "CET 1171C"
+    ]
+  },
   "CET 1178C": {
     "text": "CGS 1060 (min C) or CGS 1060",
     "courses": [
@@ -2817,6 +3227,12 @@
   },
   "CET 1605": {
     "text": "CET 1600 (min C)",
+    "courses": [
+      "CET 1600"
+    ]
+  },
+  "CET 1610": {
+    "text": "Prerequisite CET 1600 with a minimum grade of C or Prerequisite CCNA certification",
     "courses": [
       "CET 1600"
     ]
@@ -2884,6 +3300,12 @@
       "CET 2610C"
     ]
   },
+  "CET 2620": {
+    "text": "Prerequisite CET 2615 with a minimum grade of C or CCNA certification",
+    "courses": [
+      "CET 2615"
+    ]
+  },
   "CET 2660C": {
     "text": "CET 1600C (min C)",
     "courses": [
@@ -2895,6 +3317,12 @@
     "courses": [
       "CGS 1061C",
       "CET 1600C"
+    ]
+  },
+  "CET 2685": {
+    "text": "Prerequisite CET 2615 with a minimum grade of C or Prerequisite CCNA certification",
+    "courses": [
+      "CET 2615"
     ]
   },
   "CET 2793": {
@@ -2924,6 +3352,18 @@
       "CET 1600C"
     ]
   },
+  "CGS 1200C": {
+    "text": "Prerequisite CGS 1831 with a minimum grade of C",
+    "courses": [
+      "CGS 1831"
+    ]
+  },
+  "CGS 1301": {
+    "text": "Prerequisite CGS 1100 with a minimum grade of C",
+    "courses": [
+      "CGS 1100"
+    ]
+  },
   "CGS 1510": {
     "text": "CGS 1061 (min D) or CGS 1100 (min D)",
     "courses": [
@@ -2932,8 +3372,9 @@
     ]
   },
   "CGS 1515": {
-    "text": "CGS 1100 (min C)",
+    "text": "Prerequisite COP 1000 with a minimum grade of C or Prerequisite CGS 1100 with a minimum grade of C",
     "courses": [
+      "COP 1000",
       "CGS 1100"
     ]
   },
@@ -2946,11 +3387,34 @@
       "CGS PERMT"
     ]
   },
+  "CGS 1545": {
+    "text": "Prerequisite COP 1000 with a minimum grade of C or Prerequisite CGS 1100 with a minimum grade of C",
+    "courses": [
+      "COP 1000",
+      "CGS 1100"
+    ]
+  },
+  "CGS 1560": {
+    "text": "Prerequisite COP 1000 with a minimum grade of C or Prerequisite CGS 1100 with a minimum grade of C",
+    "courses": [
+      "COP 1000",
+      "CGS 1100"
+    ]
+  },
   "CGS 1570": {
     "text": "CGS 1000 (min C) or CGS PERM",
     "courses": [
       "CGS 1000",
       "CGS PERM"
+    ]
+  },
+  "CGS 1831": {
+    "text": "Prerequisite CGS 1070 with a minimum grade of C or Prerequisite CGS 1100 with a minimum grade of C or Prerequisite COP 1000 with a minimum grade of C or Prerequisite CGS 1309 with a minimum grade of C…",
+    "courses": [
+      "CGS 1070",
+      "CGS 1100",
+      "COP 1000",
+      "CGS 1309"
     ]
   },
   "CGS 2108": {
@@ -3003,10 +3467,31 @@
       "CGS 1100C"
     ]
   },
+  "CGS 2651": {
+    "text": "Prerequisite CGS 1100 with a minimum grade of C or Prerequisite COP 1000 with a minimum grade of C or Prerequisite CGS 1309 with a minimum grade of C or Prerequisite CGS 1070 with a minimum grade of C",
+    "courses": [
+      "CGS 1100",
+      "COP 1000",
+      "CGS 1309",
+      "CGS 1070"
+    ]
+  },
+  "CGS 2811": {
+    "text": "Prerequisite CTS 1120 with a minimum grade of C",
+    "courses": [
+      "CTS 1120"
+    ]
+  },
   "CGS 2820C": {
     "text": "COP2822C",
     "courses": [
       "COP2822C"
+    ]
+  },
+  "CGS 2823": {
+    "text": "Prerequisite CGS 1831 with a minimum grade of C",
+    "courses": [
+      "CGS 1831"
     ]
   },
   "CGS 3092": {
@@ -3325,6 +3810,12 @@
       "CET PERMT"
     ]
   },
+  "CIS 1358": {
+    "text": "Prerequisite CTS 1120",
+    "courses": [
+      "CTS 1120"
+    ]
+  },
   "CIS 1950C": {
     "text": "ACG 2072 (min D) and Computer Software Engineering 2071 (min D) and CIS 2321 (min D) and COP 1170 (min D) and CTS 1441 (min D) and CTS 2433 (min D) and CTS 2450 (min D) and ENC 2210 (min D) and MAC 1105 (min D) or MGF 1106 (min D) or MGF 1107 (min D)",
     "courses": [
@@ -3407,6 +3898,12 @@
       "CTS 2134"
     ]
   },
+  "CIS 2642C": {
+    "text": "Prerequisite CTS 1193 with a minimum grade of C",
+    "courses": [
+      "CTS 1193"
+    ]
+  },
   "CIS 2772C": {
     "text": "CET 1600C (min D) and CTS 1131C (min D)",
     "courses": [
@@ -3460,6 +3957,12 @@
     "courses": [
       "COP 2250",
       "CTS 2193"
+    ]
+  },
+  "CIS 4651": {
+    "text": "Prerequisite CIS 3083 with a minimum grade of C",
+    "courses": [
+      "CIS 3083"
     ]
   },
   "CIS 4782": {
@@ -3518,6 +4021,14 @@
       "ENC 1101"
     ]
   },
+  "CJE 1640": {
+    "text": "Prerequisite ENC 0025 and Prerequisite REA 0017) or Prerequisite EAP 1695 or Prerequisite appropriate scores on the English and Reading placement tests",
+    "courses": [
+      "ENC 0025",
+      "REA 0017",
+      "EAP 1695"
+    ]
+  },
   "CJE 1643": {
     "text": "CJE 1640 (min C) and CJE 1641 (min C)",
     "courses": [
@@ -3569,6 +4080,48 @@
     "courses": [
       "ENC 0027",
       "ENC 1101"
+    ]
+  },
+  "CJE 2644": {
+    "text": "Prerequisite ENC 0025 and Prerequisite REA 0017) or Prerequisite EAP 1695 or Prerequisite appropriate scores on the English and Reading placement tests",
+    "courses": [
+      "ENC 0025",
+      "REA 0017",
+      "EAP 1695"
+    ]
+  },
+  "CJE 2645": {
+    "text": "Prerequisite ENC 0025 with a minimum grade of C and Prerequisite REA 0017 with a minimum grade of C) or Prerequisite appropriate scores on the English and Reading placement tests",
+    "courses": [
+      "ENC 0025",
+      "REA 0017"
+    ]
+  },
+  "CJE 2671": {
+    "text": "Prerequisite CJE 2644 with a minimum grade of C and Prerequisite CJE 2676 with a minimum grade of C and Pre- or Co-requisite CJE 1643 with a minimum grade of C and Pre- or Co-requisite CJL 2610 with a…",
+    "courses": [
+      "CJE 2644",
+      "CJE 2676",
+      "CJE 1643",
+      "CJL 2610",
+      "CJE 2645",
+      "CJE 2672"
+    ]
+  },
+  "CJE 2672": {
+    "text": "Prerequisite ENC 0025 and Prerequisite REA 0017) or Prerequisite EAP 1695 or Prerequisite appropriate scores on the English and Reading placement tests",
+    "courses": [
+      "ENC 0025",
+      "REA 0017",
+      "EAP 1695"
+    ]
+  },
+  "CJE 2676": {
+    "text": "Prerequisite ENC 0025 and Prerequisite REA 0017) or Prerequisite EAP 1695 or Prerequisite appropriate score on the college placement tests",
+    "courses": [
+      "ENC 0025",
+      "REA 0017",
+      "EAP 1695"
     ]
   },
   "CJE 3341": {
@@ -3644,6 +4197,16 @@
     "courses": [
       "ENC 0027",
       "ENC 1101"
+    ]
+  },
+  "CJL 2610": {
+    "text": "Prerequisite CJE 2644 with a minimum grade of C and Prerequisite CJE 2676 with a minimum grade of C and Pre- or Co-requisite CJE 1643 with a minimum grade of C and Pre- or Co-requisite CJE 2645 with a…",
+    "courses": [
+      "CJE 2644",
+      "CJE 2676",
+      "CJE 1643",
+      "CJE 2645",
+      "CJE 2672"
     ]
   },
   "CJL 3010": {
@@ -3749,6 +4312,19 @@
       "CNT4509C"
     ]
   },
+  "COM 3120": {
+    "text": "Prerequisite ENC 1101 with a minimum grade of C or Prerequisite ENC 1101H with a minimum grade of C or Prerequisite IDS 1106 with a minimum grade of C) and (Prerequisite SPC 1017 with a minimum grade …",
+    "courses": [
+      "ENC 1101",
+      "ENC 1101H",
+      "IDS 1106",
+      "SPC 1017",
+      "SPC 1017H",
+      "SPC 1065",
+      "SPC 1608",
+      "SPC 1608H"
+    ]
+  },
   "COP 1000": {
     "text": "CGS 1061 (min D) or CGS 1100 (min D) and MAC 1105 (min C) or MGF 1100 (min C) or MGF 1130 (min C) or MGF 1131 (min C) or MAC 1114 (min C) or MAC 1140 (min C) or MAC 1147 (min C) or MAC 2233 (min C) or MAC 2311 (min C) or MAC 2312 (min C) or MAT 0028 (min C) or MAT 1033 (min C) or MGF 1106 (min C) or MGF 1107 (min C) or STA 2023 (min C)",
     "courses": [
@@ -3769,6 +4345,12 @@
       "MGF 1106",
       "MGF 1107",
       "STA 2023"
+    ]
+  },
+  "COP 1044": {
+    "text": "Prerequisite COP 1000 with a minimum grade of C",
+    "courses": [
+      "COP 1000"
     ]
   },
   "COP 1170": {
@@ -3808,6 +4390,12 @@
       "COP 1000"
     ]
   },
+  "COP 2222": {
+    "text": "Prerequisite COP 2220 with a minimum grade of C",
+    "courses": [
+      "COP 2220"
+    ]
+  },
   "COP 2224": {
     "text": "COP 1000 (min C)",
     "courses": [
@@ -3820,6 +4408,12 @@
       "COP 1000"
     ]
   },
+  "COP 2251": {
+    "text": "Prerequisite COP 2250",
+    "courses": [
+      "COP 2250"
+    ]
+  },
   "COP 2334C": {
     "text": "COP1000C",
     "courses": [
@@ -3830,6 +4424,12 @@
     "text": "COP 1000 (min C)",
     "courses": [
       "COP 1000"
+    ]
+  },
+  "COP 2362": {
+    "text": "Prerequisite COP 2360",
+    "courses": [
+      "COP 2360"
     ]
   },
   "COP 2373": {
@@ -3850,6 +4450,18 @@
       "COP1000C"
     ]
   },
+  "COP 2654": {
+    "text": "Prerequisite COP 1000 with a minimum grade of C",
+    "courses": [
+      "COP 1000"
+    ]
+  },
+  "COP 2660": {
+    "text": "Prerequisite COP 2251 with a minimum grade of C",
+    "courses": [
+      "COP 2251"
+    ]
+  },
   "COP 2800": {
     "text": "COP 1000 (min D)",
     "courses": [
@@ -3867,6 +4479,13 @@
     "courses": [
       "COP 1000",
       "CGS 1820"
+    ]
+  },
+  "COP 2803": {
+    "text": "Prerequisite COP 2801 with a minimum grade of C and Prerequisite CGS 1831 with a minimum grade of C",
+    "courses": [
+      "COP 2801",
+      "CGS 1831"
     ]
   },
   "COP 2805": {
@@ -3889,6 +4508,13 @@
       "COP2360C"
     ]
   },
+  "COP 2839": {
+    "text": "Prerequisite COP 2837 or Prerequisite COP 2360",
+    "courses": [
+      "COP 2837",
+      "COP 2360"
+    ]
+  },
   "COP 2840": {
     "text": "DIG 2100 (min D) and COP 1000 (min D)",
     "courses": [
@@ -3906,6 +4532,12 @@
     "text": "COP2822C",
     "courses": [
       "COP2822C"
+    ]
+  },
+  "COP 2844": {
+    "text": "Prerequisite COP 2801 with a minimum grade of C",
+    "courses": [
+      "COP 2801"
     ]
   },
   "COP 2940": {
@@ -3943,6 +4575,18 @@
       "DIG 2100",
       "COP 1000",
       "COP 2700"
+    ]
+  },
+  "COP 4504": {
+    "text": "Prerequisite COP 3035 with a minimum grade of C and Admission to Technology Development and Management (Bachelor of Applied Science) (TMGT-BAS)",
+    "courses": [
+      "COP 3035"
+    ]
+  },
+  "COP 4533": {
+    "text": "Prerequisite COP 3035 with a minimum grade of C and Admission to Technology Development and Management (Bachelor of Applied Science) (TMGT-BAS)",
+    "courses": [
+      "COP 3035"
     ]
   },
   "COP 4655C": {
@@ -3985,9 +4629,9 @@
     ]
   },
   "CPO 2002": {
-    "text": "ENC1101",
+    "text": "Prerequisite POS 2041",
     "courses": [
-      "ENC1101"
+      "POS 2041"
     ]
   },
   "CRW 2000": {
@@ -4047,11 +4691,32 @@
       "CTS 1131C"
     ]
   },
+  "CTS 1314": {
+    "text": "Prerequisite CTS 1120 with a minimum grade of C",
+    "courses": [
+      "CTS 1120"
+    ]
+  },
+  "CTS 1328": {
+    "text": "Prerequisite CNT 1000 with a minimum grade of C or Prerequisite CET 1172C with a minimum grade of C",
+    "courses": [
+      "CNT 1000",
+      "CET 1172C"
+    ]
+  },
   "CTS 1334C": {
     "text": "CTS1131C and CTS1133C",
     "courses": [
       "CTS1131C",
       "CTS1133C"
+    ]
+  },
+  "CTS 1411": {
+    "text": "Prerequisite CET 1610 with a minimum grade of C or Prerequisite CTS 1328 with a minimum grade of C or Prerequisite CNT 1000 with a minimum grade of C",
+    "courses": [
+      "CET 1610",
+      "CTS 1328",
+      "CNT 1000"
     ]
   },
   "CTS 1441": {
@@ -4066,6 +4731,15 @@
     "text": "CTS 1650 (min C)",
     "courses": [
       "CTS 1650"
+    ]
+  },
+  "CTS 2106": {
+    "text": "Prerequisite COP 1000 with a minimum grade of C or Prerequisite CNT 1000 with a minimum grade of C or Prerequisite CET 1600 with a minimum grade of C or Prerequisite CET 1172C with a minimum grade of …",
+    "courses": [
+      "COP 1000",
+      "CNT 1000",
+      "CET 1600",
+      "CET 1172C"
     ]
   },
   "CTS 2109C": {
@@ -4121,6 +4795,12 @@
       "CTS2304C"
     ]
   },
+  "CTS 2312": {
+    "text": "Prerequisite CIS 2642C with a minimum grade of C",
+    "courses": [
+      "CIS 2642C"
+    ]
+  },
   "CTS 2312C": {
     "text": "CTS 2192C (min D) and CTS 2320C (min D)",
     "courses": [
@@ -4156,6 +4836,12 @@
       "CNT 1001"
     ]
   },
+  "CTS 2370": {
+    "text": "Prerequisite CTS 1411 with a minimum grade of C",
+    "courses": [
+      "CTS 1411"
+    ]
+  },
   "CTS 2370C": {
     "text": "CTS1334C",
     "courses": [
@@ -4173,6 +4859,12 @@
     "courses": [
       "CET 1600C",
       "CTS 1131C"
+    ]
+  },
+  "CTS 2417": {
+    "text": "Prerequisite CGS 1515 with a minimum grade of C",
+    "courses": [
+      "CGS 1515"
     ]
   },
   "CTS 2433": {
@@ -4198,6 +4890,19 @@
     "text": "CTS 1441 (min D)",
     "courses": [
       "CTS 1441"
+    ]
+  },
+  "CTS 2450": {
+    "text": "Prerequisite CTS 2433 with a minimum grade of C and Prerequisite CTS 2417 with a minimum grade of C",
+    "courses": [
+      "CTS 2433",
+      "CTS 2417"
+    ]
+  },
+  "CTS 2455": {
+    "text": "Prerequisite CTS 2433 with a minimum grade of C",
+    "courses": [
+      "CTS 2433"
     ]
   },
   "CTS 2652": {
@@ -4243,6 +4948,13 @@
     "text": "CTS2305C",
     "courses": [
       "CTS2305C"
+    ]
+  },
+  "CTS 4454": {
+    "text": "Prerequisite ISM 4545 with a minimum grade of C and Prerequisite CAP 4770 with a minimum grade of C and Admission to Technology Development and Management (Bachelor of Applied Science) (TMGT-BAS)",
+    "courses": [
+      "ISM 4545",
+      "CAP 4770"
     ]
   },
   "CVT 0507": {
@@ -4464,6 +5176,16 @@
       "DEA0851"
     ]
   },
+  "DEH 1000": {
+    "text": "Prerequisite MCB 2010 with a minimum grade of C and (Prerequisite MCB 2010L with a minimum grade of C or Prerequisite MCB 2010CH with a minimum grade of C) ) and (Pre- or Co-requisite DES 1020 with a …",
+    "courses": [
+      "MCB 2010",
+      "MCB 2010L",
+      "MCB 2010C",
+      "DES 1020",
+      "DES 1020L"
+    ]
+  },
   "DEH 1002": {
     "text": "ENC 1101 (min C) and HUN 1201 (min C) and BSC 2085 (min C) and BSC 2085L (min C)",
     "courses": [
@@ -4482,22 +5204,49 @@
       "BSC 2085L"
     ]
   },
+  "DEH 1003": {
+    "text": "Prerequisite DEH 1000 with a minimum grade of C and Prerequisite DES 1020 with a minimum grade of C and Prerequisite DES 1020L with a minimum grade of C and Pre- or Co-requisite DEH 1003L",
+    "courses": [
+      "DEH 1000",
+      "DES 1020",
+      "DES 1020L",
+      "DEH 1003L"
+    ]
+  },
   "DEH 1003C": {
     "text": "DEH1001C",
     "courses": [
       "DEH1001C"
     ]
   },
-  "DEH 1130": {
-    "text": "DES 1200 (min C)",
+  "DEH 1003L": {
+    "text": "Prerequisite DEH 1000 with a minimum grade of C and Prerequisite DES 1020 with a minimum grade of C and Prerequisite DES 1020L with a minimum grade of C and Pre- or Co-requisite DEH 1003",
     "courses": [
-      "DES 1200"
+      "DEH 1000",
+      "DES 1020",
+      "DES 1020L",
+      "DEH 1003"
+    ]
+  },
+  "DEH 1130": {
+    "text": "Prerequisite BSC 2086 with a minimum grade of C and Prerequisite BSC 2086L with a minimum grade of C and Prerequisite DES 1020 with a minimum grade of C and Prerequisite DES 1020L with a minimum grade…",
+    "courses": [
+      "BSC 2086",
+      "BSC 2086L",
+      "DES 1020",
+      "DES 1020L"
     ]
   },
   "DEH 1600": {
     "text": "DEH 1002 (min C)",
     "courses": [
       "DEH 1002"
+    ]
+  },
+  "DEH 1720": {
+    "text": "Prerequisite DEH 1000 with a minimum grade of C",
+    "courses": [
+      "DEH 1000"
     ]
   },
   "DEH 1800": {
@@ -4582,9 +5331,10 @@
     ]
   },
   "DEH 2400": {
-    "text": "DEH 1800 (min C)",
+    "text": "Prerequisite DES 1020 with a minimum grade of C and Prerequisite DES 1020L with a minimum grade of C",
     "courses": [
-      "DEH 1800"
+      "DES 1020",
+      "DES 1020L"
     ]
   },
   "DEH 2530": {
@@ -4618,6 +5368,12 @@
     "text": "DEH 2602 (min C)",
     "courses": [
       "DEH 2602"
+    ]
+  },
+  "DEH 2701": {
+    "text": "Prerequisite DEH 2802L with a minimum grade of C",
+    "courses": [
+      "DEH 2802L"
     ]
   },
   "DEH 2701L": {
@@ -4658,6 +5414,13 @@
     "courses": [
       "DEH 1802",
       "DEH 2300"
+    ]
+  },
+  "DEH 2802": {
+    "text": "Prerequisite DEH 1800 with a minimum grade of C and Prerequisite DEH 1800L with a minimum grade of C",
+    "courses": [
+      "DEH 1800",
+      "DEH 1800L"
     ]
   },
   "DEH 2802L": {
@@ -4724,6 +5487,38 @@
       "DEH2806L"
     ]
   },
+  "DEH 3814": {
+    "text": "Prerequisite DEH 3730 with a minimum grade of C or Permission of the Program",
+    "courses": [
+      "DEH 3730"
+    ]
+  },
+  "DEH 4607": {
+    "text": "Prerequisite DEH 3814 and (Admission to Dental Hygiene (Bachelor of Applied Science) (DENH-BAS) or Permission of the Program)",
+    "courses": [
+      "DEH 3814"
+    ]
+  },
+  "DEH 4851": {
+    "text": "Prerequisite DEH 3814Introduction to Dental Hygiene Research and (Admission to Dental Hygiene (Bachelor of Applied Science) (DENH-BAS) or Permission of the Program)",
+    "courses": [
+      "DEH 3814I"
+    ]
+  },
+  "DEH 4852": {
+    "text": "Prerequisite DEH 3813 with a minimum grade of C and (Admission to Dental Hygiene (Bachelor of Applied Science) (DENH-BAS) or Permission of the Program)",
+    "courses": [
+      "DEH 3813"
+    ]
+  },
+  "DEH 4947": {
+    "text": "Prerequisite DEH 4607 and Prerequisite DEH 4851 and Prerequisite HSC 3201 and (Admission to Dental Hygiene (Bachelor of Applied Science) (DENH-BAS) or Permission of the Program)",
+    "courses": [
+      "DEH 4607",
+      "DEH 4851",
+      "HSC 3201"
+    ]
+  },
   "DEP 1004": {
     "text": "PSY 2012 (min D)",
     "courses": [
@@ -4741,6 +5536,12 @@
     "courses": [
       "ENC 0027",
       "ENC 1101"
+    ]
+  },
+  "DEP 2102": {
+    "text": "Prerequisite PSY 1012 with a minimum grade of C",
+    "courses": [
+      "PSY 1012"
     ]
   },
   "DEP 2302": {
@@ -4845,8 +5646,11 @@
     ]
   },
   "DES 1200L": {
-    "text": "DES 1200 (min C)",
+    "text": "Prerequisite DES 1020 with a minimum grade of C and Prerequisite DES 1020L with a minimum grade of C and Prerequisite DEH 1000 with a minimum grade of C and Pre- or Co-requisite DES 1200 with a minimu…",
     "courses": [
+      "DES 1020",
+      "DES 1020L",
+      "DEH 1000",
       "DES 1200"
     ]
   },
@@ -4873,11 +5677,19 @@
       "DEH2821"
     ]
   },
+  "DIG 2000": {
+    "text": "Prerequisite computer competency met",
+    "courses": []
+  },
   "DIG 2030C": {
     "text": "DIG 2000C (min D)",
     "courses": [
       "DIG 2000C"
     ]
+  },
+  "DIG 2091": {
+    "text": "Prerequisite computer competency met",
+    "courses": []
   },
   "DIG 2093": {
     "text": "MAR 2011 (min D)",
@@ -4895,11 +5707,27 @@
       "DIG 2430C"
     ]
   },
+  "DIG 2100": {
+    "text": "Prerequisite computer competency met",
+    "courses": []
+  },
   "DIG 2111C": {
     "text": "ART 1201C or GRA 2150C",
     "courses": [
       "ART 1201C",
       "GRA 2150C"
+    ]
+  },
+  "DIG 2116": {
+    "text": "Prerequisite DIG 2109 with a minimum grade of C",
+    "courses": [
+      "DIG 2109"
+    ]
+  },
+  "DIG 2117": {
+    "text": "Prerequisite GRA 1206C with a minimum grade of C",
+    "courses": [
+      "GRA 1206C"
     ]
   },
   "DIG 2151": {
@@ -4909,6 +5737,12 @@
       "ENC 1101C"
     ]
   },
+  "DIG 2183": {
+    "text": "Prerequisite DIG 2109 with a minimum grade of C",
+    "courses": [
+      "DIG 2109"
+    ]
+  },
   "DIG 2200": {
     "text": "DIG 2030 (min C)",
     "courses": [
@@ -4916,10 +5750,15 @@
     ]
   },
   "DIG 2205": {
-    "text": "DIG 2030 (min C)",
+    "text": "Prerequisite DIG 2030 with a minimum grade of C or Prerequisite PGY 2800C with a minimum grade of C",
     "courses": [
-      "DIG 2030"
+      "DIG 2030",
+      "PGY 2800C"
     ]
+  },
+  "DIG 2251": {
+    "text": "Prerequisite computer competency met",
+    "courses": []
   },
   "DIG 2282C": {
     "text": "DIG 1000 (min C)",
@@ -4941,11 +5780,24 @@
       "DIG 2430C"
     ]
   },
+  "DIG 2290": {
+    "text": "Prerequisite DIG 2030 with a minimum grade of C",
+    "courses": [
+      "DIG 2030"
+    ]
+  },
   "DIG 2292C": {
     "text": "DIG 2030C (min C) and DIG 2109C (min C)",
     "courses": [
       "DIG 2030C",
       "DIG 2109C"
+    ]
+  },
+  "DIG 2311": {
+    "text": "Prerequisite DIG 2131 with a minimum grade of C and Pre- or Co-requisite GRA 1206 with a minimum grade of C",
+    "courses": [
+      "DIG 2131",
+      "GRA 1206"
     ]
   },
   "DIG 2330C": {
@@ -4958,6 +5810,12 @@
     "text": "DIG 2292C (min D)",
     "courses": [
       "DIG 2292C"
+    ]
+  },
+  "DIG 2410": {
+    "text": "Prerequisite DIG 2030 with a minimum grade of C",
+    "courses": [
+      "DIG 2030"
     ]
   },
   "DIG 2430C": {
@@ -4979,6 +5837,13 @@
       "GRA 2120C"
     ]
   },
+  "DIG 2545": {
+    "text": "Prerequisite DIG 2000 with a minimum grade of C or Prerequisite DIG 2091 with a minimum grade of C",
+    "courses": [
+      "DIG 2000",
+      "DIG 2091"
+    ]
+  },
   "DIG 2580": {
     "text": "DIG 2100 (min C) and GRA 2156 (min C) and DIG 2251 (min D) and DIG 2200 (min D)",
     "courses": [
@@ -4992,6 +5857,14 @@
     "text": "DIG 2940C (min D)",
     "courses": [
       "DIG 2940C"
+    ]
+  },
+  "DIG 3110C": {
+    "text": "Prerequisite DIG 2109 with a minimum grade of C and (Prerequisite ART 1201C with a minimum grade of C or Prerequisite DIG 2131 with a minimum grade of C)",
+    "courses": [
+      "DIG 2109",
+      "ART 1201C",
+      "DIG 2131"
     ]
   },
   "DIG 3255C": {
@@ -5040,6 +5913,22 @@
       "DIG 4570"
     ]
   },
+  "DIG 3702": {
+    "text": "Prerequisite DIG 2109 with a minimum grade of C and (Prerequisite ART 1201C with a minimum grade of C or Prerequisite DIG 2131 with a minimum grade of C)",
+    "courses": [
+      "DIG 2109",
+      "ART 1201C",
+      "DIG 2131"
+    ]
+  },
+  "DIG 3823C": {
+    "text": "Prerequisite DIG 2109 with a minimum grade of C and (Prerequisite ART 1201C with a minimum grade of C or Prerequisite DIG 2131 with a minimum grade of C)",
+    "courses": [
+      "DIG 2109",
+      "ART 1201C",
+      "DIG 2131"
+    ]
+  },
   "DIG 4144C": {
     "text": "DIG3433C",
     "courses": [
@@ -5051,6 +5940,14 @@
     "courses": [
       "GRA-Graphic Arts 2156",
       "DIG 2100"
+    ]
+  },
+  "DIG 4451C": {
+    "text": "Prerequisite DIG 3293C with a minimum grade of C and (Prerequisite ART 1300C with a minimum grade of C or Prerequisite DIG 2183 with a minimum grade of C)",
+    "courses": [
+      "DIG 3293C",
+      "ART 1300C",
+      "DIG 2183"
     ]
   },
   "DSC 1222": {
@@ -5149,6 +6046,12 @@
       "EAP 0260"
     ]
   },
+  "EAP 0395": {
+    "text": "Prerequisite EAP 0295 or Prerequisite an appropriate score on the standardized placement test for ESL",
+    "courses": [
+      "EAP 0295"
+    ]
+  },
   "EAP 0400": {
     "text": "EAP 0300 (min C)",
     "courses": [
@@ -5171,6 +6074,12 @@
     "text": "EAP 0360 (min C)",
     "courses": [
       "EAP 0360"
+    ]
+  },
+  "EAP 0495": {
+    "text": "Prerequisite EAP 0395 with a minimum grade of C or Prerequisite an appropriate score on the standardized EAP placement test",
+    "courses": [
+      "EAP 0395"
     ]
   },
   "EAP 1500": {
@@ -5199,6 +6108,12 @@
       "EAP 0460"
     ]
   },
+  "EAP 1595": {
+    "text": "Prerequisite EAP 0495 or Prerequisite an appropriate score on the standardized placement test for ESL",
+    "courses": [
+      "EAP 0495"
+    ]
+  },
   "EAP 1600": {
     "text": "EAP1500 and EAP0440",
     "courses": [
@@ -5211,6 +6126,22 @@
     "courses": [
       "EAP1540",
       "EAP1660"
+    ]
+  },
+  "EAP 1695": {
+    "text": "Prerequisite EAP 1595 or an appropriate score on the standardized placement test for ESL",
+    "courses": [
+      "EAP 1595"
+    ]
+  },
+  "ECO 2000": {
+    "text": "Prerequisite ENC 0025 or Prerequisite ENC 0056) and ((Prerequisite REA 0017 or Prerequisite REA 0056) or Prerequisite EAP 1695 or Prerequisite appropriate score on the college placement test",
+    "courses": [
+      "ENC 0025",
+      "ENC 0056",
+      "REA 0017",
+      "REA 0056",
+      "EAP 1695"
     ]
   },
   "ECO 2013": {
@@ -5237,6 +6168,10 @@
       "MGF 1106",
       "MGF 1107"
     ]
+  },
+  "ECO 2013H": {
+    "text": "Prerequisite Appropriate score on the college placement test or Acceptance into the Honors College or Permission of the Program",
+    "courses": []
   },
   "ECO 2023": {
     "text": "ENC 0025 (min C.) or ENC 0027 (min C.) or ENC 0022 (min C.) or ENC 0010 (min C.) or ENC 1101 (min C) or ENC 1102 (min C) or ENC 2300 (min C) or REA-Reading 0017 (min C.) or ENC 0027 (min C.) or ENC 0022 (min C.) or REA-Reading 0002 (min C.) or ENC 1101 (min C) or ENC 1102 (min C) or ENC 2300 (min C) or MAT 0028 (min S.) or MAT 0024 (min S.) or MAT 0027 (min S.) or MAT 0014 (min C.) or MAT 1033 (min C) or MAC 1105 (min C) or MAC 1105C (min C) or STA 2023 (min C) or MAC 2233 (min C) or MGF 1106 (min C) or MGF 1107 (min C)",
@@ -5269,6 +6204,28 @@
       "ECO 2013"
     ]
   },
+  "EDE 4226": {
+    "text": "Prerequisite RED 3309 and Prerequisite EDE 4304 and Prerequisite EDE 4943 and (Prerequisite EDG 3620for Elementary Education majors or Prerequisite EEX 3241for Exceptional Education majors) and Pre- o…",
+    "courses": [
+      "RED 3309",
+      "EDE 4304",
+      "EDE 4943",
+      "EDG 3620",
+      "EEX 3241",
+      "EDE 4942"
+    ]
+  },
+  "EDE 4304": {
+    "text": "Prerequisite EDG 3620 with a minimum grade of C and Pre- or Co-requisite EDE 4943 with a minimum grade of C and Successful completion of all sections of the General Knowledge Exam",
+    "courses": [
+      "EDG 3620",
+      "EDE 4943"
+    ]
+  },
+  "EDE 4940": {
+    "text": "Prerequisite Successful completion of all Elementary Education BS program requirements and passing of all sections of the General Knowledge and Professional Education Exam",
+    "courses": []
+  },
   "EDE 4942": {
     "text": "MAE 3310 (min C) and MAE 3312 (min C) and RED 3309 (min C) and SCE 3310 (min C) and SSE 3312 (min C)",
     "courses": [
@@ -5277,6 +6234,15 @@
       "RED 3309",
       "SCE 3310",
       "SSE 3312"
+    ]
+  },
+  "EDE 4943": {
+    "text": "Prerequisite EDG 3620 with a minimum grade of C) or (Admission to Exceptional Student Education (K-12) with Infused ESOL & Reading Endorsements (Bachelor of Science) (ESEDR-BS) and Prerequisite EEX 30…",
+    "courses": [
+      "EDG 3620",
+      "EEX 3012",
+      "EEX 3241",
+      "EDE 4304"
     ]
   },
   "EDF 1005": {
@@ -5464,6 +6430,10 @@
       "CHD-Child Development 2220"
     ]
   },
+  "EEC 2907": {
+    "text": "Prerequisite This course must be taken during the student's last term in the program after completion of required courses",
+    "courses": []
+  },
   "EEC 2930": {
     "text": "CHD 1430 (min D) and CHD 1440 (min C) and CHD 2320 (min C) and CHD 2801 (min C) and CHD 2841 (min D) and EDF 1005 (min D) and EDF 2085 (min D) and EEC 2226 (min D) and EEC 2270 (min D)",
     "courses": [
@@ -5528,6 +6498,14 @@
       "RED4941C"
     ]
   },
+  "EEC 4941": {
+    "text": "Prerequisite EEC 3204 with a minimum grade of C) or (Admission to Prekindergarten/Primary Education (age 3 through grade 3) with Infused ESOL and Reading Endorsements (Bachelor of Science) (PKPED-BS) …",
+    "courses": [
+      "EEC 3204",
+      "EEC 4940",
+      "EEC 4211"
+    ]
+  },
   "EET 1015C": {
     "text": "MAC 1105 (min D)",
     "courses": [
@@ -5561,6 +6539,12 @@
       "EET1084C"
     ]
   },
+  "EET 2140C": {
+    "text": "Prerequisite EET 1035C or Permission of the Program",
+    "courses": [
+      "EET 1035C"
+    ]
+  },
   "EET 2525C": {
     "text": "EET 1084C (min C) or EET 1084 (min C)",
     "courses": [
@@ -5590,9 +6574,10 @@
     ]
   },
   "EEX 4221": {
-    "text": "EEX 4265 (min C)",
+    "text": "Prerequisite EEX 3012 with a minimum grade of C and Pre- or Co-requisite EDF 4430 with a minimum grade of C",
     "courses": [
-      "EEX 4265"
+      "EEX 3012",
+      "EDF 4430"
     ]
   },
   "EEX 4604": {
@@ -5600,6 +6585,10 @@
     "courses": [
       "EEX 3012"
     ]
+  },
+  "EEX 4940": {
+    "text": "Prerequisite Successful completion of all Exceptional Student Education BS program requirements and passing of all sections of the General Knowledge, Professional Education Exam and Subject Area Exam",
+    "courses": []
   },
   "EGN 1001C": {
     "text": "MAC1147",
@@ -5828,9 +6817,10 @@
     ]
   },
   "EMS 1119": {
-    "text": "HSC 2531 (min B)",
+    "text": "Prerequisite possession of “American Heart Association Basic Life Support” level CPR card and Admission to Emergency Medical Technician (Applied Technology Diploma without Financial Aid Eligibility) (…",
     "courses": [
-      "HSC 2531"
+      "EMS 1119L",
+      "EMS 1411"
     ]
   },
   "EMS 1119L": {
@@ -5856,6 +6846,21 @@
     "text": "EMS 1119 (min C)",
     "courses": [
       "EMS 1119"
+    ]
+  },
+  "EMS 1411": {
+    "text": "Prerequisite \"American Heart Association BLS Provider\" level CPR card and Pre- or Co-requisite EMS 1119 with a minimum grade of C and Pre- or Co-requisite EMS 1119L with a minimum grade of C",
+    "courses": [
+      "EMS 1119",
+      "EMS 1119L"
+    ]
+  },
+  "EMS 1421": {
+    "text": "Prerequisite EMS 1119 with a minimum grade of C and Prerequisite EMS 1119L with a minimum grade of C and Prerequisite EMS 1411 with a minimum grade of C",
+    "courses": [
+      "EMS 1119",
+      "EMS 1119L",
+      "EMS 1411"
     ]
   },
   "EMS 1431": {
@@ -5988,14 +6993,24 @@
       "EMS2666"
     ]
   },
-  "EMS 2602L": {
-    "text": "EMS2601 and EMS2601L and EMS2666 and EMS2602 and EMS2667",
+  "EMS 2602": {
+    "text": "Prerequisite EMS 2601 with a minimum grade of C and Prerequisite EMS 2601L with a minimum grade of C and Prerequisite EMS 2664 with a minimum grade of C and Pre- or Co-requisite EMS 2602L with a minim…",
     "courses": [
-      "EMS2601",
-      "EMS2601L",
-      "EMS2666",
-      "EMS2602",
-      "EMS2667"
+      "EMS 2601",
+      "EMS 2601L",
+      "EMS 2664",
+      "EMS 2602L",
+      "EMS 2665"
+    ]
+  },
+  "EMS 2602L": {
+    "text": "Prerequisite EMS 2601 with a minimum grade of C and Prerequisite EMS 2601L with a minimum grade of C and Prerequisite EMS 2664 with a minimum grade of C and Pre- or Co-requisite EMS 2602 with a minimu…",
+    "courses": [
+      "EMS 2601",
+      "EMS 2601L",
+      "EMS 2664",
+      "EMS 2602",
+      "EMS 2665"
     ]
   },
   "EMS 2603": {
@@ -6115,6 +7130,27 @@
       "EMS 2605L"
     ]
   },
+  "EMS 2659C": {
+    "text": "Prerequisite EMS 2601 with a minimum grade of C and Prerequisite EMS 2601L with a minimum grade of C and Prerequisite EMS 2602 with a minimum grade of C and Prerequisite EMS 2602L with a minimum grade…",
+    "courses": [
+      "EMS 2601",
+      "EMS 2601L",
+      "EMS 2602",
+      "EMS 2602L",
+      "EMS 2664",
+      "EMS 2665"
+    ]
+  },
+  "EMS 2665": {
+    "text": "Prerequisite EMS 2601 with a minimum grade of C and Prerequisite EMS 2601L with a minimum grade of C and Prerequisite EMS 2664 with a minimum grade of C and Pre- or Co-requisite EMS 2602 with a minimu…",
+    "courses": [
+      "EMS 2601",
+      "EMS 2601L",
+      "EMS 2664",
+      "EMS 2602",
+      "EMS 2602L"
+    ]
+  },
   "EMS 2666": {
     "text": "EMS 2010 and EMS 2603 and EMS 2603L",
     "courses": [
@@ -6152,6 +7188,12 @@
       "EMS 2605",
       "EMS 2605L",
       "EMS 2659"
+    ]
+  },
+  "ENC 0025": {
+    "text": "Prerequisite ENC 0015 or Prerequisite appropriate score on the SPC placement test",
+    "courses": [
+      "ENC 0015"
     ]
   },
   "ENC 0026": {
@@ -6196,6 +7238,10 @@
       "REA 0019"
     ]
   },
+  "ENC 1101H": {
+    "text": "Prerequisite Appropriate score on the college placement test or Permission of the Program",
+    "courses": []
+  },
   "ENC 1102": {
     "text": "ENC 1101C (min C) or ENC 1101 (min C) or ENC 1101 (min Z) or ENC 1101H (min C)",
     "courses": [
@@ -6219,9 +7265,10 @@
     ]
   },
   "ENG 2100": {
-    "text": "ENC 1101 (min C)",
+    "text": "Prerequisite ENC 0025 or Prerequisite EAP 1695 or Prerequisite appropriate score on the college placement test",
     "courses": [
-      "ENC 1101"
+      "ENC 0025",
+      "EAP 1695"
     ]
   },
   "ENG 2103": {
@@ -6238,10 +7285,12 @@
     ]
   },
   "ENL 2012": {
-    "text": "ENC 1102 (min C) or ENC 1102 (min Z) or ENC 1102H (min C)",
+    "text": "Prerequisite ENC 1101 with a minimum grade of C or Prerequisite ENC 1101H with a minimum grade of C or Prerequisite IDS 1101H with a minimum grade of C or Prerequisite IDS 1111H with a minimum grade o…",
     "courses": [
-      "ENC 1102",
-      "ENC 1102H"
+      "ENC 1101",
+      "ENC 1101H",
+      "IDS 1101H",
+      "IDS 1111H"
     ]
   },
   "ENL 2022": {
@@ -6284,11 +7333,29 @@
       "MGF 1107"
     ]
   },
+  "ENT 1012": {
+    "text": "Prerequisite ENT 1000",
+    "courses": [
+      "ENT 1000"
+    ]
+  },
+  "ENT 2010": {
+    "text": "Prerequisite ENT 1000",
+    "courses": [
+      "ENT 1000"
+    ]
+  },
   "ENT 2112": {
     "text": "ENC 0027 (min C) or ENC 1101 (min C)",
     "courses": [
       "ENC 0027",
       "ENC 1101"
+    ]
+  },
+  "ENT 2120": {
+    "text": "Prerequisite ENT 1000",
+    "courses": [
+      "ENT 1000"
     ]
   },
   "ENT 2411": {
@@ -6357,10 +7424,30 @@
       "MAC 2311"
     ]
   },
+  "ESC 1000C": {
+    "text": "Prerequisite ENC 0025 and Prerequisite REA 0017 and Prerequisite MAT 0028) or (Prerequisite EAP 1695 and Prerequisite MAT 0028)",
+    "courses": [
+      "ENC 0025",
+      "REA 0017",
+      "MAT 0028",
+      "EAP 1695"
+    ]
+  },
   "ESC 1000L": {
     "text": "ESC1000",
     "courses": [
       "ESC1000"
+    ]
+  },
+  "ETC 2521C": {
+    "text": "Prerequisite MAC 1105 with a minimum grade of C or Prerequisite MGF 1130 with a minimum grade of C or Prerequisite MGF 1106 with a minimum grade of C or Prerequisite MGF 1107 with a minimum grade of C…",
+    "courses": [
+      "MAC 1105",
+      "MGF 1130",
+      "MGF 1106",
+      "MGF 1107",
+      "STA 2023",
+      "STA 2023H"
     ]
   },
   "ETD 1320C": {
@@ -6370,6 +7457,12 @@
       "EGN 1111C",
       "BCN 1251C",
       "BCN PERMT"
+    ]
+  },
+  "ETD 1340C": {
+    "text": "Prerequisite ETD 1320C",
+    "courses": [
+      "ETD 1320C"
     ]
   },
   "ETD 1530": {
@@ -6409,6 +7502,40 @@
     "text": "ETD 1320C (min D)",
     "courses": [
       "ETD 1320C"
+    ]
+  },
+  "ETD 2367C": {
+    "text": "Prerequisite ETD 1320C with a minimum grade of C",
+    "courses": [
+      "ETD 1320C"
+    ]
+  },
+  "ETD 2368C": {
+    "text": "Prerequisite ETD 2364C or Permission of the Program",
+    "courses": [
+      "ETD 2364C"
+    ]
+  },
+  "ETD 2369C": {
+    "text": "Prerequisite ETD 2364C with a minimum grade of C",
+    "courses": [
+      "ETD 2364C"
+    ]
+  },
+  "ETD 2371C": {
+    "text": "Prerequisite ETD 2364C and (Prerequisite ETD 2368C or Prerequisite ETD 2369C)",
+    "courses": [
+      "ETD 2364C",
+      "ETD 2368C",
+      "ETD 2369C"
+    ]
+  },
+  "ETD 2382C": {
+    "text": "Prerequisite ETD 2364C with a minimum grade of C and (Prerequisite ETD 2368C with a minimum grade of C or Prerequisite ETD 2369C with a minimum grade of C)",
+    "courses": [
+      "ETD 2364C",
+      "ETD 2368C",
+      "ETD 2369C"
     ]
   },
   "ETD 2536": {
@@ -6463,6 +7590,12 @@
       "ETI 1420"
     ]
   },
+  "ETI 3647": {
+    "text": "Prerequisite MAN 3504 and (Admission to Technology Development and Management (Bachelor of Applied Science) (TMGT-BAS) or Admission to International Business (Bachelor of Applied Science) (INTBUS-BAS)…",
+    "courses": [
+      "MAN 3504"
+    ]
+  },
   "ETM 1010C": {
     "text": "EET1084C",
     "courses": [
@@ -6499,10 +7632,22 @@
       "ETP 1138C"
     ]
   },
+  "ETS 1407": {
+    "text": "Prerequisite BME 1008C with a minimum grade of C",
+    "courses": [
+      "BME 1008C"
+    ]
+  },
   "ETS 1511": {
     "text": "EET Elec Engineering Tech 1084 (min C)",
     "courses": [
       "EET Elec Engineering Tech 1084"
+    ]
+  },
+  "ETS 1511C": {
+    "text": "Prerequisite EET 1035C with a minimum grade of C",
+    "courses": [
+      "EET 1035C"
     ]
   },
   "ETS 1535": {
@@ -6535,6 +7680,14 @@
       "ETS1542C"
     ]
   },
+  "ETS 2424C": {
+    "text": "Prerequisite EET 1084C with a minimum grade of C and Prerequisite BME 1008C with a minimum grade of C and Pre- or Co-requisite EET 1205C with a minimum grade of C",
+    "courses": [
+      "EET 1084C",
+      "BME 1008C",
+      "EET 1205C"
+    ]
+  },
   "ETS 2436C": {
     "text": "ETS1412 and ETS1680C",
     "courses": [
@@ -6542,10 +7695,24 @@
       "ETS1680C"
     ]
   },
+  "ETS 2450C": {
+    "text": "Prerequisite CNT 1000 with a minimum grade of C",
+    "courses": [
+      "CNT 1000"
+    ]
+  },
   "ETS 2700C": {
     "text": "ETS 2542C (min D)",
     "courses": [
       "ETS 2542C"
+    ]
+  },
+  "EUH 1000": {
+    "text": "Prerequisite ENC 0025 and Prerequisite REA 0017) or Prerequisite EAP 1695 or Prerequisite appropriate score on the college placement test",
+    "courses": [
+      "ENC 0025",
+      "REA 0017",
+      "EAP 1695"
     ]
   },
   "EUH 1952": {
@@ -6590,10 +7757,38 @@
       "STA 2023"
     ]
   },
+  "EVR 1016": {
+    "text": "Prerequisite CHM 1025 and Prerequisite CHM 1025L and Prerequisite EVR 1858 and ((Prerequisite EVR 1001C or Prerequisite EVS 1001) or Permission of the Program)",
+    "courses": [
+      "CHM 1025",
+      "CHM 1025L",
+      "EVR 1858",
+      "EVR 1001C",
+      "EVS 1001"
+    ]
+  },
   "EVR 1264L": {
     "text": "EVR1264",
     "courses": [
       "EVR1264"
+    ]
+  },
+  "EVR 1328": {
+    "text": "Prerequisite ENC 0025 and Prerequisite MAT 0028 and Prerequisite REA 0017) or (Prerequisite MAT 0028 and Prerequisite EAP 1695)",
+    "courses": [
+      "ENC 0025",
+      "MAT 0028",
+      "REA 0017",
+      "EAP 1695"
+    ]
+  },
+  "EVR 1357": {
+    "text": "Prerequisite ENC 0025 with a minimum grade of C and Prerequisite REA 0017 with a minimum grade of C and Prerequisite MAT 0028 with a minimum grade of C) or (Prerequisite EAP 1695 with a minimum grade …",
+    "courses": [
+      "ENC 0025",
+      "REA 0017",
+      "MAT 0028",
+      "EAP 1695"
     ]
   },
   "EVR 2930": {
@@ -6665,6 +7860,13 @@
       "ENC 1132"
     ]
   },
+  "FIL 2030": {
+    "text": "Prerequisite ENC 0025 or Prerequisite EAP 1695 or Prerequisite appropriate score on the SPC placement test",
+    "courses": [
+      "ENC 0025",
+      "EAP 1695"
+    ]
+  },
   "FIL 2100": {
     "text": "ENC 1101 (min C)",
     "courses": [
@@ -6734,10 +7936,22 @@
       "ACG 3024"
     ]
   },
+  "FIN 4140": {
+    "text": "Prerequisite FIN 3403 with a minimum grade of C and Admission to Business Administration (Bachelor of Science) (BUS-BS)",
+    "courses": [
+      "FIN 3403"
+    ]
+  },
   "FIN 4232": {
     "text": "FIN3400",
     "courses": [
       "FIN3400"
+    ]
+  },
+  "FIN 4323": {
+    "text": "Prerequisite FIN 3403 with a minimum grade of C and Admission to Business Administration (Bachelor of Science) (BUS-BS)",
+    "courses": [
+      "FIN 3403"
     ]
   },
   "FIN 4324": {
@@ -6753,6 +7967,12 @@
       "ACG 3024"
     ]
   },
+  "FIN 4414": {
+    "text": "Prerequisite FIN 3403 with a minimum grade of C and Admission to Business Administration (Bachelor of Science) (BUS-BS)",
+    "courses": [
+      "FIN 3403"
+    ]
+  },
   "FIN 4451": {
     "text": "FIN3740 and ISM3232C",
     "courses": [
@@ -6760,10 +7980,23 @@
       "ISM3232C"
     ]
   },
-  "FRE 1121": {
-    "text": "FRE1120",
+  "FIN 4470": {
+    "text": "Prerequisite FIN 3400 with a minimum grade of C and Admission to Management and Organizational Leadership (Bachelor of Applied Science) (MGTORG-BAS)) or (Prerequisite FIN 3403 with a minimum grade of …",
     "courses": [
-      "FRE1120"
+      "FIN 3400",
+      "FIN 3403"
+    ]
+  },
+  "FIN 4504": {
+    "text": "Prerequisite FIN 3403 with a minimum grade of C and Admission to Business Administration (Bachelor of Science) (BUS-BS)",
+    "courses": [
+      "FIN 3403"
+    ]
+  },
+  "FRE 1121": {
+    "text": "Prerequisite FRE 1120 or Permission of the Program",
+    "courses": [
+      "FRE 1120"
     ]
   },
   "FRE 1130": {
@@ -6785,10 +8018,42 @@
       "FRE1120"
     ]
   },
+  "FSE 1000": {
+    "text": "Prerequisite ENC 0025 and Prerequisite REA 0017) or Prerequisite EAP 1695 or Prerequisite appropriate score on the college placement test",
+    "courses": [
+      "ENC 0025",
+      "REA 0017",
+      "EAP 1695"
+    ]
+  },
+  "FSE 1010": {
+    "text": "Prerequisite program director approval for the direct disposer applicant",
+    "courses": []
+  },
   "FSE 1020": {
     "text": "BSC2085C",
     "courses": [
       "BSC2085C"
+    ]
+  },
+  "FSE 1150": {
+    "text": "Prerequisite Completion of program orientation) or Admission to Funeral Arts (Advanced Technical Certificate with Financial Aid Eligibility) (FUNAT-ATC) or Permission of the Program",
+    "courses": []
+  },
+  "FSE 2061": {
+    "text": "Prerequisite ENC 0025 and Prerequisite REA 0017) or Prerequisite EAP 1695 or Prerequisite appropriate score on the college placement test",
+    "courses": [
+      "ENC 0025",
+      "REA 0017",
+      "EAP 1695"
+    ]
+  },
+  "FSE 2120": {
+    "text": "Prerequisite FSE 2100 with a minimum grade of C and Prerequisite FSE 2101L with a minimum grade of C and Pre- or Co-requisite FSE 2120L",
+    "courses": [
+      "FSE 2100",
+      "FSE 2101L",
+      "FSE 2120L"
     ]
   },
   "FSE 2120C": {
@@ -6800,9 +8065,47 @@
     ]
   },
   "FSE 2140": {
-    "text": "FSE2100",
+    "text": "Prerequisite FSE 2100 with a minimum grade of C and Prerequisite FSE 2101L with a minimum grade of C and Pre- or Co-requisite FSE 2141L",
     "courses": [
-      "FSE2100"
+      "FSE 2100",
+      "FSE 2101L",
+      "FSE 2141L"
+    ]
+  },
+  "FSE 2141L": {
+    "text": "Prerequisite FSE 2100 with a minimum grade of C and Prerequisite FSE 2101L with a minimum grade of C and Pre- or Co-requisite FSE 2140",
+    "courses": [
+      "FSE 2100",
+      "FSE 2101L",
+      "FSE 2140"
+    ]
+  },
+  "FSE 2160": {
+    "text": "Prerequisite HSC 1524 and Prerequisite FSE 2100 with a minimum grade of C",
+    "courses": [
+      "HSC 1524",
+      "FSE 2100"
+    ]
+  },
+  "FSE 2201": {
+    "text": "Prerequisite FSE 2202 and (Admission to Funeral Services (Associate in Science) (FUNSE-AS) or Admission to Funeral Arts (Advanced Technical Certificate with Financial Aid Eligibility) (FUNAT-ATC))",
+    "courses": [
+      "FSE 2202"
+    ]
+  },
+  "FSE 2202": {
+    "text": "Prerequisite BUL 2241 with a minimum grade of C and (Prerequisite ACG 2001 with a minimum grade of C or Prerequisite ACG 2021 with a minimum grade of C) and (Admission to Funeral Services (Associate i…",
+    "courses": [
+      "BUL 2241",
+      "ACG 2001",
+      "ACG 2021",
+      "FSE 1150"
+    ]
+  },
+  "FSE 2930": {
+    "text": "Prerequisite FSE 1150 with a minimum grade of C",
+    "courses": [
+      "FSE 1150"
     ]
   },
   "FSE 2946": {
@@ -7021,9 +8324,12 @@
     ]
   },
   "GIS 2040": {
-    "text": "ASC 2561 (min C)",
+    "text": "Prerequisite ENC 0025 and Prerequisite REA 0017 and Prerequisite MAT 0028) or (Prerequisite EAP 1695 and Prerequisite MAT 0028)",
     "courses": [
-      "ASC 2561"
+      "ENC 0025",
+      "REA 0017",
+      "MAT 0028",
+      "EAP 1695"
     ]
   },
   "GIS 2045": {
@@ -7053,6 +8359,15 @@
       "MGF 1130",
       "MGF 1131",
       "STA 2023"
+    ]
+  },
+  "GLY 2100": {
+    "text": "Prerequisite ENC 0025 and Prerequisite REA 0017 and Prerequisite MAT 0028) or (Prerequisite EAP 1695 and Prerequisite MAT 0028)",
+    "courses": [
+      "ENC 0025",
+      "REA 0017",
+      "MAT 0028",
+      "EAP 1695"
     ]
   },
   "GRA 1156": {
@@ -7166,6 +8481,29 @@
       "DIG2282C"
     ]
   },
+  "GRA 4138C": {
+    "text": "Prerequisite GRA 3816C with a minimum grade of C and Prerequisite GRA 3104C with a minimum grade of C and Prerequisite DIG 3293C with a minimum grade of C",
+    "courses": [
+      "GRA 3816C",
+      "GRA 3104C",
+      "DIG 3293C"
+    ]
+  },
+  "GRA 4139C": {
+    "text": "Prerequisite DIG 3293C with a minimum grade of C and Prerequisite DIG 2109 with a minimum grade of C and (Prerequisite GRA 1206 with a minimum grade of C or Prerequisite DIG 2284 with a minimum grade …",
+    "courses": [
+      "DIG 3293C",
+      "DIG 2109",
+      "GRA 1206",
+      "DIG 2284"
+    ]
+  },
+  "GRA 4423": {
+    "text": "Prerequisite GRA 3816C with a minimum grade of C",
+    "courses": [
+      "GRA 3816C"
+    ]
+  },
   "HCP 0621": {
     "text": "HSC 0003 (min C)",
     "courses": [
@@ -7176,6 +8514,22 @@
     "text": "NCH 0050",
     "courses": [
       "NCH 0050"
+    ]
+  },
+  "HDW 0800": {
+    "text": "Prerequisite FSE 2100 with a minimum grade of C and Prerequisite FSE 2101L with a minimum grade of C and Pre- or Co-requisite FSE 2120L",
+    "courses": [
+      "FSE 2100",
+      "FSE 2101L",
+      "FSE 2120L"
+    ]
+  },
+  "HDW 0802": {
+    "text": "Prerequisite FSE 2100 with a minimum grade of C and Prerequisite FSE 2101L with a minimum grade of C and Pre- or Co-requisite FSE 2120L",
+    "courses": [
+      "FSE 2100",
+      "FSE 2101L",
+      "FSE 2120L"
     ]
   },
   "HFT 1000": {
@@ -7212,9 +8566,9 @@
     ]
   },
   "HFT 2942": {
-    "text": "HFT2941",
+    "text": "Prerequisite HFT 1941 with a minimum grade of C and Permission of the Program",
     "courses": [
-      "HFT2941"
+      "HFT 1941"
     ]
   },
   "HIM 0434": {
@@ -7224,6 +8578,10 @@
       "HSC 0003",
       "HIM 0450"
     ]
+  },
+  "HIM 1101": {
+    "text": "Prerequisite Developmental math met or appropriate scores on the College Placement test",
+    "courses": []
   },
   "HIM 1110": {
     "text": "HSC1531",
@@ -7327,6 +8685,12 @@
       "HIM1000"
     ]
   },
+  "HIM 2201": {
+    "text": "Prerequisite any college level MAC, MGF or STA course with a grade of C or better and Pre- or Co-requisite HIM 1800 with a minimum grade of C and (Admission to Healthcare Data Management (Certificate …",
+    "courses": [
+      "HIM 1800"
+    ]
+  },
   "HIM 2214": {
     "text": "MAT 0028 (min S.) or MAT 0024 (min S.) or MAT 0027 (min S.) or MAT 0014 (min C.) or MAT 0024C (min S.) or MAT 1033 (min C) or MAC 1105 (min C) or MAC 1105C (min C) or MGF 1106 (min C)",
     "courses": [
@@ -7389,10 +8753,10 @@
     ]
   },
   "HIM 2500": {
-    "text": "HIM1300 and HIM1110",
+    "text": "Prerequisite HIM 2012 with a minimum grade of C and Prerequisite HIM 1101 with a minimum grade of C)",
     "courses": [
-      "HIM1300",
-      "HIM1110"
+      "HIM 2012",
+      "HIM 1101"
     ]
   },
   "HIM 2512": {
@@ -7405,6 +8769,13 @@
     "text": "HIM 2724 (min C)",
     "courses": [
       "HIM 2724"
+    ]
+  },
+  "HIM 2723": {
+    "text": "Prerequisite HIM 2722 with a minimum grade of C or Prerequisite HIM 2229 with a minimum grade of C)",
+    "courses": [
+      "HIM 2722",
+      "HIM 2229"
     ]
   },
   "HIM 2723C": {
@@ -7422,12 +8793,13 @@
     ]
   },
   "HIM 2810": {
-    "text": "HIM 1273 (min C) and HIM 2253 (min C) and BSC 2086C (min C) and HIM 2410 (min C)",
+    "text": "Prerequisite HIM 1140 with a minimum grade of C or Prerequisite HIM 1442 with a minimum grade of C) and Prerequisite HIM 1800 with a minimum grade of C and Prerequisite HIM 2253 with a minimum grade o…",
     "courses": [
-      "HIM 1273",
+      "HIM 1140",
+      "HIM 1442",
+      "HIM 1800",
       "HIM 2253",
-      "BSC 2086C",
-      "HIM 2410"
+      "HIM 2723"
     ]
   },
   "HIM 2810L": {
@@ -7447,6 +8819,25 @@
     "text": "HIM 2292 (min C)",
     "courses": [
       "HIM 2292"
+    ]
+  },
+  "HIM 3240": {
+    "text": "Prerequisite HSA 4184 with a minimum grade of C",
+    "courses": [
+      "HSA 4184"
+    ]
+  },
+  "HIM 3243": {
+    "text": "Prerequisite HIM 3240 and Admission to Health Services Administration (Bachelor of Applied Science) (HSA-BAS)",
+    "courses": [
+      "HIM 3240"
+    ]
+  },
+  "HIM 3852": {
+    "text": "Prerequisite HIM 3240 with a minimum grade of C and Prerequisite HIM 3243 with a minimum grade of C) and Admission to Health Services Administration (Bachelor of Applied Science) (HSA-BAS)",
+    "courses": [
+      "HIM 3240",
+      "HIM 3243"
     ]
   },
   "HIS 2930": {
@@ -7529,6 +8920,12 @@
       "HSA 3111"
     ]
   },
+  "HSA 4140": {
+    "text": "Prerequisite HSA 4184 with a minimum grade of C and (Admission to Health Services Administration (Bachelor of Applied Science) (HSA-BAS) or Admission to Cardiopulmonary Science (Bachelor of Science) (…",
+    "courses": [
+      "HSA 4184"
+    ]
+  },
   "HSA 4170": {
     "text": "GEB 3213 (min C) and ACG 2021C (min C) and HSA 3110 (min C)",
     "courses": [
@@ -7542,6 +8939,13 @@
     "courses": [
       "HSA 3111",
       "NUR 3805"
+    ]
+  },
+  "HSA 4191": {
+    "text": "Prerequisite HSA 4184 with a minimum grade of C and Admission to Health Services Administration (Bachelor of Applied Science) (HSA-BAS)) or (Prerequisite DEH 3813 with a minimum grade of C and Admissi…",
+    "courses": [
+      "HSA 4184",
+      "DEH 3813"
     ]
   },
   "HSA 4192": {
@@ -7573,10 +8977,10 @@
     ]
   },
   "HSA 4502": {
-    "text": "HSA3110 and GEB3213",
+    "text": "Prerequisite HSA 4184 with a minimum grade of C and Admission to Health Services Administration (Bachelor of Applied Science) (HSA-BAS)) or (Prerequisite DEH 3813 with a minimum grade of C and Admissi…",
     "courses": [
-      "HSA3110",
-      "GEB3213"
+      "HSA 4184",
+      "DEH 3813"
     ]
   },
   "HSA 4553": {
@@ -7624,6 +9028,26 @@
       "ENC 1101"
     ]
   },
+  "HSC 1149": {
+    "text": "Prerequisite BSC 1083 or Prerequisite BSC 1084C or (Prerequisite BSC 2085 and Prerequisite BSC 2085L and Prerequisite BSC 2086 and Prerequisite BSC 2086L) or Permission of the Program",
+    "courses": [
+      "BSC 1083",
+      "BSC 1084C",
+      "BSC 2085",
+      "BSC 2085L",
+      "BSC 2086",
+      "BSC 2086L"
+    ]
+  },
+  "HSC 1524": {
+    "text": "Prerequisite ENC 1101 with a minimum grade of C and ((Prerequisite BSC 2085 with a minimum grade of C and Prerequisite BSC 2085L with a minimum grade of C) or Prerequisite BSC 1084C with a minimum gra…",
+    "courses": [
+      "ENC 1101",
+      "BSC 2085",
+      "BSC 2085L",
+      "BSC 1084C"
+    ]
+  },
   "HSC 1531": {
     "text": "ENC 0027 (min C) or ENC 1101 (min C)",
     "courses": [
@@ -7665,11 +9089,38 @@
       "HSC2739"
     ]
   },
+  "HSC 3201": {
+    "text": "Prerequisite HSA 4184 with a minimum grade of C and (Admission to Health Services Administration (Bachelor of Applied Science) (HSA-BAS) or Admission to Cardiopulmonary Science (Bachelor of Science) (…",
+    "courses": [
+      "HSA 4184",
+      "DEH 3813"
+    ]
+  },
+  "HSC 3211": {
+    "text": "Prerequisite HSA 4184 with a minimum grade of C and Admission to Health Services Administration (Bachelor of Applied Science) (HSA-BAS)) or (Prerequisite DEH 3813 with a minimum grade of C and Admissi…",
+    "courses": [
+      "HSA 4184",
+      "DEH 3813"
+    ]
+  },
+  "HSC 3243": {
+    "text": "Prerequisite HSA 4184 with a minimum grade of C or Admission to Health Services Administration (Bachelor of Applied Science) (HSA-BAS)",
+    "courses": [
+      "HSA 4184"
+    ]
+  },
   "HSC 3624": {
     "text": "HSA3110 and GEB3213",
     "courses": [
       "HSA3110",
       "GEB3213"
+    ]
+  },
+  "HSC 4640": {
+    "text": "Prerequisite HSA 4184 with a minimum grade of C and Admission to Health Services Administration (Bachelor of Applied Science) (HSA-BAS)) or (Prerequisite DEH 4852 with a minimum grade of C and Admissi…",
+    "courses": [
+      "HSA 4184",
+      "DEH 4852"
     ]
   },
   "HSC 4730": {
@@ -7678,6 +9129,10 @@
       "STA2023",
       "MAC2311"
     ]
+  },
+  "HSC 4931": {
+    "text": "Prerequisite All Major Coursework Satisfied (HSA-BAS) and Prerequisite at least 6 credit hours from HSA-BAS Subplans CDI, HIS, HSA, HUS or PRMKT",
+    "courses": []
   },
   "HUM 1020": {
     "text": "ENC 1101 (min C)REA 0017 (min C) or REA 0017 (min C*) or REA 0011 (min C) or REA 0011 (min C*) or REA 0019 (min C) or REA 0019 (min C*) and ENC 0025 (min C) or ENC 0025 (min C*) or ENC 0021 (min C) or ENC 0021 (min C*) or ENC 0022 (min C) or ENC 0022 (min C*)",
@@ -7690,6 +9145,10 @@
       "ENC 0021",
       "ENC 0022"
     ]
+  },
+  "HUM 1020H": {
+    "text": "Prerequisite Dev Level 2 Writing Met or Appropriate score on the college placement test) and (Acceptance into the Honors College or Permission of the Honors Program)",
+    "courses": []
   },
   "HUM 2020": {
     "text": "ENC 1101C (min C) or ENC 1101 (min C) or ENC 1101 (min Z) or ENC 1101H (min C)",
@@ -7728,6 +9187,10 @@
       "ENC 0021",
       "ENC 0022"
     ]
+  },
+  "HUM 2233": {
+    "text": "Prerequisite Dev Level 2 Writing Met or Prerequisite Appropriate score on the college placement test",
+    "courses": []
   },
   "HUM 2250": {
     "text": "ENC 0027 (min C) or ENC 2250 (min C) or ENC 1101 (min C)",
@@ -7871,6 +9334,10 @@
       "HUS 2940"
     ]
   },
+  "HUS 2949": {
+    "text": "Prerequisite Permission of the Program",
+    "courses": []
+  },
   "HUS 3020": {
     "text": "HUS3105",
     "courses": [
@@ -7892,6 +9359,12 @@
       "HUS3105"
     ]
   },
+  "HUS 3204": {
+    "text": "Prerequisite HUS 2200 with a minimum grade of C and (Admission to Human Services (Bachelor of Science) (HUMSVC-BS) or Admission to Applied Mental Health (Advanced Technical Certificate with Financial …",
+    "courses": [
+      "HUS 2200"
+    ]
+  },
   "HUS 3304": {
     "text": "PSY 2012 (min C)",
     "courses": [
@@ -7904,10 +9377,22 @@
       "PSY 2012"
     ]
   },
+  "HUS 3321": {
+    "text": "Prerequisite HSA 4184 with a minimum grade of C and Admission to Health Services Administration (Bachelor of Applied Science) (HSA-BAS)) or Admission to Human Services (Bachelor of Science) (HUMSVC-BS…",
+    "courses": [
+      "HSA 4184"
+    ]
+  },
   "HUS 3323": {
     "text": "HUS3105",
     "courses": [
       "HUS3105"
+    ]
+  },
+  "HUS 3335": {
+    "text": "Prerequisite HUS 2302 with a minimum grade of C and (Admission to Human Services (Bachelor of Science) (HUMSVC-BS) or Admission to Health Services Administration (Bachelor of Applied Science) (HSA-BAS…",
+    "courses": [
+      "HUS 2302"
     ]
   },
   "HUS 3350": {
@@ -7926,10 +9411,24 @@
       "HUS3105"
     ]
   },
+  "HUS 3370": {
+    "text": "Prerequisite HSA 4184 with a minimum grade of C and Admission to Health Services Administration (Bachelor of Applied Science) (HSA-BAS)) or (Prerequisite DEH 3813 with a minimum grade of C and Admissi…",
+    "courses": [
+      "HSA 4184",
+      "DEH 3813"
+    ]
+  },
   "HUS 3505": {
     "text": "HUS3105",
     "courses": [
       "HUS3105"
+    ]
+  },
+  "HUS 3570": {
+    "text": "Prerequisite HSA 4184 with a minimum grade of C and Admission to Health Services Administration (Bachelor of Applied Science) (HSA-BAS)) or (Prerequisite DEH 3813 with a minimum grade of C and Admissi…",
+    "courses": [
+      "HSA 4184",
+      "DEH 3813"
     ]
   },
   "HUS 3574": {
@@ -7960,10 +9459,10 @@
     ]
   },
   "HUS 4442": {
-    "text": "HUS3105 and HUS4560",
+    "text": "Prerequisite HSA 4184 with a minimum grade of C and Admission to Health Services Administration (Bachelor of Applied Science) (HSA-BAS)) or (Prerequisite DEH 3813 with a minimum grade of C and Admissi…",
     "courses": [
-      "HUS3105",
-      "HUS4560"
+      "HSA 4184",
+      "DEH 3813"
     ]
   },
   "HUS 4526": {
@@ -7979,6 +9478,13 @@
     "courses": [
       "HUS3105",
       "HUS3505"
+    ]
+  },
+  "HUS 4561": {
+    "text": "Prerequisite HSA 4184 with a minimum grade of C and Admission to Health Services Administration (Bachelor of Applied Science) (HSA-BAS)) or (Prerequisite DEH 3813 with a minimum grade of C and Admissi…",
+    "courses": [
+      "HSA 4184",
+      "DEH 3813"
     ]
   },
   "HUS 4601": {
@@ -8038,6 +9544,10 @@
     "courses": [
       "ENC 1101"
     ]
+  },
+  "IDH 2634H": {
+    "text": "Prerequisite Appropriate score on the college placement test or Prerequisite Acceptance into the Honors College or Permission of the Program",
+    "courses": []
   },
   "IND 1229": {
     "text": "IND1606C and IND1404C",
@@ -8131,6 +9641,12 @@
       "ENC 0022"
     ]
   },
+  "INR 2500": {
+    "text": "Prerequisite POS 2041",
+    "courses": [
+      "POS 2041"
+    ]
+  },
   "INT 1000": {
     "text": "ASL1130 and ASL1150 and ENC1101 and ENC1101C",
     "courses": [
@@ -8162,6 +9678,52 @@
       "ASL1210",
       "INT1201",
       "INT1930"
+    ]
+  },
+  "INT 3004": {
+    "text": "Prerequisite ASL 1140C with a minimum grade of C and Prerequisite ASL 1150C with a minimum grade of C and Prerequisite ASL 1160C with a minimum grade of C and Prerequisite ASL 2210C with a minimum gra…",
+    "courses": [
+      "ASL 1140C",
+      "ASL 1150C",
+      "ASL 1160C",
+      "ASL 2210C",
+      "ASL 1300",
+      "ASL 1510"
+    ]
+  },
+  "INT 3205C": {
+    "text": "Prerequisite ASL 1140C with a minimum grade of C and Prerequisite ASL 1150C with a minimum grade of C and Prerequisite ASL 1160C with a minimum grade of C and Prerequisite ASL 2210C with a minimum gra…",
+    "courses": [
+      "ASL 1140C",
+      "ASL 1150C",
+      "ASL 1160C",
+      "ASL 2210C",
+      "ASL 1300",
+      "ASL 1510"
+    ]
+  },
+  "INT 3270": {
+    "text": "Prerequisite INT 3004 with a minimum grade of C and Prerequisite INT 3205C with a minimum grade of C and Prerequisite INT 3404 with a minimum grade of C",
+    "courses": [
+      "INT 3004",
+      "INT 3205C",
+      "INT 3404"
+    ]
+  },
+  "INT 3407": {
+    "text": "Prerequisite INT 3004 with a minimum grade of C and Prerequisite INT 3205C with a minimum grade of C and Prerequisite INT 3404 with a minimum grade of C and Prerequisite INT 3270 with a minimum grade …",
+    "courses": [
+      "INT 3004",
+      "INT 3205C",
+      "INT 3404",
+      "INT 3270",
+      "INT 3406"
+    ]
+  },
+  "INT 4260": {
+    "text": "Prerequisite INT 3270 with a minimum grade of C",
+    "courses": [
+      "INT 3270"
     ]
   },
   "ISM 3014": {
@@ -8209,6 +9771,12 @@
       "MAN 3240"
     ]
   },
+  "ISM 4113": {
+    "text": "Prerequisite ISM 3232 with a minimum grade of C",
+    "courses": [
+      "ISM 3232"
+    ]
+  },
   "ISM 4212": {
     "text": "CGS 1000 (min C) or CIS 1000 (min C)",
     "courses": [
@@ -8247,6 +9815,18 @@
       "MAN 2021"
     ]
   },
+  "ISM 4320": {
+    "text": "Prerequisite ISM 4323",
+    "courses": [
+      "ISM 4323"
+    ]
+  },
+  "ISM 4321": {
+    "text": "Prerequisite ISM 4330 with a minimum grade of C and (Admission to Technology Development and Management (Bachelor of Applied Science) (TMGT-BAS) or Admission to Cybersecurity (Bachelor of Applied Scie…",
+    "courses": [
+      "ISM 4330"
+    ]
+  },
   "ISM 4324": {
     "text": "MAN 3353 (min D) and CIS 3771 (min D)",
     "courses": [
@@ -8266,6 +9846,25 @@
       "COP2800C",
       "COP2551C",
       "COP2842C"
+    ]
+  },
+  "ISM 4545": {
+    "text": "Prerequisite STA 2023 with a minimum grade of C or Prerequisite STA 2023H with a minimum grade of C)",
+    "courses": [
+      "STA 2023",
+      "STA 2023H"
+    ]
+  },
+  "ISM 4547": {
+    "text": "Prerequisite ISM 4545 with a minimum grade of C",
+    "courses": [
+      "ISM 4545"
+    ]
+  },
+  "ISM 4548": {
+    "text": "Prerequisite ISM 4545 with a minimum grade of C",
+    "courses": [
+      "ISM 4545"
     ]
   },
   "ISM 4881": {
@@ -8292,10 +9891,11 @@
     ]
   },
   "JOU 2100": {
-    "text": "ENC1101 and ENC1101C",
+    "text": "Prerequisite ENC 1101 or Prerequisite ENC 1101H or Prerequisite IDS 1101H",
     "courses": [
-      "ENC1101",
-      "ENC1101C"
+      "ENC 1101",
+      "ENC 1101H",
+      "IDS 1101H"
     ]
   },
   "LAE 3414": {
@@ -8308,6 +9908,22 @@
     "text": "EDG 4943 (min C)",
     "courses": [
       "EDG 4943"
+    ]
+  },
+  "LAE 4335": {
+    "text": "Prerequisite TSL 3080 with a minimum grade of C and Prerequisite EEX 3012 with a minimum grade of C and Pre- or Co-requisite LAE 4941 with a minimum grade of C and Prerequisite Passing scores on the P…",
+    "courses": [
+      "TSL 3080",
+      "EEX 3012",
+      "LAE 4941"
+    ]
+  },
+  "LAE 4941": {
+    "text": "Prerequisite LAE 3323 with a minimum grade of C and Prerequisite LAE 3940 with a minimum grade of C and Pre- or Co-requisite LAE 4335 with a minimum grade of C and Passing scores on the Professional E…",
+    "courses": [
+      "LAE 3323",
+      "LAE 3940",
+      "LAE 4335"
     ]
   },
   "LAH 2020": {
@@ -8536,6 +10152,13 @@
       "MAC 1140"
     ]
   },
+  "MAD 3107": {
+    "text": "Prerequisite MAC 2311 with a minimum grade of C or Prerequisite MAC 2311H with a minimum grade of C",
+    "courses": [
+      "MAC 2311",
+      "MAC 2311H"
+    ]
+  },
   "MAE 3311": {
     "text": "EDG 4943 (min C)",
     "courses": [
@@ -8552,6 +10175,14 @@
     "text": "MAE 3311 (min C)",
     "courses": [
       "MAE 3311"
+    ]
+  },
+  "MAE 4330": {
+    "text": "Prerequisite EEX 3012 with a minimum grade of C or Prerequisite TSL 3080 with a minimum grade of C) and Pre- or Co-requisite MAE 4942 with a minimum grade of C",
+    "courses": [
+      "EEX 3012",
+      "TSL 3080",
+      "MAE 4942"
     ]
   },
   "MAN 2021": {
@@ -8600,6 +10231,10 @@
       "ENC 0027",
       "ENC 1101"
     ]
+  },
+  "MAN 2571": {
+    "text": "prerequisite courses across integrated supply chain decisions to implement a plan to achieve effective supply chain performance",
+    "courses": []
   },
   "MAN 2930": {
     "text": "SCM 1010 (min D)",
@@ -8666,6 +10301,10 @@
     "courses": [
       "GEB3213"
     ]
+  },
+  "MAN 3784": {
+    "text": "Prerequisite General Education science requirement (Environmental Science, Chemistry, Biology, Tropical Ecology, Earth Science, Geology, Meteorology, or Oceanography) and (Admission to Business Admini…",
+    "courses": []
   },
   "MAN 4101": {
     "text": "MAN2021 and GEB3213",
@@ -8756,6 +10395,12 @@
       "MAN 3303"
     ]
   },
+  "MAN 4570": {
+    "text": "Prerequisite MAN 3504 and (Admission to Business Administration (Bachelor of Science) (BUS-BS) or Admission to Management and Organizational Leadership (Bachelor of Applied Science) (MGTORG-BAS) or Ad…",
+    "courses": [
+      "MAN 3504"
+    ]
+  },
   "MAN 4720": {
     "text": "MAN 4900 (min C) and MAN 3240 (min C) and MAN 4303 (min C) and LDR 3371 (min C) and GEB 3452 (min C) and MAR 3802 (min C) and FIN 3400 (min C)",
     "courses": [
@@ -8766,6 +10411,26 @@
       "GEB 3452",
       "MAR 3802",
       "FIN 3400"
+    ]
+  },
+  "MAN 4783": {
+    "text": "Prerequisite MAN 4781 and (Admission to Sustainability Management (Bachelor of Applied Science) (SUSMGT-BAS) or Admission to Business Administration (Bachelor of Science) (BUS-BS))",
+    "courses": [
+      "MAN 4781"
+    ]
+  },
+  "MAN 4883": {
+    "text": "Prerequisite MAN 4583 with a minimum grade of C",
+    "courses": [
+      "MAN 4583"
+    ]
+  },
+  "MAN 4885": {
+    "text": "Prerequisite MAN 4583 and Pre- or Co-requisite MAN 4741 and Pre- or Co-requisite MAN 4881) and (Admission to Management and Organizational Leadership (Bachelor of Applied Science) (MGTORG-BAS) or Admi…",
+    "courses": [
+      "MAN 4583",
+      "MAN 4741",
+      "MAN 4881"
     ]
   },
   "MAN 4900": {
@@ -8839,6 +10504,12 @@
       "GEB3213"
     ]
   },
+  "MAR 3334": {
+    "text": "Prerequisite MAR 3802 with a minimum grade of C and (Admission to Business Administration (Bachelor of Science) (BUS-BS) or Admission to Management and Organizational Leadership (Bachelor of Applied S…",
+    "courses": [
+      "MAR 3802"
+    ]
+  },
   "MAR 3802": {
     "text": "FIN 3400 (min C)",
     "courses": [
@@ -8851,16 +10522,46 @@
       "MAR 1011"
     ]
   },
+  "MAR 4424": {
+    "text": "Prerequisite MAR 3802",
+    "courses": [
+      "MAR 3802"
+    ]
+  },
   "MAR 4503": {
     "text": "MAR3023",
     "courses": [
       "MAR3023"
     ]
   },
+  "MAR 4721": {
+    "text": "Prerequisite MAR 3802 with a minimum grade of C and Admission to Management and Organizational Leadership (Bachelor of Applied Science) (MGTORG-BAS)",
+    "courses": [
+      "MAR 3802"
+    ]
+  },
   "MAR 4802": {
     "text": "MAR 2011 (min D) or MAR 2011 (min S)",
     "courses": [
       "MAR 2011"
+    ]
+  },
+  "MAR 4841": {
+    "text": "Prerequisite MAR 3802 and Admission to Business Administration (Bachelor of Science) (BUS-BS)",
+    "courses": [
+      "MAR 3802"
+    ]
+  },
+  "MAS 3105": {
+    "text": "Prerequisite MAC 2312",
+    "courses": [
+      "MAC 2312"
+    ]
+  },
+  "MAS 4203": {
+    "text": "Prerequisite MAC 2312 with a minimum grade of C",
+    "courses": [
+      "MAC 2312"
     ]
   },
   "MAT 0023": {
@@ -8922,6 +10623,16 @@
       "CHM 1032"
     ]
   },
+  "MCB 2004C": {
+    "text": "Prerequisite BSC 1084C with a minimum grade of C or (Prerequisite BSC 2085 with a minimum grade of C and Prerequisite BSC 2085L with a minimum grade of C and Prerequisite BSC 2086 with a minimum grade…",
+    "courses": [
+      "BSC 1084C",
+      "BSC 2085",
+      "BSC 2085L",
+      "BSC 2086",
+      "BSC 2086L"
+    ]
+  },
   "MCB 2004L": {
     "text": "MCB 2004 (min C)",
     "courses": [
@@ -8960,6 +10671,28 @@
       "BSC 2010L",
       "BSC 1085",
       "BSC 1085L"
+    ]
+  },
+  "MCB 3020": {
+    "text": "Prerequisite BSC 2010 with a minimum grade of C and Prerequisite BSC 2010L with a minimum grade of C) or Prerequisite BSC 2010CH with a minimum grade of C) and (Prerequisite CHM 2210 with a minimum gr…",
+    "courses": [
+      "BSC 2010",
+      "BSC 2010L",
+      "BSC 2010C",
+      "CHM 2210",
+      "CHM 2210L",
+      "MCB 3020L"
+    ]
+  },
+  "MCB 3020L": {
+    "text": "Prerequisite BSC 2010 with a minimum grade of C and Prerequisite BSC 2010L with a minimum grade of C) or Prerequisite BSC 2010CH with a minimum grade of C) and (Prerequisite CHM 2210 with a minimum gr…",
+    "courses": [
+      "BSC 2010",
+      "BSC 2010L",
+      "BSC 2010C",
+      "CHM 2210",
+      "CHM 2210L",
+      "MCB 3020"
     ]
   },
   "MCB 4203": {
@@ -9125,6 +10858,12 @@
       "MAC 1105H"
     ]
   },
+  "MHF 4404": {
+    "text": "Prerequisite MAC 2311 with a minimum grade of C",
+    "courses": [
+      "MAC 2311"
+    ]
+  },
   "MKA 2021": {
     "text": "ENC 0027 (min C) or ENC 1101 (min C)",
     "courses": [
@@ -9257,11 +10996,28 @@
       "MLT2840L"
     ]
   },
-  "MMC 2100": {
-    "text": "ENC1101 and ENC1101C",
+  "MMC 2000": {
+    "text": "Prerequisite ENC 0025 or Prerequisite EAP 1695 or Prerequisite appropriate score on the college placement test",
     "courses": [
-      "ENC1101",
-      "ENC1101C"
+      "ENC 0025",
+      "EAP 1695"
+    ]
+  },
+  "MMC 2100": {
+    "text": "Prerequisite ENC 1101 or Prerequisite ENC 1101H) and Prerequisite REA 0017) or Prerequisite EAP 1695 or Prerequisite appropriate scores on the college placement test",
+    "courses": [
+      "ENC 1101",
+      "ENC 1101H",
+      "REA 0017",
+      "EAP 1695"
+    ]
+  },
+  "MMC 2700": {
+    "text": "Prerequisite ENC 0025 or Prerequisite ENC 0056) or Prerequisite EAP 1695 or Prerequisite appropriate score on the college placement test",
+    "courses": [
+      "ENC 0025",
+      "ENC 0056",
+      "EAP 1695"
     ]
   },
   "MNA 4521": {
@@ -9321,6 +11077,12 @@
       "MSL4302"
     ]
   },
+  "MUC 1102": {
+    "text": "Prerequisite MUC 1101 and Permission of the Program",
+    "courses": [
+      "MUC 1101"
+    ]
+  },
   "MUC 1211": {
     "text": "MUT 1111 (min C) or MUT PERMT",
     "courses": [
@@ -9333,6 +11095,18 @@
     "courses": [
       "MUT 1111",
       "MUC 1211"
+    ]
+  },
+  "MUC 1621": {
+    "text": "Prerequisite MUT 1001 with a minimum grade of C or Permission of the Program)",
+    "courses": [
+      "MUT 1001"
+    ]
+  },
+  "MUC 2000": {
+    "text": "Prerequisite MUT 1001 with a minimum grade of C and Admission to Music Industry/Recording Arts (Associate in Science) (MIRAS-AS)",
+    "courses": [
+      "MUT 1001"
     ]
   },
   "MUC 2221": {
@@ -9379,10 +11153,91 @@
       "ENC 1101"
     ]
   },
-  "MUM 2609": {
-    "text": "MUS 1550 (min C)",
+  "MUM 1623": {
+    "text": "Prerequisite MUM 0001 and Prerequisite MUS 1360 with a minimum grade of C",
     "courses": [
-      "MUS 1550"
+      "MUM 0001",
+      "MUS 1360"
+    ]
+  },
+  "MUM 1629": {
+    "text": "Prerequisite MUM 2600 with a minimum grade of C or Permission of the Program)",
+    "courses": [
+      "MUM 2600"
+    ]
+  },
+  "MUM 2313": {
+    "text": "Prerequisite MUM 0001 and Admission to Music Industry/Recording Arts (Associate in Science) (MIRAS-AS)",
+    "courses": [
+      "MUM 0001"
+    ]
+  },
+  "MUM 2600": {
+    "text": "Prerequisite MUM 0001 and Prerequisite MUS 1360 with a minimum grade of C and (Admission to Music Industry/Recording Arts (Associate in Science) (MIRAS-AS) or Admission to Audio Production and Enginee…",
+    "courses": [
+      "MUM 0001",
+      "MUS 1360"
+    ]
+  },
+  "MUM 2601": {
+    "text": "Prerequisite MUM 2600 with a minimum grade of C and Pre- or Co-requisite MUM 2601L with a minimum grade of C and (Admission to Music Industry/Recording Arts (Associate in Science) (MIRAS-AS) or Admiss…",
+    "courses": [
+      "MUM 2600",
+      "MUM 2601L"
+    ]
+  },
+  "MUM 2601C": {
+    "text": "Prerequisite MUM 2600 with a minimum grade of C and (Admission to Audio Production and Engineering (Certificate with Financial Aid Eligibility) (AUDIOPE-CT) or Admission to Music Industry/Recording Ar…",
+    "courses": [
+      "MUM 2600"
+    ]
+  },
+  "MUM 2602C": {
+    "text": "Prerequisite MUM 2601C with a minimum grade of C or (Prerequisite MUM 2601 with a minimum grade of C and Prerequisite MUM 2601L with a minimum grade of C))",
+    "courses": [
+      "MUM 2601C",
+      "MUM 2601",
+      "MUM 2601L"
+    ]
+  },
+  "MUM 2603": {
+    "text": "Prerequisite MUM 2602C with a minimum grade of B or (Prerequisite MUM 2602 with a minimum grade of B and Prerequisite MUM 2602L with a minimum grade of B))",
+    "courses": [
+      "MUM 2602C",
+      "MUM 2602",
+      "MUM 2602L"
+    ]
+  },
+  "MUM 2609": {
+    "text": "Prerequisite MUM 2600 with a minimum grade of C and Prerequisite MUS 1621 with a minimum grade of C and (Admission to Music Industry/Recording Arts (Associate in Science) (MIRAS-AS) or Admission to Au…",
+    "courses": [
+      "MUM 2600",
+      "MUS 1621"
+    ]
+  },
+  "MUM 2670": {
+    "text": "Prerequisite MUM 0001 and Prerequisite MUS 1360 with a minimum grade of C and Admission to Music Industry/Recording Arts (Associate in Science) (MIRAS-AS)",
+    "courses": [
+      "MUM 0001",
+      "MUS 1360"
+    ]
+  },
+  "MUM 2680": {
+    "text": "Prerequisite MUS 1360 with a minimum grade of C",
+    "courses": [
+      "MUS 1360"
+    ]
+  },
+  "MUM 2681": {
+    "text": "Prerequisite MUM 2600 with a minimum grade of C",
+    "courses": [
+      "MUM 2600"
+    ]
+  },
+  "MUM 2707": {
+    "text": "Prerequisite MUM 0001 and Admission to Music Industry/Recording Arts (Associate in Science) (MIRAS-AS)",
+    "courses": [
+      "MUM 0001"
     ]
   },
   "MUM 2949": {
@@ -9390,6 +11245,14 @@
     "courses": [
       "MUT 1112"
     ]
+  },
+  "MUN 1031": {
+    "text": "Prerequisite Audition required",
+    "courses": []
+  },
+  "MUN 1120": {
+    "text": "Prerequisite Audition required",
+    "courses": []
   },
   "MUN 1120B": {
     "text": "MUN 1120 (min C)",
@@ -9402,6 +11265,10 @@
     "courses": [
       "MUN 1120B"
     ]
+  },
+  "MUN 1140": {
+    "text": "Prerequisite Audition required",
+    "courses": []
   },
   "MUN 1210B": {
     "text": "MUN 1210 (min C)",
@@ -9475,6 +11342,10 @@
       "MUN 1640B"
     ]
   },
+  "MUN 1710": {
+    "text": "Prerequisite Audition required",
+    "courses": []
+  },
   "MUN 1710B": {
     "text": "MUN 1710 (min C)",
     "courses": [
@@ -9499,11 +11370,23 @@
       "MUN 1711B"
     ]
   },
+  "MUN 1718": {
+    "text": "Prerequisite Audition required",
+    "courses": []
+  },
+  "MUN 2004": {
+    "text": "Prerequisite Audition required",
+    "courses": []
+  },
   "MUN 2312": {
     "text": "MUN 2310 (min D)",
     "courses": [
       "MUN 2310"
     ]
+  },
+  "MUO 1001": {
+    "text": "Prerequisite Audition required",
+    "courses": []
   },
   "MUS 1010L": {
     "text": "ENC 0027 (min C) or ENC 1101 (min C)",
@@ -9535,6 +11418,13 @@
       "MVK 1111"
     ]
   },
+  "MUT 1241": {
+    "text": "Prerequisite MUT 1001 and Pre- or Co-requisite MUT 1111) or Permission of the Program",
+    "courses": [
+      "MUT 1001",
+      "MUT 1111"
+    ]
+  },
   "MUT 1242": {
     "text": "MUT 1241 (min C) and MUT 1112",
     "courses": [
@@ -9556,10 +11446,18 @@
       "MUT 1112"
     ]
   },
-  "MUT 2246": {
-    "text": "MUT 1242 (min D)",
+  "MUT 2117": {
+    "text": "Prerequisite MUT 2116 or Permission of the Program) and Pre- or Co-requisite MUT 2247",
     "courses": [
-      "MUT 1242"
+      "MUT 2116",
+      "MUT 2247"
+    ]
+  },
+  "MUT 2246": {
+    "text": "Prerequisite MUT 1242 or Permission of the Program) and Pre- or Co-requisite MUT 2116",
+    "courses": [
+      "MUT 1242",
+      "MUT 2116"
     ]
   },
   "MUT 2246C": {
@@ -9567,6 +11465,19 @@
     "courses": [
       "MUT 1242",
       "MUT 1242C"
+    ]
+  },
+  "MUT 2247": {
+    "text": "Prerequisite MUT 2246 or Permission of the Program) and Pre- or Co-requisite MUT 2117",
+    "courses": [
+      "MUT 2246",
+      "MUT 2117"
+    ]
+  },
+  "MUT 2341": {
+    "text": "Prerequisite MUT 1001 with a minimum grade of C",
+    "courses": [
+      "MUT 1001"
     ]
   },
   "MVB 1011B": {
@@ -9619,6 +11530,10 @@
       "MVB1015"
     ]
   },
+  "MVB 1311": {
+    "text": "Prerequisite Audition required",
+    "courses": []
+  },
   "MVB 1311B": {
     "text": "MVB 1311 (min C)",
     "courses": [
@@ -9636,6 +11551,10 @@
     "courses": [
       "MVB 1314"
     ]
+  },
+  "MVB 1315": {
+    "text": "Prerequisite Audition required",
+    "courses": []
   },
   "MVB 1315B": {
     "text": "MVB 1315 (min C)",
@@ -9739,6 +11658,10 @@
       "MVK 1111"
     ]
   },
+  "MVK 1311": {
+    "text": "Prerequisite Audition required",
+    "courses": []
+  },
   "MVK 1311B": {
     "text": "MVK 1311 (min C)",
     "courses": [
@@ -9803,6 +11726,10 @@
       "MVP 1311"
     ]
   },
+  "MVP 1411": {
+    "text": "Prerequisite Audition required",
+    "courses": []
+  },
   "MVP 2321": {
     "text": "MVP 1311 (min C) or MVP PERMT",
     "courses": [
@@ -9815,6 +11742,10 @@
     "courses": [
       "MVP 2321"
     ]
+  },
+  "MVP 2421": {
+    "text": "Prerequisite Audition required",
+    "courses": []
   },
   "MVS 1011B": {
     "text": "MVS PERMT or MVS 1011A (min B) or MVS 1011 (min B)",
@@ -10295,6 +12226,35 @@
       "NUR 1021C"
     ]
   },
+  "NUR 1112": {
+    "text": "Prerequisite NUR 1110C with a minimum grade of C and Prerequisite NUR 1111 with a minimum grade of C and Prerequisite NUR 1141 with a minimum grade of C and Pre- or Co-requisite NUR 2034C with a minim…",
+    "courses": [
+      "NUR 1110C",
+      "NUR 1111",
+      "NUR 1141",
+      "NUR 2034C",
+      "NUR 1142",
+      "NUR 1148",
+      "PSY 1012",
+      "PSY 1012H"
+    ]
+  },
+  "NUR 1113": {
+    "text": "Prerequisite NUR 2034C with a minimum grade of C and Prerequisite NUR 1112 with a minimum grade of C and Prerequisite NUR 1142 with a minimum grade of C and Pre- or Co-requisite NUR 2035C with a minim…",
+    "courses": [
+      "NUR 2034C",
+      "NUR 1112",
+      "NUR 1142",
+      "NUR 2035C",
+      "NUR 1148",
+      "NUR 1003C",
+      "NUR 1083",
+      "NUR 1147",
+      "NUR 1113",
+      "NUR 2205C",
+      "NUR 1149"
+    ]
+  },
   "NUR 1140C": {
     "text": "NUR 1020C (min C) or NUR 1051C (min C) and BSC 2086C (min C)",
     "courses": [
@@ -10304,10 +12264,42 @@
     ]
   },
   "NUR 1142": {
-    "text": "BSC 2085 (min C) and BSC 2085L (min C)",
+    "text": "Prerequisite NUR 1110C with a minimum grade of C and Prerequisite NUR 1111 with a minimum grade of C and Prerequisite NUR 1141 with a minimum grade of C and Pre- or Co-requisite NUR 2034C with a minim…",
     "courses": [
-      "BSC 2085",
-      "BSC 2085L"
+      "NUR 1110C",
+      "NUR 1111",
+      "NUR 1141",
+      "NUR 2034C",
+      "NUR 1112",
+      "PSY 1012",
+      "PSY 1012H"
+    ]
+  },
+  "NUR 1148": {
+    "text": "Prerequisite NUR 2034C with a minimum grade of C and Prerequisite NUR 1112 with a minimum grade of C and Prerequisite NUR 1142 with a minimum grade of C and Pre- or Co-requisite Humanities Met and Pre…",
+    "courses": [
+      "NUR 2034C",
+      "NUR 1112",
+      "NUR 1142",
+      "NUR 2035C",
+      "NUR 1113",
+      "NUR 1003C",
+      "NUR 1083",
+      "NUR 1147"
+    ]
+  },
+  "NUR 1149": {
+    "text": "Prerequisite NUR 2035C with a minimum grade of C and Prerequisite NUR 1148 with a minimum grade of C and Prerequisite NUR 1113 with a minimum grade of C and Pre- or Co-requisite NUR 2205C with a minim…",
+    "courses": [
+      "NUR 2035C",
+      "NUR 1148",
+      "NUR 1113",
+      "NUR 2205C",
+      "NUR 2940C",
+      "PSY 1012",
+      "PSY 1012H",
+      "PHI 1600",
+      "PHI 1600H"
     ]
   },
   "NUR 1200": {
@@ -10437,6 +12429,48 @@
     "text": "NUR 1023C (min C)",
     "courses": [
       "NUR 1023C"
+    ]
+  },
+  "NUR 2034C": {
+    "text": "Prerequisite NUR 1110C with a minimum grade of C and Prerequisite NUR 1111 with a minimum grade of C and Prerequisite NUR 1141 with a minimum grade of C and Pre- or Co-requisite NUR 1112 with a minimu…",
+    "courses": [
+      "NUR 1110C",
+      "NUR 1111",
+      "NUR 1141",
+      "NUR 1112",
+      "NUR 1142",
+      "PHI 1600"
+    ]
+  },
+  "NUR 2035C": {
+    "text": "Prerequisite NUR 2034C with a minimum grade of C and Prerequisite NUR 1112 with a minimum grade of C and Prerequisite NUR 1142 with a minimum grade of C and Pre- or Co-requisite NUR 1148 with a minimu…",
+    "courses": [
+      "NUR 2034C",
+      "NUR 1112",
+      "NUR 1142",
+      "NUR 1148",
+      "NUR 1113",
+      "NUR 1003C",
+      "NUR 1083",
+      "NUR 1147",
+      "PSY 1012",
+      "PSY 1012H",
+      "PHI 1600",
+      "PHI 1600H"
+    ]
+  },
+  "NUR 2205C": {
+    "text": "Prerequisite NUR 2035C with a minimum grade of C and Prerequisite NUR 1113 with a minimum grade of C and Prerequisite NUR 1148 with a minimum grade of C and Pre- or Co-requisite NUR 1149 with a minimu…",
+    "courses": [
+      "NUR 2035C",
+      "NUR 1113",
+      "NUR 1148",
+      "NUR 1149",
+      "NUR 2940C",
+      "PSY 1012",
+      "PSY 1012H",
+      "PHI 1600",
+      "PHI 1600H"
     ]
   },
   "NUR 2213C": {
@@ -10637,6 +12671,16 @@
       "NUR 2214C"
     ]
   },
+  "NUR 2940C": {
+    "text": "Prerequisite NUR 2035C with a minimum grade of C and Prerequisite NUR 1113 with a minimum grade of C and Prerequisite NUR 1148 with a minimum grade of C and Pre- or Co-requisite NUR 2205C with a minim…",
+    "courses": [
+      "NUR 2035C",
+      "NUR 1113",
+      "NUR 1148",
+      "NUR 2205C",
+      "NUR 1149"
+    ]
+  },
   "NUR 2943C": {
     "text": "NUR 2244C (min C) and NUR 2460C (min C)",
     "courses": [
@@ -10784,6 +12828,10 @@
     "courses": [
       "NUR 3805"
     ]
+  },
+  "NUR 3905": {
+    "text": "Prerequisite Permission of the Dean",
+    "courses": []
   },
   "NUR 4074": {
     "text": "NUR 3825 (min C)",
@@ -10956,10 +13004,33 @@
       "NUR 4829"
     ]
   },
+  "NUR 4950": {
+    "text": "Prerequisite NUR 3805 with a minimum grade of C and Prerequisite NUR 3874 with a minimum grade of C and Prerequisite NUR 3684 with a minimum grade of C and Prerequisite NUR 4827 with a minimum grade o…",
+    "courses": [
+      "NUR 3805",
+      "NUR 3874",
+      "NUR 3684",
+      "NUR 4827",
+      "NUR 4169",
+      "NUR 4667",
+      "NUR 3125",
+      "NUR 3655",
+      "NUR 3931"
+    ]
+  },
   "OCA 0402": {
     "text": "OTA 0101 (min D)",
     "courses": [
       "OTA 0101"
+    ]
+  },
+  "OCB 1000C": {
+    "text": "Prerequisite ENC 0025 and Prerequisite REA 0017 and Prerequisite MAT 0028) or (Prerequisite EAP 1695 and Prerequisite appropriate score on the college placement test",
+    "courses": [
+      "ENC 0025",
+      "REA 0017",
+      "MAT 0028",
+      "EAP 1695"
     ]
   },
   "OCE 2001": {
@@ -11127,6 +13198,12 @@
       "OTH 2802L"
     ]
   },
+  "PAD 4046": {
+    "text": "Prerequisite PAD 3820 with a minimum grade of C and (Admission to Public Safety Administration (Bachelor of Applied Science) (PSA-BAS) or Admission to Paralegal Studies (Bachelor of Applied Science) (…",
+    "courses": [
+      "PAD 3820"
+    ]
+  },
   "PAD 4223": {
     "text": "PAD 3820 (min C) and FIN 3400 (min C)",
     "courses": [
@@ -11140,18 +13217,82 @@
       "PAD 3820"
     ]
   },
+  "PAD 4393": {
+    "text": "Prerequisite PAD 3820 with a minimum grade of C and (Admission to Public Safety Administration (Bachelor of Applied Science) (PSA-BAS) or Admission to Emergency Management (Advanced Technical Certific…",
+    "courses": [
+      "PAD 3820"
+    ]
+  },
+  "PAD 4878": {
+    "text": "Prerequisite Permission of the program)",
+    "courses": []
+  },
+  "PCB 2061C": {
+    "text": "Prerequisite BSC 2010 with a minimum grade of C and Prerequisite BSC 2010L with a minimum grade of C) or Prerequisite BSC 2010CH with a minimum grade of C",
+    "courses": [
+      "BSC 2010",
+      "BSC 2010L",
+      "BSC 2010C"
+    ]
+  },
+  "PCB 3023": {
+    "text": "Prerequisite CHM 2210 with a minimum grade of C and Prerequisite CHM 2210L with a minimum grade of C) and (Prerequisite BSC 2010 with a minimum grade of C and (Prerequisite BSC 2010L with a minimum gr…",
+    "courses": [
+      "CHM 2210",
+      "CHM 2210L",
+      "BSC 2010",
+      "BSC 2010L",
+      "BSC 2010C"
+    ]
+  },
+  "PCB 3023L": {
+    "text": "Prerequisite CHM 2210 with a minimum grade of C and Prerequisite CHM 2210L with a minimum grade of C) and ((Prerequisite BSC 2010 with a minimum grade of C and Prerequisite BSC 2010L with a minimum gr…",
+    "courses": [
+      "CHM 2210",
+      "CHM 2210L",
+      "BSC 2010",
+      "BSC 2010L",
+      "BSC 2010C"
+    ]
+  },
   "PCB 3043": {
-    "text": "BSC 2011 (min C) and BSC 2011L (min C)",
+    "text": "Prerequisite BSC 2011 with a minimum grade of C and Prerequisite BSC 2011L with a minimum grade of C and Pre- or Co-requisite PCB 3043L with a minimum grade of C and Pre- or Co-requisite BSC 3017 with…",
     "courses": [
       "BSC 2011",
-      "BSC 2011L"
+      "BSC 2011L",
+      "PCB 3043L",
+      "BSC 3017"
     ]
   },
   "PCB 3043L": {
-    "text": "BSC 2011 (min C) and BSC 2011L (min C)",
+    "text": "Prerequisite BSC 2011 with a minimum grade of C and Prerequisite BSC 2011L with a minimum grade of C and Pre- or Co-requisite PCB 3043 with a minimum grade of C and Pre- or Co-requisite BSC 3017 with …",
     "courses": [
       "BSC 2011",
-      "BSC 2011L"
+      "BSC 2011L",
+      "PCB 3043",
+      "BSC 3017"
+    ]
+  },
+  "PCB 3063": {
+    "text": "Prerequisite BSC 2010CH with a minimum grade of C or (Prerequisite BSC 2010 with a minimum grade of C and Prerequisite BSC 2010L with a minimum grade of C) and ) Prerequisite CHM 2046 with a minimum g…",
+    "courses": [
+      "BSC 2010C",
+      "BSC 2010",
+      "BSC 2010L",
+      "CHM 2046",
+      "CHM 2046L",
+      "PCB 3063L"
+    ]
+  },
+  "PCB 3063L": {
+    "text": "Prerequisite BSC 2010CH with a minimum grade of C or (Prerequisite BSC 2010 with a minimum grade of C and Prerequisite BSC 2010L with a minimum grade of C) ) and Prerequisite CHM 2046 with a minimum g…",
+    "courses": [
+      "BSC 2010C",
+      "BSC 2010",
+      "BSC 2010L",
+      "CHM 2046",
+      "CHM 2046L",
+      "PCB 3063"
     ]
   },
   "PCB 3103": {
@@ -11184,6 +13325,45 @@
     "courses": [
       "BSC 2011",
       "BSC 2011L",
+      "PCB 3063",
+      "PCB 3063L"
+    ]
+  },
+  "PCB 4233": {
+    "text": "Prerequisite BSC 2010 with a minimum grade of C and Prerequisite BSC 2010L with a minimum grade of C) or Prerequisite BSC 2010CH with a minimum grade of C) and ((Prerequisite MCB 3020 with a minimum g…",
+    "courses": [
+      "BSC 2010",
+      "BSC 2010L",
+      "BSC 2010C",
+      "MCB 3020",
+      "MCB 3020L",
+      "PCB 3023",
+      "PCB 3023L"
+    ]
+  },
+  "PCB 4674": {
+    "text": "Prerequisite PCB 3043 with a minimum grade of C and Prerequisite PCB 3043L with a minimum grade of C) and (Prerequisite PCB 3063 with a minimum grade of C and Prerequisite PCB 3063L with a minimum gra…",
+    "courses": [
+      "PCB 3043",
+      "PCB 3043L",
+      "PCB 3063",
+      "PCB 3063L"
+    ]
+  },
+  "PCB 4723": {
+    "text": "Prerequisite PCB 3043 with a minimum grade of C and Prerequisite PCB 3043L with a minimum grade of C) and (Prerequisite PCB 3063 with a minimum grade of C and Prerequisite PCB 3063L with a minimum gra…",
+    "courses": [
+      "PCB 3043",
+      "PCB 3043L",
+      "PCB 3063",
+      "PCB 3063L"
+    ]
+  },
+  "PCB 4723L": {
+    "text": "Prerequisite PCB 3043 with a minimum grade of C and Prerequisite PCB 3043L with a minimum grade of C) and (Prerequisite PCB 3063 with a minimum grade of C and Prerequisite PCB 3063L with a minimum gra…",
+    "courses": [
+      "PCB 3043",
+      "PCB 3043L",
       "PCB 3063",
       "PCB 3063L"
     ]
@@ -11229,6 +13409,12 @@
     "text": "PGY2801C",
     "courses": [
       "PGY2801C"
+    ]
+  },
+  "PGY 2210C": {
+    "text": "Prerequisite PGY 2800C with a minimum grade of C",
+    "courses": [
+      "PGY 2800C"
     ]
   },
   "PGY 2220C": {
@@ -11289,6 +13475,10 @@
       "ENC 0022"
     ]
   },
+  "PHI 1010H": {
+    "text": "Prerequisite Appropriate score on the SPC placement test or approval of the Dean",
+    "courses": []
+  },
   "PHI 1600": {
     "text": "ENC 1101 (min C)REA 0011 (min C) or REA 0011 (min C*) or REA 0017 (min C) or REA 0017 (min C*) or REA 0019 (min C) or REA 0019 (min C*) and ENC 0025 (min C) or ENC 0025 (min C*) or ENC 0021 (min C) or ENC 0021 (min C*) or ENC 0022 (min C) or ENC 0022 (min C*)",
     "courses": [
@@ -11300,6 +13490,10 @@
       "ENC 0021",
       "ENC 0022"
     ]
+  },
+  "PHI 1600H": {
+    "text": "Prerequisite Appropriate score on SPC placement test or approval of the Dean",
+    "courses": []
   },
   "PHI 1630": {
     "text": "ENC 1101 (min C)REA 0011 (min C) or REA 0011 (min C*) or REA 0017 (min C) or REA 0017 (min C*) or REA 0019 (min C) or REA 0019 (min C*) and ENC 0025 (min C) or ENC 0025 (min C*) or ENC 0021 (min C) or ENC 0021 (min C*) or ENC 0022 (min C) or ENC 0022 (min C*)",
@@ -11342,6 +13536,16 @@
       "ENC1101"
     ]
   },
+  "PHI 2621": {
+    "text": "Prerequisite PHI 1603",
+    "courses": [
+      "PHI 1603"
+    ]
+  },
+  "PHI 2623": {
+    "text": "Prerequisite BA or BS degree or permission of Program Director",
+    "courses": []
+  },
   "PHI 2635": {
     "text": "ENC 1101 (min C) or ENC 1101 (min Z) or ENC 1101C (min C) or ENC 1101H (min C)",
     "courses": [
@@ -11370,9 +13574,34 @@
       "BSC2085C"
     ]
   },
-  "PHT 1200L": {
-    "text": "PHT 1200 (min D)",
+  "PHT 1121": {
+    "text": "Prerequisite BSC 2085 with a minimum grade of C and Prerequisite BSC 2085L with a minimum grade of C and Pre- or Co-requisite PHT 1121L with a minimum grade of C",
     "courses": [
+      "BSC 2085",
+      "BSC 2085L",
+      "PHT 1121L"
+    ]
+  },
+  "PHT 1121L": {
+    "text": "Prerequisite BSC 2085 with a minimum grade of C and Prerequisite BSC 2085L with a minimum grade of C and Pre- or Co-requisite PHT 1121 with a minimum grade of C",
+    "courses": [
+      "BSC 2085",
+      "BSC 2085L",
+      "PHT 1121"
+    ]
+  },
+  "PHT 1200": {
+    "text": "Prerequisite PHI 1600 and Prerequisite HSC 1531 and Prerequisite computer competency met",
+    "courses": [
+      "PHI 1600",
+      "HSC 1531"
+    ]
+  },
+  "PHT 1200L": {
+    "text": "Prerequisite PHI 1600 and Prerequisite HSC 1531 and Pre- or Co-requisite PHT 1200 with a minimum grade of C and Prerequisite computer competency met",
+    "courses": [
+      "PHI 1600",
+      "HSC 1531",
       "PHT 1200"
     ]
   },
@@ -11402,6 +13631,12 @@
       "PHT1120C"
     ]
   },
+  "PHT 2162": {
+    "text": "Prerequisite PHT 1801L with a minimum grade of C",
+    "courses": [
+      "PHT 1801L"
+    ]
+  },
   "PHT 2211": {
     "text": "PHT 1220 (min D) and PHT 1220L (min D)",
     "courses": [
@@ -11415,12 +13650,26 @@
       "PHT 2211"
     ]
   },
+  "PHT 2220": {
+    "text": "Prerequisite PHT 1801L with a minimum grade of C and Pre- or Co-requisite PHT 2220L with a minimum grade of C",
+    "courses": [
+      "PHT 1801L",
+      "PHT 2220L"
+    ]
+  },
   "PHT 2220C": {
     "text": "BSC 2086C (min C) and PHI 2010 (min D) and PHT 1250C (min C)",
     "courses": [
       "BSC 2086C",
       "PHI 2010",
       "PHT 1250C"
+    ]
+  },
+  "PHT 2220L": {
+    "text": "Prerequisite PHT 1801L with a minimum grade of C and Pre- or Co-requisite PHT 2220 with a minimum grade of C",
+    "courses": [
+      "PHT 1801L",
+      "PHT 2220"
     ]
   },
   "PHT 2221C": {
@@ -11555,6 +13804,14 @@
       "MAC 2114"
     ]
   },
+  "PHY 1049L": {
+    "text": "Prerequisite PHY 1048L with a minimum grade of C and (Pre- or Co-requisite PHY 1054 with a minimum grade of C or Pre- or Co-requisite PHY 2049 with a minimum grade of C)",
+    "courses": [
+      "PHY 1048L",
+      "PHY 1054",
+      "PHY 2049"
+    ]
+  },
   "PHY 1053": {
     "text": "REA 0017 (min C) or REA 0017 (min C*) or REA 0011 (min C) or REA 0011 (min C*) or REA 0019 (min C) or REA 0019 (min C*) or ENC 1101 (min C) and MAC 1147 (min C) or MAC 1114 (min C) or MAC 2311 (min C)",
     "courses": [
@@ -11576,10 +13833,12 @@
     ]
   },
   "PHY 1054": {
-    "text": "PHY 1053 (min C) or PHY 1053 and PHY 1053L (min C) or PHY 1053L",
+    "text": "Prerequisite PHY 1048L with a minimum grade of C and (Prerequisite PHY 1053 with a minimum grade of C or Prerequisite PHY 2048 with a minimum grade of C) and Pre- or Co-requisite PHY 1049L with a mini…",
     "courses": [
+      "PHY 1048L",
       "PHY 1053",
-      "PHY 1053L"
+      "PHY 2048",
+      "PHY 1049L"
     ]
   },
   "PHY 1057C": {
@@ -11602,12 +13861,13 @@
     ]
   },
   "PHY 2048": {
-    "text": "MAC 2311 (min C) and PHY 1023 (min C) and PHY 2048L (min C) and MAC 2312 (min C)",
+    "text": "Prerequisite ENC 0025 and Prerequisite REA 0017) or (Prerequisite EAP 1695 and Prerequisite MAC 2311 with a minimum grade of C and (Pre- or Co-requisite PHY 1048L with a minimum grade of C or Permissi…",
     "courses": [
+      "ENC 0025",
+      "REA 0017",
+      "EAP 1695",
       "MAC 2311",
-      "PHY 1023",
-      "PHY 2048L",
-      "MAC 2312"
+      "PHY 1048L"
     ]
   },
   "PHY 2048C": {
@@ -11692,6 +13952,10 @@
       "PHY 2053L"
     ]
   },
+  "PLA 1003": {
+    "text": "Prerequisite Dev Level 2 Writing Met and Prerequisite Dev Level 2 Reading Met",
+    "courses": []
+  },
   "PLA 1104": {
     "text": "ENC1101 and ENC1101C and PLA1003",
     "courses": [
@@ -11720,10 +13984,30 @@
       "PLA1003"
     ]
   },
+  "PLA 1730": {
+    "text": "Prerequisite PLA 1104 with a minimum grade of C",
+    "courses": [
+      "PLA 1104"
+    ]
+  },
+  "PLA 1763": {
+    "text": "Prerequisite ENC 1101 with a minimum grade of C or Prerequisite ENC 1101H with a minimum grade of C or Prerequisite IDS 1101H with a minimum grade of C",
+    "courses": [
+      "ENC 1101",
+      "ENC 1101H",
+      "IDS 1101H"
+    ]
+  },
   "PLA 2104": {
     "text": "ENC 1101 (min C)",
     "courses": [
       "ENC 1101"
+    ]
+  },
+  "PLA 2114": {
+    "text": "Prerequisite PLA 1104 with a minimum grade of C",
+    "courses": [
+      "PLA 1104"
     ]
   },
   "PLA 2200": {
@@ -11754,11 +14038,30 @@
       "PLA1003"
     ]
   },
+  "PLA 2304": {
+    "text": "Prerequisite PLA 1003 with a minimum grade of C",
+    "courses": [
+      "PLA 1003"
+    ]
+  },
+  "PLA 2433": {
+    "text": "Prerequisite PLA 1003 with a minimum grade of C and Prerequisite BUL 2241",
+    "courses": [
+      "PLA 1003",
+      "BUL 2241"
+    ]
+  },
   "PLA 2600": {
     "text": "PLA1003 and PLA1104",
     "courses": [
       "PLA1003",
       "PLA1104"
+    ]
+  },
+  "PLA 2610": {
+    "text": "Prerequisite PLA 1003 with a minimum grade of C",
+    "courses": [
+      "PLA 1003"
     ]
   },
   "PLA 2732": {
@@ -11798,6 +14101,69 @@
     "courses": [
       "PLA PERMT"
     ]
+  },
+  "PLA 3563": {
+    "text": "Prerequisite PLA 2114 with a minimum grade of C",
+    "courses": [
+      "PLA 2114"
+    ]
+  },
+  "PLA 4116": {
+    "text": "Prerequisite PLA 2114 with a minimum grade of C",
+    "courses": [
+      "PLA 2114"
+    ]
+  },
+  "PLA 4225": {
+    "text": "Prerequisite PLA 2203 and Prerequisite PLA 2114",
+    "courses": [
+      "PLA 2203",
+      "PLA 2114"
+    ]
+  },
+  "PLA 4263": {
+    "text": "Prerequisite PLA 2114 with a minimum grade of C",
+    "courses": [
+      "PLA 2114"
+    ]
+  },
+  "PLA 4522": {
+    "text": "Prerequisite BUL 2241 with a minimum grade of C or Prerequisite BUL 2131 with a minimum grade of C or Prerequisite BUL 3310 with a minimum grade of C or Prerequisite BUL 3320 with a minimum grade of C…",
+    "courses": [
+      "BUL 2241",
+      "BUL 2131",
+      "BUL 3310",
+      "BUL 3320"
+    ]
+  },
+  "PLA 4607": {
+    "text": "Prerequisite PLA 2114 with a minimum grade of C",
+    "courses": [
+      "PLA 2114"
+    ]
+  },
+  "PLA 4806": {
+    "text": "Prerequisite PLA 2114 with a minimum grade of C",
+    "courses": [
+      "PLA 2114"
+    ]
+  },
+  "PLA 4827": {
+    "text": "Prerequisite BUL 2241 with a minimum grade of C or Prerequisite BUL 2131 with a minimum grade of C or Prerequisite BUL 3310 with a minimum grade of C or Prerequisite BUL 3320 with a minimum grade of C…",
+    "courses": [
+      "BUL 2241",
+      "BUL 2131",
+      "BUL 3310",
+      "BUL 3320"
+    ]
+  },
+  "PLA 4941": {
+    "text": "Prerequisite Permission of Program and Prerequisite Senior Status",
+    "courses": []
+  },
+  "PLA 4944": {
+    "text": "Prerequisite Permission of the Program",
+    "courses": []
   },
   "PMT 0075": {
     "text": "PMT 0161",
@@ -11903,6 +14269,10 @@
       "ENC 0022"
     ]
   },
+  "POS 2041H": {
+    "text": "Prerequisite appropriate score on the college placement test or Prerequisite Permission of the Program",
+    "courses": []
+  },
   "POS 2112": {
     "text": "ENC 1101 (min C)REA 0011 (min C) or REA 0011 (min C*) or REA 0017 (min C) or REA 0017 (min C*) or REA 0019 (min C) or REA 0019 (min C*) and ENC 0025 (min C) or ENC 0025 (min C*) or ENC 0021 (min C) or ENC 0021 (min C*) or ENC 0022 (min C) or ENC 0022 (min C*)",
     "courses": [
@@ -11913,6 +14283,12 @@
       "ENC 0025",
       "ENC 0021",
       "ENC 0022"
+    ]
+  },
+  "POS 3272": {
+    "text": "Prerequisite POS 2041 with a minimum grade of C",
+    "courses": [
+      "POS 2041"
     ]
   },
   "PPE 2001": {
@@ -12169,6 +14545,39 @@
       "PTN0086"
     ]
   },
+  "PUP 3033": {
+    "text": "Prerequisite PUP 3002 with a minimum grade of C and Prerequisite PUP 3040 with a minimum grade of C",
+    "courses": [
+      "PUP 3002",
+      "PUP 3040"
+    ]
+  },
+  "PUP 3040": {
+    "text": "Prerequisite PUP 3002 with a minimum grade of C",
+    "courses": [
+      "PUP 3002"
+    ]
+  },
+  "PUP 3046": {
+    "text": "Prerequisite PUP 3043 with a minimum grade of C",
+    "courses": [
+      "PUP 3043"
+    ]
+  },
+  "PUP 3823": {
+    "text": "Prerequisite POS 3235 with a minimum grade of C",
+    "courses": [
+      "POS 3235"
+    ]
+  },
+  "PUP 4941": {
+    "text": "Prerequisite Completion of all core courses in the PPA-BS program or LEGAL-BAS program or Prerequisite Permission of the Program)",
+    "courses": []
+  },
+  "PUP 4949": {
+    "text": "Prerequisite Permission of the Program",
+    "courses": []
+  },
   "QMB 1001": {
     "text": "MAT 0028 (min S.) or MAT 0027 (min S.) or MAT 0024 (min S.) or MAT 0014 (min C.) or MAT 0024C (min S.) or MAT 1033 (min C) or MAC 1105 (min C) or MAC 1105C (min C) or MGF 1106 (min C)",
     "courses": [
@@ -12190,6 +14599,13 @@
       "MAC1105C",
       "MGF1106",
       "MGF1130"
+    ]
+  },
+  "QMB 3200": {
+    "text": "Prerequisite STA 2023 with a minimum grade of C or Prerequisite QMB 2100 with a minimum grade of C (course not offered at SPC))",
+    "courses": [
+      "STA 2023",
+      "QMB 2100"
     ]
   },
   "QMB 3600": {
@@ -12218,9 +14634,9 @@
     ]
   },
   "REA 0017": {
-    "text": "REA0007",
+    "text": "Prerequisite REA 0007 or Prerequisite an appropriate score on the college placement test",
     "courses": [
-      "REA0007"
+      "REA 0007"
     ]
   },
   "RED 3519": {
@@ -12248,15 +14664,18 @@
     ]
   },
   "RED 4511": {
-    "text": "RED 3309 (min D)",
+    "text": "Prerequisite EDG 3620 with a minimum grade of C and Prerequisite RED 3309 with a minimum grade of C) or (Admission to Exceptional Student Education (K-12) with Infused ESOL & Reading Endorsements (Bac…",
     "courses": [
-      "RED 3309"
+      "EDG 3620",
+      "RED 3309",
+      "EEX 3241"
     ]
   },
   "RED 4519": {
-    "text": "RED 3012 (min C)",
+    "text": "Prerequisite RED 3309 with a minimum grade of C and Prerequisite RED 4511 with a minimum grade of C)",
     "courses": [
-      "RED 3012"
+      "RED 3309",
+      "RED 4511"
     ]
   },
   "RED 4541": {
@@ -12338,6 +14757,10 @@
       "ENC 0021",
       "ENC 0022"
     ]
+  },
+  "RET 1007": {
+    "text": "Prerequisite Admission to the RESC-AS program",
+    "courses": []
   },
   "RET 1008": {
     "text": "RET1024 and RET1485 and RET1276 and RET1824 and RET2272L",
@@ -12506,6 +14929,24 @@
       "RET 1264C"
     ]
   },
+  "RET 2284": {
+    "text": "Prerequisite RET 1264 with a minimum grade of C",
+    "courses": [
+      "RET 1264"
+    ]
+  },
+  "RET 2414": {
+    "text": "Prerequisite RET 1485 with a minimum grade of C",
+    "courses": [
+      "RET 1485"
+    ]
+  },
+  "RET 2450": {
+    "text": "Prerequisite RET 1485 with a minimum grade of C",
+    "courses": [
+      "RET 1485"
+    ]
+  },
   "RET 2483": {
     "text": "BSC 2085C (min C) and ENC 1101 (min C) and MAC 1105 (min C)",
     "courses": [
@@ -12560,6 +15001,12 @@
       "RET 1833"
     ]
   },
+  "RET 2876L": {
+    "text": "Prerequisite RET 1875L with a minimum grade of C",
+    "courses": [
+      "RET 1875L"
+    ]
+  },
   "RET 2877L": {
     "text": "RET 2714C (min C) and RET 2876L (min C)",
     "courses": [
@@ -12576,6 +15023,12 @@
       "RET 1833",
       "RET 2878",
       "RET 2834"
+    ]
+  },
+  "RET 2879L": {
+    "text": "Prerequisite RET 2878L with a minimum grade of C",
+    "courses": [
+      "RET 2878L"
     ]
   },
   "RET 2930": {
@@ -12599,6 +15052,41 @@
       "RET2714"
     ]
   },
+  "RET 3050": {
+    "text": "Prerequisite HSA 3702 with a minimum grade of C and (Prerequisite HSA 3104 with a minimum grade of C or Prerequisite HSA 4184 with a minimum grade of C) ) or Permission of the Program Respiratory Care…",
+    "courses": [
+      "HSA 3702",
+      "HSA 3104",
+      "HSA 4184"
+    ]
+  },
+  "RET 4285": {
+    "text": "Prerequisite HSA 3104 with a minimum grade of C or Prerequisite HSA 4184 with a minimum grade of C) ) or Permission of the Program Respiratory Care or Admission to Cardiopulmonary Science (Bachelor of…",
+    "courses": [
+      "HSA 3104",
+      "HSA 4184"
+    ]
+  },
+  "RET 4494": {
+    "text": "Prerequisite HSA 3104 with a minimum grade of C or Prerequisite HSA 4184 with a minimum grade of C) ) or Permission of the Program Respiratory Care or Admission to Cardiopulmonary Science (Bachelor of…",
+    "courses": [
+      "HSA 3104",
+      "HSA 4184"
+    ]
+  },
+  "RET 4715": {
+    "text": "Prerequisite HSA 3104 with a minimum grade of C or Prerequisite HSA 4184 with a minimum grade of C) ) or Admission to Cardiopulmonary Science (Bachelor of Science) (CARD-BS) or Permision of the Respir…",
+    "courses": [
+      "HSA 3104",
+      "HSA 4184"
+    ]
+  },
+  "RMI 2213": {
+    "text": "Prerequisite RMI 1201 with a minimum grade of C",
+    "courses": [
+      "RMI 1201"
+    ]
+  },
   "RTE 1385": {
     "text": "RTE 1418C (min C)",
     "courses": [
@@ -12619,15 +15107,23 @@
     ]
   },
   "RTE 1458": {
-    "text": "RTE 1418 (min C)",
+    "text": "Prerequisite RTE 1418 with a minimum grade of C and Pre- or Co-requisite RTE 1473L with a minimum grade of C",
     "courses": [
-      "RTE 1418"
+      "RTE 1418",
+      "RTE 1473L"
     ]
   },
   "RTE 1458L": {
     "text": "RTE 1418L (min C)",
     "courses": [
       "RTE 1418L"
+    ]
+  },
+  "RTE 1473L": {
+    "text": "Prerequisite RTE 1418 with a minimum grade of C and Pre- or Co-requisite RTE 1458",
+    "courses": [
+      "RTE 1418",
+      "RTE 1458"
     ]
   },
   "RTE 1503": {
@@ -12655,9 +15151,11 @@
     ]
   },
   "RTE 1513L": {
-    "text": "RTE 1503L (min C)",
+    "text": "Prerequisite RTE 1503C with a minimum grade of C and Prerequisite RTE 1503L with a minimum grade of C and Pre- or Co-requisite RTE 1513C",
     "courses": [
-      "RTE 1503L"
+      "RTE 1503C",
+      "RTE 1503L",
+      "RTE 1513C"
     ]
   },
   "RTE 1523": {
@@ -12705,9 +15203,12 @@
     ]
   },
   "RTE 1804L": {
-    "text": "RTE 1503C",
+    "text": "Prerequisite RTE 1000 with a minimum grade of C and Prerequisite RTE 1503C with a minimum grade of C and Prerequisite RTE 1503L with a minimum grade of C and Prerequisite RTE 1418 with a minimum grade…",
     "courses": [
-      "RTE 1503C"
+      "RTE 1000",
+      "RTE 1503C",
+      "RTE 1503L",
+      "RTE 1418"
     ]
   },
   "RTE 1814": {
@@ -12718,9 +15219,11 @@
     ]
   },
   "RTE 1814L": {
-    "text": "RTE 1804L (min C)",
+    "text": "Prerequisite RTE 1804L with a minimum grade of C and Prerequisite RTE 1513L with a minimum grade of C and Prerequisite RTE 1513C with a minimum grade of C",
     "courses": [
-      "RTE 1804L"
+      "RTE 1804L",
+      "RTE 1513L",
+      "RTE 1513C"
     ]
   },
   "RTE 1824": {
@@ -12847,6 +15350,10 @@
     "courses": [
       "RTE 2844L"
     ]
+  },
+  "RTE 2949": {
+    "text": "Prerequisite Permission of the Program",
+    "courses": []
   },
   "RTV 3581C": {
     "text": "DIG2282C",
@@ -13110,17 +15617,41 @@
     ]
   },
   "SOP 2002": {
-    "text": "PSY 2012 (min C)",
+    "text": "Prerequisite PSY 1012 with a minimum grade of C or Prerequisite PSY 1012H with a minimum grade of C) or Prerequisite SYG 2000 with a minimum grade of C",
     "courses": [
-      "PSY 2012"
+      "PSY 1012",
+      "PSY 1012H",
+      "SYG 2000"
+    ]
+  },
+  "SPC 1017": {
+    "text": "Prerequisite ENC 0025 with a minimum grade of C or Prerequisite ENC 0056 with a minimum grade of C or Prerequisite ENC 0027 with a minimum grade of C or Prerequisite EAP 1695 with a minimum grade of C…",
+    "courses": [
+      "ENC 0025",
+      "ENC 0056",
+      "ENC 0027",
+      "EAP 1695"
+    ]
+  },
+  "SPC 1065": {
+    "text": "Prerequisite ENC 0025 with a minimum grade of C or Prerequisite EAP 1695 with a minimum grade of C) or Prerequisite satisfactory score on the SPC placement test",
+    "courses": [
+      "ENC 0025",
+      "EAP 1695"
     ]
   },
   "SPC 1608": {
-    "text": "ENC 0027 (min C) or ENC 1101 (min C)",
+    "text": "Prerequisite ENC 0025 or Prerequisite ENC 0056 or Prerequisite ENC 0027 or Prerequisite EAP 1695 or Prerequisite satisfactory score on the SPC placement test",
     "courses": [
+      "ENC 0025",
+      "ENC 0056",
       "ENC 0027",
-      "ENC 1101"
+      "EAP 1695"
     ]
+  },
+  "SPC 1608H": {
+    "text": "Prerequisite appropriate score on the college placement test or Prerequisite Permission of the Program",
+    "courses": []
   },
   "SPC 2065": {
     "text": "ENC1101 and ENC1101C",
@@ -13154,9 +15685,10 @@
     ]
   },
   "SPN 1121": {
-    "text": "SPN 1120 (min C) or SPN 1120 (min Z)",
+    "text": "Prerequisite SPN 1120 or Prerequisite SPN 1120H or Prerequisite Permission of the Program",
     "courses": [
-      "SPN 1120"
+      "SPN 1120",
+      "SPN 1120H"
     ]
   },
   "SPN 1121C": {
@@ -13180,10 +15712,28 @@
       "SPN 1121"
     ]
   },
+  "SPN 2201": {
+    "text": "Prerequisite SPN 2200 or Prerequisite Permission of the Program",
+    "courses": [
+      "SPN 2200"
+    ]
+  },
   "SPN 2210": {
     "text": "SPN1120",
     "courses": [
       "SPN1120"
+    ]
+  },
+  "SPN 2240": {
+    "text": "Prerequisite SPN 2201 or Prerequisite Permission of the Program",
+    "courses": [
+      "SPN 2201"
+    ]
+  },
+  "SPN 2241": {
+    "text": "Prerequisite SPN 2240 or Prerequisite Permission of the Program",
+    "courses": [
+      "SPN 2240"
     ]
   },
   "SSE 3312": {
@@ -13213,10 +15763,45 @@
       "MAC 1105H"
     ]
   },
-  "STS 1302": {
-    "text": "STS1538",
+  "STA 2023H": {
+    "text": "Prerequisite Appropriate score on the SPC mathematics placement test or Prerequisite Completion of required developmental education coursework",
+    "courses": []
+  },
+  "STA 2041": {
+    "text": "Prerequisite STA 2023 with a minimum grade of C and Prerequisite COP 1044 with a minimum grade of C",
     "courses": [
-      "STS1538"
+      "STA 2023",
+      "COP 1044"
+    ]
+  },
+  "STS 1302": {
+    "text": "Prerequisite BSC 1084C with a minimum grade of C or (Prerequisite BSC 2085 with a minimum grade of C and Prerequisite BSC 2085L with a minimum grade of C and Prerequisite BSC 2086 with a minimum grade…",
+    "courses": [
+      "BSC 1084C",
+      "BSC 2085",
+      "BSC 2085L",
+      "BSC 2086",
+      "BSC 2086L",
+      "HSC 1531",
+      "ENC 1101",
+      "MCB 2004C",
+      "STS 1302L",
+      "STS 1340"
+    ]
+  },
+  "STS 1302L": {
+    "text": "Prerequisite BSC 1084C with a minimum grade of C or (Prerequisite BSC 2085 with a minimum grade of C and Prerequisite BSC 2085L with a minimum grade of C and Prerequisite BSC 2086 with a minimum grade…",
+    "courses": [
+      "BSC 1084C",
+      "BSC 2085",
+      "BSC 2085L",
+      "BSC 2086",
+      "BSC 2086L",
+      "HSC 1531",
+      "ENC 1101",
+      "MCB 2004C",
+      "STS 1302",
+      "STS 1340"
     ]
   },
   "STS 1304L": {
@@ -13265,9 +15850,18 @@
     ]
   },
   "STS 1340": {
-    "text": "STS1538",
+    "text": "Prerequisite BSC 1084C with a minimum grade of C or (Prerequisite BSC 2085 with a minimum grade of C and Prerequisite BSC 2085L with a minimum grade of C and Prerequisite BSC 2086 with a minimum grade…",
     "courses": [
-      "STS1538"
+      "BSC 1084C",
+      "BSC 2085",
+      "BSC 2085L",
+      "BSC 2086",
+      "BSC 2086L",
+      "HSC 1531",
+      "ENC 1101",
+      "MCB 2004C",
+      "STS 1302",
+      "STS 1302L"
     ]
   },
   "STS 1931": {
@@ -13433,6 +16027,30 @@
     "courses": [
       "ENC 0027",
       "ENC 1101"
+    ]
+  },
+  "SYG 2324": {
+    "text": "Prerequisite ENC 0025 or Prerequisite ENC 0056 or Prerequisite EAP 1695 or Prerequisite satisfactory score on the SPC placement test",
+    "courses": [
+      "ENC 0025",
+      "ENC 0056",
+      "EAP 1695"
+    ]
+  },
+  "SYG 2430": {
+    "text": "Prerequisite ENC 0025 and Prerequisite REA 0017) or Prerequisite EAP 1695 or Prerequisite appropriate score on the SPC placement test",
+    "courses": [
+      "ENC 0025",
+      "REA 0017",
+      "EAP 1695"
+    ]
+  },
+  "TAR 1271": {
+    "text": "Prerequisite ARC 2461C with a minimum grade of C and ((Prerequisite BCN 1272 with a minimum grade of C or Prerequisite BCN 1251C with a minimum grade of C) or Permission of the Program)",
+    "courses": [
+      "ARC 2461C",
+      "BCN 1272",
+      "BCN 1251C"
     ]
   },
   "TAR 2122": {
@@ -13721,9 +16339,13 @@
     ]
   },
   "TSL 4081": {
-    "text": "TSL 3080 (min C)",
+    "text": "Prerequisite TSL 3080 with a minimum grade of C and Prerequisite EDE 4304 with a minimum grade of C and Prerequisite EDE 4943 with a minimum grade of C) or (Admission to Prekindergarten/Primary Educat…",
     "courses": [
-      "TSL 3080"
+      "TSL 3080",
+      "EDE 4304",
+      "EDE 4943",
+      "EEC 4940",
+      "LAE 3940"
     ]
   },
   "TSL 4240": {
@@ -13743,6 +16365,29 @@
     "text": "ENC1101",
     "courses": [
       "ENC1101"
+    ]
+  },
+  "ZOO 3307": {
+    "text": "Prerequisite BSC 2011 with a minimum grade of C and Prerequisite BSC 2011L with a minimum grade of C and Pre- or Co-requisite ZOO 3307L with a minimum grade of C",
+    "courses": [
+      "BSC 2011",
+      "BSC 2011L",
+      "ZOO 3307L"
+    ]
+  },
+  "ZOO 3307L": {
+    "text": "Prerequisite BSC 2011 with a minimum grade of C and Prerequisite BSC 2011L with a minimum grade of C and Pre- or Co-requisite ZOO 3307 with a minimum grade of C",
+    "courses": [
+      "BSC 2011",
+      "BSC 2011L",
+      "ZOO 3307"
+    ]
+  },
+  "ZOO 3733C": {
+    "text": "Prerequisite BSC 2011 with a minimum grade of C and Prerequisite BSC 2011L with a minimum grade of C",
+    "courses": [
+      "BSC 2011",
+      "BSC 2011L"
     ]
   }
 }
