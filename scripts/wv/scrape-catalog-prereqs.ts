@@ -237,17 +237,25 @@ function extractCoids(html: string): string[] {
 function parseDetailPage(
   html: string,
 ): { prefix: string; number: string; text: string; courses: string[] } | null {
-  const titleMatch = html.match(/<title>\s*([A-Z]{2,5})\s*(\d{3,4}[A-Z]?)\s*-/);
+  // Standard format: "MATH 1010 - Course Name"
+  // BridgeValley format: "MATH - 109E  Course Name" (dash between prefix and number)
+  const titleMatch = html.match(/<title>\s*([A-Z]{2,5})\s*-?\s*(\d{3,4}[A-Z]?)/);
   if (!titleMatch) return null;
   const prefix = titleMatch[1].toUpperCase();
   const number = titleMatch[2];
 
+  // BridgeValley uses "Pre-requisite(s):" (hyphenated); others use "Prerequisite(s):".
+  // BridgeValley also separates AND/OR conditions into separate <p> tags, so we
+  // must not stop at the first </p> when it is immediately followed by <p>AND</p>
+  // or <p>OR</p>. The negative lookahead keeps the lazy match running through those.
   const prereqMatch = html.match(
-    /<strong>\s*Prerequisite(?:s|\(s\))?\s*:?\s*<\/strong>\s*([\s\S]*?)(?:<br\s*\/?>\s*<br|<\/p>|<strong>)/i,
+    /<strong>\s*Pre-?requisite(?:s|\(s\))?\s*:?\s*<\/strong>\s*([\s\S]*?)(?:<br\s*\/?>\s*<br|<\/p>(?!\s*<p>\s*(?:AND|OR)\s*<\/p>)|<strong>)/i,
   );
   if (!prereqMatch) return null;
 
   let text = prereqMatch[1]
+    // Join BridgeValley's multi-paragraph AND/OR conditions into plain text
+    .replace(/<\/p>\s*<p>\s*(AND|OR)\s*<\/p>\s*<p>/gi, " $1 ")
     .replace(/<br\s*\/?>/gi, " ")
     .replace(/<[^>]+>/g, "")
     .replace(/&nbsp;?/g, " ")
