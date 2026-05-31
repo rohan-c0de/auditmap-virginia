@@ -158,11 +158,27 @@ const flConfig: StateConfig = {
       // ORG_CD. 87 category codes captured 2026-05-31; refresh from the
       // iframe category links if SF adds subjects. ~16k students.
       { scripts: ["scripts/fl/scrape-santafe.ts"], runner: "http" },
-      // manual-only: fscj — Workday for sections (auth-gated); only the
-      //   Coursedog course catalog is public (already scraped above).
-      // manual-only: pensacolastate — no public section data; the
-      //   coursesearch page is a WordPress content search over syllabus
-      //   PDFs (section codes only, no times/instructors/seats).
+      // not-scrapable: fscj — PeopleSoft Campus Solutions at
+      //   csprd.fscj.edu with no guest realm provisioned. Investigated
+      //   2026-06: tried both `csprdguest` and `FSCJGUEST` site names —
+      //   both return a 62-byte "Site name is not valid" body. The
+      //   `COMMUNITY_ACCESS.CLASS_SEARCH.GBL` page on the main realm
+      //   redirects to login (`cmd=login&errorPg=ckreq`). No Banner or
+      //   alternate SIS subdomain exists at fscj.edu, and no PDF
+      //   schedule on the academics page. Only the Coursedog course
+      //   catalog (scrape-coursedog.ts above) yields public data; that
+      //   gives course descriptions + prereqs but never sections.
+      //   Revisit if FSCJ ever provisions csprd_guest.
+      // not-scrapable: pensacolastate — migrated to Workday Student
+      //   (wd501.myworkday.com/pensacolastate). Investigated 2026-06:
+      //   Workday Student has no public guest class-search by design —
+      //   this is an architectural property of the platform, not a
+      //   config gap. The `pensacolastate.edu/course-search/` WordPress
+      //   form POSTs to a JS widget that calls Workday client-side and
+      //   returns nothing without auth. No Banner / Colleague endpoint
+      //   exists anywhere on pensacolastate.edu. Revisit only if PSC
+      //   enables Workday's public "find-courses" task (some Workday
+      //   institutions do, this one does not).
     ],
     transfers: [
       // SCNS flat-file dump — single 80 MB download, no auth, covers all
