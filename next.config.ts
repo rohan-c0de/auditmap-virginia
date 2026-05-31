@@ -3,6 +3,15 @@ import createMDX from "@next/mdx";
 
 const nextConfig: NextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
+  experimental: {
+    // Default is 8 concurrent pages per worker × 3 workers = 24 pages
+    // rendering at once, each making multiple Supabase queries. That
+    // saturates the free-tier connection pool (~15 connections) and
+    // causes "Timed out acquiring connection" / statement_timeout errors
+    // that kill the build. Cap to 2 so total concurrency stays under the
+    // pool limit even with 3 workers (3 × 2 = 6 pages at once).
+    staticGenerationMaxConcurrency: 2,
+  },
   // Explicitly bundle every state's prereqs.json into the serverless
   // functions that PARSE it — only the API routes need the file content.
   // The state layout used to also need it for an `fs.existsSync` check,
