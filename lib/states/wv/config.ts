@@ -64,10 +64,11 @@ const wvConfig: StateConfig = {
       // southern-wv) — each needs its own scraper. Eastern WV is the
       // cleanest WP+PDF example; replicate the pattern per-college.
     ],
-    // Prereqs come from whatever inline text the scrapers expose — Eastern WV's
-    // PDFs don't carry prereqs, but the aggregator is harmless for an empty
-    // state and lights up automatically once colleges with prereqs land.
-    prereqs: { source: "aggregate-from-courses" },
+    prereqs: [
+      // Six WV Acalog catalogs — WAF bypass via Playwright. Covers Pierpont,
+      // BridgeValley, Bluefield State, WV Northern, Southern WV, New River.
+      { scripts: ["scripts/wv/scrape-catalog-prereqs.ts"], runner: "http" },
+    ],
     transfers: [
       // No WV statewide articulation portal (HEPC's is outcomes-based, not
       // course-level). Marshall University publishes a public equivalency tool
