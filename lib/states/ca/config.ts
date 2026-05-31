@@ -80,6 +80,16 @@ const caConfig: StateConfig = {
       // scraper paginates via __doPostBack + VIEWSTATE; one (college, term)
       // takes ~30s–5min depending on size.
       { scripts: ["scripts/ca/scrape-4cd.ts"], runner: "http" },
+      // West Hills CCD cluster: two colleges (Coalinga, Lemoore) share a
+      // single Colleague-powered schedule page at classweb.westhillscollege.com
+      // /schedule/. One GET returns every section across both colleges in an
+      // HTML table; the College column distinguishes campuses.
+      { scripts: ["scripts/ca/scrape-westhills.ts"], runner: "http" },
+      // West Valley-Mission CCD: two colleges (Mission, West Valley) publish
+      // full schedule as static JSON at schedule.wvm.edu/data/{term}/. Four
+      // files per term (courses, crns, ssrmeet, section-instructors) provide
+      // complete section data including seats, meeting times, and instructors.
+      { scripts: ["scripts/ca/scrape-wvm.ts"], runner: "http" },
     ],
     prereqs: { source: "aggregate-from-courses" },
     transfers: [
@@ -98,7 +108,14 @@ const caConfig: StateConfig = {
       // across an academic year (ID 76 = 2025-26).
       { scripts: ["scripts/ca/scrape-assist-receivers.ts"], runner: "http" },
     ],
-    // manual-only: programs — Phase 5+.
+    programs: [
+      // 14 CCs across 4 template-based catalog platforms (CourseLeaf 14,
+      // Acalog 2, SCIQ 2, Coursedog 3). Wrapped scrape-template-programs.ts
+      // reuses scripts/lib/scrape-{platform}-programs.ts shared templates.
+      // eLumen (30 CCs) and Curricunet (20 CCs) deferred to follow-up PRs
+      // (both are SPAs requiring new Playwright-based templates).
+      { scripts: ["scripts/ca/scrape-template-programs.ts"], runner: "playwright" },
+    ],
   },
 };
 

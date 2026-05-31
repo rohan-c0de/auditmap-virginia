@@ -174,6 +174,17 @@ const txConfig: StateConfig = {
         scripts: ["scripts/tx/scrape-cisco.ts"],
         runner: "playwright",
       },
+      // Northeast Texas Community College — Jenzabar JICS Simple_Query
+      // "Find Courses" portlet at myeagle.ntcc.edu/ICS/Find_Courses/. Each
+      // term has a hidden "Export to Excel" button whose response is
+      // actually an HTML <table> (18 cols, no header) with full schedule
+      // data. The export link returns "(cache empty)" cold — the term's
+      // View Results postback must fire first to prime the server cache.
+      // ~1,800 sections / 5 terms, ~30s per term.
+      {
+        scripts: ["scripts/tx/scrape-netcc.ts"],
+        runner: "playwright",
+      },
       // Frank Phillips College — per-term, per-campus PDF schedules from
       // fpctx.edu/student-resources/. Each PDF is text-extractable (no OCR
       // needed); pdftotext -layout preserves the 12-column schema (Course

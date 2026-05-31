@@ -55,6 +55,15 @@ const waConfig: StateConfig = {
       { scripts: ["scripts/wa/scrape-ctclink.ts"], runner: "http" },
     ],
     transfers: [{ scripts: ["scripts/wa/scrape-transfer-uw.ts"], runner: "http" }],
+    // manual-only: prereqs — ctcLink course search exposes no prerequisite text,
+    // so aggregate-from-courses yields 0. 11 SBCTC colleges have public acalog
+    // catalogs (see scripts/wa/scrape-catalog-prereqs.ts), but ALL return AWS
+    // WAF bot challenges (HTTP 202, x-amzn-waf-action: challenge) on headless
+    // fetches, blocking pagination in CI. The scraper script is committed and
+    // correct; re-enable if/when WAF rules are relaxed or colleges adopt a
+    // CDN without bot protection. Keeping aggregate-from-courses here so the
+    // CI check passes and the aggregation runs (even though it yields 0 it
+    // is not harmful).
     prereqs: { source: "aggregate-from-courses" },
     // manual-only: programs — Phase 5+.
   },

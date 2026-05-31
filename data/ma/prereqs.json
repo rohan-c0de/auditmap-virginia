@@ -91,6 +91,14 @@
       "ACC 101"
     ]
   },
+  "ACC 103": {
+    "text": "ACC110 plus ACC101 or ACC108",
+    "courses": [
+      "ACC 101",
+      "ACC 108",
+      "ACC 110"
+    ]
+  },
   "ACC 105": {
     "text": "ACC 101 or ENG 095 or ESL 098 or RDG 095 or ELL 103",
     "courses": [
@@ -100,6 +108,14 @@
       "RDG 095",
       "ELL 103"
     ]
+  },
+  "ACC 108": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
+  },
+  "ACC 110": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
   },
   "ACC 111": {
     "text": "MTH 011 (min XC-) or MTH 011 (min T) and MTH 012 (min XC-) or MTH 012 (min T) or MTH 099 (min XC-) or MTH 099 (min T) or MTH 013 (min XD-) or MTH 013 (min T) or MTH 014 (min XD-) or MTH 014 (min T) or MTH 104 (min D-) or MTH 104 (min T) or MTH 108 (min D-) or MTH 108 (min T) or MTH 113 (min D-) or MTH 113 (min T) or MTH 142 (min D-) or MTH 142 (min T) or MTH 075 (min XC-) or MTH 075 (min XC-) or MTH 075 (min T) or MTH 075 (min T) or MTH 079 (min XC-) or MTH 079 (min T) or MTH 085 (min XD-) or MTH 085 (min T) or MTH 095 (min XD-) or MTH 095 (min T)",
@@ -133,9 +149,10 @@
     ]
   },
   "ACC 201": {
-    "text": "ACC 102",
+    "text": "ACC102 or ACC108",
     "courses": [
-      "ACC 102"
+      "ACC 102",
+      "ACC 108"
     ]
   },
   "ACC 202": {
@@ -145,21 +162,37 @@
     ]
   },
   "ACC 203": {
-    "text": "ACC 102",
+    "text": "ACC102 or ACC108",
+    "courses": [
+      "ACC 102",
+      "ACC 108"
+    ]
+  },
+  "ACC 204": {
+    "text": "ACC102 Introductory Accounting II Minimum Grade of: C",
     "courses": [
       "ACC 102"
     ]
   },
   "ACC 205": {
-    "text": "ACC 112 (min C-) or ACC 112 (min C-) or ACC 112 (min T) or ACC 112 (min T)",
+    "text": "Math placement or MAT010 or higher Minimum Grade of: C and ACC102 Introductory Accounting II Minimum Grade of: C and CIS110 or higher Minimum Grade of: C",
     "courses": [
-      "ACC 112"
+      "ACC 102",
+      "CIS 110",
+      "MAT 010"
     ]
   },
   "ACC 207": {
     "text": "ACC 102",
     "courses": [
       "ACC 102"
+    ]
+  },
+  "ACC 208": {
+    "text": "ACC101 or ACC108",
+    "courses": [
+      "ACC 101",
+      "ACC 108"
     ]
   },
   "ACC 212": {
@@ -207,10 +240,22 @@
       "BIO 150"
     ]
   },
+  "AHS 117": {
+    "text": "AHS-107",
+    "courses": [
+      "AHS 107"
+    ]
+  },
   "AHS 121": {
     "text": "MAT 018",
     "courses": [
       "MAT 018"
+    ]
+  },
+  "AHS 131": {
+    "text": "Requisites: Take AHS-131L - Must be taken at the same time as this course.",
+    "courses": [
+      "AHS 131L"
     ]
   },
   "AHS 230": {
@@ -222,6 +267,204 @@
       "BIO 202"
     ]
   },
+  "ALH 120": {
+    "text": "Communications Proficiency",
+    "courses": []
+  },
+  "ALH 122": {
+    "text": "Communications Proficiency",
+    "courses": []
+  },
+  "ALH 130": {
+    "text": "Communications Proficiency",
+    "courses": []
+  },
+  "ALH 134": {
+    "text": "Communications Proficiency",
+    "courses": []
+  },
+  "ALH 136": {
+    "text": "Communications Proficiency and ALH134",
+    "courses": [
+      "ALH 134"
+    ]
+  },
+  "ALH 150": {
+    "text": "Communications Proficiency",
+    "courses": []
+  },
+  "ALH 156": {
+    "text": "Communications Proficiency",
+    "courses": []
+  },
+  "ALH 161": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
+  },
+  "ALH 162": {
+    "text": "ALH161",
+    "courses": [
+      "ALH 161"
+    ]
+  },
+  "ALH 164": {
+    "text": "MAT116, BIO108, CMP101, and ALH186",
+    "courses": [
+      "ALH 186",
+      "BIO 108",
+      "CMP 101",
+      "MAT 116"
+    ]
+  },
+  "ALH 168": {
+    "text": "Communications Proficiency",
+    "courses": []
+  },
+  "ALH 174": {
+    "text": "Communications Proficiency",
+    "courses": []
+  },
+  "ALH 176": {
+    "text": "Communications Proficiency",
+    "courses": []
+  },
+  "ALH 178": {
+    "text": "Communications Proficiency",
+    "courses": []
+  },
+  "ALH 180": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
+  },
+  "ALH 182": {
+    "text": "ALH 178",
+    "courses": [
+      "ALH 178"
+    ]
+  },
+  "ALH 184": {
+    "text": "Communications Proficiency",
+    "courses": []
+  },
+  "ALH 186": {
+    "text": "Communications Proficiency",
+    "courses": []
+  },
+  "ALH 202": {
+    "text": "Min 24 credits in Health Sci prog and min CQPA of 2.0",
+    "courses": []
+  },
+  "ALH 229": {
+    "text": "Min 24 credits in Health Sci prog and min CQPA of 2.0",
+    "courses": []
+  },
+  "ANS 102": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
+  },
+  "ANS 104": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
+  },
+  "ANS 107": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
+  },
+  "ANS 108": {
+    "text": "ANS107",
+    "courses": [
+      "ANS 107"
+    ]
+  },
+  "ANS 110": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
+  },
+  "ANS 112": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
+  },
+  "ANS 114": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
+  },
+  "ANS 116": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
+  },
+  "ANS 120": {
+    "text": "ANS102",
+    "courses": [
+      "ANS 102"
+    ]
+  },
+  "ANS 122": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
+  },
+  "ANS 124": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
+  },
+  "ANS 126": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
+  },
+  "ANS 128": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
+  },
+  "ANS 130": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
+  },
+  "ANS 140": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
+  },
+  "ANS 142": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
+  },
+  "ANS 144": {
+    "text": "Communications and Mathematics profiiency",
+    "courses": []
+  },
+  "ANS 202": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
+  },
+  "ANS 204": {
+    "text": "ANS122 and completion of all courses in the Animal Care first year curriculum.",
+    "courses": [
+      "ANS 122"
+    ]
+  },
+  "ANS 206": {
+    "text": "ANS 204",
+    "courses": [
+      "ANS 204"
+    ]
+  },
+  "ANT 101": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: Cor ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "ANT 101H": {
+    "text": "Skills: ENG-020 Skills: ENG-090",
+    "courses": [
+      "ENG 020",
+      "ENG 090"
+    ]
+  },
+  "ANT 102": {
+    "text": "Communications Proficiency",
+    "courses": []
+  },
   "ANT 255": {
     "text": "ANT 101 (min D-) or ANT 101 (min T) or ANT 114 (min D-) or ANT 114 (min T) or SOC 110 (min D-) or SOC 110 (min T) or HTH 102 (min D-) or HTH 102 (min T) or LAX 110 (min D-) or LAX 110 (min T)",
     "courses": [
@@ -231,6 +474,14 @@
       "HTH 102",
       "LAX 110"
     ]
+  },
+  "ANT 275": {
+    "text": "One previous course in Anthropology",
+    "courses": []
+  },
+  "ANT 276": {
+    "text": "One previous course in Anthropology.",
+    "courses": []
   },
   "ART 101": {
     "text": "ART 101L",
@@ -270,16 +521,72 @@
     ]
   },
   "ART 104": {
-    "text": "ART 102 and ART 104L",
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
     "courses": [
-      "ART 102",
-      "ART 104L"
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
     ]
   },
   "ART 104L": {
     "text": "ART 104",
     "courses": [
       "ART 104"
+    ]
+  },
+  "ART 105": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "ART 106": {
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "RWR 090"
+    ]
+  },
+  "ART 108": {
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "RWR 090"
+    ]
+  },
+  "ART 109": {
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "RWR 090"
+    ]
+  },
+  "ART 111": {
+    "text": "ART110 or permission of instructor",
+    "courses": [
+      "ART 110"
+    ]
+  },
+  "ART 112": {
+    "text": "ART111 Drawing I",
+    "courses": [
+      "ART 111"
+    ]
+  },
+  "ART 114": {
+    "text": "Communications Proficiency",
+    "courses": []
+  },
+  "ART 116": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
+  },
+  "ART 118": {
+    "text": "Communications Proficiency and ART110 or permission of the instructor",
+    "courses": [
+      "ART 110"
     ]
   },
   "ART 122": {
@@ -317,15 +624,37 @@
     ]
   },
   "ART 140": {
-    "text": "ART 140L",
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
     "courses": [
-      "ART 140L"
+      "ENG 101",
+      "RWR 090"
     ]
   },
   "ART 140L": {
     "text": "ART 140",
     "courses": [
       "ART 140"
+    ]
+  },
+  "ART 141": {
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "RWR 090"
+    ]
+  },
+  "ART 142": {
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "RWR 090"
+    ]
+  },
+  "ART 143": {
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "RWR 090"
     ]
   },
   "ART 150": {
@@ -346,6 +675,33 @@
       "ENG 101",
       "ENG 102",
       "ENG 104"
+    ]
+  },
+  "ART 152": {
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "RWR 090"
+    ]
+  },
+  "ART 153": {
+    "text": "ART115 Digital Foundations Minimum Grade of C",
+    "courses": [
+      "ART 115"
+    ]
+  },
+  "ART 160": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "ART 201": {
+    "text": "ART118 or permission of the instructor",
+    "courses": [
+      "ART 118"
     ]
   },
   "ART 205": {
@@ -372,6 +728,32 @@
       "ART 206"
     ]
   },
+  "ART 208": {
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "RWR 090"
+    ]
+  },
+  "ART 214": {
+    "text": "ART111 Drawing I",
+    "courses": [
+      "ART 111"
+    ]
+  },
+  "ART 220": {
+    "text": "ART140 Computer Graphics",
+    "courses": [
+      "ART 140"
+    ]
+  },
+  "ART 222": {
+    "text": "ART130 Introduction to Digital Photography or ART121 Introduction to Photography",
+    "courses": [
+      "ART 121",
+      "ART 130"
+    ]
+  },
   "ART 230": {
     "text": "ART 130 and ART 230L",
     "courses": [
@@ -383,6 +765,55 @@
     "text": "ART 230",
     "courses": [
       "ART 230"
+    ]
+  },
+  "ART 232": {
+    "text": "ART231 Painting I",
+    "courses": [
+      "ART 231"
+    ]
+  },
+  "ART 235": {
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "RWR 090"
+    ]
+  },
+  "ART 241": {
+    "text": "ART141 Digital Imaging I",
+    "courses": [
+      "ART 141"
+    ]
+  },
+  "ART 250": {
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "RWR 090"
+    ]
+  },
+  "ART 252": {
+    "text": "ART115 Digital Foundations and ART152 Video I",
+    "courses": [
+      "ART 115",
+      "ART 152"
+    ]
+  },
+  "ART 253": {
+    "text": "ART115 Digital Foundations and Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ART 115",
+      "ENG 101",
+      "RWR 090"
+    ]
+  },
+  "ART 254": {
+    "text": "ART115 Digital Foundations and Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ART 115",
+      "ENG 101",
+      "RWR 090"
     ]
   },
   "ART 256": {
@@ -398,10 +829,29 @@
       "ART 252"
     ]
   },
+  "ASL 101": {
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C.",
+    "courses": [
+      "RWR 090"
+    ]
+  },
   "ASL 102": {
     "text": "ASL 101 (min C) or ASL 101 (min C) or ASL 101 (min T) or ASL 101 (min T)",
     "courses": [
       "ASL 101"
+    ]
+  },
+  "ASL 111": {
+    "text": "Fndns of Math proficiency or MAT010 or higher Minimum Grade of: C and ASL102 Elementary American Sign Language II Minimum Grade of: C",
+    "courses": [
+      "ASL 102",
+      "MAT 010"
+    ]
+  },
+  "ASL 112": {
+    "text": "ASL111 Intermediate American Sign Language I Minimum Grade of: C",
+    "courses": [
+      "ASL 111"
     ]
   },
   "ASL 201": {
@@ -409,6 +859,97 @@
     "courses": [
       "ASL 102"
     ]
+  },
+  "ASL 202": {
+    "text": "ASL201 Advanced American Sign Language I Minimum Grade of: C",
+    "courses": [
+      "ASL 201"
+    ]
+  },
+  "ASL 203": {
+    "text": "ASL111 Intermediate American Sign Language I Minimum Grade of: C",
+    "courses": [
+      "ASL 111"
+    ]
+  },
+  "ASL 205": {
+    "text": "ASL112 Intermediate American Sign Language II Minimum Grade of: C",
+    "courses": [
+      "ASL 112"
+    ]
+  },
+  "AVS 101": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
+  },
+  "AVS 102": {
+    "text": "AVS101, AVS103",
+    "courses": [
+      "AVS 101",
+      "AVS 103"
+    ]
+  },
+  "AVS 107": {
+    "text": "AVS101 and AVS103",
+    "courses": [
+      "AVS 101",
+      "AVS 103"
+    ]
+  },
+  "AVS 109": {
+    "text": "AVS101 and AVS103",
+    "courses": [
+      "AVS 101",
+      "AVS 103"
+    ]
+  },
+  "AVS 203": {
+    "text": "AVS101",
+    "courses": [
+      "AVS 101"
+    ]
+  },
+  "AVS 204": {
+    "text": "AVS102 and AVS203",
+    "courses": [
+      "AVS 102",
+      "AVS 203"
+    ]
+  },
+  "AVS 205": {
+    "text": "AVS102",
+    "courses": [
+      "AVS 102"
+    ]
+  },
+  "AVS 207": {
+    "text": "AVS104 and AVS107",
+    "courses": [
+      "AVS 104",
+      "AVS 107"
+    ]
+  },
+  "AVS 208": {
+    "text": "AVS103",
+    "courses": [
+      "AVS 103"
+    ]
+  },
+  "AVS 214": {
+    "text": "AVS101",
+    "courses": [
+      "AVS 101"
+    ]
+  },
+  "AVS 222": {
+    "text": "AVS203",
+    "courses": [
+      "AVS 203"
+    ]
+  },
+  "BIO 100": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
   },
   "BIO 101": {
     "text": "ENG 097 (min XC-) or ENG 098 (min XC-) or ENG 096 (min XC-) or ENG 099 (min XC-) or ENG 095 (min XC-) or ENG 095 (min T) or ENG 101 (min D-) or ENG 101 (min T) or ENG 102 (min D-) or ENG 102 (min T) or ENG 104 (min D-) or ENG 104 (min T)",
@@ -429,10 +970,25 @@
       "BIO 101"
     ]
   },
-  "BIO 104": {
-    "text": "BIO 104L and BIO 104L and BIO 104L",
+  "BIO 102": {
+    "text": "BIO-101 or permission of instructor Take BIO-102L",
     "courses": [
-      "BIO 104L"
+      "BIO 101",
+      "BIO 102L"
+    ]
+  },
+  "BIO 103": {
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "RWR 090"
+    ]
+  },
+  "BIO 104": {
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "RWR 090"
     ]
   },
   "BIO 104L": {
@@ -519,6 +1075,19 @@
       "BIO 109"
     ]
   },
+  "BIO 110": {
+    "text": "Take BIO-110L",
+    "courses": [
+      "BIO 110L"
+    ]
+  },
+  "BIO 111": {
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "RWR 090"
+    ]
+  },
   "BIO 112": {
     "text": "BIO 112L",
     "courses": [
@@ -541,6 +1110,15 @@
       "ELL 103"
     ]
   },
+  "BIO 117": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 or higher Minimum Grade of: C and Fndns of Math proficiency or MAT010 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "MAT 010",
+      "RWR 090"
+    ]
+  },
   "BIO 120": {
     "text": "MAT 099 or ELL 103 or RDG 095 or ESL 098 or ENG 095 or MAT 099",
     "courses": [
@@ -557,6 +1135,34 @@
       "BIO 120"
     ]
   },
+  "BIO 121": {
+    "text": "BIO115 Physiological Chemistry Minimum Grade of: C or CHM111 College Chemistry I or higher Minimum Grade of: C",
+    "courses": [
+      "BIO 115",
+      "CHM 111"
+    ]
+  },
+  "BIO 122": {
+    "text": "BIO121 Anatomy & Physiology I",
+    "courses": [
+      "BIO 121"
+    ]
+  },
+  "BIO 130": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
+  },
+  "BIO 132": {
+    "text": "BIO-101 or BIO-105 or permission of instructor",
+    "courses": [
+      "BIO 101",
+      "BIO 105"
+    ]
+  },
+  "BIO 140": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
+  },
   "BIO 141": {
     "text": "BIO 141L",
     "courses": [
@@ -569,6 +1175,31 @@
       "BIO 141"
     ]
   },
+  "BIO 142": {
+    "text": "BIO100, or BIO101, or BIO105, or BIO124",
+    "courses": [
+      "BIO 100",
+      "BIO 101",
+      "BIO 105",
+      "BIO 124"
+    ]
+  },
+  "BIO 144": {
+    "text": "BIO 100, or BIO101, or BIO105, or BIO124 or permission of instructor",
+    "courses": [
+      "BIO 100",
+      "BIO 101",
+      "BIO 105",
+      "BIO 124"
+    ]
+  },
+  "BIO 150": {
+    "text": "BIO-101 or BIO-105 or high school college prep biology within the past five years with a 73 or better or permission of instructor",
+    "courses": [
+      "BIO 101",
+      "BIO 105"
+    ]
+  },
   "BIO 154": {
     "text": "BIO 154L",
     "courses": [
@@ -579,6 +1210,12 @@
     "text": "BIO 154",
     "courses": [
       "BIO 154"
+    ]
+  },
+  "BIO 180H": {
+    "text": "ENG 101 or permission of the instructor",
+    "courses": [
+      "ENG 101"
     ]
   },
   "BIO 195": {
@@ -646,6 +1283,13 @@
       "BIO 203"
     ]
   },
+  "BIO 206": {
+    "text": "BIO211 or HLS102 with &#39;C&#39; or better",
+    "courses": [
+      "BIO 211",
+      "HLS 102"
+    ]
+  },
   "BIO 207": {
     "text": "MAT 197 or BIO 195 or BIO 196 or BIO 120",
     "courses": [
@@ -668,6 +1312,43 @@
       "BIO 207"
     ]
   },
+  "BIO 209": {
+    "text": "BIO105 or BIO106 or permission of instructor",
+    "courses": [
+      "BIO 105",
+      "BIO 106"
+    ]
+  },
+  "BIO 211": {
+    "text": "Communications & Mathematics Proficiency and BIO101 or BIO105 with a C or better. For pre-requisite equivalency information, please see below.",
+    "courses": [
+      "BIO 101",
+      "BIO 105"
+    ]
+  },
+  "BIO 212": {
+    "text": "BIO211 with &#39;C&#39; or better.",
+    "courses": [
+      "BIO 211"
+    ]
+  },
+  "BIO 214": {
+    "text": "BIO 101 with C or better, or BIO 105 with C or better, or BIO 211 with C or better",
+    "courses": [
+      "BIO 101",
+      "BIO 105",
+      "BIO 211"
+    ]
+  },
+  "BIO 215": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 or higher Minimum Grade of: C and MAT115 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "MAT 115",
+      "RWR 090"
+    ]
+  },
   "BIO 217": {
     "text": "BIO 107 (min C) or BIO 107 (min T)",
     "courses": [
@@ -681,10 +1362,42 @@
       "BIO 217"
     ]
   },
+  "BIO 220": {
+    "text": "BIO111 Introductory Biology I Minimum Grade of: C or BIO121 Anatomy & Physiology I Minimum Grade of: C or SCI105 Laboratory Methods Minimum Grade of: C",
+    "courses": [
+      "BIO 111",
+      "BIO 121",
+      "SCI 105"
+    ]
+  },
+  "BIO 223": {
+    "text": "BIO-101 or BIO-105 or Permission of instructor",
+    "courses": [
+      "BIO 101",
+      "BIO 105"
+    ]
+  },
+  "BIO 225": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
   "BIO 229": {
     "text": "BIO 107 (min C) or BIO 107 (min C) or BIO 107 (min T) or BIO 107 (min T)",
     "courses": [
       "BIO 107"
+    ]
+  },
+  "BIO 230": {
+    "text": "BIO-101 or permission of instructor BIO-132 or permission of instructor CHM-101 or CHM-150 or permission of instructor",
+    "courses": [
+      "BIO 101",
+      "BIO 132",
+      "CHM 101",
+      "CHM 150"
     ]
   },
   "BIO 231": {
@@ -786,6 +1499,59 @@
       "MAT 282"
     ]
   },
+  "BQC 201": {
+    "text": "Completion of a life sciences degree or Composition 1 and CEAR greater or equal to 82 or evidence of algebra-based, college level math and 12 credit hours of laboratory-based life sciences coursework within the Biotechnology A.A. program (or equivalent external program)",
+    "courses": []
+  },
+  "BQC 203": {
+    "text": "Completion of a life sciences degree or Composition 1 and CEAR greater or equal to 82 or evidence of algebra-based, college level math and 12 credit hours of laboratory-based life sciences coursework within the Biotechnology A.A. program (or equivalent external program)",
+    "courses": []
+  },
+  "BQC 271": {
+    "text": "Admissions to BQC program",
+    "courses": []
+  },
+  "BQC 273": {
+    "text": "BQC 201 and BQC 271 with &#39;C&#39; or better",
+    "courses": [
+      "BQC 201",
+      "BQC 271"
+    ]
+  },
+  "BQC 275": {
+    "text": "BQC 201 and BQC 271 with a &#39;C&#39; or better",
+    "courses": [
+      "BQC 201",
+      "BQC 271"
+    ]
+  },
+  "BTN 201": {
+    "text": "Communication Proficiency and STEM Math Level 3; For more information regarding math prerequisites, please visit: https://www.northshore.edu/prerequisites",
+    "courses": []
+  },
+  "BTN 202": {
+    "text": "BIO105 and BTN201 w/grade of &#39;C&#39; or better",
+    "courses": [
+      "BIO 105",
+      "BTN 201"
+    ]
+  },
+  "BTN 211": {
+    "text": "BTN201",
+    "courses": [
+      "BTN 201"
+    ]
+  },
+  "BTN 212": {
+    "text": "BTN211",
+    "courses": [
+      "BTN 211"
+    ]
+  },
+  "BUS 100": {
+    "text": "Communications Proficiency",
+    "courses": []
+  },
   "BUS 101": {
     "text": "ESL 098 or ESL 099 or RDG 095 or ENG 090 or ELL 103",
     "courses": [
@@ -796,11 +1562,32 @@
       "ELL 103"
     ]
   },
-  "BUS 105": {
-    "text": "MAT 018C",
+  "BUS 102": {
+    "text": "ACC101 Introductory Accounting I and BUS101 Introduction to Business and MKT210 Principles of Marketing",
     "courses": [
-      "MAT 018C"
+      "ACC 101",
+      "BUS 101",
+      "MKT 210"
     ]
+  },
+  "BUS 103": {
+    "text": "BUS120 and either ACC101 or ACC108",
+    "courses": [
+      "ACC 101",
+      "ACC 108",
+      "BUS 120"
+    ]
+  },
+  "BUS 105": {
+    "text": "BUS101 Introduction to Business and ENG102 English Composition II",
+    "courses": [
+      "BUS 101",
+      "ENG 102"
+    ]
+  },
+  "BUS 106": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
   },
   "BUS 111": {
     "text": "MAT 018C",
@@ -813,6 +1600,17 @@
     "courses": [
       "BUS 111"
     ]
+  },
+  "BUS 116": {
+    "text": "Communications AND either ACC102 or ACC108",
+    "courses": [
+      "ACC 102",
+      "ACC 108"
+    ]
+  },
+  "BUS 120": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
   },
   "BUS 122": {
     "text": "MAT 018 or MAT 018C",
@@ -827,6 +1625,12 @@
       "ENG 095",
       "RDG 095",
       "ELL 103"
+    ]
+  },
+  "BUS 202": {
+    "text": "BUS102 Introduction to Entrepreneurship Minimum Grade of: C",
+    "courses": [
+      "BUS 102"
     ]
   },
   "BUS 206": {
@@ -847,6 +1651,13 @@
       "BUS 107"
     ]
   },
+  "BUS 211": {
+    "text": "BUS101 Introduction to Business and ENG102 English Composition II",
+    "courses": [
+      "BUS 101",
+      "ENG 102"
+    ]
+  },
   "BUS 215": {
     "text": "MTH 075 (min XC-) or MTH 075 (min T) or MTH 079 (min XC-) or MTH 079 (min T) or MTH 085 (min XD-) or MTH 085 (min T) or MTH 013 (min XD-) or MTH 013 (min T) or MTH 095 (min XD-) or MTH 095 (min T) or MTH 099 (min XD-) or MTH 099 (min T) or MTH 014 (min XD-) or MTH 014 (min T) or MTH 104 (min D-) or MTH 104 (min T) or MTH 108 (min D-) or MTH 108 (min T) or MTH 113 (min D-) or MTH 113 (min T) or MTH 142 (min D-) or MTH 142 (min T)MTH 011 (min XC-) or MTH 011 (min T) and MTH 012 (min XC-) or MTH 012 (min T)",
     "courses": [
@@ -865,6 +1676,12 @@
       "MTH 012"
     ]
   },
+  "BUS 216": {
+    "text": "BUS-111 or permission of instructor",
+    "courses": [
+      "BUS 111"
+    ]
+  },
   "BUS 220": {
     "text": "ENG 097 (min XC-) or ENG 097 (min XC-) or ENG 097 (min T) or ENG 097 (min T) or ENG 098 (min XC-) or ENG 098 (min XC-) or ENG 098 (min T) or ENG 098 (min T) or ENG 096 (min XC-) or ENG 096 (min T) or ENG 099 (min XC-) or ENG 099 (min T) or ENG 095 (min XC-) or ENG 095 (min T) or ENG 101 (min D-) or ENG 101 (min T) or ENG 102 (min D-) or ENG 102 (min T) or ENG 104 (min D-) or ENG 104 (min T)",
     "courses": [
@@ -878,6 +1695,13 @@
       "ENG 104"
     ]
   },
+  "BUS 247": {
+    "text": "ENG-101 or ENG-103 with grade of C or better, or permission of instructor.",
+    "courses": [
+      "ENG 101",
+      "ENG 103"
+    ]
+  },
   "BUS 260": {
     "text": "BUS 110 or ACC 260 or MGT 260 or MKT 260",
     "courses": [
@@ -886,6 +1710,59 @@
       "MGT 260",
       "MKT 260"
     ]
+  },
+  "BUS 285": {
+    "text": "BUS-107 or permission of instructor CIS-102 or permission of instructor",
+    "courses": [
+      "BUS 107",
+      "CIS 102"
+    ]
+  },
+  "CAD 105": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
+  },
+  "CAD 106": {
+    "text": "CAD101 or CAD105",
+    "courses": [
+      "CAD 101",
+      "CAD 105"
+    ]
+  },
+  "CAD 107": {
+    "text": "CAD105, PHY201, or CAD101",
+    "courses": [
+      "CAD 101",
+      "CAD 105",
+      "PHY 201"
+    ]
+  },
+  "CAD 201": {
+    "text": "CAD106 or CAD107 and CAD103",
+    "courses": [
+      "CAD 103",
+      "CAD 106",
+      "CAD 107"
+    ]
+  },
+  "CAD 203": {
+    "text": "CAD103 or CAD105",
+    "courses": [
+      "CAD 103",
+      "CAD 105"
+    ]
+  },
+  "CBS 101": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
+  },
+  "CBS 102": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
+  },
+  "CBS 103": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
   },
   "CET 210": {
     "text": "CET 210L and MAT 124",
@@ -920,6 +1797,44 @@
       "PHY 221"
     ]
   },
+  "CHE 101": {
+    "text": "Communication proficiency and STEM Math Level 2; For more information regarding math prerequisites, please visit: https://www.northshore.edu/prerequisites",
+    "courses": []
+  },
+  "CHE 102": {
+    "text": "CHE101 or CHE103 or CHE114 with &#39;C&#39; or better",
+    "courses": [
+      "CHE 101",
+      "CHE 103",
+      "CHE 114"
+    ]
+  },
+  "CHE 103": {
+    "text": "Communication proficiency and STEM Math Level 3; For more information regarding math prerequisites, please visit: https://www.northshore.edu/prerequisites",
+    "courses": []
+  },
+  "CHE 104": {
+    "text": "CHE103 with grade of C or better",
+    "courses": [
+      "CHE 103"
+    ]
+  },
+  "CHE 115": {
+    "text": "Communication proficiency and STEM Math Level 2; For more information regarding math prerequisites, please visit: https://www.northshore.edu/prerequisites",
+    "courses": []
+  },
+  "CHE 201": {
+    "text": "CHE 104 with grade of C or better",
+    "courses": [
+      "CHE 104"
+    ]
+  },
+  "CHE 202": {
+    "text": "CHE201 with grade of &quot;C&quot; or better",
+    "courses": [
+      "CHE 201"
+    ]
+  },
   "CHM 101": {
     "text": "MAT 062 or MAT 089 or MAT 083 or MAT 087 or MAT 097 or MAT 063 and CHM 101L and CHM 101L and CHM 101L and CHM 101L and CHM 101L",
     "courses": [
@@ -936,6 +1851,13 @@
     "text": "CHM 101",
     "courses": [
       "CHM 101"
+    ]
+  },
+  "CHM 102": {
+    "text": "C- or better in CHM-101 or permission of instructor Take CHM-102L",
+    "courses": [
+      "CHM 101",
+      "CHM 102L"
     ]
   },
   "CHM 111": {
@@ -984,11 +1906,34 @@
       "MTH 014"
     ]
   },
+  "CHM 122": {
+    "text": "CHM121 General Chemistry I Minimum Grade of: C or better",
+    "courses": [
+      "CHM 121"
+    ]
+  },
   "CHM 124": {
     "text": "CHM 113 (min C-) or CHM 113 (min C-) or CHM 113 (min T) or CHM 113 (min T) or CHM 121 (min C-) or CHM 121 (min C-) or CHM 121 (min T) or CHM 121 (min T)",
     "courses": [
       "CHM 113",
       "CHM 121"
+    ]
+  },
+  "CHM 150": {
+    "text": "MAT-029 or MAT-136 or permission of instructor or concurrent enrollment in SCI-095.",
+    "courses": [
+      "MAT 029",
+      "MAT 136",
+      "SCI 095"
+    ]
+  },
+  "CHM 150A": {
+    "text": "MAT-029 or MAT-136 or permission of instructor or concurrent enrollment in SCI-095. Take CHM-150L",
+    "courses": [
+      "CHM 150L",
+      "MAT 029",
+      "MAT 136",
+      "SCI 095"
     ]
   },
   "CHM 151": {
@@ -1013,9 +1958,17 @@
     ]
   },
   "CHM 202": {
-    "text": "CHM 201 (min C)",
+    "text": "CHM-201 with C- or better or permission of instructor Take CHM-202L",
     "courses": [
-      "CHM 201"
+      "CHM 201",
+      "CHM 202L"
+    ]
+  },
+  "CHM 203": {
+    "text": "SCI105 Laboratory Methods Minimum Grade of: C or CHM121 General Chemistry I Minimum Grade of: C",
+    "courses": [
+      "CHM 121",
+      "SCI 105"
     ]
   },
   "CHM 221": {
@@ -1024,6 +1977,12 @@
       "CHM 114",
       "CHM 124",
       "CHM 102"
+    ]
+  },
+  "CHM 222": {
+    "text": "CHM221 Organic Chemistry I",
+    "courses": [
+      "CHM 221"
     ]
   },
   "CHM 251": {
@@ -1039,10 +1998,65 @@
       "CHN 101"
     ]
   },
+  "CHW 101": {
+    "text": "ENG101 English Composition I Minimum Grade of: C",
+    "courses": [
+      "ENG 101"
+    ]
+  },
+  "CHW 104": {
+    "text": "ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101"
+    ]
+  },
+  "CHW 110": {
+    "text": "Skills: ENG-020",
+    "courses": [
+      "ENG 020"
+    ]
+  },
+  "CHW 120": {
+    "text": "Skills: ENG-020",
+    "courses": [
+      "ENG 020"
+    ]
+  },
+  "CHW 203": {
+    "text": "ENG101 English Composition I Minimum Grade of C",
+    "courses": [
+      "ENG 101"
+    ]
+  },
+  "CHW 206": {
+    "text": "CHW204 Environmental Health Minimum Grade of: C",
+    "courses": [
+      "CHW 204"
+    ]
+  },
+  "CHW 225": {
+    "text": "Skills: ENG-020",
+    "courses": [
+      "ENG 020"
+    ]
+  },
+  "CHW 290": {
+    "text": "CHW202 Introduction to Public Health Administration Minimum Grade of: C and CHW204 Environmental Health Minimum Grade of: C",
+    "courses": [
+      "CHW 202",
+      "CHW 204"
+    ]
+  },
   "CIS 102": {
     "text": "MAT 028A",
     "courses": [
       "MAT 028A"
+    ]
+  },
+  "CIS 108": {
+    "text": "recommended: 3 credits of comp; Skills: MAT-028 or permission of instructor",
+    "courses": [
+      "MAT 028"
     ]
   },
   "CIS 110": {
@@ -1058,6 +2072,32 @@
       "CIS 110"
     ]
   },
+  "CIS 112": {
+    "text": "CIS110 Computer Applications or CTN110 Introduction to Information Technology",
+    "courses": [
+      "CIS 110",
+      "CTN 110"
+    ]
+  },
+  "CIS 113": {
+    "text": "CIS110 Computer Applications Minimum Grade of C or CTN110 Introduction to Information Technology Minimum Grade of C",
+    "courses": [
+      "CIS 110",
+      "CTN 110"
+    ]
+  },
+  "CIS 115": {
+    "text": "CTN110 Introduction to Information Technology",
+    "courses": [
+      "CTN 110"
+    ]
+  },
+  "CIS 121": {
+    "text": "CIS140 Introduction to Computer Science",
+    "courses": [
+      "CIS 140"
+    ]
+  },
   "CIS 124": {
     "text": "MAT 029",
     "courses": [
@@ -1071,10 +2111,84 @@
       "MAT 102"
     ]
   },
+  "CIS 153": {
+    "text": "CIS140 Introduction to Computer Science Minimum Grade of: C",
+    "courses": [
+      "CIS 140"
+    ]
+  },
+  "CIS 154": {
+    "text": "CIS140 Introduction to Computer Science Minimum Grade of: C or EST104 Engineering Essentials and Design Minimum Grade of: C",
+    "courses": [
+      "CIS 140",
+      "EST 104"
+    ]
+  },
   "CIS 155": {
     "text": "CIS 102",
     "courses": [
       "CIS 102"
+    ]
+  },
+  "CIS 160": {
+    "text": "CIS154 C Programming Minimum Grade of: C",
+    "courses": [
+      "CIS 154"
+    ]
+  },
+  "CIS 180": {
+    "text": "Skills: MAT-029 or permission of Program Advisor Take CIS-180L CIS-110",
+    "courses": [
+      "CIS 110",
+      "CIS 180L",
+      "MAT 029"
+    ]
+  },
+  "CIS 181": {
+    "text": "CIS-180 with C+ or better or permission of the Program&#252;Advisor Take CIS-181L",
+    "courses": [
+      "CIS 180",
+      "CIS 181L"
+    ]
+  },
+  "CIS 199": {
+    "text": "CIS115 Information Security Minimum Grade of C AND CIS153 Programming for IT OR CIS154 C Programming",
+    "courses": [
+      "CIS 115",
+      "CIS 153",
+      "CIS 154"
+    ]
+  },
+  "CIS 203": {
+    "text": "CIS-102 or permission of instructor.",
+    "courses": [
+      "CIS 102"
+    ]
+  },
+  "CIS 210": {
+    "text": "CIS113 Data Management",
+    "courses": [
+      "CIS 113"
+    ]
+  },
+  "CIS 211": {
+    "text": "CIS-125 with grade of C+ or better, or permission of instructor.",
+    "courses": [
+      "CIS 125"
+    ]
+  },
+  "CIS 214": {
+    "text": "CIS114 Help Desk & Soft Skills",
+    "courses": [
+      "CIS 114"
+    ]
+  },
+  "CIS 215": {
+    "text": "CIS115 Information Security and CIS121 Introduction to Operating Systems or CTN201 Computer Networks I",
+    "courses": [
+      "CIS 115",
+      "CIS 121",
+      "CTN 201"
     ]
   },
   "CIS 218": {
@@ -1088,6 +2202,12 @@
     "text": "CIS 218",
     "courses": [
       "CIS 218"
+    ]
+  },
+  "CIS 220": {
+    "text": "CTN110 Introduction to Information Technology",
+    "courses": [
+      "CTN 110"
     ]
   },
   "CIS 222": {
@@ -1104,11 +2224,86 @@
       "CIS 222"
     ]
   },
+  "CIS 225": {
+    "text": "CIS-102 with C+ or better or permission of the instructor",
+    "courses": [
+      "CIS 102"
+    ]
+  },
+  "CIS 228": {
+    "text": "ENG-101 or permission of instructor MAT-102 or permission of instructor",
+    "courses": [
+      "ENG 101",
+      "MAT 102"
+    ]
+  },
   "CIS 231": {
     "text": "CIS 124 and MAT 102",
     "courses": [
       "CIS 124",
       "MAT 102"
+    ]
+  },
+  "CIS 232": {
+    "text": "CIS-231 with C+ or better or permission of instructor",
+    "courses": [
+      "CIS 231"
+    ]
+  },
+  "CIS 235": {
+    "text": "CIS153 Programming for IT Minimum Grade of: C or CIS154 C Programming Minimum Grade of: C",
+    "courses": [
+      "CIS 153",
+      "CIS 154"
+    ]
+  },
+  "CIS 236": {
+    "text": "CIS113 Data Management Minimum Grade of: C and CIS235 Web Programming I Minimum Grade of: C",
+    "courses": [
+      "CIS 113",
+      "CIS 235"
+    ]
+  },
+  "CIS 240": {
+    "text": "CIS-181 with C+ or better or permission of the instructor Take CIS-240L",
+    "courses": [
+      "CIS 181",
+      "CIS 240L"
+    ]
+  },
+  "CIS 241": {
+    "text": "CIS-240 with C+ or better or permission of instructor Take CIS-241L",
+    "courses": [
+      "CIS 240",
+      "CIS 241L"
+    ]
+  },
+  "CIS 242": {
+    "text": "CIS-222 with C+ or higher or permission of instructor CIS-242L",
+    "courses": [
+      "CIS 222",
+      "CIS 242L"
+    ]
+  },
+  "CIS 245": {
+    "text": "CIS153 Programming for IT and CTN201 Computer Networks I and CIS117 Introduction to Linux",
+    "courses": [
+      "CIS 117",
+      "CIS 153",
+      "CTN 201"
+    ]
+  },
+  "CIS 252": {
+    "text": "CIS160 Computer Science I Minimum Grade of: C",
+    "courses": [
+      "CIS 160"
+    ]
+  },
+  "CIS 256": {
+    "text": "CIS-181 Take CIS-256L",
+    "courses": [
+      "CIS 181",
+      "CIS 256L"
     ]
   },
   "CIT 101": {
@@ -1403,10 +2598,197 @@
       "CIT 270"
     ]
   },
+  "CLN 106": {
+    "text": "CLN 105 Cooking Techniques 1",
+    "courses": [
+      "CLN 105"
+    ]
+  },
+  "CLN 108": {
+    "text": "CLN107 Introduction to Bakeshop",
+    "courses": [
+      "CLN 107"
+    ]
+  },
+  "CLN 201": {
+    "text": "CLN101 Introduction to Culinary Arts Minimum Grade of: C and CLN102 Applied Culinary Techniques - Culinary Foundations, Planning and Meal Prep Minimum Grade of: C and CLN103 Food Safety and Sanitation Minimum Grade of: C and BIO103 Human Nutrition & Health Minimum Grade of: C",
+    "courses": [
+      "BIO 103",
+      "CLN 101",
+      "CLN 102",
+      "CLN 103"
+    ]
+  },
+  "CLN 202": {
+    "text": "CLN101 Introduction to Culinary Arts Minimum Grade of: C- and CLN102 Applied Culinary Techniques I Minimum Grade of: C-",
+    "courses": [
+      "CLN 101",
+      "CLN 102"
+    ]
+  },
+  "CLN 204": {
+    "text": "Revised course CLN202 Applied Culinary Techniques II with a C- or better.",
+    "courses": [
+      "CLN 202"
+    ]
+  },
+  "CLN 206": {
+    "text": "CLN202 Culinary Techniques II Minimum Grade of C-",
+    "courses": [
+      "CLN 202"
+    ]
+  },
+  "CLN 208": {
+    "text": "CLN107 Introduction to Bake Shop with a C- or better",
+    "courses": [
+      "CLN 107"
+    ]
+  },
+  "CLN 209": {
+    "text": "CLN 107 Introduction to Bake Shop with a C- or better",
+    "courses": [
+      "CLN 107"
+    ]
+  },
+  "CLN 210": {
+    "text": "CLN107 Introduction to Bake Shop with a C- or better",
+    "courses": [
+      "CLN 107"
+    ]
+  },
+  "CLN 211": {
+    "text": "CLN107 Introduction to Bake Shop with a C- or better",
+    "courses": [
+      "CLN 107"
+    ]
+  },
+  "CLN 212": {
+    "text": "CLN202 Applied Culinary Technique II Minimum Grade of C-",
+    "courses": [
+      "CLN 202"
+    ]
+  },
+  "CLN 213": {
+    "text": "CLN202 Applied Culinary Techniques II Minimum Grade of C-",
+    "courses": [
+      "CLN 202"
+    ]
+  },
+  "CLN 250": {
+    "text": "ENG101 English Composition I Minimum Grade of: C AND CLN101 Introduction to Culinary Arts Minimum Grade of: C- AND CLN102 Applied Culinary Techniques - Culinary Foundations, Planning and Meal Prep Minimum Grade of: C- AND CLN208 Pastry Techniques Minimum Grade of: C-",
+    "courses": [
+      "CLN 101",
+      "CLN 102",
+      "CLN 208",
+      "ENG 101"
+    ]
+  },
+  "CLN 251": {
+    "text": "CLN250 Culinary Internship and CLN204 Restaurant Operations and CLN206 Banquet Operations and CLN212 Garde Manger and Charcuterie and CLN213 International Cuisine",
+    "courses": [
+      "CLN 204",
+      "CLN 206",
+      "CLN 212",
+      "CLN 213",
+      "CLN 250"
+    ]
+  },
+  "CMP 101": {
+    "text": "Communications Proficiency",
+    "courses": []
+  },
+  "CMP 101A": {
+    "text": "NGRD 237-244 or NGRD 245-258 and WP 4 or less, or FFL010 with a minimum of C grade",
+    "courses": [
+      "FFL 010",
+      "NGRD 237",
+      "NGRD 245"
+    ]
+  },
+  "CMP 101H": {
+    "text": "Communications Proficiency",
+    "courses": []
+  },
+  "CMP 102": {
+    "text": "CMP 101 or CMP 101H",
+    "courses": [
+      "CMP 101",
+      "CMP 101H"
+    ]
+  },
+  "CMP 102H": {
+    "text": "CMP 101 or CMP 101H",
+    "courses": [
+      "CMP 101",
+      "CMP 101H"
+    ]
+  },
   "CMP 106": {
     "text": "OIT 100",
     "courses": [
       "OIT 100"
+    ]
+  },
+  "CMP 112": {
+    "text": "CMP101 or CMP101H",
+    "courses": [
+      "CMP 101",
+      "CMP 101H"
+    ]
+  },
+  "CMP 120": {
+    "text": "CMP101 or CMP101H",
+    "courses": [
+      "CMP 101",
+      "CMP 101H"
+    ]
+  },
+  "CMP 122": {
+    "text": "CMP 101 or CMP101H",
+    "courses": [
+      "CMP 101",
+      "CMP 101H"
+    ]
+  },
+  "CMP 124": {
+    "text": "CMP 101 or CMP102H",
+    "courses": [
+      "CMP 101",
+      "CMP 102H"
+    ]
+  },
+  "CMP 126": {
+    "text": "CMP101 or CMP101H",
+    "courses": [
+      "CMP 101",
+      "CMP 101H"
+    ]
+  },
+  "CMP 148": {
+    "text": "CMP101 or CMP102H",
+    "courses": [
+      "CMP 101",
+      "CMP 102H"
+    ]
+  },
+  "CMP 149": {
+    "text": "CMP 101",
+    "courses": [
+      "CMP 101"
+    ]
+  },
+  "CMP 150": {
+    "text": "CMP101 or CMP101H with a &#39;C&#39; or permission of instructor",
+    "courses": [
+      "CMP 101",
+      "CMP 101H"
+    ]
+  },
+  "CMP 190": {
+    "text": "CMP101 or CMP101H",
+    "courses": [
+      "CMP 101",
+      "CMP 101H"
     ]
   },
   "CMT 101": {
@@ -1492,9 +2874,35 @@
     ]
   },
   "COM 102": {
-    "text": "ENG 111",
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
     "courses": [
-      "ENG 111"
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "COM 105": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "COM 111": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "COM 112": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
     ]
   },
   "COM 113": {
@@ -1541,6 +2949,12 @@
     "courses": [
       "COM 113",
       "ENG 113"
+    ]
+  },
+  "COM 199": {
+    "text": "COM115 Introduction to Mass Communication",
+    "courses": [
+      "COM 115"
     ]
   },
   "COM 205": {
@@ -1617,6 +3031,207 @@
       "COM 171"
     ]
   },
+  "COP 101": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 or higher Minimum Grade of: C and Fndns of Math proficiency or MAT010 orhigher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "MAT 010",
+      "RWR 090"
+    ]
+  },
+  "COP 110": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 or higher Minimum Grade of: C and Fndns of Math proficiency or MAT010 or higher Minimum Grade of: C Students applying for Internship must have completed a minimum of 12 credit hours at NECC with a minimum GPA of 2.5 (some academic programs may require additional credit hours). A CORI/SORI/CHRI, drug screening and/or credit check may be required by the individual worksites.",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "MAT 010",
+      "RWR 090"
+    ]
+  },
+  "COP 120": {
+    "text": "COP110 Internship Education Minimum Grade of: C",
+    "courses": [
+      "COP 110"
+    ]
+  },
+  "COP 130": {
+    "text": "Students need to have completed a micro-credential in order to earn the academic credit.",
+    "courses": []
+  },
+  "CPS 100": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
+  },
+  "CPS 101": {
+    "text": "MAT151 or higher with C or better OR placement above MAT151 AND either CPS100 or EGS102",
+    "courses": [
+      "CPS 100",
+      "EGS 102",
+      "MAT 151"
+    ]
+  },
+  "CPS 102": {
+    "text": "CPS101 with a &#39;C&#39; or better",
+    "courses": [
+      "CPS 101"
+    ]
+  },
+  "CPS 109": {
+    "text": "CPS100 and either MAT094 with &#39;C&#39; or better, or CEAR 82, or NGQA 268 or above, or or SAT530",
+    "courses": [
+      "CPS 100",
+      "MAT 094",
+      "NGQA 268",
+      "SAT 530"
+    ]
+  },
+  "CPS 114": {
+    "text": "CPS100",
+    "courses": [
+      "CPS 100"
+    ]
+  },
+  "CPS 122": {
+    "text": "CPS100",
+    "courses": [
+      "CPS 100"
+    ]
+  },
+  "CPS 124": {
+    "text": "Communications Proficiency",
+    "courses": []
+  },
+  "CPS 130": {
+    "text": "CPS100",
+    "courses": [
+      "CPS 100"
+    ]
+  },
+  "CPS 134": {
+    "text": "CPS100",
+    "courses": [
+      "CPS 100"
+    ]
+  },
+  "CPS 138": {
+    "text": "CPS100",
+    "courses": [
+      "CPS 100"
+    ]
+  },
+  "CPS 140": {
+    "text": "Communications Proficiency",
+    "courses": []
+  },
+  "CPS 148": {
+    "text": "CPS140",
+    "courses": [
+      "CPS 140"
+    ]
+  },
+  "CPS 168": {
+    "text": "CPS100",
+    "courses": [
+      "CPS 100"
+    ]
+  },
+  "CPS 170": {
+    "text": "CPS100",
+    "courses": [
+      "CPS 100"
+    ]
+  },
+  "CPS 173": {
+    "text": "CPS100 and MAT092 or MAT094 with C or better or CEAR 82 or above, or NGQA 268 or above.",
+    "courses": [
+      "CPS 100",
+      "MAT 092",
+      "MAT 094",
+      "NGQA 268"
+    ]
+  },
+  "CPS 177": {
+    "text": "CPS170",
+    "courses": [
+      "CPS 170"
+    ]
+  },
+  "CPS 182": {
+    "text": "Communications Proficiency",
+    "courses": []
+  },
+  "CPS 203": {
+    "text": "CPS102 with a “C” or better",
+    "courses": [
+      "CPS 102"
+    ]
+  },
+  "CPS 210": {
+    "text": "CPS100",
+    "courses": [
+      "CPS 100"
+    ]
+  },
+  "CPS 218": {
+    "text": "CPS100",
+    "courses": [
+      "CPS 100"
+    ]
+  },
+  "CPS 219": {
+    "text": "CPS173",
+    "courses": [
+      "CPS 173"
+    ]
+  },
+  "CPS 221": {
+    "text": "CPS170",
+    "courses": [
+      "CPS 170"
+    ]
+  },
+  "CPS 224": {
+    "text": "CPS101",
+    "courses": [
+      "CPS 101"
+    ]
+  },
+  "CPS 226": {
+    "text": "CPS101",
+    "courses": [
+      "CPS 101"
+    ]
+  },
+  "CPS 240": {
+    "text": "Communications and Mathematics Proficiencies",
+    "courses": []
+  },
+  "CPS 246": {
+    "text": "Communications and Mathematics Proficiencies, CPS122 and CPS134",
+    "courses": [
+      "CPS 122",
+      "CPS 134"
+    ]
+  },
+  "CPS 250": {
+    "text": "Communications Proficiency; CPS138",
+    "courses": [
+      "CPS 138"
+    ]
+  },
+  "CPS 251": {
+    "text": "CPS134 or instructor permission",
+    "courses": [
+      "CPS 134"
+    ]
+  },
+  "CPS 253": {
+    "text": "CPS251",
+    "courses": [
+      "CPS 251"
+    ]
+  },
   "CRJ 100": {
     "text": "ENG 085 (min XC-) or ENG 085 (min T) or ENG 095 (min XD-) or ENG 095 (min T) or ENG 096 (min XD-) or ENG 096 (min T) or ENG 099 (min XD-) or ENG 099 (min T) or ENG 101 (min D-) or ENG 101 (min T) or ENG 102 (min D-) or ENG 102 (min T) or ENG 104 (min D-) or ENG 104 (min T)",
     "courses": [
@@ -1659,6 +3274,23 @@
       "ENG 104"
     ]
   },
+  "CRJ 104": {
+    "text": "CRJ101; CRJ103",
+    "courses": [
+      "CRJ 101",
+      "CRJ 103"
+    ]
+  },
+  "CRJ 105": {
+    "text": "Communications Proficiency",
+    "courses": []
+  },
+  "CRJ 106": {
+    "text": "CRJ 105",
+    "courses": [
+      "CRJ 105"
+    ]
+  },
   "CRJ 107": {
     "text": "ENG 095 or ESL 098 or RDG 095 or ELL 103",
     "courses": [
@@ -1667,6 +3299,10 @@
       "RDG 095",
       "ELL 103"
     ]
+  },
+  "CRJ 108": {
+    "text": "Communications Proficiency",
+    "courses": []
   },
   "CRJ 109": {
     "text": "CRJ 105",
@@ -1693,14 +3329,33 @@
       "SOC 110"
     ]
   },
+  "CRJ 121": {
+    "text": "CRJ-105 with C or better or permission of instructor",
+    "courses": [
+      "CRJ 105"
+    ]
+  },
   "CRJ 123": {
     "text": "CRJ 121",
     "courses": [
       "CRJ 121"
     ]
   },
+  "CRJ 125": {
+    "text": "CRJ-105 or permission of instructor ENG-101 or permission of instructor",
+    "courses": [
+      "CRJ 105",
+      "ENG 101"
+    ]
+  },
   "CRJ 126": {
     "text": "CRJ 105",
+    "courses": [
+      "CRJ 105"
+    ]
+  },
+  "CRJ 127": {
+    "text": "CRJ-105 or permission of instructor",
     "courses": [
       "CRJ 105"
     ]
@@ -1727,9 +3382,12 @@
     ]
   },
   "CRJ 201": {
-    "text": "CRJ 200",
+    "text": "CRJ-105 CRJ-108 CRJ-127 ENG-101",
     "courses": [
-      "CRJ 200"
+      "CRJ 105",
+      "CRJ 108",
+      "CRJ 127",
+      "ENG 101"
     ]
   },
   "CRJ 202": {
@@ -1738,6 +3396,12 @@
       "ENG 111",
       "CRJ 101",
       "CRJ 103"
+    ]
+  },
+  "CRJ 208": {
+    "text": "CRJ101 Introduction to Criminal Justice",
+    "courses": [
+      "CRJ 101"
     ]
   },
   "CRJ 209": {
@@ -1764,9 +3428,10 @@
     ]
   },
   "CRJ 219": {
-    "text": "CRJ 105 or SOC 105",
+    "text": "CRJ-105 or SOC-105 or permission of the instructor ENG-101 or permission of instructor.",
     "courses": [
       "CRJ 105",
+      "ENG 101",
       "SOC 105"
     ]
   },
@@ -1794,6 +3459,10 @@
       "SOC 110"
     ]
   },
+  "CRJ 250": {
+    "text": "Reading and Writing Proficiency",
+    "courses": []
+  },
   "CRJ 275": {
     "text": "CRJ 101 and CRJ 103 and CRJ 107 and CRJ 211 and CRJ 225 and SOC 207",
     "courses": [
@@ -1803,6 +3472,14 @@
       "CRJ 211",
       "CRJ 225",
       "SOC 207"
+    ]
+  },
+  "CRJ 291": {
+    "text": "CRJ102 Incarceration & Alternatives and CRJ103 Modern Policing and CRJ202 Criminal Law",
+    "courses": [
+      "CRJ 102",
+      "CRJ 103",
+      "CRJ 202"
     ]
   },
   "CRJ 299": {
@@ -2124,10 +3801,93 @@
       "CSO 205"
     ]
   },
+  "CTE 101": {
+    "text": "Fndns of Math proficiency or MAT010 or higher Minimum Grade of: C and Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 English Composition I Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "MAT 010",
+      "RWR 090"
+    ]
+  },
+  "CTE 103": {
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 English Composition I Minimum Grade of: C and Fndns of Math proficiency or MAT010 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "MAT 010",
+      "RWR 090"
+    ]
+  },
+  "CTE 111": {
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 English Composition I Minimum Grade of: C and Math Placement",
+    "courses": [
+      "ENG 101",
+      "RWR 090"
+    ]
+  },
+  "CTE 112": {
+    "text": "CTE111 Circuit Analysis I",
+    "courses": [
+      "CTE 111"
+    ]
+  },
+  "CTE 201": {
+    "text": "CTE111 Circuit Analysis I",
+    "courses": [
+      "CTE 111"
+    ]
+  },
+  "CTE 202": {
+    "text": "CTE201 Electronics I",
+    "courses": [
+      "CTE 201"
+    ]
+  },
+  "CTE 221": {
+    "text": "CTE201 Electronics I and MAT115 Applied Mathematics",
+    "courses": [
+      "CTE 201",
+      "MAT 115"
+    ]
+  },
+  "CTN 222": {
+    "text": "CTN201 Computer Networks I",
+    "courses": [
+      "CTN 201"
+    ]
+  },
+  "CTN 223": {
+    "text": "CTN201 Computer Networks with minimum of grade of: C OR CTN222 Computer Networks II with minimum of grade of: C",
+    "courses": [
+      "CTN 201",
+      "CTN 222"
+    ]
+  },
   "CUL 101": {
     "text": "CUL 100 (min C-) or CUL 100 (min T)",
     "courses": [
       "CUL 100"
+    ]
+  },
+  "CUL 102": {
+    "text": "Skills: MAT-018C or permission of instructor CUL-101 or permission of instructor",
+    "courses": [
+      "CUL 101",
+      "MAT 018C"
+    ]
+  },
+  "CUL 103": {
+    "text": "CUL-102 or permission of instructor HSP-112 or permission of instructor HSP-118 or permission of instructor",
+    "courses": [
+      "CUL 102",
+      "HSP 112",
+      "HSP 118"
+    ]
+  },
+  "CUL 105": {
+    "text": "CUL-101 or permission of instructor CUL-102 or permission of instructor",
+    "courses": [
+      "CUL 101",
+      "CUL 102"
     ]
   },
   "CUL 114": {
@@ -2231,6 +3991,18 @@
       "DAN 119"
     ]
   },
+  "DAN 142": {
+    "text": "DAN141 Modern Dance",
+    "courses": [
+      "DAN 141"
+    ]
+  },
+  "DAN 203": {
+    "text": "DAN121 Ballet",
+    "courses": [
+      "DAN 121"
+    ]
+  },
   "DAS 100": {
     "text": "DAS 100L and DAS 100L and DAS 100L",
     "courses": [
@@ -2243,6 +4015,23 @@
       "DAS 100"
     ]
   },
+  "DAS 101": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "DAS 122": {
+    "text": "DAS101 Dental Assisting I Minimum Grade of: C and DAS102 Dental Materials and Procedures Minimum Grade of: C and DAS111 Dental Radiology I Minimum Grade of: C and DAS120 Dental Science Minimum Grade of: C",
+    "courses": [
+      "DAS 101",
+      "DAS 102",
+      "DAS 111",
+      "DAS 120"
+    ]
+  },
   "DAS 200": {
     "text": "DAS 200L",
     "courses": [
@@ -2253,6 +4042,39 @@
     "text": "DAS 200",
     "courses": [
       "DAS 200"
+    ]
+  },
+  "DAS 202": {
+    "text": "DAS101 Dental Assisting I Minimum Grade of: C and DAS102 Dental Materials and Procedures Minimum Grade of: C and DAS111 Dental Radiology I Minimum Grade of: C and DAS120 Dental Science Minimum Grade of: C",
+    "courses": [
+      "DAS 101",
+      "DAS 102",
+      "DAS 111",
+      "DAS 120"
+    ]
+  },
+  "DAS 212": {
+    "text": "DAS111 Dental Radiology I Minimum Grade of: C",
+    "courses": [
+      "DAS 111"
+    ]
+  },
+  "DAS 250": {
+    "text": "DAS101 Dental Assisting I Minimum Grade of: C and DAS102 Dental Materials and Procedures Minimum Grade of: C and DAS111 Dental Radiology I Minimum Grade of: C and DAS120 Dental Science Minimum Grade of: C",
+    "courses": [
+      "DAS 101",
+      "DAS 102",
+      "DAS 111",
+      "DAS 120"
+    ]
+  },
+  "DAS 290": {
+    "text": "DAS101 Dental Assisting I Minimum Grade of: C and DAS102 Dental Materials and Procedures Minimum Grade of: C and DAS111 Dental Radiology I Minimum Grade of: C and DAS120 Dental Science Minimum Grade of: C",
+    "courses": [
+      "DAS 101",
+      "DAS 102",
+      "DAS 111",
+      "DAS 120"
     ]
   },
   "DFS 108": {
@@ -2451,6 +4273,67 @@
       "DSC 211"
     ]
   },
+  "DST 101": {
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "RWR 090"
+    ]
+  },
+  "DST 102": {
+    "text": "ASL111 Intermediate American Sign Language I Minimum Grade of: C and DST101 Introduction to Deaf Studies Minimum Grade of: C",
+    "courses": [
+      "ASL 111",
+      "DST 101"
+    ]
+  },
+  "DST 191": {
+    "text": "ASL111 Intermediate American Sign Language I Minimum Grade of: C and DST101 Introduction to Deaf Studies Minimum Grade of: C",
+    "courses": [
+      "ASL 111",
+      "DST 101"
+    ]
+  },
+  "DST 201": {
+    "text": "ASL112 Intermediate American Sign Language II Minimum Grade of: C and DST102 Introduction to the Interpreting Field Minimum Grade of: C and DST191 Deaf Community Practicum Minimum Grade of: C",
+    "courses": [
+      "ASL 112",
+      "DST 102",
+      "DST 191"
+    ]
+  },
+  "DST 202": {
+    "text": "DST201 Interpreting I Minimum Grade of: C and DST291 Interpreting Practicum I Minimum Grade of: C and ASL201 Advanced American Sign Language I Minimum Grade of: C",
+    "courses": [
+      "ASL 201",
+      "DST 201",
+      "DST 291"
+    ]
+  },
+  "DST 205": {
+    "text": "ANT101 Cultural Anthropology and DST101 Introduction to Deaf Studies Minimum Grade of: C and DST102 Introduction to the Interpreting Field Minimum Grade of: C",
+    "courses": [
+      "ANT 101",
+      "DST 101",
+      "DST 102"
+    ]
+  },
+  "DST 291": {
+    "text": "ASL112 Intermediate American Sign Language II Minimum Grade of: C and DST102 Introduction to the Interpreting Field Minimum Grade of: C and DST191 Deaf Community Practicum Minimum Grade of: C",
+    "courses": [
+      "ASL 112",
+      "DST 102",
+      "DST 191"
+    ]
+  },
+  "DST 292": {
+    "text": "ASL201 Advanced American Sign Language I Minimum Grade of: C and DST201 Interpreting I Minimum Grade of: C and DST191 Deaf Community Practicum Minimum Grade of: C",
+    "courses": [
+      "ASL 201",
+      "DST 191",
+      "DST 201"
+    ]
+  },
   "DVD 110": {
     "text": "ENG 097 (min XC-) or ENG 097 (min T) or ENG 098 (min XC-) or ENG 098 (min T) or ENG 096 (min XC-) or ENG 096 (min T) or ENG 095 (min XC-) or ENG 095 (min T) or ENG 099 (min XC-) or ENG 101 (min D-) or ENG 101 (min T) or ENG 102 (min D-) or ENG 102 (min T) or ENG 104 (min D-) or ENG 104 (min T)",
     "courses": [
@@ -2512,10 +4395,42 @@
       "ECE 103"
     ]
   },
+  "ECE 123": {
+    "text": "ECE101 Introduction to Early Childhood Education Minimum Grade of: C",
+    "courses": [
+      "ECE 101"
+    ]
+  },
   "ECE 160": {
     "text": "ECE 110",
     "courses": [
       "ECE 110"
+    ]
+  },
+  "ECE 182": {
+    "text": "ECE101 Introduction to Early Childhood Education Minimum Grade of: C and ECE111 Preschool Curriculum Minimum Grade of: C and ECE181 Early Childhood Education Field Placement I Minimum Grade of: C",
+    "courses": [
+      "ECE 101",
+      "ECE 111",
+      "ECE 181"
+    ]
+  },
+  "ECE 201": {
+    "text": "ECE101 Introduction to Early Childhood Education Minimum Grade of: C",
+    "courses": [
+      "ECE 101"
+    ]
+  },
+  "ECE 202": {
+    "text": "ECE101 Introduction to Early Childhood Education Minimum Grade of: C",
+    "courses": [
+      "ECE 101"
+    ]
+  },
+  "ECE 203": {
+    "text": "ECE101 Introduction to Early Childhood Education Minimum Grade of: C",
+    "courses": [
+      "ECE 101"
     ]
   },
   "ECE 207": {
@@ -2534,6 +4449,14 @@
       "RDG 095",
       "ECE 104",
       "EDU 110"
+    ]
+  },
+  "ECE 211": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
     ]
   },
   "ECE 212": {
@@ -2566,6 +4489,28 @@
     "courses": [
       "ECE 110",
       "ECE 101"
+    ]
+  },
+  "ECE 250": {
+    "text": "ECE101 Introduction to Early Childhood Education Minimum Grade of: C and ECE201 Language & Reading Development in Early Childhood Minimum Grade of: C and ECE202 Expressive Learning Activities in Early Childhood Curriculum Minimum Grade of: C and ECE203 Math/Science for Early Childhood Curriculum Minimum Grade of: C and ECE271 Early Childhood Education Practicum I Minimum Grade of: C",
+    "courses": [
+      "ECE 101",
+      "ECE 201",
+      "ECE 202",
+      "ECE 203",
+      "ECE 271"
+    ]
+  },
+  "ECE 271": {
+    "text": "ECE111 Preschool Curriculum Minimum Grade of: C",
+    "courses": [
+      "ECE 111"
+    ]
+  },
+  "ECE 272": {
+    "text": "ECE271 Early Childhood Education Practicum I Minimum Grade of: C",
+    "courses": [
+      "ECE 271"
     ]
   },
   "ECN 101": {
@@ -2630,6 +4575,12 @@
       "MAT 018C"
     ]
   },
+  "ECO 213": {
+    "text": "Skills: MAT-018C or permission of instructor",
+    "courses": [
+      "MAT 018C"
+    ]
+  },
   "EDU 101": {
     "text": "ENG 085 (min XC-) or ENG 085 (min T) or ENG 095 (min XD-) or ENG 095 (min T) or ENG 096 (min XD-) or ENG 096 (min T) or ENG 099 (min XD-) or ENG 099 (min T) or ENG 101 (min D-) or ENG 101 (min T) or ENG 102 (min D-) or ENG 102 (min T) or ENG 104 (min D-) or ENG 104 (min T) or SPA 203 (min D-) or SPA 203 (min T) and EDU 104 (min C) or EDU 104 (min T)",
     "courses": [
@@ -2645,10 +4596,11 @@
     ]
   },
   "EDU 102": {
-    "text": "ENG 095 (min C) or ENG 098 (min C)",
+    "text": "EDU101 Introduction to Teaching Minimum Grade of: C or ECE101 Introduction to Early Childhood Education Minimum Grade of: C and ENG101 English Composition I Minimum Grade of: C",
     "courses": [
-      "ENG 095",
-      "ENG 098"
+      "ECE 101",
+      "EDU 101",
+      "ENG 101"
     ]
   },
   "EDU 103": {
@@ -2669,6 +4621,12 @@
       "ENG 102",
       "ENG 104",
       "SPA 203"
+    ]
+  },
+  "EDU 107": {
+    "text": "EDU-101 or permission of instructor.",
+    "courses": [
+      "EDU 101"
     ]
   },
   "EDU 110": {
@@ -2698,6 +4656,13 @@
     "text": "EDU 123",
     "courses": [
       "EDU 123"
+    ]
+  },
+  "EDU 154": {
+    "text": "ENG-101 or permission of the instructor. EDU-105 or permission of instructor.",
+    "courses": [
+      "EDU 105",
+      "ENG 101"
     ]
   },
   "EDU 175": {
@@ -2737,6 +4702,10 @@
       "EDU 110",
       "EDU 203"
     ]
+  },
+  "EDU 205": {
+    "text": "Three credits of composition or permission of the instructor.",
+    "courses": []
   },
   "EDU 208": {
     "text": "ENG 097 (min XC-) or ENG 097 (min T) or ENG 098 (min XC-) or ENG 098 (min T) or ENG 095 (min XC-) or ENG 095 (min T) or ENG 099 (min XC-) or ENG 099 (min T) or ENG 096 (min XC-) or ENG 096 (min T) or ENG 101 (min D-) or ENG 101 (min T) or ENG 102 (min D-) or ENG 102 (min T) or ENG 104 (min D-) or ENG 104 (min T) and EDU 104 (min C) or EDU 104 (min T) or PSY 218 (min C) or PSY 218 (min T) or PSY 216 (min T) or PSY 216 (min C) or PSY 215 (min C) or PSY 215 (min T)",
@@ -2780,6 +4749,12 @@
       "EDU 120"
     ]
   },
+  "EDU 215": {
+    "text": "EDU-105 or permission of the instructor.",
+    "courses": [
+      "EDU 105"
+    ]
+  },
   "EDU 220": {
     "text": "EDU 203 and EDU 204 and EDU 205",
     "courses": [
@@ -2797,8 +4772,9 @@
     ]
   },
   "EDU 224": {
-    "text": "EDU 124 and EDU 223",
+    "text": "EDU-123 or permission of instructor EDU-124 or permission of instructor EDU-223 or permission of instructor",
     "courses": [
+      "EDU 123",
       "EDU 124",
       "EDU 223"
     ]
@@ -3049,6 +5025,120 @@
       "ELL 102"
     ]
   },
+  "EMS 108": {
+    "text": "BIO101 Human Biology Minimum Grade of: C and BIO102 Human Biology Laboratory Minimum Grade of: C or BIO121 Anatomy & Physiology I Minimum Grade of: C and EMS103 Introduction to Paramedicine Minimum Grade of: C and EMS104 Pharmacology for the Paramedic Minimum Grade of: C and EMS105 Pharmacology for the Paramedic Laboratory Minimum Grade of: C and EMS106 Medical Emergencies Minimum Grade of: C and EMS107 Medical Emergencies Laboratory Minimum Grade of: C",
+    "courses": [
+      "BIO 101",
+      "BIO 102",
+      "BIO 121",
+      "EMS 103",
+      "EMS 104",
+      "EMS 105",
+      "EMS 106",
+      "EMS 107"
+    ]
+  },
+  "EMS 109": {
+    "text": "BIO101 Human Biology Minimum Grade of: C and BIO102 Human Biology Laboratory Minimum Grade of: C or BIO121 Anatomy & Physiology I Minimum Grade of: C and EMS103 Introduction to Paramedicine Minimum Grade of: C and EMS104 Pharmacology for the Paramedic Minimum Grade of: C and EMS105 Pharmacology for the Paramedic Laboratory Minimum Grade of: C and EMS106 Medical Emergencies Minimum Grade of: C and EMS107 Medical Emergencies Laboratory Minimum Grade of: C",
+    "courses": [
+      "BIO 101",
+      "BIO 102",
+      "BIO 121",
+      "EMS 103",
+      "EMS 104",
+      "EMS 105",
+      "EMS 106",
+      "EMS 107"
+    ]
+  },
+  "EMS 110": {
+    "text": "BIO101 Human Biology Minimum Grade of: C and BIO102 Human Biology Laboratory Minimum Grade of: C or BIO121 Anatomy & Physiology I Minimum Grade of: C and EMS103 Introduction to Paramedicine Minimum Grade of: C and EMS104 Pharmacology for the Paramedic Minimum Grade of: C and EMS105 Pharmacology for the Paramedic Laboratory Minimum Grade of: C and EMS106 Medical Emergencies Minimum Grade of: C and EMS107 Medical Emergencies Laboratory Minimum Grade of: C",
+    "courses": [
+      "BIO 101",
+      "BIO 102",
+      "BIO 121",
+      "EMS 103",
+      "EMS 104",
+      "EMS 105",
+      "EMS 106",
+      "EMS 107"
+    ]
+  },
+  "EMS 111": {
+    "text": "BIO101 Human Biology Minimum Grade of: C and BIO102 Human Biology Laboratory Minimum Grade of: C or BIO121 Anatomy & Physiology I Minimum Grade of: C and EMS103 Introduction to Paramedicine Minimum Grade of: C and EMS104 Pharmacology for the Paramedic Minimum Grade of: C and EMS105 Pharmacology for the Paramedic Laboratory Minimum Grade of: C and EMS106 Medical Emergencies Minimum Grade of: C and EMS107 Medical Emergencies Laboratory Minimum Grade of: C",
+    "courses": [
+      "BIO 101",
+      "BIO 102",
+      "BIO 121",
+      "EMS 103",
+      "EMS 104",
+      "EMS 105",
+      "EMS 106",
+      "EMS 107"
+    ]
+  },
+  "EMS 112": {
+    "text": "BIO101 Human Biology Minimum Grade of: C and BIO102 Human Biology Laboratory Minimum Grade of: C or BIO121 Anatomy & Physiology I Minimum Grade of: C and EMS104 Pharmacology for the Paramedic Minimum Grade of: C and EMS105 Pharmacology for the Paramedic Laboratory Minimum Grade of: C and EMS106 Medical Emergencies Minimum Grade of: C and EMS107 Medical Emergencies Laboratory Minimum Grade of: C",
+    "courses": [
+      "BIO 101",
+      "BIO 102",
+      "BIO 121",
+      "EMS 104",
+      "EMS 105",
+      "EMS 106",
+      "EMS 107"
+    ]
+  },
+  "EMS 113": {
+    "text": "BIO101 Human Biology Minimum Grade of: C and BIO102 Human Biology Laboratory Minimum Grade of: C or BIO121 Anatomy & Physiology I Minimum Grade of: C and EMS104 Pharmacology for the Paramedic Minimum Grade of: C and EMS105 Pharmacology for the Paramedic Laboratory Minimum Grade of: C",
+    "courses": [
+      "BIO 101",
+      "BIO 102",
+      "BIO 121",
+      "EMS 104",
+      "EMS 105"
+    ]
+  },
+  "EMS 201": {
+    "text": "BIO101 Human Biology Minimum Grade of: C and BIO102 Human Biology Laboratory Minimum Grade of: C or BIO121 Anatomy & Physiology I Minimum Grade of: C and EMS103 Introduction to Paramedicine Minimum Grade of: C and EMS104 Pharmacology for the Paramedic Minimum Grade of: C and EMS105 Pharmacology for the Paramedic Laboratory Minimum Grade of: C and EMS106 Medical Emergencies Minimum Grade of: C and EMS107 Medical Emergencies Laboratory Minimum Grade of: C and EMS108 Trauma Emergencies Minimum Grade of: C and EMS109 Trauma Emergencies Laboratory Minimum Grade of: C and EMS110 Cardiovascular Emergencies Minimum Grade of: C and EMS111 Cardiovascular Emergencies Laboratory Minimum Grade of: C and EMS112 Special Populations in Paramedicine Minimum Grade of: C and EMS113 Special Populations in Paramedicine Laboratory Minimum Grade of: C",
+    "courses": [
+      "BIO 101",
+      "BIO 102",
+      "BIO 121",
+      "EMS 103",
+      "EMS 104",
+      "EMS 105",
+      "EMS 106",
+      "EMS 107",
+      "EMS 108",
+      "EMS 109",
+      "EMS 110",
+      "EMS 111",
+      "EMS 112",
+      "EMS 113"
+    ]
+  },
+  "EMS 202": {
+    "text": "BIO101 Human Biology Minimum Grade of: C and BIO102 Human Biology Laboratory Minimum Grade of: C or BIO121 Anatomy & Physiology I Minimum Grade of: C and EMS103 Introduction to Paramedicine Minimum Grade of: C and EMS104 Pharmacology for the Paramedic Minimum Grade of: C and EMS105 Pharmacology for the Paramedic Laboratory Minimum Grade of: C and EMS106 Medical Emergencies Minimum Grade of: C and EMS107 Medical Emergencies Laboratory Minimum Grade of: C and EMS108 Trauma Emergencies Minimum Grade of: C and EMS109 Trauma Emergencies Laboratory Minimum Grade of: C and EMS110 Cardiovascular Emergencies Minimum Grade of: C and EMS111 Cardiovascular Emergencies Laboratory Minimum Grade of: C and EMS112 Special Populations in Paramedicine Minimum Grade of: C and EMS113 Special Populations in Paramedicine Laboratory Minimum Grade of: C and EMS201 Paramedicine Clinical Rotation Minimum Grade of: C and HES211 Neonatal Resuscitation Program Minimum Grade of: C",
+    "courses": [
+      "BIO 101",
+      "BIO 102",
+      "BIO 121",
+      "EMS 103",
+      "EMS 104",
+      "EMS 105",
+      "EMS 106",
+      "EMS 107",
+      "EMS 108",
+      "EMS 109",
+      "EMS 110",
+      "EMS 111",
+      "EMS 112",
+      "EMS 113",
+      "EMS 201",
+      "HES 211"
+    ]
+  },
   "EMS 205": {
     "text": "BIO 108",
     "courses": [
@@ -3093,10 +5183,29 @@
       "EMS 217"
     ]
   },
-  "ENG 090": {
-    "text": "RDG 090",
+  "EMT 101": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
     "courses": [
-      "RDG 090"
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "EMT 109": {
+    "text": "EMT108 Paramedicine Clinical Rotation Minimum Grade of: C",
+    "courses": [
+      "EMT 108"
+    ]
+  },
+  "ENG 020": {
+    "text": "Determined by Placement Results",
+    "courses": []
+  },
+  "ENG 090": {
+    "text": "Skills: ENG-020 or permission of instructor ENG-101",
+    "courses": [
+      "ENG 020",
+      "ENG 101"
     ]
   },
   "ENG 095": {
@@ -3130,6 +5239,12 @@
     "courses": [
       "ENG 101",
       "ENG 101H"
+    ]
+  },
+  "ENG 103": {
+    "text": "ENG101 English Composition I Minimum Grade of: C",
+    "courses": [
+      "ENG 101"
     ]
   },
   "ENG 104": {
@@ -3189,16 +5304,27 @@
     ]
   },
   "ENG 115": {
-    "text": "ENG 111 (min B) or ENG 115 (min B)",
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
     "courses": [
-      "ENG 111",
-      "ENG 115"
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
     ]
   },
   "ENG 116": {
-    "text": "ENG 101",
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
     "courses": [
-      "ENG 101"
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "ENG 117": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
     ]
   },
   "ENG 120": {
@@ -3210,6 +5336,12 @@
   },
   "ENG 131": {
     "text": "ENG 101",
+    "courses": [
+      "ENG 101"
+    ]
+  },
+  "ENG 199": {
+    "text": "ENG101 English Composition I",
     "courses": [
       "ENG 101"
     ]
@@ -3236,11 +5368,21 @@
       "ENG 104"
     ]
   },
+  "ENG 215": {
+    "text": "Three credits of Composition or permission of the instructor.",
+    "courses": []
+  },
   "ENG 217": {
     "text": "ENG 102 (min D-) or ENG 102 (min D-) or ENG 102 (min T) or ENG 102 (min T) or ENG 104 (min D-) or ENG 104 (min D-) or ENG 104 (min T) or ENG 104 (min T)",
     "courses": [
       "ENG 102",
       "ENG 104"
+    ]
+  },
+  "ENG 217H": {
+    "text": "Three credits of Composition or ENG 215 (or permission of Instructor)",
+    "courses": [
+      "ENG 215"
     ]
   },
   "ENG 224": {
@@ -3256,6 +5398,10 @@
       "ENG 102",
       "ENG 102H"
     ]
+  },
+  "ENG 228": {
+    "text": "Six credits of Composition (or permission of the Instructor).",
+    "courses": []
   },
   "ENG 231": {
     "text": "ENG 102 (min D-) or ENG 102 (min D-) or ENG 102 (min T) or ENG 102 (min T) or ENG 104 (min D-) or ENG 104 (min D-) or ENG 104 (min T) or ENG 104 (min T)",
@@ -3282,11 +5428,36 @@
       "ENG 111"
     ]
   },
+  "ENG 235": {
+    "text": "ENG-101 or ENG-103",
+    "courses": [
+      "ENG 101",
+      "ENG 103"
+    ]
+  },
   "ENG 238": {
     "text": "ENG 102 (min D-) or ENG 102 (min T) or ENG 104 (min D-) or ENG 104 (min T)",
     "courses": [
       "ENG 102",
       "ENG 104"
+    ]
+  },
+  "ENG 241": {
+    "text": "Three credits of Composition or ENG-215",
+    "courses": [
+      "ENG 215"
+    ]
+  },
+  "ENG 242": {
+    "text": "Three credits of Composition or ENG-215",
+    "courses": [
+      "ENG 215"
+    ]
+  },
+  "ENG 245": {
+    "text": "Three credits of Composition or ENG-215",
+    "courses": [
+      "ENG 215"
     ]
   },
   "ENG 246": {
@@ -3301,10 +5472,101 @@
       "ENG 215"
     ]
   },
+  "ENG 247H": {
+    "text": "Three credits of Composition or ENG 215 (or permission of Instructor)",
+    "courses": [
+      "ENG 215"
+    ]
+  },
   "ENG 255": {
     "text": "ENG 215",
     "courses": [
       "ENG 215"
+    ]
+  },
+  "ENG 263": {
+    "text": "Six credits of Composition (or permission of the Instructor).",
+    "courses": []
+  },
+  "ENG 275": {
+    "text": "Three credits of Composition or ENG-215 or permission of instructor",
+    "courses": [
+      "ENG 215"
+    ]
+  },
+  "ENG 297": {
+    "text": "Three credits of Composition or ENG 215 (or permission of Instructor)",
+    "courses": [
+      "ENG 215"
+    ]
+  },
+  "ENG 297H": {
+    "text": "Three credits of Composition or ENG 215 (or permission of Instructor)",
+    "courses": [
+      "ENG 215"
+    ]
+  },
+  "ENG 297M": {
+    "text": "Three credits of Composition or ENG 215 (or permission of Instructor)",
+    "courses": [
+      "ENG 215"
+    ]
+  },
+  "ENG 297R": {
+    "text": "Three credits of Composition or ENG 215 (or permission of Instructor)",
+    "courses": [
+      "ENG 215"
+    ]
+  },
+  "ENG 297T": {
+    "text": "Three credits of Composition or ENG 215 (or permission of Instructor)",
+    "courses": [
+      "ENG 215"
+    ]
+  },
+  "ENG 297U": {
+    "text": "Three credits of Composition or ENG 215 (or permission of Instructor)",
+    "courses": [
+      "ENG 215"
+    ]
+  },
+  "ENM 125": {
+    "text": "Skills: MAT-018C or permission of the instructor",
+    "courses": [
+      "MAT 018C"
+    ]
+  },
+  "ENM 126": {
+    "text": "ENM-125, MAT-028B or permission of instructor.",
+    "courses": [
+      "ENM 125",
+      "MAT 028B"
+    ]
+  },
+  "ENM 127": {
+    "text": "ENM-126 or permission of instructor.",
+    "courses": [
+      "ENM 126"
+    ]
+  },
+  "ENM 151": {
+    "text": "ENM-127 or MAT-102 or permission of the instructor.",
+    "courses": [
+      "ENM 127",
+      "MAT 102"
+    ]
+  },
+  "ENM 152": {
+    "text": "ENM-151 with C+ or higher or ENM-151 with ENM-052 corequisite or with permission of instructor.",
+    "courses": [
+      "ENM 052",
+      "ENM 151"
+    ]
+  },
+  "ENM 251": {
+    "text": "ENM-152",
+    "courses": [
+      "ENM 152"
     ]
   },
   "ENR 101": {
@@ -3347,16 +5609,71 @@
       "MAT 029"
     ]
   },
+  "ENT 129": {
+    "text": "ENM-126 or permission of instructor Take ENT-129L",
+    "courses": [
+      "ENM 126",
+      "ENT 129L"
+    ]
+  },
+  "ENT 151": {
+    "text": "MAT-102",
+    "courses": [
+      "MAT 102"
+    ]
+  },
   "ENT 152": {
     "text": "ENT 151",
     "courses": [
       "ENT 151"
     ]
   },
+  "ENT 161": {
+    "text": "Take ENT-161L MAT-151 or permission of instructor",
+    "courses": [
+      "ENT 161L",
+      "MAT 151"
+    ]
+  },
+  "ENT 162": {
+    "text": "ENM-151 or permission of instructor ENT-161 or permission of instructor Take ENT-162L ENM-152 or permission of instructor",
+    "courses": [
+      "ENM 151",
+      "ENM 152",
+      "ENT 161",
+      "ENT 162L"
+    ]
+  },
+  "ENT 185": {
+    "text": "MAT-102 or permission of the instructor",
+    "courses": [
+      "MAT 102"
+    ]
+  },
+  "ENT 203": {
+    "text": "ENM-151 or ENM-152 or permission of instructor Take ENT-203L",
+    "courses": [
+      "ENM 151",
+      "ENM 152",
+      "ENT 203L"
+    ]
+  },
   "ENT 212": {
     "text": "MAT 152",
     "courses": [
       "MAT 152"
+    ]
+  },
+  "ENT 214": {
+    "text": "ENT-212 or permission of instructor",
+    "courses": [
+      "ENT 212"
+    ]
+  },
+  "ENT 225": {
+    "text": "ENT-151 or permission of instructor",
+    "courses": [
+      "ENT 151"
     ]
   },
   "ENT 233": {
@@ -3373,6 +5690,27 @@
       "ENT 233"
     ]
   },
+  "ENT 234": {
+    "text": "ENT-233 or permission of instructor",
+    "courses": [
+      "ENT 233"
+    ]
+  },
+  "ENT 235": {
+    "text": "ENT-185 or permission of instructor",
+    "courses": [
+      "ENT 185"
+    ]
+  },
+  "ENT 238": {
+    "text": "Take ENT-238L MAT-102 or any higher level Math, Placement in MAT-121 or higher or permission of instructor ENT-151 or permission of instructor",
+    "courses": [
+      "ENT 151",
+      "ENT 238L",
+      "MAT 102",
+      "MAT 121"
+    ]
+  },
   "ENT 244": {
     "text": "ENT 151 or PHY 111 and MAT 102 or MAT 121",
     "courses": [
@@ -3380,6 +5718,22 @@
       "PHY 111",
       "MAT 102",
       "MAT 121"
+    ]
+  },
+  "ENT 260": {
+    "text": "ENT-129 or permission of instructor Take ENT-260L",
+    "courses": [
+      "ENT 129",
+      "ENT 260L"
+    ]
+  },
+  "ENT 261": {
+    "text": "MAT-151 or permission of instructor ENT-161 or permission of instructor Take ENT-261L MAT-152",
+    "courses": [
+      "ENT 161",
+      "ENT 261L",
+      "MAT 151",
+      "MAT 152"
     ]
   },
   "ENV 101": {
@@ -3392,6 +5746,12 @@
     "text": "ENV 101",
     "courses": [
       "ENV 101"
+    ]
+  },
+  "ENV 102": {
+    "text": "Take ENV-102L",
+    "courses": [
+      "ENV 102L"
     ]
   },
   "ENV 105": {
@@ -3448,6 +5808,12 @@
       "ELL 103"
     ]
   },
+  "ENV 120": {
+    "text": "MAT 018 or permission of instructor",
+    "courses": [
+      "MAT 018"
+    ]
+  },
   "ENV 165": {
     "text": "BIO 105 and ENV 165L",
     "courses": [
@@ -3459,6 +5825,12 @@
     "text": "ENV 165",
     "courses": [
       "ENV 165"
+    ]
+  },
+  "ENV 205": {
+    "text": "Take ENV-205L",
+    "courses": [
+      "ENV 205L"
     ]
   },
   "ENV 222": {
@@ -3490,6 +5862,42 @@
     "text": "MAT 193",
     "courses": [
       "MAT 193"
+    ]
+  },
+  "ERS 110": {
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "RWR 090"
+    ]
+  },
+  "ERS 125": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 or higher Minimum Grade of: C and Fndns of Math proficiency or MAT010 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "MAT 010",
+      "RWR 090"
+    ]
+  },
+  "ERS 130": {
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "RWR 090"
+    ]
+  },
+  "ERS 135": {
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C and Fndsn of Algebra proficiency",
+    "courses": [
+      "RWR 090"
+    ]
+  },
+  "ERS 140": {
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "RWR 090"
     ]
   },
   "ESC 111": {
@@ -3604,6 +6012,75 @@
       "EST 103"
     ]
   },
+  "EST 104": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C and Math placement",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "EST 111": {
+    "text": "EST110 Engineering Design Graphics",
+    "courses": [
+      "EST 110"
+    ]
+  },
+  "EST 112": {
+    "text": "EST111 Computer Aided Drafting I",
+    "courses": [
+      "EST 111"
+    ]
+  },
+  "EST 113": {
+    "text": "Foundations of Algebra, Reading and Writing Proficiency or ESL110 ESL Transitional Writing Minimum Grade of: C",
+    "courses": [
+      "ESL 110"
+    ]
+  },
+  "EST 114": {
+    "text": "PHS111 College Physics I",
+    "courses": [
+      "PHS 111"
+    ]
+  },
+  "EST 140": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C and Math placement",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "EST 141": {
+    "text": "MAT115 or equivalent Minimum Grade of C",
+    "courses": [
+      "MAT 115"
+    ]
+  },
+  "EST 150": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C and Math placement",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "EST 151": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C and Math Placement",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "EST 152": {
+    "text": "EST150 Machine Application and EST151 Introduction to CNC Machines",
+    "courses": [
+      "EST 150",
+      "EST 151"
+    ]
+  },
   "EST 200": {
     "text": "EST 200L and EST 200L and EST 200L and EST 200L and EST 200L and EST 200L and EST 200L",
     "courses": [
@@ -3658,10 +6135,75 @@
       "EST 206"
     ]
   },
+  "EST 211": {
+    "text": "MAT251 or higher and PHS131 Engineering Physics I",
+    "courses": [
+      "MAT 251",
+      "PHS 131"
+    ]
+  },
+  "EST 212": {
+    "text": "EST211 Engineering Mechanics I - Statics",
+    "courses": [
+      "EST 211"
+    ]
+  },
+  "EST 213": {
+    "text": "EST211 Engineering Mechanics I - Statics Minimum Grade of: C and MAT252 Calculus II",
+    "courses": [
+      "EST 211",
+      "MAT 252"
+    ]
+  },
+  "EST 215": {
+    "text": "CHM121 General Chemistry and MAT252 Calculus II minimum passing grade of D",
+    "courses": [
+      "CHM 121",
+      "MAT 252"
+    ]
+  },
+  "EST 231": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "EST 232": {
+    "text": "EST231 Engineering Circuit Analysis I",
+    "courses": [
+      "EST 231"
+    ]
+  },
+  "EXL 250": {
+    "text": "Permission of Faculty sponsor and Dean",
+    "courses": []
+  },
+  "EXL 275": {
+    "text": "Permission of Faculty sponsor and Dean",
+    "courses": []
+  },
+  "EXL 290": {
+    "text": "Permission of Faculty sponsor and Dean",
+    "courses": []
+  },
+  "FAS 103": {
+    "text": "FAS-163 or permission of instructor",
+    "courses": [
+      "FAS 163"
+    ]
+  },
   "FAS 120": {
     "text": "FAS 111",
     "courses": [
       "FAS 111"
+    ]
+  },
+  "FAS 163": {
+    "text": "FAS-123 or permission of instructor",
+    "courses": [
+      "FAS 123"
     ]
   },
   "FAS 210": {
@@ -3670,10 +6212,49 @@
       "FAS 163"
     ]
   },
+  "FAS 222": {
+    "text": "FAS-120 FAS-125 FAS-163 FAS-103 & FAS-113&#239;&#191;&#189;or&#239;&#191;&#189;FAS-114 & FAS-240&#239;&#191;&#189;or &#239;&#191;&#189;FAS-245 & FAS-246",
+    "courses": [
+      "FAS 103",
+      "FAS 113",
+      "FAS 114",
+      "FAS 120",
+      "FAS 125",
+      "FAS 163",
+      "FAS 240",
+      "FAS 245",
+      "FAS 246"
+    ]
+  },
+  "FAS 225": {
+    "text": "FAS-120 or permission of the instructor.",
+    "courses": [
+      "FAS 120"
+    ]
+  },
+  "FAS 233": {
+    "text": "FAS-120 FAS-163",
+    "courses": [
+      "FAS 120",
+      "FAS 163"
+    ]
+  },
+  "FAS 242": {
+    "text": "FAS-111 or permission of the instructor.",
+    "courses": [
+      "FAS 111"
+    ]
+  },
   "FIN 111": {
     "text": "FIN 106 (min C)",
     "courses": [
       "FIN 106"
+    ]
+  },
+  "FIN 201": {
+    "text": "ACC102 Introductory Accounting II Minimum Grade of: C",
+    "courses": [
+      "ACC 102"
     ]
   },
   "FIN 210": {
@@ -3688,6 +6269,43 @@
     "courses": [
       "ECO 201",
       "FIN 106"
+    ]
+  },
+  "FIS 101": {
+    "text": "Three (3) credits of composition or permission of instructor",
+    "courses": []
+  },
+  "FIS 123": {
+    "text": "FIS-101 or permission of instructor PHY-111 or permission of instructor",
+    "courses": [
+      "FIS 101",
+      "PHY 111"
+    ]
+  },
+  "FIS 127": {
+    "text": "MAT-101 or permission of instructor",
+    "courses": [
+      "MAT 101"
+    ]
+  },
+  "FIS 201": {
+    "text": "CHM-150",
+    "courses": [
+      "CHM 150"
+    ]
+  },
+  "FIS 206": {
+    "text": "FIS-101 or permission of the instructor FIS-106 or permission of the instructor FIS-123 or permission of the instructor",
+    "courses": [
+      "FIS 101",
+      "FIS 106",
+      "FIS 123"
+    ]
+  },
+  "FIS 210": {
+    "text": "FIS-101",
+    "courses": [
+      "FIS 101"
     ]
   },
   "FPS 119": {
@@ -3734,10 +6352,22 @@
       "ELL 103"
     ]
   },
+  "FRE 101": {
+    "text": "Skills: ENG-020",
+    "courses": [
+      "ENG 020"
+    ]
+  },
   "FRE 102": {
     "text": "FRE 101",
     "courses": [
       "FRE 101"
+    ]
+  },
+  "FRN 102": {
+    "text": "FRN101 Introductory French 1",
+    "courses": [
+      "FRN 101"
     ]
   },
   "GAT 125": {
@@ -3879,6 +6509,12 @@
       "ELL 103"
     ]
   },
+  "GEO 125": {
+    "text": "Skills: ENG-020 or permission of instructor",
+    "courses": [
+      "ENG 020"
+    ]
+  },
   "GEY 121": {
     "text": "GEY 121L",
     "courses": [
@@ -3891,6 +6527,13 @@
       "GEY 121"
     ]
   },
+  "GEY 136": {
+    "text": "Skills: MAT-028A or permission of instructor Take GEY-136L",
+    "courses": [
+      "GEY 136L",
+      "MAT 028A"
+    ]
+  },
   "GIS 224": {
     "text": "MAT 181 (min C) or MAT 099 (min C)",
     "courses": [
@@ -3898,10 +6541,171 @@
       "MAT 099"
     ]
   },
+  "GOV 101": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "GOV 102": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "GOV 211": {
+    "text": "ENG101 English Composition I Minimum Grade of: C and GOV101 or higher Minimum Grade of: C-",
+    "courses": [
+      "ENG 101",
+      "GOV 101"
+    ]
+  },
+  "GOV 275": {
+    "text": "ENG-101",
+    "courses": [
+      "ENG 101"
+    ]
+  },
+  "HES 102": {
+    "text": "Foundations of Math Proficiency or MAT020 or higher Minimum Grade of: C or Math Placement",
+    "courses": [
+      "MAT 020"
+    ]
+  },
+  "HES 103": {
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 or higher Minimum Grade of: C and Fndns of Math proficiency or MAT010 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "MAT 010",
+      "RWR 090"
+    ]
+  },
+  "HES 104": {
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 or higher Minimum Grade of: C and Fndns of Math proficiency or MAT010 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "MAT 010",
+      "RWR 090"
+    ]
+  },
+  "HES 108": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "HES 109": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C and CIS110 or higher and ACC100 or higher",
+    "courses": [
+      "ACC 100",
+      "CIS 110",
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "HES 120": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I r higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "HES 121": {
+    "text": "ENG101 English Composition I Minimum Grade of: C and HES120 Phlebotomy Minimum Grade of: C and HES115 Medical Terminology and CIS101 or higher",
+    "courses": [
+      "CIS 101",
+      "ENG 101",
+      "HES 115",
+      "HES 120"
+    ]
+  },
+  "HES 130": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I r higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "HES 201": {
+    "text": "ENG101 English Composition I Minimum Grade of: C",
+    "courses": [
+      "ENG 101"
+    ]
+  },
+  "HES 203": {
+    "text": "COM112 Interpersonal Communication and HES104 Medical Office Administration Minimum Grade of: C",
+    "courses": [
+      "COM 112",
+      "HES 104"
+    ]
+  },
+  "HES 207": {
+    "text": "Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 or higher Minimum Grade of: C and Fndns of Math proficiency or MAT010 or higher Minimum Grade of: C and BIO101 Human Biology Minimum Grade of: C or BIO122 Anatomy & Physiology II Minimum Grade of: C",
+    "courses": [
+      "BIO 101",
+      "BIO 122",
+      "ENG 101",
+      "MAT 010",
+      "RWR 090"
+    ]
+  },
+  "HES 208": {
+    "text": "BUS101 Introduction to Business and BUS105 Managerial Business Communications and ENG102 English Composition II and HES108 Introduction to Healthcare Services and HES115 Medical Terminology",
+    "courses": [
+      "BUS 101",
+      "BUS 105",
+      "ENG 102",
+      "HES 108",
+      "HES 115"
+    ]
+  },
+  "HES 211": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "HES 292": {
+    "text": "HES104 Medical Office Administration Minimum Grade of: C",
+    "courses": [
+      "HES 104"
+    ]
+  },
+  "HIM 102": {
+    "text": "AHS-129",
+    "courses": [
+      "AHS 129"
+    ]
+  },
+  "HIM 105": {
+    "text": "AHS-129",
+    "courses": [
+      "AHS 129"
+    ]
+  },
   "HIM 106": {
     "text": "AHS 129",
     "courses": [
       "AHS 129"
+    ]
+  },
+  "HIM 203": {
+    "text": "HIM-102, HIM-105, HIM-106",
+    "courses": [
+      "HIM 102",
+      "HIM 105",
+      "HIM 106"
     ]
   },
   "HIS 100": {
@@ -3912,10 +6716,11 @@
     ]
   },
   "HIS 101": {
-    "text": "ENG 095 (min C) or ENG 098 (min C)",
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
     "courses": [
-      "ENG 095",
-      "ENG 098"
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
     ]
   },
   "HIS 102": {
@@ -4002,10 +6807,19 @@
     ]
   },
   "HIS 121": {
-    "text": "ENG 095 (min C) or ENG 098 (min C)",
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
     "courses": [
-      "ENG 095",
-      "ENG 098"
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "HIS 122": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
     ]
   },
   "HIS 151": {
@@ -4026,11 +6840,84 @@
       "ELL 103"
     ]
   },
+  "HIS 201": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "HIS 223": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "HIS 224": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "HIS 225": {
+    "text": "Skills: ENG-020 Skills: ENG-090",
+    "courses": [
+      "ENG 020",
+      "ENG 090"
+    ]
+  },
   "HIS 231": {
     "text": "ENG 111 (min C)",
     "courses": [
       "ENG 111"
     ]
+  },
+  "HIS 238": {
+    "text": "3 credits of comp",
+    "courses": []
+  },
+  "HIS 241": {
+    "text": "Three credits of Composition or permission of instructor",
+    "courses": []
+  },
+  "HIS 244": {
+    "text": "ENG 101 or permission of the instructor.",
+    "courses": [
+      "ENG 101"
+    ]
+  },
+  "HIS 250": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "HIS 253": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "HIS 255": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "HIS 275": {
+    "text": "One previous course in History",
+    "courses": []
   },
   "HIT 120": {
     "text": "MED 100",
@@ -4111,11 +6998,75 @@
       "HIT 260"
     ]
   },
+  "HON 200": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "HON 201": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
   "HON 204": {
     "text": "ENG 102 (min B+) or ENG 102 (min T)",
     "courses": [
       "ENG 102"
     ]
+  },
+  "HON 275": {
+    "text": "Permission of the instructor and the Honors Program Coordinator",
+    "courses": []
+  },
+  "HON 275B": {
+    "text": "Permission of the instructor and the Honors Program Coordinator",
+    "courses": []
+  },
+  "HON 275C": {
+    "text": "Permission of the instructor and the Honors Program Coordinator",
+    "courses": []
+  },
+  "HON 298": {
+    "text": "Membership in the Berkshire Honors Scholar Program.",
+    "courses": []
+  },
+  "HON 298F": {
+    "text": "Membership in the Honors Program or permission of the instructor.",
+    "courses": []
+  },
+  "HON 298G": {
+    "text": "3 credits of comp",
+    "courses": []
+  },
+  "HON 298H": {
+    "text": "Three credits of composition or permission of instructor",
+    "courses": []
+  },
+  "HON 298I": {
+    "text": "Membership in the Berkshire Honors Scholar Program. Six credits of composition or permission of the instructor.",
+    "courses": []
+  },
+  "HON 298J": {
+    "text": "Three credits of composition or permission of instructor",
+    "courses": []
+  },
+  "HON 298K": {
+    "text": "Three credits of composition or permission of instructor",
+    "courses": []
+  },
+  "HON 298M": {
+    "text": "Six credits of composition or permission of instructor",
+    "courses": []
+  },
+  "HON 298N": {
+    "text": "3 credits of Composition or permission of instructor",
+    "courses": []
   },
   "HRT 117": {
     "text": "HRT 105 and HRT 121",
@@ -4200,6 +7151,68 @@
     "courses": [
       "HSC 180",
       "HSC 180L"
+    ]
+  },
+  "HSP 133": {
+    "text": "Skills: ENG-020 Skills: MAT-018C",
+    "courses": [
+      "ENG 020",
+      "MAT 018C"
+    ]
+  },
+  "HSP 285": {
+    "text": "Skills: ENG-020 or permission of instructor Skills: MAT-018C or permission of instructor",
+    "courses": [
+      "ENG 020",
+      "MAT 018C"
+    ]
+  },
+  "HST 104": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "HST 209": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "HST 211": {
+    "text": "ENG101 English Composition I Minimum Grade of: C and HST104 Introduction to Hospitality & Tourism",
+    "courses": [
+      "ENG 101",
+      "HST 104"
+    ]
+  },
+  "HST 214": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "HST 215": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C and Fndns of Math proficiency or MAT010 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "MAT 010",
+      "RWR 090"
+    ]
+  },
+  "HST 216": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
     ]
   },
   "HSV 101": {
@@ -4294,6 +7307,13 @@
       "HSV 120"
     ]
   },
+  "HSV 210": {
+    "text": "HSV-111 or PSY-208 or permission of instructor",
+    "courses": [
+      "HSV 111",
+      "PSY 208"
+    ]
+  },
   "HSV 214": {
     "text": "ENG 111 and HSV 101 and HSV 112",
     "courses": [
@@ -4359,6 +7379,12 @@
       "HSV 262"
     ]
   },
+  "HSV 253": {
+    "text": "HSV-263",
+    "courses": [
+      "HSV 263"
+    ]
+  },
   "HSV 257": {
     "text": "HSV 267",
     "courses": [
@@ -4371,10 +7397,23 @@
       "HSV 252"
     ]
   },
+  "HSV 263": {
+    "text": "HSV-253",
+    "courses": [
+      "HSV 253"
+    ]
+  },
   "HSV 267": {
     "text": "HSV 257",
     "courses": [
       "HSV 257"
+    ]
+  },
+  "HSV 280": {
+    "text": "HSV-252 with a B or better &#252;or permission of instructor. HSV-262 with B or better&#252;or permission of instructor",
+    "courses": [
+      "HSV 252",
+      "HSV 262"
     ]
   },
   "HSV 288": {
@@ -4384,6 +7423,12 @@
       "PSY 110",
       "HSV 122",
       "HSV 123"
+    ]
+  },
+  "HSV 297": {
+    "text": "PSY-107 and permission of instructor.",
+    "courses": [
+      "PSY 107"
     ]
   },
   "HTH 102": {
@@ -4409,6 +7454,181 @@
     "text": "ENG 101",
     "courses": [
       "ENG 101"
+    ]
+  },
+  "HUM 148H": {
+    "text": "ENG-101 or permission of the instructor (Required, Previous).",
+    "courses": [
+      "ENG 101"
+    ]
+  },
+  "HUM 155": {
+    "text": "Skills: ENG-020 Skills: ENG-090",
+    "courses": [
+      "ENG 020",
+      "ENG 090"
+    ]
+  },
+  "HUM 199": {
+    "text": "HUM102 Introduction to Liberal Arts",
+    "courses": [
+      "HUM 102"
+    ]
+  },
+  "HUM 218": {
+    "text": "HUM-136 with C- or higher",
+    "courses": [
+      "HUM 136"
+    ]
+  },
+  "HUM 233": {
+    "text": "3 credits of comp",
+    "courses": []
+  },
+  "HUM 297": {
+    "text": "ENG-101 or permission of the instructor.",
+    "courses": [
+      "ENG 101"
+    ]
+  },
+  "HUS 101": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "HUS 105": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "HUS 108": {
+    "text": "REA021 College Reading Minimum Grade of C",
+    "courses": [
+      "REA 021"
+    ]
+  },
+  "HUS 150": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "HUS 170": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "HUS 171": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "HUS 172": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "HUS 173": {
+    "text": "HUS101 Introduction to Human Services Minimum Grade of: C-",
+    "courses": [
+      "HUS 101"
+    ]
+  },
+  "HUS 190": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "HUS 191": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "HUS 192": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C and HUS191 HUS Practicum I in Alcohol/Drug AbuseServices Minimum Grade of: C-",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "HUS 191",
+      "RWR 090"
+    ]
+  },
+  "HUS 193": {
+    "text": "HUS101 Introduction to Human Services Minimum Grade of C- and HUS103 Community Resources and Client Populations Minimum Grade of C-",
+    "courses": [
+      "HUS 101",
+      "HUS 103"
+    ]
+  },
+  "HUS 201": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "HUS 202": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "HUS 208": {
+    "text": "REA021 College Reading Minimum Grade of C",
+    "courses": [
+      "REA 021"
+    ]
+  },
+  "HUS 210": {
+    "text": "Reading and Writing Proficiency",
+    "courses": []
+  },
+  "HUS 211": {
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "RWR 090"
+    ]
+  },
+  "HUS 250": {
+    "text": "CIS101 or higher and HUS101 Introduction to Human Services Minimum Grade of: C- and HUS190 Human Services Practicum I Minimum Grade of: C- or HUS191 HUS Practicum I in Alcohol/Drug Abuse Services Minimum Grade of: C-",
+    "courses": [
+      "CIS 101",
+      "HUS 101",
+      "HUS 190",
+      "HUS 191"
+    ]
+  },
+  "HUS 291": {
+    "text": "HUS190 Human Services Practicum I Minimum Grade of: C-",
+    "courses": [
+      "HUS 190"
     ]
   },
   "INT 101": {
@@ -4438,6 +7658,20 @@
     "text": "JPN 101",
     "courses": [
       "JPN 101"
+    ]
+  },
+  "JRN 101": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "JRN 102": {
+    "text": "JRN101 Journalism I",
+    "courses": [
+      "JRN 101"
     ]
   },
   "LAN 100": {
@@ -4573,10 +7807,28 @@
       "LEO 260"
     ]
   },
-  "LIT 201": {
-    "text": "ENG 111 (min C)",
+  "LIT 200": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
     "courses": [
-      "ENG 111"
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "LIT 201": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "LIT 202": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
     ]
   },
   "LIT 203": {
@@ -4605,9 +7857,35 @@
     ]
   },
   "LIT 211": {
-    "text": "ENG 111 (min C)",
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
     "courses": [
-      "ENG 111"
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "LIT 212": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: Cor ENG101 English Composition Ior higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "LIT 213": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "LIT 215": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
     ]
   },
   "LIT 217": {
@@ -4659,9 +7937,11 @@
     ]
   },
   "LIT 231": {
-    "text": "ENG 111 (min C)",
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
     "courses": [
-      "ENG 111"
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
     ]
   },
   "LIT 233": {
@@ -4688,6 +7968,102 @@
       "ENG 111"
     ]
   },
+  "LIT 251": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "LIT 262": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "LIT 263": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "LIT 264": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "LIT 267": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "LIT 271": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "LIT 272": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "LIT 275": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "LNG 111": {
+    "text": "Placement",
+    "courses": []
+  },
+  "LNG 112": {
+    "text": "Placement",
+    "courses": []
+  },
+  "LNG 121": {
+    "text": "Placement OR LNG111 Integrated Communication for Multilingual Learners 1: Minimum Grade of: C",
+    "courses": [
+      "LNG 111"
+    ]
+  },
+  "LNG 122": {
+    "text": "Placement OR LNG112 Writing for Multilingual Learners 1 Minimum Grade of: C",
+    "courses": [
+      "LNG 112"
+    ]
+  },
+  "LNG 131": {
+    "text": "Placement OR LNG121 Integrated Communication for Multilingual Learners : Minimum Grade of: C or better.",
+    "courses": [
+      "LNG 121"
+    ]
+  },
+  "LNG 132": {
+    "text": "Placement OR LNG122 Writing for Multilingual Learners 2 Minimum Grade of: C",
+    "courses": [
+      "LNG 122"
+    ]
+  },
   "LPN 142": {
     "text": "LPN 142L and LPN 142C",
     "courses": [
@@ -4705,6 +8081,40 @@
     "text": "LPN 142",
     "courses": [
       "LPN 142"
+    ]
+  },
+  "LPN 145": {
+    "text": "Requisites: Take LPN-142 - Must be completed prior to taking this course.",
+    "courses": [
+      "LPN 142"
+    ]
+  },
+  "LPN 152": {
+    "text": "Requisites: Take LPN-145 - Must be completed prior to taking this course. Take LPN-152C - Must be taken at the same time as this course.",
+    "courses": [
+      "LPN 145",
+      "LPN 152C"
+    ]
+  },
+  "LPN 162": {
+    "text": "Requisites: Take LPN-152 - Must be completed prior to taking this course. Take LPN-162L - Must be taken at the same time as this course.",
+    "courses": [
+      "LPN 152",
+      "LPN 162L"
+    ]
+  },
+  "LXM 100": {
+    "text": "BIO121 Anatomy & Physiology Minimum Grade of: C",
+    "courses": [
+      "BIO 121"
+    ]
+  },
+  "LXM 103": {
+    "text": "LXM100 Limited Radiologic Procedures I Minimum Grade of: C and LXM101 Limited Radiologic Exposures I Minimum Grade of: C and LXM102 Limited Clinical Practicum I Minimum Grade of: C",
+    "courses": [
+      "LXM 100",
+      "LXM 101",
+      "LXM 102"
     ]
   },
   "MAN 105": {
@@ -4749,17 +8159,131 @@
       "ELL 103"
     ]
   },
+  "MAS 100": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C and Fndns of Math proficiency or MAT010 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "MAT 010",
+      "RWR 090"
+    ]
+  },
+  "MAS 101": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C and Fndns of Math proficiency or MAT010 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "MAT 010",
+      "RWR 090"
+    ]
+  },
+  "MAS 110": {
+    "text": "MAS101 Medical Assisting I Minimum Grade of: C",
+    "courses": [
+      "MAS 101"
+    ]
+  },
+  "MAS 190": {
+    "text": "MAS101 Medical Assisting I Minimum Grade of: C and MAS120 Clinical Laboratory Procedures Minimum Grade of: C",
+    "courses": [
+      "MAS 101",
+      "MAS 120"
+    ]
+  },
   "MAT 018": {
     "text": "MAT 011",
     "courses": [
       "MAT 011"
     ]
   },
+  "MAT 018A": {
+    "text": "Skills: MAT-011 or permission of instructor",
+    "courses": [
+      "MAT 011"
+    ]
+  },
+  "MAT 018B": {
+    "text": "Skills: MAT-018A or permission of instructor",
+    "courses": [
+      "MAT 018A"
+    ]
+  },
+  "MAT 018C": {
+    "text": "Skills: MAT-018B or permission of instructor",
+    "courses": [
+      "MAT 018B"
+    ]
+  },
+  "MAT 020": {
+    "text": "Math Placement",
+    "courses": []
+  },
   "MAT 028": {
     "text": "MAT 018 or MAT 018C",
     "courses": [
       "MAT 018",
       "MAT 018C"
+    ]
+  },
+  "MAT 028A": {
+    "text": "Skills: MAT-018 or MAT-018C or permission of instructor",
+    "courses": [
+      "MAT 018",
+      "MAT 018C"
+    ]
+  },
+  "MAT 028B": {
+    "text": "Skills: MAT-028A or permission of instructor",
+    "courses": [
+      "MAT 028A"
+    ]
+  },
+  "MAT 028C": {
+    "text": "Skills: MAT-028B or permission of instructor",
+    "courses": [
+      "MAT 028B"
+    ]
+  },
+  "MAT 029": {
+    "text": "Skills: MAT-028C or MAT-028 or permission of instructor",
+    "courses": [
+      "MAT 028",
+      "MAT 028C"
+    ]
+  },
+  "MAT 029A": {
+    "text": "Skills: MAT-028C or MAT-028 or permission of instructor",
+    "courses": [
+      "MAT 028",
+      "MAT 028C"
+    ]
+  },
+  "MAT 029B": {
+    "text": "Skills: MAT-029A or permission of instructor",
+    "courses": [
+      "MAT 029A"
+    ]
+  },
+  "MAT 029C": {
+    "text": "Skills: MAT-029B or permission of instructor",
+    "courses": [
+      "MAT 029B"
+    ]
+  },
+  "MAT 043": {
+    "text": "Skills: ENG-020 Skills: MAT-028C or MAT-028",
+    "courses": [
+      "ENG 020",
+      "MAT 028",
+      "MAT 028C"
+    ]
+  },
+  "MAT 050": {
+    "text": "Skills: MAT-018A BUS-105 or MAT-101",
+    "courses": [
+      "BUS 105",
+      "MAT 018A",
+      "MAT 101"
     ]
   },
   "MAT 097": {
@@ -4792,10 +8316,11 @@
     ]
   },
   "MAT 101": {
-    "text": "MAT 061 or MAT 078",
+    "text": "Skills: MAT-018 or MAT-018C Skills: ENG-090",
     "courses": [
-      "MAT 061",
-      "MAT 078"
+      "ENG 090",
+      "MAT 018",
+      "MAT 018C"
     ]
   },
   "MAT 102": {
@@ -4803,6 +8328,25 @@
     "courses": [
       "MAT 028",
       "MAT 028C"
+    ]
+  },
+  "MAT 102A": {
+    "text": "Skills: MAT-029 or MAT-029C or permission of instructor",
+    "courses": [
+      "MAT 029",
+      "MAT 029C"
+    ]
+  },
+  "MAT 102B": {
+    "text": "MAT-102A or permission of instructor",
+    "courses": [
+      "MAT 102A"
+    ]
+  },
+  "MAT 102C": {
+    "text": "MAT-102B or permission of instructor",
+    "courses": [
+      "MAT 102B"
     ]
   },
   "MAT 113": {
@@ -4813,6 +8357,12 @@
       "MAT 045"
     ]
   },
+  "MAT 114": {
+    "text": "Reading and Writing Proficiency and MAT020 Minimum Grade of: C or Math Placement",
+    "courses": [
+      "MAT 020"
+    ]
+  },
   "MAT 115": {
     "text": "MAT 061 (min C) or MAT 078 (min C)",
     "courses": [
@@ -4820,11 +8370,27 @@
       "MAT 078"
     ]
   },
+  "MAT 116": {
+    "text": "Reading and Writing Proficiency and Math Placement",
+    "courses": []
+  },
   "MAT 117": {
     "text": "MAT 063 or MAT 097",
     "courses": [
       "MAT 063",
       "MAT 097"
+    ]
+  },
+  "MAT 118": {
+    "text": "Reading and Writing Proficiency and MAT020 Minimum Grade of: C or Math Placement",
+    "courses": [
+      "MAT 020"
+    ]
+  },
+  "MAT 119": {
+    "text": "MAT118 Mathematical Ideas Minimum Grade of: C",
+    "courses": [
+      "MAT 118"
     ]
   },
   "MAT 121": {
@@ -4900,10 +8466,23 @@
       "MAT 051"
     ]
   },
+  "MAT 145": {
+    "text": "MAT-102/MAT-102C",
+    "courses": [
+      "MAT 102",
+      "MAT 102C"
+    ]
+  },
   "MAT 151": {
     "text": "MAT 121",
     "courses": [
       "MAT 121"
+    ]
+  },
+  "MAT 152": {
+    "text": "MAT-151 or permission of instructor",
+    "courses": [
+      "MAT 151"
     ]
   },
   "MAT 171": {
@@ -4960,6 +8539,13 @@
       "MAT 194"
     ]
   },
+  "MAT 218": {
+    "text": "MAT-151 or permission of instructor MAT-152 or permission of instructor",
+    "courses": [
+      "MAT 151",
+      "MAT 152"
+    ]
+  },
   "MAT 231": {
     "text": "MAT 194 (min C)",
     "courses": [
@@ -4978,10 +8564,35 @@
       "MAT 152"
     ]
   },
+  "MAT 252": {
+    "text": "MAT251 Minimum Grade of: C",
+    "courses": [
+      "MAT 251"
+    ]
+  },
   "MAT 253": {
     "text": "MAT 152",
     "courses": [
       "MAT 152"
+    ]
+  },
+  "MAT 254": {
+    "text": "MAT-253 or permission of instructor",
+    "courses": [
+      "MAT 253"
+    ]
+  },
+  "MAT 255": {
+    "text": "MAT171 Minimum Grade of: C or MAT251 Minimum Grade of: C",
+    "courses": [
+      "MAT 171",
+      "MAT 251"
+    ]
+  },
+  "MAT 260": {
+    "text": "MAT251 Calculus I Minimum Grade of: C",
+    "courses": [
+      "MAT 251"
     ]
   },
   "MAT 281": {
@@ -5014,6 +8625,12 @@
       "MAT 281"
     ]
   },
+  "MBW 110": {
+    "text": "Requisites: Take MBW-110L - Must be taken at the same time as this course.",
+    "courses": [
+      "MBW 110L"
+    ]
+  },
   "MBW 120": {
     "text": "MBW 110 and MBW 120L",
     "courses": [
@@ -5027,6 +8644,13 @@
       "MBW 120"
     ]
   },
+  "MBW 128": {
+    "text": "Requisites: Take MBW-128C - Must be taken at the same time as this course. Take MBW-110 or permission of Program Advisor - Must be completed prior to taking this course.",
+    "courses": [
+      "MBW 110",
+      "MBW 128C"
+    ]
+  },
   "MBW 129": {
     "text": "MBW 128 and MBW 129C",
     "courses": [
@@ -5038,6 +8662,15 @@
     "text": "MBW 129",
     "courses": [
       "MBW 129"
+    ]
+  },
+  "MBW 130": {
+    "text": "AHS-131 MBW-120 or permission of Program Coordinator BIO-150 or equivalent Take MBW-130L",
+    "courses": [
+      "AHS 131",
+      "BIO 150",
+      "MBW 120",
+      "MBW 130L"
     ]
   },
   "MED 101": {
@@ -5258,6 +8891,18 @@
       "MAT 073"
     ]
   },
+  "MGT 201": {
+    "text": "BUS101 Introduction to Business",
+    "courses": [
+      "BUS 101"
+    ]
+  },
+  "MGT 205": {
+    "text": "BUS101 Introduction to Business",
+    "courses": [
+      "BUS 101"
+    ]
+  },
   "MGT 220": {
     "text": "MGT 101",
     "courses": [
@@ -5378,6 +9023,24 @@
       "MAT 074"
     ]
   },
+  "MKT 210": {
+    "text": "BUS101 Introduction to Business",
+    "courses": [
+      "BUS 101"
+    ]
+  },
+  "MKT 215": {
+    "text": "MKT210 Principles of Marketing: Minimum Grade of: C",
+    "courses": [
+      "MKT 210"
+    ]
+  },
+  "MKT 216": {
+    "text": "MKT210 Principles of Marketing Minimum Grade of: C",
+    "courses": [
+      "MKT 210"
+    ]
+  },
   "MKT 220": {
     "text": "MKT 101",
     "courses": [
@@ -5469,6 +9132,57 @@
     "courses": [
       "MLT 241",
       "MLT 242"
+    ]
+  },
+  "MRT 100": {
+    "text": "CIS110 Computer Applications or CIS112 Integrated Computer Applications or CIS113 Data Management and HES115 Medical Terminology",
+    "courses": [
+      "CIS 110",
+      "CIS 112",
+      "CIS 113",
+      "HES 115"
+    ]
+  },
+  "MRT 104": {
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C and HES115 Medical Terminology Minimum Grade of: C.",
+    "courses": [
+      "ENG 101",
+      "HES 115",
+      "RWR 090"
+    ]
+  },
+  "MRT 117": {
+    "text": "MAT020 or higher Minimum Grade of: C and BIO101 Human Biology Minimum Grade of: C and HES115 Medical Terminology Minimum Grade of: C and HES207 Clinical Pathophysiology Minimum Grade of: C",
+    "courses": [
+      "BIO 101",
+      "HES 115",
+      "HES 207",
+      "MAT 020"
+    ]
+  },
+  "MRT 118": {
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 or higher Minimum Grade of: C and Fndns of Math proficiency or MAT010 or higher Minimum Grade of: C and HES115 Medical Terminology and BIO101 Human Biology and CIS110 Computer Applications",
+    "courses": [
+      "BIO 101",
+      "CIS 110",
+      "ENG 101",
+      "HES 115",
+      "MAT 010",
+      "RWR 090"
+    ]
+  },
+  "MRT 204": {
+    "text": "MRT117 Basic Diagnosis Coding Systems Minimum Grade of: C and MRT118 Procedure Coding Systems (CPT) Minimum Grade of: C",
+    "courses": [
+      "MRT 117",
+      "MRT 118"
+    ]
+  },
+  "MRT 296": {
+    "text": "MRT117 Basic Diagnosis Coding Systems Minimum Grade of C and MRT118 Procedure Coding Systems Minimum grade of C",
+    "courses": [
+      "MRT 117",
+      "MRT 118"
     ]
   },
   "MTH 012": {
@@ -5634,10 +9348,22 @@
       "ELL 103"
     ]
   },
+  "MUS 108": {
+    "text": "MUS-106 or permission of instructor.",
+    "courses": [
+      "MUS 106"
+    ]
+  },
   "MUS 112": {
     "text": "MUS 111 (min D-) or MUS 111 (min T)",
     "courses": [
       "MUS 111"
+    ]
+  },
+  "MUS 116": {
+    "text": "MUS115 Aural Skills I",
+    "courses": [
+      "MUS 115"
     ]
   },
   "MUS 122": {
@@ -5668,12 +9394,30 @@
       "MUS 105"
     ]
   },
+  "MUS 132": {
+    "text": "MUS131 Piano I",
+    "courses": [
+      "MUS 131"
+    ]
+  },
+  "MUS 136": {
+    "text": "MUS135 Ensemble: Small Group I",
+    "courses": [
+      "MUS 135"
+    ]
+  },
   "MUS 137": {
     "text": "ENG 090 (min C) or RDG 090 (min C) or ELL 101 (min C)",
     "courses": [
       "ENG 090",
       "RDG 090",
       "ELL 101"
+    ]
+  },
+  "MUS 139": {
+    "text": "MUS-138 or permission of instructor",
+    "courses": [
+      "MUS 138"
     ]
   },
   "MUS 141": {
@@ -5714,6 +9458,18 @@
       "MUS 100"
     ]
   },
+  "MUS 152": {
+    "text": "MUS151 Ensemble: Chorus I",
+    "courses": [
+      "MUS 151"
+    ]
+  },
+  "MUS 155": {
+    "text": "MUS154 Community Chorus I",
+    "courses": [
+      "MUS 154"
+    ]
+  },
   "MUS 158": {
     "text": "MUS 232",
     "courses": [
@@ -5730,6 +9486,67 @@
     "text": "MUS 171 (min D-) or MUS 171 (min T)",
     "courses": [
       "MUS 171"
+    ]
+  },
+  "MUS 174": {
+    "text": "MUS173 Applied Music: Brass I",
+    "courses": [
+      "MUS 173"
+    ]
+  },
+  "MUS 176": {
+    "text": "MUS175 Applied Music: Guitar I",
+    "courses": [
+      "MUS 175"
+    ]
+  },
+  "MUS 178": {
+    "text": "MUS177 Applied Music: Percussion I",
+    "courses": [
+      "MUS 177"
+    ]
+  },
+  "MUS 180": {
+    "text": "MUS179 Applied Music: Piano I",
+    "courses": [
+      "MUS 179"
+    ]
+  },
+  "MUS 182": {
+    "text": "MUS181 Applied Music: Strings I",
+    "courses": [
+      "MUS 181"
+    ]
+  },
+  "MUS 184": {
+    "text": "MUS183 Applied Music: Voice I",
+    "courses": [
+      "MUS 183"
+    ]
+  },
+  "MUS 185": {
+    "text": "MUS 106 or MUS 108 or permission of the instructor.",
+    "courses": [
+      "MUS 106",
+      "MUS 108"
+    ]
+  },
+  "MUS 186": {
+    "text": "MUS185 Applied Music: Woodwinds I",
+    "courses": [
+      "MUS 185"
+    ]
+  },
+  "MUS 187": {
+    "text": "MUS-108 with a grade of C or better or permission of the instructor.",
+    "courses": [
+      "MUS 108"
+    ]
+  },
+  "MUS 188": {
+    "text": "MUS187 Ensemble: Chamber Choir I",
+    "courses": [
+      "MUS 187"
     ]
   },
   "MUS 192": {
@@ -5774,6 +9591,24 @@
       "MUS 213"
     ]
   },
+  "MUS 216": {
+    "text": "MUS-156 or permission of instructor",
+    "courses": [
+      "MUS 156"
+    ]
+  },
+  "MUS 217": {
+    "text": "MUS116 Aural Skills II",
+    "courses": [
+      "MUS 116"
+    ]
+  },
+  "MUS 218": {
+    "text": "MUS217 Aural Skills III",
+    "courses": [
+      "MUS 217"
+    ]
+  },
   "MUS 223": {
     "text": "MUS 122 (min D-) or MUS 122 (min T)",
     "courses": [
@@ -5784,6 +9619,13 @@
     "text": "MUS 223 (min D-) or MUS 223 (min T)",
     "courses": [
       "MUS 223"
+    ]
+  },
+  "MUS 225": {
+    "text": "Skills: ENG-020 Skills: ENG-090",
+    "courses": [
+      "ENG 020",
+      "ENG 090"
     ]
   },
   "MUS 229": {
@@ -5805,6 +9647,12 @@
       "ENG 111"
     ]
   },
+  "MUS 236": {
+    "text": "MUS136 Ensemble: Small Groups II",
+    "courses": [
+      "MUS 136"
+    ]
+  },
   "MUS 237": {
     "text": "MUS 136 (min D-) or MUS 136 (min T)",
     "courses": [
@@ -5823,6 +9671,18 @@
       "MUS 243"
     ]
   },
+  "MUS 251": {
+    "text": "MUS152 Ensemble: Chorus II",
+    "courses": [
+      "MUS 152"
+    ]
+  },
+  "MUS 252": {
+    "text": "MUS251 Ensemble: Chorus III",
+    "courses": [
+      "MUS 251"
+    ]
+  },
   "MUS 253": {
     "text": "MUS 152 (min D-) or MUS 152 (min D-) or MUS 152 (min T) or MUS 152 (min T)",
     "courses": [
@@ -5835,6 +9695,18 @@
       "ENG 102",
       "ENG 104",
       "MUS 208"
+    ]
+  },
+  "MUS 261": {
+    "text": "MUS162 Ensemble: Jazz/Rock II",
+    "courses": [
+      "MUS 162"
+    ]
+  },
+  "MUS 262": {
+    "text": "MUS261 Ensemble: Jazz/Rock III",
+    "courses": [
+      "MUS 261"
     ]
   },
   "MUS 263": {
@@ -5859,6 +9731,66 @@
     "text": "MUS 273 (min D-) or MUS 273 (min T)",
     "courses": [
       "MUS 273"
+    ]
+  },
+  "MUS 275": {
+    "text": "MUS176 Applied Music: Guitar II",
+    "courses": [
+      "MUS 176"
+    ]
+  },
+  "MUS 276": {
+    "text": "MUS275 Applied Music: Guitar III",
+    "courses": [
+      "MUS 275"
+    ]
+  },
+  "MUS 277": {
+    "text": "MUS178 Applied Music: Percussion II",
+    "courses": [
+      "MUS 178"
+    ]
+  },
+  "MUS 278": {
+    "text": "MUS277 Applied Music: Percussion III",
+    "courses": [
+      "MUS 277"
+    ]
+  },
+  "MUS 279": {
+    "text": "MUS180 Applied Music: Piano II",
+    "courses": [
+      "MUS 180"
+    ]
+  },
+  "MUS 280": {
+    "text": "MUS279 Applied Music: Piano III",
+    "courses": [
+      "MUS 279"
+    ]
+  },
+  "MUS 281": {
+    "text": "MUS182 Applied Music: Strings II",
+    "courses": [
+      "MUS 182"
+    ]
+  },
+  "MUS 282": {
+    "text": "MUS281 Applied Music: Strings III",
+    "courses": [
+      "MUS 281"
+    ]
+  },
+  "MUS 283": {
+    "text": "MUS184 Applied Music: Voice II",
+    "courses": [
+      "MUS 184"
+    ]
+  },
+  "MUS 284": {
+    "text": "MUS283 Applied Music: Voice III",
+    "courses": [
+      "MUS 283"
     ]
   },
   "MUS 293": {
@@ -5928,11 +9860,47 @@
       "NUR 102"
     ]
   },
-  "NUR 120": {
-    "text": "BIO 203 and ENG 111",
+  "NUR 106": {
+    "text": "Requisites: Take PSY-107 - Must be completed prior to taking this course. Take PSY-204 - Must be completed prior to taking this course. Take BIO-201 - Must be completed prior to taking this course. Take BIO-202 - Must be completed prior to taking this course. Take ENG-101 - Must be completed prior to taking this course.",
     "courses": [
-      "BIO 203",
-      "ENG 111"
+      "BIO 201",
+      "BIO 202",
+      "ENG 101",
+      "PSY 107",
+      "PSY 204"
+    ]
+  },
+  "NUR 120": {
+    "text": "NUR110 Nursing I Minimum Grade of: C and NUR111 Nursing Clinical I Minimum Grade of: C and NUR112 Nursing Lab I Minimum Grade of: C and NUR113 Pharmacology I Minimum Grade of: C",
+    "courses": [
+      "NUR 110",
+      "NUR 111",
+      "NUR 112",
+      "NUR 113"
+    ]
+  },
+  "NUR 121": {
+    "text": "NUR110 Nursing I Minimum Grade of: C and NUR111 Nursing Clinical I Minimum Grade of: C and NUR112 Nursing Lab I Minimum Grade of: C and NUR113 Pharmacology I Minimum Grade of: C",
+    "courses": [
+      "NUR 110",
+      "NUR 111",
+      "NUR 112",
+      "NUR 113"
+    ]
+  },
+  "NUR 122": {
+    "text": "NUR110 Nursing I Minimum Grade of: C and NUR111 Nursing Clinical I Minimum Grade of: C and NUR112 Nursing Lab I Minimum Grade of: C and NUR113 Pharmacology I Minimum Grade of: C",
+    "courses": [
+      "NUR 110",
+      "NUR 111",
+      "NUR 112",
+      "NUR 113"
+    ]
+  },
+  "NUR 123": {
+    "text": "NUR113 Pharmacology I Minimum Grade of: C",
+    "courses": [
+      "NUR 113"
     ]
   },
   "NUR 150": {
@@ -5992,11 +9960,43 @@
       "NUR 202"
     ]
   },
+  "NUR 205": {
+    "text": "NUR210 Nursing III Minimum Grade of: C and NUR211 Nursing Clinical III Minimum Grade of: C and NUR213 Pharmacology III Minimum Grade of: C",
+    "courses": [
+      "NUR 210",
+      "NUR 211",
+      "NUR 213"
+    ]
+  },
   "NUR 206": {
     "text": "NUR 201 and NUR 202",
     "courses": [
       "NUR 201",
       "NUR 202"
+    ]
+  },
+  "NUR 210": {
+    "text": "NUR120 Nursing II Minimum Grade of: C and NUR121 Nursing Clinical II Minimum Grade of: C and NUR122 Nursing Lab II Minimum Grade of: C and NUR123 Pharmacology II Minimum Grade of: C",
+    "courses": [
+      "NUR 120",
+      "NUR 121",
+      "NUR 122",
+      "NUR 123"
+    ]
+  },
+  "NUR 211": {
+    "text": "NUR120 Nursing II Minimum Grade of: C and NUR121 Nursing Clinical II Minimum Grade of: C and NUR122 Nursing Lab II Minimum Grade of: C and NUR123 Pharmacology II Minimum Grade of: C",
+    "courses": [
+      "NUR 120",
+      "NUR 121",
+      "NUR 122",
+      "NUR 123"
+    ]
+  },
+  "NUR 213": {
+    "text": "NUR123 Pharmacology II Minimum Grade of: C",
+    "courses": [
+      "NUR 123"
     ]
   },
   "NUR 220": {
@@ -6005,6 +10005,14 @@
       "BIO 205",
       "PSY 213",
       "NUR 150"
+    ]
+  },
+  "NUR 221": {
+    "text": "NUR210 Nursing III Minimum Grade of: C and NUR211 Nursing Clinical III Minimum Grade of: C and NUR213 Pharmacology III Minimum Grade of: C",
+    "courses": [
+      "NUR 210",
+      "NUR 211",
+      "NUR 213"
     ]
   },
   "NUR 250": {
@@ -6065,6 +10073,115 @@
       "OTA 130",
       "OTA 117",
       "OTA 121"
+    ]
+  },
+  "PED 135": {
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 or higher Minimum Grade of: C and Fndns of Math proficiency or MAT010 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "MAT 010",
+      "RWR 090"
+    ]
+  },
+  "PED 142": {
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "RWR 090"
+    ]
+  },
+  "PED 147": {
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "RWR 090"
+    ]
+  },
+  "PED 154": {
+    "text": "PED-154L",
+    "courses": [
+      "PED 154L"
+    ]
+  },
+  "PED 167": {
+    "text": "Reading Proficiency",
+    "courses": []
+  },
+  "PED 170": {
+    "text": "AHS-142 or permission of instructor.",
+    "courses": [
+      "AHS 142"
+    ]
+  },
+  "PED 201": {
+    "text": "PED135 Resistance Training Principles & Techniques and PED147 Cardiovascular Exercise Modalities, Testing and Prescription and PED161 Introduction to Exercise Science",
+    "courses": [
+      "PED 135",
+      "PED 147",
+      "PED 161"
+    ]
+  },
+  "PED 212": {
+    "text": "PED135 Resistance Training Principles & Techniques and PED147 Cardiovascular Exercise Modalities, Testing and Prescription and PED161 Introduction to Exercise Science",
+    "courses": [
+      "PED 135",
+      "PED 147",
+      "PED 161"
+    ]
+  },
+  "PHI 101": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "PHI 102": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "PHI 110": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "PHI 121": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "PHI 204": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "PHI 206": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "PHI 208": {
+    "text": "Reading and Writing Proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C",
+    "courses": [
+      "ESL 110",
+      "RWR 090"
     ]
   },
   "PHL 101": {
@@ -6148,6 +10265,36 @@
       "MTH 114",
       "MTH 211",
       "MTH 213"
+    ]
+  },
+  "PHS 131": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C and MAT140 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "MAT 140",
+      "RWR 090"
+    ]
+  },
+  "PHS 132": {
+    "text": "PHS131 Engineering Physics I Minimum Grade of: C",
+    "courses": [
+      "PHS 131"
+    ]
+  },
+  "PHY 101": {
+    "text": "ENM-127 or MAT-102 or equivalent Take PHY-101L",
+    "courses": [
+      "ENM 127",
+      "MAT 102",
+      "PHY 101L"
+    ]
+  },
+  "PHY 102": {
+    "text": "PHY-101 or permission of instructor Take PHY-102L",
+    "courses": [
+      "PHY 101",
+      "PHY 102L"
     ]
   },
   "PHY 105": {
@@ -6347,6 +10494,64 @@
       "PMT 113"
     ]
   },
+  "PNS 105": {
+    "text": "PNS120 Practical Nursing II Minimum Grade of: C and PNS121 Practical Nursing Clinical II Minimum Grade of: C and PNS122 Practical Nursing Lab II Minimum Grade of: C and PNS123 Practical Nursing Pharmacology II Minimum Grade of: C",
+    "courses": [
+      "PNS 120",
+      "PNS 121",
+      "PNS 122",
+      "PNS 123"
+    ]
+  },
+  "PNS 120": {
+    "text": "PNS113 Practical Practical Nursing Pharmacology I Minimum Grade of: C and PNS110 Practical Nursing I Minimum Grade of: C and PNS111 Practical Nursing Clinical I Minimum Grade of: C and PNS112 Practical Nursing Lab I Minimum Grade of: C",
+    "courses": [
+      "PNS 110",
+      "PNS 111",
+      "PNS 112",
+      "PNS 113"
+    ]
+  },
+  "PNS 121": {
+    "text": "PNS111 Practical Nursing Clinical I Minimum Grade of: C",
+    "courses": [
+      "PNS 111"
+    ]
+  },
+  "PNS 122": {
+    "text": "PNS110 Practical Nursing I Minimum Grade of: C and PNS111 Practical Nursing Clinical I Minimum Grade of: C and PNS112 Practical Nursing Lab I Minimum Grade of: C and PNS113 Practical Practical Nursing Pharmacology I Minimum Grade of: C",
+    "courses": [
+      "PNS 110",
+      "PNS 111",
+      "PNS 112",
+      "PNS 113"
+    ]
+  },
+  "PNS 123": {
+    "text": "BIO121 Anatomy & Physiology I Minimum Grade of: C and PSY101 Introduction to Psychology Minimum Grade of: C and PNS110 Practical Nursing I Minimum Grade of: C and PNS111 Practical Nursing Clinical I Minimum Grade of: C and PNS112 Practical Nursing Lab I Minimum Grade of: C and PNS113 Practical Practical Nursing Pharmacology I Minimum Grade of: C and PNS120 Practical Nursing II Minimum Grade of: C and PNS121 Practical Nursing Clinical II Minimum Grade of: C",
+    "courses": [
+      "BIO 121",
+      "PNS 110",
+      "PNS 111",
+      "PNS 112",
+      "PNS 113",
+      "PNS 120",
+      "PNS 121",
+      "PSY 101"
+    ]
+  },
+  "PNS 130": {
+    "text": "PNS121 Practical Nursing II Minimum Grade of: C",
+    "courses": [
+      "PNS 121"
+    ]
+  },
+  "PNS 131": {
+    "text": "PNS121 Practical Nursing Clinical II - Minimum Grade of C",
+    "courses": [
+      "PNS 121"
+    ]
+  },
   "PSC 101": {
     "text": "ESL 098 or RDG 095 or ESL 099 or ENG 090 or ELL 103",
     "courses": [
@@ -6372,12 +10577,43 @@
       "ENG 111"
     ]
   },
+  "PSG 102": {
+    "text": "PSG101 Polysomnography I Minimum Grade of: C",
+    "courses": [
+      "PSG 101"
+    ]
+  },
+  "PSG 111": {
+    "text": "BIO101 Human Biology Minimum Grade of: C and BIO102 Human Biology Laboratory Minimum Grade of: C or BIO121 Anatomy & Physiology I Minimum Grade of: C and HES130 Introduction to Patient Care Minimum Grade of: C and PSG105 Physiology for Sleep Technologists Minimum Grade of: C and PSG110 Polysomnography Clinical I Minimum Grade of: C",
+    "courses": [
+      "BIO 101",
+      "BIO 102",
+      "BIO 121",
+      "HES 130",
+      "PSG 105",
+      "PSG 110"
+    ]
+  },
+  "PSG 120": {
+    "text": "PSG101 Polysomnography I Minimum Grade of: C",
+    "courses": [
+      "PSG 101"
+    ]
+  },
   "PSY 101": {
     "text": "ESL 098 or ELL 103 or RDG 095",
     "courses": [
       "ESL 098",
       "ELL 103",
       "RDG 095"
+    ]
+  },
+  "PSY 105": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
     ]
   },
   "PSY 110": {
@@ -6406,14 +10642,28 @@
       "PSY 110"
     ]
   },
-  "PSY 200": {
-    "text": "PSY 110 (min C-) or PSY 110 (min C-) or PSY 110 (min T) or PSY 110 (min T)",
+  "PSY 199": {
+    "text": "PSY101 Introduction to Psychology",
     "courses": [
-      "PSY 110"
+      "PSY 101"
+    ]
+  },
+  "PSY 200": {
+    "text": "PSY101 Introduction to Psychology Minimum Grade of: C or SOC101 Introduction to Sociology Minimum Grade of: C or ANT101 Cultural Anthropology Minimum Grade of: C",
+    "courses": [
+      "ANT 101",
+      "PSY 101",
+      "SOC 101"
     ]
   },
   "PSY 201": {
     "text": "PSY 101 (min C)",
+    "courses": [
+      "PSY 101"
+    ]
+  },
+  "PSY 202": {
+    "text": "PSY101 Introduction to Psychology Minimum Grade of: C",
     "courses": [
       "PSY 101"
     ]
@@ -6425,15 +10675,24 @@
     ]
   },
   "PSY 204": {
-    "text": "PSY 107",
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
     "courses": [
-      "PSY 107"
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "PSY 205": {
+    "text": "PSY101 Introduction to Psychology Minimum Grade of: C",
+    "courses": [
+      "PSY 101"
     ]
   },
   "PSY 206": {
-    "text": "PSY 107",
+    "text": "PSY101 Introduction to Psychology Minimum Grade of: C or SOC101 Introduction to Sociology Minimum Grade of: C",
     "courses": [
-      "PSY 107"
+      "PSY 101",
+      "SOC 101"
     ]
   },
   "PSY 207": {
@@ -6449,8 +10708,10 @@
     ]
   },
   "PSY 209": {
-    "text": "PSY 101 (min C)",
+    "text": "PSY101 Introduction to Psychology Minimum Grade of: C and BIO111 to 112 Minimum Grade of: C or BIO121 to 122 Minimum Grade of: C",
     "courses": [
+      "BIO 111",
+      "BIO 121",
       "PSY 101"
     ]
   },
@@ -6536,6 +10797,12 @@
       "PSY 101"
     ]
   },
+  "PSY 226": {
+    "text": "PSY-107 or permission of instructor; requisite 3 credits of comp",
+    "courses": [
+      "PSY 107"
+    ]
+  },
   "PSY 227": {
     "text": "PSY 101 (min C)",
     "courses": [
@@ -6583,6 +10850,18 @@
       "PHL 255"
     ]
   },
+  "PSY 275": {
+    "text": "PSY-107; requisite 3 credits of comp",
+    "courses": [
+      "PSY 107"
+    ]
+  },
+  "PSY 297": {
+    "text": "PSY-107 or permission of instructor; requisite 3 credits of comp",
+    "courses": [
+      "PSY 107"
+    ]
+  },
   "PTA 102": {
     "text": "PTA 102 and BIO 232 and PTA 101 and PTA 103 and PTA 103L and PTA 102L and PTA 102L",
     "courses": [
@@ -6616,14 +10895,50 @@
       "PTA 103"
     ]
   },
+  "PTA 110": {
+    "text": "Requisites: Take PTA-103 or PTA-100 - Must be completed prior to taking this course. Take PTA-102 - Must be completed prior to taking this course. Take BIO-201 - Must be completed prior to taking this course. Take PHY-111 or PHY-101 - Must be completed prior to taking this course. Take BIO-202 - Must be taken either prior to or at the same time as this course. Take PTA-115 - Must be taken either prior to or at the same time as this course. Take PTA-110L - Must be taken at the same time as this course.",
+    "courses": [
+      "BIO 201",
+      "BIO 202",
+      "PHY 101",
+      "PHY 111",
+      "PTA 100",
+      "PTA 102",
+      "PTA 103",
+      "PTA 110L",
+      "PTA 115"
+    ]
+  },
+  "PTA 115": {
+    "text": "Requisites: Take BIO-201 - Must be completed prior to taking this course. Take PHY-111 or PHY-101 - Must be completed prior to taking this course. Take PTA-103 or PTA-100 - Must be completed prior to taking this course. Take PTA-102 - Must be taken either prior to or at the same time as this course. Take PTA-110 - Must be taken either prior to or at the same time as this course. Take BIO-202 - Must be taken either prior to or at the same time as this course. Take PTA-115L - Must be taken at the same time as this course.",
+    "courses": [
+      "BIO 201",
+      "BIO 202",
+      "PHY 101",
+      "PHY 111",
+      "PTA 100",
+      "PTA 102",
+      "PTA 103",
+      "PTA 110",
+      "PTA 115L"
+    ]
+  },
+  "PTA 150": {
+    "text": "Requisites: Take PTA-110 - Must be completed prior to taking this course. Take PTA-115 - Must be completed prior to taking this course. Offered: Summer Only",
+    "courses": [
+      "PTA 110",
+      "PTA 115"
+    ]
+  },
   "PTA 200": {
-    "text": "BIO 202 and PTA 110 and PTA 115 and PTA 204 and PTA 200L",
+    "text": "Requisites: Take BIO-202(7804) - Must be completed prior to taking this course. Take PTA-110 - Must be completed prior to taking this course. Take PTA-115(8109) - Must be completed prior to taking this course. Take PTA-204 or PTA-202 - Must be taken either prior to or at the same time as this course. Take PTA-200L - Must be taken at the same time as this course.",
     "courses": [
       "BIO 202",
       "PTA 110",
       "PTA 115",
-      "PTA 204",
-      "PTA 200L"
+      "PTA 200L",
+      "PTA 202",
+      "PTA 204"
     ]
   },
   "PTA 200L": {
@@ -6699,12 +11014,43 @@
       "PTA 204"
     ]
   },
+  "PTA 207": {
+    "text": "Requisites: Take PTA-200 - Must be completed prior to taking this course. Take PTA-204 or PTA-202 - Must be completed prior to taking this course. Take PTA-209 or PTA-203 - Must be taken either prior to or at the same time as this course. Take PTA-207L - Must be taken at the same time as this course.",
+    "courses": [
+      "PTA 200",
+      "PTA 202",
+      "PTA 203",
+      "PTA 204",
+      "PTA 207L",
+      "PTA 209"
+    ]
+  },
+  "PTA 209": {
+    "text": "Requisites: Take PTA-200 - Must be completed prior to taking this course. Take PTA-204 or PTA-202 - Must be completed prior to taking this course. Take PTA-207 or PTA-201 - Must be taken either prior to or at the same time as this course.",
+    "courses": [
+      "PTA 200",
+      "PTA 201",
+      "PTA 202",
+      "PTA 204",
+      "PTA 207"
+    ]
+  },
   "PTA 250": {
     "text": "PTA 150 and PTA 200 and PTA 204",
     "courses": [
       "PTA 150",
       "PTA 200",
       "PTA 204"
+    ]
+  },
+  "PTA 260": {
+    "text": "Requisites: Take PTA-250 - Must be completed prior to taking this course. PTA-207 or PTA-201 with a grade of C or higher - Must be taken either prior to or at the same time as this course. PTA-209 or PTA-203 with a grade of C or higher - Must be taken either prior to or at the same time as this course.",
+    "courses": [
+      "PTA 201",
+      "PTA 203",
+      "PTA 207",
+      "PTA 209",
+      "PTA 250"
     ]
   },
   "RCP 105": {
@@ -6828,6 +11174,21 @@
       "RDL 142"
     ]
   },
+  "REA 021": {
+    "text": "Reading placement or ESL024 ESL Advanced Reading Minimum Grade of: C or REA011 Basic Reading Minimum Grade of: C",
+    "courses": [
+      "ESL 024",
+      "REA 011"
+    ]
+  },
+  "REL 101": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
   "REL 111": {
     "text": "ESL 099 or ELL 103 or ENG 090 or ESL 098 or ELL 103 or RGD 095",
     "courses": [
@@ -6836,6 +11197,110 @@
       "ENG 090",
       "ESL 098",
       "RGD 095"
+    ]
+  },
+  "RSC 102": {
+    "text": "BIO115 Physiological Chemistry Minimum Grade of: C and BIO121 Anatomy & Physiology I Minimum Grade of: C and RSC100 Cardiopulmonary Physiology Minimum Grade of: C and RSC101 Fundamentals of Respiratory Care I Minimum Grade of: C and RSC111 Respiratory Modalities I Minimum Grade of: C and RSC191 Respiratory Clinical I Minimum Grade of: C",
+    "courses": [
+      "BIO 115",
+      "BIO 121",
+      "RSC 100",
+      "RSC 101",
+      "RSC 111",
+      "RSC 191"
+    ]
+  },
+  "RSC 103": {
+    "text": "RSC101 Fundamentals of Respiratory Care I Minimum Grade of: C",
+    "courses": [
+      "RSC 101"
+    ]
+  },
+  "RSC 104": {
+    "text": "RSC111 Respiratory Modalities I Minimum Grade of: C and RSC191 Respiratory Clinical I Minimum Grade of: C",
+    "courses": [
+      "RSC 111",
+      "RSC 191"
+    ]
+  },
+  "RSC 112": {
+    "text": "RSC111 Respiratory Modalities I Minimum Grade of: C and RSC191 Respiratory Clinical I Minimum Grade of: C",
+    "courses": [
+      "RSC 111",
+      "RSC 191"
+    ]
+  },
+  "RSC 192": {
+    "text": "RSC191 Respiratory Clinical I Minimum Grade of: C",
+    "courses": [
+      "RSC 191"
+    ]
+  },
+  "RSC 200": {
+    "text": "RSC102 Fundamentals of Respiratory Care II Minimum Grade of: C and RSC103 Respiratory Pharmacology Minimum Grade of: C and RSC104 Introduction to Respiratory Disease Minimum Grade of: C and RSC112 Respiratory Modalities II Minimum Grade of: C and RSC192 Respiratory Clinical II Minimum Grade of: C",
+    "courses": [
+      "RSC 102",
+      "RSC 103",
+      "RSC 104",
+      "RSC 112",
+      "RSC 192"
+    ]
+  },
+  "RSC 201": {
+    "text": "RSC192 Respiratory Clinical II Minimum Grade of: C",
+    "courses": [
+      "RSC 192"
+    ]
+  },
+  "RSC 202": {
+    "text": "RSC201 Respiratory Critical Care I Minimum Grade of: C and RSC211 Respiratory Modalities III Minimum Grade of: C and RSC292 Respiratory Clinical III Minimum Grade of: C",
+    "courses": [
+      "RSC 201",
+      "RSC 211",
+      "RSC 292"
+    ]
+  },
+  "RSC 211": {
+    "text": "BIO115 Physiological Chemistry Minimum Grade of: C and BIO122 Anatomy & Physiology II Minimum Grade of: C and RSC102 Fundamentals of Respiratory Care II Minimum Grade of: C and RSC103 Respiratory Pharmacology Minimum Grade of: C and RSC104 Introduction to Respiratory Disease Minimum Grade of: C and RSC112 Respiratory Modalities II Minimum Grade of: C and RSC192 Respiratory Clinical II Minimum Grade of: C",
+    "courses": [
+      "BIO 115",
+      "BIO 122",
+      "RSC 102",
+      "RSC 103",
+      "RSC 104",
+      "RSC 112",
+      "RSC 192"
+    ]
+  },
+  "RSC 212": {
+    "text": "RSC201 Respiratory Critical Care I Minimum Grade of: C and RSC203 Neonatal & Pediatric Respiratory Care Minimum Grade of: C and RSC292 Respiratory Clinical III Minimum Grade of: C",
+    "courses": [
+      "RSC 201",
+      "RSC 203",
+      "RSC 292"
+    ]
+  },
+  "RSC 290": {
+    "text": "RSC102 Fundamentals of Respiratory Care II Minimum Grade of: C and RSC103 Respiratory Pharmacology Minimum Grade of: C and RSC104 Introduction to Respiratory Disease Minimum Grade of: C and RSC112 Respiratory Modalities II Minimum Grade of: C and RSC192 Respiratory Clinical II Minimum Grade of: C",
+    "courses": [
+      "RSC 102",
+      "RSC 103",
+      "RSC 104",
+      "RSC 112",
+      "RSC 192"
+    ]
+  },
+  "RSC 292": {
+    "text": "BIO220 Microbiology Minimum Grade of: C and RSC192 Respiratory Clinical II Minimum Grade of: C",
+    "courses": [
+      "BIO 220",
+      "RSC 192"
+    ]
+  },
+  "RSC 293": {
+    "text": "RSC292 Respiratory Clinical III Minimum Grade of: C",
+    "courses": [
+      "RSC 292"
     ]
   },
   "RSP 101": {
@@ -6849,6 +11314,20 @@
     "text": "RSP 101",
     "courses": [
       "RSP 101"
+    ]
+  },
+  "RSP 102": {
+    "text": "CHM-150 BIO-201 Take RSP-105L",
+    "courses": [
+      "BIO 201",
+      "CHM 150",
+      "RSP 105L"
+    ]
+  },
+  "RSP 103": {
+    "text": "RSP-105",
+    "courses": [
+      "RSP 105"
     ]
   },
   "RSP 201": {
@@ -6883,12 +11362,157 @@
       "BIO 207"
     ]
   },
+  "RSP 203": {
+    "text": "RSP-205 RSP-241 Take RSP-207L",
+    "courses": [
+      "RSP 205",
+      "RSP 207L",
+      "RSP 241"
+    ]
+  },
+  "RTA 120": {
+    "text": "HES130 Introduction to Patient Care Minimum Grade of: C and RTA110 Radiologic Procedures I Minimum Grade of: C and RTA111 Radiologic Exposures I Minimum Grade of: C and RTA191 Clinical Practicum I Minimum Grade of: C",
+    "courses": [
+      "HES 130",
+      "RTA 110",
+      "RTA 111",
+      "RTA 191"
+    ]
+  },
+  "RTA 121": {
+    "text": "HES130 Introduction to Patient Care Minimum Grade of: C and RTA110 Radiologic Procedures I Minimum Grade of: C and RTA111 Radiologic Exposures I Minimum Grade of: C and RTA191 Clinical Practicum I Minimum Grade of: C",
+    "courses": [
+      "HES 130",
+      "RTA 110",
+      "RTA 111",
+      "RTA 191"
+    ]
+  },
+  "RTA 125": {
+    "text": "HES130 Introduction to Patient Care Minimum Grade of: C and RTA110 Radiologic Procedures I Minimum Grade of: C and RTA111 Radiologic Exposures I Minimum Grade of: C and RTA191 Clinical Practicum I Minimum Grade of: C",
+    "courses": [
+      "HES 130",
+      "RTA 110",
+      "RTA 111",
+      "RTA 191"
+    ]
+  },
+  "RTA 192": {
+    "text": "HES130 Introduction to Patient Care Minimum Grade of: C and RTA110 Radiologic Procedures I Minimum Grade of: C and RTA111 Radiologic Exposures I Minimum Grade of: C and RTA191 Clinical Practicum I Minimum Grade of: C",
+    "courses": [
+      "HES 130",
+      "RTA 110",
+      "RTA 111",
+      "RTA 191"
+    ]
+  },
+  "RTA 201": {
+    "text": "RTA125 Introduction to Radiologic Physics Minimum Grade of: C and RTA220 Radiologic Procedures III Minimum Grade of: C and RTA292 Clinical Practicum III Summer Minimum Grade of: C",
+    "courses": [
+      "RTA 125",
+      "RTA 220",
+      "RTA 292"
+    ]
+  },
+  "RTA 202": {
+    "text": "RTA220 Radiologic Procedures III Minimum Grade of: C and RTA292 Clinical Practicum III Summer Minimum Grade of: C",
+    "courses": [
+      "RTA 220",
+      "RTA 292"
+    ]
+  },
+  "RTA 203": {
+    "text": "RTA201 Radiologic Equipment & Quality Assurance Minimum Grade of: C and RTA202 Advanced Radiographic Imaging Minimum Grade of: C and RTA294 Clinical Practicum IV Minimum Grade of: C",
+    "courses": [
+      "RTA 201",
+      "RTA 202",
+      "RTA 294"
+    ]
+  },
+  "RTA 204": {
+    "text": "RTA201 Radiologic Equipment & Quality Assurance Minimum Grade of: C and RTA202 Advanced Radiographic Imaging Minimum Grade of: C and RTA294 Clinical Practicum IV Minimum Grade of: C",
+    "courses": [
+      "RTA 201",
+      "RTA 202",
+      "RTA 294"
+    ]
+  },
+  "RTA 205": {
+    "text": "RTA201 Radiologic Equipment & Quality Assurance Minimum Grade of: C and RTA202 Advanced Radiographic Imaging Minimum Grade of: C and RTA294 Clinical Practicum IV Minimum Grade of: C",
+    "courses": [
+      "RTA 201",
+      "RTA 202",
+      "RTA 294"
+    ]
+  },
+  "RTA 220": {
+    "text": "RTA120 Radiologic Procedures II Minimum Grade of: C and RTA121 Radiologic Exposures II Minimum Grade of: C and RTA192 Clinical Practicum II Minimum Grade of: C",
+    "courses": [
+      "RTA 120",
+      "RTA 121",
+      "RTA 192"
+    ]
+  },
+  "RTA 292": {
+    "text": "RTA120 Radiologic Procedures II Minimum Grade of: C and RTA121 Radiologic Exposures II Minimum Grade of: C and RTA192 Clinical Practicum II Minimum Grade of: C",
+    "courses": [
+      "RTA 120",
+      "RTA 121",
+      "RTA 192"
+    ]
+  },
+  "RTA 294": {
+    "text": "RTA220 Radiologic Procedures III Minimum Grade of: C and RTA292 Clinical Practicum III Summer Minimum Grade of: C",
+    "courses": [
+      "RTA 220",
+      "RTA 292"
+    ]
+  },
+  "RTA 295": {
+    "text": "RTA201 Radiologic Equipment & Quality Assurance Minimum Grade of: C and RTA202 Advanced Radiographic Imaging Minimum Grade of: C and RTA294 Clinical Practicum IV Minimum Grade of: C",
+    "courses": [
+      "RTA 201",
+      "RTA 202",
+      "RTA 294"
+    ]
+  },
+  "RWR 090": {
+    "text": "Placement exam score",
+    "courses": []
+  },
   "SCI 105": {
     "text": "ENG 099 (min C) and MAT 062",
     "courses": [
       "ENG 099",
       "MAT 062"
     ]
+  },
+  "SCI 106": {
+    "text": "Reading Proficiency and MAT020 or higher Minimum Grade of: C or Math Placement",
+    "courses": [
+      "MAT 020"
+    ]
+  },
+  "SCI 110": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C and Fndns of Math proficiency or MAT010 or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "MAT 010",
+      "RWR 090"
+    ]
+  },
+  "SCI 111": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "SCI 112": {
+    "text": "Reading and Writing Proficiency",
+    "courses": []
   },
   "SCI 114": {
     "text": "SCI 114L",
@@ -6900,6 +11524,20 @@
     "text": "SCI 114",
     "courses": [
       "SCI 114"
+    ]
+  },
+  "SCI 117": {
+    "text": "Take SCI-117L",
+    "courses": [
+      "SCI 117L"
+    ]
+  },
+  "SCI 130": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
     ]
   },
   "SCI 150": {
@@ -6920,12 +11558,38 @@
       "ENR 101"
     ]
   },
+  "SCI 230": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C and SCI130 Forensic Science or SCI105 Laboratory Methods",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090",
+      "SCI 105",
+      "SCI 130"
+    ]
+  },
   "SOC 101": {
     "text": "ESL 098 or RDG 095 or ELL 103",
     "courses": [
       "ESL 098",
       "RDG 095",
       "ELL 103"
+    ]
+  },
+  "SOC 104": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "SOC 107": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
     ]
   },
   "SOC 109": {
@@ -6956,8 +11620,17 @@
     ]
   },
   "SOC 203": {
-    "text": "SOC 101 (min C)",
+    "text": "SOC-105 or PSY-107, or permission of the instructor.",
     "courses": [
+      "PSY 107",
+      "SOC 105"
+    ]
+  },
+  "SOC 204": {
+    "text": "Reading proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ENG101 or higher Minimum Grade of: C and SOC101 Introduction to Sociology",
+    "courses": [
+      "ENG 101",
+      "RWR 090",
       "SOC 101"
     ]
   },
@@ -6976,6 +11649,13 @@
       "HSV 120"
     ]
   },
+  "SOC 208H": {
+    "text": "SOC-105 or PSY-107,",
+    "courses": [
+      "PSY 107",
+      "SOC 105"
+    ]
+  },
   "SOC 210": {
     "text": "ENG 094 (min C)",
     "courses": [
@@ -6986,6 +11666,13 @@
     "text": "SOC 110 (min D-) or SOC 110 (min D-) or SOC 110 (min T) or SOC 110 (min T)",
     "courses": [
       "SOC 110"
+    ]
+  },
+  "SOC 216": {
+    "text": "SOC-105 or PSY-107, or permission of the instructor.",
+    "courses": [
+      "PSY 107",
+      "SOC 105"
     ]
   },
   "SOC 220": {
@@ -7002,10 +11689,44 @@
       "SOC 109"
     ]
   },
+  "SOC 228": {
+    "text": "SOC-105 or PSY-107, or permission of the instructor.",
+    "courses": [
+      "PSY 107",
+      "SOC 105"
+    ]
+  },
+  "SOC 232": {
+    "text": "requisite 3 credits of comp",
+    "courses": []
+  },
+  "SOC 234": {
+    "text": "Skills: ENG-020 Skills: ENG-090 3 credits in Sociology or permission of instructor.",
+    "courses": [
+      "ENG 020",
+      "ENG 090"
+    ]
+  },
   "SOC 235": {
     "text": "SOC 110 (min D-) or SOC 110 (min D-) or SOC 110 (min T) or SOC 110 (min T)",
     "courses": [
       "SOC 110"
+    ]
+  },
+  "SOC 236": {
+    "text": "3 credits of SOC courses; 3 credits of composition",
+    "courses": []
+  },
+  "SOC 275": {
+    "text": "SOC-105",
+    "courses": [
+      "SOC 105"
+    ]
+  },
+  "SOC 297": {
+    "text": "SOC-105, or permission of the instructor.",
+    "courses": [
+      "SOC 105"
     ]
   },
   "SON 113": {
@@ -7027,6 +11748,24 @@
       "SON 123",
       "SON 216",
       "SON 221"
+    ]
+  },
+  "SPA 102": {
+    "text": "SPA-101 with a C- or better or permission of instructor",
+    "courses": [
+      "SPA 101"
+    ]
+  },
+  "SPA 201": {
+    "text": "SPA-102 with minimum grade of C- or permission of the instructor.",
+    "courses": [
+      "SPA 102"
+    ]
+  },
+  "SPA 202": {
+    "text": "SPA-201 with minimum grade of C- or permission of instructor",
+    "courses": [
+      "SPA 201"
     ]
   },
   "SPA 210": {
@@ -7076,11 +11815,25 @@
       "SPN 102"
     ]
   },
+  "SPN 202": {
+    "text": "SPN112 Introductory Spanish 2",
+    "courses": [
+      "SPN 112"
+    ]
+  },
   "SPN 205": {
     "text": "SPN 101 or SPN 105",
     "courses": [
       "SPN 101",
       "SPN 105"
+    ]
+  },
+  "SPN 220": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C and Language Course Placement",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
     ]
   },
   "STM 101": {
@@ -7095,6 +11848,50 @@
       "STM 101"
     ]
   },
+  "SUR 102": {
+    "text": "BIO122 and HES115 : Minimum grade of C",
+    "courses": [
+      "BIO 122",
+      "HES 115"
+    ]
+  },
+  "SUR 103": {
+    "text": "BIO122 and HES115 : Minimum grade of C",
+    "courses": [
+      "BIO 122",
+      "HES 115"
+    ]
+  },
+  "SUR 104": {
+    "text": "BIO 122, HES 115: Minimum grade of C",
+    "courses": [
+      "BIO 122",
+      "HES 115"
+    ]
+  },
+  "SUR 105": {
+    "text": "BIO122 , HES115 : Minimum grade of C",
+    "courses": [
+      "BIO 122",
+      "HES 115"
+    ]
+  },
+  "SUR 106": {
+    "text": "SUR102 , SUR103 , SUR104 , SUR105 : Minimum grade of: C",
+    "courses": [
+      "SUR 102",
+      "SUR 103",
+      "SUR 104",
+      "SUR 105"
+    ]
+  },
+  "SUR 107": {
+    "text": "SUR106 , SUR116 : Minimum grade of: C",
+    "courses": [
+      "SUR 106",
+      "SUR 116"
+    ]
+  },
   "SUR 114": {
     "text": "SUR 114L and BIO 231 and SUR 114L and SUR 114L and SUR 114L",
     "courses": [
@@ -7106,6 +11903,22 @@
     "text": "SUR 114",
     "courses": [
       "SUR 114"
+    ]
+  },
+  "SUR 116": {
+    "text": "SUR102 , SUR103 , SUR104 , SUR105 : Minimum grade of: C",
+    "courses": [
+      "SUR 102",
+      "SUR 103",
+      "SUR 104",
+      "SUR 105"
+    ]
+  },
+  "SUR 117": {
+    "text": "SUR106 , SUR116 : Minimum grade of: C",
+    "courses": [
+      "SUR 106",
+      "SUR 116"
     ]
   },
   "SUR 216": {
@@ -7179,6 +11992,78 @@
       "SWK 101"
     ]
   },
+  "THE 101": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "THE 110": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "THE 111": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "THE 112": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "THE 113": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "THE 114": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "THE 115": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "THE 116": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "THE 117": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
   "THE 142": {
     "text": "THE 141 (min D-) or THE 141 (min T)",
     "courses": [
@@ -7210,6 +12095,20 @@
     "courses": [
       "MAT 018C",
       "MAT 018"
+    ]
+  },
+  "THR 103": {
+    "text": "Skills: MAT-018C or MAT-018 or permission of instructor",
+    "courses": [
+      "MAT 018",
+      "MAT 018C"
+    ]
+  },
+  "THR 112": {
+    "text": "Skills: ENG-020 or permission of instructor Skills: ENG-090 or permission of instructor",
+    "courses": [
+      "ENG 020",
+      "ENG 090"
     ]
   },
   "THR 115": {
@@ -7254,10 +12153,21 @@
       "ENG 111"
     ]
   },
+  "THR 221": {
+    "text": "3 credits of comp",
+    "courses": []
+  },
   "THR 235": {
     "text": "THR 132",
     "courses": [
       "THR 132"
+    ]
+  },
+  "THR 245": {
+    "text": "THR-102 or permission of instructor THR-198 or permission of instructor",
+    "courses": [
+      "THR 102",
+      "THR 198"
     ]
   },
   "THR 282": {
@@ -7282,6 +12192,22 @@
     "text": "THR 298",
     "courses": [
       "THR 298"
+    ]
+  },
+  "TLT 105": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
+    ]
+  },
+  "TLT 110": {
+    "text": "Reading proficiency and Writing proficiency or RWR090 Reading Writing and Reasoning Minimum Grade of: C or ESL110 ESL Transitional Writing Minimum Grade of: C or ENG101 English Composition I or higher Minimum Grade of: C",
+    "courses": [
+      "ENG 101",
+      "ESL 110",
+      "RWR 090"
     ]
   },
   "VEA 182": {

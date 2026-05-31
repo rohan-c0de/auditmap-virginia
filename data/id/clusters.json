@@ -1,0 +1,26 @@
+{
+  "$comment": "Multi-college-district cluster detection output (issue #497). Each cluster represents N colleges that share a SIS host or registrable domain — a single bespoke scraper can cover all members.",
+  "state": "id",
+  "generatedAt": "2026-05-30T20:11:44.811Z",
+  "summary": {
+    "inputCount": 3,
+    "clusterCount": 0,
+    "clusteredCount": 0,
+    "singletonCount": 3
+  },
+  "clusters": [],
+  "singletons": [
+    {
+      "slug": "college-of-southern-idaho",
+      "primaryUrl": "csi.edu"
+    },
+    {
+      "slug": "college-of-western-idaho",
+      "primaryUrl": "cwi.edu"
+    },
+    {
+      "slug": "college-of-eastern-idaho",
+      "primaryUrl": "cei.edu"
+    }
+  ]
+}

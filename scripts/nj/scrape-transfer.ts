@@ -210,6 +210,17 @@ const MAX_COURSES_PER_CC = 2000;
 
 const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 
+function decodeHtmlEntities(s: string): string {
+  return s
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&#(\d+);/g, (_, code) => String.fromCharCode(parseInt(code, 10)));
+}
+
 async function retryFetch(
   url: string,
   label: string,
@@ -382,7 +393,11 @@ function parseCourseEquivalencyPage(
       );
       if (!univNameMatch) return;
 
-      const univName = univNameMatch[1].trim();
+      // Decode HTML entities before any matching/slugify — NJTransfer's
+      // server emits ampersands as `&amp;`, and a previous bug slugified
+      // "&" to "amp" instead of "and" (e.g. the bloustein school became
+      // `rutgers-edward-bloustein-sch-of-planning-amp-policy`).
+      const univName = decodeHtmlEntities(univNameMatch[1].trim());
 
       // Look up the university slug
       let univSlug = UNIV_NAME_TO_SLUG[univName] || "";
@@ -403,6 +418,7 @@ function parseCourseEquivalencyPage(
         // Generate slug from name
         univSlug = univName
           .toLowerCase()
+          .replace(/&/g, " and ")
           .replace(/[^a-z0-9]+/g, "-")
           .replace(/^-|-$/g, "");
       }
@@ -772,32 +788,52 @@ async function main() {
   fs.mkdirSync(outDir, { recursive: true });
   const outPath = path.join(outDir, "transfer-equiv.json");
 
-  // Merge with existing data (preserve any entries from other sources)
-  let existing: TransferMapping[] = [];
+  // Full overwrite — NJTransfer is the only source for nj/transfer-equiv.json,
+  // so there's nothing to "preserve" from prior runs. The old preserve-merge
+  // logic kept any entry whose university slug wasn't in UNIV_CODE_TO_SLUG,
+  // but the slugify fallback for unknown universities produces slugs that
+  // are by definition NOT in that list — so those entries got preserved
+  // forever and the file grew monotonically (29 MB → 44 MB → 330 MB across
+  // 4 cron ticks before this fix).
+  //
+  // Safety net: if the new count is < 50% of the existing count, refuse to
+  // overwrite. Catches genuine regressions (NJTransfer.org down, parser
+  // broke, etc.) before they blank the file. The bloat-collapse from this
+  // PR itself is whitelisted via `--allow-shrink` on the first run.
+  const allowShrink = args.includes("--allow-shrink");
+  let existingCount = 0;
   try {
-    existing = JSON.parse(fs.readFileSync(outPath, "utf-8"));
+    const existing = JSON.parse(fs.readFileSync(outPath, "utf-8"));
+    existingCount = Array.isArray(existing) ? existing.length : 0;
   } catch {
-    /* first run */
+    /* first run — no existing file */
   }
 
-  // Replace all NJTransfer-sourced mappings; preserve others
-  const njtransferUnivSlugs = new Set(
-    Object.values(UNIV_CODE_TO_SLUG),
-  );
-  const preserved = existing.filter(
-    (m) => !njtransferUnivSlugs.has(m.university),
-  );
-  const merged = [...preserved, ...deduped];
+  if (
+    existingCount > 0 &&
+    deduped.length < existingCount * 0.5 &&
+    !allowShrink
+  ) {
+    console.error(
+      `\n✗ Refusing to overwrite: new count ${deduped.length} is < 50% of existing ${existingCount}.`,
+    );
+    console.error(
+      `  This looks like a regression. Existing file left untouched.`,
+    );
+    console.error(
+      `  If the shrink is intentional (e.g. dedup-bug fix), re-run with --allow-shrink.`,
+    );
+    process.exit(1);
+  }
 
-  if (preserved.length > 0) {
+  fs.writeFileSync(outPath, JSON.stringify(deduped, null, 2) + "\n");
+  console.log(`\nWrote ${deduped.length} NJTransfer mappings to ${outPath}`);
+  if (existingCount > 0 && deduped.length !== existingCount) {
+    const delta = deduped.length - existingCount;
     console.log(
-      `\nMerged: ${preserved.length} preserved + ${deduped.length} new = ${merged.length} total`,
+      `Delta vs prior: ${delta > 0 ? "+" : ""}${delta} (${((delta / existingCount) * 100).toFixed(1)}%)`,
     );
   }
-
-  fs.writeFileSync(outPath, JSON.stringify(merged, null, 2) + "\n");
-  console.log(`\nWrote ${deduped.length} NJTransfer mappings to ${outPath}`);
-  console.log(`Total in file: ${merged.length}`);
 
   // --- Supabase import ---
   if (!noImport) {
