@@ -56,13 +56,16 @@ const wvConfig: StateConfig = {
   ],
   scrapers: {
     courses: [
-      // Eastern WV — WordPress + PDF schedule. PoC for issue #456 cluster #3.
-      // Auto-discovers term PDFs from the WP listing page and parses each
-      // via `pdftotext -layout` (poppler).
+      // Eastern WV — WordPress + PDF schedule.
       { scripts: ["scripts/wv/scrape-eastern-wv.ts"], runner: "http" },
-      // manual-only: 3 other WV colleges (blue-ridge, bridgevalley,
-      // southern-wv) — each needs its own scraper. Eastern WV is the
-      // cleanest WP+PDF example; replicate the pattern per-college.
+      // Mountwest CTC — Banner SSB 9 at xemctcprod.wvnet.edu (public, no WAF).
+      { scripts: ["scripts/wv/scrape-mountwest.ts"], runner: "http" },
+      // WVU at Parkersburg — custom XML schedule at schedules.wvup.edu.
+      { scripts: ["scripts/wv/scrape-wvup.ts"], runner: "http" },
+      // manual-only: blueridge — JS-rendered WP schedule, data source unknown
+      // manual-only: bridgevalley, pierpont, southern — Ellucian Experience SSO
+      // manual-only: newriver — Banner SSB but visual CAPTCHA (sgcaptcha WAF)
+      // manual-only: wvncc — Pathify SAML portal, no public SIS endpoint
     ],
     prereqs: [
       // Six WV Acalog catalogs — WAF bypass via Playwright. Covers Pierpont,
