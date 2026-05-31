@@ -12,6 +12,7 @@ import {
   parseAssistArticulation,
   ArticulationAgreement,
   ArticulationRequirement,
+  AssistArticulationResult,
 } from "../parse-assist-articulation";
 
 // ============================================================================
@@ -26,7 +27,14 @@ interface FixtureMetadata {
   filename: string;
 }
 
-type FixtureData = { result: { articulations: string } };
+// Fixtures are full ASSIST responses (envelope with isSuccessful + result).
+// Both fields are always present in real data, so we type them as required
+// here. The Record intersection mirrors what the parser declares so call
+// sites match its signature exactly.
+type FixtureData = {
+  isSuccessful: boolean;
+  result: AssistArticulationResult;
+} & Record<string, unknown>;
 const fixtures: Array<{ metadata: FixtureMetadata; data: FixtureData }> = [];
 
 beforeAll(() => {
