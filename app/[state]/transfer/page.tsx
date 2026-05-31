@@ -9,6 +9,8 @@ import {
 import { getAllStates } from "@/lib/states/registry";
 import { requireStateConfig } from "@/lib/states/route-helpers";
 import TransferClient from "./TransferClient";
+import TransferCoverageSection from "./TransferCoverageSection";
+import { loadTransferCoverage } from "@/lib/transfer-coverage";
 
 // Render on demand — some states' transfer data exceeds Vercel's ISR size limit
 export const dynamic = "force-dynamic";
@@ -139,6 +141,10 @@ export default async function TransferPage({ params }: Props) {
 
       {/* Browse transfer pathways by university — hub-page directory */}
       <BrowseTransferHubs state={state} />
+
+      {/* Per-receiver coverage map (currently CA only — loader returns null
+          for states without a data/{state}/transfer-coverage.json file). */}
+      <TransferCoverageSectionWrapper state={state} systemName={config.systemName} />
     </div>
   );
 }
@@ -149,6 +155,18 @@ export default async function TransferPage({ params }: Props) {
 // university's pathway. Only shows universities meeting the thin-content
 // guard (>= 10 transferable courses).
 // ---------------------------------------------------------------------------
+async function TransferCoverageSectionWrapper({
+  state,
+  systemName,
+}: {
+  state: string;
+  systemName: string;
+}) {
+  const coverage = await loadTransferCoverage(state);
+  if (!coverage) return null;
+  return <TransferCoverageSection coverage={coverage} systemName={systemName} />;
+}
+
 async function BrowseTransferHubs({ state }: { state: string }) {
   const universities = await getUniversitiesWithCounts(state);
   const eligible = universities.filter((u) => u.totalCount >= 10);
