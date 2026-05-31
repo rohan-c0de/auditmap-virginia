@@ -20,6 +20,7 @@
     "test:run": "vitest run",
     "check:registry": "tsx scripts/check-registry-integrity.ts",
     "check:scrapers": "tsx scripts/check-scraper-coverage.ts",
+    "check:config-data": "tsx scripts/check-config-data-consistency.ts",
     "check:scraper-terms": "tsx scripts/check-scraper-term-hardcoding.ts",
     "check:data": "tsx scripts/check-data-integrity.ts",
     "check:blog-mdx": "tsx scripts/check-blog-mdx.ts",
