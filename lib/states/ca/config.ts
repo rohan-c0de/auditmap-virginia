@@ -80,6 +80,11 @@ const caConfig: StateConfig = {
       // scraper paginates via __doPostBack + VIEWSTATE; one (college, term)
       // takes ~30s–5min depending on size.
       { scripts: ["scripts/ca/scrape-4cd.ts"], runner: "http" },
+      // West Hills CCD cluster: two colleges (Coalinga, Lemoore) share a
+      // single Colleague-powered schedule page at classweb.westhillscollege.com
+      // /schedule/. One GET returns every section across both colleges in an
+      // HTML table; the College column distinguishes campuses.
+      { scripts: ["scripts/ca/scrape-westhills.ts"], runner: "http" },
     ],
     prereqs: { source: "aggregate-from-courses" },
     transfers: [
