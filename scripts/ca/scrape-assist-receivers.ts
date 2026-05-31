@@ -134,6 +134,7 @@ function flag(name: string): string | undefined {
 }
 const PHASE = (flag("phase") ?? "all").toLowerCase(); // a | b | all
 const CC_FILTER = flag("cc"); // restrict to one CC slug for smoke-testing
+const RECEIVER_FILTER = flag("receiver")?.toUpperCase(); // restrict Phase B to a single receiver code (UCB, UCLA, …)
 const CONCURRENCY = Math.max(1, parseInt(flag("concurrency") ?? "3", 10));
 const DELAY_MS = Math.max(0, parseInt(flag("delay") ?? "200", 10));
 
@@ -333,6 +334,7 @@ async function phaseA(
 interface PhaseBResult {
   fetched: number;
   skipped: number;
+  rateLimited: number;
   errors: string[];
 }
 
@@ -349,10 +351,12 @@ async function phaseB(
 ): Promise<PhaseBResult> {
   fs.mkdirSync(FIXTURES_DIR, { recursive: true });
 
-  // Filter to top-5 UC receivers only
-  const targets = coverage.filter((e) =>
-    TOP_RECEIVERS.has(e.receiverCode.toUpperCase()),
-  );
+  // Filter to top-5 UC receivers by default; --receiver=UCB narrows further.
+  const targets = coverage.filter((e) => {
+    const code = e.receiverCode.toUpperCase();
+    if (RECEIVER_FILTER) return code === RECEIVER_FILTER;
+    return TOP_RECEIVERS.has(code);
+  });
   const totalMajors = targets.reduce((s, e) => s + e.majorCount, 0);
   console.log(
     `Phase B: ${targets.length} (CC×receiver) pairs, ${totalMajors} major reports`,
@@ -368,9 +372,49 @@ async function phaseB(
 
   let fetched = 0;
   let skipped = 0;
+  let rateLimited = 0;
   const errors: string[] = [];
   const t0 = Date.now();
   let processed = 0;
+
+  // Shared adaptive throttle. ASSIST's articulation-detail endpoint
+  // rate-limits per-IP (allows ~50 calls in a burst, then HTTP 429 with no
+  // Retry-After header; triggered an IP-level cooldown in the original
+  // smoke test). When ANY worker hits a 429 we double the per-call delay
+  // (capped at 5s) and pause for a minute before retrying — and the slow-
+  // down sticks for all workers. After a sustained quiet window we slowly
+  // halve the delay back down toward DELAY_MS.
+  let currentDelayMs = DELAY_MS;
+  let lastBackoffAt = 0;
+  const HARD_FLOOR_MS = DELAY_MS;
+  const HARD_CEILING_MS = 5000;
+  const PAUSE_ON_429_MS = 60_000;
+
+  async function fetchWithBackoff(p: string, label: string): Promise<string | null> {
+    const MAX_ATTEMPTS = 4;
+    for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+      try {
+        return await apiGetText(session, p);
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : String(err);
+        const is429 = msg.includes("HTTP 429");
+        if (!is429) {
+          errors.push(`${label} (attempt ${attempt}): ${msg}`);
+          return null;
+        }
+        rateLimited++;
+        currentDelayMs = Math.min(HARD_CEILING_MS, currentDelayMs * 2);
+        lastBackoffAt = Date.now();
+        const pauseMs = PAUSE_ON_429_MS * attempt;
+        console.log(
+          `  [B] 429 on ${label} (attempt ${attempt}/${MAX_ATTEMPTS}) — pausing ${Math.round(pauseMs / 1000)}s, new delay=${currentDelayMs}ms`,
+        );
+        await sleep(pauseMs);
+      }
+    }
+    errors.push(`${label}: HTTP 429 after ${MAX_ATTEMPTS} attempts — giving up`);
+    return null;
+  }
 
   async function worker() {
     while (queue.length > 0) {
@@ -388,31 +432,34 @@ async function phaseB(
         continue;
       }
 
-      try {
-        const text = await apiGetText(
-          session,
-          `/api/articulation/Agreements?Key=${encodeURIComponent(item.major.key)}`,
-        );
+      const text = await fetchWithBackoff(
+        `/api/articulation/Agreements?Key=${encodeURIComponent(item.major.key)}`,
+        filename,
+      );
+      if (text) {
         fs.writeFileSync(out, text);
         fetched++;
-      } catch (err) {
-        const msg = err instanceof Error ? err.message : String(err);
-        errors.push(`${filename}: ${msg}`);
       }
       processed++;
       if (processed % 250 === 0) {
         const elapsed = (Date.now() - t0) / 1000;
         const rate = processed / elapsed;
         console.log(
-          `  [B] ${processed} processed (${fetched} fetched, ${skipped} skipped, ${rate.toFixed(1)}/s, ${queue.length} remaining)`,
+          `  [B] ${processed} processed (${fetched} fetched, ${skipped} skipped, ${rateLimited} 429s, ${rate.toFixed(1)}/s, delay=${currentDelayMs}ms, ${queue.length} remaining)`,
         );
       }
-      await sleep(DELAY_MS);
+      if (
+        currentDelayMs > HARD_FLOOR_MS &&
+        Date.now() - lastBackoffAt > 60_000
+      ) {
+        currentDelayMs = Math.max(HARD_FLOOR_MS, Math.floor(currentDelayMs / 2));
+      }
+      await sleep(currentDelayMs);
     }
   }
 
   await Promise.all(Array.from({ length: CONCURRENCY }, worker));
-  return { fetched, skipped, errors };
+  return { fetched, skipped, rateLimited, errors };
 }
 
 // ---------------------------------------------------------------------------
@@ -511,6 +558,7 @@ async function main() {
     console.log(`\nPhase B complete:`);
     console.log(`  fetched: ${result.fetched}`);
     console.log(`  skipped (already on disk): ${result.skipped}`);
+    console.log(`  rate-limit retries: ${result.rateLimited}`);
     console.log(`  errors: ${result.errors.length}`);
     if (result.errors.length > 0 && result.errors.length <= 20) {
       for (const e of result.errors) console.log(`    ${e}`);
