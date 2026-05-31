@@ -124,6 +124,22 @@ const flConfig: StateConfig = {
       // (term wildcard, subject prefix). CRN extracted from detail
       // page link in each row. ~30k students, Palm Beach County.
       { scripts: ["scripts/fl/scrape-palmbeachstate.ts"], runner: "http" },
+      // Tallahassee State College — public ASP.NET MVC SPA at
+      // link.tsc.fl.edu/publicclasssearch with HTML-fragment endpoints.
+      // GET search page for cookies; POST GetCourseResults for course
+      // list per term; POST GetCourseSectionResults per course for
+      // sections. ~10k students.
+      { scripts: ["scripts/fl/scrape-tcc.ts"], runner: "http" },
+      // North Florida College — Oracle APEX report at
+      // infonetwork.nfc.edu/apex/r/nfcapi/nfc_schedule/course-schedule.
+      // One HTTP GET returns the entire schedule (all terms) as a single
+      // HTML table. Smallest scraper in the FL set. ~1.5k students.
+      { scripts: ["scripts/fl/scrape-nfc.ts"], runner: "http" },
+      // Chipola College — Jenzabar JICS Course_Schedule portlet at
+      // my.chipola.edu. Uses the shared scripts/lib/scrape-jenzabar-webforms
+      // template (template now falls back to domcontentloaded on
+      // networkidle timeout — JICS keeps background AJAX alive).
+      { scripts: ["scripts/fl/scrape-jenzabar-webforms.ts"], runner: "playwright" },
     ],
     transfers: [
       // SCNS flat-file dump — single 80 MB download, no auth, covers all
