@@ -174,6 +174,15 @@ const txConfig: StateConfig = {
         scripts: ["scripts/tx/scrape-cisco.ts"],
         runner: "playwright",
       },
+      // Grayson College — custom ASP.NET MVC "Student Planner" at
+      // planner.grayson.edu/Planner/CourseSearch/{termId}. All sections for
+      // a term are server-side rendered in a single GET — no auth, no JS.
+      // Term IDs are discovered dynamically from the dropdown links. ~800
+      // sections / major term, ~2,000 / full run, HTTP-only.
+      {
+        scripts: ["scripts/tx/scrape-grayson.ts"],
+        runner: "http",
+      },
       // Northeast Texas Community College — Jenzabar JICS Simple_Query
       // "Find Courses" portlet at myeagle.ntcc.edu/ICS/Find_Courses/. Each
       // term has a hidden "Export to Excel" button whose response is
