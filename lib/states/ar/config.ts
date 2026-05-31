@@ -84,7 +84,9 @@ const arConfig: StateConfig = {
       // IP for other universities, but no other AR receiver exposes one.
       { scripts: ["scripts/ar/scrape-transfer-asu-jonesboro.ts"], runner: "http" },
     ],
-    // manual-only: prereqs — aggregated from course-search data; no dedicated catalog scraper.
+    // Prereqs aggregated from course-search prerequisite_text (data/ar/prereqs.json,
+    // 413 parsed chains). No dedicated catalog scraper; refreshed from committed courses.
+    prereqs: { source: "aggregate-from-courses" },
     // Programs scraper currently covers 2 of 14 AR colleges (NPC + Northark
     // via Acalog). Remaining catalogs are mixed (PDF-only, bespoke HTML,
     // 403-blocked Acalog at NWACC). Follow-ups documented in the scraper
