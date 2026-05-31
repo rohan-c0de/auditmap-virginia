@@ -85,6 +85,11 @@ const caConfig: StateConfig = {
       // /schedule/. One GET returns every section across both colleges in an
       // HTML table; the College column distinguishes campuses.
       { scripts: ["scripts/ca/scrape-westhills.ts"], runner: "http" },
+      // West Valley-Mission CCD: two colleges (Mission, West Valley) publish
+      // full schedule as static JSON at schedule.wvm.edu/data/{term}/. Four
+      // files per term (courses, crns, ssrmeet, section-instructors) provide
+      // complete section data including seats, meeting times, and instructors.
+      { scripts: ["scripts/ca/scrape-wvm.ts"], runner: "http" },
     ],
     prereqs: { source: "aggregate-from-courses" },
     transfers: [
