@@ -45,7 +45,7 @@ const okConfig: StateConfig = {
   },
 
   transferSupported: false,
-  popularCourses: [],
+  popularCourses: ["ENGL 1113", "ENGL 1213", "MATH 1513", "HIST 1493", "PSYC 1113", "COMM 1113"],
   defaultZip: "73102",
   defaultZipCity: "Oklahoma City",
 

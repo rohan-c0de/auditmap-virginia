@@ -27,7 +27,7 @@ const idConfig: StateConfig = {
   seniorWaiver: null,
 
   transferSupported: false,
-  popularCourses: [],
+  popularCourses: ["ENGL 101", "ENGL 102", "MATH 143", "MATH 123", "PSYC 101", "COMM 101"],
   defaultZip: "83702",
   defaultZipCity: "Boise",
 
