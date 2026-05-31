@@ -146,7 +146,7 @@ export type ProgramRequirement = z.infer<typeof ProgramRequirementSchema>;
 
 export const CollegeProgramsSchema = z.object({
   college_slug: z.string().min(1, "college_slug required"),
-  catalog_year: z.string().min(1, "catalog_year required"),
+  catalog_year: z.string().default(""),
   catalog_url: z.string(),
   scraped_at: z.string(),
   programs: z.array(ProgramRequirementSchema),
