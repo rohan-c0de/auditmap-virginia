@@ -50,35 +50,39 @@ import type { CoursedogProgramConfig } from "../lib/scrape-coursedog-programs.js
 
 const COURSELEAF: CourseleafProgramConfig[] = [
   // Single-college instances — most CA CourseLeaf catalogs publish programs at
-  // /degrees-certificates/, not the template default /programs-study/
+  // Per-college programs paths probed 2026-05-30 (v2: corrections after first run).
   { collegeSlug: "foothill-college", baseUrl: "https://catalog.foothill.edu", programIndexPath: "/degrees-certificates/" },
-  { collegeSlug: "miracosta-college", baseUrl: "https://catalog.miracosta.edu", programIndexPath: "/degrees-certificates/" },
-  { collegeSlug: "citrus-college", baseUrl: "https://catalog.citruscollege.edu", programIndexPath: "/degrees-certificates/" },
-  { collegeSlug: "college-of-the-desert", baseUrl: "https://catalog.collegeofthedesert.edu", programIndexPath: "/degrees-certificates/" },
+  { collegeSlug: "miracosta-college", baseUrl: "https://catalog.miracosta.edu", programIndexPath: "/academicprogramservices/" },
+  { collegeSlug: "college-of-the-desert", baseUrl: "https://catalog.collegeofthedesert.edu", programIndexPath: "/programs/" },
   { collegeSlug: "long-beach-city-college", baseUrl: "https://lbcc-public.courseleaf.com", programIndexPath: "/degrees-certificates/" },
-  { collegeSlug: "mt-san-antonio-college", baseUrl: "https://catalog.mtsac.edu", programIndexPath: "/degrees-certificates/" },
-  { collegeSlug: "mt-san-jacinto-community-college-district", baseUrl: "https://catalog.msjc.edu", programIndexPath: "/degrees-certificates/" },
-  { collegeSlug: "napa-valley-college", baseUrl: "https://catalog.napavalley.edu", programIndexPath: "/degrees-certificates/" },
-  { collegeSlug: "pasadena-city-college", baseUrl: "https://curriculum.pasadena.edu", programIndexPath: "/degrees-certificates/" },
-  { collegeSlug: "santa-barbara-city-college", baseUrl: "https://catalog.sbcc.edu", programIndexPath: "/degrees-certificates/" },
+  { collegeSlug: "mt-san-antonio-college", baseUrl: "https://catalog.mtsac.edu", programIndexPath: "/programs/" },
+  { collegeSlug: "mt-san-jacinto-community-college-district", baseUrl: "https://catalog.msjc.edu", programIndexPath: "/degrees-certificates-curricula/" },
+  { collegeSlug: "napa-valley-college", baseUrl: "https://catalog.napavalley.edu", programIndexPath: "/areas-of-study/" },
+  { collegeSlug: "pasadena-city-college", baseUrl: "https://curriculum.pasadena.edu", programIndexPath: "/academic-programs/" },
+  { collegeSlug: "santa-barbara-city-college", baseUrl: "https://catalog.sbcc.edu", programIndexPath: "/programs/" },
   { collegeSlug: "san-jose-city-college", baseUrl: "https://catalog.sjcc.edu", programIndexPath: "/degrees-certificates/" },
-  { collegeSlug: "college-of-the-sequoias", baseUrl: "https://catalog.cos.edu", programIndexPath: "/degrees-certificates/" },
-  { collegeSlug: "sierra-college", baseUrl: "https://catalog.sierracollege.edu", programIndexPath: "/degrees-certificates/" },
-  { collegeSlug: "san-bernardino-valley-college", baseUrl: "https://catalog.valleycollege.edu", programIndexPath: "/degrees-certificates/" },
-  { collegeSlug: "southwestern-college", baseUrl: "https://catalog.swccd.edu", programIndexPath: "/degrees-certificates/" },
+  { collegeSlug: "college-of-the-sequoias", baseUrl: "https://catalog.cos.edu", programIndexPath: "/areas-study/" },
+  { collegeSlug: "sierra-college", baseUrl: "https://catalog.sierracollege.edu", programIndexPath: "/departments/" },
+  { collegeSlug: "san-bernardino-valley-college", baseUrl: "https://catalog.valleycollege.edu", programIndexPath: "/degree-certificate-program-index/" },
+  { collegeSlug: "southwestern-college", baseUrl: "https://catalog.swccd.edu", programIndexPath: "/certificates-certifications-degrees-csuuc-requirements/" },
   { collegeSlug: "victor-valley-college", baseUrl: "https://catalog.vvc.edu", programIndexPath: "/degrees-certificates/" },
   { collegeSlug: "evergreen-valley-college", baseUrl: "https://catalog.evc.edu", programIndexPath: "/degrees-certificates/" },
-  // District-shared catalogs — programs live under /{college}/
-  { collegeSlug: "cypress-college", baseUrl: "https://catalog.nocccd.edu", programIndexPath: "/cypress-college/" },
-  { collegeSlug: "fullerton-college", baseUrl: "https://catalog.nocccd.edu", programIndexPath: "/fullerton-college/" },
-  { collegeSlug: "coastline-community-college", baseUrl: "https://catalog.cccd.edu", programIndexPath: "/coastline/" },
-  { collegeSlug: "golden-west-college", baseUrl: "https://catalog.cccd.edu", programIndexPath: "/golden-west/" },
-  { collegeSlug: "orange-coast-college", baseUrl: "https://catalog.cccd.edu", programIndexPath: "/orange-coast/" },
-  { collegeSlug: "moorpark-college", baseUrl: "https://catalog.vcccd.edu", programIndexPath: "/moorpark/" },
-  { collegeSlug: "oxnard-college", baseUrl: "https://catalog.vcccd.edu", programIndexPath: "/oxnard/" },
-  { collegeSlug: "ventura-college", baseUrl: "https://catalog.vcccd.edu", programIndexPath: "/ventura/" },
-  { collegeSlug: "cuyamaca-college", baseUrl: "https://catalog.gcccd.edu", programIndexPath: "/cuyamaca/" },
-  { collegeSlug: "grossmont-college", baseUrl: "https://catalog.gcccd.edu", programIndexPath: "/grossmont/" },
+  // citrus-college: defer (no clean programs index)
+  // District-shared catalogs — programs live under /{college}/degrees-certificates/
+  { collegeSlug: "cypress-college", baseUrl: "https://catalog.nocccd.edu", programIndexPath: "/cypress-college/degrees-certificates/" },
+  { collegeSlug: "fullerton-college", baseUrl: "https://catalog.nocccd.edu", programIndexPath: "/fullerton-college/degrees-certificates/" },
+  // CCCD/VCCCD use 3-level /{college}/pathways/{cluster}/{program}/ structure;
+  // the template's a[href^=programIndexPath] selector can't pick that up unless
+  // pointed at /pathways/. /programs/ index contains the deep links but they
+  // don't share the index prefix — template returns 0 paths.
+  { collegeSlug: "coastline-community-college", baseUrl: "https://catalog.cccd.edu", programIndexPath: "/coastline/pathways/" },
+  { collegeSlug: "golden-west-college", baseUrl: "https://catalog.cccd.edu", programIndexPath: "/golden-west/pathways/" },
+  { collegeSlug: "orange-coast-college", baseUrl: "https://catalog.cccd.edu", programIndexPath: "/orange-coast/pathways/" },
+  { collegeSlug: "moorpark-college", baseUrl: "https://catalog.vcccd.edu", programIndexPath: "/moorpark/programs/" },
+  { collegeSlug: "oxnard-college", baseUrl: "https://catalog.vcccd.edu", programIndexPath: "/oxnard/programs/" },
+  { collegeSlug: "ventura-college", baseUrl: "https://catalog.vcccd.edu", programIndexPath: "/ventura/programs/" },
+  { collegeSlug: "cuyamaca-college", baseUrl: "https://catalog.gcccd.edu", programIndexPath: "/cuyamaca/associate-degree-programs-certificates/" },
+  { collegeSlug: "grossmont-college", baseUrl: "https://catalog.gcccd.edu", programIndexPath: "/grossmont/associate-degree-programs-certificates/" },
 ];
 
 const ACALOG: AcalogProgramConfig[] = [

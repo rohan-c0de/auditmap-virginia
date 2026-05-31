@@ -2,8 +2,76 @@
   "college_slug": "pasadena-city-college",
   "catalog_year": "",
   "catalog_url": "https://curriculum.pasadena.edu/academic-programs/",
-  "scraped_at": "2026-05-31T03:02:25.428Z",
+  "scraped_at": "2026-05-31T03:23:13.360Z",
   "programs": [
+    {
+      "title": "Accounting – Certified Bookkeeper – Associate in Science Degree, Certificate of Achievement — Associate of Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/accounting/accounting-certified-bookkeeper-as-cert-achievement/",
+      "total_credits": 21,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 21,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACCT",
+              "number": "010",
+              "title": "BOOKKEEPING - ACCOUNTING",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACCT",
+              "number": "104A",
+              "title": "COMPUTERIZED ACCOUNTING - QUICKBOOKS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACCT",
+              "number": "104B",
+              "title": "PAYROLL ACCOUNTING",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIT",
+              "number": "106",
+              "title": "BUSINESS SOFTWARE - INTRODUCTION TO MICROSOFT OFFICE SYSTEM",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIT",
+              "number": "133",
+              "title": "BUSINESS SOFTWARE - MICROSOFT EXCEL",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "112",
+              "title": "BUSINESS ENGLISH",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "114",
+              "title": "BUSINESS MATHEMATICS",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "accounting"
+    },
     {
       "title": "Anesthesia Technology – Associate in Science Degree, Certificate of Achievement — Associate of Science",
       "credential": "AS",
@@ -92,74 +160,6 @@
         }
       ],
       "matched_program_slug": null
-    },
-    {
-      "title": "Accounting – Certified Bookkeeper – Associate in Science Degree, Certificate of Achievement — Associate of Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/accounting/accounting-certified-bookkeeper-as-cert-achievement/",
-      "total_credits": 21,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 21,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ACCT",
-              "number": "010",
-              "title": "BOOKKEEPING - ACCOUNTING",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACCT",
-              "number": "104A",
-              "title": "COMPUTERIZED ACCOUNTING - QUICKBOOKS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACCT",
-              "number": "104B",
-              "title": "PAYROLL ACCOUNTING",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIT",
-              "number": "106",
-              "title": "BUSINESS SOFTWARE - INTRODUCTION TO MICROSOFT OFFICE SYSTEM",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIT",
-              "number": "133",
-              "title": "BUSINESS SOFTWARE - MICROSOFT EXCEL",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "112",
-              "title": "BUSINESS ENGLISH",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "114",
-              "title": "BUSINESS MATHEMATICS",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "accounting"
     },
     {
       "title": "Accounting - Taxation for Enrolled Agents - Certificate of Achievement — Associate of Science",
@@ -3869,6 +3869,60 @@
       "matched_program_slug": "business-administration"
     },
     {
+      "title": "Customer Service – Occupational Skills Certificate — Associate of Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/business-administration/customer-service-occupational-skills-cert/",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BIT",
+              "number": "025",
+              "title": "SURVEY OF COMPUTER TECHNOLOGY IN BUSINESS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "009",
+              "title": "INTRODUCTION TO BUSINESS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "011A",
+              "title": "BUSINESS COMMUNICATIONS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "112",
+              "title": "BUSINESS ENGLISH",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "160",
+              "title": "SALES AND CUSTOMER SERVICE",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Business Data Analytics – Associate in Science Degree, Certificate of Achievement — Associate of Science",
       "credential": "AS",
       "program_code": null,
@@ -3935,60 +3989,6 @@
         }
       ],
       "matched_program_slug": "business-administration"
-    },
-    {
-      "title": "Customer Service – Occupational Skills Certificate — Associate of Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/business-administration/customer-service-occupational-skills-cert/",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BIT",
-              "number": "025",
-              "title": "SURVEY OF COMPUTER TECHNOLOGY IN BUSINESS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "009",
-              "title": "INTRODUCTION TO BUSINESS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "011A",
-              "title": "BUSINESS COMMUNICATIONS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "112",
-              "title": "BUSINESS ENGLISH",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "160",
-              "title": "SALES AND CUSTOMER SERVICE",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
     },
     {
       "title": "Global Trade and Logistics - Certificate of Achievement — Associate of Science",
@@ -17447,67 +17447,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Journalism – Printed Media – Associate in Science Degree, Certificate of Achievement — Associate of Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/journalism/journalism-printed-media-as-cert-achievement/",
-      "total_credits": 18,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 18,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "JOUR",
-              "number": "002",
-              "title": "BEGINNING JOURNALISM",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "JOUR",
-              "number": "004A",
-              "title": "REPORTING AND NEWSWRITING",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "JOUR",
-              "number": "007A",
-              "title": "NEWSWRITING AND MAKE-UP I",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "JOUR",
-              "number": "007B",
-              "title": "NEWSWRITING AND MAKE-UP II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "JOUR",
-              "number": "107A",
-              "title": "ONLINE JOURNALISM",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "JOUR",
-              "number": "107B",
-              "title": "NEWS LEADERSHIP",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Kinesiology – Associate in Arts Degree for Transfer — Associate of Science",
       "credential": "AS",
       "program_code": null,
@@ -19166,6 +19105,67 @@
       "matched_program_slug": null
     },
     {
+      "title": "Journalism – Printed Media – Associate in Science Degree, Certificate of Achievement — Associate of Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/journalism/journalism-printed-media-as-cert-achievement/",
+      "total_credits": 18,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "JOUR",
+              "number": "002",
+              "title": "BEGINNING JOURNALISM",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "JOUR",
+              "number": "004A",
+              "title": "REPORTING AND NEWSWRITING",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "JOUR",
+              "number": "007A",
+              "title": "NEWSWRITING AND MAKE-UP I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "JOUR",
+              "number": "007B",
+              "title": "NEWSWRITING AND MAKE-UP II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "JOUR",
+              "number": "107A",
+              "title": "ONLINE JOURNALISM",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "JOUR",
+              "number": "107B",
+              "title": "NEWS LEADERSHIP",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "American Sign Language – Associate in Arts Degree, Certificate of Achievement — Associate of Science",
       "credential": "AS",
       "program_code": null,
@@ -20400,74 +20400,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Laser Technology – Associate in Science, Certificate of Achievement — Associate of Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/laser-technology/laser-technology-as-certificate-of-achievement/",
-      "total_credits": 18,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 18,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "LASR",
-              "number": "215",
-              "title": "FUNDAMENTALS OF LIGHT AND LASERS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "LASR",
-              "number": "230",
-              "title": "OPTICAL DEVICES",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "LASR",
-              "number": "245",
-              "title": "QUALITY ASSURANCE OF PRECISION OPTICS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "LASR",
-              "number": "260",
-              "title": "METROLOGY OF OPTICAL SYSTEMS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELTN",
-              "number": "130",
-              "title": "INTRODUCTION TO ELECTRONICS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELTN",
-              "number": "117",
-              "title": "INTRODUCTION TO MICROCONTROLLERS AND EMBEDDED DESIGN",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELTN",
-              "number": "131",
-              "title": "ANALOG DEVICES AND CIRCUITS",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Spanish – Associate in Arts Degree for Transfer — Associate of Science",
       "credential": "AS",
       "program_code": null,
@@ -20604,6 +20536,74 @@
               "prefix": "SPAN",
               "number": "044B",
               "title": "LA CIVILIZACIÓN DE AMÉRICA LATINA",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Laser Technology – Associate in Science, Certificate of Achievement — Associate of Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/laser-technology/laser-technology-as-certificate-of-achievement/",
+      "total_credits": 18,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "LASR",
+              "number": "215",
+              "title": "FUNDAMENTALS OF LIGHT AND LASERS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "LASR",
+              "number": "230",
+              "title": "OPTICAL DEVICES",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "LASR",
+              "number": "245",
+              "title": "QUALITY ASSURANCE OF PRECISION OPTICS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "LASR",
+              "number": "260",
+              "title": "METROLOGY OF OPTICAL SYSTEMS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELTN",
+              "number": "130",
+              "title": "INTRODUCTION TO ELECTRONICS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELTN",
+              "number": "117",
+              "title": "INTRODUCTION TO MICROCONTROLLERS AND EMBEDDED DESIGN",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELTN",
+              "number": "131",
+              "title": "ANALOG DEVICES AND CIRCUITS",
               "credits": 0,
               "or_alternatives": []
             }
@@ -22160,6 +22160,60 @@
       "matched_program_slug": null
     },
     {
+      "title": "Medical Assisting – Patient Intake Specialist – Occupational Skills Certificate — Associate of Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/medical-assisting/medical-assisting-patient-intake-specialist-occupational-skills-cert/",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MA",
+              "number": "109",
+              "title": "HEALTH INFORMATION TECHNOLOGY",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MA",
+              "number": "111A",
+              "title": "ADMINISTRATIVE MEDICAL OFFICE PROCEDURES I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MA",
+              "number": "122A",
+              "title": "CLINICAL MEDICAL OFFICE PROCEDURES I",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MA",
+              "number": "127",
+              "title": "MEDICAL INSURANCE AND REIMBURSEMENT",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HLSC",
+              "number": "115",
+              "title": "MEDICAL TERMINOLOGY",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Medical Assisting – Administrative and Clinical – Associate in Science Degree, Certificate of Achievement — Associate of Science",
       "credential": "AS",
       "program_code": null,
@@ -22270,60 +22324,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Medical Assisting – Patient Intake Specialist – Occupational Skills Certificate — Associate of Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/medical-assisting/medical-assisting-patient-intake-specialist-occupational-skills-cert/",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "MA",
-              "number": "109",
-              "title": "HEALTH INFORMATION TECHNOLOGY",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MA",
-              "number": "111A",
-              "title": "ADMINISTRATIVE MEDICAL OFFICE PROCEDURES I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MA",
-              "number": "122A",
-              "title": "CLINICAL MEDICAL OFFICE PROCEDURES I",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MA",
-              "number": "127",
-              "title": "MEDICAL INSURANCE AND REIMBURSEMENT",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HLSC",
-              "number": "115",
-              "title": "MEDICAL TERMINOLOGY",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Medical Assisting – Medical Scribe Specialist – Occupational Skills Certificate — Associate of Science",
       "credential": "AS",
       "program_code": null,
@@ -22356,6 +22356,172 @@
               "number": "110",
               "title": "MEDICAL OFFICE MICROCOMPUTER MANAGEMENT APPLICATIONS",
               "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Commercial Music – Occupational Skills Certificate — Associate of Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/music/commercial-music-occupational-skills-cert/",
+      "total_credits": 16,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 16,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MUSC",
+              "number": "093A",
+              "title": "INTRODUCTION TO THE MUSIC BUSINESS AND ENTREPRENEURSHIP",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "096A",
+              "title": "INTRODUCTION TO MUSIC RECORDING AND PRODUCTION",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "096B",
+              "title": "MUSIC RECORDING AND PRODUCTION APPLICATIONS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "096C",
+              "title": "MUSIC RECORDING & PRODUCTION WORKSHOP",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "034A",
+              "title": "JAZZ KEYBOARD SKILLS",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "034B",
+              "title": "ADVANCED JAZZ KEYBOARD SKILLS",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "036A",
+              "title": "POP-JAZZ THEORY",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "036B",
+              "title": "INTERMEDIATE JAZZ–COMMERCIAL THEORY",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "041A",
+              "title": "FIRST YEAR PIANO I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "071A",
+              "title": "VOICE TECHNIQUES I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "083A",
+              "title": "BEGINNING GUITAR",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "105",
+              "title": "POPULAR SONGWRITING",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "112A",
+              "title": "ELECTRIC BASS TECHNIQUES",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "112B",
+              "title": "ELECTRIC BASS REPERTOIRE",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "115",
+              "title": "CONTEMPORARY GUITAR TECHNIQUES",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "116",
+              "title": "DRUM SET TECHNIQUES",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "117",
+              "title": "RHYTHM SECTION TECHNIQUES",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "121",
+              "title": "LATIN PERCUSSION TECHNIQUES",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "144",
+              "title": "INTRODUCTION TO IMPROVISATION",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "171A",
+              "title": "BEGINNING TECHNIQUES OF POPULAR SINGING",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "171B",
+              "title": "INTERMEDIATE TECHNIQUES OF POPULAR SINGING",
+              "credits": 0,
               "or_alternatives": []
             }
           ]
@@ -23404,172 +23570,6 @@
               "prefix": "TVR",
               "number": "104",
               "title": "LIVE SOUND REINFORCEMENT",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Commercial Music – Occupational Skills Certificate — Associate of Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/music/commercial-music-occupational-skills-cert/",
-      "total_credits": 16,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 16,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "MUSC",
-              "number": "093A",
-              "title": "INTRODUCTION TO THE MUSIC BUSINESS AND ENTREPRENEURSHIP",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "096A",
-              "title": "INTRODUCTION TO MUSIC RECORDING AND PRODUCTION",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "096B",
-              "title": "MUSIC RECORDING AND PRODUCTION APPLICATIONS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "096C",
-              "title": "MUSIC RECORDING & PRODUCTION WORKSHOP",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "034A",
-              "title": "JAZZ KEYBOARD SKILLS",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "034B",
-              "title": "ADVANCED JAZZ KEYBOARD SKILLS",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "036A",
-              "title": "POP-JAZZ THEORY",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "036B",
-              "title": "INTERMEDIATE JAZZ–COMMERCIAL THEORY",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "041A",
-              "title": "FIRST YEAR PIANO I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "071A",
-              "title": "VOICE TECHNIQUES I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "083A",
-              "title": "BEGINNING GUITAR",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "105",
-              "title": "POPULAR SONGWRITING",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "112A",
-              "title": "ELECTRIC BASS TECHNIQUES",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "112B",
-              "title": "ELECTRIC BASS REPERTOIRE",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "115",
-              "title": "CONTEMPORARY GUITAR TECHNIQUES",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "116",
-              "title": "DRUM SET TECHNIQUES",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "117",
-              "title": "RHYTHM SECTION TECHNIQUES",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "121",
-              "title": "LATIN PERCUSSION TECHNIQUES",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "144",
-              "title": "INTRODUCTION TO IMPROVISATION",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "171A",
-              "title": "BEGINNING TECHNIQUES OF POPULAR SINGING",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "171B",
-              "title": "INTERMEDIATE TECHNIQUES OF POPULAR SINGING",
               "credits": 0,
               "or_alternatives": []
             }
@@ -25130,6 +25130,179 @@
       "matched_program_slug": null
     },
     {
+      "title": "Radiologic Technology – Associate in Science Degree, Certificate of Achievement — Associate of Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/radiology/radiologic-technology-as-cert-achievement/",
+      "total_credits": 81,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 81,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "RDTC",
+              "number": "100",
+              "title": "INTRODUCTION TO MEDICAL IMAGING",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "RDTC",
+              "number": "101",
+              "title": "MEDICAL PROCEDURES FOR THE TECHNOLOGIST",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "RDTC",
+              "number": "102",
+              "title": "RADIATION PROTECTION & RADIOBIOLOGY",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "RDTC",
+              "number": "103A",
+              "title": "RADIOGRAPHIC ANATOMY AND POSITIONING, A",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "RDTC",
+              "number": "110",
+              "title": "PROFESSIONAL ETHICS",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "RDTC",
+              "number": "112A",
+              "title": "RADIOLOGIC PHYSICS, A",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "RDTC",
+              "number": "117A",
+              "title": "CLINICAL PRACTICUM, 1",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "RDTC",
+              "number": "113",
+              "title": "CLINICAL PRACTICUM, 3",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "RDTC",
+              "number": "103B",
+              "title": "RADIOGRAPHIC ANATOMY AND POSITIONING, B",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "RDTC",
+              "number": "104",
+              "title": "PRINCIPLES OF RADIOGRAPHIC IMAGING",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "RDTC",
+              "number": "112B",
+              "title": "RADIOLOGIC PHYSICS, B",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "RDTC",
+              "number": "117B",
+              "title": "CLINICAL PRACTICUM, 2",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "RDTC",
+              "number": "119",
+              "title": "CLINICAL PRACTICUM, 4",
+              "credits": 7,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "RDTC",
+              "number": "103C",
+              "title": "CROSS SECTIONAL ANATOMY",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "RDTC",
+              "number": "105",
+              "title": "SPECIAL PROCEDURES",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "RDTC",
+              "number": "111",
+              "title": "DIGITAL RADIOGRAPHY",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "RDTC",
+              "number": "117C",
+              "title": "CLINICAL PRACTICUM, 5",
+              "credits": 9,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "RDTC",
+              "number": "113B",
+              "title": "CLINICAL PRACTICUM, B",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "RDTC",
+              "number": "116",
+              "title": "RADIOLOGIC TECHNOLOGY REVIEW",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "RDTC",
+              "number": "117D",
+              "title": "CLINICAL PRACTICUM, 6",
+              "credits": 7,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "RDTC",
+              "number": "121",
+              "title": "MAMMOGRAPHY PROCEDURES",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "RDTC",
+              "number": "123",
+              "title": "COMPUTERIZED TOMOGRAPHY",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Social and Behavioral Sciences – Associate in Arts Degree — Associate of Science",
       "credential": "AS",
       "program_code": null,
@@ -26335,179 +26508,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Radiologic Technology – Associate in Science Degree, Certificate of Achievement — Associate of Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/radiology/radiologic-technology-as-cert-achievement/",
-      "total_credits": 81,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 81,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "RDTC",
-              "number": "100",
-              "title": "INTRODUCTION TO MEDICAL IMAGING",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "RDTC",
-              "number": "101",
-              "title": "MEDICAL PROCEDURES FOR THE TECHNOLOGIST",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "RDTC",
-              "number": "102",
-              "title": "RADIATION PROTECTION & RADIOBIOLOGY",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "RDTC",
-              "number": "103A",
-              "title": "RADIOGRAPHIC ANATOMY AND POSITIONING, A",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "RDTC",
-              "number": "110",
-              "title": "PROFESSIONAL ETHICS",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "RDTC",
-              "number": "112A",
-              "title": "RADIOLOGIC PHYSICS, A",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "RDTC",
-              "number": "117A",
-              "title": "CLINICAL PRACTICUM, 1",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "RDTC",
-              "number": "113",
-              "title": "CLINICAL PRACTICUM, 3",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "RDTC",
-              "number": "103B",
-              "title": "RADIOGRAPHIC ANATOMY AND POSITIONING, B",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "RDTC",
-              "number": "104",
-              "title": "PRINCIPLES OF RADIOGRAPHIC IMAGING",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "RDTC",
-              "number": "112B",
-              "title": "RADIOLOGIC PHYSICS, B",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "RDTC",
-              "number": "117B",
-              "title": "CLINICAL PRACTICUM, 2",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "RDTC",
-              "number": "119",
-              "title": "CLINICAL PRACTICUM, 4",
-              "credits": 7,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "RDTC",
-              "number": "103C",
-              "title": "CROSS SECTIONAL ANATOMY",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "RDTC",
-              "number": "105",
-              "title": "SPECIAL PROCEDURES",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "RDTC",
-              "number": "111",
-              "title": "DIGITAL RADIOGRAPHY",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "RDTC",
-              "number": "117C",
-              "title": "CLINICAL PRACTICUM, 5",
-              "credits": 9,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "RDTC",
-              "number": "113B",
-              "title": "CLINICAL PRACTICUM, B",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "RDTC",
-              "number": "116",
-              "title": "RADIOLOGIC TECHNOLOGY REVIEW",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "RDTC",
-              "number": "117D",
-              "title": "CLINICAL PRACTICUM, 6",
-              "credits": 7,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "RDTC",
-              "number": "121",
-              "title": "MAMMOGRAPHY PROCEDURES",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "RDTC",
-              "number": "123",
-              "title": "COMPUTERIZED TOMOGRAPHY",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Speech-Language Pathology Assistant – Associate in Science Degree — Associate of Science",
       "credential": "AS",
       "program_code": null,
@@ -27137,6 +27137,109 @@
       "matched_program_slug": null
     },
     {
+      "title": "Media Programming & Management – Occupational Skills Certificate — Associate of Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/television-radio/media-programming-management-occupational-skills-cert/",
+      "total_credits": 16,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 16,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "TVR",
+              "number": "001",
+              "title": "INTRODUCTION TO ELECTRONIC MEDIA",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "019",
+              "title": "MEDIA AESTHETICS AND CINEMATIC ARTS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "021",
+              "title": "THE BUSINESS OF TELEVISION AND ELECTRONIC MEDIA",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "010",
+              "title": "INTRODUCTION TO MANAGEMENT",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "002A",
+              "title": "BEGINNING AUDIO PRODUCTION",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "007",
+              "title": "BEGINNING TV STUDIO PRODUCTION",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "012",
+              "title": "MEDIA PERFORMANCE",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "014A",
+              "title": "BEGINNING RADIO PRODUCTION",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "015",
+              "title": "MEDIA WRITING",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "016A",
+              "title": "PRODUCING & DIRECTING I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "017A",
+              "title": "TELEVISION AND FILM SCRIPT WRITING",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "018",
+              "title": "MULTIMEDIA NEWS PRODUCTION",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "business-administration"
+    },
+    {
       "title": "Television Operations – Associate in Science Degree, Certificate of Achievement — Associate of Science",
       "credential": "AS",
       "program_code": null,
@@ -27247,109 +27350,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Media Programming & Management – Occupational Skills Certificate — Associate of Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/television-radio/media-programming-management-occupational-skills-cert/",
-      "total_credits": 16,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 16,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "TVR",
-              "number": "001",
-              "title": "INTRODUCTION TO ELECTRONIC MEDIA",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "019",
-              "title": "MEDIA AESTHETICS AND CINEMATIC ARTS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "021",
-              "title": "THE BUSINESS OF TELEVISION AND ELECTRONIC MEDIA",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "010",
-              "title": "INTRODUCTION TO MANAGEMENT",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "002A",
-              "title": "BEGINNING AUDIO PRODUCTION",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "007",
-              "title": "BEGINNING TV STUDIO PRODUCTION",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "012",
-              "title": "MEDIA PERFORMANCE",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "014A",
-              "title": "BEGINNING RADIO PRODUCTION",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "015",
-              "title": "MEDIA WRITING",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "016A",
-              "title": "PRODUCING & DIRECTING I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "017A",
-              "title": "TELEVISION AND FILM SCRIPT WRITING",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "018",
-              "title": "MULTIMEDIA NEWS PRODUCTION",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "business-administration"
-    },
-    {
       "title": "Television Post Production – Occupational Skills Certificate — Associate of Science",
       "credential": "AS",
       "program_code": null,
@@ -27396,6 +27396,238 @@
               "number": "142",
               "title": "ADVANCED DIGITAL VIDEO EFFECTS EDITING",
               "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Television Production – Occupational Skills Certificate — Associate of Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/television-radio/television-production-occupational-skills-cert/",
+      "total_credits": 16,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 16,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "TVR",
+              "number": "007",
+              "title": "BEGINNING TV STUDIO PRODUCTION",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "016A",
+              "title": "PRODUCING & DIRECTING I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "016B",
+              "title": "PRODUCING AND DIRECTING II",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "015",
+              "title": "MEDIA WRITING",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "017A",
+              "title": "TELEVISION AND FILM SCRIPT WRITING",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "018",
+              "title": "MULTIMEDIA NEWS PRODUCTION",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "019",
+              "title": "MEDIA AESTHETICS AND CINEMATIC ARTS",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "021",
+              "title": "THE BUSINESS OF TELEVISION AND ELECTRONIC MEDIA",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "024",
+              "title": "DOCUMENTARY AND REALITY PRODUCTION",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Television and Radio – Video Post-Production – Certificate of Achievement — Associate of Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/television-radio/television-radio-video-post-production-cert-achievement/",
+      "total_credits": 26,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 26,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "TVR",
+              "number": "002A",
+              "title": "BEGINNING AUDIO PRODUCTION",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "007",
+              "title": "BEGINNING TV STUDIO PRODUCTION",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "024",
+              "title": "DOCUMENTARY AND REALITY PRODUCTION",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "041",
+              "title": "BEGINNING DIGITAL VIDEO EDITING",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "141B",
+              "title": "INTERMEDIATE DIGITAL VIDEO EDITING",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "142",
+              "title": "ADVANCED DIGITAL VIDEO EFFECTS EDITING",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "143",
+              "title": "DIGITAL AUDIO WORKSTATION SKILLS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "144",
+              "title": "DIGITAL NON-LINEAR ASSISTANT EDITING",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "117",
+              "title": "TELEVISION AND RADIO WORKSHOP",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "119",
+              "title": "SPORTS RADIO BROADCASTING WORKSHOP",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "120",
+              "title": "RADIO PRODUCTION WORKSHOP",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "124",
+              "title": "TELEVISION FIELD PRODUCTION",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "128A",
+              "title": "TV OPERATIONS INTERNSHIP",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Video Operations – Occupational Skills Certificate — Associate of Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/television-radio/video-operations-occupational-skills-cert/",
+      "total_credits": 10,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 10,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "TVR",
+              "number": "007",
+              "title": "BEGINNING TV STUDIO PRODUCTION",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "107",
+              "title": "INTERMEDIATE VIDEO PRODUCTION OPERATIONS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "108",
+              "title": "TELEVISION OPERATIONS",
+              "credits": 4,
               "or_alternatives": []
             }
           ]
@@ -27666,46 +27898,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Video Operations – Occupational Skills Certificate — Associate of Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/television-radio/video-operations-occupational-skills-cert/",
-      "total_credits": 10,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 10,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "TVR",
-              "number": "007",
-              "title": "BEGINNING TV STUDIO PRODUCTION",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "107",
-              "title": "INTERMEDIATE VIDEO PRODUCTION OPERATIONS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "108",
-              "title": "TELEVISION OPERATIONS",
-              "credits": 4,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Writing for Film, Television & Radio – Occupational Skills Certificate — Associate of Science",
       "credential": "AS",
       "program_code": null,
@@ -27772,116 +27964,6 @@
               "prefix": "TVR",
               "number": "021",
               "title": "THE BUSINESS OF TELEVISION AND ELECTRONIC MEDIA",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Television and Radio – Video Post-Production – Certificate of Achievement — Associate of Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/television-radio/television-radio-video-post-production-cert-achievement/",
-      "total_credits": 26,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 26,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "TVR",
-              "number": "002A",
-              "title": "BEGINNING AUDIO PRODUCTION",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "007",
-              "title": "BEGINNING TV STUDIO PRODUCTION",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "024",
-              "title": "DOCUMENTARY AND REALITY PRODUCTION",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "041",
-              "title": "BEGINNING DIGITAL VIDEO EDITING",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "141B",
-              "title": "INTERMEDIATE DIGITAL VIDEO EDITING",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "142",
-              "title": "ADVANCED DIGITAL VIDEO EFFECTS EDITING",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "143",
-              "title": "DIGITAL AUDIO WORKSTATION SKILLS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "144",
-              "title": "DIGITAL NON-LINEAR ASSISTANT EDITING",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "117",
-              "title": "TELEVISION AND RADIO WORKSHOP",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "119",
-              "title": "SPORTS RADIO BROADCASTING WORKSHOP",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "120",
-              "title": "RADIO PRODUCTION WORKSHOP",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "124",
-              "title": "TELEVISION FIELD PRODUCTION",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "128A",
-              "title": "TV OPERATIONS INTERNSHIP",
               "credits": 0,
               "or_alternatives": []
             }
@@ -28358,88 +28440,6 @@
         }
       ],
       "matched_program_slug": "welding"
-    },
-    {
-      "title": "Television Production – Occupational Skills Certificate — Associate of Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/television-radio/television-production-occupational-skills-cert/",
-      "total_credits": 16,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 16,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "TVR",
-              "number": "007",
-              "title": "BEGINNING TV STUDIO PRODUCTION",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "016A",
-              "title": "PRODUCING & DIRECTING I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "016B",
-              "title": "PRODUCING AND DIRECTING II",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "015",
-              "title": "MEDIA WRITING",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "017A",
-              "title": "TELEVISION AND FILM SCRIPT WRITING",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "018",
-              "title": "MULTIMEDIA NEWS PRODUCTION",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "019",
-              "title": "MEDIA AESTHETICS AND CINEMATIC ARTS",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "021",
-              "title": "THE BUSINESS OF TELEVISION AND ELECTRONIC MEDIA",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "024",
-              "title": "DOCUMENTARY AND REALITY PRODUCTION",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
     }
   ]
 }
