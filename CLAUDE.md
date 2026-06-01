@@ -8,9 +8,9 @@ A national community college course navigator. Helps students find classes, plan
 
 ## Scope
 
-The project is **national, expanding state-by-state**. East Coast is nearly complete. Never treat this as a Virginia-only tool — VA was the original scope but the architecture is multi-state.
+The project is **national, expanding state-by-state**. All 50 states + DC are now registered in the registry. Never treat this as a Virginia-only tool — VA was the original scope but the architecture is multi-state.
 
-Currently covered states (as of this writing): ct, dc, de, ga, ma, md, me, nc, nh, nj, ny, pa, ri, sc, tn, va, vt. Run `getAllStates()` for the authoritative list.
+Run `getAllStates()` for the authoritative list — never restate it here (it goes stale, and this file is always in context). **Registration ≠ data completeness:** a state can be registered with a config + `data/{slug}/` directory and still have empty or stub data. The remaining work is raising each registered state's data quality (courses, transfers, prereqs, programs, planner) — use `/state-audit` to grade where each one actually stands.
 
 ## Stack
 
