@@ -90,6 +90,7 @@ interface AuditResult {
   config: {
     seniorWaiverSet: boolean;
     seniorWaiverPlaceholder: boolean;
+    seniorWaiverVerifiedAbsent: boolean;
     popularCoursesCount: number;
     brandingComplete: boolean;
     brandingGaps: string[];
@@ -362,7 +363,9 @@ function gradeConfig(config: AuditResult["config"]): GradeResult {
     return { grade: "D", reason: "seniorWaiver placeholder text detected" };
   }
   const gaps: string[] = [];
-  if (!config.seniorWaiverSet) gaps.push("seniorWaiver missing");
+  if (!config.seniorWaiverSet && !config.seniorWaiverVerifiedAbsent) {
+    gaps.push("seniorWaiver missing");
+  }
   if (config.popularCoursesCount === 0) gaps.push("popularCourses empty");
   if (!config.defaultZipSet) gaps.push("defaultZip missing");
   if (!config.brandingComplete) gaps.push(`branding: ${config.brandingGaps.join(", ")}`);
@@ -579,6 +582,11 @@ function auditState(slug: string): AuditResult {
   const seniorWaiverPlaceholder = /verify with|placeholder|not yet verified/i.test(
     configText.match(/seniorWaiver:\s*\{([\s\S]*?)\}/)?.[1] || "",
   );
+  // Some states have verified that no senior-tuition waiver exists. Recognize
+  // the marker `// VERIFIED: no senior waiver` near the `seniorWaiver: null`
+  // line so the grader treats absence-by-verification as resolved, not a gap.
+  const seniorWaiverVerifiedAbsent = !seniorWaiverSet &&
+    /VERIFIED:\s*no senior waiver/i.test(configText);
   const popularCourses = extractStringArray(configText, "popularCourses");
   const defaultZipSet = /defaultZip:\s*"[^"]+"/i.test(configText);
 
@@ -685,6 +693,7 @@ function auditState(slug: string): AuditResult {
     config: {
       seniorWaiverSet,
       seniorWaiverPlaceholder,
+      seniorWaiverVerifiedAbsent,
       popularCoursesCount: popularCourses.length,
       brandingComplete: brandingGaps.length === 0,
       brandingGaps,
