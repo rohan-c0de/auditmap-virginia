@@ -61,6 +61,17 @@ const msConfig: StateConfig = {
       // Bespoke PHP schedule viewer at MGCCC
       // (mgccc.edu/website_schedules/index.php — multi-campus + multi-term).
       { scripts: ["scripts/ms/scrape-mgccc.ts"], runner: "http" },
+      // ICC custom DNN module — public UI, API needs the DNN
+      // RequestVerificationToken + ModuleId/TabId headers harvested from the
+      // rendered page (no SSO).
+      { scripts: ["scripts/ms/scrape-itawamba.ts"], runner: "http" },
+      // Hinds CC — ASP.NET WebForms with full viewstate; driven via
+      // headless Chromium with per-subject iteration to bypass the
+      // server-side result-set cap.
+      { scripts: ["scripts/ms/scrape-hinds.ts"], runner: "playwright" },
+      // Coahoma CC — Jenzabar JICS Course_Schedules portlet; same
+      // viewstate-driven postback pattern as Hinds, per-department iteration.
+      { scripts: ["scripts/ms/scrape-coahoma.ts"], runner: "playwright" },
     ],
     transfers: [
       // University of Mississippi publishes public per-CC course-equivalency
@@ -75,7 +86,7 @@ const msConfig: StateConfig = {
     programs: [{ scripts: ["scripts/ms/scrape-programs.ts"], runner: "http" }],
   },
 
-  // 7 MS colleges with no public section data (verified 2026-06 via
+  // 4 MS colleges with no public section data (verified 2026-06 via
   // untouchable-investigator + manual probes).
   documentedCeilings: {
     courses: [
@@ -90,11 +101,6 @@ const msConfig: StateConfig = {
           "ECCC runs Jenzabar JICS at my.eccc.edu; the Course_Schedules portlet renders an empty 'Please log in to view this page' shell for guests (unlike Coahoma's identical platform which does grant guest access). Verified 2026-06.",
       },
       {
-        collegeSlug: "itawamba-community-college",
-        reason:
-          "ICC's class schedule is a custom DNN module (ICC_Live_Class_Schedule) at iccms.edu/CourseSchedule whose getTerms/getCourses API returns {Message: 'Authorization has been denied for this request.'} to unauthenticated callers. ssb.iccms.edu redirects to a Banner 8 login. Verified 2026-06.",
-      },
-      {
         collegeSlug: "northeast-mississippi-community-college",
         reason:
           "NEMCC's Banner SSB 9 at reg-prod.ec.nemcc.edu has guestLoginEnabled=false on every endpoint — no public class search. No alternate PDF/HTML schedule on nemcc.edu. Verified 2026-06.",
@@ -103,16 +109,6 @@ const msConfig: StateConfig = {
         collegeSlug: "pearl-river-community-college",
         reason:
           "PRCC's Banner Extensibility ClassSearch page advertises guestLoginEnabled=true in its meta tags, but every /BannerExtensibility/internalPb/virtualDomains/* data endpoint 302-redirects to /saml/login — the guest flag controls UI flow only, not data access. Verified 2026-06.",
-      },
-      {
-        collegeSlug: "hinds-community-college",
-        reason:
-          "DEFERRED — not a ceiling. Hinds publishes a public class search at coursesearch.hindscc.edu (ASP.NET WebForms over PeopleSoft) but it requires full __VIEWSTATE/__EVENTVALIDATION postbacks; /api/TitleSearch returns title strings only. Headless Playwright follow-up needed. Tracked separately.",
-      },
-      {
-        collegeSlug: "coahoma-community-college",
-        reason:
-          "DEFERRED — not a ceiling. Coahoma's Jenzabar JICS Course_Schedules portlet (myccc.coahomacc.edu) is publicly accessible but the search form is ASP.NET WebForms with massive __VIEWSTATE; needs Playwright. Tracked separately.",
       },
     ],
   },
