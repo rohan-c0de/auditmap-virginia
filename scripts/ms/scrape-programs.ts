@@ -16,42 +16,42 @@ import type { AcalogProgramConfig } from "../lib/scrape-acalog-programs.js";
 
 const COLLEGES: AcalogProgramConfig[] = [
   {
-    collegeSlug: "mgccc",
+    collegeSlug: "mississippi-gulf-coast-community-college",
     baseUrl: "https://catalog.mgccc.edu",
     catoidFallback: 32,
     programNavoids: [3113],
     autoDiscoverCatoid: false,
   },
   {
-    collegeSlug: "hinds",
+    collegeSlug: "hinds-community-college",
     baseUrl: "https://catalog.hindscc.edu",
     catoidFallback: 22,
     programNavoids: [1040, 1041],
     autoDiscoverCatoid: false,
   },
   {
-    collegeSlug: "eastms",
+    collegeSlug: "east-mississippi-community-college",
     baseUrl: "https://catalog.eastms.edu",
     catoidFallback: 6,
     programNavoids: [601],
     autoDiscoverCatoid: false,
   },
   {
-    collegeSlug: "jcjc",
+    collegeSlug: "jones-county-junior-college",
     baseUrl: "https://catalog.jcjc.edu",
     catoidFallback: 9,
     programNavoids: [638],
     autoDiscoverCatoid: false,
   },
   {
-    collegeSlug: "meridian",
+    collegeSlug: "meridian-community-college",
     baseUrl: "https://catalog.meridiancc.edu",
     catoidFallback: 6,
     programNavoids: [141],
     autoDiscoverCatoid: false,
   },
   {
-    collegeSlug: "northwest",
+    collegeSlug: "northwest-mississippi-community-college",
     baseUrl: "https://catalog.northwestms.edu",
     catoidFallback: 8,
     programNavoids: [375],
