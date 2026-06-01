@@ -80,6 +80,21 @@ const laConfig: StateConfig = {
       { scripts: ["scripts/la/scrape-programs.ts"], runner: "http" },
     ],
   },
+  // Northshore Technical CC (12th LCTCS college) has no public section data:
+  // it's the one LCTCS member not on the shared Banner SSB host, and its
+  // sections sit behind LoLA SSO. The Coursedog catalog (already scraped) gives
+  // course metadata + prereqs via the aggregator, but never sections — so it's
+  // not surfaced as course coverage (no fake/section-less listings — invariant
+  // #4). Recorded as a ceiling so the audit excuses it from the denominator.
+  documentedCeilings: {
+    courses: [
+      {
+        collegeSlug: "northshore-technical-community-college",
+        reason:
+          "Northshore Technical CC is the only LCTCS college not on the shared Banner SSB host (reg-prod.ec.lctcs.edu); its sections sit behind LoLA SSO with no public guest class search. Only the Coursedog catalog is reachable (course metadata + 23 prereqs, fed to the aggregator) — never sections. Verified 2026-06.",
+      },
+    ],
+  },
 };
 
 export default laConfig;
