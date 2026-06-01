@@ -73,7 +73,14 @@ const neConfig: StateConfig = {
     programs: [
       { scripts: ["scripts/ne/scrape-programs.ts"], runner: "http" },
     ],
-    // manual-only: transfers — no articulation portal registered for NE.
+    // Nebraska has no CollegeTransfer.Net in-state data and the statewide
+    // Transfer Nebraska portal funnels into login-gated Transferology. UNL's
+    // public Transfer Course Equivalency tool (ASP.NET WebForms) lists all 9
+    // NE community colleges' course-to-course equivalencies. scrape-transfer.ts
+    // posts each institution id and parses the results table.
+    // COVERAGE GAP: UNL is the only University of Nebraska campus with a public
+    // tool (UNO/UNK use login-adjacent CollegeSource TES views — a follow-up).
+    transfers: [{ scripts: ["scripts/ne/scrape-transfer.ts"], runner: "http" }],
   },
 };
 
