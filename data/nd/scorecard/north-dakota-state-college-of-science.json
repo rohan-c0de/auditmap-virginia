@@ -1,0 +1,46 @@
+{
+  "unitid": 200305,
+  "schoolName": "North Dakota State College of Science",
+  "state": "ND",
+  "city": "Wahpeton",
+  "schoolUrl": "https://www.ndscs.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-06-01T02:32:49.345Z",
+  "size": 1909,
+  "shareFirstGeneration": 0.2389853138,
+  "cost": {
+    "tuitionInState": 5974,
+    "tuitionOutOfState": 6973,
+    "attendanceAcademicYear": 17265,
+    "avgNetPricePublic": 11261,
+    "bookSupply": 1000,
+    "roomBoardOffCampus": 8096,
+    "netPriceByIncome": {
+      "0_30000": 7803,
+      "30001_48000": 7297,
+      "48001_75000": 9678,
+      "75001_110000": 12078,
+      "110001_plus": 14772
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.1631,
+    "federalLoanRate": 0.3045,
+    "medianDebtCompleters": 12000
+  },
+  "completion": {
+    "completionRate150nt": 0.5472,
+    "completionRate200nt": 0.5139,
+    "transferRate": 0,
+    "retentionRateFullTime": 0.7875,
+    "retentionRatePartTime": 0.4167
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 50513,
+    "median1YrAfterCompletion": 49092,
+    "percentile25_10YrsAfterEntry": 32764,
+    "percentile75_10YrsAfterEntry": 70325,
+    "shareEarningAboveHsGrad": 0.745
+  }
+}

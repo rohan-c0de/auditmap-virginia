@@ -1,0 +1,46 @@
+{
+  "unitid": 173115,
+  "schoolName": "Northwest Technical College",
+  "state": "MN",
+  "city": "Bemidji",
+  "schoolUrl": "https://www.ntcmn.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-06-01T02:32:36.059Z",
+  "size": 751,
+  "shareFirstGeneration": 0.2742537313,
+  "cost": {
+    "tuitionInState": 6254,
+    "tuitionOutOfState": 6254,
+    "attendanceAcademicYear": 16905,
+    "avgNetPricePublic": 10996,
+    "bookSupply": 1600,
+    "roomBoardOffCampus": 11216,
+    "netPriceByIncome": {
+      "0_30000": 6638,
+      "30001_48000": 7948,
+      "48001_75000": 10641,
+      "75001_110000": 13654,
+      "110001_plus": 16137
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.3174,
+    "federalLoanRate": 0.3307,
+    "medianDebtCompleters": 15000
+  },
+  "completion": {
+    "completionRate150nt": 0.5,
+    "completionRate200nt": 0.5161,
+    "transferRate": 0.1304,
+    "retentionRateFullTime": 0.7391,
+    "retentionRatePartTime": 0.5641
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 42930,
+    "median1YrAfterCompletion": 43808,
+    "percentile25_10YrsAfterEntry": 23385,
+    "percentile75_10YrsAfterEntry": 61335,
+    "shareEarningAboveHsGrad": 0.605
+  }
+}

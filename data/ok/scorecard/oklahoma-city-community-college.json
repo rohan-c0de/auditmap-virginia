@@ -1,0 +1,46 @@
+{
+  "unitid": 207449,
+  "schoolName": "Oklahoma City Community College",
+  "state": "OK",
+  "city": "Oklahoma City",
+  "schoolUrl": "www.occc.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-06-01T02:33:26.953Z",
+  "size": 9758,
+  "shareFirstGeneration": 0.4891839794,
+  "cost": {
+    "tuitionInState": 4059,
+    "tuitionOutOfState": 9810,
+    "attendanceAcademicYear": 11439,
+    "avgNetPricePublic": 4739,
+    "bookSupply": 1600,
+    "roomBoardOffCampus": 8600,
+    "netPriceByIncome": {
+      "0_30000": 3899,
+      "30001_48000": 4276,
+      "48001_75000": 5480,
+      "75001_110000": 9351,
+      "110001_plus": 10633
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.252,
+    "federalLoanRate": 0.101,
+    "medianDebtCompleters": 10388
+  },
+  "completion": {
+    "completionRate150nt": 0.2655,
+    "completionRate200nt": 0.2811,
+    "transferRate": 0.154,
+    "retentionRateFullTime": 0.6005,
+    "retentionRatePartTime": 0.2684
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 38146,
+    "median1YrAfterCompletion": 44389,
+    "percentile25_10YrsAfterEntry": 19206,
+    "percentile75_10YrsAfterEntry": 58011,
+    "shareEarningAboveHsGrad": 0.599
+  }
+}

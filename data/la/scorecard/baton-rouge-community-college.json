@@ -1,0 +1,46 @@
+{
+  "unitid": 437103,
+  "schoolName": "Baton Rouge Community College",
+  "state": "LA",
+  "city": "Baton Rouge",
+  "schoolUrl": "www.mybrcc.edu/",
+  "ownership": 1,
+  "predominantDegree": 1,
+  "fetchedAt": "2026-06-01T02:32:32.781Z",
+  "size": 8362,
+  "shareFirstGeneration": 0.4828714816,
+  "cost": {
+    "tuitionInState": 4321,
+    "tuitionOutOfState": 4321,
+    "attendanceAcademicYear": 16522,
+    "avgNetPricePublic": 9474,
+    "bookSupply": 1353,
+    "roomBoardOffCampus": 11802,
+    "netPriceByIncome": {
+      "0_30000": 8860,
+      "30001_48000": 8156,
+      "48001_75000": 10336,
+      "75001_110000": 14051,
+      "110001_plus": 15056
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.4573,
+    "federalLoanRate": 0.3498,
+    "medianDebtCompleters": 12450
+  },
+  "completion": {
+    "completionRate150nt": 0.3102,
+    "completionRate200nt": 0.3071,
+    "transferRate": 0.0934,
+    "retentionRateFullTime": 0.5303,
+    "retentionRatePartTime": 0.152
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 34581,
+    "median1YrAfterCompletion": 34583,
+    "percentile25_10YrsAfterEntry": 16839,
+    "percentile75_10YrsAfterEntry": 53605,
+    "shareEarningAboveHsGrad": 0.553
+  }
+}

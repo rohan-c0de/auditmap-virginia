@@ -1,0 +1,46 @@
+{
+  "unitid": 234696,
+  "schoolName": "Bellingham Technical College",
+  "state": "WA",
+  "city": "Bellingham",
+  "schoolUrl": "https://www.btc.edu/",
+  "ownership": 1,
+  "predominantDegree": 1,
+  "fetchedAt": "2026-06-01T02:33:58.540Z",
+  "size": 1733,
+  "shareFirstGeneration": 0.405451448,
+  "cost": {
+    "tuitionInState": 4431,
+    "tuitionOutOfState": 5809,
+    "attendanceAcademicYear": 16104,
+    "avgNetPricePublic": 5997,
+    "bookSupply": 528,
+    "roomBoardOffCampus": 17310,
+    "netPriceByIncome": {
+      "0_30000": 4587,
+      "30001_48000": 6826,
+      "48001_75000": 6510,
+      "75001_110000": 6412,
+      "110001_plus": 15444
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.3086,
+    "federalLoanRate": 0.0789,
+    "medianDebtCompleters": 17459
+  },
+  "completion": {
+    "completionRate150nt": null,
+    "completionRate200nt": null,
+    "transferRate": null,
+    "retentionRateFullTime": null,
+    "retentionRatePartTime": null
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 49748,
+    "median1YrAfterCompletion": 66039,
+    "percentile25_10YrsAfterEntry": 26978,
+    "percentile75_10YrsAfterEntry": 76338,
+    "shareEarningAboveHsGrad": 0.701
+  }
+}

@@ -297,5 +297,31 @@
       }
     ],
     "note": "no candidate is a public institution with non-null in-state tuition"
+  },
+  {
+    "state": "wa",
+    "id": "spokane-community-college",
+    "name": "Spokane Community College",
+    "unitid": null,
+    "tier": "review",
+    "candidates": [
+      {
+        "unitid": 236692,
+        "name": "Spokane Community College",
+        "ownership": 1,
+        "predominantDegree": 2,
+        "inStateTuition": 5461,
+        "size": 4533
+      },
+      {
+        "unitid": 236708,
+        "name": "Spokane Falls Community College",
+        "ownership": 1,
+        "predominantDegree": 2,
+        "inStateTuition": 5461,
+        "size": 3199
+      }
+    ],
+    "note": "2 plausible public CCs returned — needs human disambiguation"
   }
 ]

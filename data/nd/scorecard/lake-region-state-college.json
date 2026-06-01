@@ -1,0 +1,46 @@
+{
+  "unitid": 200192,
+  "schoolName": "Lake Region State College",
+  "state": "ND",
+  "city": "Devils Lake",
+  "schoolUrl": "www.lrsc.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-06-01T02:32:48.455Z",
+  "size": 611,
+  "shareFirstGeneration": 0.337164751,
+  "cost": {
+    "tuitionInState": 5520,
+    "tuitionOutOfState": 5520,
+    "attendanceAcademicYear": 18731,
+    "avgNetPricePublic": 13577,
+    "bookSupply": 1000,
+    "roomBoardOffCampus": 9490,
+    "netPriceByIncome": {
+      "0_30000": 9238,
+      "30001_48000": 12396,
+      "48001_75000": 12807,
+      "75001_110000": 15312,
+      "110001_plus": 16525
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.1017,
+    "federalLoanRate": 0.1348,
+    "medianDebtCompleters": 10293
+  },
+  "completion": {
+    "completionRate150nt": 0.5241,
+    "completionRate200nt": 0.5118,
+    "transferRate": 0.1627,
+    "retentionRateFullTime": 0.65,
+    "retentionRatePartTime": 0.5
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 49502,
+    "median1YrAfterCompletion": 50317,
+    "percentile25_10YrsAfterEntry": 32336,
+    "percentile75_10YrsAfterEntry": 68657,
+    "shareEarningAboveHsGrad": 0.639
+  }
+}
