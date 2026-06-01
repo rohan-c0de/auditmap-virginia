@@ -8,104 +8,74 @@
  *
  * All functions return `Date | null`; callers should gracefully degrade
  * when null (data files missing or unreadable).
+ *
+ * Implementation note: this module used to call `fs.readdirSync` /
+ * `fs.statSync` with dynamic `path.join("data", state, "courses", slug)`
+ * arguments. Next's bundler tracer could not narrow those dynamic paths
+ * and conservatively pulled the entire `data/` tree (~1.5 GB) into every
+ * function that transitively imported the module, blowing past Vercel's
+ * 250 MB serverless function cap (the previous `outputFileTracingExcludes`
+ * workaround stopped holding in Next 16, which warns the pattern is
+ * "overly broad"). All freshness lookups now read from a small
+ * `data/last-updated.json` manifest built by
+ * `scripts/build-last-updated-snapshot.ts` at build time — a 57 KB file
+ * with per-college/per-dataset ISO mtimes — so no runtime fs access is
+ * needed.
  */
 
-import fs from "node:fs";
-import path from "node:path";
+// Static JSON import — inlined at bundle time. Falls back to {} if the
+// snapshot is missing (fresh checkout / test environment).
+import snapshotJson from "../data/last-updated.json";
 
-const DATA_ROOT = path.join(process.cwd(), "data");
-
-// -------------------------------------------------------------------------
-// Helpers
-// -------------------------------------------------------------------------
-
-/** Return the mtime of a single file, or null if it doesn't exist. */
-function fileMtime(filePath: string): Date | null {
-  try {
-    return fs.statSync(filePath).mtime;
-  } catch {
-    return null;
-  }
+interface LastUpdatedSnapshot {
+  courses: Record<string, Record<string, string>>;
+  courses_state: Record<string, string>;
+  programs: Record<string, Record<string, string>>;
+  programs_state: Record<string, string>;
+  transfers: Record<string, string>;
 }
 
-/** Return the most recent mtime across an array of files. */
-function latestMtime(filePaths: string[]): Date | null {
-  let latest: Date | null = null;
-  for (const fp of filePaths) {
-    const mt = fileMtime(fp);
-    if (mt && (!latest || mt > latest)) latest = mt;
-  }
-  return latest;
-}
+const SNAPSHOT: LastUpdatedSnapshot = (snapshotJson as unknown as LastUpdatedSnapshot) ?? {
+  courses: {},
+  courses_state: {},
+  programs: {},
+  programs_state: {},
+  transfers: {},
+};
 
-// -------------------------------------------------------------------------
-// Per-page helpers
-// -------------------------------------------------------------------------
+function parseIso(s: string | undefined): Date | null {
+  if (!s) return null;
+  const d = new Date(s);
+  return isNaN(d.getTime()) ? null : d;
+}
 
 /**
  * Per-college page: latest mtime across all term JSON files for this college.
  */
 export function getCollegeLastUpdated(
   state: string,
-  collegeSlug: string
+  collegeSlug: string,
 ): Date | null {
-  const dir = path.join(DATA_ROOT, state, "courses", collegeSlug);
-  try {
-    const files = fs.readdirSync(dir).filter((f) => f.endsWith(".json"));
-    return latestMtime(files.map((f) => path.join(dir, f)));
-  } catch {
-    return null;
-  }
+  return parseIso(SNAPSHOT.courses?.[state]?.[collegeSlug]);
 }
 
 /**
- * Per-course page: latest mtime across all term files that could contain this
- * course for any college in the state.
- *
- * Scanning every college directory would be expensive, so we use the state-
- * level courses directory mtime as a proxy — still accurate because the
- * scraper rewrites term files atomically.
+ * Per-course page: state-level max mtime across every college's term files.
  */
 export function getCourseLastUpdated(state: string): Date | null {
-  const dir = path.join(DATA_ROOT, state, "courses");
-  try {
-    // Walk one level (college dirs) and take the latest mtime of any term file
-    const collegeDirs = fs
-      .readdirSync(dir, { withFileTypes: true })
-      .filter((d) => d.isDirectory());
-    const allTermFiles: string[] = [];
-    for (const cd of collegeDirs) {
-      const collegePath = path.join(dir, cd.name);
-      const files = fs
-        .readdirSync(collegePath)
-        .filter((f) => f.endsWith(".json"));
-      allTermFiles.push(...files.map((f) => path.join(collegePath, f)));
-    }
-    return latestMtime(allTermFiles);
-  } catch {
-    return null;
-  }
+  return parseIso(SNAPSHOT.courses_state?.[state]);
 }
 
 /**
- * Per-program page: mtime of the programs directory for this state.
+ * Per-program page: mtime for one college's programs file, or the state-level
+ * max across all colleges when no slug is given.
  */
 export function getProgramLastUpdated(
   state: string,
-  collegeSlug?: string
+  collegeSlug?: string,
 ): Date | null {
-  const dir = path.join(DATA_ROOT, state, "programs");
-  try {
-    if (collegeSlug) {
-      const file = path.join(dir, `${collegeSlug}.json`);
-      return fileMtime(file);
-    }
-    // All programs across state — latest file
-    const files = fs.readdirSync(dir).filter((f) => f.endsWith(".json"));
-    return latestMtime(files.map((f) => path.join(dir, f)));
-  } catch {
-    return null;
-  }
+  if (collegeSlug) return parseIso(SNAPSHOT.programs?.[state]?.[collegeSlug]);
+  return parseIso(SNAPSHOT.programs_state?.[state]);
 }
 
 /**
@@ -117,12 +87,8 @@ export const getSubjectLastUpdated = getCourseLastUpdated;
  * Transfer data: mtime of the transfer-equiv.json for this state.
  */
 export function getTransferLastUpdated(state: string): Date | null {
-  return fileMtime(path.join(DATA_ROOT, state, "transfer-equiv.json"));
+  return parseIso(SNAPSHOT.transfers?.[state]);
 }
-
-// -------------------------------------------------------------------------
-// Formatting
-// -------------------------------------------------------------------------
 
 /**
  * Format a Date for user-visible display.

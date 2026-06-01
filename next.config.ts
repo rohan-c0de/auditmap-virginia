@@ -41,34 +41,24 @@ const nextConfig: NextConfig = {
     // reads transfers from Supabase; the local JSON fallback in
     // lib/transfer.ts is only exercised in local dev (no size cap).
   },
-  // `lib/data-freshness.ts` (#401) calls `fs.readdirSync(path.join(
-  // "data", state, "courses", collegeSlug))` with dynamic state+slug
-  // parameters to look up the latest mtime per course-data directory.
-  // Next.js' tracer can't narrow the dynamic pattern, so it
-  // conservatively bundles ALL matching files into every function that
-  // imports the module — ~180 MB of course JSON across 25+ states.
-  // That blew past Vercel's 250 MB serverless function cap on the
-  // post-#402 main deploy.
+  // `lib/data-freshness.ts` used to call `fs.readdirSync` with dynamic
+  // `path.join("data", state, "courses", slug)` arguments. Next's bundler
+  // tracer couldn't narrow those, so it conservatively pulled the entire
+  // `data/` tree (~1.5 GB) into every function that transitively imported
+  // the module — blowing past Vercel's 250 MB serverless function cap.
+  // Earlier deploys worked around that with an `outputFileTracingExcludes`
+  // entry keyed on `"**/*"`; Next 16 now warns the pattern is "overly
+  // broad" and the exclude stopped reliably holding once total `data/`
+  // exceeded the cap (most recently after the MS PR pushed total data
+  // size up by ~8 MB).
   //
-  // Course JSON is in Supabase at runtime; the on-disk files exist
-  // only for build-time generation and the freshness mtime lookup.
-  // Excluding the dirs from function tracing means freshness lookups
-  // return null in production (no files to stat) and callers degrade
-  // to hiding the "Last updated" line — better than failing the deploy.
-  // Same exclusion for transfer-equiv.json (heavy per-state mappings,
-  // also read by data-freshness via `getTransferLastUpdated` and at
-  // runtime in `lib/transfer.ts`; the transfer routes that genuinely
-  // need it are re-included below).
-  //
-  // The follow-up to drop the null-degradation is to pre-build a
-  // small `data/{state}/.last-updated.json` manifest at scrape time
-  // and read that instead. Out of scope for this hotfix.
-  outputFileTracingExcludes: {
-    "**/*": [
-      "./data/*/courses/**",
-      "./data/*/transfer-equiv.json",
-    ],
-  },
+  // The proper fix lives in `scripts/build-last-updated-snapshot.ts`:
+  // freshness lookups now read a 57 KB pre-built `data/last-updated.json`
+  // manifest (static import, inlined at bundle time) instead of touching
+  // the filesystem. No dynamic fs paths anywhere → no tracer confusion →
+  // no exclude rule needed. `lib/transfer.ts` still imports
+  // `transfer-equiv.json` directly under specific route handlers, where
+  // the tracer narrows the import statically.
   async redirects() {
     // VCCS 2022 renames — these colleges officially changed names in 2022
     // and external links (press, Wikipedia, prior PDFs) may still point at
