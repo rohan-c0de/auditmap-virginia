@@ -13,6 +13,7 @@
     "build": "npm run build:css && npm run build:transfer-universities-cache && npm run build:transfer-coverage-rollup && next build",
     "build:transfer-universities-cache": "tsx scripts/build-transfer-universities-cache.ts",
     "build:transfer-coverage-rollup": "tsx scripts/build-transfer-coverage-rollup.ts",
+    "build:state-summaries": "tsx scripts/build-state-summaries.ts",
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
