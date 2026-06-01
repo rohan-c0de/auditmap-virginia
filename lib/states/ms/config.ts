@@ -46,10 +46,22 @@ const msConfig: StateConfig = {
     ],
   },
   scrapers: {
-    // Only Meridian CC is wired today (Banner 8). The other 14 MS colleges
-    // remain fingerprinted but unscrapped pending wrapper work for the
-    // mixed-platform mix (Colleague, Banner SSB 9, Jenzabar, custom).
-    courses: [{ scripts: ["scripts/ms/scrape-banner8.ts"], runner: "http" }],
+    courses: [
+      // Banner 8 (classic bwckschd): meridian (existing) + mississippi-delta.
+      { scripts: ["scripts/ms/scrape-banner8.ts"], runner: "http" },
+      // Banner SSB 9: holmes (api.holmescc.edu — non-canonical host).
+      { scripts: ["scripts/ms/scrape-banner-ssb.ts"], runner: "http" },
+      // Colleague Self-Service: east-mississippi (colss-prod.ec subdomain).
+      { scripts: ["scripts/ms/scrape-colleague.ts"], runner: "playwright" },
+      // Athena/Benchmark (ProGen WebSmart on IBM iSeries): southwest +
+      // northwest MS. Both expose /athena/IXSCHED.pgm publicly.
+      { scripts: ["scripts/ms/scrape-athena.ts"], runner: "http" },
+      // Bespoke PHP class-search at Jones College (class-search.jcjc.edu).
+      { scripts: ["scripts/ms/scrape-jones.ts"], runner: "http" },
+      // Bespoke PHP schedule viewer at MGCCC
+      // (mgccc.edu/website_schedules/index.php — multi-campus + multi-term).
+      { scripts: ["scripts/ms/scrape-mgccc.ts"], runner: "http" },
+    ],
     transfers: [
       // University of Mississippi publishes public per-CC course-equivalency
       // tables (olemiss.edu/registrar/transfer-equivalencies) covering all 15
@@ -61,6 +73,48 @@ const msConfig: StateConfig = {
     ],
     prereqs: [{ scripts: ["scripts/ms/scrape-catalog-prereqs.ts"], runner: "playwright" }],
     programs: [{ scripts: ["scripts/ms/scrape-programs.ts"], runner: "http" }],
+  },
+
+  // 7 MS colleges with no public section data (verified 2026-06 via
+  // untouchable-investigator + manual probes).
+  documentedCeilings: {
+    courses: [
+      {
+        collegeSlug: "copiah-lincoln-community-college",
+        reason:
+          "Co-Lin runs Jenzabar Athena on a non-standard port (access.colin.edu:444); the only public URL is athena/isclogin.pgm which is a username/password form — no guest path. Verified 2026-06.",
+      },
+      {
+        collegeSlug: "east-central-community-college",
+        reason:
+          "ECCC runs Jenzabar JICS at my.eccc.edu; the Course_Schedules portlet renders an empty 'Please log in to view this page' shell for guests (unlike Coahoma's identical platform which does grant guest access). Verified 2026-06.",
+      },
+      {
+        collegeSlug: "itawamba-community-college",
+        reason:
+          "ICC's class schedule is a custom DNN module (ICC_Live_Class_Schedule) at iccms.edu/CourseSchedule whose getTerms/getCourses API returns {Message: 'Authorization has been denied for this request.'} to unauthenticated callers. ssb.iccms.edu redirects to a Banner 8 login. Verified 2026-06.",
+      },
+      {
+        collegeSlug: "northeast-mississippi-community-college",
+        reason:
+          "NEMCC's Banner SSB 9 at reg-prod.ec.nemcc.edu has guestLoginEnabled=false on every endpoint — no public class search. No alternate PDF/HTML schedule on nemcc.edu. Verified 2026-06.",
+      },
+      {
+        collegeSlug: "pearl-river-community-college",
+        reason:
+          "PRCC's Banner Extensibility ClassSearch page advertises guestLoginEnabled=true in its meta tags, but every /BannerExtensibility/internalPb/virtualDomains/* data endpoint 302-redirects to /saml/login — the guest flag controls UI flow only, not data access. Verified 2026-06.",
+      },
+      {
+        collegeSlug: "hinds-community-college",
+        reason:
+          "DEFERRED — not a ceiling. Hinds publishes a public class search at coursesearch.hindscc.edu (ASP.NET WebForms over PeopleSoft) but it requires full __VIEWSTATE/__EVENTVALIDATION postbacks; /api/TitleSearch returns title strings only. Headless Playwright follow-up needed. Tracked separately.",
+      },
+      {
+        collegeSlug: "coahoma-community-college",
+        reason:
+          "DEFERRED — not a ceiling. Coahoma's Jenzabar JICS Course_Schedules portlet (myccc.coahomacc.edu) is publicly accessible but the search form is ASP.NET WebForms with massive __VIEWSTATE; needs Playwright. Tracked separately.",
+      },
+    ],
   },
 };
 
