@@ -2,7 +2,7 @@
   "college_slug": "pasadena-city-college",
   "catalog_year": "",
   "catalog_url": "https://curriculum.pasadena.edu/academic-programs/",
-  "scraped_at": "2026-05-31T03:23:13.360Z",
+  "scraped_at": "2026-06-01T13:44:30.407Z",
   "programs": [
     {
       "title": "Accounting – Certified Bookkeeper – Associate in Science Degree, Certificate of Achievement — Associate of Science",
@@ -64,6 +64,67 @@
               "prefix": "BUS",
               "number": "114",
               "title": "BUSINESS MATHEMATICS",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "accounting"
+    },
+    {
+      "title": "Accounting - Taxation for Enrolled Agents - Certificate of Achievement — Associate of Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/accounting/accounting-taxation-for-enrolled-agents-cert-achievement/",
+      "total_credits": 17,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 17,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACCT",
+              "number": "010",
+              "title": "BOOKKEEPING - ACCOUNTING",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACCT",
+              "number": "104B",
+              "title": "PAYROLL ACCOUNTING",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACCT",
+              "number": "104C",
+              "title": "INDIVIDUAL TAXATION",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACCT",
+              "number": "108A",
+              "title": "VOLUNTEER INCOME TAX ASSISTANCE (VITA), TAX PREPARATION",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACCT",
+              "number": "112",
+              "title": "BUSINESS TAXATION",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACCT",
+              "number": "114",
+              "title": "TAXATION ETHICS AND REPRESENTATION",
               "credits": 3,
               "or_alternatives": []
             }
@@ -162,65 +223,163 @@
       "matched_program_slug": null
     },
     {
-      "title": "Accounting - Taxation for Enrolled Agents - Certificate of Achievement — Associate of Science",
+      "title": "Anthropology – Associate in Arts Degree for Transfer — Associate of Science",
       "credential": "AS",
       "program_code": null,
-      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/accounting/accounting-taxation-for-enrolled-agents-cert-achievement/",
-      "total_credits": 17,
+      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/anthropology/anthropology-aat/",
+      "total_credits": null,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "Recommended Course Sequence",
-          "credits_required": 17,
+          "credits_required": null,
           "choose_n": null,
           "courses": [
             {
-              "prefix": "ACCT",
-              "number": "010",
-              "title": "BOOKKEEPING - ACCOUNTING",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACCT",
-              "number": "104B",
-              "title": "PAYROLL ACCOUNTING",
+              "prefix": "ANTH",
+              "number": "001",
+              "title": "INTRODUCTION TO BIOLOGICAL ANTHROPOLOGY",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "ACCT",
-              "number": "104C",
-              "title": "INDIVIDUAL TAXATION",
+              "prefix": "ANTH",
+              "number": "001H",
+              "title": "INTRODUCTION TO BIOLOGICAL ANTHROPOLOGY - HONORS",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ANTH",
+              "number": "002",
+              "title": "CULTURAL ANTHROPOLOGY",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "ACCT",
-              "number": "108A",
-              "title": "VOLUNTEER INCOME TAX ASSISTANCE (VITA), TAX PREPARATION",
-              "credits": 1,
+              "prefix": "ANTH",
+              "number": "002H",
+              "title": "HONORS CULTURAL ANTHROPOLOGY",
+              "credits": 0,
               "or_alternatives": []
             },
             {
-              "prefix": "ACCT",
-              "number": "112",
-              "title": "BUSINESS TAXATION",
+              "prefix": "ANTH",
+              "number": "003",
+              "title": "INTRODUCTION TO ARCHAEOLOGY",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "ACCT",
-              "number": "114",
-              "title": "TAXATION ETHICS AND REPRESENTATION",
-              "credits": 3,
+              "prefix": "ANTH",
+              "number": "001L",
+              "title": "BIOLOGICAL ANTHROPOLOGY LAB",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ANTH",
+              "number": "004",
+              "title": "ANTHROPOLOGY OF RELIGION, WITCHCRAFT, AND MAGIC",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ANTH",
+              "number": "005",
+              "title": "INTRODUCTION TO LINGUISTIC ANTHROPOLOGY",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSYC",
+              "number": "005",
+              "title": "RESEARCH METHODS IN PSYCHOLOGY",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SOSC",
+              "number": "017",
+              "title": "INTRODUCTION TO RESEARCH METHODS IN SOCIAL SCIENCES",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ANAT",
+              "number": "025",
+              "title": "HUMAN ANATOMY",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "GEOG",
+              "number": "011",
+              "title": "INTRODUCTION TO GEOGRAPHIC INFORMATION SYSTEMS (with Lab)",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "GEOL",
+              "number": "001",
+              "title": "PHYSICAL GEOLOGY",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "GEOL",
+              "number": "003",
+              "title": "EARTH AND SPACE SCIENCE",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ANTH",
+              "number": "006",
+              "title": "ORIGINS OF CIVILIZATION",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ANTH",
+              "number": "007",
+              "title": "ARCHAEOLOGICAL ARTIFACT ANALYSIS",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ANTH",
+              "number": "009",
+              "title": "GENDER, SEX AND CULTURE",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ANTH",
+              "number": "012",
+              "title": "AMERICAN INDIAN CULTURES",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ANTH",
+              "number": "086",
+              "title": "CHICANO/A AND LATINO/A AMERICAN CULTURE",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETH",
+              "number": "086",
+              "title": "CHICANO/A AND LATINO/A AMERICAN CULTURE",
+              "credits": 0,
               "or_alternatives": []
             }
           ]
         }
       ],
-      "matched_program_slug": "accounting"
+      "matched_program_slug": null
     },
     {
       "title": "Archaeological Field Work – Occupational Skills Certificate — Associate of Science",
@@ -393,165 +552,6 @@
               "number": "024B",
               "title": "HISTORY OF ARCHITECTURE - RENAISSANCE TO CONTEMPORARY",
               "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Anthropology – Associate in Arts Degree for Transfer — Associate of Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/anthropology/anthropology-aat/",
-      "total_credits": null,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ANTH",
-              "number": "001",
-              "title": "INTRODUCTION TO BIOLOGICAL ANTHROPOLOGY",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ANTH",
-              "number": "001H",
-              "title": "INTRODUCTION TO BIOLOGICAL ANTHROPOLOGY - HONORS",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ANTH",
-              "number": "002",
-              "title": "CULTURAL ANTHROPOLOGY",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ANTH",
-              "number": "002H",
-              "title": "HONORS CULTURAL ANTHROPOLOGY",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ANTH",
-              "number": "003",
-              "title": "INTRODUCTION TO ARCHAEOLOGY",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ANTH",
-              "number": "001L",
-              "title": "BIOLOGICAL ANTHROPOLOGY LAB",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ANTH",
-              "number": "004",
-              "title": "ANTHROPOLOGY OF RELIGION, WITCHCRAFT, AND MAGIC",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ANTH",
-              "number": "005",
-              "title": "INTRODUCTION TO LINGUISTIC ANTHROPOLOGY",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSYC",
-              "number": "005",
-              "title": "RESEARCH METHODS IN PSYCHOLOGY",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SOSC",
-              "number": "017",
-              "title": "INTRODUCTION TO RESEARCH METHODS IN SOCIAL SCIENCES",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ANAT",
-              "number": "025",
-              "title": "HUMAN ANATOMY",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "GEOG",
-              "number": "011",
-              "title": "INTRODUCTION TO GEOGRAPHIC INFORMATION SYSTEMS (with Lab)",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "GEOL",
-              "number": "001",
-              "title": "PHYSICAL GEOLOGY",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "GEOL",
-              "number": "003",
-              "title": "EARTH AND SPACE SCIENCE",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ANTH",
-              "number": "006",
-              "title": "ORIGINS OF CIVILIZATION",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ANTH",
-              "number": "007",
-              "title": "ARCHAEOLOGICAL ARTIFACT ANALYSIS",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ANTH",
-              "number": "009",
-              "title": "GENDER, SEX AND CULTURE",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ANTH",
-              "number": "012",
-              "title": "AMERICAN INDIAN CULTURES",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ANTH",
-              "number": "086",
-              "title": "CHICANO/A AND LATINO/A AMERICAN CULTURE",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ETH",
-              "number": "086",
-              "title": "CHICANO/A AND LATINO/A AMERICAN CULTURE",
-              "credits": 0,
               "or_alternatives": []
             }
           ]
@@ -3869,60 +3869,6 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Customer Service – Occupational Skills Certificate — Associate of Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/business-administration/customer-service-occupational-skills-cert/",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BIT",
-              "number": "025",
-              "title": "SURVEY OF COMPUTER TECHNOLOGY IN BUSINESS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "009",
-              "title": "INTRODUCTION TO BUSINESS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "011A",
-              "title": "BUSINESS COMMUNICATIONS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "112",
-              "title": "BUSINESS ENGLISH",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "160",
-              "title": "SALES AND CUSTOMER SERVICE",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Business Data Analytics – Associate in Science Degree, Certificate of Achievement — Associate of Science",
       "credential": "AS",
       "program_code": null,
@@ -3989,6 +3935,60 @@
         }
       ],
       "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Customer Service – Occupational Skills Certificate — Associate of Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/business-administration/customer-service-occupational-skills-cert/",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BIT",
+              "number": "025",
+              "title": "SURVEY OF COMPUTER TECHNOLOGY IN BUSINESS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "009",
+              "title": "INTRODUCTION TO BUSINESS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "011A",
+              "title": "BUSINESS COMMUNICATIONS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "112",
+              "title": "BUSINESS ENGLISH",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "160",
+              "title": "SALES AND CUSTOMER SERVICE",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
     },
     {
       "title": "Global Trade and Logistics - Certificate of Achievement — Associate of Science",
@@ -5787,123 +5787,6 @@
       "matched_program_slug": "early-childhood-education"
     },
     {
-      "title": "Child Development – Science and Math Integration – Associate in Science Degree, Certificate of Achievement — Associate of Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/child-development/child-development-science-math-integration-as-cert-achievement/",
-      "total_credits": 39,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 39,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CHDV",
-              "number": "010",
-              "title": "PRINCIPLES AND PRACTICES OF TEACHING YOUNG CHILDREN",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHDV",
-              "number": "013A",
-              "title": "PRACTICUM IN CHILD DEVELOPMENT - A",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHDV",
-              "number": "013B",
-              "title": "PRACTICUM IN CHILD DEVELOPMENT - B",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHDV",
-              "number": "014",
-              "title": "OBSERVATION AND ASSESSMENT OF YOUNG CHILDREN",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHDV",
-              "number": "015",
-              "title": "CHILD, FAMILY AND COMMUNITY",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHDV",
-              "number": "016",
-              "title": "HEALTH, SAFETY AND NUTRITION",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHDV",
-              "number": "017",
-              "title": "TEACHING CHILDREN IN A DIVERSE SOCIETY",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHDV",
-              "number": "020",
-              "title": "INTRODUCTION TO CURRICULUM PLANNING",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHDV",
-              "number": "025A",
-              "title": "EARLY CHILDHOOD EDUCATION STEM – MATHEMATICS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHDV",
-              "number": "025B",
-              "title": "EARLY CHILDHOOD STEM – SCIENCE",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSYC",
-              "number": "021",
-              "title": "DEVELOPMENTAL PSYCHOLOGY: THE CHILD",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSYC",
-              "number": "021H",
-              "title": "HONORS DEVELOPMENTAL PSYCHOLOGY: THE CHILD",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENGL",
-              "number": "100",
-              "title": "READING AND WRITING SKILLS",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ESL",
-              "number": "005",
-              "title": "ADVANCED ACADEMIC ENGLISH",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "early-childhood-education"
-    },
-    {
       "title": "Child Development – Special Education –  Associate in Science Degree, Certificate of Achievement — Associate of Science",
       "credential": "AS",
       "program_code": null,
@@ -6020,6 +5903,123 @@
               "number": "100",
               "title": "READING AND WRITING SKILLS",
               "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ESL",
+              "number": "005",
+              "title": "ADVANCED ACADEMIC ENGLISH",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "early-childhood-education"
+    },
+    {
+      "title": "Child Development – Science and Math Integration – Associate in Science Degree, Certificate of Achievement — Associate of Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/child-development/child-development-science-math-integration-as-cert-achievement/",
+      "total_credits": 39,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 39,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CHDV",
+              "number": "010",
+              "title": "PRINCIPLES AND PRACTICES OF TEACHING YOUNG CHILDREN",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHDV",
+              "number": "013A",
+              "title": "PRACTICUM IN CHILD DEVELOPMENT - A",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHDV",
+              "number": "013B",
+              "title": "PRACTICUM IN CHILD DEVELOPMENT - B",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHDV",
+              "number": "014",
+              "title": "OBSERVATION AND ASSESSMENT OF YOUNG CHILDREN",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHDV",
+              "number": "015",
+              "title": "CHILD, FAMILY AND COMMUNITY",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHDV",
+              "number": "016",
+              "title": "HEALTH, SAFETY AND NUTRITION",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHDV",
+              "number": "017",
+              "title": "TEACHING CHILDREN IN A DIVERSE SOCIETY",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHDV",
+              "number": "020",
+              "title": "INTRODUCTION TO CURRICULUM PLANNING",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHDV",
+              "number": "025A",
+              "title": "EARLY CHILDHOOD EDUCATION STEM – MATHEMATICS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHDV",
+              "number": "025B",
+              "title": "EARLY CHILDHOOD STEM – SCIENCE",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSYC",
+              "number": "021",
+              "title": "DEVELOPMENTAL PSYCHOLOGY: THE CHILD",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSYC",
+              "number": "021H",
+              "title": "HONORS DEVELOPMENTAL PSYCHOLOGY: THE CHILD",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENGL",
+              "number": "100",
+              "title": "READING AND WRITING SKILLS",
+              "credits": 0,
               "or_alternatives": []
             },
             {
@@ -18103,6 +18103,67 @@
       "matched_program_slug": null
     },
     {
+      "title": "Journalism – Printed Media – Associate in Science Degree, Certificate of Achievement — Associate of Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/journalism/journalism-printed-media-as-cert-achievement/",
+      "total_credits": 18,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "JOUR",
+              "number": "002",
+              "title": "BEGINNING JOURNALISM",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "JOUR",
+              "number": "004A",
+              "title": "REPORTING AND NEWSWRITING",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "JOUR",
+              "number": "007A",
+              "title": "NEWSWRITING AND MAKE-UP I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "JOUR",
+              "number": "007B",
+              "title": "NEWSWRITING AND MAKE-UP II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "JOUR",
+              "number": "107A",
+              "title": "ONLINE JOURNALISM",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "JOUR",
+              "number": "107B",
+              "title": "NEWS LEADERSHIP",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Kinesiology & Wellness – Associate in Arts Degree — Associate of Science",
       "credential": "AS",
       "program_code": null,
@@ -19097,67 +19158,6 @@
               "number": "001",
               "title": "WORK EXPERIENCE/INTERNSHIP",
               "credits": 1,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Journalism – Printed Media – Associate in Science Degree, Certificate of Achievement — Associate of Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/journalism/journalism-printed-media-as-cert-achievement/",
-      "total_credits": 18,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 18,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "JOUR",
-              "number": "002",
-              "title": "BEGINNING JOURNALISM",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "JOUR",
-              "number": "004A",
-              "title": "REPORTING AND NEWSWRITING",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "JOUR",
-              "number": "007A",
-              "title": "NEWSWRITING AND MAKE-UP I",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "JOUR",
-              "number": "007B",
-              "title": "NEWSWRITING AND MAKE-UP II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "JOUR",
-              "number": "107A",
-              "title": "ONLINE JOURNALISM",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "JOUR",
-              "number": "107B",
-              "title": "NEWS LEADERSHIP",
-              "credits": 0,
               "or_alternatives": []
             }
           ]
@@ -21942,74 +21942,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Machine Shop Technology – Associate in Science Degree, Certificate of Achievement — Associate of Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/machine-shop-technology/machine-shop-technology-as-cert-achievement/",
-      "total_credits": 18,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 18,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "MACH",
-              "number": "101",
-              "title": "BEGINNING METALWORKING SKILLS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MACH",
-              "number": "102",
-              "title": "INTERMEDIATE METALWORKING SKILLS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MACH",
-              "number": "110",
-              "title": "BLUEPRINT READING",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MACH",
-              "number": "111",
-              "title": "GEOMETRIC DIMENSIONING AND TOLERANCING (GD&T)",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MACH",
-              "number": "120",
-              "title": "COMPUTER-AIDED MANUFACTURING (CAM): FUNDAMENTALS IN 2D",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MACH",
-              "number": "130",
-              "title": "CNC MILLING FUNDAMENTALS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MACH",
-              "number": "135",
-              "title": "CNC TURNING FUNDAMENTALS",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Mathematics – Associate in Science Degree for Transfer — Associate of Science",
       "credential": "AS",
       "program_code": null,
@@ -22160,60 +22092,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Medical Assisting – Patient Intake Specialist – Occupational Skills Certificate — Associate of Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/medical-assisting/medical-assisting-patient-intake-specialist-occupational-skills-cert/",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "MA",
-              "number": "109",
-              "title": "HEALTH INFORMATION TECHNOLOGY",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MA",
-              "number": "111A",
-              "title": "ADMINISTRATIVE MEDICAL OFFICE PROCEDURES I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MA",
-              "number": "122A",
-              "title": "CLINICAL MEDICAL OFFICE PROCEDURES I",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MA",
-              "number": "127",
-              "title": "MEDICAL INSURANCE AND REIMBURSEMENT",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HLSC",
-              "number": "115",
-              "title": "MEDICAL TERMINOLOGY",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Medical Assisting – Administrative and Clinical – Associate in Science Degree, Certificate of Achievement — Associate of Science",
       "credential": "AS",
       "program_code": null,
@@ -22315,6 +22193,60 @@
               "prefix": "MA",
               "number": "128",
               "title": "PRACTICUM - MEDICAL OFFICE EXPERIENCE AND CMA EXAM PREPARATION",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Medical Assisting – Patient Intake Specialist – Occupational Skills Certificate — Associate of Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/medical-assisting/medical-assisting-patient-intake-specialist-occupational-skills-cert/",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MA",
+              "number": "109",
+              "title": "HEALTH INFORMATION TECHNOLOGY",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MA",
+              "number": "111A",
+              "title": "ADMINISTRATIVE MEDICAL OFFICE PROCEDURES I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MA",
+              "number": "122A",
+              "title": "CLINICAL MEDICAL OFFICE PROCEDURES I",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MA",
+              "number": "127",
+              "title": "MEDICAL INSURANCE AND REIMBURSEMENT",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HLSC",
+              "number": "115",
+              "title": "MEDICAL TERMINOLOGY",
               "credits": 3,
               "or_alternatives": []
             }
@@ -22522,6 +22454,74 @@
               "number": "171B",
               "title": "INTERMEDIATE TECHNIQUES OF POPULAR SINGING",
               "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Machine Shop Technology – Associate in Science Degree, Certificate of Achievement — Associate of Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/machine-shop-technology/machine-shop-technology-as-cert-achievement/",
+      "total_credits": 18,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MACH",
+              "number": "101",
+              "title": "BEGINNING METALWORKING SKILLS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MACH",
+              "number": "102",
+              "title": "INTERMEDIATE METALWORKING SKILLS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MACH",
+              "number": "110",
+              "title": "BLUEPRINT READING",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MACH",
+              "number": "111",
+              "title": "GEOMETRIC DIMENSIONING AND TOLERANCING (GD&T)",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MACH",
+              "number": "120",
+              "title": "COMPUTER-AIDED MANUFACTURING (CAM): FUNDAMENTALS IN 2D",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MACH",
+              "number": "130",
+              "title": "CNC MILLING FUNDAMENTALS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MACH",
+              "number": "135",
+              "title": "CNC TURNING FUNDAMENTALS",
+              "credits": 3,
               "or_alternatives": []
             }
           ]
@@ -22815,263 +22815,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Music – Associate in Arts Degree for Transfer — Associate of Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/music/music-aat/",
-      "total_credits": null,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "MUSC",
-              "number": "001A",
-              "title": "MUSIC THEORY I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "001B",
-              "title": "MUSIC THEORY II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "001C",
-              "title": "MUSIC THEORY III",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "002A",
-              "title": "MUSICIANSHIP I",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "002B",
-              "title": "MUSICIANSHIP II",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "002C",
-              "title": "MUSICIANSHIP III",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "009A",
-              "title": "INDIVIDUAL INSTRUCTION I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "009B",
-              "title": "INDIVIDUAL INSTRUCTION II (CLASSICAL)",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "009C",
-              "title": "INDIVIDUAL INSTRUCTION III (CLASSICAL)",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "009D",
-              "title": "INDIVIDUAL INSTRUCTION II (JAZZ/COMMERCIAL)",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "009E",
-              "title": "INDIVIDUAL INSTRUCTION III (JAZZ/COMMERCIAL)",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "056",
-              "title": "VOCAL JAZZ ENSEMBLE",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "057A",
-              "title": "JAZZ COMBO",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "057B",
-              "title": "LANCER JAZZ BIG BAND",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "057C",
-              "title": "STUDIO JAZZ ENSEMBLE",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "057D",
-              "title": "Jazz Lab Band",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "057E",
-              "title": "JAZZ GUITAR ENSEMBLE",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "057F",
-              "title": "LATIN JAZZ ENSEMBLE",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "060",
-              "title": "COLLEGE/COMMUNITY ORCHESTRA",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "061",
-              "title": "LANCER MARCHING BAND",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "062",
-              "title": "LANCER CONCERT BAND",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "064",
-              "title": "CHAMBER SINGERS",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "066",
-              "title": "MADRIGALS",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "074",
-              "title": "OPERA WORKSHOP",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "075",
-              "title": "MUSICAL THEATER WORKSHOP",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "THRT",
-              "number": "075",
-              "title": "MUSICAL THEATER WORKSHOP",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "082",
-              "title": "GUITAR READING ENSEMBLE",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "001D",
-              "title": "MUSIC THEORY IV",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "002D",
-              "title": "MUSICIANSHIP IV",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "094",
-              "title": "INTRO TO MUSIC TECHNOLOGY FOR MUSICIANS",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "096A",
-              "title": "INTRODUCTION TO MUSIC RECORDING AND PRODUCTION",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "021",
-              "title": "MUSIC APPRECIATION",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "007A",
-              "title": "MUSIC HISTORY AND LITERATURE: ANTIQUITY TO 1750",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUSC",
-              "number": "007B",
-              "title": "MUSIC HISTORY AND LITERATURE: 1750 TO THE PRESENT",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Music – Certificate of Achievement — Associate of Science",
       "credential": "AS",
       "program_code": null,
@@ -23341,6 +23084,263 @@
               "prefix": "MUSC",
               "number": "082",
               "title": "GUITAR READING ENSEMBLE",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Music – Associate in Arts Degree for Transfer — Associate of Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/music/music-aat/",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MUSC",
+              "number": "001A",
+              "title": "MUSIC THEORY I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "001B",
+              "title": "MUSIC THEORY II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "001C",
+              "title": "MUSIC THEORY III",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "002A",
+              "title": "MUSICIANSHIP I",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "002B",
+              "title": "MUSICIANSHIP II",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "002C",
+              "title": "MUSICIANSHIP III",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "009A",
+              "title": "INDIVIDUAL INSTRUCTION I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "009B",
+              "title": "INDIVIDUAL INSTRUCTION II (CLASSICAL)",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "009C",
+              "title": "INDIVIDUAL INSTRUCTION III (CLASSICAL)",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "009D",
+              "title": "INDIVIDUAL INSTRUCTION II (JAZZ/COMMERCIAL)",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "009E",
+              "title": "INDIVIDUAL INSTRUCTION III (JAZZ/COMMERCIAL)",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "056",
+              "title": "VOCAL JAZZ ENSEMBLE",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "057A",
+              "title": "JAZZ COMBO",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "057B",
+              "title": "LANCER JAZZ BIG BAND",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "057C",
+              "title": "STUDIO JAZZ ENSEMBLE",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "057D",
+              "title": "Jazz Lab Band",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "057E",
+              "title": "JAZZ GUITAR ENSEMBLE",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "057F",
+              "title": "LATIN JAZZ ENSEMBLE",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "060",
+              "title": "COLLEGE/COMMUNITY ORCHESTRA",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "061",
+              "title": "LANCER MARCHING BAND",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "062",
+              "title": "LANCER CONCERT BAND",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "064",
+              "title": "CHAMBER SINGERS",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "066",
+              "title": "MADRIGALS",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "074",
+              "title": "OPERA WORKSHOP",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "075",
+              "title": "MUSICAL THEATER WORKSHOP",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "THRT",
+              "number": "075",
+              "title": "MUSICAL THEATER WORKSHOP",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "082",
+              "title": "GUITAR READING ENSEMBLE",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "001D",
+              "title": "MUSIC THEORY IV",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "002D",
+              "title": "MUSICIANSHIP IV",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "094",
+              "title": "INTRO TO MUSIC TECHNOLOGY FOR MUSICIANS",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "096A",
+              "title": "INTRODUCTION TO MUSIC RECORDING AND PRODUCTION",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "021",
+              "title": "MUSIC APPRECIATION",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "007A",
+              "title": "MUSIC HISTORY AND LITERATURE: ANTIQUITY TO 1750",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUSC",
+              "number": "007B",
+              "title": "MUSIC HISTORY AND LITERATURE: 1750 TO THE PRESENT",
               "credits": 0,
               "or_alternatives": []
             }
@@ -24999,137 +24999,6 @@
       "matched_program_slug": "psychology"
     },
     {
-      "title": "Public Health – Associate in Science Degree for Transfer — Associate of Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/public-health/public-health-ast/",
-      "total_credits": null,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "HED",
-              "number": "044",
-              "title": "HEALTH EDUCATION",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HED",
-              "number": "050",
-              "title": "INTRODUCTION TO PUBLIC HEALTH",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "STAT",
-              "number": "015",
-              "title": "STATISTICS FOR BUSINESS AND ECONOMICS",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "STAT",
-              "number": "018",
-              "title": "STATISTICS FOR BEHAVIORAL AND SOCIAL SCIENCES",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIOL",
-              "number": "003",
-              "title": "HUMAN BIOLOGY",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIOL",
-              "number": "011",
-              "title": "INTRODUCTION TO BIOLOGY WITH LAB",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIOL",
-              "number": "011H",
-              "title": "INTRODUCTION TO BIOLOGY WITH LAB - HONORS",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHEM",
-              "number": "002A",
-              "title": "CHEMISTRY - GENERAL, ORGANIC AND BIOCHEMISTRY I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHEM",
-              "number": "022",
-              "title": "INTRODUCTORY CHEMISTRY",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ANAT",
-              "number": "025",
-              "title": "HUMAN ANATOMY",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PYSO",
-              "number": "001",
-              "title": "HUMAN PHYSIOLOGY",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HED",
-              "number": "051",
-              "title": "HEALTH AND SOCIAL JUSTICE",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SOC",
-              "number": "002",
-              "title": "CONTEMPORARY SOCIAL PROBLEMS",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HED",
-              "number": "052",
-              "title": "DRUGS, HEALTH, AND SOCIETY",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HED",
-              "number": "003",
-              "title": "WOMEN'S HEALTH",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSYC",
-              "number": "025",
-              "title": "HUMAN SEXUALITY",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Radiologic Technology – Associate in Science Degree, Certificate of Achievement — Associate of Science",
       "credential": "AS",
       "program_code": null,
@@ -26508,6 +26377,137 @@
       "matched_program_slug": null
     },
     {
+      "title": "Public Health – Associate in Science Degree for Transfer — Associate of Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/public-health/public-health-ast/",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "HED",
+              "number": "044",
+              "title": "HEALTH EDUCATION",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HED",
+              "number": "050",
+              "title": "INTRODUCTION TO PUBLIC HEALTH",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "STAT",
+              "number": "015",
+              "title": "STATISTICS FOR BUSINESS AND ECONOMICS",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "STAT",
+              "number": "018",
+              "title": "STATISTICS FOR BEHAVIORAL AND SOCIAL SCIENCES",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIOL",
+              "number": "003",
+              "title": "HUMAN BIOLOGY",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIOL",
+              "number": "011",
+              "title": "INTRODUCTION TO BIOLOGY WITH LAB",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIOL",
+              "number": "011H",
+              "title": "INTRODUCTION TO BIOLOGY WITH LAB - HONORS",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHEM",
+              "number": "002A",
+              "title": "CHEMISTRY - GENERAL, ORGANIC AND BIOCHEMISTRY I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHEM",
+              "number": "022",
+              "title": "INTRODUCTORY CHEMISTRY",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ANAT",
+              "number": "025",
+              "title": "HUMAN ANATOMY",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PYSO",
+              "number": "001",
+              "title": "HUMAN PHYSIOLOGY",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HED",
+              "number": "051",
+              "title": "HEALTH AND SOCIAL JUSTICE",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SOC",
+              "number": "002",
+              "title": "CONTEMPORARY SOCIAL PROBLEMS",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HED",
+              "number": "052",
+              "title": "DRUGS, HEALTH, AND SOCIETY",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HED",
+              "number": "003",
+              "title": "WOMEN'S HEALTH",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSYC",
+              "number": "025",
+              "title": "HUMAN SEXUALITY",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Speech-Language Pathology Assistant – Associate in Science Degree — Associate of Science",
       "credential": "AS",
       "program_code": null,
@@ -26688,6 +26688,109 @@
       "matched_program_slug": null
     },
     {
+      "title": "Broadcast Journalism – Occupational Skills Certificate — Associate of Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/television-radio/broadcast-journalism-occupational-skills-certificate/",
+      "total_credits": 15,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "TVR",
+              "number": "001",
+              "title": "INTRODUCTION TO ELECTRONIC MEDIA",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "007",
+              "title": "BEGINNING TV STUDIO PRODUCTION",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "018",
+              "title": "MULTIMEDIA NEWS PRODUCTION",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "024",
+              "title": "DOCUMENTARY AND REALITY PRODUCTION",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "JOUR",
+              "number": "002",
+              "title": "BEGINNING JOURNALISM",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "002A",
+              "title": "BEGINNING AUDIO PRODUCTION",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "012",
+              "title": "MEDIA PERFORMANCE",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "014A",
+              "title": "BEGINNING RADIO PRODUCTION",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "015",
+              "title": "MEDIA WRITING",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "016A",
+              "title": "PRODUCING & DIRECTING I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "019",
+              "title": "MEDIA AESTHETICS AND CINEMATIC ARTS",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "021",
+              "title": "THE BUSINESS OF TELEVISION AND ELECTRONIC MEDIA",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Broadcast Journalism – Associate in Science Degree, Certificate of Achievement — Associate of Science",
       "credential": "AS",
       "program_code": null,
@@ -26796,109 +26899,6 @@
               "prefix": "TVR",
               "number": "129C",
               "title": "EXTENDED BROADCAST NEWS/ADMINISTRATION INTERNSHIP",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Broadcast Journalism – Occupational Skills Certificate — Associate of Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/television-radio/broadcast-journalism-occupational-skills-certificate/",
-      "total_credits": 15,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 15,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "TVR",
-              "number": "001",
-              "title": "INTRODUCTION TO ELECTRONIC MEDIA",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "007",
-              "title": "BEGINNING TV STUDIO PRODUCTION",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "018",
-              "title": "MULTIMEDIA NEWS PRODUCTION",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "024",
-              "title": "DOCUMENTARY AND REALITY PRODUCTION",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "JOUR",
-              "number": "002",
-              "title": "BEGINNING JOURNALISM",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "002A",
-              "title": "BEGINNING AUDIO PRODUCTION",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "012",
-              "title": "MEDIA PERFORMANCE",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "014A",
-              "title": "BEGINNING RADIO PRODUCTION",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "015",
-              "title": "MEDIA WRITING",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "016A",
-              "title": "PRODUCING & DIRECTING I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "019",
-              "title": "MEDIA AESTHETICS AND CINEMATIC ARTS",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "021",
-              "title": "THE BUSINESS OF TELEVISION AND ELECTRONIC MEDIA",
               "credits": 0,
               "or_alternatives": []
             }
@@ -27240,6 +27240,60 @@
       "matched_program_slug": "business-administration"
     },
     {
+      "title": "Television Post Production – Occupational Skills Certificate — Associate of Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/television-radio/television-post-production-occupational-skills-cert/",
+      "total_credits": 15,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "TVR",
+              "number": "007",
+              "title": "BEGINNING TV STUDIO PRODUCTION",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "024",
+              "title": "DOCUMENTARY AND REALITY PRODUCTION",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "041",
+              "title": "BEGINNING DIGITAL VIDEO EDITING",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "141B",
+              "title": "INTERMEDIATE DIGITAL VIDEO EDITING",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "142",
+              "title": "ADVANCED DIGITAL VIDEO EFFECTS EDITING",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Television Operations – Associate in Science Degree, Certificate of Achievement — Associate of Science",
       "credential": "AS",
       "program_code": null,
@@ -27350,60 +27404,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Television Post Production – Occupational Skills Certificate — Associate of Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/television-radio/television-post-production-occupational-skills-cert/",
-      "total_credits": 15,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 15,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "TVR",
-              "number": "007",
-              "title": "BEGINNING TV STUDIO PRODUCTION",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "024",
-              "title": "DOCUMENTARY AND REALITY PRODUCTION",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "041",
-              "title": "BEGINNING DIGITAL VIDEO EDITING",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "141B",
-              "title": "INTERMEDIATE DIGITAL VIDEO EDITING",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "142",
-              "title": "ADVANCED DIGITAL VIDEO EFFECTS EDITING",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Television Production – Occupational Skills Certificate — Associate of Science",
       "credential": "AS",
       "program_code": null,
@@ -27478,156 +27478,6 @@
               "number": "024",
               "title": "DOCUMENTARY AND REALITY PRODUCTION",
               "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Television and Radio – Video Post-Production – Certificate of Achievement — Associate of Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/television-radio/television-radio-video-post-production-cert-achievement/",
-      "total_credits": 26,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 26,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "TVR",
-              "number": "002A",
-              "title": "BEGINNING AUDIO PRODUCTION",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "007",
-              "title": "BEGINNING TV STUDIO PRODUCTION",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "024",
-              "title": "DOCUMENTARY AND REALITY PRODUCTION",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "041",
-              "title": "BEGINNING DIGITAL VIDEO EDITING",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "141B",
-              "title": "INTERMEDIATE DIGITAL VIDEO EDITING",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "142",
-              "title": "ADVANCED DIGITAL VIDEO EFFECTS EDITING",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "143",
-              "title": "DIGITAL AUDIO WORKSTATION SKILLS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "144",
-              "title": "DIGITAL NON-LINEAR ASSISTANT EDITING",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "117",
-              "title": "TELEVISION AND RADIO WORKSHOP",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "119",
-              "title": "SPORTS RADIO BROADCASTING WORKSHOP",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "120",
-              "title": "RADIO PRODUCTION WORKSHOP",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "124",
-              "title": "TELEVISION FIELD PRODUCTION",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "128A",
-              "title": "TV OPERATIONS INTERNSHIP",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Video Operations – Occupational Skills Certificate — Associate of Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/television-radio/video-operations-occupational-skills-cert/",
-      "total_credits": 10,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 10,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "TVR",
-              "number": "007",
-              "title": "BEGINNING TV STUDIO PRODUCTION",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "107",
-              "title": "INTERMEDIATE VIDEO PRODUCTION OPERATIONS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TVR",
-              "number": "108",
-              "title": "TELEVISION OPERATIONS",
-              "credits": 4,
               "or_alternatives": []
             }
           ]
@@ -27780,6 +27630,156 @@
               "number": "143",
               "title": "DIGITAL AUDIO WORKSTATION SKILLS",
               "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Television and Radio – Video Post-Production – Certificate of Achievement — Associate of Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/television-radio/television-radio-video-post-production-cert-achievement/",
+      "total_credits": 26,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 26,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "TVR",
+              "number": "002A",
+              "title": "BEGINNING AUDIO PRODUCTION",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "007",
+              "title": "BEGINNING TV STUDIO PRODUCTION",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "024",
+              "title": "DOCUMENTARY AND REALITY PRODUCTION",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "041",
+              "title": "BEGINNING DIGITAL VIDEO EDITING",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "141B",
+              "title": "INTERMEDIATE DIGITAL VIDEO EDITING",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "142",
+              "title": "ADVANCED DIGITAL VIDEO EFFECTS EDITING",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "143",
+              "title": "DIGITAL AUDIO WORKSTATION SKILLS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "144",
+              "title": "DIGITAL NON-LINEAR ASSISTANT EDITING",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "117",
+              "title": "TELEVISION AND RADIO WORKSHOP",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "119",
+              "title": "SPORTS RADIO BROADCASTING WORKSHOP",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "120",
+              "title": "RADIO PRODUCTION WORKSHOP",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "124",
+              "title": "TELEVISION FIELD PRODUCTION",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "128A",
+              "title": "TV OPERATIONS INTERNSHIP",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Video Operations – Occupational Skills Certificate — Associate of Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://curriculum.pasadena.edu/academic-programs/television-radio/video-operations-occupational-skills-cert/",
+      "total_credits": 10,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 10,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "TVR",
+              "number": "007",
+              "title": "BEGINNING TV STUDIO PRODUCTION",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "107",
+              "title": "INTERMEDIATE VIDEO PRODUCTION OPERATIONS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TVR",
+              "number": "108",
+              "title": "TELEVISION OPERATIONS",
+              "credits": 4,
               "or_alternatives": []
             }
           ]

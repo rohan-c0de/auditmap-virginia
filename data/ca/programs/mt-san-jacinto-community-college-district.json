@@ -2,34 +2,8 @@
   "college_slug": "mt-san-jacinto-community-college-district",
   "catalog_year": "",
   "catalog_url": "https://catalog.msjc.edu/degrees-certificates-curricula/",
-  "scraped_at": "2026-05-31T03:23:03.164Z",
+  "scraped_at": "2026-06-01T13:44:21.188Z",
   "programs": [
-    {
-      "title": "General Education Requirements: Cal-GETC — Associate Degree for Transfer",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.msjc.edu/degrees-certificates-curricula/general-education-requirements-cal-getc/",
-      "total_credits": null,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "PHIL",
-              "number": "112",
-              "title": "Critical Thinking and Composition",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
     {
       "title": "General Education Requirements: Local — AS",
       "credential": "other",
@@ -482,6 +456,32 @@
               "prefix": "WINE",
               "number": "102",
               "title": "Introduction to Enology (formerly VEW-102)",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "General Education Requirements: Cal-GETC — Associate Degree for Transfer",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.msjc.edu/degrees-certificates-curricula/general-education-requirements-cal-getc/",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "PHIL",
+              "number": "112",
+              "title": "Critical Thinking and Composition",
               "credits": 3,
               "or_alternatives": []
             }

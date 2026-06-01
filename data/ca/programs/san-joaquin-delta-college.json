@@ -2,18 +2,47 @@
   "college_slug": "san-joaquin-delta-college",
   "catalog_year": "2025-2026",
   "catalog_url": "https://catalog.deltacollege.edu",
-  "scraped_at": "2026-05-31T03:24:52.866Z",
+  "scraped_at": "2026-06-01T13:45:53.032Z",
   "programs": [
     {
-      "title": "Administrative Assistant II Certificate of Achievement",
+      "title": "Accounting Clerk Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3308",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3320",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
+      "requirement_groups": [
+        {
+          "name": "Core Requirements",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "or ACCT 10A Bookkeeping Units: 3",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "or CSA 20 Computer Information Systems Applications Units: 3",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "It is advised that ACCT 1A or ACCT 10A be taken either prior to or concurrently with ACCT 11 , ACCT 70 , or ACCT 89 .",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "accounting"
     },
     {
       "title": "Accounting Certificate of Achievement",
@@ -64,50 +93,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Accounting Clerk Certificate of Achievement",
+      "title": "Administrative Assistant II Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3320",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Core Requirements",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "or ACCT 10A Bookkeeping Units: 3",
-              "credits": null,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "or CSA 20 Computer Information Systems Applications Units: 3",
-              "credits": null,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "It is advised that ACCT 1A or ACCT 10A be taken either prior to or concurrently with ACCT 11 , ACCT 70 , or ACCT 89 .",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "accounting"
-    },
-    {
-      "title": "Administrative Executive Assistant Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3275",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3308",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -126,21 +115,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Administrative Executive Professional/Office Manager, AS",
-      "credential": "AS",
+      "title": "Administrative Executive Assistant Certificate of Achievement",
+      "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3304",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Advanced Culinary Arts, AS",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3229",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3275",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -152,6 +130,17 @@
       "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3399",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Administrative Executive Professional/Office Manager, AS",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3304",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -199,6 +188,28 @@
       "matched_program_slug": null
     },
     {
+      "title": "Advanced Culinary Arts, AS",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3229",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Agriculture Business - Animal Science Certificate of Achievement",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3172",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "business-administration"
+    },
+    {
       "title": "Agriculture Business - Plant Science Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
@@ -210,14 +221,29 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Agriculture Business - Animal Science Certificate of Achievement",
-      "credential": "certificate",
+      "title": "Agriculture Business, AS-T",
+      "credential": "AS",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3172",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3163",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
-      "requirement_groups": [],
+      "requirement_groups": [
+        {
+          "name": "Major Requirements - Core",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Or STAT C1000E Introduction to Statistics Units 4.5",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
       "matched_program_slug": "business-administration"
     },
     {
@@ -261,54 +287,6 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Agriculture Business Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3171",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "business-administration"
-    },
-    {
-      "title": "Agriculture Business, AS-T",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3163",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Major Requirements - Core",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "Or STAT C1000E Introduction to Statistics Units 4.5",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "business-administration"
-    },
-    {
-      "title": "Agriculture Engineering Production Plant - Level 2 Mechanical Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3388",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "engineering"
-    },
-    {
       "title": "Agriculture Engineering Production Plant - Level 1 Safety Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
@@ -320,6 +298,17 @@
       "matched_program_slug": "engineering"
     },
     {
+      "title": "Agriculture Business Certificate of Achievement",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3171",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "business-administration"
+    },
+    {
       "title": "Agriculture Mechanics Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
@@ -329,6 +318,17 @@
       "description": null,
       "requirement_groups": [],
       "matched_program_slug": null
+    },
+    {
+      "title": "Agriculture Engineering Production Plant - Level 2 Mechanical Certificate of Achievement",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3388",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "engineering"
     },
     {
       "title": "Agriculture Plant Science, AS-T",
@@ -357,6 +357,28 @@
       "matched_program_slug": null
     },
     {
+      "title": "American Sign Language, AA",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3354",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Anthropology, AA-T",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3197",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
       "title": "American Sign Language Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
@@ -380,28 +402,6 @@
           ]
         }
       ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "American Sign Language, AA",
-      "credential": "AA",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3354",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Anthropology, AA-T",
-      "credential": "AA",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3197",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
       "matched_program_slug": null
     },
     {
@@ -438,6 +438,17 @@
       "matched_program_slug": null
     },
     {
+      "title": "Apparel Industry Sewing Certificate of Achievement",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3243",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
       "title": "Architectural Drafting Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
@@ -471,26 +482,15 @@
       "matched_program_slug": null
     },
     {
-      "title": "Art History, AA-T",
+      "title": "Art, AA",
       "credential": "AA",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3226",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3225",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
       "requirement_groups": [],
       "matched_program_slug": "art"
-    },
-    {
-      "title": "Apparel Industry Sewing Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3243",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
     },
     {
       "title": "Architectural Drafting, AS",
@@ -519,21 +519,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Auto Body Advanced Repair and Restoration Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3314",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Art, AA",
+      "title": "Art History, AA-T",
       "credential": "AA",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3225",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3226",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -567,10 +556,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Automation Technology - Mechatronics, AS",
-      "credential": "AS",
+      "title": "Auto Body Advanced Repair and Restoration Certificate of Achievement",
+      "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3255",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3314",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -589,6 +578,17 @@
       "matched_program_slug": null
     },
     {
+      "title": "Automation Technology - Mechatronics, AS",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3255",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
       "title": "Automation Technician - Mechatronics Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
@@ -600,10 +600,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Automotive Electric Technology Certificate of Achievement",
+      "title": "Automotive Master Technician Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3315",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3317",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -622,32 +622,21 @@
       "matched_program_slug": "automotive-technology"
     },
     {
+      "title": "Automotive Electric Technology Certificate of Achievement",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3315",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "automotive-technology"
+    },
+    {
       "title": "Automotive Mechanics Technology Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3318",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "automotive-technology"
-    },
-    {
-      "title": "Automotive Master Technician Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3317",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "automotive-technology"
-    },
-    {
-      "title": "Automotive Technology, AS",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3256",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -666,10 +655,32 @@
       "matched_program_slug": null
     },
     {
+      "title": "Automotive Technology, AS",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3256",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "automotive-technology"
+    },
+    {
       "title": "Baking and Pastry Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3244",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Basic Peace Officer Academy Certificate of Achievement",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3209",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -688,10 +699,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Business, AS",
-      "credential": "AS",
+      "title": "Business Administration",
+      "credential": "other",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3257",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3350",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -699,10 +710,10 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Business Administration",
-      "credential": "other",
+      "title": "Business Certificate of Achievement",
+      "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3350",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3319",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -750,28 +761,6 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Basic Peace Officer Academy Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3209",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Business Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3319",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "business-administration"
-    },
-    {
       "title": "California General Education Transfer Curriculum (Cal-GETC) Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
@@ -783,10 +772,21 @@
       "matched_program_slug": null
     },
     {
-      "title": "Caterpillar Dealer Service Technician Apprenticeship Certificate of Achievement",
+      "title": "Business, AS",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3257",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Caterpillar Dealer Engine Technician Apprenticeship Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3385",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3340",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -794,10 +794,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Caterpillar Dealer Engine Technician Apprenticeship Certificate of Achievement",
+      "title": "Caterpillar Dealer Service Technician Apprenticeship Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3340",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3385",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -838,10 +838,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Computer Network Security Technician Certificate of Achievement",
-      "credential": "certificate",
+      "title": "Computer Network Technician, AS",
+      "credential": "AS",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3321",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3261",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -849,10 +849,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Computer Networking Software Certificate of Achievement",
+      "title": "Computer Network Security Technician Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3176",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3321",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -882,32 +882,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Computer Network Technician, AS",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3261",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Computer Numerical Control (CNC) Operator/Programmer Certificate of Achievement",
+      "title": "Computer Networking Software Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3323",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Computer Programming Competence Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3179",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3176",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -926,57 +904,25 @@
       "matched_program_slug": null
     },
     {
-      "title": "Computer Science, AS-T",
-      "credential": "AS",
+      "title": "Computer Programming Competence Certificate of Achievement",
+      "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3165",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3179",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
-      "requirement_groups": [
-        {
-          "name": "Major Requirements - Core",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "or CHEM 1A General Chemistry Units: 5",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Major Requirements - Restricted Electives",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "and CSP 26B Java Programming II Units: 4",
-              "credits": null,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "or",
-              "credits": null,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "and CSP 31B C++ Programming II Units: 4",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Computer Science Certificate of Achievement",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3181",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
       "matched_program_slug": "computer-science"
     },
     {
@@ -1041,26 +987,69 @@
       "matched_program_slug": "computer-science"
     },
     {
-      "title": "Computer Science Certificate of Achievement",
+      "title": "Computer Numerical Control (CNC) Operator/Programmer Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3181",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "computer-science"
-    },
-    {
-      "title": "Computer Web Developer Technician Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3185",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3323",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
       "requirement_groups": [],
       "matched_program_slug": null
+    },
+    {
+      "title": "Computer Science, AS-T",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3165",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Major Requirements - Core",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "or CHEM 1A General Chemistry Units: 5",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Major Requirements - Restricted Electives",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "and CSP 26B Java Programming II Units: 4",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "or",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "and CSP 31B C++ Programming II Units: 4",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "computer-science"
     },
     {
       "title": "Computer Support Certificate of Achievement",
@@ -1074,21 +1063,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Control Systems Technician Certificate of Completion",
+      "title": "Computer Web Developer Technician Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3396",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Costume Technician Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3389",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3185",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1118,10 +1096,32 @@
       "matched_program_slug": null
     },
     {
+      "title": "Control Systems Technician Certificate of Completion",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3396",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
       "title": "Creative Writing Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3390",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Costume Technician Certificate of Achievement",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3389",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1140,10 +1140,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Dance, AA",
+      "title": "Culinary Arts, AA",
       "credential": "AA",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3230",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3228",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1151,10 +1151,21 @@
       "matched_program_slug": null
     },
     {
-      "title": "Culinary Arts, AA",
+      "title": "Diesel Bus Technician Certificate of Achievement",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3351",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Dance, AA",
       "credential": "AA",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3228",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3230",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1173,43 +1184,10 @@
       "matched_program_slug": "automotive-technology"
     },
     {
-      "title": "Diesel Bus Technician Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3351",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
       "title": "Diesel Equipment Technician Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3325",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Digital Media Content Entrepreneurship Certificate of Completion",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3377",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Digital Media with Emphasis in Video Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3366",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1228,6 +1206,17 @@
       "matched_program_slug": null
     },
     {
+      "title": "Digital Media Content Entrepreneurship Certificate of Completion",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3377",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
       "title": "Diesel Equipment Technician, AS",
       "credential": "AS",
       "program_code": null,
@@ -1237,6 +1226,28 @@
       "description": null,
       "requirement_groups": [],
       "matched_program_slug": null
+    },
+    {
+      "title": "Digital Media with Emphasis in Video Certificate of Achievement",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3366",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Early Childhood Education Associate Teacher Certificate of Achievement",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3211",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "early-childhood-education"
     },
     {
       "title": "Digital Media with Emphasis in Audio Certificate of Achievement",
@@ -1259,17 +1270,6 @@
       "description": null,
       "requirement_groups": [],
       "matched_program_slug": null
-    },
-    {
-      "title": "Early Childhood Education Associate Teacher Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3211",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "early-childhood-education"
     },
     {
       "title": "Early Childhood Education Master Teacher Certificate of Achievement",
@@ -1298,10 +1298,10 @@
       "matched_program_slug": "early-childhood-education"
     },
     {
-      "title": "Early Childhood Education Teacher Certificate of Achievement",
-      "credential": "certificate",
+      "title": "Early Childhood Education, AA",
+      "credential": "AA",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3214",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3349",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1309,10 +1309,10 @@
       "matched_program_slug": "early-childhood-education"
     },
     {
-      "title": "Early Childhood Education, AA",
-      "credential": "AA",
+      "title": "Early Childhood Education Teacher Certificate of Achievement",
+      "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3349",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3214",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1331,17 +1331,6 @@
       "matched_program_slug": "early-childhood-education"
     },
     {
-      "title": "ECE Administration and Adult Supervision Add On Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3360",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
       "title": "Early Childhood Education, AS-T",
       "credential": "AS",
       "program_code": null,
@@ -1351,6 +1340,28 @@
       "description": null,
       "requirement_groups": [],
       "matched_program_slug": "early-childhood-education"
+    },
+    {
+      "title": "Electrical Technology - Apprenticeship, AS",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3355",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "ECE Administration and Adult Supervision Add On Certificate of Achievement",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3360",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
     },
     {
       "title": "Electrical Technology - Apprenticeship Certificate of Achievement",
@@ -1364,10 +1375,36 @@
       "matched_program_slug": null
     },
     {
-      "title": "Electrical Technology - Apprenticeship, AS",
+      "title": "Electrical Technology - Electrical Maintenance Certificate of Achievement",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3326",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area B",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Associate Degree Math Requirement Credits / Units: 4",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Electrical Technology, AS",
       "credential": "AS",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3355",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3263",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1401,54 +1438,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Electrical Technology - Electrical Maintenance Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3326",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Area B",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "Associate Degree Math Requirement Credits / Units: 4",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Electron Microscopy - Biological Concentration Basic Sample Preparation",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3421",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Electrical Technology, AS",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3263",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
       "title": "Electron Microscopy - Biological Concentration Advanced Sample Preparation Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
@@ -1471,10 +1460,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Electron Microscopy - Crystalline Materials Advanced Training Certificate of Achievement",
-      "credential": "certificate",
+      "title": "Electron Microscopy - Biological Concentration Basic Sample Preparation",
+      "credential": "other",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3330",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3421",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1482,10 +1471,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Electron Microscopy - Materials, AS",
-      "credential": "AS",
+      "title": "Electron Microscopy - Crystalline Materials Advanced Training Certificate of Achievement",
+      "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3265",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3330",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1515,6 +1504,39 @@
       "matched_program_slug": null
     },
     {
+      "title": "Electronics Technology Certificate of Achievement",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3331",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Electron Microscopy - Materials, AS",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3265",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Engineering - Computer, AS",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3293",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "engineering"
+    },
+    {
       "title": "Electron Microscopy: Field Service Technician Advanced Training",
       "credential": "other",
       "program_code": null,
@@ -1537,21 +1559,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Electronics Technology Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3331",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Engineering - Computer, AS",
+      "title": "Engineering - Civil, AS",
       "credential": "AS",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3293",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3292",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1570,32 +1581,10 @@
       "matched_program_slug": "engineering"
     },
     {
-      "title": "Engineering - Civil, AS",
-      "credential": "AS",
+      "title": "Engineering Fundamentals Certificate of Achievement",
+      "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3292",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "engineering"
-    },
-    {
-      "title": "Engineering - Mechanical, Aeronautical, and Manufacturing, AS",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3295",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "engineering"
-    },
-    {
-      "title": "Engineering Computer Aided Drafting, AS",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3296",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3332",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1614,6 +1603,28 @@
       "matched_program_slug": "engineering"
     },
     {
+      "title": "Engineering Computer Aided Drafting, AS",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3296",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "engineering"
+    },
+    {
+      "title": "Engineering - Mechanical, Aeronautical, and Manufacturing, AS",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3295",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "engineering"
+    },
+    {
       "title": "Engineering Technology Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
@@ -1623,28 +1634,6 @@
       "description": null,
       "requirement_groups": [],
       "matched_program_slug": "engineering"
-    },
-    {
-      "title": "Engineering Fundamentals Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3332",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "engineering"
-    },
-    {
-      "title": "English, AA-T",
-      "credential": "AA",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3219",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "english"
     },
     {
       "title": "Engineering Technology, AS",
@@ -1669,6 +1658,17 @@
       "matched_program_slug": null
     },
     {
+      "title": "English, AA-T",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3219",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "english"
+    },
+    {
       "title": "ESL Milestone for Multilingual Speakers: Pathway to Business Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
@@ -1678,6 +1678,17 @@
       "description": null,
       "requirement_groups": [],
       "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "ESL Milestone for Multilingual Speakers: Pathway to Health Careers Certificate of Achievement",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3382",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
     },
     {
       "title": "ESL Milestone for Multilingual Speakers: Pathway to Electrical Technology Certificate of Achievement",
@@ -1702,10 +1713,21 @@
       "matched_program_slug": null
     },
     {
-      "title": "ESL Milestone for Multilingual Speakers: Pathway to Health Careers Certificate of Achievement",
+      "title": "Fashion Merchandising Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3382",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3247",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Fluid Power and Automation Technology Certificate of Achievement",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3291",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1724,32 +1746,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Fashion Merchandising Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3247",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
       "title": "Fashion Merchandising, AS",
       "credential": "AS",
       "program_code": null,
       "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3231",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Fluid Power and Automation Technology Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3291",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1790,17 +1790,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Gas Metal Arc Welding (GMAW)/Flux Core Arc Welding (FCAW) Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3341",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "welding"
-    },
-    {
       "title": "Geology, AS-T",
       "credential": "AS",
       "program_code": null,
@@ -1810,6 +1799,17 @@
       "description": null,
       "requirement_groups": [],
       "matched_program_slug": null
+    },
+    {
+      "title": "Gas Metal Arc Welding (GMAW)/Flux Core Arc Welding (FCAW) Certificate of Achievement",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3341",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "welding"
     },
     {
       "title": "Gas Tungsten Arc Welding (GTAW) Certificate of Achievement",
@@ -1893,10 +1893,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Heavy Equipment Mechanic Certificate of Achievement",
-      "credential": "certificate",
+      "title": "Heating and Air Conditioning, Refrigeration, AS",
+      "credential": "AS",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3289",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3299",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1904,10 +1904,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Heavy Equipment Technician, AS",
-      "credential": "AS",
+      "title": "Heavy Equipment Mechanic Certificate of Achievement",
+      "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3300",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3289",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1926,10 +1926,21 @@
       "matched_program_slug": null
     },
     {
-      "title": "Heating and Air Conditioning, Refrigeration, AS",
+      "title": "High-Intermediate ESL Certificate of Competency",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3400",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Heavy Equipment Technician, AS",
       "credential": "AS",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3299",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3300",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1968,17 +1979,6 @@
         }
       ],
       "matched_program_slug": "history"
-    },
-    {
-      "title": "High-Intermediate ESL Certificate of Competency",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3400",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
     },
     {
       "title": "Horticulture - Irrigation Technician Certificate of Achievement",
@@ -2036,43 +2036,10 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Horticulture - Sustainable Landscape Management Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3187",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "business-administration"
-    },
-    {
       "title": "Horticulture - Landscape Arborist Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3367",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Industrial Technology - Electrical Apprenticeship Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3286",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Horticulture, AS",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3167",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -2091,6 +2058,28 @@
       "matched_program_slug": null
     },
     {
+      "title": "Horticulture - Sustainable Landscape Management Certificate of Achievement",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3187",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Horticulture, AS",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3167",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
       "title": "Hospitality Front of House Service Operations Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
@@ -2102,29 +2091,14 @@
       "matched_program_slug": null
     },
     {
-      "title": "Industrial Technology - Level I Certificate of Achievement",
+      "title": "Industrial Technology - Electrical Apprenticeship Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3287",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3286",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
-      "requirement_groups": [
-        {
-          "name": "Area A",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "or Associate Degree Math Requirement Units: 4",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
+      "requirement_groups": [],
       "matched_program_slug": null
     },
     {
@@ -2165,14 +2139,29 @@
       "matched_program_slug": null
     },
     {
-      "title": "Industrial Technology - Maintenance Apprenticeship Certificate of Achievement",
+      "title": "Industrial Technology - Level I Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3285",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3287",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
-      "requirement_groups": [],
+      "requirement_groups": [
+        {
+          "name": "Area A",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "or Associate Degree Math Requirement Units: 4",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
       "matched_program_slug": null
     },
     {
@@ -2198,10 +2187,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Interdisciplinary Studies, Arts, Humanities, and Social Sciences Option, AA",
-      "credential": "AA",
+      "title": "Industrial Technology - Maintenance Apprenticeship Certificate of Achievement",
+      "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3346",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3285",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -2218,6 +2207,28 @@
       "description": null,
       "requirement_groups": [],
       "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Interdisciplinary Studies, Mathematics and Science Option, AS",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3168",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "mathematics"
+    },
+    {
+      "title": "Interdisciplinary Studies, Arts, Humanities, and Social Sciences Option, AA",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3346",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
     },
     {
       "title": "International Business Certificate of Achievement",
@@ -2240,50 +2251,6 @@
       "description": null,
       "requirement_groups": [],
       "matched_program_slug": null
-    },
-    {
-      "title": "Interior Design, AA",
-      "credential": "AA",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3233",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Interdisciplinary Studies, Mathematics and Science Option, AS",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3168",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "mathematics"
-    },
-    {
-      "title": "Journalism, AA-T",
-      "credential": "AA",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3234",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Law Enforcement Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3216",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "criminal-justice"
     },
     {
       "title": "Kinesiology, AA-T",
@@ -2312,6 +2279,50 @@
       "matched_program_slug": null
     },
     {
+      "title": "Journalism, AA-T",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3234",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Interior Design, AA",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3233",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Law Enforcement Certificate of Achievement",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3216",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "criminal-justice"
+    },
+    {
+      "title": "Law Enforcement, AS",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3203",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "criminal-justice"
+    },
+    {
       "title": "Law, Public Policy, and Society, AA-T",
       "credential": "AA",
       "program_code": null,
@@ -2338,28 +2349,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Law Enforcement, AS",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3203",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "criminal-justice"
-    },
-    {
-      "title": "Logistics and Transportation Supervisor Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3281",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
       "title": "Logistics and Transportation, AS",
       "credential": "AS",
       "program_code": null,
@@ -2371,21 +2360,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Machining Technology, AS",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3303",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Manual Machining Certificate of Achievement",
+      "title": "Logistics and Transportation Supervisor Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3280",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3281",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -2404,17 +2382,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Mathematics, AS-T",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3169",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "mathematics"
-    },
-    {
       "title": "Medical Administrative Assistant Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
@@ -2424,6 +2391,28 @@
       "description": null,
       "requirement_groups": [],
       "matched_program_slug": null
+    },
+    {
+      "title": "Machining Technology, AS",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3303",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Mathematics, AS-T",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3169",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "mathematics"
     },
     {
       "title": "Mental Health Specialist Certificate of Achievement",
@@ -2437,10 +2426,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Multimedia Certificate of Achievement",
+      "title": "Manual Machining Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3250",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3280",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -2499,10 +2488,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Music, AA",
-      "credential": "AA",
+      "title": "Multimedia Certificate of Achievement",
+      "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3236",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3250",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -2521,6 +2510,17 @@
       "matched_program_slug": null
     },
     {
+      "title": "Music, AA",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3236",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
       "title": "Municipal Clerk Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
@@ -2532,10 +2532,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Music, AA-T",
-      "credential": "AA",
+      "title": "Noncredit ESL Milestone for Multilingual Speakers - Introduction to Health Careers",
+      "credential": "other",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3237",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3418",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -2543,10 +2543,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Noncredit ESL Milestone for Multilingual Speakers - Introduction to Health Careers",
-      "credential": "other",
+      "title": "Music, AA-T",
+      "credential": "AA",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3418",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3237",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -2576,17 +2576,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Nurse Assistant and Home Health Aide Certificate of Completion",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3398",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "nursing"
-    },
-    {
       "title": "Oxy-Fuel Processes and Shielded Metal Arc Welding (SMAW) Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
@@ -2596,6 +2585,17 @@
       "description": null,
       "requirement_groups": [],
       "matched_program_slug": "welding"
+    },
+    {
+      "title": "Nurse Assistant and Home Health Aide Certificate of Completion",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3398",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "nursing"
     },
     {
       "title": "Nursing, AS",
@@ -2620,10 +2620,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Paralegal/Legal Assistant Studies, AS",
-      "credential": "AS",
+      "title": "Paraprofessional Preparation Certificate of Achievement",
+      "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3356",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3361",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -2642,10 +2642,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Paraprofessional Preparation Certificate of Achievement",
-      "credential": "certificate",
+      "title": "Paralegal/Legal Assistant Studies, AS",
+      "credential": "AS",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3361",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3356",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -2664,6 +2664,17 @@
       "matched_program_slug": null
     },
     {
+      "title": "Physical Education, AS",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3204",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
       "title": "Police Science, AS",
       "credential": "AS",
       "program_code": null,
@@ -2675,10 +2686,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Physical Education, AS",
-      "credential": "AS",
+      "title": "Power Performance and Data Collecting Certificate of Achievement",
+      "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3204",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3379",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -2701,17 +2712,6 @@
       "credential": "AA",
       "program_code": null,
       "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3206",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Power Performance and Data Collecting Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3379",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -2745,6 +2745,17 @@
       "matched_program_slug": null
     },
     {
+      "title": "Psychiatric Technology, AS",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3192",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
       "title": "Psychiatric Technician Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
@@ -2756,10 +2767,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Psychiatric Technology, AS",
-      "credential": "AS",
+      "title": "Public Relations Certificate of Achievement",
+      "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3192",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3383",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -2778,17 +2789,6 @@
       "matched_program_slug": "psychology"
     },
     {
-      "title": "Public Relations Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3383",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
       "title": "Psychology, AA-T",
       "credential": "AA",
       "program_code": null,
@@ -2798,6 +2798,17 @@
       "description": null,
       "requirement_groups": [],
       "matched_program_slug": "psychology"
+    },
+    {
+      "title": "Public Safety Dispatcher Certificate of Completion",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3402",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
     },
     {
       "title": "Radiologic Technology Certificate of Achievement",
@@ -2815,17 +2826,6 @@
       "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3375",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Public Safety Dispatcher Certificate of Completion",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3402",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -2866,17 +2866,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Real Estate Salesperson Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3374",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
       "title": "Real Estate, AS",
       "credential": "AS",
       "program_code": null,
@@ -2910,15 +2899,15 @@
       "matched_program_slug": null
     },
     {
-      "title": "Retail Management and Merchandising, AS",
-      "credential": "AS",
+      "title": "Real Estate Salesperson Certificate of Achievement",
+      "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3306",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3374",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
       "requirement_groups": [],
-      "matched_program_slug": "business-administration"
+      "matched_program_slug": null
     },
     {
       "title": "Refrigeration Certificate of Achievement",
@@ -2932,21 +2921,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "San Joaquin Delta College Associate Degree General Education Pattern",
-      "credential": "AA",
+      "title": "Retail Management and Merchandising, AS",
+      "credential": "AS",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3337",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Retail Management Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3272",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3306",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -2965,10 +2943,21 @@
       "matched_program_slug": null
     },
     {
-      "title": "Scenic Technician Certificate of Achievement",
+      "title": "Retail Management Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3392",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3272",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "San Joaquin Delta College Associate Degree General Education Pattern",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3337",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -2987,10 +2976,10 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Social Media Certificate of Achievement",
+      "title": "Scenic Technician Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3362",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3392",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -3024,10 +3013,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Social Media Strategy Certificate of Completion",
+      "title": "Social Media Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3378",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3362",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -3035,10 +3024,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Spanish for Medical Professions, Certificate of Completion",
+      "title": "Social Media Strategy Certificate of Completion",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3425",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3378",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -3057,32 +3046,21 @@
       "matched_program_slug": null
     },
     {
+      "title": "Spanish for Medical Professions, Certificate of Completion",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3425",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
       "title": "Spanish for Medical Professions, Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3420",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Speech Language Pathology Assistant Advanced Placement Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3344",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Stage Electrician Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3393",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -3134,6 +3112,28 @@
       "matched_program_slug": null
     },
     {
+      "title": "Stage Electrician Certificate of Achievement",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3393",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Speech Language Pathology Assistant Advanced Placement Certificate of Achievement",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3344",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
       "title": "Stage Makeup Technician Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
@@ -3156,36 +3156,21 @@
       "matched_program_slug": null
     },
     {
-      "title": "Studio Art, AA-T",
-      "credential": "AA",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3239",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Area B - Studio Art",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "or ART 33C Figure Drawing Units: 3",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "art"
-    },
-    {
       "title": "Stagecraft Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3252",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Substance Abuse Counselor Certificate of Achievement",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3218",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -3226,28 +3211,6 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Substance Abuse Counselor Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3218",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Theatre Arts - Acting, AA",
-      "credential": "AA",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3240",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
       "title": "Tax Preparation Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
@@ -3281,10 +3244,36 @@
       "matched_program_slug": null
     },
     {
-      "title": "Theatre Arts - Technical Theatre, AA",
+      "title": "Studio Art, AA-T",
       "credential": "AA",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3241",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3239",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area B - Studio Art",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "or ART 33C Figure Drawing Units: 3",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "art"
+    },
+    {
+      "title": "Theatre Arts - Acting, AA",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3240",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -3292,10 +3281,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Winery Event Coordinator Certificate of Achievement",
-      "credential": "certificate",
+      "title": "Theatre Arts - Technical Theatre, AA",
+      "credential": "AA",
       "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3370",
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3241",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -3325,17 +3314,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Winery Sales and Marketing Certificate of Achievement",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3372",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "business-administration"
-    },
-    {
       "title": "Welding Technology Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
@@ -3362,6 +3340,17 @@
       "matched_program_slug": "welding"
     },
     {
+      "title": "Winery Event Coordinator Certificate of Achievement",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3370",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
       "title": "Winery Tasting Room Associate Certificate of Achievement",
       "credential": "certificate",
       "program_code": null,
@@ -3382,6 +3371,17 @@
       "description": null,
       "requirement_groups": [],
       "matched_program_slug": null
+    },
+    {
+      "title": "Winery Sales and Marketing Certificate of Achievement",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3372",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "business-administration"
     }
   ]
 }
