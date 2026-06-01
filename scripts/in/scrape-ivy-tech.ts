@@ -137,7 +137,7 @@ function parsePrereqs(description: string | null): { text: string; courses: stri
   const plain = stripHtml(description);
   const m = plain.match(/PREREQUISITES?:\s*(.*?)(?:CATALOG DESCRIPTION:|DESCRIPTION:|PRE\/COREQUISITES:|COREQUISITES:|$)/i);
   if (!m) return null;
-  let text = m[1].trim().replace(/\s*\.\s*$/, "").trim();
+  const text = m[1].trim().replace(/\s*\.\s*$/, "").trim();
   // Common "no prereq" sentinels.
   if (!text || /^(none|n\/a)\.?$/i.test(text)) return null;
   const codes = new Set<string>();
@@ -209,11 +209,49 @@ interface SectionNode {
   meetings: Meeting[] | null;
 }
 
+interface SectionRecord {
+  college_code: string;
+  term: string;
+  course_prefix: string;
+  course_number: string;
+  course_title: string;
+  credits: number;
+  crn: string;
+  section: string;
+  days: string;
+  start_time: string;
+  end_time: string;
+  start_date: string | null;
+  end_date: string | null;
+  location: string;
+  campus: string;
+  mode: string;
+  instructor: string;
+  seats_open: number | null;
+  seats_total: number | null;
+  prerequisite_text: string | null;
+  prerequisite_courses: string[];
+}
+
+interface PageInfo {
+  hasNextPage: boolean;
+  endCursor: string | null;
+}
+interface CoursesResponse {
+  environment: { findCourses: { pageInfo: PageInfo; edges: Array<{ node: CourseNode }> } };
+}
+interface SectionsResponse {
+  environment: { getCourseSections: { pageInfo: PageInfo; edges: Array<{ node: SectionNode }> } };
+}
+interface TermsResponse {
+  environment: { courseSearchTerms: Array<{ code: string; name: string }> };
+}
+
 async function fetchCourses(term: string): Promise<CourseNode[]> {
   const out: CourseNode[] = [];
   let after: string | null = null;
   for (;;) {
-    const d: any = await gql(COURSES_Q, { term, after });
+    const d: CoursesResponse = await gql<CoursesResponse>(COURSES_Q, { term, after });
     const conn = d.environment.findCourses;
     for (const e of conn.edges) out.push(e.node);
     if (!conn.pageInfo.hasNextPage) break;
@@ -226,7 +264,7 @@ async function fetchSections(courseId: string): Promise<SectionNode[]> {
   const out: SectionNode[] = [];
   let after: string | null = null;
   for (;;) {
-    const d: any = await gql(SECTIONS_Q, { cid: courseId, after });
+    const d: SectionsResponse = await gql<SectionsResponse>(SECTIONS_Q, { cid: courseId, after });
     const conn = d.environment.getCourseSections;
     for (const e of conn.edges) out.push(e.node);
     if (!conn.pageInfo.hasNextPage) break;
@@ -244,7 +282,7 @@ async function main() {
     return i >= 0 ? process.argv[i + 1] : null;
   })();
 
-  const td: any = await gql(TERMS_Q);
+  const td = await gql<TermsResponse>(TERMS_Q);
   const rawTerms: Array<{ code: string; name: string }> = td.environment.courseSearchTerms;
   const terms = rawTerms
     .map((t) => ({ ...t, std: termToStandard(t.name, t.code) }))
@@ -265,7 +303,7 @@ async function main() {
     const courses = await fetchCourses(term.code);
     console.log(`  ${courses.length} courses; fetching sections...`);
 
-    const records: any[] = [];
+    const records: SectionRecord[] = [];
     let done = 0;
     for (const c of courses) {
       const prefix = c.subject.shortName;

@@ -75,7 +75,9 @@ async function geocode(address: string): Promise<{ lat: number; lng: number } | 
   try {
     const res = await fetch(url, { headers: { "User-Agent": "cc-coursemap/1.0" } });
     if (!res.ok) return null;
-    const j: any = await res.json();
+    const j = (await res.json()) as {
+      result?: { addressMatches?: Array<{ coordinates?: { x: number; y: number } }> };
+    };
     const match = j?.result?.addressMatches?.[0];
     if (match?.coordinates) return { lat: match.coordinates.y, lng: match.coordinates.x };
   } catch {
@@ -85,8 +87,11 @@ async function geocode(address: string): Promise<{ lat: number; lng: number } | 
 }
 
 async function main() {
-  const inst = JSON.parse(fs.readFileSync(INST, "utf8"));
-  const ivy = inst.find((c: any) => c.id === "ivy-tech-community-college");
+  const inst = JSON.parse(fs.readFileSync(INST, "utf8")) as Array<{
+    id: string;
+    campuses?: Array<{ name: string; lat: number; lng: number; address: string }>;
+  }>;
+  const ivy = inst.find((c) => c.id === "ivy-tech-community-college");
   if (!ivy) throw new Error("Ivy Tech entry not found");
 
   const out: Array<{ name: string; lat: number; lng: number; address: string }> = [];
