@@ -12,8 +12,20 @@ name: Import data to Supabase on merge
 #   - The trigger is a *human-merged* PR — someone has already eyeballed
 #     the diff and approved it.
 #
+# SCOPING (2026-06-01 incident fix): a push now imports ONLY the state(s)
+# whose data/** files changed in the merge, split by datatype, in three
+# INDEPENDENT jobs. Previously every merge ran `import-courses.ts --all`
+# (all 50 states, sequential) on one 30-min-timeout job; once the dataset
+# outgrew 30 min the courses step was killed mid-run, the transfers/programs
+# steps were `skipped`, and the Vercel rebuild never fired — so NO merged
+# data reached prod for ~5.5h (last success 15:02Z, then 0 successes across
+# the next 40 runs). Per-state scoping makes the steady state a seconds-long
+# job; `--all` survives only on manual dispatch (backfill) with a generous
+# timeout.
+#
 # Manual workflow_dispatch is exposed for one-time backfills (e.g. data
-# that landed before this workflow existed, like PRs #64 and #65).
+# that landed before this workflow existed, or to recover from an import
+# outage). state="all" datatype="both" re-syncs everything.
 
 on:
   push:
@@ -35,6 +47,9 @@ permissions:
   contents: read
 
 # Serialize so two near-simultaneous merges don't fight over Supabase.
+# cancel-in-progress stays false: an in-flight import must finish; GitHub
+# cancels only redundant *pending* runs, which is fine because each run
+# re-imports the full current state of whatever it was scoped to.
 concurrency:
   group: import-on-merge
   cancel-in-progress: false
@@ -44,9 +59,88 @@ env:
   SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
 
 jobs:
-  import:
+  # ---------------------------------------------------------------------
+  # Decide which states to import for each datatype.
+  #   - workflow_dispatch: honor the chosen state + datatype.
+  #   - push: diff the merge against its parent and bucket changed paths
+  #     into courses / transfers / programs by on-disk location:
+  #         data/<slug>/courses/**          -> courses
+  #         data/<slug>/transfer-equiv.json -> transfers
+  #         data/<slug>/programs/**         -> programs
+  # An empty output => that datatype's job is skipped (nothing changed).
+  # ---------------------------------------------------------------------
+  plan:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    outputs:
+      courses_states: ${{ steps.plan.outputs.courses_states }}
+      transfers_states: ${{ steps.plan.outputs.transfers_states }}
+      programs_states: ${{ steps.plan.outputs.programs_states }}
+      any: ${{ steps.plan.outputs.any }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Need the merge commit's parent to diff changed files. Squash
+          # merges (this repo's convention) land as one commit, so depth 2
+          # is enough; the before-SHA path covers multi-commit pushes when
+          # that SHA is reachable.
+          fetch-depth: 2
+      - name: Determine states per datatype
+        id: plan
+        env:
+          EVENT: ${{ github.event_name }}
+          IN_STATE: ${{ github.event.inputs.state }}
+          IN_DT: ${{ github.event.inputs.datatype }}
+          BEFORE: ${{ github.event.before }}
+          SHA: ${{ github.sha }}
+        run: |
+          set -uo pipefail
+          courses=""; transfers=""; programs=""
+          if [ "$EVENT" = "workflow_dispatch" ]; then
+            st="${IN_STATE:-all}"
+            dt="${IN_DT:-both}"
+            if [ "$dt" = "both" ] || [ "$dt" = "courses" ];   then courses="$st"; fi
+            if [ "$dt" = "both" ] || [ "$dt" = "transfers" ]; then transfers="$st"; fi
+            if [ "$dt" = "both" ] || [ "$dt" = "programs" ];  then programs="$st"; fi
+          else
+            # Resolve a diff range: prefer the push's before-SHA, fall back
+            # to HEAD^ (correct for squash merges) if it isn't reachable.
+            range="HEAD^ $SHA"
+            if [ -n "$BEFORE" ] && [ "$BEFORE" != "0000000000000000000000000000000000000000" ]; then
+              if git cat-file -e "${BEFORE}^{commit}" 2>/dev/null; then
+                range="$BEFORE $SHA"
+              fi
+            fi
+            echo "Diff range: $range"
+            changed="$(git diff --name-only $range -- 'data/**' 2>/dev/null || true)"
+            courses="$(printf '%s\n' "$changed"   | grep -oE '^data/[a-z]{2}/courses/'             | cut -d/ -f2 | sort -u | tr '\n' ' ' || true)"
+            transfers="$(printf '%s\n' "$changed" | grep -E  '^data/[a-z]{2}/transfer-equiv\.json$' | cut -d/ -f2 | sort -u | tr '\n' ' ' || true)"
+            programs="$(printf '%s\n' "$changed"  | grep -oE '^data/[a-z]{2}/programs/'            | cut -d/ -f2 | sort -u | tr '\n' ' ' || true)"
+          fi
+          # Normalize whitespace.
+          courses="$(echo $courses | xargs || true)"
+          transfers="$(echo $transfers | xargs || true)"
+          programs="$(echo $programs | xargs || true)"
+          any="false"
+          if [ -n "$courses$transfers$programs" ]; then any="true"; fi
+          {
+            echo "courses_states=$courses"
+            echo "transfers_states=$transfers"
+            echo "programs_states=$programs"
+            echo "any=$any"
+          } >> "$GITHUB_OUTPUT"
+          echo "Plan -> courses:[$courses] transfers:[$transfers] programs:[$programs]"
+
+  # ---------------------------------------------------------------------
+  # Three independent import jobs. They run in parallel and each carries
+  # its own pass/fail — a slow or failing courses import can no longer
+  # cause transfers/programs to be skipped. Per-state in the steady state
+  # (seconds); only the manual `all` dispatch loops every state.
+  # ---------------------------------------------------------------------
+  courses:
+    needs: plan
+    if: ${{ needs.plan.outputs.courses_states != '' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 90 # backstop for the `all` backfill; per-state is seconds
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -54,61 +148,86 @@ jobs:
           node-version: "20"
           cache: "npm"
       - run: npm ci
-
-      - name: Resolve inputs
-        id: args
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            state="${{ inputs.state }}"
-            dt="${{ inputs.datatype }}"
-          else
-            state="all"
-            dt="both"
-          fi
-          if [ "$state" = "all" ]; then
-            flag="--all"
-          else
-            flag="--state $state"
-          fi
-          echo "state=$state" >> "$GITHUB_OUTPUT"
-          echo "datatype=$dt"  >> "$GITHUB_OUTPUT"
-          echo "flag=$flag"    >> "$GITHUB_OUTPUT"
-          echo "Importing state=$state, datatype=$dt"
-
       - name: Import courses
-        if: steps.args.outputs.datatype != 'transfers' && steps.args.outputs.datatype != 'programs'
-        run: npx tsx scripts/import-courses.ts ${{ steps.args.outputs.flag }}
+        env:
+          STATES: ${{ needs.plan.outputs.courses_states }}
+        run: |
+          set -euo pipefail
+          for s in $STATES; do
+            if [ "$s" = "all" ]; then
+              npx tsx scripts/import-courses.ts --all
+            else
+              npx tsx scripts/import-courses.ts --state "$s"
+            fi
+          done
 
+  transfers:
+    needs: plan
+    if: ${{ needs.plan.outputs.transfers_states != '' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - run: npm ci
       - name: Import transfers
-        if: steps.args.outputs.datatype != 'courses' && steps.args.outputs.datatype != 'programs'
-        run: npx tsx scripts/import-transfers.ts ${{ steps.args.outputs.flag }}
+        env:
+          STATES: ${{ needs.plan.outputs.transfers_states }}
+        run: |
+          set -euo pipefail
+          for s in $STATES; do
+            if [ "$s" = "all" ]; then
+              npx tsx scripts/import-transfers.ts --all
+            else
+              npx tsx scripts/import-transfers.ts --state "$s"
+            fi
+          done
 
-      # Programs (degree/certificate requirements) power the Degree-Path Planner
-      # at /{state}/college/{id}/program/{slug}. Before this step existed, program
-      # JSON landed in the repo on merge but never reached Supabase — and the
-      # JSON files are NOT traced into the Vercel function bundle (only
-      # data/*/prereqs.json is, per next.config.ts). So buildMajorPlan's
-      # Supabase-first read got nothing and the file fallback hit ENOENT,
-      # 404-ing every program detail page in every state. This wires the
-      # existing import-programs.ts into the same merge path as courses/transfers.
+  programs:
+    needs: plan
+    if: ${{ needs.plan.outputs.programs_states != '' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - run: npm ci
       - name: Import programs
-        if: steps.args.outputs.datatype == 'both' || steps.args.outputs.datatype == 'programs'
-        run: npx tsx scripts/import-programs.ts ${{ steps.args.outputs.flag }}
+        env:
+          STATES: ${{ needs.plan.outputs.programs_states }}
+        run: |
+          set -euo pipefail
+          for s in $STATES; do
+            if [ "$s" = "all" ]; then
+              npx tsx scripts/import-programs.ts --all
+            else
+              npx tsx scripts/import-programs.ts --state "$s"
+            fi
+          done
 
-      # Vercel auto-deploys on push to main, but that build races this import
-      # workflow. The build typically finishes ~5 min after merge while the
-      # import runs 8–15 min — so the first production deploy locks in EMPTY
-      # Supabase data for new colleges, and the affected pages render
-      # "No course data" until an unrelated PR triggers another rebuild.
-      #
-      # Fix: after both imports finish, POST to a Vercel Deploy Hook to
-      # trigger a second, authoritative build that reads the freshly-imported
-      # rows. Guarded on the secret existing so forks / local copies don't
-      # fail noisily.
-      #
-      # One-time setup: in Vercel UI → Project Settings → Git → Deploy Hooks,
-      # create a hook for branch "main"; paste the URL into the GitHub
-      # repository secret VERCEL_DEPLOY_HOOK_URL.
+  # ---------------------------------------------------------------------
+  # Always trigger a Vercel rebuild after the imports settle, so SSG/ISR
+  # pages pick up the freshly imported rows. `always() && !cancelled()`
+  # means a partial failure (e.g. one datatype errored) still publishes
+  # whatever DID land — the old single-job design skipped the rebuild
+  # entirely whenever the courses step didn't reach completion.
+  #
+  # Vercel auto-deploys on push to main, but that build races this import:
+  # the build finishes ~5 min after merge while imports lock in EMPTY
+  # Supabase data for new colleges until an unrelated rebuild. This second,
+  # authoritative build reads the freshly-imported rows.
+  # ---------------------------------------------------------------------
+  rebuild:
+    needs: [plan, courses, transfers, programs]
+    if: ${{ always() && !cancelled() && needs.plan.outputs.any == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
       - name: Trigger Vercel rebuild
         env:
           VERCEL_DEPLOY_HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
@@ -121,7 +240,6 @@ jobs:
           echo "Triggering Vercel rebuild so SSG pages pick up newly imported rows..."
           response=$(curl -sS -X POST -w '\nHTTP %{http_code}' "$VERCEL_DEPLOY_HOOK_URL")
           echo "$response"
-          # Vercel returns 201 on successful enqueue.
           code=$(echo "$response" | tail -n1 | awk '{print $2}')
           if [ "$code" != "201" ] && [ "$code" != "200" ]; then
             echo "::warning::Vercel deploy hook returned $code — rebuild may not be queued."
