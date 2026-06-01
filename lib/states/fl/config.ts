@@ -190,7 +190,23 @@ const flConfig: StateConfig = {
     // contributes catalog-level prereqs for FSCJ. Aggregator walks both
     // data/fl/courses/*/* and data/fl/coursedog-catalog/*.json.
     prereqs: { source: "aggregate-from-courses" },
-    // manual-only: programs — Phase 5+.
+    programs: [
+      {
+        // discover-catalogs.ts fingerprints each FL college's catalog platform
+        // → data/fl/catalog-discovery.json; the platform scrapers read it.
+        // Keep ordered — discovery MUST run before the scrapers. Coverage:
+        // 8 plannable colleges (626 programs). Known gaps in
+        // data/fl/DEFERRED-programs.md (courseleaf index variants, coursedog
+        // Banner-SQL variant, cf/tcc-fl link-not-inline, 9 unknown-platform).
+        scripts: [
+          "scripts/fl/discover-catalogs.ts",
+          "scripts/fl/scrape-smartcatalogiq-programs.ts",
+          "scripts/fl/scrape-acalog-programs.ts",
+          "scripts/fl/scrape-misc-programs.ts",
+        ],
+        runner: "http",
+      },
+    ],
   },
 };
 
