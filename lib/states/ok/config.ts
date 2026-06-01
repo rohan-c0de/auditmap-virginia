@@ -96,10 +96,14 @@ const okConfig: StateConfig = {
       // manual-only: eastern-oklahoma-state-college — no public guest course-search
       // URL found; site publishes only a PDF self-service guide. Skipped.
     ],
-    // manual-only: transfers — Oklahoma Course Equivalency Project (OCEP) at
-    // vita.okhighered.org/CourseSearch/ is the state portal. Orchestrator
-    // generated a stub at scripts/ok/scrape-transfer-ocep.ts but the actual
-    // scraper isn't implemented yet.
+    // Oklahoma Course Equivalency Project (OCEP, vita.okhighered.org) is the
+    // authoritative statewide source. It's a group model — each course belongs
+    // to a statewide equivalency group and every institution's course in that
+    // group is mutually transferable. scrape-transfer.ts enumerates all 12
+    // OCEP-registered OK community colleges, queries each equivalency group
+    // once, and emits edges to all other in-state institutions (universities,
+    // regionals, colleges).
+    transfers: [{ scripts: ["scripts/ok/scrape-transfer.ts"], runner: "http" }],
     prereqs: { source: "aggregate-from-courses" },
     // manual-only: programs — none of the 13 catalogs matched a templated
     // platform (acalog/courseleaf/smartcatalogiq/coursedog/cleancatalog).
