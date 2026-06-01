@@ -51,6 +51,7 @@ import akInstitutions from "@/data/ak/institutions.json";
 import idInstitutions from "@/data/id/institutions.json";
 import wiInstitutions from "@/data/wi/institutions.json";
 import okInstitutions from "@/data/ok/institutions.json";
+import neInstitutions from "@/data/ne/institutions.json";
 
 // Double-cast via `unknown` because the JSON-inferred types narrow some fields
 // to `null` where `Institution` expects a concrete type (e.g. `minimum_age` is
@@ -106,6 +107,7 @@ const REGISTRY: Record<string, Institution[]> = {
   id: idInstitutions as unknown as Institution[],
   wi: wiInstitutions as unknown as Institution[],
   ok: okInstitutions as unknown as Institution[],
+  ne: neInstitutions as unknown as Institution[],
 };
 
 /**
