@@ -33,32 +33,54 @@ const nextConfig: NextConfig = {
   // the programs/online routes. The previous glob force-bundled the
   // prereq JSON into every state route bundle even though only the
   // /api/[state]/prereqs/* handlers actually read the files.
-  outputFileTracingIncludes: {
-    "/api/[state]/prereqs/**": ["./data/*/prereqs.json"],
-    // transfer-equiv.json is NOT re-included here despite the blanket
-    // exclusion below. At ~200 MB across all states, bundling it into
-    // serverless functions blew past Vercel's 250 MB cap. Production
-    // reads transfers from Supabase; the local JSON fallback in
-    // lib/transfer.ts is only exercised in local dev (no size cap).
-  },
-  // `lib/data-freshness.ts` used to call `fs.readdirSync` with dynamic
-  // `path.join("data", state, "courses", slug)` arguments. Next's bundler
-  // tracer couldn't narrow those, so it conservatively pulled the entire
-  // `data/` tree (~1.5 GB) into every function that transitively imported
-  // the module — blowing past Vercel's 250 MB serverless function cap.
-  // Earlier deploys worked around that with an `outputFileTracingExcludes`
-  // entry keyed on `"**/*"`; Next 16 now warns the pattern is "overly
-  // broad" and the exclude stopped reliably holding once total `data/`
-  // exceeded the cap (most recently after the MS PR pushed total data
-  // size up by ~8 MB).
+  // ── Serverless-function bundle size (Vercel 250 MB cap) ────────────────
   //
-  // The proper fix lives in `scripts/build-last-updated-snapshot.ts`:
-  // freshness lookups now read a 57 KB pre-built `data/last-updated.json`
-  // manifest (static import, inlined at bundle time) instead of touching
-  // the filesystem. No dynamic fs paths anywhere → no tracer confusion →
-  // no exclude rule needed. `lib/transfer.ts` still imports
-  // `transfer-equiv.json` directly under specific route handlers, where
-  // the tracer narrows the import statically.
+  // Now that the state landing page and the sitemap routes render
+  // on-demand (`dynamic = "force-dynamic"`, see app/[state]/page.tsx),
+  // each becomes a serverless function that bundles every file its code
+  // path touches via `fs`. Next's tracer cannot narrow dynamic
+  // `path.join(process.cwd(), "data", state, …)` arguments, so it
+  // conservatively pulls EVERY state's copy of the touched data dir into
+  // the function. The per-state `data/` payload is enormous:
+  //
+  //     data/*/courses/**            ~1.9 GB   (Supabase-backed at runtime)
+  //     data/*/transfer-equiv.json   ~724 MB   (Supabase-backed at runtime)
+  //     data/*/programs/**           ~200 MB   (fs-backed; program pages need it)
+  //     data/*/scorecard/**          ~27 MB    (fs-backed; college pages need it)
+  //     data/*/scorecard-programs/** ~20 MB
+  //
+  // Strategy: exclude the three Supabase-backed heavyweights from EVERY
+  // function bundle. All three are loaded Supabase-first at runtime, with
+  // the on-disk JSON only a dev/build fallback (see loadCoursesForCollege
+  // / loadAllCourses in lib/courses.ts, loadTransferMappings* in
+  // lib/transfer.ts, loadCollegePrograms / loadProgramAcrossColleges in
+  // lib/programs/requirements.ts — each tries Supabase, then falls back to
+  // the file). Production has all three in Postgres, so excluding the
+  // files from the bundle changes nothing a user sees while removing
+  // ~2.9 GB of would-be-traced payload.
+  //
+  // NOT excluded: data/*/scorecard/** (~27 MB) and scorecard-programs
+  // (~20 MB). Those are read straight from disk at request time (no
+  // Supabase table) by the college detail page's outcome tiles, and
+  // they're small enough to bundle without threatening the cap.
+  //
+  // Note on precedence: Next applies excludes AFTER includes, so a
+  // "**/*" exclude wins over any per-route re-include of the same glob —
+  // re-including programs/ for the program routes does NOT work. That's
+  // fine here precisely because programs is Supabase-backed; the routes
+  // get their data over the wire, not from the bundle.
+  outputFileTracingExcludes: {
+    "**/*": [
+      "./data/*/courses/**",
+      "./data/*/transfer-equiv.json",
+      "./data/*/programs/**",
+    ],
+  },
+  outputFileTracingIncludes: {
+    // Prereq API parses prereqs.json directly from disk; pin it so the
+    // tracer always bundles it for this route.
+    "/api/[state]/prereqs/**": ["./data/*/prereqs.json"],
+  },
   async redirects() {
     // VCCS 2022 renames — these colleges officially changed names in 2022
     // and external links (press, Wikipedia, prior PDFs) may still point at
