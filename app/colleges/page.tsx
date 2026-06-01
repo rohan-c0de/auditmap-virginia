@@ -5,7 +5,7 @@ import { loadInstitutions } from "@/lib/institutions";
 import { getCourseCount } from "@/lib/courses";
 import { getCurrentTerm } from "@/lib/terms";
 
-export const revalidate = 86400;
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title:
