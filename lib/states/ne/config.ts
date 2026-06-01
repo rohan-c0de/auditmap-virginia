@@ -60,8 +60,10 @@ const neConfig: StateConfig = {
       { scripts: ["scripts/ne/scrape-lptc.ts"], runner: "http" },
     ],
     prereqs: { source: "aggregate-from-courses" as const },
+    programs: [
+      { scripts: ["scripts/ne/scrape-programs.ts"], runner: "http" },
+    ],
     // manual-only: transfers — no articulation portal registered for NE.
-    // manual-only: programs — Phase 6 discovered catalogs but programs scrape not yet executed.
   },
 };
 
