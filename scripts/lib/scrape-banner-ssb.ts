@@ -135,6 +135,16 @@ export interface ScraperHooks {
   termPickerOptions?: Parameters<typeof pickRecentSsbTerms<BannerTerm>>[1];
 
   /**
+   * Keep only the sections this predicate returns true for. Needed when one
+   * Banner host serves multiple institutions and only some belong to this
+   * college — e.g. Montana Tech's `reg-prod.ec.mtech.edu` serves both the
+   * 4-year North Campus (Montana Tech) and the 2-year South Campus (Highlands
+   * College, our community college), so Highlands filters to
+   * `campusDescription === "South Campus"`. Omit to keep every section.
+   */
+  sectionFilter?: (section: BannerSection) => boolean;
+
+  /**
    * Catalog-sourced prereq fallback merged after Banner's own prereq fetch.
    * Used by states whose Banner instances return empty prereq HTML
    * (DTCC's case — its catalog scrape lives in data/de/prereqs.json).
@@ -641,7 +651,13 @@ export async function scrapeBannerSsbCollege(
       const subjectMap = await buildSubjectMap(baseUrl, term.code, cookies, mepCode, appContext);
       log(`  Built subject map: ${subjectMap.size} subjects`);
 
-      const sections = await searchSections(baseUrl, term.code, cookies, log, mepCode, appContext);
+      const allSections = await searchSections(baseUrl, term.code, cookies, log, mepCode, appContext);
+      const sections = hooks.sectionFilter
+        ? allSections.filter(hooks.sectionFilter)
+        : allSections;
+      if (hooks.sectionFilter) {
+        log(`  Filtered ${allSections.length} → ${sections.length} sections (sectionFilter)`);
+      }
       if (sections.length === 0) {
         log(`  No sections found for ${term.description}`);
         continue;
