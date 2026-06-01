@@ -62,7 +62,28 @@ const vaConfig: StateConfig = {
   ],
   scrapers: {
     // manual-only: courses — VA PeopleSoft scraper consistently exceeds the 6h GitHub Actions timeout; run manually when needed.
-    // manual-only: transfers — disabled alongside courses to avoid partial-refresh drift.
+    // Transfers are SAFE on cron despite courses being manual-only. The eight
+    // scrapers below hit external university transfer-equivalency portals
+    // (GMU/ODU/UMW/UVA/VCU/VSU/VWU public HTML/JSON endpoints + Virginia Tech's
+    // published VCCS-equivalency page) — none invoke the heavy PeopleSoft course
+    // scrape they were previously (incorrectly) disabled alongside. They run
+    // sequentially in one job because each loads data/va/transfer-equiv.json,
+    // merges its own university's rows, and writes the file back.
+    transfers: [
+      {
+        scripts: [
+          "scripts/va/scrape-transfer-equiv.ts", // Virginia Tech (vt)
+          "scripts/va/scrape-transfer-gmu.ts",
+          "scripts/va/scrape-transfer-odu.ts",
+          "scripts/va/scrape-transfer-umw.ts",
+          "scripts/va/scrape-transfer-uva.ts",
+          "scripts/va/scrape-transfer-vcu.ts",
+          "scripts/va/scrape-transfer-vsu.ts",
+          "scripts/va/scrape-transfer-vwu.ts",
+        ],
+        runner: "http",
+      },
+    ],
     // Prereqs aggregate from committed course-section prerequisite_text
     // (data/va/prereqs.json, 302 parsed chains; 4,227 sections carry prereq
     // text). This reads already-committed data — it does NOT run the heavy

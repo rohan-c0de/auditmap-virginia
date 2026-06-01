@@ -92,7 +92,7 @@ The fastest realistic path is to front-load two near-zero-cost batches before an
 ## Progress tracker
 
 ### NOW — cheap, high-impact (do first)
-- [ ] **va** (D) — Virginia: Big state, all 5 dims A-grade data already on disk; D only because robust 8-univ/15,483-row transfer scrapers aren't declared in config — a one-edit cron wire flips D->A.
+- [x] **va** (D→**A**) — Virginia: ✅ DONE — wired the 8 external-portal transfer scrapers into `StateConfig.scrapers.transfers`; transfers D→A, composite **A**.
 - [ ] **md** (C) — Maryland: All dims A except courses 81%; the 3 missing colleges (ccbc/cecil/garrett) already have wired scrapers that just need a re-run -> 16/16, no new code.
 - [ ] **nc** (C) — North Carolina: Huge state one regex pass from B+: 8 prereq entries have raw <br> + empty courses[]; strip and re-extract -> prereqs C->A, courses/transfers already A.
 - [ ] **az** (C) — Arizona: Large state; AWC re-run (transient 502) + central-AZ coursedog lands courses ~95% with tohono-oodham as documented ceiling -> composite A-/A.
