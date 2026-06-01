@@ -8,12 +8,37 @@ const ksConfig: StateConfig = {
   systemUrl: "https://www.kansasregents.org/",
   collegeCount: 24,
 
-  // TODO: verify senior-waiver statute for Kansas (K.S.A. 76-728 may apply for residents 65+).
-  // Set to null if no waiver exists, or fill in per the SeniorWaiverConfig shape.
-  seniorWaiver: null,
+  // Kansas has no statewide senior tuition-waiver statute for community/technical
+  // colleges. K.S.A. 76-731a covers Board of Regents (state university) institutions,
+  // not community colleges (governed under K.S.A. Chapter 71). Each college sets its
+  // own policy; common threshold is 60–65. Populated as "varies by college" per the
+  // NE/AZ/CA pattern.
+  seniorWaiver: {
+    ageThreshold: 60,
+    legalCitation: "No statewide statute for community/technical colleges; set by each college",
+    description:
+      "Kansas has no statewide senior-tuition statute for its community and technical colleges. Each college sets its own policy — many offer a reduced senior rate or waived tuition for residents aged 60+ on credit courses, often on a space-available basis. Terms vary by college; confirm with the registrar.",
+    bannerTitle: "Kansas Senior Discounts (by college)",
+    bannerSummary:
+      "60+ in Kansas? Many community and technical colleges offer a reduced senior tuition rate — terms vary by college.",
+    bannerDetail:
+      "Kansas has no statewide senior-tuition statute for community and technical colleges. K.S.A. 76-731a covers state universities under the Board of Regents but does not extend to the 24-college community/technical system. Each college sets its own policy — commonly a reduced or waived senior rate for residents 60 or 65+ on a space-available basis, sometimes excluding lab fees and non-credit classes. Contact your college's registrar for the specific rate and eligibility.",
+  },
 
   transferSupported: false,
-  popularCourses: [],
+  // Top 8 by section count across all wired KS colleges. Different colleges use
+  // different prefixes (EG/EN/ENG for English Composition); list reflects the
+  // raw rank in scraped data.
+  popularCourses: [
+    "EG 101",
+    "EN 101",
+    "PS 100",
+    "MA 106",
+    "EN 102",
+    "SH 101",
+    "ENG 101",
+    "PSY 101",
+  ],
   defaultZip: "67202",
   defaultZipCity: "Wichita",
 
