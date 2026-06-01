@@ -81,7 +81,13 @@ const wiConfig: StateConfig = {
         runner: "http",
       },
     ],
-    // manual-only: transfers — No WI articulation portal registered. CollegeTransfer.Net fallback available.
+    // Wisconsin's statewide UW transfer system was retired in 2020 (moved to
+    // login-gated Transferology) and WTCS colleges have no CollegeTransfer.Net
+    // in-state data. UW-Milwaukee's Transfer Equivalency Database exposes a
+    // public JSON API covering all 16 WTCS colleges → UW-Milwaukee.
+    // COVERAGE GAP: UW-Milwaukee is the only receiver with a public API; other
+    // UW campuses are Transferology-gated.
+    transfers: [{ scripts: ["scripts/wi/scrape-transfer-uwm.ts"], runner: "http" }],
     // manual-only: prereqs — Coursedog catalog data for Nicolet Area TC at data/wi/coursedog-catalog/; aggregate into prereqs.json manually.
     // manual-only: programs — Phase 6 discovery found no matching catalog platforms; manual investigation needed.
   },
