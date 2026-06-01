@@ -1,0 +1,48 @@
+{
+  "college_slug": "craven",
+  "catalog_year": "2025-2026",
+  "catalog_url": "https://catalog.cravencc.edu/degrees",
+  "scraped_at": "2026-06-01T13:49:30.283Z",
+  "programs": [
+    {
+      "title": "Information Technology - Cybersecurity Coding",
+      "credential": "AAS",
+      "program_code": null,
+      "catalog_url": "https://catalog.cravencc.edu/information-technology/associate-in-applied-science/information-technology-cybersecurity-coding",
+      "total_credits": 27,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Fall Semester - Year Two",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CTS",
+              "number": "285",
+              "title": "Systems Analysis & Design",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Spring Semester - Year Two",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CSC",
+              "number": "125",
+              "title": "Secure Coding",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "computer-science"
+    }
+  ]
+}

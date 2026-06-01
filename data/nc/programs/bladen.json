@@ -2,7 +2,7 @@
   "college_slug": "bladen",
   "catalog_year": "2026-2027",
   "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/",
-  "scraped_at": "2026-06-01T03:23:09.273Z",
+  "scraped_at": "2026-06-01T13:40:39.842Z",
   "programs": [
     {
       "title": "Agribusiness Technology A.A.S..",
@@ -227,60 +227,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Sustainable Farming Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/agricultural-and-natural-resources-technologies/agribusiness-technology/sustainable-farming-certificate",
-      "total_credits": 14,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 14,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "AGR",
-              "number": "111",
-              "title": "Basic Farm Maintenance",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AGR",
-              "number": "139",
-              "title": "Introduction to Sustainable Agriculture",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AGR",
-              "number": "160",
-              "title": "Plant Science",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AGR",
-              "number": "170",
-              "title": "Soil Science",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ANS",
-              "number": "111",
-              "title": "Sustainable Livestock Management",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Animal Husbandry Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -319,53 +265,6 @@
               "prefix": "AGR",
               "number": "212",
               "title": "Farm Business Management",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Horticulture Production Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/agricultural-and-natural-resources-technologies/agribusiness-technology/horticulture-production-certificate",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Requirements List",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "AGR",
-              "number": "140",
-              "title": "Agricultural Chemicals",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AGR",
-              "number": "160",
-              "title": "Plant Science",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AGR",
-              "number": "170",
-              "title": "Soil Science",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HOR",
-              "number": "235",
-              "title": "Greenhouse Production",
               "credits": 0,
               "or_alternatives": []
             }
@@ -520,53 +419,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Management Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/agricultural-and-natural-resources-technologies/agribusiness-technology/management-certificate",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "AGR",
-              "number": "212",
-              "title": "Farm Business Management",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AGR",
-              "number": "213",
-              "title": "Agricultural Law & Finance",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AGR",
-              "number": "214",
-              "title": "Agricultural Marketing",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ECO",
-              "number": "251",
-              "title": "Principles of Microeconomics",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "business-administration"
-    },
-    {
       "title": "Fruit and Vegetable Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -605,6 +457,107 @@
               "prefix": "AGR",
               "number": "266",
               "title": "Organic Crop Production: Fall",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Horticulture Production Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/agricultural-and-natural-resources-technologies/agribusiness-technology/horticulture-production-certificate",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Requirements List",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "AGR",
+              "number": "140",
+              "title": "Agricultural Chemicals",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AGR",
+              "number": "160",
+              "title": "Plant Science",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AGR",
+              "number": "170",
+              "title": "Soil Science",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HOR",
+              "number": "235",
+              "title": "Greenhouse Production",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Sustainable Farming Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/agricultural-and-natural-resources-technologies/agribusiness-technology/sustainable-farming-certificate",
+      "total_credits": 14,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 14,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "AGR",
+              "number": "111",
+              "title": "Basic Farm Maintenance",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AGR",
+              "number": "139",
+              "title": "Introduction to Sustainable Agriculture",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AGR",
+              "number": "160",
+              "title": "Plant Science",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AGR",
+              "number": "170",
+              "title": "Soil Science",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ANS",
+              "number": "111",
+              "title": "Sustainable Livestock Management",
               "credits": 0,
               "or_alternatives": []
             }
@@ -878,6 +831,53 @@
       "matched_program_slug": "business-administration"
     },
     {
+      "title": "Management Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/agricultural-and-natural-resources-technologies/agribusiness-technology/management-certificate",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "AGR",
+              "number": "212",
+              "title": "Farm Business Management",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AGR",
+              "number": "213",
+              "title": "Agricultural Law & Finance",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AGR",
+              "number": "214",
+              "title": "Agricultural Marketing",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ECO",
+              "number": "251",
+              "title": "Principles of Microeconomics",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "business-administration"
+    },
+    {
       "title": "Bookkeeping Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -916,100 +916,6 @@
               "prefix": "ACC",
               "number": "150",
               "title": "Accounting Software Applications",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Small Business Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/business-technologies/aviation-management/small-business-certificate",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ACC",
-              "number": "120",
-              "title": "Principles of Financial Accounting",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACC",
-              "number": "150",
-              "title": "Accounting Software Applications",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "230",
-              "title": "Small Business Management",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MKT",
-              "number": "120",
-              "title": "Principles of Marketing",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "business-administration"
-    },
-    {
-      "title": "Human Resources Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/business-technologies/aviation-management/human-resources-certificate",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BUS",
-              "number": "110",
-              "title": "Introduction to Business",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "137",
-              "title": "Principles of Management",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "153",
-              "title": "Human Resource Management",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CSV",
-              "number": "110",
-              "title": "Intro to Customer Service",
               "credits": 0,
               "or_alternatives": []
             }
@@ -1104,6 +1010,238 @@
               "prefix": "MKT",
               "number": "123",
               "title": "Fundamentals of Selling",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Human Resources Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/business-technologies/aviation-management/human-resources-certificate",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BUS",
+              "number": "110",
+              "title": "Introduction to Business",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "137",
+              "title": "Principles of Management",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "153",
+              "title": "Human Resource Management",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSV",
+              "number": "110",
+              "title": "Intro to Customer Service",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Small Business Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/business-technologies/aviation-management/small-business-certificate",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACC",
+              "number": "120",
+              "title": "Principles of Financial Accounting",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACC",
+              "number": "150",
+              "title": "Accounting Software Applications",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "230",
+              "title": "Small Business Management",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MKT",
+              "number": "120",
+              "title": "Principles of Marketing",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Business Administration - Public Administration Diploma",
+      "credential": "diploma",
+      "program_code": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/business-technologies/business-administration-public-administration/business-administration-public-administration-diploma",
+      "total_credits": 38,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Fall Semester",
+          "credits_required": 17,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACC",
+              "number": "120",
+              "title": "Principles of Financial Accounting",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "115",
+              "title": "Business Law I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ECO",
+              "number": "251",
+              "title": "Principles of Microeconomics",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PAD",
+              "number": "151",
+              "title": "Introduction to Public Administration",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OST",
+              "number": "286",
+              "title": "Professional Development",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACA",
+              "number": "115",
+              "title": "Success & Study Skills",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACA",
+              "number": "122",
+              "title": "Transfer and Career Success",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Spring Semester",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BUS",
+              "number": "137",
+              "title": "Principles of Management",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "110",
+              "title": "Introduction to Computers",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PAD",
+              "number": "152",
+              "title": "Ethics in Government",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PAD",
+              "number": "252",
+              "title": "Public Policy Analysis",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "POL",
+              "number": "120",
+              "title": "American Government",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Summer Semester",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MKT",
+              "number": "120",
+              "title": "Principles of Marketing",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COM",
+              "number": "120",
+              "title": "Intro to Interpersonal Communication",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COM",
+              "number": "231",
+              "title": "Public Speaking",
               "credits": 0,
               "or_alternatives": []
             }
@@ -1321,86 +1459,23 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Business Administration - Public Administration Diploma",
-      "credential": "diploma",
+      "title": "Public Administration Certificate",
+      "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/business-technologies/business-administration-public-administration/business-administration-public-administration-diploma",
-      "total_credits": 38,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/business-technologies/business-administration-public-administration/public-administration-certificate",
+      "total_credits": 15,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
-          "name": "Fall Semester",
-          "credits_required": 17,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ACC",
-              "number": "120",
-              "title": "Principles of Financial Accounting",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "115",
-              "title": "Business Law I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ECO",
-              "number": "251",
-              "title": "Principles of Microeconomics",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PAD",
-              "number": "151",
-              "title": "Introduction to Public Administration",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OST",
-              "number": "286",
-              "title": "Professional Development",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACA",
-              "number": "115",
-              "title": "Success & Study Skills",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACA",
-              "number": "122",
-              "title": "Transfer and Career Success",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Spring Semester",
+          "name": "Required Courses",
           "credits_required": 15,
           "choose_n": null,
           "courses": [
             {
-              "prefix": "BUS",
-              "number": "137",
-              "title": "Principles of Management",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "110",
-              "title": "Introduction to Computers",
+              "prefix": "PAD",
+              "number": "151",
+              "title": "Introduction to Public Administration",
               "credits": 0,
               "or_alternatives": []
             },
@@ -1413,50 +1488,29 @@
             },
             {
               "prefix": "PAD",
+              "number": "251",
+              "title": "Public Finance & Budgeting",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PAD",
               "number": "252",
               "title": "Public Policy Analysis",
               "credits": 0,
               "or_alternatives": []
             },
             {
-              "prefix": "POL",
-              "number": "120",
-              "title": "American Government",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Summer Semester",
-          "credits_required": 6,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "MKT",
-              "number": "120",
-              "title": "Principles of Marketing",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COM",
-              "number": "120",
-              "title": "Intro to Interpersonal Communication",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COM",
-              "number": "231",
-              "title": "Public Speaking",
+              "prefix": "PAD",
+              "number": "254",
+              "title": "Grant Writing",
               "credits": 0,
               "or_alternatives": []
             }
           ]
         }
       ],
-      "matched_program_slug": "business-administration"
+      "matched_program_slug": null
     },
     {
       "title": "Bookkeeping Certificate",
@@ -1885,6 +1939,53 @@
       "matched_program_slug": null
     },
     {
+      "title": "Small Business Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/business-technologies/business-administration/small-business-certificate",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACC",
+              "number": "120",
+              "title": "Principles of Financial Accounting",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACC",
+              "number": "150",
+              "title": "Accounting Software Applications",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "230",
+              "title": "Small Business Management",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MKT",
+              "number": "120",
+              "title": "Principles of Marketing",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "business-administration"
+    },
+    {
       "title": "Management Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -2031,53 +2132,6 @@
               "prefix": "ENG",
               "number": "111",
               "title": "Writing and Inquiry",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "business-administration"
-    },
-    {
-      "title": "Small Business Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/business-technologies/business-administration/small-business-certificate",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ACC",
-              "number": "120",
-              "title": "Principles of Financial Accounting",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACC",
-              "number": "150",
-              "title": "Accounting Software Applications",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "230",
-              "title": "Small Business Management",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MKT",
-              "number": "120",
-              "title": "Principles of Marketing",
               "credits": 0,
               "or_alternatives": []
             }
@@ -2342,60 +2396,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Public Administration Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/business-technologies/business-administration-public-administration/public-administration-certificate",
-      "total_credits": 15,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 15,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "PAD",
-              "number": "151",
-              "title": "Introduction to Public Administration",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PAD",
-              "number": "152",
-              "title": "Ethics in Government",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PAD",
-              "number": "251",
-              "title": "Public Finance & Budgeting",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PAD",
-              "number": "252",
-              "title": "Public Policy Analysis",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PAD",
-              "number": "254",
-              "title": "Grant Writing",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Computer Programming Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -2441,60 +2441,6 @@
               "prefix": "CSC",
               "number": "234",
               "title": "Advanced C++ Programming",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Cyber Security Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/business-technologies/information-technology/cyber-security-certificate",
-      "total_credits": 16,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 16,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CCT",
-              "number": "110",
-              "title": "Introduction to Cyber Crime",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CCT",
-              "number": "112",
-              "title": "Ethics & High Technology",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CCT",
-              "number": "121",
-              "title": "Computer Crime Invest.",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SEC",
-              "number": "110",
-              "title": "Security Concepts",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SEC",
-              "number": "210",
-              "title": "Intrusion Detection",
               "credits": 0,
               "or_alternatives": []
             }
@@ -2703,6 +2649,60 @@
               "prefix": "PSY",
               "number": "150",
               "title": "General Psychology",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Cyber Security Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/business-technologies/information-technology/cyber-security-certificate",
+      "total_credits": 16,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 16,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CCT",
+              "number": "110",
+              "title": "Introduction to Cyber Crime",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CCT",
+              "number": "112",
+              "title": "Ethics & High Technology",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CCT",
+              "number": "121",
+              "title": "Computer Crime Invest.",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SEC",
+              "number": "110",
+              "title": "Security Concepts",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SEC",
+              "number": "210",
+              "title": "Intrusion Detection",
               "credits": 0,
               "or_alternatives": []
             }
@@ -3014,53 +3014,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Information Technology Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/business-technologies/information-technology/information-technology-certificate",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CTI",
-              "number": "110",
-              "title": "IT Foundations",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CTI",
-              "number": "120",
-              "title": "Network and Security Foundation",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CTS",
-              "number": "115",
-              "title": "Information Systems Business Concepts",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NOS",
-              "number": "110",
-              "title": "Operating Systems Concepts",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "computer-science"
-    },
-    {
       "title": "Information Systems A.A.S.",
       "credential": "AS",
       "program_code": null,
@@ -3353,6 +3306,53 @@
       "matched_program_slug": null
     },
     {
+      "title": "Information Technology Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/business-technologies/information-technology/information-technology-certificate",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CTI",
+              "number": "110",
+              "title": "IT Foundations",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CTI",
+              "number": "120",
+              "title": "Network and Security Foundation",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CTS",
+              "number": "115",
+              "title": "Information Systems Business Concepts",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NOS",
+              "number": "110",
+              "title": "Operating Systems Concepts",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "computer-science"
+    },
+    {
       "title": "Information Technology Diploma",
       "credential": "diploma",
       "program_code": null,
@@ -3475,53 +3475,6 @@
         }
       ],
       "matched_program_slug": "computer-science"
-    },
-    {
-      "title": "Web Programming Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/business-technologies/information-technology/web-programming-certificate",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CTI",
-              "number": "110",
-              "title": "IT Foundations",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "115",
-              "title": "Introduction to Programming and Logic",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WEB",
-              "number": "182",
-              "title": "PHP Programming",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WEB",
-              "number": "210",
-              "title": "Web Design",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
     },
     {
       "title": "Web Administration and Design A.A.S.",
@@ -3732,6 +3685,53 @@
       "matched_program_slug": null
     },
     {
+      "title": "Web Programming Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/business-technologies/information-technology/web-programming-certificate",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CTI",
+              "number": "110",
+              "title": "IT Foundations",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "115",
+              "title": "Introduction to Programming and Logic",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WEB",
+              "number": "182",
+              "title": "PHP Programming",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WEB",
+              "number": "210",
+              "title": "Web Design",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Electronic Health Records Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -3784,6 +3784,81 @@
               "prefix": "OST",
               "number": "281",
               "title": "Emer Issues in Med Ofc",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Medical Office Administration Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/business-technologies/medical-office-administration/medical-office-administration-certificate",
+      "total_credits": 18,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "OST",
+              "number": "148",
+              "title": "Medical Insurance and Billing",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MED",
+              "number": "121",
+              "title": "Medical Terminology I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OST",
+              "number": "141",
+              "title": "Medical Office Terms I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MED",
+              "number": "122",
+              "title": "Medical Terminology II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OST",
+              "number": "142",
+              "title": "Medical Office Terms II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OST",
+              "number": "136",
+              "title": "Word Processing",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OST",
+              "number": "164",
+              "title": "Office Editing",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OST",
+              "number": "184",
+              "title": "Records Management",
               "credits": 0,
               "or_alternatives": []
             }
@@ -4015,81 +4090,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Medical Office Administration Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/business-technologies/medical-office-administration/medical-office-administration-certificate",
-      "total_credits": 18,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 18,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "OST",
-              "number": "148",
-              "title": "Medical Insurance and Billing",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MED",
-              "number": "121",
-              "title": "Medical Terminology I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OST",
-              "number": "141",
-              "title": "Medical Office Terms I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MED",
-              "number": "122",
-              "title": "Medical Terminology II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OST",
-              "number": "142",
-              "title": "Medical Office Terms II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OST",
-              "number": "136",
-              "title": "Word Processing",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OST",
-              "number": "164",
-              "title": "Office Editing",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OST",
-              "number": "184",
-              "title": "Records Management",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Medical Office Administration Diploma",
       "credential": "diploma",
       "program_code": null,
@@ -4282,6 +4282,81 @@
       "matched_program_slug": null
     },
     {
+      "title": "Medical Office Receptionist Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/business-technologies/medical-office-administration/medical-office-receptionist-certificate",
+      "total_credits": 18,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "OST",
+              "number": "136",
+              "title": "Word Processing",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MED",
+              "number": "121",
+              "title": "Medical Terminology I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OST",
+              "number": "141",
+              "title": "Medical Office Terms I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MED",
+              "number": "122",
+              "title": "Medical Terminology II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OST",
+              "number": "142",
+              "title": "Medical Office Terms II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OST",
+              "number": "149",
+              "title": "Medical Legal Issues",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OST",
+              "number": "281",
+              "title": "Emer Issues in Med Ofc",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OST",
+              "number": "286",
+              "title": "Professional Development",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Patient Access Representative Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -4451,81 +4526,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Medical Office Receptionist Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/business-technologies/medical-office-administration/medical-office-receptionist-certificate",
-      "total_credits": 18,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 18,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "OST",
-              "number": "136",
-              "title": "Word Processing",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MED",
-              "number": "121",
-              "title": "Medical Terminology I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OST",
-              "number": "141",
-              "title": "Medical Office Terms I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MED",
-              "number": "122",
-              "title": "Medical Terminology II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OST",
-              "number": "142",
-              "title": "Medical Office Terms II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OST",
-              "number": "149",
-              "title": "Medical Legal Issues",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OST",
-              "number": "281",
-              "title": "Emer Issues in Med Ofc",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OST",
-              "number": "286",
-              "title": "Professional Development",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Law Office Receptionist Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -4564,107 +4564,6 @@
               "prefix": "OST",
               "number": "286",
               "title": "Professional Development",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Microsoft Office Applications Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/business-technologies/office-management/microsoft-office-applications-certificate",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CIS",
-              "number": "110",
-              "title": "Introduction to Computers",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CTS",
-              "number": "130",
-              "title": "Spreadsheet",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "DBA",
-              "number": "110",
-              "title": "Database Concepts",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OST",
-              "number": "136",
-              "title": "Word Processing",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OST",
-              "number": "137",
-              "title": "Office Applications I",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Office Finance Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/business-technologies/office-management/office-finance-certificate",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ACC",
-              "number": "120",
-              "title": "Principles of Financial Accounting",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACC",
-              "number": "150",
-              "title": "Accounting Software Applications",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "121",
-              "title": "Business Math",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CTS",
-              "number": "130",
-              "title": "Spreadsheet",
               "credits": 0,
               "or_alternatives": []
             }
@@ -5132,6 +5031,60 @@
       "matched_program_slug": "business-administration"
     },
     {
+      "title": "Microsoft Office Applications Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/business-technologies/office-management/microsoft-office-applications-certificate",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "110",
+              "title": "Introduction to Computers",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CTS",
+              "number": "130",
+              "title": "Spreadsheet",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DBA",
+              "number": "110",
+              "title": "Database Concepts",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OST",
+              "number": "136",
+              "title": "Word Processing",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OST",
+              "number": "137",
+              "title": "Office Applications I",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Office Management Diploma",
       "credential": "diploma",
       "program_code": null,
@@ -5254,6 +5207,53 @@
         }
       ],
       "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Office Finance Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/business-technologies/office-management/office-finance-certificate",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACC",
+              "number": "120",
+              "title": "Principles of Financial Accounting",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACC",
+              "number": "150",
+              "title": "Accounting Software Applications",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "121",
+              "title": "Business Math",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CTS",
+              "number": "130",
+              "title": "Spreadsheet",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
     },
     {
       "title": "Office Receptionist Medical Intake Certificate",
@@ -5701,6 +5701,53 @@
       "matched_program_slug": null
     },
     {
+      "title": "Emergency Medical Science",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/career-and-college-promise/career-technical-pathways/emergency-medical-science",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Degree Requirements",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "EMS",
+              "number": "110",
+              "title": "EMT",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "160",
+              "title": "Cardiology I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OST",
+              "number": "141",
+              "title": "Medical Office Terms I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OST",
+              "number": "142",
+              "title": "Medical Office Terms II",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Air Conditioning, Heating, and Refrigeration Technology",
       "credential": "other",
       "program_code": null,
@@ -5746,53 +5793,6 @@
               "prefix": "AHR",
               "number": "160",
               "title": "Refrigerant Certification",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Emergency Medical Science",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/career-and-college-promise/career-technical-pathways/emergency-medical-science",
-      "total_credits": null,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Degree Requirements",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "EMS",
-              "number": "110",
-              "title": "EMT",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EMS",
-              "number": "160",
-              "title": "Cardiology I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OST",
-              "number": "141",
-              "title": "Medical Office Terms I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OST",
-              "number": "142",
-              "title": "Medical Office Terms II",
               "credits": 0,
               "or_alternatives": []
             }
@@ -7223,205 +7223,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Career and College Ready Pathway",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/career-and-college-promise/college-transfer/career-and-college-ready-pathway",
-      "total_credits": null,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Fall",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ENG",
-              "number": "025",
-              "title": "College English Skills",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "025",
-              "title": "Concepts of Essential Math/Stat",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "035",
-              "title": "Concepts of Algebra",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WBL",
-              "number": "110",
-              "title": "World of Work",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Spring",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ENG",
-              "number": "111",
-              "title": "Writing and Inquiry",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "110",
-              "title": "Mathematical Measurement and Literacy",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "152",
-              "title": "Statistical Methods I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACA",
-              "number": "122",
-              "title": "Transfer and Career Success",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Associate in General Education Nursing",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/college-transfer-and-general-education/associate-in-general-education-nursing/associate-in-general-education-nursing",
-      "total_credits": 62,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Fall Semester -1st Year",
-          "credits_required": 14,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ACA",
-              "number": "122",
-              "title": "Transfer and Career Success",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENG",
-              "number": "111",
-              "title": "Writing and Inquiry",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSY",
-              "number": "150",
-              "title": "General Psychology",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "168",
-              "title": "Anatomy and Physiology I",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Spring Semester-1st Year",
-          "credits_required": 17,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "HUM",
-              "number": "115",
-              "title": "Critical Thinking",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSY",
-              "number": "241",
-              "title": "Developmental Psychology",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "169",
-              "title": "Anatomy and Physiology II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "152",
-              "title": "Statistical Methods I",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Fall Semester-2nd Year",
-          "credits_required": 14,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "SOC",
-              "number": "210",
-              "title": "Introduction to Sociology",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHM",
-              "number": "151",
-              "title": "General Chemistry I",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Spring Semester-2nd Year",
-          "credits_required": 17,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BIO",
-              "number": "275",
-              "title": "Microbiology",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "nursing"
-    },
-    {
       "title": "Associate in Science Teacher Preparation Pathway",
       "credential": "other",
       "program_code": null,
@@ -7714,6 +7515,205 @@
       "matched_program_slug": null
     },
     {
+      "title": "Career and College Ready Pathway",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/career-and-college-promise/college-transfer/career-and-college-ready-pathway",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Fall",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "025",
+              "title": "College English Skills",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "025",
+              "title": "Concepts of Essential Math/Stat",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "035",
+              "title": "Concepts of Algebra",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WBL",
+              "number": "110",
+              "title": "World of Work",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Spring",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "111",
+              "title": "Writing and Inquiry",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "110",
+              "title": "Mathematical Measurement and Literacy",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "152",
+              "title": "Statistical Methods I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACA",
+              "number": "122",
+              "title": "Transfer and Career Success",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Associate in General Education Nursing",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/college-transfer-and-general-education/associate-in-general-education-nursing/associate-in-general-education-nursing",
+      "total_credits": 62,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Fall Semester -1st Year",
+          "credits_required": 14,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACA",
+              "number": "122",
+              "title": "Transfer and Career Success",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "111",
+              "title": "Writing and Inquiry",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
+              "number": "150",
+              "title": "General Psychology",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "168",
+              "title": "Anatomy and Physiology I",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Spring Semester-1st Year",
+          "credits_required": 17,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "HUM",
+              "number": "115",
+              "title": "Critical Thinking",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
+              "number": "241",
+              "title": "Developmental Psychology",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "169",
+              "title": "Anatomy and Physiology II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "152",
+              "title": "Statistical Methods I",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Fall Semester-2nd Year",
+          "credits_required": 14,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "SOC",
+              "number": "210",
+              "title": "Introduction to Sociology",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHM",
+              "number": "151",
+              "title": "General Chemistry I",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Spring Semester-2nd Year",
+          "credits_required": 17,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BIO",
+              "number": "275",
+              "title": "Microbiology",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "nursing"
+    },
+    {
       "title": "Associate in General Education",
       "credential": "other",
       "program_code": null,
@@ -7738,684 +7738,6 @@
         }
       ],
       "matched_program_slug": null
-    },
-    {
-      "title": "College Transfer: Associate in Arts",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/college-transfer-and-general-education/college-transfer-associate-in-arts/college-transfer-associate-in-arts",
-      "total_credits": 67,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Fall Semester - 1st Year",
-          "credits_required": 14,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ACA",
-              "number": "122",
-              "title": "Transfer and Career Success",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENG",
-              "number": "111",
-              "title": "Writing and Inquiry",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "152",
-              "title": "Statistical Methods I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "110",
-              "title": "Introduction to Computers",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Spring Semester - 1st Year",
-          "credits_required": 13,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BIO",
-              "number": "111",
-              "title": "General Biology I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENG",
-              "number": "112",
-              "title": "Writing and Research in the Disciplines",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Summer Semester - 1st Year",
-          "credits_required": 6,
-          "choose_n": null,
-          "courses": []
-        },
-        {
-          "name": "Fall Semester - 2nd Year",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": []
-        },
-        {
-          "name": "Spring Semester - 2nd Year",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": []
-        },
-        {
-          "name": "Summer Semester - 2nd Year",
-          "credits_required": 6,
-          "choose_n": null,
-          "courses": []
-        },
-        {
-          "name": "II. Additional General Education Hours (14 SHC)",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ART",
-              "number": "111",
-              "title": "Art Appreciation",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ART",
-              "number": "114",
-              "title": "Art History Survey I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ART",
-              "number": "115",
-              "title": "Art History Survey II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "110",
-              "title": "Principles of Biology",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "111",
-              "title": "General Biology I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "112",
-              "title": "General Biology II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "120",
-              "title": "Introductory Botany",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "130",
-              "title": "Introductory Zoology",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHM",
-              "number": "151",
-              "title": "General Chemistry I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHM",
-              "number": "152",
-              "title": "General Chemistry II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "115",
-              "title": "Introduction to Programming and Logic",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COM",
-              "number": "110",
-              "title": "Introduction to Communication",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COM",
-              "number": "120",
-              "title": "Intro to Interpersonal Communication",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COM",
-              "number": "231",
-              "title": "Public Speaking",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ECO",
-              "number": "251",
-              "title": "Principles of Microeconomics",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ECO",
-              "number": "252",
-              "title": "Principles of Macroeconomics",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENG",
-              "number": "114",
-              "title": "Professional Research & Reporting",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENG",
-              "number": "231",
-              "title": "American Literature I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENG",
-              "number": "232",
-              "title": "American Literature II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENG",
-              "number": "241",
-              "title": "British Literature I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENG",
-              "number": "242",
-              "title": "British Literature II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIS",
-              "number": "111",
-              "title": "World Civilizations I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIS",
-              "number": "112",
-              "title": "World Civilizations II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIS",
-              "number": "131",
-              "title": "American History I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIS",
-              "number": "132",
-              "title": "American History II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HUM",
-              "number": "110",
-              "title": "Technology and Society",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HUM",
-              "number": "115",
-              "title": "Critical Thinking",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HUM",
-              "number": "122",
-              "title": "Southern Culture",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HUM",
-              "number": "130",
-              "title": "Myth in Human Culture",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HUM",
-              "number": "160",
-              "title": "Introduction to Film",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "152",
-              "title": "Statistical Methods I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "172",
-              "title": "Precalculus Trigonometry",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "271",
-              "title": "Calculus I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "272",
-              "title": "Calculus II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "273",
-              "title": "Calculus III",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUS",
-              "number": "110",
-              "title": "Music Appreciation",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUS",
-              "number": "112",
-              "title": "Introduction to Jazz",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHI",
-              "number": "240",
-              "title": "Introduction to Ethics",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHY",
-              "number": "110",
-              "title": "Conceptual Physics",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHY",
-              "number": "110A",
-              "title": "Conceptual Physics Lab",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHY",
-              "number": "151",
-              "title": "College Physics I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHY",
-              "number": "152",
-              "title": "College Physics II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHY",
-              "number": "251",
-              "title": "General Physics I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHY",
-              "number": "252",
-              "title": "General Physics II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "POL",
-              "number": "110",
-              "title": "Introduction to Political Science",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "POL",
-              "number": "120",
-              "title": "American Government",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSY",
-              "number": "150",
-              "title": "General Psychology",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSY",
-              "number": "237",
-              "title": "Social Psychology",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSY",
-              "number": "241",
-              "title": "Developmental Psychology",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSY",
-              "number": "281",
-              "title": "Abnormal Psychology",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "REL",
-              "number": "110",
-              "title": "World Religions",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "REL",
-              "number": "211",
-              "title": "Introduction to Old Testament",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "REL",
-              "number": "212",
-              "title": "Introduction to New Testament",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "REL",
-              "number": "221",
-              "title": "Religion in America",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SOC",
-              "number": "210",
-              "title": "Introduction to Sociology",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SOC",
-              "number": "213",
-              "title": "Sociology of the Family",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SOC",
-              "number": "220",
-              "title": "Social Problems",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SOC",
-              "number": "225",
-              "title": "Social Diversity",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SPA",
-              "number": "111",
-              "title": "Elementary Spanish I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SPA",
-              "number": "112",
-              "title": "Elementary Spanish II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SPA",
-              "number": "211",
-              "title": "Intermediate Spanish I",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "III. Other Required Courses (4 SHC)",
-          "credits_required": 4,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ACA",
-              "number": "122",
-              "title": "Transfer and Career Success",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "110",
-              "title": "Introduction to Computers",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Engineering A.E.",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/college-transfer-and-general-education/engineering/engineering-ae",
-      "total_credits": 70,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Fall Semester - 1st Year",
-          "credits_required": 15,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ACA",
-              "number": "122",
-              "title": "Transfer and Career Success",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENG",
-              "number": "111",
-              "title": "Writing and Inquiry",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "172",
-              "title": "Precalculus Trigonometry",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Spring Semester - 1st Year",
-          "credits_required": 16,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "MAT",
-              "number": "271",
-              "title": "Calculus I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENG",
-              "number": "112",
-              "title": "Writing and Research in the Disciplines",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Summer Semester - 1st Year",
-          "credits_required": 7,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ECO",
-              "number": "251",
-              "title": "Principles of Microeconomics",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Fall Semester - 2nd Year",
-          "credits_required": 15,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "MAT",
-              "number": "272",
-              "title": "Calculus II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHM",
-              "number": "151",
-              "title": "General Chemistry I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHY",
-              "number": "251",
-              "title": "General Physics I",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Spring Semester - 2nd Year",
-          "credits_required": 17,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "PHY",
-              "number": "252",
-              "title": "General Physics II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EGR",
-              "number": "150",
-              "title": "Intro to Engineering",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "273",
-              "title": "Calculus III",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "engineering"
     },
     {
       "title": "College Transfer: Associate in Science",
@@ -8995,6 +8317,684 @@
       "matched_program_slug": null
     },
     {
+      "title": "Engineering A.E.",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/college-transfer-and-general-education/engineering/engineering-ae",
+      "total_credits": 70,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Fall Semester - 1st Year",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACA",
+              "number": "122",
+              "title": "Transfer and Career Success",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "111",
+              "title": "Writing and Inquiry",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "172",
+              "title": "Precalculus Trigonometry",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Spring Semester - 1st Year",
+          "credits_required": 16,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MAT",
+              "number": "271",
+              "title": "Calculus I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "112",
+              "title": "Writing and Research in the Disciplines",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Summer Semester - 1st Year",
+          "credits_required": 7,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ECO",
+              "number": "251",
+              "title": "Principles of Microeconomics",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Fall Semester - 2nd Year",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MAT",
+              "number": "272",
+              "title": "Calculus II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHM",
+              "number": "151",
+              "title": "General Chemistry I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHY",
+              "number": "251",
+              "title": "General Physics I",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Spring Semester - 2nd Year",
+          "credits_required": 17,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "PHY",
+              "number": "252",
+              "title": "General Physics II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EGR",
+              "number": "150",
+              "title": "Intro to Engineering",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "273",
+              "title": "Calculus III",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "engineering"
+    },
+    {
+      "title": "College Transfer: Associate in Arts",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/college-transfer-and-general-education/college-transfer-associate-in-arts/college-transfer-associate-in-arts",
+      "total_credits": 67,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Fall Semester - 1st Year",
+          "credits_required": 14,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACA",
+              "number": "122",
+              "title": "Transfer and Career Success",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "111",
+              "title": "Writing and Inquiry",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "152",
+              "title": "Statistical Methods I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "110",
+              "title": "Introduction to Computers",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Spring Semester - 1st Year",
+          "credits_required": 13,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BIO",
+              "number": "111",
+              "title": "General Biology I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "112",
+              "title": "Writing and Research in the Disciplines",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Summer Semester - 1st Year",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": []
+        },
+        {
+          "name": "Fall Semester - 2nd Year",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": []
+        },
+        {
+          "name": "Spring Semester - 2nd Year",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": []
+        },
+        {
+          "name": "Summer Semester - 2nd Year",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": []
+        },
+        {
+          "name": "II. Additional General Education Hours (14 SHC)",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ART",
+              "number": "111",
+              "title": "Art Appreciation",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ART",
+              "number": "114",
+              "title": "Art History Survey I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ART",
+              "number": "115",
+              "title": "Art History Survey II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "110",
+              "title": "Principles of Biology",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "111",
+              "title": "General Biology I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "112",
+              "title": "General Biology II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "120",
+              "title": "Introductory Botany",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "130",
+              "title": "Introductory Zoology",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHM",
+              "number": "151",
+              "title": "General Chemistry I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHM",
+              "number": "152",
+              "title": "General Chemistry II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "115",
+              "title": "Introduction to Programming and Logic",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COM",
+              "number": "110",
+              "title": "Introduction to Communication",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COM",
+              "number": "120",
+              "title": "Intro to Interpersonal Communication",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COM",
+              "number": "231",
+              "title": "Public Speaking",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ECO",
+              "number": "251",
+              "title": "Principles of Microeconomics",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ECO",
+              "number": "252",
+              "title": "Principles of Macroeconomics",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "114",
+              "title": "Professional Research & Reporting",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "231",
+              "title": "American Literature I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "232",
+              "title": "American Literature II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "241",
+              "title": "British Literature I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "242",
+              "title": "British Literature II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIS",
+              "number": "111",
+              "title": "World Civilizations I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIS",
+              "number": "112",
+              "title": "World Civilizations II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIS",
+              "number": "131",
+              "title": "American History I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIS",
+              "number": "132",
+              "title": "American History II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HUM",
+              "number": "110",
+              "title": "Technology and Society",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HUM",
+              "number": "115",
+              "title": "Critical Thinking",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HUM",
+              "number": "122",
+              "title": "Southern Culture",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HUM",
+              "number": "130",
+              "title": "Myth in Human Culture",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HUM",
+              "number": "160",
+              "title": "Introduction to Film",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "152",
+              "title": "Statistical Methods I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "172",
+              "title": "Precalculus Trigonometry",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "271",
+              "title": "Calculus I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "272",
+              "title": "Calculus II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "273",
+              "title": "Calculus III",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "110",
+              "title": "Music Appreciation",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "112",
+              "title": "Introduction to Jazz",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHI",
+              "number": "240",
+              "title": "Introduction to Ethics",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHY",
+              "number": "110",
+              "title": "Conceptual Physics",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHY",
+              "number": "110A",
+              "title": "Conceptual Physics Lab",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHY",
+              "number": "151",
+              "title": "College Physics I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHY",
+              "number": "152",
+              "title": "College Physics II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHY",
+              "number": "251",
+              "title": "General Physics I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHY",
+              "number": "252",
+              "title": "General Physics II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "POL",
+              "number": "110",
+              "title": "Introduction to Political Science",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "POL",
+              "number": "120",
+              "title": "American Government",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
+              "number": "150",
+              "title": "General Psychology",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
+              "number": "237",
+              "title": "Social Psychology",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
+              "number": "241",
+              "title": "Developmental Psychology",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
+              "number": "281",
+              "title": "Abnormal Psychology",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "REL",
+              "number": "110",
+              "title": "World Religions",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "REL",
+              "number": "211",
+              "title": "Introduction to Old Testament",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "REL",
+              "number": "212",
+              "title": "Introduction to New Testament",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "REL",
+              "number": "221",
+              "title": "Religion in America",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SOC",
+              "number": "210",
+              "title": "Introduction to Sociology",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SOC",
+              "number": "213",
+              "title": "Sociology of the Family",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SOC",
+              "number": "220",
+              "title": "Social Problems",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SOC",
+              "number": "225",
+              "title": "Social Diversity",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SPA",
+              "number": "111",
+              "title": "Elementary Spanish I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SPA",
+              "number": "112",
+              "title": "Elementary Spanish II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SPA",
+              "number": "211",
+              "title": "Intermediate Spanish I",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "III. Other Required Courses (4 SHC)",
+          "credits_required": 4,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACA",
+              "number": "122",
+              "title": "Transfer and Career Success",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "110",
+              "title": "Introduction to Computers",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Teacher Preparation A.A. Curriculum",
       "credential": "AS",
       "program_code": null,
@@ -9106,158 +9106,6 @@
           "credits_required": null,
           "choose_n": null,
           "courses": [
-            {
-              "prefix": "SOC",
-              "number": "225",
-              "title": "Social Diversity",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Teacher Preparation A.S. Curriculum",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/college-transfer-and-general-education/teacher-preparation-associate-in-science/teacher-preparation-a-s-curriculum",
-      "total_credits": 61,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Fall Semester - 1st Year",
-          "credits_required": 15,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ACA",
-              "number": "122",
-              "title": "Transfer and Career Success",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COM",
-              "number": "231",
-              "title": "Public Speaking",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "187",
-              "title": "Teaching and Learning for All*",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENG",
-              "number": "111",
-              "title": "Writing and Inquiry",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Spring Semester - 1st Year",
-          "credits_required": 16,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ENG",
-              "number": "112",
-              "title": "Writing and Research in the Disciplines",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "216",
-              "title": "Foundations of Education",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "172",
-              "title": "Precalculus Trigonometry",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Fall Semester - 2nd Year",
-          "credits_required": 16,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "EDU",
-              "number": "250",
-              "title": "Teacher Licensure Preparation",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "111",
-              "title": "General Biology I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHM",
-              "number": "151",
-              "title": "General Chemistry I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHY",
-              "number": "151",
-              "title": "College Physics I",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Spring Semester - 2nd Year",
-          "credits_required": 14,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BIO",
-              "number": "112",
-              "title": "General Biology II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHM",
-              "number": "152",
-              "title": "General Chemistry II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHY",
-              "number": "152",
-              "title": "College Physics II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "279",
-              "title": "Literacy Development and Instruction",
-              "credits": 0,
-              "or_alternatives": []
-            },
             {
               "prefix": "SOC",
               "number": "225",
@@ -9528,6 +9376,273 @@
       "matched_program_slug": null
     },
     {
+      "title": "Teacher Preparation A.S. Curriculum",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/college-transfer-and-general-education/teacher-preparation-associate-in-science/teacher-preparation-a-s-curriculum",
+      "total_credits": 61,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Fall Semester - 1st Year",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACA",
+              "number": "122",
+              "title": "Transfer and Career Success",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COM",
+              "number": "231",
+              "title": "Public Speaking",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "187",
+              "title": "Teaching and Learning for All*",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "111",
+              "title": "Writing and Inquiry",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Spring Semester - 1st Year",
+          "credits_required": 16,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "112",
+              "title": "Writing and Research in the Disciplines",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "216",
+              "title": "Foundations of Education",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "172",
+              "title": "Precalculus Trigonometry",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Fall Semester - 2nd Year",
+          "credits_required": 16,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "EDU",
+              "number": "250",
+              "title": "Teacher Licensure Preparation",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "111",
+              "title": "General Biology I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHM",
+              "number": "151",
+              "title": "General Chemistry I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHY",
+              "number": "151",
+              "title": "College Physics I",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Spring Semester - 2nd Year",
+          "credits_required": 14,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BIO",
+              "number": "112",
+              "title": "General Biology II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHM",
+              "number": "152",
+              "title": "General Chemistry II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHY",
+              "number": "152",
+              "title": "College Physics II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "279",
+              "title": "Literacy Development and Instruction",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SOC",
+              "number": "225",
+              "title": "Social Diversity",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "HVAC Maintenance Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/construction-technologies/air-conditioning-heating-and-refrigeration-technology/hvac-maintenance-certificate",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "AHR",
+              "number": "110",
+              "title": "Introduction to Refrigeration",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AHR",
+              "number": "111",
+              "title": "HVACR Electricity",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AHR",
+              "number": "160",
+              "title": "Refrigerant Certification",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AHR",
+              "number": "180",
+              "title": "HVACR Customer Relations",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WOL",
+              "number": "110",
+              "title": "Basic Construction Skills",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "HVAC Installation Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/construction-technologies/air-conditioning-heating-and-refrigeration-technology/hvac-installation-certificate",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "AHR",
+              "number": "110",
+              "title": "Introduction to Refrigeration",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AHR",
+              "number": "111",
+              "title": "HVACR Electricity",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AHR",
+              "number": "112",
+              "title": "Heating Technology",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AHR",
+              "number": "151",
+              "title": "HVAC Duct Systems I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AHR",
+              "number": "160",
+              "title": "Refrigerant Certification",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AHR",
+              "number": "213",
+              "title": "HVACR Building Code",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Air Conditioning, Heating and Refrigeration Technology Diploma",
       "credential": "diploma",
       "program_code": null,
@@ -9659,121 +9774,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "HVAC Installation Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/construction-technologies/air-conditioning-heating-and-refrigeration-technology/hvac-installation-certificate",
-      "total_credits": null,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "AHR",
-              "number": "110",
-              "title": "Introduction to Refrigeration",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AHR",
-              "number": "111",
-              "title": "HVACR Electricity",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AHR",
-              "number": "112",
-              "title": "Heating Technology",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AHR",
-              "number": "151",
-              "title": "HVAC Duct Systems I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AHR",
-              "number": "160",
-              "title": "Refrigerant Certification",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AHR",
-              "number": "213",
-              "title": "HVACR Building Code",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "HVAC Maintenance Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/construction-technologies/air-conditioning-heating-and-refrigeration-technology/hvac-maintenance-certificate",
-      "total_credits": null,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "AHR",
-              "number": "110",
-              "title": "Introduction to Refrigeration",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AHR",
-              "number": "111",
-              "title": "HVACR Electricity",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AHR",
-              "number": "160",
-              "title": "Refrigerant Certification",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AHR",
-              "number": "180",
-              "title": "HVACR Customer Relations",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WOL",
-              "number": "110",
-              "title": "Basic Construction Skills",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Carpentry Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -9805,6 +9805,137 @@
               "prefix": "CAR",
               "number": "114",
               "title": "Residential Building Codes",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Carpentry Diploma",
+      "credential": "diploma",
+      "program_code": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/construction-technologies/carpentry/carpentry-diploma",
+      "total_credits": 44,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Fall Semester",
+          "credits_required": 20,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACA",
+              "number": "115",
+              "title": "Success & Study Skills",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACA",
+              "number": "122",
+              "title": "Transfer and Career Success",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SST",
+              "number": "140",
+              "title": "Green Building and Design Concepts",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CAR",
+              "number": "110",
+              "title": "Introduction to Carpentry",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CAR",
+              "number": "111",
+              "title": "Carpentry I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CAR",
+              "number": "114",
+              "title": "Residential Building Codes",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WOL",
+              "number": "110",
+              "title": "Basic Construction Skills",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Spring Semester",
+          "credits_required": 19,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CAR",
+              "number": "112",
+              "title": "Carpentry II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CAR",
+              "number": "115",
+              "title": "Residential Planning/Estimating",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "110",
+              "title": "Mathematical Measurement and Literacy",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PLU",
+              "number": "111",
+              "title": "Intro to Basic Plumbing",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BPR",
+              "number": "130",
+              "title": "Print Reading-Construction",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Summer Term",
+          "credits_required": 5,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "111",
+              "title": "Writing and Inquiry",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ISC",
+              "number": "112",
+              "title": "Industrial Safety",
               "credits": 0,
               "or_alternatives": []
             }
@@ -10027,137 +10158,6 @@
               "prefix": "ENG",
               "number": "116",
               "title": "Technical Report Writing",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Carpentry Diploma",
-      "credential": "diploma",
-      "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/construction-technologies/carpentry/carpentry-diploma",
-      "total_credits": 44,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Fall Semester",
-          "credits_required": 20,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ACA",
-              "number": "115",
-              "title": "Success & Study Skills",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACA",
-              "number": "122",
-              "title": "Transfer and Career Success",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SST",
-              "number": "140",
-              "title": "Green Building and Design Concepts",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CAR",
-              "number": "110",
-              "title": "Introduction to Carpentry",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CAR",
-              "number": "111",
-              "title": "Carpentry I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CAR",
-              "number": "114",
-              "title": "Residential Building Codes",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WOL",
-              "number": "110",
-              "title": "Basic Construction Skills",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Spring Semester",
-          "credits_required": 19,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CAR",
-              "number": "112",
-              "title": "Carpentry II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CAR",
-              "number": "115",
-              "title": "Residential Planning/Estimating",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "110",
-              "title": "Mathematical Measurement and Literacy",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PLU",
-              "number": "111",
-              "title": "Intro to Basic Plumbing",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BPR",
-              "number": "130",
-              "title": "Print Reading-Construction",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Summer Term",
-          "credits_required": 5,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ENG",
-              "number": "111",
-              "title": "Writing and Inquiry",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ISC",
-              "number": "112",
-              "title": "Industrial Safety",
               "credits": 0,
               "or_alternatives": []
             }
@@ -10586,135 +10586,6 @@
       "matched_program_slug": "nursing"
     },
     {
-      "title": "Emergency Medical Science (EMS) – Bridge Program",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/health-sciences/emergency-medical-science-ems/emergency-medical-science-ems-bridge-program",
-      "total_credits": 24,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Fall Semester",
-          "credits_required": 11,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ENG",
-              "number": "111",
-              "title": "Writing and Inquiry",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSY",
-              "number": "150",
-              "title": "General Psychology",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "168",
-              "title": "Anatomy and Physiology I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACA",
-              "number": "115",
-              "title": "Success & Study Skills",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACA",
-              "number": "122",
-              "title": "Transfer and Career Success",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Spring Semester",
-          "credits_required": 13,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "HUM",
-              "number": "115",
-              "title": "Critical Thinking",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COM",
-              "number": "231",
-              "title": "Public Speaking",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "169",
-              "title": "Anatomy and Physiology II",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Health Sciences Certificate - Phlebotomy",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/health-sciences/health-sciences/copy-of-health-sciences-certificate-phlebotomy",
-      "total_credits": null,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "PBT",
-              "number": "110",
-              "title": "Phlebotomy Experience",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HSC",
-              "number": "111",
-              "title": "Intro to Healthcare Careers",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HSC",
-              "number": "115",
-              "title": "Intro to Health Sys and Ethics",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HSC",
-              "number": "121",
-              "title": "Healthcare Communication",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Emergency Medical Science (EMS) A.A.S.",
       "credential": "AS",
       "program_code": null,
@@ -10907,6 +10778,135 @@
               "prefix": "PSY",
               "number": "150",
               "title": "General Psychology",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Emergency Medical Science (EMS) – Bridge Program",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/health-sciences/emergency-medical-science-ems/emergency-medical-science-ems-bridge-program",
+      "total_credits": 24,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Fall Semester",
+          "credits_required": 11,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "111",
+              "title": "Writing and Inquiry",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
+              "number": "150",
+              "title": "General Psychology",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "168",
+              "title": "Anatomy and Physiology I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACA",
+              "number": "115",
+              "title": "Success & Study Skills",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACA",
+              "number": "122",
+              "title": "Transfer and Career Success",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Spring Semester",
+          "credits_required": 13,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "HUM",
+              "number": "115",
+              "title": "Critical Thinking",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COM",
+              "number": "231",
+              "title": "Public Speaking",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "169",
+              "title": "Anatomy and Physiology II",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Health Sciences Certificate - Phlebotomy",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/health-sciences/health-sciences/copy-of-health-sciences-certificate-phlebotomy",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "PBT",
+              "number": "110",
+              "title": "Phlebotomy Experience",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HSC",
+              "number": "111",
+              "title": "Intro to Healthcare Careers",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HSC",
+              "number": "115",
+              "title": "Intro to Health Sys and Ethics",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HSC",
+              "number": "121",
+              "title": "Healthcare Communication",
               "credits": 0,
               "or_alternatives": []
             }
@@ -11999,74 +11999,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Facilities Maintenance Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/industrial-technologies/industrial-systems-technology/facilities-maintenance-certificate",
-      "total_credits": 14,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Fall Semester",
-          "credits_required": 6,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "AHR",
-              "number": "120",
-              "title": "HVACR Maintenance",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELC",
-              "number": "113",
-              "title": "Residential Wiring",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Spring Semester",
-          "credits_required": 8,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BPR",
-              "number": "111",
-              "title": "Print Reading",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MNT",
-              "number": "150",
-              "title": "Basic Building Maintenance",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PLU",
-              "number": "111",
-              "title": "Intro to Basic Plumbing",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ISC",
-              "number": "112",
-              "title": "Industrial Safety",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Practical Nursing",
       "credential": "other",
       "program_code": null,
@@ -12154,6 +12086,266 @@
         }
       ],
       "matched_program_slug": "nursing"
+    },
+    {
+      "title": "Facilities Maintenance Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/industrial-technologies/industrial-systems-technology/facilities-maintenance-certificate",
+      "total_credits": 14,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Fall Semester",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "AHR",
+              "number": "120",
+              "title": "HVACR Maintenance",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELC",
+              "number": "113",
+              "title": "Residential Wiring",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Spring Semester",
+          "credits_required": 8,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BPR",
+              "number": "111",
+              "title": "Print Reading",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MNT",
+              "number": "150",
+              "title": "Basic Building Maintenance",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PLU",
+              "number": "111",
+              "title": "Intro to Basic Plumbing",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ISC",
+              "number": "112",
+              "title": "Industrial Safety",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Industrial Systems Technology Diploma",
+      "credential": "diploma",
+      "program_code": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/industrial-technologies/industrial-systems-technology/industrial-systems-technology-diploma",
+      "total_credits": 43,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Fall Semester",
+          "credits_required": 16,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACA",
+              "number": "115",
+              "title": "Success & Study Skills",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACA",
+              "number": "122",
+              "title": "Transfer and Career Success",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELC",
+              "number": "112",
+              "title": "DC/AC Electricity",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELC",
+              "number": "118",
+              "title": "National Electrical Code",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HYD",
+              "number": "110",
+              "title": "Hydraulics/Pneumatics I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MNT",
+              "number": "160",
+              "title": "Industrial Fabrication",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WOL",
+              "number": "110",
+              "title": "Basic Construction Skills",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Spring Semester",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BPR",
+              "number": "111",
+              "title": "Print Reading",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ISC",
+              "number": "112",
+              "title": "Industrial Safety",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "110",
+              "title": "Mathematical Measurement and Literacy",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MEC",
+              "number": "130",
+              "title": "Mechanisms",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MNT",
+              "number": "150",
+              "title": "Basic Building Maintenance",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PLU",
+              "number": "111",
+              "title": "Intro to Basic Plumbing",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WLD",
+              "number": "112",
+              "title": "Basic Welding Processes",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WLD",
+              "number": "121",
+              "title": "GMAW (MIG) FCAW/Plate",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Summer Semester",
+          "credits_required": 9,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "AHR",
+              "number": "120",
+              "title": "HVACR Maintenance",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELC",
+              "number": "117",
+              "title": "Motors and Controls",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "111",
+              "title": "Writing and Inquiry",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Machining Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/industrial-technologies/industrial-systems-technology/machining-certificate",
+      "total_credits": 8,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Spring Semester",
+          "credits_required": 8,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MAC",
+              "number": "111",
+              "title": "Machining Technology I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ISC",
+              "number": "112",
+              "title": "Industrial Safety",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
     },
     {
       "title": "Industrial Systems Technology A.A.S.",
@@ -12560,165 +12752,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Industrial Systems Technology Diploma",
-      "credential": "diploma",
-      "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/industrial-technologies/industrial-systems-technology/industrial-systems-technology-diploma",
-      "total_credits": 43,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Fall Semester",
-          "credits_required": 16,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ACA",
-              "number": "115",
-              "title": "Success & Study Skills",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACA",
-              "number": "122",
-              "title": "Transfer and Career Success",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELC",
-              "number": "112",
-              "title": "DC/AC Electricity",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELC",
-              "number": "118",
-              "title": "National Electrical Code",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HYD",
-              "number": "110",
-              "title": "Hydraulics/Pneumatics I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MNT",
-              "number": "160",
-              "title": "Industrial Fabrication",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WOL",
-              "number": "110",
-              "title": "Basic Construction Skills",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Spring Semester",
-          "credits_required": 18,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BPR",
-              "number": "111",
-              "title": "Print Reading",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ISC",
-              "number": "112",
-              "title": "Industrial Safety",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "110",
-              "title": "Mathematical Measurement and Literacy",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MEC",
-              "number": "130",
-              "title": "Mechanisms",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MNT",
-              "number": "150",
-              "title": "Basic Building Maintenance",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PLU",
-              "number": "111",
-              "title": "Intro to Basic Plumbing",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WLD",
-              "number": "112",
-              "title": "Basic Welding Processes",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WLD",
-              "number": "121",
-              "title": "GMAW (MIG) FCAW/Plate",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Summer Semester",
-          "credits_required": 9,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "AHR",
-              "number": "120",
-              "title": "HVACR Maintenance",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELC",
-              "number": "117",
-              "title": "Motors and Controls",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENG",
-              "number": "111",
-              "title": "Writing and Inquiry",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Commercial and Industrial Welding Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -12764,39 +12797,6 @@
         }
       ],
       "matched_program_slug": "welding"
-    },
-    {
-      "title": "Machining Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/industrial-technologies/industrial-systems-technology/machining-certificate",
-      "total_credits": 8,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Spring Semester",
-          "credits_required": 8,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "MAC",
-              "number": "111",
-              "title": "Machining Technology I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ISC",
-              "number": "112",
-              "title": "Industrial Safety",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
     },
     {
       "title": "Structural Welding Certificate",
@@ -12846,17 +12846,17 @@
       "matched_program_slug": "welding"
     },
     {
-      "title": "Welding Technology Diploma",
-      "credential": "diploma",
+      "title": "Welding Processes I Certificate",
+      "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/industrial-technologies/welding-technology/welding-technology-diploma",
-      "total_credits": 36,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/industrial-technologies/welding-technology/welding-processes-i-certificate",
+      "total_credits": 15,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
-          "name": "Fall Semester",
-          "credits_required": 14,
+          "name": "Required Courses",
+          "credits_required": 15,
           "choose_n": null,
           "courses": [
             {
@@ -12875,55 +12875,6 @@
             },
             {
               "prefix": "WLD",
-              "number": "141",
-              "title": "Symbols and Specifications",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "110",
-              "title": "Mathematical Measurement and Literacy",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACA",
-              "number": "115",
-              "title": "Success & Study Skills",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACA",
-              "number": "122",
-              "title": "Transfer and Career Success",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Spring Semester",
-          "credits_required": 16,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ENG",
-              "number": "111",
-              "title": "Writing and Inquiry",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ISC",
-              "number": "112",
-              "title": "Industrial Safety",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WLD",
               "number": "121",
               "title": "GMAW (MIG) FCAW/Plate",
               "credits": 0,
@@ -12933,34 +12884,6 @@
               "prefix": "WLD",
               "number": "131",
               "title": "GTAW (TIG) Plate",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WLD",
-              "number": "262",
-              "title": "Inspection & Testing",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Summer Term",
-          "credits_required": 6,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "WLD",
-              "number": "116",
-              "title": "SMAW (Stick) Plate/Pipe",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WLD",
-              "number": "261",
-              "title": "Certification Practices",
               "credits": 0,
               "or_alternatives": []
             }
@@ -13185,30 +13108,128 @@
       "matched_program_slug": "welding"
     },
     {
-      "title": "Basic Law Enforcement Training",
-      "credential": "other",
+      "title": "Welding Technology Diploma",
+      "credential": "diploma",
       "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/public-service-technologies/basic-law-enforcement-training/basic-law-enforcement-training",
-      "total_credits": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/industrial-technologies/welding-technology/welding-technology-diploma",
+      "total_credits": 36,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
-          "name": "Required Courses",
-          "credits_required": null,
+          "name": "Fall Semester",
+          "credits_required": 14,
           "choose_n": null,
           "courses": [
             {
-              "prefix": "CJC",
+              "prefix": "WLD",
               "number": "110",
-              "title": "Basic Law Enforcement BLET",
+              "title": "Cutting Processes",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WLD",
+              "number": "115",
+              "title": "SMAW (Stick) Plate",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WLD",
+              "number": "141",
+              "title": "Symbols and Specifications",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "110",
+              "title": "Mathematical Measurement and Literacy",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACA",
+              "number": "115",
+              "title": "Success & Study Skills",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACA",
+              "number": "122",
+              "title": "Transfer and Career Success",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Spring Semester",
+          "credits_required": 16,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "111",
+              "title": "Writing and Inquiry",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ISC",
+              "number": "112",
+              "title": "Industrial Safety",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WLD",
+              "number": "121",
+              "title": "GMAW (MIG) FCAW/Plate",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WLD",
+              "number": "131",
+              "title": "GTAW (TIG) Plate",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WLD",
+              "number": "262",
+              "title": "Inspection & Testing",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Summer Term",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "WLD",
+              "number": "116",
+              "title": "SMAW (Stick) Plate/Pipe",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WLD",
+              "number": "261",
+              "title": "Certification Practices",
               "credits": 0,
               "or_alternatives": []
             }
           ]
         }
       ],
-      "matched_program_slug": "criminal-justice"
+      "matched_program_slug": "welding"
     },
     {
       "title": "911 Communications and Operations A.A.S.",
@@ -13354,6 +13375,32 @@
         }
       ],
       "matched_program_slug": null
+    },
+    {
+      "title": "Basic Law Enforcement Training",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/public-service-technologies/basic-law-enforcement-training/basic-law-enforcement-training",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CJC",
+              "number": "110",
+              "title": "Basic Law Enforcement BLET",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "criminal-justice"
     },
     {
       "title": "Cosmetology A.A.S",
@@ -13824,53 +13871,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Criminal Justice Fundamentals Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/public-service-technologies/criminal-justice-technology/criminal-justice-fundamentals-certificate",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CJC",
-              "number": "111",
-              "title": "Introduction to Criminal Justice",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CJC",
-              "number": "121",
-              "title": "Law Enforcement Operations",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CJC",
-              "number": "141",
-              "title": "Corrections",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSY",
-              "number": "150",
-              "title": "General Psychology",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "criminal-justice"
-    },
-    {
       "title": "Criminal Justice Technology A.A.S.",
       "credential": "AS",
       "program_code": null,
@@ -14120,6 +14120,53 @@
       "matched_program_slug": "criminal-justice"
     },
     {
+      "title": "Criminal Justice Fundamentals Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/public-service-technologies/criminal-justice-technology/criminal-justice-fundamentals-certificate",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CJC",
+              "number": "111",
+              "title": "Introduction to Criminal Justice",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CJC",
+              "number": "121",
+              "title": "Law Enforcement Operations",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CJC",
+              "number": "141",
+              "title": "Corrections",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
+              "number": "150",
+              "title": "General Psychology",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "criminal-justice"
+    },
+    {
       "title": "Homeland Security Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -14221,10 +14268,10 @@
       "matched_program_slug": "criminal-justice"
     },
     {
-      "title": "Welding Processes I Certificate",
+      "title": "Private Investigations/Loss Prevention Certificate",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/industrial-technologies/welding-technology/welding-processes-i-certificate",
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/public-service-technologies/criminal-justice-technology/private-investigations-loss-prevention-certificate",
       "total_credits": 15,
       "gpa_minimum": 2,
       "description": null,
@@ -14235,37 +14282,44 @@
           "choose_n": null,
           "courses": [
             {
-              "prefix": "WLD",
-              "number": "110",
-              "title": "Cutting Processes",
+              "prefix": "CJC",
+              "number": "111",
+              "title": "Introduction to Criminal Justice",
               "credits": 0,
               "or_alternatives": []
             },
             {
-              "prefix": "WLD",
-              "number": "115",
-              "title": "SMAW (Stick) Plate",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WLD",
+              "prefix": "CJC",
               "number": "121",
-              "title": "GMAW (MIG) FCAW/Plate",
+              "title": "Law Enforcement Operations",
               "credits": 0,
               "or_alternatives": []
             },
             {
-              "prefix": "WLD",
+              "prefix": "CJC",
               "number": "131",
-              "title": "GTAW (TIG) Plate",
+              "title": "Criminal Law",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CJC",
+              "number": "132",
+              "title": "Court Procedure & Evidence",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CJC",
+              "number": "151",
+              "title": "Introduction to Loss Prevention",
               "credits": 0,
               "or_alternatives": []
             }
           ]
         }
       ],
-      "matched_program_slug": "welding"
+      "matched_program_slug": null
     },
     {
       "title": "Administrator Early Childhood Certificate",
@@ -14320,60 +14374,6 @@
         }
       ],
       "matched_program_slug": "early-childhood-education"
-    },
-    {
-      "title": "Private Investigations/Loss Prevention Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/public-service-technologies/criminal-justice-technology/private-investigations-loss-prevention-certificate",
-      "total_credits": 15,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 15,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CJC",
-              "number": "111",
-              "title": "Introduction to Criminal Justice",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CJC",
-              "number": "121",
-              "title": "Law Enforcement Operations",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CJC",
-              "number": "131",
-              "title": "Criminal Law",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CJC",
-              "number": "132",
-              "title": "Court Procedure & Evidence",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CJC",
-              "number": "151",
-              "title": "Introduction to Loss Prevention",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
     },
     {
       "title": "Early Childhood Education – Career A.A.S.",
@@ -14584,19 +14584,40 @@
       "matched_program_slug": "early-childhood-education"
     },
     {
-      "title": "Early Childhood Preschool Certificate",
-      "credential": "certificate",
+      "title": "Early Childhood Education Diploma",
+      "credential": "diploma",
       "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/public-service-technologies/early-childhood-education/early-childhood-preschool-certificate",
-      "total_credits": 16,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/public-service-technologies/early-childhood-education/early-childhood-education-diploma",
+      "total_credits": 45,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
-          "name": "Required Courses",
-          "credits_required": 16,
+          "name": "Fall Semester",
+          "credits_required": 20,
           "choose_n": null,
           "courses": [
+            {
+              "prefix": "ACA",
+              "number": "115",
+              "title": "Success & Study Skills",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACA",
+              "number": "122",
+              "title": "Transfer and Career Success",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "111",
+              "title": "Writing and Inquiry",
+              "credits": 0,
+              "or_alternatives": []
+            },
             {
               "prefix": "EDU",
               "number": "119",
@@ -14606,8 +14627,8 @@
             },
             {
               "prefix": "EDU",
-              "number": "131",
-              "title": "Child, Family, and Community",
+              "number": "144",
+              "title": "Child Development I",
               "credits": 0,
               "or_alternatives": []
             },
@@ -14620,8 +14641,8 @@
             },
             {
               "prefix": "EDU",
-              "number": "153",
-              "title": "Health, Safety and Nutrition",
+              "number": "221",
+              "title": "Children with Exceptionalities",
               "credits": 0,
               "or_alternatives": []
             },
@@ -14629,6 +14650,76 @@
               "prefix": "EDU",
               "number": "145",
               "title": "Child Development II",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Spring Semester",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "110",
+              "title": "Introduction to Computers",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "131",
+              "title": "Child, Family, and Community",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "151",
+              "title": "Creative Activities",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "153",
+              "title": "Health, Safety and Nutrition",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Fall Semester",
+          "credits_required": 13,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MAT",
+              "number": "110",
+              "title": "Mathematical Measurement and Literacy",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "234",
+              "title": "Infants, Toddlers, and Twos",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "280",
+              "title": "Language and Literacy Experiences",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "284",
+              "title": "Early Childhood Capstone Practicum",
               "credits": 0,
               "or_alternatives": []
             }
@@ -14825,10 +14916,10 @@
       "matched_program_slug": "early-childhood-education"
     },
     {
-      "title": "Lead Teacher Early Childhood Certificate",
+      "title": "Early Childhood Preschool Certificate",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/public-service-technologies/early-childhood-education/lead-teacher-early-childhood-certificate",
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/public-service-technologies/early-childhood-education/early-childhood-preschool-certificate",
       "total_credits": 16,
       "gpa_minimum": 2,
       "description": null,
@@ -14838,13 +14929,6 @@
           "credits_required": 16,
           "choose_n": null,
           "courses": [
-            {
-              "prefix": "CIS",
-              "number": "110",
-              "title": "Introduction to Computers",
-              "credits": 0,
-              "or_alternatives": []
-            },
             {
               "prefix": "EDU",
               "number": "119",
@@ -14867,9 +14951,16 @@
               "or_alternatives": []
             },
             {
-              "prefix": "PSY",
-              "number": "150",
-              "title": "General Psychology",
+              "prefix": "EDU",
+              "number": "153",
+              "title": "Health, Safety and Nutrition",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "145",
+              "title": "Child Development II",
               "credits": 0,
               "or_alternatives": []
             }
@@ -14933,37 +15024,23 @@
       "matched_program_slug": null
     },
     {
-      "title": "Early Childhood Education Diploma",
-      "credential": "diploma",
+      "title": "Lead Teacher Early Childhood Certificate",
+      "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/public-service-technologies/early-childhood-education/early-childhood-education-diploma",
-      "total_credits": 45,
+      "catalog_url": "https://bladencc.smartcatalogiq.com/en/2026-2027/academic-catalog/curriculum-programs-of-study/public-service-technologies/early-childhood-education/lead-teacher-early-childhood-certificate",
+      "total_credits": 16,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
-          "name": "Fall Semester",
-          "credits_required": 20,
+          "name": "Required Courses",
+          "credits_required": 16,
           "choose_n": null,
           "courses": [
             {
-              "prefix": "ACA",
-              "number": "115",
-              "title": "Success & Study Skills",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACA",
-              "number": "122",
-              "title": "Transfer and Career Success",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENG",
-              "number": "111",
-              "title": "Writing and Inquiry",
+              "prefix": "CIS",
+              "number": "110",
+              "title": "Introduction to Computers",
               "credits": 0,
               "or_alternatives": []
             },
@@ -14976,8 +15053,8 @@
             },
             {
               "prefix": "EDU",
-              "number": "144",
-              "title": "Child Development I",
+              "number": "131",
+              "title": "Child, Family, and Community",
               "credits": 0,
               "or_alternatives": []
             },
@@ -14989,86 +15066,9 @@
               "or_alternatives": []
             },
             {
-              "prefix": "EDU",
-              "number": "221",
-              "title": "Children with Exceptionalities",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "145",
-              "title": "Child Development II",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Spring Semester",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CIS",
-              "number": "110",
-              "title": "Introduction to Computers",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "131",
-              "title": "Child, Family, and Community",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "151",
-              "title": "Creative Activities",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "153",
-              "title": "Health, Safety and Nutrition",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Fall Semester",
-          "credits_required": 13,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "MAT",
-              "number": "110",
-              "title": "Mathematical Measurement and Literacy",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "234",
-              "title": "Infants, Toddlers, and Twos",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "280",
-              "title": "Language and Literacy Experiences",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "284",
-              "title": "Early Childhood Capstone Practicum",
+              "prefix": "PSY",
+              "number": "150",
+              "title": "General Psychology",
               "credits": 0,
               "or_alternatives": []
             }
