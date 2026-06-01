@@ -196,8 +196,11 @@ const BASE_URL = "https://njtransfer.org/artweb";
 const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
 
-// Delay between requests to avoid stressing the server
-const DELAY_MS = 800;
+// Delay between requests to avoid stressing the server.
+// 800ms was causing timeouts on the 6h CI ceiling (19 CCs × 26 letters × 800ms→~5h57m).
+// Reduced to 200ms after profiling and local testing with njtransfer.org (handles it fine).
+// See issue #671 (NJ transfers timeout / cancelled) and PR #590 (A-Z loop).
+const DELAY_MS = 200;
 // Max courses per CC (safety limit to prevent infinite loops)
 const MAX_COURSES_PER_CC = 2000;
 
@@ -206,6 +209,17 @@ const MAX_COURSES_PER_CC = 2000;
 // ---------------------------------------------------------------------------
 
 const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
+
+function decodeHtmlEntities(s: string): string {
+  return s
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&#(\d+);/g, (_, code) => String.fromCharCode(parseInt(code, 10)));
+}
 
 async function retryFetch(
   url: string,
@@ -379,7 +393,11 @@ function parseCourseEquivalencyPage(
       );
       if (!univNameMatch) return;
 
-      const univName = univNameMatch[1].trim();
+      // Decode HTML entities before any matching/slugify — NJTransfer's
+      // server emits ampersands as `&amp;`, and a previous bug slugified
+      // "&" to "amp" instead of "and" (e.g. the bloustein school became
+      // `rutgers-edward-bloustein-sch-of-planning-amp-policy`).
+      const univName = decodeHtmlEntities(univNameMatch[1].trim());
 
       // Look up the university slug
       let univSlug = UNIV_NAME_TO_SLUG[univName] || "";
@@ -400,6 +418,7 @@ function parseCourseEquivalencyPage(
         // Generate slug from name
         univSlug = univName
           .toLowerCase()
+          .replace(/&/g, " and ")
           .replace(/[^a-z0-9]+/g, "-")
           .replace(/^-|-$/g, "");
       }
@@ -554,68 +573,70 @@ async function scrapeCC(
   const sessionId = await setupSession(ccCode, artId);
   await sleep(300);
 
-  // Step 3: Start from the first course
-  const firstCourseHtml = await retryFetch(
-    `${BASE_URL}/crs-srch.cgi?${sessionId}`,
-    `first-course(${ccCode})`,
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: `CRSID=A&LUp=Go&SI=${ccCode}&RI=All&From_where=precs.cgi`,
-    },
-  );
-
-  if (!firstCourseHtml) {
-    console.log("    Empty response for first course, skipping");
-    return [];
-  }
-
+  // Step 3+4: NJTransfer's `Next` link only walks within the starting-letter
+  // bucket — once we reach the last A-prefixed course, the Next link points
+  // back to the first A course (or disappears), so a single `CRSID=A` search
+  // followed by Next-iteration captures A-prefix data only. To get full
+  // alphabet coverage we restart the search at each letter A–Z.
   const allMappings: TransferMapping[] = [];
   let courseCount = 0;
   const seenCourses = new Set<string>();
+  const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
-  // Parse first course
-  let result = parseCourseEquivalencyPage(firstCourseHtml, ccCode);
-  if (result.ccCourseId) {
+  for (const letter of LETTERS) {
+    if (courseCount >= courseLimit) break;
+
+    const firstCourseHtml = await retryFetch(
+      `${BASE_URL}/crs-srch.cgi?${sessionId}`,
+      `first-course(${ccCode}, ${letter})`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `CRSID=${letter}&LUp=Go&SI=${ccCode}&RI=All&From_where=precs.cgi`,
+      },
+    );
+
+    if (!firstCourseHtml) continue;
+
+    let result = parseCourseEquivalencyPage(firstCourseHtml, ccCode);
+
+    // Skip if no course was found for this letter or NJTransfer fell through
+    // to a course we've already captured under an earlier letter.
+    if (!result.ccCourseId || seenCourses.has(result.ccCourseId)) continue;
+
     seenCourses.add(result.ccCourseId);
     allMappings.push(...result.mappings);
     courseCount++;
-  }
 
-  // Step 4: Follow Next links
-  while (result.nextUrl && courseCount < courseLimit) {
-    await sleep(DELAY_MS);
+    // Iterate within this letter bucket via Next links
+    while (result.nextUrl && courseCount < courseLimit) {
+      await sleep(DELAY_MS);
 
-    const html = await retryFetch(
-      result.nextUrl,
-      `next-course(${ccCode}, #${courseCount})`,
-    );
-
-    if (!html) break;
-
-    result = parseCourseEquivalencyPage(html, ccCode);
-
-    // Detect loop (we've come back to a course we've seen)
-    if (result.ccCourseId && seenCourses.has(result.ccCourseId)) {
-      console.log(
-        `    Reached end of course list after ${courseCount} courses (loop detected at ${result.ccCourseId})`,
+      const html = await retryFetch(
+        result.nextUrl,
+        `next-course(${ccCode}, ${letter}, #${courseCount})`,
       );
-      break;
-    }
 
-    if (result.ccCourseId) {
-      seenCourses.add(result.ccCourseId);
-      allMappings.push(...result.mappings);
-      courseCount++;
+      if (!html) break;
 
-      if (courseCount % 50 === 0) {
-        console.log(
-          `    ${courseCount} courses processed (${allMappings.length} mappings so far)...`,
-        );
+      result = parseCourseEquivalencyPage(html, ccCode);
+
+      // End of bucket: Next link looped back to a course we've already seen
+      if (result.ccCourseId && seenCourses.has(result.ccCourseId)) break;
+
+      if (result.ccCourseId) {
+        seenCourses.add(result.ccCourseId);
+        allMappings.push(...result.mappings);
+        courseCount++;
+
+        if (courseCount % 50 === 0) {
+          console.log(
+            `    ${courseCount} courses processed (${allMappings.length} mappings so far)...`,
+          );
+        }
+      } else {
+        break;
       }
-    } else {
-      // Empty page — likely hit the end
-      break;
     }
   }
 
@@ -767,32 +788,52 @@ async function main() {
   fs.mkdirSync(outDir, { recursive: true });
   const outPath = path.join(outDir, "transfer-equiv.json");
 
-  // Merge with existing data (preserve any entries from other sources)
-  let existing: TransferMapping[] = [];
+  // Full overwrite — NJTransfer is the only source for nj/transfer-equiv.json,
+  // so there's nothing to "preserve" from prior runs. The old preserve-merge
+  // logic kept any entry whose university slug wasn't in UNIV_CODE_TO_SLUG,
+  // but the slugify fallback for unknown universities produces slugs that
+  // are by definition NOT in that list — so those entries got preserved
+  // forever and the file grew monotonically (29 MB → 44 MB → 330 MB across
+  // 4 cron ticks before this fix).
+  //
+  // Safety net: if the new count is < 50% of the existing count, refuse to
+  // overwrite. Catches genuine regressions (NJTransfer.org down, parser
+  // broke, etc.) before they blank the file. The bloat-collapse from this
+  // PR itself is whitelisted via `--allow-shrink` on the first run.
+  const allowShrink = args.includes("--allow-shrink");
+  let existingCount = 0;
   try {
-    existing = JSON.parse(fs.readFileSync(outPath, "utf-8"));
+    const existing = JSON.parse(fs.readFileSync(outPath, "utf-8"));
+    existingCount = Array.isArray(existing) ? existing.length : 0;
   } catch {
-    /* first run */
+    /* first run — no existing file */
   }
 
-  // Replace all NJTransfer-sourced mappings; preserve others
-  const njtransferUnivSlugs = new Set(
-    Object.values(UNIV_CODE_TO_SLUG),
-  );
-  const preserved = existing.filter(
-    (m) => !njtransferUnivSlugs.has(m.university),
-  );
-  const merged = [...preserved, ...deduped];
+  if (
+    existingCount > 0 &&
+    deduped.length < existingCount * 0.5 &&
+    !allowShrink
+  ) {
+    console.error(
+      `\n✗ Refusing to overwrite: new count ${deduped.length} is < 50% of existing ${existingCount}.`,
+    );
+    console.error(
+      `  This looks like a regression. Existing file left untouched.`,
+    );
+    console.error(
+      `  If the shrink is intentional (e.g. dedup-bug fix), re-run with --allow-shrink.`,
+    );
+    process.exit(1);
+  }
 
-  if (preserved.length > 0) {
+  fs.writeFileSync(outPath, JSON.stringify(deduped, null, 2) + "\n");
+  console.log(`\nWrote ${deduped.length} NJTransfer mappings to ${outPath}`);
+  if (existingCount > 0 && deduped.length !== existingCount) {
+    const delta = deduped.length - existingCount;
     console.log(
-      `\nMerged: ${preserved.length} preserved + ${deduped.length} new = ${merged.length} total`,
+      `Delta vs prior: ${delta > 0 ? "+" : ""}${delta} (${((delta / existingCount) * 100).toFixed(1)}%)`,
     );
   }
-
-  fs.writeFileSync(outPath, JSON.stringify(merged, null, 2) + "\n");
-  console.log(`\nWrote ${deduped.length} NJTransfer mappings to ${outPath}`);
-  console.log(`Total in file: ${merged.length}`);
 
   // --- Supabase import ---
   if (!noImport) {

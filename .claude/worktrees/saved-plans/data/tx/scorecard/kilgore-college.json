@@ -1,0 +1,46 @@
+{
+  "unitid": 226019,
+  "schoolName": "Kilgore College",
+  "state": "TX",
+  "city": "Kilgore",
+  "schoolUrl": "https://www.kilgore.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-16T15:39:45.011Z",
+  "size": 3215,
+  "shareFirstGeneration": 0.5388450353,
+  "cost": {
+    "tuitionInState": 2160,
+    "tuitionOutOfState": 5256,
+    "attendanceAcademicYear": 14080,
+    "avgNetPricePublic": 5364,
+    "bookSupply": 2685,
+    "roomBoardOffCampus": 7718,
+    "netPriceByIncome": {
+      "0_30000": 5364,
+      "30001_48000": null,
+      "48001_75000": null,
+      "75001_110000": null,
+      "110001_plus": null
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.3173,
+    "federalLoanRate": 0.1223,
+    "medianDebtCompleters": 14967
+  },
+  "completion": {
+    "completionRate150nt": 0.3924,
+    "completionRate200nt": 0.3819,
+    "transferRate": 0.2302,
+    "retentionRateFullTime": 0.6528,
+    "retentionRatePartTime": 0.4045
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 37975,
+    "median1YrAfterCompletion": 34733,
+    "percentile25_10YrsAfterEntry": 19839,
+    "percentile75_10YrsAfterEntry": 59139,
+    "shareEarningAboveHsGrad": 0.518
+  }
+}

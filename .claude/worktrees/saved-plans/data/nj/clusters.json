@@ -1,0 +1,118 @@
+{
+  "$comment": "Multi-college-district cluster detection output (issue #497). Each cluster represents N colleges that share a SIS host or registrable domain — a single bespoke scraper can cover all members.",
+  "state": "nj",
+  "generatedAt": "2026-05-24T02:53:43Z",
+  "summary": {
+    "inputCount": 19,
+    "clusterCount": 1,
+    "clusteredCount": 2,
+    "singletonCount": 17
+  },
+  "clusters": [
+    {
+      "id": "rcsj-edu",
+      "sharedSignal": "rcsj.edu",
+      "signalKind": "registrable-domain",
+      "memberSlugs": [
+        "rcsj-cumberland",
+        "rcsj-gloucester"
+      ],
+      "evidence": {
+        "rcsj-cumberland": [
+          "www.rcsj.edu"
+        ],
+        "rcsj-gloucester": [
+          "www.rcsj.edu"
+        ]
+      },
+      "publicGuestAccess": "unknown"
+    }
+  ],
+  "singletons": [
+    {
+      "slug": "atlantic-cape",
+      "name": "Atlantic Cape Community College",
+      "primaryUrl": "www.atlantic.edu"
+    },
+    {
+      "slug": "bergen",
+      "name": "Bergen Community College",
+      "primaryUrl": "www.bergen.edu"
+    },
+    {
+      "slug": "brookdale",
+      "name": "Brookdale Community College",
+      "primaryUrl": "www.brookdalecc.edu"
+    },
+    {
+      "slug": "camden",
+      "name": "Camden County College",
+      "primaryUrl": "www.camdencc.edu"
+    },
+    {
+      "slug": "ccm",
+      "name": "County College of Morris",
+      "primaryUrl": "www.ccm.edu"
+    },
+    {
+      "slug": "essex",
+      "name": "Essex County College",
+      "primaryUrl": "www.essex.edu"
+    },
+    {
+      "slug": "hccc",
+      "name": "Hudson County Community College",
+      "primaryUrl": "www.hccc.edu"
+    },
+    {
+      "slug": "mercer",
+      "name": "Mercer County Community College",
+      "primaryUrl": "www.mccc.edu"
+    },
+    {
+      "slug": "middlesex",
+      "name": "Middlesex College",
+      "primaryUrl": "www.middlesexcc.edu"
+    },
+    {
+      "slug": "ocean",
+      "name": "Ocean County College",
+      "primaryUrl": "www.ocean.edu"
+    },
+    {
+      "slug": "passaic",
+      "name": "Passaic County Community College",
+      "primaryUrl": "www.pccc.edu"
+    },
+    {
+      "slug": "rvcc",
+      "name": "Raritan Valley Community College",
+      "primaryUrl": "www.raritanval.edu"
+    },
+    {
+      "slug": "rcbc",
+      "name": "Rowan College at Burlington County",
+      "primaryUrl": "www.rcbc.edu"
+    },
+    {
+      "slug": "salem",
+      "name": "Salem Community College",
+      "primaryUrl": "www.salemcc.edu"
+    },
+    {
+      "slug": "sussex",
+      "name": "Sussex County Community College",
+      "primaryUrl": "www.sussex.edu"
+    },
+    {
+      "slug": "ucnj",
+      "name": "UCNJ Union College",
+      "primaryUrl": "www.ucc.edu"
+    },
+    {
+      "slug": "warren",
+      "name": "Warren County Community College",
+      "primaryUrl": "www.warren.edu"
+    }
+  ]
+}

@@ -23,8 +23,10 @@ const hiConfig: StateConfig = {
       "University of Hawaiʻi Board of Regents Policy 6.205 lets Hawaiʻi residents aged 60+ enroll in regular UH credit courses without paying tuition, on a space-available basis. Some fees still apply, and seats are allocated after regular registration — contact your campus registrar for the timing.",
   },
 
-  transferSupported: false,
-  popularCourses: [],
+  // Transfer data: 15,649 in-state equivalencies across the 3 UH-system
+  // 4-years (Hilo, Mānoa, West Oʻahu), scraped via scrape-transfer-uhdad.ts.
+  transferSupported: true,
+  popularCourses: ["ENG 1007", "ENG 1005", "ENG 1006", "PHYL 141L5", "PHYL 1415", "SP 1515"],
   defaultZip: "96813",
   defaultZipCity: "Honolulu",
 
@@ -58,8 +60,26 @@ const hiConfig: StateConfig = {
         runner: "http",
       },
     ],
-    // manual-only: transfers — Phase 3 (transfer-equiv) not yet wired up.
-    // manual-only: prereqs — Phase 4.
+    // UH System publishes a statewide course-transfer database covering
+    // all 10 UH campuses (6 CCs as senders × 3 four-years as receivers).
+    //
+    // The original Banner SSB form at sis.hawaii.edu/uhdad/CourseTransfer.home
+    // was retired and now returns HTTP 502. UH replaced it with an
+    // Ellucian-React SPA at sis.hawaii.edu:9350/crsetrns/ backed by a
+    // JSON API (/transfer/x-transfer-equiv?institutionCode=&campusCode=).
+    // The API requires an X-Recaptcha-Token header but only presence-
+    // checks it. The scraper sends `cc-coursemap-scraper` as a clearly
+    // attributed value.
+    //
+    // The scraper refuses to overwrite the existing transfer-equiv.json
+    // with an empty array when all pairs fail, so a transient outage
+    // leaves the last good snapshot in place rather than corrupting state.
+    transfers: [
+      { scripts: ["scripts/hi/scrape-transfer-uhdad.ts"], runner: "http" },
+    ],
+    // Prereqs aggregated from course-search prerequisite_text (data/hi/prereqs.json,
+    // 418 parsed chains). No dedicated catalog scraper; refreshed from committed courses.
+    prereqs: { source: "aggregate-from-courses" },
     // manual-only: programs — Phase 5+.
   },
 };

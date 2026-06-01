@@ -8,12 +8,15 @@ import {
   getAvailableTerms,
   trimCoursesForClient,
 } from "@/lib/courses";
+import { runPooled } from "@/lib/concurrency";
 import { getCurrentTerm } from "@/lib/terms";
 import CollegeScorecardSection from "./CollegeScorecardSection";
 import CollegeTermSection from "./CollegeTermSection";
+import CollegeContext from "@/components/CollegeContext";
 import TopProgramsSection from "./TopProgramsSection";
+import { loadCollegePrograms } from "@/lib/programs/requirements";
+import { countRealCourses, PLAN_MIN_COURSES } from "@/lib/programs/plan-shared";
 import { buildTransferLookupForCourses } from "@/lib/transfer-scoped";
-import { getAllStates } from "@/lib/states/registry";
 import { requireStateConfig } from "@/lib/states/route-helpers";
 import { getTopInstructors } from "@/lib/instructors";
 import { computeOfferingProfile } from "@/lib/college-stats";
@@ -73,15 +76,25 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
   };
 }
 
-// Force HTTP 404 (not a cached 200 soft-404) for any (state, college-id) pair
-// not in `loadInstitutions`. `generateStaticParams` already enumerates every
-// valid pair at build time, so this is zero extra build cost. See #337.
-export const dynamicParams = false;
+// Sparse SSG (#702): pre-render only the colleges whose state config sets
+// `prerenderAtBuild: true`. Everything else renders on demand via ISR
+// (24h `revalidate` below) on the first visit and serves from the CDN
+// thereafter.
+//
+// Invalid (state, id) pairs still return a true HTTP 404 because the page
+// body calls `notFound()` after the in-memory `institutions.find()` miss.
+// Switching `dynamicParams` to `true` does not weaken the 404 guarantee
+// the previous `false` setting offered; it only lets Next.js reach the
+// page handler before bailing. The handler is a synchronous array lookup,
+// so the per-invalid-request CPU cost is negligible.
+//
+// State priority is set on each StateConfig rather than hardcoded here —
+// see CLAUDE.md invariant #1. To promote a state into the build-time
+// tier, set `prerenderAtBuild: true` in `lib/states/{slug}/config.ts`.
+export const dynamicParams = true;
 
 export function generateStaticParams() {
-  return getAllStates().flatMap((config) =>
-    loadInstitutions(config.slug).map((i) => ({ state: config.slug, id: i.id }))
-  );
+  return [];
 }
 
 export default async function CollegeDetailPage(props: PageProps) {
@@ -97,13 +110,23 @@ export default async function CollegeDetailPage(props: PageProps) {
   // Load courses for every term this college has data in. Doing this server-
   // side lets the client switch terms via the URL without triggering a fresh
   // server render, which would force the whole page out of ISR.
+  //
+  // Concurrency note: each loadCoursesForCollege call internally fires
+  // (count + N paginated fetches) capped at runPooled(..., 5). With ~4-6
+  // terms fanned out at once via a naked Promise.all, peak parallelism per
+  // college page was 4-6 × ~5 = ~20-30 simultaneous Supabase queries. Stack
+  // that across the build's 3 worker processes and pgbouncer saturates,
+  // producing the statement_timeout cascade visible on PRs #823 / #824 /
+  // #825 / #826. Cap term-fan-out to 2 to keep peak in-flight queries per
+  // page render at ~10.
   const allTerms = await getAvailableTerms(state);
   const termCoursePairs: { term: string; courses: CourseSection[] }[] =
-    await Promise.all(
-      allTerms.map(async (t) => ({
+    await runPooled(
+      allTerms.map((t) => async () => ({
         term: t,
         courses: await loadCoursesForCollege(institution.college_slug, t, state),
-      }))
+      })),
+      2,
     );
   const termsWithData = termCoursePairs
     .filter((p) => p.courses.length > 0)
@@ -119,6 +142,13 @@ export default async function CollegeDetailPage(props: PageProps) {
 
   const collegeSlug = institution.college_slug;
 
+  // How many of this college's programs have enough real courses to render a
+  // transfer plan? Gates the "Plan a degree" call-to-action so it never points
+  // at a programs page with no actual plans.
+  const plannableCount = (await loadCollegePrograms(state, collegeSlug)).filter(
+    (p) => countRealCourses(p) >= PLAN_MIN_COURSES,
+  ).length;
+
   // Build per-term maps for the client wrapper. Only the terms that actually
   // have data are shipped.
   const coursesByTerm: Record<string, CourseSection[]> = {};
@@ -129,9 +159,13 @@ export default async function CollegeDetailPage(props: PageProps) {
   > = {};
   const courseListingUrlByTerm: Record<string, string> = {};
 
+  // Same fan-out concern as the first Promise.all above: each iteration
+  // fires isDataStale (1 query) + getTopInstructors (1 query) per term;
+  // unbounded across N terms × 3 build workers × the parent loop's already
+  // running queries piles onto pgbouncer. Cap to 2.
   const union: CourseSection[] = [];
-  await Promise.all(
-    termsWithData.map(async (t) => {
+  await runPooled(
+    termsWithData.map((t) => async () => {
       const courses =
         termCoursePairs.find((p) => p.term === t)?.courses ?? [];
       // Only ship the default term's courses in the initial RSC payload.
@@ -157,7 +191,8 @@ export default async function CollegeDetailPage(props: PageProps) {
       // every course the college offers, regardless of which term
       // the user has selected.
       union.push(...courses);
-    })
+    }),
+    2,
   );
 
   // Shared transfer lookup, scoped to the union of courses across all terms
@@ -330,6 +365,48 @@ export default async function CollegeDetailPage(props: PageProps) {
           </div>
         </div>
       </section>
+
+      {/* Plan-a-degree call-to-action — the planner's main entry point from a
+          college page. Gated so it only shows when real plans exist. */}
+      {plannableCount > 0 && (
+        <Link
+          href={`/${state}/college/${id}/programs`}
+          className="group mt-6 flex items-center justify-between gap-4 rounded-xl border border-teal-200 dark:border-teal-900 bg-teal-50 dark:bg-teal-950/40 px-5 py-4 transition hover:bg-teal-100 dark:hover:bg-teal-900/40"
+        >
+          <div>
+            <p className="text-sm font-semibold text-teal-800 dark:text-teal-300">
+              Plan a degree at {institution.name}
+            </p>
+            <p className="mt-0.5 text-sm text-gray-600 dark:text-slate-300">
+              Pick a program and see every course it needs — which ones transfer
+              to the school you want, and what&rsquo;s open to register for now.
+            </p>
+          </div>
+          <span className="shrink-0 text-teal-700 dark:text-teal-300 group-hover:translate-x-0.5 transition-transform">
+            &rarr;
+          </span>
+        </Link>
+      )}
+
+      {/* At-a-glance — data-grounded editorial context paragraphs. Renders
+          nothing when fewer than 2 sentences qualify (sparse-data colleges),
+          so we don't get an empty heading. */}
+      <CollegeContext
+        state={state}
+        stateName={config.name}
+        systemName={config.systemName}
+        institution={institution}
+        sections={coursesByTerm[defaultTerm] ?? []}
+        term={defaultTerm}
+        seniorWaiver={
+          config.seniorWaiver
+            ? {
+                ageThreshold: config.seniorWaiver.ageThreshold,
+                legalCitation: config.seniorWaiver.legalCitation,
+              }
+            : null
+        }
+      />
 
       {/* COURSES — immediately after hero (courses-first layout) */}
       <CollegeTermSection

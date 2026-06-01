@@ -1,0 +1,46 @@
+{
+  "$comment": "Multi-college-district cluster detection output (issue #497). Each cluster represents N colleges that share a SIS host or registrable domain — a single bespoke scraper can cover all members.",
+  "state": "ne",
+  "generatedAt": "2026-06-01T00:08:38.118Z",
+  "summary": {
+    "inputCount": 8,
+    "clusterCount": 0,
+    "clusteredCount": 0,
+    "singletonCount": 8
+  },
+  "clusters": [],
+  "singletons": [
+    {
+      "slug": "nebraska-indian-community-college",
+      "primaryUrl": "thenicc.edu"
+    },
+    {
+      "slug": "central-community-college",
+      "primaryUrl": "cccneb.edu"
+    },
+    {
+      "slug": "metropolitan-community-college-area",
+      "primaryUrl": "mccneb.edu"
+    },
+    {
+      "slug": "nebraska-college-of-technical-agriculture",
+      "primaryUrl": "ncta.unl.edu"
+    },
+    {
+      "slug": "little-priest-tribal-college",
+      "primaryUrl": "littlepriest.edu"
+    },
+    {
+      "slug": "northeast-community-college",
+      "primaryUrl": "northeast.edu"
+    },
+    {
+      "slug": "western-nebraska-community-college",
+      "primaryUrl": "wncc.edu"
+    },
+    {
+      "slug": "southeast-community-college-area",
+      "primaryUrl": "southeast.edu"
+    }
+  ]
+}

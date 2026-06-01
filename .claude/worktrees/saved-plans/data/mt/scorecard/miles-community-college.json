@@ -1,0 +1,46 @@
+{
+  "unitid": 180373,
+  "schoolName": "Miles Community College",
+  "state": "MT",
+  "city": "Miles City",
+  "schoolUrl": "www.milescc.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-17T04:07:39.256Z",
+  "size": 332,
+  "shareFirstGeneration": 0.3775100402,
+  "cost": {
+    "tuitionInState": 5818,
+    "tuitionOutOfState": 10626,
+    "attendanceAcademicYear": 17452,
+    "avgNetPricePublic": 10405,
+    "bookSupply": 1700,
+    "roomBoardOffCampus": 8826,
+    "netPriceByIncome": {
+      "0_30000": 9462,
+      "30001_48000": 9486,
+      "48001_75000": 10693,
+      "75001_110000": 10411,
+      "110001_plus": 13000
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.206,
+    "federalLoanRate": 0.2269,
+    "medianDebtCompleters": 11500
+  },
+  "completion": {
+    "completionRate150nt": 0.6174,
+    "completionRate200nt": 0.5124,
+    "transferRate": 0.2,
+    "retentionRateFullTime": 0.625,
+    "retentionRatePartTime": 0.5263
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 42862,
+    "median1YrAfterCompletion": 38800,
+    "percentile25_10YrsAfterEntry": 23773,
+    "percentile75_10YrsAfterEntry": 63732,
+    "shareEarningAboveHsGrad": 0.617
+  }
+}

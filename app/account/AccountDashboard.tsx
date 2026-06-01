@@ -18,6 +18,9 @@ interface AccountUser {
   avatarUrl: string | null;
   authProvider: string | null;
   defaultState: string | null;
+  /** PR 3 seat-watch: per-user opt-out toggle. Defaults to true on the
+   *  profile row; the dashboard renders a switch next to defaultState. */
+  seatNotificationsEnabled: boolean;
 }
 
 interface SavedSchedule {
@@ -53,11 +56,20 @@ interface SavedTransfer {
   created_at: string;
 }
 
+interface SavedPlan {
+  id: string;
+  state: string;
+  name: string;
+  target_courses: string[];
+  created_at: string;
+}
+
 interface Props {
   user: AccountUser;
   savedSchedules: SavedSchedule[];
   savedCourses: SavedCourse[];
   savedTransfers: SavedTransfer[];
+  savedPlans: SavedPlan[];
 }
 
 // ---------------------------------------------------------------------------
@@ -128,10 +140,14 @@ export default function AccountDashboard({
   savedSchedules: initialSchedules,
   savedCourses: initialCourses,
   savedTransfers: initialTransfers,
+  savedPlans: initialPlans,
 }: Props) {
   const router = useRouter();
   const { signOut } = useAuth();
   const [defaultState, setDefaultState] = useState(user.defaultState ?? "");
+  const [seatNotificationsEnabled, setSeatNotificationsEnabled] = useState(
+    user.seatNotificationsEnabled,
+  );
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
   const [deleting, setDeleting] = useState(false);
@@ -141,12 +157,14 @@ export default function AccountDashboard({
   const [schedules, setSchedules] = useState(initialSchedules);
   const [courses, setCourses] = useState(initialCourses);
   const [transfers, setTransfers] = useState(initialTransfers);
+  const [plans, setPlans] = useState(initialPlans);
 
   const states = getAllStates();
 
   const schedulesGrouped = useMemo(() => groupByState(schedules), [schedules]);
   const coursesGrouped = useMemo(() => groupByState(courses), [courses]);
   const transfersGrouped = useMemo(() => groupByState(transfers), [transfers]);
+  const plansGrouped = useMemo(() => groupByState(plans), [plans]);
 
   // ── Preferences ──
   const handleSavePreferences = async () => {
@@ -156,6 +174,7 @@ export default function AccountDashboard({
       .from("profiles")
       .update({
         default_state: defaultState || null,
+        seat_notifications_enabled: seatNotificationsEnabled,
         updated_at: new Date().toISOString(),
       })
       .eq("id", user.id);
@@ -183,6 +202,12 @@ export default function AccountDashboard({
     setTransfers((prev) => prev.filter((t) => t.id !== id));
   };
 
+  const deletePlan = async (id: string) => {
+    const supabase = createClient();
+    await supabase.from("saved_plans").delete().eq("id", id);
+    setPlans((prev) => prev.filter((p) => p.id !== id));
+  };
+
   // ── Delete account ──
   const handleDeleteAccount = async () => {
     setDeleting(true);
@@ -200,7 +225,8 @@ export default function AccountDashboard({
     setDeleting(false);
   };
 
-  const totalSaved = schedules.length + courses.length + transfers.length;
+  const totalSaved =
+    schedules.length + courses.length + transfers.length + plans.length;
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
@@ -282,6 +308,26 @@ export default function AccountDashboard({
             {saved ? "Saved!" : saving ? "Saving..." : "Save"}
           </button>
         </div>
+
+        {/* Seat-watch notifications toggle (PR 3) */}
+        <div className="mt-4 pt-4 border-t border-gray-100 dark:border-slate-700">
+          <label className="flex items-start gap-3 cursor-pointer">
+            <input
+              type="checkbox"
+              checked={seatNotificationsEnabled}
+              onChange={(e) => setSeatNotificationsEnabled(e.target.checked)}
+              className="mt-0.5 h-4 w-4 rounded border-gray-300 text-teal-600 focus:ring-teal-500"
+            />
+            <span className="flex-1">
+              <span className="block text-sm font-medium text-gray-700 dark:text-slate-300">
+                Email me when a seat opens in a course on one of my plans
+              </span>
+              <span className="block text-xs text-gray-500 dark:text-slate-400 mt-0.5">
+                At most one email per day. Click &quot;Save&quot; above to apply.
+              </span>
+            </span>
+          </label>
+        </div>
       </section>
 
       {/* ── Summary cards ── */}
@@ -289,7 +335,15 @@ export default function AccountDashboard({
         <h2 className="text-lg font-semibold text-gray-900 dark:text-slate-100 mb-4">
           Saved Data
         </h2>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <a href="#plans" className="text-center p-4 rounded-lg bg-gray-50 dark:bg-slate-800 hover:ring-2 hover:ring-teal-200 dark:hover:ring-teal-800 transition">
+            <p className="text-2xl font-bold text-teal-600">
+              {plans.length}
+            </p>
+            <p className="text-xs text-gray-500 dark:text-slate-400 mt-1">
+              Degree Plans
+            </p>
+          </a>
           <a href="#schedules" className="text-center p-4 rounded-lg bg-gray-50 dark:bg-slate-800 hover:ring-2 hover:ring-teal-200 dark:hover:ring-teal-800 transition">
             <p className="text-2xl font-bold text-teal-600">
               {schedules.length}
@@ -320,6 +374,39 @@ export default function AccountDashboard({
             Nothing saved yet. Use the schedule builder, course search, or
             transfer tool and click the save/bookmark buttons to keep your work.
           </p>
+        )}
+      </section>
+
+      {/* ── Degree Plans ── */}
+      <section id="plans" className="mb-6">
+        <SectionHeading
+          title="Degree Plans"
+          count={plans.length}
+          icon={
+            <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h12M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
+            </svg>
+          }
+        />
+        {plans.length === 0 ? (
+          <EmptyCard
+            message="No saved plans yet."
+            linkText="Build a plan"
+            linkHref={user.defaultState ? `/${user.defaultState}/plan` : "/"}
+          />
+        ) : (
+          <div className="space-y-3">
+            {Array.from(plansGrouped.entries()).map(([stateSlug, items]) => (
+              <div key={stateSlug}>
+                <StateLabel state={stateSlug} />
+                <div className="space-y-2">
+                  {items.map((p) => (
+                    <PlanRow key={p.id} plan={p} onDelete={deletePlan} />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         )}
       </section>
 
@@ -582,6 +669,58 @@ function ScheduleRow({ schedule, onDelete }: { schedule: SavedSchedule; onDelete
           </Link>
         )}
         <DeleteButton onDelete={() => onDelete(schedule.id)} />
+      </div>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Plan Row
+// ---------------------------------------------------------------------------
+
+function PlanRow({ plan, onDelete }: { plan: SavedPlan; onDelete: (id: string) => void }) {
+  const targetCount = plan.target_courses?.length ?? 0;
+  const preview = (plan.target_courses ?? []).slice(0, 4).join(", ");
+  const extra = targetCount > 4 ? ` +${targetCount - 4} more` : "";
+
+  return (
+    <div className="rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-3 flex items-center gap-3">
+      {/* Plan icon */}
+      <div className="shrink-0 text-teal-600 dark:text-teal-400">
+        <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h12M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
+        </svg>
+      </div>
+
+      {/* Info */}
+      <div className="flex-1 min-w-0">
+        <p className="text-sm font-medium text-gray-900 dark:text-slate-100 truncate">
+          {plan.name}
+        </p>
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 mt-0.5">
+          {preview && (
+            <p className="text-xs text-gray-500 dark:text-slate-400 truncate">
+              {preview}{extra}
+            </p>
+          )}
+          <span className="text-xs text-gray-400 dark:text-slate-500">
+            {targetCount} target{targetCount === 1 ? "" : "s"}
+          </span>
+          <span className="text-xs text-gray-400 dark:text-slate-500">
+            {formatDate(plan.created_at)}
+          </span>
+        </div>
+      </div>
+
+      {/* Actions */}
+      <div className="flex items-center gap-2 shrink-0">
+        <Link
+          href={`/plan/${plan.id}`}
+          className="inline-flex items-center gap-1 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-2.5 py-1.5 text-xs font-medium text-teal-600 dark:text-teal-400 hover:bg-gray-50 dark:hover:bg-slate-700 transition"
+        >
+          Open
+        </Link>
+        <DeleteButton onDelete={() => onDelete(plan.id)} />
       </div>
     </div>
   );

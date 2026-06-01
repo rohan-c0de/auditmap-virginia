@@ -3,6 +3,25 @@ import createMDX from "@next/mdx";
 
 const nextConfig: NextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
+  experimental: {
+    // Two reasons to keep this low:
+    //  1. Supabase pool — default 8 pages/worker × 3 workers = 24 pages at
+    //     once, each running multiple queries, saturates the free-tier pool
+    //     (~15 conns) → "Timed out acquiring connection" build failures.
+    //  2. Memory — each in-flight page loads a state's course/program data;
+    //     several large states (CA 189k sections, TX) rendering at once
+    //     spiked peak RAM past Vercel's 8 GB build machine → OOM (exit 137).
+    //     A prior bump to 4 reintroduced the OOM. At 2, the build still hit
+    //     Supabase pool saturation locally (7 workers × 2 = 14 concurrent
+    //     pages > ~15-conn free-tier pool → "statement timeout" / connection
+    //     resets during static generation). Set to 1 so concurrent in-flight
+    //     pages = worker count, staying under the pool and minimizing RAM.
+    // The high-cardinality + data-heavy per-state pages now generate
+    // on-demand (empty generateStaticParams across course/subject/program/
+    // about/plan/results/starting-soon/programs), so build-time generation
+    // is minimal regardless — this cap is the belt to that suspenders.
+    staticGenerationMaxConcurrency: 1,
+  },
   // Explicitly bundle every state's prereqs.json into the serverless
   // functions that PARSE it — only the API routes need the file content.
   // The state layout used to also need it for an `fs.existsSync` check,
@@ -16,14 +35,11 @@ const nextConfig: NextConfig = {
   // /api/[state]/prereqs/* handlers actually read the files.
   outputFileTracingIncludes: {
     "/api/[state]/prereqs/**": ["./data/*/prereqs.json"],
-    // Routes that read transfer-equiv.json at runtime via lib/transfer.ts
-    // (or its sitemap helper). Re-included after the blanket exclusion
-    // below so the data ships only to functions that need it.
-    "/api/[state]/transfer/**": ["./data/*/transfer-equiv.json"],
-    "/sitemap/transfer.xml/**": ["./data/*/transfer-equiv.json"],
-    "/[state]/transfer/**": ["./data/*/transfer-equiv.json"],
-    "/[state]/course/[code]/**": ["./data/*/transfer-equiv.json"],
-    "/[state]/schedule/**": ["./data/*/transfer-equiv.json"],
+    // transfer-equiv.json is NOT re-included here despite the blanket
+    // exclusion below. At ~200 MB across all states, bundling it into
+    // serverless functions blew past Vercel's 250 MB cap. Production
+    // reads transfers from Supabase; the local JSON fallback in
+    // lib/transfer.ts is only exercised in local dev (no size cap).
   },
   // `lib/data-freshness.ts` (#401) calls `fs.readdirSync(path.join(
   // "data", state, "courses", collegeSlug))` with dynamic state+slug

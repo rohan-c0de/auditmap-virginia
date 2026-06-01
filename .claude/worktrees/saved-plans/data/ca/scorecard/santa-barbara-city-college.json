@@ -1,0 +1,46 @@
+{
+  "unitid": 122889,
+  "schoolName": "Santa Barbara City College",
+  "state": "CA",
+  "city": "Santa Barbara",
+  "schoolUrl": "www.sbcc.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-23T07:22:12.320Z",
+  "size": 9889,
+  "shareFirstGeneration": 0.4572147651,
+  "cost": {
+    "tuitionInState": 1240,
+    "tuitionOutOfState": 10432,
+    "attendanceAcademicYear": 20394,
+    "avgNetPricePublic": 11315,
+    "bookSupply": 1062,
+    "roomBoardOffCampus": 22086,
+    "netPriceByIncome": {
+      "0_30000": 9333,
+      "30001_48000": 10868,
+      "48001_75000": 11536,
+      "75001_110000": 15381,
+      "110001_plus": 19544
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.1788,
+    "federalLoanRate": 0.036,
+    "medianDebtCompleters": 11000
+  },
+  "completion": {
+    "completionRate150nt": 0.3363,
+    "completionRate200nt": 0.4215,
+    "transferRate": 0.2492,
+    "retentionRateFullTime": 0.6502,
+    "retentionRatePartTime": 0.5061
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 47647,
+    "median1YrAfterCompletion": 55357,
+    "percentile25_10YrsAfterEntry": 23778,
+    "percentile75_10YrsAfterEntry": 74712,
+    "shareEarningAboveHsGrad": 0.638
+  }
+}

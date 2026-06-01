@@ -1,0 +1,46 @@
+{
+  "unitid": 122658,
+  "schoolName": "San Joaquin Delta College",
+  "state": "CA",
+  "city": "Stockton",
+  "schoolUrl": "www.deltacollege.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-23T07:22:10.889Z",
+  "size": 15781,
+  "shareFirstGeneration": 0.5642076503,
+  "cost": {
+    "tuitionInState": 1180,
+    "tuitionOutOfState": 9772,
+    "attendanceAcademicYear": 9965,
+    "avgNetPricePublic": 2407,
+    "bookSupply": 2000,
+    "roomBoardOffCampus": 21600,
+    "netPriceByIncome": {
+      "0_30000": 1291,
+      "30001_48000": 1589,
+      "48001_75000": 3996,
+      "75001_110000": 6942,
+      "110001_plus": 7087
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2522,
+    "federalLoanRate": 0.0103,
+    "medianDebtCompleters": 7500
+  },
+  "completion": {
+    "completionRate150nt": 0.3452,
+    "completionRate200nt": 0.3969,
+    "transferRate": 0.0764,
+    "retentionRateFullTime": 0.6838,
+    "retentionRatePartTime": 0.4509
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 43212,
+    "median1YrAfterCompletion": 41906,
+    "percentile25_10YrsAfterEntry": 21498,
+    "percentile75_10YrsAfterEntry": 66072,
+    "shareEarningAboveHsGrad": 0.549
+  }
+}

@@ -39,6 +39,21 @@ import orZipcodes from "@/data/or/zipcodes.json";
 import caZipcodes from "@/data/ca/zipcodes.json";
 import nvZipcodes from "@/data/nv/zipcodes.json";
 import azZipcodes from "@/data/az/zipcodes.json";
+import arZipcodes from "@/data/ar/zipcodes.json";
+import coZipcodes from "@/data/co/zipcodes.json";
+import laZipcodes from "@/data/la/zipcodes.json";
+import mnZipcodes from "@/data/mn/zipcodes.json";
+import ndZipcodes from "@/data/nd/zipcodes.json";
+import nmZipcodes from "@/data/nm/zipcodes.json";
+import sdZipcodes from "@/data/sd/zipcodes.json";
+import utZipcodes from "@/data/ut/zipcodes.json";
+import waZipcodes from "@/data/wa/zipcodes.json";
+import wyZipcodes from "@/data/wy/zipcodes.json";
+import akZipcodes from "@/data/ak/zipcodes.json";
+import idZipcodes from "@/data/id/zipcodes.json";
+import wiZipcodes from "@/data/wi/zipcodes.json";
+import okZipcodes from "@/data/ok/zipcodes.json";
+import neZipcodes from "@/data/ne/zipcodes.json";
 import inZipcodes from "@/data/in/zipcodes.json";
 
 type ZipEntry = { lat: number; lng: number; city: string };
@@ -78,6 +93,21 @@ const ZIP_REGISTRY: Record<string, Record<string, ZipEntry>> = {
   ca: caZipcodes as Record<string, ZipEntry>,
   nv: nvZipcodes as Record<string, ZipEntry>,
   az: azZipcodes as Record<string, ZipEntry>,
+  ar: arZipcodes as Record<string, ZipEntry>,
+  co: coZipcodes as Record<string, ZipEntry>,
+  la: laZipcodes as Record<string, ZipEntry>,
+  mn: mnZipcodes as Record<string, ZipEntry>,
+  nd: ndZipcodes as Record<string, ZipEntry>,
+  nm: nmZipcodes as Record<string, ZipEntry>,
+  sd: sdZipcodes as Record<string, ZipEntry>,
+  ut: utZipcodes as Record<string, ZipEntry>,
+  wa: waZipcodes as Record<string, ZipEntry>,
+  wy: wyZipcodes as Record<string, ZipEntry>,
+  ak: akZipcodes as Record<string, ZipEntry>,
+  id: idZipcodes as Record<string, ZipEntry>,
+  wi: wiZipcodes as Record<string, ZipEntry>,
+  ok: okZipcodes as Record<string, ZipEntry>,
+  ne: neZipcodes as Record<string, ZipEntry>,
   in: inZipcodes as Record<string, ZipEntry>,
 };
 

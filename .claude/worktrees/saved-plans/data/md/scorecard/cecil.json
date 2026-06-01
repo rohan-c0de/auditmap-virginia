@@ -1,0 +1,46 @@
+{
+  "unitid": 162104,
+  "schoolName": "Cecil College",
+  "state": "MD",
+  "city": "North East",
+  "schoolUrl": "www.cecil.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-13T02:13:15.453Z",
+  "size": 1363,
+  "shareFirstGeneration": 0.5329787234,
+  "cost": {
+    "tuitionInState": 5640,
+    "tuitionOutOfState": 10830,
+    "attendanceAcademicYear": 14700,
+    "avgNetPricePublic": 9658,
+    "bookSupply": 2220,
+    "roomBoardOffCampus": 13766,
+    "netPriceByIncome": {
+      "0_30000": 7850,
+      "30001_48000": 9601,
+      "48001_75000": 9102,
+      "75001_110000": 12875,
+      "110001_plus": 13157
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2683,
+    "federalLoanRate": 0.0851,
+    "medianDebtCompleters": 9536
+  },
+  "completion": {
+    "completionRate150nt": 0.3744,
+    "completionRate200nt": 0.345,
+    "transferRate": 0.1689,
+    "retentionRateFullTime": 0.6164,
+    "retentionRatePartTime": 0.4819
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 43952,
+    "median1YrAfterCompletion": 27866,
+    "percentile25_10YrsAfterEntry": 24774,
+    "percentile75_10YrsAfterEntry": 66812,
+    "shareEarningAboveHsGrad": 0.571
+  }
+}

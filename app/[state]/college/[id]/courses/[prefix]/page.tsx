@@ -9,7 +9,6 @@ import {
   trimCoursesForClient,
 } from "@/lib/courses";
 import { getCurrentTerm, termLabel } from "@/lib/terms";
-import { getAllStates } from "@/lib/states/registry";
 import { requireStateConfig } from "@/lib/states/route-helpers";
 import { buildTransferLookupForCourses } from "@/lib/transfer-scoped";
 import { subjectName } from "@/lib/subjects";
@@ -30,33 +29,8 @@ type PageProps = {
 // Static params — prerender the highest-traffic subject pages at build time
 // ---------------------------------------------------------------------------
 
-// The full cartesian product is ~9k pages (all colleges × all subjects
-// across 15 states), which blows out deploy output size. Instead, we
-// prerender a curated subset: common subjects at the first few colleges per
-// state. These are the pages most likely to be visited right after a deploy.
-// Everything else ISRs on first request (`dynamicParams` defaults to true).
-//
-// Uses only sync static data (loadInstitutions + getAllStates), so no
-// build-time DB calls. If a (college, subject) combo has no data at
-// render time, the page calls notFound() and Next caches a 404 — harmless.
-
-// Subjects present at virtually every US community college.
-const PRERENDER_SUBJECTS = ["eng", "mth", "bio", "csc", "psy", "his"];
-// First N colleges per state (institution lists are typically ordered by
-// largest / most campuses first).
-const COLLEGES_PER_STATE = 3;
-
 export function generateStaticParams() {
-  return getAllStates().flatMap((s) => {
-    const colleges = loadInstitutions(s.slug).slice(0, COLLEGES_PER_STATE);
-    return colleges.flatMap((c) =>
-      PRERENDER_SUBJECTS.map((prefix) => ({
-        state: s.slug,
-        id: c.id,
-        prefix,
-      }))
-    );
-  });
+  return [];
 }
 
 // ---------------------------------------------------------------------------

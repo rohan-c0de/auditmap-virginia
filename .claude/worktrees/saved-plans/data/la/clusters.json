@@ -1,0 +1,65 @@
+{
+  "$comment": "Multi-college-district cluster detection output (issue #497). Each cluster represents N colleges that share a SIS host or registrable domain — a single bespoke scraper can cover all members.",
+  "state": "la",
+  "generatedAt": "2026-05-28T20:30:45.600Z",
+  "summary": {
+    "inputCount": 10,
+    "clusterCount": 1,
+    "clusteredCount": 3,
+    "singletonCount": 7
+  },
+  "clusters": [
+    {
+      "id": "reg-prod-ec-lctcs-edu",
+      "sharedSignal": "reg-prod.ec.lctcs.edu",
+      "signalKind": "shared-sis-host",
+      "memberSlugs": [
+        "delgado-community-college",
+        "fletcher-technical-community-college",
+        "river-parishes-community-college"
+      ],
+      "evidence": {
+        "delgado-community-college": [
+          "reg-prod.ec.lctcs.edu"
+        ],
+        "fletcher-technical-community-college": [
+          "reg-prod.ec.lctcs.edu"
+        ],
+        "river-parishes-community-college": [
+          "reg-prod.ec.lctcs.edu"
+        ]
+      },
+      "publicGuestAccess": "unknown"
+    }
+  ],
+  "singletons": [
+    {
+      "slug": "central-louisiana-technical-community-college",
+      "primaryUrl": "cltcc.edu"
+    },
+    {
+      "slug": "nunez-community-college",
+      "primaryUrl": "nunez.edu"
+    },
+    {
+      "slug": "northwest-louisiana-technical-community-college",
+      "primaryUrl": "nltcc.edu"
+    },
+    {
+      "slug": "baton-rouge-community-college",
+      "primaryUrl": "mybrcc.edu"
+    },
+    {
+      "slug": "louisiana-delta-community-college",
+      "primaryUrl": "ladelta.edu"
+    },
+    {
+      "slug": "bossier-parish-community-college",
+      "primaryUrl": "bpcc.edu"
+    },
+    {
+      "slug": "south-louisiana-community-college",
+      "primaryUrl": "solacc.edu"
+    }
+  ]
+}

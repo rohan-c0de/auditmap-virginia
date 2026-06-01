@@ -29,6 +29,7 @@ export default async function AccountPage() {
     { data: schedules },
     { data: courses },
     { data: transfers },
+    { data: plans },
   ] = await Promise.all([
     supabase
       .from("saved_schedules")
@@ -43,6 +44,11 @@ export default async function AccountPage() {
     supabase
       .from("saved_transfers")
       .select("id, state, name, selected_courses, selected_universities, filters, created_at")
+      .eq("user_id", user.id)
+      .order("created_at", { ascending: false }),
+    supabase
+      .from("saved_plans")
+      .select("id, state, name, target_courses, created_at")
       .eq("user_id", user.id)
       .order("created_at", { ascending: false }),
   ]);
@@ -63,10 +69,16 @@ export default async function AccountPage() {
           null,
         authProvider: profile?.auth_provider ?? null,
         defaultState: profile?.default_state ?? null,
+        // PR 3 seat-watch. Defaults to true on the profile row (per
+        // migration 019), so when the column is null on legacy rows
+        // we still treat the user as opted-in until they opt out.
+        seatNotificationsEnabled:
+          profile?.seat_notifications_enabled ?? true,
       }}
       savedSchedules={schedules ?? []}
       savedCourses={courses ?? []}
       savedTransfers={transfers ?? []}
+      savedPlans={plans ?? []}
     />
   );
 }

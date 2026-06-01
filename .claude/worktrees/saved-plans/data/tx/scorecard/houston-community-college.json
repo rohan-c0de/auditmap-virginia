@@ -1,0 +1,46 @@
+{
+  "unitid": 225423,
+  "schoolName": "Houston Community College",
+  "state": "TX",
+  "city": "Houston",
+  "schoolUrl": "www.hccs.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-16T15:39:32.871Z",
+  "size": 40503,
+  "shareFirstGeneration": 0.499465069,
+  "cost": {
+    "tuitionInState": 2040,
+    "tuitionOutOfState": 5460,
+    "attendanceAcademicYear": 12009,
+    "avgNetPricePublic": 5737,
+    "bookSupply": 2250,
+    "roomBoardOffCampus": 9330,
+    "netPriceByIncome": {
+      "0_30000": 5722,
+      "30001_48000": 4271,
+      "48001_75000": 6534,
+      "75001_110000": 8363,
+      "110001_plus": 10123
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.3574,
+    "federalLoanRate": 0.1462,
+    "medianDebtCompleters": 13921
+  },
+  "completion": {
+    "completionRate150nt": null,
+    "completionRate200nt": null,
+    "transferRate": null,
+    "retentionRateFullTime": null,
+    "retentionRatePartTime": null
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 39254,
+    "median1YrAfterCompletion": 34320,
+    "percentile25_10YrsAfterEntry": 18789,
+    "percentile75_10YrsAfterEntry": 61121,
+    "shareEarningAboveHsGrad": 0.607
+  }
+}

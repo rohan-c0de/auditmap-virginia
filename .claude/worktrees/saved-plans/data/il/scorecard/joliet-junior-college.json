@@ -1,0 +1,46 @@
+{
+  "unitid": 146296,
+  "schoolName": "Joliet Junior College",
+  "state": "IL",
+  "city": "Joliet",
+  "schoolUrl": "https://www.jjc.edu/",
+  "ownership": 1,
+  "predominantDegree": 1,
+  "fetchedAt": "2026-05-16T19:36:03.193Z",
+  "size": 9306,
+  "shareFirstGeneration": 0.4684061616,
+  "cost": {
+    "tuitionInState": 4530,
+    "tuitionOutOfState": 13800,
+    "attendanceAcademicYear": 9452,
+    "avgNetPricePublic": 1672,
+    "bookSupply": 1380,
+    "roomBoardOffCampus": 9970,
+    "netPriceByIncome": {
+      "0_30000": 890,
+      "30001_48000": 220,
+      "48001_75000": 2824,
+      "75001_110000": 3835,
+      "110001_plus": 4556
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2458,
+    "federalLoanRate": 0.0408,
+    "medianDebtCompleters": 9711
+  },
+  "completion": {
+    "completionRate150nt": 0.2053,
+    "completionRate200nt": 0.2525,
+    "transferRate": 0.2551,
+    "retentionRateFullTime": 0.6733,
+    "retentionRatePartTime": 0.4006
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 42889,
+    "median1YrAfterCompletion": 38826,
+    "percentile25_10YrsAfterEntry": 23236,
+    "percentile75_10YrsAfterEntry": 66581,
+    "shareEarningAboveHsGrad": 0.553
+  }
+}

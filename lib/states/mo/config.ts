@@ -20,8 +20,8 @@ const moConfig: StateConfig = {
       "Missouri Revised Statutes § 173.270 lets Missouri residents 65+ enroll in courses at state-supported colleges tuition-free on a space-available basis. Confirm with each college's registrar.",
   },
 
-  transferSupported: false,
-  popularCourses: [],
+  transferSupported: true,
+  popularCourses: ["ENG 101", "ENGL 101", "PSY 110", "MTH 128", "ENG 102", "PLS 101"],
   defaultZip: "65101",
   defaultZipCity: "Jefferson City",
 
@@ -46,12 +46,33 @@ const moConfig: StateConfig = {
     ],
   },
   scrapers: {
-    // Two of MO's six scrapable colleges are wired; jefferson-college and
-    // MCC-Kansas-City need re-fingerprint (see scripts/mo/scrape-colleague.ts).
+    // 8 of 13 MCCA colleges wired:
+    //   Colleague (3): east-central, ozarks-tech, st-charles
+    //   Jenzabar ICS (2): crowder, mineral-area
+    //   Banner 8 (1): state-fair (starssb.sfccmo.edu/PROD — added 2026-05-30
+    //     after #456 re-baseline; original sweep's Cloudflare default-UA
+    //     challenge made it look custom)
+    //   Already have data (2): jefferson, metro-kc (scraped during auto-add-state)
+    // Deferred — SSO-gated or blocked:
+    //   saint-louis: Ellucian Experience SSO-gated (former Banner SSB 9 path returns 404)
+    //   moberly-area: my.macc.edu login-gated
+    //   state-technical: mytech.statetechmo.edu login-gated
+    //   three-rivers: SSO-gated
+    //   north-central-missouri: SiteLock captcha
     courses: [
       { scripts: ["scripts/mo/scrape-colleague.ts"], runner: "playwright" },
+      { scripts: ["scripts/mo/scrape-jenzabar.ts"], runner: "playwright" },
+      { scripts: ["scripts/mo/scrape-banner8.ts"], runner: "http" },
     ],
-    // manual-only: transfers — no articulation portal registered for MO yet.
+    transfers: [
+      // MDHEWD's statewide CORE 42 course database (annual public .xlsx at
+      // dhewd.mo.gov) maps every public institution's course to a shared MOTR
+      // common number. The scraper self-joins on the MOTR number to emit
+      // CC→4-year equivalencies for all 13 MO public universities. Gen-ed
+      // core only (~188 MOTR courses), not major-specific. In-state by
+      // construction. ~8,800 mappings. Re-scrape swaps the SOURCE_URL year.
+      { scripts: ["scripts/mo/scrape-transfer-core42.ts"], runner: "http" },
+    ],
     prereqs: { source: "aggregate-from-courses" },
     // manual-only: programs — Phase 5+.
   },

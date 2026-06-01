@@ -1,0 +1,46 @@
+{
+  "unitid": 139357,
+  "schoolName": "Columbus Technical College",
+  "state": "GA",
+  "city": "Columbus",
+  "schoolUrl": "www.columbustech.edu/",
+  "ownership": 1,
+  "predominantDegree": 1,
+  "fetchedAt": "2026-05-13T02:12:43.564Z",
+  "size": 2719,
+  "shareFirstGeneration": 0.4165232358,
+  "cost": {
+    "tuitionInState": 4052,
+    "tuitionOutOfState": 7262,
+    "attendanceAcademicYear": 13144,
+    "avgNetPricePublic": 4001,
+    "bookSupply": 600,
+    "roomBoardOffCampus": 14094,
+    "netPriceByIncome": {
+      "0_30000": 3383,
+      "30001_48000": 4543,
+      "48001_75000": 6170,
+      "75001_110000": null,
+      "110001_plus": null
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.5737,
+    "federalLoanRate": 0,
+    "medianDebtCompleters": 8756
+  },
+  "completion": {
+    "completionRate150nt": 0.2674,
+    "completionRate200nt": 0.3005,
+    "transferRate": 0.0909,
+    "retentionRateFullTime": 0.5217,
+    "retentionRatePartTime": 0.3911
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 34238,
+    "median1YrAfterCompletion": 26913,
+    "percentile25_10YrsAfterEntry": 18245,
+    "percentile75_10YrsAfterEntry": 49911,
+    "shareEarningAboveHsGrad": 0.446
+  }
+}

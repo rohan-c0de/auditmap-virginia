@@ -1,0 +1,89 @@
+{
+  "$comment": "Multi-college-district cluster detection output (issue #497). Each cluster represents N colleges that share a SIS host or registrable domain — a single bespoke scraper can cover all members.",
+  "state": "mo",
+  "generatedAt": "2026-05-24T02:53:11Z",
+  "summary": {
+    "inputCount": 13,
+    "clusterCount": 1,
+    "clusteredCount": 2,
+    "singletonCount": 11
+  },
+  "clusters": [
+    {
+      "id": "experience-elluciancloud-com",
+      "sharedSignal": "experience.elluciancloud.com",
+      "signalKind": "shared-sis-host",
+      "memberSlugs": [
+        "east-central-college",
+        "state-fair-community-college"
+      ],
+      "evidence": {
+        "east-central-college": [
+          "experience.elluciancloud.com"
+        ],
+        "state-fair-community-college": [
+          "experience.elluciancloud.com"
+        ]
+      },
+      "publicGuestAccess": "sso-gated",
+      "publicGuestEvidence": "redirected to https://experience.elluciancloud.com/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL (HTTP 404)"
+    }
+  ],
+  "singletons": [
+    {
+      "slug": "ozarks-technical-community-college",
+      "name": "Ozarks Technical Community College",
+      "primaryUrl": "otc.edu"
+    },
+    {
+      "slug": "saint-louis-community-college",
+      "name": "Saint Louis Community College",
+      "primaryUrl": "stlcc.edu"
+    },
+    {
+      "slug": "crowder-college",
+      "name": "Crowder College",
+      "primaryUrl": "crowder.edu"
+    },
+    {
+      "slug": "jefferson-college",
+      "name": "Jefferson College",
+      "primaryUrl": "jeffco.edu"
+    },
+    {
+      "slug": "state-technical-college-of-missouri",
+      "name": "State Technical College of Missouri",
+      "primaryUrl": "statetechmo.edu"
+    },
+    {
+      "slug": "metropolitan-community-college-kansas-city",
+      "name": "Metropolitan Community College-Kansas City",
+      "primaryUrl": "mcckc.edu"
+    },
+    {
+      "slug": "mineral-area-college",
+      "name": "Mineral Area College",
+      "primaryUrl": "mineralarea.edu"
+    },
+    {
+      "slug": "moberly-area-community-college",
+      "name": "Moberly Area Community College",
+      "primaryUrl": "macc.edu"
+    },
+    {
+      "slug": "three-rivers-college",
+      "name": "Three Rivers College",
+      "primaryUrl": "trcc.edu"
+    },
+    {
+      "slug": "north-central-missouri-college",
+      "name": "North Central Missouri College",
+      "primaryUrl": "ncmissouri.edu"
+    },
+    {
+      "slug": "st-charles-community-college",
+      "name": "St Charles Community College",
+      "primaryUrl": "stchas.edu"
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "$comment": "Multi-college-district cluster detection output (issue #497). Each cluster represents N colleges that share a SIS host or registrable domain — a single bespoke scraper can cover all members.",
+  "state": "mn",
+  "generatedAt": "2026-05-28T20:43:17.224Z",
+  "summary": {
+    "inputCount": 23,
+    "clusterCount": 0,
+    "clusteredCount": 0,
+    "singletonCount": 23
+  },
+  "clusters": [],
+  "singletons": [
+    {
+      "slug": "fond-du-lac-tribal-and-community-college",
+      "primaryUrl": "fdltcc.edu"
+    },
+    {
+      "slug": "northland-community-and-technical-college",
+      "primaryUrl": "northlandcollege.edu"
+    },
+    {
+      "slug": "pine-technical-and-community-college",
+      "primaryUrl": "pine.edu"
+    },
+    {
+      "slug": "anoka-technical-college",
+      "primaryUrl": "anokatech.edu"
+    },
+    {
+      "slug": "dakota-county-technical-college",
+      "primaryUrl": "dctc.edu"
+    },
+    {
+      "slug": "century-college",
+      "primaryUrl": "century.edu"
+    },
+    {
+      "slug": "anoka-ramsey-community-college",
+      "primaryUrl": "anokaramsey.edu"
+    },
+    {
+      "slug": "riverland-community-college",
+      "primaryUrl": "riverland.edu"
+    },
+    {
+      "slug": "northwest-technical-college",
+      "primaryUrl": "ntcmn.edu"
+    },
+    {
+      "slug": "central-lakes-college-brainerd",
+      "primaryUrl": "clcmn.edu"
+    },
+    {
+      "slug": "minnesota-state-community-and-technical-college",
+      "primaryUrl": "minnesota.edu"
+    },
+    {
+      "slug": "minnesota-west-community-and-technical-college",
+      "primaryUrl": "mnwest.edu"
+    },
+    {
+      "slug": "minnesota-north-college",
+      "primaryUrl": "minnesotanorth.edu"
+    },
+    {
+      "slug": "inver-hills-community-college",
+      "primaryUrl": "inverhills.edu"
+    },
+    {
+      "slug": "south-central-college",
+      "primaryUrl": "southcentral.edu"
+    },
+    {
+      "slug": "minneapolis-community-and-technical-college",
+      "primaryUrl": "minneapolis.edu"
+    },
+    {
+      "slug": "north-hennepin-community-college",
+      "primaryUrl": "nhcc.edu"
+    },
+    {
+      "slug": "normandale-community-college",
+      "primaryUrl": "normandale.edu"
+    },
+    {
+      "slug": "rochester-community-and-technical-college",
+      "primaryUrl": "rctc.edu"
+    },
+    {
+      "slug": "st-cloud-technical-and-community-college",
+      "primaryUrl": "sctcc.edu"
+    },
+    {
+      "slug": "saint-paul-college",
+      "primaryUrl": "saintpaul.edu"
+    },
+    {
+      "slug": "ridgewater-college",
+      "primaryUrl": "ridgewater.edu"
+    },
+    {
+      "slug": "red-lake-nation-college",
+      "primaryUrl": "rlnc.education"
+    }
+  ]
+}

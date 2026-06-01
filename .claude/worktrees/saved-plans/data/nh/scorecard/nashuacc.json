@@ -1,0 +1,46 @@
+{
+  "unitid": 183141,
+  "schoolName": "Nashua Community College",
+  "state": "NH",
+  "city": "Nashua",
+  "schoolUrl": "nashuacc.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-13T02:14:13.607Z",
+  "size": 1135,
+  "shareFirstGeneration": 0.4053191489,
+  "cost": {
+    "tuitionInState": 7140,
+    "tuitionOutOfState": 15390,
+    "attendanceAcademicYear": 29014,
+    "avgNetPricePublic": 23154,
+    "bookSupply": 1400,
+    "roomBoardOffCampus": 16152,
+    "netPriceByIncome": {
+      "0_30000": 21030,
+      "30001_48000": 27225,
+      "48001_75000": 28677,
+      "75001_110000": 29014,
+      "110001_plus": 28492
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2401,
+    "federalLoanRate": 0.2036,
+    "medianDebtCompleters": 11000
+  },
+  "completion": {
+    "completionRate150nt": 0.3765,
+    "completionRate200nt": 0.3564,
+    "transferRate": 0.2118,
+    "retentionRateFullTime": 0.6414,
+    "retentionRatePartTime": 0.4894
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 46164,
+    "median1YrAfterCompletion": 34583,
+    "percentile25_10YrsAfterEntry": 19366,
+    "percentile75_10YrsAfterEntry": 66755,
+    "shareEarningAboveHsGrad": 0.664
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "unitid": 210234,
+  "schoolName": "Treasure Valley Community College",
+  "state": "OR",
+  "city": "Ontario",
+  "schoolUrl": "https://www.tvcc.cc/",
+  "ownership": 1,
+  "predominantDegree": 1,
+  "fetchedAt": "2026-05-19T16:23:09.018Z",
+  "size": 1193,
+  "shareFirstGeneration": 0.4815184815,
+  "cost": {
+    "tuitionInState": 6345,
+    "tuitionOutOfState": 6795,
+    "attendanceAcademicYear": 14990,
+    "avgNetPricePublic": 11172,
+    "bookSupply": 1464,
+    "roomBoardOffCampus": 8166,
+    "netPriceByIncome": {
+      "0_30000": 10685,
+      "30001_48000": 10777,
+      "48001_75000": 12049,
+      "75001_110000": 13552,
+      "110001_plus": 12817
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.6154,
+    "federalLoanRate": 0.5261,
+    "medianDebtCompleters": 12000
+  },
+  "completion": {
+    "completionRate150nt": 0.3675,
+    "completionRate200nt": 0.293,
+    "transferRate": 0.1538,
+    "retentionRateFullTime": 0.5839,
+    "retentionRatePartTime": 0.4151
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 36738,
+    "median1YrAfterCompletion": 30590,
+    "percentile25_10YrsAfterEntry": 19446,
+    "percentile75_10YrsAfterEntry": 53615,
+    "shareEarningAboveHsGrad": 0.482
+  }
+}

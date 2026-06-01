@@ -1,0 +1,46 @@
+{
+  "unitid": 198039,
+  "schoolName": "Blue Ridge Community College",
+  "state": "NC",
+  "city": "Flat Rock",
+  "schoolUrl": "www.blueridge.edu/",
+  "ownership": 1,
+  "predominantDegree": 1,
+  "fetchedAt": "2026-05-13T02:13:47.542Z",
+  "size": 1758,
+  "shareFirstGeneration": 0.4593639576,
+  "cost": {
+    "tuitionInState": 2660,
+    "tuitionOutOfState": 8804,
+    "attendanceAcademicYear": 13274,
+    "avgNetPricePublic": 5756,
+    "bookSupply": 2450,
+    "roomBoardOffCampus": 9826,
+    "netPriceByIncome": {
+      "0_30000": 5723,
+      "30001_48000": 4646,
+      "48001_75000": 6581,
+      "75001_110000": 8351,
+      "110001_plus": null
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.3505,
+    "federalLoanRate": 0.0418,
+    "medianDebtCompleters": 12000
+  },
+  "completion": {
+    "completionRate150nt": 0.4972,
+    "completionRate200nt": 0.4178,
+    "transferRate": 0.1412,
+    "retentionRateFullTime": 0.7021,
+    "retentionRatePartTime": 0.4854
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 36324,
+    "median1YrAfterCompletion": 37784,
+    "percentile25_10YrsAfterEntry": 19103,
+    "percentile75_10YrsAfterEntry": 53491,
+    "shareEarningAboveHsGrad": 0.464
+  }
+}

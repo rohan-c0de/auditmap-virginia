@@ -1,5 +1,6 @@
 import type { CourseSection } from "./types";
 import { supabase } from "./supabase";
+import { runPooled } from "./concurrency";
 
 // ---------------------------------------------------------------------------
 // In-memory cache (server-side, survives across requests in dev/prod)
@@ -15,7 +16,12 @@ interface CacheEntry<T> {
 const cache = new Map<string, CacheEntry<unknown>>();
 const inflight = new Map<string, Promise<unknown>>();
 
-async function cached<T>(key: string, fn: () => Promise<T>): Promise<T> {
+/** In-memory cache + concurrent-call dedup. Exported so other modules can
+ *  share the same cache keyspace and avoid repeated full-table paginations
+ *  during static prerender (see lib/transfer.ts getUniversitiesWithCounts,
+ *  which gets called 3× per transfer-hub page — generateStaticParams,
+ *  generateMetadata, page handler). */
+export async function cached<T>(key: string, fn: () => Promise<T>): Promise<T> {
   const entry = cache.get(key) as CacheEntry<T> | undefined;
   if (entry && entry.expires > Date.now()) return entry.data;
 
@@ -63,30 +69,33 @@ export async function loadCoursesForCollege(
 
     const PAGE_SIZE = 1000;
     const pages = Math.ceil(count / PAGE_SIZE);
-    const promises: Promise<CourseSection[]>[] = [];
 
+    // Concurrency-cap page fetches (same pattern as loadAllCourses). The
+    // college page loads courses for every term simultaneously; without a cap,
+    // 4 terms × 3 pages × 3 build workers = 36 concurrent Supabase queries
+    // from this one function alone, which saturates the connection pool and
+    // causes statement_timeout on other queries.
+    const tasks: Array<() => Promise<CourseSection[]>> = [];
     for (let i = 0; i < pages; i++) {
       const start = i * PAGE_SIZE;
       const end = start + PAGE_SIZE - 1;
-      promises.push(
-        (async () => {
-          const { data, error } = await supabase
-            .from("courses")
-            .select("*")
-            .eq("college_code", collegeSlug)
-            .eq("term", term)
-            .eq("state", state)
-            .range(start, end);
-          if (error) {
-            console.error(`loadCoursesForCollege page ${i} error:`, error.message);
-            return [];
-          }
-          return (data || []).map(mapRow);
-        })()
-      );
+      tasks.push(async () => {
+        const { data, error } = await supabase
+          .from("courses")
+          .select("*")
+          .eq("college_code", collegeSlug)
+          .eq("term", term)
+          .eq("state", state)
+          .range(start, end);
+        if (error) {
+          console.error(`loadCoursesForCollege page ${i} error:`, error.message);
+          return [];
+        }
+        return (data || []).map(mapRow);
+      });
     }
 
-    const results = await Promise.all(promises);
+    const results = await runPooled(tasks, 5);
     return results.flat();
   });
 }
@@ -299,7 +308,12 @@ export function getUniqueSubjects(courses: CourseSection[]): string[] {
 
 /**
  * Load all courses from all colleges for a given term from Supabase.
- * Uses parallel pagination for speed.
+ *
+ * Internally paginates with bounded concurrency — large states (NJ ~50k rows,
+ * VA ~30k) fan out to 30+ pages, and during `next build` the unbounded
+ * parallelism saturated Supabase's connection pool when multiple pages were
+ * built simultaneously. The cap below trades a small wall-clock cost (sequential
+ * batches of 5 instead of all-at-once) for build resilience.
  */
 export async function loadAllCourses(
   term: string,
@@ -315,34 +329,93 @@ export async function loadAllCourses(
 
     if (countErr || !count || count === 0) return [];
 
-    // Fetch all pages in parallel (much faster than sequential)
     const PAGE_SIZE = 1000;
     const pages = Math.ceil(count / PAGE_SIZE);
-    const promises: Promise<CourseSection[]>[] = [];
 
+    // Build one thunk per page. Each is a closure that performs the actual
+    // Supabase call when invoked — runPooled only starts a thunk when there's
+    // a free slot under the concurrency cap.
+    const tasks: Array<() => Promise<CourseSection[]>> = [];
     for (let i = 0; i < pages; i++) {
       const start = i * PAGE_SIZE;
       const end = start + PAGE_SIZE - 1;
-      promises.push(
-        (async () => {
-          const { data, error } = await supabase
-            .from("courses")
-            .select("*")
-            .eq("term", term)
-            .eq("state", state)
-            .range(start, end);
-          if (error) {
-            console.error(`loadAllCourses page ${i} error:`, error.message);
-            return [];
-          }
-          return (data || []).map(mapRow);
-        })()
-      );
+      tasks.push(async () => {
+        const { data, error } = await supabase
+          .from("courses")
+          .select("*")
+          .eq("term", term)
+          .eq("state", state)
+          .range(start, end);
+        if (error) {
+          console.error(`loadAllCourses page ${i} error:`, error.message);
+          return [];
+        }
+        return (data || []).map(mapRow);
+      });
     }
 
-    const results = await Promise.all(promises);
+    // Concurrency cap of 5 per call. With 3 build workers each running one
+    // loadAllCourses at a time, peak Supabase connections per state is ~15
+    // — well under any pgbouncer pool size in use here.
+    const results = await runPooled(tasks, 5);
     return results.flat();
   });
+}
+
+/**
+ * Slim section shape used only for the transfer-page courseAvailability
+ * aggregation. Avoids hauling the full ~30-column CourseSection wire
+ * payload for tens of thousands of rows when all we need is "how many
+ * sections + which colleges teach this CC course?". Issue #777.
+ */
+export interface CourseAvailabilityRow {
+  course_prefix: string;
+  course_number: string;
+  college_code: string;
+}
+
+/**
+ * Load slim availability rows for a specific set of subject prefixes.
+ * Returns only (prefix, number, college_code) — see CourseAvailabilityRow.
+ *
+ * For the transfer page's courseAvailability map: ~50-200 distinct CC
+ * prefixes vs the full 48K-row state catalog, with ~85% wire-payload
+ * reduction from column projection. Issue #777.
+ */
+export async function loadCoursesByPrefixes(
+  prefixes: string[],
+  term: string,
+  state: string,
+): Promise<CourseAvailabilityRow[]> {
+  if (prefixes.length === 0) return [];
+  const distinct = Array.from(new Set(prefixes)).sort();
+  return cached(
+    `coursesByPrefixes:${state}:${term}:${distinct.join("|")}`,
+    async () => {
+      const PAGE_SIZE = 1000;
+      const allData: CourseAvailabilityRow[] = [];
+      let offset = 0;
+      while (true) {
+        const { data, error } = await supabase
+          .from("courses")
+          .select("course_prefix, course_number, college_code")
+          .eq("state", state)
+          .eq("term", term)
+          .in("course_prefix", distinct)
+          .range(offset, offset + PAGE_SIZE - 1);
+
+        if (error) {
+          console.error("loadCoursesByPrefixes error:", error.message);
+          return [];
+        }
+        if (!data || data.length === 0) break;
+        allData.push(...(data as CourseAvailabilityRow[]));
+        if (data.length < PAGE_SIZE) break;
+        offset += PAGE_SIZE;
+      }
+      return allData;
+    },
+  );
 }
 
 /**

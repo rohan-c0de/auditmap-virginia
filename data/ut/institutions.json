@@ -1,0 +1,96 @@
+[
+  {
+    "id": "snow-college",
+    "name": "Snow College",
+    "system": "Public 2-year",
+    "college_slug": "snow-college",
+    "campuses": [
+      {
+        "name": "Snow College (Ephraim)",
+        "lat": 39.360177,
+        "lng": -111.58296,
+        "address": "150 E College Ave, Ephraim, UT 84627"
+      }
+    ],
+    "audit_policy": {
+      "allowed": true,
+      "cost_model": "varies",
+      "cost_note": "Audit-policy details for Snow College have not yet been verified — confirm with the registrar before relying on this entry.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 62,
+          "cost": "Free (tuition only; lab and course fees still apply)",
+          "notes": "Utah Code 53B-8-104 — residents aged 62+ may enroll tuition-free on a space-available basis at Utah public colleges and universities. Confirm registration timing and per-course fees with the campus registrar.",
+          "source_url": "https://le.utah.gov/xcode/Title53B/Chapter8/53B-8-S104.html"
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Apply online at snow.edu",
+          "Register as a non-degree / audit student",
+          "Register for courses during open enrollment"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "",
+        "contact_email": "",
+        "contact_phone": ""
+      },
+      "restrictions": [
+        "Verify all restrictions with the college before enrolling"
+      ],
+      "last_verified": "2026-05-28",
+      "source_url": "https://snow.edu"
+    },
+    "unitid": 230597
+  },
+  {
+    "id": "salt-lake-community-college",
+    "name": "Salt Lake Community College",
+    "system": "Public 2-year",
+    "college_slug": "salt-lake-community-college",
+    "campuses": [
+      {
+        "name": "Salt Lake Community College (Salt Lake City)",
+        "lat": 40.671575,
+        "lng": -111.942809,
+        "address": "4600 S Redwood Rd, Salt Lake City, UT 84123"
+      }
+    ],
+    "audit_policy": {
+      "allowed": true,
+      "cost_model": "varies",
+      "cost_note": "Audit-policy details for Salt Lake Community College have not yet been verified — confirm with the registrar before relying on this entry.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 62,
+          "cost": "Free (tuition only; lab and course fees still apply)",
+          "notes": "Utah Code 53B-8-104 — residents aged 62+ may enroll tuition-free on a space-available basis at Utah public colleges and universities. Confirm registration timing and per-course fees with the campus registrar.",
+          "source_url": "https://le.utah.gov/xcode/Title53B/Chapter8/53B-8-S104.html"
+        }
+      },
+      "application_process": {
+        "steps": [
+          "Apply online at slcc.edu",
+          "Register as a non-degree / audit student",
+          "Register for courses during open enrollment"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "",
+        "contact_email": "",
+        "contact_phone": ""
+      },
+      "restrictions": [
+        "Verify all restrictions with the college before enrolling"
+      ],
+      "last_verified": "2026-05-28",
+      "source_url": "https://slcc.edu"
+    },
+    "unitid": 230746
+  }
+]

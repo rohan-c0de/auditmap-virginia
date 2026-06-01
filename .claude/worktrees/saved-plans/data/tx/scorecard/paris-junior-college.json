@@ -1,0 +1,46 @@
+{
+  "unitid": 227401,
+  "schoolName": "Paris Junior College",
+  "state": "TX",
+  "city": "Paris",
+  "schoolUrl": "www.parisjc.edu/",
+  "ownership": 1,
+  "predominantDegree": 1,
+  "fetchedAt": "2026-05-16T15:39:48.776Z",
+  "size": 2204,
+  "shareFirstGeneration": 0.5541401274,
+  "cost": {
+    "tuitionInState": 2700,
+    "tuitionOutOfState": 5700,
+    "attendanceAcademicYear": 13626,
+    "avgNetPricePublic": 7690,
+    "bookSupply": 1500,
+    "roomBoardOffCampus": 11130,
+    "netPriceByIncome": {
+      "0_30000": 7212,
+      "30001_48000": 6232,
+      "48001_75000": 8420,
+      "75001_110000": 9679,
+      "110001_plus": 11096
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2567,
+    "federalLoanRate": 0.0238,
+    "medianDebtCompleters": 5342
+  },
+  "completion": {
+    "completionRate150nt": 0.3766,
+    "completionRate200nt": 0.3734,
+    "transferRate": 0.1507,
+    "retentionRateFullTime": 0.5763,
+    "retentionRatePartTime": 0.3663
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 36515,
+    "median1YrAfterCompletion": 33045,
+    "percentile25_10YrsAfterEntry": 18994,
+    "percentile75_10YrsAfterEntry": 56749,
+    "shareEarningAboveHsGrad": 0.47
+  }
+}

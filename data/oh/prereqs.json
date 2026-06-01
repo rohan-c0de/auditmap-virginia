@@ -157,6 +157,12 @@
       "Accounting 1020"
     ]
   },
+  "ACCT 122": {
+    "text": "ACCT 111",
+    "courses": [
+      "ACCT 111"
+    ]
+  },
   "ACCT 1311": {
     "text": "Mathematics 0960 (min C) or Mathematics 0980 (min C) or Mathematics 0930 (min C) or Mathematics 0940 (min C) or Mathematics 0955 (min C) or Mathematics 0965 (min C) or Mathematics 0990 or Mathematics 1100 (min C) or Mathematics 1060 (min C) or Mathematics 1190 (min C) or Mathematics 1200 (min C) or Mathematics 1270 (min C) or Mathematics 1280 (min C) or Mathematics 1240 (min C) or Mathematics 1250 (min C) or Mathematics 1270 (min C) or Mathematics 1280 (min C) or Mathematics 1410 (min C) or Mathematics 1470 (min C) or Mathematics 1480 (min C) or Mathematics 1490 (min C) or Mathematics 1510 (min C) or Mathematics 1521 (min C) or Mathematics 1530 (min C) or Mathematics 153H (min C) or Mathematics 1540 (min C) or Mathematics 154H (min C) or Mathematics 1580 (min C) or Mathematics 1610 (min C) and English 0990 (min C)",
     "courses": [
@@ -212,10 +218,28 @@
       "Accounting 1020"
     ]
   },
+  "ACCT 2016": {
+    "text": "ACCT 2012",
+    "courses": [
+      "ACCT 2012"
+    ]
+  },
+  "ACCT 2030": {
+    "text": "ACCT 1010",
+    "courses": [
+      "ACCT 1010"
+    ]
+  },
   "ACCT 2041": {
     "text": "Accounting 1041 (min C)",
     "courses": [
       "Accounting 1041"
+    ]
+  },
+  "ACCT 2050": {
+    "text": "ACCT 1010",
+    "courses": [
+      "ACCT 1010"
     ]
   },
   "ACCT 2310": {
@@ -642,6 +666,18 @@
       "Art 1050",
       "Art 1081",
       "Art 1070"
+    ]
+  },
+  "ARTS 1070": {
+    "text": "ARTS 1070",
+    "courses": [
+      "ARTS 1070"
+    ]
+  },
+  "ARTS 1070L": {
+    "text": "ARTS 1070",
+    "courses": [
+      "ARTS 1070"
     ]
   },
   "ASL 1020": {
@@ -1075,6 +1111,13 @@
       "Business Administration 2601"
     ]
   },
+  "BIO 010": {
+    "text": "ENGL 012 or ENGL 100",
+    "courses": [
+      "ENGL 012",
+      "ENGL 100"
+    ]
+  },
   "BIO 021": {
     "text": "IDS 102 (min B)",
     "courses": [
@@ -1106,6 +1149,13 @@
       "English 101H",
       "English 101",
       "English 102"
+    ]
+  },
+  "BIO 105": {
+    "text": "ENGL 012 or ENGL 100",
+    "courses": [
+      "ENGL 012",
+      "ENGL 100"
     ]
   },
   "BIO 1050": {
@@ -1294,10 +1344,12 @@
     ]
   },
   "BIO 121": {
-    "text": "BIO 101 (min C) or BIO 021 (min C)",
+    "text": "BIO 010 and ENGL 012 or ENGL 100 and CHEM 020",
     "courses": [
-      "BIO 101",
-      "BIO 021"
+      "BIO 010",
+      "ENGL 012",
+      "ENGL 100",
+      "CHEM 020"
     ]
   },
   "BIO 122": {
@@ -1327,6 +1379,23 @@
     "courses": [
       "BIO 122",
       "BIO 123"
+    ]
+  },
+  "BIO 130": {
+    "text": "BIO 010 and CHEM 020 and ENGL 012 or ENGL 100",
+    "courses": [
+      "BIO 010",
+      "CHEM 020",
+      "ENGL 012",
+      "ENGL 100"
+    ]
+  },
+  "BIO 131": {
+    "text": "BIO 130 and ENGL 012 or ENGL 100",
+    "courses": [
+      "BIO 130",
+      "ENGL 012",
+      "ENGL 100"
     ]
   },
   "BIO 1410": {
@@ -1448,10 +1517,14 @@
     ]
   },
   "BIO 200": {
-    "text": "BIO 142 (min D) or BIO 141 (min D)",
+    "text": "BIO 120 or BIO 121 or BIO 130 or BIO 160 and ENGL 012 or ENGL 100",
     "courses": [
-      "BIO 142",
-      "BIO 141"
+      "BIO 120",
+      "BIO 121",
+      "BIO 130",
+      "BIO 160",
+      "ENGL 012",
+      "ENGL 100"
     ]
   },
   "BIO 2060": {
@@ -1542,6 +1615,171 @@
       "Biology 234B"
     ]
   },
+  "BIO 305": {
+    "text": "BIO 200",
+    "courses": [
+      "BIO 200"
+    ]
+  },
+  "BIO 310": {
+    "text": "BIO 200",
+    "courses": [
+      "BIO 200"
+    ]
+  },
+  "BIOL 0051": {
+    "text": "BIOL 2751",
+    "courses": [
+      "BIOL 2751"
+    ]
+  },
+  "BIOL 1230": {
+    "text": "MATH 0084 and BIOL 1230L",
+    "courses": [
+      "MATH 0084",
+      "BIOL 1230L"
+    ]
+  },
+  "BIOL 1230L": {
+    "text": "BIOL 1230",
+    "courses": [
+      "BIOL 1230"
+    ]
+  },
+  "BIOL 1550": {
+    "text": "BIOL 1550L",
+    "courses": [
+      "BIOL 1550L"
+    ]
+  },
+  "BIOL 1550L": {
+    "text": "BIOL 1550",
+    "courses": [
+      "BIOL 1550"
+    ]
+  },
+  "BIOL 1730": {
+    "text": "BIOL 1730L",
+    "courses": [
+      "BIOL 1730L"
+    ]
+  },
+  "BIOL 1730L": {
+    "text": "BIOL 1730",
+    "courses": [
+      "BIOL 1730"
+    ]
+  },
+  "BIOL 2751": {
+    "text": "BIOL 2751L and BIOL 0051 and BIOL 2751",
+    "courses": [
+      "BIOL 2751L",
+      "BIOL 0051",
+      "BIOL 2751"
+    ]
+  },
+  "BIOL 2751L": {
+    "text": "BIOL 2751",
+    "courses": [
+      "BIOL 2751"
+    ]
+  },
+  "BIOL 2752": {
+    "text": "BIOL 2751 and BIOL 2752L",
+    "courses": [
+      "BIOL 2751",
+      "BIOL 2752L"
+    ]
+  },
+  "BIOL 2752L": {
+    "text": "BIOL 2752",
+    "courses": [
+      "BIOL 2752"
+    ]
+  },
+  "BIOS 1114": {
+    "text": "BIOS 1113",
+    "courses": [
+      "BIOS 1113"
+    ]
+  },
+  "BIOS 2410": {
+    "text": "BIOS 1010 and CHEM 1210",
+    "courses": [
+      "BIOS 1010",
+      "CHEM 1210"
+    ]
+  },
+  "BIOS 2410L": {
+    "text": "BIOS 2410",
+    "courses": [
+      "BIOS 2410"
+    ]
+  },
+  "BSN 310": {
+    "text": "BSN 300 and ENGL 250",
+    "courses": [
+      "BSN 300",
+      "ENGL 250"
+    ]
+  },
+  "BSN 315": {
+    "text": "BSN 300 and PHIL 305",
+    "courses": [
+      "BSN 300",
+      "PHIL 305"
+    ]
+  },
+  "BSN 320": {
+    "text": "BSN 300 and ENGL 250",
+    "courses": [
+      "BSN 300",
+      "ENGL 250"
+    ]
+  },
+  "BSN 325": {
+    "text": "BSN 300 and ENGL 250",
+    "courses": [
+      "BSN 300",
+      "ENGL 250"
+    ]
+  },
+  "BSN 400": {
+    "text": "BSN 300 and ENGL 250",
+    "courses": [
+      "BSN 300",
+      "ENGL 250"
+    ]
+  },
+  "BSN 410": {
+    "text": "BSN 300 and ENGL 250",
+    "courses": [
+      "BSN 300",
+      "ENGL 250"
+    ]
+  },
+  "BSN 415": {
+    "text": "BSN 300 and ENGL 250",
+    "courses": [
+      "BSN 300",
+      "ENGL 250"
+    ]
+  },
+  "BSN 420": {
+    "text": "BSN 300 and BSN 305 and BSN 405 and BSN 315 and BSN 320 and BSN 325 and BSN 400 and BSN 310 and BSN 410 and BSN 415",
+    "courses": [
+      "BSN 300",
+      "BSN 305",
+      "BSN 405",
+      "BSN 315",
+      "BSN 320",
+      "BSN 325",
+      "BSN 400",
+      "BSN 310",
+      "BSN 410",
+      "BSN 415"
+    ]
+  },
   "BT 1150": {
     "text": "Information Technology 1090 (min C) or Information Technology 1010 (min C)",
     "courses": [
@@ -1630,6 +1868,12 @@
       "Business Technology 2411"
     ]
   },
+  "BUS 115": {
+    "text": "ECON 105",
+    "courses": [
+      "ECON 105"
+    ]
+  },
   "BUS 121": {
     "text": "IDS 102 (min B)",
     "courses": [
@@ -1661,6 +1905,24 @@
     "text": "IDS 102 (min B)",
     "courses": [
       "IDS 102"
+    ]
+  },
+  "BUSM 1150": {
+    "text": "ECON 1510",
+    "courses": [
+      "ECON 1510"
+    ]
+  },
+  "BUSM 2280": {
+    "text": "BUSM 2285",
+    "courses": [
+      "BUSM 2285"
+    ]
+  },
+  "BUSM 2285": {
+    "text": "BUSM 2280",
+    "courses": [
+      "BUSM 2280"
     ]
   },
   "CCR 1200": {
@@ -2079,6 +2341,13 @@
       "NET 220"
     ]
   },
+  "CHEM 020": {
+    "text": "ENGL 012 or ENGL 100",
+    "courses": [
+      "ENGL 012",
+      "ENGL 100"
+    ]
+  },
   "CHEM 1000": {
     "text": "English 0980 (min C) or English 0990 (min C) or English 0985 (min A) or English 0995 (min C) or English 0900 (min C) or English 1010 (min C) or English 101H (min C) or English 101 (min D) and English 102 (min D) or English As A Second Language 1310 (min C) and English As A Second Language 1320 (min C) and English As A Second Language 1330 (min C) or English As A Second Language 1310 (min C) and English As A Second Language 1321 (min C) and English As A Second Language 1331 (min C) or English 098 (min D) or English 099 (min D)",
     "courses": [
@@ -2193,6 +2462,19 @@
       "Chemistry 101H"
     ]
   },
+  "CHEM 1030": {
+    "text": "MATH 0084 and CHEM 1030L",
+    "courses": [
+      "MATH 0084",
+      "CHEM 1030L"
+    ]
+  },
+  "CHEM 1030L": {
+    "text": "CHEM 1030",
+    "courses": [
+      "CHEM 1030"
+    ]
+  },
   "CHEM 1081": {
     "text": "English 1010 (min C) or English 101H (min C) or English 101 (min C) and English 102 (min C) or English 1020 (min C) or English 102H (min C)",
     "courses": [
@@ -2202,6 +2484,19 @@
       "English 102",
       "English 1020",
       "English 102H"
+    ]
+  },
+  "CHEM 1210": {
+    "text": "MATH 1110 and CHEM 1210L",
+    "courses": [
+      "MATH 1110",
+      "CHEM 1210L"
+    ]
+  },
+  "CHEM 1210L": {
+    "text": "CHEM 1210",
+    "courses": [
+      "CHEM 1210"
     ]
   },
   "CHEM 1290": {
@@ -2411,6 +2706,24 @@
     "text": "CIS 221 (min D)",
     "courses": [
       "CIS 221"
+    ]
+  },
+  "CISS 1270": {
+    "text": "CISS 1210",
+    "courses": [
+      "CISS 1210"
+    ]
+  },
+  "CISS 1280": {
+    "text": "CISS 1220",
+    "courses": [
+      "CISS 1220"
+    ]
+  },
+  "CISS 1290": {
+    "text": "CISS 1220",
+    "courses": [
+      "CISS 1220"
     ]
   },
   "CJ 1050": {
@@ -3445,6 +3758,18 @@
       "DHY 232"
     ]
   },
+  "DHYG 2102": {
+    "text": "DHYG 1000",
+    "courses": [
+      "DHYG 1000"
+    ]
+  },
+  "DHYG 2105": {
+    "text": "MICR 1201",
+    "courses": [
+      "MICR 1201"
+    ]
+  },
   "DIET 1050": {
     "text": "English 0990 (min C) or English 0900 (min C) or English 0995 (min C) or English 0985 (min A) or English As A Second Language 1310 (min C) and English As A Second Language 1320 (min C) and English As A Second Language 1330 (min C) or English As A Second Language 1310 (min C) and English As A Second Language 1321 (min C) and English As A Second Language 1331 (min C) or English As A Second Language 1510 (min C) and English As A Second Language 1520 (min C) and English As A Second Language 1530 (min C) and English As A Second Language 1540 (min C) or English 1010 (min C) or English 101H (min C) or English 101 (min D) and English 102 (min D) or English 1020 (min C) or English 102H (min C)",
     "courses": [
@@ -3586,6 +3911,12 @@
       "Mathematics 161H"
     ]
   },
+  "DMS 110": {
+    "text": "BIO 131",
+    "courses": [
+      "BIO 131"
+    ]
+  },
   "DMS 1303": {
     "text": "Biology 2331 (min C) or Biology 2330 (min C) and English 0900 (min C) or English 0990 (min C) or English 0995 (min C) or English 0985 (min A) or English As A Second Language 1310 (min C) and English As A Second Language 1320 (min C) and English As A Second Language 1330 (min C) or English As A Second Language 1310 (min C) and English As A Second Language 1321 (min C) and English As A Second Language 1331 (min C) or English As A Second Language 1510 (min C) and English As A Second Language 1520 (min C) and English As A Second Language 1530 (min C) and English As A Second Language 1540 (min C) or English 101 (min D) and English 102 (min D) or English 1010 (min C) or English 101H (min C) or English 1020 (min C) or English 102H (min C)",
     "courses": [
@@ -3685,6 +4016,12 @@
     "text": "Diagnostic Medical Sonography 1940 (min C)",
     "courses": [
       "Diagnostic Medical Sonography 1940"
+    ]
+  },
+  "DMS 210": {
+    "text": "DMS 110",
+    "courses": [
+      "DMS 110"
     ]
   },
   "DMS 2301": {
@@ -4219,6 +4556,25 @@
       "Early Childhood Education 1010"
     ]
   },
+  "EDUT 2080": {
+    "text": "EDUT 1070",
+    "courses": [
+      "EDUT 1070"
+    ]
+  },
+  "EDUT 2140": {
+    "text": "EDUT 1010",
+    "courses": [
+      "EDUT 1010"
+    ]
+  },
+  "EDUT 2150": {
+    "text": "PSYC 1010 or PSY 110",
+    "courses": [
+      "PSYC 1010",
+      "PSY 110"
+    ]
+  },
   "EET 1015": {
     "text": "Information Technology 1010 (min C) or Information Technology 101H (min C) or Information Technology 1090 (min C) or Information Technology 109H (min C)",
     "courses": [
@@ -4558,6 +4914,94 @@
       "Electrical/Electronic Engineer 3210"
     ]
   },
+  "ELET 1510": {
+    "text": "MATH 1110",
+    "courses": [
+      "MATH 1110"
+    ]
+  },
+  "ELET 2570": {
+    "text": "ELET 1530",
+    "courses": [
+      "ELET 1530"
+    ]
+  },
+  "ELET 2760": {
+    "text": "ELET 1530",
+    "courses": [
+      "ELET 1530"
+    ]
+  },
+  "EMMT 1010": {
+    "text": "EMMT 0011",
+    "courses": [
+      "EMMT 0011"
+    ]
+  },
+  "EMMT 1020": {
+    "text": "EMMT 0011",
+    "courses": [
+      "EMMT 0011"
+    ]
+  },
+  "EMMT 1030": {
+    "text": "EMMT 0011",
+    "courses": [
+      "EMMT 0011"
+    ]
+  },
+  "EMMT 1050": {
+    "text": "EMMT 0011",
+    "courses": [
+      "EMMT 0011"
+    ]
+  },
+  "EMMT 1100": {
+    "text": "EMMT 1010 and EMMT 0011",
+    "courses": [
+      "EMMT 1010",
+      "EMMT 0011"
+    ]
+  },
+  "EMMT 1540": {
+    "text": "EMMT 1010 and EMMT 0011",
+    "courses": [
+      "EMMT 1010",
+      "EMMT 0011"
+    ]
+  },
+  "EMMT 2100": {
+    "text": "EMMT 1050 or AIM 104 and EMMT 0011",
+    "courses": [
+      "EMMT 1050",
+      "AIM 104",
+      "EMMT 0011"
+    ]
+  },
+  "EMMT 2120": {
+    "text": "EMMT 0011",
+    "courses": [
+      "EMMT 0011"
+    ]
+  },
+  "EMMT 2150": {
+    "text": "EMMT 0011",
+    "courses": [
+      "EMMT 0011"
+    ]
+  },
+  "EMMT 2300": {
+    "text": "EMMT 0011",
+    "courses": [
+      "EMMT 0011"
+    ]
+  },
+  "EMS 120": {
+    "text": "EMS 100",
+    "courses": [
+      "EMS 100"
+    ]
+  },
   "EMS 121": {
     "text": "IDS 102 (min B)",
     "courses": [
@@ -4759,6 +5203,13 @@
     "text": "Emergency Medical Technology 2360 (min C)",
     "courses": [
       "Emergency Medical Technology 2360"
+    ]
+  },
+  "EMTP 2030": {
+    "text": "EMTP 1010 and BIOL 1730",
+    "courses": [
+      "EMTP 1010",
+      "BIOL 1730"
     ]
   },
   "END 1312": {
@@ -5194,6 +5645,87 @@
       "English 103"
     ]
   },
+  "ENGL 0010": {
+    "text": "ENGL 1010",
+    "courses": [
+      "ENGL 1010"
+    ]
+  },
+  "ENGL 012": {
+    "text": "ENGL 100C",
+    "courses": [
+      "ENGL 100C"
+    ]
+  },
+  "ENGL 100": {
+    "text": "ENGL 012",
+    "courses": [
+      "ENGL 012"
+    ]
+  },
+  "ENGL 100C": {
+    "text": "ENGL 012",
+    "courses": [
+      "ENGL 012"
+    ]
+  },
+  "ENGL 101": {
+    "text": "ENGL 100",
+    "courses": [
+      "ENGL 100"
+    ]
+  },
+  "ENGL 1010": {
+    "text": "ENGL 0040 or ENGL 0010 or WRIT 0090 or READ 0080",
+    "courses": [
+      "ENGL 0040",
+      "ENGL 0010",
+      "WRIT 0090",
+      "READ 0080"
+    ]
+  },
+  "ENGL 1030": {
+    "text": "ENGL 1010",
+    "courses": [
+      "ENGL 1010"
+    ]
+  },
+  "ENGL 2050": {
+    "text": "ENGL 1030",
+    "courses": [
+      "ENGL 1030"
+    ]
+  },
+  "ENGL 2070": {
+    "text": "ENGL 1030",
+    "courses": [
+      "ENGL 1030"
+    ]
+  },
+  "ENGL 2090": {
+    "text": "ENGL 1010",
+    "courses": [
+      "ENGL 1010"
+    ]
+  },
+  "ENGL 2123": {
+    "text": "ENGL 1510",
+    "courses": [
+      "ENGL 1510"
+    ]
+  },
+  "ENGR 3980": {
+    "text": "ENGR 3990",
+    "courses": [
+      "ENGR 3990"
+    ]
+  },
+  "ENGR 3990": {
+    "text": "ENGR 3980",
+    "courses": [
+      "ENGR 3980"
+    ]
+  },
   "ENT 120": {
     "text": "IDS 102 (min B) or ENG 102 (min B)",
     "courses": [
@@ -5211,6 +5743,12 @@
     "text": "ENT 120 (min D)",
     "courses": [
       "ENT 120"
+    ]
+  },
+  "ERT 1102": {
+    "text": "ERT 1101",
+    "courses": [
+      "ERT 1101"
     ]
   },
   "ESCI 1030": {
@@ -5782,6 +6320,12 @@
       "German 1010"
     ]
   },
+  "GS 2010": {
+    "text": "GS 1010",
+    "courses": [
+      "GS 1010"
+    ]
+  },
   "HIM 1113": {
     "text": "Medical Assisting 1020 (min C) or Health Technology 1060 (min C) or Medical Assisting 1010 (min C) and Biology 1050 (min C) and Biology 105L (min C) or Health Technology 1050 (min C) and Biology 1050 (min C) and Biology 105L (min C)",
     "courses": [
@@ -5871,6 +6415,13 @@
     "text": "Health Information Management 1301 (min C)",
     "courses": [
       "Health Information Management 1301"
+    ]
+  },
+  "HIST 100": {
+    "text": "ENGL 012 or ENGL 100",
+    "courses": [
+      "ENGL 012",
+      "ENGL 100"
     ]
   },
   "HIST 1010": {
@@ -6208,6 +6759,40 @@
       "CDC 222"
     ]
   },
+  "HLT 110": {
+    "text": "ENGL 012 or ENGL 100",
+    "courses": [
+      "ENGL 012",
+      "ENGL 100"
+    ]
+  },
+  "HLT 112": {
+    "text": "HLT 110",
+    "courses": [
+      "HLT 110"
+    ]
+  },
+  "HLT 140": {
+    "text": "HLT 145 and HLT 150",
+    "courses": [
+      "HLT 145",
+      "HLT 150"
+    ]
+  },
+  "HLT 145": {
+    "text": "HLT 140 and HLT 150",
+    "courses": [
+      "HLT 140",
+      "HLT 150"
+    ]
+  },
+  "HLT 150": {
+    "text": "HLT 140 and HLT 145",
+    "courses": [
+      "HLT 140",
+      "HLT 145"
+    ]
+  },
   "HLTH 2500": {
     "text": "English 1010 (min C) or English 101H (min C) or English 1020 (min C) or English 102H (min C) or English 101 (min D) and English 102 (min D)",
     "courses": [
@@ -6217,6 +6802,43 @@
       "English 102H",
       "English 101",
       "English 102"
+    ]
+  },
+  "HMSV 2030": {
+    "text": "HMSV 1020 and HMSV 1170",
+    "courses": [
+      "HMSV 1020",
+      "HMSV 1170"
+    ]
+  },
+  "HMSV 2050": {
+    "text": "HMSV 1020 and HMSV 1170",
+    "courses": [
+      "HMSV 1020",
+      "HMSV 1170"
+    ]
+  },
+  "HMSV 2070": {
+    "text": "HMSV 1020 and HMSV 1090 and HMSV 1170 and ENGL 1030",
+    "courses": [
+      "HMSV 1020",
+      "HMSV 1090",
+      "HMSV 1170",
+      "ENGL 1030"
+    ]
+  },
+  "HMSV 2150": {
+    "text": "HMSV 1150",
+    "courses": [
+      "HMSV 1150"
+    ]
+  },
+  "HMSV 2270": {
+    "text": "HMSV 2030 and HMSV 2050 and HMSV 2070",
+    "courses": [
+      "HMSV 2030",
+      "HMSV 2050",
+      "HMSV 2070"
     ]
   },
   "HOSP 1010": {
@@ -7874,6 +8496,55 @@
       "ITD 100"
     ]
   },
+  "ITEC 1430": {
+    "text": "ITEC 1640 or ITEC 1650 or ITEC 1840 or ITEC 1635 or ITEC 1690 and ITEC 2420",
+    "courses": [
+      "ITEC 1640",
+      "ITEC 1650",
+      "ITEC 1840",
+      "ITEC 1635",
+      "ITEC 1690",
+      "ITEC 2420"
+    ]
+  },
+  "ITEC 1645": {
+    "text": "ITEC 1640",
+    "courses": [
+      "ITEC 1640"
+    ]
+  },
+  "ITEC 2420": {
+    "text": "ITEC 1690 and ITEC 1430",
+    "courses": [
+      "ITEC 1690",
+      "ITEC 1430"
+    ]
+  },
+  "ITEC 2610": {
+    "text": "ITEC 1420 or ITEC 1610",
+    "courses": [
+      "ITEC 1420",
+      "ITEC 1610"
+    ]
+  },
+  "ITEC 2665": {
+    "text": "ITEC 1645",
+    "courses": [
+      "ITEC 1645"
+    ]
+  },
+  "ITEC 2980": {
+    "text": "ITEC 2990",
+    "courses": [
+      "ITEC 2990"
+    ]
+  },
+  "ITEC 2990": {
+    "text": "ITEC 2980",
+    "courses": [
+      "ITEC 2980"
+    ]
+  },
   "ITNT 2300": {
     "text": "Electrical/Electronic Engineer 1240 (min C) or Electrical/Electronic Engineer 1241 (min C) or Information Technology 1020 (min C) or Information Technology 1025 (min C)",
     "courses": [
@@ -7935,6 +8606,18 @@
     "text": "JCR 2105 (min D)",
     "courses": [
       "JCR 2105"
+    ]
+  },
+  "LET 120": {
+    "text": "LET 100",
+    "courses": [
+      "LET 100"
+    ]
+  },
+  "LET 225": {
+    "text": "LET 100",
+    "courses": [
+      "LET 100"
     ]
   },
   "LP 1300": {
@@ -8437,6 +9120,25 @@
       "IDS 102"
     ]
   },
+  "MATH 0065": {
+    "text": "MATH 0075 and MATH 1070",
+    "courses": [
+      "MATH 0075",
+      "MATH 1070"
+    ]
+  },
+  "MATH 014": {
+    "text": "MATH 140C",
+    "courses": [
+      "MATH 140C"
+    ]
+  },
+  "MATH 031": {
+    "text": "MATH 130C",
+    "courses": [
+      "MATH 130C"
+    ]
+  },
   "MATH 0930": {
     "text": "Mathematics 0910 (min C) or Mathematics 0915 (min C)",
     "courses": [
@@ -8488,6 +9190,12 @@
       "English 102H"
     ]
   },
+  "MATH 1070": {
+    "text": "MATH 0065",
+    "courses": [
+      "MATH 0065"
+    ]
+  },
   "MATH 1190": {
     "text": "Mathematics 0950 (min C) or Mathematics 0955 (min C) or Mathematics 0930 (min C) or Mathematics 0980 (min C) or Mathematics 0990 (min C) or Mathematics 1270 (min C)",
     "courses": [
@@ -8497,6 +9205,18 @@
       "Mathematics 0980",
       "Mathematics 0990",
       "Mathematics 1270"
+    ]
+  },
+  "MATH 130": {
+    "text": "MATH 031",
+    "courses": [
+      "MATH 031"
+    ]
+  },
+  "MATH 130C": {
+    "text": "MATH 031",
+    "courses": [
+      "MATH 031"
     ]
   },
   "MATH 1370": {
@@ -8520,6 +9240,18 @@
     "text": "Mathematics 1370 (min C)",
     "courses": [
       "Mathematics 1370"
+    ]
+  },
+  "MATH 140": {
+    "text": "MATH 014",
+    "courses": [
+      "MATH 014"
+    ]
+  },
+  "MATH 140C": {
+    "text": "MATH 014",
+    "courses": [
+      "MATH 014"
     ]
   },
   "MATH 1410": {
@@ -8571,6 +9303,12 @@
       "Mathematics 153H",
       "Mathematics 1580",
       "Mathematics 1610"
+    ]
+  },
+  "MATH 150": {
+    "text": "MATH 140",
+    "courses": [
+      "MATH 140"
     ]
   },
   "MATH 1500": {
@@ -8686,6 +9424,96 @@
     "courses": [
       "Mathematics 1620",
       "Mathematics 2310"
+    ]
+  },
+  "MCDE 106": {
+    "text": "MCDE 104 or MCDE 105 and MCDE 107",
+    "courses": [
+      "MCDE 104",
+      "MCDE 105",
+      "MCDE 107"
+    ]
+  },
+  "MCDE 107": {
+    "text": "MCDE 104 or MCDE 105 and MCDE 106",
+    "courses": [
+      "MCDE 104",
+      "MCDE 105",
+      "MCDE 106"
+    ]
+  },
+  "MECT 2230": {
+    "text": "MECT 2230L",
+    "courses": [
+      "MECT 2230L"
+    ]
+  },
+  "MECT 2230L": {
+    "text": "MECT 2230",
+    "courses": [
+      "MECT 2230"
+    ]
+  },
+  "MECT 2330": {
+    "text": "MATH 1050 and PHYS 1110",
+    "courses": [
+      "MATH 1050",
+      "PHYS 1110"
+    ]
+  },
+  "MECT 2335": {
+    "text": "MATH 1150 and PHYS 1110 or PHYS 2010",
+    "courses": [
+      "MATH 1150",
+      "PHYS 1110",
+      "PHYS 2010"
+    ]
+  },
+  "MECT 2905": {
+    "text": "MECT 1750",
+    "courses": [
+      "MECT 1750"
+    ]
+  },
+  "MECT 3010": {
+    "text": "MECT 2330 and MATH 1151",
+    "courses": [
+      "MECT 2330",
+      "MATH 1151"
+    ]
+  },
+  "MECT 3031": {
+    "text": "MATH 1151 and PHYS 1130",
+    "courses": [
+      "MATH 1151",
+      "PHYS 1130"
+    ]
+  },
+  "MECT 3910": {
+    "text": "MECT 2910",
+    "courses": [
+      "MECT 2910"
+    ]
+  },
+  "MECT 4010": {
+    "text": "MECT 1750 and MATH 1151",
+    "courses": [
+      "MECT 1750",
+      "MATH 1151"
+    ]
+  },
+  "MECT 4050": {
+    "text": "MECT 2230 and MECT 3050",
+    "courses": [
+      "MECT 2230",
+      "MECT 3050"
+    ]
+  },
+  "MECT 4910": {
+    "text": "MECT 1750 and MECT 2440",
+    "courses": [
+      "MECT 1750",
+      "MECT 2440"
     ]
   },
   "MET 1100": {
@@ -9156,6 +9984,28 @@
     "text": "Mech Eng/Manuf Ind Eng Tech 2460 (min C)",
     "courses": [
       "Mech Eng/Manuf Ind Eng Tech 2460"
+    ]
+  },
+  "MFGT 1120": {
+    "text": "MFGT 1110 or MECT 1150 or ENRD 2260",
+    "courses": [
+      "MFGT 1110",
+      "MECT 1150",
+      "ENRD 2260"
+    ]
+  },
+  "MFGT 1640": {
+    "text": "MFGT 1110",
+    "courses": [
+      "MFGT 1110"
+    ]
+  },
+  "MFGT 2250": {
+    "text": "MFGT 1110 or MECT 1150 or ENRD 2260",
+    "courses": [
+      "MFGT 1110",
+      "MECT 1150",
+      "ENRD 2260"
     ]
   },
   "MGT 121": {
@@ -9989,6 +10839,12 @@
       "MTH 224"
     ]
   },
+  "MUS 1141": {
+    "text": "MUS 1140",
+    "courses": [
+      "MUS 1140"
+    ]
+  },
   "MUS 1210": {
     "text": "Music 1200 (min C)",
     "courses": [
@@ -10067,6 +10923,18 @@
       "Recording Arts &amp; Technology 1510",
       "Recording Arts &amp; Technology 1511",
       "Electrical/Electronic Engineer 1130"
+    ]
+  },
+  "MUS 2218": {
+    "text": "MUS 1145",
+    "courses": [
+      "MUS 1145"
+    ]
+  },
+  "MUS 2223": {
+    "text": "MUS 2214",
+    "courses": [
+      "MUS 2214"
     ]
   },
   "MUS 2301": {
@@ -10300,6 +11168,53 @@
     "courses": [
       "Nuclear Medicine Technology 2950",
       "Nuclear Medicine Technology 2920"
+    ]
+  },
+  "NPN 109": {
+    "text": "NPN 118",
+    "courses": [
+      "NPN 118"
+    ]
+  },
+  "NPN 118": {
+    "text": "NPN 109",
+    "courses": [
+      "NPN 109"
+    ]
+  },
+  "NPN 119": {
+    "text": "NPN 120 and NPN 121 and NPN 122",
+    "courses": [
+      "NPN 120",
+      "NPN 121",
+      "NPN 122"
+    ]
+  },
+  "NPN 120": {
+    "text": "NPN 109 and NPN 118 and BIO 121 or BIO 130 or BIO 131 and MATH 130",
+    "courses": [
+      "NPN 109",
+      "NPN 118",
+      "BIO 121",
+      "BIO 130",
+      "BIO 131",
+      "MATH 130"
+    ]
+  },
+  "NPN 121": {
+    "text": "NPN 120 and NPN 119 and NPN 122",
+    "courses": [
+      "NPN 120",
+      "NPN 119",
+      "NPN 122"
+    ]
+  },
+  "NPN 122": {
+    "text": "NPN 120 and NPN 119 and NPN 121",
+    "courses": [
+      "NPN 120",
+      "NPN 119",
+      "NPN 121"
     ]
   },
   "NSG 100": {
@@ -10646,6 +11561,31 @@
       "NSG 340"
     ]
   },
+  "NT 2200": {
+    "text": "NT 1530",
+    "courses": [
+      "NT 1530"
+    ]
+  },
+  "NT 2230": {
+    "text": "NT 2200",
+    "courses": [
+      "NT 2200"
+    ]
+  },
+  "NT 2250": {
+    "text": "NT 1530",
+    "courses": [
+      "NT 1530"
+    ]
+  },
+  "NT 2651": {
+    "text": "NT 2200 and NT 2250",
+    "courses": [
+      "NT 2200",
+      "NT 2250"
+    ]
+  },
   "NTR 121": {
     "text": "IDS 102 (min B)",
     "courses": [
@@ -10768,6 +11708,28 @@
       "English 102H"
     ]
   },
+  "NURS 108": {
+    "text": "BIO 130 and NURS 107 and NURS 115 and MATH 130 and PSY 100",
+    "courses": [
+      "BIO 130",
+      "NURS 107",
+      "NURS 115",
+      "MATH 130",
+      "PSY 100"
+    ]
+  },
+  "NURS 117": {
+    "text": "BIO 131 and NURS 210 and ENGL 101 and NURS 216 and NURS 108 and SPCH 210 and PSY 100",
+    "courses": [
+      "BIO 131",
+      "NURS 210",
+      "ENGL 101",
+      "NURS 216",
+      "NURS 108",
+      "SPCH 210",
+      "PSY 100"
+    ]
+  },
   "NURS 1201": {
     "text": "Biology 2331 (min B) and Biology 2341 (min B) and Nursing 1000 (min C) and Nursing 1010 (min C) and Mathematics 1410 (min C) and Psychology 1010 (min C) and Psychology 2020 (min C)",
     "courses": [
@@ -10847,10 +11809,67 @@
       "Biology 2500"
     ]
   },
+  "NURS 201": {
+    "text": "NURS 117 and NURS 211 and ENGL 100 and BIO 200 and SPCH 210",
+    "courses": [
+      "NURS 117",
+      "NURS 211",
+      "ENGL 100",
+      "BIO 200",
+      "SPCH 210"
+    ]
+  },
   "NURS 2010": {
     "text": "Nursing 2000 (min C)",
     "courses": [
       "Nursing 2000"
+    ]
+  },
+  "NURS 210": {
+    "text": "BIO 130",
+    "courses": [
+      "BIO 130"
+    ]
+  },
+  "NURS 211": {
+    "text": "NURS 117 and NURS 201",
+    "courses": [
+      "NURS 117",
+      "NURS 201"
+    ]
+  },
+  "NURS 213": {
+    "text": "BIO 200 and NURS 201 and NURS 211 and SOC 110 and NURS 215 and ENGL 101 and SPCH 210",
+    "courses": [
+      "BIO 200",
+      "NURS 201",
+      "NURS 211",
+      "SOC 110",
+      "NURS 215",
+      "ENGL 101",
+      "SPCH 210"
+    ]
+  },
+  "NURS 214": {
+    "text": "BIO 200 and NURS 201 and NURS 211 and SOC 110 and NURS 215 and ENGL 101 and ENGL 101 or ENGL 101 and SPCH 210",
+    "courses": [
+      "BIO 200",
+      "NURS 201",
+      "NURS 211",
+      "SOC 110",
+      "NURS 215",
+      "ENGL 101",
+      "SPCH 210"
+    ]
+  },
+  "NURS 215": {
+    "text": "NURS 117 and NURS 201 and NURS 211 and NURS 213 or NURS 214 and NURS 214",
+    "courses": [
+      "NURS 117",
+      "NURS 201",
+      "NURS 211",
+      "NURS 213",
+      "NURS 214"
     ]
   },
   "OTA 123": {
@@ -11094,6 +12113,18 @@
       "English 102"
     ]
   },
+  "PHIL 105": {
+    "text": "ENGL 100",
+    "courses": [
+      "ENGL 100"
+    ]
+  },
+  "PHIL 200": {
+    "text": "ENGL 100",
+    "courses": [
+      "ENGL 100"
+    ]
+  },
   "PHIL 2020": {
     "text": "English 1010 (min C) or English 101H (min C) or English 101 (min D) and English 102 (min D)",
     "courses": [
@@ -11123,6 +12154,102 @@
       "English 102H",
       "English 101",
       "English 102"
+    ]
+  },
+  "PHTA 1010": {
+    "text": "PHTA 1040 and PHTA 1070",
+    "courses": [
+      "PHTA 1040",
+      "PHTA 1070"
+    ]
+  },
+  "PHTA 1040": {
+    "text": "PHTA 1010 and PHTA 1070 and PHTA 1040L",
+    "courses": [
+      "PHTA 1010",
+      "PHTA 1070",
+      "PHTA 1040L"
+    ]
+  },
+  "PHTA 1040L": {
+    "text": "PHTA 1040",
+    "courses": [
+      "PHTA 1040"
+    ]
+  },
+  "PHTA 1040T": {
+    "text": "PHTA 1040",
+    "courses": [
+      "PHTA 1040"
+    ]
+  },
+  "PHTA 1070": {
+    "text": "PHTA 1010 and PHTA 1040 and PHTA 1070L",
+    "courses": [
+      "PHTA 1010",
+      "PHTA 1040",
+      "PHTA 1070L"
+    ]
+  },
+  "PHTA 1070L": {
+    "text": "PHTA 1070",
+    "courses": [
+      "PHTA 1070"
+    ]
+  },
+  "PHTA 2070": {
+    "text": "PHTA 2110 and PHTA 2115 and PHTA 2090 and PHTA 2170",
+    "courses": [
+      "PHTA 2110",
+      "PHTA 2115",
+      "PHTA 2090",
+      "PHTA 2170"
+    ]
+  },
+  "PHTA 2070L": {
+    "text": "PHTA 2070",
+    "courses": [
+      "PHTA 2070"
+    ]
+  },
+  "PHTA 2090": {
+    "text": "PHTA 2110 and PHTA 2115 and PHTA 2070 and PHTA 2170",
+    "courses": [
+      "PHTA 2110",
+      "PHTA 2115",
+      "PHTA 2070",
+      "PHTA 2170"
+    ]
+  },
+  "PHTA 2090L": {
+    "text": "PHTA 2090",
+    "courses": [
+      "PHTA 2090"
+    ]
+  },
+  "PHTA 2110": {
+    "text": "PHTA 1090 and PHTA 1110 and PHTA 2115",
+    "courses": [
+      "PHTA 1090",
+      "PHTA 1110",
+      "PHTA 2115"
+    ]
+  },
+  "PHTA 2115": {
+    "text": "PHTA 1090 and PHTA 1110 and PHTA 2110",
+    "courses": [
+      "PHTA 1090",
+      "PHTA 1110",
+      "PHTA 2110"
+    ]
+  },
+  "PHTA 2170": {
+    "text": "PHTA 2110 and PHTA 2115 and PHTA 2070 and PHTA 2090",
+    "courses": [
+      "PHTA 2110",
+      "PHTA 2115",
+      "PHTA 2070",
+      "PHTA 2090"
     ]
   },
   "PHY 101": {
@@ -11227,6 +12354,19 @@
       "Mathematics 1610"
     ]
   },
+  "PHYS 1110": {
+    "text": "MATH 1130",
+    "courses": [
+      "MATH 1130"
+    ]
+  },
+  "PHYS 1130": {
+    "text": "PHYS 1110 and MATH 1051",
+    "courses": [
+      "PHYS 1110",
+      "MATH 1051"
+    ]
+  },
   "PHYS 1210": {
     "text": "Mathematics 1280 (min C) or Mathematics 1270 (min C) or Mathematics 1200 (min C) or Mathematics 0965 (min C) or Mathematics 1470 (min C) or Mathematics 1480 (min C) or Mathematics 1530 (min C) or Mathematics 153H (min C) or Mathematics 1521 (min C) or Mathematics 1540 (min C) or Mathematics 154H (min C) or Mathematics 1510 (min C) or Mathematics 1580 (min C) or Mathematics 1610 (min C) or Mathematics 161H (min C) or Mathematics 2010 (min C)",
     "courses": [
@@ -11252,6 +12392,12 @@
     "text": "Physics 1210 (min C)",
     "courses": [
       "Physics 1210"
+    ]
+  },
+  "PHYS 2010": {
+    "text": "MATH 1151",
+    "courses": [
+      "MATH 1151"
     ]
   },
   "PHYS 2250": {
@@ -11450,6 +12596,82 @@
     "text": "PNC 130 (min C)",
     "courses": [
       "PNC 130"
+    ]
+  },
+  "PNUR 1012": {
+    "text": "BIOL 1730 and BIOL 1101 and PNUR 1030 and PNUR 1012L and PNUR 1012C",
+    "courses": [
+      "BIOL 1730",
+      "BIOL 1101",
+      "PNUR 1030",
+      "PNUR 1012L",
+      "PNUR 1012C"
+    ]
+  },
+  "PNUR 1012C": {
+    "text": "PNUR 1012",
+    "courses": [
+      "PNUR 1012"
+    ]
+  },
+  "PNUR 1012L": {
+    "text": "PNUR 1012",
+    "courses": [
+      "PNUR 1012"
+    ]
+  },
+  "PNUR 1030": {
+    "text": "PNUR 1012 and BIOL 1730",
+    "courses": [
+      "PNUR 1012",
+      "BIOL 1730"
+    ]
+  },
+  "PNUR 2012": {
+    "text": "BIOL 1550 and PNUR 2012C and PNUR 2012L and PNUR 1012 and PNUR 1030 and BIOL 1730 and BIOL 1101",
+    "courses": [
+      "BIOL 1550",
+      "PNUR 2012C",
+      "PNUR 2012L",
+      "PNUR 1012",
+      "PNUR 1030",
+      "BIOL 1730",
+      "BIOL 1101"
+    ]
+  },
+  "PNUR 2012C": {
+    "text": "PNUR 2012",
+    "courses": [
+      "PNUR 2012"
+    ]
+  },
+  "PNUR 2012L": {
+    "text": "PNUR 2012",
+    "courses": [
+      "PNUR 2012"
+    ]
+  },
+  "PNUR 2032": {
+    "text": "PNUR 2012 and PNUR 2032C and BIOL 1550 and PNUR 2050",
+    "courses": [
+      "PNUR 2012",
+      "PNUR 2032C",
+      "BIOL 1550",
+      "PNUR 2050"
+    ]
+  },
+  "PNUR 2032C": {
+    "text": "PNUR 2032",
+    "courses": [
+      "PNUR 2032"
+    ]
+  },
+  "PNUR 2050": {
+    "text": "PNUR 2012 and PNUR 2032 and BIOL 1550",
+    "courses": [
+      "PNUR 2012",
+      "PNUR 2032",
+      "BIOL 1550"
     ]
   },
   "POL 1000": {
@@ -11938,6 +13160,12 @@
       "PSY 121"
     ]
   },
+  "PSY 200": {
+    "text": "PSY 100",
+    "courses": [
+      "PSY 100"
+    ]
+  },
   "PSY 2010": {
     "text": "Psychology 1010 (min C) or Psychology 101H (min C) or Psychology 102Z (min C) or Psychology 101 (min D) and Psychology 102 (min D)",
     "courses": [
@@ -12011,6 +13239,12 @@
       "Psychology 101H"
     ]
   },
+  "PSY 210": {
+    "text": "PSY 100",
+    "courses": [
+      "PSY 100"
+    ]
+  },
   "PSY 2100": {
     "text": "Psychology 1010 (min C) or Psychology 101H (min C) or Psychology 102Z (min C) or Psychology 101 (min D) and Psychology 102 (min D)",
     "courses": [
@@ -12073,6 +13307,36 @@
     "text": "PSY 121 (min D)",
     "courses": [
       "PSY 121"
+    ]
+  },
+  "PSY 310": {
+    "text": "BSN 300",
+    "courses": [
+      "BSN 300"
+    ]
+  },
+  "PSYC 2010": {
+    "text": "PSYC 1010",
+    "courses": [
+      "PSYC 1010"
+    ]
+  },
+  "PSYC 2050": {
+    "text": "PSYC 1010",
+    "courses": [
+      "PSYC 1010"
+    ]
+  },
+  "PSYC 2090": {
+    "text": "PSYC 1010",
+    "courses": [
+      "PSYC 1010"
+    ]
+  },
+  "PSYC 2170": {
+    "text": "PSYC 1010",
+    "courses": [
+      "PSYC 1010"
     ]
   },
   "PTA 120": {
@@ -12297,6 +13561,122 @@
     "text": "Physical Therapist Assist 2840 (min C)",
     "courses": [
       "Physical Therapist Assist 2840"
+    ]
+  },
+  "RAD 154": {
+    "text": "RAD 131 and RAD 133",
+    "courses": [
+      "RAD 131",
+      "RAD 133"
+    ]
+  },
+  "RAD 166": {
+    "text": "RAD 165",
+    "courses": [
+      "RAD 165"
+    ]
+  },
+  "RAD 284": {
+    "text": "RAD 186",
+    "courses": [
+      "RAD 186"
+    ]
+  },
+  "RADS 1121": {
+    "text": "RADS 1151 and RADS 1170 and RADS 1175",
+    "courses": [
+      "RADS 1151",
+      "RADS 1170",
+      "RADS 1175"
+    ]
+  },
+  "RADS 1151": {
+    "text": "RADS 1121 and RADS 1170 and RADS 1175",
+    "courses": [
+      "RADS 1121",
+      "RADS 1170",
+      "RADS 1175"
+    ]
+  },
+  "RADS 1151L": {
+    "text": "RADS 1151",
+    "courses": [
+      "RADS 1151"
+    ]
+  },
+  "RADS 1170": {
+    "text": "RADS 1121 and RADS 1151",
+    "courses": [
+      "RADS 1121",
+      "RADS 1151"
+    ]
+  },
+  "RADS 1170L": {
+    "text": "RADS 1170",
+    "courses": [
+      "RADS 1170"
+    ]
+  },
+  "RADS 1175": {
+    "text": "RADS 1121 and RADS 1151 and RADS 1170",
+    "courses": [
+      "RADS 1121",
+      "RADS 1151",
+      "RADS 1170"
+    ]
+  },
+  "RADS 2322": {
+    "text": "RADS 1221 and RADS 1270 and RADS 2350",
+    "courses": [
+      "RADS 1221",
+      "RADS 1270",
+      "RADS 2350"
+    ]
+  },
+  "RADS 2350": {
+    "text": "RADS 1251 or RADS 1275 or BIOL 2752 and RADS 2322",
+    "courses": [
+      "RADS 1251",
+      "RADS 1275",
+      "BIOL 2752",
+      "RADS 2322"
+    ]
+  },
+  "RADS 2350L": {
+    "text": "RADS 2350",
+    "courses": [
+      "RADS 2350"
+    ]
+  },
+  "RADS 2421": {
+    "text": "RADS 2322 and RADS 2450 and RADS 2470",
+    "courses": [
+      "RADS 2322",
+      "RADS 2450",
+      "RADS 2470"
+    ]
+  },
+  "RADS 2450": {
+    "text": "RADS 2350 and RADS 2421 and RADS 2470",
+    "courses": [
+      "RADS 2350",
+      "RADS 2421",
+      "RADS 2470"
+    ]
+  },
+  "RADS 2450L": {
+    "text": "RADS 2450",
+    "courses": [
+      "RADS 2450"
+    ]
+  },
+  "RADS 2470": {
+    "text": "RADS 1275 or RADS 2350 and RADS 2421 and RADS 2450",
+    "courses": [
+      "RADS 1275",
+      "RADS 2350",
+      "RADS 2421",
+      "RADS 2450"
     ]
   },
   "RADT 1410": {
@@ -12635,6 +14015,34 @@
       "English 102H"
     ]
   },
+  "RESP 1110": {
+    "text": "RESP 1140 and RESP 1110L and RESP 1190 and BIOL 1730",
+    "courses": [
+      "RESP 1140",
+      "RESP 1110L",
+      "RESP 1190",
+      "BIOL 1730"
+    ]
+  },
+  "RESP 1110L": {
+    "text": "RESP 1110",
+    "courses": [
+      "RESP 1110"
+    ]
+  },
+  "RESP 1140": {
+    "text": "RESP 1110 and CHEM 1030",
+    "courses": [
+      "RESP 1110",
+      "CHEM 1030"
+    ]
+  },
+  "RESP 1190": {
+    "text": "RESP 1110",
+    "courses": [
+      "RESP 1110"
+    ]
+  },
   "RESP 1320": {
     "text": "Respiratory Care 1300 (min C) and Respiratory Care 1310 (min C)",
     "courses": [
@@ -12656,6 +14064,35 @@
       "Respiratory Care 1310"
     ]
   },
+  "RESP 200": {
+    "text": "RESP 140 and RESP 150 and RESP 180 and BIO 131",
+    "courses": [
+      "RESP 140",
+      "RESP 150",
+      "RESP 180",
+      "BIO 131"
+    ]
+  },
+  "RESP 210": {
+    "text": "RESP 130 and RESP 140 and RESP 150 and RESP 180 and BIO 131",
+    "courses": [
+      "RESP 130",
+      "RESP 140",
+      "RESP 150",
+      "RESP 180",
+      "BIO 131"
+    ]
+  },
+  "RESP 221": {
+    "text": "RESP 130 and RESP 140 and RESP 150 and RESP 181 and BIO 131",
+    "courses": [
+      "RESP 130",
+      "RESP 140",
+      "RESP 150",
+      "RESP 181",
+      "BIO 131"
+    ]
+  },
   "RESP 2300": {
     "text": "Respiratory Care 1330 (min C)",
     "courses": [
@@ -12663,9 +14100,18 @@
     ]
   },
   "RESP 2310": {
-    "text": "Respiratory Care 2210 (min C)",
+    "text": "RESP 1210 and RESP 2310L and RESP 2330 and RESP 2390",
     "courses": [
-      "Respiratory Care 2210"
+      "RESP 1210",
+      "RESP 2310L",
+      "RESP 2330",
+      "RESP 2390"
+    ]
+  },
+  "RESP 2310L": {
+    "text": "RESP 2310",
+    "courses": [
+      "RESP 2310"
     ]
   },
   "RESP 2320": {
@@ -12685,6 +14131,43 @@
     "text": "Respiratory Care 2950 (min C)",
     "courses": [
       "Respiratory Care 2950"
+    ]
+  },
+  "RESP 2390": {
+    "text": "RESP 1210 and RESP 1290 and RESP 2310 and RESP 2330",
+    "courses": [
+      "RESP 1210",
+      "RESP 1290",
+      "RESP 2310",
+      "RESP 2330"
+    ]
+  },
+  "RESP 2410": {
+    "text": "RESP 2410L and RESP 2470 and RESP 2490",
+    "courses": [
+      "RESP 2410L",
+      "RESP 2470",
+      "RESP 2490"
+    ]
+  },
+  "RESP 2410L": {
+    "text": "RESP 2410",
+    "courses": [
+      "RESP 2410"
+    ]
+  },
+  "RESP 2470": {
+    "text": "RESP 2490 and RESP 2410",
+    "courses": [
+      "RESP 2490",
+      "RESP 2410"
+    ]
+  },
+  "RESP 2490": {
+    "text": "RESP 2410 and RESP 2470",
+    "courses": [
+      "RESP 2410",
+      "RESP 2470"
     ]
   },
   "RESP 2940": {
@@ -12709,6 +14192,177 @@
     "courses": [
       "Respiratory Care 2950",
       "Respiratory Care 2920"
+    ]
+  },
+  "RNUR 1012": {
+    "text": "BIOL 2751 or PSYC 1010 or STAT 1010 and RNUR 1030",
+    "courses": [
+      "BIOL 2751",
+      "PSYC 1010",
+      "STAT 1010",
+      "RNUR 1030"
+    ]
+  },
+  "RNUR 1012C": {
+    "text": "RNUR 1012",
+    "courses": [
+      "RNUR 1012"
+    ]
+  },
+  "RNUR 1012L": {
+    "text": "RNUR 1012",
+    "courses": [
+      "RNUR 1012"
+    ]
+  },
+  "RNUR 1014": {
+    "text": "RNUR 1012 or BIOL 2751 or PSYC 1010 or STAT 1010 and RNUR 1030",
+    "courses": [
+      "RNUR 1012",
+      "BIOL 2751",
+      "PSYC 1010",
+      "STAT 1010",
+      "RNUR 1030"
+    ]
+  },
+  "RNUR 1014C": {
+    "text": "RNUR 1014",
+    "courses": [
+      "RNUR 1014"
+    ]
+  },
+  "RNUR 1014L": {
+    "text": "RNUR 1014",
+    "courses": [
+      "RNUR 1014"
+    ]
+  },
+  "RNUR 1030": {
+    "text": "RNUR 1012 and RNUR 1014 and PSYC 1010 and BIOL 2751",
+    "courses": [
+      "RNUR 1012",
+      "RNUR 1014",
+      "PSYC 1010",
+      "BIOL 2751"
+    ]
+  },
+  "RNUR 1125": {
+    "text": "RNUR 1030 and PSYC 1010 and PSYC 2010 and BIOL 1101 and BIOL 2752 and RNUR 1125L and RNUR 1125C and ENGL 1010",
+    "courses": [
+      "RNUR 1030",
+      "PSYC 1010",
+      "PSYC 2010",
+      "BIOL 1101",
+      "BIOL 2752",
+      "RNUR 1125L",
+      "RNUR 1125C",
+      "ENGL 1010"
+    ]
+  },
+  "RNUR 1125C": {
+    "text": "RNUR 1125",
+    "courses": [
+      "RNUR 1125"
+    ]
+  },
+  "RNUR 1125L": {
+    "text": "RNUR 1125",
+    "courses": [
+      "RNUR 1125"
+    ]
+  },
+  "RNUR 2032": {
+    "text": "RNUR 1125 or RNUR 1054 or RNUR 1060 and BIOL 1550 or CHEM 1030 or RNUR 2072 and RNUR 2032C and RNUR 2032L",
+    "courses": [
+      "RNUR 1125",
+      "RNUR 1054",
+      "RNUR 1060",
+      "BIOL 1550",
+      "CHEM 1030",
+      "RNUR 2072",
+      "RNUR 2032C",
+      "RNUR 2032L"
+    ]
+  },
+  "RNUR 2032C": {
+    "text": "RNUR 2032L",
+    "courses": [
+      "RNUR 2032L"
+    ]
+  },
+  "RNUR 2034": {
+    "text": "RNUR 1125 or RNUR 1054 or RNUR 1060 and RNUR 2034C and RNUR 2034L",
+    "courses": [
+      "RNUR 1125",
+      "RNUR 1054",
+      "RNUR 1060",
+      "RNUR 2034C",
+      "RNUR 2034L"
+    ]
+  },
+  "RNUR 2034C": {
+    "text": "RNUR 2034L",
+    "courses": [
+      "RNUR 2034L"
+    ]
+  },
+  "RNUR 2052": {
+    "text": "RNUR 1125 or RNUR 1054 or RNUR 1060 and BIOL 1550 or CHEM 1030 and RNUR 2052C and RNUR 2052L",
+    "courses": [
+      "RNUR 1125",
+      "RNUR 1054",
+      "RNUR 1060",
+      "BIOL 1550",
+      "CHEM 1030",
+      "RNUR 2052C",
+      "RNUR 2052L"
+    ]
+  },
+  "RNUR 2052C": {
+    "text": "RNUR 2052L",
+    "courses": [
+      "RNUR 2052L"
+    ]
+  },
+  "RNUR 2054": {
+    "text": "RNUR 2052 and BIOL 1550 or CHEM 1030 and RNUR 2054C and RNUR 2054L",
+    "courses": [
+      "RNUR 2052",
+      "BIOL 1550",
+      "CHEM 1030",
+      "RNUR 2054C",
+      "RNUR 2054L"
+    ]
+  },
+  "RNUR 2054C": {
+    "text": "RNUR 2054L",
+    "courses": [
+      "RNUR 2054L"
+    ]
+  },
+  "RNUR 2060": {
+    "text": "RNUR 2032 or RNUR 2034 or RNUR 2052",
+    "courses": [
+      "RNUR 2032",
+      "RNUR 2034",
+      "RNUR 2052"
+    ]
+  },
+  "RNUR 2062": {
+    "text": "RNUR 2060 and RNUR 2032 or RNUR 2034 or RNUR 2052",
+    "courses": [
+      "RNUR 2060",
+      "RNUR 2032",
+      "RNUR 2034",
+      "RNUR 2052"
+    ]
+  },
+  "RNUR 4040": {
+    "text": "RNUR 3010 or RNUR 3020 or RNUR 3040",
+    "courses": [
+      "RNUR 3010",
+      "RNUR 3020",
+      "RNUR 3040"
     ]
   },
   "RUSS 1020": {
@@ -13094,6 +14748,12 @@
       "Anthropology 1010"
     ]
   },
+  "SPAN 1020": {
+    "text": "SPAN 1010",
+    "courses": [
+      "SPAN 1010"
+    ]
+  },
   "SPAN 1021": {
     "text": "Spanish 1011 (min C) or Spanish 1010 (min C)",
     "courses": [
@@ -13118,6 +14778,39 @@
     "text": "SPN 100 (min D) or SPN 100 (min CR)",
     "courses": [
       "SPN 100"
+    ]
+  },
+  "STAT 0086": {
+    "text": "MATH 0072 or MATH 0073",
+    "courses": [
+      "MATH 0072",
+      "MATH 0073"
+    ]
+  },
+  "STAT 1040": {
+    "text": "STAT 1010",
+    "courses": [
+      "STAT 1010"
+    ]
+  },
+  "STAT 9920": {
+    "text": "MATH 0075",
+    "courses": [
+      "MATH 0075"
+    ]
+  },
+  "STNA 1110": {
+    "text": "STNA 1250 and STNA 1150",
+    "courses": [
+      "STNA 1250",
+      "STNA 1150"
+    ]
+  },
+  "STNA 1250": {
+    "text": "STNA 1110 and STNA 1150",
+    "courses": [
+      "STNA 1110",
+      "STNA 1150"
     ]
   },
   "SUR 102": {
@@ -13309,6 +15002,36 @@
       "Surgical Technology 1911",
       "Surgical Technology 1921",
       "Surgical Technology 2851"
+    ]
+  },
+  "SWA 251": {
+    "text": "SWA 111",
+    "courses": [
+      "SWA 111"
+    ]
+  },
+  "SWA 280": {
+    "text": "SWA 285",
+    "courses": [
+      "SWA 285"
+    ]
+  },
+  "SWA 285": {
+    "text": "SWA 100 and SWA 111 and SWA 121 and SWA 131 and SWA 141 and ENGL 100 and ENGL 101",
+    "courses": [
+      "SWA 100",
+      "SWA 111",
+      "SWA 121",
+      "SWA 131",
+      "SWA 141",
+      "ENGL 100",
+      "ENGL 101"
+    ]
+  },
+  "SWA 286": {
+    "text": "SWA 285",
+    "courses": [
+      "SWA 285"
     ]
   },
   "SWK 121": {
@@ -13808,6 +15531,43 @@
       "VC&amp;D-Visual Comm &amp; Design 1431",
       "Visual Com - Photography 1450",
       "Visual Communication 1431"
+    ]
+  },
+  "VCMT 1085": {
+    "text": "VCMT 1050",
+    "courses": [
+      "VCMT 1050"
+    ]
+  },
+  "VCMT 2070": {
+    "text": "VCMT 1050",
+    "courses": [
+      "VCMT 1050"
+    ]
+  },
+  "VCMT 2280": {
+    "text": "VCMT 1280 and ENGL 1010",
+    "courses": [
+      "VCMT 1280",
+      "ENGL 1010"
+    ]
+  },
+  "VCMT 2550": {
+    "text": "VCMT 1550",
+    "courses": [
+      "VCMT 1550"
+    ]
+  },
+  "VCMT 2800": {
+    "text": "VCMT 2850",
+    "courses": [
+      "VCMT 2850"
+    ]
+  },
+  "VCMT 2850": {
+    "text": "VCMT 2800",
+    "courses": [
+      "VCMT 2800"
     ]
   },
   "VCPH 1450": {

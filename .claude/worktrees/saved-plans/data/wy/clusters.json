@@ -1,0 +1,53 @@
+{
+  "$comment": "Multi-college-district cluster detection output (issue #497). Each cluster represents N colleges that share a SIS host or registrable domain — a single bespoke scraper can cover all members.",
+  "state": "wy",
+  "generatedAt": "2026-05-30T00:24:33.003Z",
+  "summary": {
+    "inputCount": 7,
+    "clusterCount": 1,
+    "clusteredCount": 2,
+    "singletonCount": 5
+  },
+  "clusters": [
+    {
+      "id": "wy-edu",
+      "sharedSignal": "wy.edu",
+      "signalKind": "registrable-domain",
+      "memberSlugs": [
+        "laramie-county-community-college",
+        "eastern-wyoming-college"
+      ],
+      "evidence": {
+        "laramie-county-community-college": [
+          "lccc.wy.edu"
+        ],
+        "eastern-wyoming-college": [
+          "ewc.wy.edu"
+        ]
+      },
+      "publicGuestAccess": "unknown"
+    }
+  ],
+  "singletons": [
+    {
+      "slug": "central-wyoming-college",
+      "primaryUrl": "cwc.edu"
+    },
+    {
+      "slug": "northwest-college",
+      "primaryUrl": "nwc.edu"
+    },
+    {
+      "slug": "western-wyoming-community-college",
+      "primaryUrl": "westernwyoming.edu"
+    },
+    {
+      "slug": "casper-college",
+      "primaryUrl": "caspercollege.edu"
+    },
+    {
+      "slug": "northern-wyoming-community-college-district",
+      "primaryUrl": "sheridan.edu"
+    }
+  ]
+}

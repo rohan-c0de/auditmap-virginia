@@ -1,0 +1,19 @@
+<!--
+  Drift fixture #2: a course page with no `div#schedule` at all.
+
+  This simulates the symptoms of an auth-wall login redirect or an error
+  page being returned in place of the real catalog. scrapeSections() must
+  return an empty array rather than producing junk rows from whatever
+  HTML happens to be present.
+-->
+<html>
+<body>
+  <div class="credits">3 credits</div>
+  <div class="endtext">No schedule available for this course.</div>
+
+  <main>
+    <h1>Page not found</h1>
+    <p>The course you requested could not be located. Please <a href="/login">sign in</a> to continue.</p>
+  </main>
+</body>
+</html>

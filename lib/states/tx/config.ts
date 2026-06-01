@@ -29,8 +29,8 @@ const txConfig: StateConfig = {
       "Texas Education Code § 54.365 lets Texas residents aged 65+ take up to 6 credit hours per semester at any state-funded community college without paying tuition, on a space-available basis. Fees still apply; seats are allocated after regular registration. Contact your college's registrar for the timing.",
   },
 
-  transferSupported: false,
-  popularCourses: [],
+  transferSupported: true,
+  popularCourses: ["ENGL 1301", "MATH 1314", "ENGL 1302", "HIST 1301", "GOVT 2305", "EDUC 1300"],
   defaultZip: "77002",
   defaultZipCity: "Houston",
 
@@ -113,9 +113,107 @@ const txConfig: StateConfig = {
         scripts: ["scripts/tx/scrape-howard.ts"],
         runner: "http",
       },
+      // Vernon College + Victoria College — two standalone Banner SSB 9
+      // instances with public guest access. Vernon serves SSB at the root
+      // domain (www.vernoncollege.edu) rather than the usual subdomain.
+      {
+        scripts: ["scripts/tx/scrape-banner-ssb.ts"],
+        runner: "http",
+      },
+      // Panola College — standard Jenzabar StudentRegistration portlet
+      // (public Everyone.jnz path, uses #stuRegTermSelect). Driven by the
+      // shared template at scripts/lib/scrape-jenzabar.ts.
+      {
+        scripts: ["scripts/tx/scrape-jenzabar.ts"],
+        runner: "playwright",
+      },
+      // Paris Jr, NCTC, Texarkana — Jenzabar ASP.NET WebForms variant
+      // (`pg0$V$ddlTerm` + `pg0$V$btnSearch`, letter-chunk pager). Driven
+      // by a new shared template at scripts/lib/scrape-jenzabar-webforms.ts
+      // that generalizes the existing bespoke Kilgore scraper.
+      {
+        scripts: ["scripts/tx/scrape-jenzabar-webforms.ts"],
+        runner: "playwright",
+      },
+      // Collin County Community College District — a custom Azure App
+      // Service REST API at coursebook-collin-api.azurewebsites.net/sections
+      // powers the public class-schedule SPA. Workday-flavored JSON; no
+      // auth, paginated 10 items/page (server caps explicit pageSize to
+      // 0), ~195 pages, ~1,948 sections. 86% of sections expose a
+      // prerequisite sentence in the Description field, so the scraper
+      // captures prereq_text + prereq_courses inline.
+      {
+        scripts: ["scripts/tx/scrape-collin.ts"],
+        runner: "http",
+      },
+      // Clarendon College — bespoke ASP.NET WebForms class search at
+      // ci.clarendoncollege.edu. Sparse data: dept, course nbr, type,
+      // section, title, credits, status, instructor — no CRN, no meeting
+      // days/times, no seats. Course-identity + instructor data still has
+      // planner value. ~205 sections per cron tick.
+      {
+        scripts: ["scripts/tx/scrape-clarendon.ts"],
+        runner: "playwright",
+      },
+      // Lone Star College System (~93k students). Guest auto-POST to
+      // PS Classic CommunityAccess CLASS_SEARCH. Per (campus, subject) loop;
+      // PS Classic enforces a 250-section result cap so the scraper splits
+      // over-limit queries by catalog-nbr halves (≤1999 / ≥2000). 8 campuses,
+      // ~172 subjects → ~1,400 queries / term, ~8h headless run.
+      {
+        scripts: ["scripts/tx/scrape-lsc.ts"],
+        runner: "playwright",
+      },
+      // Cisco College — Power Campus "CC4" widget at
+      // admin.cisco.edu/cc4/web_course_avail.html. One PXwidget AJAX call
+      // per term returns every section as a fixed-16-column HTML table
+      // (Course ID, Term, Title, Days, Times, Dates, Location, Instructor,
+      // Credits, Limit, Enrolled, Campus, Short ID, Notes). ~650 sections
+      // / term, ~1 min per term × 5 terms = ~5 min total run.
+      {
+        scripts: ["scripts/tx/scrape-cisco.ts"],
+        runner: "playwright",
+      },
+      // Northeast Texas Community College — Jenzabar JICS Simple_Query
+      // "Find Courses" portlet at myeagle.ntcc.edu/ICS/Find_Courses/. Each
+      // term has a hidden "Export to Excel" button whose response is
+      // actually an HTML <table> (18 cols, no header) with full schedule
+      // data. The export link returns "(cache empty)" cold — the term's
+      // View Results postback must fire first to prime the server cache.
+      // ~1,800 sections / 5 terms, ~30s per term.
+      {
+        scripts: ["scripts/tx/scrape-netcc.ts"],
+        runner: "playwright",
+      },
+      // Frank Phillips College — per-term, per-campus PDF schedules from
+      // fpctx.edu/student-resources/. Each PDF is text-extractable (no OCR
+      // needed); pdftotext -layout preserves the 12-column schema (Course
+      // Code, Section, Course Name, Credits, Days, Times, Building/Room,
+      // Faculty Last+First, Dates). Summer PDFs use an 11-column variant
+      // with merged Faculty Name. URLs are pinned per term in TERM_PDFS.
+      {
+        scripts: ["scripts/tx/scrape-frank-phillips.ts"],
+        runner: "http",
+      },
     ],
-    // manual-only: transfers — Phase 3 (transfer-equiv) not yet wired up.
-    // manual-only: prereqs — Phase 4.
+    transfers: [
+      { scripts: ["scripts/tx/scrape-transfer-tccns.ts"], runner: "http" },
+    ],
+    prereqs: [
+      // Six TX colleges publish their course catalog via Acalog but don't
+      // expose a public class-section endpoint. The Acalog detail pages
+      // embed a Prerequisites sentence — that's enough to enrich the
+      // semester planner's prereq chain for these colleges' courses.
+      // Brazosport, Dallas, Midland, Tyler Jr, Lamar State Orange,
+      // Wharton County — all six are Imperva-gated; the scraper acquires
+      // WAF cookies via headless Chromium once per base URL.
+      { scripts: ["scripts/tx/scrape-acalog-prereqs.ts"], runner: "playwright" },
+      // Two more TX colleges publish their catalog via CourseLeaf (not
+      // Acalog). San Jacinto uses subject-roll-up pages with
+      // <div class="courseblock"> blocks; Grayson uses per-course detail
+      // pages. The scraper handles both layouts.
+      { scripts: ["scripts/tx/scrape-courseleaf-prereqs.ts"], runner: "http" },
+    ],
     // manual-only: programs — Phase 5+.
   },
 };

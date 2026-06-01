@@ -1,0 +1,46 @@
+{
+  "unitid": 101897,
+  "schoolName": "Northeast Alabama Community College",
+  "state": "AL",
+  "city": "Rainsville",
+  "schoolUrl": "https://www.nacc.edu/",
+  "ownership": 1,
+  "predominantDegree": 1,
+  "fetchedAt": "2026-05-13T02:12:21.350Z",
+  "size": 1629,
+  "shareFirstGeneration": 0.5827759197,
+  "cost": {
+    "tuitionInState": 5040,
+    "tuitionOutOfState": 8910,
+    "attendanceAcademicYear": 11620,
+    "avgNetPricePublic": 2756,
+    "bookSupply": 2400,
+    "roomBoardOffCampus": 9800,
+    "netPriceByIncome": {
+      "0_30000": 1451,
+      "30001_48000": 2130,
+      "48001_75000": 5212,
+      "75001_110000": 7316,
+      "110001_plus": 5648
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.3418,
+    "federalLoanRate": 0.1194,
+    "medianDebtCompleters": 6100
+  },
+  "completion": {
+    "completionRate150nt": 0.5597,
+    "completionRate200nt": 0.5719,
+    "transferRate": 0.0483,
+    "retentionRateFullTime": 0.695,
+    "retentionRatePartTime": 0.6228
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 34913,
+    "median1YrAfterCompletion": 36190,
+    "percentile25_10YrsAfterEntry": 19863,
+    "percentile75_10YrsAfterEntry": 53108,
+    "shareEarningAboveHsGrad": 0.499
+  }
+}

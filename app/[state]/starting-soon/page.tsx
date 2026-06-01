@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import StartingSoonClient from "./StartingSoonClient";
-import { getAllStates } from "@/lib/states/registry";
 import { requireStateConfig } from "@/lib/states/route-helpers";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
@@ -8,8 +7,17 @@ type Props = {
   params: Promise<{ state: string }>;
 };
 
+// On-demand ISR: generate no pages at build (keeps build memory low — see the
+// staticGenerationMaxConcurrency note in next.config). requireStateConfig()
+// 404s invalid states.
+export const dynamicParams = true;
+export const revalidate = 1209600; // 14 days
+// NOTE: this page is time-sensitive ("starting soon" / late-start classes), so
+// a 14-day TTL can show stale sections. The right freshness fix is on-demand
+// revalidation triggered by the scrape pipeline (revalidatePath) rather than a
+// timer — tracked with the build-decoupling follow-up.
 export function generateStaticParams() {
-  return getAllStates().map((s) => ({ state: s.slug }));
+  return [];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

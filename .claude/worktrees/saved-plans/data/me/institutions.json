@@ -1,0 +1,343 @@
+[
+  {
+    "id": "cmcc",
+    "name": "Central Maine Community College",
+    "system": "MCCS",
+    "college_slug": "cmcc",
+    "campuses": [
+      {
+        "name": "Main Campus (Auburn)",
+        "lat": 44.0765,
+        "lng": -70.2291,
+        "address": "1250 Turner St, Auburn, ME 04210"
+      }
+    ],
+    "audit_policy": {
+      "allowed": true,
+      "cost_model": "free_for_seniors",
+      "cost_note": "ME residents 65+ may audit courses tuition-free on a space-available basis.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "Maine residents aged 65+ may audit credit courses at MCCS colleges tuition-free on a space-available basis per MRSA Title 20-A, §12701.",
+          "source_url": "https://www.cmcc.edu"
+        }
+      },
+      "restrictions": [
+        "Space-available basis only",
+        "Some fees may still apply"
+      ],
+      "application_process": {
+        "steps": [
+          "Apply online at cmcc.edu",
+          "Register as a non-degree student",
+          "Register for courses during open enrollment"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "",
+        "contact_email": "",
+        "contact_phone": ""
+      },
+      "source_url": "https://cmcc.edu"
+    },
+    "unitid": 161077
+  },
+  {
+    "id": "emcc",
+    "name": "Eastern Maine Community College",
+    "system": "MCCS",
+    "college_slug": "emcc",
+    "campuses": [
+      {
+        "name": "Main Campus (Bangor)",
+        "lat": 44.8092,
+        "lng": -68.787,
+        "address": "354 Hogan Rd, Bangor, ME 04401"
+      }
+    ],
+    "audit_policy": {
+      "allowed": true,
+      "cost_model": "free_for_seniors",
+      "cost_note": "ME residents 65+ may audit courses tuition-free on a space-available basis.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "Maine residents aged 65+ may audit credit courses at MCCS colleges tuition-free on a space-available basis per MRSA Title 20-A, §12701.",
+          "source_url": "https://www.emcc.edu"
+        }
+      },
+      "restrictions": [
+        "Space-available basis only",
+        "Some fees may still apply"
+      ],
+      "application_process": {
+        "steps": [
+          "Apply online at emcc.edu",
+          "Register as a non-degree student",
+          "Register for courses during open enrollment"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "",
+        "contact_email": "",
+        "contact_phone": ""
+      },
+      "source_url": "https://emcc.edu"
+    },
+    "unitid": 161138
+  },
+  {
+    "id": "kvcc",
+    "name": "Kennebec Valley Community College",
+    "system": "MCCS",
+    "college_slug": "kvcc",
+    "campuses": [
+      {
+        "name": "Fairfield Campus",
+        "lat": 44.5879,
+        "lng": -69.6283,
+        "address": "92 Western Ave, Fairfield, ME 04937"
+      },
+      {
+        "name": "Hinckley Campus",
+        "lat": 44.6453,
+        "lng": -69.6449,
+        "address": "3 Good Will-Hinckley Rd, Hinckley, ME 04944"
+      }
+    ],
+    "audit_policy": {
+      "allowed": true,
+      "cost_model": "free_for_seniors",
+      "cost_note": "ME residents 65+ may audit courses tuition-free on a space-available basis.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "Maine residents aged 65+ may audit credit courses at MCCS colleges tuition-free on a space-available basis per MRSA Title 20-A, §12701.",
+          "source_url": "https://www.kvcc.me.edu"
+        }
+      },
+      "restrictions": [
+        "Space-available basis only",
+        "Some fees may still apply"
+      ],
+      "application_process": {
+        "steps": [
+          "Apply online at kvcc.me.edu",
+          "Register as a non-degree student",
+          "Register for courses during open enrollment"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "",
+        "contact_email": "",
+        "contact_phone": ""
+      },
+      "source_url": "https://kvcc.me.edu"
+    },
+    "unitid": 161192
+  },
+  {
+    "id": "nmcc",
+    "name": "Northern Maine Community College",
+    "system": "MCCS",
+    "college_slug": "nmcc",
+    "campuses": [
+      {
+        "name": "Main Campus (Presque Isle)",
+        "lat": 46.6753,
+        "lng": -68.0087,
+        "address": "33 Edgemont Dr, Presque Isle, ME 04769"
+      }
+    ],
+    "audit_policy": {
+      "allowed": true,
+      "cost_model": "free_for_seniors",
+      "cost_note": "ME residents 65+ may audit courses tuition-free on a space-available basis.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "Maine residents aged 65+ may audit credit courses at MCCS colleges tuition-free on a space-available basis per MRSA Title 20-A, §12701.",
+          "source_url": "https://www.nmcc.edu"
+        }
+      },
+      "restrictions": [
+        "Space-available basis only",
+        "Some fees may still apply"
+      ],
+      "application_process": {
+        "steps": [
+          "Apply online at nmcc.edu",
+          "Register as a non-degree student",
+          "Register for courses during open enrollment"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "",
+        "contact_email": "",
+        "contact_phone": ""
+      },
+      "source_url": "https://nmcc.edu"
+    },
+    "unitid": 161484
+  },
+  {
+    "id": "smcc",
+    "name": "Southern Maine Community College",
+    "system": "MCCS",
+    "college_slug": "smcc",
+    "campuses": [
+      {
+        "name": "South Portland Campus",
+        "lat": 43.6308,
+        "lng": -70.2372,
+        "address": "2 Fort Rd, South Portland, ME 04106"
+      },
+      {
+        "name": "Brunswick Campus",
+        "lat": 43.8962,
+        "lng": -69.935,
+        "address": "29 Sewall St, Brunswick, ME 04011"
+      }
+    ],
+    "audit_policy": {
+      "allowed": true,
+      "cost_model": "free_for_seniors",
+      "cost_note": "ME residents 65+ may audit courses tuition-free on a space-available basis.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "Maine residents aged 65+ may audit credit courses at MCCS colleges tuition-free on a space-available basis per MRSA Title 20-A, §12701.",
+          "source_url": "https://www.smccme.edu"
+        }
+      },
+      "restrictions": [
+        "Space-available basis only",
+        "Some fees may still apply"
+      ],
+      "application_process": {
+        "steps": [
+          "Apply online at smccme.edu",
+          "Register as a non-degree student",
+          "Register for courses during open enrollment"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "",
+        "contact_email": "",
+        "contact_phone": ""
+      },
+      "source_url": "https://smccme.edu"
+    },
+    "unitid": 161545
+  },
+  {
+    "id": "wccc",
+    "name": "Washington County Community College",
+    "system": "MCCS",
+    "college_slug": "wccc",
+    "campuses": [
+      {
+        "name": "Main Campus (Calais)",
+        "lat": 45.1677,
+        "lng": -67.2513,
+        "address": "One College Dr, Calais, ME 04619"
+      }
+    ],
+    "audit_policy": {
+      "allowed": true,
+      "cost_model": "free_for_seniors",
+      "cost_note": "ME residents 65+ may audit courses tuition-free on a space-available basis.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "Maine residents aged 65+ may audit credit courses at MCCS colleges tuition-free on a space-available basis per MRSA Title 20-A, §12701.",
+          "source_url": "https://www.wccc.me.edu"
+        }
+      },
+      "restrictions": [
+        "Space-available basis only",
+        "Some fees may still apply"
+      ],
+      "application_process": {
+        "steps": [
+          "Apply online at wccc.me.edu",
+          "Register as a non-degree student",
+          "Register for courses during open enrollment"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "",
+        "contact_email": "",
+        "contact_phone": ""
+      },
+      "source_url": "https://wccc.me.edu"
+    },
+    "unitid": 161581
+  },
+  {
+    "id": "yccc",
+    "name": "York County Community College",
+    "system": "MCCS",
+    "college_slug": "yccc",
+    "campuses": [
+      {
+        "name": "Main Campus (Wells)",
+        "lat": 43.3189,
+        "lng": -70.617,
+        "address": "112 College Dr, Wells, ME 04090"
+      }
+    ],
+    "audit_policy": {
+      "allowed": true,
+      "cost_model": "free_for_seniors",
+      "cost_note": "ME residents 65+ may audit courses tuition-free on a space-available basis.",
+      "eligibility": {
+        "minimum_age": 18,
+        "residency_required": false,
+        "senior_discount": {
+          "available": true,
+          "age_threshold": 65,
+          "cost": "free",
+          "notes": "Maine residents aged 65+ may audit credit courses at MCCS colleges tuition-free on a space-available basis per MRSA Title 20-A, §12701.",
+          "source_url": "https://www.yccc.edu"
+        }
+      },
+      "restrictions": [
+        "Space-available basis only",
+        "Some fees may still apply"
+      ],
+      "application_process": {
+        "steps": [
+          "Apply online at yccc.edu",
+          "Register as a non-degree student",
+          "Register for courses during open enrollment"
+        ],
+        "timing": "Register during the normal enrollment period",
+        "form_url": "",
+        "contact_email": "",
+        "contact_phone": ""
+      },
+      "source_url": "https://yccc.edu"
+    },
+    "unitid": 420440
+  }
+]

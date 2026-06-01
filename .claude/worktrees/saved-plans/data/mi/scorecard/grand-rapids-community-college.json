@@ -1,0 +1,46 @@
+{
+  "unitid": 170055,
+  "schoolName": "Grand Rapids Community College",
+  "state": "MI",
+  "city": "Grand Rapids",
+  "schoolUrl": "https://www.grcc.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-13T02:13:29.867Z",
+  "size": 10698,
+  "shareFirstGeneration": 0.4142663504,
+  "cost": {
+    "tuitionInState": 4179,
+    "tuitionOutOfState": 12219,
+    "attendanceAcademicYear": 15658,
+    "avgNetPricePublic": 8621,
+    "bookSupply": 616,
+    "roomBoardOffCampus": 9227,
+    "netPriceByIncome": {
+      "0_30000": 7373,
+      "30001_48000": 7292,
+      "48001_75000": 8362,
+      "75001_110000": 11582,
+      "110001_plus": 14013
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2861,
+    "federalLoanRate": 0.1415,
+    "medianDebtCompleters": 9000
+  },
+  "completion": {
+    "completionRate150nt": 0.2113,
+    "completionRate200nt": 0.2645,
+    "transferRate": 0.2034,
+    "retentionRateFullTime": 0.5913,
+    "retentionRatePartTime": 0.4961
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 38377,
+    "median1YrAfterCompletion": 38948,
+    "percentile25_10YrsAfterEntry": 19532,
+    "percentile75_10YrsAfterEntry": 56633,
+    "shareEarningAboveHsGrad": 0.567
+  }
+}

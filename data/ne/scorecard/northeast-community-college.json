@@ -1,0 +1,46 @@
+{
+  "unitid": 181491,
+  "schoolName": "Northeast Community College",
+  "state": "NE",
+  "city": "Norfolk",
+  "schoolUrl": "https://northeast.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-06-01T00:08:48.227Z",
+  "size": 2387,
+  "shareFirstGeneration": 0.3992762364,
+  "cost": {
+    "tuitionInState": 3840,
+    "tuitionOutOfState": 5130,
+    "attendanceAcademicYear": 14437,
+    "avgNetPricePublic": 8544,
+    "bookSupply": 1144,
+    "roomBoardOffCampus": 8584,
+    "netPriceByIncome": {
+      "0_30000": 5505,
+      "30001_48000": 6546,
+      "48001_75000": 7127,
+      "75001_110000": 11287,
+      "110001_plus": 12780
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.163,
+    "federalLoanRate": 0.1264,
+    "medianDebtCompleters": 11000
+  },
+  "completion": {
+    "completionRate150nt": 0.558,
+    "completionRate200nt": 0.5627,
+    "transferRate": 0.1261,
+    "retentionRateFullTime": 0.7483,
+    "retentionRatePartTime": 0.4167
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 42634,
+    "median1YrAfterCompletion": 38909,
+    "percentile25_10YrsAfterEntry": 26330,
+    "percentile75_10YrsAfterEntry": 60827,
+    "shareEarningAboveHsGrad": 0.628
+  }
+}

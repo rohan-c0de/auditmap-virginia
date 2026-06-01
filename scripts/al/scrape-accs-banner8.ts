@@ -25,7 +25,6 @@
  *   SUSCC  southern-union-state-community-college           [has data]
  *   CACC   coastal-alabama-community-college                [has data]
  *   JSCC   jefferson-state-community-college
- *   WSCC   george-c-wallace-state-community-college-hanceville
  *   TSCC   h-councill-trenholm-state-community-college
  *   NWSCC  northwest-shoals-community-college
  *   LBWCC  lurleen-b-wallace-community-college
@@ -63,7 +62,11 @@ const HOSTS: Record<string, string> = {
   "southern-union-state-community-college": `${BASE}/SUSCC`,
   // Newly mapped (no prior course data):
   "jefferson-state-community-college": `${BASE}/JSCC`,
-  "george-c-wallace-state-community-college-hanceville": `${BASE}/WSCC`,
+  // george-c-wallace-state-community-college-hanceville moved to OneACCS
+  // Banner SSB 9 (scrape-accs-banner-ssb9.ts) — wallacestate.edu's official
+  // "Find Classes" link now points to reg-prod.ec.accs.edu?mepCode=WSCC, and
+  // this Banner 8 PROD/WSCC endpoint returns 503. Same migration pattern as
+  // LBWCC. Moved 2026-05-30.
   "h-councill-trenholm-state-community-college": `${BASE}/TSCC`,
   "northwest-shoals-community-college": `${BASE}/NWSCC`,
   // lurleen-b-wallace-community-college moved to OneACCS Banner SSB 9

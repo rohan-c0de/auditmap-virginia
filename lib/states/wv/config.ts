@@ -23,7 +23,7 @@ const wvConfig: StateConfig = {
   // No transfer data yet — Phase 3. WV does not appear to run a unified
   // state articulation portal; expect a per-receiving-university or
   // CollegeTransfer.Net approach.
-  transferSupported: false,
+  transferSupported: true,
   popularCourses: ["ENGL 101", "MATH 121", "BIOL 101", "PSYC 101", "HIST 101", "SOCI 101"],
   defaultZip: "25301",
   defaultZipCity: "Charleston",
@@ -56,20 +56,31 @@ const wvConfig: StateConfig = {
   ],
   scrapers: {
     courses: [
-      // Eastern WV — WordPress + PDF schedule. PoC for issue #456 cluster #3.
-      // Auto-discovers term PDFs from the WP listing page and parses each
-      // via `pdftotext -layout` (poppler).
+      // Eastern WV — WordPress + PDF schedule.
       { scripts: ["scripts/wv/scrape-eastern-wv.ts"], runner: "http" },
-      // manual-only: 3 other WV colleges (blue-ridge, bridgevalley,
-      // southern-wv) — each needs its own scraper. Eastern WV is the
-      // cleanest WP+PDF example; replicate the pattern per-college.
+      // Mountwest CTC — Banner SSB 9 at xemctcprod.wvnet.edu (public, no WAF).
+      { scripts: ["scripts/wv/scrape-mountwest.ts"], runner: "http" },
+      // WVU at Parkersburg — custom XML schedule at schedules.wvup.edu.
+      { scripts: ["scripts/wv/scrape-wvup.ts"], runner: "http" },
+      // manual-only: blueridge — JS-rendered WP schedule, data source unknown
+      // manual-only: bridgevalley, pierpont, southern — Ellucian Experience SSO
+      // manual-only: newriver — Banner SSB but visual CAPTCHA (sgcaptcha WAF)
+      // manual-only: wvncc — Pathify SAML portal, no public SIS endpoint
     ],
-    // Prereqs come from whatever inline text the scrapers expose — Eastern WV's
-    // PDFs don't carry prereqs, but the aggregator is harmless for an empty
-    // state and lights up automatically once colleges with prereqs land.
-    prereqs: { source: "aggregate-from-courses" },
-    // manual-only: transfers — no WV statewide articulation portal; future
-    // work is per-receiving-university or CollegeTransfer.Net (WVU, Marshall).
+    prereqs: [
+      // Six WV Acalog catalogs — WAF bypass via Playwright. Covers Pierpont,
+      // BridgeValley, Bluefield State, WV Northern, Southern WV, New River.
+      { scripts: ["scripts/wv/scrape-catalog-prereqs.ts"], runner: "http" },
+    ],
+    transfers: [
+      // No WV statewide articulation portal (HEPC's is outcomes-based, not
+      // course-level). Marshall University publishes a public equivalency tool
+      // (mubert.marshall.edu/transfer) covering 8 of WV's 9 CCs. Single
+      // receiver for now — WVU's data is behind a DegreeWorks SPA and
+      // Fairmont/Shepherd's CollegeSource TES public view 403s non-browser
+      // clients; both are documented follow-ups.
+      { scripts: ["scripts/wv/scrape-transfer-marshall.ts"], runner: "http" },
+    ],
     // manual-only: programs — Phase 5+.
   },
 };

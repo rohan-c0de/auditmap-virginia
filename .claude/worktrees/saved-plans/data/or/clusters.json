@@ -1,0 +1,99 @@
+{
+  "$comment": "Multi-college-district cluster detection output (issue #497). Each cluster represents N colleges that share a SIS host or registrable domain — a single bespoke scraper can cover all members.",
+  "state": "or",
+  "generatedAt": "2026-05-24T02:54:18Z",
+  "summary": {
+    "inputCount": 17,
+    "clusterCount": 0,
+    "clusteredCount": 0,
+    "singletonCount": 17
+  },
+  "clusters": [],
+  "singletons": [
+    {
+      "slug": "chemeketa-community-college",
+      "name": "Chemeketa Community College",
+      "primaryUrl": "chemeketa.edu"
+    },
+    {
+      "slug": "mt-hood-community-college",
+      "name": "Mt Hood Community College",
+      "primaryUrl": "mhcc.edu"
+    },
+    {
+      "slug": "blue-mountain-community-college",
+      "name": "Blue Mountain Community College",
+      "primaryUrl": "bluecc.edu"
+    },
+    {
+      "slug": "central-oregon-community-college",
+      "name": "Central Oregon Community College",
+      "primaryUrl": "cocc.edu"
+    },
+    {
+      "slug": "clackamas-community-college",
+      "name": "Clackamas Community College",
+      "primaryUrl": "clackamas.edu"
+    },
+    {
+      "slug": "clatsop-community-college",
+      "name": "Clatsop Community College",
+      "primaryUrl": "clatsopcc.edu"
+    },
+    {
+      "slug": "lane-community-college",
+      "name": "Lane Community College",
+      "primaryUrl": "lanecc.edu"
+    },
+    {
+      "slug": "linn-benton-community-college",
+      "name": "Linn-Benton Community College",
+      "primaryUrl": "linnbenton.edu"
+    },
+    {
+      "slug": "portland-community-college",
+      "name": "Portland Community College",
+      "primaryUrl": "pcc.edu"
+    },
+    {
+      "slug": "rogue-community-college",
+      "name": "Rogue Community College",
+      "primaryUrl": "roguecc.edu"
+    },
+    {
+      "slug": "southwestern-oregon-community-college",
+      "name": "Southwestern Oregon Community College",
+      "primaryUrl": "socc.edu"
+    },
+    {
+      "slug": "treasure-valley-community-college",
+      "name": "Treasure Valley Community College",
+      "primaryUrl": "tvcc.cc"
+    },
+    {
+      "slug": "umpqua-community-college",
+      "name": "Umpqua Community College",
+      "primaryUrl": "umpqua.edu"
+    },
+    {
+      "slug": "columbia-gorge-community-college",
+      "name": "Columbia Gorge Community College",
+      "primaryUrl": "cgcc.edu"
+    },
+    {
+      "slug": "tillamook-bay-community-college",
+      "name": "Tillamook Bay Community College",
+      "primaryUrl": "tillamookbaycc.edu"
+    },
+    {
+      "slug": "oregon-coast-community-college",
+      "name": "Oregon Coast Community College",
+      "primaryUrl": "oregoncoastcc.org"
+    },
+    {
+      "slug": "klamath-community-college",
+      "name": "Klamath Community College",
+      "primaryUrl": "klamathcc.edu"
+    }
+  ]
+}

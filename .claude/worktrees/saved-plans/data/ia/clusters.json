@@ -1,0 +1,103 @@
+{
+  "$comment": "Multi-college-district cluster detection output (issue #497). Each cluster represents N colleges that share a SIS host or registrable domain — a single bespoke scraper can cover all members.",
+  "state": "ia",
+  "generatedAt": "2026-05-24T02:52:17Z",
+  "summary": {
+    "inputCount": 16,
+    "clusterCount": 1,
+    "clusteredCount": 2,
+    "singletonCount": 14
+  },
+  "clusters": [
+    {
+      "id": "iavalley-edu",
+      "sharedSignal": "iavalley.edu",
+      "signalKind": "registrable-domain",
+      "memberSlugs": [
+        "ellsworth-community-college",
+        "marshalltown-community-college"
+      ],
+      "evidence": {
+        "ellsworth-community-college": [
+          "ecc.iavalley.edu"
+        ],
+        "marshalltown-community-college": [
+          "mcc.iavalley.edu"
+        ]
+      },
+      "publicGuestAccess": "unknown"
+    }
+  ],
+  "singletons": [
+    {
+      "slug": "des-moines-area-community-college",
+      "name": "Des Moines Area Community College",
+      "primaryUrl": "dmacc.edu"
+    },
+    {
+      "slug": "eastern-iowa-community-college-district",
+      "name": "Eastern Iowa Community College District",
+      "primaryUrl": "eicc.edu"
+    },
+    {
+      "slug": "hawkeye-community-college",
+      "name": "Hawkeye Community College",
+      "primaryUrl": "hawkeyecollege.edu"
+    },
+    {
+      "slug": "indian-hills-community-college",
+      "name": "Indian Hills Community College",
+      "primaryUrl": "indianhills.edu"
+    },
+    {
+      "slug": "iowa-central-community-college",
+      "name": "Iowa Central Community College",
+      "primaryUrl": "iowacentral.edu"
+    },
+    {
+      "slug": "iowa-lakes-community-college",
+      "name": "Iowa Lakes Community College",
+      "primaryUrl": "iowalakes.edu"
+    },
+    {
+      "slug": "iowa-western-community-college",
+      "name": "Iowa Western Community College",
+      "primaryUrl": "iwcc.edu"
+    },
+    {
+      "slug": "kirkwood-community-college",
+      "name": "Kirkwood Community College",
+      "primaryUrl": "kirkwood.edu"
+    },
+    {
+      "slug": "north-iowa-area-community-college",
+      "name": "North Iowa Area Community College",
+      "primaryUrl": "niacc.edu"
+    },
+    {
+      "slug": "northeast-iowa-community-college",
+      "name": "Northeast Iowa Community College",
+      "primaryUrl": "nicc.edu"
+    },
+    {
+      "slug": "northwest-iowa-community-college",
+      "name": "Northwest Iowa Community College",
+      "primaryUrl": "nwicc.edu"
+    },
+    {
+      "slug": "southeastern-community-college",
+      "name": "Southeastern Community College",
+      "primaryUrl": "scciowa.edu"
+    },
+    {
+      "slug": "southwestern-community-college",
+      "name": "Southwestern Community College",
+      "primaryUrl": "swcciowa.edu"
+    },
+    {
+      "slug": "western-iowa-tech-community-college",
+      "name": "Western Iowa Tech Community College",
+      "primaryUrl": "witcc.edu"
+    }
+  ]
+}

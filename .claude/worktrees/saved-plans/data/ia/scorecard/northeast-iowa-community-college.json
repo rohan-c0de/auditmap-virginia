@@ -1,0 +1,46 @@
+{
+  "unitid": 154110,
+  "schoolName": "Northeast Iowa Community College",
+  "state": "IA",
+  "city": "Calmar",
+  "schoolUrl": "https://www.nicc.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-13T02:12:56.954Z",
+  "size": 1697,
+  "shareFirstGeneration": 0.3688362919,
+  "cost": {
+    "tuitionInState": 6780,
+    "tuitionOutOfState": 7770,
+    "attendanceAcademicYear": 17838,
+    "avgNetPricePublic": 11272,
+    "bookSupply": 1200,
+    "roomBoardOffCampus": 9300,
+    "netPriceByIncome": {
+      "0_30000": 9137,
+      "30001_48000": 8176,
+      "48001_75000": 12225,
+      "75001_110000": 15390,
+      "110001_plus": 16353
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2284,
+    "federalLoanRate": 0.1476,
+    "medianDebtCompleters": 12000
+  },
+  "completion": {
+    "completionRate150nt": 0.5144,
+    "completionRate200nt": 0.5249,
+    "transferRate": 0.0731,
+    "retentionRateFullTime": 0.6182,
+    "retentionRatePartTime": 0.5088
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 41306,
+    "median1YrAfterCompletion": 41897,
+    "percentile25_10YrsAfterEntry": 24896,
+    "percentile75_10YrsAfterEntry": 58281,
+    "shareEarningAboveHsGrad": 0.615
+  }
+}

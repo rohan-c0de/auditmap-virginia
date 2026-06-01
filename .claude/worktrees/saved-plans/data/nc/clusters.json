@@ -1,0 +1,84 @@
+{
+  "$comment": "Multi-college-district cluster detection output (issue #497). Each cluster represents N colleges that share a SIS host or registrable domain — a single bespoke scraper can cover all members.",
+  "state": "nc",
+  "generatedAt": "2026-05-24T02:53:38Z",
+  "summary": {
+    "inputCount": 14,
+    "clusterCount": 0,
+    "clusteredCount": 0,
+    "singletonCount": 14
+  },
+  "clusters": [],
+  "singletons": [
+    {
+      "slug": "asheville-buncombe-technical",
+      "name": "Asheville-Buncombe Technical Community College",
+      "primaryUrl": "abtech.edu"
+    },
+    {
+      "slug": "cape-fear",
+      "name": "Cape Fear Community College",
+      "primaryUrl": "catalog.cfcc.edu"
+    },
+    {
+      "slug": "catawba-valley",
+      "name": "Catawba Valley Community College",
+      "primaryUrl": "www.cvcc.edu"
+    },
+    {
+      "slug": "central-piedmont",
+      "name": "Central Piedmont Community College",
+      "primaryUrl": "www.cpcc.edu"
+    },
+    {
+      "slug": "durham-technical",
+      "name": "Durham Technical Community College",
+      "primaryUrl": "www.durhamtech.edu"
+    },
+    {
+      "slug": "fayetteville-technical",
+      "name": "Fayetteville Technical Community College",
+      "primaryUrl": "www.faytechcc.edu"
+    },
+    {
+      "slug": "forsyth-technical",
+      "name": "Forsyth Technical Community College",
+      "primaryUrl": "catalog.forsythtech.edu"
+    },
+    {
+      "slug": "gaston",
+      "name": "Gaston College",
+      "primaryUrl": "www.gaston.edu"
+    },
+    {
+      "slug": "guilford-technical",
+      "name": "Guilford Technical Community College",
+      "primaryUrl": "catalog.gtcc.edu"
+    },
+    {
+      "slug": "johnston",
+      "name": "Johnston Community College",
+      "primaryUrl": "courseleaf.johnstoncc.edu"
+    },
+    {
+      "slug": "pitt",
+      "name": "Pitt Community College",
+      "primaryUrl": "catalog.pittcc.edu"
+    },
+    {
+      "slug": "rowan-cabarrus",
+      "name": "Rowan-Cabarrus Community College",
+      "primaryUrl": "www.rccc.edu"
+    },
+    {
+      "slug": "sandhills",
+      "name": "Sandhills Community College",
+      "primaryUrl": "www.sandhills.edu"
+    },
+    {
+      "slug": "wake-technical",
+      "name": "Wake Technical Community College",
+      "primaryUrl": "www.waketech.edu"
+    }
+  ]
+}

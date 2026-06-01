@@ -1,0 +1,46 @@
+{
+  "unitid": 101161,
+  "schoolName": "Coastal Alabama Community College",
+  "state": "AL",
+  "city": "Bay Minette",
+  "schoolUrl": "www.coastalalabama.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-13T02:12:15.253Z",
+  "size": 4798,
+  "shareFirstGeneration": 0.4351196495,
+  "cost": {
+    "tuitionInState": 5040,
+    "tuitionOutOfState": 8910,
+    "attendanceAcademicYear": 20605,
+    "avgNetPricePublic": 13644,
+    "bookSupply": 2750,
+    "roomBoardOffCampus": 8025,
+    "netPriceByIncome": {
+      "0_30000": 11916,
+      "30001_48000": 11904,
+      "48001_75000": 15603,
+      "75001_110000": 17856,
+      "110001_plus": 19588
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.3567,
+    "federalLoanRate": 0.6436,
+    "medianDebtCompleters": 11000
+  },
+  "completion": {
+    "completionRate150nt": 0.3133,
+    "completionRate200nt": 0.3006,
+    "transferRate": 0.2521,
+    "retentionRateFullTime": 0.6207,
+    "retentionRatePartTime": 0.4441
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 34894,
+    "median1YrAfterCompletion": 47740,
+    "percentile25_10YrsAfterEntry": 18526,
+    "percentile75_10YrsAfterEntry": 54820,
+    "shareEarningAboveHsGrad": 0.524
+  }
+}

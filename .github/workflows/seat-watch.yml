@@ -1,0 +1,56 @@
+name: Seat-watch notifications
+
+# Runs the seat-watch cron — detects 0 → >0 seat transitions for courses
+# in users' saved plans and sends a Resend email (or logs in dry-run).
+#
+# Cadence: every 6 hours, offset 15 min past the hour so it doesn't
+# collide with the scheduled-scrape jobs that land course data updates.
+# Each run is a single node process; no matrix, no parallel state work.
+#
+# Dry-run by default. To send real emails, the repo secret
+# SEAT_WATCH_DRY_RUN must be set to 'false' and the supporting secrets
+# (RESEND_API_KEY, SEAT_WATCH_TOKEN_SECRET, SUPABASE_*) must all be
+# present. The script will not send if dry-run is enabled, even with the
+# email service keys configured.
+#
+# Manual dispatch input lets an operator force a one-off dry-run vs.
+# real run without changing the repo-level secret.
+
+on:
+  schedule:
+    - cron: "15 */6 * * *"  # Every 6h at :15 — 00:15, 06:15, 12:15, 18:15 UTC
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run? (logs only, no emails)"
+        type: choice
+        options: ["true", "false"]
+        default: "true"
+
+permissions:
+  contents: read
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      # The script defaults DRY_RUN to true if unset. workflow_dispatch
+      # input takes precedence; otherwise the repo secret controls it.
+      SEAT_WATCH_DRY_RUN: ${{ inputs.dry_run || secrets.SEAT_WATCH_DRY_RUN || 'true' }}
+      NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+      SEAT_WATCH_TOKEN_SECRET: ${{ secrets.SEAT_WATCH_TOKEN_SECRET }}
+      EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+      NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+      - run: npm ci
+
+      - name: Run seat-watch
+        run: npx tsx scripts/seat-watch.ts

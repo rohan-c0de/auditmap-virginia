@@ -1,0 +1,46 @@
+{
+  "unitid": 121044,
+  "schoolName": "Pasadena City College",
+  "state": "CA",
+  "city": "Pasadena",
+  "schoolUrl": "pasadena.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-23T07:22:06.950Z",
+  "size": 21466,
+  "shareFirstGeneration": 0.5635898978,
+  "cost": {
+    "tuitionInState": 1180,
+    "tuitionOutOfState": 9820,
+    "attendanceAcademicYear": 13677,
+    "avgNetPricePublic": 3864,
+    "bookSupply": 938,
+    "roomBoardOffCampus": 19431,
+    "netPriceByIncome": {
+      "0_30000": 3051,
+      "30001_48000": 2631,
+      "48001_75000": 6003,
+      "75001_110000": 9136,
+      "110001_plus": 11261
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.3112,
+    "federalLoanRate": 0.0091,
+    "medianDebtCompleters": 6651
+  },
+  "completion": {
+    "completionRate150nt": 0.4787,
+    "completionRate200nt": 0.473,
+    "transferRate": 0.086,
+    "retentionRateFullTime": 0.7596,
+    "retentionRatePartTime": 0.4344
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 43937,
+    "median1YrAfterCompletion": 27351,
+    "percentile25_10YrsAfterEntry": 21490,
+    "percentile75_10YrsAfterEntry": 68339,
+    "shareEarningAboveHsGrad": 0.592
+  }
+}

@@ -4,12 +4,14 @@ import { notFound } from "next/navigation";
 import SearchForm from "@/components/SearchForm";
 import StartingSoonCallout from "@/components/StartingSoonCallout";
 import NotifyBanner from "@/components/NotifyBanner";
-import { getNextTerm } from "@/lib/terms";
-import { getAllStates, isValidState } from "@/lib/states/registry";
+import StateContext from "@/components/StateContext";
+import { getCurrentTerm, getNextTerm } from "@/lib/terms";
+import { getAllStates, hasPrereqsCoverage, isValidState } from "@/lib/states/registry";
 import { requireStateConfig } from "@/lib/states/route-helpers";
 import { getArticlesByState, getStateTopicLinks, categoryLabel } from "@/lib/blog";
 import { getQualifyingProgramSlugs, getProgramBySlug } from "@/lib/programs";
 import { loadOnlineData, onlineQualifies } from "@/lib/online";
+import { loadStateSummary } from "@/lib/state-summary";
 
 type Props = {
   params: Promise<{ state: string }>;
@@ -43,19 +45,40 @@ export default async function HomePage({ params }: Props) {
   if (!isValidState(state)) notFound();
   const config = requireStateConfig(state);
   const nextTerm = await getNextTerm(state);
+  // Used by <StateContext> to compute statewide insights against the current
+  // term's data — safe to fail through to no insights, since the renderer
+  // skips when fewer than 2 sentences qualify.
+  const currentTerm = await getCurrentTerm(state).catch(() => null);
   const stateArticles = getArticlesByState(state);
   const topicLinks = getStateTopicLinks(state);
   const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com";
 
   // Phase 4 hub links — only surfaced when underlying pages would render.
-  // Loading both in parallel; failures are non-fatal (page still renders
-  // without the section).
-  const [programSlugs, onlineData] = await Promise.all([
-    getQualifyingProgramSlugs(state).catch(() => [] as string[]),
-    loadOnlineData(state).catch(() => null),
-  ]);
-  const showOnline = onlineQualifies(onlineData);
+  // #946: prefer the precomputed summary manifest so the build does no heavy
+  // data loading. Fall back to the live loaders when the manifest is absent
+  // (e.g. a brand-new state before the precompute step has run) so behavior is
+  // never worse than before. Both loaders are non-fatal (section just hides).
+  const summary = loadStateSummary(state);
+  let programSlugs: string[];
+  let showOnline: boolean;
+  let onlineSections: number;
+  let onlineColleges: number;
+  if (summary) {
+    programSlugs = summary.programSlugs;
+    showOnline = summary.showOnline;
+    onlineSections = summary.onlineSections;
+    onlineColleges = summary.onlineColleges;
+  } else {
+    const [slugs, onlineData] = await Promise.all([
+      getQualifyingProgramSlugs(state).catch(() => [] as string[]),
+      loadOnlineData(state).catch(() => null),
+    ]);
+    programSlugs = slugs;
+    showOnline = onlineQualifies(onlineData);
+    onlineSections = onlineData?.totalSections ?? 0;
+    onlineColleges = onlineData?.totalColleges ?? 0;
+  }
 
   const breadcrumbLd = {
     "@context": "https://schema.org",
@@ -247,6 +270,24 @@ export default async function HomePage({ params }: Props) {
                 Build a weekly schedule across multiple colleges and spot conflicts before you register.
               </p>
             </Link>
+            {/* Degree-path planner card (PR after the sticky-loop sequence).
+                Gated by prereq coverage — same condition as the header nav —
+                so the link only appears when the planner has real data to
+                map. Also acts as an internal link that helps the /[state]/plan
+                page get indexed by Google. */}
+            {hasPrereqsCoverage(state) && (
+              <Link
+                href={`/${state}/plan`}
+                className="group rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 transition hover:border-teal-300 dark:hover:border-teal-700 hover:shadow-sm"
+              >
+                <h3 className="font-semibold text-gray-900 dark:text-slate-100 group-hover:text-teal-600 transition-colors mb-1">
+                  Course Planner
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-slate-400">
+                  Pick courses you want to take and we&apos;ll sequence the prerequisites into semesters. Save your plan and we&apos;ll email you when seats open.
+                </p>
+              </Link>
+            )}
             <Link
               href={`/${state}/colleges`}
               className="group rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 transition hover:border-teal-300 dark:hover:border-teal-700 hover:shadow-sm"
@@ -267,7 +308,7 @@ export default async function HomePage({ params }: Props) {
                   Online Courses
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-slate-400">
-                  {onlineData!.totalSections} online sections across {onlineData!.totalColleges} {config.systemName} colleges this term.
+                  {onlineSections} online sections across {onlineColleges} {config.systemName} colleges this term.
                 </p>
               </Link>
             )}
@@ -283,6 +324,24 @@ export default async function HomePage({ params }: Props) {
           </p>
         </div>
       </section>
+
+      {/* At-a-glance — data-grounded editorial paragraphs about the state's
+          CC system. Renders nothing when fewer than 2 sentences qualify. */}
+      <StateContext
+        state={state}
+        stateName={config.name}
+        systemName={config.systemName}
+        term={currentTerm}
+        seniorWaiver={
+          config.seniorWaiver
+            ? {
+                ageThreshold: config.seniorWaiver.ageThreshold,
+                legalCitation: config.seniorWaiver.legalCitation,
+                bannerDetail: config.seniorWaiver.bannerDetail,
+              }
+            : null
+        }
+      />
 
       {/* Browse by program — only when at least one program qualifies */}
       {programSlugs.length > 0 && (

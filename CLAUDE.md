@@ -82,7 +82,16 @@ Before adding a new rule, recommendation, or reminder anywhere in this repo, ask
 
 CLAUDE.md is always in context; every line here costs per-session tokens. Keep it tight. Use skills and code comments for the bulky stuff.
 
-## Git — branch and worktree awareness
+## Git — ONE PR = ONE WORKTREE (non-negotiable)
+
+**The repo root is shared by ~17 concurrent Claude sessions. Never create a branch, scrape, or commit PR work in the main checkout.** Doing so races every other session: your commits dangle (cherry-pick rescues), the shared `.claude/branch-lock` gets overwritten ("expected someone-else's-branch"), and your freshly-scraped data files get reverted to HEAD mid-run. On 2026-05-30 this silently wiped 3,512 just-scraped IA transfer rows to `[]` between scrape and commit. A worktree has its own HEAD, index, and files — it is immune.
+
+**Start every unit of PR work with a worktree, then stay inside it:**
+```bash
+WT=$(scripts/new-pr-worktree.sh <slug>)   # creates .claude/worktrees/<slug> on claude/<slug> off origin/main,
+cd "$WT"                                    # copies .env.local, seeds branch-lock. Then scrape/commit/push HERE.
+```
+The main checkout stays on `main` and is read-only / coordination only. The `pre-worktree-guard.sh` hook blocks `checkout -b` / branch-switch / `reset --hard` / `clean -f` in the main checkout — if you hit it, you forgot to make a worktree; don't bypass, make one. Inside the worktree the same commands are safe. The hook also blocks **foreign worktree removal** (`git worktree remove <path>` or `rm -rf <path>` where `<path>` is another session's `.claude/worktrees/<slug>`) — that's what aborted my own scrape mid-run on 2026-05-31. Self-removal (caller's cwd is the target) is allowed. Run the suite with `bash .claude/hooks/test-pre-worktree-guard.sh` (18 cases).
 
 **Before touching any file, always confirm which branch you're on and whether a worktree is active.**
 
@@ -100,6 +109,8 @@ This matters because:
 1. `git branch --show-current` — confirm you're on the right base (usually `main`).
 2. `git worktree list` — if any worktrees are listed, confirm the branch you're about to create or check out is not already held by one.
 3. If a worktree holds the target branch, either work inside that worktree's directory or remove it first (`git worktree remove <path>`).
+
+**Long-running orchestrators always run in a worktree, never in the main checkout.** This applies to `auto-add-state` (`scripts/lib/add-state.ts`) and any future cross-cutting >10-min script that writes registry edits or per-state bootstrap files. A concurrent session's `git checkout` in the main checkout will silently clobber in-flight writes while the orchestrator keeps running against its in-memory state — exactly the AR-2026-05-24 failure mode. The hook at `.claude/hooks/pre-orchestrator-guard.sh` blocks `add-state.ts` from the main checkout as a backstop.
 
 Never assume the working directory is the main repo — skills like `blog-pipeline` and `auto-add-state` call `EnterWorktree`, which changes the CWD. After any skill completes, verify `pwd` and `git branch --show-current` before proceeding.
 
@@ -119,9 +130,11 @@ Branch naming convention used so far: `claude/<state>-phase<N><letter>-<topic>` 
 
 Merging is the user's job — they click "Squash and merge" on GitHub. Don't run `gh pr merge` on their behalf unless they explicitly ask.
 
-**Don't push to a PR branch after you've told the user to merge.** GitHub squashes whatever is on the branch at merge-time; a commit pushed seconds after they click Merge becomes an orphaned dead commit on the remote branch and never reaches `main`. This has happened twice (PR #37 and PR #41). If you realize you need one more small edit after saying "go merge", either:
-1. Wait for the merge to land, then open a tiny follow-up PR, or
+**Don't push to a PR branch after you've told the user to merge.** GitHub squashes whatever is on the branch at merge-time; a commit pushed seconds after they click Merge becomes an orphaned dead commit on the remote branch and never reaches `main`. This has happened three times (PRs #37, #41, and #947). If you realize you need one more small edit after saying "go merge", either:
+1. Wait for the merge to land, then open a tiny follow-up PR (cherry-pick onto a fresh branch off `main`), or
 2. Grab the user's attention before they click Merge ("one more commit coming, hold on").
+
+The `pre-push-merged-pr-guard.sh` hook blocks `git push` when the current branch's PR is already MERGED or CLOSED. If you hit the block, don't bypass — cherry-pick onto a fresh worktree off `main` and open a follow-up PR. Run the test suite with `bash .claude/hooks/test-pre-push-merged-pr-guard.sh` (17 cases).
 
 Never push a commit and _hope_ the user hasn't merged yet. That's what caused the lost commits.
 
@@ -170,3 +183,17 @@ Cost: 5–10 minutes. Catches: the things the other two checks miss — interact
 ## Environment quirks
 
 **This is NOT the Next.js you know.** Next 16 has breaking changes vs. training-data-era Next.js. Before writing routing, caching, or server-component code, read the relevant page in `node_modules/next/dist/docs/`. Heed deprecation notices.
+
+**CSS is compiled by the Tailwind CLI, not by Turbopack's PostCSS plugin.** `app/tailwind.source.css` is the file you edit (Tailwind v4 directives, `@plugin`, `@theme inline`, etc.); `app/globals.css` is its compiled output (gitignored). `npm run dev` runs the CLI in `--watch` mode alongside `next dev` via `concurrently`; `npm run build` compiles once then runs `next build`. Layout still imports `./globals.css` so nothing downstream needs to change.
+
+This setup exists because Turbopack's PostCSS worker has a recurring IPC bug with `@tailwindcss/postcss` on this codebase: any `@import "tailwindcss";` in `globals.css` causes the worker subprocess to die during init, every route returns 500 after an ~84-second timeout, and `/var/folders/.../next-panic-*.log` shows `Failed to write app endpoint / [project]/app/globals.css [app-client] (css) / failed to receive message / unexpected end of file / evaluate_webpack_loader failed`. Confirmed against:
+
+  - Tailwind 4.2.2 and 4.3.0 (both fail)
+  - Next 16.2.1 and 16.2.6 (both fail)
+  - Node 22 LTS and Node 25 (both fail — `.nvmrc`/`engines` still pin to LTS to match Vercel, but Node version isn't the cause)
+  - Fresh `.next` cache, raised file-descriptor limit, `--webpack` mode (none help)
+  - Bare globals.css with nothing but `@import "tailwindcss";` (panic still fires; not project-specific code)
+
+Upstream ([vercel/next.js#78407](https://github.com/vercel/next.js/issues/78407) was a related "hangs on large codebases" fix in April 2025, but the bug resurfaced — six open 2026 discussions report the same `failed to receive message` trace, e.g. [#79567](https://github.com/vercel/next.js/discussions/79567), [#89489](https://github.com/vercel/next.js/discussions/89489), [#90859](https://github.com/vercel/next.js/discussions/90859)). Bypassing Turbopack's PostCSS entirely is the only reliable unblock until the upstream fix lands.
+
+**Implication when adding a new Tailwind feature:** if you need to edit `globals.css`, edit `tailwind.source.css` instead — your change won't show up otherwise. The compiled `globals.css` is rewritten on every `dev:css` watcher tick or `build:css` invocation.

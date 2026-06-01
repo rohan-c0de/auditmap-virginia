@@ -1,0 +1,54 @@
+{
+  "$comment": "Multi-college-district cluster detection output (issue #497). Each cluster represents N colleges that share a SIS host or registrable domain — a single bespoke scraper can cover all members.",
+  "state": "ok",
+  "generatedAt": "2026-05-31T18:41:20.967Z",
+  "summary": {
+    "inputCount": 7,
+    "clusterCount": 1,
+    "clusteredCount": 2,
+    "singletonCount": 5
+  },
+  "clusters": [
+    {
+      "id": "experience-elluciancloud-com",
+      "sharedSignal": "experience.elluciancloud.com",
+      "signalKind": "shared-sis-host",
+      "memberSlugs": [
+        "oklahoma-city-community-college",
+        "western-oklahoma-state-college"
+      ],
+      "evidence": {
+        "oklahoma-city-community-college": [
+          "experience.elluciancloud.com"
+        ],
+        "western-oklahoma-state-college": [
+          "experience.elluciancloud.com"
+        ]
+      },
+      "publicGuestAccess": "sso-gated",
+      "publicGuestEvidence": "redirected to https://experience.elluciancloud.com/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL (HTTP 404)"
+    }
+  ],
+  "singletons": [
+    {
+      "slug": "carl-albert-state-college",
+      "primaryUrl": "carlalbert.edu"
+    },
+    {
+      "slug": "eastern-oklahoma-state-college",
+      "primaryUrl": "eosc.edu"
+    },
+    {
+      "slug": "redlands-community-college",
+      "primaryUrl": "redlandscc.edu"
+    },
+    {
+      "slug": "murray-state-college",
+      "primaryUrl": "mscok.edu"
+    },
+    {
+      "slug": "rose-state-college",
+      "primaryUrl": "rose.edu"
+    }
+  ]
+}

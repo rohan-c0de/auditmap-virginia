@@ -37,6 +37,21 @@ import orInstitutions from "@/data/or/institutions.json";
 import caInstitutions from "@/data/ca/institutions.json";
 import nvInstitutions from "@/data/nv/institutions.json";
 import azInstitutions from "@/data/az/institutions.json";
+import arInstitutions from "@/data/ar/institutions.json";
+import mnInstitutions from "@/data/mn/institutions.json";
+import laInstitutions from "@/data/la/institutions.json";
+import nmInstitutions from "@/data/nm/institutions.json";
+import sdInstitutions from "@/data/sd/institutions.json";
+import utInstitutions from "@/data/ut/institutions.json";
+import waInstitutions from "@/data/wa/institutions.json";
+import coInstitutions from "@/data/co/institutions.json";
+import ndInstitutions from "@/data/nd/institutions.json";
+import wyInstitutions from "@/data/wy/institutions.json";
+import akInstitutions from "@/data/ak/institutions.json";
+import idInstitutions from "@/data/id/institutions.json";
+import wiInstitutions from "@/data/wi/institutions.json";
+import okInstitutions from "@/data/ok/institutions.json";
+import neInstitutions from "@/data/ne/institutions.json";
 import inInstitutions from "@/data/in/institutions.json";
 
 // Double-cast via `unknown` because the JSON-inferred types narrow some fields
@@ -79,6 +94,21 @@ const REGISTRY: Record<string, Institution[]> = {
   ca: caInstitutions as unknown as Institution[],
   nv: nvInstitutions as unknown as Institution[],
   az: azInstitutions as unknown as Institution[],
+  ar: arInstitutions as unknown as Institution[],
+  mn: mnInstitutions as unknown as Institution[],
+  la: laInstitutions as unknown as Institution[],
+  nm: nmInstitutions as unknown as Institution[],
+  sd: sdInstitutions as unknown as Institution[],
+  ut: utInstitutions as unknown as Institution[],
+  wa: waInstitutions as unknown as Institution[],
+  co: coInstitutions as unknown as Institution[],
+  nd: ndInstitutions as unknown as Institution[],
+  wy: wyInstitutions as unknown as Institution[],
+  ak: akInstitutions as unknown as Institution[],
+  id: idInstitutions as unknown as Institution[],
+  wi: wiInstitutions as unknown as Institution[],
+  ok: okInstitutions as unknown as Institution[],
+  ne: neInstitutions as unknown as Institution[],
   in: inInstitutions as unknown as Institution[],
 };
 

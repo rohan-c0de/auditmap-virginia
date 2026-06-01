@@ -1,0 +1,78 @@
+{
+  "$comment": "Aggregate platform-distribution snapshot from the fingerprint sweep performed for issue #289. Per-state platform counts only — per-college URL/evidence detail is regenerated on demand by re-running scripts/lib/fingerprint-state-sweep.ts (output goes to tmp/sweep-results.json, gitignored). Reason: the per-college blob is 224K and changes whenever a college migrates SIS, while these aggregates are stable enough to use as the build-decision input documented in the issue. ut/wa/wi/wv/wy were skipped during the original sweep due to an IPEDS API outage; ca was deliberately skipped as too large to fingerprint cheaply and not relevant to the template-build decision. Re-sweep those 6 when needed.",
+  "generatedAt": "2026-05-09",
+  "scriptVersion": "scripts/lib/fingerprint-state-sweep.ts (PR #299)",
+  "swept": {
+    "productive": ["ak", "al", "ar", "az", "co", "hi", "ia", "id", "il", "in", "ks", "ky", "la", "mi", "mn", "mo", "ms", "mt", "nd", "ne", "nm", "nv", "oh", "ok", "or", "sd", "tx"],
+    "skipped": {
+      "ca": "deliberately skipped — ~150 colleges, not relevant to the build-template decision",
+      "ut": "IPEDS API outage during sweep — re-run when API recovers",
+      "wa": "IPEDS API outage during sweep — re-run when API recovers",
+      "wi": "IPEDS API outage during sweep — re-run when API recovers",
+      "wv": "IPEDS API outage during sweep — re-run when API recovers",
+      "wy": "IPEDS API outage during sweep — re-run when API recovers"
+    }
+  },
+  "perState": {
+    "ak": { "totalColleges": 1, "platforms": { "custom": 1 } },
+    "al": { "totalColleges": 23, "platforms": { "custom": 10, "banner-ssb-9": 7, "auth-gated": 2, "banner-8": 2, "acalog": 1, "unknown": 1 } },
+    "ar": { "totalColleges": 14, "platforms": { "custom": 9, "colleague": 2, "unknown": 1, "acalog": 1, "jenzabar": 1 } },
+    "az": { "totalColleges": 21, "platforms": { "unknown": 9, "banner-ssb-9": 3, "colleague": 2, "acalog": 2, "custom": 2, "coursedog": 2, "jenzabar": 1 } },
+    "co": { "totalColleges": 15, "platforms": { "banner-8": 7, "acalog": 3, "unknown": 2, "custom": 2, "banner-ssb-9": 1 } },
+    "hi": { "totalColleges": 6, "platforms": { "unknown": 2, "banner-ssb-9": 2, "ellucian-experience": 1, "custom": 1 } },
+    "ia": { "totalColleges": 16, "platforms": { "custom": 7, "unknown": 3, "jenzabar": 3, "colleague": 2, "banner-ssb-9": 1 } },
+    "id": { "totalColleges": 4, "platforms": { "colleague": 2, "auth-gated": 1, "banner-8": 1 } },
+    "il": { "totalColleges": 48, "platforms": { "custom": 19, "colleague": 14, "jenzabar": 4, "banner-ssb-9": 3, "coursedog": 2, "unknown": 2, "peoplesoft": 1, "ellucian-experience": 1, "webadvisor": 1, "auth-gated": 1 } },
+    "in": { "totalColleges": 1, "platforms": { "auth-gated": 1 } },
+    "ks": { "totalColleges": 24, "platforms": { "jenzabar": 7, "custom": 5, "colleague": 4, "banner-ssb-9": 4, "unknown": 3, "auth-gated": 1 } },
+    "ky": { "totalColleges": 16, "platforms": { "peoplesoft": 16 } },
+    "la": { "totalColleges": 12, "platforms": { "custom": 7, "acalog": 2, "banner-ssb-9": 1, "coursedog": 1, "courseleaf": 1 } },
+    "mi": { "totalColleges": 31, "platforms": { "colleague": 10, "jenzabar": 6, "banner-ssb-9": 5, "custom": 3, "coursedog": 2, "acalog": 2, "auth-gated": 1, "unknown": 1, "ellucian-experience": 1 } },
+    "mn": { "totalColleges": 28, "platforms": { "custom": 17, "banner-ssb-9": 4, "acalog": 3, "workday": 3, "jenzabar": 1 } },
+    "mo": { "totalColleges": 13, "platforms": { "jenzabar": 3, "custom": 3, "banner-ssb-9": 3, "colleague": 3, "acalog": 1 } },
+    "ms": { "totalColleges": 15, "platforms": { "custom": 5, "unknown": 3, "colleague": 2, "banner-ssb-9": 2, "acalog": 2, "jenzabar": 1 } },
+    "mt": { "totalColleges": 10, "platforms": { "custom": 6, "unknown": 1, "auth-gated": 1, "jenzabar": 1, "acalog": 1 } },
+    "nd": { "totalColleges": 8, "platforms": { "custom": 6, "jenzabar": 2 } },
+    "ne": { "totalColleges": 9, "platforms": { "unknown": 2, "custom": 2, "auth-gated": 2, "jenzabar": 1, "colleague": 1, "acalog": 1 } },
+    "nm": { "totalColleges": 12, "platforms": { "custom": 3, "workday": 2, "banner-ssb-9": 2, "coursedog": 2, "jenzabar": 1, "unknown": 1, "acalog": 1 } },
+    "nv": { "totalColleges": 4, "platforms": { "custom": 2, "coursedog": 1, "acalog": 1 } },
+    "oh": { "totalColleges": 22, "platforms": { "custom": 10, "unknown": 4, "banner-ssb-9": 3, "colleague": 2, "acalog": 1, "jenzabar": 1, "banner-8": 1 } },
+    "ok": { "totalColleges": 13, "platforms": { "custom": 4, "banner-ssb-9": 3, "jenzabar": 2, "colleague": 2, "banner-8": 1, "peoplesoft": 1 } },
+    "or": { "totalColleges": 17, "platforms": { "unknown": 4, "banner-ssb-9": 4, "jenzabar": 4, "custom": 3, "auth-gated": 1, "acalog": 1 } },
+    "sd": { "totalColleges": 6, "platforms": { "jenzabar": 4, "custom": 1, "coursedog": 1 } },
+    "tx": { "totalColleges": 59, "platforms": { "custom": 19, "unknown": 9, "colleague": 8, "jenzabar": 8, "acalog": 6, "banner-ssb-9": 4, "coursedog": 3, "auth-gated": 1, "ellucian-experience": 1 } }
+  },
+  "totals": {
+    "totalCollegesFingerprinted": 448,
+    "byPlatform": {
+      "custom": 147,
+      "colleague": 54,
+      "banner-ssb-9": 52,
+      "jenzabar": 51,
+      "unknown": 48,
+      "acalog": 29,
+      "peoplesoft": 18,
+      "coursedog": 14,
+      "auth-gated": 12,
+      "banner-8": 12,
+      "workday": 5,
+      "ellucian-experience": 4,
+      "webadvisor": 1,
+      "courseleaf": 1
+    },
+    "templateCovered": 118,
+    "untemplated": 123
+  },
+  "decision": {
+    "build": [
+      { "what": "scripts/lib/scrape-jenzabar.ts (template, same shape as banner-ssb / colleague / banner-8)", "why": "51 colleges across 18 states; clears the issue's ≥30 / ≥3 threshold easily; biggest concentrations: tx=8, ks=7, mi=6, il/or/sd=4 each. Likely needs both Jenzabar JICS and the older Course_Schedules.jnz variant — validate against 2-3 colleges from different states before declaring done." },
+      { "what": "Bespoke KCTCS PeopleSoft scraper for KY", "why": "16/16 KY colleges run on a single shared KCTCS PeopleSoft instance — bespoke scraper unblocks the entire state. Not a template; a one-off." },
+      { "what": "Improve orchestrator's manual-TODO output", "why": "147 colleges (33% of swept population) are bespoke 'custom' HTML — no template will help. Make the per-college TODO output actionable so manual work starts faster." }
+    ],
+    "skip": [
+      { "what": "Generic PeopleSoft template", "why": "18 colleges across 3 states; 16 of them are KY/KCTCS sharing one instance. Outside KY, only 2 colleges (ok=1, il=1). Below the ≥40 / ≥3 threshold by a wide margin." },
+      { "what": "Workday template", "why": "5 colleges across 2 states. Heavy SPA, frequently auth-gated. Re-evaluate by hand if needed." },
+      { "what": "acalog / coursedog / courseleaf templates", "why": "Long tail; no individual platform clears the threshold. Acalog (29) is mostly catalog-side, not registration data." }
+    ]
+  }
+}

@@ -1,6 +1,16 @@
 {
   "$comment": "Per-state metadata used by scripts/lib/bootstrap-state.ts to generate Phase 1 files for new states. Complete coverage for the 17 states currently shipping; for unknown states, bootstrap-state falls back to placeholder values and flags the entry as a manual TODO in the orchestrator's summary. Add a new entry here when you ship a new state to extend autonomous coverage.",
   "states": {
+    "ak": {
+      "fullName": "Alaska",
+      "fipsCode": "02",
+      "systemName": "Tribal CC",
+      "systemFullName": "Alaska community colleges",
+      "systemUrl": "https://www.ilisagvik.edu/",
+      "defaultZip": "99723",
+      "defaultZipCity": "Utqiagvik",
+      "seniorWaiver": null
+    },
     "al": {
       "fullName": "Alabama",
       "fipsCode": "01",
@@ -9,6 +19,16 @@
       "systemUrl": "https://www.accs.edu/",
       "defaultZip": "35203",
       "defaultZipCity": "Birmingham",
+      "seniorWaiver": null
+    },
+    "co": {
+      "fullName": "Colorado",
+      "fipsCode": "08",
+      "systemName": "CCCS",
+      "systemFullName": "Colorado Community College System",
+      "systemUrl": "https://cccs.edu/",
+      "defaultZip": "80202",
+      "defaultZipCity": "Denver",
       "seniorWaiver": null
     },
     "ct": {
@@ -99,6 +119,16 @@
       "defaultZipCity": "Des Moines",
       "seniorWaiver": null
     },
+    "id": {
+      "fullName": "Idaho",
+      "fipsCode": "16",
+      "systemName": "Idaho Community Colleges",
+      "systemFullName": "Idaho Community Colleges (overseen by the Idaho State Board of Education)",
+      "systemUrl": "https://boardofed.idaho.gov/",
+      "defaultZip": "83702",
+      "defaultZipCity": "Boise",
+      "seniorWaiver": null
+    },
     "ky": {
       "fullName": "Kentucky",
       "fipsCode": "21",
@@ -107,6 +137,16 @@
       "systemUrl": "https://kctcs.edu/",
       "defaultZip": "40202",
       "defaultZipCity": "Louisville",
+      "seniorWaiver": null
+    },
+    "la": {
+      "fullName": "Louisiana",
+      "fipsCode": "22",
+      "systemName": "LCTCS",
+      "systemFullName": "Louisiana Community and Technical College System",
+      "systemUrl": "https://www.lctcs.edu/",
+      "defaultZip": "70806",
+      "defaultZipCity": "Baton Rouge",
       "seniorWaiver": null
     },
     "ma": {
@@ -197,6 +237,16 @@
       "defaultZipCity": "Raleigh",
       "seniorWaiver": null
     },
+    "ne": {
+      "fullName": "Nebraska",
+      "fipsCode": "31",
+      "systemName": "NCCA",
+      "systemFullName": "Nebraska Community College Association",
+      "systemUrl": "https://nebraskacommunitycolleges.org/",
+      "defaultZip": "68508",
+      "defaultZipCity": "Lincoln",
+      "seniorWaiver": null
+    },
     "nh": {
       "fullName": "New Hampshire",
       "fipsCode": "33",
@@ -222,6 +272,23 @@
         "bannerTitle": "NJ Senior Tuition Waiver",
         "bannerSummary": "Over 65 in NJ? Community college tuition may be waived.",
         "bannerDetail": "New Jersey law allows residents aged 65+ to enroll in NJ community college credit courses tuition-free on a space-available basis."
+      }
+    },
+    "nm": {
+      "fullName": "New Mexico",
+      "fipsCode": "35",
+      "systemName": "NM Community Colleges",
+      "systemFullName": "New Mexico Community Colleges",
+      "systemUrl": "https://hed.nm.gov/",
+      "defaultZip": "87501",
+      "defaultZipCity": "Santa Fe",
+      "seniorWaiver": {
+        "ageThreshold": 65,
+        "legalCitation": "NMSA 1978 § 21-21D (Senior Citizens Reduced Tuition Act; impl. 5.7.19 NMAC)",
+        "description": "New Mexico residents aged 65+ pay $5.00 per credit hour for up to 10 credit hours per semester at NM post-secondary degree-granting institutions, on a space-available basis.",
+        "bannerTitle": "New Mexico Senior Citizens Reduced Tuition",
+        "bannerSummary": "Age 65+ in New Mexico? Pay $5 per credit hour, up to 10 credits per semester.",
+        "bannerDetail": "Under the Senior Citizens Reduced Tuition Act (NMSA 1978 § 21-21D, implemented by 5.7.19 NMAC), New Mexico residents who reach age 65 by the census date may register at the reduced rate of $5.00 per credit hour for up to 10 credit hours per semester, on a space-available basis."
       }
     },
     "nv": {
@@ -283,6 +350,23 @@
         "bannerTitle": "Ohio Program 60",
         "bannerSummary": "Over 60 in Ohio? You can audit classes at state-supported colleges tuition-free.",
         "bannerDetail": "Ohio Revised Code § 3345.27 (Program 60) lets Ohio residents 60+ audit courses at state-assisted institutions tuition-free on a space-available basis. Confirm with each college's registrar."
+      }
+    },
+    "ok": {
+      "fullName": "Oklahoma",
+      "fipsCode": "40",
+      "systemName": "OSRHE",
+      "systemFullName": "Oklahoma State System of Higher Education",
+      "systemUrl": "https://okhighered.org/",
+      "defaultZip": "73102",
+      "defaultZipCity": "Oklahoma City",
+      "seniorWaiver": {
+        "ageThreshold": 65,
+        "legalCitation": "OK Admin Code § 610:35-5-1(g) (OSRHE Senior Citizen waiver)",
+        "description": "Oklahoma residents 65 and older may enroll in undergraduate credit courses at state institutions tuition-free on a space-available basis.",
+        "bannerTitle": "Oklahoma Senior Citizen Tuition Waiver",
+        "bannerSummary": "Over 65 in Oklahoma? Tuition may be waived for credit classes on a space-available basis.",
+        "bannerDetail": "OSRHE policy 35-5-1(g) lets Oklahoma residents 65+ enroll in undergraduate credit courses tuition-free at state colleges on a space-available basis. Confirm specifics with each college's registrar."
       }
     },
     "or": {
@@ -376,6 +460,23 @@
       "defaultZipCity": "Montpelier",
       "seniorWaiver": null
     },
+    "wa": {
+      "fullName": "Washington",
+      "fipsCode": "53",
+      "systemName": "SBCTC",
+      "systemFullName": "Washington State Board for Community and Technical Colleges",
+      "systemUrl": "https://www.sbctc.edu/",
+      "defaultZip": "98101",
+      "defaultZipCity": "Seattle",
+      "seniorWaiver": {
+        "ageThreshold": 60,
+        "legalCitation": "RCW 28B.50.265",
+        "description": "Washington residents aged 60+ may audit community and technical college courses on a space-available basis with tuition waived; a nominal registration fee (typically $5 per quarter) applies.",
+        "bannerTitle": "Washington Senior Tuition Waiver",
+        "bannerSummary": "Over 60 in Washington? Audit community college courses tuition-free on a space-available basis.",
+        "bannerDetail": "Washington law (RCW 28B.50.265) allows residents aged 60+ to audit credit and noncredit courses at any of the 33 SBCTC community and technical colleges on a space-available basis. Tuition is waived; a small registration fee (typically $5 per quarter) applies. Each college sets its own enrollment procedure."
+      }
+    },
     "wv": {
       "fullName": "West Virginia",
       "fipsCode": "54",
@@ -385,19 +486,127 @@
       "defaultZip": "25301",
       "defaultZipCity": "Charleston",
       "seniorWaiver": null
+    },
+    "wy": {
+      "fullName": "Wyoming",
+      "fipsCode": "56",
+      "systemName": "WCCC",
+      "systemFullName": "Wyoming Community College Commission",
+      "systemUrl": "https://www.communitycolleges.wy.edu/",
+      "defaultZip": "82001",
+      "defaultZipCity": "Cheyenne",
+      "seniorWaiver": null
+    },
+    "mn": {
+      "fullName": "Minnesota",
+      "fipsCode": "27",
+      "systemName": "Minnesota State",
+      "systemFullName": "Minnesota State Colleges and Universities",
+      "systemUrl": "https://www.minnstate.edu/",
+      "defaultZip": "55101",
+      "defaultZipCity": "Saint Paul",
+      "seniorWaiver": {
+        "ageThreshold": 62,
+        "legalCitation": "Minn. Stat. § 135A.51",
+        "description": "Minnesota residents aged 62+ may take courses at state colleges and universities for an administrative fee with regular tuition waived, on a space-available basis.",
+        "bannerTitle": "MN Senior Citizen Education Program",
+        "bannerSummary": "Over 62 in Minnesota? Tuition is waived at state colleges (small admin fee applies).",
+        "bannerDetail": "Minnesota law allows residents aged 62+ to take courses at Minnesota State colleges and universities; for-credit enrollment costs $20/credit administrative fee, and audit enrollment is free, on a space-available basis."
+      }
+    },
+    "nd": {
+      "fullName": "North Dakota",
+      "fipsCode": "38",
+      "systemName": "NDUS",
+      "systemFullName": "North Dakota University System",
+      "systemUrl": "https://ndus.edu/",
+      "defaultZip": "58501",
+      "defaultZipCity": "Bismarck",
+      "seniorWaiver": {
+        "ageThreshold": 65,
+        "legalCitation": "N.D.C.C. § 15-10-19.1",
+        "description": "North Dakota law permits residents aged 65+ to audit courses at North Dakota University System institutions tuition-free on a space-available basis.",
+        "bannerTitle": "North Dakota Senior Audit Program",
+        "bannerSummary": "Over 65 in North Dakota? You may be eligible to audit NDUS courses tuition-free.",
+        "bannerDetail": "North Dakota law permits residents aged 65+ to audit courses at North Dakota University System institutions tuition-free on a space-available basis."
+      }
+    },
+    "sd": {
+      "fullName": "South Dakota",
+      "fipsCode": "46",
+      "systemName": "SD Technical & Tribal Colleges",
+      "systemFullName": "South Dakota Technical Colleges & Tribal Colleges",
+      "systemUrl": "https://www.boardofregents.sd.gov/",
+      "defaultZip": "57104",
+      "defaultZipCity": "Sioux Falls",
+      "seniorWaiver": null
+    },
+    "ut": {
+      "fullName": "Utah",
+      "fipsCode": "49",
+      "systemName": "USHE",
+      "systemFullName": "Utah System of Higher Education (community colleges)",
+      "systemUrl": "https://ushe.edu/",
+      "defaultZip": "84130",
+      "defaultZipCity": "Salt Lake City",
+      "seniorWaiver": {
+        "ageThreshold": 62,
+        "legalCitation": "Utah Code 53B-8-104",
+        "description": "Utah residents aged 62 and older may enroll in courses at Utah's public colleges and universities tuition-free on a space-available basis (lab fees and other course fees still apply)."
+      }
     }
   },
   "fipsCodes": {
-    "al": "01", "ak": "02", "az": "04", "ar": "05", "ca": "06",
-    "co": "08", "ct": "09", "de": "10", "dc": "11", "fl": "12",
-    "ga": "13", "hi": "15", "id": "16", "il": "17", "in": "18",
-    "ia": "19", "ks": "20", "ky": "21", "la": "22", "me": "23",
-    "md": "24", "ma": "25", "mi": "26", "mn": "27", "ms": "28",
-    "mo": "29", "mt": "30", "ne": "31", "nv": "32", "nh": "33",
-    "nj": "34", "nm": "35", "ny": "36", "nc": "37", "nd": "38",
-    "oh": "39", "ok": "40", "or": "41", "pa": "42", "ri": "44",
-    "sc": "45", "sd": "46", "tn": "47", "tx": "48", "ut": "49",
-    "vt": "50", "va": "51", "wa": "53", "wv": "54", "wi": "55",
+    "al": "01",
+    "ak": "02",
+    "az": "04",
+    "ar": "05",
+    "ca": "06",
+    "co": "08",
+    "ct": "09",
+    "de": "10",
+    "dc": "11",
+    "fl": "12",
+    "ga": "13",
+    "hi": "15",
+    "id": "16",
+    "il": "17",
+    "in": "18",
+    "ia": "19",
+    "ks": "20",
+    "ky": "21",
+    "la": "22",
+    "me": "23",
+    "md": "24",
+    "ma": "25",
+    "mi": "26",
+    "mn": "27",
+    "ms": "28",
+    "mo": "29",
+    "mt": "30",
+    "ne": "31",
+    "nv": "32",
+    "nh": "33",
+    "nj": "34",
+    "nm": "35",
+    "ny": "36",
+    "nc": "37",
+    "nd": "38",
+    "oh": "39",
+    "ok": "40",
+    "or": "41",
+    "pa": "42",
+    "ri": "44",
+    "sc": "45",
+    "sd": "46",
+    "tn": "47",
+    "tx": "48",
+    "ut": "49",
+    "vt": "50",
+    "va": "51",
+    "wa": "53",
+    "wv": "54",
+    "wi": "55",
     "wy": "56"
   }
 }

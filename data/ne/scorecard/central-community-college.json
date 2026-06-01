@@ -1,0 +1,46 @@
+{
+  "unitid": 180902,
+  "schoolName": "Central Community College",
+  "state": "NE",
+  "city": "Grand Island",
+  "schoolUrl": "https://www.cccneb.edu/",
+  "ownership": 1,
+  "predominantDegree": 1,
+  "fetchedAt": "2026-06-01T00:08:46.411Z",
+  "size": 3353,
+  "shareFirstGeneration": 0.4931573803,
+  "cost": {
+    "tuitionInState": 3360,
+    "tuitionOutOfState": 4800,
+    "attendanceAcademicYear": 14128,
+    "avgNetPricePublic": 7024,
+    "bookSupply": 1500,
+    "roomBoardOffCampus": 9784,
+    "netPriceByIncome": {
+      "0_30000": 5609,
+      "30001_48000": 6217,
+      "48001_75000": 6027,
+      "75001_110000": 9208,
+      "110001_plus": 11829
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.1919,
+    "federalLoanRate": 0.0874,
+    "medianDebtCompleters": 7992
+  },
+  "completion": {
+    "completionRate150nt": 0.4809,
+    "completionRate200nt": 0.4894,
+    "transferRate": 0.1215,
+    "retentionRateFullTime": 0.6879,
+    "retentionRatePartTime": 0.4523
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 39429,
+    "median1YrAfterCompletion": 41713,
+    "percentile25_10YrsAfterEntry": 24228,
+    "percentile75_10YrsAfterEntry": 56430,
+    "shareEarningAboveHsGrad": 0.558
+  }
+}

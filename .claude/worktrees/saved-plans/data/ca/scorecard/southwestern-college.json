@@ -1,0 +1,46 @@
+{
+  "unitid": 123800,
+  "schoolName": "Southwestern College",
+  "state": "CA",
+  "city": "Chula Vista",
+  "schoolUrl": "https://www.swccd.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-05-23T07:22:15.082Z",
+  "size": 18614,
+  "shareFirstGeneration": 0.5653573728,
+  "cost": {
+    "tuitionInState": 1344,
+    "tuitionOutOfState": 10640,
+    "attendanceAcademicYear": 22104,
+    "avgNetPricePublic": 12671,
+    "bookSupply": 1210,
+    "roomBoardOffCampus": 23897,
+    "netPriceByIncome": {
+      "0_30000": 11380,
+      "30001_48000": 11634,
+      "48001_75000": 14332,
+      "75001_110000": 18484,
+      "110001_plus": 20045
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.3582,
+    "federalLoanRate": 0.0522,
+    "medianDebtCompleters": 4500
+  },
+  "completion": {
+    "completionRate150nt": 0.355,
+    "completionRate200nt": 0.4011,
+    "transferRate": 0.0706,
+    "retentionRateFullTime": 0.6995,
+    "retentionRatePartTime": 0.389
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 40060,
+    "median1YrAfterCompletion": 32035,
+    "percentile25_10YrsAfterEntry": 20734,
+    "percentile75_10YrsAfterEntry": 59678,
+    "shareEarningAboveHsGrad": 0.549
+  }
+}

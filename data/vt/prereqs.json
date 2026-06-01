@@ -251,15 +251,6 @@
       "AHS 3043"
     ]
   },
-  "AHS 3180": {
-    "text": "CHE 1031 or BIO 2011 or BIO 2060 or BIO 1030",
-    "courses": [
-      "CHE 1031",
-      "BIO 2011",
-      "BIO 2060",
-      "BIO 1030"
-    ]
-  },
   "AHS 3210": {
     "text": "AHS 2160 and AHS 3210L",
     "courses": [
@@ -2875,10 +2866,13 @@
       "GEY 1050"
     ]
   },
-  "GLB 4610": {
-    "text": "GLB 3810",
+  "GEY 3110": {
+    "text": "GEY 1030 or GEY 1050 or GEY 1111 or ENV 1050",
     "courses": [
-      "GLB 3810"
+      "GEY 1030",
+      "GEY 1050",
+      "GEY 1111",
+      "ENV 1050"
     ]
   },
   "GTS 1040": {
@@ -2998,22 +2992,10 @@
       "ENG 1061"
     ]
   },
-  "INT 1053": {
-    "text": "INT 1051",
-    "courses": [
-      "INT 1051"
-    ]
-  },
   "INT 2860": {
     "text": "CED 0286",
     "courses": [
       "CED 0286"
-    ]
-  },
-  "INT 3054": {
-    "text": "INT 1053",
-    "courses": [
-      "INT 1053"
     ]
   },
   "LAH 1050": {
@@ -3609,6 +3591,13 @@
       "MUS 4872"
     ]
   },
+  "MUS 4750": {
+    "text": "MUS 2125 and MUS 2125L",
+    "courses": [
+      "MUS 2125",
+      "MUS 2125L"
+    ]
+  },
   "MUS 4871": {
     "text": "MUS 4610 and MUS 4872",
     "courses": [
@@ -3630,11 +3619,10 @@
       "NUR 2040"
     ]
   },
-  "NUR 2040": {
-    "text": "NUR 2030 and NUR 2060",
+  "NUR 2043": {
+    "text": "NUR 2030",
     "courses": [
-      "NUR 2030",
-      "NUR 2060"
+      "NUR 2030"
     ]
   },
   "NUR 2045": {
@@ -4283,7 +4271,7 @@
     ]
   },
   "PHY 1052": {
-    "text": "PHY 1051 and PHY 1052L",
+    "text": "PHY 1051 and PHY 1052L and PHY 1052L",
     "courses": [
       "PHY 1051",
       "PHY 1052L"
@@ -4702,9 +4690,9 @@
     ]
   },
   "RSP 2011": {
-    "text": "RSP 2801 and RSP 2013 and RSP 2602",
+    "text": "RSP 2720 and RSP 2013 and RSP 2602",
     "courses": [
-      "RSP 2801",
+      "RSP 2720",
       "RSP 2013",
       "RSP 2602"
     ]
@@ -4721,9 +4709,9 @@
     ]
   },
   "RSP 2013": {
-    "text": "RSP 2801 and RSP 2013L and RSP 2011 and RSP 2602",
+    "text": "RSP 2720 and RSP 2013L and RSP 2011 and RSP 2602",
     "courses": [
-      "RSP 2801",
+      "RSP 2720",
       "RSP 2013L",
       "RSP 2011",
       "RSP 2602"
@@ -4736,9 +4724,9 @@
     ]
   },
   "RSP 2602": {
-    "text": "RSP 2801 and RSP 2011 and RSP 2013",
+    "text": "RSP 2720 and RSP 2011 and RSP 2013",
     "courses": [
-      "RSP 2801",
+      "RSP 2720",
       "RSP 2011",
       "RSP 2013"
     ]
@@ -4759,12 +4747,6 @@
     "courses": [
       "SCI 2210L",
       "SCI 2210"
-    ]
-  },
-  "SCI 2560": {
-    "text": "SCI 2560L",
-    "courses": [
-      "SCI 2560L"
     ]
   },
   "SMT 2470": {
