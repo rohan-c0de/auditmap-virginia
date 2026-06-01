@@ -139,7 +139,9 @@ function parseRow(line: string): Omit<CourseSection, "college_code" | "term"> | 
   // or dates + FEES. Pull the first MM/DD/YYYY date we find from the right
   // side of the row.
   const dateMatches = after.match(/\d{1,2}\/\d{1,2}\/\d{4}/g) ?? [];
-  const start_date = dateMatches.length > 0 ? parseDate(dateMatches[0]) : "";
+  // Index the array directly so noUncheckedIndexedAccess narrows the element
+  // from `string | undefined` to `string` before passing it to parseDate.
+  const start_date = dateMatches[0] ? parseDate(dateMatches[0]) : "";
 
   // Time is typically the field with "-" between two times
   const timeIdx = parts.findIndex((p) => /\d{1,2}:\d{2}\s?[AP]M?-\d{1,2}:\d{2}\s?[AP]M?/.test(p) || p === "-");
