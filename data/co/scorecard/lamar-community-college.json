@@ -1,0 +1,46 @@
+{
+  "unitid": 127389,
+  "schoolName": "Lamar Community College",
+  "state": "CO",
+  "city": "Lamar",
+  "schoolUrl": "https://www.lamarcc.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-06-01T01:58:08.957Z",
+  "size": 400,
+  "shareFirstGeneration": 0.472361809,
+  "cost": {
+    "tuitionInState": 4550,
+    "tuitionOutOfState": 7260,
+    "attendanceAcademicYear": 20044,
+    "avgNetPricePublic": 9161,
+    "bookSupply": 1460,
+    "roomBoardOffCampus": 16785,
+    "netPriceByIncome": {
+      "0_30000": 7513,
+      "30001_48000": 8163,
+      "48001_75000": 10137,
+      "75001_110000": 12389,
+      "110001_plus": 17711
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2911,
+    "federalLoanRate": 0.0858,
+    "medianDebtCompleters": 8750
+  },
+  "completion": {
+    "completionRate150nt": 0.5472,
+    "completionRate200nt": 0.4207,
+    "transferRate": 0.2516,
+    "retentionRateFullTime": 0.5643,
+    "retentionRatePartTime": 0.2424
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 38719,
+    "median1YrAfterCompletion": 27176,
+    "percentile25_10YrsAfterEntry": 20169,
+    "percentile75_10YrsAfterEntry": 58927,
+    "shareEarningAboveHsGrad": 0.508
+  }
+}

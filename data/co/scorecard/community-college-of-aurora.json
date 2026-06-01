@@ -1,0 +1,46 @@
+{
+  "unitid": 126863,
+  "schoolName": "Community College of Aurora",
+  "state": "CO",
+  "city": "Aurora",
+  "schoolUrl": "https://www.ccaurora.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-06-01T01:58:08.514Z",
+  "size": 3250,
+  "shareFirstGeneration": 0.5111925112,
+  "cost": {
+    "tuitionInState": 4470,
+    "tuitionOutOfState": 17070,
+    "attendanceAcademicYear": 17275,
+    "avgNetPricePublic": 8656,
+    "bookSupply": 1460,
+    "roomBoardOffCampus": 16785,
+    "netPriceByIncome": {
+      "0_30000": 6305,
+      "30001_48000": 6611,
+      "48001_75000": 9726,
+      "75001_110000": 12409,
+      "110001_plus": 16700
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.1608,
+    "federalLoanRate": 0.0646,
+    "medianDebtCompleters": 10500
+  },
+  "completion": {
+    "completionRate150nt": 0.3346,
+    "completionRate200nt": 0.359,
+    "transferRate": 0.2,
+    "retentionRateFullTime": 0.6094,
+    "retentionRatePartTime": 0.4013
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 44592,
+    "median1YrAfterCompletion": 38109,
+    "percentile25_10YrsAfterEntry": 23335,
+    "percentile75_10YrsAfterEntry": 66759,
+    "shareEarningAboveHsGrad": 0.611
+  }
+}
