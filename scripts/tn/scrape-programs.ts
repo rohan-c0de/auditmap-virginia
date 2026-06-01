@@ -19,7 +19,7 @@
  *
  * Usage:
  *   npx tsx scripts/tn/scrape-programs.ts
- *   npx tsx scripts/tn/scrape-programs.ts --college pstcc
+ *   npx tsx scripts/tn/scrape-programs.ts --college pellissippi-state
  *   npx tsx scripts/tn/scrape-programs.ts --limit 5     # smoke test
  */
 
@@ -31,7 +31,7 @@ import type { AcalogProgramConfig } from "../lib/scrape-acalog-programs.js";
 
 const COLLEGES: AcalogProgramConfig[] = [
   {
-    collegeSlug: "pstcc",
+    collegeSlug: "pellissippi-state",
     baseUrl: "https://catalog.pstcc.edu",
     catoidFallback: 20,
     programNavoids: [1127, 1140, 1132],
