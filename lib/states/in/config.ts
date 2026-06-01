@@ -62,10 +62,13 @@ const inConfig: StateConfig = {
     // Prereqs are flattened out of the course scrape (prerequisite_text on
     // each section, parsed from the CollegeScheduler course descriptions).
     prereqs: { source: "aggregate-from-courses" },
-    // manual-only: transfers — Indiana's Core Transfer Library / TransferIN
-    // (in.gov/che) is the statewide articulation source but is delivered as
-    // an SPA / wpdatatables-backed table, not yet scraped. Deferred to a
-    // follow-up PR.
+    // Ivy Tech's CollegeTransfer.Net OData record yields in-state equivalencies
+    // to the University of Southern Indiana (~400 direct course pairs).
+    // COVERAGE GAP: CT.Net does not carry Ivy Tech → IU / Purdue / Ball State /
+    // Indiana State, which are the dominant pathways — those live in Purdue's
+    // Banner credit guide and IU's CollegeSource TES public views. A follow-up
+    // PR will add those receivers; this establishes baseline coverage.
+    transfers: [{ scripts: ["scripts/in/scrape-transfer.ts"], runner: "http" }],
     // manual-only: programs — no public catalog matched a templated platform
     // (catalog.ivytech.edu is Acalog); programs discovery deferred.
   },
