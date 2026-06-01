@@ -19,9 +19,9 @@ import {
   loadProgramData,
   qualifies,
   getProgramBySlug,
-  getQualifyingProgramSlugs,
   PROGRAMS,
 } from "@/lib/programs";
+import { loadStateSummary } from "@/lib/state-summary";
 import { loadProgramAcrossColleges, checkCourseAvailability } from "@/lib/programs/requirements";
 import { countRealCourses, programSlug, PLAN_MIN_COURSES } from "@/lib/programs/plan-shared";
 import { computeCourseAvailabilityProfile } from "@/lib/course-stats";
@@ -245,19 +245,17 @@ export default async function ProgramPage(props: PageProps) {
   // qualifies. Builds a topic cluster — both for student comparison
   // (\"how does nursing in NC stack up vs VA, SC, GA?\") and for SEO
   // link equity flowing through topically-related pages.
-  const otherStatesWithThisProgram = (
-    await Promise.all(
-      getAllStates()
-        .filter((s) => s.slug !== state)
-        .map(async (s) => {
-          const slugs = await getQualifyingProgramSlugs(s.slug).catch(
-            () => [] as string[],
-          );
-          return slugs.includes(slug) ? s : null;
-        }),
-    )
-  )
-    .filter((s): s is NonNullable<typeof s> => s !== null)
+  //
+  // Read each state's qualifying-program list from its precomputed summary
+  // manifest (#946) — a synchronous file read — rather than calling
+  // getQualifyingProgramSlugs() live for all ~48 other states. The live path
+  // ran paginated `courses` subject queries for every program in every state
+  // on each render; on a cold serverless instance (empty in-memory cache)
+  // that fan-out blew past the function timeout and 504'd the whole page.
+  // States without a manifest yet are simply omitted from this footer.
+  const otherStatesWithThisProgram = getAllStates()
+    .filter((s) => s.slug !== state)
+    .filter((s) => loadStateSummary(s.slug)?.programSlugs.includes(slug))
     .sort((a, b) => a.name.localeCompare(b.name));
 
   return (
