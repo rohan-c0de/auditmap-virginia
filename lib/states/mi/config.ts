@@ -87,7 +87,21 @@ const miConfig: StateConfig = {
       // MiTransfer.org AJAX portal — 5 major MI universities × 28 CCs, ~155 fetches.
       { scripts: ["scripts/mi/scrape-transfer-mitransfer.ts"], runner: "http" },
     ],
-    // manual-only: programs — Phase 5+.
+    programs: [
+      {
+        // discover-catalogs.ts fingerprints each MI college's catalog platform
+        // → data/mi/catalog-discovery.json; the platform scrapers read it.
+        // Keep ordered — discovery MUST run before the scrapers. Coverage:
+        // 7 plannable colleges (498 programs). Gaps in data/mi/DEFERRED-programs.md.
+        scripts: [
+          "scripts/mi/discover-catalogs.ts",
+          "scripts/mi/scrape-smartcatalogiq-programs.ts",
+          "scripts/mi/scrape-acalog-programs.ts",
+          "scripts/mi/scrape-misc-programs.ts",
+        ],
+        runner: "http",
+      },
+    ],
   },
 };
 
