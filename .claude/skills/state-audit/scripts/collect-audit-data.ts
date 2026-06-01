@@ -212,12 +212,18 @@ function isStale(term: string, threshold: string): boolean {
 function isSuspicious(term: string): boolean {
   const now = new Date();
   const year = now.getFullYear();
-  // Non-standard term codes (like 2027XX)
-  if (!/^\d{4}(FA|SP|SU)$/.test(term)) return true;
-  // More than 1 year in the future
+  // Malformed year, or more than 1 year in the future.
   const termYear = parseInt(term.substring(0, 4), 10);
-  if (termYear > year + 1) return true;
-  return false;
+  if (Number.isNaN(termYear) || termYear > year + 1) return true;
+  // Recognized term codes: 4-digit year + a season, optionally a numeric
+  // summer/winter sub-session marker.
+  //   FA (fall), SP (spring), SU (summer), WI (winter), plus SU1/SU2/WI1.
+  if (/^\d{4}(FA|SP|SU|WI)\d?$/.test(term)) return false;
+  //   Some colleges encode summer/winter sessions as U#/S# (e.g. Wilson CC's
+  //   real 2026U1 summer-session-1 term, 157 sections).
+  if (/^\d{4}(U|S)\d$/.test(term)) return false;
+  // Anything else (2026MAY, 2026F, 2026CSU, 2027XX, …) is non-standard.
+  return true;
 }
 
 // ---------------------------------------------------------------------------
@@ -230,14 +236,21 @@ function gradeCourses(
   courses: AuditResult["courses"],
   ceilingCourseColleges: string[],
 ): GradeResult {
-  // Exempt documented-ceiling colleges from the coverage denominator.
+  // Exempt documented-ceiling colleges from the coverage ratio entirely: a
+  // documented ceiling is genuinely unreachable, so it must count toward
+  // neither the numerator nor the denominator.
+  //   - A ceiling college that is MISSING (the normal case — no public data)
+  //     drops out of the denominator only.
+  //   - A ceiling college that happens to have data drops out of both (neutral).
+  // The previous formula subtracted exempt-AND-missing colleges from the
+  // numerator, but those were never in `coveredColleges` — so documenting a
+  // ceiling *lowered* coverage (e.g. AR's true 12/12=100% was mis-graded
+  // 10/12=83% C; FL 26/26=100% read 24/26=92% B).
   const exemptSet = new Set(ceilingCourseColleges);
+  const exemptMissing = courses.missingColleges.filter((s) => exemptSet.has(s)).length;
+  const exemptCovered = ceilingCourseColleges.length - exemptMissing;
   const adjustedTotal = courses.collegeCount - ceilingCourseColleges.length;
-  const adjustedCovered = courses.coveredColleges - courses.missingColleges
-    .filter((s) => exemptSet.has(s))
-    .length;
-  // (If a ceiling slug isn't actually in missingColleges it doesn't change
-  // covered, but the denominator drops — which only helps coverage.)
+  const adjustedCovered = courses.coveredColleges - exemptCovered;
   const denom = Math.max(1, adjustedTotal);
   const coverage = adjustedCovered / denom;
   const stale = courses.staleTerms.length;
