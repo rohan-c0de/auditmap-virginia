@@ -46,6 +46,16 @@ const mtConfig: StateConfig = {
       { scripts: ["scripts/mt/scrape-banner8.ts"], runner: "http" },
       { scripts: ["scripts/mt/scrape-skc.ts"], runner: "http" },
       { scripts: ["scripts/mt/scrape-cdkc.ts"], runner: "http" },
+      // aaniiih-nakoda-college: Empower-XL (ComSpec) at the non-canonical host
+      // empowerweb-ancollege.empower-xl.com — public ColdFusion CourseCatalog
+      // flow (GET token, POST courseCatalog.cfc GetList → ui-grid HTML), same
+      // shape as ak's Ilisagvik. Cloudflare-fronted, so a browser UA is used.
+      { scripts: ["scripts/mt/scrape-aaniiih-nakoda.ts"], runner: "http" },
+      // highlands-college-of-montana-tech: the 2-year division of Montana Tech.
+      // No host of its own — its courses live in Montana Tech's public Banner
+      // SSB 9 at reg-prod.ec.mtech.edu; the scraper keeps only South Campus
+      // (Highlands) sections, dropping the shared 4-year North Campus.
+      { scripts: ["scripts/mt/scrape-highlands.ts"], runner: "http" },
       // little-big-horn-college: Jenzabar ICS via direct HTTP POST (no browser
       // needed — no EVENTVALIDATION, session cookie + VIEWSTATE sufficient).
       // cloudram.lbhc.edu/ICS — non-canonical host; uses GUID term IDs.
@@ -68,6 +78,26 @@ const mtConfig: StateConfig = {
       { scripts: ["scripts/mt/scrape-transfer-ccn.ts"], runner: "http" },
     ],
     // manual-only: programs — Phase 5+.
+    // DEFERRED-scrapers: fort-peck-community-college — interactive Jenzabar JICS
+    //   at fpcportal.jenzabarcloud.com is auth-gated (empty portlet for guests),
+    //   but term-by-term PDF class schedules are public on Webflow CDN (linked
+    //   from fpcc.edu/academics/academics-resources). Needs a PDF extractor —
+    //   distinct, larger effort than the interactive scrapers above. NOT a
+    //   ceiling (data is public), just deferred.
+  },
+  // stone-child-college runs Empower XL at scc.empower-xl.com but only the
+  // applicationLogin.xhtml page is public — every course-catalog path 404s and
+  // there is no guest catalog link. Genuinely auth-gated, so it's a ceiling
+  // (verified 2026-06). (Contrast aaniiih-nakoda, whose Empower-XL exposes a
+  // public CourseCatalog endpoint and IS scraped above.)
+  documentedCeilings: {
+    courses: [
+      {
+        collegeSlug: "stone-child-college",
+        reason:
+          "Stone Child College runs Empower XL at scc.empower-xl.com, but only /new/EMPOWER/authentication/applicationLogin.xhtml is reachable — every course-catalog path returns 404 and the login page exposes no guest/public catalog link. No public course-section data exists. Verified 2026-06.",
+      },
+    ],
   },
 };
 
