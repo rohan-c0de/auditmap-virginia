@@ -4,13 +4,23 @@ import createMDX from "@next/mdx";
 const nextConfig: NextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   experimental: {
-    // Default is 8 concurrent pages per worker × 3 workers = 24 pages
-    // rendering at once, each making multiple Supabase queries. That
-    // saturates the free-tier connection pool (~15 connections) and
-    // causes "Timed out acquiring connection" / statement_timeout errors
-    // that kill the build. Cap to 2 so total concurrency stays under the
-    // pool limit even with 3 workers (3 × 2 = 6 pages at once).
-    staticGenerationMaxConcurrency: 4,
+    // Two reasons to keep this low:
+    //  1. Supabase pool — default 8 pages/worker × 3 workers = 24 pages at
+    //     once, each running multiple queries, saturates the free-tier pool
+    //     (~15 conns) → "Timed out acquiring connection" build failures.
+    //  2. Memory — each in-flight page loads a state's course/program data;
+    //     several large states (CA 189k sections, TX) rendering at once
+    //     spiked peak RAM past Vercel's 8 GB build machine → OOM (exit 137).
+    //     A prior bump to 4 reintroduced the OOM. At 2, the build still hit
+    //     Supabase pool saturation locally (7 workers × 2 = 14 concurrent
+    //     pages > ~15-conn free-tier pool → "statement timeout" / connection
+    //     resets during static generation). Set to 1 so concurrent in-flight
+    //     pages = worker count, staying under the pool and minimizing RAM.
+    // The high-cardinality + data-heavy per-state pages now generate
+    // on-demand (empty generateStaticParams across course/subject/program/
+    // about/plan/results/starting-soon/programs), so build-time generation
+    // is minimal regardless — this cap is the belt to that suspenders.
+    staticGenerationMaxConcurrency: 1,
   },
   // Explicitly bundle every state's prereqs.json into the serverless
   // functions that PARSE it — only the API routes need the file content.
