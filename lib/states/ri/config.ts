@@ -55,6 +55,7 @@ const riConfig: StateConfig = {
     { slug: "providence-college", names: ["Providence College", "PC"] },
     { slug: "roger-williams", names: ["Roger Williams", "RWU", "Roger Williams University"] },
     { slug: "salve-regina", names: ["Salve Regina", "Salve", "Salve Regina University"] },
+    { slug: "jwu", names: ["JWU", "Johnson & Wales", "Johnson & Wales University", "Johnson and Wales", "Johnson and Wales University"] },
   ],
   scrapers: {
     courses: [{ scripts: ["scripts/ri/scrape-banner8.ts"], runner: "http" }],

@@ -79,6 +79,18 @@ const TARGETS: TESTarget[] = [
     universityName: "Rhode Island College",
     searchTerm: "Community College of Rhode Island",
   },
+  {
+    // Johnson & Wales University (Providence campus) — also publishes a TES
+    // Public View on the same platform. JWU's Providence campus is a major
+    // CCRI transfer destination (hospitality, business, culinary). Salve
+    // Regina's TES URL is technically public but blocked behind AWS WAF
+    // CAPTCHA as of 2026-06; JWU's is not WAF-gated. Same ASP.NET WebForms
+    // + math-CAPTCHA flow as URI/RIC.
+    url: "https://tes.collegesource.com/publicview/TES_publicview01.aspx?rid=145040a7-7365-4840-8a90-b20c0b6ffb26&aid=5c721b0f-0e7e-4e91-9399-06a81322b340",
+    universitySlug: "jwu",
+    universityName: "Johnson & Wales University",
+    searchTerm: "Community College of Rhode Island",
+  },
 ];
 
 const UA =
@@ -626,7 +638,12 @@ async function main() {
         `  ERROR scraping ${target.universityName}: ${(err as Error).message}`
       );
     }
-    await sleep(2000);
+    // 30s cooldown between targets. Empirically tes.collegesource.com's
+    // AWS WAF returns HTTP 405 on back-to-back requests to different
+    // rid/aid pairs from the same IP within ~10s of finishing a long
+    // pagination loop, but lets us through after ~30s. Cheaper than
+    // session rotation.
+    await sleep(30000);
   }
 
   // Filter out no-transfer entries for stats
