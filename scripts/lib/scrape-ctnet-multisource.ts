@@ -31,6 +31,7 @@ import fs from "fs";
 import path from "path";
 import { importTransfersToSupabase } from "./supabase-import.js";
 import { fetchInStateInstitutions } from "./in-state-institutions.js";
+import { mergeTransferRows } from "./transfer-merge.js";
 
 export interface CtnetCollege {
   /** Our internal college slug (matches data/{slug}/institutions.json). */
@@ -323,29 +324,12 @@ export async function scrapeCtnetState(
     return;
   }
 
+  // Preserve rows this run didn't produce (other scrapers in the same state,
+  // or colleges this run failed to reach), keyed by sending-college slug +
+  // receiving university. Shared with the per-state portal scrapers.
+  const merged = mergeTransferRows(slug, all, { log: (m) => console.log(`\n  ${m}`) });
+
   const outPath = path.join(process.cwd(), "data", slug, "transfer-equiv.json");
-  let preserved: TransferMapping[] = [];
-  // Drop only rows we just refreshed: same sending CC slug AND same receiving
-  // university. Mirrors scripts/nh/scrape-transfer.ts merge semantics so a
-  // partial run preserves colleges that weren't re-scraped this time.
-  const ourUniversities = new Set(all.map((m) => m.university));
-  try {
-    const existing = JSON.parse(fs.readFileSync(outPath, "utf-8"));
-    if (Array.isArray(existing)) {
-      preserved = (existing as TransferMapping[]).filter((m) => {
-        const sl = m.notes.match(/^\[([\w-]+)\]/)?.[1];
-        const ownedByThisRun =
-          sl !== undefined && successfulSlugs.has(sl) && ourUniversities.has(m.university);
-        return !ownedByThisRun;
-      });
-    }
-  } catch {
-    // No existing file — fresh start.
-  }
-
-  const merged = [...preserved, ...all];
-  console.log(`\n  Merged: ${preserved.length} preserved + ${all.length} new = ${merged.length} total`);
-
   fs.mkdirSync(path.dirname(outPath), { recursive: true });
   fs.writeFileSync(outPath, JSON.stringify(merged, null, 2) + "\n");
   console.log(`Saved ${merged.length} mappings → ${outPath}`);
