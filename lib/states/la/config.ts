@@ -8,11 +8,17 @@ const laConfig: StateConfig = {
   systemUrl: "https://www.lctcs.edu/",
   collegeCount: 12,
 
-  // No statewide senior-tuition-waiver statute confirmed for Louisiana
-  // community colleges. Each LCTCS institution may offer its own
-  // senior-discount policy; verify with the registrar before relying on
-  // any single citation. Leave null until a system-wide statute is found.
-  seniorWaiver: null,
+  seniorWaiver: {
+    ageThreshold: 55,
+    legalCitation: "La. R.S. 17:1807",
+    description:
+      "Louisiana residents 55+ are exempt from tuition and registration fees at public colleges — including LCTCS community and technical colleges — plus a 50% textbook reduction (La. R.S. 17:1807). The benefit applies only to the extent the legislature appropriates funds (PRIME Fund), so availability can vary year to year; confirm with the college.",
+    bannerTitle: "Louisiana Senior Tuition Exemption (55+)",
+    bannerSummary:
+      "55+ in Louisiana? State law exempts you from tuition and registration fees — subject to annual state funding.",
+    bannerDetail:
+      "Under La. R.S. 17:1807, Louisiana residents aged 55 and older are exempt from tuition and registration fees at any public college or university (including LCTCS community and technical colleges) and receive a 50% reduction on textbook costs, whether in person or online. The exemption applies only if and to the extent the legislature appropriates funds (via the PRIME Fund), with reimbursement to colleges capped at $200 per credit hour — so in practice availability can vary by year. Contact the registrar to confirm the current term's funding before enrolling.",
+  },
 
   transferSupported: true,
   popularCourses: ["ENGL 1010", "MATH 1100", "BIOL 1010", "PSYC 2000", "HIST 1010"],

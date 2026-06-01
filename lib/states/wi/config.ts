@@ -8,13 +8,30 @@ const wiConfig: StateConfig = {
   systemUrl: "https://www.wtcsystem.edu/",
   collegeCount: 16,
 
-  // TODO: research WI senior-waiver statute.
-  // Wisconsin does not have a statewide senior-audit waiver; each WTCS college
-  // sets its own policy. Verify per-college before populating.
-  seniorWaiver: null,
+  seniorWaiver: {
+    ageThreshold: 60,
+    legalCitation:
+      "Wis. Stat. § 38.24(4m) (audit, 60+); § 38.24(1m)(b) (program-fee exemption, 62+)",
+    description:
+      "Wisconsin residents 60+ may audit technical college courses with no auditor's fee, space-available and with instructor approval (Wis. Stat. § 38.24(4m)); residents 62+ are exempt from program fees in vocational-adult programs (§ 38.24(1m)(b)). Material and special-course fees may still apply.",
+    bannerTitle: "Wisconsin Senior Audit — free (60+)",
+    bannerSummary:
+      "60+ in Wisconsin? You can audit technical college courses with no auditor's fee under Wis. Stat. § 38.24.",
+    bannerDetail:
+      "Under Wis. Stat. § 38.24(4m), Wisconsin technical college district boards must let residents aged 60 and older audit a course without paying the auditor's fee, on a space-available basis and with instructor approval. Separately, § 38.24(1m)(b) exempts residents 62 and older from program fees in vocational-adult programs. Auditing means no credit or grade, and material or special-course fees may still apply. Contact your technical college's registrar about enrollment timing.",
+  },
 
   transferSupported: false,
-  popularCourses: [],
+  // Top course codes by section count across the scraped WTCS colleges.
+  // WTCS uses the statewide "DDD-DDD" course-number scheme (e.g. 801-136 =
+  // English Composition I); computed from data/wi/courses.
+  popularCourses: [
+    "COMM 801-136",
+    "MATH 804-134",
+    "SCIL 806-177",
+    "BSCE 809-198",
+    "COMM 801-196",
+  ],
   // Madison Area Technical College ZIP
   defaultZip: "53704",
   defaultZipCity: "Madison",

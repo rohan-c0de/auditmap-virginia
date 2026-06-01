@@ -20,11 +20,17 @@ const idConfig: StateConfig = {
   systemUrl: "https://boardofed.idaho.gov/",
   collegeCount: 4,
 
-  // Idaho Code § 33-2110A allows residents 60+ to audit courses at state
-  // institutions for $5/credit on a space-available basis — that's audit-only
-  // pricing, not a meaningful tuition waiver, so left null until verified
-  // college-by-college with each registrar.
-  seniorWaiver: null,
+  seniorWaiver: {
+    ageThreshold: 60,
+    legalCitation: "Idaho Code § 33-2110A",
+    description:
+      "Idaho residents 60+ may audit courses at state-supported institutions for $5 per credit on a space-available basis (Idaho Code § 33-2110A). That's reduced-cost audit access (no credit/grade), not a full waiver; individual colleges may add their own senior discounts on credit courses — confirm with the registrar.",
+    bannerTitle: "Idaho Senior Audit — $5/credit (60+)",
+    bannerSummary:
+      "60+ in Idaho? You can audit courses for $5 per credit, space-available, under Idaho Code § 33-2110A.",
+    bannerDetail:
+      "Under Idaho Code § 33-2110A, Idaho residents aged 60 and older may register to audit courses at state-supported institutions for $5 per credit hour on a space-available basis. Auditing means no credit or grade. Individual colleges (CSI, CWI, NIC, CEI) may offer their own additional senior discounts on for-credit courses; contact the registrar for specifics. Course and lab fees may still apply.",
+  },
 
   transferSupported: false,
   popularCourses: ["ENGL 101", "ENGL 102", "MATH 143", "MATH 123", "PSYC 101", "COMM 101"],
