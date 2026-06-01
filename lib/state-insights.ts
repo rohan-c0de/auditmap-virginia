@@ -15,6 +15,9 @@ import { getStateAggregates, type StateScorecardAggregates } from "@/lib/scoreca
 import { getArticlesByState } from "@/lib/blog";
 import { supabase } from "@/lib/supabase";
 import type { CourseSection } from "@/lib/types";
+import type { TransferDestRollup } from "@/scripts/build-transfer-dest-rollup";
+import * as fs from "node:fs";
+import * as path from "node:path";
 
 export interface StateInsightCollegeRef {
   collegeCode: string;
@@ -88,54 +91,17 @@ export interface StateInsights {
 // Process-cached transfer + ASSIST aggregations (heavy queries)
 // ---------------------------------------------------------------------------
 
-const stateTransferCache = new Map<
-  string,
-  Promise<{ destinations: StateInsightTransferDest[]; total: number }>
->();
-
-async function loadStateTransferDestinations(
+function loadStateTransferDestinations(
   state: string,
-): Promise<{ destinations: StateInsightTransferDest[]; total: number }> {
-  const existing = stateTransferCache.get(state);
-  if (existing) return existing;
-
-  const promise = (async () => {
-    // Single GROUP BY RPC instead of a sequential paginated while-loop scan.
-    // The old approach fetched transfers in pages of 1000, requiring 50–100
-    // round trips for large states (IL, CA, TX, NJ). During parallel next build
-    // those sequential scans saturated the connection pool and caused
-    // statement_timeout errors across unrelated queries. Migration 016 adds the
-    // get_state_transfer_destinations RPC backed by idx_transfers_state_university.
-    const { data, error } = await supabase.rpc(
-      "get_state_transfer_destinations",
-      { p_state: state },
-    );
-
-    if (error || !data || data.length === 0) {
-      if (error) {
-        console.warn(
-          `loadStateTransferDestinations error for ${state}:`,
-          error.message,
-        );
-      }
-      return { destinations: [] as StateInsightTransferDest[], total: 0 };
-    }
-
-    const destinations = (data as { university: string; mapping_count: string | number }[]).map(
-      (row) => ({
-        university: row.university,
-        mappingCount: Number(row.mapping_count),
-      }),
-    );
-    const total = Number(
-      (data as { total_count: string | number }[])[0]?.total_count ?? 0,
-    );
-
-    return { destinations, total };
-  })();
-
-  stateTransferCache.set(state, promise);
-  return promise;
+): { destinations: StateInsightTransferDest[]; total: number } {
+  const rollupPath = path.join(process.cwd(), "data", state, "transfer-dest-rollup.json");
+  try {
+    const raw = fs.readFileSync(rollupPath, "utf8");
+    const rollup = JSON.parse(raw) as TransferDestRollup;
+    return { destinations: rollup.destinations, total: rollup.total };
+  } catch {
+    return { destinations: [], total: 0 };
+  }
 }
 
 const stateAssistCache = new Map<
@@ -274,10 +240,7 @@ export async function getStateInsights(
     term
       ? loadAllCourses(term, state).catch(() => [] as CourseSection[])
       : Promise.resolve([] as CourseSection[]),
-    loadStateTransferDestinations(state).catch(() => ({
-      destinations: [] as StateInsightTransferDest[],
-      total: 0,
-    })),
+    Promise.resolve(loadStateTransferDestinations(state)),
     state === "ca"
       ? loadStateAssistContext(state).catch(() => ({
           count: 0,
