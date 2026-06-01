@@ -130,9 +130,11 @@ Branch naming convention used so far: `claude/<state>-phase<N><letter>-<topic>` 
 
 Merging is the user's job — they click "Squash and merge" on GitHub. Don't run `gh pr merge` on their behalf unless they explicitly ask.
 
-**Don't push to a PR branch after you've told the user to merge.** GitHub squashes whatever is on the branch at merge-time; a commit pushed seconds after they click Merge becomes an orphaned dead commit on the remote branch and never reaches `main`. This has happened twice (PR #37 and PR #41). If you realize you need one more small edit after saying "go merge", either:
-1. Wait for the merge to land, then open a tiny follow-up PR, or
+**Don't push to a PR branch after you've told the user to merge.** GitHub squashes whatever is on the branch at merge-time; a commit pushed seconds after they click Merge becomes an orphaned dead commit on the remote branch and never reaches `main`. This has happened three times (PRs #37, #41, and #947). If you realize you need one more small edit after saying "go merge", either:
+1. Wait for the merge to land, then open a tiny follow-up PR (cherry-pick onto a fresh branch off `main`), or
 2. Grab the user's attention before they click Merge ("one more commit coming, hold on").
+
+The `pre-push-merged-pr-guard.sh` hook blocks `git push` when the current branch's PR is already MERGED or CLOSED. If you hit the block, don't bypass — cherry-pick onto a fresh worktree off `main` and open a follow-up PR. Run the test suite with `bash .claude/hooks/test-pre-push-merged-pr-guard.sh` (17 cases).
 
 Never push a commit and _hope_ the user hasn't merged yet. That's what caused the lost commits.
 
