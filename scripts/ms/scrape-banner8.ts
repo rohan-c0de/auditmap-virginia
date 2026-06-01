@@ -16,10 +16,18 @@
  *   npx tsx scripts/ms/scrape-banner8.ts --college meridian-community-college
  *   npx tsx scripts/ms/scrape-banner8.ts --no-import
  */
+// Mississippi Delta's Banner 8 (Oracle Application Server 11g, old TLS chain)
+// triggers UNABLE_TO_VERIFY_LEAF_SIGNATURE under Node's strict default — same
+// workaround as scripts/ma/scrape-banner8.ts and scripts/ga/scrape-banner-ssb.ts.
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+
 import { scrapeBanner8ByHost } from "../lib/scrape-banner-8";
 
 const HOSTS: Record<string, string> = {
   "meridian-community-college": "https://ssb.meridiancc.edu/ssb/prod",
+  // Mississippi Delta CC — Banner 8 at mybanner.msdelta.edu/PROD. Confirmed
+  // public guest access; serves classic bwckschd dynamic-schedule pages.
+  "mississippi-delta-community-college": "https://mybanner.msdelta.edu/PROD",
 };
 
 async function main() {
