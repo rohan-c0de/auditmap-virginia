@@ -91,6 +91,14 @@ const njConfig: StateConfig = {
       // Campus Nexus portal (sisportal-100962.campusnexus.cloud). HTTP-only
       // (uses Node's https module, not fetch — Anthology Cloud rejects HTTP/2).
       { scripts: ["scripts/nj/scrape-rcsj.ts"], runner: "http" },
+      // ocean — OCC's old Colleague (selfservice.ocean.edu) is dead; its public
+      // schedule is a bespoke PHP app at media.ocean.edu/Schedule/schedule.php
+      // that server-renders all sections (no login, no JS).
+      { scripts: ["scripts/nj/scrape-ocean.ts"], runner: "http" },
+      // salem — Colleague Self-Service at self-service.salemcc.edu (hyphen),
+      // using the older Search/Section JSON API rather than Student/Courses, so
+      // the shared scrape-colleague.ts can't reach it. Public, no login.
+      { scripts: ["scripts/nj/scrape-salem.ts"], runner: "http" },
     ],
     transfers: [{ scripts: ["scripts/nj/scrape-transfer.ts"], runner: "http" }],
     prereqs: { source: "aggregate-from-courses" },
@@ -113,6 +121,24 @@ const njConfig: StateConfig = {
       "community college courses near me",
       "NJ community college schedule",
       "NJ senior citizen tuition waiver",
+    ],
+  },
+  // Two NJ colleges have no public section data and can't be scraped (both
+  // verified 2026-06 via untouchable-investigator probes). Their old Colleague
+  // Self-Service hosts are dead; they migrated to SSO-gated platforms whose
+  // only public surface is catalog metadata / PDFs (no sections).
+  documentedCeilings: {
+    courses: [
+      {
+        collegeSlug: "sussex",
+        reason:
+          "Sussex CCC's old Colleague (selfservice.sussex.edu) is decommissioned; it migrated to Jenzabar ICS at my.sussex.edu where every course portlet is SAML-SSO-gated (empty portlets div for guests). The only public surface is the Acalog catalog at catalog.sussex.edu — course metadata + prereqs, never sections. Verified 2026-06.",
+      },
+      {
+        collegeSlug: "warren",
+        reason:
+          "Warren CCC's old Colleague (selfservice.warren.edu) is dead; it runs Jenzabar ICS at mywarren.warren.edu where the course-search form renders but every POST redirects to an error page (guest searches rejected). The only public section data is term PDF schedules on warren.edu — no machine-readable public endpoint. Verified 2026-06.",
+      },
     ],
   },
 };
