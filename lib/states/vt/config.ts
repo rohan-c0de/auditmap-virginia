@@ -60,6 +60,20 @@ const vtConfig: StateConfig = {
     prereqs: [{ scripts: ["scripts/vt/scrape-catalog-prereqs.ts"], runner: "http" }],
     programs: [{ scripts: ["scripts/vt/scrape-programs.ts"], runner: "http" }],
   },
+  documentedCeilings: {
+    // Transfers cap at B: the University of Vermont is the only Vermont
+    // receiver exposing a public, scrapeable course-to-course articulation
+    // table (UVM Banner transfer guide, ~346 CCV→UVM pairs — shipped/wired).
+    // Re-verified 2026-05-31: Vermont State University (the largest in-state
+    // receiver) renders its CCV pathways only via a JS-only Acalog page with
+    // no public lookup; Champlain, Norwich, Saint Michael's and Bennington
+    // publish prose "transfer guarantee" / credit-block agreements with no
+    // course-to-course tables; there is no statewide Vermont articulation
+    // portal. CCV's own transfer-pathways API is program-level, not
+    // course-to-course. So one public receiver is the structural ceiling.
+    transfers:
+      "University of Vermont is the only Vermont receiver with a public course-to-course articulation table (UVM Banner transfer guide, wired). Vermont State University is JS-only Acalog with no public lookup; Champlain/Norwich/St. Michael's/Bennington publish only prose credit-block agreements; no statewide articulation portal exists. Verified 2026-05-31.",
+  },
 };
 
 export default vtConfig;
