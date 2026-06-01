@@ -1,27 +1,15 @@
 # Plan-to-Outcome journey — prototype README
 
-> **What this is:** a committed, throwaway **design prototype** that serves as the executable
-> spec for the future production build (see the linked GitHub issue). It is NOT wired into the
-> Next.js app and is not shipped to users — it's a reference: open it, click through it, and read
-> this file to see exactly what to build and which decisions/gotchas were already settled.
-> When you build the real thing, this is the context to carry over.
->
-> **Files here**
-> - `journey.html` — the runnable prototype (self-contained; just open it).
-> - `journey.app.html` — the source (CSS + HTML + JS); edit this.
-> - `journey-data.json` — a real GA data snapshot inlined as `window.DATA`.
-> - `README.md` — this spec.
->
-> **Rebuild after editing source/data** (the build is a trivial concat — `journey.html` =
-> a `<script>window.DATA=…</script>` head wrapping `journey-data.json`, then `journey.app.html`):
-> ```bash
-> cd docs/prototypes/plan-to-outcome
-> { printf '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Plan-to-Outcome — Community College Path prototype</title>\n<script>window.DATA='; cat journey-data.json; printf ';</script>\n'; cat journey.app.html; } > journey.html
-> ```
-
 **Open `journey.html` in any browser.** No server, no build. One self-contained file
 (data + CSS + JS inlined). The selection lives in the URL hash, so reloading or sharing
 the link restores exactly where you were.
+
+## Current look & feel (this version)
+- **On-brand visual design** matching communitycollegepath.com: **teal** accent (`teal-600`), slate/gray neutrals, white surfaces, the **Geist** typeface, and a consistent inline **line-icon** set (no emoji). **Light by default; a ☀️/🌙 toggle** switches to a fully-themed dark mode (every surface is variable-driven, so both are readable).
+- **Plan step is card-based, not a line graph.** No connector lines — each course card shows its prerequisite inline ("take after ACCT 1100"). It **opens focused** ("classes you can take now") with a **"Show the full plan — all N semesters"** expander that reveals the semester-column view.
+- **Simple interactions** (no mode toggle): tap a card to add it to your schedule; tap the ○ corner to mark a class you've already taken.
+- **Login to save + personalize:** free to explore everything; signing in (mock in this prototype) is required to save completed-course progress and the personalized "next semester." No "saved on this device."
+- Earlier passes' content (4-step flow, honesty rules, the app-wide invariant harness, all the bug fixes) still applies; the sections below are the running history.
 
 ## What it anchors on (all REAL data from the repo)
 - **State / college / program:** Georgia · Atlanta Technical College · Accounting A.S. (67 cr)
