@@ -1,6 +1,15 @@
 import type { CourseSection } from "./types";
 import { supabase } from "./supabase";
 import { runPooled } from "./concurrency";
+// Pre-built (state, college, term) → section count manifest, regenerated on
+// every `npm run build` by scripts/build-section-counts-snapshot.ts. Used to
+// short-circuit the per-college Supabase COUNT query inside getCourseCount —
+// without this, /colleges static gen fires ~765 COUNTs in parallel, saturates
+// the Supabase pool, and trips Vercel's 60s per-page static-gen budget.
+import sectionCountsJson from "../data/section-counts.json";
+
+const SECTION_COUNTS: Record<string, number> =
+  (sectionCountsJson as unknown as Record<string, number>) ?? {};
 
 // ---------------------------------------------------------------------------
 // In-memory cache (server-side, survives across requests in dev/prod)
@@ -194,6 +203,14 @@ export async function getCourseCount(
   term: string,
   state: string
 ): Promise<number> {
+  // Snapshot lookup is O(1) and inlined into the bundle — no network call.
+  // The snapshot is rebuilt by `npm run build:section-counts-snapshot` on
+  // every Vercel deploy, so it tracks freshly-scraped data within one
+  // deploy cycle. Missing entries fall through to Supabase (e.g. a college
+  // added between deploys, or term files not yet committed).
+  const key = `${state}|${collegeSlug}|${term}`;
+  if (key in SECTION_COUNTS) return SECTION_COUNTS[key];
+
   return cached(`count:${state}:${collegeSlug}:${term}`, async () => {
     const { count, error } = await supabase
       .from("courses")
