@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Welcome — inspired concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7faf9; --panel:#fff; --ink:#0f172a; --muted:#5b6573; --line:#e6ebf0; --line2:#d3dbe2;
+  --brand:#0d9488; --brand-strong:#0f766e; --brand-soft:#effbf8; --brand-tint:#cdeee8; --bright:#2dd4bf;
+  --warm:#f59e0b; --warm-soft:#fef3c7;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Geist",system-ui,sans-serif;font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+h1,h2,h3{margin:0;letter-spacing:-.025em;font-weight:700}
+.ic{stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;display:inline-block;vertical-align:middle}
+a{color:var(--brand);text-decoration:none}
+/* nav */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+.brandmark{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px}
+.logo{width:32px;height:32px;border-radius:10px;background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center}
+.navlinks{display:flex;gap:24px;align-items:center;color:var(--muted);font-size:14px}
+.navlinks a:hover{color:var(--ink)}
+.btn{font-family:inherit;font-weight:600;border-radius:999px;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:8px;transition:transform .12s ease,box-shadow .12s ease,background .12s}
+.btn.primary{background:var(--brand);color:#fff;padding:12px 20px;font-size:14px;box-shadow:0 10px 24px -12px rgba(13,148,136,.6)}
+.btn.primary:hover{background:var(--brand-strong);transform:translateY(-1px)}
+.btn.soft{background:#fff;color:var(--ink);border:1px solid var(--line2);padding:11px 18px;font-size:14px}
+.btn.soft:hover{border-color:var(--brand);color:var(--brand-strong)}
+/* hero */
+.hero{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center;padding:46px 0 30px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--brand-strong);font-weight:600;font-size:13px;background:var(--brand-soft);border:1px solid var(--brand-tint);padding:7px 14px;border-radius:999px;margin-bottom:22px}
+.hero h1{font-size:58px;line-height:1.03;letter-spacing:-.035em;font-weight:800}
+.hero h1 em{font-style:normal;color:var(--brand);position:relative}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:10px;background:var(--brand-tint);border-radius:6px;z-index:-1;opacity:.7}
+.hero p{font-size:18.5px;color:var(--muted);max-width:480px;margin:20px 0 26px}
+.cta-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.cta-note{color:var(--muted);font-size:13px;display:inline-flex;gap:7px;align-items:center}
+/* hero art: abstract shapes + a floating course-card preview */
+.art{position:relative;height:420px}
+.blob{position:absolute;border-radius:50%;filter:blur(2px)}
+.b1{width:300px;height:300px;right:-30px;top:10px;background:radial-gradient(circle at 30% 30%,#5eead4,#0d9488);opacity:.16}
+.b2{width:180px;height:180px;left:0;bottom:0;background:radial-gradient(circle at 30% 30%,#fcd34d,#f59e0b);opacity:.16}
+.ring{position:absolute;border:2px dashed var(--brand-tint);border-radius:50%}
+.r1{width:360px;height:360px;right:-10px;top:0}
+.float{position:absolute;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 24px 50px -28px rgba(15,23,42,.4);padding:14px 16px}
+.f-course{right:30px;top:46px;width:230px}
+.f-course .top{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:14px}
+.f-course .sub{color:var(--muted);font-size:12px;margin:3px 0 9px}
+.seatpill{display:inline-flex;align-items:center;gap:6px;background:#dcfce7;color:#15803d;font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px}
+.seatpill .d{width:7px;height:7px;border-radius:50%;background:#16a34a}
+.f-stat{left:14px;top:182px;width:188px;display:flex;gap:10px;align-items:center}
+.f-stat .num{font-size:24px;font-weight:800;color:var(--brand)}
+.f-stat .lbl{font-size:11.5px;color:var(--muted);line-height:1.25}
+.f-transfer{left:24px;bottom:14px;width:210px}
+.f-transfer .row{display:flex;align-items:center;gap:8px;font-size:12px;padding:3px 0}
+.tickok{color:var(--brand);font-weight:800}
+/* logos / social proof */
+.proof{display:flex;align-items:center;gap:26px;flex-wrap:wrap;padding:10px 0 6px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);margin-top:10px}
+.proof b{color:var(--ink)}
+.proof .logos{display:flex;gap:18px;opacity:.6;font-weight:700;letter-spacing:-.01em}
+/* how it works */
+.section{padding:64px 0}
+.section .kicker{color:var(--brand-strong);font-weight:600;font-size:13px;letter-spacing:.04em;text-transform:uppercase;text-align:center}
+.section h2{font-size:34px;text-align:center;margin:10px 0 6px;letter-spacing:-.03em}
+.section .lead{color:var(--muted);text-align:center;max-width:560px;margin:0 auto 40px;font-size:16px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;position:relative}
+.stepc{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+.stepc .n{width:34px;height:34px;border-radius:10px;background:var(--brand-soft);color:var(--brand);display:flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:14px}
+.stepc h3{font-size:16px;margin-bottom:4px}
+.stepc p{color:var(--muted);font-size:13px;margin:0;line-height:1.5}
+/* on-ramps */
+.ramps{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:16px}
+.ramp{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:24px;cursor:pointer;transition:transform .18s,box-shadow .18s;display:flex;flex-direction:column;gap:9px;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+.ramp:hover{transform:translateY(-3px);box-shadow:0 22px 44px -28px rgba(15,118,110,.5)}
+.ramp.primary{border-color:var(--brand);background:linear-gradient(180deg,#fff,var(--brand-soft))}
+.ramp .chip{width:46px;height:46px;border-radius:14px;background:var(--brand-soft);color:var(--brand);display:flex;align-items:center;justify-content:center}
+.ramp h3{font-size:19px;margin-top:4px}
+.ramp p{color:var(--muted);font-size:13.5px;margin:0}
+.ramp .go{margin-top:auto;padding-top:8px;color:var(--brand-strong);font-weight:600;font-size:13.5px;display:inline-flex;gap:6px;align-items:center}
+.ramp.primary .go{color:#fff;background:var(--brand);align-self:flex-start;padding:9px 16px;border-radius:999px}
+/* quote */
+.quote{background:linear-gradient(135deg,#0f766e,#0d9488);color:#fff;border-radius:24px;padding:46px 48px;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;position:relative;overflow:hidden}
+.quote::before{content:"";position:absolute;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.07);right:-60px;top:-80px}
+.quote blockquote{margin:0;font-size:23px;line-height:1.4;font-weight:600;letter-spacing:-.01em;max-width:640px}
+.quote .who{margin-top:16px;font-size:14px;opacity:.85}
+.quote .big{text-align:center}
+.quote .big .n{font-size:46px;font-weight:800;letter-spacing:-.03em}
+.quote .big .l{font-size:13px;opacity:.85}
+.foot{color:var(--muted);font-size:12.5px;text-align:center;padding:40px 0 60px}
+.tag{display:inline-block;background:var(--brand-soft);color:var(--brand-strong);border:1px solid var(--brand-tint);font-size:11px;font-weight:600;padding:3px 9px;border-radius:6px}
+@media(max-width:860px){.hero{grid-template-columns:1fr}.art{display:none}.steps{grid-template-columns:1fr 1fr}.ramps{grid-template-columns:1fr}.quote{grid-template-columns:1fr}.hero h1{font-size:40px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="nav">
+    <div class="brandmark"><div class="logo"><svg class="ic" style="width:18px;height:18px;stroke:#fff" viewBox="0 0 24 24"><path d="M3 9l9-5 9 5-9 5z"/><path d="M7 11v5c0 1 2 2 5 2s5-1 5-2v-5"/></svg></div>Community College Path</div>
+    <div class="navlinks"><a href="#">Colleges</a><a href="#">How it works</a><a href="#">Blog</a><button class="btn soft">Sign in</button></div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <span class="eyebrow"><svg class="ic" style="width:15px;height:15px" viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg> Free · no experience needed</span>
+      <h1>Plan college<br>that <em>actually pays off.</em></h1>
+      <p>See what to take, whether you can get a seat, whether it transfers, and where it leads — using real data from your community college. One step at a time.</p>
+      <div class="cta-row">
+        <button class="btn primary">Start planning <svg class="ic" style="width:16px;height:16px;stroke:#fff" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <button class="btn soft">Just show me what to take next</button>
+      </div>
+      <div class="cta-note" style="margin-top:14px"><svg class="ic" style="width:14px;height:14px;color:var(--brand)" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg> No account needed to explore</div>
+    </div>
+    <!-- abstract art + floating real-looking cards -->
+    <div class="art">
+      <div class="blob b1"></div><div class="blob b2"></div><div class="ring r1"></div>
+      <div class="float f-course">
+        <div class="top">ACCT 1100 <span style="color:var(--muted);font-weight:500;font-size:12px">4 cr</span></div>
+        <div class="sub">Financial Accounting I</div>
+        <span class="seatpill"><span class="d"></span>18 seats open</span>
+      </div>
+      <div class="float f-stat">
+        <div class="num">$30k</div><div class="lbl">median earnings,<br>10 years after</div>
+      </div>
+      <div class="float f-transfer">
+        <div style="font-weight:700;font-size:12px;margin-bottom:4px">Transfers to UWG</div>
+        <div class="row"><span class="tickok">✓</span> ACCT 1100 → ACCT 2101</div>
+        <div class="row" style="color:var(--muted)"><span style="color:#94a3b8;font-weight:800">≈</span> elective credit</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proof">
+    <span>Real, up-to-date data from <b>50+ community colleges</b></span>
+    <span class="logos"><span>VCCS</span><span>TCSG</span><span>LACCD</span><span>Ivy&nbsp;Tech</span></span>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="section">
+    <div class="kicker">How it works</div>
+    <h2>From "where do I start?" to a plan that fits your life.</h2>
+    <p class="lead">Four steps. No jargon. Built so a first-time college student can use it without help.</p>
+    <div class="steps">
+      <div class="stepc"><div class="n">1</div><h3>Plan</h3><p>See your program as classes you can take now — colored by whether seats are open this term.</p></div>
+      <div class="stepc"><div class="n">2</div><h3>Schedule</h3><p>Fit classes around work, across nearby colleges, on one weekly grid. We flag a conflict-free combo.</p></div>
+      <div class="stepc"><div class="n">3</div><h3>Transfer</h3><p>See which courses actually count toward a major at your target university — before you register.</p></div>
+      <div class="stepc"><div class="n">4</div><h3>Outcomes</h3><p>What it costs, how long it takes, and what graduates earn — shown honestly, with the gaps named.</p></div>
+    </div>
+  </div>
+
+  <!-- ON-RAMPS -->
+  <div class="section" style="padding-top:0">
+    <h2 style="font-size:28px">Start wherever you are</h2>
+    <p class="lead" style="margin-bottom:26px">Pick the door that fits — you can always change direction later.</p>
+    <div class="ramps">
+      <div class="ramp primary">
+        <div class="chip"><svg class="ic" style="width:22px;height:22px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></div>
+        <h3>I know my major</h3><p>Plan it semester by semester, with seats and transfer built in.</p>
+        <span class="go">Start planning <svg class="ic" style="width:15px;height:15px;stroke:#fff" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+      <div class="ramp">
+        <div class="chip"><svg class="ic" style="width:22px;height:22px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15 9l-2 6-4 2 2-6z"/></svg></div>
+        <h3>Help me choose</h3><p>Tell us the kind of work you want; we'll match it to a program.</p>
+        <span class="go">Explore by interest <svg class="ic" style="width:15px;height:15px" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+      <div class="ramp">
+        <div class="chip"><svg class="ic" style="width:22px;height:22px" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div>
+        <h3>What's next?</h3><p>Already enrolled — get a ready-to-register schedule for next term.</p>
+        <span class="go">Build next semester <svg class="ic" style="width:15px;height:15px" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUOTE / TRUST -->
+  <div class="quote">
+    <div>
+      <blockquote>"I had no idea which classes would transfer. I could finally see it before I wasted a semester — and what the degree actually pays."</blockquote>
+      <div class="who">— a first-generation student, the person this is built for</div>
+    </div>
+    <div class="big"><div class="n">37%</div><div class="l">of students out-earn a<br>typical high-school grad</div></div>
+  </div>
+
+  <div class="foot"><span class="tag">Inspired concept · welcome screen</span> &nbsp; Teal/Geist brand · airy hero with abstract shapes + floating real cards · "how it works" flow · social proof + student quote. Real GA / Atlanta Tech / Accounting data values.</div>
+
+</div>
+</body>
+</html>
