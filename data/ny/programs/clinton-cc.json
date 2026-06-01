@@ -1,158 +1,9 @@
 {
   "college_slug": "clinton-cc",
+  "catalog_year": "2025-2026",
   "catalog_url": "https://catalog.clinton.edu/degrees",
-  "scraped_at": "2026-05-30T07:21:55.432Z",
+  "scraped_at": "2026-06-01T13:39:34.947Z",
   "programs": [
-    {
-      "title": "Business Management",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.clinton.edu/certificate-programs/certificate/business-management",
-      "total_credits": 24,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Degree Requirements (24 Credits)",
-          "credits_required": 24,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ACC",
-              "number": "110",
-              "title": "Fundamentals of Accounting",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "101",
-              "title": "Introduction To Business",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "250",
-              "title": "Principles of Management",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "260",
-              "title": "Business Law I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CSC",
-              "number": "102",
-              "title": "Introduction To Microcomputer Applications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENG",
-              "number": "101",
-              "title": "English Composition",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "business-administration"
-    },
-    {
-      "title": "Payroll",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.clinton.edu/certificate-programs/certificate/payroll",
-      "total_credits": 25,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "English (3 Credits):",
-          "credits_required": 3,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ENG",
-              "number": "101",
-              "title": "English Composition",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Communications (3 Credits):",
-          "credits_required": 3,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "COM",
-              "number": "101",
-              "title": "Public Speaking",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Business (19 Credits):",
-          "credits_required": 19,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ACC",
-              "number": "120",
-              "title": "Financial Accounting",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACC",
-              "number": "159",
-              "title": "Payroll Accounting",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACC",
-              "number": "252",
-              "title": "Computer Applications In Accounting",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "101",
-              "title": "Introduction To Business",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "213",
-              "title": "Business Communications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CSC",
-              "number": "102",
-              "title": "Introduction To Microcomputer Applications",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
     {
       "title": "Industrial/Commercial Electrician",
       "credential": "certificate",
@@ -250,6 +101,95 @@
       "matched_program_slug": null
     },
     {
+      "title": "Payroll",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.clinton.edu/certificate-programs/certificate/payroll",
+      "total_credits": 25,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "English (3 Credits):",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Communications (3 Credits):",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "COM",
+              "number": "101",
+              "title": "Public Speaking",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Business (19 Credits):",
+          "credits_required": 19,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACC",
+              "number": "120",
+              "title": "Financial Accounting",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACC",
+              "number": "159",
+              "title": "Payroll Accounting",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACC",
+              "number": "252",
+              "title": "Computer Applications In Accounting",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "101",
+              "title": "Introduction To Business",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "213",
+              "title": "Business Communications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSC",
+              "number": "102",
+              "title": "Introduction To Microcomputer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Computer Support",
       "credential": "certificate",
       "program_code": null,
@@ -309,6 +249,149 @@
         }
       ],
       "matched_program_slug": null
+    },
+    {
+      "title": "Alcohol & Substance Abuse Counseling",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.clinton.edu/certificate-programs/certificate/alcohol-substance-abuse-counseling",
+      "total_credits": 30,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Human Services (27 Credits)",
+          "credits_required": 30,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "HUS",
+              "number": "101",
+              "title": "Introduction To Human Services",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HUS",
+              "number": "105",
+              "title": "Introduction To Basic Counseling Skills",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HUS",
+              "number": "108",
+              "title": "Foundations For The Chemical Dependency Professional",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HUS",
+              "number": "110",
+              "title": "Critical Topics In Chemical Dependency",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HUS",
+              "number": "175",
+              "title": "Ethics of Chemical Dependency Counseling",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HUS",
+              "number": "201",
+              "title": "Social Service Agencies",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HUS",
+              "number": "206",
+              "title": "Group Skills For Human Services",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HUS",
+              "number": "210",
+              "title": "Identification, Diagnosis, & Treatment Planning",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HUS",
+              "number": "284",
+              "title": "Internship & Seminar For CASAC",
+              "credits": 6,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Business Management",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.clinton.edu/certificate-programs/certificate/business-management",
+      "total_credits": 24,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Degree Requirements (24 Credits)",
+          "credits_required": 24,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACC",
+              "number": "110",
+              "title": "Fundamentals of Accounting",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "101",
+              "title": "Introduction To Business",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "250",
+              "title": "Principles of Management",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "260",
+              "title": "Business Law I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSC",
+              "number": "102",
+              "title": "Introduction To Microcomputer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "business-administration"
     },
     {
       "title": "Mechanical Technology Certificate",
@@ -420,88 +503,6 @@
               "number": "202",
               "title": "Introduction To Industrial Electricity",
               "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Alcohol & Substance Abuse Counseling",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.clinton.edu/certificate-programs/certificate/alcohol-substance-abuse-counseling",
-      "total_credits": 30,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Human Services (27 Credits)",
-          "credits_required": 30,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "HUS",
-              "number": "101",
-              "title": "Introduction To Human Services",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HUS",
-              "number": "105",
-              "title": "Introduction To Basic Counseling Skills",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HUS",
-              "number": "108",
-              "title": "Foundations For The Chemical Dependency Professional",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HUS",
-              "number": "110",
-              "title": "Critical Topics In Chemical Dependency",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HUS",
-              "number": "175",
-              "title": "Ethics of Chemical Dependency Counseling",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HUS",
-              "number": "201",
-              "title": "Social Service Agencies",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HUS",
-              "number": "206",
-              "title": "Group Skills For Human Services",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HUS",
-              "number": "210",
-              "title": "Identification, Diagnosis, & Treatment Planning",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HUS",
-              "number": "284",
-              "title": "Internship & Seminar For CASAC",
-              "credits": 6,
               "or_alternatives": []
             }
           ]
