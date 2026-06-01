@@ -94,7 +94,7 @@ The fastest realistic path is to front-load two near-zero-cost batches before an
 ### NOW — cheap, high-impact (do first)
 - [x] **va** (D→**A**) — Virginia: ✅ DONE — wired the 8 external-portal transfer scrapers into `StateConfig.scrapers.transfers`; transfers D→A, composite **A**.
 - [ ] **md** (C) — Maryland: All dims A except courses 81%; the 3 missing colleges (ccbc/cecil/garrett) already have wired scrapers that just need a re-run -> 16/16, no new code.
-- [ ] **nc** (C) — North Carolina: Huge state one regex pass from B+: 8 prereq entries have raw <br> + empty courses[]; strip and re-extract -> prereqs C->A, courses/transfers already A.
+- [x] **nc** (C→**B**) — North Carolina: Huge state one regex pass from B+: 8 prereq entries have raw <br> + empty courses[]; strip and re-extract -> prereqs C->A, courses/transfers already A.
 - [ ] **az** (C) — Arizona: Large state; AWC re-run (transient 502) + central-AZ coursedog lands courses ~95% with tohono-oodham as documented ceiling -> composite A-/A.
 - [ ] **ak** (F) — Alaska: Single tribal college; F only because no-portal transfers isn't recorded as a ceiling — a metadata edit flips F->B+/A with everything else already A/B.
 - [ ] **la** (B) — Louisiana: Everything built/wired incl 5 aligned programs; record northshore (LoLA SSO) as a courses ceiling and 92% becomes A -> composite A.
