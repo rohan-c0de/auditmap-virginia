@@ -199,6 +199,7 @@ import okConfig from "./ok/config";
 import coConfig from "./co/config";
 import neConfig from "./ne/config";
 import ksConfig from "./ks/config";
+import inConfig from "./in/config";
 
 const ALL_CONFIGS: StateConfig[] = [
   vaConfig,
@@ -251,6 +252,7 @@ const ALL_CONFIGS: StateConfig[] = [
   coConfig,
   neConfig,
   ksConfig,
+  inConfig,
 ];
 
 const configs: Record<string, StateConfig> = Object.fromEntries(
