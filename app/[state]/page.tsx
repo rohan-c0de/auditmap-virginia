@@ -11,6 +11,7 @@ import { requireStateConfig } from "@/lib/states/route-helpers";
 import { getArticlesByState, getStateTopicLinks, categoryLabel } from "@/lib/blog";
 import { getQualifyingProgramSlugs, getProgramBySlug } from "@/lib/programs";
 import { loadOnlineData, onlineQualifies } from "@/lib/online";
+import { loadStateSummary } from "@/lib/state-summary";
 
 type Props = {
   params: Promise<{ state: string }>;
@@ -54,13 +55,30 @@ export default async function HomePage({ params }: Props) {
     process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com";
 
   // Phase 4 hub links — only surfaced when underlying pages would render.
-  // Loading both in parallel; failures are non-fatal (page still renders
-  // without the section).
-  const [programSlugs, onlineData] = await Promise.all([
-    getQualifyingProgramSlugs(state).catch(() => [] as string[]),
-    loadOnlineData(state).catch(() => null),
-  ]);
-  const showOnline = onlineQualifies(onlineData);
+  // #946: prefer the precomputed summary manifest so the build does no heavy
+  // data loading. Fall back to the live loaders when the manifest is absent
+  // (e.g. a brand-new state before the precompute step has run) so behavior is
+  // never worse than before. Both loaders are non-fatal (section just hides).
+  const summary = loadStateSummary(state);
+  let programSlugs: string[];
+  let showOnline: boolean;
+  let onlineSections: number;
+  let onlineColleges: number;
+  if (summary) {
+    programSlugs = summary.programSlugs;
+    showOnline = summary.showOnline;
+    onlineSections = summary.onlineSections;
+    onlineColleges = summary.onlineColleges;
+  } else {
+    const [slugs, onlineData] = await Promise.all([
+      getQualifyingProgramSlugs(state).catch(() => [] as string[]),
+      loadOnlineData(state).catch(() => null),
+    ]);
+    programSlugs = slugs;
+    showOnline = onlineQualifies(onlineData);
+    onlineSections = onlineData?.totalSections ?? 0;
+    onlineColleges = onlineData?.totalColleges ?? 0;
+  }
 
   const breadcrumbLd = {
     "@context": "https://schema.org",
@@ -290,7 +308,7 @@ export default async function HomePage({ params }: Props) {
                   Online Courses
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-slate-400">
-                  {onlineData!.totalSections} online sections across {onlineData!.totalColleges} {config.systemName} colleges this term.
+                  {onlineSections} online sections across {onlineColleges} {config.systemName} colleges this term.
                 </p>
               </Link>
             )}
