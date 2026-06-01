@@ -9,7 +9,7 @@ import {
 } from "@/lib/sitemap-xml";
 import { getCourseLastUpdated } from "@/lib/data-freshness";
 
-export const revalidate = 86400;
+export const dynamic = "force-dynamic";
 
 export async function GET() {
   const url = siteOrigin();

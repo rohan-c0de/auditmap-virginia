@@ -25,7 +25,7 @@ const SUBJECT_SNAPSHOT: Record<string, Array<{ prefix: string; count: number }>>
 
 const MIN_SECTIONS_FOR_INDEXED_URL = 3;
 
-export const revalidate = 86400;
+export const dynamic = "force-dynamic";
 
 export async function GET() {
   const url = siteOrigin();

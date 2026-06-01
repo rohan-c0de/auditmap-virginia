@@ -17,15 +17,21 @@ type Props = {
   params: Promise<{ state: string }>;
 };
 
-// Force HTTP 404 (not a cached HTTP 200 soft-404) for any state slug
-// that isn't in the registry. Vercel ISR otherwise caches the rendered
-// `notFound()` UI as a 200 response, causing soft-404 floods in Search
-// Console for every garbage URL bots probe. See issue #337.
-export const dynamicParams = false;
-
-export function generateStaticParams() {
-  return getAllStates().map((s) => ({ state: s.slug }));
-}
+// Skip build-time pre-rendering. Even after snapshotizing
+// StartingSoonCallout, StateContext, getCourseCount, and the
+// college-subjects sitemap rollup, the per-state page still tripped
+// Vercel's 60s static-gen budget on big states (VA, ME, …) because of
+// transitive Supabase calls inside the programs/online hubs that
+// `loadStateSummary` falls back to. Rendering on-demand sidesteps the
+// build-time pressure entirely — first hit after deploy renders the page
+// fresh (~1–3 s), subsequent hits within the cache window are served
+// from the CDN.
+//
+// Invalid state slugs fall through to the existing `notFound()` check
+// below. With `force-dynamic` there's no ISR cache to convert that into
+// a soft-404 (the previous `dynamicParams = false` workaround for issue
+// #337 is no longer needed).
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { state } = await params;

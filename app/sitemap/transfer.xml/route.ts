@@ -7,7 +7,7 @@ import {
   type SitemapEntry,
 } from "@/lib/sitemap-xml";
 
-export const revalidate = 86400;
+export const dynamic = "force-dynamic";
 
 const MIN_TRANSFER_HUB_COUNT = 10;
 
