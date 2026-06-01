@@ -71,7 +71,16 @@ const ksConfig: StateConfig = {
       { scripts: ["scripts/ks/scrape-colby.ts"], runner: "http" },
       { scripts: ["scripts/ks/scrape-salina.ts"], runner: "http" },
     ],
-    // manual-only: transfers — no statewide articulation portal registered for KS yet.
+    // Kansas has no CollegeTransfer.Net in-state data and the Board of Regents
+    // systemwide portal is Cloudflare-walled. Wichita State's public GenEd
+    // Transfer Equivalency web app (ASP.NET WebForms) lists all 24 KS
+    // community/technical colleges' course-to-course equivalencies, including
+    // the KS Systemwide Transfer (KRSN) flag. scrape-transfer.ts drives the
+    // two-step institution→results postback and keeps the latest effective
+    // term per course.
+    // COVERAGE GAP: Wichita State is one receiver; KU and K-State have their
+    // own public tools (follow-ups).
+    transfers: [{ scripts: ["scripts/ks/scrape-transfer.ts"], runner: "http" }],
     prereqs: { source: "aggregate-from-courses" },
     // manual-only: programs — Phase 6 catalog discovery found no templated platforms; bespoke per-college needed.
   },
