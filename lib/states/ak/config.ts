@@ -50,9 +50,11 @@ const akConfig: StateConfig = {
         runner: "http",
       },
     ],
-    // manual-only: transfers — Alaska has no registered articulation portal
-    // and Ilisagvik (one CC, tribal-controlled) doesn't publish bulk transfer
-    // equivalencies. Skip until a data source is identified.
+    // Iḷisaġvik publishes its equivalencies to the University of Alaska
+    // system in CollegeTransfer.Net's public OData API. Coverage is narrow
+    // (one sending college → UAA) but real; scrape-transfer.ts keeps in-state
+    // targets only.
+    transfers: [{ scripts: ["scripts/ak/scrape-transfer.ts"], runner: "http" }],
     // Empower SIS sections don't expose prerequisite text, so we scrape the
     // catalog (CleanCatalog at catalog.ilisagvik.edu) for the `field-pr`
     // block on each course detail page. Pantheon rate-limits raw fetch and

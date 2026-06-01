@@ -68,9 +68,11 @@ const wyConfig: StateConfig = {
       // spreadsheets. No machine-readable public endpoint. Genuine gap.
     ],
     prereqs: { source: "aggregate-from-courses" },
-    // manual-only: transfers — Wyoming has no registered articulation portal
-    // in data/articulation-portals.json yet. Add once the state's transfer
-    // matrix source is identified.
+    // All 7 Wyoming community colleges publish dense in-state equivalencies
+    // (primarily → University of Wyoming, plus inter-CC articulation) in
+    // CollegeTransfer.Net's public OData API. scrape-transfer.ts pages each
+    // sender and keeps in-state targets only.
+    transfers: [{ scripts: ["scripts/wy/scrape-transfer.ts"], runner: "http" }],
     // manual-only: programs — Phase 6 wrapper at scripts/wy/scrape-programs.ts
     // found no templated catalogs; needs per-college investigation.
   },
