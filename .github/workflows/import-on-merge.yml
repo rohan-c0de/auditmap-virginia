@@ -140,7 +140,11 @@ jobs:
     needs: plan
     if: ${{ needs.plan.outputs.courses_states != '' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 90 # backstop for the `all` backfill; per-state is seconds
+    # Per-state pushes (the steady state) finish in seconds; this cap only
+    # matters for the manual `--all` backfill path. The 2026-06-01 backfill
+    # (run 26781597798) cancelled at 90 min after importing 24/50 states —
+    # NC alone took 37 min, MD 6, GA 7. Budget enough for the full 50.
+    timeout-minutes: 240
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -165,7 +169,11 @@ jobs:
     needs: plan
     if: ${{ needs.plan.outputs.transfers_states != '' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    # Same rationale as courses. The 2026-06-01 backfill cancelled at 45 min
+    # mid-NY — MD alone took 22 min (122,925 mappings), NY 254,448 mappings
+    # is even larger. 180 min gives the full 50-state `--all` headroom; the
+    # per-state-per-merge steady state is seconds.
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
