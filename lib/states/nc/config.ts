@@ -155,7 +155,24 @@ const ncConfig: StateConfig = {
       },
     ],
     prereqs: { source: "aggregate-from-courses" },
-    // manual-only: programs — Acalog program scraper not yet wired up for this state.
+    programs: [
+      {
+        // discover-catalogs.ts fingerprints each NCCCS college's catalog platform
+        // and writes data/nc/catalog-discovery.json; the platform scrapers read it.
+        // Keep these in one ordered job — discovery MUST run before the scrapers.
+        // Coverage: 17 colleges (acalog ×9, smartcatalogiq ×7, courseleaf ×1).
+        // Known gaps (see data/nc/DEFERRED-programs.md): coursedog (Colleague-Ethos
+        // variant won't parse), several smartcatalogiq instances nest programs below
+        // the walker's depth or are on stale editions.
+        scripts: [
+          "scripts/nc/discover-catalogs.ts",
+          "scripts/nc/scrape-smartcatalogiq-programs.ts",
+          "scripts/nc/scrape-acalog-programs.ts",
+          "scripts/nc/scrape-misc-programs.ts",
+        ],
+        runner: "http",
+      },
+    ],
   },
 };
 
