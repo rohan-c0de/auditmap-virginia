@@ -65,10 +65,12 @@ const idConfig: StateConfig = {
       // Public-accessible but ASP.NET WebForms with VIEWSTATE; no template exists
       // yet for this platform.
     ],
-    // manual-only: transfers — Idaho has no registered articulation portal. The
-    // state's three public universities (Boise State, U of I, Idaho State)
-    // publish individual equivalency tables but there is no consolidated
-    // statewide source.
+    // Idaho's State Board of Education runs a consolidated statewide tool at
+    // coursetransfer.idaho.gov covering all 8 public institutions (the 4
+    // community colleges → BSU/ISU/UI/LCSC + inter-college). scrape-transfer.ts
+    // enumerates each college's courses via the GetCourseTitles autocomplete
+    // and parses the per-receiver equivalency results pages.
+    transfers: [{ scripts: ["scripts/id/scrape-transfer.ts"], runner: "http" }],
     prereqs: { source: "aggregate-from-courses" },
     // manual-only: programs — no college's catalog matched a templated
     // platform (acalog/courseleaf/smartcatalogiq/coursedog/cleancatalog).
