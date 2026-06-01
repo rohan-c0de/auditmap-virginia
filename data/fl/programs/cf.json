@@ -2,7 +2,7 @@
   "college_slug": "cf",
   "catalog_year": "2025-2026",
   "catalog_url": "https://catalog.cf.edu",
-  "scraped_at": "2026-06-01T03:40:26.438Z",
+  "scraped_at": "2026-06-01T13:49:39.897Z",
   "programs": [
     {
       "title": "Accounting Technology, A.S.",
@@ -38,17 +38,6 @@
       "matched_program_slug": "accounting"
     },
     {
-      "title": "Associate in Arts Academic Pathways",
-      "credential": "AA",
-      "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2574",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
       "title": "Associate in Arts Degree Requirements",
       "credential": "AA",
       "program_code": null,
@@ -78,17 +67,6 @@
           "courses": []
         }
       ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Associate in Science, Applied Technology Diploma, and Certificate Academic Pathways",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2580",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
       "matched_program_slug": null
     },
     {
@@ -139,29 +117,14 @@
       "matched_program_slug": null
     },
     {
-      "title": "Cardiovascular Technology, A.S.",
-      "credential": "AS",
+      "title": "Associate in Arts Academic Pathways",
+      "credential": "AA",
       "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2606",
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2574",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
-      "requirement_groups": [
-        {
-          "name": "General Education Courses",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "or higher level mathematics course",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
+      "requirement_groups": [],
       "matched_program_slug": null
     },
     {
@@ -212,44 +175,41 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Computer Information Technology, A.S.",
+      "title": "Associate in Science, Applied Technology Diploma, and Certificate Academic Pathways",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2580",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Cardiovascular Technology, A.S.",
       "credential": "AS",
       "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2353",
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2606",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
       "requirement_groups": [
         {
-          "name": "Program Courses",
+          "name": "General Education Courses",
           "credits_required": null,
           "choose_n": null,
           "courses": [
             {
               "prefix": "ELEC",
               "number": "XXX",
-              "title": "CGS1949 - Work Experience I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "OR",
-              "credits": null,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "OR",
+              "title": "or higher level mathematics course",
               "credits": null,
               "or_alternatives": []
             }
           ]
         }
       ],
-      "matched_program_slug": "computer-science"
+      "matched_program_slug": null
     },
     {
       "title": "Criminal Justice Technology, A.S.",
@@ -292,6 +252,57 @@
       "matched_program_slug": "criminal-justice"
     },
     {
+      "title": "Computer Information Technology, A.S.",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2353",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Program Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "CGS1949 - Work Experience I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "OR",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "OR",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "computer-science"
+    },
+    {
+      "title": "Diagnostic Medical Sonography Technology, A.S.",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2597",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
       "title": "Dental Hygiene, A.S.",
       "credential": "AS",
       "program_code": null,
@@ -325,6 +336,32 @@
       "matched_program_slug": null
     },
     {
+      "title": "Engineering Technology - Advanced Manufacturing Specialization, A.S.",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2375",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Program Electives",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "EGS1949 - Work Experience I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "engineering"
+    },
+    {
       "title": "Early Childhood Education, A.S.",
       "credential": "AS",
       "program_code": null,
@@ -351,15 +388,15 @@
       "matched_program_slug": "early-childhood-education"
     },
     {
-      "title": "Diagnostic Medical Sonography Technology, A.S.",
+      "title": "Engineering Technology - Electronics Specialization, A.S.",
       "credential": "AS",
       "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2597",
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2373",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
       "requirement_groups": [],
-      "matched_program_slug": null
+      "matched_program_slug": "engineering"
     },
     {
       "title": "Emergency Medical Services, A.S",
@@ -388,54 +425,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Engineering Technology - Electronics Specialization, A.S.",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2373",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "engineering"
-    },
-    {
-      "title": "Engineering Technology - Supply Chain Automation Specialization, A.S.",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2600",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "engineering"
-    },
-    {
-      "title": "Engineering Technology - Advanced Manufacturing Specialization, A.S.",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2375",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Program Electives",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "EGS1949 - Work Experience I",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "engineering"
-    },
-    {
       "title": "Engineering Technology - Quality Specialization, A.S.",
       "credential": "AS",
       "program_code": null,
@@ -460,6 +449,60 @@
         }
       ],
       "matched_program_slug": "engineering"
+    },
+    {
+      "title": "Equine Studies - Equine Exercise Physiology, A.S.",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2383",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Program Core Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "OR",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "OR",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "ANS1949 - Work Experience I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Equine Electives (9 Credits)",
+          "credits_required": 9,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Additional Equine credits (maximum of 9 credits from other Equine specialization)",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
     },
     {
       "title": "Equine Studies - Business Management Specialization, A.S.",
@@ -516,15 +559,15 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Fire Science Technology, A.S.",
+      "title": "Engineering Technology - Supply Chain Automation Specialization, A.S.",
       "credential": "AS",
       "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2593",
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2600",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
       "requirement_groups": [],
-      "matched_program_slug": null
+      "matched_program_slug": "engineering"
     },
     {
       "title": "Graphics Technology. A.S.",
@@ -553,57 +596,14 @@
       "matched_program_slug": null
     },
     {
-      "title": "Equine Studies - Equine Exercise Physiology, A.S.",
+      "title": "Fire Science Technology, A.S.",
       "credential": "AS",
       "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2383",
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2593",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
-      "requirement_groups": [
-        {
-          "name": "Program Core Courses",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "OR",
-              "credits": null,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "OR",
-              "credits": null,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "ANS1949 - Work Experience I",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Equine Electives (9 Credits)",
-          "credits_required": 9,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "Additional Equine credits (maximum of 9 credits from other Equine specialization)",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
+      "requirement_groups": [],
       "matched_program_slug": null
     },
     {
@@ -706,46 +706,6 @@
       "matched_program_slug": "nursing"
     },
     {
-      "title": "Nursing - Paramedic to A.D.N. Bridge",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2391",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "General Education Courses",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "OR",
-              "credits": null,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "OR",
-              "credits": null,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "OR",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "nursing"
-    },
-    {
       "title": "Office Administration - Legal Office Specialization, A.S.",
       "credential": "AS",
       "program_code": null,
@@ -784,6 +744,46 @@
         }
       ],
       "matched_program_slug": null
+    },
+    {
+      "title": "Nursing - Paramedic to A.D.N. Bridge",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2391",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "General Education Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "OR",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "OR",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "OR",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "nursing"
     },
     {
       "title": "Nursing, R.N.",
@@ -873,17 +873,6 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Radiography, A.S.",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2399",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
       "title": "Precision Agriculture Technology, A.S.",
       "credential": "AS",
       "program_code": null,
@@ -961,6 +950,17 @@
       "matched_program_slug": null
     },
     {
+      "title": "Radiography, A.S.",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2399",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
       "title": "Supply Chain Management, A.S",
       "credential": "AS",
       "program_code": null,
@@ -1009,6 +1009,17 @@
       "matched_program_slug": "business-administration"
     },
     {
+      "title": "Accounting Technology Specialist, College Credit Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2340",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "accounting"
+    },
+    {
       "title": "Accounting Technology Management, College Credit Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -1042,17 +1053,6 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Artificial Intelligence Awareness, College Credit Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2852",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
       "title": "Accounting Technology Operations, College Credit Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -1064,21 +1064,10 @@
       "matched_program_slug": "accounting"
     },
     {
-      "title": "Accounting Technology Specialist, College Credit Certificate",
+      "title": "Artificial Intelligence Awareness, College Credit Certificate",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2340",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "accounting"
-    },
-    {
-      "title": "Automation, College Credit Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2378",
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2852",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1086,21 +1075,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Business Entrepreneurship, College Credit Certificate",
+      "title": "Automation, College Credit Certificate",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2347",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "business-administration"
-    },
-    {
-      "title": "Basics of Agribusiness, A.T.C.",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2585",
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2378",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1119,30 +1097,15 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Business Operations, College Credit Certificate",
-      "credential": "certificate",
+      "title": "Basics of Agribusiness, A.T.C.",
+      "credential": "other",
       "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2346",
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2585",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
-      "requirement_groups": [
-        {
-          "name": "Program Courses",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "OR",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "business-administration"
+      "requirement_groups": [],
+      "matched_program_slug": null
     },
     {
       "title": "Business Management, College Credit Certificate",
@@ -1175,39 +1138,6 @@
           ]
         }
       ],
-      "matched_program_slug": "business-administration"
-    },
-    {
-      "title": "Computer Information Data Specialist, College Credit Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2359",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Compensation and Benefits, A.T.C.",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2591",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Child Care Center Management, College Credit Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2368",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
       "matched_program_slug": "business-administration"
     },
     {
@@ -1251,10 +1181,58 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Computer Programming Specialist, College Credit Certificate",
+      "title": "Business Entrepreneurship, College Credit Certificate",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2358",
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2347",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Business Operations, College Credit Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2346",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Program Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "OR",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Child Care Center Management, College Credit Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2368",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Compensation and Benefits, A.T.C.",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2591",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1262,10 +1240,21 @@
       "matched_program_slug": null
     },
     {
-      "title": "Correctional Officer, Career and Technical Certificate",
+      "title": "Computer Information Data Specialist, College Credit Certificate",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2401",
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2359",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Computer Programming Specialist, College Credit Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2358",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1282,6 +1271,17 @@
       "description": null,
       "requirement_groups": [],
       "matched_program_slug": "criminal-justice"
+    },
+    {
+      "title": "Correctional Officer, Career and Technical Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2401",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
     },
     {
       "title": "Crossover from Corrections to Law Enforcement, Career and Technical Certificate",
@@ -1368,6 +1368,17 @@
       "matched_program_slug": null
     },
     {
+      "title": "Early Childhood Development Specialization, College Credit Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2369",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "early-childhood-education"
+    },
+    {
       "title": "Digital Media/Multimedia Authoring, College Credit Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -1388,17 +1399,6 @@
       "description": null,
       "requirement_groups": [],
       "matched_program_slug": null
-    },
-    {
-      "title": "Early Childhood Development Specialization, College Credit Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2369",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "early-childhood-education"
     },
     {
       "title": "Emergency Management, A.T.C",
@@ -1471,17 +1471,6 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Florida Law Enforcement Academy, Career and Technical Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2404",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "criminal-justice"
-    },
-    {
       "title": "Equine Technician, College Credit Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -1508,10 +1497,43 @@
       "matched_program_slug": null
     },
     {
+      "title": "Florida Law Enforcement Academy, Career and Technical Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2404",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "criminal-justice"
+    },
+    {
       "title": "Guest Services Specialist, College Credit Certificate",
       "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2352",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Help Desk Support Technician, College Credit Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2356",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Geographic Information Systems, College Credit Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2850",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1530,10 +1552,10 @@
       "matched_program_slug": "art"
     },
     {
-      "title": "Geographic Information Systems, College Credit Certificate",
+      "title": "Human Resources Administrator, College Credit Certificate",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2850",
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2349",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1567,17 +1589,6 @@
       "matched_program_slug": "computer-science"
     },
     {
-      "title": "Human Resources Administrator, College Credit Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2349",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
       "title": "Landscape and Horticulture Professional, College Credit Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -1589,26 +1600,30 @@
       "matched_program_slug": null
     },
     {
-      "title": "Help Desk Support Technician, College Credit Certificate",
+      "title": "Livestock Production Management, College Credit Certificate",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2356",
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2343",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Lean Six Sigma Green Belt, College Credit Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2376",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
+      "requirement_groups": [
+        {
+          "name": "Program Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "AEB1949 - Agribusiness Internship",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "business-administration"
     },
     {
       "title": "Information Technology Support Specialist, College Credit Certificate",
@@ -1644,6 +1659,39 @@
       "matched_program_slug": "computer-science"
     },
     {
+      "title": "Lean Six Sigma Green Belt, College Credit Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2376",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Logistics and Supply Chain Management, A.T.C.",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2416",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Logistics and Transportation Specialist, College Credit Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2388",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
       "title": "Marketing Operations, College Credit Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -1677,65 +1725,6 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Logistics and Transportation Specialist, College Credit Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2388",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Livestock Production Management, College Credit Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2343",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Program Courses",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "AEB1949 - Agribusiness Internship",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "business-administration"
-    },
-    {
-      "title": "Logistics and Supply Chain Management, A.T.C.",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2416",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "business-administration"
-    },
-    {
-      "title": "Network Security, College Credit Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2586",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
       "title": "Mechanical Designer and Programmer, College Credit Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -1751,6 +1740,17 @@
       "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2379",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Network Security, College Credit Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2586",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1780,10 +1780,10 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Pneumatics, Hydraulics and Motors for Manufacturing, College Credit Certificate",
+      "title": "Paramedic, College Credit Certificate",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2380",
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2372",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1802,10 +1802,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Paramedic, College Credit Certificate",
+      "title": "Pneumatics, Hydraulics and Motors for Manufacturing, College Credit Certificate",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2372",
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2380",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1824,15 +1824,37 @@
       "matched_program_slug": null
     },
     {
-      "title": "Welding Technology - Advanced, Career and Technical Certificate",
+      "title": "Scientific Workplace Preparation, College Credit Certificate",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2407",
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2577",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "welding"
+      "requirement_groups": [
+        {
+          "name": "Program Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "OR",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "OR",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
     },
     {
       "title": "Welding Technology, Career and Technical Certificate",
@@ -1875,65 +1897,21 @@
       "matched_program_slug": "welding"
     },
     {
-      "title": "Scientific Workplace Preparation, College Credit Certificate",
+      "title": "Welding Technology - Advanced, Career and Technical Certificate",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2577",
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2407",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
-      "requirement_groups": [
-        {
-          "name": "Program Courses",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "OR",
-              "credits": null,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "OR",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
+      "requirement_groups": [],
+      "matched_program_slug": "welding"
     },
     {
       "title": "Business and Organizational Management - Accounting Specialization, B.A.S.",
       "credential": "AS",
       "program_code": null,
       "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2420",
-      "total_credits": null,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "business-administration"
-    },
-    {
-      "title": "Business and Organizational Management - Agribusiness Management Specialization, B.A.S.",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2409",
-      "total_credits": null,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Business and Organizational Management - Human Resources Management Specialization, B.A.S.",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2579",
       "total_credits": null,
       "gpa_minimum": 2,
       "description": null,
@@ -1967,10 +1945,43 @@
       "matched_program_slug": "business-administration"
     },
     {
+      "title": "Business and Organizational Management - Agribusiness Management Specialization, B.A.S.",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2409",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
       "title": "Business and Organizational Management - Health Care Management Specialization, B.A.S.",
       "credential": "AS",
       "program_code": null,
       "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2411",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Business and Organizational Management - Human Resources Management Specialization, B.A.S.",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2579",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Business and Organizational Management - Management Information Systems Specialization, B.A.S.",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2410",
       "total_credits": null,
       "gpa_minimum": 2,
       "description": null,
@@ -1989,10 +2000,10 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Business and Organizational Management - Management Information Systems Specialization, B.A.S.",
+      "title": "Business and Organizational Management - Public Safety Administration Specialization, B.A.S.",
       "credential": "AS",
       "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2410",
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2412",
       "total_credits": null,
       "gpa_minimum": 2,
       "description": null,
@@ -2020,28 +2031,6 @@
       "description": null,
       "requirement_groups": [],
       "matched_program_slug": "early-childhood-education"
-    },
-    {
-      "title": "Business and Organizational Management - Public Safety Administration Specialization, B.A.S.",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2412",
-      "total_credits": null,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "business-administration"
-    },
-    {
-      "title": "Cooperative Education Program",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2570",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
     },
     {
       "title": "Registered Nurse to Bachelor of Science in Nursing",
@@ -2089,6 +2078,17 @@
         }
       ],
       "matched_program_slug": "nursing"
+    },
+    {
+      "title": "Cooperative Education Program",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.cf.edu/preview_program.php?catoid=24&poid=2570",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
     }
   ]
 }

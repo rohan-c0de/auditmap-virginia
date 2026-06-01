@@ -2,8 +2,61 @@
   "college_slug": "tcc-fl",
   "catalog_year": "",
   "catalog_url": "https://catalog.tsc.fl.edu",
-  "scraped_at": "2026-06-01T03:41:38.220Z",
+  "scraped_at": "2026-06-01T13:51:06.376Z",
   "programs": [
+    {
+      "title": "College and University Transfer, A.A.",
+      "credential": "AA",
+      "program_code": "1001",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2521",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "General Education Requirements for Associate in Arts Degree (36 Credit Hours)",
+          "credits_required": 36,
+          "choose_n": null,
+          "courses": []
+        },
+        {
+          "name": "5. Social Sciences-9 credit hours",
+          "credits_required": 9,
+          "choose_n": null,
+          "courses": []
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "CAD Foundations Certificate",
+      "credential": "certificate",
+      "program_code": "6354",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2549",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Program Courses (15 credit hours)",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": []
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Veterinary Assisting Career Certificate Program",
+      "credential": "certificate",
+      "program_code": "5040A",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2627",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
     {
       "title": "Building Construction Management, A.S.",
       "credential": "AS",
@@ -42,41 +95,6 @@
         }
       ],
       "matched_program_slug": "business-administration"
-    },
-    {
-      "title": "College and University Transfer, A.A.",
-      "credential": "AA",
-      "program_code": "1001",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2521",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "General Education Requirements for Associate in Arts Degree (36 Credit Hours)",
-          "credits_required": 36,
-          "choose_n": null,
-          "courses": []
-        },
-        {
-          "name": "5. Social Sciences-9 credit hours",
-          "credits_required": 9,
-          "choose_n": null,
-          "courses": []
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Veterinary Assisting Career Certificate Program",
-      "credential": "certificate",
-      "program_code": "5040A",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2627",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
     },
     {
       "title": "Building Construction Specialist Certificate",
@@ -137,21 +155,14 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "CAD Foundations Certificate",
+      "title": "Heating, Ventilation, Air-Conditioning/Refrigeration (HVAC/R) 1 Career Certificate Program",
       "credential": "certificate",
-      "program_code": "6354",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2549",
+      "program_code": "5037A",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2586",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
-      "requirement_groups": [
-        {
-          "name": "Program Courses (15 credit hours)",
-          "credits_required": 15,
-          "choose_n": null,
-          "courses": []
-        }
-      ],
+      "requirement_groups": [],
       "matched_program_slug": null
     },
     {
@@ -184,28 +195,6 @@
           "courses": []
         }
       ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Pipefitter Apprenticeship Career Certificate Program",
-      "credential": "certificate",
-      "program_code": "5034A",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2615",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Heating, Ventilation, Air-Conditioning/Refrigeration (HVAC/R) 1 Career Certificate Program",
-      "credential": "certificate",
-      "program_code": "5037A",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2586",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
       "matched_program_slug": null
     },
     {
@@ -242,6 +231,17 @@
       "matched_program_slug": null
     },
     {
+      "title": "Pipefitter Apprenticeship Career Certificate Program",
+      "credential": "certificate",
+      "program_code": "5034A",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2615",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
       "title": "Plumbing Apprenticeship Career Certificate Program",
       "credential": "certificate",
       "program_code": "5035A",
@@ -251,56 +251,6 @@
       "description": null,
       "requirement_groups": [],
       "matched_program_slug": null
-    },
-    {
-      "title": "Accounting Technology Management Certificate",
-      "credential": "certificate",
-      "program_code": "6329",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2533",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Program Courses (27 credit hours)",
-          "credits_required": 27,
-          "choose_n": null,
-          "courses": []
-        }
-      ],
-      "matched_program_slug": "business-administration"
-    },
-    {
-      "title": "Accounting Technology, A.S.",
-      "credential": "AS",
-      "program_code": "2170",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2620",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "General Education (15 credit hours)",
-          "credits_required": 15,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "Any General Education Mathematics State Core course 3 credit hour(s)",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Program Courses (45 credit hours)",
-          "credits_required": 45,
-          "choose_n": null,
-          "courses": []
-        }
-      ],
-      "matched_program_slug": "accounting"
     },
     {
       "title": "Animation and Game Art, A.S.",
@@ -393,6 +343,56 @@
       "matched_program_slug": null
     },
     {
+      "title": "Accounting Technology Management Certificate",
+      "credential": "certificate",
+      "program_code": "6329",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2533",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Program Courses (27 credit hours)",
+          "credits_required": 27,
+          "choose_n": null,
+          "courses": []
+        }
+      ],
+      "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Accounting Technology, A.S.",
+      "credential": "AS",
+      "program_code": "2170",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2620",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "General Education (15 credit hours)",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Any General Education Mathematics State Core course 3 credit hour(s)",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Program Courses (45 credit hours)",
+          "credits_required": 45,
+          "choose_n": null,
+          "courses": []
+        }
+      ],
+      "matched_program_slug": "accounting"
+    },
+    {
       "title": "Accounting Technology Operations Certificate",
       "credential": "certificate",
       "program_code": "6330",
@@ -461,6 +461,54 @@
       "matched_program_slug": "business-administration"
     },
     {
+      "title": "Business Administration, B.A.S.",
+      "credential": "AS",
+      "program_code": "C101",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2618",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Associate of Arts Degree (60 credit hours) or Associate of Science (60 credit hours)",
+          "credits_required": 60,
+          "choose_n": null,
+          "courses": []
+        },
+        {
+          "name": "B.A.S. Core Courses (60 credit hours)",
+          "credits_required": 60,
+          "choose_n": null,
+          "courses": []
+        },
+        {
+          "name": "B.A.S. Courses (24 credit hours)",
+          "credits_required": 24,
+          "choose_n": null,
+          "courses": []
+        }
+      ],
+      "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Business Development and Entrepreneurship Certificate",
+      "credential": "certificate",
+      "program_code": "6319",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2541",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Program Courses (24 credit hours)",
+          "credits_required": 24,
+          "choose_n": null,
+          "courses": []
+        }
+      ],
+      "matched_program_slug": "business-administration"
+    },
+    {
       "title": "Business Administration, A.S.",
       "credential": "AS",
       "program_code": "2109",
@@ -508,54 +556,6 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Business Development and Entrepreneurship Certificate",
-      "credential": "certificate",
-      "program_code": "6319",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2541",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Program Courses (24 credit hours)",
-          "credits_required": 24,
-          "choose_n": null,
-          "courses": []
-        }
-      ],
-      "matched_program_slug": "business-administration"
-    },
-    {
-      "title": "Business Administration, B.A.S.",
-      "credential": "AS",
-      "program_code": "C101",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2618",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Associate of Arts Degree (60 credit hours) or Associate of Science (60 credit hours)",
-          "credits_required": 60,
-          "choose_n": null,
-          "courses": []
-        },
-        {
-          "name": "B.A.S. Core Courses (60 credit hours)",
-          "credits_required": 60,
-          "choose_n": null,
-          "courses": []
-        },
-        {
-          "name": "B.A.S. Courses (24 credit hours)",
-          "credits_required": 24,
-          "choose_n": null,
-          "courses": []
-        }
-      ],
-      "matched_program_slug": "business-administration"
-    },
-    {
       "title": "Entrepreneurship Certificate",
       "credential": "certificate",
       "program_code": "6362",
@@ -571,17 +571,6 @@
           "courses": []
         }
       ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Medical Administrative Specialist Career Certificate Program",
-      "credential": "certificate",
-      "program_code": "5036A",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2592",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
       "matched_program_slug": null
     },
     {
@@ -636,6 +625,17 @@
         }
       ],
       "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Medical Administrative Specialist Career Certificate Program",
+      "credential": "certificate",
+      "program_code": "5036A",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2592",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
     },
     {
       "title": "Medical Office Administration, A.S.",
@@ -792,17 +792,6 @@
       "matched_program_slug": "criminal-justice"
     },
     {
-      "title": "Crossover from Correctional Officer to Law Enforcement Officer Career Certificate Program",
-      "credential": "certificate",
-      "program_code": "5006A",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2568",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "criminal-justice"
-    },
-    {
       "title": "Correctional Officer Basic Recruit Career Certificate Program",
       "credential": "certificate",
       "program_code": "5005A",
@@ -814,10 +803,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Crossover from Correctional Officer to Correctional Probation Officer Career Certificate Program",
+      "title": "Correctional Probation Officer Basic Recruit Career Certificate Program",
       "credential": "certificate",
-      "program_code": "5014A",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2571",
+      "program_code": "5012A",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2564",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -825,10 +814,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Correctional Probation Officer Basic Recruit Career Certificate Program",
+      "title": "Crossover from Correctional Officer to Correctional Probation Officer Career Certificate Program",
       "credential": "certificate",
-      "program_code": "5012A",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2564",
+      "program_code": "5014A",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2571",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -851,6 +840,85 @@
       "credential": "certificate",
       "program_code": "5015A",
       "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2567",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "criminal-justice"
+    },
+    {
+      "title": "Crossover from Correctional Officer to Law Enforcement Officer Career Certificate Program",
+      "credential": "certificate",
+      "program_code": "5006A",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2568",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "criminal-justice"
+    },
+    {
+      "title": "Crossover from Law Enforcement Officer to Correctional Officer Career and Technical Certificate",
+      "credential": "certificate",
+      "program_code": "5008A",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2569",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "criminal-justice"
+    },
+    {
+      "title": "Firefighter Career Certificate Program",
+      "credential": "certificate",
+      "program_code": "5020A",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2520",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Firefighter/Emergency Medical Technician -Combined Career Certificate Program",
+      "credential": "certificate",
+      "program_code": "5038A",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2558",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Elementary Education, B.S.",
+      "credential": "other",
+      "program_code": "C102",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2616",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Associate of Arts Degree (60 credit hours)",
+          "credits_required": 60,
+          "choose_n": null,
+          "courses": []
+        },
+        {
+          "name": "B.S. Core Courses (60 credit hours)",
+          "credits_required": 60,
+          "choose_n": null,
+          "courses": []
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Law Enforcement Basic Recruit Career Certificate Program",
+      "credential": "certificate",
+      "program_code": "5007A",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2566",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -898,74 +966,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Law Enforcement Basic Recruit Career Certificate Program",
-      "credential": "certificate",
-      "program_code": "5007A",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2566",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "criminal-justice"
-    },
-    {
-      "title": "Firefighter Career Certificate Program",
-      "credential": "certificate",
-      "program_code": "5020A",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2520",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Crossover from Law Enforcement Officer to Correctional Officer Career and Technical Certificate",
-      "credential": "certificate",
-      "program_code": "5008A",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2569",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "criminal-justice"
-    },
-    {
-      "title": "Firefighter/Emergency Medical Technician -Combined Career Certificate Program",
-      "credential": "certificate",
-      "program_code": "5038A",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2558",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Elementary Education, B.S.",
-      "credential": "other",
-      "program_code": "C102",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2616",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Associate of Arts Degree (60 credit hours)",
-          "credits_required": 60,
-          "choose_n": null,
-          "courses": []
-        },
-        {
-          "name": "B.S. Core Courses (60 credit hours)",
-          "credits_required": 60,
-          "choose_n": null,
-          "courses": []
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Early Childhood Development, Education and Management, A.S.",
       "credential": "AS",
       "program_code": "2123",
@@ -998,17 +998,23 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Infant and Toddler Certificate",
-      "credential": "certificate",
-      "program_code": "6366",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2608",
+      "title": "Exceptional Student Education, B.S.",
+      "credential": "other",
+      "program_code": "C103",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2617",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
       "requirement_groups": [
         {
-          "name": "Program Courses (12 credit hours)",
-          "credits_required": 12,
+          "name": "Associate of Arts Degree (60 credit hours)",
+          "credits_required": 60,
+          "choose_n": null,
+          "courses": []
+        },
+        {
+          "name": "B.S. Core Courses (60 credit hours)",
+          "credits_required": 60,
           "choose_n": null,
           "courses": []
         }
@@ -1034,23 +1040,17 @@
       "matched_program_slug": "early-childhood-education"
     },
     {
-      "title": "Exceptional Student Education, B.S.",
-      "credential": "other",
-      "program_code": "C103",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2617",
+      "title": "Infant and Toddler Certificate",
+      "credential": "certificate",
+      "program_code": "6366",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2608",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
       "requirement_groups": [
         {
-          "name": "Associate of Arts Degree (60 credit hours)",
-          "credits_required": 60,
-          "choose_n": null,
-          "courses": []
-        },
-        {
-          "name": "B.S. Core Courses (60 credit hours)",
-          "credits_required": 60,
+          "name": "Program Courses (12 credit hours)",
+          "credits_required": 12,
           "choose_n": null,
           "courses": []
         }
@@ -1130,6 +1130,70 @@
       "matched_program_slug": "business-administration"
     },
     {
+      "title": "Dental Hygiene, A.S.",
+      "credential": "AS",
+      "program_code": "2101",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2530",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "General Education (21 credit hours)",
+          "credits_required": 21,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Any General Education Humanities State Core course 3 credit hour(s)",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Program Courses (67 credit hours)",
+          "credits_required": 67,
+          "choose_n": null,
+          "courses": []
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Emergency Administration and Management, A.S.",
+      "credential": "AS",
+      "program_code": "2187",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2655",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "General Education (15 credit hours)",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Any General Education Humanities State Core course 3 credit hour(s)",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Program Courses (45 credit hours)",
+          "credits_required": 45,
+          "choose_n": null,
+          "courses": []
+        }
+      ],
+      "matched_program_slug": "business-administration"
+    },
+    {
       "title": "Energy Management and Controls Technology, A.S.",
       "credential": "AS",
       "program_code": "2169",
@@ -1180,38 +1244,6 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Emergency Administration and Management, A.S.",
-      "credential": "AS",
-      "program_code": "2187",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2655",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "General Education (15 credit hours)",
-          "credits_required": 15,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "Any General Education Humanities State Core course 3 credit hour(s)",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Program Courses (45 credit hours)",
-          "credits_required": 45,
-          "choose_n": null,
-          "courses": []
-        }
-      ],
-      "matched_program_slug": "business-administration"
-    },
-    {
       "title": "Diagnostic Medical Sonography, A.S.",
       "credential": "AS",
       "program_code": "2185",
@@ -1239,104 +1271,6 @@
           "credits_required": 59,
           "choose_n": null,
           "courses": []
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Dental Hygiene, A.S.",
-      "credential": "AS",
-      "program_code": "2101",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2530",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "General Education (21 credit hours)",
-          "credits_required": 21,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "Any General Education Humanities State Core course 3 credit hour(s)",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Program Courses (67 credit hours)",
-          "credits_required": 67,
-          "choose_n": null,
-          "courses": []
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Emergency Medical Services (EMS) Technology, A.S.",
-      "credential": "AS",
-      "program_code": "2104",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2528",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "General Education (15 credit hours)",
-          "credits_required": 15,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "Any General Education Humanities State Core course 3 credit hour(s)",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Program Courses (58 credit hours)",
-          "credits_required": 58,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "Any college-level course(s) 3 credit hour(s)",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Emergency Medical Technician Applied Technology Diploma",
-      "credential": "diploma",
-      "program_code": "B312",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2527",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Program Courses (12 credit hours)",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "All courses must be completed with a grade of “C” or better.",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
         }
       ],
       "matched_program_slug": null
@@ -1389,14 +1323,43 @@
       "matched_program_slug": null
     },
     {
-      "title": "Medical Assisting Career Certificate",
-      "credential": "certificate",
-      "program_code": "5046A",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2650",
+      "title": "Emergency Medical Services (EMS) Technology, A.S.",
+      "credential": "AS",
+      "program_code": "2104",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2528",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
-      "requirement_groups": [],
+      "requirement_groups": [
+        {
+          "name": "General Education (15 credit hours)",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Any General Education Humanities State Core course 3 credit hour(s)",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Program Courses (58 credit hours)",
+          "credits_required": 58,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Any college-level course(s) 3 credit hour(s)",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
       "matched_program_slug": null
     },
     {
@@ -1438,36 +1401,41 @@
       "matched_program_slug": "nursing"
     },
     {
-      "title": "Nursing (Bridge for Healthcare Professionals to Nursing) R.N., A.S.",
-      "credential": "AS",
-      "program_code": "2164",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2581",
+      "title": "Emergency Medical Technician Applied Technology Diploma",
+      "credential": "diploma",
+      "program_code": "B312",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2527",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
       "requirement_groups": [
         {
-          "name": "General Education (18 credit hours)",
-          "credits_required": 18,
+          "name": "Program Courses (12 credit hours)",
+          "credits_required": 12,
           "choose_n": null,
           "courses": [
             {
               "prefix": "ELEC",
               "number": "XXX",
-              "title": "Any General Education Humanities State Core course 3 credit hour(s) *",
+              "title": "All courses must be completed with a grade of “C” or better.",
               "credits": null,
               "or_alternatives": []
             }
           ]
-        },
-        {
-          "name": "Program Courses (44 credit hours)",
-          "credits_required": 44,
-          "choose_n": null,
-          "courses": []
         }
       ],
-      "matched_program_slug": "nursing"
+      "matched_program_slug": null
+    },
+    {
+      "title": "Medical Assisting Career Certificate",
+      "credential": "certificate",
+      "program_code": "5046A",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2650",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
     },
     {
       "title": "Nursing, R.N., A.S.",
@@ -1502,6 +1470,49 @@
       "matched_program_slug": "nursing"
     },
     {
+      "title": "Phlebotomy Career Certificate Program",
+      "credential": "certificate",
+      "program_code": "5043A",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2625",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Nursing (Bridge for Healthcare Professionals to Nursing) R.N., A.S.",
+      "credential": "AS",
+      "program_code": "2164",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2581",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "General Education (18 credit hours)",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Any General Education Humanities State Core course 3 credit hour(s) *",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Program Courses (44 credit hours)",
+          "credits_required": 44,
+          "choose_n": null,
+          "courses": []
+        }
+      ],
+      "matched_program_slug": "nursing"
+    },
+    {
       "title": "Nurse Assistant, Long Term Care Career Certificate Program",
       "credential": "certificate",
       "program_code": "5024A",
@@ -1511,6 +1522,17 @@
       "description": null,
       "requirement_groups": [],
       "matched_program_slug": "nursing"
+    },
+    {
+      "title": "Patient Care Technician Career Certificate Program",
+      "credential": "certificate",
+      "program_code": "5041A",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2629",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
     },
     {
       "title": "Paramedic Certificate",
@@ -1528,28 +1550,6 @@
           "courses": []
         }
       ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Phlebotomy Career Certificate Program",
-      "credential": "certificate",
-      "program_code": "5043A",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2625",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Patient Care Technician Career Certificate Program",
-      "credential": "certificate",
-      "program_code": "5041A",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2629",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
       "matched_program_slug": null
     },
     {
@@ -1578,70 +1578,6 @@
         {
           "name": "Program Courses (62 credit hours)",
           "credits_required": 62,
-          "choose_n": null,
-          "courses": []
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Surgical Technology, A.S.",
-      "credential": "AS",
-      "program_code": "2161",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2593",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "General Education (18 credit hours)",
-          "credits_required": 18,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "Any General Education Humanities State Core course 3 credit hour(s)",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Program Courses (46 credit hours)",
-          "credits_required": 46,
-          "choose_n": null,
-          "courses": []
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Respiratory Care, A.S.",
-      "credential": "AS",
-      "program_code": "2106",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2522",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "General Education (18 credit hours)",
-          "credits_required": 18,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "Any General Education Mathematics State Core course 3 credit hour(s) *",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Program Courses (58 credit hours)",
-          "credits_required": 58,
           "choose_n": null,
           "courses": []
         }
@@ -1720,67 +1656,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Computer Programming and Web Development, A.S.",
-      "credential": "AS",
-      "program_code": "2158",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2546",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "General Education (15 credit hours)",
-          "credits_required": 15,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "Any General Education Humanities State Core course 3 credit hour(s)",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Program Courses (45 credit hours)",
-          "credits_required": 45,
-          "choose_n": null,
-          "courses": []
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Artificial Intelligence Practitioner Career Certificate",
-      "credential": "certificate",
-      "program_code": "6369",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2652",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Program Courses (18 credit hours)",
-          "credits_required": 18,
-          "choose_n": null,
-          "courses": []
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Applied Cybersecurity Career Certificate Program",
-      "credential": "certificate",
-      "program_code": "5028A",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2590",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "computer-science"
-    },
-    {
       "title": "Computer Information Technology, A.S.",
       "credential": "AS",
       "program_code": "2180",
@@ -1821,6 +1696,67 @@
       "matched_program_slug": "computer-science"
     },
     {
+      "title": "Artificial Intelligence Practitioner Career Certificate",
+      "credential": "certificate",
+      "program_code": "6369",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2652",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Program Courses (18 credit hours)",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": []
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Computer Programming and Web Development, A.S.",
+      "credential": "AS",
+      "program_code": "2158",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2546",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "General Education (15 credit hours)",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Any General Education Humanities State Core course 3 credit hour(s)",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Program Courses (45 credit hours)",
+          "credits_required": 45,
+          "choose_n": null,
+          "courses": []
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Applied Cybersecurity Career Certificate Program",
+      "credential": "certificate",
+      "program_code": "5028A",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2590",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "computer-science"
+    },
+    {
       "title": "Computer Programming and Analysis Certificate",
       "credential": "certificate",
       "program_code": "6302",
@@ -1854,17 +1790,17 @@
       "matched_program_slug": null
     },
     {
-      "title": "Cybersecurity Operations, A.S.",
+      "title": "Surgical Technology, A.S.",
       "credential": "AS",
-      "program_code": "2171",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2622",
+      "program_code": "2161",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2593",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
       "requirement_groups": [
         {
-          "name": "General Education (15 credit hours)",
-          "credits_required": 15,
+          "name": "General Education (18 credit hours)",
+          "credits_required": 18,
           "choose_n": null,
           "courses": [
             {
@@ -1877,13 +1813,71 @@
           ]
         },
         {
-          "name": "Program Courses (45 credit hours)",
-          "credits_required": 45,
+          "name": "Program Courses (46 credit hours)",
+          "credits_required": 46,
           "choose_n": null,
           "courses": []
         }
       ],
-      "matched_program_slug": "computer-science"
+      "matched_program_slug": null
+    },
+    {
+      "title": "Computer Programming Specialist Certificate",
+      "credential": "certificate",
+      "program_code": "6338",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2543",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Program Courses (18 credit hours)",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Select two of the following:",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Respiratory Care, A.S.",
+      "credential": "AS",
+      "program_code": "2106",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2522",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "General Education (18 credit hours)",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Any General Education Mathematics State Core course 3 credit hour(s) *",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Program Courses (58 credit hours)",
+          "credits_required": 58,
+          "choose_n": null,
+          "courses": []
+        }
+      ],
+      "matched_program_slug": null
     },
     {
       "title": "Cybersecurity, A.S.",
@@ -1918,36 +1912,42 @@
       "matched_program_slug": "computer-science"
     },
     {
-      "title": "Computer Programming Specialist Certificate",
-      "credential": "certificate",
-      "program_code": "6338",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2543",
+      "title": "Cybersecurity Operations, A.S.",
+      "credential": "AS",
+      "program_code": "2171",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2622",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
       "requirement_groups": [
         {
-          "name": "Program Courses (18 credit hours)",
-          "credits_required": 18,
+          "name": "General Education (15 credit hours)",
+          "credits_required": 15,
           "choose_n": null,
           "courses": [
             {
               "prefix": "ELEC",
               "number": "XXX",
-              "title": "Select two of the following:",
+              "title": "Any General Education Humanities State Core course 3 credit hour(s)",
               "credits": null,
               "or_alternatives": []
             }
           ]
+        },
+        {
+          "name": "Program Courses (45 credit hours)",
+          "credits_required": 45,
+          "choose_n": null,
+          "courses": []
         }
       ],
-      "matched_program_slug": null
+      "matched_program_slug": "computer-science"
     },
     {
-      "title": "Game Development Design, A.S.",
+      "title": "Data Science Technology, A.S.",
       "credential": "AS",
-      "program_code": "2179",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2633",
+      "program_code": "2181",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2637",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1976,10 +1976,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Data Science Technology, A.S.",
+      "title": "Game Development Design, A.S.",
       "credential": "AS",
-      "program_code": "2181",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2637",
+      "program_code": "2179",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2633",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -2054,56 +2054,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Network Support Technician Certificate",
-      "credential": "certificate",
-      "program_code": "6358",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2585",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Program Courses (21 credit hours)",
-          "credits_required": 21,
-          "choose_n": null,
-          "courses": []
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Engineering Technology, A.S.",
-      "credential": "AS",
-      "program_code": "2163",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2580",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "General Education (15 credit hours)",
-          "credits_required": 15,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "Any General Education Humanities State Core course 3 credit hour(s)",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Program Courses (45 credit hours)",
-          "credits_required": 45,
-          "choose_n": null,
-          "courses": []
-        }
-      ],
-      "matched_program_slug": "engineering"
-    },
-    {
       "title": "Network Infrastructure Certificate",
       "credential": "certificate",
       "program_code": "6359",
@@ -2172,22 +2122,54 @@
       "matched_program_slug": "engineering"
     },
     {
-      "title": "Pneumatics, Hydraulics and Motors for Manufacturing Certificate",
+      "title": "Network Support Technician Certificate",
       "credential": "certificate",
-      "program_code": "6349",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2524",
+      "program_code": "6358",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2585",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
       "requirement_groups": [
         {
-          "name": "Program Courses (12 credit hours)",
-          "credits_required": 12,
+          "name": "Program Courses (21 credit hours)",
+          "credits_required": 21,
           "choose_n": null,
           "courses": []
         }
       ],
       "matched_program_slug": null
+    },
+    {
+      "title": "Engineering Technology, A.S.",
+      "credential": "AS",
+      "program_code": "2163",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2580",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "General Education (15 credit hours)",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Any General Education Humanities State Core course 3 credit hour(s)",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Program Courses (45 credit hours)",
+          "credits_required": 45,
+          "choose_n": null,
+          "courses": []
+        }
+      ],
+      "matched_program_slug": "engineering"
     },
     {
       "title": "Engineering Technologies Support Specialist Certificate",
@@ -2208,17 +2190,6 @@
       "matched_program_slug": "engineering"
     },
     {
-      "title": "Commercial Vehicle Driving Career Certificate Program",
-      "credential": "certificate",
-      "program_code": "5029A",
-      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2602",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
       "title": "Welding Technology Advanced, Career Certificate Program",
       "credential": "certificate",
       "program_code": "5030A",
@@ -2230,6 +2201,24 @@
       "matched_program_slug": "welding"
     },
     {
+      "title": "Pneumatics, Hydraulics and Motors for Manufacturing Certificate",
+      "credential": "certificate",
+      "program_code": "6349",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2524",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Program Courses (12 credit hours)",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": []
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Welding Technology Career Certificate Program",
       "credential": "certificate",
       "program_code": "5023A",
@@ -2239,6 +2228,17 @@
       "description": null,
       "requirement_groups": [],
       "matched_program_slug": "welding"
+    },
+    {
+      "title": "Commercial Vehicle Driving Career Certificate Program",
+      "credential": "certificate",
+      "program_code": "5029A",
+      "catalog_url": "https://catalog.tsc.fl.edu/preview_program.php?catoid=23&poid=2602",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
     },
     {
       "title": "Supply Chain Management, A.S.",
