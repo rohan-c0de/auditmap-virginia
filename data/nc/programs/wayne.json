@@ -2,7 +2,7 @@
   "college_slug": "wayne",
   "catalog_year": "2024-2025",
   "catalog_url": "https://waynecc.smartcatalogiq.com/en/2024-2025/general-catalog-and-student-handbook/work-based-learning-program/",
-  "scraped_at": "2026-06-01T03:30:58.250Z",
+  "scraped_at": "2026-06-01T13:45:44.456Z",
   "programs": [
     {
       "title": "A+ Fundamentals Certificate",
@@ -50,60 +50,6 @@
               "prefix": "CTS",
               "number": "220",
               "title": "Advanced Hardware/Software Support",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Application Development Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://waynecc.smartcatalogiq.com/en/2024-2025/general-catalog-and-student-handbook/programs-of-study/certificate-diploma-and-associate-in-applied-science-degree-programs/application-development-certificate",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "First (Spring) Semester",
-          "credits_required": 6,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CSC",
-              "number": "134",
-              "title": "C++ Programming",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CSC",
-              "number": "151",
-              "title": "JAVA Programming",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Second (Fall) Semester",
-          "credits_required": 6,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CSC",
-              "number": "251",
-              "title": "Advanced JAVA Programming",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "DBA",
-              "number": "120",
-              "title": "Database Programming I",
               "credits": 3,
               "or_alternatives": []
             }
@@ -228,60 +174,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Artificial Intelligence Fundamentals Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://waynecc.smartcatalogiq.com/en/2024-2025/general-catalog-and-student-handbook/programs-of-study/certificate-diploma-and-associate-in-applied-science-degree-programs/artificial-intelligence-fundamentals-certificate",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "First (Summer) Semester",
-          "credits_required": 6,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CSC",
-              "number": "113",
-              "title": "AI Fundamentals",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CSC",
-              "number": "121",
-              "title": "Python Programming",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Second (Fall) Semester",
-          "credits_required": 6,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CSC",
-              "number": "128",
-              "title": "Chatbot Programming I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CTS",
-              "number": "210",
-              "title": "Computer Ethics",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Artificial Intelligence Consultant 2 Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -313,6 +205,114 @@
               "prefix": "CTS",
               "number": "285",
               "title": "Systems Analysis & Design",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Second (Fall) Semester",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CSC",
+              "number": "128",
+              "title": "Chatbot Programming I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CTS",
+              "number": "210",
+              "title": "Computer Ethics",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Application Development Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://waynecc.smartcatalogiq.com/en/2024-2025/general-catalog-and-student-handbook/programs-of-study/certificate-diploma-and-associate-in-applied-science-degree-programs/application-development-certificate",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "First (Spring) Semester",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CSC",
+              "number": "134",
+              "title": "C++ Programming",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSC",
+              "number": "151",
+              "title": "JAVA Programming",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Second (Fall) Semester",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CSC",
+              "number": "251",
+              "title": "Advanced JAVA Programming",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DBA",
+              "number": "120",
+              "title": "Database Programming I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Artificial Intelligence Fundamentals Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://waynecc.smartcatalogiq.com/en/2024-2025/general-catalog-and-student-handbook/programs-of-study/certificate-diploma-and-associate-in-applied-science-degree-programs/artificial-intelligence-fundamentals-certificate",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "First (Summer) Semester",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CSC",
+              "number": "113",
+              "title": "AI Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSC",
+              "number": "121",
+              "title": "Python Programming",
               "credits": 3,
               "or_alternatives": []
             }
