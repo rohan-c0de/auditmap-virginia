@@ -198,6 +198,7 @@ import wiConfig from "./wi/config";
 import okConfig from "./ok/config";
 import coConfig from "./co/config";
 import neConfig from "./ne/config";
+import ksConfig from "./ks/config";
 import inConfig from "./in/config";
 
 const ALL_CONFIGS: StateConfig[] = [
@@ -250,6 +251,7 @@ const ALL_CONFIGS: StateConfig[] = [
   okConfig,
   coConfig,
   neConfig,
+  ksConfig,
   inConfig,
 ];
 
