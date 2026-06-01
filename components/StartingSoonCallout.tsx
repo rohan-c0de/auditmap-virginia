@@ -1,26 +1,31 @@
 import Link from "next/link";
-import { loadAllCourses } from "@/lib/courses";
-import { getCurrentTerm } from "@/lib/terms";
-import { daysUntilStart } from "@/lib/course-status";
+// Pre-built per-state aggregate of "sections starting in the next 14 days,"
+// regenerated on every Vercel build by
+// scripts/build-starting-soon-snapshot.ts. The previous version called
+// `loadAllCourses(currentTerm, state)` server-side here — a paginated
+// Supabase fetch of the full state catalog. Rendered inside every state
+// landing page during static generation, that saturated the free-tier
+// pool and tripped Vercel's 60s per-page budget (the symptom was
+// "Failed to build /[state]/page: /va after 3 attempts.")
+import startingSoonJson from "@/data/starting-soon.json";
 
-const WINDOW_DAYS = 14;
+interface StartingSoonSnapshot {
+  _generatedAt: string;
+  windowDays: number;
+  perState: Record<string, { uniqueCourses: number; uniqueColleges: number }>;
+}
+
+const SNAPSHOT: StartingSoonSnapshot = (startingSoonJson as unknown as StartingSoonSnapshot) ?? {
+  _generatedAt: "",
+  windowDays: 14,
+  perState: {},
+};
 
 export default async function StartingSoonCallout({ state }: { state: string }) {
-  const currentTerm = await getCurrentTerm(state);
-  const allCourses = await loadAllCourses(currentTerm, state);
+  const entry = SNAPSHOT.perState[state];
+  if (!entry || entry.uniqueCourses === 0) return null;
 
-  const upcoming = allCourses.filter((s) => {
-    if (!s.start_date) return false;
-    const days = daysUntilStart(s.start_date);
-    return days >= 0 && days <= WINDOW_DAYS;
-  });
-
-  if (upcoming.length === 0) return null;
-
-  const uniqueCourses = new Set(
-    upcoming.map((s) => `${s.course_prefix}-${s.course_number}`)
-  ).size;
-  const uniqueColleges = new Set(upcoming.map((s) => s.college_code)).size;
+  const { uniqueCourses, uniqueColleges } = entry;
 
   return (
     <Link

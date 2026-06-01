@@ -7,9 +7,19 @@ import { runPooled } from "./concurrency";
 // without this, /colleges static gen fires ~765 COUNTs in parallel, saturates
 // the Supabase pool, and trips Vercel's 60s per-page static-gen budget.
 import sectionCountsJson from "../data/section-counts.json";
+// Pre-built per-(state, college, term) prefix-count rollup. Same shape the
+// sitemap college-subjects route uses; we re-use it here for state-level
+// aggregates so getStateInsights / StateContext can derive "total sections"
+// and "top subjects per state" without running `loadAllCourses` (which
+// paginates Supabase and saturated the pool during static gen — same root
+// cause as the /colleges build failure).
+import sitemapSubjectsJson from "../data/sitemap-college-subjects.json";
 
 const SECTION_COUNTS: Record<string, number> =
   (sectionCountsJson as unknown as Record<string, number>) ?? {};
+
+const SITEMAP_SUBJECTS: Record<string, Array<{ prefix: string; count: number }>> =
+  (sitemapSubjectsJson as unknown as Record<string, Array<{ prefix: string; count: number }>>) ?? {};
 
 // ---------------------------------------------------------------------------
 // In-memory cache (server-side, survives across requests in dev/prod)
@@ -203,25 +213,20 @@ export async function getCourseCount(
   term: string,
   state: string
 ): Promise<number> {
-  // Snapshot lookup is O(1) and inlined into the bundle — no network call.
-  // The snapshot is rebuilt by `npm run build:section-counts-snapshot` on
-  // every Vercel deploy, so it tracks freshly-scraped data within one
-  // deploy cycle. Missing entries fall through to Supabase (e.g. a college
-  // added between deploys, or term files not yet committed).
+  // Snapshot-only lookup. The snapshot is rebuilt by
+  // `npm run build:section-counts-snapshot` on every Vercel deploy from
+  // the same on-disk JSON files the scrape → import pipeline writes, so
+  // it tracks freshly-scraped data within one deploy cycle.
+  //
+  // We intentionally do NOT fall back to Supabase on a miss. /colleges
+  // calls this ~765 times in parallel during static generation; even a
+  // handful of misses meant a handful of concurrent Supabase COUNTs,
+  // which saturated the free-tier connection pool and tripped Vercel's
+  // 60s per-page budget. A snapshot miss now returns 0 — i.e. "no course
+  // data for this college this term," which is the same UX a freshly-
+  // registered, not-yet-scraped college would have anyway.
   const key = `${state}|${collegeSlug}|${term}`;
-  if (key in SECTION_COUNTS) return SECTION_COUNTS[key];
-
-  return cached(`count:${state}:${collegeSlug}:${term}`, async () => {
-    const { count, error } = await supabase
-      .from("courses")
-      .select("id", { count: "exact", head: true })
-      .eq("college_code", collegeSlug)
-      .eq("term", term)
-      .eq("state", state);
-
-    if (error) return 0;
-    return count || 0;
-  });
+  return SECTION_COUNTS[key] ?? 0;
 }
 
 /**
@@ -722,3 +727,55 @@ function mapRow(row: any): CourseSection {
     prerequisite_courses: row.prerequisite_courses || [],
   };
 }
+
+
+// ---------------------------------------------------------------------------
+// State-level aggregates from pre-built snapshots (no Supabase calls).
+// These mirror what tallyTopSubjects(loadAllCourses(...)) used to produce in
+// state-insights.ts. They keep that codepath out of Supabase during static
+// generation, where pool saturation otherwise tripped Vercel's 60s
+// per-page budget on /[state]/page renders.
+// ---------------------------------------------------------------------------
+
+/** Total sections in a state for a given term (sum across all colleges). */
+export function getStateSectionTotalFromSnapshot(state: string, term: string): number {
+  const prefix = `${state}|`;
+  const suffix = `|${term}`;
+  let total = 0;
+  for (const k in SECTION_COUNTS) {
+    if (k.startsWith(prefix) && k.endsWith(suffix)) {
+      total += SECTION_COUNTS[k] ?? 0;
+    }
+  }
+  return total;
+}
+
+/** Top N subject prefixes for a state in a given term, with section + college counts. */
+export function getStateTopSubjectsFromSnapshot(
+  state: string,
+  term: string,
+  limit = 3,
+): Array<{ prefix: string; sectionCount: number; collegesOffering: number }> {
+  const prefix = `${state}|`;
+  const suffix = `|${term}`;
+  const byPrefix = new Map<string, { sectionCount: number; colleges: Set<string> }>();
+  for (const k in SITEMAP_SUBJECTS) {
+    if (!k.startsWith(prefix) || !k.endsWith(suffix)) continue;
+    // Key shape: "<state>|<collegeSlug>|<term>"
+    const middle = k.slice(prefix.length, k.length - suffix.length);
+    for (const { prefix: subj, count } of SITEMAP_SUBJECTS[k]) {
+      const entry = byPrefix.get(subj);
+      if (entry) {
+        entry.sectionCount += count;
+        entry.colleges.add(middle);
+      } else {
+        byPrefix.set(subj, { sectionCount: count, colleges: new Set([middle]) });
+      }
+    }
+  }
+  return Array.from(byPrefix.entries())
+    .map(([subj, v]) => ({ prefix: subj, sectionCount: v.sectionCount, collegesOffering: v.colleges.size }))
+    .sort((a, b) => b.sectionCount - a.sectionCount)
+    .slice(0, limit);
+}
+

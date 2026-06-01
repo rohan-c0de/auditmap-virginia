@@ -10,11 +10,16 @@
 
 import { loadInstitutions } from "@/lib/institutions";
 import { getStateRankings } from "@/lib/college-insights";
-import { loadAllCourses } from "@/lib/courses";
+// Snapshot-only helpers replace the previous `loadAllCourses` Supabase
+// fan-out used to derive totalSections + topSubjects. Same data, zero
+// network — see lib/courses.ts for why this matters during static gen.
+import {
+  getStateSectionTotalFromSnapshot,
+  getStateTopSubjectsFromSnapshot,
+} from "@/lib/courses";
 import { getStateAggregates, type StateScorecardAggregates } from "@/lib/scorecard";
 import { getArticlesByState } from "@/lib/blog";
 import { supabase } from "@/lib/supabase";
-import type { CourseSection } from "@/lib/types";
 import type { TransferDestRollup } from "@/scripts/build-transfer-dest-rollup";
 import * as fs from "node:fs";
 import * as path from "node:path";
@@ -172,34 +177,8 @@ async function loadStateAssistContext(
 // Top subjects statewide
 // ---------------------------------------------------------------------------
 
-function tallyTopSubjects(sections: CourseSection[]): StateInsightSubject[] {
-  const byPrefix = new Map<
-    string,
-    { sectionCount: number; colleges: Set<string> }
-  >();
-  for (const s of sections) {
-    const prefix = s.course_prefix;
-    if (!prefix) continue;
-    const entry = byPrefix.get(prefix);
-    if (entry) {
-      entry.sectionCount += 1;
-      entry.colleges.add(s.college_code);
-    } else {
-      byPrefix.set(prefix, {
-        sectionCount: 1,
-        colleges: new Set([s.college_code]),
-      });
-    }
-  }
-  return Array.from(byPrefix.entries())
-    .map(([prefix, v]) => ({
-      prefix,
-      sectionCount: v.sectionCount,
-      collegesOffering: v.colleges.size,
-    }))
-    .sort((a, b) => b.sectionCount - a.sectionCount)
-    .slice(0, 3);
-}
+// (Previously: tallyTopSubjects(sections: CourseSection[]) — replaced by
+// getStateTopSubjectsFromSnapshot in lib/courses.ts.)
 
 // ---------------------------------------------------------------------------
 // Main bundler
@@ -228,18 +207,20 @@ export async function getStateInsights(
   const codeToName = new Map<string, string>();
   for (const i of institutions) codeToName.set(i.college_slug, i.name);
 
-  // Fan out the heavy queries in parallel.
+  // Fan out the heavy queries in parallel. Note: the previous version
+  // included `loadAllCourses(term, state)` here — a paginated Supabase
+  // catalog download. It saturated the connection pool when 51 states
+  // rendered during static gen and was the second of two killers (the
+  // first being `getCourseCount` fan-out from /colleges) behind the
+  // "Failed to build /[state]/page: /va after 3 attempts" failures.
+  // Replaced with snapshot-derived aggregates below.
   const [
     rankings,
-    allSections,
     transferAgg,
     assistAgg,
     scorecardAgg,
   ] = await Promise.all([
     term ? getStateRankings(state, term).catch(() => null) : Promise.resolve(null),
-    term
-      ? loadAllCourses(term, state).catch(() => [] as CourseSection[])
-      : Promise.resolve([] as CourseSection[]),
     Promise.resolve(loadStateTransferDestinations(state)),
     state === "ca"
       ? loadStateAssistContext(state).catch(() => ({
@@ -250,8 +231,8 @@ export async function getStateInsights(
     Promise.resolve(getStateAggregates(state)),
   ]);
 
-  const totalSections = allSections.length || null;
-  const topSubjects = tallyTopSubjects(allSections);
+  const totalSections = term ? getStateSectionTotalFromSnapshot(state, term) || null : null;
+  const topSubjects = term ? getStateTopSubjectsFromSnapshot(state, term, 3) : [];
 
   let largestCollege: StateInsightCollegeRef | null = null;
   let smallestCollege: StateInsightCollegeRef | null = null;
