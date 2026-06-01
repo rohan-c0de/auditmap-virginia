@@ -72,6 +72,12 @@ const msConfig: StateConfig = {
       // Coahoma CC — Jenzabar JICS Course_Schedules portlet; same
       // viewstate-driven postback pattern as Hinds, per-department iteration.
       { scripts: ["scripts/ms/scrape-coahoma.ts"], runner: "playwright" },
+      // PRCC — actual SIS (Banner Extensibility) is SAML-walled, but the
+      // bookstore (WebPRISM) exposes a public term→dept→course→section XML
+      // cascade for textbook adoptions. The bookstore aggregates physical
+      // sections by textbook adoption, so this yields course-level catalog
+      // data per term rather than per-section granularity.
+      { scripts: ["scripts/ms/scrape-prcc-bookstore.ts"], runner: "http" },
     ],
     transfers: [
       // University of Mississippi publishes public per-CC course-equivalency
@@ -86,29 +92,24 @@ const msConfig: StateConfig = {
     programs: [{ scripts: ["scripts/ms/scrape-programs.ts"], runner: "http" }],
   },
 
-  // 4 MS colleges with no public section data (verified 2026-06 via
+  // 3 MS colleges with no public section data (verified 2026-06 via
   // untouchable-investigator + manual probes).
   documentedCeilings: {
     courses: [
       {
         collegeSlug: "copiah-lincoln-community-college",
         reason:
-          "Co-Lin runs Jenzabar Athena on a non-standard port (access.colin.edu:444); the only public URL is athena/isclogin.pgm which is a username/password form — no guest path. Verified 2026-06.",
+          "Co-Lin runs Jenzabar Athena on a non-standard port (access.colin.edu:444); the only public URL is athena/isclogin.pgm which is a username/password form. No Banner / Colleague / SSB alternative subdomain resolves; no public bookstore-XML; no PDF schedule on the marketing site. Verified 2026-06.",
       },
       {
         collegeSlug: "east-central-community-college",
         reason:
-          "ECCC runs Jenzabar JICS at my.eccc.edu; the Course_Schedules portlet renders an empty 'Please log in to view this page' shell for guests (unlike Coahoma's identical platform which does grant guest access). Verified 2026-06.",
+          "ECCC runs Jenzabar JICS at my.eccc.edu; the Course_Schedules portlet renders an empty 'Please log in to view this page' shell for guests (unlike Coahoma's identical platform). In-house bookstore has no XML cascade; no PDF schedule. Verified 2026-06.",
       },
       {
         collegeSlug: "northeast-mississippi-community-college",
         reason:
-          "NEMCC's Banner SSB 9 at reg-prod.ec.nemcc.edu has guestLoginEnabled=false on every endpoint — no public class search. No alternate PDF/HTML schedule on nemcc.edu. Verified 2026-06.",
-      },
-      {
-        collegeSlug: "pearl-river-community-college",
-        reason:
-          "PRCC's Banner Extensibility ClassSearch page advertises guestLoginEnabled=true in its meta tags, but every /BannerExtensibility/internalPb/virtualDomains/* data endpoint 302-redirects to /saml/login — the guest flag controls UI flow only, not data access. Verified 2026-06.",
+          "NEMCC's Banner SSB 9 at reg-prod.ec.nemcc.edu has guestLoginEnabled=false on every endpoint, and its Banner Extensibility customPage SAML-redirects all virtualDomain data calls. Bookstore is a Square Online e-commerce site (no class lookup). No PDF schedule. Verified 2026-06.",
       },
     ],
   },
