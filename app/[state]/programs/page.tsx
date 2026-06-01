@@ -16,7 +16,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { getAllStates, isValidState } from "@/lib/states/registry";
+import { isValidState } from "@/lib/states/registry";
 import { requireStateConfig } from "@/lib/states/route-helpers";
 import { PROGRAMS } from "@/lib/programs/registry";
 import {
@@ -26,16 +26,20 @@ import {
 } from "@/lib/programs";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
-export const revalidate = 604800; // 7 days
+export const revalidate = 1209600; // 14 days
 
 type PageProps = {
   params: Promise<{ state: string }>;
 };
 
-export const dynamicParams = false;
+// On-demand ISR: generate no pages at build (keeps build memory low — see the
+// staticGenerationMaxConcurrency note in next.config). Programs index loads a
+// state's full program data, so building all 48 at once was a memory hog.
+// requireStateConfig()/isValidState 404 invalid states.
+export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  return getAllStates().map((s) => ({ state: s.slug }));
+  return [];
 }
 
 function siteUrl(): string {

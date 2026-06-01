@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { getAllStates } from "@/lib/states/registry";
 import { requireStateConfig } from "@/lib/states/route-helpers";
 import PlannerClient from "./PlannerClient";
 
@@ -7,8 +6,13 @@ type Props = {
   params: Promise<{ state: string }>;
 };
 
+// On-demand ISR: generate no pages at build (keeps build memory low — see the
+// staticGenerationMaxConcurrency note in next.config). requireStateConfig()
+// 404s invalid states.
+export const dynamicParams = true;
+export const revalidate = 1209600; // 14 days
 export function generateStaticParams() {
-  return getAllStates().map((s) => ({ state: s.slug }));
+  return [];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
