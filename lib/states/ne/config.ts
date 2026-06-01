@@ -8,10 +8,20 @@ const neConfig: StateConfig = {
   systemUrl: "https://nebraskacommunitycolleges.org/",
   collegeCount: 9,
 
-  // Nebraska has no statewide senior tuition-waiver statute. Individual
-  // colleges set their own policy — e.g. Mid-Plains CC offers a 62+ rate
-  // (institutional, not state-mandated). Leave null at the state level.
-  seniorWaiver: null,
+  // Nebraska has no statewide senior tuition-waiver statute; each community
+  // college sets its own policy. Populated at state level as a "varies by
+  // college" entry with the most common threshold (62), per the AZ/CA pattern.
+  seniorWaiver: {
+    ageThreshold: 62,
+    legalCitation: "No statewide statute; set by each community college",
+    description:
+      "Nebraska has no statewide senior-tuition statute. Each community college sets its own policy — commonly a reduced senior rate for residents 62+ on credit courses (e.g. Metropolitan CC, Mid-Plains CC). Terms vary by college; confirm with the registrar.",
+    bannerTitle: "Nebraska Senior Discounts (by college)",
+    bannerSummary:
+      "62+ in Nebraska? Many community colleges offer a reduced senior tuition rate — terms vary by college.",
+    bannerDetail:
+      "Nebraska has no statewide senior-tuition statute; each community college sets its own policy. A common pattern is a reduced (often ~50%) senior tuition rate for residents aged 62 and older on credit courses, sometimes excluding non-credit classes and third-party-paid tuition (e.g. Metropolitan Community College, Mid-Plains Community College). Contact your college's registrar or business office for the specific rate and eligibility.",
+  },
 
   transferSupported: false,
   // Top 8 by section count across all 7 scraped NE colleges (9,636 sections).
