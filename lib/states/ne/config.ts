@@ -56,6 +56,10 @@ const neConfig: StateConfig = {
         scripts: ["scripts/ne/scrape-wncc.ts"],
         runner: "node" as const,
       },
+      {
+        scripts: ["scripts/ne/scrape-lptc.ts"],
+        runner: "node" as const,
+      },
     ],
     prereqs: { source: "aggregate-from-courses" as const },
     // manual-only: transfers — no articulation portal registered for NE.
