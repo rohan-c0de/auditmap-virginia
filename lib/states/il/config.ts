@@ -74,7 +74,23 @@ const ilConfig: StateConfig = {
       // SIU Articulation Portal — ~36K mappings across 39 CCs via POST forms.
       { scripts: ["scripts/il/scrape-transfer-siu.ts"], runner: "http" },
     ],
-    // manual-only: programs — Phase 5+; no state has program scrapers yet.
+    programs: [
+      {
+        // discover-catalogs.ts fingerprints each IL college's catalog platform
+        // → data/il/catalog-discovery.json; the platform scrapers read it.
+        // Keep ordered — discovery MUST run before the scrapers. Coverage:
+        // 10 plannable colleges (1,066 programs). Gaps in
+        // data/il/DEFERRED-programs.md (City Colleges of Chicago shared catalog,
+        // courseleaf index variants, coursedog, nested SmartCatalogIQ).
+        scripts: [
+          "scripts/il/discover-catalogs.ts",
+          "scripts/il/scrape-smartcatalogiq-programs.ts",
+          "scripts/il/scrape-acalog-programs.ts",
+          "scripts/il/scrape-misc-programs.ts",
+        ],
+        runner: "http",
+      },
+    ],
   },
 };
 
