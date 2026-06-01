@@ -57,70 +57,71 @@ export async function getAvailableTermsForDisplay(state: string): Promise<{
     .sort((a, b) => termSortKey(b.code) - termSortKey(a.code));
 }
 
+// ---------------------------------------------------------------------------
+// Batch current-term resolver
+//
+// During Next.js static generation, dozens of pages call getCurrentTerm() for
+// different states concurrently. The old per-state RPC accumulated enough
+// connection pressure to time out the 2-minute Supabase statement_timeout once
+// the courses table passed ~1M rows. This version fetches ALL states' term
+// counts in a single RPC (get_all_term_college_counts, ~400ms) and caches the
+// result map so every subsequent getCurrentTerm(state) is a synchronous lookup.
+// ---------------------------------------------------------------------------
+
+interface TermCountRow {
+  state: string;
+  term: string;
+  college_count: number;
+}
+
+function pickBestTerm(rows: TermCountRow[]): string {
+  if (rows.length === 0) return "2026SP";
+  let bestTerm = rows[0].term;
+  let bestCount = Number(rows[0].college_count);
+  for (const row of rows) {
+    const count = Number(row.college_count);
+    if (
+      count > bestCount ||
+      (count === bestCount && termSortKey(row.term) > termSortKey(bestTerm))
+    ) {
+      bestTerm = row.term;
+      bestCount = count;
+    }
+  }
+  return bestTerm;
+}
+
+async function loadAllCurrentTerms(): Promise<Map<string, string>> {
+  const { data, error } = await supabase.rpc("get_all_term_college_counts");
+
+  if (error || !data) {
+    console.warn("get_all_term_college_counts RPC error:", error?.message ?? error);
+    return new Map();
+  }
+
+  const byState = new Map<string, TermCountRow[]>();
+  for (const row of data as TermCountRow[]) {
+    if (!byState.has(row.state)) byState.set(row.state, []);
+    byState.get(row.state)!.push(row);
+  }
+
+  const result = new Map<string, string>();
+  for (const [st, rows] of byState) {
+    result.set(st, pickBestTerm(rows));
+  }
+  return result;
+}
+
 /**
  * Get the current term code by querying Supabase.
- * Uses a single RPC call to get term→college counts instead of N separate queries.
- * Returns the term with the most college data, breaking ties by recency.
+ * Batch-fetches all states' term→college counts in one RPC call, then caches
+ * the map. Returns the term with the most college data, breaking ties by recency.
  * Falls back to "2026SP" if no data is found.
  */
 export async function getCurrentTerm(state: string): Promise<string> {
   return cached(`currentTerm:${state}`, async () => {
-    // Try RPC first (single query instead of N+1)
-    const { data: rpcData, error: rpcErr } = await supabase.rpc(
-      "get_term_college_counts",
-      { p_state: state }
-    );
-
-    if (!rpcErr && rpcData) {
-      if (rpcData.length === 0) return "2026SP";
-
-      let bestTerm = rpcData[0].term;
-      let bestCount = Number(rpcData[0].college_count);
-
-      for (const row of rpcData) {
-        const count = Number(row.college_count);
-        if (
-          count > bestCount ||
-          (count === bestCount && termSortKey(row.term) > termSortKey(bestTerm))
-        ) {
-          bestTerm = row.term;
-          bestCount = count;
-        }
-      }
-
-      return bestTerm;
-    }
-
-    // Fallback: use getAvailableTerms + individual queries (old slow path)
-    console.warn("get_term_college_counts RPC error, using fallback:", rpcErr?.message ?? rpcErr);
-    const terms = await getAvailableTerms(state);
-    if (terms.length === 0) return "2026SP";
-
-    let bestTerm = terms[0];
-    let bestCount = 0;
-
-    for (const term of terms) {
-      const { count, error: countErr } = await supabase
-        .from("courses")
-        .select("id", { count: "exact", head: true })
-        .eq("state", state)
-        .eq("term", term);
-
-      if (countErr) {
-        console.error(`Term count error for ${term}:`, countErr.message);
-        continue;
-      }
-      const c = count || 0;
-      if (
-        c > bestCount ||
-        (c === bestCount && termSortKey(term) > termSortKey(bestTerm))
-      ) {
-        bestTerm = term;
-        bestCount = c;
-      }
-    }
-
-    return bestTerm;
+    const allTerms = await cached("currentTermMap:all", loadAllCurrentTerms);
+    return allTerms.get(state) ?? "2026SP";
   });
 }
 
