@@ -39,6 +39,12 @@ const ksConfig: StateConfig = {
       { scripts: ["scripts/ks/scrape-banner-ssb.ts"], runner: "playwright" },
       { scripts: ["scripts/ks/scrape-colleague.ts"], runner: "playwright" },
       { scripts: ["scripts/ks/scrape-jenzabar-webforms.ts"], runner: "playwright" },
+      { scripts: ["scripts/ks/scrape-fhnw-empower-xl.ts"], runner: "http" },
+      { scripts: ["scripts/ks/scrape-hutchinson.ts"], runner: "http" },
+      { scripts: ["scripts/ks/scrape-allen.ts"], runner: "http" },
+      { scripts: ["scripts/ks/scrape-manhattan-tech.ts"], runner: "http" },
+      { scripts: ["scripts/ks/scrape-colby.ts"], runner: "http" },
+      { scripts: ["scripts/ks/scrape-salina.ts"], runner: "http" },
     ],
     // manual-only: transfers — no statewide articulation portal registered for KS yet.
     prereqs: { source: "aggregate-from-courses" },
