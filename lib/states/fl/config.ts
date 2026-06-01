@@ -208,6 +208,27 @@ const flConfig: StateConfig = {
       },
     ],
   },
+  // Two FCS colleges have no public section data and cannot be scraped — both
+  // investigated 2026-06 (see the not-scrapable notes in scrapers.courses).
+  // They are excused from the course-coverage denominator so the audit reflects
+  // the reachable system, not an unreachable one. FSCJ's Coursedog catalog still
+  // contributes course-level prereqs via the aggregator; it just never yields
+  // sections, so it is not surfaced as course coverage (no fake/section-less
+  // listings — invariant #4).
+  documentedCeilings: {
+    courses: [
+      {
+        collegeSlug: "fscj",
+        reason:
+          "FSCJ runs PeopleSoft Campus Solutions at csprd.fscj.edu with no guest realm provisioned (csprdguest/FSCJGUEST both return a 'Site name is not valid' body; COMMUNITY_ACCESS.CLASS_SEARCH.GBL on the main realm redirects to login). No Banner or alternate SIS subdomain and no PDF schedule exist. The public Coursedog catalog (scripts/fl/scrape-coursedog.ts) yields course descriptions + prereqs but never sections. Verified 2026-06.",
+      },
+      {
+        collegeSlug: "pensacolastate",
+        reason:
+          "Pensacola State migrated to Workday Student (wd501.myworkday.com/pensacolastate); Workday Student has no public guest class-search by design. The pensacolastate.edu/course-search/ WordPress form POSTs to a JS widget that calls Workday client-side and returns nothing without auth. No Banner/Colleague endpoint exists anywhere on pensacolastate.edu. Verified 2026-06.",
+      },
+    ],
+  },
 };
 
 export default flConfig;
