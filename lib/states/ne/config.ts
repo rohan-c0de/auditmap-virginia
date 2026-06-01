@@ -5,21 +5,37 @@ const neConfig: StateConfig = {
   name: "Nebraska",
   systemName: "NCCA",
   systemFullName: "Nebraska Community College Association",
-  systemUrl: "https://ncca.ne.gov/",
+  systemUrl: "https://nebraskacommunitycolleges.org/",
   collegeCount: 9,
 
+  // Nebraska has no statewide senior tuition-waiver statute. Individual
+  // colleges set their own policy — e.g. Mid-Plains CC offers a 62+ rate
+  // (institutional, not state-mandated). Leave null at the state level.
   seniorWaiver: null,
 
   transferSupported: false,
-  popularCourses: [],
+  // Top 8 by section count across all 7 scraped NE colleges (9,636 sections).
+  // Computed once from data/ne/courses; refresh periodically as new colleges
+  // come online. ACFS 1015 = Adult Coping & Family Skills (workforce);
+  // ENGL 1010 dominates with 310 sections statewide.
+  popularCourses: [
+    "ENGL 1010",
+    "MATH 1150",
+    "PSYC 1810",
+    "ENGL 1020",
+    "SPCH 1110",
+    "BIOS 1010",
+    "SOCI 1010",
+    "ACCT 1200",
+  ],
   defaultZip: "68508",
   defaultZipCity: "Lincoln",
 
   courseDiscoveryUrl: (_collegeSlug: string, _prefix: string, _number: string) =>
-    "https://ncca.ne.gov/",
+    "https://nebraskacommunitycolleges.org/",
 
   collegeCoursesUrl: (_collegeSlug: string) =>
-    "https://ncca.ne.gov/",
+    "https://nebraskacommunitycolleges.org/",
 
   branding: {
     siteName: "Community College Path Nebraska",
@@ -36,30 +52,12 @@ const neConfig: StateConfig = {
   },
   scrapers: {
     courses: [
-      {
-        scripts: ["scripts/ne/scrape-colleague.ts"],
-        runner: "node" as const,
-      },
-      {
-        scripts: ["scripts/ne/scrape-banner-ssb.ts"],
-        runner: "node" as const,
-      },
-      {
-        scripts: ["scripts/ne/scrape-nicc.ts"],
-        runner: "node" as const,
-      },
-      {
-        scripts: ["scripts/ne/scrape-mpcc.ts"],
-        runner: "node" as const,
-      },
-      {
-        scripts: ["scripts/ne/scrape-wncc.ts"],
-        runner: "node" as const,
-      },
-      {
-        scripts: ["scripts/ne/scrape-lptc.ts"],
-        runner: "node" as const,
-      },
+      { scripts: ["scripts/ne/scrape-colleague.ts"], runner: "playwright" },
+      { scripts: ["scripts/ne/scrape-banner-ssb.ts"], runner: "http" },
+      { scripts: ["scripts/ne/scrape-nicc.ts"], runner: "http" },
+      { scripts: ["scripts/ne/scrape-mpcc.ts"], runner: "http" },
+      { scripts: ["scripts/ne/scrape-wncc.ts"], runner: "http" },
+      { scripts: ["scripts/ne/scrape-lptc.ts"], runner: "http" },
     ],
     prereqs: { source: "aggregate-from-courses" as const },
     // manual-only: transfers — no articulation portal registered for NE.
