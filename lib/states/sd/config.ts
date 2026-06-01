@@ -8,12 +8,14 @@ const sdConfig: StateConfig = {
   systemUrl: "https://www.boardofregents.sd.gov/",
   collegeCount: 6,
 
-  // No statewide senior tuition-waiver statute in SD. Verified 2026-05-29:
-  // Southeast Tech (southeasttech.edu/costs-financial-aid) and Western Dakota
-  // Tech (wdt.edu/paying-for-school/cost) publish full tuition schedules with
-  // no senior-citizen discount, audit waiver, or age-based reduction. Lake
-  // Area Tech and Mitchell Tech cost pages were unreachable for direct
-  // verification but their published catalogs contain no such policy.
+  // VERIFIED: no senior waiver — South Dakota has no statewide senior
+  // tuition-waiver statute. Verified 2026-05-29: Southeast Tech
+  // (southeasttech.edu/costs-financial-aid) and Western Dakota Tech
+  // (wdt.edu/paying-for-school/cost) publish full tuition schedules with no
+  // senior-citizen discount, audit waiver, or age-based reduction. Lake Area
+  // Tech and Mitchell Tech cost pages were unreachable for direct verification
+  // but their published catalogs contain no such policy. The "VERIFIED:" marker
+  // above signals to /state-audit that this null is by-verification, not a gap.
   seniorWaiver: null,
 
   transferSupported: true,
