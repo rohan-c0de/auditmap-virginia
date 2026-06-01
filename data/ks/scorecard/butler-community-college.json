@@ -1,0 +1,46 @@
+{
+  "unitid": 154800,
+  "schoolName": "Butler Community College",
+  "state": "KS",
+  "city": "El Dorado",
+  "schoolUrl": "www.butlercc.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-06-01T00:40:56.740Z",
+  "size": 5104,
+  "shareFirstGeneration": 0.4160719006,
+  "cost": {
+    "tuitionInState": 3541,
+    "tuitionOutOfState": 6271,
+    "attendanceAcademicYear": 21295,
+    "avgNetPricePublic": 15724,
+    "bookSupply": 1000,
+    "roomBoardOffCampus": 15552,
+    "netPriceByIncome": {
+      "0_30000": 13485,
+      "30001_48000": 16423,
+      "48001_75000": 16840,
+      "75001_110000": 17258,
+      "110001_plus": 20810
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.3339,
+    "federalLoanRate": 0.177,
+    "medianDebtCompleters": 10500
+  },
+  "completion": {
+    "completionRate150nt": 0.3228,
+    "completionRate200nt": 0.3311,
+    "transferRate": 0.2444,
+    "retentionRateFullTime": 0.6304,
+    "retentionRatePartTime": 0.385
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 41206,
+    "median1YrAfterCompletion": 34651,
+    "percentile25_10YrsAfterEntry": 24164,
+    "percentile75_10YrsAfterEntry": 60347,
+    "shareEarningAboveHsGrad": 0.594
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "$comment": "Multi-college-district cluster detection output (issue #497). Each cluster represents N colleges that share a SIS host or registrable domain — a single bespoke scraper can cover all members.",
+  "state": "ks",
+  "generatedAt": "2026-06-01T00:39:37.684Z",
+  "summary": {
+    "inputCount": 12,
+    "clusterCount": 0,
+    "clusteredCount": 0,
+    "singletonCount": 12
+  },
+  "clusters": [],
+  "singletons": [
+    {
+      "slug": "barton-county-community-college",
+      "primaryUrl": "bartonccc.edu"
+    },
+    {
+      "slug": "coffeyville-community-college",
+      "primaryUrl": "coffeyville.edu"
+    },
+    {
+      "slug": "colby-community-college",
+      "primaryUrl": "colbycc.edu"
+    },
+    {
+      "slug": "highland-community-college",
+      "primaryUrl": "highlandcc.edu"
+    },
+    {
+      "slug": "hutchinson-community-college",
+      "primaryUrl": "hutchcc.edu"
+    },
+    {
+      "slug": "independence-community-college",
+      "primaryUrl": "indycc.edu"
+    },
+    {
+      "slug": "manhattan-area-technical-college",
+      "primaryUrl": "manhattantech.edu"
+    },
+    {
+      "slug": "northwest-kansas-technical-college",
+      "primaryUrl": "nwktc.edu"
+    },
+    {
+      "slug": "pratt-community-college",
+      "primaryUrl": "prattcc.edu"
+    },
+    {
+      "slug": "garden-city-community-college",
+      "primaryUrl": "gcccks.edu"
+    },
+    {
+      "slug": "johnson-county-community-college",
+      "primaryUrl": "jccc.edu"
+    },
+    {
+      "slug": "north-central-kansas-technical-college",
+      "primaryUrl": "ncktc.edu"
+    }
+  ]
+}
