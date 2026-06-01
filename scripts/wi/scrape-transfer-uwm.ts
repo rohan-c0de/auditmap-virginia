@@ -35,6 +35,7 @@
 import fs from "fs";
 import path from "path";
 import { importTransfersToSupabase } from "../lib/supabase-import.js";
+import { mergeTransferRows } from "../lib/transfer-merge.js";
 
 interface TransferMapping {
   state: string;
@@ -232,8 +233,9 @@ async function main() {
 
   const outPath = path.join(process.cwd(), "data", "wi", "transfer-equiv.json");
   fs.mkdirSync(path.dirname(outPath), { recursive: true });
-  fs.writeFileSync(outPath, JSON.stringify(all, null, 2) + "\n");
-  console.log(`\nSaved ${all.length} mappings → ${outPath}`);
+  const merged = mergeTransferRows("wi", all, { log: (m) => console.log(`  ${m}`) });
+  fs.writeFileSync(outPath, JSON.stringify(merged, null, 2) + "\n");
+  console.log(`\nSaved ${merged.length} mappings → ${outPath}`);
 
   if (!skipImport) {
     try {
