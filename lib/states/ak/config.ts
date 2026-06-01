@@ -72,6 +72,15 @@ const akConfig: StateConfig = {
       },
     ],
   },
+  // Alaska has no public CC→4-year articulation data to scrape: the state
+  // operates no registered articulation portal, and its single community
+  // college (Ilisagvik, tribally-controlled in Utqiagvik) doesn't publish
+  // bulk transfer equivalencies. This is a structural ceiling, not unfinished
+  // work — recorded so the audit caps transfers at B instead of grading F.
+  documentedCeilings: {
+    transfers:
+      "Alaska operates no registered statewide articulation portal, and Ilisagvik — the state's single, tribally-controlled community college — publishes no bulk CC→4-year transfer equivalencies. No public data source exists to scrape. Verified 2026-06.",
+  },
 };
 
 export default akConfig;

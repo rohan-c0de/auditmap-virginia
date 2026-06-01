@@ -96,7 +96,7 @@ The fastest realistic path is to front-load two near-zero-cost batches before an
 - [ ] **md** (C) — Maryland: All dims A except courses 81%; the 3 missing colleges (ccbc/cecil/garrett) already have wired scrapers that just need a re-run -> 16/16, no new code.
 - [x] **nc** (C→**B**) — North Carolina: Huge state one regex pass from B+: 8 prereq entries have raw <br> + empty courses[]; strip and re-extract -> prereqs C->A, courses/transfers already A.
 - [ ] **az** (C) — Arizona: Large state; AWC re-run (transient 502) + central-AZ coursedog lands courses ~95% with tohono-oodham as documented ceiling -> composite A-/A.
-- [ ] **ak** (F) — Alaska: Single tribal college; F only because no-portal transfers isn't recorded as a ceiling — a metadata edit flips F->B+/A with everything else already A/B.
+- [x] **ak** (F→**B**) — Alaska: ✅ documented transfers ceiling (no AK articulation portal; single tribal college) → transfers F→B, composite B (at ceiling; remaining B is prereqs/config, data-limited)
 - [ ] **la** (B) — Louisiana: Everything built/wired incl 5 aligned programs; record northshore (LoLA SSO) as a courses ceiling and 92% becomes A -> composite A.
 - [ ] **mn** (B) — Minnesota: 26/28 courses, all else A, planner-ready; document the 2 independent tribal colleges as ceilings -> courses A, composite A. No scraping.
 - [ ] **mt** (C) — Montana: All dims A except courses 60%; the 4 missing are tribal/auth-gated ceilings — recording them lifts courses 60%->effective 100%, composite C->A.
