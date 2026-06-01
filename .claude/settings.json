@@ -23,6 +23,10 @@
           {
             "type": "command",
             "command": ".claude/hooks/pre-pr-build-check.sh"
+          },
+          {
+            "type": "command",
+            "command": ".claude/hooks/pre-push-merged-pr-guard.sh"
           }
         ]
       }
