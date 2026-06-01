@@ -8,12 +8,19 @@ const coConfig: StateConfig = {
   systemUrl: "https://cccs.edu/",
   collegeCount: 15,
 
-  // TODO: research statewide senior-tuition policy. CCCS does not have a
-  // single uniform statute equivalent to AL's § 16-60-114; each college
-  // sets its own senior-discount policy. Leave null until verified.
-  seniorWaiver: null,
+  seniorWaiver: {
+    ageThreshold: 60,
+    legalCitation: "C.R.S. § 23-60-202 (State Board tuition authority); no statewide senior-tuition statute",
+    description:
+      "Colorado has no statewide senior-tuition statute. The State Board for Community Colleges and Occupational Education sets CCCS tuition, and each college sets its own senior policy — most commonly free or reduced-cost enrollment on a no-credit audit basis for residents 60+, space-available. Terms (age, fees, credit vs. audit) vary by college; confirm with the registrar.",
+    bannerTitle: "Colorado Senior Tuition (by college)",
+    bannerSummary:
+      "Over 60 in Colorado? Many community colleges let seniors audit courses free or at reduced cost — terms vary by college.",
+    bannerDetail:
+      "Colorado has no statewide senior-tuition statute. Under the State Board for Community Colleges and Occupational Education (C.R.S. § 23-60-202), each CCCS college sets its own senior policy. In practice most colleges let residents 60+ enroll on a no-credit audit basis, free or at reduced cost, on a space-available basis after regular registration. Some exclude lab, computer, or special-equipment courses, and fees may still apply. Contact your college's registrar or financial aid office for the specific terms.",
+  },
 
-  transferSupported: false,
+  transferSupported: true,
   popularCourses: ["ENG 121", "MAT 121", "BIO 111", "PSY 101", "HIS 121", "ECO 201"],
   defaultZip: "80202",
   defaultZipCity: "Denver",
@@ -52,39 +59,56 @@ const coConfig: StateConfig = {
         scripts: ["scripts/co/scrape-colleague.ts"],
         runner: "playwright",
       },
+      // Aims Community College runs Workday Student. Its public class
+      // schedule (schedule.aims.edu) is a React SPA backed by a Netlify
+      // function that proxies a public Workday custom report — no SSO.
+      // One HTTP scraper covers all Aims terms.
+      {
+        scripts: ["scripts/co/scrape-aims-workday.ts"],
+        runner: "http",
+      },
     ],
-    // manual-only: transfers — hard ceiling. Investigated 2026-05-30 as part
-    // of the transfer cold-start sweep (issue #804). All high-enrollment CO
-    // receivers are login-gated:
-    //   CU Boulder / CU System → transferology.com (login wall, no bulk export)
-    //   Colorado State → transferweb.colostate.edu (login / CAS)
-    //   UCCS, MSU Denver, UNC, Fort Lewis → same Transferology or no public tool
-    // CDHE's GT Pathways (Guaranteed Transfer) framework at highered.colorado.gov
-    // maps gen-ed CATEGORY guarantees (GT-CO1, GT-MA1, etc.), NOT course-to-course
-    // equivalencies — useless for our model. Colorado Mesa (DegreeWorks SPA) and
-    // CSU Global (CollegeSource TES) are public but give thin, lopsided coverage
-    // with no statewide signal. Documenting as a ceiling rather than shipping
-    // weak one-receiver data. Revisit if CDHE ever publishes a public API or
-    // CU/CSU opens guest access to their equivalency tools.
-    // CCCS Banner 8 section descriptions do not include prerequisite text,
-    // so the aggregator will yield 0 entries. Catalog-based prereq sources
-    // (Acalog at catalog.cncc.edu / catalog.pueblocc.edu, SmartCatalogIQ
-    // at rrcc.smartcatalogiq.com / frontrange.smartcatalogiq.com,
-    // CourseLeaf at catalog.ccd.edu, CleanCatalog at catalog.morgancc.edu)
-    // are tracked as a follow-up.
-    prereqs: { source: "aggregate-from-courses" },
+    // Transfers: only the University of Denver exposes a public, scrapeable
+    // course-to-course articulation system (Banner bwcktart at
+    // apps25.du.edu:8446 — ~336 CCCS→DU pairs). build-transfers.ts wraps it.
+    // See documentedCeilings.transfers for why DU is the only public receiver.
+    transfers: [
+      {
+        scripts: ["scripts/co/build-transfers.ts"],
+        runner: "http",
+      },
+    ],
+    // CCCS Banner 8 section descriptions carry no prerequisite text, so
+    // aggregate-from-courses yields 0. Instead we scrape prerequisites from
+    // the CCNS-shared catalogs: Red Rocks SmartCatalogIQ (rrcc) +
+    // Community College of Denver CourseLeaf (catalog.ccd.edu). Because
+    // Colorado uses statewide Common Course Numbering, a prereq keyed by
+    // course code (e.g. BIO 2101) applies system-wide.
+    prereqs: [
+      {
+        scripts: ["scripts/co/scrape-prereqs.ts"],
+        runner: "http",
+      },
+    ],
     // manual-only: programs — Phase 6 (catalog discovery emitted a wrapper
     // at scripts/co/scrape-programs.ts but no catalogs matched a templated
     // platform; will be picked up when one of the CCCS Acalog/SmartCatalogIQ
     // / CleanCatalog catalogs gets a scraper).
   },
   documentedCeilings: {
-    courses: [
-      {
-        collegeSlug: "aims-community-college",
-        reason: "Aims runs only an Acalog course catalog (catalog/programs platform, not live section search). The college's homepage does not expose a Banner / Colleague / Workday endpoint. Verified 2026-05-28.",
-      },
-    ],
+    // Transfers cap at B: University of Denver is the ONLY Colorado receiver
+    // with a public, scrapeable course-to-course articulation system (Banner
+    // bwcktart, ~336 CCCS→DU pairs — shipped). Re-verified 2026-05-31 against
+    // every major in-state receiver: CU Boulder/Denver and CSU/CSU-Pueblo are
+    // Banner-9/PeopleSoft with no public bwcktart; UNC's Banner 8 is retired
+    // and Banner 9 is SSO-gated; MSU Denver, Colorado Mesa, Western, Fort Lewis
+    // gate everything behind SSO or Transferology (account required). UCCS and
+    // MSU Denver publish only degree-plan advising PDFs (CCCS courses listed
+    // with NO receiving course code) — not course-to-course equivalencies, so
+    // they are intentionally excluded rather than shipped as same-code echoes.
+    // CDHE GT Pathways is category-level (GT-CO1, etc.), not course-to-course.
+    transfers:
+      "University of Denver is the only CO receiver exposing public course-to-course articulation (Banner bwcktart). All other in-state receivers (CU, CSU, UNC, MSU Denver, UCCS, Colorado Mesa, Western, Fort Lewis) are SSO/Transferology-gated or publish only degree-plan advising sheets with no receiving course codes. Verified 2026-05-31.",
   },
 };
 
