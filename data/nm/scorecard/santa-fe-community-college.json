@@ -1,0 +1,46 @@
+{
+  "unitid": 188137,
+  "schoolName": "Santa Fe Community College",
+  "state": "NM",
+  "city": "Santa Fe",
+  "schoolUrl": "https://www.sfcc.edu/",
+  "ownership": 1,
+  "predominantDegree": 1,
+  "fetchedAt": "2026-06-01T02:32:54.027Z",
+  "size": 3369,
+  "shareFirstGeneration": 0.5087209302,
+  "cost": {
+    "tuitionInState": 1851,
+    "tuitionOutOfState": 4131,
+    "attendanceAcademicYear": 18405,
+    "avgNetPricePublic": 11067,
+    "bookSupply": 1235,
+    "roomBoardOffCampus": 19170,
+    "netPriceByIncome": {
+      "0_30000": 10145,
+      "30001_48000": 11255,
+      "48001_75000": 13688,
+      "75001_110000": null,
+      "110001_plus": null
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.1702,
+    "federalLoanRate": 0.0118,
+    "medianDebtCompleters": 13236
+  },
+  "completion": {
+    "completionRate150nt": 0.2342,
+    "completionRate200nt": 0.2816,
+    "transferRate": 0.1646,
+    "retentionRateFullTime": 0.5934,
+    "retentionRatePartTime": 0.4727
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 38005,
+    "median1YrAfterCompletion": 45332,
+    "percentile25_10YrsAfterEntry": 17014,
+    "percentile75_10YrsAfterEntry": 56713,
+    "shareEarningAboveHsGrad": 0.575
+  }
+}

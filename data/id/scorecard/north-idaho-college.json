@@ -1,0 +1,46 @@
+{
+  "unitid": 142443,
+  "schoolName": "North Idaho College",
+  "state": "ID",
+  "city": "Coeur d'Alene",
+  "schoolUrl": "https://www.nic.edu/",
+  "ownership": 1,
+  "predominantDegree": 1,
+  "fetchedAt": "2026-06-01T02:32:03.583Z",
+  "size": 2619,
+  "shareFirstGeneration": 0.4171505136,
+  "cost": {
+    "tuitionInState": 3396,
+    "tuitionOutOfState": 8736,
+    "attendanceAcademicYear": 18333,
+    "avgNetPricePublic": 10575,
+    "bookSupply": 2400,
+    "roomBoardOffCampus": 16785,
+    "netPriceByIncome": {
+      "0_30000": 7775,
+      "30001_48000": 9741,
+      "48001_75000": 10577,
+      "75001_110000": 14496,
+      "110001_plus": 15845
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2385,
+    "federalLoanRate": 0.1558,
+    "medianDebtCompleters": 9000
+  },
+  "completion": {
+    "completionRate150nt": 0.3752,
+    "completionRate200nt": 0.3855,
+    "transferRate": 0.1697,
+    "retentionRateFullTime": 0.6333,
+    "retentionRatePartTime": 0.4333
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 40081,
+    "median1YrAfterCompletion": 37864,
+    "percentile25_10YrsAfterEntry": 21825,
+    "percentile75_10YrsAfterEntry": 60627,
+    "shareEarningAboveHsGrad": 0.556
+  }
+}

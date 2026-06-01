@@ -1,0 +1,46 @@
+{
+  "unitid": 234933,
+  "schoolName": "Clark College",
+  "state": "WA",
+  "city": "Vancouver",
+  "schoolUrl": "https://www.clark.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-06-01T02:33:59.923Z",
+  "size": 4945,
+  "shareFirstGeneration": 0.4245954693,
+  "cost": {
+    "tuitionInState": 5233,
+    "tuitionOutOfState": 11183,
+    "attendanceAcademicYear": 19668,
+    "avgNetPricePublic": 11465,
+    "bookSupply": 528,
+    "roomBoardOffCampus": 17310,
+    "netPriceByIncome": {
+      "0_30000": 8773,
+      "30001_48000": 10015,
+      "48001_75000": 13291,
+      "75001_110000": 16017,
+      "110001_plus": 17813
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2406,
+    "federalLoanRate": 0.2151,
+    "medianDebtCompleters": 10881
+  },
+  "completion": {
+    "completionRate150nt": null,
+    "completionRate200nt": null,
+    "transferRate": null,
+    "retentionRateFullTime": null,
+    "retentionRatePartTime": null
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 42356,
+    "median1YrAfterCompletion": 35493,
+    "percentile25_10YrsAfterEntry": 21977,
+    "percentile75_10YrsAfterEntry": 64676,
+    "shareEarningAboveHsGrad": 0.601
+  }
+}

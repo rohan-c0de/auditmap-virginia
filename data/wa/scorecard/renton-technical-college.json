@@ -1,0 +1,46 @@
+{
+  "unitid": 236382,
+  "schoolName": "Renton Technical College",
+  "state": "WA",
+  "city": "Renton",
+  "schoolUrl": "www.rtc.edu/",
+  "ownership": 1,
+  "predominantDegree": 1,
+  "fetchedAt": "2026-06-01T02:34:06.790Z",
+  "size": 1783,
+  "shareFirstGeneration": 0.52,
+  "cost": {
+    "tuitionInState": 6308,
+    "tuitionOutOfState": 7369,
+    "attendanceAcademicYear": 17585,
+    "avgNetPricePublic": 8296,
+    "bookSupply": 528,
+    "roomBoardOffCampus": 17310,
+    "netPriceByIncome": {
+      "0_30000": 7034,
+      "30001_48000": 8137,
+      "48001_75000": 9790,
+      "75001_110000": 13861,
+      "110001_plus": 16335
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2095,
+    "federalLoanRate": 0.0304,
+    "medianDebtCompleters": 7920
+  },
+  "completion": {
+    "completionRate150nt": null,
+    "completionRate200nt": null,
+    "transferRate": null,
+    "retentionRateFullTime": null,
+    "retentionRatePartTime": null
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 49782,
+    "median1YrAfterCompletion": 49173,
+    "percentile25_10YrsAfterEntry": 27780,
+    "percentile75_10YrsAfterEntry": 75295,
+    "shareEarningAboveHsGrad": 0.655
+  }
+}

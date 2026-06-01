@@ -1,0 +1,46 @@
+{
+  "unitid": 200022,
+  "schoolName": "Bismarck State College",
+  "state": "ND",
+  "city": "Bismarck",
+  "schoolUrl": "https://bismarckstate.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-06-01T02:32:46.864Z",
+  "size": 2839,
+  "shareFirstGeneration": 0.272327044,
+  "cost": {
+    "tuitionInState": 5247,
+    "tuitionOutOfState": 7331,
+    "attendanceAcademicYear": 15771,
+    "avgNetPricePublic": 10270,
+    "bookSupply": 1100,
+    "roomBoardOffCampus": 9000,
+    "netPriceByIncome": {
+      "0_30000": 6140,
+      "30001_48000": 5828,
+      "48001_75000": 8524,
+      "75001_110000": 12160,
+      "110001_plus": 13979
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.1456,
+    "federalLoanRate": 0.2025,
+    "medianDebtCompleters": 11533
+  },
+  "completion": {
+    "completionRate150nt": null,
+    "completionRate200nt": null,
+    "transferRate": null,
+    "retentionRateFullTime": null,
+    "retentionRatePartTime": null
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 54277,
+    "median1YrAfterCompletion": 53877,
+    "percentile25_10YrsAfterEntry": 34717,
+    "percentile75_10YrsAfterEntry": 83256,
+    "shareEarningAboveHsGrad": 0.765
+  }
+}

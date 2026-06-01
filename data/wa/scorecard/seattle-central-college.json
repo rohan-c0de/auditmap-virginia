@@ -1,0 +1,46 @@
+{
+  "unitid": 236513,
+  "schoolName": "Seattle Central College",
+  "state": "WA",
+  "city": "Seattle",
+  "schoolUrl": "seattlecentral.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-06-01T02:34:07.687Z",
+  "size": 3953,
+  "shareFirstGeneration": 0.4375757576,
+  "cost": {
+    "tuitionInState": 5184,
+    "tuitionOutOfState": 5745,
+    "attendanceAcademicYear": 17889,
+    "avgNetPricePublic": 8819,
+    "bookSupply": 582,
+    "roomBoardOffCampus": 19041,
+    "netPriceByIncome": {
+      "0_30000": 7883,
+      "30001_48000": 8893,
+      "48001_75000": 10422,
+      "75001_110000": 11555,
+      "110001_plus": 16989
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2061,
+    "federalLoanRate": 0.0319,
+    "medianDebtCompleters": 12000
+  },
+  "completion": {
+    "completionRate150nt": null,
+    "completionRate200nt": null,
+    "transferRate": null,
+    "retentionRateFullTime": null,
+    "retentionRatePartTime": null
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 43307,
+    "median1YrAfterCompletion": 54412,
+    "percentile25_10YrsAfterEntry": 19783,
+    "percentile75_10YrsAfterEntry": 68743,
+    "shareEarningAboveHsGrad": 0.563
+  }
+}

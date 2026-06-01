@@ -1,0 +1,46 @@
+{
+  "unitid": 187903,
+  "schoolName": "New Mexico Junior College",
+  "state": "NM",
+  "city": "Hobbs",
+  "schoolUrl": "https://www.nmjc.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-06-01T02:32:52.071Z",
+  "size": 2175,
+  "shareFirstGeneration": 0.5389312977,
+  "cost": {
+    "tuitionInState": 1440,
+    "tuitionOutOfState": 2280,
+    "attendanceAcademicYear": 9258,
+    "avgNetPricePublic": 6524,
+    "bookSupply": 1680,
+    "roomBoardOffCampus": 8925,
+    "netPriceByIncome": {
+      "0_30000": 6000,
+      "30001_48000": 6697,
+      "48001_75000": 7669,
+      "75001_110000": null,
+      "110001_plus": null
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2653,
+    "federalLoanRate": 0.0184,
+    "medianDebtCompleters": 11313
+  },
+  "completion": {
+    "completionRate150nt": 0.5817,
+    "completionRate200nt": 0.2755,
+    "transferRate": 0.1468,
+    "retentionRateFullTime": 0.7036,
+    "retentionRatePartTime": 0.4149
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 34233,
+    "median1YrAfterCompletion": 47749,
+    "percentile25_10YrsAfterEntry": 16530,
+    "percentile75_10YrsAfterEntry": 55337,
+    "shareEarningAboveHsGrad": 0.527
+  }
+}
