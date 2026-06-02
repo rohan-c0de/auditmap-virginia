@@ -291,6 +291,45 @@ function parseDateMDY(s: string): string {
   return `${m[3]}-${m[1]}-${m[2]}`;
 }
 
+/**
+ * Map a raw ctcLink `instruction_mode_descr` to the canonical delivery-mode
+ * enum the import schema requires ("in-person" | "online" | "hybrid" | "zoom").
+ *
+ * ctcLink emits ~12 free-text descriptions; passing them through verbatim made
+ * 100% of WA rows fail schema validation, so every (college, term) aborted and
+ * WA imported 0 sections (discovered 2026-06-01). The full observed vocabulary,
+ * by frequency:
+ *   Online Asynchronous, Hybrid, In-Person (Web Enhanced), In Person,
+ *   Online Scheduled, Online Asynchron. w/In-Person, Flexible,
+ *   Online Scheduled w/In-Person, Individualized Instruction, Other,
+ *   Self-Paced, On-line
+ *
+ * Rules (checked in order — "mixed" wins over "online"):
+ *   1. anything that combines online + in-person, or is hyflex/"flexible"  -> hybrid
+ *   2. anything online / on-line / self-paced                              -> online
+ *   3. everything else (in-person, web-enhanced, individualized, other)    -> in-person
+ *
+ * We deliberately fold synchronous "Online Scheduled" into `online` rather than
+ * `zoom`: ctcLink doesn't tell us the meeting tool, and labeling a class "zoom"
+ * we can't confirm is riskier than the true-but-less-specific "online". Errs
+ * toward not over-promising a delivery format. Exported for the one-time
+ * migration of already-scraped files (scripts/wa/normalize-existing-modes.ts).
+ */
+export function normalizeCtclinkMode(
+  raw: string,
+): "in-person" | "online" | "hybrid" | "zoom" {
+  const s = (raw || "").toLowerCase();
+  const hasInPerson = s.includes("in-person") || s.includes("in person");
+  const hasOnline = s.includes("online") || s.includes("on-line");
+  // Mixed delivery (online + in-person), or hyflex/flexible -> hybrid.
+  if (s.includes("hybrid") || s.includes("flexible")) return "hybrid";
+  if (hasOnline && hasInPerson) return "hybrid";
+  // Purely remote.
+  if (hasOnline || s.includes("self-paced")) return "online";
+  // In person, web-enhanced, individualized, other, or empty -> in-person.
+  return "in-person";
+}
+
 function transformClass(c: ClassRecord, slug: string, termName: string): CourseSection {
   const credits = typeof c.units === "string" ? parseFloat(c.units) || 0 : c.units ?? 0;
   // Pick first meeting (most classes have one; multi-meeting take the primary)
@@ -318,7 +357,7 @@ function transformClass(c: ClassRecord, slug: string, termName: string): CourseS
     start_date,
     location,
     campus: c.campus_descr ?? "",
-    mode: c.instruction_mode_descr ?? "",
+    mode: normalizeCtclinkMode(c.instruction_mode_descr ?? ""),
     instructor: instr && instr !== "Staff" ? instr : instr === "Staff" ? "Staff" : null,
     seats_open,
     seats_total,
@@ -431,7 +470,17 @@ async function main() {
   }
 }
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+// Only run the scraper when this file is executed directly (e.g.
+// `tsx scripts/wa/scrape-ctclink.ts`), NOT when another module imports it for a
+// helper like normalizeCtclinkMode. Without this guard, importing the file
+// kicked off a live scrape of all 33 WA colleges as a side effect. Matches the
+// direct-run convention used by scripts/ky/scrape-courses.ts and others.
+const isDirectRun =
+  import.meta.url.startsWith("file:") &&
+  import.meta.url === `file://${process.argv[1]}`;
+if (isDirectRun) {
+  main().catch((e) => {
+    console.error(e);
+    process.exit(1);
+  });
+}
