@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Course search — concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="concept.css">
+<style>
+/* search + filter row */
+.toolbar{display:flex;flex-direction:column;gap:12px;margin-top:14px}
+.searchwrap{position:relative;max-width:520px}
+.searchwrap .ic{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.searchwrap input{font-family:inherit;font-size:14.5px;padding:11px 16px 11px 42px;border:1px solid var(--line2);border-radius:999px;background:var(--panel);color:var(--ink);width:100%;outline:none}
+.searchwrap input:focus{border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.filters .lbl{font-size:12px;color:var(--muted);font-weight:600;margin-right:2px}
+
+/* two-column layout */
+.cslayout{display:grid;grid-template-columns:1fr 380px;gap:22px;margin-top:18px;align-items:start}
+
+/* left list */
+.listmeta{font-size:12.5px;color:var(--muted);margin:0 0 10px;display:flex;align-items:center;gap:8px}
+.clist{display:flex;flex-direction:column;gap:10px}
+.crow{padding:15px 18px;cursor:pointer;transition:border-color .12s,box-shadow .12s,transform .12s}
+.crow:hover{border-color:var(--brand-tint);box-shadow:var(--shadow-lift);transform:translateY(-1px)}
+.crow.sel{border-color:var(--brand);box-shadow:0 0 0 1px var(--brand)}
+.crow .top{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.crow .code{font-weight:800;font-size:15.5px;letter-spacing:-.01em}
+.crow .cr{font-size:12px;color:var(--muted);font-weight:600;white-space:nowrap}
+.crow .ttl{color:var(--muted);font-size:13.5px;margin-top:1px;line-height:1.35}
+.crow .summ{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:11px;font-size:12.5px;color:var(--muted)}
+.crow .summ .sc{display:inline-flex;align-items:center;gap:5px}
+.preq{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;color:var(--warm-strong);background:var(--warm-soft);padding:2px 8px;border-radius:999px}
+.preq .ic{width:13px;height:13px}
+.noresult{color:var(--muted);font-size:13.5px;text-align:center;padding:34px 8px}
+
+/* right detail */
+.detail{padding:22px 22px 24px;position:sticky;top:78px}
+.detail .dcode{font-weight:800;font-size:21px;letter-spacing:-.02em}
+.detail .dttl{color:var(--muted);font-size:14px;margin-top:2px}
+.detail .dmeta{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.pill{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;color:var(--ink);background:var(--panel2);border:1px solid var(--line);padding:4px 10px;border-radius:999px}
+.pill .ic{width:13px;height:13px;color:var(--brand)}
+
+.block{margin-top:18px}
+.block .h{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px;margin-bottom:8px}
+.block .h .ic{width:14px;height:14px;color:var(--brand)}
+.preqbox{font-size:13px;line-height:1.5}
+.preqbox .req{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:var(--warm-strong);background:var(--warm-soft);border:1px solid var(--warm);padding:5px 11px;border-radius:9px;margin:2px 6px 2px 0}
+.preqbox .none{color:var(--muted)}
+
+/* sections table */
+.sectbl{display:flex;flex-direction:column;gap:1px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.srow{display:grid;grid-template-columns:1fr auto;gap:8px 12px;padding:11px 13px;background:var(--panel);border-top:1px solid var(--line)}
+.srow:first-child{border-top:none}
+.srow .when{font-size:13px;font-weight:600;color:var(--ink)}
+.srow .when.arr{color:var(--muted);font-weight:500}
+.srow .meta{font-size:11.5px;color:var(--muted);margin-top:3px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.srow .meta .mode{display:inline-flex;align-items:center;gap:4px}
+.srow .meta .ic{width:12px;height:12px}
+.srow .seatcell{align-self:center;justify-self:end;text-align:right}
+.srow .seatcell .frac{font-size:10px;color:var(--muted);margin-top:3px;font-variant-numeric:tabular-nums}
+.dempty{color:var(--muted);font-size:13.5px;text-align:center;padding:30px 8px}
+
+@media(max-width:820px){
+  .cslayout{grid-template-columns:1fr}
+  .detail{position:static}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="phead">
+    <div class="kick">Find a class</div>
+    <h1>Course search</h1>
+    <div class="who">Atlanta Technical College · Accounting, A.S. · Spring 2026</div>
+  </div>
+
+  <div class="toolbar">
+    <div class="searchwrap">
+      <svg class="ic" width="18" height="18" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
+      <input id="q" placeholder="Search ACCT, BUSN, course title…" autocomplete="off">
+    </div>
+    <div class="filters">
+      <span class="lbl">Filter</span>
+      <span class="chip" data-f="open">
+        <svg class="ic" width="15" height="15" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"></path></svg>Open seats only</span>
+      <span class="chip" data-f="weekend">
+        <svg class="ic" width="15" height="15" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 9h18M8 3v4M16 3v4"></path></svg>Weekend</span>
+      <span class="chip" data-f="evening">
+        <svg class="ic" width="15" height="15" viewBox="0 0 24 24"><path d="M21 12.8A8 8 0 1111.2 3a6.2 6.2 0 009.8 9.8z"></path></svg>Evening</span>
+      <span class="chip" data-f="online">
+        <svg class="ic" width="15" height="15" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg>Online / arranged</span>
+    </div>
+  </div>
+
+  <div class="cslayout">
+    <div>
+      <p class="listmeta" id="listmeta"></p>
+      <div class="clist" id="clist"></div>
+    </div>
+
+    <div class="card detail" id="detail">
+      <div class="dempty">Select a course to see its sections.</div>
+    </div>
+  </div>
+
+  <div class="cfoot">
+    <span class="tag">Concept · course search</span>
+    Real Atlanta Technical College / Accounting, A.S. sections — days, times, seats, and instructor names — come straight from <code>window.CDATA</code>. No course descriptions are shown because we don't have an honest source for them.
+  </div>
+</div>
+
+<script src="concept-data.js"></script>
+<script>
+(function(){
+  var C = window.CDATA || {};
+  var SEC = C.sections || {};
+  // only courses that actually have sections, in the catalog order from CDATA.courses
+  var COURSES = (C.courses || []).filter(function(c){ return SEC[c.code] && SEC[c.code].length; });
+
+  // ---- helpers ----------------------------------------------------------
+  function esc(s){ var d=document.createElement('div'); d.textContent=(s==null?'':String(s)); return d.innerHTML; }
+  function decode(s){ var d=document.createElement('textarea'); d.innerHTML=(s==null?'':String(s)); return d.value; } // unescapes &#39; etc, then we re-esc on render
+
+  function openSeats(code){
+    return (SEC[code]||[]).reduce(function(n,s){ return n + (s.open||0); }, 0);
+  }
+  function seatClass(open){ return open>10 ? 'seat' : (open>=1 ? 'seat low' : 'seat none'); }
+
+  function hasTime(s){ return s.days && s.days.trim() !== '' && s.start && s.start.trim() !== ''; }
+  function isWeekend(s){ return hasTime(s) && /Sa|Su/.test(s.days); }
+  function isEvening(s){
+    if(!hasTime(s)) return false;
+    var m = /(\d+):(\d+)\s*(AM|PM)/.exec(s.start);
+    if(!m) return false;
+    var h = parseInt(m[1],10) % 12; if(m[3]==='PM') h += 12;
+    return h >= 17; // 5 PM or later
+  }
+  function isOnlineOrArranged(s){ return s.mode==='online' || !hasTime(s); }
+
+  // does a course have at least one section passing all active filters?
+  function courseMatches(code, filt){
+    var secs = SEC[code]||[];
+    return secs.some(function(s){
+      if(filt.open && (s.open||0) <= 0) return false;
+      if(filt.weekend && !isWeekend(s)) return false;
+      if(filt.evening && !isEvening(s)) return false;
+      if(filt.online && !isOnlineOrArranged(s)) return false;
+      return true;
+    });
+  }
+
+  // ---- state ------------------------------------------------------------
+  var state = { q:'', filt:{open:false,weekend:false,evening:false,online:false}, sel:null };
+
+  // ---- left list --------------------------------------------------------
+  var clist = document.getElementById('clist');
+  var listmeta = document.getElementById('listmeta');
+
+  function visibleCourses(){
+    var q = state.q.toLowerCase();
+    return COURSES.filter(function(c){
+      if(q){
+        var hay = (c.code + ' ' + c.title).toLowerCase();
+        if(hay.indexOf(q) === -1) return false;
+      }
+      if(state.filt.open||state.filt.weekend||state.filt.evening||state.filt.online){
+        if(!courseMatches(c.code, state.filt)) return false;
+      }
+      return true;
+    });
+  }
+
+  function renderList(){
+    var vis = visibleCourses();
+    var anyFilter = state.q || state.filt.open || state.filt.weekend || state.filt.evening || state.filt.online;
+    listmeta.innerHTML = '<svg class="ic" width="14" height="14" viewBox="0 0 24 24"><path d="M4 6h16M7 12h10M10 18h4"></path></svg>' +
+      '<span><b style="color:var(--ink)">' + vis.length + '</b> course' + (vis.length===1?'':'s') +
+      (anyFilter ? ' match' + (vis.length===1?'es':'') + ' your filters' : ' with sections this term') + '</span>';
+
+    if(!vis.length){
+      clist.innerHTML = '<div class="card noresult">No courses match. Try clearing a filter or your search.</div>';
+      return;
+    }
+
+    clist.innerHTML = vis.map(function(c){
+      var secs = SEC[c.code]||[];
+      var open = openSeats(c.code);
+      var sc = seatClass(open);
+      var preq = (c.dependsOn && c.dependsOn.length)
+        ? '<span class="preq" title="Has prerequisites"><svg class="ic" viewBox="0 0 24 24"><path d="M12 2l9 5v6c0 5-3.5 7.5-9 9-5.5-1.5-9-4-9-9V7z"></path><path d="M9 12l2 2 4-4"></path></svg>Prereq</span>'
+        : '';
+      return '<div class="card crow' + (state.sel===c.code?' sel':'') + '" data-code="' + esc(c.code) + '">' +
+          '<div class="top"><span class="code">' + esc(c.code) + '</span>' +
+            '<span class="cr">' + esc(c.credits) + ' cr</span></div>' +
+          '<div class="ttl">' + esc(c.title) + '</div>' +
+          '<div class="summ">' +
+            '<span class="sc"><svg class="ic" width="14" height="14" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 9h18"></path></svg>' +
+              secs.length + ' section' + (secs.length===1?'':'s') + '</span>' +
+            '<span class="' + sc + '"><span class="d"></span>' + open + ' seat' + (open===1?'':'s') + ' open</span>' +
+            preq +
+          '</div>' +
+        '</div>';
+    }).join('');
+
+    Array.prototype.forEach.call(clist.querySelectorAll('.crow'), function(el){
+      el.addEventListener('click', function(){ select(el.getAttribute('data-code')); });
+    });
+  }
+
+  // ---- right detail -----------------------------------------------------
+  var detail = document.getElementById('detail');
+
+  function shortPrereq(c){
+    if(c.dependsOn && c.dependsOn.length){
+      return c.dependsOn.map(function(code){
+        return '<span class="req"><svg class="ic" width="13" height="13" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"></path></svg>' + esc(code) + '</span>';
+      }).join('') +
+      '<div class="muted" style="font-size:12px;margin-top:6px">Must be completed with a grade of C or better.</div>';
+    }
+    return '<div class="none">No course prerequisite — open to new students. <span class="muted">(English placement applies.)</span></div>';
+  }
+
+  function sectionRow(s){
+    var timed = hasTime(s);
+    var when = timed
+      ? '<div class="when">' + esc(s.days) + ' &middot; ' + esc(s.start) + '&ndash;' + esc(s.end) + '</div>'
+      : '<div class="when arr">' + (s.mode==='online' ? 'Online' : 'Arranged time') + '</div>';
+    var modeIcon = s.mode==='online'
+      ? '<svg class="ic" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg>'
+      : '<svg class="ic" viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13"></path><path d="M10 21v-6h4v6"></path></svg>';
+    var instr = decode(s.instr);
+    var open = s.open||0, total = s.total||0;
+    return '<div class="srow">' +
+        '<div>' + when +
+          '<div class="meta">' +
+            '<span class="mode">' + modeIcon + (s.mode==='online'?'Online':'In-person') + '</span>' +
+            '<span>&middot;</span>' +
+            '<span>' + esc(instr) + '</span>' +
+          '</div>' +
+        '</div>' +
+        '<div class="seatcell">' +
+          '<span class="' + seatClass(open) + '"><span class="d"></span>' + open + ' open</span>' +
+          '<div class="frac">of ' + total + ' seats</div>' +
+        '</div>' +
+      '</div>';
+  }
+
+  function renderDetail(){
+    var c = COURSES.filter(function(x){ return x.code===state.sel; })[0];
+    if(!c){ detail.innerHTML = '<div class="dempty">Select a course to see its sections.</div>'; return; }
+    var secs = SEC[c.code]||[];
+    var open = openSeats(c.code);
+
+    detail.innerHTML =
+      '<div class="dcode">' + esc(c.code) + '</div>' +
+      '<div class="dttl">' + esc(c.title) + '</div>' +
+      '<div class="dmeta">' +
+        '<span class="pill"><svg class="ic" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 7v6"></path></svg>' + esc(c.credits) + ' credits</span>' +
+        '<span class="pill"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 9h18"></path></svg>' + secs.length + ' section' + (secs.length===1?'':'s') + '</span>' +
+        '<span class="' + seatClass(open) + '"><span class="d"></span>' + open + ' total open</span>' +
+      '</div>' +
+
+      '<div class="block">' +
+        '<div class="h"><svg class="ic" viewBox="0 0 24 24"><path d="M12 2l9 5v6c0 5-3.5 7.5-9 9-5.5-1.5-9-4-9-9V7z"></path></svg>Prerequisite</div>' +
+        '<div class="preqbox">' + shortPrereq(c) + '</div>' +
+      '</div>' +
+
+      '<div class="block">' +
+        '<div class="h"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 9h18M8 3v4M16 3v4"></path></svg>Sections</div>' +
+        (secs.length
+          ? '<div class="sectbl">' + secs.map(sectionRow).join('') + '</div>'
+          : '<div class="dempty">No sections listed.</div>') +
+      '</div>';
+  }
+
+  function select(code){
+    state.sel = code;
+    renderList();
+    renderDetail();
+  }
+
+  // ---- wire up controls -------------------------------------------------
+  document.getElementById('q').addEventListener('input', function(e){
+    state.q = e.target.value.trim();
+    renderList();
+    // keep selection if still visible; otherwise fall to first visible
+    var vis = visibleCourses();
+    if(!vis.some(function(c){return c.code===state.sel;})) {
+      if(vis.length){ select(vis[0].code); } else { state.sel=null; renderDetail(); }
+    }
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll('.chip[data-f]'), function(chip){
+    chip.addEventListener('click', function(){
+      var f = chip.getAttribute('data-f');
+      state.filt[f] = !state.filt[f];
+      chip.classList.toggle('on', state.filt[f]);
+      renderList();
+      var vis = visibleCourses();
+      if(!vis.some(function(c){return c.code===state.sel;})) {
+        if(vis.length){ select(vis[0].code); } else { state.sel=null; renderDetail(); }
+      }
+    });
+  });
+
+  // ---- init: default-select ACCT 1100 (or first available) --------------
+  var initSel = COURSES.some(function(c){return c.code==='ACCT 1100';}) ? 'ACCT 1100' : (COURSES[0] && COURSES[0].code);
+  state.sel = initSel || null;
+  renderList();
+  renderDetail();
+})();
+</script>
+<script src="concept-nav.js"></script>
+</body>
+</html>

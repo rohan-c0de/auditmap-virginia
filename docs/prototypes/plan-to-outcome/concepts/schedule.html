@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Schedule comparator — concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="concept.css">
+<style>
+/* ---- controls ---- */
+.controls{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
+.ctlpanel{padding:16px 18px}
+.ctlpanel h2{font-size:14px;display:flex;align-items:center;gap:8px;letter-spacing:-.01em}
+.ctlpanel h2 .ic{color:var(--brand);width:16px;height:16px}
+.ctlpanel .desc{color:var(--muted);font-size:12.5px;margin:3px 0 11px}
+.ctlrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ctlgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+/* college toggle chips carry a color dot */
+.chip .dot{width:9px;height:9px;border-radius:3px;flex:0 0 auto}
+.chip.coll> .dot{background:var(--brand)}
+.chip.col2 .dot{background:var(--warm)}
+.chip.col2.on{background:var(--warm-soft);border-color:var(--warm);color:var(--warm-strong)}
+.chip.col2:hover{border-color:var(--warm);color:var(--warm-strong)}
+/* layout: grid + side panel */
+.schedlayout{display:grid;grid-template-columns:1fr 296px;gap:18px;margin-top:16px;align-items:start}
+@media(max-width:920px){.schedlayout{grid-template-columns:1fr}}
+.gridcard{padding:18px 18px 20px;overflow:hidden}
+.gridhead{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.gridhead h2{font-size:16px;display:flex;align-items:center;gap:8px}
+.gridhead h2 .ic{color:var(--brand)}
+.legendrow{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);align-items:center}
+.legendrow .lk{display:inline-flex;align-items:center;gap:6px}
+.legendrow i{width:12px;height:12px;border-radius:3px;display:inline-block}
+.legendrow i.atc{background:var(--brand-soft);border:1.5px solid var(--brand)}
+.legendrow i.gpt{background:var(--warm-soft);border:1.5px dashed var(--warm)}
+.legendrow i.wk{background:color-mix(in srgb,var(--muted) 22%,transparent);border:1px solid var(--line2)}
+.legendrow i.cf{background:var(--bad-bg);border:1.5px solid var(--bad)}
+/* the calendar */
+.calscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.cal{position:relative;min-width:620px}
+.caldays{display:grid;grid-template-columns:54px repeat(6,1fr);gap:0}
+.calday{font-size:12px;font-weight:700;color:var(--muted);text-align:center;padding:0 0 8px;letter-spacing:.02em}
+.calday.gut{text-align:left}
+.calbody{position:relative;display:grid;grid-template-columns:54px repeat(6,1fr);gap:0}
+.gutter{position:relative}
+.gutter .tl{position:absolute;left:0;right:8px;text-align:right;font-size:10.5px;color:var(--muted);font-variant-numeric:tabular-nums;transform:translateY(-6px)}
+.daycol{position:relative;border-left:1px solid var(--line)}
+.daycol:last-child{border-right:1px solid var(--line)}
+/* hour gridlines drawn on each day col via repeating bg */
+.daycol .hr{position:absolute;left:0;right:0;border-top:1px solid var(--line)}
+.daycol .hr.half{border-top:1px dashed color-mix(in srgb,var(--line) 70%,transparent)}
+/* work-hours overlay band */
+.workband{position:absolute;left:0;right:0;background:color-mix(in srgb,var(--muted) 15%,transparent);border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);pointer-events:none;z-index:1}
+.workband .wl{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-90deg);font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap;opacity:.8}
+/* class blocks */
+.blk{position:absolute;left:3px;right:3px;border-radius:8px;padding:5px 7px;overflow:hidden;z-index:3;cursor:default;font-size:11px;line-height:1.25;box-shadow:var(--shadow);transition:transform .1s}
+.blk:hover{transform:scale(1.015);z-index:5}
+.blk .bc{font-weight:800;font-size:11.5px;letter-spacing:-.01em;display:flex;align-items:center;gap:5px}
+.blk .bt{font-size:10px;opacity:.92;font-variant-numeric:tabular-nums;margin-top:1px}
+.blk .seat{margin-top:4px;padding:1px 6px;font-size:9.5px}
+.blk.atc{background:var(--brand-soft);border:1.5px solid var(--brand);color:var(--brand-strong)}
+.blk.gpt{background:var(--warm-soft);border:1.5px dashed var(--warm);color:var(--warm-strong);font-style:italic}
+.blk.gpt .bc .tagi{font-style:normal}
+.blk.conf{outline:2.5px solid var(--bad);outline-offset:0;border-color:var(--bad);z-index:6}
+.blk.conf .bc::after{content:"!";display:inline-flex;align-items:center;justify-content:center;width:13px;height:13px;border-radius:50%;background:var(--bad);color:var(--bad-bg);font-size:9px;font-weight:800;margin-left:auto;font-style:normal}
+.emptygrid{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px;text-align:center;padding:30px;z-index:2}
+/* side panels */
+.side .panel{padding:16px 18px;margin-bottom:14px}
+.side h2{font-size:14px;display:flex;align-items:center;gap:8px}
+.side h2 .ic{color:var(--brand);width:16px;height:16px}
+.side .desc{font-size:12px;color:var(--muted);margin:3px 0 10px}
+.onlinelist{display:flex;flex-direction:column;gap:8px}
+.onlineitem{display:flex;align-items:flex-start;gap:9px;padding:9px 11px;border:1px solid var(--line);border-radius:11px;background:var(--panel2)}
+.onlineitem .oc{font-weight:700;font-size:12px}
+.onlineitem .om{font-size:11px;color:var(--muted);margin-top:1px}
+.onlineitem .ot{margin-left:auto;font-size:9.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line2);border-radius:5px;padding:2px 6px;white-space:nowrap;align-self:center}
+.statline{display:flex;justify-content:space-between;font-size:12.5px;padding:7px 0;border-top:1px solid var(--line)}
+.statline:first-of-type{border-top:none}
+.statline b{font-variant-numeric:tabular-nums}
+.illustip{font-size:11px;color:var(--muted);font-style:italic;margin-top:10px;display:flex;gap:7px;align-items:flex-start}
+.illustip .ic{color:var(--warm);width:14px;height:14px;flex:0 0 auto;margin-top:1px}
+.conflictnote{margin-top:6px}
+/* size callout icons (shared .callout .ic sets color/flex but not dimensions) */
+#comboCallout .callout .ic{width:18px;height:18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="phead">
+    <div class="kick">Schedule</div>
+    <h1>Build a conflict-free week</h1>
+    <div class="who">Fit classes around your job — across nearby colleges, on one weekly grid.</div>
+  </div>
+
+  <!-- CONTROLS -->
+  <div class="ctlgrid">
+    <div class="panel ctlpanel">
+      <h2><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/><path d="M9 14l2 2 4-4"/></svg> Your work hours</h2>
+      <div class="desc">We grey out the times you can't take class. Toggle the band to see what opens up.</div>
+      <div class="ctlrow">
+        <button class="chip on" id="workChip"><svg class="ic" style="width:13px;height:13px" viewBox="0 0 24 24"><path d="M5 8h14v11H5z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg> Working Mon–Fri, 3:00–9:00 PM</button>
+      </div>
+    </div>
+
+    <div class="panel ctlpanel">
+      <h2><svg class="ic" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-6h6v6"/></svg> Colleges to compare</h2>
+      <div class="desc">Atlanta Tech sections are real. Add a nearby college to compare — its sections are illustrative.</div>
+      <div class="ctlrow" id="collegeRow"></div>
+    </div>
+
+    <div class="panel ctlpanel">
+      <h2><svg class="ic" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg> Classes to fit in</h2>
+      <div class="desc">Pick the courses you need this term. Each meeting drops onto the week.</div>
+      <div class="ctlrow" id="courseRow"></div>
+    </div>
+  </div>
+
+  <!-- combo callout -->
+  <div id="comboCallout"></div>
+
+  <!-- GRID + SIDE -->
+  <div class="schedlayout">
+    <div class="card gridcard">
+      <div class="gridhead">
+        <h2><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg> Your week</h2>
+        <div class="legendrow">
+          <span class="lk"><i class="atc"></i> Atlanta Tech</span>
+          <span class="lk"><i class="gpt"></i> Georgia Piedmont <span class="tagi">illus</span></span>
+          <span class="lk"><i class="wk"></i> Work hours</span>
+          <span class="lk"><i class="cf"></i> Conflict</span>
+        </div>
+      </div>
+      <div class="calscroll">
+        <div class="cal">
+          <div class="caldays" id="calDays"></div>
+          <div class="calbody" id="calBody"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="side">
+      <div class="panel">
+        <h2><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> This week</h2>
+        <div id="weekStats"></div>
+      </div>
+      <div class="panel">
+        <h2><svg class="ic" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg> Also online / arranged</h2>
+        <div class="desc">These selected sections have no set day or time — they can't sit on the grid, so they never conflict.</div>
+        <div class="onlinelist" id="onlineList"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cfoot">
+    <span class="tag">Concept · schedule comparator (moat #2)</span>
+    Atlanta Tech sections are <b>real</b> — days, times, and seats come straight from <code>window.CDATA.sections</code>; the second college (Georgia Piedmont Tech) shows <b>illustrative placeholder</b> sections (flagged) because we don't yet have its section data.
+    <div class="src">Times parsed to 30-minute rows, 7 AM–9 PM; overlaps detected per day by interval intersection; the work band is a default Mon–Fri 3–9 PM block you can toggle.</div>
+  </div>
+</div>
+
+<script src="concept-data.js"></script>
+<script>
+(function(){
+  var D = window.CDATA || {};
+  var SEC = D.sections || {};
+  var COURSES = D.courses || [];
+  var titleOf = {}; COURSES.forEach(function(c){ titleOf[c.code]=c.title; });
+
+  /* ---------- grid geometry ---------- */
+  var START_H = 7, END_H = 21;            // 7 AM .. 9 PM
+  var ROWS = (END_H - START_H) * 2;        // 30-min slots
+  var ROW_PX = 26;                         // px per 30-min slot
+  var DAY_KEYS = ['M','Tu','W','Th','F','Sa'];
+  var DAY_LBL  = {M:'Mon',Tu:'Tue',W:'Wed',Th:'Thu',F:'Fri',Sa:'Sat'};
+  var dayIdx = {}; DAY_KEYS.forEach(function(d,i){ dayIdx[d]=i; });
+
+  // Parse a "days" string like "MW","TuTh","Sa","MTuWThF" into tokens.
+  function parseDays(s){
+    if(!s) return [];
+    var out=[], i=0;
+    while(i<s.length){
+      var two=s.substr(i,2);
+      if(two==='Tu'||two==='Th'||two==='Sa'||two==='Su'){ out.push(two); i+=2; }
+      else { var one=s[i]; if(dayIdx[one]!=null) out.push(one); i++; }
+    }
+    return out.filter(function(d){return dayIdx[d]!=null;});
+  }
+  // "8:30 AM" -> minutes since midnight
+  function toMin(t){
+    if(!t) return null;
+    var m=t.match(/(\d+):(\d+)\s*(AM|PM)/i); if(!m) return null;
+    var h=+m[1]%12; if(/pm/i.test(m[3])) h+=12;
+    return h*60 + (+m[2]);
+  }
+  var GRID_START = START_H*60, GRID_END = END_H*60;
+  function topPx(min){ return (min - GRID_START)/30 * ROW_PX; }
+
+  function seatClass(open,total){
+    if(open<=0) return 'none';
+    if(open/Math.max(total,1) <= 0.18 || open<=3) return 'low';
+    return '';
+  }
+  function fmtTime(t){ return (t||'').replace(/:00/,''); }
+
+  /* ---------- illustrative second-college sections (NOT real data) ---------- */
+  // Clearly synthetic placeholders for Georgia Piedmont Tech — flagged illustrative everywhere.
+  var GPT = {
+    'ACCT 1100':[{days:'TuTh',start:'10:00 AM',end:'11:20 AM',open:12,total:24}],
+    'ACCT 1105':[{days:'MW',start:'12:00 PM',end:'1:20 PM',open:8,total:24}],
+    'COMP 1000':[{days:'F',start:'9:00 AM',end:'11:45 AM',open:14,total:26}],
+    'BUSN 1440':[{days:'Sa',start:'12:30 PM',end:'2:30 PM',open:5,total:20}]
+  };
+
+  /* ---------- state ---------- */
+  var PICKABLE = ['ACCT 1100','ACCT 1105','BUSN 1440','COMP 1000'];
+  var picked = {'ACCT 1100':true,'ACCT 1105':true,'COMP 1000':true,'BUSN 1440':false};
+  var colleges = {
+    atc:{on:true,  label:'Atlanta Tech',           cls:'col', real:true},
+    gpt:{on:false, label:'Georgia Piedmont Tech',  cls:'col2', real:false}
+  };
+  var showWork = true;
+  var WORK = {days:['M','Tu','W','Th','F'], start:15*60, end:21*60}; // 3–9 PM Mon–Fri
+
+  /* ---------- pick one in-person, on-grid section per course (the comparator's job) ----------
+     Greedy: for each picked course at each enabled college, take the first in-person section
+     that sits on the grid AND avoids the work band; if none avoids work, take first on-grid
+     so the conflict is visible. */
+  function gridSections(code, source, real){
+    var list = (source[code]||[]).map(function(s){return s;});
+    return list.filter(function(s){
+      return (s.mode||'in-person')==='in-person' && parseDays(s.days).length && toMin(s.start)!=null && toMin(s.start)>=GRID_START && toMin(s.end)<=GRID_END;
+    });
+  }
+  function hitsWork(sec){
+    var ds=parseDays(sec.days), a=toMin(sec.start), b=toMin(sec.end);
+    return ds.some(function(d){
+      return WORK.days.indexOf(d)>=0 && a < WORK.end && WORK.start < b;
+    });
+  }
+  function overlapsPlaced(s, placed){
+    var ds=parseDays(s.days), a=toMin(s.start), b=toMin(s.end);
+    return placed.some(function(p){
+      return ds.some(function(d){return p.days.indexOf(d)>=0;}) && a < p.end && p.start < b;
+    });
+  }
+  // The comparator's core move: greedily pick the section that avoids the work band
+  // AND doesn't collide with what's already on the grid. Fall back step by step so a
+  // block always shows (and any unavoidable clash stays visible in red).
+  function chooseSection(code, src, real, placed){
+    var cands = gridSections(code, src, real);
+    if(!cands.length) return null;
+    var clear = showWork ? cands.filter(function(s){return !hitsWork(s);}) : cands;
+    // 1) clears work AND no conflict   2) clears work   3) no conflict   4) anything on grid
+    var best = clear.filter(function(s){return !overlapsPlaced(s, placed);})[0]
+            || clear[0]
+            || cands.filter(function(s){return !overlapsPlaced(s, placed);})[0]
+            || cands[0];
+    return mk(best, code, real);
+  }
+  function mk(s, code, real){
+    return {
+      code:code, real:real, days:parseDays(s.days), start:toMin(s.start), end:toMin(s.end),
+      startTxt:s.start, endTxt:s.end, open:s.open, total:s.total, instr:s.instr||''
+    };
+  }
+
+  /* ---------- build placed blocks ---------- */
+  function buildPlaced(){
+    var placed=[];
+    PICKABLE.forEach(function(code){
+      if(!picked[code]) return;
+      if(colleges.atc.on){ var a=chooseSection(code, SEC, true, placed);  if(a) placed.push(a); }
+      if(colleges.gpt.on){ var g=chooseSection(code, GPT, false, placed); if(g) placed.push(g); }
+    });
+    // conflict detection: same day + overlapping interval -> mark both
+    placed.forEach(function(p){p.conf=false; p.workConf=false;});
+    for(var i=0;i<placed.length;i++){
+      for(var j=i+1;j<placed.length;j++){
+        var A=placed[i], B=placed[j];
+        var share = A.days.some(function(d){return B.days.indexOf(d)>=0;});
+        if(share && A.start < B.end && B.start < A.end){ A.conf=true; B.conf=true; }
+      }
+    }
+    // work-band overlap (informational)
+    if(showWork){
+      placed.forEach(function(p){
+        p.workConf = p.days.some(function(d){return WORK.days.indexOf(d)>=0;}) && p.start<WORK.end && WORK.start<p.end;
+      });
+    }
+    return placed;
+  }
+
+  /* ---------- collect online/arranged for picked+enabled ---------- */
+  function onlineSections(){
+    var out=[];
+    PICKABLE.forEach(function(code){
+      if(!picked[code]) return;
+      if(colleges.atc.on){
+        (SEC[code]||[]).forEach(function(s){
+          var noGrid = !parseDays(s.days).length || toMin(s.start)==null;
+          if(noGrid) out.push({code:code, real:true, mode:s.mode||'in-person', open:s.open, total:s.total, instr:s.instr});
+        });
+      }
+    });
+    return out;
+  }
+
+  /* ---------- render calendar shell ---------- */
+  function renderShell(){
+    var days=document.getElementById('calDays');
+    days.innerHTML = '<div class="calday gut">EST</div>' + DAY_KEYS.map(function(d){return '<div class="calday">'+DAY_LBL[d]+'</div>';}).join('');
+    var body=document.getElementById('calBody');
+    var h='';
+    // gutter
+    h+='<div class="gutter" style="height:'+(ROWS*ROW_PX)+'px">';
+    for(var hr=START_H; hr<=END_H; hr++){
+      var top=(hr-START_H)*2*ROW_PX;
+      var lbl = (hr%12===0?12:hr%12) + (hr<12?' AM':' PM');
+      h+='<div class="tl" style="top:'+top+'px">'+lbl+'</div>';
+    }
+    h+='</div>';
+    // day columns
+    DAY_KEYS.forEach(function(d){
+      h+='<div class="daycol" id="col-'+d+'" style="height:'+(ROWS*ROW_PX)+'px"></div>';
+    });
+    body.innerHTML=h;
+    // gridlines per column
+    DAY_KEYS.forEach(function(d){
+      var col=document.getElementById('col-'+d), gl='';
+      for(var r=0;r<=ROWS;r++){
+        var isHour = r%2===0;
+        gl+='<div class="hr'+(isHour?'':' half')+'" style="top:'+(r*ROW_PX)+'px"></div>';
+      }
+      col.innerHTML=gl;
+    });
+  }
+
+  /* ---------- render everything dynamic ---------- */
+  function render(){
+    // clear blocks/bands from columns (keep gridlines = the .hr children)
+    DAY_KEYS.forEach(function(d){
+      var col=document.getElementById('col-'+d);
+      Array.prototype.slice.call(col.querySelectorAll('.blk,.workband')).forEach(function(n){n.remove();});
+    });
+
+    // work band
+    if(showWork){
+      WORK.days.forEach(function(d){
+        var col=document.getElementById('col-'+d);
+        var t=topPx(WORK.start), hgt=topPx(WORK.end)-topPx(WORK.start);
+        var band=document.createElement('div');
+        band.className='workband';
+        band.style.top=t+'px'; band.style.height=hgt+'px';
+        if(d==='W') band.innerHTML='<span class="wl">Work</span>';
+        col.appendChild(band);
+      });
+    }
+
+    var placed = buildPlaced();
+    var anyOnGrid=false;
+    placed.forEach(function(p){
+      p.days.forEach(function(d){
+        var col=document.getElementById('col-'+d); if(!col) return;
+        anyOnGrid=true;
+        var top=topPx(p.start), hgt=Math.max(topPx(p.end)-topPx(p.start), 22);
+        var blk=document.createElement('div');
+        blk.className='blk '+(p.real?'atc':'gpt illus')+(p.conf?' conf':'');
+        blk.style.top=top+'px'; blk.style.height=(hgt-3)+'px';
+        var sc=seatClass(p.open,p.total);
+        var tagi = p.real ? '' : ' <span class="tagi">illus</span>';
+        blk.innerHTML =
+          '<div class="bc">'+p.code+tagi+'</div>'+
+          '<div class="bt">'+fmtTime(p.startTxt)+'–'+fmtTime(p.endTxt)+'</div>'+
+          (hgt>52 ? '<span class="seat '+sc+'"><span class="d"></span>'+p.open+' open</span>' : '');
+        blk.title = (titleOf[p.code]||p.code)+(p.real?' · Atlanta Tech (real)':' · Georgia Piedmont (illustrative)')+
+                    '\n'+fmtTime(p.startTxt)+'–'+fmtTime(p.endTxt)+' · '+p.open+'/'+p.total+' seats'+(p.instr?' · '+p.instr:'');
+        col.appendChild(blk);
+      });
+    });
+
+    // empty state
+    var existing=document.querySelector('.emptygrid'); if(existing) existing.remove();
+    if(!anyOnGrid){
+      var cal=document.querySelector('.cal');
+      var e=document.createElement('div'); e.className='emptygrid';
+      e.textContent='No on-grid sections selected. Pick a course above, or check the online/arranged list — those have no fixed meeting time.';
+      cal.appendChild(e);
+    }
+
+    renderSide(placed);
+    renderCombo(placed);
+  }
+
+  /* ---------- side: week stats + online list ---------- */
+  function renderSide(placed){
+    var conf = placed.filter(function(p){return p.conf;}).length;
+    var workHits = placed.filter(function(p){return p.workConf;}).length;
+    var creditTotal = 0, seen={};
+    placed.forEach(function(p){ if(!seen[p.code]){ seen[p.code]=1; var c=COURSES.find(function(x){return x.code===p.code;}); creditTotal += c?c.credits:0; } });
+    var meetings = placed.reduce(function(a,p){return a+p.days.length;},0);
+    var html='';
+    html+='<div class="statline"><span class="muted">On-grid sections</span><b>'+placed.length+'</b></div>';
+    html+='<div class="statline"><span class="muted">Weekly meetings</span><b>'+meetings+'</b></div>';
+    html+='<div class="statline"><span class="muted">Credits (on grid)</span><b>'+creditTotal+'</b></div>';
+    html+='<div class="statline"><span class="muted">Conflicts</span><b style="color:'+(conf?'var(--bad)':'var(--good)')+'">'+conf+'</b></div>';
+    html+='<div class="statline"><span class="muted">Overlap work hours</span><b style="color:'+(workHits?'var(--warm-strong)':'var(--good)')+'">'+workHits+'</b></div>';
+    if(colleges.gpt.on){
+      html+='<div class="illustip"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg> Georgia Piedmont blocks are illustrative placeholders, not real section data.</div>';
+    }
+    document.getElementById('weekStats').innerHTML=html;
+
+    var on=onlineSections();
+    var ol=document.getElementById('onlineList');
+    if(!on.length){ ol.innerHTML='<div class="muted" style="font-size:12px">No online / arranged sections for the picked courses.</div>'; }
+    else{
+      ol.innerHTML = on.map(function(s){
+        var sc=seatClass(s.open,s.total);
+        var modeTag = s.mode==='online' ? 'Online' : 'Arranged';
+        return '<div class="onlineitem"><div><div class="oc">'+s.code+'</div>'+
+          '<div class="om">'+(titleOf[s.code]||'')+(s.instr?' · '+s.instr:'')+'</div>'+
+          '<span class="seat '+sc+'" style="margin-top:5px"><span class="d"></span>'+s.open+'/'+s.total+'</span></div>'+
+          '<span class="ot">'+modeTag+'</span></div>';
+      }).join('');
+    }
+  }
+
+  /* ---------- combo callout ---------- */
+  function renderCombo(placed){
+    var el=document.getElementById('comboCallout');
+    var conf = placed.filter(function(p){return p.conf;});
+    var workHits = placed.filter(function(p){return p.workConf;});
+    if(conf.length){
+      var codes=[]; conf.forEach(function(p){ if(codes.indexOf(p.code)<0) codes.push(p.code); });
+      var list = codes.length===1 ? codes[0]
+               : codes.length===2 ? codes[0]+' and '+codes[1]
+               : codes.slice(0,-1).join(', ')+', and '+codes[codes.length-1];
+      var word = codes.length>1 ? 'overlap' : 'overlaps';
+      el.innerHTML='<div class="callout warm"><svg class="ic" viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>'+
+        '<p><b>Time clash.</b> '+list+' '+word+' on the same day — every clashing block is outlined in red on the grid. Swap one for a different section (or its online option) to clear it.</p></div>';
+    } else if(workHits.length){
+      el.innerHTML='<div class="callout warm"><svg class="ic" viewBox="0 0 24 24"><path d="M5 8h14v11H5z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg>'+
+        '<p><b>Runs into work.</b> '+workHits.length+' section(s) land inside your 3–9 PM work band. The grid shades that band — pick a morning or Saturday section instead.</p></div>';
+    } else {
+      el.innerHTML='<div class="callout"><svg class="ic" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>'+
+        '<p><b>Conflict-free combo found.</b> This set keeps your evenings free, has no overlaps, and stays clear of your 3–9 PM job. Saturday and morning Atlanta Tech sections do the heavy lifting.</p></div>';
+    }
+  }
+
+  /* ---------- controls wiring ---------- */
+  function renderCollegeChips(){
+    var row=document.getElementById('collegeRow');
+    row.innerHTML = Object.keys(colleges).map(function(k){
+      var c=colleges[k];
+      var tag = c.real ? '' : '<span class="tagi">illustrative</span>';
+      return '<button class="chip '+c.cls+(c.on?' on':'')+'" data-col="'+k+'"><span class="dot"></span>'+c.label+tag+'</button>';
+    }).join('');
+    Array.prototype.slice.call(row.querySelectorAll('[data-col]')).forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var k=btn.getAttribute('data-col'); colleges[k].on=!colleges[k].on;
+        btn.classList.toggle('on', colleges[k].on); render();
+      });
+    });
+  }
+  function renderCourseChips(){
+    var row=document.getElementById('courseRow');
+    row.innerHTML = PICKABLE.map(function(code){
+      return '<button class="chip'+(picked[code]?' on':'')+'" data-code="'+code+'">'+code+'</button>';
+    }).join('');
+    Array.prototype.slice.call(row.querySelectorAll('[data-code]')).forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var code=btn.getAttribute('data-code'); picked[code]=!picked[code];
+        btn.classList.toggle('on', picked[code]); render();
+      });
+    });
+  }
+  document.getElementById('workChip').addEventListener('click',function(){
+    showWork=!showWork; this.classList.toggle('on', showWork); render();
+  });
+
+  renderShell();
+  renderCollegeChips();
+  renderCourseChips();
+  render();
+})();
+</script>
+<script src="concept-nav.js"></script>
+</body>
+</html>
