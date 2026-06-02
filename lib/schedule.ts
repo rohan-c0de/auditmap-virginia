@@ -23,6 +23,7 @@ import { getZipCoordinates, calculateDistance } from "./geo";
 import { parseTimeToMinutes, daysToBitmask } from "./time-utils";
 import { isInProgress } from "./course-status";
 import { getCurrentTerm } from "./terms";
+import { bestTransferEntry } from "./transfer-rank";
 const MAX_RESULTS = 20;
 const MAX_HEAP_SIZE = 50;
 const MAX_COMBINATIONS_EVALUATED = 100_000;
@@ -377,7 +378,10 @@ function filterSections(
     if (transferLookup && targetUniversity) {
       const entries = transferLookup[courseKey];
       if (entries) {
-        const match = entries.find((e) => e.university === targetUniversity);
+        // One-to-many: a course can map to the target university with several
+        // statuses. Surface the best (direct > elective > no-credit), not
+        // whichever row happens to be first. See lib/transfer-rank.ts.
+        const match = bestTransferEntry(entries, targetUniversity);
         if (match) {
           transferStatus = match.type;
           transferCourse = match.course;

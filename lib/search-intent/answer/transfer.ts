@@ -21,6 +21,7 @@
 //                       → resolved? → look up mapping → yes / partial / no
 
 import { getTransferInfo } from "../../transfer";
+import { bestMappingForUniversity } from "../../transfer-rank";
 import type { TransferIntent } from "../types";
 import type {
   Answer,
@@ -114,9 +115,11 @@ export async function lookupTransfer(
     });
   }
 
-  const match = mappings.find(
-    (m) => m.university === resolution.resolved!.slug,
-  );
+  // One-to-many: a course can map to the destination with several rows of
+  // different status. Answer with the best outcome (direct > elective >
+  // no-credit), not whichever row is first — otherwise "Does X transfer to Y?"
+  // can say "partial" when a direct equivalent exists. See lib/transfer-rank.ts.
+  const match = bestMappingForUniversity(mappings, resolution.resolved.slug);
   if (!match) {
     // University exists in the state's transfer space, but this course
     // doesn't map to it. Surface alternatives.
