@@ -387,6 +387,19 @@ async function main() {
 
   console.log(`\n=== Summary ===\n  Total: ${grandTotal} sections`);
 
+  // The class-schedule listing carries no course title (rows are written with
+  // course_title ""), so enrich from broward's CourseLeaf catalog and drop the
+  // untitleable vocational tail BEFORE import — otherwise every (college, term)
+  // aborts on the title-required schema check. See enrich-courseleaf-titles.ts.
+  if (grandTotal > 0) {
+    const { enrichCourseLeafTitles } = await import("./enrich-courseleaf-titles");
+    await enrichCourseLeafTitles({
+      college: "broward",
+      catalogBase: "https://catalog.broward.edu",
+      dropUntitled: true,
+    });
+  }
+
   if (!noImport && grandTotal > 0) {
     const { importCoursesToSupabase } = await import("../lib/supabase-import");
     await importCoursesToSupabase(STATE);
