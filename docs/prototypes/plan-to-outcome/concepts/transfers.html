@@ -53,7 +53,7 @@ svg.sankey{display:block;width:100%;height:auto}
 .rows{display:grid;gap:7px}
 .trow{display:grid;grid-template-columns:118px 26px 1fr;align-items:center;gap:10px;background:var(--panel2);border:1px solid var(--line);border-left:3px solid var(--line2);border-radius:11px;padding:10px 13px}
 .trow.direct{border-left-color:var(--brand)}
-.trow.elective{border-left-color:var(--bright)}
+.trow.elective{border-left-color:var(--warm)}
 .trow.no{border-left-color:var(--bad)}
 .trow .cc{font-weight:700;font-size:13.5px;font-variant-numeric:tabular-nums}
 .trow .arr{color:var(--muted);display:flex;justify-content:center}
@@ -65,7 +65,7 @@ svg.sankey{display:block;width:100%;height:auto}
 .trow.no .eq .ut{font-style:italic}
 .pillk{font-size:10px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:2px 7px;border-radius:999px;white-space:nowrap}
 .pillk.direct{color:var(--good);background:var(--good-bg)}
-.pillk.elective{color:var(--brand-strong);background:var(--brand-soft)}
+.pillk.elective{color:var(--warm-strong);background:var(--warm-soft)}
 .pillk.no{color:var(--bad);background:var(--bad-bg)}
 .eqtop{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 
@@ -74,6 +74,33 @@ svg.sankey{display:block;width:100%;height:auto}
   .trow .cc{font-size:12.5px}
   .phead h1{font-size:26px}
 }
+/* view toggle + matrix */
+.viewtoggle{display:flex;align-items:center;gap:8px;margin:0 0 16px;flex-wrap:wrap}
+.vt{font-family:inherit;font-size:13px;font-weight:600;padding:7px 14px;border-radius:999px;border:1px solid var(--line2);background:var(--panel);color:var(--muted);cursor:pointer}
+.vt.on{background:var(--brand-soft);border-color:var(--brand-tint);color:var(--brand-strong)}
+.vt:hover{border-color:var(--brand)}
+.vthint{font-size:12px;color:var(--muted);margin-left:4px}
+.matcard{padding:20px 22px}
+.matwrap{overflow-x:auto;margin-top:4px}
+table.matrix{border-collapse:separate;border-spacing:0;width:100%;font-size:13px}
+table.matrix th,table.matrix td{padding:8px 9px;text-align:center;border-bottom:1px solid var(--line)}
+table.matrix thead th{position:sticky;top:0;background:var(--panel);font-size:11px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);white-space:nowrap;z-index:2}
+table.matrix th.coursecol,table.matrix td.coursecol{text-align:left;position:sticky;left:0;background:var(--panel);min-width:128px;z-index:1}
+table.matrix thead th.coursecol{z-index:3}
+table.matrix td.coursecol .cc{font-weight:700;font-variant-numeric:tabular-nums}
+table.matrix td.coursecol .ct{font-size:11px;color:var(--muted);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:170px}
+.cell{display:inline-flex;align-items:center;justify-content:center;width:100%;min-width:76px;height:30px;border-radius:7px;font-size:11px;font-weight:700}
+.cell.direct{background:var(--brand);color:var(--bg)}
+.cell.elective{background:var(--warm-soft);color:var(--warm-strong);border:1px solid var(--warm)}
+.cell.no{background:var(--panel2);color:var(--muted)}
+.cell.na{color:var(--line2);font-weight:400}
+td.acceptcol{font-weight:700;color:var(--brand-strong);font-variant-numeric:tabular-nums}
+table.matrix tfoot td{font-weight:700;color:var(--brand-strong);border-bottom:none;border-top:2px solid var(--line2)}
+table.matrix tfoot td.coursecol{color:var(--ink)}
+table.matrix tbody tr:hover td{background:var(--brand-soft)}
+.matlegend{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;font-size:12px;color:var(--muted);align-items:center}
+.matlegend .lk{display:inline-flex;align-items:center;gap:6px}
+.matlegend i{width:13px;height:13px;border-radius:4px;display:inline-block}
 </style>
 </head>
 <body>
@@ -85,6 +112,14 @@ svg.sankey{display:block;width:100%;height:auto}
     <div class="who">Atlanta Tech · Accounting, A.S. &nbsp;&rarr;&nbsp; choose a university</div>
   </div>
 
+  <!-- view toggle -->
+  <div class="viewtoggle">
+    <button class="vt on" data-view="flow">Flow view</button>
+    <button class="vt" data-view="matrix">Matrix view</button>
+    <span class="vthint">Matrix = every course &times; every university at once</span>
+  </div>
+
+  <div id="flowview">
   <!-- university selector -->
   <div class="unirow" id="unirow"></div>
 
@@ -124,6 +159,31 @@ svg.sankey{display:block;width:100%;height:auto}
     </div>
 
   </div>
+  </div><!-- /flowview -->
+
+  <!-- MATRIX VIEW -->
+  <div id="matrixview" hidden>
+    <div class="card matcard">
+      <div class="dlhead">
+        <h2>
+          <svg class="ic" width="18" height="18" viewBox="0 0 24 24"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z"/></svg>
+          Course &rarr; university matrix
+        </h2>
+        <span class="sub">All four universities at once — pick where the most credits land.</span>
+      </div>
+      <div class="matwrap" id="matwrap"></div>
+      <div class="matlegend">
+        <span class="lk"><i style="background:var(--brand)"></i>Direct equivalent</span>
+        <span class="lk"><i style="background:var(--warm-soft);border:1px solid var(--warm)"></i>Elective credit</span>
+        <span class="lk"><i style="background:var(--panel2)"></i>No credit</span>
+        <span class="lk"><i style="background:transparent;border:1px solid var(--line2)"></i>Not reviewed</span>
+      </div>
+      <div class="callout" id="matsummary" style="margin-top:16px">
+        <svg class="ic" width="18" height="18" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+        <p></p>
+      </div>
+    </div>
+  </div>
 
   <div class="cfoot">
     <span class="tag">Concept · transfer pathway (moat #3)</span>
@@ -144,7 +204,7 @@ svg.sankey{display:block;width:100%;height:auto}
   // mirrors transferCounts exactly (direct / elective / no)
   var CATS = [
     {key:'direct',   label:'Direct equivalent', color:'var(--brand)',  note:'counts as the same course'},
-    {key:'elective', label:'Elective credit',   color:'var(--bright)', note:'counts as elective credit only'},
+    {key:'elective', label:'Elective credit',   color:'var(--warm)', note:'counts as elective credit only'},
     {key:'no',       label:'No credit',         color:'var(--muted)',  note:'no credit awarded'}
   ];
   function catOf(r){ return r.noCredit ? 'no' : (r.elective ? 'elective' : 'direct'); }
@@ -371,7 +431,7 @@ svg.sankey{display:block;width:100%;height:auto}
   var ARROW = '<svg class="ic" width="16" height="16" viewBox="0 0 24 24"><path d="M5 12h13"/><path d="M13 6l6 6-6 6"/></svg>';
   var GINFO = {
     direct:   {label:'Direct equivalents', color:'var(--brand)',  note:'counts as the same course'},
-    elective: {label:'Elective credit',    color:'var(--bright)', note:'counts as elective credit only'},
+    elective: {label:'Elective credit',    color:'var(--warm)', note:'counts as elective credit only'},
     no:       {label:'No credit',          color:'var(--bad)',    note:'not awarded any credit'}
   };
 
@@ -430,6 +490,53 @@ svg.sankey{display:block;width:100%;height:auto}
   }
 
   render();
+})();
+</script>
+<script>
+/* ---- Matrix view: every course × every university ---- */
+(function(){
+  var T = (window.CDATA&&window.CDATA.transfers)||{};
+  var UNIVS = Object.keys(T);
+  var SHORT = {'University of West Georgia':'West Georgia','Georgia State University':'Georgia State','University of Georgia':'UGA','Georgia Tech':'Georgia Tech'};
+  var titles={}; (window.CDATA.courses||[]).forEach(function(c){ titles[c.code]=c.title; });
+  var RANK={direct:3,elective:2,no:1};
+  var courses={};
+  UNIVS.forEach(function(u){ (T[u]||[]).forEach(function(r){
+    if(!courses[r.cc]) courses[r.cc]={};
+    var s = r.noCredit ? 'no' : (r.elective ? 'elective' : 'direct');
+    // a course can map to several university courses; keep its best outcome
+    if(!courses[r.cc][u] || RANK[s] > RANK[courses[r.cc][u]]) courses[r.cc][u]=s;
+  }); });
+  function counts(c){ var n=0; UNIVS.forEach(function(u){var v=courses[c][u]; if(v==='direct'||v==='elective')n++;}); return n; }
+  function score(c){ var s=0; UNIVS.forEach(function(u){var v=courses[c][u]; if(v==='direct')s+=2; else if(v==='elective')s+=1;}); return s; }
+  var codes = Object.keys(courses).sort(function(a,b){ return (score(b)-score(a)) || a.localeCompare(b); });
+  var LBL={direct:'direct',elective:'elective',no:'no credit'};
+  function cell(v){ return v ? '<span class="cell '+v+'">'+LBL[v]+'</span>' : '<span class="cell na">&middot;</span>'; }
+
+  var head='<thead><tr><th class="coursecol">Your course</th>'+
+    UNIVS.map(function(u){return '<th>'+(SHORT[u]||u)+'</th>';}).join('')+'<th>accepts</th></tr></thead>';
+  var body='<tbody>'+codes.map(function(c){
+    return '<tr><td class="coursecol"><span class="cc">'+c+'</span><span class="ct">'+(titles[c]||'')+'</span></td>'+
+      UNIVS.map(function(u){return '<td>'+cell(courses[c][u])+'</td>';}).join('')+
+      '<td class="acceptcol">'+counts(c)+'/'+UNIVS.length+'</td></tr>';
+  }).join('')+'</tbody>';
+  var foot='<tfoot><tr><td class="coursecol">Counts toward a degree</td>'+
+    UNIVS.map(function(u){ var n=0,tot=0; codes.forEach(function(c){var v=courses[c][u]; if(v){tot++; if(v==='direct'||v==='elective')n++;}}); return '<td>'+n+'/'+tot+'</td>'; }).join('')+
+    '<td></td></tr></tfoot>';
+  document.getElementById('matwrap').innerHTML='<table class="matrix">'+head+body+foot+'</table>';
+
+  var best=UNIVS.map(function(u){var n=0;codes.forEach(function(c){var v=courses[c][u];if(v==='direct'||v==='elective')n++;});return {u:u,n:n};}).sort(function(a,b){return b.n-a.n;})[0];
+  if(best) document.querySelector('#matsummary p').innerHTML='<b>'+(SHORT[best.u]||best.u)+' keeps the most of your credits</b> — '+best.n+' of the courses it reviewed count toward a degree there. Each row shows each university\'s best outcome for that course; a dot means they haven\'t reviewed it. Counts are course-level here &mdash; the Flow view breaks out every individual equivalency, so its totals run higher. In-state transfers only.';
+
+  var fv=document.getElementById('flowview'), mv=document.getElementById('matrixview');
+  document.querySelectorAll('.vt').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.vt').forEach(function(x){x.classList.remove('on');});
+      b.classList.add('on');
+      var matrix=b.getAttribute('data-view')==='matrix';
+      fv.hidden=matrix; mv.hidden=!matrix;
+    });
+  });
 })();
 </script>
 <script src="concept-nav.js"></script>
