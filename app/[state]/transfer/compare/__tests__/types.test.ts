@@ -1,0 +1,78 @@
+import { describe, it, expect } from "vitest";
+import { buildBestMappingLookup, rankMapping, getCellInfo } from "../types";
+import type { TransferMapping } from "@/lib/types";
+import type { CCCourse } from "../types";
+
+function mk(partial: Partial<TransferMapping>): TransferMapping {
+  return {
+    cc_prefix: "ACCT",
+    cc_number: "1100",
+    cc_course: "ACCT 1100",
+    cc_title: "Financial Accounting I",
+    cc_credits: "4",
+    university: "uga",
+    university_name: "University of Georgia",
+    univ_course: "",
+    univ_title: "",
+    univ_credits: "",
+    notes: "",
+    no_credit: false,
+    is_elective: false,
+    ...partial,
+  };
+}
+
+const ACCT1100: CCCourse = { prefix: "ACCT", number: "1100", course: "ACCT 1100", title: "Financial Accounting I" };
+
+describe("rankMapping", () => {
+  it("orders direct > elective > no-credit", () => {
+    expect(rankMapping(mk({}))).toBeGreaterThan(rankMapping(mk({ is_elective: true })));
+    expect(rankMapping(mk({ is_elective: true }))).toBeGreaterThan(rankMapping(mk({ no_credit: true })));
+  });
+});
+
+describe("buildBestMappingLookup", () => {
+  it("keeps the best outcome per (course, university) regardless of array order (worst last)", () => {
+    // Real-world shape: one CC course maps to several university courses, with the
+    // WORST outcome last in the array — last-wins would wrongly show 'no-credit'.
+    const mappings = [
+      mk({ univ_course: "ACCT 2101", no_credit: false, is_elective: false }), // direct
+      mk({ univ_course: "ACCT 0XXX", is_elective: true }), // elective
+      mk({ univ_course: "", no_credit: true }), // no-credit (LAST)
+    ];
+    const cell = getCellInfo(ACCT1100, "uga", buildBestMappingLookup(mappings));
+    expect(cell.status).toBe("direct");
+    expect(cell.course).toBe("ACCT 2101");
+  });
+
+  it("upgrades no-credit to elective when an elective mapping exists", () => {
+    const mappings = [mk({ no_credit: true }), mk({ is_elective: true, univ_course: "X 1XXX" })];
+    const cell = getCellInfo(ACCT1100, "uga", buildBestMappingLookup(mappings));
+    expect(cell.status).toBe("elective");
+  });
+
+  it("keeps separate best entries per university", () => {
+    const mappings = [
+      mk({ university: "uga", no_credit: false, is_elective: false }), // direct at uga
+      mk({ university: "gatech", no_credit: true }), // no-credit at gatech
+    ];
+    const lookup = buildBestMappingLookup(mappings);
+    expect(lookup.size).toBe(2);
+    expect(getCellInfo(ACCT1100, "uga", lookup).status).toBe("direct");
+    expect(getCellInfo(ACCT1100, "gatech", lookup).status).toBe("no-credit");
+  });
+
+  it("is deterministic on ties — keeps the first direct mapping", () => {
+    const mappings = [
+      mk({ univ_course: "ACCT 2101" }), // direct (first)
+      mk({ univ_course: "ACCT 2102" }), // direct (second, same rank)
+    ];
+    const cell = getCellInfo(ACCT1100, "uga", buildBestMappingLookup(mappings));
+    expect(cell.course).toBe("ACCT 2101");
+  });
+
+  it("returns unknown for a course with no mapping", () => {
+    const cell = getCellInfo(ACCT1100, "uga", buildBestMappingLookup([]));
+    expect(cell.status).toBe("unknown");
+  });
+});

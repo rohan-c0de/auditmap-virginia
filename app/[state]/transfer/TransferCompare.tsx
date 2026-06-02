@@ -4,7 +4,7 @@ import { useState, useMemo, useEffect, useCallback } from "react";
 import { useSearchParams } from "next/navigation";
 import type { TransferMapping } from "@/lib/types";
 import type { CCCourse, CompareFilters, UniversityScore, CellStatus } from "./compare/types";
-import { getCellInfo } from "./compare/types";
+import { getCellInfo, buildBestMappingLookup } from "./compare/types";
 import CompareFilterBar from "./compare/CompareFilterBar";
 import CompareScoreCard from "./compare/CompareScoreCard";
 import CompareTable from "./compare/CompareTable";
@@ -99,14 +99,12 @@ export default function TransferCompare({
       .filter(([, courses]) => courses.length > 0);
   }, [coursesByPrefix, searchQuery]);
 
-  const transferLookup = useMemo(() => {
-    const map = new Map<string, TransferMapping>();
-    for (const m of mappings) {
-      const key = `${m.cc_prefix} ${m.cc_number}|${m.university}`;
-      map.set(key, m);
-    }
-    return map;
-  }, [mappings]);
+  // Collapse one-to-many mappings to the best outcome per (course, university) —
+  // NOT last-wins, which silently downgrades cells (see buildBestMappingLookup).
+  const transferLookup = useMemo(
+    () => buildBestMappingLookup(mappings),
+    [mappings]
+  );
 
   const selectedCoursesList = useMemo(() => {
     return allCourses.filter((c) => selectedCourses.has(c.course));
