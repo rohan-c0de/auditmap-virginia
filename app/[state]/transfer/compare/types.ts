@@ -63,3 +63,31 @@ export function getCellInfo(
     return { status: "elective", label: "~", course: m.univ_course, title: m.univ_title, credits: m.univ_credits, notes: m.notes || "" };
   return { status: "direct", label: "\u2713", course: m.univ_course, title: m.univ_title, credits: m.univ_credits, notes: m.notes || "" };
 }
+
+// Higher is better: direct (3) > elective (2) > no-credit (1).
+export function rankMapping(m: TransferMapping): number {
+  return m.no_credit ? 1 : m.is_elective ? 2 : 3;
+}
+
+/**
+ * Collapse one-to-many transfer mappings to the BEST outcome per (course, university).
+ *
+ * A single CC course can map to several university courses with different statuses
+ * (one row direct, another elective, another no-credit). The comparison cell must
+ * reflect the best a student can actually get \u2014 direct > elective > no-credit \u2014 NOT
+ * whichever row happened to be last in the array. A naive `map.set(key, m)` is last-wins
+ * and silently downgrades cells (e.g. shows "does not transfer" when a direct equivalent
+ * exists), which is exactly the kind of wrong transfer signal that can cost a student a
+ * semester. Ties keep the first matching row, so the result is deterministic.
+ */
+export function buildBestMappingLookup(
+  mappings: TransferMapping[]
+): Map<string, TransferMapping> {
+  const map = new Map<string, TransferMapping>();
+  for (const m of mappings) {
+    const key = `${m.cc_prefix} ${m.cc_number}|${m.university}`;
+    const existing = map.get(key);
+    if (!existing || rankMapping(m) > rankMapping(existing)) map.set(key, m);
+  }
+  return map;
+}
