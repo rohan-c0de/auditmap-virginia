@@ -3,43 +3,32 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Coverage map — concept</title>
+<title>Browse by state — concept</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="concept.css">
 <style>
-.maplayout{display:grid;grid-template-columns:1fr 320px;gap:22px;margin-top:14px;align-items:start}
-.mapcard{padding:20px}
-.mapgrid{display:grid;grid-template-columns:repeat(11,1fr);grid-auto-rows:1fr;gap:7px;aspect-ratio:11/8}
-.tile{position:relative;border-radius:10px;border:1px solid transparent;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:transform .1s,box-shadow .1s;user-select:none;min-width:0}
-.tile:hover{transform:translateY(-2px);box-shadow:var(--shadow-lift);z-index:2}
-.tile.sel{outline:2.5px solid var(--ink);outline-offset:1px}
-.tile .ab{font-weight:800;font-size:13px;letter-spacing:-.02em;line-height:1}
-.tile .gg{font-size:9px;font-weight:700;opacity:.8;margin-top:2px}
-.tile.A{background:var(--gA-bg);color:var(--gA)} .tile.B{background:var(--gB-bg);color:var(--gB)}
-.tile.C{background:var(--gC-bg);color:var(--gC)} .tile.D{background:var(--gD-bg);color:var(--gD)}
-.tile.F{background:var(--gF-bg);color:var(--gF)}
-.legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:16px;font-size:12.5px;color:var(--muted);align-items:center}
-.legend .lk{display:inline-flex;align-items:center;gap:6px}
+.maplayout{display:grid;grid-template-columns:1fr 300px;gap:22px;margin-top:14px;align-items:start}
+.mapcard{padding:18px 20px}
+.usmap{width:100%;height:auto;display:block}
+.usmap .st{stroke:var(--panel);stroke-width:1;cursor:pointer;transition:fill .12s}
+.usmap .st.active{fill:var(--brand)}
+.usmap .st.active:hover{fill:var(--brand-strong)}
+.usmap .st.soon{fill:var(--line2);cursor:default}
+.usmap .st.sel{stroke:var(--ink);stroke-width:2}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px;font-size:12.5px;color:var(--muted);align-items:center}
+.legend .lk{display:inline-flex;align-items:center;gap:7px}
 .legend i{width:13px;height:13px;border-radius:4px;display:inline-block}
-.searchrow{display:flex;gap:10px;align-items:center;margin-bottom:14px;flex-wrap:wrap}
-.searchrow input{font-family:inherit;font-size:14px;padding:9px 14px;border:1px solid var(--line2);border-radius:999px;background:var(--panel);color:var(--ink);width:220px;outline:none}
+.searchrow{display:flex;gap:10px;align-items:center;margin-bottom:6px;flex-wrap:wrap}
+.searchrow input{font-family:inherit;font-size:14px;padding:9px 14px;border:1px solid var(--line2);border-radius:999px;background:var(--panel);color:var(--ink);width:230px;outline:none}
 .searchrow input:focus{border-color:var(--brand)}
-/* detail */
 .detail{padding:20px;position:sticky;top:78px}
 .detail .dn{font-size:22px;font-weight:800;letter-spacing:-.02em}
-.detail .dsub{color:var(--muted);font-size:13px;margin-top:2px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.detail .stat{display:flex;justify-content:space-between;padding:10px 0;border-top:1px solid var(--line);font-size:13.5px}
-.detail .stat:first-of-type{border-top:none;margin-top:10px}
-.detail .stat b{font-variant-numeric:tabular-nums}
-.dimgrades{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
-.dg{font-size:11px;font-weight:600;padding:4px 9px;border-radius:8px;background:var(--panel2);border:1px solid var(--line);color:var(--muted)}
-.dg b{font-weight:800}
-.empty{color:var(--muted);font-size:13.5px;text-align:center;padding:34px 8px}
-.scoreboard{display:flex;gap:10px;flex-wrap:wrap;margin:4px 0 0}
-.sb{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px 14px;text-align:center;min-width:62px}
-.sb .n{font-size:22px;font-weight:800;letter-spacing:-.02em}
-.sb .l{font-size:10.5px;color:var(--muted);font-weight:600;letter-spacing:.03em;text-transform:uppercase}
+.detail .dsub{color:var(--muted);font-size:13px;margin-top:3px}
+.detail .stat{display:flex;align-items:baseline;gap:8px;margin:16px 0 2px}
+.detail .stat .n{font-size:34px;font-weight:800;letter-spacing:-.03em;color:var(--brand)}
+.detail .stat .u{font-size:13px;color:var(--muted)}
+.detail .empty{color:var(--muted);font-size:13.5px;text-align:center;padding:30px 8px}
 @media(max-width:880px){.maplayout{grid-template-columns:1fr}.detail{position:static}}
 </style>
 </head>
@@ -47,97 +36,77 @@
 <div class="wrap">
 
   <div class="phead">
-    <div class="kick">National coverage</div>
-    <h1>Every state, graded honestly</h1>
-    <div class="who">Pick your state to start. Color shows how complete our <b>data</b> is there — courses, prereqs, transfers, outcomes — not how good the colleges are.</div>
+    <div class="kick">Browse by state</div>
+    <h1>Find your state</h1>
+    <div class="who">We cover community colleges nationwide. Click your state to start — same map style as the live site.</div>
   </div>
-
-  <div class="scoreboard" id="sb"></div>
 
   <div class="maplayout">
     <div class="card mapcard">
       <div class="searchrow">
         <input id="q" placeholder="Find your state…" autocomplete="off">
-        <span class="muted" style="font-size:12.5px">51 states + DC · click a tile</span>
+        <span class="muted" style="font-size:12.5px">50 states + DC · click a state</span>
       </div>
-      <div class="mapgrid" id="grid"></div>
-      <div class="legend" id="legend"></div>
+      <svg id="map" class="usmap" viewBox="0 0 975 610" role="img" aria-label="Map of US states — click to browse a state"></svg>
+      <div class="legend" id="legend">
+        <span class="lk"><i style="background:var(--brand)"></i> Available — click to browse</span>
+        <span class="lk"><i style="background:var(--line2)"></i> Coming soon</span>
+      </div>
     </div>
 
     <div class="card detail" id="detail">
-      <div class="empty">Hover or tap a state to see its coverage.</div>
+      <div class="empty">Hover or tap a state to see its colleges.</div>
     </div>
   </div>
 
   <div class="cfoot">
-    <span class="tag">Concept · coverage map</span>
-    Inspired by the national, state-by-state mission. A schematic <b>tile-grid map</b> (every state equally clickable — no tiny RI/DC to miss), colored by the <b>real audit composite grade</b> from <code>docs/state-goals/_audit-snapshot.json</code> (11 A · 7 B · 17 C · 6 D · 10 F). Grades = <b>data completeness</b>, not college quality. College counts and section totals are real. A true geographic outline is also possible if preferred — this layout trades exact geography for legibility.
+    <span class="tag">Concept · browse by state</span>
+    Mirrors the live site's <code>USMap.tsx</code> — a real geographic map (us-atlas Albers projection, same data prod uses), states filled teal and clickable with their college counts. No data-quality grades shown; the live map signals "available vs coming soon," not internal completeness. College counts are real (from the state registry / audit snapshot).
   </div>
 </div>
 
-<script src="concept-data.js"></script>
+<script src="us-states-paths.js"></script>
 <script>
-var GRID={
-AK:[0,0],ME:[0,10],VT:[1,9],NH:[1,10],
-WA:[2,0],ID:[2,1],MT:[2,2],ND:[2,3],MN:[2,4],WI:[2,5],MI:[2,6],NY:[2,8],MA:[2,9],RI:[2,10],
-OR:[3,0],NV:[3,1],WY:[3,2],SD:[3,3],IA:[3,4],IL:[3,5],IN:[3,6],OH:[3,7],PA:[3,8],NJ:[3,9],CT:[3,10],
-CA:[4,0],UT:[4,1],CO:[4,2],NE:[4,3],MO:[4,4],KY:[4,5],WV:[4,6],VA:[4,7],MD:[4,8],DE:[4,9],
-AZ:[5,1],NM:[5,2],KS:[5,3],AR:[5,4],TN:[5,5],NC:[5,6],SC:[5,7],DC:[5,8],
-TX:[6,2],OK:[6,3],LA:[6,4],MS:[6,5],AL:[6,6],GA:[6,7],
-HI:[7,0],FL:[7,7]
-};
-var NAME={AL:"Alabama",AK:"Alaska",AZ:"Arizona",AR:"Arkansas",CA:"California",CO:"Colorado",CT:"Connecticut",DE:"Delaware",DC:"District of Columbia",FL:"Florida",GA:"Georgia",HI:"Hawaii",ID:"Idaho",IL:"Illinois",IN:"Indiana",IA:"Iowa",KS:"Kansas",KY:"Kentucky",LA:"Louisiana",ME:"Maine",MD:"Maryland",MA:"Massachusetts",MI:"Michigan",MN:"Minnesota",MS:"Mississippi",MO:"Missouri",MT:"Montana",NE:"Nebraska",NV:"Nevada",NH:"New Hampshire",NJ:"New Jersey",NM:"New Mexico",NY:"New York",NC:"North Carolina",ND:"North Dakota",OH:"Ohio",OK:"Oklahoma",OR:"Oregon",PA:"Pennsylvania",RI:"Rhode Island",SC:"South Carolina",SD:"South Dakota",TN:"Tennessee",TX:"Texas",UT:"Utah",VT:"Vermont",VA:"Virginia",WA:"Washington",WV:"West Virginia",WI:"Wisconsin",WY:"Wyoming"};
-var GR=(window.CDATA&&window.CDATA.stateGrades)||{};
-var GCOLOR={A:'var(--gA)',B:'var(--gB)',C:'var(--gC)',D:'var(--gD)',F:'var(--gF)'};
-var GBG={A:'var(--gA-bg)',B:'var(--gB-bg)',C:'var(--gC-bg)',D:'var(--gD-bg)',F:'var(--gF-bg)'};
-var GLABEL={A:'Excellent',B:'Good',C:'Partial',D:'Thin',F:'Stub / blocked'};
-
-function gradeOf(ab){var r=GR[ab.toLowerCase()];return r?r.g:'?';}
-var grid=document.getElementById('grid');
-var tiles={};
-Object.keys(GRID).forEach(function(ab){
-  var pos=GRID[ab],g=gradeOf(ab);
-  var t=document.createElement('div');
-  t.className='tile '+g;
-  t.style.gridRow=(pos[0]+1); t.style.gridColumn=(pos[1]+1);
-  t.innerHTML='<span class="ab">'+ab+'</span><span class="gg">'+g+'</span>';
-  t.addEventListener('mouseenter',function(){show(ab);});
-  t.addEventListener('click',function(){select(ab);});
-  grid.appendChild(t); tiles[ab]=t;
+var DATA=window.USPATHS||[];
+var svg=document.getElementById('map'), paths={};
+var ABBR={Alabama:'AL',Alaska:'AK',Arizona:'AZ',Arkansas:'AR',California:'CA',Colorado:'CO',Connecticut:'CT',Delaware:'DE','District of Columbia':'DC',Florida:'FL',Georgia:'GA',Hawaii:'HI',Idaho:'ID',Illinois:'IL',Indiana:'IN',Iowa:'IA',Kansas:'KS',Kentucky:'KY',Louisiana:'LA',Maine:'ME',Maryland:'MD',Massachusetts:'MA',Michigan:'MI',Minnesota:'MN',Mississippi:'MS',Missouri:'MO',Montana:'MT',Nebraska:'NE',Nevada:'NV','New Hampshire':'NH','New Jersey':'NJ','New Mexico':'NM','New York':'NY','North Carolina':'NC','North Dakota':'ND',Ohio:'OH',Oklahoma:'OK',Oregon:'OR',Pennsylvania:'PA','Rhode Island':'RI','South Carolina':'SC','South Dakota':'SD',Tennessee:'TN',Texas:'TX',Utah:'UT',Vermont:'VT',Virginia:'VA',Washington:'WA','West Virginia':'WV',Wisconsin:'WI',Wyoming:'WY'};
+var SVGNS='http://www.w3.org/2000/svg';
+DATA.forEach(function(s){
+  if(!s.d)return;
+  var p=document.createElementNS(SVGNS,'path');
+  p.setAttribute('d',s.d);
+  var active=s.count>0;
+  p.setAttribute('class','st '+(active?'active':'soon'));
+  var t=document.createElementNS(SVGNS,'title');
+  t.textContent=active? (s.name+' — '+s.count+' colleges · click to browse') : (s.name+' — coming soon');
+  p.appendChild(t);
+  if(active){
+    p.addEventListener('mouseenter',function(){show(s);});
+    p.addEventListener('click',function(){select(s);});
+  }
+  svg.appendChild(p); paths[s.name]=p;
 });
 
-// scoreboard
-var counts={A:0,B:0,C:0,D:0,F:0};
-Object.keys(GRID).forEach(function(ab){var g=gradeOf(ab);if(counts[g]!=null)counts[g]++;});
-document.getElementById('sb').innerHTML=['A','B','C','D','F'].map(function(g){
-  return '<div class="sb"><div class="n" style="color:'+GCOLOR[g]+'">'+counts[g]+'</div><div class="l">'+g+' · '+GLABEL[g]+'</div></div>';
-}).join('');
-document.getElementById('legend').innerHTML=['A','B','C','D','F'].map(function(g){
-  return '<span class="lk"><i style="background:'+GBG[g]+';border:1px solid '+GCOLOR[g]+'"></i> '+g+' — '+GLABEL[g]+'</span>';
-}).join('')+'<span class="lk muted" style="font-style:italic">grade = data completeness, not college quality</span>';
-
 var selected=null;
-function select(ab){selected=ab;Object.keys(tiles).forEach(function(k){tiles[k].classList.toggle('sel',k===ab);});show(ab);}
-function show(ab){
-  var r=GR[ab.toLowerCase()]||{},g=r.g||'?';
-  var d=document.getElementById('detail');
-  d.innerHTML='<div class="dn">'+(NAME[ab]||ab)+'</div>'+
-    '<div class="dsub"><span class="grade '+g+'" style="min-width:auto;padding:3px 8px"><span class="g" style="font-size:15px">'+g+'</span></span> '+GLABEL[g]+' coverage</div>'+
-    '<div class="stat"><span class="muted">Colleges in dataset</span><b>'+(r.c||0)+'</b></div>'+
-    '<div class="stat"><span class="muted">Course sections</span><b>'+((r.s||0).toLocaleString())+'</b></div>'+
-    '<button class="btn primary" style="width:100%;margin-top:14px">Explore '+(NAME[ab]||ab)+' →</button>'+
-    '<div class="src" style="margin-top:12px">Composite grade from the live state audit. "Explore" would drop into course search for this state.</div>';
+function select(s){selected=s.name;Object.keys(paths).forEach(function(k){paths[k].classList.toggle('sel',k===s.name);});show(s);}
+function show(s){
+  var ab=ABBR[s.name]||'';
+  document.getElementById('detail').innerHTML=
+    '<div class="dn">'+s.name+'</div>'+
+    '<div class="dsub">'+(ab?ab+' · ':'')+'community colleges</div>'+
+    '<div class="stat"><span class="n">'+s.count+'</span><span class="u">colleges in our data</span></div>'+
+    '<button class="btn primary" style="width:100%;margin-top:16px">Browse '+s.name+' →</button>'+
+    '<div class="src" style="margin-top:12px">On the live site this links to /'+(ab.toLowerCase())+' — the state\'s course search and colleges.</div>';
 }
 // search
 document.getElementById('q').addEventListener('input',function(e){
   var v=e.target.value.trim().toLowerCase();
-  if(!v){Object.keys(tiles).forEach(function(k){tiles[k].style.opacity=1;});return;}
   var hit=null;
-  Object.keys(tiles).forEach(function(k){
-    var m=k.toLowerCase().indexOf(v)===0 || (NAME[k]||'').toLowerCase().indexOf(v)===0;
-    tiles[k].style.opacity=m?1:.18; if(m&&!hit)hit=k;
+  Object.keys(paths).forEach(function(k){
+    var on=!v || k.toLowerCase().indexOf(v)===0 || (ABBR[k]||'').toLowerCase()===v;
+    paths[k].style.opacity=on?1:.2; if(on&&v&&!hit)hit=k;
   });
-  if(hit)show(hit);
+  if(hit){var s=DATA.find(function(d){return d.name===hit;}); if(s&&s.count>0)show(s);}
 });
 </script>
 <script src="concept-nav.js"></script>
