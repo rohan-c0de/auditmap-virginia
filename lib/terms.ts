@@ -90,11 +90,65 @@ interface TermCountRow {
   college_count: number;
 }
 
-function pickBestTerm(rows: TermCountRow[]): string {
+// Approximate first month of each season (0-indexed). Used by isWithinHorizon
+// to compare a term code against the calendar — we don't need exact academic
+// dates, just a roughly-correct month so the horizon filter rejects terms
+// unambiguously too far out.
+const SEASON_MONTH: Record<string, number> = { SP: 1, SU: 5, FA: 8 };
+
+/**
+ * True when `term` is no more than `monthsAhead` months in the future from
+ * `now`. Past terms always pass — we keep them so a state whose scrape only
+ * has stale data still resolves to *something* useful instead of falling
+ * through to the hardcoded default.
+ *
+ * Exported for unit tests.
+ */
+export function isWithinHorizon(
+  term: string,
+  monthsAhead = 9,
+  now: Date = new Date(),
+): boolean {
+  const m = term.match(/^(\d{4})(SP|SU|FA)$/);
+  if (!m) return true; // unknown format — don't reject
+  const termDate = new Date(parseInt(m[1]), SEASON_MONTH[m[2]], 1);
+  const monthDelta =
+    (termDate.getFullYear() - now.getFullYear()) * 12 +
+    (termDate.getMonth() - now.getMonth());
+  return monthDelta <= monthsAhead;
+}
+
+/**
+ * Pick the term that best represents "what students should see right now"
+ * for a state. Prefers terms with the most college coverage; on ties,
+ * prefers the more recent term.
+ *
+ * Horizon filter (added 2026-06-01): drop terms more than ~9 months in the
+ * future before the tie-break. Without it, a state with few colleges (NH,
+ * CT, UT, AR, NV — all 1–3 colleges) where every scraped term has
+ * college_count=1 would let a stray 2027SU scrape beat a well-populated
+ * 2026FA on the recency tie-break — and the API would serve a tiny set of
+ * future-term sections as "current," making search look broken on prod.
+ * Concrete case: NH had 2026SP=21, 2026SU=10, 2026FA=35, 2027SP=22,
+ * 2027SU=9 sections, all college_count=1 — pickBestTerm returned 2027SU.
+ *
+ * If the horizon filter empties the pool (state has *only* far-future data
+ * — e.g. an incomplete scrape), fall back to the unfiltered list so we
+ * still return a real term.
+ *
+ * Exported for unit tests.
+ */
+export function pickBestTerm(
+  rows: TermCountRow[],
+  now: Date = new Date(),
+): string {
   if (rows.length === 0) return "2026SP";
-  let bestTerm = rows[0].term;
-  let bestCount = Number(rows[0].college_count);
-  for (const row of rows) {
+  const inHorizon = rows.filter((r) => isWithinHorizon(r.term, 9, now));
+  const pool = inHorizon.length > 0 ? inHorizon : rows;
+
+  let bestTerm = pool[0].term;
+  let bestCount = Number(pool[0].college_count);
+  for (const row of pool) {
     const count = Number(row.college_count);
     if (
       count > bestCount ||
