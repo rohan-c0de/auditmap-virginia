@@ -25,7 +25,13 @@ const SITEMAP_SUBJECTS: Record<string, Array<{ prefix: string; count: number }>>
 // In-memory cache (server-side, survives across requests in dev/prod)
 // ---------------------------------------------------------------------------
 
-const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+// 30 minutes. Course/transfer data is scraped ~3×/week (Mon/Wed/Fri), so a
+// short TTL bought no freshness — it just re-paginated Supabase on every warm
+// request, which was a major driver of the egress-quota overage (485/250 GB).
+// A longer TTL lets a warm serverless instance serve repeat (crawler) reads
+// from memory instead of re-querying Postgres. 30 min is well within the data's
+// real change cadence.
+const CACHE_TTL = 30 * 60 * 1000; // 30 minutes
 
 interface CacheEntry<T> {
   data: T;
