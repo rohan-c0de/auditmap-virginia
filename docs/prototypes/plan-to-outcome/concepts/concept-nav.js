@@ -9,6 +9,7 @@
     {f:'prereqs.html',      t:'Prereqs'},
     {f:'transfers.html',    t:'Transfer'},
     {f:'schedule.html',     t:'Schedule'},
+    {f:'compare-colleges.html', t:'Compare'},
     {f:'compare-outcomes.html', t:'Outcomes'},
     {f:'journey-dashboard.html', t:'Dashboard'},
     {f:'us-map.html',       t:'Map'}
