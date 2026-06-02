@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Compare colleges — concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="concept.css">
+<style>
+.toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:2px 0 16px}
+.coursepick{display:inline-flex;align-items:center;gap:9px;background:var(--panel);border:1px solid var(--line2);border-radius:12px;padding:9px 14px;font-weight:700;font-size:15px;cursor:pointer}
+.coursepick .sub{font-weight:500;color:var(--muted);font-size:13px}
+.coursepick:hover{border-color:var(--brand)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.sortwrap{margin-left:auto;display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--muted)}
+.sortwrap select{font-family:inherit;font-size:13px;font-weight:600;color:var(--ink);background:var(--panel);border:1px solid var(--line2);border-radius:999px;padding:7px 12px;cursor:pointer;outline:none}
+.matcard{padding:6px 6px 14px;overflow-x:auto}
+table.cmp{border-collapse:separate;border-spacing:0;width:100%;font-size:13.5px}
+table.cmp th,table.cmp td{padding:13px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:middle}
+table.cmp thead th{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);white-space:nowrap;border-bottom:1px solid var(--line2)}
+table.cmp thead th.num,table.cmp td.num{text-align:center}
+.colcell{min-width:210px}
+.colcell .nm{font-weight:700;font-size:14.5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.colcell .meta{color:var(--muted);font-size:12px;margin-top:2px}
+.rec{font-size:10px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--brand-strong);background:var(--brand-soft);border:1px solid var(--brand-tint);border-radius:999px;padding:2px 8px}
+.realtag{font-size:9.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--good);background:var(--good-bg);border-radius:999px;padding:2px 7px}
+.when{font-weight:600}
+.when small{display:block;color:var(--muted);font-weight:500;font-size:11.5px}
+.fmt{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--muted)}
+.tx{display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px}
+.tx.direct{background:var(--brand);color:var(--bg)}
+.tx.elective{background:var(--warm-soft);color:var(--warm-strong);border:1px solid var(--warm)}
+.tx.no{background:var(--panel2);color:var(--muted)}
+.cost{font-weight:700;font-variant-numeric:tabular-nums}
+tr.norow td{color:var(--muted)}
+tr.norow .colcell .nm{color:var(--muted)}
+tr.dim{opacity:.4}
+tr.best td{background:var(--brand-soft)}
+:root[data-theme="dark"] tr.best td{background:color-mix(in srgb,var(--brand-soft) 60%,transparent)}
+.cfoot .tag{margin-right:8px}
+@media(max-width:760px){.sortwrap{margin-left:0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="phead">
+    <div class="kick">Compare colleges</div>
+    <h1>One course, every college near you</h1>
+    <div class="who">Where can you take this class — when, for how much, and will it transfer? Like Google Flights, for class.</div>
+  </div>
+
+  <div class="toolbar">
+    <span class="coursepick"><svg class="ic" style="width:16px;height:16px;color:var(--brand)" viewBox="0 0 24 24"><path d="M3 9l9-5 9 5-9 5z"/><path d="M7 11v5c0 1 2 2 5 2s5-1 5-2v-5"/></svg> ACCT 1100 <span class="sub">Financial Accounting I · near 30310 ▾</span></span>
+    <div class="filters" id="filters">
+      <span class="chip on" data-f="open"><svg class="ic" style="width:13px;height:13px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg> Open seats</span>
+      <span class="chip" data-f="evening">Evening</span>
+      <span class="chip" data-f="online">Online</span>
+      <span class="chip" data-f="transfers">Transfers to UWG</span>
+    </div>
+    <span class="sortwrap">Sort
+      <select id="sort">
+        <option value="rec">Recommended</option>
+        <option value="seats">Most seats</option>
+        <option value="cost">Lowest cost</option>
+        <option value="transfer">Best transfer</option>
+      </select>
+    </span>
+  </div>
+
+  <div class="card matcard">
+    <table class="cmp" id="cmp">
+      <thead><tr>
+        <th class="colcell">College</th>
+        <th>Next section</th>
+        <th class="num">Seats open</th>
+        <th>Format</th>
+        <th class="num">Est. cost</th>
+        <th class="num">Transfers&nbsp;&rarr;&nbsp;UWG</th>
+      </tr></thead>
+      <tbody id="cmpbody"></tbody>
+    </table>
+  </div>
+
+  <div class="callout warm" style="margin-top:16px">
+    <svg class="ic" style="width:17px;height:17px" viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+    <p><b>Atlanta Technical College is real</b> (sections, seats, format, and the UWG transfer outcome come from our live data). The other colleges are <b>illustrative placeholders</b> to show the comparison — we don't have their section data yet. Estimated cost is illustrative for every row.</p>
+  </div>
+
+  <div class="cfoot">
+    <span class="tag">Concept · multi-college comparator (moat #2)</span>
+    Inspired by the TravelPerk / Google&nbsp;Flights fare grid: pick a course, compare every nearby college on one row each — soonest section, open seats, format, cost, and whether it transfers to your target. In-state colleges only.
+  </div>
+</div>
+
+<script src="concept-data.js"></script>
+<script>
+(function(){
+  var D = window.CDATA||{};
+  // ---- Atlanta Tech row = REAL (from CDATA) ----
+  var secs = (D.sections && D.sections['ACCT 1100']) || [];
+  var timed = secs.filter(function(s){ return s.days && s.start; });
+  var totalOpen = secs.reduce(function(a,s){ return a + (s.open||0); }, 0);
+  var soonest = timed[0];
+  // UWG transfer outcome for ACCT 1100 (best of its mappings)
+  var RANK={direct:3,elective:2,no:1};
+  var uwg = (D.transfers && D.transfers['University of West Georgia']) || [];
+  var best='no';
+  uwg.forEach(function(r){ if(r.cc==='ACCT 1100'){ var s=r.noCredit?'no':(r.elective?'elective':'direct'); if(RANK[s]>RANK[best]) best=s; } });
+
+  var atc = {
+    name:'Atlanta Technical College', real:true, dist:'3.1 mi',
+    when: soonest ? (soonest.days+' '+soonest.start+'–'+soonest.end) : 'Arranged',
+    sectionsNote: secs.length+' sections',
+    seats: totalOpen, evening:false, online:true, format:'In-person + online',
+    cost: 890, transfer: best
+  };
+  // ---- illustrative comparators (real GA institutions; figures placeholder) ----
+  var others = [
+    {name:'Georgia Piedmont Technical College', dist:'9.4 mi', when:'MW 6:00–7:40 PM', sectionsNote:'evening section', seats:12, evening:true, online:false, format:'In-person', cost:840, transfer:'elective'},
+    {name:'Chattahoochee Technical College', dist:'18.2 mi', when:'TR 9:00–10:40 AM', sectionsNote:'3 sections', seats:18, evening:false, online:true, format:'In-person + online', cost:910, transfer:'direct'},
+    {name:'Atlanta Metropolitan State College', dist:'4.7 mi', when:'Online · asynchronous', sectionsNote:'online only', seats:5, evening:false, online:true, format:'Online', cost:1180, transfer:'elective'},
+    {name:'Gwinnett Technical College', dist:'27.0 mi', when:null, sectionsNote:'not offered this term', seats:0, evening:false, online:false, format:'—', cost:null, transfer:null}
+  ];
+
+  var TXLABEL={direct:'direct',elective:'elective',no:'no credit'};
+  function seatPill(n){ if(n<=0) return '<span class="seat none"><span class="d"></span>none</span>'; var cls=n>=15?'':(n>=6?'low':'low'); return '<span class="seat '+cls+'"><span class="d"></span>'+n+'</span>'; }
+  function txCell(t){ return t ? '<span class="tx '+t+'">'+TXLABEL[t]+'</span>' : '<span class="tx no">—</span>'; }
+
+  function rowHTML(r){
+    var notOffered = !r.when;
+    var nm = '<div class="nm">'+r.name+(r.real?' <span class="realtag">real</span>':' <span class="tagi">illustrative</span>')+'</div>'+
+             '<div class="meta">'+r.dist+' · '+r.sectionsNote+'</div>';
+    var when = notOffered ? '<span class="muted" style="font-style:italic">not offered this term</span>'
+              : '<span class="when">'+r.when.split('·')[0]+(r.when.indexOf('·')>-1?'<small>'+r.when.split('·')[1].trim()+'</small>':'')+'</span>';
+    var fmtIcon = r.format.indexOf('Online')===0 ? '<svg class="ic" style="width:14px;height:14px" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>'
+                : (r.format==='—' ? '' : '<svg class="ic" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13"/></svg>');
+    return '<td class="colcell">'+nm+'</td>'+
+      '<td>'+when+'</td>'+
+      '<td class="num">'+(notOffered?'<span class="muted">—</span>':seatPill(r.seats))+'</td>'+
+      '<td><span class="fmt">'+fmtIcon+' '+r.format+'</span></td>'+
+      '<td class="num cost">'+(r.cost?('<span class="illus">$'+r.cost+'</span>'):'<span class="muted">—</span>')+'</td>'+
+      '<td class="num">'+txCell(r.transfer)+'</td>';
+  }
+
+  var rows = [atc].concat(others);
+  var TXR={direct:3,elective:2,no:1};
+  function render(){
+    var sort = document.getElementById('sort').value;
+    var filt = {}; document.querySelectorAll('#filters .chip.on').forEach(function(c){ filt[c.dataset.f]=true; });
+    var list = rows.slice();
+    // sort
+    if(sort==='seats') list.sort(function(a,b){ return (b.seats||0)-(a.seats||0); });
+    else if(sort==='cost') list.sort(function(a,b){ return (a.cost||1e9)-(b.cost||1e9); });
+    else if(sort==='transfer') list.sort(function(a,b){ return (TXR[b.transfer]||0)-(TXR[a.transfer]||0); });
+    // recommended: real first, then by seats
+    else list.sort(function(a,b){ return (b.real?1:0)-(a.real?1:0) || (b.seats||0)-(a.seats||0); });
+
+    var best = list.filter(function(r){return r.when;})[0]; // top offered row after sort
+    var tb = document.getElementById('cmpbody');
+    tb.innerHTML = list.map(function(r){
+      var hide = false;
+      if(filt.open && (!r.when || r.seats<=0)) hide=true;
+      if(filt.evening && !r.evening) hide=true;
+      if(filt.online && !r.online) hide=true;
+      if(filt.transfers && r.transfer!=='direct' && r.transfer!=='elective') hide=true;
+      var cls = [];
+      if(!r.when) cls.push('norow');
+      if(r===best && sort!=='rec') {} // only badge in recommended
+      return '<tr class="'+(r===best?'best':'')+'" '+(hide?'hidden':'')+'>'+rowHTML(r)+'</tr>';
+    }).join('');
+    // add a "best pick" badge to the top offered row's name
+    var bestTr = tb.querySelector('tr.best .colcell .nm');
+    if(bestTr) bestTr.insertAdjacentHTML('beforeend', ' <span class="rec">best pick</span>');
+  }
+  document.getElementById('sort').addEventListener('change', render);
+  document.querySelectorAll('#filters .chip').forEach(function(c){ c.addEventListener('click', function(){ c.classList.toggle('on'); render(); }); });
+  render();
+})();
+</script>
+<script src="concept-nav.js"></script>
+</body>
+</html>
