@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { unstable_cache } from "next/cache";
 import type { TransferMapping, TransferMappingClient } from "./types";
 import { supabase } from "./supabase";
 import { cached } from "./courses";
@@ -111,18 +112,36 @@ export async function loadTransferMappingsByUniversity(
    */
   cap?: number
 ): Promise<TransferMapping[]> {
-  // Cache per (state, university, cap). This loader backs the force-dynamic
-  // /[state]/transfer route, so it previously re-paginated the transfers table
-  // on EVERY request (incl. every crawler hit) with no caching — it was the
-  // single heaviest egress source in the app (~13.4M calls, ~50% of DB egress;
-  // the 485/250 GB quota overage). Wrapping it in the shared in-memory cache
-  // (same pattern as getUniversitiesWithCounts) collapses repeat reads on a
-  // warm instance to one query per TTL window.
+  // Two cache layers, both keyed by (state, university, cap):
+  //   1. in-memory `cached()` — intra-instance dedup + fast warm hits, and a
+  //      safety net for results too large for the cross-instance Data Cache's
+  //      ~2 MB item limit (huge universities), which unstable_cache silently
+  //      skips caching.
+  //   2. unstable_cache (below) — Vercel Data Cache, shared ACROSS serverless
+  //      instances so cold starts don't re-query Postgres. This is the gap the
+  //      in-memory-only cache (PR #1075) left: under crawler load Vercel spins
+  //      up many short-lived instances, each previously a fresh cache miss.
+  // This loader backs the force-dynamic /[state]/transfer route and was the
+  // single heaviest egress source (~13.4M calls, ~50% of DB egress — the
+  // 485/250 GB quota overage).
   return cached(
     `transfer-by-university:${state}:${university}:${cap ?? "all"}`,
-    () => _loadTransferMappingsByUniversity(state, university, cap),
+    () => _xInstanceTransfersByUniversity(state, university, cap),
   );
 }
+
+// Cross-instance persistent cache (Vercel Data Cache). revalidate 1800s (30m)
+// matches the in-memory CACHE_TTL and is well within the ~3×/week scrape
+// cadence. unstable_cache keys on the function arguments automatically; the
+// keyParts entry is just a stable namespace. Only the transfers loader gets
+// this — the courses loaders run inside build scripts (no Next cache context),
+// whereas this loader is only ever called from Next routes (verified).
+const _xInstanceTransfersByUniversity = unstable_cache(
+  (state: string, university: string, cap?: number) =>
+    _loadTransferMappingsByUniversity(state, university, cap),
+  ["transfer-by-university"],
+  { revalidate: 1800, tags: ["transfers"] },
+);
 
 async function _loadTransferMappingsByUniversity(
   state: string,

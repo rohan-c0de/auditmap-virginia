@@ -69,6 +69,16 @@ export async function cached<T>(key: string, fn: () => Promise<T>): Promise<T> {
   return promise;
 }
 
+// Exactly the columns `mapRow` reads to build a CourseSection — i.e. the full
+// CourseSection shape and nothing more. Replacing `select("*")` with this
+// projection drops every other column the `courses` table carries (ids,
+// scrape metadata, timestamps, etc.) from the wire, cutting per-row egress
+// with zero behavior change (those columns were already discarded by mapRow).
+// Egress reduction matters: wide `courses` reads were a secondary contributor
+// to the Supabase egress-quota overage (the transfers loader was the primary).
+const COURSE_COLUMNS =
+  "college_code, term, course_prefix, course_number, course_title, credits, crn, days, start_time, end_time, start_date, location, campus, mode, instructor, seats_open, seats_total, prerequisite_text, prerequisite_courses";
+
 /**
  * Load all course sections for a given college and term from Supabase.
  */
@@ -107,7 +117,7 @@ export async function loadCoursesForCollege(
       tasks.push(async () => {
         const { data, error } = await supabase
           .from("courses")
-          .select("*")
+          .select(COURSE_COLUMNS)
           .eq("college_code", collegeSlug)
           .eq("term", term)
           .eq("state", state)
@@ -370,7 +380,7 @@ export async function loadAllCourses(
       tasks.push(async () => {
         const { data, error } = await supabase
           .from("courses")
-          .select("*")
+          .select(COURSE_COLUMNS)
           .eq("term", term)
           .eq("state", state)
           .range(start, end);
@@ -426,7 +436,7 @@ export async function searchSections(
       for (let i = 0; i < maxPages; i++) {
         let q = supabase
           .from("courses")
-          .select("*")
+          .select(COURSE_COLUMNS)
           .eq("state", state)
           .eq("term", term);
         if (parsed.prefix) q = q.eq("course_prefix", parsed.prefix);
@@ -525,7 +535,7 @@ export async function loadCourseByCode(
   return cached(`course:${state}:${term}:${prefix}:${number}`, async () => {
     const { data, error } = await supabase
       .from("courses")
-      .select("*")
+      .select(COURSE_COLUMNS)
       .eq("state", state)
       .eq("term", term)
       .eq("course_prefix", prefix)
@@ -576,7 +586,7 @@ export async function loadCoursesBySubject(
         (async () => {
           const { data, error } = await supabase
             .from("courses")
-            .select("*")
+            .select(COURSE_COLUMNS)
             .eq("state", state)
             .eq("term", term)
             .eq("course_prefix", prefix)
