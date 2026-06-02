@@ -7,6 +7,7 @@
  * Usage:
  *   npx tsx scripts/import-courses.ts --state va
  *   npx tsx scripts/import-courses.ts --all
+ *   npx tsx scripts/import-courses.ts --state mi --dry-run   # preview, no writes
  */
 
 import { importCoursesToSupabase } from "./lib/supabase-import";
@@ -19,6 +20,7 @@ async function main() {
   const stateIdx = args.indexOf("--state");
   const isAll = args.includes("--all");
   const force = args.includes("--force");
+  const dryRun = args.includes("--dry-run");
 
   let states: string[];
   if (isAll) {
@@ -39,15 +41,21 @@ async function main() {
     return;
   }
 
-  console.log(`Importing courses for: ${states.join(", ")}`);
+  console.log(
+    `${dryRun ? "[DRY RUN] " : ""}Importing courses for: ${states.join(", ")}`
+  );
 
   let grandTotal = 0;
   for (const state of states) {
-    const count = await importCoursesToSupabase(state, { force });
+    const count = await importCoursesToSupabase(state, { force, dryRun });
     grandTotal += count || 0;
   }
 
-  console.log(`\nDone. Total: ${grandTotal} sections imported.`);
+  console.log(
+    dryRun
+      ? `\nDone (dry run — nothing written).`
+      : `\nDone. Total: ${grandTotal} sections imported.`
+  );
 }
 
 main().catch((err) => {
