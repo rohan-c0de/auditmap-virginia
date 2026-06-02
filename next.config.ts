@@ -124,6 +124,74 @@ const nextConfig: NextConfig = {
       { source: "/program/:slug", destination: "/va/program/:slug", permanent: true },
     ];
   },
+  async headers() {
+    // Baseline security headers applied to every route. These are STATIC
+    // (identical for every request, no per-user variation and no cookies), so
+    // they do NOT affect ISR/CDN cacheability — unlike anything that touches
+    // cookies, which would flip responses to `Cache-Control: private`. Setting
+    // them here (rather than in proxy.ts) keeps them off the SEO-sensitive
+    // proxy path entirely.
+    //
+    // Content-Security-Policy is shipped in REPORT-ONLY mode. Report-Only
+    // never blocks anything — the browser only logs would-be violations to
+    // the console (and to report-uri/report-to if configured) — so it is safe
+    // to enable on production immediately. The point is to surface what a
+    // future ENFORCING policy would break BEFORE flipping it on, since a wrong
+    // enforcing CSP would break AdSense/GA/Supabase and take the site down.
+    //
+    // Allowlist derived from the actual third parties in the code:
+    //   - AdSense:   pagead2.googlesyndication.com (+ its ad-serving domains,
+    //                which are broad and may surface more in console reports)
+    //   - GA/gtag:   googletagmanager.com / google-analytics.com (+ an inline
+    //                gtag bootstrap → 'unsafe-inline' in script-src)
+    //   - Supabase:  *.supabase.co (connect-src, browser client)
+    //   - Fonts:     self-hosted via next/font → 'self' only, no CDN
+    // 'unsafe-inline'/'unsafe-eval' are present because Next's bootstrap and
+    // AdSense both need them; tightening to nonces is a later step once the
+    // report-only run confirms the rest of the allowlist is complete.
+    const cspReportOnly = [
+      "default-src 'self'",
+      "base-uri 'self'",
+      "object-src 'none'",
+      "frame-ancestors 'self'",
+      "form-action 'self'",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://*.googlesyndication.com https://www.googletagmanager.com https://www.google-analytics.com https://tpc.googlesyndication.com https://www.google.com https://adservice.google.com https://*.g.doubleclick.net",
+      "style-src 'self' 'unsafe-inline'",
+      "img-src 'self' data: https:",
+      "font-src 'self' data:",
+      "connect-src 'self' https://*.supabase.co https://*.google-analytics.com https://*.analytics.google.com https://*.googlesyndication.com https://pagead2.googlesyndication.com https://*.g.doubleclick.net",
+      "frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com https://*.googlesyndication.com",
+    ].join("; ");
+
+    const securityHeaders = [
+      // CSP in Report-Only — observe violations in the console, tune, then
+      // promote to the enforcing `Content-Security-Policy` header in a follow-up.
+      { key: "Content-Security-Policy-Report-Only", value: cspReportOnly },
+      // Stop browsers from MIME-sniffing a response away from its declared type.
+      { key: "X-Content-Type-Options", value: "nosniff" },
+      // Send only the origin (not the full path/query) on cross-origin nav.
+      { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+      // Clickjacking protection. SAMEORIGIN (not DENY) since nothing embeds the
+      // site today; if a future partner-embed feature ships, swap this for a
+      // CSP `frame-ancestors` allowlist scoped to the embeddable pages and keep
+      // /account un-framable (its delete button is clickjacking-sensitive).
+      { key: "X-Frame-Options", value: "SAMEORIGIN" },
+      // Force HTTPS for 2 years. No `preload` (that's a near-irreversible
+      // browser-list commitment); includeSubDomains is safe — all hosts are
+      // HTTPS-only on Vercel.
+      {
+        key: "Strict-Transport-Security",
+        value: "max-age=63072000; includeSubDomains",
+      },
+      // Disable powerful APIs the site doesn't use (verified: no
+      // navigator.geolocation / camera / microphone usage in the app).
+      {
+        key: "Permissions-Policy",
+        value: "camera=(), microphone=(), geolocation=()",
+      },
+    ];
+    return [{ source: "/:path*", headers: securityHeaders }];
+  },
 };
 
 const withMDX = createMDX({});
