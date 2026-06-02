@@ -46,13 +46,21 @@ on:
 permissions:
   contents: read
 
-# Serialize so two near-simultaneous merges don't fight over Supabase.
-# cancel-in-progress stays false: an in-flight import must finish; GitHub
-# cancels only redundant *pending* runs, which is fine because each run
-# re-imports the full current state of whatever it was scoped to.
-concurrency:
-  group: import-on-merge
-  cancel-in-progress: false
+# Concurrency is declared PER IMPORT JOB (keyed by the scoped state list),
+# NOT here at the workflow level. See the burst-safety note above each import
+# job below.
+#
+# Why not a single workflow-level `group: import-on-merge`? It was that until
+# the 2026-06-02 incident. A single group serializes the WHOLE workflow, and
+# with cancel-in-progress: false GitHub keeps only the running run + the single
+# newest *pending* run, cancelling any older pending ones. That was harmless
+# under the old `--all` design (every run re-imported all 50 states, so the
+# survivor caught everything) but became data-losing once #1041 scoped each
+# run to only the state(s) changed in ITS merge: a burst of merges for
+# DIFFERENT states (#1064 il, #1065 mo, #1066 fl) cancelled the mo run, and no
+# other run ever planned mo, so mo never reached Supabase and had to be
+# re-imported by hand. Per-state job-level groups fix this — distinct states
+# get distinct groups and never cancel each other.
 
 env:
   NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
@@ -139,6 +147,25 @@ jobs:
   courses:
     needs: plan
     if: ${{ needs.plan.outputs.courses_states != '' }}
+    # Burst safety: group by the scoped state list rather than one global
+    # `import-on-merge` group. Two merges for DIFFERENT states (il, mo) get
+    # DIFFERENT groups (`import-courses-il`, `import-courses-mo`) and run in
+    # parallel — safe, because `import-courses.ts --state X` rewrites only
+    # state X's rows, so distinct states touch DISJOINT rows. Two merges for
+    # the SAME state collapse to one group and serialize (cancel-in-progress
+    # false → the in-flight run finishes; only a redundant *pending* run for
+    # the same state is dropped, and the survivor checks out the newer main
+    # which already contains both merges' data). This preserves the original
+    # "don't let two runs fight over the same Supabase rows" guarantee while
+    # no longer cancelling an unrelated state's only import.
+    # Residual edge: a single PR touching multiple states yields a multi-state
+    # group string (e.g. `import-courses-mo fl`); a concurrent `import-courses-il mo`
+    # would not serialize against it on the shared `mo` rows. Multi-state PRs
+    # are rare and the worst case is a transient last-writer-wins on mo that
+    # the next mo merge corrects — strictly better than today's silent drop.
+    concurrency:
+      group: import-courses-${{ needs.plan.outputs.courses_states }}
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     # Per-state pushes (the steady state) finish in seconds; this cap only
     # matters for the manual `--all` backfill path. The 2026-06-01 backfill
@@ -168,6 +195,10 @@ jobs:
   transfers:
     needs: plan
     if: ${{ needs.plan.outputs.transfers_states != '' }}
+    # Per-state concurrency group — see the courses job for the full rationale.
+    concurrency:
+      group: import-transfers-${{ needs.plan.outputs.transfers_states }}
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     # Same rationale as courses. The 2026-06-01 backfill cancelled at 45 min
     # mid-NY — MD alone took 22 min (122,925 mappings), NY 254,448 mappings
@@ -197,6 +228,10 @@ jobs:
   programs:
     needs: plan
     if: ${{ needs.plan.outputs.programs_states != '' }}
+    # Per-state concurrency group — see the courses job for the full rationale.
+    concurrency:
+      group: import-programs-${{ needs.plan.outputs.programs_states }}
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
@@ -234,6 +269,14 @@ jobs:
   rebuild:
     needs: [plan, courses, transfers, programs]
     if: ${{ always() && !cancelled() && needs.plan.outputs.any == 'true' }}
+    # A Vercel rebuild reads the FULL Supabase dataset (all states), so a burst
+    # of merges only needs the latest rebuild to fire — earlier ones are pure
+    # waste. Unlike the per-state import groups above, this group is shared and
+    # DOES cancel in-progress: the newest rebuild supersedes older ones and
+    # still publishes every state's freshly-imported rows.
+    concurrency:
+      group: import-rebuild
+      cancel-in-progress: true
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Vercel rebuild
