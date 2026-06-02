@@ -7,6 +7,7 @@ import type { CourseMode } from "@/lib/types";
 import type { Answer } from "@/lib/search-intent/answer";
 import { expandDays } from "@/lib/time-utils";
 import { termCodeFromLabel } from "@/lib/term-label";
+import { bestTransferEntry } from "@/lib/transfer-rank";
 import dynamic from "next/dynamic";
 import DayToggle from "@/components/DayToggle";
 import PrereqChain from "@/components/PrereqChain";
@@ -766,7 +767,11 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
                           const key = `${course.prefix}-${course.number}`;
                           const entries = transferLookup[key];
                           if (!entries) return null;
-                          const entry = entries.find((e) => e.university === transferTo);
+                          // Best outcome per university (direct > elective >
+                          // no-credit), not whichever row is first — otherwise a
+                          // course with a direct equivalent can show "elective"
+                          // (or nothing). See lib/transfer-rank.ts.
+                          const entry = bestTransferEntry(entries, transferTo);
                           if (!entry) return null;
                           if (entry.type === "direct") {
                             return (
