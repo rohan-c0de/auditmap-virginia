@@ -35,11 +35,15 @@ export async function GET(request: Request) {
   const code = searchParams.get("code");
   const next = safeNext(searchParams.get("next"));
 
-  // In dev, redirect to the request origin (localhost). In production, always
-  // use our canonical host — we do NOT trust x-forwarded-host, which a client
-  // can set to point the post-login redirect at an arbitrary domain.
+  // Only TRUE production forces the canonical host (defending against
+  // host-header injection — we never trust x-forwarded-host there). Local dev
+  // AND Vercel preview/branch deploys use the request's own origin so login
+  // completes on the host the user is actually on. Gating on NODE_ENV instead
+  // would bounce preview-deploy logins to the prod host (NODE_ENV is
+  // "production" on previews too), dropping the just-set session cookie.
+  // VERCEL_ENV is unset locally, so dev falls to `origin` (localhost).
   const base =
-    process.env.NODE_ENV === "development" ? origin : CANONICAL_SITE_URL;
+    process.env.VERCEL_ENV === "production" ? CANONICAL_SITE_URL : origin;
 
   if (code) {
     const supabase = await createClient();
