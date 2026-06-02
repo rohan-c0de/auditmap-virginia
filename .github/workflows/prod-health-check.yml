@@ -70,7 +70,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set +e
-          npm run check:prod-health > /tmp/probe-output.txt 2>&1
+          # Invoked via tsx directly rather than an npm script wrapper so
+          # this workflow has zero package.json coupling — adding a script
+          # entry to package.json is a separate convenience that doesn't
+          # belong on the critical path of "is prod alive."
+          npx tsx scripts/check-prod-health.ts > /tmp/probe-output.txt 2>&1
           code=$?
           cat /tmp/probe-output.txt
           # Persist for downstream issue body, regardless of pass/fail.

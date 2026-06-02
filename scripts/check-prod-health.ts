@@ -191,7 +191,7 @@ async function runProdHealthCheck() {
   process.exit(1);
 }
 
-main().catch((err) => {
+runProdHealthCheck().catch((err) => {
   console.error("prod-health-check crashed:", err);
   process.exit(2);
 });
