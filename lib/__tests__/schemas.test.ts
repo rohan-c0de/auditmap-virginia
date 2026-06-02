@@ -51,6 +51,32 @@ describe("CourseSectionSchema", () => {
     expect(CourseSectionSchema.safeParse(broken).success).toBe(false);
   });
 
+  it("accepts null detail/schedule fields (absent-by-design; coerced at import)", () => {
+    // An async-online section can legitimately have no meeting days/times/
+    // location/campus and no listed credits. Scrapers that emit null here
+    // used to trip the >5% abort and drop whole (college, term) sets (the AR
+    // cluster). row-prep coerces these to "" / 0 before insert.
+    const result = CourseSectionSchema.safeParse({
+      ...validCourseSection,
+      credits: null,
+      days: null,
+      start_time: null,
+      end_time: null,
+      location: null,
+      campus: null,
+    });
+    expect(result.success).toBe(true);
+  });
+
+  it("still rejects missing crn and course_title (real scraper bugs, not absent-by-design)", () => {
+    expect(
+      CourseSectionSchema.safeParse({ ...validCourseSection, crn: "" }).success
+    ).toBe(false);
+    expect(
+      CourseSectionSchema.safeParse({ ...validCourseSection, course_title: "" }).success
+    ).toBe(false);
+  });
+
   it("rejects negative credits", () => {
     const result = CourseSectionSchema.safeParse({
       ...validCourseSection,

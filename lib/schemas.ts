@@ -27,16 +27,23 @@ export const CourseSectionSchema = z.object({
   course_prefix: z.string().min(1, "course_prefix required"),
   course_number: z.string().min(1, "course_number required"),
   course_title: z.string().min(1, "course_title required"),
-  credits: z.number().nonnegative("credits must be >= 0"),
+  // Detail fields that may be genuinely absent for a section (an async online
+  // class has no credits listed yet / no meeting days). Accept null — the
+  // importer coerces these to safe defaults (credits 0, days "") at row-prep
+  // (scripts/lib/supabase-import.ts). Before this, a scraper that emitted null
+  // here failed validation BEFORE the coercion ran, tripping the >5% abort
+  // and dropping the whole (college, term) — e.g. the AR cluster (cossatot,
+  // ozarka, national-park, …) imported 0 sections over null days/time fields.
+  credits: z.number().nonnegative("credits must be >= 0").nullable(),
   crn: z.string().min(1, "crn required"),
 
-  // Schedule fields — may legitimately be empty strings or "TBA".
-  days: z.string(),
-  start_time: z.string(),
-  end_time: z.string(),
+  // Schedule fields — may legitimately be empty strings, "TBA", or null.
+  days: z.string().nullable(),
+  start_time: z.string().nullable(),
+  end_time: z.string().nullable(),
   start_date: z.string().nullable().optional(),
-  location: z.string(),
-  campus: z.string(),
+  location: z.string().nullable(),
+  campus: z.string().nullable(),
 
   // Constrained vocabulary. Anything else means the scraper invented a mode.
   // `zoom` = synchronous remote class (distinct from asynchronous `online`).
