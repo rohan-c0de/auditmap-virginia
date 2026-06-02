@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Search-first home — concept</title>
+<title>Home — concept</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#f6f7f9; --panel:#fff; --ink:#0f172a; --muted:#5b6573; --line:#e7e9ee; --line2:#d6dae1;
   --brand:#0d9488; --brand-strong:#0f766e; --brand-soft:#eef2f4; --brand-tint:#d7dee3; --bright:#2dd4bf;
-  --warm:#f59e0b; --warm-soft:#fef3c7;
-  --good:#15803d; --good-bg:#dcfce7; --mid:#b45309; --mid-bg:#fef3c7;
+  --warm:#f59e0b; --warm-soft:#fef3c7; --good:#15803d; --good-bg:#dcfce7;
+  --shadow:0 1px 2px rgba(15,23,42,.05);
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Geist",system-ui,sans-serif;font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
@@ -30,80 +30,51 @@ a{color:var(--brand);text-decoration:none}
 .btn.primary:hover{background:var(--brand-strong);transform:translateY(-1px)}
 .btn.soft{background:#fff;color:var(--ink);border:1px solid var(--line2);padding:10px 16px;font-size:14px}
 .btn.soft:hover{border-color:var(--brand);color:var(--brand-strong)}
-/* hero with search-as-hero */
-.hero{text-align:center;padding:40px 0 18px}
+/* hero: ask box (left) + map (right) */
+.hero2{display:grid;grid-template-columns:1.04fr .96fr;gap:36px;align-items:center;padding:30px 0 26px}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--brand-strong);font-weight:600;font-size:13px;background:var(--brand-soft);border:1px solid var(--brand-tint);padding:6px 13px;border-radius:999px;margin-bottom:18px}
-.hero h1{font-size:46px;line-height:1.05;letter-spacing:-.035em;font-weight:800;max-width:760px;margin:0 auto}
-.hero h1 em{font-style:normal;color:var(--brand);position:relative}
-.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:3px;height:9px;background:var(--brand-tint);border-radius:6px;z-index:-1;opacity:.7}
-.hero .sub{font-size:17px;color:var(--muted);max-width:560px;margin:16px auto 26px}
-/* the search bar (airbnb pill) */
-.searchbar{display:flex;align-items:stretch;background:#fff;border:1px solid var(--line2);border-radius:999px;box-shadow:0 18px 44px -26px rgba(15,23,42,.4);max-width:760px;margin:0 auto;padding:6px 6px 6px 8px}
-.sfield{flex:1;display:flex;flex-direction:column;justify-content:center;padding:9px 18px;text-align:left;cursor:pointer;border-radius:999px}
-.sfield:hover{background:var(--brand-soft)}
-.sfield+.sfield{border-left:1px solid var(--line)}
-.sfield .lab{font-size:11px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--muted)}
-.sfield .val{font-size:15px;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:7px;margin-top:1px}
-.sfield .val .ph{color:var(--muted);font-weight:500}
-.searchbar .go{align-self:center;margin-left:6px;width:48px;height:48px;border-radius:50%;background:var(--brand);color:#fff;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;flex:0 0 auto;box-shadow:0 8px 18px -8px rgba(13,148,136,.7)}
-.searchbar .go:hover{background:var(--brand-strong)}
-/* category pills */
-.cats{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin:20px auto 4px;max-width:720px}
-.cat{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line2);color:var(--ink);font-size:13px;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer}
-.cat:hover{border-color:var(--brand);color:var(--brand-strong)}
-.cat.on{background:var(--brand);border-color:var(--brand);color:#fff}
-.cat .d{width:7px;height:7px;border-radius:50%;background:var(--bright)}
-/* results split (zillow map+list) */
-.results{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin:34px 0 20px;align-items:start}
-.resbar{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;margin-bottom:2px}
-.resbar h2{font-size:19px}
-.resbar .filters{display:flex;gap:8px;flex-wrap:wrap}
-.fchip{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line2);font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:999px;color:var(--muted);cursor:pointer}
-.fchip:hover{border-color:var(--brand);color:var(--brand-strong)}
-.fchip.on{background:var(--brand-soft);border-color:var(--brand-tint);color:var(--brand-strong)}
-.list{display:flex;flex-direction:column;gap:12px}
-.ccard{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 16px 14px;box-shadow:0 1px 2px rgba(15,23,42,.04);transition:transform .15s,box-shadow .15s,border-color .15s;cursor:pointer}
-.ccard:hover{transform:translateY(-2px);box-shadow:0 18px 38px -26px rgba(15,118,110,.5);border-color:var(--brand-tint)}
-.ccard.real{border-color:var(--brand-tint);background:linear-gradient(180deg,#fff,var(--brand-soft))}
-.cc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
-.cc-name{font-size:16px;font-weight:700;line-height:1.2}
-.cc-meta{color:var(--muted);font-size:12.5px;margin-top:2px;display:flex;align-items:center;gap:8px}
-.grade{flex:0 0 auto;text-align:center;border-radius:12px;padding:6px 10px;min-width:54px;background:var(--good-bg);color:var(--good)}
-.grade .g{font-size:20px;font-weight:800;line-height:1;letter-spacing:-.02em}
-.grade .gl{font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;opacity:.8}
-.grade.b{background:#e0f2fe;color:#0369a1}.grade.c{background:var(--mid-bg);color:var(--mid)}
-.cc-stats{display:flex;gap:18px;margin-top:13px;flex-wrap:wrap}
-.cc-stat .n{font-size:16px;font-weight:800;letter-spacing:-.02em}
-.cc-stat .n.est{color:var(--brand)}
-.cc-stat .l{font-size:11px;color:var(--muted)}
-.illus{font-style:italic}
-.tagi{font-size:9px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:#94a3b8;border:1px solid var(--line2);border-radius:5px;padding:1px 4px;vertical-align:middle;margin-left:5px}
-.seat{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;color:var(--good);background:var(--good-bg);padding:3px 9px;border-radius:999px}
-.seat .d{width:7px;height:7px;border-radius:50%;background:#16a34a}
-/* fit meter (collegevine) */
-.fit{display:flex;align-items:center;gap:9px;margin-top:12px;padding-top:11px;border-top:1px solid var(--line)}
-.fitbar{flex:1;height:7px;border-radius:999px;background:var(--line);overflow:hidden}
-.fitbar i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--bright),var(--brand))}
-.fit .pct{font-size:12.5px;font-weight:700;color:var(--brand-strong)}
-.fit .fl{font-size:11.5px;color:var(--muted)}
-/* map panel (stylized, not a real map) */
-.mapwrap{position:sticky;top:14px;background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 1px 2px rgba(15,23,42,.04)}
-.maphead{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;border-bottom:1px solid var(--line);font-size:12.5px;color:var(--muted);font-weight:600}
-.mapcanvas{position:relative;height:430px;background:
-  linear-gradient(0deg,rgba(13,148,136,.05),rgba(13,148,136,.05)),
-  repeating-linear-gradient(0deg,transparent 0 38px,rgba(15,23,42,.05) 38px 39px),
-  repeating-linear-gradient(90deg,transparent 0 38px,rgba(15,23,42,.05) 38px 39px),#f1f6f5}
-.road{position:absolute;background:#fff;opacity:.9}
-.pin{position:absolute;transform:translate(-50%,-100%);cursor:pointer}
-.pin .dot{width:26px;height:26px;border-radius:50% 50% 50% 2px;transform:rotate(45deg);background:var(--brand);box-shadow:0 6px 14px -6px rgba(13,148,136,.8);display:flex;align-items:center;justify-content:center}
-.pin .dot b{transform:rotate(-45deg);color:#fff;font-size:12px;font-weight:800}
-.pin.alt .dot{background:#fff;border:2px solid var(--brand)}
-.pin.alt .dot b{color:var(--brand)}
-.pin .lab{position:absolute;left:50%;top:30px;transform:translateX(-50%);white-space:nowrap;background:#fff;border:1px solid var(--line2);border-radius:7px;font-size:10.5px;font-weight:700;padding:2px 7px;box-shadow:0 4px 10px -6px rgba(15,23,42,.4)}
-.mapnote{position:absolute;left:10px;bottom:10px;background:rgba(255,255,255,.92);border:1px solid var(--line2);border-radius:8px;font-size:10px;color:var(--muted);padding:4px 8px;font-style:italic}
-.foot{color:var(--muted);font-size:12.5px;padding:26px 0 50px;border-top:1px solid var(--line);margin-top:8px}
+.hero2 h1{font-size:46px;line-height:1.04;letter-spacing:-.04em;font-weight:800}
+.hero2 h1 em{font-style:normal;color:var(--brand);position:relative}
+.hero2 h1 em::after{content:"";position:absolute;left:0;right:0;bottom:3px;height:9px;background:var(--brand-tint);border-radius:6px;z-index:-1;opacity:.7}
+.hero2 .sub{font-size:17px;color:var(--muted);max-width:480px;margin:16px 0 22px}
+/* the ask box (LLM natural-language search — faithful to prod CourseSearchHero) */
+.askbox{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line2);border-radius:16px;padding:8px 8px 8px 16px;box-shadow:0 1px 0 rgba(15,23,42,.04),0 10px 26px -10px rgba(13,148,136,.35);transition:border-color .12s,box-shadow .12s}
+.askbox:focus-within{border-color:var(--brand);box-shadow:0 0 0 4px var(--brand-soft)}
+.askbox .si{width:20px;height:20px;color:#94a3b8;flex:0 0 auto}
+.askwrap{position:relative;flex:1;min-width:0}
+.askbox input{width:100%;border:none;outline:none;background:transparent;font-family:inherit;font-size:16px;color:var(--ink);padding:8px 0}
+.askbox input::placeholder{color:#94a3b8}
+.typed{position:absolute;inset:0;display:flex;align-items:center;pointer-events:none;color:#94a3b8;font-size:16px}
+.typed .cur{display:inline-block;width:2px;height:1.1em;background:#94a3b8;margin-left:1px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.askbox .go{flex:0 0 auto;background:var(--brand);color:#fff;border:none;border-radius:11px;padding:10px 16px;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.askbox .go:hover{background:var(--brand-strong)}
+/* searching-in row */
+.sin{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:14px;font-size:13px}
+.sin .lab{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.sin .statechip{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:5px 12px;font-weight:600;cursor:pointer;border:1px solid var(--brand-tint);background:var(--brand-soft);color:var(--brand-strong)}
+.sin .statechip.empty{border-style:dashed;border-color:var(--line2);background:#fff;color:var(--muted);font-weight:500}
+.sin .statechip.need{border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft)}
+/* popular */
+.popular{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.popular .lab{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-right:2px}
+.pop{background:#fff;border:1px solid var(--line2);color:var(--muted);font-size:12.5px;padding:6px 12px;border-radius:999px;cursor:pointer}
+.pop:hover{border-color:var(--brand);color:var(--brand-strong)}
+/* hero map */
+.heromap{background:var(--panel);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:14px 16px 10px}
+.heromap .cap{display:flex;align-items:center;justify-content:space-between;font-size:12.5px;color:var(--muted);margin-bottom:4px;min-height:20px}
+.heromap .cap b{color:var(--ink)}
+.usmap{width:100%;height:auto;display:block}
+.usmap .st{stroke:var(--panel);stroke-width:1;cursor:pointer;transition:fill .1s}
+.usmap .st.active{fill:var(--brand)}
+.usmap .st.active:hover{fill:var(--brand-strong)}
+.usmap .st.soon{fill:var(--line2);cursor:default}
+.usmap .st.sel{stroke:var(--ink);stroke-width:2}
+.heromap .leg{display:flex;gap:14px;font-size:11px;color:var(--muted);margin-top:6px;align-items:center}
+.heromap .leg i{width:11px;height:11px;border-radius:3px;display:inline-block;vertical-align:middle;margin-right:5px}
+.foot{color:var(--muted);font-size:12.5px;padding:24px 0 50px;border-top:1px solid var(--line);margin-top:18px}
 .tag{display:inline-block;background:var(--brand-soft);color:var(--brand-strong);border:1px solid var(--brand-tint);font-size:11px;font-weight:600;padding:3px 9px;border-radius:6px}
-@media(max-width:880px){.results{grid-template-columns:1fr}.mapwrap{display:none}.hero h1{font-size:34px}.searchbar{flex-wrap:wrap;border-radius:20px}.sfield+.sfield{border-left:none;border-top:1px solid var(--line)}}
+@media(max-width:880px){.hero2{grid-template-columns:1fr;gap:24px}.hero2 h1{font-size:36px}}
 </style>
 </head>
 <body>
@@ -111,161 +82,115 @@ a{color:var(--brand);text-decoration:none}
 
   <div class="nav">
     <div class="brandmark"><div class="logo"><svg class="ic" style="width:17px;height:17px;stroke:#fff" viewBox="0 0 24 24"><path d="M3 9l9-5 9 5-9 5z"/><path d="M7 11v5c0 1 2 2 5 2s5-1 5-2v-5"/></svg></div>Community College Path</div>
-    <div class="navlinks"><a href="#">Browse</a><a href="#">Transfer</a><a href="#">Outcomes</a><button class="btn soft">Sign in</button></div>
+    <div class="navlinks"><a href="us-map.html">Browse</a><a href="transfers.html">Transfer</a><a href="compare-outcomes.html">Outcomes</a><button class="btn soft">Sign in</button></div>
   </div>
 
-  <!-- HERO: search is the hero -->
-  <div class="hero">
-    <span class="eyebrow"><svg class="ic" style="width:14px;height:14px" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg> Free · start by searching</span>
-    <h1>Find a class that <em>fits your life</em> and pays off.</h1>
-    <p class="sub">Tell us what you want to study and where. We'll show real colleges near you — with open seats, transfer paths, and what graduates earn.</p>
+  <!-- HERO: ask box + map -->
+  <div class="hero2">
+    <div>
+      <span class="eyebrow"><svg class="ic" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M3 9l9-5 9 5-9 5z"/><path d="M7 11v5c0 1 2 2 5 2s5-1 5-2v-5"/></svg> Free · no experience needed</span>
+      <h1>Ask anything about <em>community college.</em></h1>
+      <p class="sub">Type a real question — or pick your state on the map. We answer with real data: classes, prereqs, transfer, and cost.</p>
 
-    <div class="searchbar">
-      <div class="sfield">
-        <div class="lab">I want to study</div>
-        <div class="val"><svg class="ic" style="width:16px;height:16px;color:var(--brand)" viewBox="0 0 24 24"><path d="M3 9l9-5 9 5-9 5z"/><path d="M7 11v5c0 1 2 2 5 2s5-1 5-2v-5"/></svg> Accounting</div>
-      </div>
-      <div class="sfield">
-        <div class="lab">Near</div>
-        <div class="val"><svg class="ic" style="width:16px;height:16px;color:var(--brand)" viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Atlanta, GA <span class="ph">· 30310</span></div>
-      </div>
-      <div class="sfield" style="flex:.7">
-        <div class="lab">Transfer to</div>
-        <div class="val"><span class="ph">Any university</span></div>
-      </div>
-      <button class="go" aria-label="Search"><svg class="ic" style="width:20px;height:20px;stroke:#fff" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></button>
-    </div>
+      <form class="askbox" id="askform" autocomplete="off">
+        <svg class="si ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+        <div class="askwrap">
+          <input id="ask" type="text" aria-label="Ask about courses, transfer, prereqs">
+          <div class="typed" id="typed" aria-hidden="true"></div>
+        </div>
+        <button class="go" type="submit">Ask <svg class="ic" style="width:15px;height:15px;stroke:#fff" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </form>
 
-    <div class="cats">
-      <span class="cat on"><span class="d"></span>Accounting</span>
-      <span class="cat">Nursing</span>
-      <span class="cat">IT &amp; Cybersecurity</span>
-      <span class="cat">Welding</span>
-      <span class="cat">Business</span>
-      <span class="cat">Early Childhood</span>
-      <span class="cat">Not sure yet →</span>
-    </div>
-  </div>
+      <div class="sin">
+        <span class="lab">Searching in</span>
+        <span class="statechip empty" id="sinchip">select your state on the map →</span>
+      </div>
 
-  <!-- RESULTS: zillow map + list -->
-  <div class="results">
-    <div class="resbar">
-      <h2>5 colleges teach Accounting near 30310</h2>
-      <div class="filters">
-        <span class="fchip on"><svg class="ic" style="width:13px;height:13px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg> Seats open this term</span>
-        <span class="fchip">Evening / weekend</span>
-        <span class="fchip">Under $8k total</span>
-        <span class="fchip">Transfers to UWG</span>
+      <div class="popular">
+        <span class="lab">Popular</span>
+        <span class="pop">Does ENG 111 transfer to GMU?</span>
+        <span class="pop">prereqs for BIO 256</span>
+        <span class="pop">online math, summer 2026</span>
+        <span class="pop">free college if I'm 65+</span>
       </div>
     </div>
 
-    <div class="list">
-      <!-- REAL college: Atlanta Technical College -->
-      <div class="ccard real">
-        <div class="cc-top">
-          <div>
-            <div class="cc-name">Atlanta Technical College <span class="seat" style="margin-left:6px"><span class="d"></span>18 seats open</span></div>
-            <div class="cc-meta"><svg class="ic" style="width:13px;height:13px" viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> 3.1 mi · Accounting, A.S. · 60 credits</div>
-          </div>
-          <div class="grade"><div class="g">A−</div><div class="gl">Transfer</div></div>
-        </div>
-        <div class="cc-stats">
-          <div class="cc-stat"><div class="n est">$7,400</div><div class="l">Est. total cost <span class="tagi">2 yr</span></div></div>
-          <div class="cc-stat"><div class="n">$30k</div><div class="l">Median earnings, 10y</div></div>
-          <div class="cc-stat"><div class="n">4</div><div class="l">Universities accept credits</div></div>
-        </div>
-        <div class="fit">
-          <span class="fl">Fit for you</span>
-          <div class="fitbar"><i style="width:88%"></i></div>
-          <span class="pct">88% · strong match</span>
-        </div>
-      </div>
-
-      <!-- Illustrative comparators (real GA institutions, figures illustrative) -->
-      <div class="ccard">
-        <div class="cc-top">
-          <div>
-            <div class="cc-name">Georgia Piedmont Technical College <span class="seat" style="margin-left:6px"><span class="d"></span>seats open</span></div>
-            <div class="cc-meta"><svg class="ic" style="width:13px;height:13px" viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> 9.4 mi · Accounting, A.S. · 60 credits</div>
-          </div>
-          <div class="grade b"><div class="g">B+</div><div class="gl">Transfer</div></div>
-        </div>
-        <div class="cc-stats">
-          <div class="cc-stat"><div class="n est illus">$7,900</div><div class="l illus">Est. total cost <span class="tagi">illustrative</span></div></div>
-          <div class="cc-stat"><div class="n illus">$29k</div><div class="l illus">Median earnings, 10y</div></div>
-          <div class="cc-stat"><div class="n illus">3</div><div class="l illus">Universities accept credits</div></div>
-        </div>
-        <div class="fit">
-          <span class="fl">Fit for you</span>
-          <div class="fitbar"><i style="width:74%"></i></div>
-          <span class="pct">74% · good match</span>
-        </div>
-      </div>
-
-      <div class="ccard">
-        <div class="cc-top">
-          <div>
-            <div class="cc-name">Atlanta Metropolitan State College</div>
-            <div class="cc-meta"><svg class="ic" style="width:13px;height:13px" viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> 4.7 mi · Business / Accounting track</div>
-          </div>
-          <div class="grade b"><div class="g">B</div><div class="gl">Transfer</div></div>
-        </div>
-        <div class="cc-stats">
-          <div class="cc-stat"><div class="n est illus">$6,800</div><div class="l illus">Est. total cost <span class="tagi">illustrative</span></div></div>
-          <div class="cc-stat"><div class="n illus">$28k</div><div class="l illus">Median earnings, 10y</div></div>
-          <div class="cc-stat"><div class="n illus">3</div><div class="l illus">Universities accept credits</div></div>
-        </div>
-        <div class="fit">
-          <span class="fl">Fit for you</span>
-          <div class="fitbar"><i style="width:69%"></i></div>
-          <span class="pct">69% · good match</span>
-        </div>
-      </div>
-
-      <div class="ccard">
-        <div class="cc-top">
-          <div>
-            <div class="cc-name">Chattahoochee Technical College</div>
-            <div class="cc-meta"><svg class="ic" style="width:13px;height:13px" viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> 18.2 mi · Accounting, A.S.</div>
-          </div>
-          <div class="grade c"><div class="g">B−</div><div class="gl">Transfer</div></div>
-        </div>
-        <div class="cc-stats">
-          <div class="cc-stat"><div class="n est illus">$7,600</div><div class="l illus">Est. total cost <span class="tagi">illustrative</span></div></div>
-          <div class="cc-stat"><div class="n illus">$31k</div><div class="l illus">Median earnings, 10y</div></div>
-          <div class="cc-stat"><div class="n illus">4</div><div class="l illus">Universities accept credits</div></div>
-        </div>
-        <div class="fit">
-          <span class="fl">Fit for you</span>
-          <div class="fitbar"><i style="width:62%"></i></div>
-          <span class="pct">62% · farther away</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- stylized map -->
-    <div class="mapwrap">
-      <div class="maphead"><span>Map view</span><span><svg class="ic" style="width:13px;height:13px;color:var(--brand)" viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> 5 colleges</span></div>
-      <div class="mapcanvas">
-        <div class="road" style="left:0;right:0;top:46%;height:6px"></div>
-        <div class="road" style="left:0;right:0;top:72%;height:4px"></div>
-        <div class="road" style="top:0;bottom:0;left:38%;width:5px"></div>
-        <div class="road" style="top:0;bottom:0;left:67%;width:4px"></div>
-        <div class="road" style="left:10%;top:10%;width:55%;height:4px;transform:rotate(22deg);transform-origin:left"></div>
-        <div class="pin" style="left:40%;top:50%"><div class="dot"><b>1</b></div><div class="lab">Atlanta Tech · A−</div></div>
-        <div class="pin alt" style="left:67%;top:33%"><div class="dot"><b>2</b></div></div>
-        <div class="pin alt" style="left:50%;top:64%"><div class="dot"><b>3</b></div></div>
-        <div class="pin alt" style="left:79%;top:76%"><div class="dot"><b>4</b></div></div>
-        <div class="pin alt" style="left:22%;top:24%"><div class="dot"><b>5</b></div></div>
-        <div class="mapnote">Stylized map — geometry is illustrative, not to scale</div>
+    <!-- hero map -->
+    <div class="heromap">
+      <div class="cap" id="mapcap"><span>Pick your state</span><span class="muted" id="capright">50 states + DC</span></div>
+      <svg id="map" class="usmap" viewBox="0 0 975 610" role="img" aria-label="Map of US states — click your state"></svg>
+      <div class="leg">
+        <span><i style="background:var(--brand)"></i>Available</span>
+        <span><i style="background:var(--line2)"></i>Coming soon</span>
       </div>
     </div>
   </div>
 
   <div class="foot">
-    <span class="tag">Concept · search-first home</span> &nbsp; Inspired by Airbnb (search-as-hero, category pills), Zillow (map+list split, the confident cost "estimate", filter chips), Niche (letter-grade badges), CollegeVine (fit meter). <b>Atlanta Technical College</b> figures are real GA / Accounting A.S. data; other colleges are real GA institutions but their cost / earnings / grade / fit figures are <span class="illus">illustrative</span> placeholders (flagged inline). The map is stylized, not geographic.
+    <span class="tag">Concept · home / landing</span> &nbsp; Keeps prod's natural-language "ask" box (cycling example questions + popular searches, routes to <code>/{state}/courses?q=</code>) and puts the live geographic state map (mirrors <code>USMap.tsx</code>) in the hero — clicking a state sets it as your "searching in" state. Real college counts; no coverage grades or fabricated results.
   </div>
 
 </div>
+
+<script src="us-states-paths.js"></script>
+<script>
+/* ---- typewriter for the ask box (faithful to prod placeholders) ---- */
+var PHRASES=["ENG 111","does this transfer to GMU?","intro biology","prereqs for BIO 256","online math, summer 2026","free college if I'm 65+"];
+var ask=document.getElementById('ask'), typed=document.getElementById('typed');
+var pi=0,ci=0,del=false,focused=false;
+ask.addEventListener('focus',function(){focused=true;render();});
+ask.addEventListener('blur',function(){focused=false;});
+ask.addEventListener('input',function(){render();});
+function render(){
+  if(ask.value!=='' || focused){ typed.style.display='none'; ask.placeholder=focused?'Search courses, transfer info, prereqs…':''; return; }
+  typed.style.display='flex';
+}
+function tw(){
+  if(ask.value!=='' || focused){ return setTimeout(tw,400); }
+  var p=PHRASES[pi];
+  if(!del){ ci++; typed.innerHTML=p.slice(0,ci)+'<span class="cur"></span>'; if(ci===p.length){del=true;return setTimeout(tw,1800);} return setTimeout(tw,60); }
+  else { ci--; typed.innerHTML=p.slice(0,ci)+'<span class="cur"></span>'; if(ci===0){del=false;pi=(pi+1)%PHRASES.length;return setTimeout(tw,400);} return setTimeout(tw,30); }
+}
+render(); tw();
+
+document.querySelectorAll('.pop').forEach(function(b){ b.addEventListener('click',function(){ ask.value=b.textContent; ask.focus(); render(); }); });
+
+/* ---- hero map (real geographic, mirrors USMap.tsx) ---- */
+var DATA=window.USPATHS||[];
+var svg=document.getElementById('map'), paths={};
+var ABBR={Alabama:'AL',Alaska:'AK',Arizona:'AZ',Arkansas:'AR',California:'CA',Colorado:'CO',Connecticut:'CT',Delaware:'DE','District of Columbia':'DC',Florida:'FL',Georgia:'GA',Hawaii:'HI',Idaho:'ID',Illinois:'IL',Indiana:'IN',Iowa:'IA',Kansas:'KS',Kentucky:'KY',Louisiana:'LA',Maine:'ME',Maryland:'MD',Massachusetts:'MA',Michigan:'MI',Minnesota:'MN',Mississippi:'MS',Missouri:'MO',Montana:'MT',Nebraska:'NE',Nevada:'NV','New Hampshire':'NH','New Jersey':'NJ','New Mexico':'NM','New York':'NY','North Carolina':'NC','North Dakota':'ND',Ohio:'OH',Oklahoma:'OK',Oregon:'OR',Pennsylvania:'PA','Rhode Island':'RI','South Carolina':'SC','South Dakota':'SD',Tennessee:'TN',Texas:'TX',Utah:'UT',Vermont:'VT',Virginia:'VA',Washington:'WA','West Virginia':'WV',Wisconsin:'WI',Wyoming:'WY'};
+var NS='http://www.w3.org/2000/svg', selected=null;
+var cap=document.getElementById('mapcap'), capR=document.getElementById('capright'), sinchip=document.getElementById('sinchip');
+DATA.forEach(function(s){
+  if(!s.d)return;
+  var p=document.createElementNS(NS,'path');
+  p.setAttribute('d',s.d);
+  var active=s.count>0;
+  p.setAttribute('class','st '+(active?'active':'soon'));
+  var t=document.createElementNS(NS,'title'); t.textContent=active?(s.name+' — '+s.count+' colleges'):(s.name+' — coming soon'); p.appendChild(t);
+  if(active){
+    p.addEventListener('mouseenter',function(){ cap.querySelector('span').innerHTML='<b>'+s.name+'</b>'; capR.textContent=s.count+' colleges'; });
+    p.addEventListener('mouseleave',function(){ if(!selected){cap.querySelector('span').textContent='Pick your state'; capR.textContent='50 states + DC';} });
+    p.addEventListener('click',function(){ pick(s); });
+  }
+  svg.appendChild(p); paths[s.name]=p;
+});
+function pick(s){
+  selected=s.name;
+  Object.keys(paths).forEach(function(k){paths[k].classList.toggle('sel',k===s.name);});
+  cap.querySelector('span').innerHTML='<b>'+s.name+'</b>'; capR.textContent=s.count+' colleges';
+  var ab=(ABBR[s.name]||'').toLowerCase();
+  sinchip.className='statechip';
+  sinchip.innerHTML='<svg class="ic" style="width:13px;height:13px" viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> '+s.name+' · '+s.count+' colleges';
+  ask.focus();
+}
+document.getElementById('askform').addEventListener('submit',function(e){
+  e.preventDefault();
+  if(!selected){ sinchip.classList.add('need'); sinchip.textContent='← pick your state on the map first'; return; }
+  // concept: would route to /{state}/courses?q=<query>
+  var ab=(ABBR[selected]||'').toLowerCase();
+  cap.querySelector('span').innerHTML='<b>'+selected+'</b>'; capR.textContent='→ /'+ab+'/courses';
+});
+</script>
 </body>
 </html>
