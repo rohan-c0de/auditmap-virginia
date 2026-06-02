@@ -111,6 +111,24 @@ export async function loadTransferMappingsByUniversity(
    */
   cap?: number
 ): Promise<TransferMapping[]> {
+  // Cache per (state, university, cap). This loader backs the force-dynamic
+  // /[state]/transfer route, so it previously re-paginated the transfers table
+  // on EVERY request (incl. every crawler hit) with no caching — it was the
+  // single heaviest egress source in the app (~13.4M calls, ~50% of DB egress;
+  // the 485/250 GB quota overage). Wrapping it in the shared in-memory cache
+  // (same pattern as getUniversitiesWithCounts) collapses repeat reads on a
+  // warm instance to one query per TTL window.
+  return cached(
+    `transfer-by-university:${state}:${university}:${cap ?? "all"}`,
+    () => _loadTransferMappingsByUniversity(state, university, cap),
+  );
+}
+
+async function _loadTransferMappingsByUniversity(
+  state: string,
+  university: string,
+  cap?: number
+): Promise<TransferMapping[]> {
   try {
     const allData: TransferMapping[] = [];
     let offset = 0;
