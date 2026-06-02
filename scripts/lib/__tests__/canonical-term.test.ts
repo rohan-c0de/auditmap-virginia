@@ -2,7 +2,9 @@ import { describe, expect, it } from "vitest";
 import {
   inferTermFromStartDates,
   resolveCanonicalTerm,
+  buildImportUnits,
   CANONICAL_TERM,
+  type RawTermFile,
 } from "../canonical-term";
 
 const row = (start_date: string | null) => ({ start_date });
@@ -79,5 +81,98 @@ describe("resolveCanonicalTerm", () => {
     expect(CANONICAL_TERM.test("2026FA")).toBe(true);
     expect(CANONICAL_TERM.test("2026WI")).toBe(false);
     expect(CANONICAL_TERM.test("FL26")).toBe(false);
+  });
+});
+
+const sec = (crn: string, start_date: string | null = "2026-08-20") => ({ crn, start_date });
+
+describe("buildImportUnits", () => {
+  // ---- Safety invariant: colleges with ANY canonical term are untouched ----
+
+  it("a canonical-only college gets one unit per file, term=stem, no rewriting", () => {
+    const files: RawTermFile[] = [
+      { stem: "2026FA", sections: [sec("100"), sec("101")] },
+      { stem: "2026SU", sections: [sec("200")] },
+    ];
+    const units = buildImportUnits(files);
+    expect(units).toHaveLength(2);
+    expect(units.map((u) => u.term)).toEqual(["2026FA", "2026SU"]);
+    expect(units.every((u) => u.canonicalized === false)).toBe(true);
+    // Same row arrays, untouched.
+    expect(units[0].sections).toHaveLength(2);
+    expect(units[1].sections).toHaveLength(1);
+  });
+
+  it("does NOT touch non-canonical files when a canonical one is present (WA 2027WI case)", () => {
+    // WA: canonical FA/SU/SP + a winter file. Winter must pass through under
+    // its raw stem, NOT be folded into 2027SP — that would clobber real spring.
+    const files: RawTermFile[] = [
+      { stem: "2026FA", sections: [sec("1")] },
+      { stem: "2027SP", sections: [sec("2", "2027-04-01")] },
+      { stem: "2027WI", sections: [sec("3", "2027-01-05")] }, // Jan dates -> would infer SP
+    ];
+    const units = buildImportUnits(files);
+    const byTerm = Object.fromEntries(units.map((u) => [u.term, u]));
+    expect(units).toHaveLength(3);
+    expect(byTerm["2027WI"]).toBeDefined();
+    expect(byTerm["2027WI"].canonicalized).toBe(false);
+    expect(byTerm["2027SP"].sections).toHaveLength(1); // not merged with winter
+  });
+
+  // ---- Fully-invisible colleges (no canonical file) get canonicalized ----
+
+  it("canonicalizes every file for a fully-invisible college", () => {
+    const files: RawTermFile[] = [
+      { stem: "FL26", sections: [sec("1", "2026-08-20")] },
+      { stem: "SU26", sections: [sec("2", "2026-06-10")] },
+    ];
+    const units = buildImportUnits(files);
+    const terms = units.map((u) => u.term).sort();
+    expect(terms).toEqual(["2026FA", "2026SU"]);
+    expect(units.every((u) => u.canonicalized)).toBe(true);
+    // rows carry through
+    expect(units.find((u) => u.term === "2026FA")!.sections).toHaveLength(1);
+  });
+
+  it("merges files that resolve to the same term and dedups by CRN (schoolcraft case)", () => {
+    const files: RawTermFile[] = [
+      { stem: "2026-02", sections: [sec("A", "2026-06-01"), sec("B", "2026-06-02")] },
+      { stem: "2026-03", sections: [sec("B", "2026-06-15"), sec("C", "2026-07-01")] }, // B dup
+      { stem: "2026-04", sections: [sec("D", "2026-09-01")] },
+    ];
+    const units = buildImportUnits(files);
+    const su = units.find((u) => u.term === "2026SU")!;
+    const fa = units.find((u) => u.term === "2026FA")!;
+    expect(su.sections.map((s) => (s as { crn: string }).crn).sort()).toEqual(["A", "B", "C"]); // B deduped
+    expect(fa.sections).toHaveLength(1);
+  });
+
+  it("keeps an unresolvable file under its raw stem (never lost, never guessed)", () => {
+    const files: RawTermFile[] = [
+      { stem: "FL26", sections: [sec("1", "2026-08-20")] },
+      { stem: "WEIRD", sections: [sec("2", null), sec("3", "TBA")] }, // no dates
+    ];
+    const units = buildImportUnits(files);
+    const byTerm = Object.fromEntries(units.map((u) => [u.term, u]));
+    expect(byTerm["2026FA"]).toBeDefined();
+    expect(byTerm["WEIRD"]).toBeDefined(); // preserved
+    expect(byTerm["WEIRD"].canonicalized).toBe(false);
+    expect(byTerm["WEIRD"].sections).toHaveLength(2);
+  });
+
+  it("does not collapse CRN-less rows together", () => {
+    const files: RawTermFile[] = [
+      { stem: "FL26", sections: [
+        { start_date: "2026-08-20" }, // no crn
+        { start_date: "2026-08-21" }, // no crn
+      ] },
+    ];
+    const units = buildImportUnits(files);
+    expect(units[0].term).toBe("2026FA");
+    expect(units[0].sections).toHaveLength(2); // both kept
+  });
+
+  it("handles an empty college", () => {
+    expect(buildImportUnits([])).toEqual([]);
   });
 });

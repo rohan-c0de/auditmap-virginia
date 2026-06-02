@@ -24,6 +24,7 @@ import {
   validateRows,
   isTransferHeaderRow,
 } from "../../lib/schemas";
+import { buildImportUnits, type RawTermFile } from "./canonical-term";
 
 const BATCH_SIZE = 500;
 
@@ -144,9 +145,10 @@ interface CourseRow {
  */
 export async function importCoursesToSupabase(
   state: string,
-  opts: { force?: boolean } = {}
+  opts: { force?: boolean; dryRun?: boolean } = {}
 ): Promise<number> {
   const force = !!opts.force;
+  const dryRun = !!opts.dryRun;
   let sb: SupabaseClient;
   try {
     sb = getSupabase();
@@ -177,13 +179,48 @@ export async function importCoursesToSupabase(
       .readdirSync(collegeDir)
       .filter((f) => f.endsWith(".json"));
 
+    // Read every term file, then resolve them into (term, rows) import units.
+    // For colleges with at least one canonical term file this is one unit per
+    // file with term = filename stem — identical to the legacy path. Only
+    // fully-invisible colleges (no canonical term at all) get their terms
+    // canonicalized + merged here, so they stop importing under terms search
+    // never queries. See buildImportUnits in lib/canonical-term.ts.
+    const rawFiles: RawTermFile[] = [];
     for (const file of termFiles) {
-      const term = file.replace(".json", "");
-      const filePath = path.join(collegeDir, file);
-      const raw = fs.readFileSync(filePath, "utf-8");
+      const raw = fs.readFileSync(path.join(collegeDir, file), "utf-8");
       const sections = JSON.parse(raw) as Array<Record<string, unknown>>;
+      if (sections.length === 0) continue;
+      rawFiles.push({ stem: file.replace(".json", ""), sections });
+    }
+    const units = buildImportUnits(rawFiles);
+    for (const u of units.filter((u) => u.canonicalized)) {
+      console.log(
+        `  CANONICALIZED ${slug}: -> ${u.term} (${u.sections.length} rows from non-canonical term file(s))`
+      );
+    }
+
+    for (const unit of units) {
+      const term = unit.term;
+      const sections = unit.sections as Array<Record<string, unknown>>;
 
       if (sections.length === 0) continue;
+
+      // Dry-run: show what WOULD change vs. what's in Supabase now, write
+      // nothing. Lets you preview the canonicalization against prod safely
+      // (npm run import:courses -- --state mi --dry-run).
+      if (dryRun) {
+        const { count } = await sb
+          .from("courses")
+          .select("id", { count: "exact", head: true })
+          .eq("state", state)
+          .eq("college_code", slug)
+          .eq("term", term);
+        const tag = unit.canonicalized ? " [canonicalized]" : "";
+        console.log(
+          `  [dry-run] ${slug}/${term}: existing ${count ?? 0} -> incoming ${sections.length}${tag}`
+        );
+        continue;
+      }
 
       // Change-detection preflight: if incoming is far below existing,
       // the scraper is probably broken. Abort unless --force. See issue #51.
