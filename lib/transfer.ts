@@ -148,6 +148,7 @@ async function _loadTransferMappingsByUniversity(
   university: string,
   cap?: number
 ): Promise<TransferMapping[]> {
+  let supabaseFailed = false;
   try {
     const allData: TransferMapping[] = [];
     let offset = 0;
@@ -174,14 +175,34 @@ async function _loadTransferMappingsByUniversity(
     }
 
     if (allData.length > 0) return allData;
+    // Supabase succeeded but returned 0 rows: a legitimately-empty result.
+    // Fall through to the JSON fallback (dev may have local data Supabase lacks).
   } catch {
-    // Supabase unavailable — fall through
+    // Supabase errored — fall through to the local JSON fallback.
+    supabaseFailed = true;
   }
 
   // Fallback: filter from the full local JSON
   const all = await loadTransferMappings(state);
   const filtered = all.filter((m) => m.university === university);
-  return cap ? filtered.slice(0, cap) : filtered;
+  const result = cap ? filtered.slice(0, cap) : filtered;
+
+  // Cache-poisoning guard: if Supabase ERRORED and the fallback also produced
+  // nothing (in prod the JSON is excluded from the serverless bundle, so the
+  // fallback always returns []), do NOT return an empty array — both cache
+  // layers (in-memory `cached()` and cross-instance `unstable_cache`) would
+  // then pin that empty result for the full 30-min TTL and serve a "no transfer
+  // mappings" lie long after Supabase recovers (seconds later). Throwing
+  // instead: `cached()` rethrows without caching and `unstable_cache` skips
+  // caching on throw, so the next request retries. A genuinely-empty university
+  // (Supabase OK, 0 rows, fallback empty) is NOT a failure and returns [] above
+  // via `supabaseFailed === false`.
+  if (supabaseFailed && result.length === 0) {
+    throw new Error(
+      `transfers unavailable for ${state}/${university}: Supabase errored and no fallback data`
+    );
+  }
+  return result;
 }
 
 /**
