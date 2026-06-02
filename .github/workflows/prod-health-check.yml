@@ -1,0 +1,130 @@
+name: Prod health check
+
+# Smoke-tests production every 30 minutes to catch the silent-failure pattern
+# that broke us on 2026-06-01 (import pipeline froze for ~5.5h, scrapers kept
+# running, merges kept landing, nothing reached students). See
+# scripts/check-prod-health.ts for the specific checks.
+#
+# Failure handling is "one open issue at a time" — we don't want to flood
+# notifications when prod is down for an hour. The workflow:
+#   1. Runs the check (continue-on-error so we always reach the issue steps).
+#   2. On failure: if there's no open `prod-health-incident` issue, opens one
+#      with the run URL + check output. If one already exists, comments with
+#      "still failing as of X." Then fails the workflow run.
+#   3. On recovery: if there's an open incident, comments "recovered" and
+#      closes it. The workflow run succeeds.
+#
+# Tunable: PROD_BASE_URL, IMPORT_MAX_AGE_HOURS. Defaults in the script.
+
+on:
+  schedule:
+    # Every 30 minutes. The incident this guards against would be visible
+    # within 15-30 min — finer-grain polling burns API quota without much
+    # better detection time.
+    - cron: "*/30 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  # Need write on issues to open / comment / close the rolling incident.
+  issues: write
+  contents: read
+  # Read-only repo metadata so the script can hit GitHub's Actions API to
+  # check the import-on-merge last-success age.
+  actions: read
+
+# Don't pile up concurrent runs if a check is slow.
+concurrency:
+  group: prod-health-check
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - run: npm ci
+
+      # Idempotent — `|| true` swallows "label already exists." The first
+      # ever incident would otherwise fail trying to attach an undefined
+      # label and we'd lose the alert.
+      - name: Ensure prod-health-incident label exists
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create prod-health-incident \
+            --color "B60205" \
+            --description "Auto-managed by .github/workflows/prod-health-check.yml" \
+            || true
+
+      - name: Run prod health check
+        id: probe
+        continue-on-error: true
+        env:
+          # The script's GitHub API call (import-age check) needs auth to
+          # avoid the 60 req/hr unauth limit.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set +e
+          # Invoked via tsx directly rather than an npm script wrapper so
+          # this workflow has zero package.json coupling — adding a script
+          # entry to package.json is a separate convenience that doesn't
+          # belong on the critical path of "is prod alive."
+          npx tsx scripts/check-prod-health.ts > /tmp/probe-output.txt 2>&1
+          code=$?
+          cat /tmp/probe-output.txt
+          # Persist for downstream issue body, regardless of pass/fail.
+          {
+            echo "probe_exit=$code"
+            echo "probe_output<<EOF"
+            cat /tmp/probe-output.txt
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+          exit $code
+
+      - name: Open / update incident issue on failure
+        if: steps.probe.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          OUTPUT: ${{ steps.probe.outputs.probe_output }}
+        run: |
+          set -euo pipefail
+          issue_num=$(gh issue list --label prod-health-incident --state open --json number --jq '.[0].number // empty' || true)
+          body=$(cat <<EOF
+          Prod health check failed at $(date -u +%Y-%m-%dT%H:%M:%SZ).
+
+          Run: $RUN_URL
+
+          \`\`\`
+          $OUTPUT
+          \`\`\`
+          EOF
+          )
+          if [ -z "$issue_num" ]; then
+            gh issue create \
+              --label prod-health-incident \
+              --title "Prod health check failing — $(date -u +%Y-%m-%dT%H:%MZ)" \
+              --body "$body"
+          else
+            gh issue comment "$issue_num" --body "$body"
+          fi
+          # Re-propagate the failure so this run is marked red in the Actions tab.
+          exit 1
+
+      - name: Close incident on recovery
+        if: steps.probe.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          issue_num=$(gh issue list --label prod-health-incident --state open --json number --jq '.[0].number // empty' || true)
+          if [ -n "$issue_num" ]; then
+            gh issue comment "$issue_num" --body "Prod health recovered at $(date -u +%Y-%m-%dT%H:%M:%SZ). Closing this incident. Run: $RUN_URL"
+            gh issue close "$issue_num"
+          fi
