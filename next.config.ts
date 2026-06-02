@@ -124,6 +124,44 @@ const nextConfig: NextConfig = {
       { source: "/program/:slug", destination: "/va/program/:slug", permanent: true },
     ];
   },
+  async headers() {
+    // Baseline security headers applied to every route. These are STATIC
+    // (identical for every request, no per-user variation and no cookies), so
+    // they do NOT affect ISR/CDN cacheability — unlike anything that touches
+    // cookies, which would flip responses to `Cache-Control: private`. Setting
+    // them here (rather than in proxy.ts) keeps them off the SEO-sensitive
+    // proxy path entirely.
+    //
+    // Deliberately NOT included: Content-Security-Policy. A correct CSP must
+    // allowlist AdSense, Google Analytics, Supabase, and the font/CDN origins;
+    // shipping one blind would break the live site. CSP should be added later
+    // in Report-Only mode first, tuned against real traffic, then enforced.
+    const securityHeaders = [
+      // Stop browsers from MIME-sniffing a response away from its declared type.
+      { key: "X-Content-Type-Options", value: "nosniff" },
+      // Send only the origin (not the full path/query) on cross-origin nav.
+      { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+      // Clickjacking protection. SAMEORIGIN (not DENY) since nothing embeds the
+      // site today; if a future partner-embed feature ships, swap this for a
+      // CSP `frame-ancestors` allowlist scoped to the embeddable pages and keep
+      // /account un-framable (its delete button is clickjacking-sensitive).
+      { key: "X-Frame-Options", value: "SAMEORIGIN" },
+      // Force HTTPS for 2 years. No `preload` (that's a near-irreversible
+      // browser-list commitment); includeSubDomains is safe — all hosts are
+      // HTTPS-only on Vercel.
+      {
+        key: "Strict-Transport-Security",
+        value: "max-age=63072000; includeSubDomains",
+      },
+      // Disable powerful APIs the site doesn't use (verified: no
+      // navigator.geolocation / camera / microphone usage in the app).
+      {
+        key: "Permissions-Policy",
+        value: "camera=(), microphone=(), geolocation=()",
+      },
+    ];
+    return [{ source: "/:path*", headers: securityHeaders }];
+  },
 };
 
 const withMDX = createMDX({});
