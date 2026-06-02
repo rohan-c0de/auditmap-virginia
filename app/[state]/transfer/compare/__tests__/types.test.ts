@@ -1,5 +1,11 @@
 import { describe, it, expect } from "vitest";
-import { buildBestMappingLookup, rankMapping, getCellInfo } from "../types";
+import {
+  buildBestMappingLookup,
+  rankMapping,
+  getCellInfo,
+  isHeavyTransferState,
+  HEAVY_PRELOAD_THRESHOLD,
+} from "../types";
 import type { TransferMapping } from "@/lib/types";
 import type { CCCourse } from "../types";
 
@@ -74,5 +80,42 @@ describe("buildBestMappingLookup", () => {
   it("returns unknown for a course with no mapping", () => {
     const cell = getCellInfo(ACCT1100, "uga", buildBestMappingLookup([]));
     expect(cell.status).toBe("unknown");
+  });
+});
+
+describe("isHeavyTransferState", () => {
+  it("is false for a small state (auto-preload)", () => {
+    // GA-shape: a handful of universities, ~10K total rows.
+    const unis = [
+      { mappingCount: 3000 },
+      { mappingCount: 2500 },
+      { mappingCount: 4000 },
+    ];
+    expect(isHeavyTransferState(unis)).toBe(false);
+  });
+
+  it("is true for a heavy state (gate behind Load all)", () => {
+    // MI-shape: few universities but ~150K total rows.
+    const unis = [
+      { mappingCount: 80000 },
+      { mappingCount: 70000 },
+    ];
+    expect(isHeavyTransferState(unis)).toBe(true);
+  });
+
+  it("treats missing counts as zero — unknown-size states default to auto-preload", () => {
+    expect(isHeavyTransferState([{}, {}, {}])).toBe(false);
+    expect(isHeavyTransferState([])).toBe(false);
+  });
+
+  it("uses a strict threshold (exactly at the cutoff is not heavy)", () => {
+    expect(isHeavyTransferState([{ mappingCount: HEAVY_PRELOAD_THRESHOLD }])).toBe(false);
+    expect(isHeavyTransferState([{ mappingCount: HEAVY_PRELOAD_THRESHOLD + 1 }])).toBe(true);
+  });
+
+  it("sums counts across universities, not per-university", () => {
+    // Each university is small, but 43 of them (TX-shape) sum past the cutoff.
+    const unis = Array.from({ length: 43 }, () => ({ mappingCount: 4400 }));
+    expect(isHeavyTransferState(unis)).toBe(true);
   });
 });

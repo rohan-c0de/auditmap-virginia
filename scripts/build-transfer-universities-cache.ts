@@ -29,6 +29,13 @@ interface TransferMapping {
 interface UniversityEntry {
   slug: string;
   name: string;
+  // Total transfer rows for this receiving university. Lets the client size
+  // the Compare matrix preload cheaply (no row scan at request time): the
+  // /[state]/transfer page reads this ~1 KB cache, sums the counts, and
+  // auto-preloads every university only when the total is light enough.
+  // Heavy states (CA/TX/NY/MI, 150K+ rows) gate the full matrix behind an
+  // explicit "Load all" button instead. See TransferClient. Issue #777 kin.
+  mappingCount: number;
 }
 
 const DATA_DIR = path.join(process.cwd(), "data");
@@ -49,13 +56,15 @@ function buildOne(state: string): { written: boolean; count: number } {
   const data = JSON.parse(raw) as TransferMapping[];
 
   const seen = new Map<string, string>();
+  const counts = new Map<string, number>();
   for (const m of data) {
     if (!m.university) continue;
     if (!seen.has(m.university)) seen.set(m.university, m.university_name || m.university);
+    counts.set(m.university, (counts.get(m.university) ?? 0) + 1);
   }
 
   const out: UniversityEntry[] = Array.from(seen.entries())
-    .map(([slug, name]) => ({ slug, name }))
+    .map(([slug, name]) => ({ slug, name, mappingCount: counts.get(slug) ?? 0 }))
     .sort((a, b) => a.name.localeCompare(b.name));
 
   const outPath = path.join(DATA_DIR, state, "transfer-universities.json");
