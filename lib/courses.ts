@@ -384,6 +384,71 @@ export async function loadAllCourses(
   });
 }
 
+// Cap on sections returned by a single search. A course search groups sections
+// into courses and paginates COURSES, so even a broad prefix (e.g. "ENG"
+// resolves to ~dozens of distinct courses) never needs the full set. The cap
+// bounds the pathological keyword that matches tens of thousands of titles.
+const SEARCH_SECTION_CAP = 5000;
+const SEARCH_PAGE_SIZE = 1000;
+
+/**
+ * Push a course search down into Postgres: return ONLY the sections matching
+ * the parsed query (prefix / number / keyword), scoped to (state, term).
+ *
+ * Replaces the old "loadAllCourses(state, term) then filter in JS" path that
+ * pulled every section for the term — ~188k rows for CA — into the serverless
+ * function and 504'd on broad queries. With the predicate in SQL the planner
+ * uses idx_courses_state_term_prefix_number (code queries) / scans the ~30k
+ * (state, term) rows for an indexed ILIKE (keyword), returning the matching
+ * subset (typically 10s–1000s of rows).
+ *
+ * Returns [] when there is no predicate — callers (course search) always pass
+ * one because the route requires q.length >= 2 and parseQuery yields a
+ * prefix/number/keyword for any such input.
+ */
+export async function searchSections(
+  term: string,
+  state: string,
+  parsed: { prefix: string | null; number: string | null; keyword: string | null }
+): Promise<CourseSection[]> {
+  if (!parsed.prefix && !parsed.number && !parsed.keyword) return [];
+  return cached(
+    `search:${state}:${term}:${parsed.prefix ?? ""}:${parsed.number ?? ""}:${parsed.keyword ?? ""}`,
+    async () => {
+      const out: CourseSection[] = [];
+      const maxPages = Math.ceil(SEARCH_SECTION_CAP / SEARCH_PAGE_SIZE);
+      for (let i = 0; i < maxPages; i++) {
+        let q = supabase
+          .from("courses")
+          .select("*")
+          .eq("state", state)
+          .eq("term", term);
+        if (parsed.prefix) q = q.eq("course_prefix", parsed.prefix);
+        if (parsed.number) q = q.eq("course_number", parsed.number);
+        // ILIKE mirrors the previous JS `title.toLowerCase().includes(kw)`
+        // (case-insensitive substring). `%` is escaped so a literal % in the
+        // query can't widen the match.
+        if (parsed.keyword) {
+          const safe = parsed.keyword.replace(/[%_]/g, (m) => `\\${m}`);
+          q = q.ilike("course_title", `%${safe}%`);
+        }
+        const { data, error } = await q.range(
+          i * SEARCH_PAGE_SIZE,
+          i * SEARCH_PAGE_SIZE + SEARCH_PAGE_SIZE - 1
+        );
+        if (error) {
+          console.error(`searchSections page ${i} error:`, error.message);
+          break;
+        }
+        const rows = (data || []).map(mapRow);
+        out.push(...rows);
+        if (rows.length < SEARCH_PAGE_SIZE) break; // last page reached
+      }
+      return out;
+    }
+  );
+}
+
 /**
  * Slim section shape used only for the transfer-page courseAvailability
  * aggregation. Avoids hauling the full ~30-column CourseSection wire
