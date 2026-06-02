@@ -298,6 +298,17 @@ async function main() {
     console.log(`\n  ${termName}: ${sections.length} sections`);
     total += sections.length;
   }
+
+  // The catalog SPA yields no course_title, so the scraped rows would all fail
+  // the title-required schema check. Fill titles from Florida's statewide
+  // course numbering (other FL colleges' titles for the same prefix+number)
+  // and drop the untitleable remainder, so the import succeeds. See
+  // enrich-scns-titles.ts.
+  if (total > 0) {
+    const { enrichScnsTitles } = await import("./enrich-scns-titles");
+    enrichScnsTitles({ college: COLLEGE_SLUG, dropUntitled: true });
+  }
+
   console.log(`\nDone! ${total} sections total\n`);
 }
 
