@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Help me choose — concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="concept.css">
+<style>
+.shell{max-width:760px;margin:0 auto}
+.intro{text-align:center;padding:32px 0 8px}
+.intro .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--brand-strong);font-weight:600;font-size:13px;background:var(--brand-soft);border:1px solid var(--brand-tint);padding:7px 14px;border-radius:999px}
+.intro h1{font-size:44px;line-height:1.05;letter-spacing:-.035em;font-weight:800;margin:18px 0 0}
+.intro h1 em{font-style:normal;color:var(--brand)}
+.intro p{font-size:17px;color:var(--muted);max-width:520px;margin:14px auto 0}
+/* progress */
+.prog{display:flex;align-items:center;justify-content:center;gap:8px;margin:26px 0 18px}
+.prog .dot{width:34px;height:5px;border-radius:999px;background:var(--line2)}
+.prog .dot.on{background:var(--brand)}
+/* question card */
+.qcard{background:var(--panel);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:30px 32px}
+.qcard .qn{font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--brand-strong)}
+.qcard h2{font-size:25px;letter-spacing:-.02em;margin:6px 0 20px}
+.opts{display:grid;gap:11px}
+.opts.two{grid-template-columns:1fr 1fr}
+.opt{display:flex;align-items:center;gap:13px;text-align:left;background:var(--panel);border:1.5px solid var(--line2);border-radius:14px;padding:15px 17px;cursor:pointer;font-family:inherit;font-size:15px;color:var(--ink);transition:border-color .12s,background .12s,transform .1s}
+.opt:hover{border-color:var(--brand);transform:translateY(-1px)}
+.opt.on{border-color:var(--brand);background:var(--brand-soft)}
+.opt .oi{width:40px;height:40px;border-radius:12px;background:var(--brand-soft);color:var(--brand);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.opt.on .oi{background:var(--brand);color:#fff}
+:root[data-theme="dark"] .opt.on .oi{color:#04201c}
+.opt .ot{font-weight:600;display:block}
+.opt .od{font-size:12.5px;color:var(--muted);font-weight:400;margin-top:1px;display:block}
+.navrow{display:flex;justify-content:space-between;align-items:center;margin-top:22px}
+.ghost{background:none;border:none;color:var(--muted);font-family:inherit;font-weight:600;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;padding:8px 4px}
+.ghost:hover{color:var(--ink)}
+.ghost:disabled{opacity:.35;cursor:default}
+/* results */
+.results{display:none}
+.results.show{display:block}
+.qcard.hide{display:none}
+.resline{text-align:center;margin-bottom:8px}
+.resline h2{font-size:30px;letter-spacing:-.03em}
+.resline p{color:var(--muted);font-size:15px;margin:6px 0 0}
+.match{display:flex;align-items:center;gap:16px;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px 20px;box-shadow:var(--shadow);margin-top:13px;transition:transform .15s,box-shadow .15s,border-color .15s;text-decoration:none;color:inherit}
+.match.real{border-color:var(--brand-tint);background:linear-gradient(180deg,var(--panel),var(--brand-soft))}
+.match:hover{transform:translateY(-2px);box-shadow:var(--shadow-lift)}
+.match .fit{flex:0 0 auto;width:64px;height:64px;border-radius:16px;background:var(--brand-soft);color:var(--brand-strong);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.match .fit .p{font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1}
+.match .fit .f{font-size:9px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;opacity:.8}
+.match .body{flex:1;min-width:0}
+.match .body h3{font-size:17px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.match .body .meta{color:var(--muted);font-size:13px;margin-top:3px}
+.match .body .meta b{color:var(--ink)}
+.match .arr{flex:0 0 auto;color:var(--brand-strong)}
+.realtag{font-size:10px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--good);background:var(--good-bg);padding:2px 8px;border-radius:999px}
+.illusbanner{display:flex;gap:11px;background:var(--warm-soft);border:1px solid var(--warm);border-radius:13px;padding:13px 15px;margin-top:18px}
+.illusbanner .ic{color:var(--warm-strong);flex:0 0 auto;margin-top:1px}
+.illusbanner p{margin:0;font-size:12.5px;color:var(--ink);line-height:1.5}
+.illusbanner b{color:var(--warm-strong)}
+.restart{text-align:center;margin-top:18px}
+@media(max-width:620px){.opts.two{grid-template-columns:1fr}.intro h1{font-size:32px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="shell">
+
+    <div class="intro">
+      <span class="eyebrow"><svg class="ic" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2zM9 21h6M10 19h4"/></svg> No experience needed</span>
+      <h1>Not sure what to study?<br><em>Let's find it.</em></h1>
+      <p>Three quick questions. We'll point you to programs that fit how you want to work — and what you want out of it.</p>
+    </div>
+
+    <div class="prog" id="prog"></div>
+
+    <!-- QUESTION CARD -->
+    <div class="qcard" id="qcard"></div>
+
+    <!-- RESULTS -->
+    <div class="results" id="results">
+      <div class="resline">
+        <h2 id="restitle">Your best matches</h2>
+        <p id="ressub"></p>
+      </div>
+      <div id="matchlist"></div>
+      <div class="illusbanner">
+        <svg class="ic" style="width:17px;height:17px" viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+        <p><b>Concept note.</b> The matching logic and fit scores here are <b>illustrative</b>, and only the <b>Accounting, A.S.</b> card uses real Atlanta Tech data (it links to its real program page). Other programs are placeholders to show the flow — a production version would match against the full, real program catalog.</p>
+      </div>
+      <div class="restart"><button class="btn soft" onclick="restart()">Start over</button></div>
+    </div>
+
+  </div>
+
+  <div class="cfoot">
+    <span class="tag">Concept · help me choose</span>
+    Inspired by CollegeVine / Princeton Review guided matching. A short interest + constraints quiz that routes to a program. Real data is limited to the Accounting, A.S. result (links to <code>program.html</code>); the quiz logic, fit scores, and other programs are illustrative placeholders, flagged in the result.
+  </div>
+</div>
+
+<script>
+var QUESTIONS=[
+  {qn:'Question 1 of 3', h:'What kind of work sounds good to you?', key:'field', two:true, opts:[
+    {v:'business', t:'Numbers & business', d:'Money, records, planning', ic:'<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>'},
+    {v:'health',   t:'Helping people / health', d:'Care, clinics, patients', ic:'<path d="M12 21s-7-4.5-7-10a4 4 0 017-2 4 4 0 017 2c0 5.5-7 10-7 10z"/>'},
+    {v:'trades',   t:'Building & hands-on', d:'Welding, HVAC, repair', ic:'<path d="M14 7l3 3-8 8-3 .5.5-3z"/><path d="M16 5l3 3"/>'},
+    {v:'tech',     t:'Computers & tech', d:'IT, security, software', ic:'<rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>'}
+  ]},
+  {qn:'Question 2 of 3', h:'How much time do you have for school?', key:'time', opts:[
+    {v:'full', t:'Full-time', d:'I can take a full load', ic:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'},
+    {v:'part', t:'Part-time', d:'A class or two at a time', ic:'<circle cx="12" cy="12" r="9"/><path d="M12 12V7M12 12h4"/>'},
+    {v:'evening', t:'Evenings & weekends', d:'I work during the day', ic:'<path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/>'}
+  ]},
+  {qn:'Question 3 of 3', h:'What matters most right now?', key:'goal', opts:[
+    {v:'job', t:'A job, fast', d:'Get working as soon as I can', ic:'<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/>'},
+    {v:'transfer', t:'Transfer to a 4-year', d:'A bachelor\'s is the goal', ic:'<path d="M4 7h12M12 3l4 4-4 4"/><path d="M20 17H8M12 21l-4-4 4-4"/>'},
+    {v:'pay', t:'The highest pay', d:'Earnings are my priority', ic:'<path d="M3 17l6-6 4 4 7-8"/><path d="M21 7v5M21 7h-5"/>'}
+  ]}
+];
+// program catalog — Accounting is REAL, others illustrative
+var PROGRAMS={
+  business:[
+    {code:'ACCT', name:'Accounting, A.S.', real:true, meta:'67 credits · $30,350 median earnings · transfers to 4 universities', href:'program.html'},
+    {code:'BMGT', name:'Business Management, A.S.', meta:'~63 credits · broad business core', href:null},
+    {code:'LOGI', name:'Logistics & Supply Chain', meta:'~60 credits · growing field', href:null}
+  ],
+  health:[
+    {code:'PNUR', name:'Practical Nursing', meta:'clinical track · licensure path', href:null},
+    {code:'HIMT', name:'Health Information Tech', meta:'records & coding · transfer-friendly', href:null},
+    {code:'MAST', name:'Medical Assisting', meta:'fast to a clinic job', href:null}
+  ],
+  trades:[
+    {code:'WELD', name:'Welding & Joining', meta:'hands-on · high demand', href:null},
+    {code:'HVAC', name:'Air Conditioning Tech', meta:'service & install · year-round work', href:null},
+    {code:'AUTO', name:'Automotive Technology', meta:'diagnostics & repair', href:null}
+  ],
+  tech:[
+    {code:'CIST', name:'Computer Information Systems', meta:'broad IT foundation · transfers', href:null},
+    {code:'CYBR', name:'Cybersecurity', meta:'security ops · strong demand', href:null},
+    {code:'NETW', name:'Networking Specialist', meta:'infrastructure & support', href:null}
+  ]
+};
+var FIELD_LABEL={business:'numbers and business',health:'helping people and health',trades:'hands-on, building work',tech:'computers and tech'};
+
+var step=0, answers={};
+var prog=document.getElementById('prog'), qcard=document.getElementById('qcard'), results=document.getElementById('results');
+function drawProg(){
+  prog.innerHTML=QUESTIONS.map(function(_,i){return '<span class="dot'+(i<=step&&step<QUESTIONS.length?(i<=step?' on':''):' on')+'"></span>';}).join('');
+  // simpler: light dots up to current
+  prog.innerHTML=QUESTIONS.map(function(_,i){return '<span class="dot'+(i<=step? ' on':'')+'"></span>';}).join('');
+}
+function render(){
+  if(step>=QUESTIONS.length){showResults();return;}
+  drawProg();
+  var q=QUESTIONS[step];
+  var chosen=answers[q.key];
+  qcard.classList.remove('hide'); results.classList.remove('show');
+  qcard.innerHTML='<div class="qn">'+q.qn+'</div><h2>'+q.h+'</h2>'+
+    '<div class="opts'+(q.two?' two':'')+'">'+
+      q.opts.map(function(o){
+        return '<button class="opt'+(chosen===o.v?' on':'')+'" data-v="'+o.v+'">'+
+          '<span class="oi"><svg class="ic" style="width:20px;height:20px" viewBox="0 0 24 24">'+o.ic+'</svg></span>'+
+          '<span><span class="ot">'+o.t+'</span><span class="od">'+o.d+'</span></span></button>';
+      }).join('')+
+    '</div>'+
+    '<div class="navrow">'+
+      '<button class="ghost" id="back"'+(step===0?' disabled':'')+'><svg class="ic" style="width:15px;height:15px" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> Back</button>'+
+      '<span class="muted" style="font-size:12.5px">Tap an answer to continue</span>'+
+    '</div>';
+  Array.prototype.forEach.call(qcard.querySelectorAll('.opt'),function(b){
+    b.addEventListener('click',function(){ answers[q.key]=b.getAttribute('data-v'); step++; render(); });
+  });
+  var back=document.getElementById('back'); if(back)back.addEventListener('click',function(){ if(step>0){step--;render();} });
+}
+function showResults(){
+  drawProg();
+  qcard.classList.add('hide'); results.classList.add('show');
+  var list=(PROGRAMS[answers.field]||PROGRAMS.business).slice();
+  // illustrative fit scores: real one highest, vary others by goal/time deterministically
+  var base=[92,78,71];
+  document.getElementById('ressub').textContent='Because you picked '+FIELD_LABEL[answers.field]+(answers.goal==='transfer'?', with transfer in mind':answers.goal==='pay'?', prioritizing pay':', aiming to work soon')+'.';
+  document.getElementById('matchlist').innerHTML=list.map(function(p,i){
+    var fit=base[i]||(70-i*4);
+    var inner='<div class="fit"><span class="p">'+fit+'%</span><span class="f">fit</span></div>'+
+      '<div class="body"><h3>'+p.name+(p.real?' <span class="realtag">real data</span>':' <span class="tagi">illustrative</span>')+'</h3>'+
+      '<div class="meta">'+p.meta+'</div></div>'+
+      '<span class="arr"><svg class="ic" style="width:20px;height:20px" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>';
+    return p.href ? '<a class="match real" href="'+p.href+'">'+inner+'</a>'
+                  : '<div class="match" style="cursor:default">'+inner+'</div>';
+  }).join('');
+}
+function restart(){ step=0; answers={}; render(); }
+render();
+</script>
+<script src="concept-nav.js"></script>
+</body>
+</html>

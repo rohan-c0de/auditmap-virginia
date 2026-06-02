@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Program — concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="concept.css">
+<style>
+/* elevated, editorial "viewbook" craft — bigger type scale, generous rhythm */
+.hero{position:relative;display:grid;grid-template-columns:1.08fr .92fr;gap:34px;align-items:center;padding:40px 0 30px}
+.hero .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--brand-strong);font-weight:600;font-size:13px;background:var(--brand-soft);border:1px solid var(--brand-tint);padding:7px 14px;border-radius:999px}
+.hero h1{font-size:58px;line-height:1.02;letter-spacing:-.04em;font-weight:800;margin:20px 0 0}
+.hero h1 em{font-style:normal;color:var(--brand)}
+.hero .vp{font-size:19px;color:var(--muted);max-width:480px;margin:18px 0 24px;line-height:1.5}
+.hero .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.statchips{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.statchip{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:11px 15px;box-shadow:var(--shadow)}
+.statchip .n{font-size:21px;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
+.statchip .n.teal{color:var(--brand)}
+.statchip .l{font-size:11.5px;color:var(--muted)}
+/* glance card */
+.art{position:relative;height:400px}
+.art .blob{position:absolute;border-radius:50%;filter:blur(3px)}
+.art .b1{width:300px;height:300px;right:-20px;top:0;background:radial-gradient(circle at 30% 30%,var(--bright),var(--brand));opacity:.14}
+.art .b2{width:170px;height:170px;left:10px;bottom:10px;background:radial-gradient(circle at 30% 30%,var(--warm),#f59e0b);opacity:.13}
+.art .ring{position:absolute;width:340px;height:340px;right:0;top:10px;border:2px dashed var(--brand-tint);border-radius:50%}
+.glance{position:absolute;right:14px;top:40px;width:300px;background:var(--panel);border:1px solid var(--line);border-radius:20px;box-shadow:0 30px 60px -34px rgba(15,23,42,.45);padding:20px 22px}
+:root[data-theme="dark"] .glance{box-shadow:0 30px 60px -30px rgba(0,0,0,.7)}
+.glance h3{font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.glance .grow{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-top:1px solid var(--line);font-size:14px}
+.glance .grow:first-of-type{border-top:none;padding-top:14px}
+.glance .grow .k{color:var(--muted);display:flex;align-items:center;gap:8px}
+.glance .grow .v{font-weight:700}
+.glance .grow .v.teal{color:var(--brand)}
+/* section rhythm */
+.sec{padding:46px 0;border-top:1px solid var(--line)}
+.sec .skick{color:var(--brand-strong);font-weight:600;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase}
+.sec h2{font-size:32px;letter-spacing:-.03em;margin:8px 0 6px}
+.sec .slead{color:var(--muted);font-size:16px;max-width:620px;margin:0 0 24px}
+/* study list */
+.studygrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.studyc{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;box-shadow:var(--shadow)}
+.studyc .cc{font-weight:700;font-size:14.5px}
+.studyc .ct{color:var(--muted);font-size:12.5px;margin-top:2px;line-height:1.35}
+.studyc .cr{font-size:11px;color:var(--brand-strong);font-weight:600;margin-top:7px;display:inline-block}
+/* two-up cards (leads / cost) */
+.twoup{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.bigstat{display:flex;align-items:baseline;gap:10px;margin:6px 0 2px}
+.bigstat .n{font-size:40px;font-weight:800;letter-spacing:-.03em;color:var(--brand)}
+.bigstat .u{font-size:13.5px;color:var(--muted)}
+.uni-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-top:1px solid var(--line);font-size:13.5px}
+.uni-row:first-of-type{border-top:none}
+.uni-row .cnt{font-weight:700;color:var(--brand-strong);font-variant-numeric:tabular-nums}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:6px}
+.stepc{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow);text-decoration:none;color:inherit;transition:transform .15s,box-shadow .15s,border-color .15s;display:flex;flex-direction:column;gap:7px}
+.stepc:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift);border-color:var(--brand-tint)}
+.stepc .ci{width:36px;height:36px;border-radius:11px;background:var(--brand-soft);color:var(--brand);display:flex;align-items:center;justify-content:center}
+.stepc h3{font-size:15.5px}
+.stepc p{color:var(--muted);font-size:12.5px;margin:0;line-height:1.45;flex:1}
+.stepc .go{color:var(--brand-strong);font-weight:600;font-size:12.5px;display:inline-flex;gap:5px;align-items:center}
+/* cta band */
+.ctaband{background:linear-gradient(135deg,var(--brand-strong),var(--brand));color:#fff;border-radius:24px;padding:40px 44px;display:flex;justify-content:space-between;align-items:center;gap:24px;margin-top:46px;position:relative;overflow:hidden}
+.ctaband::before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.08);right:-70px;top:-90px}
+.ctaband h2{font-size:27px;letter-spacing:-.02em;color:#fff}
+.ctaband p{margin:6px 0 0;font-size:15px;opacity:.9;max-width:440px}
+.ctaband .btn{background:#fff;color:var(--brand-strong);flex:0 0 auto}
+.ctaband .btn:hover{background:#fff;transform:translateY(-1px)}
+@media(max-width:880px){.hero{grid-template-columns:1fr}.art{display:none}.hero h1{font-size:40px}.studygrid{grid-template-columns:1fr 1fr}.twoup{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.ctaband{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <span class="eyebrow"><svg class="ic" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M3 9l9-5 9 5-9 5z"/><path d="M7 11v5c0 1 2 2 5 2s5-1 5-2v-5"/></svg> Atlanta Technical College · Associate of Science</span>
+      <h1>Accounting,<br><em>A.S.</em></h1>
+      <p class="vp">Learn the books that every business runs on — and walk out with credits that transfer, a clear path to a bachelor's, and skills employers pay for.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="prereqs.html">See your path <svg class="ic" style="width:16px;height:16px;stroke:#fff" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn soft" href="courses.html">Browse classes</a>
+      </div>
+      <div class="statchips">
+        <div class="statchip"><span class="n">67</span><span class="l">credits</span></div>
+        <div class="statchip"><span class="n">~2 yrs</span><span class="l">full-time</span></div>
+        <div class="statchip"><span class="n teal">$30k</span><span class="l">median earnings</span></div>
+        <div class="statchip"><span class="n">4</span><span class="l">transfer universities</span></div>
+      </div>
+    </div>
+    <div class="art">
+      <div class="blob b1"></div><div class="blob b2"></div><div class="ring"></div>
+      <div class="glance">
+        <h3>At a glance</h3>
+        <div class="grow"><span class="k"><svg class="ic" style="width:15px;height:15px;color:var(--brand)" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h10"/></svg> Credential</span><span class="v">Associate of Science</span></div>
+        <div class="grow"><span class="k"><svg class="ic" style="width:15px;height:15px;color:var(--brand)" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg> Length</span><span class="v">~4 semesters</span></div>
+        <div class="grow"><span class="k"><svg class="ic" style="width:15px;height:15px;color:var(--brand)" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg> Net price, &lt;$48k income</span><span class="v teal">often $0</span></div>
+        <div class="grow"><span class="k"><svg class="ic" style="width:15px;height:15px;color:var(--brand)" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 7-8"/></svg> Earnings, 10 yr</span><span class="v">$30,350 median</span></div>
+        <div class="grow"><span class="k"><svg class="ic" style="width:15px;height:15px;color:var(--brand)" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg> Seats open now</span><span class="v teal">yes · this term</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT YOU'LL STUDY -->
+  <div class="sec">
+    <div class="skick">What you'll study</div>
+    <h2>The classes that build on each other</h2>
+    <p class="slead">A mix of accounting core, business, and skills courses. You start with the fundamentals and work up to tax, payroll, and an internship.</p>
+    <div class="studygrid" id="studygrid"></div>
+    <div class="callout">
+      <svg class="ic" style="width:17px;height:17px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+      <p><b>Order matters.</b> Financial Accounting I unlocks II, which unlocks tax and governmental accounting. <a href="prereqs.html">See the full prerequisite map →</a></p>
+    </div>
+  </div>
+
+  <!-- WHERE IT LEADS -->
+  <div class="sec">
+    <div class="skick">Where it leads</div>
+    <h2>Earnings, and a real transfer path</h2>
+    <div class="twoup">
+      <div class="panel">
+        <h2 style="font-size:16px"><svg class="ic" style="width:18px;height:18px" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 7-8"/><path d="M21 7v5M21 7h-5"/></svg> What graduates earn</h2>
+        <div class="bigstat"><span class="n">$30,350</span><span class="u">median, 10 yrs after entry</span></div>
+        <p class="muted" style="font-size:13.5px;margin:6px 0 0">37% earn more than a typical Georgia high-school graduate. Finishing the degree usually lands you higher in the range ($14.5k–$48.4k). <a href="compare-outcomes.html">Full outcomes →</a></p>
+      </div>
+      <div class="panel">
+        <h2 style="font-size:16px"><svg class="ic" style="width:18px;height:18px" viewBox="0 0 24 24"><path d="M4 7h12M12 3l4 4-4 4"/><path d="M20 17H8M12 21l-4-4 4-4"/></svg> Transfers to</h2>
+        <div id="unilist" style="margin-top:8px"></div>
+        <p class="muted" style="font-size:12.5px;margin:10px 0 0"><a href="transfers.html">See exactly which courses count →</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT IT COSTS -->
+  <div class="sec">
+    <div class="skick">What it costs</div>
+    <h2>Sticker price isn't what most people pay</h2>
+    <p class="slead">Tuition is $3,382/year — but after financial aid, most students pay far less. For many families, aid covers tuition entirely.</p>
+    <div class="twoup">
+      <div class="panel" style="display:flex;flex-direction:column;justify-content:center">
+        <div class="bigstat"><span class="n">often $0</span><span class="u">net tuition if your family earns under $48k</span></div>
+        <p class="muted" style="font-size:13.5px;margin:6px 0 0">Average net price runs <b style="color:var(--brand-strong)">negative</b> for lower incomes — aid exceeds tuition, leaving money toward living costs.</p>
+      </div>
+      <div class="panel">
+        <h2 style="font-size:16px"><svg class="ic" style="width:18px;height:18px" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg> Net price by income</h2>
+        <div id="costlist" style="margin-top:10px"></div>
+        <p class="src">Source: College Scorecard, average net price by income band.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW YOU'LL GET THERE -->
+  <div class="sec">
+    <div class="skick">How you'll get there</div>
+    <h2>Everything you need to plan it</h2>
+    <p class="slead">From your first class to the day your credits land at a university — all in one place.</p>
+    <div class="steps">
+      <a class="stepc" href="prereqs.html">
+        <span class="ci"><svg class="ic" style="width:18px;height:18px" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="12" r="2.5"/><path d="M8.2 7.2l7.6 3.6M8.2 16.8l7.6-3.6"/></svg></span>
+        <h3>Prerequisite map</h3><p>See what to take first and what each class unlocks.</p>
+        <span class="go">Open <svg class="ic" style="width:13px;height:13px" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="stepc" href="courses.html">
+        <span class="ci"><svg class="ic" style="width:18px;height:18px" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h10"/></svg></span>
+        <h3>Open sections</h3><p>Find seats this term — days, times, and instructors.</p>
+        <span class="go">Open <svg class="ic" style="width:13px;height:13px" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="stepc" href="schedule.html">
+        <span class="ci"><svg class="ic" style="width:18px;height:18px" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></span>
+        <h3>Fit it around work</h3><p>Build a conflict-free week across nearby colleges.</p>
+        <span class="go">Open <svg class="ic" style="width:13px;height:13px" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="stepc" href="transfers.html">
+        <span class="ci"><svg class="ic" style="width:18px;height:18px" viewBox="0 0 24 24"><path d="M4 7h12M12 3l4 4-4 4"/><path d="M20 17H8M12 21l-4-4 4-4"/></svg></span>
+        <h3>Transfer check</h3><p>See which credits count before you register.</p>
+        <span class="go">Open <svg class="ic" style="width:13px;height:13px" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="ctaband">
+    <div>
+      <h2>Ready to map your first semester?</h2>
+      <p>We'll show you what to take now — with open seats and transfer built in. No account needed to start.</p>
+    </div>
+    <a class="btn" href="prereqs.html">Start planning <svg class="ic" style="width:16px;height:16px;stroke:currentColor" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+
+  <div class="cfoot">
+    <span class="tag">Concept · program viewbook</span>
+    Inspired by university program pages (ASU / MIT / Northeastern / Georgia Tech) — confident editorial type, generous rhythm, a section per question a student actually asks. <b>All data is real</b> Atlanta Tech / Accounting A.S. (courses, credits, earnings, net price, transfer counts) from <code>concept-data.js</code>. Links wire into the journey pages.
+  </div>
+</div>
+
+<script src="concept-data.js"></script>
+<script>
+var D=window.CDATA;
+// study grid: show first 9 courses
+var sg=document.getElementById('studygrid');
+sg.innerHTML=D.courses.slice(0,9).map(function(c){
+  return '<div class="studyc"><div class="cc">'+c.code+'</div><div class="ct">'+c.title+'</div><span class="cr">'+(c.credits||'')+' credits</span></div>';
+}).join('');
+// uni list with real transfer counts (counts that count = direct+elective)
+var tc=D.transferCounts, names={'University of West Georgia':'West Georgia','Georgia State University':'Georgia State','University of Georgia':'UGA','Georgia Tech':'Georgia Tech'};
+document.getElementById('unilist').innerHTML=Object.keys(tc).map(function(u){
+  var c=tc[u], counts=c.direct+c.elective;
+  return '<div class="uni-row"><span>'+(names[u]||u)+'</span><span class="cnt">'+counts+' of '+c.total+' count</span></div>';
+}).join('');
+// cost list from real netPriceByIncome
+var np=(D.outcomes&&D.outcomes.cost&&D.outcomes.cost.netPriceByIncome)||{};
+var bands=[['0_30000','Under $30k'],['30001_48000','$30k–$48k'],['48001_75000','$48k–$75k'],['75001_110000','$75k–$110k'],['110001_plus','$110k+']];
+document.getElementById('costlist').innerHTML=bands.map(function(b){
+  var v=np[b[0]]; if(v==null)return '';
+  var neg=v<0, disp=(neg?'−$':'$')+Math.abs(v).toLocaleString();
+  return '<div class="uni-row"><span class="muted">'+b[1]+'</span><span class="cnt" style="color:'+(neg?'var(--brand-strong)':'var(--warm-strong)')+'">'+disp+'</span></div>';
+}).join('');
+</script>
+<script src="concept-nav.js"></script>
+</body>
+</html>

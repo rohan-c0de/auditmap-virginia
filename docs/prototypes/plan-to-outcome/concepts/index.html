@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Plan-to-Outcome — concept gallery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="concept.css">
+<style>
+.lead{max-width:680px;color:var(--muted);font-size:16px;margin:8px 0 0}
+.grp{margin-top:30px}
+.grp h2{font-size:14px;letter-spacing:.05em;text-transform:uppercase;color:var(--brand-strong);margin-bottom:2px}
+.grp .gd{color:var(--muted);font-size:13.5px;margin-bottom:14px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gc{display:flex;flex-direction:column;padding:18px;text-decoration:none;color:inherit;transition:transform .15s,box-shadow .15s,border-color .15s}
+.gc:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift);border-color:var(--brand-tint)}
+.gc .tt{display:flex;align-items:center;gap:9px}
+.gc .chip2{width:34px;height:34px;border-radius:10px;background:var(--brand-soft);color:var(--brand);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.gc h3{font-size:16px}
+.gc p{color:var(--muted);font-size:13px;margin:10px 0 0;line-height:1.5;flex:1}
+.gc .src{margin-top:11px}
+.gc .real{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:700;color:var(--good);background:var(--good-bg);padding:2px 8px;border-radius:999px}
+.gc .mix{color:var(--warm-strong);background:var(--warm-soft)}
+.gc .go{margin-top:12px;color:var(--brand-strong);font-weight:600;font-size:13px;display:inline-flex;gap:6px;align-items:center}
+@media(max-width:880px){.gallery{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="phead">
+    <div class="kick">Design scratchpad</div>
+    <h1>Plan-to-Outcome — concept gallery</h1>
+    <p class="lead">Self-contained mockups exploring what the experience could look like, all in the real brand. Nothing here ships. Real Atlanta Tech / Accounting A.S. data throughout; illustrative bits are flagged. Use the top nav to move between the journey pages.</p>
+  </div>
+
+  <div class="grp">
+    <h2>The student journey</h2>
+    <div class="gd">Plan → find classes → see prerequisites → check transfer → build a schedule → understand outcomes.</div>
+    <div class="gallery">
+
+      <a class="card gc" href="home-search.html">
+        <div class="tt"><span class="chip2"><svg class="ic" style="width:18px;height:18px" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></span><h3>Home / search</h3></div>
+        <p>Search-first landing: "study ___ near ___", map + list of nearby colleges with grade badges and a fit meter.</p>
+        <div class="src"><span class="real mix">mixed · flagged</span></div>
+        <span class="go">Open <svg class="ic" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="card gc" href="choose.html">
+        <div class="tt"><span class="chip2"><svg class="ic" style="width:18px;height:18px" viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2zM9 21h6"/></svg></span><h3>Help me choose</h3></div>
+        <p>Guided quiz (CollegeVine/Princeton Review): a few interest + constraint questions → matched programs with a fit score.</p>
+        <div class="src"><span class="real mix">mixed · flagged</span></div>
+        <span class="go">Open <svg class="ic" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="card gc" href="program.html">
+        <div class="tt"><span class="chip2"><svg class="ic" style="width:18px;height:18px" viewBox="0 0 24 24"><path d="M3 9l9-5 9 5-9 5z"/><path d="M7 11v5c0 1 2 2 5 2s5-1 5-2v-5"/></svg></span><h3>Program viewbook</h3></div>
+        <p>University-style editorial program page (ASU/MIT/Northeastern): hero, what you study, where it leads, cost, how to get there.</p>
+        <div class="src"><span class="real">real data</span></div>
+        <span class="go">Open <svg class="ic" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="card gc" href="courses.html">
+        <div class="tt"><span class="chip2"><svg class="ic" style="width:18px;height:18px" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h10"/></svg></span><h3>Course search</h3></div>
+        <p>Find a class: filter by term, days, time, online, open seats; section list with real seats; course detail panel.</p>
+        <div class="src"><span class="real">real data</span></div>
+        <span class="go">Open <svg class="ic" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="card gc" href="prereqs.html">
+        <div class="tt"><span class="chip2"><svg class="ic" style="width:18px;height:18px" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="12" r="2.5"/><path d="M8.2 7.2l7.6 3.6M8.2 16.8l7.6-3.6"/></svg></span><h3>Prereq graph</h3></div>
+        <p>Moat #1 — visual dependency graph of a whole program; connector lines, levels, "available this term" highlight.</p>
+        <div class="src"><span class="real">real data</span></div>
+        <span class="go">Open <svg class="ic" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="card gc" href="transfers.html">
+        <div class="tt"><span class="chip2"><svg class="ic" style="width:18px;height:18px" viewBox="0 0 24 24"><path d="M4 7h12M12 3l4 4-4 4"/><path d="M20 17H8M12 21l-4-4 4-4"/></svg></span><h3>Transfer pathway</h3></div>
+        <p>Moat #3 — Sankey flow from your courses to a target university; no-credit courses flagged before you register.</p>
+        <div class="src"><span class="real">real data</span></div>
+        <span class="go">Open <svg class="ic" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="card gc" href="schedule.html">
+        <div class="tt"><span class="chip2"><svg class="ic" style="width:18px;height:18px" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></span><h3>Schedule comparator</h3></div>
+        <p>Moat #2 — "Google Flights for community college": block work hours, overlay sections from nearby colleges on one weekly grid.</p>
+        <div class="src"><span class="real mix">mixed · flagged</span></div>
+        <span class="go">Open <svg class="ic" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="card gc" href="compare-outcomes.html">
+        <div class="tt"><span class="chip2"><svg class="ic" style="width:18px;height:18px" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 7-8"/><path d="M21 7v5M21 7h-5"/></svg></span><h3>Outcomes &amp; compare</h3></div>
+        <p>Earnings distribution, cost-by-income (negative for under-$48k!), transfer breakdown, peer comparison. Every number real.</p>
+        <div class="src"><span class="real">all real data</span></div>
+        <span class="go">Open <svg class="ic" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="card gc" href="journey-dashboard.html">
+        <div class="tt"><span class="chip2"><svg class="ic" style="width:18px;height:18px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 019 9"/></svg></span><h3>Personal dashboard</h3></div>
+        <p>Moat #5 — signed-in "your path": progress ring, semester timeline, trajectory, best next class. Premium dark + light.</p>
+        <div class="src"><span class="real mix">mixed · flagged</span></div>
+        <span class="go">Open <svg class="ic" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="grp">
+    <h2>National &amp; landing</h2>
+    <div class="gd">Where the national mission and first impression live.</div>
+    <div class="gallery">
+      <a class="card gc" href="us-map.html">
+        <div class="tt"><span class="chip2"><svg class="ic" style="width:18px;height:18px" viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><h3>Coverage map</h3></div>
+        <p>US tile-grid, every state clickable, colored by the real audit grade (11 A / 7 B / 17 C / 6 D / 10 F).</p>
+        <div class="src"><span class="real">real grades</span></div>
+        <span class="go">Open <svg class="ic" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="card gc" href="welcome-inspired.html">
+        <div class="tt"><span class="chip2"><svg class="ic" style="width:18px;height:18px" viewBox="0 0 24 24"><path d="M3 12l2-2 7-7 7 7 2 2M5 10v10h14V10"/></svg></span><h3>Welcome / landing</h3></div>
+        <p>Product-as-hero marketing landing — "how it works" flow, social proof. The first design exploration.</p>
+        <div class="src"><span class="real mix">mixed · flagged</span></div>
+        <span class="go">Open <svg class="ic" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="cfoot">
+    <span class="tag">Concept gallery</span> All pages share one brand stylesheet (<code>concept.css</code>), nav (<code>concept-nav.js</code>), and data source (<code>concept-data.js</code> — real Atlanta Tech / Accounting A.S.). Not wired into the live app.
+  </div>
+</div>
+<script src="concept-nav.js"></script>
+</body>
+</html>

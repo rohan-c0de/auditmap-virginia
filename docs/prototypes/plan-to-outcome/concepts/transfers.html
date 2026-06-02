@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Transfer pathway — concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="concept.css">
+<style>
+/* selector row */
+.unirow{display:flex;gap:9px;flex-wrap:wrap;margin:16px 0 0}
+.unirow .chip .ct{font-variant-numeric:tabular-nums;color:var(--muted);font-weight:600}
+.unirow .chip.on .ct{color:var(--brand-strong)}
+
+.flowlayout{display:grid;grid-template-columns:1fr;gap:18px;margin-top:14px}
+
+/* sankey card */
+.sankcard{padding:20px 22px}
+.sankhead{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.sankhead h2{font-size:18px;display:flex;align-items:center;gap:9px}
+.sankhead h2 .ic{color:var(--brand)}
+.sankhead .sub{color:var(--muted);font-size:13px}
+.sankwrap{width:100%;overflow:hidden}
+svg.sankey{display:block;width:100%;height:auto}
+
+/* svg text + node styling driven by CSS vars */
+.sk-ribbon{transition:d .55s cubic-bezier(.22,.61,.36,1),opacity .3s;cursor:default}
+.sk-node{transition:height .55s cubic-bezier(.22,.61,.36,1),y .55s cubic-bezier(.22,.61,.36,1)}
+.sk-label{font-family:"Geist",system-ui,sans-serif;fill:var(--ink)}
+.sk-sub{font-family:"Geist",system-ui,sans-serif;fill:var(--muted)}
+.sk-num{font-family:"Geist",system-ui,sans-serif;font-weight:800;letter-spacing:-.02em}
+.sk-axis{fill:var(--muted);font-family:"Geist",system-ui,sans-serif;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.sankcard .ribbon-dim{opacity:.22}
+
+/* mini legend */
+.flegend{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;font-size:12.5px;color:var(--muted);align-items:center}
+.flegend .lk{display:inline-flex;align-items:center;gap:7px;cursor:pointer;user-select:none}
+.flegend i{width:13px;height:13px;border-radius:4px;display:inline-block;flex:0 0 auto}
+.flegend .lk.muted-out{opacity:.4}
+
+/* detail list */
+.dlcard{padding:20px 22px}
+.dlhead{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+.dlhead h2{font-size:18px;display:flex;align-items:center;gap:9px}
+.dlhead h2 .ic{color:var(--brand)}
+.dlhead .sub{color:var(--muted);font-size:13px}
+.grp{margin-top:16px}
+.grp:first-of-type{margin-top:10px}
+.grp .gh{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.grp .gh i{width:11px;height:11px;border-radius:3px;display:inline-block;flex:0 0 auto}
+.grp .gh .gc{color:var(--muted);font-weight:600;letter-spacing:0;text-transform:none;font-size:12px}
+.rows{display:grid;gap:7px}
+.trow{display:grid;grid-template-columns:118px 26px 1fr;align-items:center;gap:10px;background:var(--panel2);border:1px solid var(--line);border-left:3px solid var(--line2);border-radius:11px;padding:10px 13px}
+.trow.direct{border-left-color:var(--brand)}
+.trow.elective{border-left-color:var(--bright)}
+.trow.no{border-left-color:var(--bad)}
+.trow .cc{font-weight:700;font-size:13.5px;font-variant-numeric:tabular-nums}
+.trow .arr{color:var(--muted);display:flex;justify-content:center}
+.trow.no .arr{opacity:.5}
+.trow .eq{min-width:0}
+.trow .eq .ucode{font-weight:700;font-size:13.5px;color:var(--brand-strong);font-variant-numeric:tabular-nums}
+.trow.elective .eq .ucode{color:var(--ink)}
+.trow .eq .ut{color:var(--muted);font-size:12.5px;display:block;margin-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.trow.no .eq .ut{font-style:italic}
+.pillk{font-size:10px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:2px 7px;border-radius:999px;white-space:nowrap}
+.pillk.direct{color:var(--good);background:var(--good-bg)}
+.pillk.elective{color:var(--brand-strong);background:var(--brand-soft)}
+.pillk.no{color:var(--bad);background:var(--bad-bg)}
+.eqtop{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+
+@media(max-width:640px){
+  .trow{grid-template-columns:88px 20px 1fr;gap:8px;padding:9px 11px}
+  .trow .cc{font-size:12.5px}
+  .phead h1{font-size:26px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="phead">
+    <div class="kick">Transfer</div>
+    <h1>Where your credits go</h1>
+    <div class="who">Atlanta Tech · Accounting, A.S. &nbsp;&rarr;&nbsp; choose a university</div>
+  </div>
+
+  <!-- university selector -->
+  <div class="unirow" id="unirow"></div>
+
+  <div class="flowlayout">
+
+    <!-- SANKEY -->
+    <div class="card sankcard">
+      <div class="sankhead">
+        <h2>
+          <svg class="ic" width="18" height="18" viewBox="0 0 24 24"><path d="M3 6h7M3 12h13M3 18h5"/><path d="M14 3l4 3-4 3"/><path d="M17 9l4 3-4 3"/><path d="M9 15l4 3-4 3"/></svg>
+          Credit flow
+        </h2>
+        <span class="sub" id="sankSub"></span>
+      </div>
+      <div class="sankwrap">
+        <svg class="sankey" id="sankey" viewBox="0 0 760 360" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Sankey flow of community-college courses to university credit outcomes"></svg>
+      </div>
+
+      <div class="flegend" id="flegend"></div>
+
+      <div class="callout" id="summary">
+        <svg class="ic" width="18" height="18" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+        <p></p>
+      </div>
+    </div>
+
+    <!-- DETAIL LIST -->
+    <div class="card dlcard">
+      <div class="dlhead">
+        <h2>
+          <svg class="ic" width="18" height="18" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13"/><path d="M3 6h.01M3 12h.01M3 18h.01"/></svg>
+          Course-by-course
+        </h2>
+        <span class="sub" id="dlSub"></span>
+      </div>
+      <div id="dlbody"></div>
+    </div>
+
+  </div>
+
+  <div class="cfoot">
+    <span class="tag">Concept · transfer pathway (moat #3)</span>
+    Real Georgia statewide articulation data from <code>window.CDATA</code>; <b>in-state transfers only</b>. "Reviewed" reflects the courses each university has actually evaluated against this program &mdash; not the full degree, and not every course Atlanta Tech offers.
+  </div>
+</div>
+
+<script src="concept-data.js"></script>
+<script>
+(function(){
+  var CD = window.CDATA || {};
+  var COUNTS = CD.transferCounts || {};
+  var TRANSFERS = CD.transfers || {};
+  var UNIS = Object.keys(COUNTS);           // 4 universities, in data order
+  var DEFAULT = 'University of West Georgia';
+
+  // ---- category model: noCredit > elective > direct -------------------------
+  // mirrors transferCounts exactly (direct / elective / no)
+  var CATS = [
+    {key:'direct',   label:'Direct equivalent', color:'var(--brand)',  note:'counts as the same course'},
+    {key:'elective', label:'Elective credit',   color:'var(--bright)', note:'counts as elective credit only'},
+    {key:'no',       label:'No credit',         color:'var(--muted)',  note:'no credit awarded'}
+  ];
+  function catOf(r){ return r.noCredit ? 'no' : (r.elective ? 'elective' : 'direct'); }
+
+  // ---- short name for axis labels ------------------------------------------
+  var SHORT = {
+    'University of West Georgia':'West Georgia',
+    'Georgia State University':'Georgia State',
+    'University of Georgia':'UGA',
+    'Georgia Tech':'Georgia Tech'
+  };
+  function shortOf(u){ return SHORT[u] || u; }
+
+  var selected = DEFAULT;
+  var hiddenCats = {};                       // legend toggle state (visual only)
+
+  // ===== selector chips =====================================================
+  var unirow = document.getElementById('unirow');
+  UNIS.forEach(function(u){
+    var c = COUNTS[u];
+    var b = document.createElement('button');
+    b.className = 'chip' + (u===selected?' on':'');
+    b.setAttribute('data-uni', u);
+    b.innerHTML = '<svg class="ic" width="14" height="14" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V10l7-5 7 5v11"/><path d="M9 21v-6h6v6"/></svg>'+
+                  u + ' <span class="ct">' + c.total + '</span>';
+    b.addEventListener('click', function(){ pick(u); });
+    unirow.appendChild(b);
+  });
+
+  function pick(u){
+    if(u===selected) return;
+    selected = u;
+    Array.prototype.forEach.call(unirow.children, function(ch){
+      ch.classList.toggle('on', ch.getAttribute('data-uni')===u);
+    });
+    render();
+  }
+
+  // ===== SVG Sankey =========================================================
+  var SVG_NS = 'http://www.w3.org/2000/svg';
+  var svg = document.getElementById('sankey');
+  var W = 760, H = 360;
+  var PAD_T = 46, PAD_B = 26;             // vertical breathing room for axis labels
+  var LX = 150, LW = 26;                  // left node x + width
+  var RX = 560, RW = 26;                  // right node x + width
+  var GAP = 18;                           // gap between stacked right nodes
+  var built = false;
+  var els = {};                           // cached svg elements
+
+  function mk(tag, attrs){
+    var e = document.createElementNS(SVG_NS, tag);
+    if(attrs) for(var k in attrs) e.setAttribute(k, attrs[k]);
+    return e;
+  }
+
+  // a filled ribbon: a band leaving the left node [y0a..y0b] and arriving at
+  // the right node [y1a..y1b], drawn as two horizontal-tangent cubic beziers.
+  function ribbonPath(x0, y0a, y0b, x1, y1a, y1b){
+    var mx = (x0 + x1) / 2;
+    return 'M' + x0 + ',' + y0a +
+           'C' + mx + ',' + y0a + ' ' + mx + ',' + y1a + ' ' + x1 + ',' + y1a +
+           'L' + x1 + ',' + y1b +
+           'C' + mx + ',' + y1b + ' ' + mx + ',' + y0b + ' ' + x0 + ',' + y0b +
+           'Z';
+  }
+
+  function buildSkeleton(){
+    // axis labels
+    els.axisL = mk('text', {class:'sk-axis', x:LX+LW/2, y:24, 'text-anchor':'middle'});
+    els.axisL.textContent = 'Your courses';
+    els.axisR = mk('text', {class:'sk-axis', x:RX+RW/2, y:24, 'text-anchor':'end'});
+    svg.appendChild(els.axisL); svg.appendChild(els.axisR);
+
+    // ribbons first (so nodes paint over their edges)
+    els.ribbon = {};
+    CATS.forEach(function(c){
+      var p = mk('path', {class:'sk-ribbon', 'data-cat':c.key, fill:c.color, 'fill-opacity':'0.32', stroke:c.color, 'stroke-opacity':'0.18', 'stroke-width':'1'});
+      svg.appendChild(p); els.ribbon[c.key] = p;
+    });
+
+    // left node
+    els.leftNode = mk('rect', {class:'sk-node', x:LX, width:LW, rx:6, fill:'var(--ink)', 'fill-opacity':'0.85'});
+    svg.appendChild(els.leftNode);
+    els.leftNum = mk('text', {class:'sk-num', x:LX-12, 'text-anchor':'end', fill:'var(--ink)', 'font-size':'26'});
+    els.leftLab = mk('text', {class:'sk-sub', x:LX-12, 'text-anchor':'end', 'font-size':'12'});
+    els.leftLab.textContent = 'reviewed';
+    svg.appendChild(els.leftNum); svg.appendChild(els.leftLab);
+
+    // right nodes + labels
+    els.rNode = {}; els.rNum = {}; els.rLab = {}; els.rNote = {};
+    CATS.forEach(function(c){
+      els.rNode[c.key] = mk('rect', {class:'sk-node', x:RX, width:RW, rx:6, fill:c.color});
+      svg.appendChild(els.rNode[c.key]);
+      els.rNum[c.key]  = mk('text', {class:'sk-num', x:RX+RW+14, 'font-size':'22', fill:c.color});
+      els.rLab[c.key]  = mk('text', {class:'sk-label', x:RX+RW+14, 'font-size':'13.5', 'font-weight':'700'});
+      els.rLab[c.key].textContent = c.label;
+      els.rNote[c.key] = mk('text', {class:'sk-sub', x:RX+RW+14, 'font-size':'11.5'});
+      els.rNote[c.key].textContent = c.note;
+      svg.appendChild(els.rNum[c.key]); svg.appendChild(els.rLab[c.key]); svg.appendChild(els.rNote[c.key]);
+    });
+
+    built = true;
+  }
+
+  function drawSankey(){
+    if(!built) buildSkeleton();
+    var c = COUNTS[selected];
+    var total = c.total || 0;
+    var vals = {direct:c.direct||0, elective:c.elective||0, no:c.no||0};
+
+    var innerH = H - PAD_T - PAD_B;
+    var perUnit = total > 0 ? innerH / total : 0;   // px per course — shared by both sides => proportional
+
+    // ----- right column: stacked nodes, height = count * perUnit ------------
+    var nActive = CATS.filter(function(cc){return vals[cc.key]>0;}).length;
+    var totalGap = GAP * Math.max(0, nActive - 1);
+    var rUsable = innerH - totalGap;
+    var rPerUnit = total > 0 ? rUsable / total : 0;
+
+    var rY = PAD_T, rPos = {};
+    CATS.forEach(function(cc){
+      var v = vals[cc.key];
+      var h = v>0 ? Math.max(2, v * rPerUnit) : 0;
+      rPos[cc.key] = {y:rY, h:h, mid:rY + h/2};
+      if(v>0) rY += h + GAP;
+    });
+
+    // ----- left node: full height = total ----------------------------------
+    var lH = total>0 ? innerH : 0;
+    var lY = PAD_T;
+    els.leftNode.setAttribute('y', lY);
+    els.leftNode.setAttribute('height', Math.max(2, lH));
+    els.leftNum.setAttribute('y', lY + lH/2 - 2);
+    els.leftNum.textContent = total;
+    els.leftLab.setAttribute('y', lY + lH/2 + 16);
+
+    // left edge is partitioned proportionally so ribbons tile with no overlap
+    var lCursor = lY;
+    CATS.forEach(function(cc){
+      var v = vals[cc.key];
+      var seg = v * perUnit;
+      var y0a = lCursor, y0b = lCursor + seg;
+      var rp = rPos[cc.key];
+      var pth = els.ribbon[cc.key];
+      var hidden = !!hiddenCats[cc.key];
+      if(v>0){
+        pth.setAttribute('d', ribbonPath(LX+LW, y0a, y0b, RX, rp.y, rp.y+rp.h));
+        pth.style.opacity = hidden ? '0.06' : '1';
+        lCursor = y0b;
+      } else {
+        // collapse to a flat line at the node mid so the transition stays smooth
+        pth.setAttribute('d', ribbonPath(LX+LW, lCursor, lCursor, RX, rp.mid, rp.mid));
+        pth.style.opacity = '0';
+      }
+    });
+
+    // ----- right node rects + labels ---------------------------------------
+    CATS.forEach(function(cc){
+      var v = vals[cc.key];
+      var rp = rPos[cc.key];
+      var node = els.rNode[cc.key], num = els.rNum[cc.key], lab = els.rLab[cc.key], note = els.rNote[cc.key];
+      var hidden = !!hiddenCats[cc.key];
+      if(v>0){
+        node.setAttribute('y', rp.y);
+        node.setAttribute('height', rp.h);
+        node.style.opacity = hidden ? '0.25' : '1';
+        var labY = rp.mid;
+        // when a band is thin, keep the 3-line label legible by centering the block
+        num.setAttribute('y', labY - 8); num.textContent = v;
+        lab.setAttribute('y', labY + 8);
+        note.setAttribute('y', labY + 23);
+        num.style.opacity = lab.style.opacity = note.style.opacity = hidden ? '0.45' : '1';
+      } else {
+        node.setAttribute('height', 0);
+        node.style.opacity = '0';
+        // still show a zero marker so "0 don't transfer" reads as a real fact
+        var midY = rp.mid;
+        num.setAttribute('y', midY - 8); num.textContent = '0';
+        lab.setAttribute('y', midY + 8);
+        note.setAttribute('y', midY + 23);
+        num.style.opacity = '0.5'; lab.style.opacity = '0.55'; note.style.opacity = '0.45';
+      }
+    });
+
+    els.axisR.textContent = shortOf(selected) + ' outcome';
+  }
+
+  // ===== legend (also toggles ribbon focus) =================================
+  function drawLegend(){
+    var fl = document.getElementById('flegend');
+    fl.innerHTML = CATS.map(function(c){
+      var off = hiddenCats[c.key] ? ' muted-out' : '';
+      return '<span class="lk'+off+'" data-cat="'+c.key+'">'+
+             '<i style="background:'+c.color+'"></i>'+c.label+'</span>';
+    }).join('') + '<span class="lk muted" style="cursor:default;font-style:italic">click a swatch to focus a band</span>';
+    Array.prototype.forEach.call(fl.querySelectorAll('.lk[data-cat]'), function(el){
+      el.addEventListener('click', function(){
+        var k = el.getAttribute('data-cat');
+        hiddenCats[k] = !hiddenCats[k];
+        drawLegend(); drawSankey();
+      });
+    });
+  }
+
+  // ===== summary callout ====================================================
+  function drawSummary(){
+    var c = COUNTS[selected];
+    var counting = (c.direct||0) + (c.elective||0);
+    var s = shortOf(selected);
+    var txt;
+    if(c.no === 0){
+      txt = '<b>All '+c.total+' reviewed courses</b> count toward a '+s+' degree '+
+            '('+c.direct+' as a direct equivalent, '+c.elective+' as elective credit). '+
+            'None were rejected.';
+    } else {
+      txt = '<b>'+counting+' of '+c.total+'</b> reviewed courses count toward a '+s+' degree '+
+            '('+c.direct+' direct'+(c.direct===1?'ly':' equivalents')+', '+c.elective+' as elective credit). '+
+            '<b>'+c.no+'</b> don’t transfer.';
+    }
+    document.querySelector('#summary p').innerHTML = txt;
+  }
+
+  // ===== detail list ========================================================
+  var ARROW = '<svg class="ic" width="16" height="16" viewBox="0 0 24 24"><path d="M5 12h13"/><path d="M13 6l6 6-6 6"/></svg>';
+  var GINFO = {
+    direct:   {label:'Direct equivalents', color:'var(--brand)',  note:'counts as the same course'},
+    elective: {label:'Elective credit',    color:'var(--bright)', note:'counts as elective credit only'},
+    no:       {label:'No credit',          color:'var(--bad)',    note:'not awarded any credit'}
+  };
+
+  function drawList(){
+    var rows = (TRANSFERS[selected] || []).slice();
+    // sort: direct first, then elective, then no-credit; stable within group by cc code
+    var order = {direct:0, elective:1, no:2};
+    rows.sort(function(a,b){
+      var d = order[catOf(a)] - order[catOf(b)];
+      if(d) return d;
+      return a.cc.localeCompare(b.cc);
+    });
+
+    var groups = {direct:[], elective:[], no:[]};
+    rows.forEach(function(r){ groups[catOf(r)].push(r); });
+
+    var html = '';
+    ['direct','elective','no'].forEach(function(k){
+      var g = groups[k];
+      if(!g.length) return;
+      var gi = GINFO[k];
+      html += '<div class="grp">'+
+        '<div class="gh"><i style="background:'+gi.color+'"></i>'+gi.label+
+        ' <span class="gc">'+g.length+' course'+(g.length===1?'':'s')+' &middot; '+gi.note+'</span></div>'+
+        '<div class="rows">';
+      g.forEach(function(r){
+        var cls = k;
+        var eq;
+        if(k==='no'){
+          eq = '<div class="eqtop"><span class="pillk no">No credit</span></div>'+
+               '<span class="ut">Does not transfer</span>';
+        } else {
+          var pill = k==='direct'
+            ? '<span class="pillk direct">Direct</span>'
+            : '<span class="pillk elective">Elective</span>';
+          eq = '<div class="eqtop"><span class="ucode">'+(r.univ||'&mdash;')+'</span>'+pill+'</div>'+
+               '<span class="ut">'+(r.univTitle||'')+'</span>';
+        }
+        html += '<div class="trow '+cls+'">'+
+          '<span class="cc">'+r.cc+'</span>'+
+          '<span class="arr">'+ARROW+'</span>'+
+          '<span class="eq">'+eq+'</span>'+
+        '</div>';
+      });
+      html += '</div></div>';
+    });
+    document.getElementById('dlbody').innerHTML = html;
+  }
+
+  // ===== orchestrate ========================================================
+  function render(){
+    var c = COUNTS[selected];
+    document.getElementById('sankSub').textContent = c.total + ' courses reviewed by ' + shortOf(selected);
+    document.getElementById('dlSub').textContent   = 'Atlanta Tech → ' + selected;
+    drawSankey(); drawLegend(); drawSummary(); drawList();
+  }
+
+  render();
+})();
+</script>
+<script src="concept-nav.js"></script>
+</body>
+</html>
