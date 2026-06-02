@@ -38,7 +38,7 @@ interface CourseSection {
   credits: number;
   section_code: string;
   crn: string | null;
-  days: string[];
+  days: string;
   start_time: string | null;
   end_time: string | null;
   start_date: string | null;
@@ -223,8 +223,14 @@ function parseRow(
     course_title: title || courseCodeRaw,
     credits,
     section_code: sectionCode,
-    crn: null,
-    days: sched.days,
+    // Jenzabar's public course search exposes no numeric CRN; the section is
+    // identified by its section code (e.g. "01 NEO"). Use that as the crn so
+    // rows satisfy the crn-required schema check — otherwise every (college,
+    // term) aborted on import and Crowder / Mineral Area showed 0 courses.
+    crn: sectionCode || null,
+    // Join to the canonical day string ("T","R" -> "TR") the schema + search
+    // expect; the parser collects single-letter day codes into an array.
+    days: sched.days.join(""),
     start_time: sched.start_time,
     end_time: sched.end_time,
     start_date: startDate,
