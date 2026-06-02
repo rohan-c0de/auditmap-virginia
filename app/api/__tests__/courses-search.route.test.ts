@@ -12,6 +12,9 @@ vi.mock("@/lib/institutions", () => ({
 vi.mock("@/lib/terms", () => ({
   getCurrentTerm: vi.fn(async () => "2026SP"),
 }));
+vi.mock("@/lib/courses", () => ({
+  getAvailableTerms: vi.fn(async () => ["2026SP", "2026SU", "2026FA"]),
+}));
 vi.mock("@/lib/rate-limit", () => ({
   rateLimit: vi.fn(() => ({ allowed: true, remaining: 99 })),
   getClientKey: vi.fn(() => "ip:1.2.3.4"),
@@ -141,5 +144,43 @@ describe("GET /api/[state]/courses/search", () => {
     const body = await res.json();
     expect(body.totalSections).toBe(5);
     expect(body.totalColleges).toBe(3);
+  });
+
+  // Term-fallback signals (added 2026-06-01). Until this, an explicit
+  // ?term= that didn't match the state's available list was silently
+  // swapped for the current term — a student following a stale URL would
+  // get current-term results with no indication their term was changed.
+  describe("term fallback signal", () => {
+    it("omits requestedTerm when no ?term= is passed; termFallback false", async () => {
+      const { req, ctx } = makeRequest("va", { q: "ENG 111" });
+      const res = await GET(req, ctx);
+      expect(res.status).toBe(200);
+      const body = await res.json();
+      expect(body.requestedTerm).toBeNull();
+      expect(body.servedTerm).toBe("2026SP");
+      expect(body.termFallback).toBe(false);
+    });
+
+    it("honors an explicit ?term= that matches an available term", async () => {
+      const { req, ctx } = makeRequest("va", { q: "ENG 111", term: "2026FA" });
+      const res = await GET(req, ctx);
+      const body = await res.json();
+      expect(body.requestedTerm).toBe("2026FA");
+      expect(body.servedTerm).toBe("2026FA");
+      expect(body.termFallback).toBe(false);
+      // searchCoursesAcrossColleges received the requested term, not the default
+      expect(searchMock.mock.calls[0][0]).toBe("2026FA");
+    });
+
+    it("flags termFallback when ?term= isn't in the state's available list", async () => {
+      const { req, ctx } = makeRequest("va", { q: "ENG 111", term: "2099XX" });
+      const res = await GET(req, ctx);
+      const body = await res.json();
+      expect(body.requestedTerm).toBe("2099XX");
+      expect(body.servedTerm).toBe("2026SP");
+      expect(body.termFallback).toBe(true);
+      // Search was performed against the fallback term, not the rejected param
+      expect(searchMock.mock.calls[0][0]).toBe("2026SP");
+    });
   });
 });

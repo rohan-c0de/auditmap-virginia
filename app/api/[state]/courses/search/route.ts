@@ -56,14 +56,24 @@ export async function GET(request: NextRequest, context: RouteContext) {
   // (cached) and ignore unknown values so a stale or hand-typed code doesn't
   // produce empty results without explanation. Default to current term when
   // omitted, preserving existing behavior.
-  const termParam = searchParams.get("term")?.trim();
+  //
+  // The response signals the fallback explicitly via `requestedTerm` /
+  // `servedTerm` / `termFallback`. Until 2026-06-01 this fallback was
+  // silent: a student following a stale link with ?term=2027SU on a state
+  // with no 2027SU rows would see current-term results with no indication
+  // their requested term had been swapped. Exposing these fields lets the
+  // UI surface a "Spring 2027 had no listed sections — showing Fall 2026
+  // instead" note without changing the search behavior.
+  const termParamRaw = searchParams.get("term")?.trim();
+  const requestedTerm = termParamRaw && termParamRaw.length > 0 ? termParamRaw : null;
   let term: string;
-  if (termParam) {
+  if (requestedTerm) {
     const available = await getAvailableTerms(state);
-    term = available.includes(termParam) ? termParam : await getCurrentTerm(state);
+    term = available.includes(requestedTerm) ? requestedTerm : await getCurrentTerm(state);
   } else {
     term = await getCurrentTerm(state);
   }
+  const termFallback = requestedTerm !== null && requestedTerm !== term;
 
   const results = await searchCoursesAcrossColleges(
     term,
@@ -75,5 +85,10 @@ export async function GET(request: NextRequest, context: RouteContext) {
     state
   );
 
-  return NextResponse.json(results);
+  return NextResponse.json({
+    ...results,
+    requestedTerm,
+    servedTerm: term,
+    termFallback,
+  });
 }
