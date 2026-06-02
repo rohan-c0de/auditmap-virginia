@@ -48,6 +48,18 @@ function log(msg: string, extra?: Record<string, unknown>) {
   }
 }
 
+/**
+ * Redact a user for logs. We must NEVER write a student's email address to
+ * these logs: this script runs in GitHub Actions, whose logs are retained
+ * ~90 days and readable by anyone with repo access. An email paired with the
+ * exact courses a student is planning is identifiable academic-intent data.
+ * Log a truncated, pseudonymous user_id instead — enough to correlate a run,
+ * useless as PII without service-role DB access (which the operator already has).
+ */
+function redactUser(userId: string | undefined): string {
+  return userId ? `user:${userId.slice(0, 8)}` : "user:unknown";
+}
+
 async function main() {
   log(`Starting seat-watch run (DRY_RUN=${DRY_RUN})`);
   const service = getServiceClient();
@@ -82,7 +94,7 @@ async function main() {
   if (DRY_RUN) {
     for (const n of notifications) {
       log("DRY_RUN would send:", {
-        to: n.user_email,
+        user: redactUser(n.user_id),
         course: n.course_code,
         plan: n.plan_name,
         seats: `${n.seats_open}/${n.seats_total ?? "?"}`,
@@ -124,14 +136,14 @@ async function main() {
         // Email already sent; ledger insert failed. Log loudly so an
         // operator can investigate, but don't crash the batch.
         console.error(
-          `[seat-watch] WARN: sent email but ledger insert failed for ${n.user_email} ${n.course_code}: ${error.message}`,
+          `[seat-watch] WARN: sent email but ledger insert failed for ${redactUser(n.user_id)} ${n.course_code}: ${error.message}`,
         );
       }
       sent++;
     } catch (e) {
       failed++;
       console.error(
-        `[seat-watch] ERROR sending to ${n.user_email} for ${n.course_code}:`,
+        `[seat-watch] ERROR sending to ${redactUser(n.user_id)} for ${n.course_code}:`,
         e instanceof Error ? e.message : e,
       );
     }
