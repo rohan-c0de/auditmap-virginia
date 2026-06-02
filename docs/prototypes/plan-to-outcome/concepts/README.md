@@ -141,10 +141,13 @@ that "reviewed" ≠ the whole program and more reviewed ≠ more that transfer.
 weekly Mon–Sat grid; overlaps and work-hour clashes flagged, a conflict-free combo suggested.
 Atlanta Tech sections are **real**; a second nearby college is **clearly flagged illustrative**.
 
-### `us-map.html` — coverage map *(real grades)*
-A schematic **US tile-grid** (every state equally clickable), each state colored by its **real
-audit composite grade** (11 A · 7 B · 17 C · 6 D · 10 F). Grade = **data completeness, not college
-quality**. A true geographic outline is also possible if preferred.
+### `us-map.html` — browse by state *(real map, real counts)*
+Mirrors the **live site's `components/USMap.tsx`** — a real geographic US map (us-atlas Albers
+projection, the same data prod uses), states filled teal and clickable with their real college
+counts; hovering shows "{state} — N colleges · browse." **Deliberately no data-quality grades** —
+the live map signals "available vs coming soon," never internal completeness. (An earlier draft
+colored states by audit grade A–F; that wrongly broadcast our coverage gaps to students and was
+replaced with this prod-faithful version.)
 
 ## How to add a new concept here
 Drop a self-contained `*.html` in this folder and add a short blurb above: what it explores,
