@@ -91,3 +91,39 @@ export function buildBestMappingLookup(
   }
   return map;
 }
+
+// ---------------------------------------------------------------------------
+// Compare-matrix preload sizing
+// ---------------------------------------------------------------------------
+
+/**
+ * Total transfer rows across all of a state's universities above which
+ * auto-preloading the whole Compare matrix would be too heavy for the client.
+ *
+ * The matrix needs every university's mappings to fill its columns, but for
+ * the largest states that's 150K-250K rows / tens of MB (CA, TX, NY, MI) —
+ * the same payload issue #777 deliberately keeps off the initial page load.
+ * Below this threshold the client preloads all universities on entering
+ * Compare (most states, instant matrix); above it, the matrix loads the
+ * default university only and gates the rest behind an explicit "Load all"
+ * button, so a first-gen student on a low-end phone isn't forced to pull a
+ * quarter-million rows just to open the tab.
+ *
+ * 50K cleanly separates the heavy states (≥139K) from the rest (≤26K).
+ */
+export const HEAVY_PRELOAD_THRESHOLD = 50_000;
+
+/**
+ * True when a state's universities collectively carry enough transfer rows
+ * that the Compare matrix should NOT auto-preload them all. Universities
+ * missing a `mappingCount` (e.g. the Supabase fallback path that doesn't
+ * compute counts) contribute 0 — i.e. an unknown-size state defaults to the
+ * cheaper auto-preload, which is safe because every heavy state ships a
+ * committed cache file with real counts.
+ */
+export function isHeavyTransferState(
+  universities: { mappingCount?: number }[]
+): boolean {
+  const total = universities.reduce((sum, u) => sum + (u.mappingCount ?? 0), 0);
+  return total > HEAVY_PRELOAD_THRESHOLD;
+}

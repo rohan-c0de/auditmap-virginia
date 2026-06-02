@@ -311,7 +311,7 @@ export async function getCoursesForUniversity(
  */
 export async function getUniversities(
   state: string
-): Promise<{ slug: string; name: string }[]> {
+): Promise<{ slug: string; name: string; mappingCount?: number }[]> {
   // Fast path: pre-computed cache file from scripts/build-transfer-universities-cache.ts.
   // For CA (100K+ mappings) and TX (280K+), iterating all rows in Supabase took
   // 16-23s and pushed the page past Vercel's serverless timeout — see issue #777.
@@ -323,6 +323,7 @@ export async function getUniversities(
       const cached = JSON.parse(fs.readFileSync(cachePath, "utf-8")) as {
         slug: string;
         name: string;
+        mappingCount?: number;
       }[];
       if (Array.isArray(cached) && cached.length > 0) return cached;
     }

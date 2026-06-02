@@ -1,12 +1,16 @@
 "use client";
 
-import { useState, useMemo, useEffect, useRef } from "react";
+import { useState, useMemo, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import type { TransferMapping } from "@/lib/types";
 import TransferCompare from "./TransferCompare";
+import { isHeavyTransferState } from "./compare/types";
 
 interface Props {
-  universities: { slug: string; name: string }[];
+  // mappingCount (per-university transfer-row total) rides along from the
+  // transfer-universities.json cache; it lets Compare decide whether to
+  // auto-preload every university or gate the heavy ones behind a button.
+  universities: { slug: string; name: string; mappingCount?: number }[];
   mappings: TransferMapping[];
   courseAvailability: Record<
     string,
@@ -47,27 +51,107 @@ export default function TransferClient({
         ? { [defaultUniversity]: initialMappings }
         : {}
   );
-  const [loadingUniversity, setLoadingUniversity] = useState(false);
-  // Tracks which universities have been requested to avoid duplicate fetches.
+  // Tracks which universities have an in-flight fetch, to avoid duplicates.
   const pendingFetches = useRef(new Set<string>());
+  // Mirror of mappingsCache for the stable loadUniversity() guard, so the
+  // callback can stay out of mappingsCache's dependency churn (otherwise it
+  // would be recreated on every load and re-fire the preload effect).
+  const mappingsCacheRef = useRef(mappingsCache);
+  useEffect(() => {
+    mappingsCacheRef.current = mappingsCache;
+  }, [mappingsCache]);
+  // Universities whose preload fetch has finished (resolved or rejected).
+  const [settledUnis, setSettledUnis] = useState<Set<string>>(() => new Set());
+
+  // Fetch one university's mappings into the cache. Idempotent: skips if
+  // already cached or in flight; clears the pending flag on completion so a
+  // transient failure can be retried on re-entry.
+  const loadUniversity = useCallback(
+    (slug: string): Promise<void> => {
+      if (mappingsCacheRef.current[slug] || pendingFetches.current.has(slug)) {
+        return Promise.resolve();
+      }
+      pendingFetches.current.add(slug);
+      return fetch(
+        `/api/${state}/transfer/mappings?university=${encodeURIComponent(slug)}`
+      )
+        .then((r) => r.json())
+        .then((data: { mappings: TransferMapping[] }) => {
+          setMappingsCache((prev) => ({ ...prev, [slug]: data.mappings ?? [] }));
+        })
+        .catch(() => {
+          // Leave uncached — the column stays "—" and a retry can re-fetch.
+        })
+        .finally(() => {
+          pendingFetches.current.delete(slug);
+          // Mark as settled (succeeded OR failed) so preload progress can
+          // complete even if one university 500s — otherwise the spinner
+          // would hang forever waiting on a column that will never arrive.
+          setSettledUnis((prev) =>
+            prev.has(slug) ? prev : new Set(prev).add(slug)
+          );
+        });
+    },
+    [state]
+  );
+
+  // Browse view: load the currently-selected university on mount / on change.
+  // (loadUniversity is idempotent; the spinner is derived below, so this
+  // effect never calls setState synchronously.)
+  useEffect(() => {
+    loadUniversity(selectedUniversity);
+  }, [selectedUniversity, loadUniversity]);
+
+  // ── Compare view: size-aware preload of every university ──
+  // Normal states preload all universities the moment Compare opens, so the
+  // matrix is populated out of the box. Heavy states (CA/TX/NY/MI) would mean
+  // pulling 150K–250K rows at once, so they wait for an explicit "Load all"
+  // click — see isHeavyTransferState / HEAVY_PRELOAD_THRESHOLD.
+  const isHeavyState = useMemo(
+    () => isHeavyTransferState(universities),
+    [universities]
+  );
+  const [loadAllRequested, setLoadAllRequested] = useState(false);
 
   useEffect(() => {
-    if (mappingsCache[selectedUniversity] || pendingFetches.current.has(selectedUniversity)) return;
-    pendingFetches.current.add(selectedUniversity);
-    Promise.resolve().then(() => setLoadingUniversity(true));
-    fetch(`/api/${state}/transfer/mappings?university=${encodeURIComponent(selectedUniversity)}`)
-      .then((r) => r.json())
-      .then((data: { mappings: TransferMapping[] }) => {
-        setMappingsCache((prev) => ({ ...prev, [selectedUniversity]: data.mappings }));
-      })
-      .finally(() => setLoadingUniversity(false));
-  }, [selectedUniversity, state, mappingsCache]);
+    if (viewMode !== "compare") return;
+    if (isHeavyState && !loadAllRequested) return;
+    for (const u of universities) loadUniversity(u.slug);
+  }, [viewMode, isHeavyState, loadAllRequested, universities, loadUniversity]);
 
   // All mappings across cached universities — used by compare view.
   const allCachedMappings = useMemo(
     () => Object.values(mappingsCache).flat(),
     [mappingsCache]
   );
+
+  // Compare preload progress / gating.
+  // loadedUniCount = columns actually populated (for the honest "N/total"
+  // label). settledCount also counts universities whose fetch failed, so the
+  // spinner can complete even when a column never arrives.
+  const loadedUniCount = useMemo(
+    () => universities.filter((u) => mappingsCache[u.slug]).length,
+    [universities, mappingsCache]
+  );
+  const settledCount = useMemo(
+    () =>
+      universities.filter(
+        (u) => mappingsCache[u.slug] || settledUnis.has(u.slug)
+      ).length,
+    [universities, mappingsCache, settledUnis]
+  );
+  const allUnisLoaded = loadedUniCount >= universities.length;
+  const allUnisSettled = settledCount >= universities.length;
+  // Browse spinner, derived: the selected university hasn't loaded yet and its
+  // fetch hasn't failed. (Derived instead of stateful so the load effect never
+  // sets state synchronously — react-hooks/set-state-in-effect.)
+  const loadingUniversity =
+    !mappingsCache[selectedUniversity] && !settledUnis.has(selectedUniversity);
+  const preloadActive = !isHeavyState || loadAllRequested;
+  const comparePreloading =
+    viewMode === "compare" && preloadActive && !allUnisSettled;
+  const showLoadAllButton =
+    viewMode === "compare" && isHeavyState && !loadAllRequested && !allUnisLoaded;
 
   // Current university's mappings (may be empty while loading).
   const universityMappings = useMemo(
@@ -294,13 +378,41 @@ export default function TransferClient({
 
       {/* ── Compare view ── */}
       {viewMode === "compare" ? (
-        <TransferCompare
-          universities={universities}
-          mappings={allCachedMappings}
-          courseAvailability={courseAvailability}
-          state={state}
-          popularCourses={popularCourses}
-        />
+        <>
+          {/* Heavy states: don't auto-pull 150K+ rows — let the user opt in. */}
+          {showLoadAllButton && (
+            <div className="mb-6 flex flex-col gap-3 rounded-lg border border-teal-200 dark:border-teal-800 bg-teal-50 dark:bg-teal-900/20 p-4 sm:flex-row sm:items-center sm:justify-between">
+              <p className="text-sm text-teal-800 dark:text-teal-300">
+                Showing one school so far. {universities.length} universities
+                transfer in {state.toUpperCase()} — load them all to compare
+                every option side by side.
+              </p>
+              <button
+                onClick={() => setLoadAllRequested(true)}
+                className="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-lg bg-teal-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-teal-700"
+              >
+                Load all {universities.length} universities
+                <span aria-hidden>&rarr;</span>
+              </button>
+            </div>
+          )}
+
+          {/* Progress while university columns stream in. */}
+          {comparePreloading && (
+            <div className="mb-4 flex items-center gap-2 text-sm text-gray-500 dark:text-slate-400">
+              <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-gray-300 border-t-teal-600" />
+              Loading universities… ({loadedUniCount}/{universities.length})
+            </div>
+          )}
+
+          <TransferCompare
+            universities={universities}
+            mappings={allCachedMappings}
+            courseAvailability={courseAvailability}
+            state={state}
+            popularCourses={popularCourses}
+          />
+        </>
       ) : (
       <>
       {/* University selector */}
