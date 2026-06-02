@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Your path — dashboard concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7faf9; --panel:#fff; --panel2:#f8fafc; --ink:#0f172a; --muted:#5b6573; --line:#e6ebf0; --line2:#d3dbe2;
+  --brand:#0d9488; --brand-strong:#0f766e; --brand-soft:#effbf8; --brand-tint:#cdeee8; --bright:#2dd4bf;
+  --warm:#f59e0b; --warm-soft:#fef3c7; --good:#15803d; --good-bg:#dcfce7;
+  --glow:rgba(13,148,136,.18); --shadow:0 1px 2px rgba(15,23,42,.05);
+}
+:root[data-theme="dark"]{
+  --bg:#0a1413; --panel:#0f1f1d; --panel2:#13262300; --ink:#ecfdf8; --muted:#8aa39d; --line:#1c302d; --line2:#26423d;
+  --brand:#2dd4bf; --brand-strong:#5eead4; --brand-soft:#102826; --brand-tint:#1c403b; --bright:#5eead4;
+  --warm:#fbbf24; --warm-soft:#2a230f; --good:#4ade80; --good-bg:#10241a;
+  --glow:rgba(45,212,191,.22); --shadow:0 1px 2px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box}
+body{margin:0;background:
+  radial-gradient(900px 380px at 80% -8%,var(--glow),transparent 60%),var(--bg);
+  color:var(--ink);font-family:"Geist",system-ui,sans-serif;font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;min-height:100vh}
+.wrap{max-width:1020px;margin:0 auto;padding:0 26px}
+h1,h2,h3{margin:0;letter-spacing:-.025em;font-weight:700}
+.ic{stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;display:inline-block;vertical-align:middle}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.brandmark{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px}
+.logo{width:30px;height:30px;border-radius:9px;background:var(--brand);color:#04201c;display:flex;align-items:center;justify-content:center}
+.toggle{display:inline-flex;align-items:center;gap:7px;background:var(--panel);border:1px solid var(--line2);color:var(--muted);font-size:12.5px;font-weight:600;padding:8px 13px;border-radius:999px;cursor:pointer;font-family:inherit}
+.toggle:hover{color:var(--ink);border-color:var(--brand)}
+/* header */
+.dhead{padding:10px 0 6px}
+.dhead .kick{color:var(--brand-strong);font-weight:600;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase}
+.dhead h1{font-size:34px;letter-spacing:-.03em;margin:6px 0 4px}
+.dhead .who{color:var(--muted);font-size:14.5px}
+/* hero row: ring + stat tiles */
+.hero{display:grid;grid-template-columns:300px 1fr;gap:18px;margin-top:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}
+.ringcard{padding:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
+.ringcard::after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,var(--glow),transparent 70%);top:-60px;right:-80px}
+.ringwrap{position:relative;width:170px;height:170px}
+.ringwrap .ctr{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ringwrap .ctr .big{font-size:38px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.ringwrap .ctr .sm{font-size:12px;color:var(--muted);margin-top:3px}
+.ringcard .cap{margin-top:14px;font-size:13px;color:var(--muted)}
+.ringcard .cap b{color:var(--ink)}
+/* tiles */
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.tile{padding:18px 20px;display:flex;flex-direction:column;gap:6px;position:relative;overflow:hidden}
+.tile .ti{width:36px;height:36px;border-radius:11px;background:var(--brand-soft);color:var(--brand);display:flex;align-items:center;justify-content:center}
+.tile .n{font-size:27px;font-weight:800;letter-spacing:-.03em;margin-top:6px}
+.tile .l{font-size:12.5px;color:var(--muted);line-height:1.4}
+.tile .spark{position:absolute;right:14px;bottom:12px;opacity:.85}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--good-bg);color:var(--good);align-self:flex-start}
+/* section title */
+.stitle{display:flex;align-items:center;gap:9px;font-size:16px;font-weight:700;margin:26px 0 12px}
+.stitle .ic{color:var(--brand)}
+.stitle .note{margin-left:auto;font-size:11.5px;color:var(--muted);font-weight:500;font-style:italic}
+/* timeline */
+.timeline{display:flex;gap:12px;overflow-x:auto;padding:2px 2px 8px}
+.term{flex:0 0 188px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;box-shadow:var(--shadow)}
+.term.cur{border-color:var(--brand);box-shadow:0 0 0 1px var(--brand),0 16px 36px -24px var(--glow)}
+.term .th{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.term .tn{font-weight:700;font-size:13.5px}
+.term .ts{font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:2px 8px;border-radius:999px}
+.ts.done{background:var(--good-bg);color:var(--good)}
+.ts.now{background:var(--brand-soft);color:var(--brand-strong)}
+.ts.next{background:var(--panel2);color:var(--muted);border:1px solid var(--line2)}
+.course{display:flex;align-items:center;gap:8px;padding:7px 9px;border-radius:9px;background:var(--panel2);border:1px solid var(--line);margin-bottom:6px;font-size:12px}
+.course:last-child{margin-bottom:0}
+.course .cc{font-weight:700}
+.course .cr{margin-left:auto;color:var(--muted);font-size:11px}
+.course .chk{width:15px;height:15px;color:var(--good)}
+.course.cur-c{border-color:var(--brand-tint);background:var(--brand-soft)}
+.term .sum{margin-top:9px;font-size:11px;color:var(--muted);text-align:right}
+/* bottom: trajectory + next class */
+.cols2{display:grid;grid-template-columns:1.25fr 1fr;gap:18px;margin-top:6px}
+.traj{padding:22px 24px}
+.traj h3{font-size:15px;margin-bottom:2px}
+.traj .d{font-size:12.5px;color:var(--muted)}
+.curvewrap{margin-top:14px}
+.bandlabel{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:8px}
+.range{margin-top:14px;display:flex;align-items:center;gap:12px}
+.range .rb{flex:1;height:10px;border-radius:999px;background:linear-gradient(90deg,#94a3b855,var(--brand));position:relative}
+.range .rb .dot{position:absolute;top:50%;width:16px;height:16px;border-radius:50%;background:var(--brand);border:3px solid var(--panel);transform:translate(-50%,-50%);box-shadow:0 0 0 1px var(--brand)}
+.range .lab{font-size:11px;color:var(--muted)}
+.nextc{padding:22px 24px;display:flex;flex-direction:column}
+.nextc h3{font-size:15px}
+.nextc .rec{margin-top:12px;border:1px solid var(--brand-tint);background:var(--brand-soft);border-radius:14px;padding:14px}
+.nextc .rec .cn{font-weight:800;font-size:15px}
+.nextc .rec .ct{color:var(--muted);font-size:12.5px;margin:2px 0 9px}
+.nextc .rec .meta{display:flex;gap:8px;flex-wrap:wrap}
+.mchip{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px;background:var(--panel);border:1px solid var(--line2);color:var(--muted)}
+.mchip.ok{color:var(--good);border-color:var(--good)}
+.mchip.seat{color:var(--brand-strong);border-color:var(--brand-tint)}
+.btn{font-family:inherit;font-weight:600;border-radius:999px;cursor:pointer;border:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--brand);color:#04201c;padding:11px 16px;font-size:13.5px;margin-top:14px}
+:root:not([data-theme="dark"]) .btn{color:#fff}
+.foot{color:var(--muted);font-size:12.5px;padding:24px 0 50px;border-top:1px solid var(--line);margin-top:24px}
+.tag{display:inline-block;background:var(--brand-soft);color:var(--brand-strong);border:1px solid var(--brand-tint);font-size:11px;font-weight:600;padding:3px 9px;border-radius:6px}
+@media(max-width:820px){.hero{grid-template-columns:1fr}.tiles{grid-template-columns:1fr 1fr}.cols2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="nav">
+    <div class="brandmark"><div class="logo"><svg class="ic" style="width:17px;height:17px;stroke:#04201c" viewBox="0 0 24 24"><path d="M3 9l9-5 9 5-9 5z"/><path d="M7 11v5c0 1 2 2 5 2s5-1 5-2v-5"/></svg></div>Community College Path</div>
+    <button class="toggle" id="tt"><svg class="ic" style="width:15px;height:15px" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg> <span id="ttl">Light</span></button>
+  </div>
+
+  <div class="dhead">
+    <div class="kick">Your path</div>
+    <h1>Accounting, A.S.</h1>
+    <div class="who">Atlanta Technical College · planning for Spring 2026</div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="card ringcard">
+      <div class="ringwrap">
+        <svg width="170" height="170" viewBox="0 0 170 170">
+          <circle cx="85" cy="85" r="68" fill="none" stroke="var(--line)" stroke-width="14"/>
+          <circle cx="85" cy="85" r="68" fill="none" stroke="var(--brand)" stroke-width="14" stroke-linecap="round"
+                  stroke-dasharray="427.3" stroke-dashoffset="318.9" transform="rotate(-90 85 85)"/>
+        </svg>
+        <div class="ctr"><div class="big">25%</div><div class="sm">17 / 67 credits</div></div>
+      </div>
+      <div class="cap"><b>5 courses</b> done · <b>50 credits</b> to go</div>
+    </div>
+
+    <div class="tiles">
+      <div class="card tile">
+        <div class="ti"><svg class="ic" style="width:19px;height:19px" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div>
+        <div class="n">≈ 4</div><div class="l">semesters to your degree, at your current pace</div>
+      </div>
+      <div class="card tile">
+        <div class="ti"><svg class="ic" style="width:19px;height:19px" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 7-8"/><path d="M21 7v5M21 7h-5"/></svg></div>
+        <div class="n">$30k</div><div class="l">median earnings graduates reach, 10 yrs after</div>
+      </div>
+      <div class="card tile">
+        <div class="ti"><svg class="ic" style="width:19px;height:19px" viewBox="0 0 24 24"><path d="M4 7h12M12 3l4 4-4 4"/><path d="M20 17H8M12 21l-4-4 4-4"/></svg></div>
+        <div class="n">4</div><div class="l">universities that accept your credits</div>
+        <span class="pill" style="margin-top:4px"><svg class="ic" style="width:11px;height:11px" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg> West Georgia: 25 count</span>
+      </div>
+      <div class="card tile">
+        <div class="ti"><svg class="ic" style="width:19px;height:19px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
+        <div class="n">18</div><div class="l">seats open in your recommended next class</div>
+        <span class="pill" style="margin-top:4px;background:var(--brand-soft);color:var(--brand-strong)">registration open now</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="stitle"><svg class="ic" style="width:18px;height:18px" viewBox="0 0 24 24"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg> Your semesters <span class="note">example plan — your real plan adapts as you check off courses</span></div>
+  <div class="timeline">
+    <div class="term">
+      <div class="th"><span class="tn">Fall 2025</span><span class="ts done">Done</span></div>
+      <div class="course"><svg class="ic chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span class="cc">FYES 1001</span><span class="cr">3</span></div>
+      <div class="course"><svg class="ic chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span class="cc">COMP 1000</span><span class="cr">3</span></div>
+      <div class="course"><svg class="ic chk" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><span class="cc">BUSN 1440</span><span class="cr">4</span></div>
+      <div class="sum">10 credits</div>
+    </div>
+    <div class="term cur">
+      <div class="th"><span class="tn">Spring 2026</span><span class="ts now">Now</span></div>
+      <div class="course cur-c"><svg class="ic" style="width:15px;height:15px;color:var(--brand)" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg><span class="cc">ACCT 1100</span><span class="cr">4</span></div>
+      <div class="course cur-c"><svg class="ic" style="width:15px;height:15px;color:var(--brand)" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg><span class="cc">MKTG 1100</span><span class="cr">3</span></div>
+      <div class="sum">7 credits · in progress</div>
+    </div>
+    <div class="term">
+      <div class="th"><span class="tn">Summer 2026</span><span class="ts next">Planned</span></div>
+      <div class="course"><span class="cc">ACCT 1105</span><span class="cr">4</span></div>
+      <div class="course"><span class="cc">ACCT 1140</span><span class="cr">3</span></div>
+      <div class="sum">7 credits</div>
+    </div>
+    <div class="term">
+      <div class="th"><span class="tn">Fall 2026</span><span class="ts next">Planned</span></div>
+      <div class="course"><span class="cc">ACCT 1145</span><span class="cr">3</span></div>
+      <div class="course"><span class="cc">ACCT 2120</span><span class="cr">3</span></div>
+      <div class="course"><span class="cc">MGMT 1100</span><span class="cr">3</span></div>
+      <div class="sum">9 credits</div>
+    </div>
+    <div class="term">
+      <div class="th"><span class="tn">Spring 2027</span><span class="ts next">Planned</span></div>
+      <div class="course"><span class="cc">ACCT 2135</span><span class="cr">3</span></div>
+      <div class="course"><span class="cc">ACCT 2140</span><span class="cr">3</span></div>
+      <div class="course"><span class="cc">MGMT 1120</span><span class="cr">3</span></div>
+      <div class="sum">9 credits</div>
+    </div>
+  </div>
+
+  <!-- TRAJECTORY + NEXT CLASS -->
+  <div class="cols2">
+    <div class="card traj">
+      <h3>Where this is heading</h3>
+      <div class="d">Earnings range graduates of this program reach, 10 years after entry.</div>
+      <div class="curvewrap">
+        <svg width="100%" height="120" viewBox="0 0 400 120" preserveAspectRatio="none">
+          <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="var(--brand)" stop-opacity=".35"/><stop offset="1" stop-color="var(--brand)" stop-opacity="0"/>
+          </linearGradient></defs>
+          <path d="M0 110 C 90 108, 150 92, 210 64 C 270 36, 330 20, 400 12 L400 120 L0 120 Z" fill="url(#g)"/>
+          <path d="M0 110 C 90 108, 150 92, 210 64 C 270 36, 330 20, 400 12" fill="none" stroke="var(--brand)" stroke-width="2.5"/>
+          <circle cx="210" cy="64" r="4.5" fill="var(--brand)"/>
+        </svg>
+      </div>
+      <div class="bandlabel"><span>Start</span><span>Today</span><span>10 yrs out</span></div>
+      <div class="range">
+        <span class="lab">$14.5k</span>
+        <div class="rb"><span class="dot" style="left:58%"></span></div>
+        <span class="lab">$48.4k</span>
+      </div>
+      <div class="d" style="margin-top:8px">Median <b style="color:var(--brand-strong)">$30,350</b> · you're aiming above the midpoint by finishing the degree.</div>
+    </div>
+
+    <div class="card nextc">
+      <h3>Your best next class</h3>
+      <div class="rec">
+        <div class="cn">ACCT 1105</div>
+        <div class="ct">Financial Accounting II · 4 credits</div>
+        <div class="meta">
+          <span class="mchip ok"><svg class="ic" style="width:11px;height:11px" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg> prereq ACCT 1100 in progress</span>
+          <span class="mchip seat"><svg class="ic" style="width:11px;height:11px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg> 18 seats open</span>
+          <span class="mchip">transfers to UWG</span>
+        </div>
+      </div>
+      <button class="btn">Add to Summer 2026 <svg class="ic" style="width:15px;height:15px;stroke:currentColor" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
+      <div class="d" style="font-size:11.5px;color:var(--muted);margin-top:10px">Picked because it unlocks the most later courses and keeps you on the 4-semester pace.</div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="tag">Concept · personal dashboard</span> &nbsp; Inspired by Flighty (premium dark, personal data made beautiful, timeline/recap), Apple (restraint, one focal number). Course codes, credits (67 total), earnings ($30,350 median; $14.5k–$48.4k range), seats (18), and transfer count (West Georgia: 25) are <b>real</b> Atlanta Tech / Accounting A.S. data. The <b>completed-credits state and semester layout are an illustrative example</b> of an in-progress student — the real version is driven by what you check off. Toggle light/dark, top-right.
+  </div>
+
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('tt'), lbl=document.getElementById('ttl'), root=document.documentElement;
+  function sync(){var dark=root.getAttribute('data-theme')==='dark'; lbl.textContent=dark?'Light':'Dark';}
+  btn.addEventListener('click',function(){
+    root.setAttribute('data-theme', root.getAttribute('data-theme')==='dark'?'light':'dark'); sync();
+  });
+  sync();
+})();
+</script>
+</body>
+</html>

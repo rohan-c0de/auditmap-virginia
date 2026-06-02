@@ -34,6 +34,58 @@ Atlanta Tech / Accounting figures.
 Status: **partial keep** — the owner liked *some* of it; not yet adopted into the live
 prototype. Still gathering additional ideas before committing to a direction.
 
+---
+
+### `home-search.html` — search-first home
+A landing where the **search interaction is the hero** (not a static illustration): a pill
+search bar — "I want to study ___ near ___ transfer to ___" — over category pills, then a
+**map + list split** of nearby colleges. Each result card carries a letter-grade transfer
+badge, a confident single cost **estimate**, an open-seats indicator, and a personal **fit
+meter**.
+
+Borrows from:
+- **Airbnb** — search-as-hero, the pill search bar, category browsing.
+- **Zillow** — the map+list split, the one confident "estimate" number (à la Zestimate), filter chips.
+- **Niche** — letter-grade report-card badges.
+- **CollegeVine** — the personalized "fit" gauge.
+
+⚠️ **Honesty:** **Atlanta Technical College** figures are real (Accounting A.S.). The other four
+are **real Georgia institutions**, but their cost / earnings / grade / fit numbers are
+**illustrative placeholders** (tagged inline). The map is **stylized**, not geographic.
+
+### `compare-outcomes.html` — outcomes & compare *(almost entirely real data)*
+A College-Scorecard-style outcomes surface for one program: an **earnings distribution**
+(25th / median / 75th percentile), **cost-by-income** bars (showing that for families under
+$48k, aid *exceeds* tuition — a genuinely non-obvious, honest insight), the **transfer
+breakdown** per university (direct equivalent vs. elective vs. no-credit), and an
+**earnings-vs-nearby-colleges** comparison.
+
+Borrows from:
+- **College Scorecard** — earnings distribution, cost-by-income, comparison framing.
+- **NerdWallet** — money made plain-English + trustworthy, with the caveats surfaced not hidden.
+- **Niche** — compare layout.
+
+✅ **Honesty: every number on this page is real** — College Scorecard outcomes & net-price-by-income
+for Atlanta Tech, real GA statewide articulation counts, real per-college earnings for 22 GA
+colleges. The honesty *caveats* themselves are part of the design (college-wide vs. major-specific
+earnings; "reviewed ≠ transfers"). This is the strongest demonstration that our real data already
+supports a premium outcomes view.
+
+### `journey-dashboard.html` — personal dashboard (premium dark)
+A signed-in "your path" dashboard: a **progress ring** (credits done), stat tiles (semesters
+left, projected earnings, universities that accept your credits, open seats in your next class),
+a **semester timeline** (done / now / planned), an earnings **trajectory** curve, and a "best
+next class" recommendation. Defaults to a **premium dark** theme with a working light toggle.
+
+Borrows from:
+- **Flighty** — personal data made *beautiful*, the timeline/recap feel, premium dark aesthetic.
+- **Apple** — restraint, one focal number per tile.
+
+⚠️ **Honesty:** course codes, credits (67 total), earnings ($30,350 median; $14.5k–$48.4k range),
+seats (18), and the West Georgia transfer count (25) are **real** Atlanta Tech / Accounting data.
+The **completed-credits state and semester layout are an illustrative example** of an in-progress
+student — the real version is driven by what the student checks off.
+
 ## How to add a new concept here
 Drop a self-contained `*.html` in this folder and add a short blurb above: what it explores,
 what it borrows/changes, and any honesty caveats (no fabricated data/quotes presented as real).

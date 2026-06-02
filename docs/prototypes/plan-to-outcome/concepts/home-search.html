@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Search-first home — concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7faf9; --panel:#fff; --ink:#0f172a; --muted:#5b6573; --line:#e6ebf0; --line2:#d3dbe2;
+  --brand:#0d9488; --brand-strong:#0f766e; --brand-soft:#effbf8; --brand-tint:#cdeee8; --bright:#2dd4bf;
+  --warm:#f59e0b; --warm-soft:#fef3c7;
+  --good:#15803d; --good-bg:#dcfce7; --mid:#b45309; --mid-bg:#fef3c7;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Geist",system-ui,sans-serif;font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 26px}
+h1,h2,h3{margin:0;letter-spacing:-.025em;font-weight:700}
+.ic{stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;display:inline-block;vertical-align:middle}
+a{color:var(--brand);text-decoration:none}
+/* nav */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.brandmark{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px}
+.logo{width:30px;height:30px;border-radius:9px;background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center}
+.navlinks{display:flex;gap:22px;align-items:center;color:var(--muted);font-size:14px}
+.navlinks a:hover{color:var(--ink)}
+.btn{font-family:inherit;font-weight:600;border-radius:999px;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:8px;transition:transform .12s,box-shadow .12s,background .12s}
+.btn.primary{background:var(--brand);color:#fff;padding:11px 18px;font-size:14px;box-shadow:0 10px 24px -12px rgba(13,148,136,.6)}
+.btn.primary:hover{background:var(--brand-strong);transform:translateY(-1px)}
+.btn.soft{background:#fff;color:var(--ink);border:1px solid var(--line2);padding:10px 16px;font-size:14px}
+.btn.soft:hover{border-color:var(--brand);color:var(--brand-strong)}
+/* hero with search-as-hero */
+.hero{text-align:center;padding:40px 0 18px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--brand-strong);font-weight:600;font-size:13px;background:var(--brand-soft);border:1px solid var(--brand-tint);padding:6px 13px;border-radius:999px;margin-bottom:18px}
+.hero h1{font-size:46px;line-height:1.05;letter-spacing:-.035em;font-weight:800;max-width:760px;margin:0 auto}
+.hero h1 em{font-style:normal;color:var(--brand);position:relative}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:3px;height:9px;background:var(--brand-tint);border-radius:6px;z-index:-1;opacity:.7}
+.hero .sub{font-size:17px;color:var(--muted);max-width:560px;margin:16px auto 26px}
+/* the search bar (airbnb pill) */
+.searchbar{display:flex;align-items:stretch;background:#fff;border:1px solid var(--line2);border-radius:999px;box-shadow:0 18px 44px -26px rgba(15,23,42,.4);max-width:760px;margin:0 auto;padding:6px 6px 6px 8px}
+.sfield{flex:1;display:flex;flex-direction:column;justify-content:center;padding:9px 18px;text-align:left;cursor:pointer;border-radius:999px}
+.sfield:hover{background:var(--brand-soft)}
+.sfield+.sfield{border-left:1px solid var(--line)}
+.sfield .lab{font-size:11px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--muted)}
+.sfield .val{font-size:15px;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:7px;margin-top:1px}
+.sfield .val .ph{color:var(--muted);font-weight:500}
+.searchbar .go{align-self:center;margin-left:6px;width:48px;height:48px;border-radius:50%;background:var(--brand);color:#fff;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;flex:0 0 auto;box-shadow:0 8px 18px -8px rgba(13,148,136,.7)}
+.searchbar .go:hover{background:var(--brand-strong)}
+/* category pills */
+.cats{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin:20px auto 4px;max-width:720px}
+.cat{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line2);color:var(--ink);font-size:13px;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer}
+.cat:hover{border-color:var(--brand);color:var(--brand-strong)}
+.cat.on{background:var(--brand);border-color:var(--brand);color:#fff}
+.cat .d{width:7px;height:7px;border-radius:50%;background:var(--bright)}
+/* results split (zillow map+list) */
+.results{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin:34px 0 20px;align-items:start}
+.resbar{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;margin-bottom:2px}
+.resbar h2{font-size:19px}
+.resbar .filters{display:flex;gap:8px;flex-wrap:wrap}
+.fchip{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line2);font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:999px;color:var(--muted);cursor:pointer}
+.fchip:hover{border-color:var(--brand);color:var(--brand-strong)}
+.fchip.on{background:var(--brand-soft);border-color:var(--brand-tint);color:var(--brand-strong)}
+.list{display:flex;flex-direction:column;gap:12px}
+.ccard{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 16px 14px;box-shadow:0 1px 2px rgba(15,23,42,.04);transition:transform .15s,box-shadow .15s,border-color .15s;cursor:pointer}
+.ccard:hover{transform:translateY(-2px);box-shadow:0 18px 38px -26px rgba(15,118,110,.5);border-color:var(--brand-tint)}
+.ccard.real{border-color:var(--brand-tint);background:linear-gradient(180deg,#fff,var(--brand-soft))}
+.cc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.cc-name{font-size:16px;font-weight:700;line-height:1.2}
+.cc-meta{color:var(--muted);font-size:12.5px;margin-top:2px;display:flex;align-items:center;gap:8px}
+.grade{flex:0 0 auto;text-align:center;border-radius:12px;padding:6px 10px;min-width:54px;background:var(--good-bg);color:var(--good)}
+.grade .g{font-size:20px;font-weight:800;line-height:1;letter-spacing:-.02em}
+.grade .gl{font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;opacity:.8}
+.grade.b{background:#e0f2fe;color:#0369a1}.grade.c{background:var(--mid-bg);color:var(--mid)}
+.cc-stats{display:flex;gap:18px;margin-top:13px;flex-wrap:wrap}
+.cc-stat .n{font-size:16px;font-weight:800;letter-spacing:-.02em}
+.cc-stat .n.est{color:var(--brand)}
+.cc-stat .l{font-size:11px;color:var(--muted)}
+.illus{font-style:italic}
+.tagi{font-size:9px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:#94a3b8;border:1px solid var(--line2);border-radius:5px;padding:1px 4px;vertical-align:middle;margin-left:5px}
+.seat{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;color:var(--good);background:var(--good-bg);padding:3px 9px;border-radius:999px}
+.seat .d{width:7px;height:7px;border-radius:50%;background:#16a34a}
+/* fit meter (collegevine) */
+.fit{display:flex;align-items:center;gap:9px;margin-top:12px;padding-top:11px;border-top:1px solid var(--line)}
+.fitbar{flex:1;height:7px;border-radius:999px;background:var(--line);overflow:hidden}
+.fitbar i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--bright),var(--brand))}
+.fit .pct{font-size:12.5px;font-weight:700;color:var(--brand-strong)}
+.fit .fl{font-size:11.5px;color:var(--muted)}
+/* map panel (stylized, not a real map) */
+.mapwrap{position:sticky;top:14px;background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+.maphead{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;border-bottom:1px solid var(--line);font-size:12.5px;color:var(--muted);font-weight:600}
+.mapcanvas{position:relative;height:430px;background:
+  linear-gradient(0deg,rgba(13,148,136,.05),rgba(13,148,136,.05)),
+  repeating-linear-gradient(0deg,transparent 0 38px,rgba(15,23,42,.05) 38px 39px),
+  repeating-linear-gradient(90deg,transparent 0 38px,rgba(15,23,42,.05) 38px 39px),#f1f6f5}
+.road{position:absolute;background:#fff;opacity:.9}
+.pin{position:absolute;transform:translate(-50%,-100%);cursor:pointer}
+.pin .dot{width:26px;height:26px;border-radius:50% 50% 50% 2px;transform:rotate(45deg);background:var(--brand);box-shadow:0 6px 14px -6px rgba(13,148,136,.8);display:flex;align-items:center;justify-content:center}
+.pin .dot b{transform:rotate(-45deg);color:#fff;font-size:12px;font-weight:800}
+.pin.alt .dot{background:#fff;border:2px solid var(--brand)}
+.pin.alt .dot b{color:var(--brand)}
+.pin .lab{position:absolute;left:50%;top:30px;transform:translateX(-50%);white-space:nowrap;background:#fff;border:1px solid var(--line2);border-radius:7px;font-size:10.5px;font-weight:700;padding:2px 7px;box-shadow:0 4px 10px -6px rgba(15,23,42,.4)}
+.mapnote{position:absolute;left:10px;bottom:10px;background:rgba(255,255,255,.92);border:1px solid var(--line2);border-radius:8px;font-size:10px;color:var(--muted);padding:4px 8px;font-style:italic}
+.foot{color:var(--muted);font-size:12.5px;padding:26px 0 50px;border-top:1px solid var(--line);margin-top:8px}
+.tag{display:inline-block;background:var(--brand-soft);color:var(--brand-strong);border:1px solid var(--brand-tint);font-size:11px;font-weight:600;padding:3px 9px;border-radius:6px}
+@media(max-width:880px){.results{grid-template-columns:1fr}.mapwrap{display:none}.hero h1{font-size:34px}.searchbar{flex-wrap:wrap;border-radius:20px}.sfield+.sfield{border-left:none;border-top:1px solid var(--line)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="nav">
+    <div class="brandmark"><div class="logo"><svg class="ic" style="width:17px;height:17px;stroke:#fff" viewBox="0 0 24 24"><path d="M3 9l9-5 9 5-9 5z"/><path d="M7 11v5c0 1 2 2 5 2s5-1 5-2v-5"/></svg></div>Community College Path</div>
+    <div class="navlinks"><a href="#">Browse</a><a href="#">Transfer</a><a href="#">Outcomes</a><button class="btn soft">Sign in</button></div>
+  </div>
+
+  <!-- HERO: search is the hero -->
+  <div class="hero">
+    <span class="eyebrow"><svg class="ic" style="width:14px;height:14px" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg> Free · start by searching</span>
+    <h1>Find a class that <em>fits your life</em> and pays off.</h1>
+    <p class="sub">Tell us what you want to study and where. We'll show real colleges near you — with open seats, transfer paths, and what graduates earn.</p>
+
+    <div class="searchbar">
+      <div class="sfield">
+        <div class="lab">I want to study</div>
+        <div class="val"><svg class="ic" style="width:16px;height:16px;color:var(--brand)" viewBox="0 0 24 24"><path d="M3 9l9-5 9 5-9 5z"/><path d="M7 11v5c0 1 2 2 5 2s5-1 5-2v-5"/></svg> Accounting</div>
+      </div>
+      <div class="sfield">
+        <div class="lab">Near</div>
+        <div class="val"><svg class="ic" style="width:16px;height:16px;color:var(--brand)" viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Atlanta, GA <span class="ph">· 30310</span></div>
+      </div>
+      <div class="sfield" style="flex:.7">
+        <div class="lab">Transfer to</div>
+        <div class="val"><span class="ph">Any university</span></div>
+      </div>
+      <button class="go" aria-label="Search"><svg class="ic" style="width:20px;height:20px;stroke:#fff" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></button>
+    </div>
+
+    <div class="cats">
+      <span class="cat on"><span class="d"></span>Accounting</span>
+      <span class="cat">Nursing</span>
+      <span class="cat">IT &amp; Cybersecurity</span>
+      <span class="cat">Welding</span>
+      <span class="cat">Business</span>
+      <span class="cat">Early Childhood</span>
+      <span class="cat">Not sure yet →</span>
+    </div>
+  </div>
+
+  <!-- RESULTS: zillow map + list -->
+  <div class="results">
+    <div class="resbar">
+      <h2>5 colleges teach Accounting near 30310</h2>
+      <div class="filters">
+        <span class="fchip on"><svg class="ic" style="width:13px;height:13px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg> Seats open this term</span>
+        <span class="fchip">Evening / weekend</span>
+        <span class="fchip">Under $8k total</span>
+        <span class="fchip">Transfers to UWG</span>
+      </div>
+    </div>
+
+    <div class="list">
+      <!-- REAL college: Atlanta Technical College -->
+      <div class="ccard real">
+        <div class="cc-top">
+          <div>
+            <div class="cc-name">Atlanta Technical College <span class="seat" style="margin-left:6px"><span class="d"></span>18 seats open</span></div>
+            <div class="cc-meta"><svg class="ic" style="width:13px;height:13px" viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> 3.1 mi · Accounting, A.S. · 60 credits</div>
+          </div>
+          <div class="grade"><div class="g">A−</div><div class="gl">Transfer</div></div>
+        </div>
+        <div class="cc-stats">
+          <div class="cc-stat"><div class="n est">$7,400</div><div class="l">Est. total cost <span class="tagi">2 yr</span></div></div>
+          <div class="cc-stat"><div class="n">$30k</div><div class="l">Median earnings, 10y</div></div>
+          <div class="cc-stat"><div class="n">4</div><div class="l">Universities accept credits</div></div>
+        </div>
+        <div class="fit">
+          <span class="fl">Fit for you</span>
+          <div class="fitbar"><i style="width:88%"></i></div>
+          <span class="pct">88% · strong match</span>
+        </div>
+      </div>
+
+      <!-- Illustrative comparators (real GA institutions, figures illustrative) -->
+      <div class="ccard">
+        <div class="cc-top">
+          <div>
+            <div class="cc-name">Georgia Piedmont Technical College <span class="seat" style="margin-left:6px"><span class="d"></span>seats open</span></div>
+            <div class="cc-meta"><svg class="ic" style="width:13px;height:13px" viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> 9.4 mi · Accounting, A.S. · 60 credits</div>
+          </div>
+          <div class="grade b"><div class="g">B+</div><div class="gl">Transfer</div></div>
+        </div>
+        <div class="cc-stats">
+          <div class="cc-stat"><div class="n est illus">$7,900</div><div class="l illus">Est. total cost <span class="tagi">illustrative</span></div></div>
+          <div class="cc-stat"><div class="n illus">$29k</div><div class="l illus">Median earnings, 10y</div></div>
+          <div class="cc-stat"><div class="n illus">3</div><div class="l illus">Universities accept credits</div></div>
+        </div>
+        <div class="fit">
+          <span class="fl">Fit for you</span>
+          <div class="fitbar"><i style="width:74%"></i></div>
+          <span class="pct">74% · good match</span>
+        </div>
+      </div>
+
+      <div class="ccard">
+        <div class="cc-top">
+          <div>
+            <div class="cc-name">Atlanta Metropolitan State College</div>
+            <div class="cc-meta"><svg class="ic" style="width:13px;height:13px" viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> 4.7 mi · Business / Accounting track</div>
+          </div>
+          <div class="grade b"><div class="g">B</div><div class="gl">Transfer</div></div>
+        </div>
+        <div class="cc-stats">
+          <div class="cc-stat"><div class="n est illus">$6,800</div><div class="l illus">Est. total cost <span class="tagi">illustrative</span></div></div>
+          <div class="cc-stat"><div class="n illus">$28k</div><div class="l illus">Median earnings, 10y</div></div>
+          <div class="cc-stat"><div class="n illus">3</div><div class="l illus">Universities accept credits</div></div>
+        </div>
+        <div class="fit">
+          <span class="fl">Fit for you</span>
+          <div class="fitbar"><i style="width:69%"></i></div>
+          <span class="pct">69% · good match</span>
+        </div>
+      </div>
+
+      <div class="ccard">
+        <div class="cc-top">
+          <div>
+            <div class="cc-name">Chattahoochee Technical College</div>
+            <div class="cc-meta"><svg class="ic" style="width:13px;height:13px" viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> 18.2 mi · Accounting, A.S.</div>
+          </div>
+          <div class="grade c"><div class="g">B−</div><div class="gl">Transfer</div></div>
+        </div>
+        <div class="cc-stats">
+          <div class="cc-stat"><div class="n est illus">$7,600</div><div class="l illus">Est. total cost <span class="tagi">illustrative</span></div></div>
+          <div class="cc-stat"><div class="n illus">$31k</div><div class="l illus">Median earnings, 10y</div></div>
+          <div class="cc-stat"><div class="n illus">4</div><div class="l illus">Universities accept credits</div></div>
+        </div>
+        <div class="fit">
+          <span class="fl">Fit for you</span>
+          <div class="fitbar"><i style="width:62%"></i></div>
+          <span class="pct">62% · farther away</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- stylized map -->
+    <div class="mapwrap">
+      <div class="maphead"><span>Map view</span><span><svg class="ic" style="width:13px;height:13px;color:var(--brand)" viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> 5 colleges</span></div>
+      <div class="mapcanvas">
+        <div class="road" style="left:0;right:0;top:46%;height:6px"></div>
+        <div class="road" style="left:0;right:0;top:72%;height:4px"></div>
+        <div class="road" style="top:0;bottom:0;left:38%;width:5px"></div>
+        <div class="road" style="top:0;bottom:0;left:67%;width:4px"></div>
+        <div class="road" style="left:10%;top:10%;width:55%;height:4px;transform:rotate(22deg);transform-origin:left"></div>
+        <div class="pin" style="left:40%;top:50%"><div class="dot"><b>1</b></div><div class="lab">Atlanta Tech · A−</div></div>
+        <div class="pin alt" style="left:67%;top:33%"><div class="dot"><b>2</b></div></div>
+        <div class="pin alt" style="left:50%;top:64%"><div class="dot"><b>3</b></div></div>
+        <div class="pin alt" style="left:79%;top:76%"><div class="dot"><b>4</b></div></div>
+        <div class="pin alt" style="left:22%;top:24%"><div class="dot"><b>5</b></div></div>
+        <div class="mapnote">Stylized map — geometry is illustrative, not to scale</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="tag">Concept · search-first home</span> &nbsp; Inspired by Airbnb (search-as-hero, category pills), Zillow (map+list split, the confident cost "estimate", filter chips), Niche (letter-grade badges), CollegeVine (fit meter). <b>Atlanta Technical College</b> figures are real GA / Accounting A.S. data; other colleges are real GA institutions but their cost / earnings / grade / fit figures are <span class="illus">illustrative</span> placeholders (flagged inline). The map is stylized, not geographic.
+  </div>
+
+</div>
+</body>
+</html>
