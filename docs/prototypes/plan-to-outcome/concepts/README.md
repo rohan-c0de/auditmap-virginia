@@ -8,6 +8,22 @@ the design direction is still being explored.
 
 Each concept is a self-contained HTML file — **just open it in a browser** (no server, no build).
 
+### Start here: the navigable set
+The newer pages form **one cross-linked, navigable experience** sharing a single brand
+stylesheet (`concept.css`), top nav (`concept-nav.js`, with a working light/dark toggle), and
+data source (`concept-data.js` → `window.CDATA`, real Atlanta Tech / Accounting A.S. data).
+Open **`index.html`** for a gallery that links every page, or jump between pages via the top nav.
+Because these share files, browse them **served from this folder** (e.g. a local static server) so
+the relative `concept.*` includes resolve. The three earlier pages below (welcome, home-search,
+compare-outcomes, journey-dashboard) remain fully self-contained.
+
+### Real-data note
+`concept-data.js` carries the real, curated dataset the journey pages read: 20 program courses
+with credits, **verified** intra-program prerequisite edges (over-matched regex output was hand-pruned
+so the graph never shows a wrong dependency), real section times/seats/instructors, real Georgia
+articulation rows, College Scorecard outcomes, and the **real per-state audit grades** (from
+`docs/state-goals/_audit-snapshot.json`) used to color the coverage map.
+
 ## Concepts
 
 ### `welcome-inspired.html` — welcome-screen visual direction
@@ -85,6 +101,44 @@ Borrows from:
 seats (18), and the West Georgia transfer count (25) are **real** Atlanta Tech / Accounting data.
 The **completed-credits state and semester layout are an illustrative example** of an in-progress
 student — the real version is driven by what the student checks off.
+
+### `index.html` — concept gallery / hub
+A simple card gallery linking every page, grouped by the student journey, with a real/illustrative
+honesty badge per page. The front door to the navigable set.
+
+### `courses.html` — course search *(real data)*
+The bread-and-butter find-a-class surface: a search box + working filter chips (open seats,
+weekend, evening, online/arranged), a list of the 17 Accounting courses that have sections this
+term (with a seat summary colored by availability), and a detail panel showing the meaningful
+prerequisite, plus a table of every real section (days/time, mode, instructor, open/total seats).
+No course descriptions are shown — we don't have an honest source for them.
+
+### `prereqs.html` — prerequisite graph *(real data · moat #1)*
+The visual dependency graph: 20 program courses in three tiers (no-prereq → after-the-basics →
+needs-earlier-courses), with SVG bezier connector lines drawn between dependent courses. Hover a
+course to light up its whole chain. Renders **only the 7 verified edges** — no inferred/guessed
+dependencies (a wrong prerequisite edge can cost a student a semester). Courses with no incoming
+line require only English placement, stated as a footnote rather than drawn with fake lines.
+
+### `transfers.html` — transfer pathway *(real data · moat #3)*
+A proportional **Sankey** flow: pick one of four Georgia universities, see your reviewed courses
+split into direct-equivalent / elective-credit / no-credit ribbons (heights proportional to the
+real counts), with a per-course detail list color-coded by outcome. In-state only. Surfaces the
+honest nuance that "reviewed" ≠ the whole program, and that more courses reviewed ≠ more that transfer.
+
+### `schedule.html` — schedule comparator *(mixed · flagged · moat #2)*
+"Google Flights for community college": block your work hours, toggle colleges, and drop course
+sections onto one weekly Mon–Sat grid; overlaps and work-hour clashes are flagged, and a
+conflict-free combo is suggested. Atlanta Tech sections are **real**; a second nearby college is
+included only to show the multi-college comparison and its sections are **clearly flagged
+illustrative**. Online/arranged sections (no fixed time) are listed separately since they can't sit
+on the grid.
+
+### `us-map.html` — coverage map *(real grades)*
+A schematic **US tile-grid** (every state equally clickable — no tiny RI/DC to miss), each state
+colored by its **real audit composite grade** (11 A · 7 B · 17 C · 6 D · 10 F). Search, hover/click
+for per-state college + section counts. Grade = **data completeness, not college quality**. A true
+geographic outline is also possible if preferred; this trades exact geography for legibility.
 
 ## How to add a new concept here
 Drop a self-contained `*.html` in this folder and add a short blurb above: what it explores,
