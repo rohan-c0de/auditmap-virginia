@@ -286,6 +286,34 @@ async function main() {
   );
   console.log(`   ${active.length} active sections across known campuses.`);
 
+  // Recover CRN for secondary components (LAB / DISC / etc.). PeopleSoft only
+  // stamps the enrollment ClassNum on the primary (LEC) component; the linked
+  // LAB rows come back with ClassNum=" ". They share Subject+CatalogNum+Campus+
+  // Term+Section with their LEC, so borrow that section's ClassNum. Without
+  // this, ~25% of CCC rows had an empty crn and the title-OK/crn-required
+  // schema check aborted the whole (college, term) on import — every City
+  // College showed 0 courses on prod.
+  const crnBySection = new Map<string, string>();
+  const sectionKey = (s: CCCRawSection) =>
+    `${s.Subject.trim()}|${s.CatalogNum.trim()}|${s.CampusCode}|${s.Term}|${(s.Section || "").trim()}`;
+  for (const s of active) {
+    if (s.ClassNum.trim()) {
+      const k = sectionKey(s);
+      if (!crnBySection.has(k)) crnBySection.set(k, s.ClassNum.trim());
+    }
+  }
+  let recovered = 0;
+  for (const s of active) {
+    if (!s.ClassNum.trim()) {
+      const crn = crnBySection.get(sectionKey(s));
+      if (crn) {
+        s.ClassNum = crn;
+        recovered++;
+      }
+    }
+  }
+  console.log(`   Recovered ${recovered} component CRNs from their enrollment section.`);
+
   // Determine term labels
   const termCodes = [...new Set(active.map((s) => s.Term))].sort();
   const termLabels: Record<string, string> = {};
