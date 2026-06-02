@@ -40,11 +40,19 @@
 .sec h2{font-size:32px;letter-spacing:-.03em;margin:8px 0 6px}
 .sec .slead{color:var(--muted);font-size:16px;max-width:620px;margin:0 0 24px}
 /* study list */
-.studygrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.studyc{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;box-shadow:var(--shadow)}
-.studyc .cc{font-weight:700;font-size:14.5px}
-.studyc .ct{color:var(--muted);font-size:12.5px;margin-top:2px;line-height:1.35}
-.studyc .cr{font-size:11px;color:var(--brand-strong);font-weight:600;margin-top:7px;display:inline-block}
+.studytiers{display:flex;flex-direction:column;gap:22px}
+.tier .tlabel{display:flex;align-items:center;gap:9px;font-size:15px;font-weight:700;letter-spacing:-.01em}
+.tier .tnum{width:24px;height:24px;border-radius:8px;background:var(--brand-soft);color:var(--brand-strong);font-size:12.5px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
+.tier .tsub{font-size:13px;color:var(--muted);margin:3px 0 11px 33px}
+.tcards{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.studyc{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:13px 15px;box-shadow:var(--shadow)}
+.studyc .cc{font-weight:700;font-size:14px}
+.studyc .ct{color:var(--muted);font-size:12px;margin-top:2px;line-height:1.35;min-height:32px}
+.studyc .meta{display:flex;align-items:center;gap:7px;margin-top:8px;flex-wrap:wrap}
+.studyc .cr{font-size:11px;color:var(--ink);font-weight:600}
+.studyc .rel{font-size:10.5px;font-weight:700;display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:999px}
+.studyc .rel.unlocks{color:var(--brand-strong);background:var(--brand-soft)}
+.studyc .rel.needs{color:var(--muted);background:var(--panel2);border:1px solid var(--line)}
 /* two-up cards (leads / cost) */
 .twoup{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .bigstat{display:flex;align-items:baseline;gap:10px;margin:6px 0 2px}
@@ -67,7 +75,7 @@
 .ctaband p{margin:6px 0 0;font-size:15px;opacity:.9;max-width:440px}
 .ctaband .btn{background:#fff;color:var(--brand-strong);flex:0 0 auto}
 .ctaband .btn:hover{background:#fff;transform:translateY(-1px)}
-@media(max-width:880px){.hero{grid-template-columns:1fr}.art{display:none}.hero h1{font-size:40px}.studygrid{grid-template-columns:1fr 1fr}.twoup{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.ctaband{flex-direction:column;align-items:flex-start}}
+@media(max-width:880px){.hero{grid-template-columns:1fr}.art{display:none}.hero h1{font-size:40px}.tcards{grid-template-columns:1fr 1fr}.twoup{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.ctaband{flex-direction:column;align-items:flex-start}}
 </style>
 </head>
 <body>
@@ -106,9 +114,9 @@
   <!-- WHAT YOU'LL STUDY -->
   <div class="sec">
     <div class="skick">What you'll study</div>
-    <h2>The classes that build on each other</h2>
-    <p class="slead">A mix of accounting core, business, and skills courses. You start with the fundamentals and work up to tax, payroll, and an internship.</p>
-    <div class="studygrid" id="studygrid"></div>
+    <h2>The classes, in the order you'd take them</h2>
+    <p class="slead">Grouped by when you can take them — what's open from day one, and what builds on earlier courses. Each card shows what it needs and what it unlocks.</p>
+    <div class="studytiers" id="studytiers"></div>
     <div class="callout">
       <svg class="ic" style="width:17px;height:17px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
       <p><b>Order matters.</b> Financial Accounting I unlocks II, which unlocks tax and governmental accounting. <a href="prereqs.html">See the full prerequisite map →</a></p>
@@ -198,10 +206,25 @@
 <script src="concept-data.js"></script>
 <script>
 var D=window.CDATA;
-// study grid: show first 9 courses
-var sg=document.getElementById('studygrid');
-sg.innerHTML=D.courses.slice(0,9).map(function(c){
-  return '<div class="studyc"><div class="cc">'+c.code+'</div><div class="ct">'+c.title+'</div><span class="cr">'+(c.credits||'')+' credits</span></div>';
+// study tiers: group courses by build level, annotate needs/unlocks (from real edges)
+var unlocks={};
+(D.edges||[]).forEach(function(e){ unlocks[e.from]=(unlocks[e.from]||0)+1; });
+var byLevel={1:[],2:[],3:[]};
+D.courses.forEach(function(c){ (byLevel[c.level]||byLevel[1]).push(c); });
+var TIER={1:['Start anytime','No course prerequisite — open from your first term.'],
+          2:['After the basics','Needs one earlier accounting course first.'],
+          3:['Builds on earlier courses','Sits at the top of a prerequisite chain.']};
+function scard(c){
+  var rel=[];
+  if(c.dependsOn&&c.dependsOn.length) rel.push('<span class="rel needs">needs '+c.dependsOn.join(', ')+'</span>');
+  if(unlocks[c.code]) rel.push('<span class="rel unlocks">unlocks '+unlocks[c.code]+' →</span>');
+  return '<div class="studyc"><div class="cc">'+c.code+'</div><div class="ct">'+c.title+'</div>'+
+    '<div class="meta"><span class="cr">'+(c.credits||'')+' cr</span>'+rel.join('')+'</div></div>';
+}
+document.getElementById('studytiers').innerHTML=[1,2,3].map(function(lv){
+  var cs=byLevel[lv]; if(!cs.length) return '';
+  return '<div class="tier"><div class="tlabel"><span class="tnum">'+lv+'</span>'+TIER[lv][0]+
+    '</div><div class="tsub">'+TIER[lv][1]+'</div><div class="tcards">'+cs.map(scard).join('')+'</div></div>';
 }).join('');
 // uni list with real transfer counts (counts that count = direct+elective)
 var tc=D.transferCounts, names={'University of West Georgia':'West Georgia','Georgia State University':'Georgia State','University of Georgia':'UGA','Georgia Tech':'Georgia Tech'};
