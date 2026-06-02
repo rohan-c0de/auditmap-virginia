@@ -15,10 +15,11 @@
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Geist",system-ui,sans-serif;font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1120px;margin:0 auto;padding:0 26px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 26px}
 h1,h2,h3{margin:0;letter-spacing:-.025em;font-weight:700}
 .ic{stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;display:inline-block;vertical-align:middle}
 a{color:var(--brand);text-decoration:none}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--muted)}
 /* nav */
 .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
 .brandmark{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px}
@@ -26,55 +27,61 @@ a{color:var(--brand);text-decoration:none}
 .navlinks{display:flex;gap:22px;align-items:center;color:var(--muted);font-size:14px}
 .navlinks a:hover{color:var(--ink)}
 .btn{font-family:inherit;font-weight:600;border-radius:999px;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:8px;transition:transform .12s,box-shadow .12s,background .12s}
-.btn.primary{background:var(--brand);color:#fff;padding:11px 18px;font-size:14px;box-shadow:0 10px 24px -12px rgba(13,148,136,.6)}
-.btn.primary:hover{background:var(--brand-strong);transform:translateY(-1px)}
 .btn.soft{background:#fff;color:var(--ink);border:1px solid var(--line2);padding:10px 16px;font-size:14px}
 .btn.soft:hover{border-color:var(--brand);color:var(--brand-strong)}
-/* hero: ask box (left) + map (right) */
-.hero2{display:grid;grid-template-columns:1.04fr .96fr;gap:36px;align-items:center;padding:30px 0 26px}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--brand-strong);font-weight:600;font-size:13px;background:var(--brand-soft);border:1px solid var(--brand-tint);padding:6px 13px;border-radius:999px;margin-bottom:18px}
-.hero2 h1{font-size:46px;line-height:1.04;letter-spacing:-.04em;font-weight:800}
-.hero2 h1 em{font-style:normal;color:var(--brand);position:relative}
-.hero2 h1 em::after{content:"";position:absolute;left:0;right:0;bottom:3px;height:9px;background:var(--brand-tint);border-radius:6px;z-index:-1;opacity:.7}
-.hero2 .sub{font-size:17px;color:var(--muted);max-width:480px;margin:16px 0 22px}
-/* the ask box (LLM natural-language search — faithful to prod CourseSearchHero) */
-.askbox{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line2);border-radius:16px;padding:8px 8px 8px 16px;box-shadow:0 1px 0 rgba(15,23,42,.04),0 10px 26px -10px rgba(13,148,136,.35);transition:border-color .12s,box-shadow .12s}
+/* HERO — full-size centered ask box */
+.hero{text-align:center;padding:46px 0 14px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--brand-strong);font-weight:600;font-size:13px;background:var(--brand-soft);border:1px solid var(--brand-tint);padding:6px 13px;border-radius:999px;margin-bottom:20px}
+.hero h1{font-size:50px;line-height:1.03;letter-spacing:-.04em;font-weight:800;max-width:780px;margin:0 auto}
+.hero h1 em{font-style:normal;color:var(--brand);position:relative}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:3px;height:10px;background:var(--brand-tint);border-radius:6px;z-index:-1;opacity:.7}
+.hero .sub{font-size:18px;color:var(--muted);max-width:600px;margin:18px auto 28px}
+/* the ask box (LLM natural-language search — faithful to prod CourseSearchHero), full size */
+.askbox{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line2);border-radius:18px;padding:9px 9px 9px 18px;box-shadow:0 1px 0 rgba(15,23,42,.04),0 12px 30px -10px rgba(13,148,136,.35);max-width:680px;margin:0 auto;transition:border-color .12s,box-shadow .12s}
 .askbox:focus-within{border-color:var(--brand);box-shadow:0 0 0 4px var(--brand-soft)}
-.askbox .si{width:20px;height:20px;color:#94a3b8;flex:0 0 auto}
-.askwrap{position:relative;flex:1;min-width:0}
-.askbox input{width:100%;border:none;outline:none;background:transparent;font-family:inherit;font-size:16px;color:var(--ink);padding:8px 0}
+.askbox .si{width:22px;height:22px;color:#94a3b8;flex:0 0 auto}
+.askwrap{position:relative;flex:1;min-width:0;text-align:left}
+.askbox input{width:100%;border:none;outline:none;background:transparent;font-family:inherit;font-size:17px;color:var(--ink);padding:10px 0}
 .askbox input::placeholder{color:#94a3b8}
-.typed{position:absolute;inset:0;display:flex;align-items:center;pointer-events:none;color:#94a3b8;font-size:16px}
+.typed{position:absolute;inset:0;display:flex;align-items:center;pointer-events:none;color:#94a3b8;font-size:17px}
 .typed .cur{display:inline-block;width:2px;height:1.1em;background:#94a3b8;margin-left:1px;animation:blink 1s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
-.askbox .go{flex:0 0 auto;background:var(--brand);color:#fff;border:none;border-radius:11px;padding:10px 16px;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.askbox .go{flex:0 0 auto;background:var(--brand);color:#fff;border:none;border-radius:13px;padding:12px 20px;font-family:inherit;font-size:15px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
 .askbox .go:hover{background:var(--brand-strong)}
-/* searching-in row */
-.sin{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:14px;font-size:13px}
-.sin .lab{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.sin{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:16px;font-size:13px}
+.sin .lab{font-family:ui-monospace,Menlo,monospace;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
 .sin .statechip{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:5px 12px;font-weight:600;cursor:pointer;border:1px solid var(--brand-tint);background:var(--brand-soft);color:var(--brand-strong)}
 .sin .statechip.empty{border-style:dashed;border-color:var(--line2);background:#fff;color:var(--muted);font-weight:500}
 .sin .statechip.need{border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft)}
-/* popular */
-.popular{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.popular .lab{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-right:2px}
+.popular{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center}
+.popular .lab{font-family:ui-monospace,Menlo,monospace;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-right:2px}
 .pop{background:#fff;border:1px solid var(--line2);color:var(--muted);font-size:12.5px;padding:6px 12px;border-radius:999px;cursor:pointer}
 .pop:hover{border-color:var(--brand);color:var(--brand-strong)}
-/* hero map */
-.heromap{background:var(--panel);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:14px 16px 10px}
-.heromap .cap{display:flex;align-items:center;justify-content:space-between;font-size:12.5px;color:var(--muted);margin-bottom:4px;min-height:20px}
-.heromap .cap b{color:var(--ink)}
-.usmap{width:100%;height:auto;display:block}
-.usmap .st{stroke:var(--panel);stroke-width:1;cursor:pointer;transition:fill .1s}
+/* BROWSE BY STATE — full-size map section */
+.mapsec{padding:46px 0 10px}
+.mapsec .shead{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+.mapsec .legend{display:flex;align-items:center;gap:14px;font-size:12px;color:var(--muted)}
+.mapsec .legend .lk{display:inline-flex;align-items:center;gap:6px}
+.mapsec .legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+.mapcap{text-align:center;min-height:22px;font-size:13.5px;color:var(--muted);margin-bottom:6px}
+.mapcap b{color:var(--ink)}
+.usmap{width:100%;height:auto;display:block;max-width:980px;margin:0 auto}
+.usmap .st{stroke:var(--bg);stroke-width:1.2;cursor:pointer;transition:fill .1s}
 .usmap .st.active{fill:var(--brand)}
 .usmap .st.active:hover{fill:var(--brand-strong)}
 .usmap .st.soon{fill:var(--line2);cursor:default}
-.usmap .st.sel{stroke:var(--ink);stroke-width:2}
-.heromap .leg{display:flex;gap:14px;font-size:11px;color:var(--muted);margin-top:6px;align-items:center}
-.heromap .leg i{width:11px;height:11px;border-radius:3px;display:inline-block;vertical-align:middle;margin-right:5px}
-.foot{color:var(--muted);font-size:12.5px;padding:24px 0 50px;border-top:1px solid var(--line);margin-top:18px}
+.usmap .st.sel{stroke:var(--ink);stroke-width:2.4}
+.listtoggle{margin-top:14px;text-align:center}
+.listtoggle summary{cursor:pointer;color:var(--muted);font-size:13.5px;list-style:none;display:inline-flex;align-items:center;gap:6px}
+.listtoggle summary:hover{color:var(--brand-strong)}
+.statelist{margin-top:16px;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.statelist a{display:flex;align-items:baseline;gap:7px;border:1px solid var(--line);background:var(--panel);border-radius:11px;padding:9px 11px;font-size:13.5px}
+.statelist a:hover{border-color:var(--brand-tint);background:var(--brand-soft)}
+.statelist .ab{font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+.statelist .cc{margin-left:auto;font-size:11.5px;color:var(--muted)}
+.foot{color:var(--muted);font-size:12.5px;padding:24px 0 50px;border-top:1px solid var(--line);margin-top:24px}
 .tag{display:inline-block;background:var(--brand-soft);color:var(--brand-strong);border:1px solid var(--brand-tint);font-size:11px;font-weight:600;padding:3px 9px;border-radius:6px}
-@media(max-width:880px){.hero2{grid-template-columns:1fr;gap:24px}.hero2 h1{font-size:36px}}
+@media(max-width:760px){.hero h1{font-size:36px}.statelist{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
@@ -85,111 +92,117 @@ a{color:var(--brand);text-decoration:none}
     <div class="navlinks"><a href="us-map.html">Browse</a><a href="transfers.html">Transfer</a><a href="compare-outcomes.html">Outcomes</a><button class="btn soft">Sign in</button></div>
   </div>
 
-  <!-- HERO: ask box + map -->
-  <div class="hero2">
-    <div>
-      <span class="eyebrow"><svg class="ic" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M3 9l9-5 9 5-9 5z"/><path d="M7 11v5c0 1 2 2 5 2s5-1 5-2v-5"/></svg> Free · no experience needed</span>
-      <h1>Ask anything about <em>community college.</em></h1>
-      <p class="sub">Type a real question — or pick your state on the map. We answer with real data: classes, prereqs, transfer, and cost.</p>
+  <!-- HERO: full-size centered ask box -->
+  <div class="hero">
+    <span class="eyebrow"><svg class="ic" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M3 9l9-5 9 5-9 5z"/><path d="M7 11v5c0 1 2 2 5 2s5-1 5-2v-5"/></svg> Free · no experience needed</span>
+    <h1>Ask anything about <em>community college.</em></h1>
+    <p class="sub">Type a real question — courses, prereqs, transfer, cost. We answer with real data from colleges in your state.</p>
 
-      <form class="askbox" id="askform" autocomplete="off">
-        <svg class="si ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
-        <div class="askwrap">
-          <input id="ask" type="text" aria-label="Ask about courses, transfer, prereqs">
-          <div class="typed" id="typed" aria-hidden="true"></div>
-        </div>
-        <button class="go" type="submit">Ask <svg class="ic" style="width:15px;height:15px;stroke:#fff" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-      </form>
-
-      <div class="sin">
-        <span class="lab">Searching in</span>
-        <span class="statechip empty" id="sinchip">select your state on the map →</span>
+    <form class="askbox" id="askform" autocomplete="off">
+      <svg class="si ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+      <div class="askwrap">
+        <input id="ask" type="text" aria-label="Ask about courses, transfer, prereqs">
+        <div class="typed" id="typed" aria-hidden="true"></div>
       </div>
+      <button class="go" type="submit">Ask <svg class="ic" style="width:16px;height:16px;stroke:#fff" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </form>
 
-      <div class="popular">
-        <span class="lab">Popular</span>
-        <span class="pop">Does ENG 111 transfer to GMU?</span>
-        <span class="pop">prereqs for BIO 256</span>
-        <span class="pop">online math, summer 2026</span>
-        <span class="pop">free college if I'm 65+</span>
-      </div>
+    <div class="sin">
+      <span class="lab">searching in</span>
+      <span class="statechip empty" id="sinchip">select your state ↓</span>
     </div>
 
-    <!-- hero map -->
-    <div class="heromap">
-      <div class="cap" id="mapcap"><span>Pick your state</span><span class="muted" id="capright">50 states + DC</span></div>
-      <svg id="map" class="usmap" viewBox="0 0 975 610" role="img" aria-label="Map of US states — click your state"></svg>
-      <div class="leg">
-        <span><i style="background:var(--brand)"></i>Available</span>
-        <span><i style="background:var(--line2)"></i>Coming soon</span>
-      </div>
+    <div class="popular">
+      <span class="lab">popular</span>
+      <span class="pop">Does ENG 111 transfer to GMU?</span>
+      <span class="pop">prereqs for BIO 256</span>
+      <span class="pop">online math, summer 2026</span>
+      <span class="pop">free college if I'm 65+</span>
     </div>
   </div>
 
+  <!-- BROWSE BY STATE: full-size map -->
+  <div class="mapsec">
+    <div class="shead">
+      <span class="mono">browse by state</span>
+      <span class="legend">
+        <span class="lk"><i style="background:var(--brand)"></i><span id="liveN">— live</span></span>
+        <span class="lk"><i style="background:var(--line2)"></i>coming soon</span>
+        <span style="color:var(--line2)">·</span>
+        <span id="totalN">— colleges total</span>
+      </span>
+    </div>
+    <div class="mapcap" id="mapcap">Click your state to start.</div>
+    <svg id="map" class="usmap" viewBox="0 0 975 610" role="img" aria-label="Map of US states — click your state"></svg>
+    <details class="listtoggle">
+      <summary><span class="closed">or see all states as a list</span><svg class="ic" style="width:13px;height:13px" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
+      <div class="statelist" id="statelist"></div>
+    </details>
+  </div>
+
   <div class="foot">
-    <span class="tag">Concept · home / landing</span> &nbsp; Keeps prod's natural-language "ask" box (cycling example questions + popular searches, routes to <code>/{state}/courses?q=</code>) and puts the live geographic state map (mirrors <code>USMap.tsx</code>) in the hero — clicking a state sets it as your "searching in" state. Real college counts; no coverage grades or fabricated results.
+    <span class="tag">Concept · home / landing</span> &nbsp; Matches prod: a full-size natural-language "ask" box (cycling example questions + popular searches, routes to <code>/{state}/courses?q=</code>) over the full-size geographic state map (mirrors <code>USMap.tsx</code>, with the live/coming-soon legend + "see all as a list" fallback). Clicking a state sets your "searching in" state. Real college counts; no coverage grades.
   </div>
 
 </div>
 
 <script src="us-states-paths.js"></script>
 <script>
-/* ---- typewriter for the ask box (faithful to prod placeholders) ---- */
+/* typewriter ask box (prod placeholders) */
 var PHRASES=["ENG 111","does this transfer to GMU?","intro biology","prereqs for BIO 256","online math, summer 2026","free college if I'm 65+"];
 var ask=document.getElementById('ask'), typed=document.getElementById('typed');
 var pi=0,ci=0,del=false,focused=false;
 ask.addEventListener('focus',function(){focused=true;render();});
-ask.addEventListener('blur',function(){focused=false;});
-ask.addEventListener('input',function(){render();});
-function render(){
-  if(ask.value!=='' || focused){ typed.style.display='none'; ask.placeholder=focused?'Search courses, transfer info, prereqs…':''; return; }
-  typed.style.display='flex';
-}
-function tw(){
-  if(ask.value!=='' || focused){ return setTimeout(tw,400); }
-  var p=PHRASES[pi];
-  if(!del){ ci++; typed.innerHTML=p.slice(0,ci)+'<span class="cur"></span>'; if(ci===p.length){del=true;return setTimeout(tw,1800);} return setTimeout(tw,60); }
-  else { ci--; typed.innerHTML=p.slice(0,ci)+'<span class="cur"></span>'; if(ci===0){del=false;pi=(pi+1)%PHRASES.length;return setTimeout(tw,400);} return setTimeout(tw,30); }
-}
+ask.addEventListener('blur',function(){focused=false;render();});
+ask.addEventListener('input',render);
+function render(){ if(ask.value!=='' || focused){typed.style.display='none';ask.placeholder=focused?'Search courses, transfer info, prereqs…':'';} else {typed.style.display='flex';} }
+function tw(){ if(ask.value!=='' || focused){return setTimeout(tw,400);} var p=PHRASES[pi];
+  if(!del){ci++;typed.innerHTML=p.slice(0,ci)+'<span class="cur"></span>';if(ci===p.length){del=true;return setTimeout(tw,1800);}return setTimeout(tw,60);}
+  else{ci--;typed.innerHTML=p.slice(0,ci)+'<span class="cur"></span>';if(ci===0){del=false;pi=(pi+1)%PHRASES.length;return setTimeout(tw,400);}return setTimeout(tw,30);} }
 render(); tw();
+document.querySelectorAll('.pop').forEach(function(b){b.addEventListener('click',function(){ask.value=b.textContent;ask.focus();render();});});
 
-document.querySelectorAll('.pop').forEach(function(b){ b.addEventListener('click',function(){ ask.value=b.textContent; ask.focus(); render(); }); });
-
-/* ---- hero map (real geographic, mirrors USMap.tsx) ---- */
+/* full-size geographic map (mirrors USMap.tsx) */
 var DATA=window.USPATHS||[];
-var svg=document.getElementById('map'), paths={};
 var ABBR={Alabama:'AL',Alaska:'AK',Arizona:'AZ',Arkansas:'AR',California:'CA',Colorado:'CO',Connecticut:'CT',Delaware:'DE','District of Columbia':'DC',Florida:'FL',Georgia:'GA',Hawaii:'HI',Idaho:'ID',Illinois:'IL',Indiana:'IN',Iowa:'IA',Kansas:'KS',Kentucky:'KY',Louisiana:'LA',Maine:'ME',Maryland:'MD',Massachusetts:'MA',Michigan:'MI',Minnesota:'MN',Mississippi:'MS',Missouri:'MO',Montana:'MT',Nebraska:'NE',Nevada:'NV','New Hampshire':'NH','New Jersey':'NJ','New Mexico':'NM','New York':'NY','North Carolina':'NC','North Dakota':'ND',Ohio:'OH',Oklahoma:'OK',Oregon:'OR',Pennsylvania:'PA','Rhode Island':'RI','South Carolina':'SC','South Dakota':'SD',Tennessee:'TN',Texas:'TX',Utah:'UT',Vermont:'VT',Virginia:'VA',Washington:'WA','West Virginia':'WV',Wisconsin:'WI',Wyoming:'WY'};
-var NS='http://www.w3.org/2000/svg', selected=null;
-var cap=document.getElementById('mapcap'), capR=document.getElementById('capright'), sinchip=document.getElementById('sinchip');
+var svg=document.getElementById('map'), NS='http://www.w3.org/2000/svg', paths={}, selected=null;
+var cap=document.getElementById('mapcap'), sinchip=document.getElementById('sinchip');
+var live=0, total=0;
 DATA.forEach(function(s){
   if(!s.d)return;
-  var p=document.createElementNS(NS,'path');
-  p.setAttribute('d',s.d);
-  var active=s.count>0;
-  p.setAttribute('class','st '+(active?'active':'soon'));
-  var t=document.createElementNS(NS,'title'); t.textContent=active?(s.name+' — '+s.count+' colleges'):(s.name+' — coming soon'); p.appendChild(t);
+  if(s.count>0){live++;total+=s.count;}
+  var p=document.createElementNS(NS,'path'); p.setAttribute('d',s.d);
+  var active=s.count>0; p.setAttribute('class','st '+(active?'active':'soon'));
+  var t=document.createElementNS(NS,'title'); t.textContent=active?(s.name+' — '+s.count+' colleges · click to browse'):(s.name+' — coming soon'); p.appendChild(t);
   if(active){
-    p.addEventListener('mouseenter',function(){ cap.querySelector('span').innerHTML='<b>'+s.name+'</b>'; capR.textContent=s.count+' colleges'; });
-    p.addEventListener('mouseleave',function(){ if(!selected){cap.querySelector('span').textContent='Pick your state'; capR.textContent='50 states + DC';} });
-    p.addEventListener('click',function(){ pick(s); });
+    p.addEventListener('mouseenter',function(){cap.innerHTML='<b>'+s.name+'</b> · '+s.count+' colleges';});
+    p.addEventListener('mouseleave',function(){if(!selected)cap.textContent='Click your state to start.';});
+    p.addEventListener('click',function(){pick(s);});
   }
   svg.appendChild(p); paths[s.name]=p;
 });
+document.getElementById('liveN').textContent=live+' live';
+document.getElementById('totalN').textContent=total.toLocaleString()+' colleges total';
 function pick(s){
   selected=s.name;
   Object.keys(paths).forEach(function(k){paths[k].classList.toggle('sel',k===s.name);});
-  cap.querySelector('span').innerHTML='<b>'+s.name+'</b>'; capR.textContent=s.count+' colleges';
-  var ab=(ABBR[s.name]||'').toLowerCase();
+  var ab=(ABBR[s.name]||'');
+  cap.innerHTML='<b>'+s.name+'</b> · '+s.count+' colleges — searching here';
   sinchip.className='statechip';
   sinchip.innerHTML='<svg class="ic" style="width:13px;height:13px" viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> '+s.name+' · '+s.count+' colleges';
-  ask.focus();
+  window.scrollTo({top:0,behavior:'smooth'});
 }
+/* list fallback */
+document.getElementById('statelist').innerHTML=DATA.filter(function(s){return s.count>0;}).sort(function(a,b){return a.name.localeCompare(b.name);}).map(function(s){
+  return '<a href="#" data-n="'+s.name+'"><span class="ab">'+(ABBR[s.name]||'')+'</span>'+s.name+'<span class="cc">'+s.count+'</span></a>';
+}).join('');
+document.querySelectorAll('#statelist a').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var s=DATA.find(function(d){return d.name===a.getAttribute('data-n');});if(s)pick(s);});});
+
 document.getElementById('askform').addEventListener('submit',function(e){
   e.preventDefault();
-  if(!selected){ sinchip.classList.add('need'); sinchip.textContent='← pick your state on the map first'; return; }
-  // concept: would route to /{state}/courses?q=<query>
+  if(!selected){sinchip.classList.add('need');sinchip.textContent='↓ pick your state on the map first';return;}
   var ab=(ABBR[selected]||'').toLowerCase();
-  cap.querySelector('span').innerHTML='<b>'+selected+'</b>'; capR.textContent='→ /'+ab+'/courses';
+  cap.innerHTML='<b>'+selected+'</b> → /'+ab+'/courses?q='+encodeURIComponent(ask.value||'');
 });
 </script>
 </body>
