@@ -68,8 +68,8 @@
   </div>
 
   <p class="muted" style="font-size:14px;max-width:640px;margin:10px 0 0">
-    Every box is a course in this program. Lines show which course unlocks which — so you can see, at a glance,
-    what you can take in your first term and what has to wait. Hover a course to light up its whole chain.
+    Every box is a course, grouped by when you can take it. The <b>unlocks&nbsp;N</b> badge marks the gateway courses.
+    Hover any course to trace its chain — what it needs, and everything it opens up — with arrows showing the order.
   </p>
 
   <div class="glegend">
@@ -146,6 +146,20 @@
     children[e.from].push(e.to);
   });
 
+  // transitive descendants — how many later courses this one ultimately unlocks
+  // (so the "unlocks N" badge equals the cards that light up on hover)
+  var descCount = {};
+  (function(){
+    var memo = {};
+    function desc(code){
+      if(memo[code]) return memo[code];
+      var s = {};
+      (children[code]||[]).forEach(function(c){ s[c]=true; var sub=desc(c); Object.keys(sub).forEach(function(k){s[k]=true;}); });
+      memo[code] = s; return s;
+    }
+    courses.forEach(function(c){ descCount[c.code] = Object.keys(desc(c.code)).length; });
+  })();
+
   // ---- render nodes ----
   var tiersEl = document.getElementById('tiers');
   var nodeEls = {}; // code -> element
@@ -164,7 +178,7 @@
       var n = document.createElement('div');
       n.className = 'node';
       n.dataset.code = c.code;
-      var feeds = (children[c.code]||[]).length;
+      var feeds = descCount[c.code]||0;
       var feedsBadge = feeds>0 ? '<span class="feeds">unlocks '+feeds+'</span>' : '';
       var chip = isOpen(c)
         ? '<span class="seat"><span class="d"></span>open now</span>'
@@ -224,69 +238,76 @@
 
   var pathByEdge = []; // {el, edge}
 
+  // transitive descendants per node (for edge reduction)
+  var descMemo = {};
+  function descSet(code){
+    if(descMemo[code]) return descMemo[code];
+    var s = {};
+    (children[code]||[]).forEach(function(c){ s[c]=true; var sub=descSet(c); Object.keys(sub).forEach(function(k){s[k]=true;}); });
+    descMemo[code] = s; return s;
+  }
+  courses.forEach(function(c){ descSet(c.code); });
+  // reduced edge set: drop u->v when v is also reachable from another child of u
+  // (transitive reduction — removes the "diamond" duplicate lines)
+  var reduced = edges.filter(function(e){
+    return !(children[e.from]||[]).some(function(w){ return w!==e.to && descMemo[w] && descMemo[w][e.to]; });
+  });
+
   function buildWires(){
     while(svg.firstChild) svg.removeChild(svg.firstChild);
     pathByEdge = [];
     var gb = graph.getBoundingClientRect();
-    // give svg an explicit pixel viewBox so coordinates map 1:1
     svg.setAttribute('viewBox', '0 0 '+gb.width+' '+gb.height);
     svg.setAttribute('width', gb.width);
     svg.setAttribute('height', gb.height);
-
-    // skip on mobile stacked layout (svg hidden anyway)
     if(getComputedStyle(svg).display === 'none') return;
 
-    edges.forEach(function(e){
+    // arrowhead markers (style=var so they adapt to light/dark)
+    var defs = document.createElementNS(SVGNS,'defs');
+    defs.innerHTML =
+      '<marker id="arrB" viewBox="0 0 8 8" refX="6.5" refY="4" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M0 0 L8 4 L0 8 z" style="fill:var(--brand)"/></marker>'+
+      '<marker id="arrM" viewBox="0 0 8 8" refX="6.5" refY="4" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M0 0 L8 4 L0 8 z" style="fill:var(--muted)"/></marker>';
+    svg.appendChild(defs);
+
+    reduced.forEach(function(e){
       var a = nodeEl(e.from), b = nodeEl(e.to);
       if(!a || !b) return;
       var ra = a.getBoundingClientRect(), rb = b.getBoundingClientRect();
-      // from = right-center of prereq node; to = left-center of dependent node
       var x1 = ra.right - gb.left, y1 = ra.top - gb.top + ra.height/2;
-      var x2 = rb.left  - gb.left, y2 = rb.top - gb.top + rb.height/2;
-      // horizontal control-point offset: ~55% of the gap, clamped for smoothness
-      var dx = Math.max(40, (x2 - x1) * 0.55);
-      var c1x = x1 + dx, c2x = x2 - dx;
-      var d = 'M '+x1.toFixed(1)+' '+y1.toFixed(1)+
-              ' C '+c1x.toFixed(1)+' '+y1.toFixed(1)+', '+
-                    c2x.toFixed(1)+' '+y2.toFixed(1)+', '+
-                    x2.toFixed(1)+' '+y2.toFixed(1);
+      var x2 = rb.left  - gb.left - 7, y2 = rb.top - gb.top + rb.height/2; // -7 = arrowhead room
+      var midx = x1 + Math.max(18, (x2 - x1) * 0.5);
+      var r = 8, down = y2 >= y1 ? 1 : -1, d;
+      if(Math.abs(y2 - y1) < 2){
+        d = 'M '+x1+' '+y1+' H '+x2;                      // straight when aligned
+      } else {
+        d = 'M '+x1+' '+y1+                                // right-angle (orthogonal) elbow w/ rounded corners
+            ' H '+(midx-r)+
+            ' Q '+midx+' '+y1+' '+midx+' '+(y1+down*r)+
+            ' V '+(y2-down*r)+
+            ' Q '+midx+' '+y2+' '+(midx+r)+' '+y2+
+            ' H '+x2;
+      }
+      var isOr = e.type === 'or';
       var p = document.createElementNS(SVGNS,'path');
       p.setAttribute('d', d);
-      var isOr = e.type === 'or';
+      p.setAttribute('fill','none');
       p.setAttribute('stroke', isOr ? 'var(--muted)' : 'var(--brand)');
-      p.setAttribute('stroke-width', isOr ? '1.6' : '2');
-      p.setAttribute('stroke-linecap','round');
+      p.setAttribute('stroke-width', isOr ? '1.8' : '2.2');
+      p.setAttribute('stroke-linejoin','round');
       if(isOr) p.setAttribute('stroke-dasharray','5 5');
-      p.setAttribute('opacity', isOr ? '0.7' : '0.85');
+      p.setAttribute('marker-end', isOr ? 'url(#arrM)' : 'url(#arrB)');
+      p.setAttribute('opacity','0');  // CLEAN AT REST — wires only appear on hover/focus
       p.dataset.from = e.from; p.dataset.to = e.to;
       svg.appendChild(p);
       pathByEdge.push({el:p, edge:e});
-
-      // tiny endpoint marker dot at the dependent side for crispness
-      var dot = document.createElementNS(SVGNS,'circle');
-      dot.setAttribute('cx', x2.toFixed(1)); dot.setAttribute('cy', y2.toFixed(1));
-      dot.setAttribute('r','2.6');
-      dot.setAttribute('fill', isOr ? 'var(--muted)' : 'var(--brand)');
-      dot.setAttribute('opacity', isOr ? '0.7' : '0.9');
-      dot.dataset.from = e.from; dot.dataset.to = e.to;
-      svg.appendChild(dot);
-      pathByEdge.push({el:dot, edge:e});
-
-      // Dashed "or" edges are explained by the legend AND an inline chip on the
-      // dependent node (see renderNodes) — no SVG mid-line label, because the
-      // column gutter is too narrow to place one without clipping.
     });
   }
 
-  // ---- hover highlighting of full chain ----
+  // ---- hover: light only the hovered course's chain ----
   function clearFocus(){
     graph.classList.remove('has-focus');
     graph.querySelectorAll('.node').forEach(function(n){ n.classList.remove('lit','root'); });
-    pathByEdge.forEach(function(o){
-      var isOr = o.edge.type==='or';
-      o.el.setAttribute('opacity', o.el.tagName==='circle' ? (isOr?'0.7':'0.9') : (isOr?'0.7':'0.85'));
-      if(o.el.tagName==='path'){ o.el.setAttribute('stroke-width', isOr?'1.6':'2'); }
-    });
+    pathByEdge.forEach(function(o){ o.el.setAttribute('opacity','0'); }); // hide every wire at rest
   }
 
   function focus(code){
@@ -302,16 +323,9 @@
       n.classList.toggle('lit', !!on);
       n.classList.toggle('root', n.dataset.code===code);
     });
-    // dim/emphasize wires: an edge is "on" if both endpoints are in the lit set
+    // show ONLY this chain's wires; everything else stays hidden
     pathByEdge.forEach(function(o){
-      var on = lit[o.edge.from] && lit[o.edge.to];
-      var isOr = o.edge.type==='or';
-      if(o.el.tagName==='path'){
-        o.el.setAttribute('opacity', on ? '1' : '0.12');
-        o.el.setAttribute('stroke-width', on ? (isOr?'2':'2.6') : (isOr?'1.6':'2'));
-      } else {
-        o.el.setAttribute('opacity', on ? '1' : '0.12');
-      }
+      o.el.setAttribute('opacity', (lit[o.edge.from] && lit[o.edge.to]) ? '1' : '0');
     });
   }
 
