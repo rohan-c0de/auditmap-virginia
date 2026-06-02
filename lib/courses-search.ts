@@ -1,6 +1,6 @@
 import type { CourseSection, Institution } from "./types";
 import { getZipCoordinates, calculateDistance } from "./geo";
-import { loadAllCourses } from "./courses";
+import { searchSections } from "./courses";
 
 // ---------------------------------------------------------------------------
 // Cross-college search
@@ -106,8 +106,12 @@ export async function searchCoursesAcrossColleges(
   totalSections: number;
   totalColleges: number;
 }> {
-  const allCourses = await loadAllCourses(term, state);
   const { prefix, number, keyword } = parseQuery(query);
+  // Push the query predicate into Postgres instead of loading every section
+  // for the term and filtering in JS (which 504'd on large states like CA,
+  // ~188k rows). The JS filters below still run on this already-narrowed set,
+  // so output is unchanged — just over 10s–1000s of rows.
+  const allCourses = await searchSections(term, state, { prefix, number, keyword });
 
   // Build institution lookup
   const instMap = new Map<string, Institution>();
