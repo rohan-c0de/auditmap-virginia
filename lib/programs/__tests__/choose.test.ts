@@ -294,3 +294,26 @@ describe("taxonomy", () => {
     );
   });
 });
+
+// --- edge cases (gaps from the session test-coverage audit) ---------------
+
+describe("recommend — edge cases", () => {
+  it("returns [] for an empty fact set", () => {
+    expect(recommend([], ans({ field: "business", goal: "job" }))).toEqual([]);
+  });
+
+  it("preserves a single match", () => {
+    const r = recommend([accounting], ans({ field: "business", goal: "pay" }));
+    expect(r.map((f) => f.slug)).toEqual(["accounting"]);
+  });
+});
+
+describe("matchesTime — null onlinePct", () => {
+  it("treats a null online share as no online availability", () => {
+    const f = fact({ slug: "x", onlinePct: null });
+    expect(matchesTime(f, "online")).toBe(false);
+    // full/part time still match regardless of online data
+    expect(matchesTime(f, "fulltime")).toBe(true);
+    expect(matchesTime(f, "parttime")).toBe(true);
+  });
+});
