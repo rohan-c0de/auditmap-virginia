@@ -2,16 +2,11 @@
 
 import { useState, useCallback } from "react";
 import PrereqFlowChart from "./PrereqFlowChart";
+import type { ChainNode } from "@/lib/prereqs";
 
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
-
-interface ChainNode {
-  course: string;
-  text: string;
-  children: ChainNode[];
-}
 
 interface PrereqChainProps {
   /** State slug for the API call (e.g., "tn", "de") */

@@ -1,226 +1,264 @@
 "use client";
 
-// ---------------------------------------------------------------------------
-// Types
-// ---------------------------------------------------------------------------
+import {
+  useCallback,
+  useEffect,
+  useId,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+import type { ChainNode } from "@/lib/prereqs";
+import { buildPrereqGraph, chainOf, formatCourseCode, type EdgeType } from "./prereqGraph";
+import DataProvenanceNote from "./DataProvenanceNote";
 
-interface ChainNode {
-  course: string;
-  text: string;
-  children: ChainNode[];
+// Wires are shown at rest so the structure reads without interaction; below
+// this node count they're near-solid, above it they soften so a big chain
+// isn't a thicket. Hover always brightens just the hovered course's chain.
+const SMALL_CHAIN = 8;
+
+interface Wire {
+  key: string;
+  from: string;
+  to: string;
+  type: EdgeType;
+  d: string;
 }
 
-// ---------------------------------------------------------------------------
-// Tree utilities
-// ---------------------------------------------------------------------------
-
-function maxDepth(node: ChainNode): number {
-  if (node.children.length === 0) return 0;
-  return 1 + Math.max(...node.children.map(maxDepth));
-}
-
-/** Flatten the tree into ordered levels (BFS). Each level is a set of
- *  courses you can take once all deeper levels are done. */
-function buildLevels(node: ChainNode): { course: string; text: string }[][] {
-  const levels: Map<string, { course: string; text: string }>[] = [];
-  const seen = new Set<string>();
-
-  function walk(n: ChainNode, depth: number) {
-    // Avoid infinite loops from circular prereqs
-    const key = `${n.course}@${depth}`;
-    if (seen.has(n.course)) return;
-    seen.add(n.course);
-
-    // Ensure the level array exists
-    while (levels.length <= depth) levels.push(new Map());
-
-    levels[depth].set(n.course, { course: n.course, text: n.text });
-
-    for (const child of n.children) {
-      walk(child, depth + 1);
-    }
-  }
-
-  // Walk children (skip root — that's the target course)
-  for (const child of node.children) {
-    walk(child, 0);
-  }
-
-  // Reverse so deepest prereqs (start courses) come first
-  levels.reverse();
-
-  return levels.map((m) => Array.from(m.values()));
-}
-
-// ---------------------------------------------------------------------------
-// CSS keyframes
-// ---------------------------------------------------------------------------
-
-function FlowStyles() {
+/**
+ * Orthogonal connector: exit the prerequisite's right edge, run vertically at
+ * `jogX`, then enter the dependent's left edge horizontally — so the
+ * (orient=auto) arrowhead always sits on a left→right segment and points
+ * forward, however tall the jump. `jogX` is assigned per edge so that two
+ * connectors leaving the same column don't stack in one vertical channel.
+ */
+function connector(x1: number, y1: number, x2: number, y2: number, jogX: number): string {
+  if (Math.abs(y2 - y1) < 2) return `M ${x1} ${y1} H ${x2}`;
+  const gap = x2 - x1;
+  if (gap < 6) return `M ${x1} ${y1} L ${x2} ${y2}`; // too tight for a clean elbow
+  const r = Math.max(2, Math.min(7, (gap - 2) / 2, Math.abs(y2 - y1) / 2));
+  const jog = Math.min(Math.max(jogX, x1 + r), x2 - r); // keep both corners in the gap
+  const down = y2 >= y1 ? 1 : -1;
   return (
-    <style>{`
-      @keyframes flow {
-        0%   { transform: translateX(-12px); opacity: 0; }
-        50%  { opacity: 1; }
-        100% { transform: translateX(24px); opacity: 0; }
-      }
-    `}</style>
+    `M ${x1} ${y1} H ${jog - r}` +
+    ` Q ${jog} ${y1} ${jog} ${y1 + down * r}` +
+    ` V ${y2 - down * r}` +
+    ` Q ${jog} ${y2} ${jog + r} ${y2}` +
+    ` H ${x2}`
   );
 }
 
-// ---------------------------------------------------------------------------
-// Main export
-// ---------------------------------------------------------------------------
+function columnLabel(col: number, columnCount: number): string {
+  if (col === 0) return "Take first";
+  if (col === columnCount - 1) return "Ready for";
+  return "Then";
+}
 
 export default function PrereqFlowChart({ tree }: { tree: ChainNode }) {
-  if (tree.children.length === 0) return null;
+  const graph = useMemo(() => buildPrereqGraph(tree), [tree]);
+  const uid = useId().replace(/:/g, "");
 
-  const depth = maxDepth(tree);
-  const levels = buildLevels(tree);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const nodeRefs = useRef<Map<string, HTMLElement>>(new Map());
+  const [wires, setWires] = useState<Wire[]>([]);
+  const [dims, setDims] = useState<{ w: number; h: number }>({ w: 0, h: 0 });
+  const [focused, setFocused] = useState<string | null>(null);
 
-  // If there's only one prereq with no further prereqs, show simple view
-  if (depth === 1 && tree.children.length <= 3) {
-    return (
-      <div className="space-y-2">
-        <FlowStyles />
-        <p className="text-[11px] font-medium text-slate-500 dark:text-slate-400">
-          Take {tree.children.length === 1 ? "this" : "these"} first:
-        </p>
-        <div className="flex flex-wrap gap-2">
-          {tree.children.map((child) => (
-            <div
-              key={child.course}
-              className="inline-flex items-center gap-2 rounded-lg border border-emerald-200 dark:border-emerald-700/60 bg-emerald-50/80 dark:bg-emerald-900/30 px-3 py-1.5"
-            >
-              <span className="text-[11px] font-bold text-emerald-700 dark:text-emerald-300">
-                {child.course}
-              </span>
-              {child.text && (
-                <span className="text-[10px] text-emerald-600/70 dark:text-emerald-400/70">
-                  {child.text}
-                </span>
-              )}
-            </div>
+  const measure = useCallback(() => {
+    const container = containerRef.current;
+    if (!container) return;
+    const cb = container.getBoundingClientRect();
+
+    // Pass 1: endpoints.
+    type Seg = { key: string; from: string; to: string; type: EdgeType; x1: number; y1: number; x2: number; y2: number };
+    const segs: Seg[] = [];
+    for (const e of graph.edges) {
+      const a = nodeRefs.current.get(e.from);
+      const b = nodeRefs.current.get(e.to);
+      if (!a || !b) continue;
+      const ra = a.getBoundingClientRect();
+      const rb = b.getBoundingClientRect();
+      segs.push({
+        key: `${e.from}|${e.to}`, from: e.from, to: e.to, type: e.type,
+        x1: ra.right - cb.left,
+        y1: ra.top - cb.top + ra.height / 2,
+        x2: rb.left - cb.left - 6, // leave room for the arrowhead
+        y2: rb.top - cb.top + rb.height / 2,
+      });
+    }
+
+    // Pass 2: give each vertical-jog connector its own channel within the gap
+    // to the right of its source column, so two jogs from the same column don't
+    // overlap into one line. Straight (same-row) connectors need no channel.
+    const byColumn = new Map<number, Seg[]>();
+    for (const s of segs) {
+      if (Math.abs(s.y1 - s.y2) <= 2) continue;
+      const key = Math.round(s.x1);
+      const list = byColumn.get(key);
+      if (list) list.push(s);
+      else byColumn.set(key, [s]);
+    }
+    const jogX = new Map<string, number>();
+    for (const [, list] of byColumn) {
+      list.sort((p, q) => p.y1 + p.y2 - (q.y1 + q.y2));
+      list.forEach((s, i) => jogX.set(s.key, s.x1 + 12 + i * 9));
+    }
+
+    const next: Wire[] = segs.map((s) => ({
+      key: s.key, from: s.from, to: s.to, type: s.type,
+      d: connector(s.x1, s.y1, s.x2, s.y2, jogX.get(s.key) ?? s.x1 + 12),
+    }));
+    setWires(next);
+    setDims({ w: cb.width, h: cb.height });
+  }, [graph]);
+
+  // Measure after layout (rAF so it runs post-paint, not synchronously in the
+  // effect), on container resize, and once fonts settle (which shifts card
+  // sizes). All measure() calls are async here, so no cascading-render churn.
+  useEffect(() => {
+    let cancelled = false;
+    const raf = requestAnimationFrame(() => {
+      if (!cancelled) measure();
+    });
+    const container = containerRef.current;
+    const ro =
+      container && typeof ResizeObserver !== "undefined"
+        ? new ResizeObserver(() => measure())
+        : null;
+    ro?.observe(container!);
+    if (typeof document !== "undefined" && document.fonts?.ready) {
+      document.fonts.ready.then(() => {
+        if (!cancelled) measure();
+      });
+    }
+    return () => {
+      cancelled = true;
+      cancelAnimationFrame(raf);
+      ro?.disconnect();
+    };
+  }, [measure]);
+
+  const columns = useMemo(() => {
+    const cols: (typeof graph.nodes)[] = Array.from({ length: graph.columnCount }, () => []);
+    for (const n of graph.nodes) cols[n.column]?.push(n);
+    return cols;
+  }, [graph]);
+
+  const lit = useMemo(
+    () => (focused ? chainOf(focused, graph.edges) : null),
+    [focused, graph.edges],
+  );
+
+  // No course prereqs to draw (e.g. all were test-score / term tokens).
+  if (graph.nodes.length <= 1 || graph.edges.length === 0) return null;
+
+  const baseWireOpacity = graph.nodes.length <= SMALL_CHAIN ? 0.9 : 0.45;
+
+  return (
+    <div>
+      <style>{`
+        .prq-${uid}{--prq-req:#0d9488;--prq-or:#94a3b8;}
+        :where(.dark) .prq-${uid}{--prq-req:#2dd4bf;--prq-or:#64748b;}
+      `}</style>
+
+      <div className={`prq-${uid} overflow-x-auto`}>
+        <div
+          ref={containerRef}
+          className="relative inline-flex items-stretch gap-12 pt-3"
+          style={{ minWidth: "min-content" }}
+        >
+          {/* Connector overlay — decorative; the ordered columns below carry the meaning. */}
+          <svg
+            className="pointer-events-none absolute inset-0 overflow-visible"
+            width={dims.w}
+            height={dims.h}
+            viewBox={`0 0 ${dims.w} ${dims.h}`}
+            aria-hidden="true"
+          >
+            <defs>
+              <marker id={`req-${uid}`} viewBox="0 0 8 8" refX="6.5" refY="4" markerWidth="5.5" markerHeight="5.5" orient="auto">
+                <path d="M0 0 L8 4 L0 8 z" style={{ fill: "var(--prq-req)" }} />
+              </marker>
+              <marker id={`or-${uid}`} viewBox="0 0 8 8" refX="6.5" refY="4" markerWidth="5.5" markerHeight="5.5" orient="auto">
+                <path d="M0 0 L8 4 L0 8 z" style={{ fill: "var(--prq-or)" }} />
+              </marker>
+            </defs>
+            {wires.map((w) => {
+              const isOr = w.type === "or";
+              const opacity = lit
+                ? lit.has(w.from) && lit.has(w.to)
+                  ? 1
+                  : 0.06
+                : baseWireOpacity;
+              return (
+                <path
+                  key={w.key}
+                  data-from={w.from}
+                  data-to={w.to}
+                  d={w.d}
+                  fill="none"
+                  style={{ stroke: isOr ? "var(--prq-or)" : "var(--prq-req)" }}
+                  strokeWidth={isOr ? 1.6 : 2.2}
+                  strokeLinejoin="round"
+                  strokeDasharray={isOr ? "5 5" : undefined}
+                  markerEnd={`url(#${isOr ? "or" : "req"}-${uid})`}
+                  opacity={opacity}
+                />
+              );
+            })}
+          </svg>
+
+          {columns.map((col, ci) => (
+            <ol key={ci} className="relative z-10 m-0 flex list-none flex-col gap-2.5 p-0">
+              <li className="text-[9px] font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+                {columnLabel(ci, graph.columnCount)}
+              </li>
+              {col.map((node) => {
+                const dim = lit ? !lit.has(node.code) : false;
+                const tone = node.isRoot
+                  ? "border-amber-300 bg-amber-50 dark:border-amber-600/60 dark:bg-amber-900/30"
+                  : node.isLeaf
+                    ? "border-emerald-200 bg-emerald-50/80 dark:border-emerald-700/60 dark:bg-emerald-900/30"
+                    : "border-slate-200 bg-white dark:border-slate-600/60 dark:bg-slate-700/50";
+                const codeTone = node.isRoot
+                  ? "text-amber-800 dark:text-amber-200"
+                  : node.isLeaf
+                    ? "text-emerald-700 dark:text-emerald-300"
+                    : "text-slate-700 dark:text-slate-200";
+                return (
+                  <li key={node.code}>
+                    <button
+                      type="button"
+                      ref={(el) => {
+                        const m = nodeRefs.current;
+                        if (el) m.set(node.code, el);
+                        else m.delete(node.code);
+                      }}
+                      onMouseEnter={() => setFocused(node.code)}
+                      onMouseLeave={() => setFocused(null)}
+                      onFocus={() => setFocused(node.code)}
+                      onBlur={() => setFocused(null)}
+                      className={`flex w-full items-center gap-1.5 rounded-lg border px-2.5 py-1.5 text-left transition-opacity ${tone} ${dim ? "opacity-30" : "opacity-100"}`}
+                    >
+                      <span className={`text-[11px] font-bold ${codeTone}`}>{formatCourseCode(node.code)}</span>
+                      {node.isRoot && (
+                        <svg className="h-3 w-3 shrink-0 text-amber-500 dark:text-amber-400" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                      )}
+                    </button>
+                  </li>
+                );
+              })}
+            </ol>
           ))}
         </div>
-        <div className="flex items-center gap-1.5 pt-1">
-          <svg className="w-3 h-3 text-slate-300 dark:text-slate-600" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
-          </svg>
-          <span className="text-[11px] font-medium text-amber-600 dark:text-amber-400">
-            Then take {tree.course}
-          </span>
-        </div>
       </div>
-    );
-  }
 
-  // Multi-level: show step-by-step
-  return (
-    <div className="space-y-1">
-      <FlowStyles />
-
-      {/* Steps */}
-      <ol className="relative space-y-0">
-        {levels.map((level, i) => {
-          const isFirst = i === 0;
-          const stepNum = i + 1;
-          const label = isFirst
-            ? "Start here"
-            : `Step ${stepNum}`;
-
-          return (
-            <li key={i} className="relative flex gap-3 pb-3">
-              {/* Vertical line */}
-              {i < levels.length - 1 && (
-                <div className="absolute left-[11px] top-[24px] bottom-0 w-px bg-gradient-to-b from-slate-200 to-slate-100 dark:from-slate-600 dark:to-slate-700" />
-              )}
-
-              {/* Step indicator */}
-              <div className="shrink-0 flex flex-col items-center">
-                <div
-                  className={`
-                    flex items-center justify-center w-[23px] h-[23px] rounded-full text-[9px] font-black
-                    ${isFirst
-                      ? "bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400 ring-2 ring-emerald-200 dark:ring-emerald-700/60"
-                      : "bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 ring-1 ring-slate-200 dark:ring-slate-600"
-                    }
-                  `}
-                >
-                  {stepNum}
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="flex-1 min-w-0 pt-0.5">
-                <p className="text-[10px] font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-1.5">
-                  {label}
-                </p>
-                <div className="flex flex-wrap gap-1.5">
-                  {level.map((item) => (
-                    <div
-                      key={item.course}
-                      className={`
-                        inline-flex items-center gap-2 rounded-lg border px-2.5 py-1.5
-                        ${isFirst
-                          ? "border-emerald-200 dark:border-emerald-700/60 bg-emerald-50/80 dark:bg-emerald-900/30"
-                          : "border-slate-200 dark:border-slate-600/60 bg-white/80 dark:bg-slate-700/50"
-                        }
-                      `}
-                    >
-                      <span
-                        className={`text-[11px] font-bold ${
-                          isFirst
-                            ? "text-emerald-700 dark:text-emerald-300"
-                            : "text-slate-700 dark:text-slate-200"
-                        }`}
-                      >
-                        {item.course}
-                      </span>
-                      {item.text && (
-                        <span className="text-[10px] text-slate-400 dark:text-slate-500 truncate max-w-[150px]">
-                          {item.text}
-                        </span>
-                      )}
-                    </div>
-                  ))}
-                  {level.length > 1 && (
-                    <span className="self-center text-[9px] font-medium text-slate-300 dark:text-slate-600 italic">
-                      (take all)
-                    </span>
-                  )}
-                </div>
-              </div>
-            </li>
-          );
-        })}
-
-        {/* Final: Target course */}
-        <li className="relative flex gap-3">
-          <div className="shrink-0 flex flex-col items-center">
-            <div className="flex items-center justify-center w-[23px] h-[23px] rounded-full bg-amber-100 dark:bg-amber-900/50 text-amber-600 dark:text-amber-400 ring-2 ring-amber-200 dark:ring-amber-700/60">
-              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-              </svg>
-            </div>
-          </div>
-          <div className="flex-1 pt-0.5">
-            <p className="text-[10px] font-semibold text-amber-500 dark:text-amber-400 uppercase tracking-wider mb-1.5">
-              Ready
-            </p>
-            <div className="inline-flex items-center gap-2 rounded-lg border border-amber-200 dark:border-amber-600/60 bg-amber-50/80 dark:bg-amber-900/30 px-2.5 py-1.5">
-              <span className="text-[11px] font-bold text-amber-700 dark:text-amber-200">
-                {tree.course}
-              </span>
-              {tree.text && (
-                <span className="text-[10px] text-amber-500 dark:text-amber-400/70 truncate max-w-[180px]">
-                  {tree.text}
-                </span>
-              )}
-            </div>
-          </div>
-        </li>
-      </ol>
+      <DataProvenanceNote>
+        Prerequisites are pulled automatically from the college catalog — confirm
+        with an advisor before you register.
+      </DataProvenanceNote>
     </div>
   );
 }

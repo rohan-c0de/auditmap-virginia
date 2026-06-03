@@ -91,10 +91,15 @@ export function parsePrereqGroups(text: string, courses: string[]): string[][] {
   const groups: string[][] = [];
   const assigned = new Set<string>();
   for (const chunk of chunks) {
+    const chunkUpper = chunk.toUpperCase();
     const group: string[] = [];
     for (const course of courses) {
       if (assigned.has(course)) continue;
-      if (chunk.toUpperCase().includes(course)) {
+      // Case-insensitive on both sides: course codes can be stored mixed-case
+      // ("Business (BUS) 121"), and a case-sensitive match silently drops them
+      // out of their OR group — making "X or Y" render as "X and Y", a wrong
+      // (and costly) prerequisite signal.
+      if (chunkUpper.includes(course.toUpperCase())) {
         group.push(course);
         assigned.add(course);
       }
