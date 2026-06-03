@@ -40,23 +40,36 @@ export function chain(primary: Classifier, fallback: Classifier): Classifier {
   };
 }
 
-/** Build one provider's llm + cache namespace by name. Null = anthropic/unknown. */
-function buildProvider(name: string | undefined): { llm: Classifier; modelVersion: string } | null {
+/**
+ * Build one provider's llm + cache namespace from a spec.
+ *
+ * Spec is `provider` or `provider:model` (model = everything after the first
+ * colon, so Groq's "openai/gpt-oss-20b" and Cloudflare's "@cf/..." both work).
+ * The per-spec model override lets a fallback use a DIFFERENT model than the
+ * primary — e.g. primary groq:gpt-oss-120b, fallback groq:gpt-oss-20b. Groq's
+ * free-tier rate limits are PER-MODEL, so falling back to a second Groq model
+ * usually dodges the primary's 429 and answers in ~0.5s — far better than the
+ * slow (7-30s) Cloudflare 70B. Null = anthropic/unknown.
+ */
+function buildProvider(spec: string | undefined): { llm: Classifier; modelVersion: string } | null {
+  if (!spec) return null;
+  const colon = spec.indexOf(":");
+  const name = colon === -1 ? spec : spec.slice(0, colon);
+  const modelOverride = colon === -1 ? undefined : spec.slice(colon + 1);
   switch (name) {
     case "cloudflare": {
-      const model = process.env.CF_MODEL ?? "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
+      const model = modelOverride ?? process.env.CF_MODEL ?? "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
       return {
         llm: localClassifier({
           wire: "openai",
           baseUrl: `https://api.cloudflare.com/client/v4/accounts/${process.env.CF_ACCOUNT_ID}/ai/v1`,
           apiKey: process.env.CF_API_TOKEN,
           model,
-          // Workers AI's 70B latency is variable (often 7-30s under load). The
-          // answer card is non-blocking and Supabase-cached, so we'd rather wait
-          // and populate (+ cache) it than abort. Kept under the route's
-          // maxDuration. If snappier responses matter, CLASSIFIER_PROVIDER=groq
-          // is the same code path and sub-second.
-          timeoutMs: 45_000,
+          // Workers AI's 70B is slow + variable (7-30s+). It's now used mainly as
+          // a LAST-RESORT fallback, so fail fast (12s) rather than make a user
+          // wait 45s for a card that may not come. Override with CF_TIMEOUT_MS
+          // if running Cloudflare as the primary.
+          timeoutMs: Number(process.env.CF_TIMEOUT_MS ?? 12_000),
         }),
         modelVersion: `cf:${model}`,
       };
@@ -64,8 +77,9 @@ function buildProvider(name: string | undefined): { llm: Classifier; modelVersio
     case "groq": {
       // Must be a Groq model that supports response_format json_schema (Groq's
       // structured-outputs list). llama-3.3-70b-versatile does NOT — it only
-      // does json_object. gpt-oss-120b is fast (~1-2s) and schema-capable.
-      const model = process.env.GROQ_MODEL ?? "openai/gpt-oss-120b";
+      // does json_object. gpt-oss-120b is the accurate default (~1-2s);
+      // gpt-oss-20b is faster (~0.5s) and a good rate-limit fallback.
+      const model = modelOverride ?? process.env.GROQ_MODEL ?? "openai/gpt-oss-120b";
       return {
         llm: localClassifier({
           wire: "openai",
@@ -78,7 +92,7 @@ function buildProvider(name: string | undefined): { llm: Classifier; modelVersio
       };
     }
     case "ollama": {
-      const model = process.env.OLLAMA_MODEL ?? "qwen2.5:7b-instruct";
+      const model = modelOverride ?? process.env.OLLAMA_MODEL ?? "qwen2.5:7b-instruct";
       return {
         llm: localClassifier({
           wire: "ollama",
@@ -93,6 +107,11 @@ function buildProvider(name: string | undefined): { llm: Classifier; modelVersio
     default:
       return null; // anthropic — the existing Claude Haiku path
   }
+}
+
+/** Chain N classifiers: try each in order, falling to the next on any throw. */
+export function chainAll(classifiers: Classifier[]): Classifier {
+  return classifiers.reduce((primary, next) => chain(primary, next));
 }
 
 /**
@@ -111,14 +130,23 @@ function providerDefault(): { llm: Classifier; modelVersion: string } | null {
   const primary = buildProvider(process.env.CLASSIFIER_PROVIDER);
   if (!primary) return null;
 
-  const fallbackName = process.env.CLASSIFIER_FALLBACK;
-  if (fallbackName && fallbackName !== process.env.CLASSIFIER_PROVIDER) {
-    const fallback = buildProvider(fallbackName);
-    if (fallback) {
-      return { llm: chain(primary.llm, fallback.llm), modelVersion: primary.modelVersion };
-    }
-  }
-  return primary;
+  // CLASSIFIER_FALLBACK is a comma-separated list of `provider[:model]` specs,
+  // tried in order when the primary (then each prior fallback) errors. Skip any
+  // that resolve to the same cache namespace as the primary (a pointless retry).
+  // Recommended prod chain: groq:openai/gpt-oss-20b,cloudflare
+  const fallbacks = (process.env.CLASSIFIER_FALLBACK ?? "")
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .map(buildProvider)
+    .filter((p): p is { llm: Classifier; modelVersion: string } => p !== null)
+    .filter((p) => p.modelVersion !== primary.modelVersion);
+
+  if (fallbacks.length === 0) return primary;
+  return {
+    llm: chainAll([primary, ...fallbacks].map((p) => p.llm)),
+    modelVersion: primary.modelVersion,
+  };
 }
 
 /** Compose a cache-backed classifier from injectable parts. */
