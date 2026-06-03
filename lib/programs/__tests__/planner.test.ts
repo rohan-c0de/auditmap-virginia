@@ -213,3 +213,119 @@ describe("buildMajorPlan — targeted transfer loader integration", () => {
     expect(loadTransferMappingsForCoursesMock).not.toHaveBeenCalled();
   });
 });
+
+// ───────────────────────────────────────────────────────────────────────────
+// Audit pass: planner integration with the loader's post-fix skip-unsafe
+// behavior. The loader now silently skips course tokens that don't match
+// /^[A-Z0-9-]+$/i — these tests verify the planner doesn't crash on those
+// courses and still renders them in the requirement list (just without
+// transfer info).
+// ───────────────────────────────────────────────────────────────────────────
+
+describe("buildMajorPlan — audit: post-fix behavior with unsafe course codes", () => {
+  it("a program course with a comma in its code is still listed in the plan; just has no transfer verdicts", async () => {
+    loadCollegeProgramsMock.mockResolvedValue([
+      {
+        ...FAKE_PROGRAM,
+        title: "Plan With Unsafe Course",
+        requirement_groups: [
+          {
+            name: "Core",
+            credits_required: null,
+            choose_n: null,
+            courses: [
+              { prefix: "CS", number: "110", title: "Intro", credits: "4", or_alternatives: [] },
+              { prefix: "CS", number: "120", title: "DS", credits: "4", or_alternatives: [] },
+              { prefix: "CS", number: "210", title: "Sys", credits: "4", or_alternatives: [] },
+              { prefix: "MATH", number: "280", title: "Calc1", credits: "5", or_alternatives: [] },
+              { prefix: "MATH", number: "281", title: "Calc2", credits: "5", or_alternatives: [] },
+              // Hostile / malformed code — loader should skip, but the course
+              // must still appear in the plan UI so the student sees the
+              // requirement (just with no transfer info next to it).
+              { prefix: "BAD,SQL", number: "110", title: "Bad", credits: "3", or_alternatives: [] },
+            ],
+          },
+        ],
+      },
+    ]);
+    loadTransferMappingsForCoursesMock.mockResolvedValue([
+      makeMapping("CS", "110", "ucsd"),
+    ]);
+
+    const plan = await buildMajorPlan(
+      "ca",
+      "cuyamaca",
+      programSlug({ title: "Plan With Unsafe Course", credential: "AS" }),
+    );
+    expect(plan).not.toBeNull();
+    const allCourses = plan!.groups.flatMap((g) => g.courses);
+    const bad = allCourses.find((c) => c.code === "BAD,SQL 110");
+    expect(bad).toBeDefined();
+    expect(bad!.acceptingCount).toBe(0);
+    expect(Object.keys(bad!.transfers)).toHaveLength(0);
+  });
+
+  it("a program course with whitespace in its code (trailing space) still gets its transfers resolved", async () => {
+    loadCollegeProgramsMock.mockResolvedValue([
+      {
+        ...FAKE_PROGRAM,
+        title: "Plan With Whitespace",
+        requirement_groups: [
+          {
+            name: "Core",
+            credits_required: null,
+            choose_n: null,
+            courses: [
+              // " CS " with leading + trailing space — scraped programs do
+              // occasionally have this. The loader trims before querying;
+              // the planner's joinKey also strips whitespace, so the lookup
+              // must still find the mapping that came back under "CS"/"110".
+              { prefix: " CS ", number: " 110 ", title: "Intro", credits: "4", or_alternatives: [] },
+              { prefix: "CS", number: "120", title: "DS", credits: "4", or_alternatives: [] },
+              { prefix: "CS", number: "210", title: "Sys", credits: "4", or_alternatives: [] },
+              { prefix: "MATH", number: "280", title: "C1", credits: "5", or_alternatives: [] },
+              { prefix: "MATH", number: "281", title: "C2", credits: "5", or_alternatives: [] },
+            ],
+          },
+        ],
+      },
+    ]);
+    // Supabase row comes back with trimmed values (as it would in prod).
+    loadTransferMappingsForCoursesMock.mockResolvedValue([
+      makeMapping("CS", "110", "ucsd"),
+    ]);
+
+    const plan = await buildMajorPlan(
+      "ca",
+      "cuyamaca",
+      programSlug({ title: "Plan With Whitespace", credential: "AS" }),
+    );
+    expect(plan).not.toBeNull();
+    const cs110 = plan!.groups
+      .flatMap((g) => g.courses)
+      .find((c) => c.code === " CS  110 " || c.code === "CS 110" || c.code === " CS   110 ");
+    expect(cs110).toBeDefined();
+    // The transfer to UCSD MUST resolve despite the input whitespace,
+    // because joinKey strips it on both the program side and the result side.
+    expect(cs110!.acceptingCount).toBe(1);
+    expect(cs110!.transfers.ucsd?.status).toBe("direct");
+  });
+
+  it("mapping rows for a (prefix, number) NOT in the program are ignored without crashing", async () => {
+    loadTransferMappingsForCoursesMock.mockResolvedValue([
+      makeMapping("CS", "110", "ucsd"),
+      // Bogus extra row — should NEVER appear in any output because no
+      // group has BIO 999.
+      makeMapping("BIO", "999", "ucsd"),
+    ]);
+
+    const plan = await buildMajorPlan("ca", "cuyamaca", programSlug(FAKE_PROGRAM));
+    expect(plan).not.toBeNull();
+    const allCodes = plan!.groups.flatMap((g) => g.courses).map((c) => c.code);
+    expect(allCodes).not.toContain("BIO 999");
+    // UCSD coverage shouldn't be inflated by the orphan row.
+    const ucsd = plan!.universities.find((u) => u.slug === "ucsd");
+    // 1 group occurrence of CS 110 + 1 of Math group CS 110 = 2.
+    expect(ucsd?.accepts).toBe(2);
+  });
+});
