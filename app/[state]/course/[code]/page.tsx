@@ -21,6 +21,8 @@ import {
   getCourseLastUpdated,
   formatLastUpdated,
 } from "@/lib/data-freshness";
+import SectionSeats from "@/components/SectionSeats";
+import { aggregateSeats, aggregateLabel } from "@/lib/seats";
 
 export const revalidate = 604800; // 7 days — pSEO content rarely changes
 
@@ -341,9 +343,9 @@ export default async function CoursePage(props: PageProps) {
     .sort(([a], [b]) => a.localeCompare(b))
     .slice(0, 12);
 
-  // Seats summary
-  const totalSeats = sections.reduce((sum, s) => sum + (s.seats_open ?? 0), 0);
-  const sectionsWithSeats = sections.filter((s) => s.seats_open !== null && s.seats_open > 0).length;
+  // Seats summary — aggregated honestly (negatives = waitlist, sentinels, and
+  // 0/1 flag states never inflate the count). See lib/seats.ts.
+  const seatSummaryLabel = aggregateLabel(aggregateSeats(sections));
 
   const lastUpdated = getCourseLastUpdated(state);
 
@@ -493,9 +495,9 @@ export default async function CoursePage(props: PageProps) {
               {colleges.length === 1 ? "college" : "colleges"}
             </span>
             <span className="text-gray-400 dark:text-slate-500">{term}</span>
-            {sectionsWithSeats > 0 && (
+            {seatSummaryLabel && (
               <span className="text-emerald-600 dark:text-emerald-400">
-                {totalSeats} {totalSeats === 1 ? "seat" : "seats"} open
+                {seatSummaryLabel}
               </span>
             )}
             {lastUpdated && (
@@ -930,19 +932,7 @@ function CollegeBlock({
                       </span>
                     </td>
                     <td className="px-3 py-2">
-                      {s.seats_open !== null && s.seats_open !== undefined ? (
-                        <span className={`inline-block rounded-full px-2 py-0.5 text-[10px] font-medium ${
-                          s.seats_open > 10
-                            ? "bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400"
-                            : s.seats_open > 0
-                              ? "bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400"
-                              : "bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-400"
-                        }`}>
-                          {s.seats_open}{s.seats_total ? `/${s.seats_total}` : ""}
-                        </span>
-                      ) : (
-                        <span className="text-[10px] text-gray-400 dark:text-slate-500">&mdash;</span>
-                      )}
+                      <SectionSeats open={s.seats_open} total={s.seats_total} />
                     </td>
                   </tr>
                 );

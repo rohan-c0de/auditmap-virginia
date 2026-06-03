@@ -6,6 +6,7 @@ import type { GeneratedSchedule, ScheduleResponse, ScheduleSection } from "@/lib
 import WeeklyCalendar from "./WeeklyCalendar";
 import ScoreBar from "./ScoreBar";
 import { isValidTime, expandDays } from "@/lib/time-utils";
+import SectionSeats from "@/components/SectionSeats";
 import { useAuth } from "@/lib/hooks/useAuth";
 import { createClient } from "@/lib/supabase/client";
 import { track } from "@/lib/analytics";
@@ -429,17 +430,7 @@ function ScheduleCard({
                   {s.distance !== null && (
                     <span className="ml-1 text-gray-400 dark:text-slate-500">{s.distance} mi</span>
                   )}
-                  {s.seats_open !== null && s.seats_open !== undefined && (
-                    <span className={`ml-1.5 inline-block rounded-full px-1.5 py-0 text-[10px] font-medium ${
-                      s.seats_open > 10
-                        ? "bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400"
-                        : s.seats_open > 0
-                          ? "bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400"
-                          : "bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-400"
-                    }`}>
-                      {s.seats_open} seat{s.seats_open !== 1 ? "s" : ""}
-                    </span>
-                  )}
+                  <SectionSeats open={s.seats_open} total={s.seats_total} className="ml-1.5" hideUnknown />
                   {transferStyle && (
                     <span className={`ml-1.5 inline-block rounded-full px-1.5 py-0 text-[10px] font-medium ${transferStyle.bg} ${transferStyle.text}`}>
                       {transferStyle.label}
@@ -642,19 +633,7 @@ function ScheduleCard({
                         </span>
                       </td>
                       <td className="px-3 py-2 text-gray-600 dark:text-slate-400">
-                        {s.seats_open !== null && s.seats_open !== undefined ? (
-                          <span className={`inline-block rounded-full px-2 py-0.5 text-[10px] font-medium ${
-                            s.seats_open > 10
-                              ? "bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400"
-                              : s.seats_open > 0
-                                ? "bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400"
-                                : "bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-400"
-                          }`}>
-                            {s.seats_open}{s.seats_total ? `/${s.seats_total}` : ""}
-                          </span>
-                        ) : (
-                          <span className="text-[10px] text-gray-400 dark:text-slate-500">—</span>
-                        )}
+                        <SectionSeats open={s.seats_open} total={s.seats_total} />
                       </td>
                       {sections.some((sec) => sec.transferStatus) && (
                         <td className="px-3 py-2">

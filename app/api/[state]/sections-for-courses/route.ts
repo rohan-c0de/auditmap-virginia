@@ -4,8 +4,12 @@
  * Bulk seat-availability lookup for the SemesterPlanner. For each requested
  * (course_prefix, course_number) pair, returns:
  *   - section_count          how many sections offered this term
- *   - total_seats_open       sum of seats_open across those sections
- *   - total_seats_total      sum of seats_total across those sections
+ *   - total_seats_open       trustworthy sum of open seats (via lib/seats —
+ *                            negatives/sentinels/0-1 flags excluded), or null
+ *                            when no section reports a real count
+ *   - open_sections          sections that are open/available (fallback for
+ *                            flag-only states where total_seats_open is null)
+ *   - total_seats_total      always null — summed capacities aren't trustworthy
  *   - scraped_at             timestamp of the freshest section row (proxy
  *                            for 'last updated'; used by the planner to
  *                            display 'seats as of [timestamp]')
@@ -31,6 +35,7 @@ import { rateLimit, getClientKey } from "@/lib/rate-limit";
 import { isValidState } from "@/lib/states/registry";
 import { getCurrentTerm } from "@/lib/terms";
 import { getAvailableTerms } from "@/lib/courses";
+import { aggregateSeats } from "@/lib/seats";
 
 type RouteContext = { params: Promise<{ state: string }> };
 
@@ -56,8 +61,9 @@ type SectionRow = {
 interface SectionSummary {
   course_code: string;
   section_count: number;
-  total_seats_open: number | null;
-  total_seats_total: number | null;
+  total_seats_open: number | null; // trustworthy open-seat sum, null if none real
+  open_sections: number; // sections that are open/available (flag-state fallback)
+  total_seats_total: number | null; // always null — summed totals aren't trustworthy
   scraped_at: string | null;
   is_stale: boolean;
   sample_sections: Array<{
@@ -179,6 +185,7 @@ export async function GET(request: NextRequest, context: RouteContext) {
         course_code: code,
         section_count: 0,
         total_seats_open: null,
+        open_sections: 0,
         total_seats_total: null,
         scraped_at: null,
         is_stale: false,
@@ -186,20 +193,11 @@ export async function GET(request: NextRequest, context: RouteContext) {
       };
     }
 
-    let seatsOpenSum = 0;
-    let seatsTotalSum = 0;
-    let hadOpen = false;
-    let hadTotal = false;
+    // Aggregate seats honestly: negatives (waitlist), sentinels (≥1000), and
+    // 0/1 flag-state values never inflate the count. See lib/seats.ts.
+    const seatAgg = aggregateSeats(rows);
     let freshest = 0;
     for (const r of rows) {
-      if (r.seats_open != null) {
-        seatsOpenSum += r.seats_open;
-        hadOpen = true;
-      }
-      if (r.seats_total != null) {
-        seatsTotalSum += r.seats_total;
-        hadTotal = true;
-      }
       const t = new Date(r.created_at).getTime();
       if (t > freshest) freshest = t;
     }
@@ -218,8 +216,11 @@ export async function GET(request: NextRequest, context: RouteContext) {
     return {
       course_code: code,
       section_count: rows.length,
-      total_seats_open: hadOpen ? seatsOpenSum : null,
-      total_seats_total: hadTotal ? seatsTotalSum : null,
+      // Honest: trustworthy open-seat sum (null if no section has a real count),
+      // plus open-section count for flag/sentinel states to fall back on.
+      total_seats_open: seatAgg.openSeats,
+      open_sections: seatAgg.openSections,
+      total_seats_total: null,
       scraped_at: freshest > 0 ? new Date(freshest).toISOString() : null,
       is_stale: freshest > 0 ? now - freshest > STALE_THRESHOLD_MS : false,
       sample_sections,
