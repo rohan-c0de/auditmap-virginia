@@ -25,19 +25,16 @@ interface Wire {
   d: string;
 }
 
-/** Orthogonal elbow with rounded corners, prereq (right edge) → dependent (left edge). */
-function elbow(x1: number, y1: number, x2: number, y2: number): string {
+/**
+ * Smooth S-curve from a prerequisite's right edge to its dependent's left edge.
+ * Always approaches the target horizontally from the left, so the (orient=auto)
+ * arrowhead points forward. An orthogonal elbow reversed its final segment when
+ * the column gap was narrow, which flipped the arrowhead backwards.
+ */
+function connector(x1: number, y1: number, x2: number, y2: number): string {
   if (Math.abs(y2 - y1) < 2) return `M ${x1} ${y1} H ${x2}`;
-  const midx = x1 + Math.max(16, (x2 - x1) * 0.5);
-  const r = 7;
-  const down = y2 >= y1 ? 1 : -1;
-  return (
-    `M ${x1} ${y1} H ${midx - r}` +
-    ` Q ${midx} ${y1} ${midx} ${y1 + down * r}` +
-    ` V ${y2 - down * r}` +
-    ` Q ${midx} ${y2} ${midx + r} ${y2}` +
-    ` H ${x2}`
-  );
+  const c = Math.min((x2 - x1) * 0.5, 60); // ≤ half-gap, so control points never cross
+  return `M ${x1} ${y1} C ${x1 + c} ${y1}, ${x2 - c} ${y2}, ${x2} ${y2}`;
 }
 
 function columnLabel(col: number, columnCount: number): string {
@@ -71,7 +68,7 @@ export default function PrereqFlowChart({ tree }: { tree: ChainNode }) {
       const y1 = ra.top - cb.top + ra.height / 2;
       const x2 = rb.left - cb.left - 6; // leave room for the arrowhead
       const y2 = rb.top - cb.top + rb.height / 2;
-      next.push({ key: `${e.from}|${e.to}`, from: e.from, to: e.to, type: e.type, d: elbow(x1, y1, x2, y2) });
+      next.push({ key: `${e.from}|${e.to}`, from: e.from, to: e.to, type: e.type, d: connector(x1, y1, x2, y2) });
     }
     setWires(next);
     setDims({ w: cb.width, h: cb.height });
