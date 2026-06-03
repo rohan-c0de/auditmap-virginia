@@ -88,6 +88,7 @@ describe("GET /api/[state]/ask", () => {
         type: "transfer" as const,
         course: { prefix: "ENG", number: "111" },
         subjectPrefix: null,
+        courseTitle: null,
         university: "gmu",
       },
       secondaryIntent: null,

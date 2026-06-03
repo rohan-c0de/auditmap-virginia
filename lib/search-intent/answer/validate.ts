@@ -7,6 +7,9 @@
 
 import { supabase } from "../../supabase";
 import { getUniversities } from "../../transfer";
+import { getCourseTitlesForSubject } from "../../courses";
+import { matchTitle, type CourseSuggestion } from "./resolve-course";
+import type { CourseRef } from "../types";
 
 export interface CourseValidation {
   exists: boolean;
@@ -87,6 +90,39 @@ export async function resolveUniversity(
     .map((r) => r.u);
 
   return { resolved: null, suggestions: ranked };
+}
+
+export interface CourseResolution {
+  resolved: CourseRef | null;
+  // When resolution defers (ambiguous / no confident match), the best course
+  // candidates to offer the student as chips. Better than today's generic
+  // "which course?" because they're real codes+titles in this subject.
+  suggestions: CourseSuggestion[];
+}
+
+/**
+ * Resolve a course the student named by TITLE ("Intermediate Arabic II") to a
+ * code (ARA 202), so the prereqs/transfer lookups can run. Mirrors
+ * resolveUniversity: resolve on a confident match, otherwise return ranked
+ * suggestions — NEVER resolve to a wrong course (see resolve-course.ts).
+ *
+ * Subject-scoped only: without a prefix hint we'd have to scan the entire
+ * state catalog (38k rows for CA) on the hot /ask path, so absent one we
+ * safely DEFER. The classifier reliably emits the subject prefix.
+ */
+export async function resolveCourse(
+  state: string,
+  opts: { title: string; prefixHint?: string | null },
+): Promise<CourseResolution> {
+  const title = opts.title?.trim();
+  const prefix = opts.prefixHint?.trim();
+  if (!title || !prefix) return { resolved: null, suggestions: [] };
+
+  const catalog = await getCourseTitlesForSubject(state, prefix);
+  if (catalog.length === 0) return { resolved: null, suggestions: [] };
+
+  const { resolved, suggestions } = matchTitle(catalog, title);
+  return { resolved, suggestions };
 }
 
 function normalize(s: string): string {

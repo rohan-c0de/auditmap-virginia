@@ -28,7 +28,7 @@ import type {
   TransferAnswer,
   TransferEquivalency,
 } from "./types";
-import { courseExists, resolveUniversity } from "./validate";
+import { courseExists, resolveCourse, resolveUniversity } from "./validate";
 import { makeNoAnswer } from "./no-answer";
 import { subjectName } from "../../subjects";
 
@@ -38,7 +38,18 @@ export async function lookupTransfer(
   intent: TransferIntent,
   state: string,
 ): Promise<Answer> {
-  const { course } = intent;
+  let course = intent.course;
+
+  // Student named the course by TITLE instead of a code — resolve to a code so
+  // the equivalency lookup can run. On an ambiguous title we leave course null
+  // and fall through to the existing subject-browse / clarification path.
+  if (!course && intent.courseTitle) {
+    const r = await resolveCourse(state, {
+      title: intent.courseTitle,
+      prefixHint: intent.subjectPrefix,
+    });
+    if (r.resolved) course = r.resolved;
+  }
 
   if (!course) {
     if (intent.subjectPrefix) {

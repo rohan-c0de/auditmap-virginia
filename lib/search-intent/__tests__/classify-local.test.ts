@@ -77,6 +77,7 @@ describe("localClassifier (openai wire — Cloudflare/Groq)", () => {
       type: "transfer",
       course: { prefix: "ENG", number: "111" },
       subjectPrefix: null,
+      courseTitle: null,
       university: "gmu",
     });
     expect(result.studentSummary).toContain("ENG 111");
@@ -91,6 +92,7 @@ describe("localClassifier (openai wire — Cloudflare/Groq)", () => {
       type: "transfer",
       course: { prefix: "ENG", number: "111" },
       subjectPrefix: null,
+      courseTitle: null,
       university: "gmu",
     });
   });

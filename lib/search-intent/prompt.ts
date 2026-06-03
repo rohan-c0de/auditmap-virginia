@@ -48,6 +48,7 @@ Intent types:
 Entity-extraction rules:
 
 - Course codes: extract prefix (uppercase, e.g. "ENG", "ENGL", "MATH") and number ("111", "1001"). Handle typos and missing spaces ("eng111", "psy200" → ENG 111, PSY 200). The user message includes a "Subject prefixes used in <state>" list — when extracting a prefix, ALWAYS pick from that list. Different states use different conventions (VA uses MTH and PSY, NY uses MATH and may have both PSY and PSYC, ME uses ENGL). If the user's subject is ambiguous, prefer the prefix that appears in the state's list. If no list is provided, default to the most common form.
+- Course titles (for transfer and prereqs intents): if the student names a course by its TITLE instead of a code — "Intermediate Arabic II", "Beginning American Sign Language", "Principles of Accounting" — set course_title to that title VERBATIM and set course_prefix to the matching subject prefix from the state list (ARA, ASL, ACC). Leave course_number null. CRITICAL: when the student gives a course CODE (prefix + number, e.g. "ARA 202", "prereqs for BIO 256"), set course_prefix and course_number and leave course_title null. Never set both course_number and course_title. course_title is only for the title-without-a-number case.
 - University names: use the alias table provided in the user message to resolve names and abbreviations to slugs. For universities not in the alias table, lowercase and hyphenate: "Smith College" → "smith". If the alias is ambiguous (e.g. multi-campus system with no campus specified), use the slug and lower your confidence.
 - Age: parse numeric age from "65+", "60", "I'm 65", etc.
 - Days: "weekend" → ["S", "U"]; "MWF" → ["M", "W", "F"]; "TR" or "Tu/Th" → ["T", "R"].
@@ -149,6 +150,10 @@ export const CLASSIFY_TOOL = {
       course_number: {
         type: ["string", "null"],
         description: "Course number as a string (preserve digits exactly), e.g. 111, 1001. Null if no specific course number in query (subject-level queries like 'math courses' leave this null).",
+      },
+      course_title: {
+        type: ["string", "null"],
+        description: "For transfer/prereqs intents ONLY: the course's TITLE when the student names it instead of giving a number (e.g. 'Intermediate Arabic II', 'Principles of Accounting'). Set course_prefix to the subject too. Null whenever course_number is present, or when no course is named by title.",
       },
       // Prereqs-specific
       prereq_direction: {
@@ -268,6 +273,7 @@ export interface ClassifierToolInput {
   type: "transfer" | "pathway" | "prereqs" | "eligibility" | "course" | "unknown";
   course_prefix?: string | null;
   course_number?: string | null;
+  course_title?: string | null;
   prereq_direction?: "forward" | "inverse" | null;
   university?: string | null;
   major?: string | null;

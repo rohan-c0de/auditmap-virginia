@@ -12,32 +12,37 @@ vi.mock("../../../prereqs", async () => {
 vi.mock("../validate", () => ({
   courseExists: vi.fn(),
   resolveUniversity: vi.fn(),
+  resolveCourse: vi.fn(),
 }));
 
 import { lookupPrereqs } from "../prereqs";
 import type { PrereqsIntent } from "../../types";
 import { buildChain, loadPrereqs } from "../../../prereqs";
-import { courseExists } from "../validate";
+import { courseExists, resolveCourse } from "../validate";
 
 const mockLoadPrereqs = loadPrereqs as ReturnType<typeof vi.fn>;
 const mockBuildChain = buildChain as ReturnType<typeof vi.fn>;
 const mockCourseExists = courseExists as ReturnType<typeof vi.fn>;
+const mockResolveCourse = resolveCourse as ReturnType<typeof vi.fn>;
 
 beforeEach(() => {
   mockLoadPrereqs.mockReset();
   mockBuildChain.mockReset();
   mockCourseExists.mockReset();
+  mockResolveCourse.mockReset();
 });
 
 const BIO_256: PrereqsIntent = {
   type: "prereqs",
   course: { prefix: "BIO", number: "256" },
+  subjectPrefix: null,
+  courseTitle: null,
   direction: "forward",
 };
 
 describe("lookupPrereqs", () => {
   it("returns 'no-course-named' when course is missing", async () => {
-    const result = await lookupPrereqs({ type: "prereqs", course: null, direction: "forward" }, "va");
+    const result = await lookupPrereqs({ type: "prereqs", course: null, subjectPrefix: null, courseTitle: null, direction: "forward" }, "va");
     if (result.type !== "prereqs") throw new Error("wrong type");
     expect(result.status).toBe("no-course-named");
     expect(result.course).toBeNull();
@@ -100,7 +105,7 @@ describe("lookupPrereqs", () => {
     );
     mockBuildChain.mockReturnValue({ course: "BIO 256", text: "BIO 101", children: [] });
     const result = await lookupPrereqs(
-      { type: "prereqs", course: { prefix: "bio", number: "256" }, direction: "forward" },
+      { type: "prereqs", course: { prefix: "bio", number: "256" }, subjectPrefix: null, courseTitle: null, direction: "forward" },
       "va",
     );
     if (result.type !== "prereqs") throw new Error("wrong type");
@@ -125,7 +130,7 @@ describe("lookupPrereqs", () => {
         ]),
       );
       const result = await lookupPrereqs(
-        { type: "prereqs", course: { prefix: "BIO", number: "101" }, direction: "inverse" },
+        { type: "prereqs", course: { prefix: "BIO", number: "101" }, subjectPrefix: null, courseTitle: null, direction: "inverse" },
         "va",
       );
       if (result.type !== "prereqs") throw new Error("wrong type");
@@ -140,7 +145,7 @@ describe("lookupPrereqs", () => {
         ]),
       );
       const result = await lookupPrereqs(
-        { type: "prereqs", course: { prefix: "BIO", number: "256" }, direction: "inverse" },
+        { type: "prereqs", course: { prefix: "BIO", number: "256" }, subjectPrefix: null, courseTitle: null, direction: "inverse" },
         "va",
       );
       if (result.type !== "prereqs") throw new Error("wrong type");
@@ -153,7 +158,7 @@ describe("lookupPrereqs", () => {
       );
       mockCourseExists.mockResolvedValue({ exists: false });
       const result = await lookupPrereqs(
-        { type: "prereqs", course: { prefix: "XYZ", number: "999" }, direction: "inverse" },
+        { type: "prereqs", course: { prefix: "XYZ", number: "999" }, subjectPrefix: null, courseTitle: null, direction: "inverse" },
         "va",
       );
       if (result.type !== "prereqs") throw new Error("wrong type");
@@ -195,6 +200,70 @@ describe("lookupPrereqs", () => {
       const result = await lookupPrereqs(BIO_256, "va");
       if (result.type !== "prereqs") throw new Error("wrong type");
       expect(result.followups).toContain("Search for BIO courses");
+    });
+  });
+
+  // The student named the course by TITLE ("Intermediate Arabic II") instead
+  // of a code. lookupPrereqs calls resolveCourse to get a code, then proceeds.
+  describe("title resolution", () => {
+    const ARABIC_BY_TITLE: PrereqsIntent = {
+      type: "prereqs",
+      course: null,
+      subjectPrefix: "ARA",
+      courseTitle: "Intermediate Arabic II",
+      direction: "forward",
+    };
+
+    it("resolves the title to a code and returns the normal prereqs answer", async () => {
+      mockResolveCourse.mockResolvedValue({
+        resolved: { prefix: "ARA", number: "202" },
+        suggestions: [],
+      });
+      mockLoadPrereqs.mockReturnValue(
+        new Map([["ARA 202", { text: "ARA 201", courses: ["ARA 201"] }]]),
+      );
+      mockBuildChain.mockReturnValue({ course: "ARA 202", text: "ARA 201", children: [] });
+
+      const result = await lookupPrereqs(ARABIC_BY_TITLE, "va");
+      if (result.type !== "prereqs") throw new Error("wrong type");
+      expect(mockResolveCourse).toHaveBeenCalledWith("va", {
+        title: "Intermediate Arabic II",
+        prefixHint: "ARA",
+      });
+      expect(result.status).toBe("found");
+      expect(result.course).toEqual({ prefix: "ARA", number: "202" });
+    });
+
+    it("defers with clickable course suggestions when the title is ambiguous", async () => {
+      mockResolveCourse.mockResolvedValue({
+        resolved: null,
+        suggestions: [
+          { code: "ARA 102", title: "Beginning Arabic II" },
+          { code: "ARA 202", title: "Intermediate Arabic II" },
+        ],
+      });
+
+      const result = await lookupPrereqs(
+        { ...ARABIC_BY_TITLE, courseTitle: "Arabic II" },
+        "va",
+      );
+      if (result.type !== "prereqs") throw new Error("wrong type");
+      expect(result.status).toBe("no-course-named");
+      // loadPrereqs must NOT be consulted — we never resolved a course.
+      expect(mockLoadPrereqs).not.toHaveBeenCalled();
+      expect(result.followups).toEqual([
+        "Prereqs for ARA 102",
+        "Prereqs for ARA 202",
+      ]);
+    });
+
+    it("does not attempt resolution when a code was given (code wins)", async () => {
+      mockLoadPrereqs.mockReturnValue(
+        new Map([["BIO 256", { text: "BIO 101", courses: ["BIO 101"] }]]),
+      );
+      mockBuildChain.mockReturnValue({ course: "BIO 256", text: "BIO 101", children: [] });
+      await lookupPrereqs(BIO_256, "va");
+      expect(mockResolveCourse).not.toHaveBeenCalled();
     });
   });
 });

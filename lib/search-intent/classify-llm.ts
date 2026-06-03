@@ -151,6 +151,7 @@ function toSecondarySearchIntent(
         subjectPrefix: !courseRef && secondary.course_prefix
           ? secondary.course_prefix.toUpperCase()
           : null,
+        courseTitle: null,
         university: secondary.university ?? null,
       };
     case "pathway":
@@ -162,7 +163,15 @@ function toSecondarySearchIntent(
         credential: null,
       };
     case "prereqs":
-      return { type: "prereqs", course: courseRef, direction: "forward" };
+      return {
+        type: "prereqs",
+        course: courseRef,
+        subjectPrefix: !courseRef && secondary.course_prefix
+          ? secondary.course_prefix.toUpperCase()
+          : null,
+        courseTitle: null,
+        direction: "forward",
+      };
     case "eligibility":
       return {
         type: "eligibility",
@@ -197,6 +206,7 @@ function toSearchIntent(rawQuery: string, input: ClassifierToolInput): SearchInt
         subjectPrefix: !courseRef && input.course_prefix
           ? input.course_prefix.toUpperCase()
           : null,
+        courseTitle: !courseRef ? input.course_title ?? null : null,
         university: input.university ?? null,
       };
     case "pathway":
@@ -211,6 +221,10 @@ function toSearchIntent(rawQuery: string, input: ClassifierToolInput): SearchInt
       return {
         type: "prereqs",
         course: courseRef,
+        subjectPrefix: !courseRef && input.course_prefix
+          ? input.course_prefix.toUpperCase()
+          : null,
+        courseTitle: !courseRef ? input.course_title ?? null : null,
         direction: input.prereq_direction === "inverse" ? "inverse" : "forward",
       };
     case "eligibility":

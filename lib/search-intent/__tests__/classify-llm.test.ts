@@ -52,6 +52,7 @@ describe("llmClassifier", () => {
       type: "transfer",
       course: { prefix: "ENG", number: "111" },
       subjectPrefix: null,
+      courseTitle: null,
       university: "gmu",
     });
     expect(result.confidence).toBe(0.95);
@@ -71,6 +72,7 @@ describe("llmClassifier", () => {
       type: "transfer",
       course: null,
       subjectPrefix: "ENG",
+      courseTitle: null,
       university: "uva",
     });
   });
@@ -87,6 +89,8 @@ describe("llmClassifier", () => {
     expect(result.intent).toEqual({
       type: "prereqs",
       course: { prefix: "BIO", number: "256" },
+      subjectPrefix: null,
+      courseTitle: null,
       direction: "forward",
     });
   });
@@ -104,6 +108,8 @@ describe("llmClassifier", () => {
     expect(result.intent).toEqual({
       type: "prereqs",
       course: { prefix: "ENG", number: "111" },
+      subjectPrefix: null,
+      courseTitle: null,
       direction: "inverse",
     });
   });
@@ -346,12 +352,15 @@ describe("toClassifiedIntent", () => {
     expect(result.intent).toEqual({
       type: "prereqs",
       course: { prefix: "ENG", number: "111" },
+      subjectPrefix: null,
+      courseTitle: null,
       direction: "forward",
     });
     expect(result.secondaryIntent).toEqual({
       type: "transfer",
       course: { prefix: "ENG", number: "111" },
       subjectPrefix: null,
+      courseTitle: null,
       university: "gmu",
     });
   });
