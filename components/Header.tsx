@@ -5,52 +5,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ThemeToggle from "@/components/ThemeToggle";
 import UserMenu from "@/components/auth/UserMenu";
-
-// Task-based nav groups — single source of truth for the sidebar. "Find your
-// program" (the guided quiz) sits with Programs; it's ungated like /programs
-// (both notFound() when a state has no qualifying programs). See #413 for why
-// the Programs index is reachable from every page.
-const NAV_GROUPS = [
-  {
-    heading: "Explore classes",
-    items: [
-      { path: "", label: "Search" },
-      { path: "/courses", label: "Find a Course" },
-      { path: "/starting-soon", label: "Starting Soon" },
-      { path: "/colleges", label: "All Colleges" },
-    ],
-  },
-  {
-    heading: "Plan your path",
-    items: [
-      { path: "/schedule", label: "Schedule Builder" },
-      { path: "/plan", label: "Semester Planner" },
-      { path: "/transfer", label: "Transfer" },
-    ],
-  },
-  {
-    heading: "Programs & majors",
-    items: [
-      { path: "/choose", label: "Find your program" },
-      { path: "/programs", label: "Programs" },
-    ],
-  },
-];
-
-// "More" utility links — About is state-scoped; All States is the global "/".
-const MORE_ITEMS = [{ path: "/about", label: "About" }];
-
-// Guides cluster (#374) — high-traffic blog hubs surfaced in the sidebar.
-const GUIDES_ITEMS = [
-  { href: "/blog/free-community-college-classes-for-seniors", label: "Senior Waivers" },
-  { href: "/blog/how-to-check-if-community-college-course-transfers", label: "Transfer Guides" },
-  { href: "/blog/what-does-audit-a-class-mean", label: "Auditing a Class" },
-  { href: "/blog/how-to-find-late-start-community-college-classes", label: "Late-Start Classes" },
-  { href: "/blog", label: "All Articles →" },
-];
-
-const PIN_KEY = "ccp-nav-pinned";
-const DESKTOP_MQ = "(min-width: 1024px)";
+import {
+  PIN_KEY,
+  DESKTOP_MQ,
+  sidebarVisible,
+  buildNavColumns,
+  isNavLinkActive,
+  closesOnNavigate,
+} from "@/lib/nav/sidebar";
 
 export default function Header({
   state,
@@ -72,7 +34,7 @@ export default function Header({
 
   // On desktop the sidebar shows when opened OR pinned; on mobile only when
   // explicitly opened (pin is a desktop-only convenience).
-  const effectiveOpen = isDesktop ? open || pinned : open;
+  const effectiveOpen = sidebarVisible(open, pinned, isDesktop);
 
   // Track viewport so pin/push apply on desktop only.
   useEffect(() => {
@@ -133,7 +95,7 @@ export default function Header({
 
   // Clicking a link closes the menu unless it's pinned open on desktop.
   const onNavigate = () => {
-    if (!(isDesktop && pinned)) setOpen(false);
+    if (closesOnNavigate(isDesktop, pinned)) setOpen(false);
   };
 
   const togglePin = () => {
@@ -142,38 +104,9 @@ export default function Header({
     if (next) setOpen(true);
   };
 
-  // Hide transfer/planner where the state lacks the data backing them.
-  const showItem = (path: string) =>
-    (path !== "/transfer" || transferSupported) &&
-    (path !== "/plan" || prereqsAvailable);
-  const toLink = (item: { path: string; label: string }) => ({
-    href: `/${state}${item.path}`,
-    label: item.label,
-  });
-
-  const columns: { heading: string; links: { href: string; label: string }[] }[] = [
-    ...NAV_GROUPS.map((g) => ({
-      heading: g.heading,
-      links: g.items.filter((i) => showItem(i.path)).map(toLink),
-    })),
-    { heading: "Guides", links: GUIDES_ITEMS.map((i) => ({ href: i.href, label: i.label })) },
-    {
-      heading: "More",
-      links: [
-        ...MORE_ITEMS.filter((i) => showItem(i.path)).map(toLink),
-        { href: "/", label: "All States" },
-      ],
-    },
-  ];
-
-  // Highlight the current page. State home (/{state}) matches exactly so it
-  // doesn't light up on every sub-route; others match the page or its children.
+  const columns = buildNavColumns(state, { transferSupported, prereqsAvailable });
   const stateHome = `/${state}`;
-  const isActive = (href: string) => {
-    if (href === stateHome) return pathname === stateHome;
-    if (href === "/") return false; // "All States" — never "current" on a state page
-    return pathname === href || pathname.startsWith(`${href}/`);
-  };
+  const isActive = (href: string) => isNavLinkActive(pathname, href, stateHome);
 
   return (
     <>
