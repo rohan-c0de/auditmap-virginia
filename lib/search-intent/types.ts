@@ -19,6 +19,10 @@ export interface TransferIntent {
   // courses that transfer to UVA"). Null when the user named a specific
   // course (use `course` instead) or mentioned no subject at all.
   subjectPrefix: string | null;
+  // Course TITLE when the student named the course by name instead of a code
+  // (e.g. "Intermediate Arabic II"). The answer layer resolves it to a code
+  // via resolveCourse(). Null when `course` is set or no title was given.
+  courseTitle: string | null;
   // university slug as it appears in transfer-equiv data (e.g. "gmu", "vcu").
   // null = "transfer to anywhere" (show all destinations).
   university: string | null;
@@ -28,6 +32,13 @@ export interface PrereqsIntent {
   type: "prereqs";
   // null = "prereqs for what?" — clarification prompt.
   course: CourseRef | null;
+  // Subject prefix when the student named a course without a number
+  // (e.g. "ARA" for "Intermediate Arabic II"). Scopes title resolution to one
+  // subject so it stays cheap on large states. Null when `course` is set.
+  subjectPrefix: string | null;
+  // Course TITLE when the student named the course by name instead of a code.
+  // Resolved to a code via resolveCourse(). Null when `course` is set.
+  courseTitle: string | null;
   // "forward" (default) = what do I need before this course?
   // "inverse" = I finished this course, what can I take next?
   direction: "forward" | "inverse";

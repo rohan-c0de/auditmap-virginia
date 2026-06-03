@@ -20,13 +20,35 @@
 import { buildChain, buildInverseIndex, loadPrereqs } from "../../prereqs";
 import type { PrereqsIntent } from "../types";
 import type { Answer, PrereqsAnswer } from "./types";
-import { courseExists } from "./validate";
+import { courseExists, resolveCourse } from "./validate";
 
 export async function lookupPrereqs(
   intent: PrereqsIntent,
   state: string,
 ): Promise<Answer> {
-  const { course } = intent;
+  let course = intent.course;
+
+  // The student named the course by TITLE ("Intermediate Arabic II") rather
+  // than a code. Resolve it to a code (ARA 202) so the lookup can proceed.
+  // Resolve-or-defer: a confident match continues the normal flow; anything
+  // ambiguous returns the clarification with real course chips instead of a
+  // wrong prereq.
+  if (!course && intent.courseTitle) {
+    const r = await resolveCourse(state, {
+      title: intent.courseTitle,
+      prefixHint: intent.subjectPrefix,
+    });
+    if (r.resolved) {
+      course = r.resolved;
+    } else {
+      return makeAnswer({
+        status: "no-course-named",
+        course: null,
+        suggestions: r.suggestions,
+        state,
+      });
+    }
+  }
 
   if (!course) {
     return makeAnswer({
@@ -119,6 +141,13 @@ function makeAnswer(
 }
 
 function buildFollowups(parts: Omit<PrereqsAnswer, "type" | "source">): string[] {
+  // Title resolution deferred (ambiguous name) — offer the real course
+  // candidates as clickable queries. Clicking re-runs e.g. "Prereqs for
+  // ARA 202", which resolves to a code and answers. Must come before the
+  // `!parts.course` guard, since these answers have a null course.
+  if (parts.status === "no-course-named" && parts.suggestions?.length) {
+    return parts.suggestions.slice(0, 3).map((s) => `Prereqs for ${s.code}`);
+  }
   if (!parts.course) return [];
   const courseCode = `${parts.course.prefix} ${parts.course.number}`;
 

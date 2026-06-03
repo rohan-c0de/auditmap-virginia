@@ -10,6 +10,7 @@
 // these to pick a card variant and copy.
 
 import type { ChainNode } from "../../prereqs";
+import type { CourseSuggestion } from "./resolve-course";
 
 export interface SourceCitation {
   source: "transfer-equiv" | "prereqs" | "institutions" | "supabase-courses";
@@ -93,6 +94,10 @@ export interface PrereqsAnswer {
   // Present when status is "unlocks". List of courses this course is a
   // prerequisite for (inverse prereq lookup).
   unlocks?: string[];
+  // Present when status is "no-course-named" AND the student named the course
+  // by a title we couldn't confidently resolve — real course candidates to
+  // offer as chips (see resolveCourse / resolve-course.ts).
+  suggestions?: CourseSuggestion[];
   source: SourceCitation;
   followups?: string[];
 }

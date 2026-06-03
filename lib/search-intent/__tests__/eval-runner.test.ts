@@ -50,12 +50,15 @@ const PERFECT_CLASSIFIER: Classifier = (q, _state) => {
       type: "transfer",
       course: { prefix: "ENG", number: "111" },
       subjectPrefix: null,
+      courseTitle: null,
       university: "gmu",
     };
   } else if (q.includes("prereqs")) {
     intent = {
       type: "prereqs",
       course: { prefix: "BIO", number: "256" },
+      subjectPrefix: null,
+      courseTitle: null,
       direction: "forward",
     };
   } else {

@@ -707,6 +707,62 @@ export async function getDistinctSubjects(
 }
 
 /**
+ * Distinct (number, title) catalog for ONE subject prefix across the whole
+ * state — TERM-AGNOSTIC on purpose. Powers title→code resolution on /ask
+ * (lib/search-intent/answer/validate.ts → resolveCourse).
+ *
+ * Why term-agnostic: term codes in the courses table are inconsistent across
+ * scrapers (CA alone has 2026FA / 2026-FA / 26-FA for the same semester) and
+ * the "latest" by string-sort is often a tiny partial scrape. Scoping a title
+ * catalog to one term would resolve almost nothing for large multi-district
+ * states. Unioning all terms also maximizes recall (a course's title can drift
+ * across terms — every variant should resolve to the same code) and matches
+ * courseExists(), which already checks ANY term.
+ *
+ * Why subject-scoped: pulling one prefix keeps this cheap and CONSTANT-cost
+ * regardless of state size — CA's 38k-course catalog is never loaded; we fetch
+ * the rows for the named subject only. Column-projected and cached (5 min)
+ * like the other catalog reads.
+ */
+export async function getCourseTitlesForSubject(
+  state: string,
+  prefix: string,
+): Promise<Array<{ prefix: string; number: string; title: string }>> {
+  const upper = prefix.toUpperCase();
+  return cached(`courseTitles:${state}:${upper}`, async () => {
+    const seen = new Set<string>();
+    const out: Array<{ prefix: string; number: string; title: string }> = [];
+    const PAGE_SIZE = 1000;
+    let page = 0;
+    while (true) {
+      const start = page * PAGE_SIZE;
+      const { data: rows, error } = await supabase
+        .from("courses")
+        .select("course_number, course_title")
+        .eq("state", state)
+        .eq("course_prefix", upper)
+        .range(start, start + PAGE_SIZE - 1);
+      if (error || !rows || rows.length === 0) {
+        if (error) console.error("getCourseTitlesForSubject error:", error.message);
+        break;
+      }
+      for (const r of rows as Array<{ course_number: string; course_title: string }>) {
+        const number = sanitizeCourseNumber(r.course_number);
+        const title = r.course_title;
+        if (!number || !title) continue;
+        const key = `${number}|${title}`; // many sections share both
+        if (seen.has(key)) continue;
+        seen.add(key);
+        out.push({ prefix: upper, number, title });
+      }
+      if (rows.length < PAGE_SIZE) break;
+      page++;
+    }
+    return out;
+  });
+}
+
+/**
  * Return distinct (course_prefix, course_number) pairs for a state+term.
  * Used by the sitemap to enumerate course detail URLs without pulling the
  * entire course catalog. Falls back to a paginated 2-column scan if the

@@ -8,6 +8,7 @@ vi.mock("../../../transfer", () => ({
 vi.mock("../validate", () => ({
   courseExists: vi.fn(),
   resolveUniversity: vi.fn(),
+  resolveCourse: vi.fn(),
 }));
 
 import { lookupTransfer } from "../transfer";
@@ -49,13 +50,14 @@ const ENG_111_INTENT: TransferIntent = {
   type: "transfer",
   course: { prefix: "ENG", number: "111" },
   subjectPrefix: null,
+  courseTitle: null,
   university: "gmu",
 };
 
 describe("lookupTransfer", () => {
   it("returns NoAnswer when course is missing", async () => {
     const result = await lookupTransfer(
-      { type: "transfer", course: null, subjectPrefix: null, university: "gmu" },
+      { type: "transfer", course: null, subjectPrefix: null, courseTitle: null, university: "gmu" },
       "va",
     );
     expect(result.type).toBe("none");
@@ -68,7 +70,7 @@ describe("lookupTransfer", () => {
       resolved: { slug: "uva", name: "University of Virginia" },
     });
     const result = await lookupTransfer(
-      { type: "transfer", course: null, subjectPrefix: "ENG", university: "uva" },
+      { type: "transfer", course: null, subjectPrefix: "ENG", courseTitle: null, university: "uva" },
       "va",
     );
     expect(result.type).toBe("none");
@@ -80,7 +82,7 @@ describe("lookupTransfer", () => {
 
   it("returns browse guidance when subjectPrefix set without university", async () => {
     const result = await lookupTransfer(
-      { type: "transfer", course: null, subjectPrefix: "MATH", university: null },
+      { type: "transfer", course: null, subjectPrefix: "MATH", courseTitle: null, university: null },
       "va",
     );
     expect(result.type).toBe("none");
@@ -112,7 +114,7 @@ describe("lookupTransfer", () => {
       mapping({ university: "vt", university_name: "Virginia Tech", univ_course: "ENGL 1105" }),
     ]);
     const result = await lookupTransfer(
-      { type: "transfer", course: { prefix: "ENG", number: "111" }, subjectPrefix: null, university: null },
+      { type: "transfer", course: { prefix: "ENG", number: "111" }, subjectPrefix: null, courseTitle: null, university: null },
       "va",
     );
     if (result.type !== "transfer") throw new Error("wrong type");
@@ -129,7 +131,7 @@ describe("lookupTransfer", () => {
       suggestions: [{ slug: "gmu", name: "George Mason University" }],
     });
     const result = await lookupTransfer(
-      { type: "transfer", course: { prefix: "ENG", number: "111" }, subjectPrefix: null, university: "nonsense" },
+      { type: "transfer", course: { prefix: "ENG", number: "111" }, subjectPrefix: null, courseTitle: null, university: "nonsense" },
       "va",
     );
     if (result.type !== "transfer") throw new Error("wrong type");
@@ -234,7 +236,7 @@ describe("lookupTransfer", () => {
         mapping({ university: "vcu", university_name: "VCU" }),
       ]);
       const result = await lookupTransfer(
-        { type: "transfer", course: { prefix: "ENG", number: "111" }, subjectPrefix: null, university: null },
+        { type: "transfer", course: { prefix: "ENG", number: "111" }, subjectPrefix: null, courseTitle: null, university: null },
         "va",
       );
       if (result.type !== "transfer") throw new Error("wrong type");
