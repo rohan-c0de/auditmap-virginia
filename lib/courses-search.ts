@@ -1,6 +1,7 @@
 import type { CourseSection, Institution } from "./types";
 import { getZipCoordinates, calculateDistance } from "./geo";
-import { searchSections } from "./courses";
+import { searchSections, getDistinctSubjects } from "./courses";
+import { subjectName } from "./subjects";
 
 // ---------------------------------------------------------------------------
 // Cross-college search
@@ -51,6 +52,31 @@ export function parseQuery(q: string): {
 
   // Otherwise treat as keyword search on title
   return { prefix: null, number: null, keyword: q.trim().toLowerCase() };
+}
+
+// Filler words dropped when rescuing a no-result natural-language keyword query
+// (e.g. "math courses without prerequisite" → "math"). Intentionally narrow:
+// generic course/qualifier words, not subject or descriptor words, so we never
+// strip the part that identifies what the student wants.
+const KEYWORD_FILLER = new Set([
+  "course", "courses", "class", "classes", "section", "sections",
+  "without", "with", "no", "not", "any", "all", "some", "that", "which",
+  "have", "having", "has", "the", "for", "and", "or", "to", "do", "does",
+  "prerequisite", "prerequisites", "prereq", "prereqs", "requisite", "requisites",
+  "requirement", "requirements", "require", "requires", "required", "need", "needs",
+]);
+
+/**
+ * Reduce a free-text keyword to its meaningful tokens for the zero-result
+ * rescue: lowercase, strip punctuation, drop filler words and tokens under 3
+ * chars. "math courses without prerequisite?" → ["math"].
+ */
+export function meaningfulKeywordTokens(keyword: string): string[] {
+  return keyword
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, " ")
+    .split(/\s+/)
+    .filter((t) => t.length >= 3 && !KEYWORD_FILLER.has(t));
 }
 
 /** Check if a time string falls in a time-of-day bucket */
@@ -106,12 +132,60 @@ export async function searchCoursesAcrossColleges(
   totalSections: number;
   totalColleges: number;
 }> {
-  const { prefix, number, keyword } = parseQuery(query);
+  let { prefix, number, keyword } = parseQuery(query);
   // Push the query predicate into Postgres instead of loading every section
   // for the term and filtering in JS (which 504'd on large states like CA,
   // ~188k rows). The JS filters below still run on this already-narrowed set,
   // so output is unchanged — just over 10s–1000s of rows.
-  const allCourses = await searchSections(term, state, { prefix, number, keyword });
+  let allCourses = await searchSections(term, state, { prefix, number, keyword });
+
+  // Zero-result rescue for natural-language keyword phrases. A keyword like
+  // "math courses without prerequisite" matches no course TITLE verbatim, so the
+  // server-side search returns nothing (this also happens when the /ask
+  // classifier leaves `keyword` null and the client searches the raw sentence).
+  // Strip filler words and re-query on the remaining subject token(s). Because a
+  // short subject word re-parses as a PREFIX (e.g. "math" → MATH), this recovers
+  // the whole subject, not just title matches. Only runs when the normal search
+  // found nothing, so it can never change a query that already returns results.
+  if (allCourses.length === 0 && keyword) {
+    const tokens = meaningfulKeywordTokens(keyword);
+    if (tokens.length > 0) {
+      // Resolve each token to THIS state's actual subject prefixes via subject
+      // names — so "math" → MTH (VA) / MAT (NC) / MATH (CT,TX), not a literal
+      // "MATH" that only some states use. Query those prefixes, plus each token
+      // as a title keyword (to catch title-only words like "calculus" that
+      // aren't subject names). Union + dedupe.
+      const subjects = await getDistinctSubjects(term, state);
+      const matchPrefixes = subjects.filter((p) =>
+        tokens.some(
+          (t) => p.toLowerCase().includes(t) || subjectName(p).toLowerCase().includes(t),
+        ),
+      );
+      const seen = new Set<string>();
+      const union: CourseSection[] = [];
+      const add = (rows: CourseSection[]) => {
+        for (const r of rows) {
+          const k = `${r.course_prefix}-${r.course_number}-${r.college_code}-${r.crn}`;
+          if (!seen.has(k)) {
+            seen.add(k);
+            union.push(r);
+          }
+        }
+      };
+      for (const p of matchPrefixes) {
+        add(await searchSections(term, state, { prefix: p, number: null, keyword: null }));
+      }
+      for (const t of tokens) {
+        add(await searchSections(term, state, { prefix: null, number: null, keyword: t }));
+      }
+      if (union.length > 0) {
+        allCourses = union;
+        prefix = null;
+        number = null;
+        keyword = null; // already matched per-token above
+      }
+    }
+  }
 
   // Build institution lookup
   const instMap = new Map<string, Institution>();
@@ -126,20 +200,22 @@ export async function searchCoursesAcrossColleges(
     if (zipInfo) userCoords = { lat: zipInfo.lat, lng: zipInfo.lng };
   }
 
-  // Step 1: Filter sections
+  // Non-query filters (mode/days/time) — shared by the main pass and the
+  // zero-result keyword rescue below so they stay in sync.
+  const passesFilters = (s: CourseSection): boolean => {
+    if (filters.mode && s.mode !== filters.mode) return false;
+    if (filters.days && filters.days.length > 0 && !sectionMatchesDays(s.days, filters.days)) return false;
+    if (filters.timeOfDay && !matchesTimeOfDay(s.start_time, filters.timeOfDay)) return false;
+    return true;
+  };
+
+  // Step 1: Apply the remaining JS-side filters to the server-narrowed set
+  // (prefix/number/keyword reflect the rescue's effective parse when it ran).
   const matched = allCourses.filter((s) => {
-    // Query matching
     if (prefix && s.course_prefix !== prefix) return false;
     if (number && s.course_number !== number) return false;
     if (keyword && !s.course_title.toLowerCase().includes(keyword)) return false;
-
-    // Filters
-    if (filters.mode && s.mode !== filters.mode) return false;
-    if (filters.days && filters.days.length > 0 && !sectionMatchesDays(s.days, filters.days)) return false;
-    if (filters.timeOfDay && !matchesTimeOfDay(s.start_time, filters.timeOfDay))
-      return false;
-
-    return true;
+    return passesFilters(s);
   });
 
   // Step 2: Group by course (prefix+number), then by college

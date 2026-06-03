@@ -3,7 +3,26 @@ import {
   parseQuery,
   matchesTimeOfDay,
   sectionMatchesDays,
+  meaningfulKeywordTokens,
 } from "../courses-search";
+
+describe("meaningfulKeywordTokens (zero-result rescue)", () => {
+  it("strips course/qualifier filler, keeping the subject", () => {
+    expect(meaningfulKeywordTokens("math courses without prerequisite?")).toEqual(["math"]);
+    expect(meaningfulKeywordTokens("biology classes")).toEqual(["biology"]);
+  });
+  it("keeps multiple subject/descriptor tokens", () => {
+    expect(meaningfulKeywordTokens("online accounting courses")).toEqual(["online", "accounting"]);
+  });
+  it("drops tokens under 3 chars and punctuation", () => {
+    // "of" = filler, "ml" = under 3 chars → both dropped; "art" kept.
+    expect(meaningfulKeywordTokens("art of ml")).toEqual(["art"]);
+  });
+  it("returns [] when only filler remains, so the rescue is skipped (stays 0)", () => {
+    expect(meaningfulKeywordTokens("courses that have no prerequisites")).toEqual([]);
+    expect(meaningfulKeywordTokens("any courses with no prereqs")).toEqual([]);
+  });
+});
 
 describe("parseQuery", () => {
   it("parses an exact course code with space", () => {
