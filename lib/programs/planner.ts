@@ -20,8 +20,9 @@
 
 import * as fs from "fs";
 import * as path from "path";
+import { unstable_cache } from "next/cache";
 import { loadCollegePrograms } from "@/lib/programs/requirements";
-import { loadTransferMappings } from "@/lib/transfer";
+import { loadTransferMappingsForCourses } from "@/lib/transfer";
 import { loadInstitutions } from "@/lib/institutions";
 import { loadPrereqs } from "@/lib/prereqs";
 import { getCurrentTerm } from "@/lib/terms";
@@ -229,7 +230,7 @@ export async function listPlannableProgramsForCollege(
  * the college, program, or program's real-course list can't be resolved
  * (callers should `notFound()`).
  */
-export async function buildMajorPlan(
+async function buildMajorPlanInner(
   state: string,
   collegeId: string,
   slug: string,
@@ -250,8 +251,13 @@ export async function buildMajorPlan(
   const term = resolveTerm(state, collegeSlug, preferredTerm) ?? preferredTerm;
   const sectionCounts = term ? sectionCountsFromFiles(state, collegeSlug, term) : new Map();
 
-  // Index transfer mappings by join key for fast per-course lookup.
-  const mappings = await loadTransferMappings(state);
+  // Targeted fetch: only the courses this program requires, not the entire
+  // state's transfer table. For CA (~162k state rows) this is the difference
+  // between a 15s cold render and <1s. Backed by idx_transfers_state_course.
+  const programCourses = program.requirement_groups.flatMap((g) =>
+    g.courses.filter(isRealCourse).map((c) => ({ prefix: c.prefix, number: c.number })),
+  );
+  const mappings = await loadTransferMappingsForCourses(state, programCourses);
   const transferIndex = new Map<string, CourseTransfer[]>();
   for (const m of mappings) {
     const key = joinKey(m.cc_prefix, m.cc_number);
@@ -350,6 +356,31 @@ export async function buildMajorPlan(
     totals: { listedCourses, offeredThisTerm },
     sequence,
   };
+}
+
+// Cross-instance plan cache. The route already declares `revalidate = 86400`,
+// but until this wrap landed every Supabase fetch inside `buildMajorPlanInner`
+// (loadCollegePrograms, loadTransferMappingsForCourses, getCurrentTerm)
+// counted as uncached fetch under Next 16's defaults — which marks the whole
+// route dynamic and ships `cache-control: no-store`. Wrapping the full plan
+// in unstable_cache restores Vercel-Data-Cache-backed ISR: first visitor pays
+// the assembly cost, everyone else gets an edge HIT for 24h.
+//
+// Key parts are the function arguments; the "program-plan-v1" string is just
+// a namespace. Bump the suffix when the MajorPlan shape changes so stale
+// cached objects don't deserialize wrong.
+const _cachedBuildMajorPlan = unstable_cache(
+  (state: string, collegeId: string, slug: string) => buildMajorPlanInner(state, collegeId, slug),
+  ["program-plan-v1"],
+  { revalidate: 86400, tags: ["transfers", "programs"] },
+);
+
+export async function buildMajorPlan(
+  state: string,
+  collegeId: string,
+  slug: string,
+): Promise<MajorPlan | null> {
+  return _cachedBuildMajorPlan(state, collegeId, slug);
 }
 
 /** direct beats elective beats no-credit when a course maps multiple ways. */

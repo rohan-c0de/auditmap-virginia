@@ -205,6 +205,63 @@ async function _loadTransferMappingsByUniversity(
   return result;
 }
 
+// Shared column list — kept identical across loaders so callers get a
+// uniform TransferMapping shape.
+const TRANSFER_COLUMNS =
+  "cc_prefix, cc_number, cc_course, cc_title, cc_credits, university, university_name, univ_course, univ_title, univ_credits, notes, no_credit, is_elective";
+
+// Chunk size for the compound .or() filter. Each tuple encodes to ~40 chars
+// (`and(cc_prefix.eq.XX,cc_number.eq.NNN)`); 100 stays comfortably under
+// PostgREST's ~8KB practical URL ceiling.
+const COURSE_FILTER_CHUNK = 100;
+
+/**
+ * Load transfer mappings for a specific set of CC courses in a single
+ * (or few) targeted Supabase queries — instead of pulling the entire
+ * state's mappings and filtering in memory.
+ *
+ * Replaces `loadTransferMappings(state)` for callers that already know
+ * which `(cc_prefix, cc_number)` pairs they need. Critical for CA, where
+ * the state-wide loader pages through ~162k rows (~15s) just to use ~30.
+ *
+ * Backed by `idx_transfers_state_course` on `(state, cc_prefix, cc_number)`
+ * — see `EXPLAIN ANALYZE` in PR #N description (~5ms server-side for ~10
+ * courses on the CA dataset).
+ */
+export async function loadTransferMappingsForCourses(
+  state: string,
+  courses: ReadonlyArray<{ prefix: string; number: string }>,
+): Promise<TransferMapping[]> {
+  if (courses.length === 0) return [];
+
+  // Dedupe — programs often list the same course in multiple requirement
+  // groups, and a duplicate filter clause is wasted DB work.
+  const seen = new Set<string>();
+  const unique: Array<{ prefix: string; number: string }> = [];
+  for (const c of courses) {
+    const key = `${c.prefix}|${c.number}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    unique.push(c);
+  }
+
+  const out: TransferMapping[] = [];
+  for (let i = 0; i < unique.length; i += COURSE_FILTER_CHUNK) {
+    const batch = unique.slice(i, i + COURSE_FILTER_CHUNK);
+    const orFilter = batch
+      .map((c) => `and(cc_prefix.eq.${c.prefix},cc_number.eq.${c.number})`)
+      .join(",");
+    const { data, error } = await supabase
+      .from("transfers")
+      .select(TRANSFER_COLUMNS)
+      .eq("state", state)
+      .or(orFilter);
+    if (error) throw error;
+    if (data) out.push(...(data as TransferMapping[]));
+  }
+  return out;
+}
+
 /**
  * Load all transfer mappings from Supabase (with local JSON fallback).
  * Cached after first load.
