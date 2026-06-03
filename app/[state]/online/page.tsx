@@ -21,6 +21,14 @@ import { getBlogRecommendations } from "@/lib/blog-recommendations";
 
 export const revalidate = 604800; // 7 days
 
+// Required for ISR — without it this [state] route renders dynamically and the
+// revalidate above is dead (Next 16: an empty array still opts the route into
+// static generation; omitting the export entirely makes it dynamic). Mirrors
+// every other /[state]/* page. See issue #1137.
+export function generateStaticParams() {
+  return [];
+}
+
 type PageProps = {
   params: Promise<{ state: string }>;
 };
