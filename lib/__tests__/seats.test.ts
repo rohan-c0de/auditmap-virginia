@@ -129,3 +129,17 @@ describe("labels & tone", () => {
     expect(seatTone(describeSeats(null, null))).toBe("muted");
   });
 });
+
+describe("seats — edge & boundary hardening", () => {
+  it("sentinel boundary: 999 is a real count, 1000 is a sentinel", () => {
+    expect(describeSeats(999, null)).toEqual({ status: "count", open: 999 });
+    expect(describeSeats(1000, null)).toEqual({ status: "open" });
+  });
+  it("a total of 0 is not a usable total → open count only (no divide-by-zero)", () => {
+    expect(describeSeats(5, 0)).toEqual({ status: "count", open: 5 });
+  });
+  it("seatTone low/good boundary is at 5 vs 6 open seats", () => {
+    expect(seatTone(describeSeats(5, 30))).toBe("low");
+    expect(seatTone(describeSeats(6, 30))).toBe("good");
+  });
+});
