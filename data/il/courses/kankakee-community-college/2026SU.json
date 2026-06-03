@@ -15,7 +15,7 @@
     "campus": "VC",
     "mode": "in-person",
     "instructor": "Bara Alzoubi",
-    "seats_open": 3,
+    "seats_open": 0,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -38,8 +38,10 @@
     "instructor": "Bara Alzoubi",
     "seats_open": 20,
     "seats_total": 22,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ACCT 1514",
+    "prerequisite_courses": [
+      "ACCT 1514"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -57,7 +59,7 @@
     "campus": "MITC",
     "mode": "in-person",
     "instructor": "Bryon Meyer",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 12,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -78,7 +80,7 @@
     "campus": "MITC",
     "mode": "in-person",
     "instructor": "Bryon Meyer",
-    "seats_open": 1,
+    "seats_open": 0,
     "seats_total": 12,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -120,7 +122,7 @@
     "campus": "RRC",
     "mode": "in-person",
     "instructor": "Faith Belflower",
-    "seats_open": 3,
+    "seats_open": 4,
     "seats_total": 20,
     "prerequisite_text": "ENGL 1422",
     "prerequisite_courses": [
@@ -273,7 +275,7 @@
     "campus": "RRC",
     "mode": "in-person",
     "instructor": "Elizabeth Scott",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 24,
     "prerequisite_text": "ENGL 1422",
     "prerequisite_courses": [
@@ -296,7 +298,7 @@
     "campus": "RRC",
     "mode": "in-person",
     "instructor": "Kenneth Mager",
-    "seats_open": 12,
+    "seats_open": 11,
     "seats_total": 24,
     "prerequisite_text": "ENGL 1422",
     "prerequisite_courses": [
@@ -342,7 +344,7 @@
     "campus": "SEC",
     "mode": "hybrid",
     "instructor": "Elizabeth Scott",
-    "seats_open": 4,
+    "seats_open": 5,
     "seats_total": 11,
     "prerequisite_text": "ENGL 1422",
     "prerequisite_courses": [
@@ -365,10 +367,12 @@
     "campus": "RRC",
     "mode": "in-person",
     "instructor": "Jonathon Cohen",
-    "seats_open": 2,
+    "seats_open": 3,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIOL 1564",
+    "prerequisite_courses": [
+      "BIOL 1564"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -386,10 +390,12 @@
     "campus": "RRC",
     "mode": "hybrid",
     "instructor": "Jonathon Cohen",
-    "seats_open": 1,
+    "seats_open": 2,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIOL 2644",
+    "prerequisite_courses": [
+      "BIOL 2644"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -407,10 +413,12 @@
     "campus": "RRC",
     "mode": "in-person",
     "instructor": "Brent Adams",
-    "seats_open": 3,
+    "seats_open": 1,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIOL 2644",
+    "prerequisite_courses": [
+      "BIOL 2644"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -428,10 +436,14 @@
     "campus": "RRC",
     "mode": "in-person",
     "instructor": "Kristen Larson",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIOL 1564 or BIOL 1514 or CHEM 1614",
+    "prerequisite_courses": [
+      "BIOL 1564",
+      "BIOL 1514",
+      "CHEM 1614"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -449,10 +461,14 @@
     "campus": "RRC",
     "mode": "in-person",
     "instructor": "Kristen Larson",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "BIOL 1564 or BIOL 1514 or CHEM 1614",
+    "prerequisite_courses": [
+      "BIOL 1564",
+      "BIOL 1514",
+      "CHEM 1614"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -470,7 +486,7 @@
     "campus": "VC",
     "mode": "hybrid",
     "instructor": "Gina Randles",
-    "seats_open": 9,
+    "seats_open": 7,
     "seats_total": 35,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -596,10 +612,11 @@
     "campus": "RRC",
     "mode": "in-person",
     "instructor": "Jorge Gavillan",
-    "seats_open": 16,
+    "seats_open": 14,
     "seats_total": 25,
-    "prerequisite_text": "MATH 0984",
+    "prerequisite_text": "MATH 1424 or MATH 0984",
     "prerequisite_courses": [
+      "MATH 1424",
       "MATH 0984"
     ]
   },
@@ -621,8 +638,9 @@
     "instructor": "Kaitlin Burgess",
     "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": "MATH 0984",
+    "prerequisite_text": "MATH 1424 or MATH 0984",
     "prerequisite_courses": [
+      "MATH 1424",
       "MATH 0984"
     ]
   },
@@ -663,10 +681,13 @@
     "campus": "RRC",
     "mode": "in-person",
     "instructor": "Amy Carruthers",
-    "seats_open": 13,
+    "seats_open": 11,
     "seats_total": 24,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "CHEM 1534 and MATH 1424",
+    "prerequisite_courses": [
+      "CHEM 1534",
+      "MATH 1424"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -772,7 +793,7 @@
     "campus": "SEC",
     "mode": "hybrid",
     "instructor": "Laura Zumwalt",
-    "seats_open": 6,
+    "seats_open": 8,
     "seats_total": 20,
     "prerequisite_text": "ENGL 1422",
     "prerequisite_courses": [
@@ -795,7 +816,7 @@
     "campus": "VC",
     "mode": "in-person",
     "instructor": "Deisy Anderson",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 22,
     "prerequisite_text": "ENGL 1422",
     "prerequisite_courses": [
@@ -818,7 +839,7 @@
     "campus": "VC",
     "mode": "in-person",
     "instructor": "Dana Corlett-Bryant",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": "ENGL 1422",
     "prerequisite_courses": [
@@ -841,7 +862,7 @@
     "campus": "VC",
     "mode": "in-person",
     "instructor": "Deisy Anderson",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 22,
     "prerequisite_text": "ENGL 1422",
     "prerequisite_courses": [
@@ -887,7 +908,7 @@
     "campus": "VC",
     "mode": "in-person",
     "instructor": "Gina Randles",
-    "seats_open": 9,
+    "seats_open": 1,
     "seats_total": 35,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -908,7 +929,7 @@
     "campus": "VC",
     "mode": "in-person",
     "instructor": "Melissa Kapidis",
-    "seats_open": 6,
+    "seats_open": 4,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -973,8 +994,11 @@
     "instructor": "Sarah Gowler",
     "seats_open": 11,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ECED 1513 and ECED 2533",
+    "prerequisite_courses": [
+      "ECED 1513",
+      "ECED 2533"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -1013,11 +1037,12 @@
     "campus": "VC",
     "mode": "in-person",
     "instructor": "Wesley Davenport",
-    "seats_open": 15,
+    "seats_open": 10,
     "seats_total": 20,
-    "prerequisite_text": "ENGL 1422",
+    "prerequisite_text": "ENGL 1422 and MATH 1424",
     "prerequisite_courses": [
-      "ENGL 1422"
+      "ENGL 1422",
+      "MATH 1424"
     ]
   },
   {
@@ -1036,11 +1061,12 @@
     "campus": "VC",
     "mode": "in-person",
     "instructor": "Wesley Davenport",
-    "seats_open": 12,
+    "seats_open": 9,
     "seats_total": 20,
-    "prerequisite_text": "ENGL 1422",
+    "prerequisite_text": "ENGL 1422 and MATH 1424",
     "prerequisite_courses": [
-      "ENGL 1422"
+      "ENGL 1422",
+      "MATH 1424"
     ]
   },
   {
@@ -1059,7 +1085,7 @@
     "campus": "VC",
     "mode": "in-person",
     "instructor": "Jessica Friedericks",
-    "seats_open": 18,
+    "seats_open": 17,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1105,8 +1131,10 @@
     "instructor": "Jason Howard, Kristine Salmons",
     "seats_open": 0,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ELTR 1004",
+    "prerequisite_courses": [
+      "ELTR 1004"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -1126,8 +1154,10 @@
     "instructor": "Douglas Keast, Kristine Salmons",
     "seats_open": 0,
     "seats_total": 16,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ELTR 1004",
+    "prerequisite_courses": [
+      "ELTR 1004"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -1229,7 +1259,7 @@
     "campus": "VC",
     "mode": "in-person",
     "instructor": "Patrick Klette",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 8,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1294,8 +1324,10 @@
     "instructor": "Kristine Salmons",
     "seats_open": 5,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ELTR 2444",
+    "prerequisite_courses": [
+      "ELTR 2444"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -1315,8 +1347,10 @@
     "instructor": "Michael Kettley",
     "seats_open": 0,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ELTR 2444",
+    "prerequisite_courses": [
+      "ELTR 2444"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -1334,10 +1368,12 @@
     "campus": "RRC",
     "mode": "in-person",
     "instructor": "Kenneth Edwards",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ELTR 2444",
+    "prerequisite_courses": [
+      "ELTR 2444"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -1355,7 +1391,7 @@
     "campus": "RRC",
     "mode": "in-person",
     "instructor": "Kenneth Edwards",
-    "seats_open": 3,
+    "seats_open": 4,
     "seats_total": 8,
     "prerequisite_text": "ELTR 1004",
     "prerequisite_courses": [
@@ -1380,8 +1416,10 @@
     "instructor": "Jennifer Pecora Kettley",
     "seats_open": 3,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENGL 1613",
+    "prerequisite_courses": [
+      "ENGL 1613"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -1445,7 +1483,7 @@
     "campus": "SEC",
     "mode": "hybrid",
     "instructor": "Laura Zumwalt",
-    "seats_open": 9,
+    "seats_open": 10,
     "seats_total": 18,
     "prerequisite_text": "ENGL 1422",
     "prerequisite_courses": [
@@ -1514,7 +1552,7 @@
     "campus": "VC",
     "mode": "in-person",
     "instructor": "Trisha Dandurand",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 18,
     "prerequisite_text": "ENGL 1422",
     "prerequisite_courses": [
@@ -1537,7 +1575,7 @@
     "campus": "VC",
     "mode": "in-person",
     "instructor": "Trisha Dandurand",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 18,
     "prerequisite_text": "ENGL 1422",
     "prerequisite_courses": [
@@ -1555,12 +1593,12 @@
     "days": "",
     "start_time": "",
     "end_time": "",
-    "start_date": "2026-06-01",
+    "start_date": "2026-06-15",
     "location": "Virtual Campus/Online",
     "campus": "VC",
     "mode": "in-person",
     "instructor": "Linsey Cuti",
-    "seats_open": 17,
+    "seats_open": 12,
     "seats_total": 18,
     "prerequisite_text": "ENGL 1422",
     "prerequisite_courses": [
@@ -1606,10 +1644,12 @@
     "campus": "RRC",
     "mode": "in-person",
     "instructor": "Jeannette Kirchner",
-    "seats_open": 7,
+    "seats_open": 8,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENGL 1613",
+    "prerequisite_courses": [
+      "ENGL 1613"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -1629,8 +1669,10 @@
     "instructor": "Megan Cox",
     "seats_open": 14,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENGL 1613",
+    "prerequisite_courses": [
+      "ENGL 1613"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -1648,10 +1690,12 @@
     "campus": "VC",
     "mode": "in-person",
     "instructor": "Linsey Cuti",
-    "seats_open": 2,
+    "seats_open": 1,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENGL 1613",
+    "prerequisite_courses": [
+      "ENGL 1613"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -1669,10 +1713,12 @@
     "campus": "VC",
     "mode": "in-person",
     "instructor": "Amy Porter",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENGL 1613",
+    "prerequisite_courses": [
+      "ENGL 1613"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -1690,10 +1736,12 @@
     "campus": "VC",
     "mode": "in-person",
     "instructor": "Linsey Cuti",
-    "seats_open": 6,
+    "seats_open": 4,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENGL 1613",
+    "prerequisite_courses": [
+      "ENGL 1613"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -1711,10 +1759,12 @@
     "campus": "VC",
     "mode": "in-person",
     "instructor": "Dana Corlett-Bryant",
-    "seats_open": 7,
+    "seats_open": 6,
     "seats_total": 18,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ENGL 1613",
+    "prerequisite_courses": [
+      "ENGL 1613"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -1755,7 +1805,7 @@
     "campus": "OFF",
     "mode": "in-person",
     "instructor": "Casey Meister, Francine Castongia",
-    "seats_open": 59,
+    "seats_open": 57,
     "seats_total": 75,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1839,7 +1889,7 @@
     "campus": "VC",
     "mode": "in-person",
     "instructor": "Christina Sosnowski",
-    "seats_open": 17,
+    "seats_open": 14,
     "seats_total": 30,
     "prerequisite_text": "ENGL 1422",
     "prerequisite_courses": [
@@ -1862,7 +1912,7 @@
     "campus": "RRC",
     "mode": "in-person",
     "instructor": "Janika Baki-Alling, Lynn McIntyre",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1885,8 +1935,11 @@
     "instructor": "Lamanda Baade",
     "seats_open": 0,
     "seats_total": 1,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HLTH 1404 or HLTH 1412 or HLTH 1404",
+    "prerequisite_courses": [
+      "HLTH 1404",
+      "HLTH 1412"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -1906,8 +1959,11 @@
     "instructor": "Lamanda Baade",
     "seats_open": 0,
     "seats_total": 1,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HLTH 1404 or HLTH 1412 or HLTH 1404",
+    "prerequisite_courses": [
+      "HLTH 1404",
+      "HLTH 1412"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -1927,8 +1983,11 @@
     "instructor": "Lamanda Baade",
     "seats_open": 0,
     "seats_total": 1,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HLTH 1404 or HLTH 1412 or HLTH 1404",
+    "prerequisite_courses": [
+      "HLTH 1404",
+      "HLTH 1412"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -1948,8 +2007,11 @@
     "instructor": "Lamanda Baade",
     "seats_open": 1,
     "seats_total": 1,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HLTH 1404 or HLTH 1412 or HLTH 1404",
+    "prerequisite_courses": [
+      "HLTH 1404",
+      "HLTH 1412"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -1969,8 +2031,11 @@
     "instructor": "Lamanda Baade",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HLTH 1404 or HLTH 1412 or HLTH 1404",
+    "prerequisite_courses": [
+      "HLTH 1404",
+      "HLTH 1412"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -1990,8 +2055,11 @@
     "instructor": "Lamanda Baade",
     "seats_open": 0,
     "seats_total": 1,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HLTH 1404 or HLTH 1412 or HLTH 1404",
+    "prerequisite_courses": [
+      "HLTH 1404",
+      "HLTH 1412"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -2009,10 +2077,13 @@
     "campus": "OFF",
     "mode": "in-person",
     "instructor": "Lamanda Baade",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 1,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HLTH 1404 or HLTH 1412 or HLTH 1404",
+    "prerequisite_courses": [
+      "HLTH 1404",
+      "HLTH 1412"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -2032,8 +2103,11 @@
     "instructor": "Lamanda Baade",
     "seats_open": 0,
     "seats_total": 1,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HLTH 1404 or HLTH 1412 or HLTH 1404",
+    "prerequisite_courses": [
+      "HLTH 1404",
+      "HLTH 1412"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -2053,8 +2127,11 @@
     "instructor": "Lamanda Baade",
     "seats_open": 1,
     "seats_total": 1,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HLTH 1404 or HLTH 1412 or HLTH 1404",
+    "prerequisite_courses": [
+      "HLTH 1404",
+      "HLTH 1412"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -2074,8 +2151,11 @@
     "instructor": "Lamanda Baade",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HLTH 1404 or HLTH 1412 or HLTH 1404",
+    "prerequisite_courses": [
+      "HLTH 1404",
+      "HLTH 1412"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -2095,8 +2175,11 @@
     "instructor": "Lamanda Baade",
     "seats_open": 1,
     "seats_total": 1,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HLTH 1404 or HLTH 1412 or HLTH 1404",
+    "prerequisite_courses": [
+      "HLTH 1404",
+      "HLTH 1412"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -2116,8 +2199,11 @@
     "instructor": "Lamanda Baade",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HLTH 1404 or HLTH 1412 or HLTH 1404",
+    "prerequisite_courses": [
+      "HLTH 1404",
+      "HLTH 1412"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -2137,8 +2223,11 @@
     "instructor": "Lamanda Baade",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HLTH 1404 or HLTH 1412 or HLTH 1404",
+    "prerequisite_courses": [
+      "HLTH 1404",
+      "HLTH 1412"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -2158,8 +2247,11 @@
     "instructor": "Lamanda Baade",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HLTH 1404 or HLTH 1412 or HLTH 1404",
+    "prerequisite_courses": [
+      "HLTH 1404",
+      "HLTH 1412"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -2179,8 +2271,11 @@
     "instructor": "Lamanda Baade",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HLTH 1404 or HLTH 1412 or HLTH 1404",
+    "prerequisite_courses": [
+      "HLTH 1404",
+      "HLTH 1412"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -2200,8 +2295,11 @@
     "instructor": "Lamanda Baade",
     "seats_open": 0,
     "seats_total": 1,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HLTH 1404 or HLTH 1412 or HLTH 1404",
+    "prerequisite_courses": [
+      "HLTH 1404",
+      "HLTH 1412"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -2219,10 +2317,13 @@
     "campus": "OFF",
     "mode": "in-person",
     "instructor": "Lamanda Baade",
-    "seats_open": 1,
+    "seats_open": 0,
     "seats_total": 1,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HLTH 1404 or HLTH 1412 or HLTH 1404",
+    "prerequisite_courses": [
+      "HLTH 1404",
+      "HLTH 1412"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -2242,8 +2343,11 @@
     "instructor": "Lamanda Baade",
     "seats_open": 0,
     "seats_total": 1,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HLTH 1404 or HLTH 1412 or HLTH 1404",
+    "prerequisite_courses": [
+      "HLTH 1404",
+      "HLTH 1412"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -2263,8 +2367,11 @@
     "instructor": "Lamanda Baade",
     "seats_open": 0,
     "seats_total": 1,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HLTH 1404 or HLTH 1412 or HLTH 1404",
+    "prerequisite_courses": [
+      "HLTH 1404",
+      "HLTH 1412"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -2284,8 +2391,11 @@
     "instructor": "Lamanda Baade",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HLTH 1404 or HLTH 1412 or HLTH 1404",
+    "prerequisite_courses": [
+      "HLTH 1404",
+      "HLTH 1412"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -2303,10 +2413,13 @@
     "campus": "OFF",
     "mode": "in-person",
     "instructor": "Lamanda Baade",
-    "seats_open": 1,
+    "seats_open": 0,
     "seats_total": 1,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HLTH 1404 or HLTH 1412 or HLTH 1404",
+    "prerequisite_courses": [
+      "HLTH 1404",
+      "HLTH 1412"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -2326,8 +2439,11 @@
     "instructor": "Lamanda Baade",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HLTH 1404 or HLTH 1412 or HLTH 1404",
+    "prerequisite_courses": [
+      "HLTH 1404",
+      "HLTH 1412"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -2347,8 +2463,11 @@
     "instructor": "Lamanda Baade",
     "seats_open": 0,
     "seats_total": 0,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HLTH 1404 or HLTH 1412 or HLTH 1404",
+    "prerequisite_courses": [
+      "HLTH 1404",
+      "HLTH 1412"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -2368,8 +2487,11 @@
     "instructor": "Lamanda Baade",
     "seats_open": 0,
     "seats_total": 1,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HLTH 1404 or HLTH 1412 or HLTH 1404",
+    "prerequisite_courses": [
+      "HLTH 1404",
+      "HLTH 1412"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -2387,7 +2509,7 @@
     "campus": "VC",
     "mode": "in-person",
     "instructor": "Amy Hertz",
-    "seats_open": 9,
+    "seats_open": 7,
     "seats_total": 30,
     "prerequisite_text": "ENGL 1422",
     "prerequisite_courses": [
@@ -2410,7 +2532,7 @@
     "campus": "VC",
     "mode": "in-person",
     "instructor": "Scott Kistler",
-    "seats_open": 1,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": "ENGL 1422",
     "prerequisite_courses": [
@@ -2433,7 +2555,7 @@
     "campus": "VC",
     "mode": "in-person",
     "instructor": "Steven DePasquale",
-    "seats_open": 17,
+    "seats_open": 15,
     "seats_total": 30,
     "prerequisite_text": "ENGL 1422",
     "prerequisite_courses": [
@@ -2456,7 +2578,7 @@
     "campus": "VC",
     "mode": "in-person",
     "instructor": "Scott Kistler",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 30,
     "prerequisite_text": "ENGL 1422",
     "prerequisite_courses": [
@@ -2479,7 +2601,7 @@
     "campus": "VC",
     "mode": "in-person",
     "instructor": "Jeremy Van Kley",
-    "seats_open": 19,
+    "seats_open": 16,
     "seats_total": 30,
     "prerequisite_text": "ENGL 1422",
     "prerequisite_courses": [
@@ -2523,10 +2645,12 @@
     "campus": "MITC",
     "mode": "in-person",
     "instructor": "Roger Koerner",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MCHN 1311",
+    "prerequisite_courses": [
+      "MCHN 1311"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -2628,7 +2752,7 @@
     "campus": "VC",
     "mode": "hybrid",
     "instructor": "Robert Babich",
-    "seats_open": 11,
+    "seats_open": 8,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2670,10 +2794,13 @@
     "campus": "RRC",
     "mode": "in-person",
     "instructor": "Michael Kettley",
-    "seats_open": 14,
+    "seats_open": 15,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MATH 1103 or MATH 1414",
+    "prerequisite_courses": [
+      "MATH 1103",
+      "MATH 1414"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -2691,10 +2818,12 @@
     "campus": "RRC",
     "mode": "in-person",
     "instructor": "Ruth Fabbro",
-    "seats_open": 19,
+    "seats_open": 18,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MATH 1414",
+    "prerequisite_courses": [
+      "MATH 1414"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -2714,8 +2843,10 @@
     "instructor": "Jessie Rezba",
     "seats_open": 0,
     "seats_total": 1,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MATH 1424",
+    "prerequisite_courses": [
+      "MATH 1424"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -2733,10 +2864,13 @@
     "campus": "RRC",
     "mode": "in-person",
     "instructor": "Jorge Gavillan",
-    "seats_open": 16,
+    "seats_open": 14,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MATH 1424 or MATH 0984",
+    "prerequisite_courses": [
+      "MATH 1424",
+      "MATH 0984"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -2756,8 +2890,11 @@
     "instructor": "Kaitlin Burgess",
     "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MATH 1424 or MATH 0984",
+    "prerequisite_courses": [
+      "MATH 1424",
+      "MATH 0984"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -2777,8 +2914,11 @@
     "instructor": "Kaitlin Burgess",
     "seats_open": 0,
     "seats_total": 1,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MATH 1424 or MATH 1453",
+    "prerequisite_courses": [
+      "MATH 1424",
+      "MATH 1453"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -2796,10 +2936,13 @@
     "campus": "RRC",
     "mode": "hybrid",
     "instructor": "Kaitlin Burgess",
-    "seats_open": 4,
+    "seats_open": 2,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "MATH 1424 or MATH 1453",
+    "prerequisite_courses": [
+      "MATH 1424",
+      "MATH 1453"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -2817,10 +2960,12 @@
     "campus": "RRC",
     "mode": "hybrid",
     "instructor": "Amy Harwood",
-    "seats_open": 27,
+    "seats_open": 26,
     "seats_total": 32,
-    "prerequisite_text": "ENGL 1422",
+    "prerequisite_text": "MATH 1803 or MATH 1814 and ENGL 1422",
     "prerequisite_courses": [
+      "MATH 1803",
+      "MATH 1814",
       "ENGL 1422"
     ]
   },
@@ -2842,8 +2987,9 @@
     "instructor": "Jorge Gavillan",
     "seats_open": 19,
     "seats_total": 32,
-    "prerequisite_text": "ENGL 1422",
+    "prerequisite_text": "MATH 2515 and ENGL 1422",
     "prerequisite_courses": [
+      "MATH 2515",
       "ENGL 1422"
     ]
   },
@@ -2863,7 +3009,7 @@
     "campus": "RRC",
     "mode": "in-person",
     "instructor": "Tishauna Thigpen",
-    "seats_open": 9,
+    "seats_open": 8,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2907,8 +3053,10 @@
     "instructor": "Mark Sawicki",
     "seats_open": 14,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PMED 2215",
+    "prerequisite_courses": [
+      "PMED 2215"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -2926,7 +3074,7 @@
     "campus": "VC",
     "mode": "in-person",
     "instructor": "Wesley Davenport",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 30,
     "prerequisite_text": "ENGL 1422",
     "prerequisite_courses": [
@@ -2991,7 +3139,7 @@
     "campus": "RRC",
     "mode": "in-person",
     "instructor": "Jessica Kawa",
-    "seats_open": 12,
+    "seats_open": 13,
     "seats_total": 24,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3014,8 +3162,13 @@
     "instructor": "Kimberly Libby, Regina VanDeVelde",
     "seats_open": 3,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PHTA 1133 and PHTA 1203 and PHTA 1243 and PHTA 1272",
+    "prerequisite_courses": [
+      "PHTA 1133",
+      "PHTA 1203",
+      "PHTA 1243",
+      "PHTA 1272"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -3035,8 +3188,14 @@
     "instructor": "Kimberly Libby, Regina VanDeVelde",
     "seats_open": 3,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PHTA 1243 and PHTA 1246 and PHTA 1272 and BIOL 2654 and PHTA 2001",
+    "prerequisite_courses": [
+      "PHTA 1243",
+      "PHTA 1246",
+      "PHTA 1272",
+      "BIOL 2654",
+      "PHTA 2001"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -3054,8 +3213,8 @@
     "campus": "VC",
     "mode": "in-person",
     "instructor": "Steven DePasquale",
-    "seats_open": 0,
-    "seats_total": 30,
+    "seats_open": 1,
+    "seats_total": 31,
     "prerequisite_text": "ENGL 1422",
     "prerequisite_courses": [
       "ENGL 1422"
@@ -3079,8 +3238,14 @@
     "instructor": "Kim Brands, Heather Baud, Elyssa Galloway, Lauren Hills, Mary Kyrouac, Mary Nehls",
     "seats_open": 7,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PNUR 1140 and PNUR 1262 and BIOL 1564 or BIOL 2644 or BIOL 2654",
+    "prerequisite_courses": [
+      "PNUR 1140",
+      "PNUR 1262",
+      "BIOL 1564",
+      "BIOL 2644",
+      "BIOL 2654"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -3119,7 +3284,7 @@
     "campus": "SEC",
     "mode": "in-person",
     "instructor": "Mary Nehls, Lauren Hills",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 16,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3142,8 +3307,10 @@
     "instructor": "Lauren Hills",
     "seats_open": 7,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PNUR 1316",
+    "prerequisite_courses": [
+      "PNUR 1316"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -3161,7 +3328,7 @@
     "campus": "RRC",
     "mode": "in-person",
     "instructor": "Kadie Wood",
-    "seats_open": 13,
+    "seats_open": 12,
     "seats_total": 35,
     "prerequisite_text": "ENGL 1422",
     "prerequisite_courses": [
@@ -3184,7 +3351,7 @@
     "campus": "RRC",
     "mode": "in-person",
     "instructor": "Megan Pfeifer",
-    "seats_open": 15,
+    "seats_open": 14,
     "seats_total": 35,
     "prerequisite_text": "ENGL 1422",
     "prerequisite_courses": [
@@ -3230,7 +3397,7 @@
     "campus": "VC",
     "mode": "in-person",
     "instructor": "Cari Stevenson",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 30,
     "prerequisite_text": "ENGL 1422",
     "prerequisite_courses": [
@@ -3299,7 +3466,7 @@
     "campus": "VC",
     "mode": "in-person",
     "instructor": "Megan Pfeifer",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 30,
     "prerequisite_text": "ENGL 1422",
     "prerequisite_courses": [
@@ -3324,8 +3491,10 @@
     "instructor": "Cari Stevenson",
     "seats_open": 4,
     "seats_total": 30,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "PSYC 1813",
+    "prerequisite_courses": [
+      "PSYC 1813"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -3366,8 +3535,14 @@
     "instructor": "Rebecca Sherry, Olivia Skubic",
     "seats_open": 0,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "XRAY 1326 and XRAY 1053 and XRAY 1042 and XRAY 1232 and XRAY 2212",
+    "prerequisite_courses": [
+      "XRAY 1326",
+      "XRAY 1053",
+      "XRAY 1042",
+      "XRAY 1232",
+      "XRAY 2212"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -3445,12 +3620,14 @@
     "instructor": "Jaclyn Montemayer",
     "seats_open": 5,
     "seats_total": 20,
-    "prerequisite_text": "RESP 1331 and RESP 1113 and RESP 1324 and MATH 1142",
+    "prerequisite_text": "RESP 1331 and RESP 1113 and RESP 1324 and MATH 1142 and BIOL 1564 or BIOL 2654",
     "prerequisite_courses": [
       "RESP 1331",
       "RESP 1113",
       "RESP 1324",
-      "MATH 1142"
+      "MATH 1142",
+      "BIOL 1564",
+      "BIOL 2654"
     ]
   },
   {
@@ -3471,8 +3648,13 @@
     "instructor": "Kelli Jandura",
     "seats_open": 8,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "RESP 2213 or RESP 2225 or RESP 2411 or RESP 2445",
+    "prerequisite_courses": [
+      "RESP 2213",
+      "RESP 2225",
+      "RESP 2411",
+      "RESP 2445"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -3490,7 +3672,7 @@
     "campus": "VC",
     "mode": "in-person",
     "instructor": "Trisha Dandurand",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 30,
     "prerequisite_text": "ENGL 1422",
     "prerequisite_courses": [
@@ -3536,7 +3718,7 @@
     "campus": "VC",
     "mode": "in-person",
     "instructor": "Ryan Gorecki",
-    "seats_open": 8,
+    "seats_open": 7,
     "seats_total": 12,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3559,8 +3741,10 @@
     "instructor": "Tyson Creek",
     "seats_open": 3,
     "seats_total": 8,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WELD 1124",
+    "prerequisite_courses": [
+      "WELD 1124"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -3578,10 +3762,12 @@
     "campus": "MITC",
     "mode": "hybrid",
     "instructor": "Tyson Creek",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 8,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WELD 1124",
+    "prerequisite_courses": [
+      "WELD 1124"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -3599,10 +3785,12 @@
     "campus": "MITC",
     "mode": "in-person",
     "instructor": "Tyson Creek",
-    "seats_open": 3,
+    "seats_open": 4,
     "seats_total": 8,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WELD 1124",
+    "prerequisite_courses": [
+      "WELD 1124"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -3620,10 +3808,12 @@
     "campus": "MITC",
     "mode": "hybrid",
     "instructor": "Timothy Marcotte",
-    "seats_open": 2,
+    "seats_open": 3,
     "seats_total": 8,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WELD 1124",
+    "prerequisite_courses": [
+      "WELD 1124"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -3643,8 +3833,10 @@
     "instructor": "Timothy Marcotte",
     "seats_open": 3,
     "seats_total": 8,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WELD 1124",
+    "prerequisite_courses": [
+      "WELD 1124"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -3662,10 +3854,12 @@
     "campus": "MITC",
     "mode": "in-person",
     "instructor": "Timothy Marcotte",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 8,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "WELD 1124",
+    "prerequisite_courses": [
+      "WELD 1124"
+    ]
   },
   {
     "college_code": "kankakee-community-college",
@@ -3683,7 +3877,7 @@
     "campus": "MITC",
     "mode": "in-person",
     "instructor": "Roger Koerner",
-    "seats_open": 1,
+    "seats_open": 2,
     "seats_total": 12,
     "prerequisite_text": null,
     "prerequisite_courses": []
