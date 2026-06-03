@@ -3,12 +3,14 @@ import {
   recommend,
   matchesTime,
   availableFieldIds,
+  relevantSlugs,
   FIELDS,
   GOALS,
   TIMES,
   type ChooseProgramFact,
   type QuizAnswers,
 } from "../choose";
+import { PROGRAMS } from "../registry";
 
 // --- fixtures -------------------------------------------------------------
 
@@ -264,5 +266,31 @@ describe("taxonomy", () => {
   it("has 3 goals and 4 time options", () => {
     expect(GOALS).toHaveLength(3);
     expect(TIMES).toHaveLength(4);
+  });
+
+  it("every field slug exists in the program registry", () => {
+    const valid = new Set(PROGRAMS.map((p) => p.slug));
+    for (const f of FIELDS) {
+      for (const s of f.slugs) {
+        expect(valid.has(s), `${s} (field ${f.id}) is not a registry slug`).toBe(
+          true,
+        );
+      }
+    }
+  });
+
+  // INVARIANT that guarantees the home-page CTA never links to an empty quiz:
+  // the home page shows the CTA when getQualifyingProgramSlugs(state) is
+  // non-empty (a subset of all registry slugs), and /[state]/choose has
+  // content when any relevantSlug qualifies. Those are equivalent ONLY if
+  // relevantSlugs() covers every registry slug. If a future program is added
+  // to the registry without being placed in a field, this fails — assign it
+  // to a FIELD (or change the CTA gate) so the CTA can't dead-end on a 404.
+  it("relevantSlugs() covers every registry program slug (CTA-no-404 invariant)", () => {
+    const relevant = new Set(relevantSlugs());
+    const missing = PROGRAMS.map((p) => p.slug).filter((s) => !relevant.has(s));
+    expect(missing, `registry slugs missing from any field: ${missing.join(", ")}`).toEqual(
+      [],
+    );
   });
 });
