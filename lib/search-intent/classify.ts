@@ -10,6 +10,7 @@
 
 import { memoryCache, supabaseCache, type Cache } from "./cache";
 import { llmClassifier } from "./classify-llm";
+import { localClassifier } from "./classify-local";
 import { CLASSIFIER_MODEL } from "./prompt";
 import type { Classifier, ClassifiedIntent } from "./types";
 
@@ -19,11 +20,70 @@ export interface ClassifierWithOptions {
   modelVersion?: string;
 }
 
+/**
+ * Resolve the default LLM + cache namespace from `CLASSIFIER_PROVIDER`.
+ *
+ * Returns null for the implicit "anthropic" default (handled by the caller so
+ * the Anthropic client is only constructed when actually used). The
+ * `modelVersion` is part of the Supabase cache PRIMARY KEY, so switching
+ * providers automatically starts a fresh cache namespace — and flipping back
+ * reuses the old one. Cutover and rollback are a single env-var change.
+ */
+function providerDefault(): { llm: Classifier; modelVersion: string } | null {
+  switch (process.env.CLASSIFIER_PROVIDER) {
+    case "cloudflare": {
+      const model = process.env.CF_MODEL ?? "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
+      return {
+        llm: localClassifier({
+          wire: "openai",
+          baseUrl: `https://api.cloudflare.com/client/v4/accounts/${process.env.CF_ACCOUNT_ID}/ai/v1`,
+          apiKey: process.env.CF_API_TOKEN,
+          model,
+          timeoutMs: 25_000,
+        }),
+        modelVersion: `cf:${model}`,
+      };
+    }
+    case "groq": {
+      const model = process.env.GROQ_MODEL ?? "llama-3.3-70b-versatile";
+      return {
+        llm: localClassifier({
+          wire: "openai",
+          baseUrl: "https://api.groq.com/openai/v1",
+          apiKey: process.env.GROQ_API_KEY,
+          model,
+          timeoutMs: 15_000,
+        }),
+        modelVersion: `groq:${model}`,
+      };
+    }
+    case "ollama": {
+      const model = process.env.OLLAMA_MODEL ?? "qwen2.5:7b-instruct";
+      return {
+        llm: localClassifier({
+          wire: "ollama",
+          baseUrl: process.env.OLLAMA_URL ?? "http://127.0.0.1:11434",
+          apiKey: process.env.OLLAMA_TOKEN,
+          model,
+          timeoutMs: 30_000,
+        }),
+        modelVersion: `ollama:${model}`,
+      };
+    }
+    default:
+      return null; // anthropic — the existing Claude Haiku path
+  }
+}
+
 /** Compose a cache-backed classifier from injectable parts. */
 export function classifierWith(opts: ClassifierWithOptions = {}): Classifier {
+  // Resolve a provider only when the caller hasn't injected an llm (tests/eval
+  // pass their own). `?? llmClassifier()` stays lazy so the Anthropic client
+  // (which throws without a key) is constructed only when it's the chosen path.
+  const provider = opts.llm ? null : providerDefault();
   const cache = opts.cache ?? supabaseCache();
-  const llm = opts.llm ?? llmClassifier();
-  const modelVersion = opts.modelVersion ?? CLASSIFIER_MODEL;
+  const llm = opts.llm ?? provider?.llm ?? llmClassifier();
+  const modelVersion = opts.modelVersion ?? provider?.modelVersion ?? CLASSIFIER_MODEL;
 
   return async (query: string, state: string): Promise<ClassifiedIntent> => {
     const cached = await cache.get(query, state, modelVersion);
