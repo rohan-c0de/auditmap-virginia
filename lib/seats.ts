@@ -125,13 +125,16 @@ export function seatTone(info: SeatInfo): SeatTone {
   }
 }
 
-/** Aggregate label for a header / matrix cell. Null = nothing trustworthy to show. */
+/**
+ * Aggregate label for a header summary. Always framed as open-vs-total
+ * SECTIONS ("245 of 320 sections open") so it reads the same in every state —
+ * count states and flag states alike — instead of a large, hard-to-grok
+ * statewide seat sum ("4,605 seats open"). Null = no trustworthy data to show.
+ *
+ * (Raw seat sums are still available via aggregateSeats().openSeats for callers
+ * that genuinely want per-college counts, e.g. the compare matrix.)
+ */
 export function aggregateLabel(a: SeatAggregate): string | null {
-  if (a.openSeats != null) {
-    return `${a.openSeats} ${a.openSeats === 1 ? "seat" : "seats"} open`;
-  }
-  if (a.anyData) {
-    return `${a.openSections} of ${a.totalSections} ${a.totalSections === 1 ? "section" : "sections"} open`;
-  }
-  return null;
+  if (!a.anyData) return null;
+  return `${a.openSections} of ${a.totalSections} ${a.totalSections === 1 ? "section" : "sections"} open`;
 }
