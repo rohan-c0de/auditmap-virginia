@@ -5,6 +5,8 @@ import {
   combinations,
   hasTimeConflict,
   hasBreakViolation,
+  isFullSection,
+  scoreSeatAvailability,
   type EnrichedSection,
 } from "../schedule";
 
@@ -189,5 +191,57 @@ describe("hasBreakViolation", () => {
     const a = section({ _startMin: 540, _endMin: 600 });
     const b = section({ _startMin: 600, _endMin: 660 });
     expect(hasBreakViolation(a, b, 0)).toBe(false);
+  });
+});
+
+describe("isFullSection (hide-full filter)", () => {
+  it("treats 0 open as full", () => {
+    expect(isFullSection({ seats_open: 0, seats_total: 30 })).toBe(true);
+  });
+  it("treats NEGATIVE open (full + waitlist) as full — the bug the old `=== 0` missed", () => {
+    expect(isFullSection({ seats_open: -5, seats_total: 30 })).toBe(true);
+    expect(isFullSection({ seats_open: -363, seats_total: null })).toBe(true);
+  });
+  it("does NOT treat open sections, sentinels, or unknown as full", () => {
+    expect(isFullSection({ seats_open: 5, seats_total: 30 })).toBe(false);
+    expect(isFullSection({ seats_open: 9999, seats_total: 9999 })).toBe(false); // sentinel = open
+    expect(isFullSection({ seats_open: 1, seats_total: null })).toBe(false); // flag-state open
+    expect(isFullSection({ seats_open: null, seats_total: null })).toBe(false); // unknown — kept
+  });
+});
+
+describe("scoreSeatAvailability", () => {
+  const score = (rows: { seats_open: number | null; seats_total: number | null }[]) =>
+    scoreSeatAvailability(rows as Pick<EnrichedSection, "seats_open" | "seats_total">[]);
+
+  it("a confirmed wide-open section scores the max (15)", () => {
+    expect(score([{ seats_open: 25, seats_total: 30 }])).toBe(15);
+  });
+
+  it("a full section (0) scores 0", () => {
+    expect(score([{ seats_open: 0, seats_total: 30 }])).toBe(0);
+  });
+
+  it("a waitlisted (negative) section scores 0, not negative — old code went below 0", () => {
+    expect(score([{ seats_open: -5, seats_total: 30 }])).toBe(0);
+  });
+
+  it("a 9999 sentinel section is NOT ranked most-available (scores below a real wide-open one)", () => {
+    const sentinel = score([{ seats_open: 9999, seats_total: 9999 }]);
+    const wideOpen = score([{ seats_open: 25, seats_total: 30 }]);
+    expect(sentinel).toBeLessThan(wideOpen);
+    expect(sentinel).toBeGreaterThan(0); // still counts as available
+  });
+
+  it("real open count with a sentinel total is treated as available, not full", () => {
+    // open 20, total 9999 (sentinel) → old code: fillRatio≈0 → ~0 (looked full).
+    const s = score([{ seats_open: 20, seats_total: 9999 }]);
+    expect(s).toBeGreaterThan(score([{ seats_open: 1, seats_total: 30 }])); // beats a nearly-full real section
+  });
+
+  it("no-data sections get a neutral mid score (unchanged)", () => {
+    const neutral = score([{ seats_open: null, seats_total: null }]);
+    expect(neutral).toBeGreaterThan(0);
+    expect(neutral).toBeLessThan(15);
   });
 });
