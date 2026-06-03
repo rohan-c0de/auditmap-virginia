@@ -87,7 +87,11 @@ const alConfig: StateConfig = {
     // / prerequisite_courses fields and flattens them into a single
     // data/al/prereqs.json keyed by course code.
     prereqs: { source: "aggregate-from-courses" },
-    // manual-only: programs — Phase 5+.
+    // Degree/program requirements for the 9 CleanCatalog colleges that yield
+    // parseable programs (14 more deferred — see data/al/DEFERRED-programs.md).
+    programs: [
+      { scripts: ["scripts/al/scrape-programs.ts"], runner: "http" },
+    ],
   },
   documentedCeilings: {
     courses: [
