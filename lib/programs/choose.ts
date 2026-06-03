@@ -1,23 +1,18 @@
 /**
- * "Help me choose" guided-flow data layer + pure recommendation logic.
+ * "Help me choose" guided-flow taxonomy + PURE recommendation logic.
  *
  * Powers `/[state]/choose`: a short interest → goal → schedule quiz that
  * points an undecided student at real program comparison pages. Owner-
  * approved concept (the `choose.html` prototype); this is the production
  * wiring against the REAL catalog.
  *
- * Two halves, deliberately separated:
+ * This module is CLIENT-SAFE: no I/O, no server-only imports. It is imported
+ * by both the server page and the `ChooseQuiz` client component. The async
+ * fact gatherer (which reads Supabase + the BLS file) lives separately in
+ * `choose-data.ts` so server-only code never leaks into the client bundle.
  *
- *  1. PURE LOGIC (`recommend`, the FIELDS/GOALS/TIMES taxonomy) — no I/O,
- *     fully unit-tested. Given a set of program facts and the student's
- *     three answers, returns the ordered matches.
- *
- *  2. SERVER GATHERER (`gatherChooseFacts`) — reads only data sources proven
- *     available at runtime: live sections via `loadProgramData` (Supabase,
- *     same path the /[state]/programs index uses) + BLS wages (bundled
- *     file). It NEVER fabricates a number; every field is a measured value
- *     or null. Slugs are emitted ONLY when they clear `qualifies()`, so a
- *     recommendation can never link to a program page that soft-404s.
+ * Given a set of program facts and the student's three answers, `recommend`
+ * returns the ordered matches — fully unit-tested.
  *
  * Design decisions worth keeping (verified against real data 2026-06-02):
  *  - Field taxonomy maps onto slugs that actually qualify. Each non-trades
@@ -27,16 +22,11 @@
  *  - Job-vs-transfer orientation comes from the registry `primarySoc`
  *    (non-null = a direct CC career path; null = transfer-oriented), NOT from
  *    scraped `total_credits`/credentials, which are only 3–18% populated in
- *    some states.
- *  - No transfer-coverage % is computed here: `transfer-equiv.json` is
- *    excluded from runtime bundles, and career programs legitimately have
- *    ~0 transfer rows. The UI links to the existing transfer views instead.
+ *    some states. (Applied in `choose-data.ts` when building facts.)
+ *  - No transfer-coverage % is computed: `transfer-equiv.json` is excluded
+ *    from runtime bundles, and career programs legitimately have ~0 transfer
+ *    rows. The UI links to the existing transfer views instead.
  */
-
-import { loadProgramData, qualifies } from "./index";
-import { getProgramBySlug } from "./registry";
-import { computeCourseAvailabilityProfile } from "@/lib/course-stats";
-import { getStateSocStats } from "@/lib/bls";
 
 // ---------------------------------------------------------------------------
 // Quiz taxonomy (config-driven — tune the field→slug map in one place)
@@ -291,62 +281,10 @@ export function recommend(
   return ordered;
 }
 
-// ---------------------------------------------------------------------------
-// Server-side fact gathering (Supabase live sections + bundled BLS file)
-// ---------------------------------------------------------------------------
-
-/** Every slug referenced by any field (deduped) — the universe to evaluate. */
-function relevantSlugs(): string[] {
-  return [...new Set(FIELDS.flatMap((f) => f.slugs))];
-}
-
-/**
- * Gather honest facts for every quiz-relevant program that QUALIFIES in the
- * state this term. Mirrors the /[state]/programs index cost profile
- * (loadProgramData per slug, cached + ISR). Returns only qualifying slugs,
- * so the client can never recommend a soft-404 page.
- */
-export async function gatherChooseFacts(
-  state: string,
-): Promise<ChooseProgramFact[]> {
-  const slugs = relevantSlugs();
-  const results = await Promise.all(
-    slugs.map(async (slug) => {
-      const def = getProgramBySlug(slug);
-      if (!def) return null;
-      const data = await loadProgramData(state, slug).catch(() => null);
-      if (!data || !qualifies(data)) return null;
-
-      const profile = computeCourseAvailabilityProfile(data.flatSections);
-      const onlinePct = profile
-        ? Math.round((profile.modes.pcts.online ?? 0) + (profile.modes.pcts.zoom ?? 0))
-        : null;
-      const eveningAvailable = profile ? profile.timeOfDay.evening > 0 : false;
-      const medianWage = def.primarySoc
-        ? getStateSocStats(state, def.primarySoc)?.medianAnnualWage ?? null
-        : null;
-
-      return {
-        slug,
-        name: def.name,
-        blurb: def.description,
-        collegeCount: data.totalColleges,
-        sectionCount: data.totalSections,
-        onlinePct,
-        eveningAvailable,
-        medianWage,
-        careerOriented: def.primarySoc != null,
-      } satisfies ChooseProgramFact;
-    }),
-  );
-
-  return results.filter((r): r is ChooseProgramFact => r !== null);
-}
-
 /**
  * Which fields will actually yield ≥1 result given the qualifying facts.
- * Lets the page disable/annotate dead fields up front rather than letting a
- * student pick one and hit an empty screen.
+ * Lets the UI disable/annotate dead fields up front rather than letting a
+ * student pick one and hit an empty screen. Pure — runs on the client.
  */
 export function availableFieldIds(facts: ChooseProgramFact[]): Set<FieldId> {
   const present = new Set(facts.map((f) => f.slug));
@@ -355,4 +293,10 @@ export function availableFieldIds(facts: ChooseProgramFact[]): Set<FieldId> {
     if (field.slugs.some((s) => present.has(s))) out.add(field.id);
   }
   return out;
+}
+
+/** Every slug referenced by any field (deduped) — the universe to evaluate
+ *  server-side. Pure; lives here so the taxonomy stays the single source. */
+export function relevantSlugs(): string[] {
+  return [...new Set(FIELDS.flatMap((f) => f.slugs))];
 }
