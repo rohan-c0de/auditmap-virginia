@@ -24,6 +24,7 @@ import { parseTimeToMinutes, daysToBitmask } from "./time-utils";
 import { isInProgress } from "./course-status";
 import { getCurrentTerm } from "./terms";
 import { bestTransferEntry } from "./transfer-rank";
+import { describeSeats } from "./seats";
 const MAX_RESULTS = 20;
 const MAX_HEAP_SIZE = 50;
 const MAX_COMBINATIONS_EVALUATED = 100_000;
@@ -364,8 +365,12 @@ function filterSections(
     // If mode is in-person and no distance data but maxDistance is set, let it through
     // (we only filter when we have data)
 
-    // Seat availability filter (checked after all other criteria so count is accurate)
-    if (hideFullSections && s.seats_open !== null && s.seats_open === 0) {
+    // Seat availability filter (checked after all other criteria so count is
+    // accurate). "Full" means 0 OR negative seats_open — a negative value is a
+    // full section with a waitlist (35 states), which the old `=== 0` check
+    // missed. Routed through lib/seats so sentinels/flags aren't mistaken for
+    // full. Unknown (null) sections are kept.
+    if (hideFullSections && isFullSection(s)) {
       filteredFullCount++;
       continue;
     }
@@ -760,22 +765,46 @@ function scoreVariety(sections: EnrichedSection[]): number {
   return Math.round((3 + ratio * 7) * 10) / 10;
 }
 
+/** A section is "full" (no enrollable seats) when seats_open is 0 or negative
+ *  (negative = full with a waitlist). Sentinels/flags/unknown are NOT full. */
+export function isFullSection(s: {
+  seats_open: number | null;
+  seats_total: number | null;
+}): boolean {
+  return describeSeats(s.seats_open, s.seats_total).status === "full";
+}
+
 /** Seat Availability (0-15): more open seats = higher score */
-function scoreSeatAvailability(sections: EnrichedSection[]): number {
+export function scoreSeatAvailability(
+  sections: Pick<EnrichedSection, "seats_open" | "seats_total">[],
+): number {
   const MAX = 15;
   let totalScore = 0;
   let count = 0;
 
   for (const s of sections) {
-    if (s.seats_open === null || s.seats_total === null || s.seats_total === 0) {
-      // No seat data — give neutral score (assume mid-range availability)
-      totalScore += 0.5;
-      count++;
+    count++;
+    // Route through lib/seats so negatives (waitlist) score as full and
+    // sentinels (≥1000, e.g. 9999) aren't turned into a bogus fill ratio.
+    const info = describeSeats(s.seats_open, s.seats_total);
+    if (info.status === "unknown") {
+      totalScore += 0.5; // no data — neutral (mid-range), unchanged
       continue;
     }
-
-    count++;
-    const fillRatio = s.seats_open / s.seats_total;
+    if (info.status === "full") {
+      totalScore += 0; // 0 or waitlisted — no availability
+      continue;
+    }
+    if (info.status === "open" || info.total == null) {
+      // Available, but no trustworthy capacity (sentinel/online-unlimited, a
+      // flag-state open, or an open count with no sane total). Score it
+      // "available but uncertain" — high, but below a confirmed wide-open
+      // section, so an unknown-capacity section is never ranked most-available.
+      totalScore += 0.75;
+      continue;
+    }
+    // Real count with a sane total → graded fill ratio.
+    const fillRatio = info.open! / info.total;
     // >50% open = full score, 25-50% = linear, 10-25% = steeper penalty, <10% = low
     if (fillRatio >= 0.5) {
       totalScore += 1.0;
