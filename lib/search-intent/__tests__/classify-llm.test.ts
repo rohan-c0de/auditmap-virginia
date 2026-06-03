@@ -384,3 +384,76 @@ describe("toClassifiedIntent", () => {
     expect(result.secondaryIntent.course?.prefix).toBe("BIO");
   });
 });
+
+describe("llmClassifier — course_title mapping & code-wins", () => {
+  async function classify(input: Partial<ClassifierToolInput>) {
+    const classifier = llmClassifier({ client: fakeClient(input) });
+    return (await classifier("q", "va")).intent;
+  }
+
+  it("maps a prereqs title-by-name into courseTitle + subjectPrefix (course null)", async () => {
+    const intent = await classify({
+      type: "prereqs",
+      course_prefix: "ARA",
+      course_number: null,
+      course_title: "Intermediate Arabic II",
+    });
+    expect(intent).toEqual({
+      type: "prereqs",
+      course: null,
+      subjectPrefix: "ARA",
+      courseTitle: "Intermediate Arabic II",
+      direction: "forward",
+    });
+  });
+
+  it("CODE WINS for prereqs: a code present forces courseTitle + subjectPrefix to null", async () => {
+    const intent = await classify({
+      type: "prereqs",
+      course_prefix: "BIO",
+      course_number: "256",
+      course_title: "Genetics", // present, but must be ignored when a code exists
+    });
+    expect(intent).toEqual({
+      type: "prereqs",
+      course: { prefix: "BIO", number: "256" },
+      subjectPrefix: null,
+      courseTitle: null,
+      direction: "forward",
+    });
+  });
+
+  it("maps a transfer title-by-name into courseTitle + subjectPrefix (course null)", async () => {
+    const intent = await classify({
+      type: "transfer",
+      course_prefix: "ACC",
+      course_number: null,
+      course_title: "Principles of Accounting",
+      university: null,
+    });
+    expect(intent).toEqual({
+      type: "transfer",
+      course: null,
+      subjectPrefix: "ACC",
+      courseTitle: "Principles of Accounting",
+      university: null,
+    });
+  });
+
+  it("CODE WINS for transfer: a code present forces courseTitle to null", async () => {
+    const intent = await classify({
+      type: "transfer",
+      course_prefix: "ENG",
+      course_number: "111",
+      course_title: "Composition I",
+      university: "gmu",
+    });
+    expect(intent).toEqual({
+      type: "transfer",
+      course: { prefix: "ENG", number: "111" },
+      subjectPrefix: null,
+      courseTitle: null,
+      university: "gmu",
+    });
+  });
+});
