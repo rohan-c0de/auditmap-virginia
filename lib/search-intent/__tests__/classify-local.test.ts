@@ -81,6 +81,27 @@ describe("localClassifier (openai wire — Cloudflare/Groq)", () => {
     });
     expect(result.studentSummary).toContain("ENG 111");
   });
+
+  it("handles Cloudflare's already-parsed object content (not a JSON string)", async () => {
+    // Cloudflare Workers AI json_schema mode returns message.content as an
+    // OBJECT, unlike OpenAI/Groq which return a JSON string. Both must work.
+    mockFetch({ choices: [{ message: { content: TOOL_INPUT } }] });
+    const result = await localClassifier(CF)("does ENG 111 transfer to GMU?", "va");
+    expect(result.intent).toEqual({
+      type: "transfer",
+      course: { prefix: "ENG", number: "111" },
+      subjectPrefix: null,
+      university: "gmu",
+    });
+  });
+
+  it("strips a ```json fence when a model wraps its output", async () => {
+    mockFetch({
+      choices: [{ message: { content: "```json\n" + JSON.stringify(TOOL_INPUT) + "\n```" } }],
+    });
+    const result = await localClassifier(CF)("does ENG 111 transfer to GMU?", "va");
+    expect(result.intent.type).toBe("transfer");
+  });
 });
 
 describe("localClassifier (ollama wire)", () => {

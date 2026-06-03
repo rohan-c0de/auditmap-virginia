@@ -13,6 +13,26 @@
 
 export type LlmWire = "openai" | "ollama";
 
+/**
+ * Parse model output that should be JSON but may be wrapped in a ```json fence
+ * or padded with prose (smaller models do this even in json_schema mode).
+ * Tries a clean parse, then a fenced/substring parse before giving up.
+ */
+export function parseLooseJson<T>(raw: string): T {
+  try {
+    return JSON.parse(raw) as T;
+  } catch {
+    // strip ```json … ``` fences and any text before the first { / after the last }
+    const fenced = raw.replace(/^```(?:json)?\s*/i, "").replace(/\s*```\s*$/i, "");
+    const start = fenced.indexOf("{");
+    const end = fenced.lastIndexOf("}");
+    if (start !== -1 && end > start) {
+      return JSON.parse(fenced.slice(start, end + 1)) as T;
+    }
+    throw new Error(`json-chat: could not parse model output as JSON: ${raw.slice(0, 200)}`);
+  }
+}
+
 export interface JsonChatConfig {
   wire: LlmWire;
   /** OpenAI-wire: the `/v1`-style base (no trailing slash). Ollama-wire: host root. */
@@ -103,18 +123,20 @@ export async function jsonChat<T>(
       );
     }
     const data = (await res.json()) as {
-      message?: { content?: string };
-      choices?: Array<{ message?: { content?: string } }>;
+      message?: { content?: unknown };
+      choices?: Array<{ message?: { content?: unknown } }>;
     };
     const content = isOllama
       ? data?.message?.content
       : data?.choices?.[0]?.message?.content;
-    if (typeof content !== "string") {
-      throw new Error(
-        `json-chat ${cfg.wire}: no message content in response: ${JSON.stringify(data).slice(0, 300)}`,
-      );
-    }
-    return JSON.parse(content) as T;
+    // Wire quirk: most OpenAI-compatible endpoints (and Ollama) return
+    // `content` as a JSON *string* to be parsed. Cloudflare Workers AI's
+    // json_schema mode returns it as an already-parsed *object*. Accept both.
+    if (content && typeof content === "object") return content as T;
+    if (typeof content === "string") return parseLooseJson<T>(content);
+    throw new Error(
+      `json-chat ${cfg.wire}: no usable message content in response: ${JSON.stringify(data).slice(0, 300)}`,
+    );
   } finally {
     clearTimeout(timer);
   }

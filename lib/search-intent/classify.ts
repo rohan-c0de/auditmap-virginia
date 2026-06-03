@@ -39,7 +39,12 @@ function providerDefault(): { llm: Classifier; modelVersion: string } | null {
           baseUrl: `https://api.cloudflare.com/client/v4/accounts/${process.env.CF_ACCOUNT_ID}/ai/v1`,
           apiKey: process.env.CF_API_TOKEN,
           model,
-          timeoutMs: 25_000,
+          // Workers AI's 70B latency is variable (often 7-30s under load). The
+          // answer card is non-blocking and Supabase-cached, so we'd rather wait
+          // and populate (+ cache) it than abort. Kept under the route's
+          // maxDuration. If snappier responses matter, CLASSIFIER_PROVIDER=groq
+          // is the same code path and sub-second.
+          timeoutMs: 45_000,
         }),
         modelVersion: `cf:${model}`,
       };

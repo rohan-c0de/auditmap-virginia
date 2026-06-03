@@ -27,10 +27,11 @@ import { lookupAnswers } from "@/lib/search-intent/answer";
 
 type RouteContext = { params: Promise<{ state: string }> };
 
-// Allow headroom for an open-model classifier call (Cloudflare/Groq are fast;
-// a self-hosted Ollama box over a tunnel can take longer). Hobby allows ≤60,
-// Pro ≤300. The adapter's own timeoutMs is kept below this.
-export const maxDuration = 30;
+// Headroom for an open-model classifier call. Cloudflare Workers AI's 70B can
+// take 7-30s under load; the adapter's own timeoutMs (45s) sits just under this.
+// Hobby allows ≤60, Pro ≤300. The /ask call is non-blocking (course results
+// render first) and the result is Supabase-cached, so a slow first hit is fine.
+export const maxDuration = 60;
 
 // LLM calls cost real money, so keep the per-IP cap tighter than the
 // course-search endpoint's 30/min default.
