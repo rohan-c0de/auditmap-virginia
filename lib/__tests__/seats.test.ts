@@ -93,8 +93,18 @@ describe("labels & tone", () => {
     expect(seatLabel(describeSeats(null, null))).toBe("—");
   });
 
-  it("aggregateLabel prefers real seats, falls back to sections, else null", () => {
-    expect(aggregateLabel(aggregateSeats([{ seats_open: 5, seats_total: 30 }]))).toBe("5 seats open");
+  it("aggregateLabel always frames as open-of-total SECTIONS (consistent across states)", () => {
+    // Count state (GA-shape): even with real seat counts, header reads sections.
+    expect(
+      aggregateLabel(
+        aggregateSeats([
+          { seats_open: 5, seats_total: 30 }, // open
+          { seats_open: 0, seats_total: 25 }, // full
+          { seats_open: 12, seats_total: 30 }, // open
+        ]),
+      ),
+    ).toBe("2 of 3 sections open");
+    // Flag state (VA-shape): 0/1 flags → same framing.
     expect(
       aggregateLabel(
         aggregateSeats([
@@ -103,6 +113,11 @@ describe("labels & tone", () => {
         ]),
       ),
     ).toBe("1 of 2 sections open");
+    // Singular when there's a single section.
+    expect(aggregateLabel(aggregateSeats([{ seats_open: 5, seats_total: 30 }]))).toBe(
+      "1 of 1 section open",
+    );
+    // No data → null (header shows nothing).
     expect(aggregateLabel(aggregateSeats([{ seats_open: null, seats_total: null }]))).toBeNull();
   });
 
