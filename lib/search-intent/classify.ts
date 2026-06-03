@@ -50,14 +50,17 @@ function providerDefault(): { llm: Classifier; modelVersion: string } | null {
       };
     }
     case "groq": {
-      const model = process.env.GROQ_MODEL ?? "llama-3.3-70b-versatile";
+      // Must be a Groq model that supports response_format json_schema (Groq's
+      // structured-outputs list). llama-3.3-70b-versatile does NOT — it only
+      // does json_object. gpt-oss-120b is fast (~1-2s) and schema-capable.
+      const model = process.env.GROQ_MODEL ?? "openai/gpt-oss-120b";
       return {
         llm: localClassifier({
           wire: "openai",
           baseUrl: "https://api.groq.com/openai/v1",
           apiKey: process.env.GROQ_API_KEY,
           model,
-          timeoutMs: 15_000,
+          timeoutMs: 20_000,
         }),
         modelVersion: `groq:${model}`,
       };
