@@ -26,7 +26,8 @@ interface PlanCourse {
 interface SeatSummary {
   course_code: string;
   section_count: number;
-  total_seats_open: number | null;
+  total_seats_open: number | null; // trustworthy open-seat sum, null if none real
+  open_sections: number; // open/available sections (flag-state fallback)
   total_seats_total: number | null;
   scraped_at: string | null;
   is_stale: boolean;
@@ -372,20 +373,25 @@ function SeatBadge({ seats }: { seats: SeatSummary }) {
       </span>
     );
   }
+  // Honest: prefer a trustworthy open-seat count; otherwise (flag/sentinel
+  // states with no real counts) fall back to open-vs-full from section flags.
+  const hasCount = seats.total_seats_open != null;
   const open = seats.total_seats_open ?? 0;
-  const color =
-    open === 0
-      ? "border-red-300 dark:border-red-700 bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-400"
-      : open <= 10
-        ? "border-amber-300 dark:border-amber-700 bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400"
-        : "border-emerald-300 dark:border-emerald-700 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400";
+  const available = hasCount ? open > 0 : seats.open_sections > 0;
+  const label = hasCount ? (open === 0 ? "Full" : String(open)) : available ? "Open" : "Full";
+  const color = !available
+    ? "border-red-300 dark:border-red-700 bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-400"
+    : hasCount && open <= 10
+      ? "border-amber-300 dark:border-amber-700 bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400"
+      : "border-emerald-300 dark:border-emerald-700 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400";
   // Stale: dim the color with reduced opacity. Keeps the at-a-glance
   // signal but flags reduced confidence per the 3-day staleness convention.
   const staleClass = seats.is_stale ? "opacity-60" : "";
   const tooltip = (() => {
     const parts = [
-      `${open} seat${open === 1 ? "" : "s"} open`,
-      seats.total_seats_total != null ? `${seats.total_seats_total} total` : null,
+      hasCount
+        ? `${open} seat${open === 1 ? "" : "s"} open`
+        : `${seats.open_sections} of ${seats.section_count} section${seats.section_count === 1 ? "" : "s"} open`,
       `${seats.section_count} section${seats.section_count === 1 ? "" : "s"}`,
       seats.scraped_at
         ? `as of ${new Date(seats.scraped_at).toLocaleDateString("en-US", { month: "short", day: "numeric" })}`
@@ -399,7 +405,7 @@ function SeatBadge({ seats }: { seats: SeatSummary }) {
       className={`text-[9px] px-1.5 py-0.5 rounded-full border font-medium ${color} ${staleClass}`}
       title={tooltip}
     >
-      {open === 0 ? "Full" : open}
+      {label}
     </span>
   );
 }

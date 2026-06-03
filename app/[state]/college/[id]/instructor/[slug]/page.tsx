@@ -14,6 +14,8 @@ import type { Metadata } from "next";
 import { loadInstitutions } from "@/lib/institutions";
 import { getCurrentTerm, termLabel } from "@/lib/terms";
 import { getAvailableTerms } from "@/lib/courses";
+import SectionSeats from "@/components/SectionSeats";
+import { aggregateSeats, aggregateLabel } from "@/lib/seats";
 import { isValidState } from "@/lib/states/registry";
 import { requireStateConfig } from "@/lib/states/route-helpers";
 import { getInstructorBySlug, getTopInstructors, type InstructorProfile } from "@/lib/instructors";
@@ -220,14 +222,9 @@ export default async function InstructorPage(props: PageProps) {
     .filter((i) => i.slug !== slug)
     .slice(0, 20);
 
-  // Seats summary
-  const totalSeats = sections.reduce(
-    (sum, s) => sum + (s.seats_open ?? 0),
-    0
-  );
-  const sectionsWithSeats = sections.filter(
-    (s) => s.seats_open !== null && s.seats_open > 0
-  ).length;
+  // Seats summary — aggregated honestly via lib/seats (negatives/sentinels/0-1
+  // flags never inflate the count).
+  const seatSummaryLabel = aggregateLabel(aggregateSeats(sections));
 
   // JSON-LD
   const siteUrl =
@@ -349,11 +346,9 @@ export default async function InstructorPage(props: PageProps) {
             {uniqueCourses === 1 ? "course" : "courses"} &middot;{" "}
             <span className="text-gray-400 dark:text-slate-500">{term}</span>
           </p>
-          {sectionsWithSeats > 0 && (
+          {seatSummaryLabel && (
             <p className="text-emerald-600 dark:text-emerald-400 text-sm mt-1">
-              {totalSeats} {totalSeats === 1 ? "seat" : "seats"} open across{" "}
-              {sectionsWithSeats}{" "}
-              {sectionsWithSeats === 1 ? "section" : "sections"}
+              {seatSummaryLabel}
             </p>
           )}
         </div>
@@ -447,24 +442,7 @@ export default async function InstructorPage(props: PageProps) {
                         </span>
                       </td>
                       <td className="px-3 py-2">
-                        {s.seats_open !== null && s.seats_open !== undefined ? (
-                          <span
-                            className={`inline-block rounded-full px-2 py-0.5 text-[10px] font-medium ${
-                              s.seats_open > 10
-                                ? "bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400"
-                                : s.seats_open > 0
-                                  ? "bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400"
-                                  : "bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-400"
-                            }`}
-                          >
-                            {s.seats_open}
-                            {s.seats_total ? `/${s.seats_total}` : ""}
-                          </span>
-                        ) : (
-                          <span className="text-[10px] text-gray-400 dark:text-slate-500">
-                            &mdash;
-                          </span>
-                        )}
+                        <SectionSeats open={s.seats_open} total={s.seats_total} />
                       </td>
                     </tr>
                   );
