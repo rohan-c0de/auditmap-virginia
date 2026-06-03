@@ -215,6 +215,14 @@ const TRANSFER_COLUMNS =
 // PostgREST's ~8KB practical URL ceiling.
 const COURSE_FILTER_CHUNK = 100;
 
+// Whitelist of characters allowed inside a single course token (cc_prefix
+// or cc_number) when it's interpolated into a PostgREST .or() filter.
+// Letters / digits / hyphen cover every real course code we've seen in
+// scraped catalog data; any other character (comma, paren, period, quote,
+// whitespace, empty) gets the row skipped — never interpolated raw, where
+// it could split the compound filter and silently corrupt the query.
+const COURSE_TOKEN_RE = /^[A-Z0-9-]+$/i;
+
 /**
  * Load transfer mappings for a specific set of CC courses in a single
  * (or few) targeted Supabase queries — instead of pulling the entire
@@ -234,16 +242,32 @@ export async function loadTransferMappingsForCourses(
 ): Promise<TransferMapping[]> {
   if (courses.length === 0) return [];
 
-  // Dedupe — programs often list the same course in multiple requirement
-  // groups, and a duplicate filter clause is wasted DB work.
+  // Dedupe + sanitize. Each (prefix, number) is trimmed and validated against
+  // COURSE_TOKEN_RE before going into the .or() filter — otherwise a scraped
+  // course code containing a comma, paren, period, quote, or whitespace would
+  // be interpolated raw and silently corrupt PostgREST's parsing of the
+  // compound filter (commas split tuples, parens close `and(...)` early, etc.).
+  // Trimming also aligns with planner's joinKey() so a stored "CS " doesn't
+  // miss its "CS" mapping.
   const seen = new Set<string>();
   const unique: Array<{ prefix: string; number: string }> = [];
   for (const c of courses) {
-    const key = `${c.prefix}|${c.number}`;
+    const prefix = c.prefix.trim();
+    const number = c.number.trim();
+    if (!COURSE_TOKEN_RE.test(prefix) || !COURSE_TOKEN_RE.test(number)) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        `loadTransferMappingsForCourses: skipping unsafe course token`,
+        { state, prefix: c.prefix, number: c.number },
+      );
+      continue;
+    }
+    const key = `${prefix}|${number}`;
     if (seen.has(key)) continue;
     seen.add(key);
-    unique.push(c);
+    unique.push({ prefix, number });
   }
+  if (unique.length === 0) return [];
 
   const out: TransferMapping[] = [];
   for (let i = 0; i < unique.length; i += COURSE_FILTER_CHUNK) {

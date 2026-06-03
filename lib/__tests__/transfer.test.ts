@@ -293,3 +293,189 @@ describe("loadTransferMappingsForCourses", () => {
     }
   });
 });
+
+// ───────────────────────────────────────────────────────────────────────────
+// Audit pass (post-merge of PR #1098). These tests probe edge cases the
+// initial 9 happy-path tests don't cover:
+//   - PostgREST .or() filter integrity under hostile course-code characters
+//   - chunk-boundary off-by-ones at exactly 100 / 200 / 201
+//   - partial chunk failure (chunk 1 ok, chunk 2 throws)
+//   - empty-string prefix/number (defensive)
+//   - input-array mutation guarantee
+// ───────────────────────────────────────────────────────────────────────────
+
+describe("loadTransferMappingsForCourses — audit: PostgREST filter integrity", () => {
+  beforeEach(() => {
+    fromMock.mockClear();
+    selectMock.mockClear();
+    eqMock.mockClear();
+    orMock.mockClear();
+    supabaseClient._queueResponses([]);
+  });
+
+  // A scraped course code with a comma in it is the most dangerous case: the
+  // unescaped comma SPLITS the compound .or() filter, fundamentally changing
+  // the query's meaning. Real catalog data isn't supposed to have commas, but
+  // bad scraper extractions do produce them (and an attacker who could insert
+  // a course row could exploit it).
+  it("never emits an unescaped comma-bearing payload into the .or() filter", async () => {
+    supabaseClient._queueResponses([{ data: [], error: null }]);
+    let threw = false;
+    try {
+      await loadTransferMappingsForCourses("ca", [
+        { prefix: "CS,SQL_INJECTION", number: "110" },
+      ]);
+    } catch {
+      threw = true;
+    }
+    if (threw) return; // acceptable defensive strategy: reject hostile input
+
+    // Acceptable defensive strategies: (a) the bad course was skipped (filter
+    // is empty or doesn't include this course's payload), or (b) the special
+    // char was percent-encoded / quoted. The failure mode this catches: the
+    // raw literal "SQL_INJECTION" appears in the filter string, which means
+    // PostgREST is going to see it as an extra unintended operand.
+    const filter = orMock.mock.calls[0]?.[0] ?? "";
+    expect(filter).not.toContain("SQL_INJECTION");
+  });
+
+  // Closing paren in the number would close the outer and(...) early.
+  it("either escapes or rejects a course code containing ')'", async () => {
+    supabaseClient._queueResponses([{ data: [], error: null }]);
+    let threw = false;
+    try {
+      await loadTransferMappingsForCourses("ca", [
+        { prefix: "CS", number: "110)" },
+      ]);
+    } catch {
+      threw = true;
+    }
+    if (threw) return;
+    const filter = orMock.mock.calls[0]?.[0] ?? "";
+    // Open-paren count must equal close-paren count. If the loader skipped
+    // the hostile course entirely, Supabase is never called → filter is ""
+    // → 0 == 0, also a pass.
+    const opens = (filter.match(/\(/g) ?? []).length;
+    const closes = (filter.match(/\)/g) ?? []).length;
+    expect(opens).toBe(closes);
+  });
+
+  // Trailing whitespace silently mismatches Supabase storage. Either the
+  // loader trims it (defensive) or throws (loud). Producing a filter with a
+  // literal embedded space is the failure mode — Supabase comparison wouldn't
+  // find the row, and the page would silently show no transfers.
+  it("trims or rejects whitespace-padded prefix/number (matches planner's joinKey() behavior)", async () => {
+    supabaseClient._queueResponses([{ data: [], error: null }]);
+    let threw = false;
+    try {
+      await loadTransferMappingsForCourses("ca", [
+        { prefix: "CS ", number: " 110" },
+      ]);
+    } catch {
+      threw = true;
+    }
+    if (threw) return;
+    const filter = orMock.mock.calls[0]?.[0] ?? "";
+    // No raw whitespace inside an eq value — that would produce a literal
+    // space in the URL filter and miss any "CS" stored without trailing space.
+    // An empty filter (loader skipped the course) is also acceptable.
+    expect(filter).not.toMatch(/eq\.[A-Z]+\s/);
+    expect(filter).not.toMatch(/eq\.\s/);
+  });
+
+  it("empty prefix or empty number must not produce a meaningless `eq.` filter", async () => {
+    supabaseClient._queueResponses([{ data: [], error: null }]);
+    let threw = false;
+    try {
+      await loadTransferMappingsForCourses("ca", [{ prefix: "", number: "110" }]);
+    } catch {
+      threw = true;
+    }
+    if (threw) return;
+    const filter = orMock.mock.calls[0]?.[0] ?? "";
+    // `cc_prefix.eq.,cc_number.eq.110` is the failure mode — eq with no value.
+    expect(filter).not.toContain("cc_prefix.eq.,");
+    expect(filter).not.toContain("cc_number.eq.,");
+    expect(filter).not.toMatch(/eq\.$/);
+  });
+});
+
+describe("loadTransferMappingsForCourses — audit: chunk boundaries", () => {
+  beforeEach(() => {
+    fromMock.mockClear();
+    selectMock.mockClear();
+    eqMock.mockClear();
+    orMock.mockClear();
+    supabaseClient._queueResponses([]);
+  });
+
+  it("exactly 100 courses → exactly 1 chunk (off-by-one at the boundary)", async () => {
+    supabaseClient._queueResponses([{ data: [], error: null }]);
+    const courses: Array<{ prefix: string; number: string }> = [];
+    for (let i = 0; i < 100; i++) courses.push({ prefix: "X", number: String(i) });
+    await loadTransferMappingsForCourses("ca", courses);
+    expect(orMock).toHaveBeenCalledTimes(1);
+  });
+
+  it("exactly 200 courses → exactly 2 chunks (not 3)", async () => {
+    supabaseClient._queueResponses([
+      { data: [], error: null },
+      { data: [], error: null },
+    ]);
+    const courses: Array<{ prefix: string; number: string }> = [];
+    for (let i = 0; i < 200; i++) courses.push({ prefix: "X", number: String(i) });
+    await loadTransferMappingsForCourses("ca", courses);
+    expect(orMock).toHaveBeenCalledTimes(2);
+  });
+
+  it("201 courses → exactly 3 chunks, no rows lost", async () => {
+    const chunk1 = Array.from({ length: 100 }, (_, i) => makeMapping("A", String(i)));
+    const chunk2 = Array.from({ length: 100 }, (_, i) => makeMapping("B", String(i)));
+    const chunk3 = [makeMapping("C", "0")];
+    supabaseClient._queueResponses([
+      { data: chunk1, error: null },
+      { data: chunk2, error: null },
+      { data: chunk3, error: null },
+    ]);
+    const courses: Array<{ prefix: string; number: string }> = [];
+    for (let i = 0; i < 100; i++) courses.push({ prefix: "A", number: String(i) });
+    for (let i = 0; i < 100; i++) courses.push({ prefix: "B", number: String(i) });
+    courses.push({ prefix: "C", number: "0" });
+    const result = await loadTransferMappingsForCourses("ca", courses);
+    expect(orMock).toHaveBeenCalledTimes(3);
+    expect(result).toHaveLength(201);
+  });
+});
+
+describe("loadTransferMappingsForCourses — audit: resilience + input safety", () => {
+  beforeEach(() => {
+    fromMock.mockClear();
+    selectMock.mockClear();
+    eqMock.mockClear();
+    orMock.mockClear();
+    supabaseClient._queueResponses([]);
+  });
+
+  it("if chunk 2 throws, the whole call rejects (does not silently return chunk 1's rows)", async () => {
+    const chunk1Rows = [makeMapping("A", "1"), makeMapping("A", "2")];
+    supabaseClient._queueResponses([
+      { data: chunk1Rows, error: null },
+      { data: null, error: { message: "boom" } },
+    ]);
+    const courses: Array<{ prefix: string; number: string }> = [];
+    for (let i = 0; i < 101; i++) courses.push({ prefix: "X", number: String(i) });
+    await expect(loadTransferMappingsForCourses("ca", courses)).rejects.toBeTruthy();
+  });
+
+  it("does not mutate the caller's courses array (dedup uses a local copy)", async () => {
+    supabaseClient._queueResponses([{ data: [], error: null }]);
+    const courses = [
+      { prefix: "CS", number: "110" },
+      { prefix: "CS", number: "110" }, // duplicate
+      { prefix: "MATH", number: "280" },
+    ];
+    const snapshot = JSON.parse(JSON.stringify(courses));
+    await loadTransferMappingsForCourses("ca", courses);
+    expect(courses).toEqual(snapshot);
+  });
+});
