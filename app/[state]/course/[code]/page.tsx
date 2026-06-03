@@ -23,6 +23,8 @@ import {
 } from "@/lib/data-freshness";
 import SectionSeats from "@/components/SectionSeats";
 import { aggregateSeats, aggregateLabel } from "@/lib/seats";
+import { buildCollegeCompareRows } from "@/lib/compare-colleges";
+import CourseCollegeCompare from "@/components/CourseCollegeCompare";
 
 export const revalidate = 604800; // 7 days — pSEO content rarely changes
 
@@ -307,6 +309,15 @@ export default async function CoursePage(props: PageProps) {
 
   // Group by college
   const colleges = groupByCollege(sections, institutions);
+
+  // Compare-colleges matrix: one honest, sortable row per offering college,
+  // plus the in-state colleges that don't offer it this term.
+  const compareRows = buildCollegeCompareRows(colleges);
+  const offeringSlugs = new Set(colleges.map((c) => c.slug));
+  const notOfferedColleges = institutions
+    .filter((i) => !offeringSlugs.has(i.id))
+    .map((i) => i.name)
+    .sort();
 
   // Mode breakdown across all sections (consumed by the existing pill row)
   const modeBreakdown: Record<string, number> = {};
@@ -764,7 +775,25 @@ export default async function CoursePage(props: PageProps) {
           </section>
         )}
 
-        {/* Availability by college */}
+        {/* Compare colleges — side-by-side matrix (only worthwhile with ≥2). */}
+        {colleges.length >= 2 && (
+          <section className="mb-8">
+            <SectionHeading id="compare" className="text-lg font-semibold text-gray-900 dark:text-slate-100 mb-1">
+              Compare colleges
+            </SectionHeading>
+            <p className="text-sm text-gray-500 dark:text-slate-400 mb-3">
+              Where to take {prefix} {number} — sort and filter by when it meets,
+              open seats, and format.
+            </p>
+            <CourseCollegeCompare
+              rows={compareRows}
+              state={state}
+              notOffered={notOfferedColleges}
+            />
+          </section>
+        )}
+
+        {/* Availability by college — full per-section detail */}
         <section className="mb-8">
           <SectionHeading id="colleges" className="text-lg font-semibold text-gray-900 dark:text-slate-100 mb-3">
             Available at {colleges.length} {colleges.length === 1 ? "college" : "colleges"}
