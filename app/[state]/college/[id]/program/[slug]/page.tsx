@@ -50,6 +50,20 @@ function resolveCredential(title: string, credential: string): string {
 }
 export const dynamicParams = true;
 
+// REQUIRED for ISR. Next 16: "You must always return an array from
+// generateStaticParams, even if it's empty. Otherwise, the route will be
+// dynamically rendered." (node_modules/next/dist/docs/.../generate-static-params.md).
+// Returning [] prerenders nothing at build but makes every program page
+// statically render + edge-cache on first visit (revalidate above). Without
+// this export the route is fully dynamic — uncached Supabase fetches inside
+// buildMajorPlan force `cache-control: no-store` and ISR never engages, so
+// every visitor pays the full render. The college page does the same thing.
+// See issue #1137 (the unstable_cache wrap in #1098 caches the *data* but
+// could not make the *route* static — only this can).
+export function generateStaticParams() {
+  return [];
+}
+
 interface PageProps {
   params: Promise<{ state: string; id: string; slug: string }>;
 }
