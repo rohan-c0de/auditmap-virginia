@@ -11,8 +11,29 @@ describe("meaningfulKeywordTokens (zero-result rescue)", () => {
     expect(meaningfulKeywordTokens("math courses without prerequisite?")).toEqual(["math"]);
     expect(meaningfulKeywordTokens("biology classes")).toEqual(["biology"]);
   });
-  it("keeps multiple subject/descriptor tokens", () => {
+  it("keeps multiple subject tokens", () => {
     expect(meaningfulKeywordTokens("online accounting courses")).toEqual(["online", "accounting"]);
+  });
+  it("drops level/scope descriptors so the rescue stays on-subject (not cross-subject)", () => {
+    // The bug: "intermediate" re-queried as a title substring and pulled in
+    // Intermediate Algebra / Accounting / etc. into an Arabic search's grid.
+    expect(meaningfulKeywordTokens("Intermediate Arabic II")).toEqual(["arabic"]);
+    expect(meaningfulKeywordTokens("intro to psychology")).toEqual(["psychology"]);
+    expect(meaningfulKeywordTokens("principles of accounting")).toEqual(["accounting"]);
+    expect(meaningfulKeywordTokens("beginning spanish")).toEqual(["spanish"]);
+    expect(meaningfulKeywordTokens("general biology")).toEqual(["biology"]);
+    // a query that is ONLY descriptors → no tokens → rescue skipped (stays 0)
+    expect(meaningfulKeywordTokens("introduction")).toEqual([]);
+    expect(meaningfulKeywordTokens("advanced intermediate")).toEqual([]);
+  });
+  it("strips question/stop words from raw NL sentences (the /ask grid case)", () => {
+    // The screenshot query: the whole sentence reaches the grid. Without
+    // stop-word stripping, "are"/"there" substring-match across all subjects.
+    expect(
+      meaningfulKeywordTokens("are there any prerequisite for Intermediate Arabic II"),
+    ).toEqual(["arabic"]);
+    expect(meaningfulKeywordTokens("what biology classes are available")).toEqual(["biology"]);
+    expect(meaningfulKeywordTokens("show me online nursing courses")).toEqual(["online", "nursing"]);
   });
   it("drops tokens under 3 chars and punctuation", () => {
     // "of" = filler, "ml" = under 3 chars → both dropped; "art" kept.

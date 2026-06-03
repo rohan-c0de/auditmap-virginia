@@ -55,15 +55,40 @@ export function parseQuery(q: string): {
 }
 
 // Filler words dropped when rescuing a no-result natural-language keyword query
-// (e.g. "math courses without prerequisite" → "math"). Intentionally narrow:
-// generic course/qualifier words, not subject or descriptor words, so we never
-// strip the part that identifies what the student wants.
+// (e.g. "math courses without prerequisite" → "math"). Two groups:
+//   1. Generic course / qualifier words.
+//   2. Level / scope descriptors (intro, intermediate, advanced, principles…).
+// Descriptors are dropped because in the 0-result rescue a bare descriptor token
+// re-queries as a title substring and matches EVERY same-level course across all
+// subjects — e.g. "Intermediate Arabic" pulled in "Intermediate Algebra",
+// "Intermediate Accounting", etc. into the results grid. The SUBJECT token
+// ("arabic") identifies the course and survives; a level word never names a
+// subject, so dropping it only ever narrows cross-subject noise. A query that is
+// ONLY descriptors yields no tokens → no rescue (acceptable; too vague to
+// recover precisely).
 const KEYWORD_FILLER = new Set([
+  // generic course / qualifier words
   "course", "courses", "class", "classes", "section", "sections",
   "without", "with", "no", "not", "any", "all", "some", "that", "which",
   "have", "having", "has", "the", "for", "and", "or", "to", "do", "does",
   "prerequisite", "prerequisites", "prereq", "prereqs", "requisite", "requisites",
   "requirement", "requirements", "require", "requires", "required", "need", "needs",
+  // level / scope descriptors (identify a LEVEL, not a subject)
+  "intro", "introduction", "introductory", "beginning", "beginner", "beginners",
+  "elementary", "intermediate", "advanced", "general", "principles",
+  "fundamental", "fundamentals", "basic", "basics", "foundation", "foundations",
+  "survey",
+  // common English question / stop / intent words. Raw NL sentences reach the
+  // rescue when the /ask page searches the whole question (e.g. "are there any
+  // prerequisites for Intermediate Arabic II") — without these, "are" and
+  // "there" substring-match "softwARE", "THEREapy", etc. across every subject.
+  // None of these ever names a subject.
+  "are", "was", "were", "what", "whats", "when", "where", "how", "why", "who",
+  "whose", "whom", "can", "could", "will", "would", "should", "shall", "may",
+  "might", "must", "did", "there", "here", "this", "these", "those", "you",
+  "your", "yours", "our", "their", "them", "they", "its", "about", "from",
+  "than", "then", "also", "only", "just", "into", "want", "wants", "looking",
+  "show", "find", "take", "get", "available", "offered",
 ]);
 
 /**
