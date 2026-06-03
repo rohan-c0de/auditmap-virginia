@@ -26,15 +26,28 @@ interface Wire {
 }
 
 /**
- * Smooth S-curve from a prerequisite's right edge to its dependent's left edge.
- * Always approaches the target horizontally from the left, so the (orient=auto)
- * arrowhead points forward. An orthogonal elbow reversed its final segment when
- * the column gap was narrow, which flipped the arrowhead backwards.
+ * Orthogonal connector: exit the prerequisite's right edge, run vertically,
+ * then enter the dependent's left edge horizontally — so the (orient=auto)
+ * arrowhead always sits on a left→right segment and points forward, no matter
+ * how tall the jump is. (A smooth S-curve rendered its arrowhead pointing
+ * *up* on near-vertical jumps; an unclamped elbow reversed its last segment.)
  */
 function connector(x1: number, y1: number, x2: number, y2: number): string {
   if (Math.abs(y2 - y1) < 2) return `M ${x1} ${y1} H ${x2}`;
-  const c = Math.min((x2 - x1) * 0.5, 60); // ≤ half-gap, so control points never cross
-  return `M ${x1} ${y1} C ${x1 + c} ${y1}, ${x2 - c} ${y2}, ${x2} ${y2}`;
+  const gap = x2 - x1;
+  if (gap < 6) return `M ${x1} ${y1} L ${x2} ${y2}`; // too tight for a clean elbow
+  const r = Math.max(2, Math.min(8, (gap - 2) / 2, Math.abs(y2 - y1) / 2));
+  // Vertical jog midway, clamped so both rounded corners fit and both
+  // horizontal runs (and thus the arrowhead) point left→right.
+  const jog = Math.min(Math.max(x1 + gap / 2, x1 + r), x2 - r);
+  const down = y2 >= y1 ? 1 : -1;
+  return (
+    `M ${x1} ${y1} H ${jog - r}` +
+    ` Q ${jog} ${y1} ${jog} ${y1 + down * r}` +
+    ` V ${y2 - down * r}` +
+    ` Q ${jog} ${y2} ${jog + r} ${y2}` +
+    ` H ${x2}`
+  );
 }
 
 function columnLabel(col: number, columnCount: number): string {
