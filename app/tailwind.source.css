@@ -83,3 +83,19 @@ body {
     opacity: 1;
   }
 }
+
+/* Side navigation push (components/Header.tsx).
+   When the sidebar is open, the header sets data-nav-open on <html>. On
+   desktop (≥1024px) the body shifts right by the sidebar width (16rem = w-64)
+   so the fixed sidebar doesn't cover content; on smaller screens the sidebar
+   is an overlay, so no push. Only state pages render that header, so this
+   attribute is never set elsewhere. */
+body {
+  transition: padding-left 0.2s ease;
+}
+
+@media (min-width: 1024px) {
+  html[data-nav-open="1"] body {
+    padding-left: 16rem;
+  }
+}
