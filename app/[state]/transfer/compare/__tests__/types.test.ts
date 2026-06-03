@@ -5,9 +5,10 @@ import {
   getCellInfo,
   isHeavyTransferState,
   HEAVY_PRELOAD_THRESHOLD,
+  CELL_COLORS,
 } from "../types";
 import type { TransferMapping } from "@/lib/types";
-import type { CCCourse } from "../types";
+import type { CCCourse, CellStatus } from "../types";
 
 function mk(partial: Partial<TransferMapping>): TransferMapping {
   return {
@@ -117,5 +118,38 @@ describe("isHeavyTransferState", () => {
     // Each university is small, but 43 of them (TX-shape) sum past the cutoff.
     const unis = Array.from({ length: 43 }, () => ({ mappingCount: 4400 }));
     expect(isHeavyTransferState(unis)).toBe(true);
+  });
+});
+
+describe("getCellInfo — status, glyph, and colors (direct, not just via lookup)", () => {
+  const lookupFor = (m: TransferMapping) =>
+    new Map([[`${m.cc_prefix} ${m.cc_number}|${m.university}`, m]]);
+
+  it("direct → ✓ with the equivalent university course", () => {
+    const cell = getCellInfo(ACCT1100, "uga", lookupFor(mk({ univ_course: "ACCT 2101" })));
+    expect(cell.status).toBe("direct");
+    expect(cell.label).toBe("✓");
+    expect(cell.course).toBe("ACCT 2101");
+  });
+  it("elective → ~", () => {
+    const cell = getCellInfo(ACCT1100, "uga", lookupFor(mk({ is_elective: true, univ_course: "X 1XXX" })));
+    expect(cell.status).toBe("elective");
+    expect(cell.label).toBe("~");
+  });
+  it("no-credit → ✗ with no course", () => {
+    const cell = getCellInfo(ACCT1100, "uga", lookupFor(mk({ no_credit: true })));
+    expect(cell.status).toBe("no-credit");
+    expect(cell.label).toBe("✗");
+    expect(cell.course).toBe("");
+  });
+  it("missing mapping → unknown / —", () => {
+    const cell = getCellInfo(ACCT1100, "uga", new Map());
+    expect(cell.status).toBe("unknown");
+    expect(cell.label).toBe("—");
+  });
+  it("CELL_COLORS has an entry for every status (no missing key → no blank cell)", () => {
+    (["direct", "elective", "no-credit", "unknown"] as CellStatus[]).forEach((s) =>
+      expect(CELL_COLORS[s]).toBeTruthy(),
+    );
   });
 });

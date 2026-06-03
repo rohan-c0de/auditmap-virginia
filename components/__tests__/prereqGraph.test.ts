@@ -136,4 +136,27 @@ describe("chainOf", () => {
     expect(lit.has(A)).toBe(true);
     expect(lit.has(B)).toBe(false);
   });
+
+  it("lights the full chain through a diamond, not the sibling branch", () => {
+    // X ← A ← D and X ← B ← D. A's chain: D (ancestor) + X (descendant) + A; not B.
+    const g = buildPrereqGraph(n(X, [n(A, [n(D)]), n(B, [n(D)])]));
+    const lit = chainOf(A, g.edges);
+    expect(lit.has(A)).toBe(true);
+    expect(lit.has(D)).toBe(true);
+    expect(lit.has(X)).toBe(true);
+    expect(lit.has(B)).toBe(false);
+  });
+});
+
+describe("buildPrereqGraph — cycle safety (defensive)", () => {
+  it("terminates and yields finite columns on a cyclic input (A↔B)", () => {
+    // Real chains are acyclic (buildChain breaks cycles), but the graph layout
+    // must never hang or produce Infinity if a cycle ever slips through.
+    const a = n(A);
+    const b = n(B, [a]);
+    a.children.push(b); // A ← B ← A
+    const g = buildPrereqGraph(n(X, [a]));
+    expect(codes(g)).toEqual([A, B, X].sort());
+    g.nodes.forEach((node) => expect(Number.isFinite(node.column)).toBe(true));
+  });
 });

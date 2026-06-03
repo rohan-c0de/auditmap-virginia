@@ -244,4 +244,16 @@ describe("scoreSeatAvailability", () => {
     expect(neutral).toBeGreaterThan(0);
     expect(neutral).toBeLessThan(15);
   });
+
+  it("averages a mix of full / open-unlimited / real-count / unknown sections", () => {
+    // per-section sub-scores: wide-open count 1.0, full 0, sentinel 0.75,
+    // unknown 0.5 → avg 0.5625 × 15 = 8.4375 → rounded to 8.4.
+    const s = score([
+      { seats_open: 25, seats_total: 30 },
+      { seats_open: 0, seats_total: 30 },
+      { seats_open: 9999, seats_total: 9999 },
+      { seats_open: null, seats_total: null },
+    ]);
+    expect(s).toBe(8.4);
+  });
 });

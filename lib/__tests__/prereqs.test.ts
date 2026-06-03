@@ -22,6 +22,28 @@ describe("parsePrereqGroups", () => {
     expect(groups).toHaveLength(1); // one OR group, not three required ones
     expect(groups[0]).toHaveLength(3);
   });
+
+  it("a single course is its own required group", () => {
+    expect(parsePrereqGroups("ENG 111", ["ENG 111"])).toEqual([["ENG 111"]]);
+  });
+
+  it("'X or department approval' → just the real course, required (dept approval isn't a course)", () => {
+    // Only the course is in `courses`; the "or department approval" alternative
+    // isn't a parseable course, so the lone course is required. Acceptable — the
+    // full human text is still shown on the badge.
+    expect(parsePrereqGroups("CIVT 1550 or department approval", ["CIVT 1550"])).toEqual([
+      ["CIVT 1550"],
+    ]);
+  });
+
+  it("documents comma-without-and/or behavior: grouped together (no spurious AND split)", () => {
+    // Comma-separated with no 'and'/'or' keyword → one chunk → one group. (Real
+    // data had 0 comma-only cases; this pins the behavior so it can't regress
+    // silently into N separate required groups.)
+    const groups = parsePrereqGroups("ACCT 1010, ACCT 1020", ["ACCT 1010", "ACCT 1020"]);
+    expect(groups).toHaveLength(1);
+    expect(groups[0]).toHaveLength(2);
+  });
 });
 
 describe("buildChain groups (end-to-end OR detection)", () => {

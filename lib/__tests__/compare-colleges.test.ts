@@ -90,3 +90,29 @@ describe("applyCompare", () => {
     expect(applyCompare(rows, { sort: "name", onlineOnly: true }).map((r) => r.slug)).toEqual(["b"]);
   });
 });
+
+describe("applyCompare — evening, combined filters & tie-breaks (hardening)", () => {
+  const rows = buildCollegeCompareRows([
+    college({ slug: "a", name: "Alpha", sections: [sec({ seats_open: 2, mode: "in-person", start_time: "9:00 AM", end_time: "10:15 AM" })] }),
+    college({ slug: "b", name: "Bravo", sections: [sec({ seats_open: 50, mode: "online", days: "", start_time: "TBA", end_time: "TBA" })] }),
+    college({ slug: "e", name: "Echo", sections: [sec({ seats_open: 3, mode: "in-person", start_time: "6:00 PM", end_time: "8:45 PM" })] }),
+  ]);
+
+  it("evening-only keeps just the evening (≥5 PM) college", () => {
+    expect(applyCompare(rows, { sort: "name", eveningOnly: true }).map((r) => r.slug)).toEqual(["e"]);
+  });
+
+  it("combined open + online filters AND together", () => {
+    expect(
+      applyCompare(rows, { sort: "name", openOnly: true, onlineOnly: true }).map((r) => r.slug),
+    ).toEqual(["b"]);
+  });
+
+  it("availability sort breaks ties alphabetically by name", () => {
+    const tied = buildCollegeCompareRows([
+      college({ slug: "z", name: "Zeta", sections: [sec({ seats_open: 5 })] }),
+      college({ slug: "a2", name: "Aaa", sections: [sec({ seats_open: 5 })] }),
+    ]);
+    expect(applyCompare(tied, { sort: "availability" }).map((r) => r.name)).toEqual(["Aaa", "Zeta"]);
+  });
+});
