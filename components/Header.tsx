@@ -159,13 +159,14 @@ export default function Header({
         />
       )}
 
-      {/* Sidebar */}
+      {/* Sidebar. Open/closed transform lives in CSS keyed on
+          html[data-nav-open] (app/tailwind.source.css), not on this className,
+          so the inline no-flash script can show it before first paint on a
+          pinned reload — in sync with the content push. */}
       <aside
         id="site-sidebar"
         aria-label="Site navigation"
-        className={`fixed top-0 left-0 z-50 flex h-dvh w-64 flex-col border-r border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-lg transition-transform duration-200 ease-out ${
-          effectiveOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+        className="fixed top-0 left-0 z-50 flex h-dvh w-64 flex-col border-r border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-lg"
       >
         {/* Sidebar control row — aligns with the top bar height. */}
         <div className="flex h-[65px] flex-shrink-0 items-center justify-between border-b border-gray-100 dark:border-slate-700 px-4">

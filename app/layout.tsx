@@ -103,6 +103,18 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-white dark:bg-slate-900 text-gray-900 dark:text-slate-100">
+        {/* No-flash sidebar restore: on a hard reload of a pinned desktop
+            state page, set data-nav-open before first paint so the sidebar is
+            already open and the content already pushed — no slide-in. Runs only
+            for a 2-letter state slug (the only routes that render the sidebar),
+            so non-state pages are never shifted. Mirrors lib/nav/sidebar.ts
+            (PIN_KEY + 1024px breakpoint). */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){try{var s=location.pathname.split('/')[1]||'';if(localStorage.getItem('ccp-nav-pinned')==='1'&&window.matchMedia('(min-width: 1024px)').matches&&/^[a-z][a-z]$/.test(s)){document.documentElement.setAttribute('data-nav-open','1');}}catch(e){}})();",
+          }}
+        />
         <JsonLd data={siteJsonLd} />
         <ThemeProvider>
           <AuthProvider>

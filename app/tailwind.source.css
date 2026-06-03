@@ -84,12 +84,24 @@ body {
   }
 }
 
-/* Side navigation push (components/Header.tsx).
-   When the sidebar is open, the header sets data-nav-open on <html>. On
-   desktop (≥1024px) the body shifts right by the sidebar width (16rem = w-64)
-   so the fixed sidebar doesn't cover content; on smaller screens the sidebar
-   is an overlay, so no push. Only state pages render that header, so this
-   attribute is never set elsewhere. */
+/* Side navigation (components/Header.tsx).
+   Both the sidebar's slide AND the desktop content-push are driven by the
+   `data-nav-open` attribute on <html> — set by the header, and pre-set before
+   first paint by the inline script in app/layout.tsx. Keeping both on the same
+   attribute means a pinned reload applies them together, with no flash where
+   content jumps right while the sidebar lags behind. Only state pages render
+   the header / the #site-sidebar element, so this attribute is inert
+   elsewhere. NOTE: the inline no-flash script hardcodes the "ccp-nav-pinned"
+   key and the 1024px breakpoint — keep them in sync with lib/nav/sidebar.ts. */
+#site-sidebar {
+  transform: translateX(-100%);
+  transition: transform 0.2s ease-out;
+}
+
+html[data-nav-open="1"] #site-sidebar {
+  transform: translateX(0);
+}
+
 body {
   transition: padding-left 0.2s ease;
 }
