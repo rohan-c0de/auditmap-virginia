@@ -5,18 +5,26 @@
  * goal, schedule — then real program matches that link to the existing
  * /[state]/program/[slug] comparison pages.
  *
- * All data arrives as props from the server page (`facts`); this component
- * imports ONLY the client-safe taxonomy + pure `recommend` from
+ * The quiz answers live in the URL (?interest=&goal=&schedule=) so a refresh
+ * restores progress and a results view is shareable/deep-linkable — the URL is
+ * the single source of truth, not local state. Must be rendered inside a
+ * <Suspense> boundary (it reads useSearchParams).
+ *
+ * All program data arrives as props from the server page (`facts`); this
+ * component imports ONLY the client-safe taxonomy + pure `recommend` from
  * `lib/programs/choose` (never the Supabase/fs gatherer). Every number shown
  * is a measured value passed in — nothing is fabricated here.
  */
 
-import { useState } from "react";
 import Link from "next/link";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import {
   FIELDS,
   GOALS,
   TIMES,
+  FIELD_IDS,
+  GOAL_IDS,
+  TIME_IDS,
   recommend,
   availableFieldIds,
   type ChooseProgramFact,
@@ -31,6 +39,9 @@ type Props = {
   facts: ChooseProgramFact[];
   transferSupported: boolean;
 };
+
+// URL param keys (human-readable; shareable links).
+const PARAM = { field: "interest", goal: "goal", time: "schedule" } as const;
 
 /** Render one of our trusted inline-SVG path strings as a stroked icon. */
 function Icon({ path, className }: { path: string; className?: string }) {
@@ -139,21 +150,51 @@ export default function ChooseQuiz({
   facts,
   transferSupported,
 }: Props) {
-  const [step, setStep] = useState(0); // 0=field, 1=goal, 2=time, 3=results
-  const [field, setField] = useState<FieldId | null>(null);
-  const [goal, setGoal] = useState<GoalId | null>(null);
-  const [time, setTime] = useState<TimeId | null>(null);
+  const router = useRouter();
+  const pathname = usePathname();
+  const params = useSearchParams();
 
   const available = availableFieldIds(facts);
   const fieldOptions = FIELDS.filter((f) => available.has(f.id));
   const someFieldsHidden = fieldOptions.length < FIELDS.length;
 
-  function reset() {
-    setStep(0);
-    setField(null);
-    setGoal(null);
-    setTime(null);
-  }
+  // Answers are derived from the URL (single source of truth) and validated —
+  // a stale/invalid/unavailable param resolves to null and cascades, so a bad
+  // deep link degrades gracefully to the earliest unanswered step.
+  const fieldParam = params.get(PARAM.field);
+  const goalParam = params.get(PARAM.goal);
+  const timeParam = params.get(PARAM.time);
+  const field: FieldId | null =
+    fieldParam && (FIELD_IDS as string[]).includes(fieldParam) && available.has(fieldParam as FieldId)
+      ? (fieldParam as FieldId)
+      : null;
+  const goal: GoalId | null =
+    field && goalParam && (GOAL_IDS as string[]).includes(goalParam) ? (goalParam as GoalId) : null;
+  const time: TimeId | null =
+    goal && timeParam && (TIME_IDS as string[]).includes(timeParam) ? (timeParam as TimeId) : null;
+
+  const step = field ? (goal ? (time ? 3 : 2) : 1) : 0;
+
+  const writeParams = (next: Partial<Record<keyof typeof PARAM, string | null>>) => {
+    const sp = new URLSearchParams(params.toString());
+    for (const [k, v] of Object.entries(next)) {
+      const key = PARAM[k as keyof typeof PARAM];
+      if (v == null) sp.delete(key);
+      else sp.set(key, v);
+    }
+    const qs = sp.toString();
+    router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
+  };
+
+  const pickField = (id: FieldId) => writeParams({ field: id, goal: null, time: null });
+  const pickGoal = (id: GoalId) => writeParams({ goal: id, time: null });
+  const pickTime = (id: TimeId) => writeParams({ time: id });
+  const goBack = () => {
+    if (step >= 3) writeParams({ time: null });
+    else if (step === 2) writeParams({ goal: null });
+    else if (step === 1) writeParams({ field: null });
+  };
+  const reset = () => router.replace(pathname, { scroll: false });
 
   const progress = (
     <div className="flex items-center justify-center gap-2 my-7">
@@ -168,8 +209,6 @@ export default function ChooseQuiz({
     </div>
   );
 
-  const goBack = () => setStep((s) => Math.max(0, s - 1));
-
   // ---- Questions ----
   if (step === 0) {
     return (
@@ -183,10 +222,7 @@ export default function ChooseQuiz({
           two
           canBack={false}
           onBack={goBack}
-          onPick={(id) => {
-            setField(id);
-            setStep(1);
-          }}
+          onPick={pickField}
         />
         {someFieldsHidden && (
           <p className="mt-4 text-center text-[13px] text-slate-500 dark:text-slate-400">
@@ -216,10 +252,7 @@ export default function ChooseQuiz({
           selected={goal}
           canBack
           onBack={goBack}
-          onPick={(id) => {
-            setGoal(id);
-            setStep(2);
-          }}
+          onPick={pickGoal}
         />
       </>
     );
@@ -237,19 +270,19 @@ export default function ChooseQuiz({
           two
           canBack
           onBack={goBack}
-          onPick={(id) => {
-            setTime(id);
-            setStep(3);
-          }}
+          onPick={pickTime}
         />
       </>
     );
   }
 
   // ---- Results ----
-  const answers =
-    field && goal && time ? { field, goal, time } : null;
+  const answers = field && goal && time ? { field, goal, time } : null;
   const matches = answers ? recommend(facts, answers) : [];
+  // "Earn the most" but we have no wage data for any match (sparse state) —
+  // set honest expectations instead of an unqualified pay-ranked list.
+  const noWageData =
+    answers?.goal === "pay" && matches.length > 0 && matches.every((m) => m.medianWage == null);
 
   return (
     <>
@@ -268,6 +301,15 @@ export default function ChooseQuiz({
         )}
       </div>
 
+      {noWageData && (
+        <p className="mt-4 rounded-xl border border-amber-200 dark:border-amber-900/50 bg-amber-50 dark:bg-amber-900/20 px-4 py-3 text-[13px] text-amber-800 dark:text-amber-200">
+          We don&rsquo;t have wage data for these {stateName} programs yet, so
+          we can&rsquo;t rank them by pay. They&rsquo;re ordered by how widely
+          they&rsquo;re offered instead — open one to see its earnings on the
+          program page.
+        </p>
+      )}
+
       {matches.length === 0 ? (
         <div className="mt-6 rounded-2xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 text-center">
           <p className="text-slate-600 dark:text-slate-300">
@@ -283,78 +325,91 @@ export default function ChooseQuiz({
         </div>
       ) : (
         <ul className="mt-6 space-y-3">
-          {matches.map((m, i) => (
-            <li key={m.slug}>
-              <Link
-                href={`/${state}/program/${m.slug}`}
-                className={`group flex items-center gap-4 rounded-2xl border p-4 sm:p-5 transition-all hover:-translate-y-0.5 hover:shadow-md ${
-                  i === 0
-                    ? "border-teal-300 dark:border-teal-700 bg-gradient-to-b from-white to-teal-50/60 dark:from-slate-900 dark:to-teal-900/20"
-                    : "border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900"
-                }`}
-              >
-                <div className="min-w-0 flex-1">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <h3 className="text-lg font-semibold text-teal-800 dark:text-teal-200">
-                      {m.name}
-                    </h3>
-                    {i === 0 && (
-                      <span className="rounded-full bg-teal-600 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
-                        Best match
-                      </span>
-                    )}
-                    <span className="rounded-full border border-gray-200 dark:border-slate-700 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
-                      {m.careerOriented ? "Career-focused" : "Transfer-focused"}
-                    </span>
-                  </div>
-                  <p className="mt-1 text-sm text-slate-600 dark:text-slate-400 line-clamp-2">
-                    {m.blurb}
-                  </p>
-                  <div className="mt-2.5 flex flex-wrap gap-x-4 gap-y-1 text-[13px] text-slate-600 dark:text-slate-300">
-                    <span>
-                      <b className="font-semibold text-slate-900 dark:text-slate-100">
-                        {m.collegeCount}
-                      </b>{" "}
-                      {m.collegeCount === 1 ? "college" : "colleges"}
-                    </span>
-                    <span>
-                      <b className="font-semibold text-slate-900 dark:text-slate-100">
-                        {m.sectionCount}
-                      </b>{" "}
-                      sections this term
-                    </span>
-                    {m.medianWage != null && (
-                      <span title="State median annual wage for the program's primary career (U.S. Bureau of Labor Statistics)">
-                        <b className="font-semibold text-slate-900 dark:text-slate-100">
-                          ${m.medianWage.toLocaleString()}
-                        </b>{" "}
-                        median pay · BLS
-                      </span>
-                    )}
-                    {answers?.time === "online" &&
-                      m.onlinePct != null &&
-                      m.onlinePct > 0 && (
-                        <span>
-                          <b className="font-semibold text-slate-900 dark:text-slate-100">
-                            {m.onlinePct}%
-                          </b>{" "}
-                          online
+          {matches.map((m, i) => {
+            // Suppress the "Career-focused" tag under a transfer goal — it
+            // reads as contradictory next to "you want to transfer". Transfer-
+            // oriented programs still show their tag.
+            const natureBadge =
+              m.careerOriented && answers?.goal === "transfer"
+                ? null
+                : m.careerOriented
+                  ? "Career-focused"
+                  : "Transfer-focused";
+            return (
+              <li key={m.slug}>
+                <Link
+                  href={`/${state}/program/${m.slug}`}
+                  className={`group flex items-center gap-4 rounded-2xl border p-4 sm:p-5 transition-all hover:-translate-y-0.5 hover:shadow-md ${
+                    i === 0
+                      ? "border-teal-300 dark:border-teal-700 bg-gradient-to-b from-white to-teal-50/60 dark:from-slate-900 dark:to-teal-900/20"
+                      : "border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900"
+                  }`}
+                >
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <h3 className="text-lg font-semibold text-teal-800 dark:text-teal-200">
+                        {m.name}
+                      </h3>
+                      {i === 0 && (
+                        <span className="rounded-full bg-teal-600 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
+                          Best match
                         </span>
                       )}
-                    {answers?.time === "evening" && m.eveningAvailable && (
-                      <span className="text-teal-700 dark:text-teal-300">
-                        Evening sections available
+                      {natureBadge && (
+                        <span className="rounded-full border border-gray-200 dark:border-slate-700 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                          {natureBadge}
+                        </span>
+                      )}
+                    </div>
+                    <p className="mt-1 text-sm text-slate-600 dark:text-slate-400 line-clamp-2">
+                      {m.blurb}
+                    </p>
+                    <div className="mt-2.5 flex flex-wrap gap-x-4 gap-y-1 text-[13px] text-slate-600 dark:text-slate-300">
+                      <span>
+                        <b className="font-semibold text-slate-900 dark:text-slate-100">
+                          {m.collegeCount}
+                        </b>{" "}
+                        {m.collegeCount === 1 ? "college" : "colleges"}
                       </span>
-                    )}
+                      <span>
+                        <b className="font-semibold text-slate-900 dark:text-slate-100">
+                          {m.sectionCount}
+                        </b>{" "}
+                        sections this term
+                      </span>
+                      {m.medianWage != null && (
+                        <span title="State median annual wage for the program's primary career (U.S. Bureau of Labor Statistics)">
+                          <b className="font-semibold text-slate-900 dark:text-slate-100">
+                            ${m.medianWage.toLocaleString()}
+                          </b>{" "}
+                          median pay · BLS
+                        </span>
+                      )}
+                      {answers?.time === "online" &&
+                        m.onlinePct != null &&
+                        m.onlinePct > 0 && (
+                          <span>
+                            <b className="font-semibold text-slate-900 dark:text-slate-100">
+                              {m.onlinePct}%
+                            </b>{" "}
+                            online
+                          </span>
+                        )}
+                      {answers?.time === "evening" && m.eveningAvailable && (
+                        <span className="text-teal-700 dark:text-teal-300">
+                          Evening sections available
+                        </span>
+                      )}
+                    </div>
                   </div>
-                </div>
-                <Icon
-                  path='<path d="M5 12h14M13 6l6 6-6 6"/>'
-                  className="h-5 w-5 flex-shrink-0 text-slate-400 group-hover:text-teal-600 transition-colors"
-                />
-              </Link>
-            </li>
-          ))}
+                  <Icon
+                    path='<path d="M5 12h14M13 6l6 6-6 6"/>'
+                    className="h-5 w-5 flex-shrink-0 text-slate-400 group-hover:text-teal-600 transition-colors"
+                  />
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       )}
 

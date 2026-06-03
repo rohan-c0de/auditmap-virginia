@@ -15,6 +15,7 @@
  * (same gate as the /[state]/programs index).
  */
 
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { isValidState } from "@/lib/states/registry";
@@ -110,12 +111,16 @@ export default async function ChoosePage(props: PageProps) {
       </header>
 
       <div className="mt-2">
-        <ChooseQuiz
-          state={state}
-          stateName={config.name}
-          facts={facts}
-          transferSupported={config.transferSupported}
-        />
+        {/* Suspense boundary required: ChooseQuiz reads useSearchParams to keep
+            the quiz answers in the URL (shareable / refresh-safe). */}
+        <Suspense fallback={<div className="min-h-[420px]" />}>
+          <ChooseQuiz
+            state={state}
+            stateName={config.name}
+            facts={facts}
+            transferSupported={config.transferSupported}
+          />
+        </Suspense>
       </div>
     </div>
   );
