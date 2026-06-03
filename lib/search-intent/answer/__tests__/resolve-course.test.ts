@@ -241,3 +241,35 @@ describe("cross-state round-trip — false-resolve must be ZERO", () => {
     60_000,
   );
 });
+
+describe("matchTitle / normalizeTitle — edge cases", () => {
+  it("returns reason 'empty' for an empty/whitespace title or empty catalog", () => {
+    const cat: CatalogCourse[] = [{ prefix: "BIO", number: "101", title: "General Biology I" }];
+    expect(matchTitle(cat, "").reason).toBe("empty");
+    expect(matchTitle(cat, "   ").resolved).toBeNull();
+    expect(matchTitle([], "Anything").reason).toBe("empty");
+  });
+
+  it("does NOT treat a multi-digit course number in the title as a level numeral", () => {
+    expect(normalizeTitle("English 101")).toBe("english 101");
+    const cat: CatalogCourse[] = [
+      { prefix: "ENG", number: "1", title: "English 101" },
+      { prefix: "ENG", number: "2", title: "English 102" },
+    ];
+    expect(matchTitle(cat, "English 101").resolved).toEqual({ prefix: "ENG", number: "1" });
+    expect(matchTitle(cat, "English 102").resolved).toEqual({ prefix: "ENG", number: "2" });
+  });
+
+  it("resolves a single-token title only when it is exact AND unique", () => {
+    const unique: CatalogCourse[] = [
+      { prefix: "BIO", number: "256", title: "Genetics" },
+      { prefix: "BIO", number: "101", title: "General Biology I" },
+    ];
+    expect(matchTitle(unique, "Genetics").resolved).toEqual({ prefix: "BIO", number: "256" });
+    const ambiguous: CatalogCourse[] = [
+      { prefix: "BIO", number: "256", title: "Genetics" },
+      { prefix: "BIO", number: "257", title: "Genetics" },
+    ];
+    expect(matchTitle(ambiguous, "Genetics").resolved).toBeNull();
+  });
+});

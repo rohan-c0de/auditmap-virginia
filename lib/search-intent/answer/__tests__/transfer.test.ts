@@ -14,17 +14,19 @@ vi.mock("../validate", () => ({
 import { lookupTransfer } from "../transfer";
 import type { TransferIntent } from "../../types";
 import { getTransferInfo } from "../../../transfer";
-import { courseExists, resolveUniversity } from "../validate";
+import { courseExists, resolveCourse, resolveUniversity } from "../validate";
 import type { TransferMapping } from "../../../types";
 
 const mockGetTransferInfo = getTransferInfo as ReturnType<typeof vi.fn>;
 const mockCourseExists = courseExists as ReturnType<typeof vi.fn>;
 const mockResolveUniversity = resolveUniversity as ReturnType<typeof vi.fn>;
+const mockResolveCourse = resolveCourse as ReturnType<typeof vi.fn>;
 
 beforeEach(() => {
   mockGetTransferInfo.mockReset();
   mockCourseExists.mockReset();
   mockResolveUniversity.mockReset();
+  mockResolveCourse.mockReset();
 });
 
 function mapping(partial: Partial<TransferMapping>): TransferMapping {
@@ -250,5 +252,52 @@ describe("lookupTransfer", () => {
       if (result.type !== "transfer") throw new Error("wrong type");
       expect(result.followups).toContain("Search for ENG courses");
     });
+  });
+});
+
+describe("lookupTransfer — title resolution", () => {
+  const BY_TITLE: TransferIntent = {
+    type: "transfer",
+    course: null,
+    subjectPrefix: "ENG",
+    courseTitle: "Composition I",
+    university: null,
+  };
+
+  it("resolves a title to a code, then runs the normal transfer lookup", async () => {
+    mockResolveCourse.mockResolvedValue({
+      resolved: { prefix: "ENG", number: "111" },
+      suggestions: [],
+    });
+    mockCourseExists.mockResolvedValue({ exists: true });
+    mockGetTransferInfo.mockResolvedValue([]); // exists, no mappings → "no"
+    const result = await lookupTransfer(BY_TITLE, "va");
+    expect(mockResolveCourse).toHaveBeenCalledWith("va", {
+      title: "Composition I",
+      prefixHint: "ENG",
+    });
+    if (result.type !== "transfer") throw new Error("wrong type");
+    expect(result.status).toBe("no");
+    expect(result.course).toEqual({ prefix: "ENG", number: "111" });
+  });
+
+  it("falls through to subject-browse and looks up NO course when the title doesn't resolve", async () => {
+    mockResolveCourse.mockResolvedValue({
+      resolved: null,
+      suggestions: [{ code: "ENG 111", title: "Composition I" }],
+    });
+    const result = await lookupTransfer(BY_TITLE, "va");
+    expect(mockResolveCourse).toHaveBeenCalled();
+    expect(mockCourseExists).not.toHaveBeenCalled(); // never resolved a course to look up
+    expect(result.type).toBe("none");
+    if (result.type !== "none") return;
+    expect(result.reason).toBe("missing-entity");
+  });
+
+  it("does NOT attempt resolution when a code was given (code wins)", async () => {
+    mockCourseExists.mockResolvedValue({ exists: true });
+    mockGetTransferInfo.mockResolvedValue([]);
+    await lookupTransfer(ENG_111_INTENT, "va");
+    expect(mockResolveCourse).not.toHaveBeenCalled();
   });
 });
