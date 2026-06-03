@@ -42,32 +42,7 @@ export function llmClassifier(opts: LlmClassifierOptions = {}): Classifier {
   const model = opts.model ?? CLASSIFIER_MODEL;
 
   return async (query: string, state: string): Promise<ClassifiedIntent> => {
-    const config = getStateConfig(state);
-    const stateName = config?.name ?? state;
-    const aliases = config?.universityAliases ?? [];
-    const aliasBlock = aliases.length > 0
-      ? `\n\nUniversity aliases for ${stateName}:\n${buildUniversityBlock(aliases)}`
-      : "";
-
-    // Inject the state's actual subject prefixes so the LLM picks the right
-    // course-code prefix (VA uses PSY/MTH, ME uses ENGL/MATH, etc.) rather
-    // than defaulting to its own normalization. Both calls are cached
-    // (currentTerm + distinctSubjects) so the cost is one-time per state.
-    // If either lookup fails (no data, scraper hasn't run yet), we silently
-    // omit the prefix block — the classifier still works, just without the
-    // state-specific grounding.
-    let prefixBlock = "";
-    try {
-      const term = await getCurrentTerm(state);
-      const prefixes = await getDistinctSubjects(term, state);
-      if (prefixes.length > 0) {
-        prefixBlock = `\n\nSubject prefixes used in ${stateName}:\n${buildSubjectPrefixBlock(prefixes)}`;
-      }
-    } catch {
-      /* state data unavailable — fall through without prefix grounding */
-    }
-
-    const userMessage = `[State: ${stateName}]${aliasBlock}${prefixBlock}\n\n${query}`;
+    const userMessage = await buildUserMessage(query, state);
 
     const response = await client.messages.create({
       model,
@@ -93,6 +68,43 @@ export function llmClassifier(opts: LlmClassifierOptions = {}): Classifier {
     }
     return toClassifiedIntent(query, toolUse.input as ClassifierToolInput);
   };
+}
+
+/**
+ * Build the classifier's user message: `[State: <name>]` + the state's
+ * university-alias table + the state's actual subject prefixes, then the query.
+ *
+ * The prefix block grounds course-code extraction in the state's real
+ * conventions (VA uses PSY/MTH, ME uses ENGL/MATH, etc.) instead of the model's
+ * own normalization. currentTerm + distinctSubjects are cached, so the cost is
+ * one-time per state. If state data is unavailable (scraper hasn't run yet) we
+ * omit the prefix block — classification still works, just without the
+ * state-specific grounding.
+ *
+ * Shared by every classifier backend (Anthropic, Cloudflare, Groq, Ollama) so
+ * the prompt is identical regardless of which model answers.
+ */
+export async function buildUserMessage(query: string, state: string): Promise<string> {
+  const config = getStateConfig(state);
+  const stateName = config?.name ?? state;
+  const aliases = config?.universityAliases ?? [];
+  const aliasBlock =
+    aliases.length > 0
+      ? `\n\nUniversity aliases for ${stateName}:\n${buildUniversityBlock(aliases)}`
+      : "";
+
+  let prefixBlock = "";
+  try {
+    const term = await getCurrentTerm(state);
+    const prefixes = await getDistinctSubjects(term, state);
+    if (prefixes.length > 0) {
+      prefixBlock = `\n\nSubject prefixes used in ${stateName}:\n${buildSubjectPrefixBlock(prefixes)}`;
+    }
+  } catch {
+    /* state data unavailable — fall through without prefix grounding */
+  }
+
+  return `[State: ${stateName}]${aliasBlock}${prefixBlock}\n\n${query}`;
 }
 
 /** Convert tool input into the canonical ClassifiedIntent. Exported for testing. */
