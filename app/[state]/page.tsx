@@ -152,6 +152,53 @@ export default async function HomePage({ params }: Props) {
           />
           <StartingSoonCallout state={state} />
         </div>
+
+        {/* "Help me choose" entry point — only when programs qualify (so the
+            quiz always has content; same gate as Browse by Program below). */}
+        {programSlugs.length > 0 && (
+          <div className="max-w-2xl mx-auto mt-8">
+            <Link
+              href={`/${state}/choose`}
+              className="group flex items-center gap-4 rounded-2xl border border-teal-200 dark:border-teal-800 bg-gradient-to-br from-teal-50 to-white dark:from-teal-900/30 dark:to-slate-900 px-5 py-4 transition-all hover:-translate-y-0.5 hover:shadow-md"
+            >
+              <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-teal-600 text-white">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-5 w-5"
+                  aria-hidden="true"
+                >
+                  <path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z" />
+                </svg>
+              </span>
+              <span className="min-w-0 text-left">
+                <span className="block font-semibold text-gray-900 dark:text-slate-100">
+                  Not sure what to study?
+                </span>
+                <span className="block text-sm text-gray-600 dark:text-slate-400">
+                  Answer three quick questions and we&rsquo;ll point you to
+                  programs that fit.
+                </span>
+              </span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="ml-auto h-5 w-5 flex-shrink-0 text-teal-600 dark:text-teal-400 group-hover:translate-x-0.5 transition-transform"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </Link>
+          </div>
+        )}
       </section>
 
       {/* How it works */}
