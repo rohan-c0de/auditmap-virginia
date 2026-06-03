@@ -21,16 +21,28 @@ export interface ClassifierWithOptions {
 }
 
 /**
- * Resolve the default LLM + cache namespace from `CLASSIFIER_PROVIDER`.
- *
- * Returns null for the implicit "anthropic" default (handled by the caller so
- * the Anthropic client is only constructed when actually used). The
- * `modelVersion` is part of the Supabase cache PRIMARY KEY, so switching
- * providers automatically starts a fresh cache namespace — and flipping back
- * reuses the old one. Cutover and rollback are a single env-var change.
+ * Try `primary`; if it throws (rate limit, timeout, network, bad response),
+ * fall back to `fallback`. Used to make a free-tier primary (e.g. Groq, whose
+ * RPM cap 429s under bursts) robust by retrying on a second provider instead of
+ * surfacing a 503. If BOTH fail, the original error from `fallback` propagates
+ * → the route 503s → the UI drops the answer card (graceful, unchanged).
  */
-function providerDefault(): { llm: Classifier; modelVersion: string } | null {
-  switch (process.env.CLASSIFIER_PROVIDER) {
+export function chain(primary: Classifier, fallback: Classifier): Classifier {
+  return async (query, state) => {
+    try {
+      return await primary(query, state);
+    } catch (err) {
+      console.warn(
+        `[classifier] primary failed (${err instanceof Error ? err.message.slice(0, 120) : "unknown"}); trying fallback`,
+      );
+      return fallback(query, state);
+    }
+  };
+}
+
+/** Build one provider's llm + cache namespace by name. Null = anthropic/unknown. */
+function buildProvider(name: string | undefined): { llm: Classifier; modelVersion: string } | null {
+  switch (name) {
     case "cloudflare": {
       const model = process.env.CF_MODEL ?? "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
       return {
@@ -81,6 +93,32 @@ function providerDefault(): { llm: Classifier; modelVersion: string } | null {
     default:
       return null; // anthropic — the existing Claude Haiku path
   }
+}
+
+/**
+ * Resolve the default LLM + cache namespace from `CLASSIFIER_PROVIDER`, with an
+ * optional `CLASSIFIER_FALLBACK` provider that's tried when the primary fails.
+ *
+ * Returns null for the implicit "anthropic" default (handled by the caller so
+ * the Anthropic client is only constructed when actually used). The
+ * `modelVersion` is part of the Supabase cache PRIMARY KEY, so switching
+ * providers starts a fresh cache namespace — and flipping back reuses the old
+ * one. Cutover and rollback are a single env-var change. (The cache namespaces
+ * by the PRIMARY's modelVersion; a fallback-produced result is cached there
+ * too, which is fine — both providers emit the same ClassifiedIntent shape.)
+ */
+function providerDefault(): { llm: Classifier; modelVersion: string } | null {
+  const primary = buildProvider(process.env.CLASSIFIER_PROVIDER);
+  if (!primary) return null;
+
+  const fallbackName = process.env.CLASSIFIER_FALLBACK;
+  if (fallbackName && fallbackName !== process.env.CLASSIFIER_PROVIDER) {
+    const fallback = buildProvider(fallbackName);
+    if (fallback) {
+      return { llm: chain(primary.llm, fallback.llm), modelVersion: primary.modelVersion };
+    }
+  }
+  return primary;
 }
 
 /** Compose a cache-backed classifier from injectable parts. */
