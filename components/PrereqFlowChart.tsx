@@ -26,20 +26,18 @@ interface Wire {
 }
 
 /**
- * Orthogonal connector: exit the prerequisite's right edge, run vertically,
- * then enter the dependent's left edge horizontally — so the (orient=auto)
- * arrowhead always sits on a left→right segment and points forward, no matter
- * how tall the jump is. (A smooth S-curve rendered its arrowhead pointing
- * *up* on near-vertical jumps; an unclamped elbow reversed its last segment.)
+ * Orthogonal connector: exit the prerequisite's right edge, run vertically at
+ * `jogX`, then enter the dependent's left edge horizontally — so the
+ * (orient=auto) arrowhead always sits on a left→right segment and points
+ * forward, however tall the jump. `jogX` is assigned per edge so that two
+ * connectors leaving the same column don't stack in one vertical channel.
  */
-function connector(x1: number, y1: number, x2: number, y2: number): string {
+function connector(x1: number, y1: number, x2: number, y2: number, jogX: number): string {
   if (Math.abs(y2 - y1) < 2) return `M ${x1} ${y1} H ${x2}`;
   const gap = x2 - x1;
   if (gap < 6) return `M ${x1} ${y1} L ${x2} ${y2}`; // too tight for a clean elbow
-  const r = Math.max(2, Math.min(8, (gap - 2) / 2, Math.abs(y2 - y1) / 2));
-  // Vertical jog midway, clamped so both rounded corners fit and both
-  // horizontal runs (and thus the arrowhead) point left→right.
-  const jog = Math.min(Math.max(x1 + gap / 2, x1 + r), x2 - r);
+  const r = Math.max(2, Math.min(7, (gap - 2) / 2, Math.abs(y2 - y1) / 2));
+  const jog = Math.min(Math.max(jogX, x1 + r), x2 - r); // keep both corners in the gap
   const down = y2 >= y1 ? 1 : -1;
   return (
     `M ${x1} ${y1} H ${jog - r}` +
@@ -70,19 +68,46 @@ export default function PrereqFlowChart({ tree }: { tree: ChainNode }) {
     const container = containerRef.current;
     if (!container) return;
     const cb = container.getBoundingClientRect();
-    const next: Wire[] = [];
+
+    // Pass 1: endpoints.
+    type Seg = { key: string; from: string; to: string; type: EdgeType; x1: number; y1: number; x2: number; y2: number };
+    const segs: Seg[] = [];
     for (const e of graph.edges) {
       const a = nodeRefs.current.get(e.from);
       const b = nodeRefs.current.get(e.to);
       if (!a || !b) continue;
       const ra = a.getBoundingClientRect();
       const rb = b.getBoundingClientRect();
-      const x1 = ra.right - cb.left;
-      const y1 = ra.top - cb.top + ra.height / 2;
-      const x2 = rb.left - cb.left - 6; // leave room for the arrowhead
-      const y2 = rb.top - cb.top + rb.height / 2;
-      next.push({ key: `${e.from}|${e.to}`, from: e.from, to: e.to, type: e.type, d: connector(x1, y1, x2, y2) });
+      segs.push({
+        key: `${e.from}|${e.to}`, from: e.from, to: e.to, type: e.type,
+        x1: ra.right - cb.left,
+        y1: ra.top - cb.top + ra.height / 2,
+        x2: rb.left - cb.left - 6, // leave room for the arrowhead
+        y2: rb.top - cb.top + rb.height / 2,
+      });
     }
+
+    // Pass 2: give each vertical-jog connector its own channel within the gap
+    // to the right of its source column, so two jogs from the same column don't
+    // overlap into one line. Straight (same-row) connectors need no channel.
+    const byColumn = new Map<number, Seg[]>();
+    for (const s of segs) {
+      if (Math.abs(s.y1 - s.y2) <= 2) continue;
+      const key = Math.round(s.x1);
+      const list = byColumn.get(key);
+      if (list) list.push(s);
+      else byColumn.set(key, [s]);
+    }
+    const jogX = new Map<string, number>();
+    for (const [, list] of byColumn) {
+      list.sort((p, q) => p.y1 + p.y2 - (q.y1 + q.y2));
+      list.forEach((s, i) => jogX.set(s.key, s.x1 + 12 + i * 9));
+    }
+
+    const next: Wire[] = segs.map((s) => ({
+      key: s.key, from: s.from, to: s.to, type: s.type,
+      d: connector(s.x1, s.y1, s.x2, s.y2, jogX.get(s.key) ?? s.x1 + 12),
+    }));
     setWires(next);
     setDims({ w: cb.width, h: cb.height });
   }, [graph]);
@@ -139,7 +164,7 @@ export default function PrereqFlowChart({ tree }: { tree: ChainNode }) {
       <div className={`prq-${uid} overflow-x-auto`}>
         <div
           ref={containerRef}
-          className="relative inline-flex items-stretch gap-7 pt-3"
+          className="relative inline-flex items-stretch gap-12 pt-3"
           style={{ minWidth: "min-content" }}
         >
           {/* Connector overlay — decorative; the ordered columns below carry the meaning. */}
@@ -168,6 +193,8 @@ export default function PrereqFlowChart({ tree }: { tree: ChainNode }) {
               return (
                 <path
                   key={w.key}
+                  data-from={w.from}
+                  data-to={w.to}
                   d={w.d}
                   fill="none"
                   style={{ stroke: isOr ? "var(--prq-or)" : "var(--prq-req)" }}
