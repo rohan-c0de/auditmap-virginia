@@ -166,6 +166,8 @@ export default function Header({
       <aside
         id="site-sidebar"
         aria-label="Site navigation"
+        aria-hidden={!effectiveOpen}
+        inert={!effectiveOpen}
         className="fixed top-0 left-0 z-50 flex h-dvh w-64 flex-col border-r border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-lg"
       >
         {/* Sidebar control row — aligns with the top bar height. */}
@@ -180,6 +182,7 @@ export default function Header({
                 type="button"
                 onClick={togglePin}
                 aria-pressed={pinned}
+                aria-label={pinned ? "Unpin menu" : "Keep menu open"}
                 title={pinned ? "Unpin menu" : "Keep menu open"}
                 className={`inline-flex h-8 w-8 items-center justify-center rounded-md transition ${
                   pinned
@@ -221,7 +224,7 @@ export default function Header({
                     href={link.href}
                     onClick={onNavigate}
                     aria-current={active ? "page" : undefined}
-                    className={`block rounded-md px-2 py-1.5 text-sm transition-colors ${
+                    className={`flex min-h-11 items-center rounded-md px-2 py-1.5 text-sm transition-colors lg:min-h-0 ${
                       active
                         ? "bg-teal-50 font-semibold text-teal-700 dark:bg-teal-500/10 dark:text-teal-300"
                         : "text-gray-700 hover:bg-gray-50 hover:text-teal-700 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-teal-300"
