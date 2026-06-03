@@ -114,12 +114,15 @@ export default function CourseSearchHero({
   useEffect(() => {
     if (!pickerOpen || !pickerRef.current) return;
     const rect = pickerRef.current.getBoundingClientRect();
+    const spaceBelow = window.innerHeight - rect.bottom - 16;
     setDropdownStyle({
       position: "fixed",
       top: rect.bottom + 8,
       left: "50%",
       transform: "translateX(-50%)",
       width: Math.min(576, window.innerWidth - 32),
+      maxHeight: Math.max(240, spaceBelow),
+      overflowY: "auto",
       zIndex: 9999,
     });
   }, [pickerOpen]);
