@@ -2,8 +2,45 @@
   "college_slug": "surry",
   "catalog_year": "",
   "catalog_url": "https://catalog.surry.edu",
-  "scraped_at": "2026-06-01T03:24:36.962Z",
+  "scraped_at": "2026-06-04T20:17:09.680Z",
   "programs": [
+    {
+      "title": "Accounting and Finance Degree",
+      "credential": "other",
+      "program_code": "A25800",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1201",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "accounting"
+    },
+    {
+      "title": "Associate in Arts Degree - College Transfer",
+      "credential": "AA",
+      "program_code": "A10100",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1181",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Elective/Pre-Major Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "PED Any Physical Education Course",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
     {
       "title": "Business Administration Degree",
       "credential": "other",
@@ -56,17 +93,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Accounting and Finance Degree",
-      "credential": "other",
-      "program_code": "A25800",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1201",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "accounting"
-    },
-    {
       "title": "Criminal Justice Technology Degree",
       "credential": "other",
       "program_code": "A55180",
@@ -91,32 +117,6 @@
         }
       ],
       "matched_program_slug": "criminal-justice"
-    },
-    {
-      "title": "Associate in Arts Degree - College Transfer",
-      "credential": "AA",
-      "program_code": "A10100",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1181",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Elective/Pre-Major Courses",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "PED Any Physical Education Course",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
     },
     {
       "title": "Digital Media Technology Degree",
@@ -215,6 +215,28 @@
       "matched_program_slug": "business-administration"
     },
     {
+      "title": "Digital Design Certificate",
+      "credential": "certificate",
+      "program_code": "C25210B",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1207",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Graphic Design Certificate",
+      "credential": "certificate",
+      "program_code": "C25210D",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1350",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "art"
+    },
+    {
       "title": "Multimedia Certificate",
       "credential": "certificate",
       "program_code": "C25210C",
@@ -237,17 +259,6 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Digital Design Certificate",
-      "credential": "certificate",
-      "program_code": "C25210B",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1207",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
       "title": "Information Technology Certificate",
       "credential": "certificate",
       "program_code": "C25590A",
@@ -257,39 +268,6 @@
       "description": null,
       "requirement_groups": [],
       "matched_program_slug": "computer-science"
-    },
-    {
-      "title": "Graphic Design Certificate",
-      "credential": "certificate",
-      "program_code": "C25210D",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1350",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "art"
-    },
-    {
-      "title": "Computer Programming and Development Certificate",
-      "credential": "certificate",
-      "program_code": "C25590C",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1215",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Medical Billing and Insurance Certificate",
-      "credential": "certificate",
-      "program_code": "C25310A",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1225",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
     },
     {
       "title": "Network Management Certificate",
@@ -307,6 +285,28 @@
       "credential": "certificate",
       "program_code": "C25310B",
       "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1226",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Computer Programming and Development Certificate",
+      "credential": "certificate",
+      "program_code": "C25590C",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1215",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Medical Billing and Insurance Certificate",
+      "credential": "certificate",
+      "program_code": "C25310A",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1225",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -347,32 +347,10 @@
       "matched_program_slug": "criminal-justice"
     },
     {
-      "title": "Infant/Toddler Care Certificate",
-      "credential": "certificate",
-      "program_code": "C55290",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1322",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
       "title": "Early Childhood Education Certificate",
       "credential": "certificate",
       "program_code": "C55220",
       "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1321",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "early-childhood-education"
-    },
-    {
-      "title": "Early Childhood Administration Certificate",
-      "credential": "certificate",
-      "program_code": "C55850",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1323",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -391,10 +369,43 @@
       "matched_program_slug": null
     },
     {
+      "title": "Infant/Toddler Care Certificate",
+      "credential": "certificate",
+      "program_code": "C55290",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1322",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Early Childhood Administration Certificate",
+      "credential": "certificate",
+      "program_code": "C55850",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1323",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "early-childhood-education"
+    },
+    {
       "title": "Community Spanish Interpreter Certificate",
       "credential": "certificate",
       "program_code": "C55370",
       "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1317",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Spanish Language Certificate",
+      "credential": "certificate",
+      "program_code": "C55370B",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1319",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -456,34 +467,23 @@
       "matched_program_slug": "art"
     },
     {
-      "title": "Spanish Language Certificate",
-      "credential": "certificate",
-      "program_code": "C55370B",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1319",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Associate in Science in Teacher Preparation Degree - College Transfer",
+      "title": "Associate in Science Degree - College Transfer",
       "credential": "AA",
-      "program_code": "A1040T",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1185",
+      "program_code": "A10400",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1182",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
       "requirement_groups": [
         {
-          "name": "General Education Courses",
+          "name": "Select 6 Hours From Any of the Previous Course Listings and/or From the Following.",
           "credits_required": null,
           "choose_n": null,
           "courses": [
             {
               "prefix": "ELEC",
               "number": "XXX",
-              "title": "*Courses may also be selected from the UGETC within the CAA",
+              "title": "PED Any Physical Education Course",
               "credits": null,
               "or_alternatives": []
             }
@@ -519,32 +519,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Associate in Science Degree - College Transfer",
-      "credential": "AA",
-      "program_code": "A10400",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1182",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Select 6 Hours From Any of the Previous Course Listings and/or From the Following.",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "PED Any Physical Education Course",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Associate in Arts in Teacher Preparation Pathway",
       "credential": "AA",
       "program_code": "P1012T",
@@ -553,6 +527,32 @@
       "gpa_minimum": null,
       "description": null,
       "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Associate in Science in Teacher Preparation Degree - College Transfer",
+      "credential": "AA",
+      "program_code": "A1040T",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1185",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "General Education Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "*Courses may also be selected from the UGETC within the CAA",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
       "matched_program_slug": null
     },
     {
@@ -591,17 +591,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Associate in Fine Arts Pathway",
-      "credential": "AA",
-      "program_code": "P1062C",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1177",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "art"
-    },
-    {
       "title": "Associate in Science in Teacher Preparation Pathway",
       "credential": "AA",
       "program_code": "P1042T",
@@ -613,21 +602,21 @@
       "matched_program_slug": null
     },
     {
-      "title": "Associate in Science Pathway",
+      "title": "Associate in Fine Arts Pathway",
       "credential": "AA",
-      "program_code": "P1042C",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1178",
+      "program_code": "P1062C",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1177",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
       "requirement_groups": [],
-      "matched_program_slug": null
+      "matched_program_slug": "art"
     },
     {
-      "title": "Career and College Promise Career and College Ready Pathway Leading to either a CCP Transfer Pathway or CTE Pathway",
-      "credential": "other",
-      "program_code": "P9099A",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1431",
+      "title": "Associate in Science Pathway",
+      "credential": "AA",
+      "program_code": "P1042C",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1178",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -661,30 +650,15 @@
       "matched_program_slug": null
     },
     {
-      "title": "Associate Degree Nursing",
-      "credential": "AA",
-      "program_code": "A45110",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1292",
+      "title": "Career and College Promise Career and College Ready Pathway Leading to either a CCP Transfer Pathway or CTE Pathway",
+      "credential": "other",
+      "program_code": "P9099A",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1431",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
-      "requirement_groups": [
-        {
-          "name": "2nd Spring Semester",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "Humanities/Fine Arts Elective - See Choices Below *",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "nursing"
+      "requirement_groups": [],
+      "matched_program_slug": null
     },
     {
       "title": "Associate Degree Nursing LPN-ADN",
@@ -727,32 +701,6 @@
       "matched_program_slug": "nursing"
     },
     {
-      "title": "Construction Management Technology Degree",
-      "credential": "other",
-      "program_code": "A35190",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1253",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "2nd Spring Semester",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "Take one course: ECO, SOC, or PSY",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "business-administration"
-    },
-    {
       "title": "Computer-Integrated Machining Degree",
       "credential": "other",
       "program_code": "A50210",
@@ -784,6 +732,84 @@
         }
       ],
       "matched_program_slug": null
+    },
+    {
+      "title": "Associate Degree Nursing",
+      "credential": "AA",
+      "program_code": "A45110",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1292",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "2nd Spring Semester",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Humanities/Fine Arts Elective - See Choices Below *",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "nursing"
+    },
+    {
+      "title": "Automotive Systems Technology Degree",
+      "credential": "other",
+      "program_code": "A60160",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1243",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Humanities/Fine Arts Elective",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "automotive-technology"
+    },
+    {
+      "title": "Construction Management Technology Degree",
+      "credential": "other",
+      "program_code": "A35190",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1253",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "2nd Spring Semester",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Take one course: ECO, SOC, or PSY",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "business-administration"
     },
     {
       "title": "Cosmetology Degree",
@@ -845,6 +871,39 @@
       "matched_program_slug": "early-childhood-education"
     },
     {
+      "title": "Early Childhood Education Degree Transfer Birth - Kindergarten Non-Licensure",
+      "credential": "other",
+      "program_code": "A55220N",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1328",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "2nd Spring Semester",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Social Science - Elective *",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Humanities Elective - See choices below",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "early-childhood-education"
+    },
+    {
       "title": "Early Childhood Education Degree - Transfer - Birth Kindergarten Licensure",
       "credential": "other",
       "program_code": "A55220L",
@@ -885,32 +944,6 @@
       "matched_program_slug": "early-childhood-education"
     },
     {
-      "title": "Automotive Systems Technology Degree",
-      "credential": "other",
-      "program_code": "A60160",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1243",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Courses",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "Humanities/Fine Arts Elective",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "automotive-technology"
-    },
-    {
       "title": "Electrical Track Degree",
       "credential": "other",
       "program_code": "A35130",
@@ -932,9 +965,9 @@
               "or_alternatives": []
             },
             {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "or ENG 114 Professional Research & Reporting",
+              "prefix": "ENG",
+              "number": "114",
+              "title": "Professional Research &amp; Reporting",
               "credits": null,
               "or_alternatives": []
             },
@@ -951,37 +984,15 @@
       "matched_program_slug": null
     },
     {
-      "title": "Early Childhood Education Degree Transfer Birth - Kindergarten Non-Licensure",
-      "credential": "other",
-      "program_code": "A55220N",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1328",
+      "title": "Emergency Medical Science Associate in Applied Science Degree Bridge Program",
+      "credential": "AA",
+      "program_code": "A45340BR",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1284",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
-      "requirement_groups": [
-        {
-          "name": "2nd Spring Semester",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "Social Science - Elective *",
-              "credits": null,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "Humanities Elective - See choices below",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "early-childhood-education"
+      "requirement_groups": [],
+      "matched_program_slug": null
     },
     {
       "title": "Forensic Science Degree",
@@ -1007,17 +1018,6 @@
           ]
         }
       ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Emergency Medical Science Associate in Applied Science Degree Bridge Program",
-      "credential": "AA",
-      "program_code": "A45340BR",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1284",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
       "matched_program_slug": null
     },
     {
@@ -1087,95 +1087,6 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "RIBN Curriculum Plan Surry Community College and Western Carolina",
-      "credential": "other",
-      "program_code": "A45110R",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1295",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "YEAR ONE Fall - Freshman Year",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "* MAT 171 Precalculus Algebra can be substituted for MAT 152 Statistical Methods I",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Spring - Freshman Year",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "OR HIS 112 World Civilizations II",
-              "credits": null,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "* PED 110 Fit and Well for Life can be substituted for HEA 110 Personal Health/Wellness",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Summer - Freshman Year",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "OR ENG 114 Professional Research & Reporting",
-              "credits": null,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "WCU - NSG 346 Pathophysiology for NSG - Taken at WCU Online (Check WCU catalog)",
-              "credits": null,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ART",
-              "number": "111",
-              "title": "",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "YEAR TWO Fall - Sophomore Year",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "WCU - UL Perspectives, Taken at WCU Online (Check WCU catalog)",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Physical Therapist Assistant Degree",
       "credential": "other",
       "program_code": "A45620",
@@ -1228,6 +1139,95 @@
       "matched_program_slug": null
     },
     {
+      "title": "RIBN Curriculum Plan Surry Community College and Western Carolina",
+      "credential": "other",
+      "program_code": "A45110R",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1295",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "YEAR ONE Fall - Freshman Year",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MAT",
+              "number": "171",
+              "title": "Precalculus Algebra",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Spring - Freshman Year",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "HIS",
+              "number": "112",
+              "title": "World Civilizations II",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PED",
+              "number": "110",
+              "title": "Fit and Well for Life",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Summer - Freshman Year",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "114",
+              "title": "Professional Research &amp; Reporting",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "WCU - NSG 346 Pathophysiology for NSG - Taken at WCU Online (Check WCU catalog)",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ART",
+              "number": "111",
+              "title": "",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "YEAR TWO Fall - Sophomore Year",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "WCU - UL Perspectives, Taken at WCU Online (Check WCU catalog)",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Computer Support Specialist Certificate",
       "credential": "certificate",
       "program_code": "C25590D",
@@ -1265,15 +1265,15 @@
       "matched_program_slug": "accounting"
     },
     {
-      "title": "Air Conditioning, Heating, and Refrigeration Technology Diploma",
+      "title": "Business Administration Diploma",
       "credential": "diploma",
-      "program_code": "D35100",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1237",
+      "program_code": "D25120",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1204",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
       "requirement_groups": [],
-      "matched_program_slug": null
+      "matched_program_slug": "business-administration"
     },
     {
       "title": "Automotive Systems Technology Diploma",
@@ -1285,6 +1285,28 @@
       "description": null,
       "requirement_groups": [],
       "matched_program_slug": "automotive-technology"
+    },
+    {
+      "title": "Air Conditioning, Heating, and Refrigeration Technology Diploma",
+      "credential": "diploma",
+      "program_code": "D35100",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1237",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Computer-Integrated Machining Diploma",
+      "credential": "diploma",
+      "program_code": "D50210",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1251",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
     },
     {
       "title": "Community Spanish Interpreter Diploma",
@@ -1311,28 +1333,6 @@
         }
       ],
       "matched_program_slug": null
-    },
-    {
-      "title": "Computer-Integrated Machining Diploma",
-      "credential": "diploma",
-      "program_code": "D50210",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1251",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Business Administration Diploma",
-      "credential": "diploma",
-      "program_code": "D25120",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1204",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "business-administration"
     },
     {
       "title": "Criminal Justice Technology Diploma",
@@ -1372,17 +1372,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Cosmetology Diploma",
-      "credential": "diploma",
-      "program_code": "D55140",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1312",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
       "title": "Digital Media Technology Diploma",
       "credential": "diploma",
       "program_code": "D25210",
@@ -1409,57 +1398,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Forensic Science Diploma",
-      "credential": "diploma",
-      "program_code": "D5518C",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1309",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Early Childhood Education Diploma",
-      "credential": "diploma",
-      "program_code": "D55220",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1324",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "One Semester",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "OR EDU 145 Child Development II",
-              "credits": null,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "OR EDU 146 Child Guidance",
-              "credits": null,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "259",
-              "title": "",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "early-childhood-education"
-    },
-    {
       "title": "Electrical Track Diploma",
       "credential": "diploma",
       "program_code": "D35130",
@@ -1474,9 +1412,9 @@
           "choose_n": null,
           "courses": [
             {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "or ENG 111 Writing and Inquiry",
+              "prefix": "ENG",
+              "number": "111",
+              "title": "Writing and Inquiry",
               "credits": null,
               "or_alternatives": []
             },
@@ -1493,15 +1431,15 @@
       "matched_program_slug": null
     },
     {
-      "title": "Mechatronics Engineering Technology Diploma",
+      "title": "Cosmetology Diploma",
       "credential": "diploma",
-      "program_code": "D40350",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1273",
+      "program_code": "D55140",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1312",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
       "requirement_groups": [],
-      "matched_program_slug": "engineering"
+      "matched_program_slug": null
     },
     {
       "title": "Information Technology Diploma",
@@ -1544,32 +1482,6 @@
       "matched_program_slug": "computer-science"
     },
     {
-      "title": "Viticulture and Enology Diploma",
-      "credential": "diploma",
-      "program_code": "D15430",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1196",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Spring Semester",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "WBL",
-              "number": "111",
-              "title": "",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Medical Office Administration Diploma",
       "credential": "diploma",
       "program_code": "D25310",
@@ -1596,15 +1508,55 @@
       "matched_program_slug": null
     },
     {
-      "title": "Practical Nursing Diploma",
+      "title": "Early Childhood Education Diploma",
       "credential": "diploma",
-      "program_code": "D45660",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1290",
+      "program_code": "D55220",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1324",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "One Semester",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "EDU",
+              "number": "145",
+              "title": "Child Development II",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "146",
+              "title": "Child Guidance",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "259",
+              "title": "",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "early-childhood-education"
+    },
+    {
+      "title": "Forensic Science Diploma",
+      "credential": "diploma",
+      "program_code": "D5518C",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1309",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
       "requirement_groups": [],
-      "matched_program_slug": "nursing"
+      "matched_program_slug": null
     },
     {
       "title": "Welding Technology Diploma",
@@ -1640,6 +1592,65 @@
       "matched_program_slug": "welding"
     },
     {
+      "title": "Viticulture and Enology Diploma",
+      "credential": "diploma",
+      "program_code": "D15430",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1196",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Spring Semester",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "WBL",
+              "number": "111",
+              "title": "",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Air Conditioning, Heating, and Refrigeration Technology Certificate",
+      "credential": "certificate",
+      "program_code": "C35100",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1236",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Mechatronics Engineering Technology Diploma",
+      "credential": "diploma",
+      "program_code": "D40350",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1273",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "engineering"
+    },
+    {
+      "title": "Practical Nursing Diploma",
+      "credential": "diploma",
+      "program_code": "D45660",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1290",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "nursing"
+    },
+    {
       "title": "Automotive Systems Technology Certificate",
       "credential": "certificate",
       "program_code": "C60160",
@@ -1662,28 +1673,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Air Conditioning, Heating, and Refrigeration Technology Certificate",
-      "credential": "certificate",
-      "program_code": "C35100",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1236",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Computer-Integrated Machining CNC Machining Certificate",
-      "credential": "certificate",
-      "program_code": "C50210A",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1249",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
       "title": "Cosmetology Certificate",
       "credential": "certificate",
       "program_code": "C55140",
@@ -1695,10 +1684,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Construction Technology: Carpentry Certificate",
+      "title": "Electrical Track Commercial Wiring Certificate",
       "credential": "certificate",
-      "program_code": "C35180",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1254",
+      "program_code": "C35130E",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1348",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1717,10 +1706,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Electrical Track Commercial Wiring Certificate",
+      "title": "Computer-Integrated Machining CNC Machining Certificate",
       "credential": "certificate",
-      "program_code": "C35130E",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1348",
+      "program_code": "C50210A",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1249",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1754,10 +1743,21 @@
       "matched_program_slug": null
     },
     {
-      "title": "Electrical Track Photovoltaic Systems Certificate",
+      "title": "Forensic Science Certificate",
       "credential": "certificate",
-      "program_code": "C35130D",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1349",
+      "program_code": "C5518C",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1308",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Construction Technology: Carpentry Certificate",
+      "credential": "certificate",
+      "program_code": "C35180",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1254",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1776,17 +1776,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Mechatronics Engineering Technology - Electronics Certificate",
-      "credential": "certificate",
-      "program_code": "C40350B",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1368",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "engineering"
-    },
-    {
       "title": "Mechatronics Engineering Technology Certificate",
       "credential": "certificate",
       "program_code": "C40350",
@@ -1798,10 +1787,21 @@
       "matched_program_slug": "engineering"
     },
     {
-      "title": "Forensic Science Certificate",
+      "title": "Mechatronics Engineering Technology - Electronics Certificate",
       "credential": "certificate",
-      "program_code": "C5518C",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1308",
+      "program_code": "C40350B",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1368",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "engineering"
+    },
+    {
+      "title": "Electrical Track Photovoltaic Systems Certificate",
+      "credential": "certificate",
+      "program_code": "C35130D",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1349",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1820,10 +1820,32 @@
       "matched_program_slug": "nursing"
     },
     {
+      "title": "Viticulture and Enology Certificate - Viticulture (Grape Growing) Track",
+      "credential": "certificate",
+      "program_code": "C15430A",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1191",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
       "title": "Viticulture and Enology Certificate - Enology (Winemaking) Track",
       "credential": "certificate",
       "program_code": "C15430B",
       "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1193",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Viticulture and Enology Certificate - Viticulture Track (C15430AX) (CCP ONLY)",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1192",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
@@ -1853,65 +1875,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Viticulture and Enology Certificate - Viticulture (Grape Growing) Track",
-      "credential": "certificate",
-      "program_code": "C15430A",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1191",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Viticulture and Enology Certificate - Viticulture Track (C15430AX) (CCP ONLY)",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1192",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Welding Technology Certificate",
-      "credential": "certificate",
-      "program_code": "C50420",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1275",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [],
-      "matched_program_slug": "welding"
-    },
-    {
-      "title": "Welding Technology Industrial Certificate",
-      "credential": "certificate",
-      "program_code": "C50420C",
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1278",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Fall Semester",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "*This course articulates to credit at Surry Community College.* WLD 3106Z1 to WLD 115",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "welding"
-    },
-    {
       "title": "Welding Technology GMAW Certificate",
       "credential": "certificate",
       "program_code": "C50420A",
@@ -1935,6 +1898,17 @@
           ]
         }
       ],
+      "matched_program_slug": "welding"
+    },
+    {
+      "title": "Welding Technology Certificate",
+      "credential": "certificate",
+      "program_code": "C50420",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1275",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
       "matched_program_slug": "welding"
     },
     {
@@ -2023,30 +1997,30 @@
       "matched_program_slug": null
     },
     {
-      "title": "Automotive Workforce Certificate",
+      "title": "Welding Technology Industrial Certificate",
       "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1244",
+      "program_code": "C50420C",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1278",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
       "requirement_groups": [
         {
-          "name": "Automotive Workforce Certificate",
+          "name": "Fall Semester",
           "credits_required": null,
           "choose_n": null,
           "courses": [
             {
-              "prefix": "TRN",
-              "number": "110",
-              "title": "",
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "*This course articulates to credit at Surry Community College.* WLD 3106Z1 to WLD 115",
               "credits": null,
               "or_alternatives": []
             }
           ]
         }
       ],
-      "matched_program_slug": "automotive-technology"
+      "matched_program_slug": "welding"
     },
     {
       "title": "Auto Dealer License Renewal Workforce Certificate",
@@ -2073,32 +2047,6 @@
         }
       ],
       "matched_program_slug": null
-    },
-    {
-      "title": "Basic Law Enforcement Training (BLET) Workforce Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1303",
-      "total_credits": null,
-      "gpa_minimum": null,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Basic Law Enforcement Training Workforce Certificate Course",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "College curriculum can be awarded for CJC 111, CJC 113, CJC 131, CJC 132, CJC 221, and CJC 231 for completion of this certificate and successfully passed the Commissions comprehensive certification examination.",
-              "credits": null,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "criminal-justice"
     },
     {
       "title": "Auto Dealer License Workforce Certificate",
@@ -2153,37 +2101,56 @@
       "matched_program_slug": null
     },
     {
-      "title": "Certified Production Technician - Industrial Manufacturing Workforce Certificate",
+      "title": "Basic Law Enforcement Training (BLET) Workforce Certificate",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1269",
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1303",
       "total_credits": null,
       "gpa_minimum": null,
       "description": null,
       "requirement_groups": [
         {
-          "name": "CPT Industrial Manufacturing Workforce Certificate Course",
+          "name": "Basic Law Enforcement Training Workforce Certificate Course",
           "credits_required": null,
           "choose_n": null,
           "courses": [
             {
               "prefix": "ELEC",
               "number": "XXX",
-              "title": "Certification Testing: MSSC - Certified Production Technician",
-              "credits": null,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELEC",
-              "number": "XXX",
-              "title": "Additional testing information: https://www.msscusa.org/certification/production-certification-cpt/ Cost does not include books, tools, and supplies. Virginia residents pay the same rate as in-state students.",
+              "title": "College curriculum can be awarded for CJC 111, CJC 113, CJC 131, CJC 132, CJC 221, and CJC 231 for completion of this certificate and successfully passed the Commissions comprehensive certification examination.",
               "credits": null,
               "or_alternatives": []
             }
           ]
         }
       ],
-      "matched_program_slug": null
+      "matched_program_slug": "criminal-justice"
+    },
+    {
+      "title": "Automotive Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1244",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Automotive Workforce Certificate",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "TRN",
+              "number": "110",
+              "title": "",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "automotive-technology"
     },
     {
       "title": "Central Sterile Processing Workforce Certificate",
@@ -2219,6 +2186,39 @@
       "matched_program_slug": null
     },
     {
+      "title": "Certified Production Technician - Industrial Manufacturing Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1269",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "CPT Industrial Manufacturing Workforce Certificate Course",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Certification Testing: MSSC - Certified Production Technician",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Additional testing information: https://www.msscusa.org/certification/production-certification-cpt/ Cost does not include books, tools, and supplies. Virginia residents pay the same rate as in-state students.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Clinical Medical Assistant Workforce Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -2236,6 +2236,46 @@
               "prefix": "ELEC",
               "number": "XXX",
               "title": "Additional testing information: www.nhanow.com Virginia residents pay the same rate as in-state students.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Construction Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1257",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Construction Workforce Certificate Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BPR",
+              "number": "130",
+              "title": "",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Certification Testing: OSHA - 10 Construction",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Additional testing information: https://www.osha.gov/ Virginia residents pay the same rate as in-state students.",
               "credits": null,
               "or_alternatives": []
             }
@@ -2275,6 +2315,1390 @@
           ]
         }
       ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Cosmetology Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1314",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Cosmetology Workforce Certificate Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "*College Curriculum credit can be awarded for the following: COS - 111 Cosmetology Concepts I for COS - 3201A Cosmetology Theory I (WTCE) , COS - 112 Salon I for COS - 3201B Cosmetology Salon I (WTCE) , COS - 113 Cosmetology Concepts II for COS - 3201C Cosmetology Theory II (WTCE) , COS - 114 Salon II for COS - 3201D Cosmetology Salon II (WTCE) , COS - 115 Cosmetology Concepts III for COS - 3201E Cosmetology Theory III (WTCE) , COS - 116 Salon III for COS - 3201F Cosmetology Salon III (WTCE) , COS - 117 Cosmetology Concepts IV for COS - 3201G Cosmetology Theory IV (WTCE) , COS - 118 Salon IV for COS - 3201H Cosmetology Salon IV (WTCE) and successfully passed the certification examination.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Digital Media Technology Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1358",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Digital Medical Technology Workforce Certificate Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "DME",
+              "number": "110",
+              "title": "",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Electrical Systems - Commercial Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1353",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Electrical Systems - Commercial Workforce Certificate Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "*College Curriculum credit can be awarded for the following: BPR - 130 Print Reading-Construction ELC - 112 DC/AC Electricity ELC - 114 Commercial Wiring ELC - 118 National Electrical Code ELC - 126 Electrical Computations Virginia residents pay the same rate as in-state students.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Detention Officer (DOCC) Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1311",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Detention Officer (DOCC) Workforce Certificate Course",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Certification Testing: North Carolina Sheriff’s Training and Standards",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Additional testing information: www.ncdoj.gov Virginia residents pay the same rate as in-state students.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Electrical Systems - Residential Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1352",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Electrical Systems - Residential Workforce Certificate Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "*College Curriculum credit can be awarded for the following: BPR - 130 Print Reading-Construction ELC - 112 DC/AC Electricity ELC - 113 Residential Wiring I ELC - 118 National Electrical Code ELC - 126 Electrical Computations Cost does not include associated books, tools, and supplies. Virginia residents pay the same tuition rate as in-state students.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Emergency Medical Technician Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1286",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Emergency Medical Technician Workforce Certificate Course",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "*College Curriculum credit can be awarded for EMS - 110 EMT for completion of this certificate and successfully passing the certification examination. Certification Testing: North Carolina Office of EMS, National Registry of EMTs",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Additional testing information https://oems.nc.gov/ and https://www.nremt.org/ Virginia residents pay the same rate as in-state students.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Esthetics Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1364",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Emergency Vehicle Driver Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1285",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Emergency Vehicle Driver Workforce Certificate Course",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Certification Testing: North Carolina Office of EMS Additional testing information: https://www.ncems.org/",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Fire Apparatus Driver/Aerial Operator Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1330",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Fire Apparatus Driver/Aerial Operator Workforce Certificate Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "OR",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Fire/Rescue Instructor Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1347",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Fire/Rescue Instructor Workforce Certificate Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Prerequisites: High School or equivalent required;",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Prerequisites High School or equivalent required;",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Certification Testing: Fire and Life Safety Educator Additional Testing may be required. Virginia residents pay the same rate as in-state students.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Fire/Rescue Officer Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1332",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Fire/Rescue Officer Workforce Certificate Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Virginia residents pay the same rate as in-state students. Members of approved North Carolina fire departments and rescue squads may be eligible to receive tuition waivers for these classes.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Fire Technical Rescuer Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1335",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Firefighter Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1331",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Firefighter Workforce Certificate Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Virginia residents pay the same rate as in-state students.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "General Maintenance Technician Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1360",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "General Maintenance Technician Workforce Certificate Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "*College Curriculum credit can be awarded for the following for completion of this certificate: AHR - 112 Heating Technology AHR 120 HVACR Maintenance BPR 130 Print Reading-Construction ELC 114 Commercial Wiring MNT 110 Introduction to Maintenance Procedures Virginia residents pay the same rate as in-state students.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Hazardous Materials Responder Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1333",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Hazardous Materials Responder Workforce Certificate Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Certification Testing: Hazardous Materials Responder Certification Virginia residents pay the same rate as in-state students. Members of approved North Carolina fire departments and rescue squads may be eligible to receive tuition waivers for these classes.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Human Resources Development Workforce Training Courses",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1374",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Human Resources Development (HRD) Training Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Virginia residents pay the same tuition rate as in-state students. Per the NC General Statutes (G.S. 115D-5(b) (13)), individuals enrolling in courses offered through the Human Resources Development (HRD) Program may be granted a waiver of registration fees if they meet one of four criteria: Are unemployed;",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "HVAC - Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1240",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "HVAC Workforce Certificate Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "**College Curriculum credit can be awarded for the following: AHR - 110 Introduction to Refrigeration for AHR - 3131C Intro to Refrigeration (WTCE) , ELC - 112 DC/AC Electricity for ELC - 3014G DC/AC Electricity (WTCE) , ELC - 125 Diagrams and Schematics for ELC - 3014H Diagrams and Schematics (WTCE) , AHR - 112 Heating Technology for AHR - 3131E Heating Technology (WTCE) , AHR - 160 Refrigerant Certification for AHR - 3128A Refrigerant Certification (WTCE) and successfully passed the certification examination. Certification Testing: EPA 608 Certification Additional testing information: http://www.refrigerationboard.org/ https://www.escogroup.org/ Virginia residents pay the same rate as in-state students.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Initial Fire and Life Safety Educator Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1329",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Initial Fire and Life Safety Educator Workforce Certification Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Certification Testing: Fire and Life Safety Educator",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Additional testing may be required. Virginia residents pay the same rate as in-state students. Members of approved North Carolina fire departments and rescue squads may be eligible to receive tuition waivers for these classes.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Information Technology Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1218",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Information Technology Workforce Certificate Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "**College Curriculum credit can be awarded for the following: CTI - 110 IT Foundations for WEB - 3000D IT Foundations (WTCE) , CTI - 120 Network and Security Foundations for NET - 3100B Network and Security Foundations (WTCE) , CTS - 115 Information Systems Business Concepts for MLS - 3810H Info System Business Concepts (WTCE) , CIS 110 Introduction to Computers for CET - 3100A Tech Support Functions (WTCE) Virginia residents pay the same rate as in-state students.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "computer-science"
+    },
+    {
+      "title": "Mechatronics Engineering Technology Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1369",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "engineering"
+    },
+    {
+      "title": "Medical Billing and Coding Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1227",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Medical Billing and Coding Workforce Certificate Course",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "*Students should contact Dr. Yvonne Johnson concerning details on articulation.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Medication Aide Certification Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1289",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Medication Aide Certification Workforce Certificate Course",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Certification Testing: North Carolina Board of Nursing",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Additional testing information www.ncbon.org Virginia residents pay the same rate as in-state students.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Nail Technician Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1315",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Nail Technician Workforce Certificate Course",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Students must purchase a materials kit through the SCC bookstore at an additional cost. Virginia residents pay the same rate as in-state students.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Natural Hair Care Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1365",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Natural Hair Care Workforce Certificate Course",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Students must purchase a materials kit through the SCC bookstore at an additional cost. Virginia residents pay the same rate as in-state students.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Multimedia Workforce Career Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1211",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Multimedia Workforce Certificate",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "*These courses meet the requirements for the “Continuing Education to Curriculum Credit” method of Credit for Prior Learning competencies and earn course credit. The content mastered is comparable to the student learning outcomes of a SCC curriculum course and may be used to fulfill degree, diploma, or certificate requirements. Contact the course instructor for complete details.",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "**College Curriculum credit can be awarded for the following: DME - 110 Introduction to Digital Media for SGR - 3100A Intro to Digital Media (WTCE) , DME - 115 Graphic Design Tools for SGR - 3100B Digital Media Tools (WTCE) , DME - 140 Introduction to Audio/Video Media for SGR - 3100E Intro to Audio Video Media (WTCE) , DME - 120 Introduction to Multimedia for SGR - 3100C Intro to Multimedia (WTCE) , DME - 130 Digital Animation I for SGR - 3100D Digital Animation I (WTCE) , DME - 260 Emerging Technologies in Digital Media for SGR - 3100F Emerging Tech in Digital Media (WTCE)",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "National Incident Management System 300/400 Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1334",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "National Incident Management System 300/400 Workforce Certificate Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Certification Testing: NIMS 300 & 400 Virginia residents pay the same rate as in-state students. Members of approved North Carolina fire departments and rescue squads may be eligible to receive tuition waivers for these classes.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Notary and E-Notary Public Education Course",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1229",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Notary and E-Notary Public Education Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "*Must be fully commissioned NC Notary Public to take e-Notary courses.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Paramedic Initial Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1288",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Paramedic Initial Workforce Certificate Course",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Certification Testing: Upon completion of this course, students are eligible to test for the NC State Paramedic credential and the National Registry Paramedic credential.",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Forty-five (45) curriculum credits can be awarded in the Emergency Medical Science Associate in Applied Science Degree Bridge Program (A45340BR) for completion of this certificate and successful completion of the certification examination. Virginia residents pay the same rate as in-state students.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Nurse Aide II Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1299",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Nurse Aide II Workforce Certificate Course",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Certification Testing: North Carolina Board of Nursing",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Additional testing information www.ncbon.com Virginia residents pay the same rate as in-state students.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "nursing"
+    },
+    {
+      "title": "Pharmacy Technician Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1300",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Pharmacy Technician Workforce Certificate Course",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Certification Testing: Pharmacy Technician Certification Board",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Additional testing information www.ptcb.com Virginia residents pay the same rate as in-state students.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Nurse Aide I Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1297",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Nurse Aide I Workforce Certificate Course",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "College curriculum credit for Nurse Aide I can be awarded once the student completes the NAS 3240 course and after successfully passing the certification examination.",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Certification Testing: Credentia",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Additional testing information www.credentia.com Virginia residents pay the same rate as in-state students.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "nursing"
+    },
+    {
+      "title": "Python Programming Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1359",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Teacher Assistant Pathway Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1366",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Teacher Assistant Pathway Workforce Certificate Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Virginia residents pay the same rate as in-state students.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Phlebotomy Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1301",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Phlebotomy Workforce Certificate Course",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Virginia residents pay the same rate as in-state students.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Technical Rescuer Machinery Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1339",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Technical Rescuer Machinery Certificate Course",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Certification Testing: Technical Rescuer Certification Additional testing may be required. Virginia residents pay the same rate as in-state students. Members of approved North Carolina fire departments and rescue squads may be eligible to receive tuition waivers for these classes.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Technical Rescuer Heavy Vehicle Rescue Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1372",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Technical Rescuer Heavy Vehicle Rescue Certificate Course",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Certification Testing: Technical Rescuer Certification Additional testing may be required. Virginia residents pay the same rate as in-state students. Members of approved North Carolina fire departments and rescue squads may be eligible to receive tuition waivers for these classes.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Technical Rescuer Confined Space Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1336",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Technical Rescuer Confined Space Certificate Course",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Virginia residents pay the same rate as in-state students. Members of approved North Carolina fire departments and rescue squads may be eligible to receive tuition waivers for these classes.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Technical Rescuer Rope Rescue Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1373",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Technical Rescuer Rope Rescue Certificate Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "OR",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Certification Testing: Technical Rescuer Certification Additional testing may be required. Virginia residents pay the same rate as in-state students. Members of approved North Carolina fire departments and rescue squads may be eligible to receive tuition waivers for these classes.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Technical Rescuer Trench Rescue Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1340",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Technical Rescuer Trench Rescue Certificate Course",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Certification Testing: Technical Rescuer Certification Additional testing may be required. Virginia residents pay the same rate as in-state students. Members of approved North Carolina fire departments and rescue squads may be eligible to receive tuition waivers for these classes.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Technical Rescuer Passenger Vehicle Rescue Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1371",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Technical Rescuer Passenger Vehicle Rescue Certificate Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "OR",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "FRC - 1200 Technical Rescue Introduction Course (WTCE)",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Certification Testing: Technical Rescuer Certification Additional testing may be required. Virginia residents pay the same rate as in-state students.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Technical Rescuer Surface Water Rescue Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1337",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Technical Rescuer Surface Water Rescue Certificate Course",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Certification Testing: Technical Rescuer Certification Additional testing may be required. Virginia residents pay the same rate as in-state students. Members of approved North Carolina fire departments and rescue squads may be eligible to receive tuition waivers for these classes.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Technical Rescuer Structural Collapse Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1341",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Technical Rescuer Structural Collapse Certificate Course",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Certification Testing: Technical Rescuer Certification Additional testing may be required. Virginia residents pay the same rate as in-state students. Members of approved North Carolina fire departments and rescue squads may be eligible to receive tuition waivers for these classes.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Technical Rescuer Wilderness Search Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1338",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Technical Rescuer Wilderness Search Certificate Course",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Certification Testing: Technical Rescuer Certification Additional testing may be required. Virginia residents pay the same rate as in-state students. Members of approved North Carolina fire departments and rescue squads may be eligible to receive tuition waivers for these classes.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Veterinary Assistant Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1357",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Veterinary Assistant Workforce Certificate",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Virginia residents pay the same rate as in-state students.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Truck Driver-CDL Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1342",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Truck Driver- CDL Workforce Certificate Course",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Certification Testing: NCDMV Commercial Driver License",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Additional testing information: https://www.ncdot.gov/dmv/license-id/driver-licenses/commercial/Pages/apply-for-cdl.aspx Virginia residents pay the same rate as in-state students.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Welding Technology Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1370",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": "welding"
+    },
+    {
+      "title": "Trucking Logistics Management Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1343",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Trucking Logistics Management Workforce Certificate Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Virginia residents pay the same rate as in-state students.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Construction Assistant Fast-Track Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1256",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Welding-Industrial Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1281",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Welding-Industrial Workforce Certificate Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "College Curriculum credit can be awarded for the following: WLD - 110 Cutting Processes WLD - 115 SMAW (Stick) Plate WLD - 141 Symbols and Specifications WLD - 121 GMAW (MIG) FCAW/Plate ISC 112 Industrial Safety",
+              "credits": null,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "Note: This certificate is offered each fall. Virginia residents pay the same rate as in-state students.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "welding"
+    },
+    {
+      "title": "Electrical Assistant Fast-Track Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1263",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Electrical Systems Institute Fast-Track Workforce Career Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1264",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Electrical Institute Fast-Track Workforce Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELEC",
+              "number": "XXX",
+              "title": "*College Curriculum credit can be awarded for ELC - 113 Residential Wiring I and ELC - 125 Diagrams and Schematics for completion of this certificate. Virginia residents pay the same rate as in-state students.",
+              "credits": null,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Masonry Assistant Fast-Track Workforce Career Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1258",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "HVAC Technical Assistant Fast Track Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1239",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Maintenance Technician Fast-Track Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1268",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Production Welder Fast-Track Workforce Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.surry.edu/preview_program.php?catoid=7&poid=1280",
+      "total_credits": null,
+      "gpa_minimum": null,
+      "description": null,
+      "requirement_groups": [],
       "matched_program_slug": null
     }
   ]
