@@ -335,7 +335,23 @@ async function scrapeJenzabar(
         .replace(/&nbsp;/g, " ")
         .replace(/\s+/g, " ")
         .trim();
-    const allCourseData: RawCourse[] = [];
+    // Inline anonymous type — matches the shape of the main page.evaluate
+    // call's `rows` declaration below. `RawCourse` was used in an earlier
+    // draft of this branch but never defined at file scope, which broke
+    // `next build` after #1193 merged.
+    const allCourseData: {
+      title: string;
+      prefix: string;
+      number: string;
+      crn: string;
+      credits: string;
+      days: string;
+      times: string;
+      location: string;
+      campus: string;
+      instructor: string;
+      seats: string;
+    }[] = [];
     for (const row of allRows) {
       const codeRaw = stripTags(row.courseCode);
       // codeRaw looks like "ACC 101 01" with extra spaces collapsed
