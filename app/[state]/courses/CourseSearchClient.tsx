@@ -20,6 +20,7 @@ import { useAuth } from "@/lib/hooks/useAuth";
 import { createClient } from "@/lib/supabase/client";
 import { track } from "@/lib/analytics";
 import AdUnit from "@/components/AdUnit";
+import { stashFavoriteDraft, favoriteDedupKey } from "@/lib/anon-draft";
 
 // ---------------------------------------------------------------------------
 // Types matching the API response
@@ -196,7 +197,20 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
   const [bookmarkError, setBookmarkError] = useState<string | null>(null);
 
   const toggleBookmark = useCallback(async (course: CourseGroup) => {
-    if (!user) { openLoginModal(); return; }
+    if (!user) {
+      // Stash the favorite BEFORE the login modal / OAuth redirect so it
+      // survives sign-in and can be drained into the new account. (Logged-out,
+      // bookmarkedCourses is always empty, so a click here is always an ADD.)
+      stashFavoriteDraft({
+        state,
+        coursePrefix: course.prefix,
+        courseNumber: course.number,
+        courseTitle: course.title,
+        dedupKey: favoriteDedupKey(state, course.prefix, course.number),
+      });
+      openLoginModal();
+      return;
+    }
     const key = `${course.prefix}-${course.number}`;
     setBookmarkLoading((prev) => new Set(prev).add(key));
     setBookmarkError(null);

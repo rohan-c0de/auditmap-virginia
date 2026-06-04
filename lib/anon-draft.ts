@@ -29,9 +29,18 @@ export interface AnonPlanDraft {
   dedupKey: string;
 }
 
+export interface AnonFavoriteDraft {
+  state: string;
+  coursePrefix: string;
+  courseNumber: string;
+  courseTitle: string;
+  dedupKey: string;
+}
+
 export interface AnonDraft {
   v: number;
   plans: AnonPlanDraft[];
+  favorites: AnonFavoriteDraft[];
   savedAt: number; // epoch ms
 }
 
@@ -59,13 +68,30 @@ export function parseAndValidateDraft(raw: string | null, now: number): AnonDraf
   const d = parsed as Partial<AnonDraft> | null;
   if (!d || d.v !== ANON_DRAFT_VERSION || !Array.isArray(d.plans)) return null;
   if (typeof d.savedAt !== "number" || now - d.savedAt > ANON_DRAFT_MAX_AGE_MS) return null;
-  if (d.plans.length === 0) return null;
-  return d as AnonDraft;
+  // favorites was added after v1 shipped — default a missing array so older
+  // #1176 drafts (plans only) stay valid.
+  const favorites = Array.isArray(d.favorites) ? d.favorites : [];
+  if (d.plans.length === 0 && favorites.length === 0) return null;
+  return { v: d.v, plans: d.plans, favorites, savedAt: d.savedAt } as AnonDraft;
 }
 
 /** PURE: add or replace a plan by its dedupKey (each entry keeps its own state). */
 export function upsertPlan(plans: AnonPlanDraft[], plan: AnonPlanDraft): AnonPlanDraft[] {
   return [...plans.filter((p) => p.dedupKey !== plan.dedupKey), plan];
+}
+
+/** Stable content key for a favorited course — matches the saved_courses unique
+ *  index granularity (state + prefix + number). */
+export function favoriteDedupKey(state: string, prefix: string, number: string): string {
+  return `${state}::${prefix}::${number}`;
+}
+
+/** PURE: add or replace a favorite by its dedupKey. */
+export function upsertFavorite(
+  favorites: AnonFavoriteDraft[],
+  fav: AnonFavoriteDraft
+): AnonFavoriteDraft[] {
+  return [...favorites.filter((f) => f.dedupKey !== fav.dedupKey), fav];
 }
 
 // ── sessionStorage I/O (client-only; no-ops during SSR) ─────────────────────
@@ -75,11 +101,33 @@ export function stashPlanDraft(plan: AnonPlanDraft): void {
   try {
     const existing = readAnonDraft();
     const plans = upsertPlan(existing?.plans ?? [], plan);
-    const draft: AnonDraft = { v: ANON_DRAFT_VERSION, plans, savedAt: Date.now() };
+    const draft: AnonDraft = {
+      v: ANON_DRAFT_VERSION,
+      plans,
+      favorites: existing?.favorites ?? [],
+      savedAt: Date.now(),
+    };
     window.sessionStorage.setItem(ANON_DRAFT_KEY, JSON.stringify(draft));
   } catch {
     // QuotaExceededError / serialization — drop silently; worst case the user
     // re-saves after signing in.
+  }
+}
+
+export function stashFavoriteDraft(fav: AnonFavoriteDraft): void {
+  if (typeof window === "undefined") return;
+  try {
+    const existing = readAnonDraft();
+    const favorites = upsertFavorite(existing?.favorites ?? [], fav);
+    const draft: AnonDraft = {
+      v: ANON_DRAFT_VERSION,
+      plans: existing?.plans ?? [],
+      favorites,
+      savedAt: Date.now(),
+    };
+    window.sessionStorage.setItem(ANON_DRAFT_KEY, JSON.stringify(draft));
+  } catch {
+    // QuotaExceededError / serialization — drop silently.
   }
 }
 
