@@ -21,20 +21,37 @@ hint underestimated all three. Per-college diagnoses below.
 - **Next action (separate PR):** identify the JS-fetched data source for the new
   course-finder app and build a bespoke `scrape-ccbc.ts`. Not a re-run.
 
-### cecil — JICS portlet term selection is JS-rendered (medium)
-- **Configured target:** `scripts/md/scrape-jenzabar.ts` against
-  `my.cecil.edu/ICS/Course_Search.jnz`.
-- **Today:** page is reachable (HTTP 200, IIS). Scraper navigates successfully.
-  But the static HTML for `Course_Search.jnz` carries no `<select name="*term*">`
-  options — the term dropdown is populated client-side by JICS JavaScript after
-  `load`. The scraper assumes server-rendered options and submits the form with
-  a hardcoded `2026FA` term, which produces zero results. The scraper's
-  pagination logic then tries to click "next page" → 30s element-not-visible
-  timeout.
-- **Next action (separate PR):** in `scrape-jenzabar.ts`, wait for the term
-  `<select>` to be populated (`page.waitForFunction(() => document.querySelector(...).options.length > 0)`)
-  before reading available terms. Then guard the pagination loop: don't click
-  next-page when page 1 returned 0 rows.
+### cecil — ASP.NET WebForms postback semantics needed (medium-large)
+- **What THIS PR did fix (genuine prep work, all backward-compatible with garrett):**
+  - Discovered the actual public-guest search URL is
+    `Course_Search.jnz?portlet=Student_Registration&screen=StudentRegistrationPortlet_CourseSearchView&screenType=next`,
+    not the bare landing URL the audit pointed at. Updated the config.
+  - Added an Osano cookie-banner dismiss step (cecil's form scripts don't
+    run until cookies are dismissed; garrett is unaffected because it has
+    no cookie banner).
+  - Added cecil's `#stuRegTermSelect` to the term-selector probe list. The
+    term dropdown does populate without `waitForFunction` — it just had a
+    non-standard ID. The scraper now finds 2 available terms ("Spring
+    Credit 2026", "Summer Credit 2026"; no Fall 2026 published yet) and
+    selects Spring 2026 correctly.
+  - Reordered the search-button selector list to try text-specific
+    selectors first (`button:has-text("Search Courses")`) so the generic
+    `button[type="submit"]` doesn't match cecil's Login button.
+- **Final remaining blocker:** even after a successful search-button click,
+  cecil's `<button type="submit">Search Courses</button>` doesn't trigger a
+  visible page change. The URL stays the same; the only table on the page
+  (the form-input table, 17 rows) doesn't update. Cecil's portlet is
+  ASP.NET WebForms, and the button is likely wired to call
+  `__doPostBack(...)` against the page's `__VIEWSTATE` to submit the search
+  via ASP.NET's server-side postback mechanism. A plain Playwright `.click()`
+  doesn't go through this code path.
+- **Next action (separate PR):** instead of `.click()`, drive the search
+  via `page.evaluate(() => __doPostBack('<eventTarget>', ''))` after
+  inspecting the button's actual onclick handler to find the event target.
+  Cecil's term dropdown may also need the same — the term-change might
+  need a postback to populate department options. Once results land,
+  garrett's header-aware row extractor (this PR) likely works for cecil
+  too — but the table column headers should be verified.
 
 ### garrett — RESOLVED in this PR ✅
 - **Status:** 216 sections written to `data/md/courses/garrett/2026FA.json`

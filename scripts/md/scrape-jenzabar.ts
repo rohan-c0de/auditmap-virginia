@@ -44,7 +44,12 @@ interface CourseSection {
 const JENZABAR_COLLEGES: Record<string, { baseUrl: string; searchPath: string }> = {
   cecil: {
     baseUrl: "https://my.cecil.edu",
-    searchPath: "/ICS/Course_Search.jnz",
+    // Bare /ICS/Course_Search.jnz lands on cecil's Free-form_Content welcome
+    // portlet (no search form rendered). The actual public guest search lives
+    // under the Student_Registration portlet with screen specifier — same
+    // ?portlet=...&screen=... pattern garrett uses.
+    searchPath:
+      "/ICS/Course_Search.jnz?portlet=Student_Registration&screen=StudentRegistrationPortlet_CourseSearchView&screenType=next",
   },
   garrett: {
     baseUrl: "https://my.garrettcollege.edu",
@@ -137,6 +142,27 @@ async function scrapeJenzabar(
   // Wait for the page to load
   await page.waitForTimeout(2000);
 
+  // Some JICS portals (cecil) gate the actual form behind an Osano cookie
+  // consent banner — until it's dismissed the search form scripts don't
+  // execute. Try common Accept buttons; ignore if not present.
+  for (const cookieSel of [
+    'button:has-text("Accept")',
+    'button:has-text("Allow All")',
+    "#onetrust-accept-btn-handler",
+  ]) {
+    const cookieBtn = await page.$(cookieSel);
+    if (cookieBtn) {
+      try {
+        await cookieBtn.click({ timeout: 2000 });
+        await page.waitForTimeout(1500);
+        console.log(`  Dismissed cookie banner via ${cookieSel}`);
+      } catch {
+        /* button vanished / not actually visible — ignore */
+      }
+      break;
+    }
+  }
+
   // Try to find and select the target term
   // Jenzabar course search typically has a term dropdown
   const termSelectors = [
@@ -147,6 +173,7 @@ async function scrapeJenzabar(
     "#pg0_V_ddlTerm",
     "#ddlTerm",
     'select[name="ddlTerm"]',
+    "#stuRegTermSelect", // cecil — Student_Registration portlet
   ];
 
   let termSelect = null;
@@ -226,14 +253,18 @@ async function scrapeJenzabar(
   const standardTerm = toStandardTerm(selectedTermDesc);
   console.log(`  Standard term: ${standardTerm}`);
 
-  // Click search button
+  // Click search button. Text-specific selectors come FIRST so a generic
+  // button[type=submit] doesn't accidentally click a Login/Accept button
+  // earlier in the DOM (cecil has both).
   const searchBtnSelectors = [
+    'button:has-text("Search Courses")',
     'input[type="submit"][value*="Search" i]',
-    'button[type="submit"]',
     'input[type="button"][value*="Search" i]',
+    'button:has-text("Search")',
     "#pg0_V_btnSearch",
     'a[id*="btnSearch"]',
     'input[value="Search"]',
+    'button[type="submit"]',
   ];
 
   for (const sel of searchBtnSelectors) {
