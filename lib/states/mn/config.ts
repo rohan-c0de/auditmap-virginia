@@ -59,11 +59,27 @@ const mnConfig: StateConfig = {
       "Minnesota State Colleges and Universities",
     ],
   },
+  documentedCeilings: {
+    courses: [
+      {
+        collegeSlug: "red-lake-nation-college",
+        reason:
+          "Red Lake Nation College runs Populi (rlnc.populiweb.com), but the root is a Populi login page and the public-catalog path (/catalog) returns 404 — Populi's public online-catalog feature is not enabled, so no public course-section data exists. (Leech Lake Tribal College, the other MN tribal college, IS scraped via its public JICS Course_Search portlet.) Verified 2026-06.",
+      },
+    ],
+  },
   scrapers: {
     courses: [
       {
         scripts: ["scripts/mn/scrape-mn-eservices.ts"],
         runner: "http",
+      },
+      {
+        // Leech Lake Tribal College — public Jenzabar JICS Course_Search
+        // portlet (my.lltc.edu/ICS/Portal_Homepage.jnz?portlet=Course_Search).
+        // Not part of the MnSCU eServices system the http scraper covers.
+        scripts: ["scripts/mn/scrape-jenzabar.ts"],
+        runner: "playwright",
       },
     ],
     transfers: [
