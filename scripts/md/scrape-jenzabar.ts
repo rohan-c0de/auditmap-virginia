@@ -128,7 +128,11 @@ async function scrapeJenzabar(
   const url = `${config.baseUrl}${config.searchPath}`;
 
   console.log(`  Navigating to ${url}`);
-  await page.goto(url, { waitUntil: "networkidle", timeout: 30000 });
+  // `load` rather than `networkidle` — garrett's JICS has persistent analytics
+  // activity that never quiesces, causing a 30s timeout. `load` waits for
+  // resources without hanging on never-idle networks. The waitForTimeout below
+  // already gives JS-rendered widgets (term dropdown, etc.) time to settle.
+  await page.goto(url, { waitUntil: "load", timeout: 30000 });
 
   // Wait for the page to load
   await page.waitForTimeout(2000);
