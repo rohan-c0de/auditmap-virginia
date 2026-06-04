@@ -114,6 +114,8 @@ This matters because:
 
 Never assume the working directory is the main repo — skills like `blog-pipeline` and `auto-add-state` call `EnterWorktree`, which changes the CWD. After any skill completes, verify `pwd` and `git branch --show-current` before proceeding.
 
+**Stage only the files your change touched — never `git add -A`.** `npm run dev`/`npm run build` regenerate ~70+ derived `data/*.json` files (`last-updated.json`, `term-counts.json`, `*/transfer-dest-rollup.json`, …); committing that churn balloons the diff and can revert another state's data. Use explicit `git add <paths>` and check `git diff --cached --name-only` before committing.
+
 ## Git — narrate as you go
 
 The user is learning git in real time and wants to understand what's happening, not just approve blind steps. When running any git or `gh` command, narrate it in **one or two plain-English sentences** before or after the tool call:
