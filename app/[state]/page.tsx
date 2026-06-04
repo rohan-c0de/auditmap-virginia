@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import SearchForm from "@/components/SearchForm";
 import StartingSoonCallout from "@/components/StartingSoonCallout";
 import NotifyBanner from "@/components/NotifyBanner";
+import AccountPromo from "@/components/auth/AccountPromo";
 import StateContext from "@/components/StateContext";
 import { getCurrentTerm, getNextTerm } from "@/lib/terms";
 import { getAllStates, hasPrereqsCoverage, isValidState } from "@/lib/states/registry";
@@ -278,6 +279,9 @@ export default async function HomePage({ params }: Props) {
 
           {/* Notify banner */}
           <NotifyBanner nextTerm={nextTerm.label} state={state} />
+
+          {/* Logged-out growth CTA — browsing stays free; promotes saving only */}
+          <AccountPromo className="mt-4" />
         </div>
       </section>
 

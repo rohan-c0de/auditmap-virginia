@@ -6,6 +6,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 import UserMenu from "@/components/auth/UserMenu";
 import CourseSearchHero from "@/components/CourseSearchHero";
 import USMap from "@/components/USMap";
+import AccountPromo from "@/components/auth/AccountPromo";
 
 const STATE_NAMES = getAllStates().map((s) => s.name);
 const STATE_LIST_SENTENCE =
@@ -362,6 +363,9 @@ export default async function LandingPage() {
           </div>
         </div>
       </section>
+
+      {/* Logged-out growth CTA — browsing stays free; promotes saving only */}
+      <AccountPromo className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12" />
 
     </div>
   );
