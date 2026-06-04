@@ -159,7 +159,7 @@ export default function AccountDashboard({
   const [transfers, setTransfers] = useState(initialTransfers);
   const [plans, setPlans] = useState(initialPlans);
 
-  const states = getAllStates();
+  const states = [...getAllStates()].sort((a, b) => a.name.localeCompare(b.name));
 
   const schedulesGrouped = useMemo(() => groupByState(schedules), [schedules]);
   const coursesGrouped = useMemo(() => groupByState(courses), [courses]);
