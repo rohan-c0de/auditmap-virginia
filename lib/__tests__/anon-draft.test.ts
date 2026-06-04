@@ -2,11 +2,14 @@ import { describe, expect, it } from "vitest";
 import {
   parseAndValidateDraft,
   upsertPlan,
+  upsertFavorite,
   planDedupKey,
+  favoriteDedupKey,
   ANON_DRAFT_VERSION,
   ANON_DRAFT_MAX_AGE_MS,
   type AnonDraft,
   type AnonPlanDraft,
+  type AnonFavoriteDraft,
 } from "@/lib/anon-draft";
 
 const NOW = 1_750_000_000_000;
@@ -18,9 +21,18 @@ const plan = (over: Partial<AnonPlanDraft> = {}): AnonPlanDraft => ({
   dedupKey: "va::BIO 101",
   ...over,
 });
+const fav = (over: Partial<AnonFavoriteDraft> = {}): AnonFavoriteDraft => ({
+  state: "va",
+  coursePrefix: "BIO",
+  courseNumber: "101",
+  courseTitle: "Biology I",
+  dedupKey: "va::BIO::101",
+  ...over,
+});
 const draft = (over: Partial<AnonDraft> = {}): AnonDraft => ({
   v: ANON_DRAFT_VERSION,
   plans: [plan()],
+  favorites: [],
   savedAt: NOW,
   ...over,
 });
@@ -49,6 +61,18 @@ describe("parseAndValidateDraft", () => {
     expect(parseAndValidateDraft("{not json", NOW)).toBeNull();
     expect(parseAndValidateDraft(JSON.stringify(draft({ plans: [] })), NOW)).toBeNull();
   });
+
+  it("defaults a missing favorites array (back-compat with v1 plans-only drafts)", () => {
+    const legacy = JSON.stringify({ v: ANON_DRAFT_VERSION, plans: [plan()], savedAt: NOW });
+    const parsed = parseAndValidateDraft(legacy, NOW);
+    expect(parsed?.favorites).toEqual([]);
+    expect(parsed?.plans).toHaveLength(1);
+  });
+
+  it("accepts a favorites-only draft (no plans)", () => {
+    const favOnly = draft({ plans: [], favorites: [fav()] });
+    expect(parseAndValidateDraft(JSON.stringify(favOnly), NOW)).toEqual(favOnly);
+  });
 });
 
 describe("upsertPlan", () => {
@@ -70,5 +94,20 @@ describe("planDedupKey", () => {
   it("differs by state and by target set", () => {
     expect(planDedupKey("va", ["A"])).not.toBe(planDedupKey("tx", ["A"]));
     expect(planDedupKey("va", ["A"])).not.toBe(planDedupKey("va", ["A", "B"]));
+  });
+});
+
+describe("upsertFavorite / favoriteDedupKey", () => {
+  it("replaces a favorite with the same dedupKey", () => {
+    const a = fav({ dedupKey: "k1", courseTitle: "Old" });
+    const b = fav({ dedupKey: "k2" });
+    const aPrime = fav({ dedupKey: "k1", courseTitle: "New" });
+    const out = upsertFavorite(upsertFavorite([a], b), aPrime);
+    expect(out).toHaveLength(2);
+    expect(out.find((f) => f.dedupKey === "k1")?.courseTitle).toBe("New");
+  });
+  it("favoriteDedupKey is content-based (state + prefix + number)", () => {
+    expect(favoriteDedupKey("va", "BIO", "101")).toBe("va::BIO::101");
+    expect(favoriteDedupKey("va", "BIO", "101")).not.toBe(favoriteDedupKey("tx", "BIO", "101"));
   });
 });
