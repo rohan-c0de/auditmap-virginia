@@ -4,6 +4,7 @@ import { Fragment, useState, useCallback, useMemo, useEffect, useRef } from "rea
 import { createClient } from "@/lib/supabase/client";
 import { useAuth } from "@/lib/hooks/useAuth";
 import { track } from "@/lib/analytics";
+import { stashPlanDraft, planDedupKey } from "@/lib/anon-draft";
 
 // ---------------------------------------------------------------------------
 // Types
@@ -751,7 +752,23 @@ export default function SemesterPlanner({
             <button
               type="button"
               onClick={async () => {
-                if (!user) { openLoginModal(); return; }
+                if (!user) {
+                  // Stash the plan to sessionStorage BEFORE the login modal /
+                  // OAuth redirect destroys React state, so it survives sign-in
+                  // and can be drained into the new account. See lib/anon-draft.
+                  const draftName =
+                    initialName?.trim() ||
+                    (targets.length > 0 ? targets.join(", ") : "My Plan");
+                  stashPlanDraft({
+                    state,
+                    name: draftName,
+                    targetCourses: targets,
+                    kind: "semester",
+                    dedupKey: planDedupKey(state, targets),
+                  });
+                  openLoginModal();
+                  return;
+                }
                 setSaveStatus("saving");
                 try {
                   const supabase = createClient();

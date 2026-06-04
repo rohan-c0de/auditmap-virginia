@@ -14,6 +14,7 @@ import {
   TOS_VERSION,
   decideConsentAction,
 } from "@/lib/consent";
+import { readAnonDraft, clearAnonDraft, type AnonDraft } from "@/lib/anon-draft";
 
 // Type-only imports above don't add bundle weight. The runtime
 // `@supabase/supabase-js` code is behind a dynamic import in
@@ -57,6 +58,13 @@ export interface AuthContextValue {
   needsConsent: boolean;
   /** Record Terms/Privacy + 13+ acceptance for the current user */
   acceptConsent: () => Promise<void>;
+  /** A plan draft found in sessionStorage on first authed load, awaiting the
+   *  shared-computer confirm (null = nothing to drain). */
+  pendingDraft: AnonDraft | null;
+  /** Drain the pending draft into the account (idempotent RPC). Returns success. */
+  drainDraft: () => Promise<boolean>;
+  /** Discard the pending draft without saving it. */
+  discardDraft: () => void;
 }
 
 // ---------------------------------------------------------------------------
@@ -96,6 +104,7 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
   const [loginModalOpen, setLoginModalOpen] = useState(false);
   const [needsConsent, setNeedsConsent] = useState(false);
+  const [pendingDraft, setPendingDraft] = useState<AnonDraft | null>(null);
 
   // Cached Supabase client. Null until first call to `getSupabase()`.
   const supabaseRef = useRef<SupabaseClient | null>(null);
@@ -181,6 +190,12 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
     [reconcileConsent]
   );
 
+  // Surface any sessionStorage plan draft for the shared-computer confirm on
+  // first authed load. NEVER auto-flush — see DraftDrainPrompt + lib/anon-draft.
+  const reconcileDraft = useCallback(() => {
+    setPendingDraft(readAnonDraft());
+  }, []);
+
   /**
    * Dynamic-import + instantiate the Supabase client on first call. Wires
    * up the `onAuthStateChange` subscription exactly once per mount so that
@@ -202,6 +217,7 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
               setUser(newUser);
               if (newUser) {
                 await fetchProfile(newUser.id);
+                reconcileDraft();
                 setLoginModalOpen(false);
               } else {
                 setProfile(null);
@@ -216,7 +232,7 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
       );
     }
     return loaderRef.current;
-  }, [fetchProfile]);
+  }, [fetchProfile, reconcileDraft]);
 
   // Initialize auth state on mount.
   useEffect(() => {
@@ -247,6 +263,7 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
         setUser(currentUser);
         if (currentUser) {
           await fetchProfile(currentUser.id);
+          reconcileDraft();
         }
       } catch {
         // No session, timeout, or error — user stays null.
@@ -261,7 +278,7 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
       subscriptionRef.current?.unsubscribe();
       subscriptionRef.current = null;
     };
-  }, [fetchProfile, getSupabase]);
+  }, [fetchProfile, getSupabase, reconcileDraft]);
 
   // ---------------------------------------------------------------------------
   // Auth actions — each triggers the dynamic Supabase load on first use
@@ -321,6 +338,7 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
     setUser(null);
     setProfile(null);
     setNeedsConsent(false);
+    setPendingDraft(null);
   }, []);
 
   // Accept the current Terms/Privacy + 13+ attestation (used by the
@@ -337,6 +355,30 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
       setNeedsConsent(false);
     }
   }, [user, writeConsent]);
+
+  // Drain the pending sessionStorage plan draft into the account via a single
+  // transactional, idempotent RPC (ON CONFLICT DO NOTHING on client_dedup_key).
+  // Clears the draft only after a confirmed commit. Triggered by DraftDrainPrompt.
+  const drainDraft = useCallback(async (): Promise<boolean> => {
+    const supabase = supabaseRef.current;
+    if (!supabase || !user || !pendingDraft) return false;
+    try {
+      const { error } = await supabase.rpc("drain_anonymous_plans", {
+        payload: pendingDraft,
+      });
+      if (error) return false;
+      clearAnonDraft();
+      setPendingDraft(null);
+      return true;
+    } catch {
+      return false;
+    }
+  }, [user, pendingDraft]);
+
+  const discardDraft = useCallback(() => {
+    clearAnonDraft();
+    setPendingDraft(null);
+  }, []);
 
   const openLoginModal = useCallback(() => setLoginModalOpen(true), []);
   const closeLoginModal = useCallback(() => setLoginModalOpen(false), []);
@@ -359,6 +401,9 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
         loginModalOpen,
         needsConsent,
         acceptConsent,
+        pendingDraft,
+        drainDraft,
+        discardDraft,
       }}
     >
       {children}

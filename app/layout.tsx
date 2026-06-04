@@ -7,6 +7,7 @@ import ThemeProvider from "@/components/ThemeProvider";
 import AuthProvider from "@/components/AuthProvider";
 import LoginModal from "@/components/auth/LoginModal";
 import ConsentPrompt from "@/components/auth/ConsentPrompt";
+import DraftDrainPrompt from "@/components/auth/DraftDrainPrompt";
 import JsonLd from "@/components/JsonLd";
 import Footer from "@/components/Footer";
 import { getAllStates } from "@/lib/states/registry";
@@ -125,6 +126,7 @@ export default function RootLayout({
             <Footer />
             <LoginModal />
             <ConsentPrompt />
+            <DraftDrainPrompt />
           </AuthProvider>
         </ThemeProvider>
         <Analytics />
