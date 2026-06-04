@@ -507,6 +507,7 @@ export default function AccountDashboard({
           plans, schedules, bookmarks, transfer tracking, seat alerts, and email
           subscriptions — as a JSON file.
         </p>
+        {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- API route file download (JSON attachment), not page navigation; <Link> would client-navigate and break the download */}
         <a
           href="/api/account/export"
           className="inline-flex items-center gap-2 rounded-lg border border-gray-300 dark:border-slate-600 px-4 py-2 text-sm font-medium text-gray-700 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-700 transition"

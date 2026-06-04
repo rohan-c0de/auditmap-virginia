@@ -27,6 +27,7 @@
  *   npx tsx scripts/ks/scrape-hutchinson.ts --term 261S
  */
 import * as cheerio from "cheerio";
+import type { AnyNode } from "domhandler";
 import * as fs from "fs";
 import * as path from "path";
 
@@ -128,7 +129,7 @@ async function discoverPageCount(termCode: string): Promise<number> {
   return pages.length > 0 ? Math.max(...pages) : 1;
 }
 
-function parseCourseAccordion($el: cheerio.Cheerio<any>, $: cheerio.CheerioAPI, stdTerm: string): CourseSection[] {
+function parseCourseAccordion($el: cheerio.Cheerio<AnyNode>, $: cheerio.CheerioAPI, stdTerm: string): CourseSection[] {
   const titleRaw = $el.find("a.accordian-program-title").first().text().trim();
   // e.g. "Basic Concepts for Allied Health Studies - BI100"
   const titleMatch = titleRaw.match(/^(.*?)\s+-\s+([A-Z]{2,4})(\d{3}[A-Z]?)$/);
