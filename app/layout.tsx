@@ -6,6 +6,7 @@ import AdSenseScript from "@/components/AdSenseScript";
 import ThemeProvider from "@/components/ThemeProvider";
 import AuthProvider from "@/components/AuthProvider";
 import LoginModal from "@/components/auth/LoginModal";
+import ConsentPrompt from "@/components/auth/ConsentPrompt";
 import JsonLd from "@/components/JsonLd";
 import Footer from "@/components/Footer";
 import { getAllStates } from "@/lib/states/registry";
@@ -123,6 +124,7 @@ export default function RootLayout({
             {children}
             <Footer />
             <LoginModal />
+            <ConsentPrompt />
           </AuthProvider>
         </ThemeProvider>
         <Analytics />

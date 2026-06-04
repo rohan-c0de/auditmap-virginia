@@ -1,8 +1,10 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 import { useAuth } from "@/lib/hooks/useAuth";
 import { getEnabledProviders } from "@/lib/auth-providers";
+import { CONSENT_PENDING_KEY, TOS_VERSION } from "@/lib/consent";
 
 /**
  * Login modal dialog — appears over the current page.
@@ -23,6 +25,7 @@ export default function LoginModal() {
   const [magicLinkSent, setMagicLinkSent] = useState(false);
   const [magicLinkError, setMagicLinkError] = useState<string | null>(null);
   const [isSending, setIsSending] = useState(false);
+  const [consent, setConsent] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const providers = getEnabledProviders();
 
@@ -42,6 +45,8 @@ export default function LoginModal() {
       setMagicLinkSent(false);
 
       setMagicLinkError(null);
+
+      setConsent(false);
     }
   }, [loginModalOpen]);
 
@@ -61,10 +66,21 @@ export default function LoginModal() {
     return () => dialog.removeEventListener("cancel", handleCancel);
   }, [closeLoginModal]);
 
+  // Persist the accepted Terms version so AuthProvider can record it after the
+  // auth round-trip (OAuth redirect / magic-link click). See lib/consent.ts.
+  const markConsentPending = () => {
+    try {
+      localStorage.setItem(CONSENT_PENDING_KEY, TOS_VERSION);
+    } catch {
+      // localStorage blocked — the post-auth ConsentPrompt fallback captures it.
+    }
+  };
+
   const handleMagicLink = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email.trim()) return;
+    if (!email.trim() || !consent) return;
 
+    markConsentPending();
     setIsSending(true);
     setMagicLinkError(null);
 
@@ -113,13 +129,39 @@ export default function LoginModal() {
           </button>
         </div>
 
+        {/* Age + Terms/Privacy consent — REQUIRED before any sign-in path */}
+        <label className="flex items-start gap-2 mb-5 text-xs text-gray-600 dark:text-slate-400">
+          <input
+            type="checkbox"
+            checked={consent}
+            onChange={(e) => setConsent(e.target.checked)}
+            className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 dark:border-slate-600 text-teal-600 focus:ring-teal-500"
+          />
+          <span>
+            I am 13 or older and agree to the{" "}
+            <Link href="/terms" target="_blank" className="text-teal-600 underline">
+              Terms of Service
+            </Link>{" "}
+            and{" "}
+            <Link href="/privacy" target="_blank" className="text-teal-600 underline">
+              Privacy Policy
+            </Link>
+            .
+          </span>
+        </label>
+
         {/* SSO Buttons — rendered dynamically from AUTH_PROVIDERS config */}
         <div className="space-y-3">
           {providers.map((provider) => (
             <button
               key={provider.id}
-              onClick={() => signInWithOAuth(provider.id)}
-              className="flex w-full items-center justify-center gap-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 px-4 py-2.5 text-sm font-medium text-gray-700 dark:text-slate-200 hover:bg-gray-50 dark:hover:bg-slate-600 transition"
+              onClick={() => {
+                if (!consent) return;
+                markConsentPending();
+                signInWithOAuth(provider.id);
+              }}
+              disabled={!consent}
+              className="flex w-full items-center justify-center gap-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 px-4 py-2.5 text-sm font-medium text-gray-700 dark:text-slate-200 hover:bg-gray-50 dark:hover:bg-slate-600 transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <provider.icon />
               {provider.label}
@@ -174,7 +216,7 @@ export default function LoginModal() {
             )}
             <button
               type="submit"
-              disabled={isSending}
+              disabled={isSending || !consent}
               className="mt-3 w-full rounded-lg bg-teal-600 px-4 py-2.5 text-sm font-medium text-white hover:bg-teal-700 disabled:opacity-50 disabled:cursor-not-allowed transition"
             >
               {isSending ? "Sending..." : "Send Magic Link"}

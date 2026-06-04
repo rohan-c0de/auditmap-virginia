@@ -9,6 +9,11 @@ import {
   type ReactNode,
 } from "react";
 import type { SupabaseClient, User } from "@supabase/supabase-js";
+import {
+  CONSENT_PENDING_KEY,
+  TOS_VERSION,
+  decideConsentAction,
+} from "@/lib/consent";
 
 // Type-only imports above don't add bundle weight. The runtime
 // `@supabase/supabase-js` code is behind a dynamic import in
@@ -26,6 +31,8 @@ export interface Profile {
   auth_provider: string | null;
   default_state: string | null;
   preferences: Record<string, unknown>;
+  tos_accepted_at: string | null;
+  tos_version: string | null;
   created_at: string;
   updated_at: string;
 }
@@ -46,6 +53,10 @@ export interface AuthContextValue {
   closeLoginModal: () => void;
   /** Whether the login modal is currently open */
   loginModalOpen: boolean;
+  /** True when a signed-in account must accept the Terms before continuing */
+  needsConsent: boolean;
+  /** Record Terms/Privacy + 13+ acceptance for the current user */
+  acceptConsent: () => Promise<void>;
 }
 
 // ---------------------------------------------------------------------------
@@ -84,6 +95,7 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [loginModalOpen, setLoginModalOpen] = useState(false);
+  const [needsConsent, setNeedsConsent] = useState(false);
 
   // Cached Supabase client. Null until first call to `getSupabase()`.
   const supabaseRef = useRef<SupabaseClient | null>(null);
@@ -92,26 +104,82 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
   // Subscription handle so we can unsubscribe on unmount.
   const subscriptionRef = useRef<{ unsubscribe: () => void } | null>(null);
 
-  // Fetch profile from profiles table. Uses whatever Supabase client is
-  // already loaded — called only after auth state is known, so the client
-  // is guaranteed to exist.
-  const fetchProfile = useCallback(async (userId: string) => {
-    const supabase = supabaseRef.current;
-    if (!supabase) return;
-    try {
-      const { data } = await supabase
+  // Write Terms/Privacy + 13+ acceptance to the user's own profiles row
+  // (allowed by the "Users update own profile" RLS policy). Patches local
+  // state on success so the UI reflects acceptance without a refetch.
+  const writeConsent = useCallback(
+    async (
+      supabase: SupabaseClient,
+      userId: string,
+      version: string
+    ): Promise<boolean> => {
+      const acceptedAt = new Date().toISOString();
+      const { error } = await supabase
         .from("profiles")
-        .select("*")
-        .eq("id", userId)
-        .single();
+        .update({ tos_accepted_at: acceptedAt, tos_version: version })
+        .eq("id", userId);
+      if (error) return false;
+      setProfile((p) =>
+        p ? { ...p, tos_accepted_at: acceptedAt, tos_version: version } : p
+      );
+      return true;
+    },
+    []
+  );
 
-      if (data) {
-        setProfile(data as Profile);
+  // After auth, reconcile consent: record a fresh signup's pending acceptance,
+  // or flag that an existing account must accept now. See lib/consent.ts.
+  const reconcileConsent = useCallback(
+    async (supabase: SupabaseClient, userId: string, profileData: Profile) => {
+      const pending =
+        typeof window !== "undefined"
+          ? localStorage.getItem(CONSENT_PENDING_KEY)
+          : null;
+      const action = decideConsentAction(profileData.tos_accepted_at, pending);
+      if (action === "none") {
+        if (pending) localStorage.removeItem(CONSENT_PENDING_KEY);
+        setNeedsConsent(false);
+        return;
       }
-    } catch {
-      // Profile fetch failed — user stays authenticated without profile data
-    }
-  }, []);
+      if (action === "record") {
+        const ok = await writeConsent(supabase, userId, pending as string);
+        if (ok) {
+          localStorage.removeItem(CONSENT_PENDING_KEY);
+          setNeedsConsent(false);
+        } else {
+          // write failed — fall back to prompting so consent still lands
+          setNeedsConsent(true);
+        }
+        return;
+      }
+      setNeedsConsent(true); // "prompt"
+    },
+    [writeConsent]
+  );
+
+  // Fetch profile from profiles table, then reconcile consent. Uses whatever
+  // Supabase client is already loaded — called only after auth state is known.
+  const fetchProfile = useCallback(
+    async (userId: string) => {
+      const supabase = supabaseRef.current;
+      if (!supabase) return;
+      try {
+        const { data } = await supabase
+          .from("profiles")
+          .select("*")
+          .eq("id", userId)
+          .single();
+
+        if (data) {
+          setProfile(data as Profile);
+          await reconcileConsent(supabase, userId, data as Profile);
+        }
+      } catch {
+        // Profile fetch failed — user stays authenticated without profile data
+      }
+    },
+    [reconcileConsent]
+  );
 
   /**
    * Dynamic-import + instantiate the Supabase client on first call. Wires
@@ -252,7 +320,23 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
     }
     setUser(null);
     setProfile(null);
+    setNeedsConsent(false);
   }, []);
+
+  // Accept the current Terms/Privacy + 13+ attestation (used by the
+  // existing-account ConsentPrompt; signup records consent automatically).
+  const acceptConsent = useCallback(async () => {
+    const supabase = supabaseRef.current;
+    const uid = user?.id;
+    if (!supabase || !uid) return;
+    const ok = await writeConsent(supabase, uid, TOS_VERSION);
+    if (ok) {
+      if (typeof window !== "undefined") {
+        localStorage.removeItem(CONSENT_PENDING_KEY);
+      }
+      setNeedsConsent(false);
+    }
+  }, [user, writeConsent]);
 
   const openLoginModal = useCallback(() => setLoginModalOpen(true), []);
   const closeLoginModal = useCallback(() => setLoginModalOpen(false), []);
@@ -273,6 +357,8 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
         openLoginModal,
         closeLoginModal,
         loginModalOpen,
+        needsConsent,
+        acceptConsent,
       }}
     >
       {children}
