@@ -45,8 +45,13 @@ function fingerprint(url: string, body: string): string | null {
   const u = url.toLowerCase();
   const b = body.toLowerCase();
   if (u.includes("smartcatalogiq.com") || b.includes("smartcatalogiq")) return "smartcatalogiq";
-  if (u.includes("acalog.com") || b.includes("acalogadmin") || b.includes("preview_program.php") || b.includes("acalog")) return "acalog";
+  // Coursedog MUST be checked before Acalog: the acalog test below matches a bare
+  // `b.includes("acalog")`, and some Coursedog catalogs carry a stray "Acalog"
+  // mention (footer/credit) that falsely tagged them acalog. fscj is the known case
+  // (catalog.fscj.edu is Coursedog, tenant fscj_peoplesoft, but had 4 incidental
+  // "Acalog" markers vs 80 "coursedog" ones). "coursedog" is the stronger signal.
   if (u.includes("coursedog.com") || b.includes("coursedog")) return "coursedog";
+  if (u.includes("acalog.com") || b.includes("acalogadmin") || b.includes("preview_program.php") || b.includes("acalog")) return "acalog";
   if (b.includes("courseleaf") || u.includes("/coursecat") || b.includes("courseleaf.com")) return "courseleaf";
   if (b.includes("cleancatalog")) return "cleancatalog";
   if (b.includes("modern campus") || u.includes("moderncampus")) return "modern-campus";
