@@ -26,7 +26,7 @@ const akConfig: StateConfig = {
       "Ilisagvik College's North Slope Borough Elder Tuition Waiver covers tuition for NSB residents aged 62 or older. Students remain responsible for course fees, registration fees, textbooks, and lab kits. The waiver form must be completed and submitted before each semester's withdrawal deadline; contact Financial Aid at 907-852-1708 or fin.aid@ilisagvik.edu. Alaska has no statewide CC senior-tuition statute — the University of Alaska 60+ reduction under AS 14.40.130 applies to UA campuses, not to Ilisagvik.",
   },
 
-  transferSupported: false,
+  transferSupported: true,
   popularCourses: ["ENGL 101", "MATH 105", "BIOL 100", "PSY 101", "HIST 131"],
   defaultZip: "99723",
   defaultZipCity: "Utqiagvik",

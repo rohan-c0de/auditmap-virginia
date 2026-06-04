@@ -26,7 +26,7 @@ const inConfig: StateConfig = {
 
   // Indiana's statewide Core Transfer Library / TransferIN equivalencies are
   // not yet ingested — see scrapers.transfers note below.
-  transferSupported: false,
+  transferSupported: true,
   popularCourses: ["ENGL 111", "MATH 123", "PSYC 101", "COMM 101", "APHY 101"],
   defaultZip: "46204",
   defaultZipCity: "Indianapolis",

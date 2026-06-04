@@ -32,7 +32,7 @@ const idConfig: StateConfig = {
       "Under Idaho Code § 33-2110A, Idaho residents aged 60 and older may register to audit courses at state-supported institutions for $5 per credit hour on a space-available basis. Auditing means no credit or grade. Individual colleges (CSI, CWI, NIC, CEI) may offer their own additional senior discounts on for-credit courses; contact the registrar for specifics. Course and lab fees may still apply.",
   },
 
-  transferSupported: false,
+  transferSupported: true,
   popularCourses: ["ENGL 101", "ENGL 102", "MATH 143", "MATH 123", "PSYC 101", "COMM 101"],
   defaultZip: "83702",
   defaultZipCity: "Boise",

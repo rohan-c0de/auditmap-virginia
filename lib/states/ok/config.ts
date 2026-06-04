@@ -44,7 +44,7 @@ const okConfig: StateConfig = {
       "OSRHE policy 35-5-1(g) lets Oklahoma residents 65+ enroll in undergraduate credit courses tuition-free at state colleges on a space-available basis. Confirm specifics with each college's registrar.",
   },
 
-  transferSupported: false,
+  transferSupported: true,
   popularCourses: ["ENGL 1113", "ENGL 1213", "MATH 1513", "HIST 1493", "PSYC 1113", "COMM 1113"],
   defaultZip: "73102",
   defaultZipCity: "Oklahoma City",
