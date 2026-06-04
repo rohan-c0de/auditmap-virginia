@@ -497,6 +497,27 @@ export default function AccountDashboard({
         )}
       </section>
 
+      {/* ── Your data ── */}
+      <section className="rounded-lg border border-gray-200 dark:border-slate-700 p-6 mb-6">
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-slate-100 mb-2">
+          Your data
+        </h2>
+        <p className="text-sm text-gray-600 dark:text-slate-400 mb-4">
+          Download a copy of everything saved to your account — your profile,
+          plans, schedules, bookmarks, transfer tracking, seat alerts, and email
+          subscriptions — as a JSON file.
+        </p>
+        <a
+          href="/api/account/export"
+          className="inline-flex items-center gap-2 rounded-lg border border-gray-300 dark:border-slate-600 px-4 py-2 text-sm font-medium text-gray-700 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-700 transition"
+        >
+          <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+          </svg>
+          Download my data
+        </a>
+      </section>
+
       {/* ── Danger zone ── */}
       <section className="rounded-lg border border-red-200 dark:border-red-900/50 p-6">
         <h2 className="text-lg font-semibold text-red-700 dark:text-red-400 mb-2">

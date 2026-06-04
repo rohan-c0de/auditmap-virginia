@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { getServiceClient } from "@/lib/supabase";
 import { rateLimit, getClientKey } from "@/lib/rate-limit";
+import { escapeIlikePattern } from "@/lib/account-export";
 
 /**
  * DELETE /api/account/delete
@@ -72,8 +73,28 @@ export async function DELETE(request: Request) {
       );
     }
 
-    // 4. Use service role to delete the user (requires admin privileges)
+    // 4. Use the service role for the deletions that need admin privileges.
     const serviceClient = getServiceClient();
+
+    // 4a. Remove the email-keyed subscriber row(s) FIRST. These are NOT
+    // cascaded by deleting the auth user — `subscribers` is keyed by email and
+    // the profiles.subscriber_id FK is ON DELETE SET NULL — so without this a
+    // deleted user keeps receiving notification emails. Case-insensitive,
+    // wildcard-escaped match on the account's verified email.
+    if (user.email) {
+      const { error: subErr } = await serviceClient
+        .from("subscribers")
+        .delete()
+        .ilike("email", escapeIlikePattern(user.email));
+      if (subErr) {
+        // Non-fatal: a lingering subscriber (still unsubscribable) is better
+        // than a half-deleted account. Surface it for monitoring and proceed.
+        console.error("Subscriber cleanup on delete failed:", subErr.message);
+      }
+    }
+
+    // 4b. Delete the auth user. CASCADE handles profiles + saved_* +
+    // plan_seat_notifications.
     const { error: deleteError } =
       await serviceClient.auth.admin.deleteUser(user.id);
 
