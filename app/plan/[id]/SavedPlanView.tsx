@@ -1,15 +1,44 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import SemesterPlanner from "@/components/SemesterPlanner";
 import { createClient } from "@/lib/supabase/client";
-import { toggleCompleted, completedCount } from "@/lib/transfer-tracker";
+import {
+  toggleCompleted,
+  completedCount,
+  progressSummary,
+  type TransferVerdict,
+} from "@/lib/transfer-tracker";
 
 interface University {
   slug: string;
   name: string;
 }
+
+// Transfer verdict badge styles. Deliberately indigo / violet / rose / gray +
+// ✓ ≈ ✕ icons — NOT the seat green/amber/red palette — so a transfer outcome is
+// never confusable with a seat-availability signal. Icons carry the meaning so
+// it's not color-only.
+const VERDICT_STYLE: Record<TransferVerdict, { label: string; cls: string }> = {
+  direct: {
+    label: "✓ Transfers",
+    cls: "bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300",
+  },
+  elective: {
+    label: "≈ Elective",
+    cls: "bg-violet-50 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300",
+  },
+  "no-credit": {
+    label: "✕ No credit",
+    cls: "bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300",
+  },
+  none: {
+    label: "— No data",
+    cls: "bg-gray-100 dark:bg-slate-700 text-gray-500 dark:text-slate-400",
+  },
+};
 
 interface SavedPlanViewProps {
   planId: string;
@@ -24,6 +53,9 @@ interface SavedPlanViewProps {
   targetUniversity: string | null;
   /** Course codes the user has marked completed on this plan. */
   completedCourses: string[];
+  /** Per-target-course transfer verdict to the current target university
+   *  (server-computed). Empty {} when no target university is set. */
+  verdicts: Record<string, TransferVerdict>;
 }
 
 function formatDate(iso: string): string {
@@ -55,7 +87,9 @@ export default function SavedPlanView({
   universities,
   targetUniversity,
   completedCourses,
+  verdicts,
 }: SavedPlanViewProps) {
+  const router = useRouter();
   const [targetUni, setTargetUni] = useState<string | null>(targetUniversity);
   const [completed, setCompleted] = useState<string[]>(completedCourses);
 
@@ -71,7 +105,13 @@ export default function SavedPlanView({
       .from("saved_plans")
       .update({ target_university: slug })
       .eq("id", planId);
-    if (error) setTargetUni(prev);
+    if (error) {
+      setTargetUni(prev);
+    } else {
+      // Re-run the server component so per-course verdicts recompute for the
+      // newly chosen university (the `verdicts` prop is server-derived).
+      router.refresh();
+    }
   }
 
   async function persistCompleted(next: string[]) {
@@ -86,6 +126,8 @@ export default function SavedPlanView({
   }
 
   const { done, total } = completedCount(targetCourses, completed);
+  const summary = progressSummary(completed, verdicts);
+  const hasGoal = targetUni != null && targetUni !== "";
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-900">
@@ -150,10 +192,11 @@ export default function SavedPlanView({
           </div>
         </div>
 
-        {/* Transfer goal & progress (Milestone C, PR 1 — capture only).
-            Pick a target university + check off completed courses; the progress
-            computation (how completed courses transfer to that university)
-            lands in PR 2. Writes update the two tracker columns in place. */}
+        {/* Transfer goal & progress (Milestone C). Pick a target university +
+            check off completed courses; each course shows how it transfers to
+            that university (direct / elective / no-credit), with a live tally of
+            the completed ones. Tracker fields update in place (RLS-scoped);
+            changing the university re-runs the server to recompute verdicts. */}
         <section className="mb-6 rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5">
           <h2 className="text-base font-semibold text-slate-900 dark:text-slate-100">
             Transfer goal &amp; progress
@@ -180,11 +223,23 @@ export default function SavedPlanView({
               <p className="text-sm font-medium text-slate-900 dark:text-slate-100">
                 {done} of {total} {total === 1 ? "course" : "courses"} completed
               </p>
+
+              {hasGoal && completed.length > 0 && (
+                <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
+                  Of your {completed.length} completed: {summary.direct} transfer directly
+                  {" · "}
+                  {summary.elective} as elective{" · "}
+                  {summary.noCredit} no-credit
+                  {summary.noData > 0 ? ` · ${summary.noData} no transfer data` : ""}
+                </p>
+              )}
+
               <ul className="mt-2 space-y-1.5">
                 {targetCourses.map((code) => {
                   const isDone = completed.includes(code);
+                  const verdict = verdicts[code] ?? "none";
                   return (
-                    <li key={code}>
+                    <li key={code} className="flex items-center justify-between gap-2">
                       <label className="inline-flex items-center gap-2 text-sm cursor-pointer">
                         <input
                           type="checkbox"
@@ -202,6 +257,13 @@ export default function SavedPlanView({
                           {code}
                         </span>
                       </label>
+                      {hasGoal && (
+                        <span
+                          className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-medium ${VERDICT_STYLE[verdict].cls}`}
+                        >
+                          {VERDICT_STYLE[verdict].label}
+                        </span>
+                      )}
                     </li>
                   );
                 })}
@@ -214,8 +276,9 @@ export default function SavedPlanView({
           )}
 
           <p className="mt-3 text-xs text-slate-400 dark:text-slate-500">
-            We&apos;ll use this to show how your completed courses transfer to your
-            chosen university — coming soon.
+            {hasGoal
+              ? "Transfer outcomes are in-state equivalencies from each university's published guides — verify with the receiving school's registrar."
+              : "Pick a university above to see how each course transfers (direct, elective, or no credit)."}
           </p>
         </section>
 
