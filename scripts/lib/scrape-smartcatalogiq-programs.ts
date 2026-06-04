@@ -206,6 +206,7 @@ async function discoverProgramPaths(
   baseUrl: string,
   programsRoot: string,
   followSiblingPaths = false,
+  maxPages = Infinity,
 ): Promise<string[]> {
   const visited = new Set<string>();
   const programLinks = new Set<string>();
@@ -219,6 +220,10 @@ async function discoverProgramPaths(
     : programsRoot;
 
   while (queue.length > 0) {
+    // Backstop on broad-BFS fallback runs (see scrapeSmartCatalogIqPrograms) so a
+    // huge catalog can't run forever. Working colleges' primary BFS leaves this
+    // at the default Infinity — same control flow as before.
+    if (visited.size >= maxPages) break;
     const path = queue.shift()!;
     if (visited.has(path)) continue;
     visited.add(path);
@@ -505,8 +510,24 @@ export async function scrapeSmartCatalogIqPrograms(
 
   const programsRoot = `/en/${year}/${catalogPath}/${programsPath}/`;
   console.log(`  [${collegeSlug}] Walking ${programsRoot} for program detail pages...`);
-  const paths = await discoverProgramPaths(baseUrl, programsRoot, config.followSiblingPaths ?? false);
+  let paths = await discoverProgramPaths(baseUrl, programsRoot, config.followSiblingPaths ?? false);
   console.log(`  [${collegeSlug}] Found ${paths.length} program detail pages`);
+
+  // Fallback: some SmartCatalogIQ catalogs (phsc: /academic-programs/ → /prog-desc/)
+  // place program detail pages in a SIBLING URL tree under the catalog root —
+  // outside the configured programsPath, so the primary BFS finds nothing.
+  // When that happens, walk the broader catalog root (/en/{year}/{catalogPath}/)
+  // with a hard page cap so a huge catalog can't run away. Page-detail gate is
+  // unchanged (<h1 class="degreeTitle">), so this only adds reach, never noise.
+  // Working catalogs never enter this branch — the primary BFS always finds >0.
+  if (paths.length === 0) {
+    const catalogRoot = `/en/${year}/${catalogPath}/`;
+    console.log(
+      `  [${collegeSlug}] No programs at ${programsRoot}; falling back to broader BFS at ${catalogRoot} (cap 500)`,
+    );
+    paths = await discoverProgramPaths(baseUrl, catalogRoot, false, 500);
+    console.log(`  [${collegeSlug}] Fallback found ${paths.length} program detail pages`);
+  }
 
   if (paths.length === 0) {
     return {
