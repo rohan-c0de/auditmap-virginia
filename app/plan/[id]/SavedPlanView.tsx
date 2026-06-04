@@ -1,7 +1,15 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import SemesterPlanner from "@/components/SemesterPlanner";
+import { createClient } from "@/lib/supabase/client";
+import { toggleCompleted, completedCount } from "@/lib/transfer-tracker";
+
+interface University {
+  slug: string;
+  name: string;
+}
 
 interface SavedPlanViewProps {
   planId: string;
@@ -10,6 +18,12 @@ interface SavedPlanViewProps {
   name: string;
   targetCourses: string[];
   createdAt: string;
+  /** In-state universities the user can pick as their transfer goal. */
+  universities: University[];
+  /** The plan's current target-university slug, or null if unset. */
+  targetUniversity: string | null;
+  /** Course codes the user has marked completed on this plan. */
+  completedCourses: string[];
 }
 
 function formatDate(iso: string): string {
@@ -38,8 +52,41 @@ export default function SavedPlanView({
   name,
   targetCourses,
   createdAt,
+  universities,
+  targetUniversity,
+  completedCourses,
 }: SavedPlanViewProps) {
-  void planId;
+  const [targetUni, setTargetUni] = useState<string | null>(targetUniversity);
+  const [completed, setCompleted] = useState<string[]>(completedCourses);
+
+  // Persist the two tracker fields IN PLACE on this plan. The plan's structure
+  // (target_courses / plan_data) stays immutable — only target_university and
+  // completed_courses update. RLS ("Users manage own plans" FOR ALL, 017)
+  // scopes the UPDATE to the owner. Optimistic, revert on error.
+  async function persistTargetUniversity(slug: string | null) {
+    const prev = targetUni;
+    setTargetUni(slug);
+    const supabase = createClient();
+    const { error } = await supabase
+      .from("saved_plans")
+      .update({ target_university: slug })
+      .eq("id", planId);
+    if (error) setTargetUni(prev);
+  }
+
+  async function persistCompleted(next: string[]) {
+    const prev = completed;
+    setCompleted(next);
+    const supabase = createClient();
+    const { error } = await supabase
+      .from("saved_plans")
+      .update({ completed_courses: next })
+      .eq("id", planId);
+    if (error) setCompleted(prev);
+  }
+
+  const { done, total } = completedCount(targetCourses, completed);
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-900">
       {/* Header */}
@@ -102,6 +149,75 @@ export default function SavedPlanView({
             </Link>
           </div>
         </div>
+
+        {/* Transfer goal & progress (Milestone C, PR 1 — capture only).
+            Pick a target university + check off completed courses; the progress
+            computation (how completed courses transfer to that university)
+            lands in PR 2. Writes update the two tracker columns in place. */}
+        <section className="mb-6 rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5">
+          <h2 className="text-base font-semibold text-slate-900 dark:text-slate-100">
+            Transfer goal &amp; progress
+          </h2>
+
+          <label className="mt-3 block text-sm text-slate-600 dark:text-slate-400">
+            University you&apos;re aiming to transfer to
+            <select
+              value={targetUni ?? ""}
+              onChange={(e) => persistTargetUniversity(e.target.value || null)}
+              className="mt-1 block w-full rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none transition"
+            >
+              <option value="">Choose a university…</option>
+              {universities.map((u) => (
+                <option key={u.slug} value={u.slug}>
+                  {u.name}
+                </option>
+              ))}
+            </select>
+          </label>
+
+          {targetCourses.length > 0 ? (
+            <div className="mt-4">
+              <p className="text-sm font-medium text-slate-900 dark:text-slate-100">
+                {done} of {total} {total === 1 ? "course" : "courses"} completed
+              </p>
+              <ul className="mt-2 space-y-1.5">
+                {targetCourses.map((code) => {
+                  const isDone = completed.includes(code);
+                  return (
+                    <li key={code}>
+                      <label className="inline-flex items-center gap-2 text-sm cursor-pointer">
+                        <input
+                          type="checkbox"
+                          checked={isDone}
+                          onChange={() => persistCompleted(toggleCompleted(completed, code))}
+                          className="h-4 w-4 rounded border-gray-300 dark:border-slate-600 text-teal-600 focus:ring-teal-500"
+                        />
+                        <span
+                          className={
+                            isDone
+                              ? "line-through text-slate-400 dark:text-slate-500"
+                              : "text-slate-700 dark:text-slate-300"
+                          }
+                        >
+                          {code}
+                        </span>
+                      </label>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          ) : (
+            <p className="mt-4 text-sm text-slate-500 dark:text-slate-400">
+              This plan has no target courses to track yet.
+            </p>
+          )}
+
+          <p className="mt-3 text-xs text-slate-400 dark:text-slate-500">
+            We&apos;ll use this to show how your completed courses transfer to your
+            chosen university — coming soon.
+          </p>
+        </section>
 
         <SemesterPlanner
           state={state}

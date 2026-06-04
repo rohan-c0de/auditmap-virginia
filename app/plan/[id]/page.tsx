@@ -22,6 +22,7 @@
 import { notFound, redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { getStateConfig } from "@/lib/states/registry";
+import { getUniversities } from "@/lib/transfer";
 import SavedPlanView from "./SavedPlanView";
 
 type Props = {
@@ -48,7 +49,7 @@ export default async function SavedPlanPage({ params }: Props) {
 
   const { data: plan } = await supabase
     .from("saved_plans")
-    .select("id, state, name, target_courses, created_at")
+    .select("id, state, name, target_courses, target_university, completed_courses, created_at")
     .eq("id", id)
     .single();
 
@@ -66,6 +67,11 @@ export default async function SavedPlanPage({ params }: Props) {
     notFound();
   }
 
+  // In-state universities the user can pick as their transfer goal (cached
+  // file fast-path; falls back to the transfers table). Empty when the state
+  // has no transfer data — the picker then simply offers no options.
+  const universities = await getUniversities(plan.state);
+
   return (
     <SavedPlanView
       planId={plan.id}
@@ -74,6 +80,9 @@ export default async function SavedPlanPage({ params }: Props) {
       name={plan.name}
       targetCourses={plan.target_courses ?? []}
       createdAt={plan.created_at}
+      universities={universities}
+      targetUniversity={plan.target_university ?? null}
+      completedCourses={plan.completed_courses ?? []}
     />
   );
 }
