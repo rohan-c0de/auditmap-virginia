@@ -148,7 +148,12 @@ const mdConfig: StateConfig = {
       {
         scripts: [
           "scripts/md/scrape-banner-ssb.ts",
+          // scrape-banner8.ts kept for archival reference — CCBC migrated off
+          // Banner 8 in 2026, simon.ccbcmd.edu/pls/PROD/bwck* all 404 now.
+          // Their public course finder is a static HTML SPA scraped by
+          // scrape-ccbc.ts.
           "scripts/md/scrape-banner8.ts",
+          "scripts/md/scrape-ccbc.ts",
           "scripts/md/scrape-custom.ts",
         ],
         runner: "http",

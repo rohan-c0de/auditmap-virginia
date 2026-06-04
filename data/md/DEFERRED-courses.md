@@ -1,28 +1,45 @@
 # MD courses — deferred coverage gaps (2026-06-04)
 
-After this PR, MD courses are at **15/16 (93.75%, grade B/B+ depending on
-audit thresholds)**, up from 13/16 (81%, C). **Garrett (216 Fall 2026
-sections) AND Cecil (374 Spring 2026 sections) unblocked + shipped here.**
-Only ccbc remains — and ccbc is a true platform migration (off Banner 8 to
-a 6 MB JS SPA) that needs a fresh bespoke scraper, not a re-run. The
-2026-06-01 audit's "just re-run the wired scrapers; no new code" hint
-underestimated all three, but two of three are now solved.
+After this PR, MD courses are at **16/16 (100%, grade A)**, up from 13/16
+(81%, C). **All three previously-missing colleges — garrett, cecil, ccbc —
+are unblocked and shipped here.** The 2026-06-01 audit's "just re-run the
+wired scrapers; no new code" hint dramatically underestimated all three,
+but each required a different fix and they all land now:
+
+  - garrett (216 Fall 2026 sections) — 3 stacked JICS bugs
+  - cecil (374 Spring 2026 sections) — 5 stacked fixes inc. REST-API short-circuit
+  - **ccbc (2,851 Fall 2026 sections) — new bespoke scraper for the post-Banner-8
+    static SPA at ccbcmd.edu/Programs-and-Courses-Finder/**
 
 ## Per-college blockers
 
-### ccbc — Banner 8 platform migration (largest scope)
-- **Configured target:** `scripts/md/scrape-banner8.ts` against
-  `simon.ccbcmd.edu/pls/PROD/bwckschd.p_disp_dyn_sched` (Banner 8 schedule lookup).
-- **Today (2026-06-04):** the entire `/pls/PROD/bwck*` endpoint set returns **HTTP
-  404**. `simon.ccbcmd.edu/pls/PROD/homepage.htm` exists but serves a blank Oracle
-  Apex shell — Banner 8 is gone.
-- **Where the data is now:** `www.ccbcmd.edu/Programs-and-Courses-Finder/index.html`
-  serves a 6 MB client-side single-page app (fuse.js + jQuery; no SIS endpoint
-  references; no Banner/PeopleSoft/Destiny/Coursedog/CollegeScheduler markers).
-  Course data is loaded after `DOMContentLoaded` via JS — needs Playwright or a
-  static-data probe to locate.
-- **Next action (separate PR):** identify the JS-fetched data source for the new
-  course-finder app and build a bespoke `scrape-ccbc.ts`. Not a re-run.
+### ccbc — RESOLVED in this PR ✅
+- **Status:** 2,851 Fall 2026 sections written to `data/md/courses/ccbc/2026FA.json`,
+  all schema-valid. Real curriculum: ENGL 245, MATH 203, BIOL 141, PSYC 140,
+  CMNS 121, MUSA 106, CSIT 97, HUSC 94, ACDV 93, MNGT 88, plus 100+ smaller
+  subjects.
+- **What it took:** CCBC genuinely migrated off Banner 8 in 2026 —
+  `simon.ccbcmd.edu/pls/PROD/bwck*` all 404 now. But the data isn't gone, just
+  reorganized. The new public course finder at
+  `ccbcmd.edu/Programs-and-Courses-Finder/index.html` is a 5.8 MB *static* HTML
+  page that **embeds every course as a `<li class="...{term} pc--card--course"
+  data-crns="...">` card** — one card per course, multiple CRNs per card, with
+  the term encoded in the class list (`fall2026`, `summer2026`, etc.) and seat
+  availability augmented from a separate JSON file
+  (`cwcascadew1.ccbcmd.edu/bannerimport/ccbcVolatileCourseData.json`).
+- **New scraper:** `scripts/md/scrape-ccbc.ts` (HTTP-runner, no Playwright
+  needed). Fetches the index HTML, cheerios out the cards, expands each card
+  into one section per CRN, joins the volatile-data file for seat counts. Wired
+  into `lib/states/md/config.ts` `scrapers.courses` alongside the now-archival
+  `scrape-banner8.ts` (left in place for documentation; doesn't conflict because
+  banner8 produces 0 sections and the merge happens cleanly).
+- **Honest data caveats:** the card UI doesn't carry days/times/instructor or
+  credit count — those would require fetching each `course/{prefix}/{number}.html`
+  detail page (1,608 extra fetches at full term coverage). Defaulted credits to
+  3 (CCBC's standard for credit courses) and `instructor: "To be Announced"`.
+  Days/start_time/end_time intentionally empty strings — schema accepts and the
+  importer coerces. Students can search by code/title; the missing schedule
+  details are a follow-up.
 
 ### cecil — RESOLVED in this PR ✅
 - **Status:** 374 sections written to `data/md/courses/cecil/2026SP.json`
@@ -110,18 +127,11 @@ underestimated all three, but two of three are now solved.
 
 ## Net effect of this PR
 
-- **Garrett shipped** — 216 Fall 2026 sections at `data/md/courses/garrett/2026FA.json`.
-- **Cecil shipped** — 374 Spring 2026 sections at `data/md/courses/cecil/2026SP.json`.
-- **MD course coverage: 13/16 → 15/16 (81% → 93.75%).** Composite grade moves
-  from C to B (or B+ depending on threshold; 95% is the A bar).
-- **Eight real bugs fixed in `scripts/md/scrape-jenzabar.ts`** across the
-  three colleges' diagnoses: networkidle wait, semantic term matching,
-  subterm-skip, header-aware row extractor (used in BOTH initial + paginated
-  scrape), correct cecil URL, cookie-banner dismiss, cecil term-selector ID,
-  text-specific search-button order, `toStandardTerm` flexibility for cecil's
-  "Spring Credit 2026" wording.
-- **Cecil short-circuits the form-click flow via its REST API** —
-  cleaner than emulating jQuery clicks on a portlet that doesn't re-render.
-- **CCBC still deferred** — a true platform migration (off Banner 8 to a
-  6 MB JS SPA) that needs a fresh bespoke scraper. The only one of the three
-  not shippable as a Jenzabar-scraper extension.
+- **Garrett shipped** — 216 Fall 2026 sections.
+- **Cecil shipped** — 374 Spring 2026 sections.
+- **CCBC shipped** — 2,851 Fall 2026 sections via the new bespoke scraper.
+- **MD course coverage: 13/16 → 16/16 (81% → 100%). Composite grade C → A.**
+- **Three different fix shapes for three different problems**, each
+  underestimated by the audit. The unifying lesson: "wired but produces
+  nothing" sometimes means stale platform data, not term codes — always
+  probe before re-running.
