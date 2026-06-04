@@ -58,9 +58,10 @@ const JENZABAR_COLLEGES: Record<string, { baseUrl: string; searchPath: string }>
   },
 };
 
-// Standard term mapping
+// Standard term mapping. Allow filler words between season and year
+// so "Spring Credit 2026" (cecil) also resolves to 2026SP, not XXXX.
 function toStandardTerm(termDesc: string): string {
-  const match = termDesc.match(/(spring|summer|fall|winter)\s*(\d{4})/i);
+  const match = termDesc.match(/(spring|summer|fall|winter)[^\d]*(\d{4})/i);
   if (!match) return "XXXX";
   const season = match[1].toLowerCase();
   const year = match[2];
@@ -252,6 +253,150 @@ async function scrapeJenzabar(
 
   const standardTerm = toStandardTerm(selectedTermDesc);
   console.log(`  Standard term: ${standardTerm}`);
+
+  // Cecil short-circuit: the StudentRegistration portlet renders results via
+  // an XHR to a private REST endpoint, not a server-rendered HTML table.
+  // Driving that endpoint directly via fetch (carrying the page's session
+  // cookies) is far more reliable than emulating the form-click and waiting
+  // for client-side rendering that never lands on this portlet.
+  if (slug === "cecil") {
+    console.log("  Cecil: posting to /webserviceproxy/exi/rest/.../pagedsectiondataforsearch");
+    const apiUrl = `${config.baseUrl}/ICS/webserviceproxy/exi/rest/studentregistration/pagedsectiondataforsearch?Id=1`;
+    const advancedFilters = [
+      { name: "courseCode", value: "" },
+      { name: "courseCodeType", value: "0" },
+      { name: "courseTitle", value: "" },
+      { name: "courseTitleType", value: "0" },
+      { name: "requirementType", value: "" },
+      { name: "division", value: "" },
+      { name: "department", value: "" },
+      { name: "academicLevel", value: "" },
+      { name: "subject", value: "" },
+      { name: "campusLocation", value: "" },
+      { name: "term", value: "" },
+      { name: "beginsAfter", value: "" },
+      { name: "beginsBefore", value: "" },
+      { name: "method", value: "" },
+      { name: "sectionStatus", value: "" },
+    ];
+    const pageSize = 50;
+    let currentPage = 0;
+    let allRows: Record<string, string>[] = [];
+    while (true) {
+      const data: { rows?: Record<string, string>[]; filteredRows?: number } =
+        await page.evaluate(
+          async (args: { apiUrl: string; pageState: object }) => {
+            const r = await fetch(args.apiUrl, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ pageState: args.pageState }),
+            });
+            return r.json();
+          },
+          {
+            apiUrl,
+            pageState: {
+              enabled: true,
+              keywordFilter: "",
+              quickFilters: [],
+              sortColumn: "",
+              sortAscending: true,
+              currentPage,
+              pageSize,
+              showingAll: false,
+              selectedAll: false,
+              excludedFromSelection: [],
+              includedInSelection: [],
+              advancedFilters,
+              totalRows: 0,
+              filteredRows: 0,
+              quickFilterCounts: [],
+            },
+          },
+        );
+      const rows = data.rows || [];
+      console.log(
+        `  cecil API page ${currentPage}: ${rows.length} rows (of ${data.filteredRows ?? "?"} total)`,
+      );
+      if (rows.length === 0) break;
+      allRows = allRows.concat(rows);
+      if (data.filteredRows && allRows.length >= data.filteredRows) break;
+      currentPage += 1;
+      if (currentPage > 50) break; // safety cap
+    }
+    // Each field is wrapped: <label class='sr-only'>Course Code</label><a>ACC 101 01</a>.
+    // Strip the screen-reader label *and its text* first so the visible value
+    // isn't prefixed with "Course Code"/"Title"/etc. (which otherwise wins
+    // the leading [A-Z]{2,5} match in the course-code regex).
+    const stripTags = (s: string | undefined) =>
+      (s || "")
+        .replace(/<label[^>]*class=['"]sr-only['"][^>]*>[^<]*<\/label>/gi, "")
+        .replace(/<[^>]+>/g, "")
+        .replace(/&nbsp;/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+    const allCourseData: RawCourse[] = [];
+    for (const row of allRows) {
+      const codeRaw = stripTags(row.courseCode);
+      // codeRaw looks like "ACC 101 01" with extra spaces collapsed
+      const m = codeRaw.match(/^([A-Z]{2,5})\s+(\d{3,4}[A-Z]?)\s+(\d+)/);
+      if (!m) continue;
+      const title = stripTags(row.title);
+      if (!title) continue;
+      const schedRaw = stripTags(row.schedule);
+      // Schedule may be "MW 10:00 AM-11:30 AM" or "6/8/2026 - 8/1/2026 Online Course Asynchronous - *"
+      const dayMatch = schedRaw.match(/\b([MTWRFSU]{1,6})\b\s+\d/);
+      const timeMatch = schedRaw.match(
+        /(\d{1,2}:\d{2}\s*(?:AM|PM)?)\s*-\s*(\d{1,2}:\d{2}\s*(?:AM|PM)?)/i,
+      );
+      allCourseData.push({
+        title,
+        prefix: m[1],
+        number: m[2],
+        crn: m[3],
+        credits: stripTags(row.credits) || "3",
+        days: dayMatch ? dayMatch[1] : "",
+        times: timeMatch ? `${timeMatch[1]} - ${timeMatch[2]}` : "",
+        location: "",
+        campus: "",
+        instructor: stripTags(row.faculty),
+        seats: stripTags(row.seatsOpen),
+      });
+    }
+    console.log(`  Cecil: parsed ${allCourseData.length} sections from API`);
+    // Jump directly to the section-build phase by writing through the same
+    // CourseSection-conversion loop the form-click flow uses. The loop expects
+    // `allCourseData` to be in scope where it processes rows — so we
+    // synthesize a minimal version of the rest of the function here.
+    for (const raw of allCourseData) {
+      const timeParts = raw.times.match(
+        /(\d{1,2}:\d{2}\s*(?:AM|PM)?)\s*[-–]\s*(\d{1,2}:\d{2}\s*(?:AM|PM)?)/i,
+      );
+      const modeStr = [raw.title, raw.campus, raw.location].join(" ");
+      sections.push({
+        college_code: slug,
+        term: standardTerm,
+        course_prefix: raw.prefix,
+        course_number: raw.number,
+        course_title: raw.title,
+        credits: parseFloat(raw.credits || "3") || 3,
+        crn: raw.crn,
+        days: parseDays(raw.days),
+        start_time: timeParts ? timeParts[1] : "",
+        end_time: timeParts ? timeParts[2] : "",
+        start_date: "",
+        location: raw.location,
+        campus: raw.campus || "Main",
+        mode: detectMode(modeStr),
+        instructor: raw.instructor || "To be Announced",
+        seats_open: null,
+        seats_total: null,
+        prerequisite_text: null,
+        prerequisite_courses: [],
+      });
+    }
+    return sections;
+  }
 
   // Click search button. Text-specific selectors come FIRST so a generic
   // button[type=submit] doesn't accidentally click a Login/Accept button

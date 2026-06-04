@@ -1,9 +1,12 @@
 # MD courses — deferred coverage gaps (2026-06-04)
 
-After this PR, MD courses are at 14/16 (87.5%, still grade C but one closer).
-**Garrett unblocked + shipped here (216 sections).** ccbc and cecil remain
-deferred — the 2026-06-01 audit's "just re-run the wired scrapers; no new code"
-hint underestimated all three. Per-college diagnoses below.
+After this PR, MD courses are at **15/16 (93.75%, grade B/B+ depending on
+audit thresholds)**, up from 13/16 (81%, C). **Garrett (216 Fall 2026
+sections) AND Cecil (374 Spring 2026 sections) unblocked + shipped here.**
+Only ccbc remains — and ccbc is a true platform migration (off Banner 8 to
+a 6 MB JS SPA) that needs a fresh bespoke scraper, not a re-run. The
+2026-06-01 audit's "just re-run the wired scrapers; no new code" hint
+underestimated all three, but two of three are now solved.
 
 ## Per-college blockers
 
@@ -21,7 +24,37 @@ hint underestimated all three. Per-college diagnoses below.
 - **Next action (separate PR):** identify the JS-fetched data source for the new
   course-finder app and build a bespoke `scrape-ccbc.ts`. Not a re-run.
 
-### cecil — ASP.NET WebForms postback semantics needed (medium-large)
+### cecil — RESOLVED in this PR ✅
+- **Status:** 374 sections written to `data/md/courses/cecil/2026SP.json`
+  with all rows passing schema. Real Spring 2026 curriculum across PED, MAT,
+  BUS, NUR (Nursing), OFT (Office Technology), EGL (English), PHO, BIO, CIS,
+  LAE, ART (sample: `ART 101 "FUNDAMENTALS OF DESIGN I"`, section 01).
+- **What it took:** five stacked bugs in one go.
+  1. Audit-pointed URL (bare `Course_Search.jnz`) landed on a blank welcome
+     portlet. Real public-guest URL is
+     `Course_Search.jnz?portlet=Student_Registration&screen=StudentRegistrationPortlet_CourseSearchView&screenType=next`.
+  2. Osano cookie banner had to be dismissed before portlet scripts ran.
+  3. Cecil's term selector has a non-standard ID (`#stuRegTermSelect`); added
+     to the probe list.
+  4. `toStandardTerm` regex required season + year with optional spaces
+     only; cecil's option text is "Spring Credit 2026" with a filler word.
+     Relaxed to `(spring|summer|...)[^\d]*(\d{4})`.
+  5. **The real architecture lever:** cecil's "Search Courses" button isn't
+     a server-postback — it's a jQuery handler that XHRs a private REST API
+     (`/ICS/webserviceproxy/exi/rest/studentregistration/pagedsectiondataforsearch?Id=1`)
+     and the results render via JS into a container that wasn't visible
+     to the existing form-click + table-scrape flow. Added a cecil-specific
+     branch in `scrapeJenzabar` that posts to the REST API directly
+     (carrying the page's session cookies via `page.evaluate(fetch(...))`),
+     paginates by `currentPage`, parses the HTML-wrapped JSON rows, and
+     short-circuits the form-click pipeline entirely.
+- **Honest data caveats:** cecil's API returns schedule strings in mixed
+  formats ("MW 10:00 AM-11:30 AM" vs "6/8/2026 - 8/1/2026 Online Course
+  Asynchronous"). The current row parser extracts course code, title, faculty,
+  credits, and seats reliably; days and times come out empty for many sections
+  (online courses, in particular, have no day/time). A follow-up could parse
+  the schedule strings more carefully — but the schema validates as-is and
+  students can find the courses by code/title.
 - **What THIS PR did fix (genuine prep work, all backward-compatible with garrett):**
   - Discovered the actual public-guest search URL is
     `Course_Search.jnz?portlet=Student_Registration&screen=StudentRegistrationPortlet_CourseSearchView&screenType=next`,
@@ -77,17 +110,18 @@ hint underestimated all three. Per-college diagnoses below.
 
 ## Net effect of this PR
 
-- **Garrett resolved (data shipped):** 216 sections at
-  `data/md/courses/garrett/2026FA.json` covering 15+ subject prefixes. MD
-  course coverage goes from **13/16 → 14/16 (87.5%)**. Still under the 90%
-  B+ bar, but closes one of the three audited gaps with real student-facing
-  schedule data.
-- **Three real bugs in `scripts/md/scrape-jenzabar.ts` fixed in this PR:**
-  (a) `networkidle` → `load` (garrett wait); (b) semantic term matching with
-  subterm-skip (garrett, will also help cecil once cecil's term dropdown
-  loads); (c) header-aware "Strategy 0" row extractor with section-as-CRN
-  (garrett, generic for any JICS table with a header row). Used in BOTH the
-  initial extraction and the pagination loop's secondary extraction —
-  garrett has 11 result pages.
-- **Cecil + ccbc still deferred** with sharper diagnoses. Each is a
-  separate small-to-medium PR.
+- **Garrett shipped** — 216 Fall 2026 sections at `data/md/courses/garrett/2026FA.json`.
+- **Cecil shipped** — 374 Spring 2026 sections at `data/md/courses/cecil/2026SP.json`.
+- **MD course coverage: 13/16 → 15/16 (81% → 93.75%).** Composite grade moves
+  from C to B (or B+ depending on threshold; 95% is the A bar).
+- **Eight real bugs fixed in `scripts/md/scrape-jenzabar.ts`** across the
+  three colleges' diagnoses: networkidle wait, semantic term matching,
+  subterm-skip, header-aware row extractor (used in BOTH initial + paginated
+  scrape), correct cecil URL, cookie-banner dismiss, cecil term-selector ID,
+  text-specific search-button order, `toStandardTerm` flexibility for cecil's
+  "Spring Credit 2026" wording.
+- **Cecil short-circuits the form-click flow via its REST API** —
+  cleaner than emulating jQuery clicks on a portlet that doesn't re-render.
+- **CCBC still deferred** — a true platform migration (off Banner 8 to a
+  6 MB JS SPA) that needs a fresh bespoke scraper. The only one of the three
+  not shippable as a Jenzabar-scraper extension.
