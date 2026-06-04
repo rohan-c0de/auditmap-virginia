@@ -21,7 +21,7 @@ const wiConfig: StateConfig = {
       "Under Wis. Stat. § 38.24(4m), Wisconsin technical college district boards must let residents aged 60 and older audit a course without paying the auditor's fee, on a space-available basis and with instructor approval. Separately, § 38.24(1m)(b) exempts residents 62 and older from program fees in vocational-adult programs. Auditing means no credit or grade, and material or special-course fees may still apply. Contact your technical college's registrar about enrollment timing.",
   },
 
-  transferSupported: false,
+  transferSupported: true,
   // Top course codes by section count across the scraped WTCS colleges.
   // WTCS uses the statewide "DDD-DDD" course-number scheme (e.g. 801-136 =
   // English Composition I); computed from data/wi/courses.

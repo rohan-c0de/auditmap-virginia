@@ -23,7 +23,7 @@ const wyConfig: StateConfig = {
       "Wyoming has no statewide senior-tuition statute; each community college sets its own policy, usually for residents aged 60 and older. Examples range from a full tuition waiver on a limited number of credits (Northwest College's Golden Age program) to a reduced per-credit rate or percentage discount (Laramie County Community College, Western Wyoming Community College). Course and mandatory fees often still apply, and seats are typically space-available. Contact your college's registrar for the specific terms.",
   },
 
-  transferSupported: false,
+  transferSupported: true,
   popularCourses: ["ENGL 1010", "MATH 1000", "BIOL 1010", "PSYC 1000", "HIST 1110"],
   defaultZip: "82001",
   defaultZipCity: "Cheyenne",

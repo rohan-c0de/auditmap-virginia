@@ -23,7 +23,7 @@ const neConfig: StateConfig = {
       "Nebraska has no statewide senior-tuition statute; each community college sets its own policy. A common pattern is a reduced (often ~50%) senior tuition rate for residents aged 62 and older on credit courses, sometimes excluding non-credit classes and third-party-paid tuition (e.g. Metropolitan Community College, Mid-Plains Community College). Contact your college's registrar or business office for the specific rate and eligibility.",
   },
 
-  transferSupported: false,
+  transferSupported: true,
   // Top 8 by section count across all 7 scraped NE colleges (9,636 sections).
   // Computed once from data/ne/courses; refresh periodically as new colleges
   // come online. ACFS 1015 = Adult Coping & Family Skills (workforce);

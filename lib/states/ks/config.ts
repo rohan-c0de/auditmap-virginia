@@ -25,7 +25,7 @@ const ksConfig: StateConfig = {
       "Kansas has no statewide senior-tuition statute for community and technical colleges. K.S.A. 76-731a covers state universities under the Board of Regents but does not extend to the 24-college community/technical system. Each college sets its own policy — commonly a reduced or waived senior rate for residents 60 or 65+ on a space-available basis, sometimes excluding lab fees and non-credit classes. Contact your college's registrar for the specific rate and eligibility.",
   },
 
-  transferSupported: false,
+  transferSupported: true,
   // Top 8 by section count across all wired KS colleges. Different colleges use
   // different prefixes (EG/EN/ENG for English Composition); list reflects the
   // raw rank in scraped data.
