@@ -22,7 +22,8 @@
 import { notFound, redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { getStateConfig } from "@/lib/states/registry";
-import { getUniversities } from "@/lib/transfer";
+import { getUniversities, loadTransferMappingsByUniversity } from "@/lib/transfer";
+import { transferVerdict, type TransferVerdict } from "@/lib/transfer-tracker";
 import SavedPlanView from "./SavedPlanView";
 
 type Props = {
@@ -72,17 +73,30 @@ export default async function SavedPlanPage({ params }: Props) {
   // has no transfer data — the picker then simply offers no options.
   const universities = await getUniversities(plan.state);
 
+  // Per-target-course transfer verdict to the chosen university (best outcome:
+  // direct > elective > no-credit; "none" if unmapped). Computed server-side
+  // for the CURRENT target_university only; the client re-summarizes live as
+  // courses are checked, and a university change triggers router.refresh() so
+  // this recomputes. Empty {} when no goal is set (or the plan has no targets).
+  const targetCourses: string[] = plan.target_courses ?? [];
+  let verdicts: Record<string, TransferVerdict> = {};
+  if (plan.target_university && targetCourses.length > 0) {
+    const mappings = await loadTransferMappingsByUniversity(plan.state, plan.target_university);
+    verdicts = Object.fromEntries(targetCourses.map((c) => [c, transferVerdict(mappings, c)]));
+  }
+
   return (
     <SavedPlanView
       planId={plan.id}
       state={plan.state}
       systemName={config.systemName}
       name={plan.name}
-      targetCourses={plan.target_courses ?? []}
+      targetCourses={targetCourses}
       createdAt={plan.created_at}
       universities={universities}
       targetUniversity={plan.target_university ?? null}
       completedCourses={plan.completed_courses ?? []}
+      verdicts={verdicts}
     />
   );
 }
