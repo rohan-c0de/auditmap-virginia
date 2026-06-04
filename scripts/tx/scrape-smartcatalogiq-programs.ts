@@ -126,9 +126,9 @@ async function main() {
       let data;
       if (det && det.programsPaths.length > 0) {
         // Walk every populated program section and merge (dedup by url/title).
-        const merged: any[] = [];
+        const merged: Awaited<ReturnType<typeof scrapeSmartCatalogIqPrograms>>["programs"] = [];
         const seen = new Set<string>();
-        let meta: any = null;
+        let meta: Awaited<ReturnType<typeof scrapeSmartCatalogIqPrograms>> | null = null;
         for (const programsPath of det.programsPaths) {
           const part = await scrapeSmartCatalogIqPrograms({
             collegeSlug: c.slug,
