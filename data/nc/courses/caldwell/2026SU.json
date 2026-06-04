@@ -57,8 +57,8 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Crump, T",
-    "seats_open": 0,
-    "seats_total": 25,
+    "seats_open": 1,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -79,7 +79,7 @@
     "mode": "online",
     "instructor": "Crump, T",
     "seats_open": 0,
-    "seats_total": 25,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -99,7 +99,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Crump, T, Barnett, H",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -162,7 +162,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Sawyer, M",
-    "seats_open": 11,
+    "seats_open": 10,
     "seats_total": 25,
     "prerequisite_text": "ACC 120",
     "prerequisite_courses": [
@@ -271,7 +271,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Treide, R",
-    "seats_open": 12,
+    "seats_open": 11,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -466,7 +466,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Williams, L",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -487,7 +487,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Williams, L",
-    "seats_open": 8,
+    "seats_open": 7,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -508,7 +508,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "DeViney, D",
-    "seats_open": 4,
+    "seats_open": 5,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -571,7 +571,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Ray-Osborn, C",
-    "seats_open": 3,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -826,6 +826,27 @@
   {
     "college_code": "caldwell",
     "term": "2026SU",
+    "course_prefix": "CHM",
+    "course_number": "151",
+    "course_title": "General Chemistry I",
+    "credits": 4,
+    "crn": "CHM-151-621",
+    "days": "M T W Th F Sa Su",
+    "start_time": "",
+    "end_time": "",
+    "start_date": "2026-06-02",
+    "location": "On Line",
+    "campus": "B",
+    "mode": "online",
+    "instructor": "Sherman, S",
+    "seats_open": 22,
+    "seats_total": 30,
+    "prerequisite_text": null,
+    "prerequisite_courses": []
+  },
+  {
+    "college_code": "caldwell",
+    "term": "2026SU",
     "course_prefix": "COM",
     "course_number": "120",
     "course_title": "Intro Interpersonal Com",
@@ -990,7 +1011,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Wright, H",
-    "seats_open": 10,
+    "seats_open": 11,
     "seats_total": 40,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1011,33 +1032,10 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Wright, H",
-    "seats_open": 23,
+    "seats_open": 24,
     "seats_total": 40,
     "prerequisite_text": null,
     "prerequisite_courses": []
-  },
-  {
-    "college_code": "caldwell",
-    "term": "2026SU",
-    "course_prefix": "CSC",
-    "course_number": "221",
-    "course_title": "Advanced Python Programming",
-    "credits": 3,
-    "crn": "CSC-221-620",
-    "days": "M T W Th F Sa Su",
-    "start_time": "",
-    "end_time": "",
-    "start_date": "2026-06-02",
-    "location": "On Line",
-    "campus": "B",
-    "mode": "online",
-    "instructor": "Wang, M",
-    "seats_open": 29,
-    "seats_total": 30,
-    "prerequisite_text": "CSC 121",
-    "prerequisite_courses": [
-      "CSC 121"
-    ]
   },
   {
     "college_code": "caldwell",
@@ -1055,7 +1053,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Wright, H",
-    "seats_open": 20,
+    "seats_open": 19,
     "seats_total": 40,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1169,7 +1167,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Cooper, E",
-    "seats_open": 14,
+    "seats_open": 13,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1211,7 +1209,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Hyatt, M",
-    "seats_open": 8,
+    "seats_open": 6,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1232,7 +1230,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "White, A",
-    "seats_open": 12,
+    "seats_open": 14,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1323,7 +1321,7 @@
     "campus": "TAPS",
     "mode": "in-person",
     "instructor": "McGuire, L",
-    "seats_open": 8,
+    "seats_open": 5,
     "seats_total": 20,
     "prerequisite_text": "ELC 112 or ELC 131",
     "prerequisite_courses": [
@@ -1368,7 +1366,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Greene, D",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1410,7 +1408,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Greene, D",
-    "seats_open": 3,
+    "seats_open": 6,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1498,7 +1496,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Shaut, S",
-    "seats_open": 1,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": "ENG 025",
     "prerequisite_courses": [
@@ -1590,7 +1588,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Shaut, S",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 30,
     "prerequisite_text": "ENG 111 (min C)",
     "prerequisite_courses": [
@@ -1613,7 +1611,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Shaut, S",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 30,
     "prerequisite_text": "ENG 111 (min C)",
     "prerequisite_courses": [
@@ -1636,7 +1634,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Barnett, H",
-    "seats_open": 8,
+    "seats_open": 9,
     "seats_total": 30,
     "prerequisite_text": "ENG 111 (min C)",
     "prerequisite_courses": [
@@ -1659,7 +1657,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Hoover, K",
-    "seats_open": 1,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": "ENG 112",
     "prerequisite_courses": [
@@ -1682,7 +1680,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Barnett, H",
-    "seats_open": 16,
+    "seats_open": 14,
     "seats_total": 25,
     "prerequisite_text": "ENG 112 or ENG 113 or ENG 114",
     "prerequisite_courses": [
@@ -1854,7 +1852,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Chester, D",
-    "seats_open": 6,
+    "seats_open": 7,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1919,7 +1917,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Early, J",
-    "seats_open": 29,
+    "seats_open": 28,
     "seats_total": 40,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1961,7 +1959,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Xiong, M",
-    "seats_open": 24,
+    "seats_open": 26,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1982,7 +1980,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Powell, M",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2003,7 +2001,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Powell, M",
-    "seats_open": 17,
+    "seats_open": 18,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2066,7 +2064,7 @@
     "campus": "C",
     "mode": "in-person",
     "instructor": "Rhoney, J",
-    "seats_open": 6,
+    "seats_open": 8,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2087,7 +2085,7 @@
     "campus": "W",
     "mode": "in-person",
     "instructor": "Rhoney, J",
-    "seats_open": 15,
+    "seats_open": 14,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2129,7 +2127,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Joyner, F",
-    "seats_open": 16,
+    "seats_open": 19,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2150,7 +2148,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Powell, M",
-    "seats_open": 8,
+    "seats_open": 5,
     "seats_total": 30,
     "prerequisite_text": "MAT 035",
     "prerequisite_courses": [
@@ -2173,7 +2171,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Powell, M",
-    "seats_open": 10,
+    "seats_open": 11,
     "seats_total": 30,
     "prerequisite_text": "MAT 025",
     "prerequisite_courses": [
@@ -2242,7 +2240,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Wandler, J",
-    "seats_open": 10,
+    "seats_open": 6,
     "seats_total": 30,
     "prerequisite_text": "MAT 025",
     "prerequisite_courses": [
@@ -2265,8 +2263,8 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Joyner, F",
-    "seats_open": 0,
-    "seats_total": 30,
+    "seats_open": 1,
+    "seats_total": 32,
     "prerequisite_text": "MAT 035",
     "prerequisite_courses": [
       "MAT 035"
@@ -2288,7 +2286,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Elder, B",
-    "seats_open": 12,
+    "seats_open": 13,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2441,8 +2439,8 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Butler, J",
-    "seats_open": 0,
-    "seats_total": 25,
+    "seats_open": 4,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2463,7 +2461,7 @@
     "mode": "online",
     "instructor": "Tate-Gibson, C",
     "seats_open": 0,
-    "seats_total": 25,
+    "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
   },
@@ -2483,7 +2481,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Butler, J",
-    "seats_open": 7,
+    "seats_open": 8,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2525,7 +2523,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Early, J",
-    "seats_open": 23,
+    "seats_open": 21,
     "seats_total": 40,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2592,7 +2590,7 @@
     "campus": "C",
     "mode": "in-person",
     "instructor": "Wallace, N, Cline, A, Stein, R",
-    "seats_open": 2,
+    "seats_open": 3,
     "seats_total": 40,
     "prerequisite_text": "NUR 101",
     "prerequisite_courses": [
@@ -2726,7 +2724,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Elder, B",
-    "seats_open": 18,
+    "seats_open": 19,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2747,7 +2745,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Bedford, A",
-    "seats_open": 0,
+    "seats_open": 2,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -2857,7 +2855,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Hollandsworth, J",
-    "seats_open": 1,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": "PHY 110A",
     "prerequisite_courses": [
@@ -2880,7 +2878,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Hollandsworth, J",
-    "seats_open": 1,
+    "seats_open": 0,
     "seats_total": 30,
     "prerequisite_text": "PHY 110",
     "prerequisite_courses": [
@@ -2903,7 +2901,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Chaffee, R",
-    "seats_open": 3,
+    "seats_open": 6,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3008,7 +3006,7 @@
     "campus": "W",
     "mode": "in-person",
     "instructor": "Hamby, R",
-    "seats_open": 25,
+    "seats_open": 23,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3052,7 +3050,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Hamby, R",
-    "seats_open": 13,
+    "seats_open": 12,
     "seats_total": 30,
     "prerequisite_text": "PSY 150",
     "prerequisite_courses": [
@@ -3075,7 +3073,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Hamby, R",
-    "seats_open": 2,
+    "seats_open": 3,
     "seats_total": 30,
     "prerequisite_text": "PSY 150",
     "prerequisite_courses": [
@@ -3245,7 +3243,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Errante, C",
-    "seats_open": 5,
+    "seats_open": 4,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3266,7 +3264,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Shiles, C",
-    "seats_open": 7,
+    "seats_open": 8,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3395,7 +3393,7 @@
     "campus": "C",
     "mode": "in-person",
     "instructor": "Robert, A",
-    "seats_open": 1,
+    "seats_open": 2,
     "seats_total": 18,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3416,7 +3414,7 @@
     "campus": "C",
     "mode": "in-person",
     "instructor": "Hudson, G",
-    "seats_open": 10,
+    "seats_open": 11,
     "seats_total": 18,
     "prerequisite_text": "WLD 115 and WLD 121 and WLD 131",
     "prerequisite_courses": [
@@ -3441,7 +3439,7 @@
     "campus": "B",
     "mode": "online",
     "instructor": "Deal, S",
-    "seats_open": 10,
+    "seats_open": 8,
     "seats_total": 30,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3525,7 +3523,7 @@
     "campus": "O",
     "mode": "in-person",
     "instructor": "Hooks, T",
-    "seats_open": 16,
+    "seats_open": 17,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
