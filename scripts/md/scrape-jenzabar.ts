@@ -174,16 +174,38 @@ async function scrapeJenzabar(
       `  Available terms: ${options.map((o) => o.text).join(", ")}`
     );
 
-    // Find a matching term (prefer Fall 2026, then Spring 2026, etc.)
-    const targetLower = targetTerm.toLowerCase();
-    let bestOption = options.find(
-      (o) => o.text.toLowerCase().includes(targetLower)
-    );
+    // Parse the targetTerm into year + semester so we can match against
+    // human-readable option text. Required because JICS instances encode
+    // their option VALUES inconsistently — garrett's "Fall 2026" carries
+    // VALUE="2027;FA" (academic year encoded with END year), so a substring
+    // match on "2026FA" against the value or text finds nothing.
+    const tm = targetTerm.match(/^(\d{4})(FA|SP|SU|WI)$/i);
+    const semWord = tm
+      ? { FA: "fall", SP: "spring", SU: "summer", WI: "winter" }[
+          tm[2].toUpperCase() as "FA" | "SP" | "SU" | "WI"
+        ]
+      : null;
+    const targetYear = tm ? tm[1] : null;
+
+    // Subterm rows (e.g. "Fall 2026 - Subterm A") split a term in half;
+    // skip them in favor of the full-term parent so we don't get half the
+    // sections.
+    const isSubterm = (t: string) => /subterm|sub-term/i.test(t);
+
+    let bestOption = options.find((o) => {
+      if (isSubterm(o.text)) return false;
+      const t = o.text.toLowerCase();
+      if (semWord && targetYear) {
+        return t.includes(semWord) && t.includes(targetYear);
+      }
+      return t.includes(targetTerm.toLowerCase());
+    });
     if (!bestOption) {
-      // Try finding the most recent future term
+      // Fallback: any near-future term that isn't a subterm.
       bestOption = options.find(
         (o) =>
-          o.text.includes("2026") || o.text.includes("2027")
+          !isSubterm(o.text) &&
+          (o.text.includes("2026") || o.text.includes("2027"))
       );
     }
 
@@ -243,7 +265,65 @@ async function scrapeJenzabar(
       seats: string;
     }[] = [];
 
-    // Strategy 1: Look for table rows with course data
+    // Strategy 0: Header-aware extraction. Garrett's JICS results table
+    // (id="pg0_V_dgCourses") has a th header row like
+    //   ["Add", "Textbooks", "Course code", "Name", "Faculty", "Seats Open",
+    //    "Status", "Schedule", "Credits", "Begin Date", "End Date"]
+    // and data rows where "Course code" is "ACC 210 01" (prefix + number +
+    // section in one cell — no separate CRN column). The existing aacc data
+    // already stores section numbers in the crn field ("001", "002", ...), so
+    // we adopt the same convention here. Schedule combines days/times/location.
+    const tablesAll = document.querySelectorAll("table");
+    for (const table of tablesAll) {
+      const headerCells = Array.from(
+        table.querySelectorAll("tr:first-child th, tr:first-child td"),
+      ).map((c) => (c.textContent || "").trim().toLowerCase());
+      // Inline column lookups — keep zero helper functions inside this
+      // page.evaluate body so the bundler doesn't emit __name() decorators
+      // that the browser doesn't have at runtime.
+      const iCode = headerCells.indexOf("course code");
+      const iName = headerCells.indexOf("name");
+      if (iCode < 0 || iName < 0) continue; // Not the header-aware table layout.
+      const iFaculty = headerCells.indexOf("faculty");
+      const iSeats = headerCells.indexOf("seats open");
+      const iSched = headerCells.indexOf("schedule");
+      const iCred = headerCells.indexOf("credits");
+
+      const dataRows = table.querySelectorAll("tr");
+      for (let r = 1; r < dataRows.length; r++) {
+        const cells = Array.from(dataRows[r].querySelectorAll("td"));
+        if (cells.length < Math.max(iCode, iName) + 1) continue;
+        const codeText = (cells[iCode]?.textContent || "").trim();
+        // Match "ACC 210 01" → prefix=ACC, number=210, section=01
+        const m = codeText.match(/^([A-Z]{2,5})\s+(\d{3,4}[A-Z]?)\s+(\d+)/);
+        if (!m) continue;
+        const title = (cells[iName]?.textContent || "").trim();
+        if (!title) continue; // Skip instruction rows ("TO VIEW TEXTBOOK…").
+        const schedCell = iSched >= 0 ? (cells[iSched]?.textContent || "").trim() : "";
+        // Schedule format: "MW 10:10 AM-11:40 AM; Main Campus, Building ..."
+        const dayMatch = schedCell.match(/^([MTWRFSU]+)\s/);
+        const timeMatch = schedCell.match(
+          /(\d{1,2}:\d{2}\s*(?:AM|PM)?)\s*-\s*(\d{1,2}:\d{2}\s*(?:AM|PM)?)/i,
+        );
+        rows.push({
+          title: title,
+          prefix: m[1],
+          number: m[2],
+          crn: m[3], // section number — matches aacc/etc. convention
+          credits: iCred >= 0 ? (cells[iCred]?.textContent || "").trim() : "3",
+          days: dayMatch ? dayMatch[1] : "",
+          times: timeMatch ? `${timeMatch[1]} - ${timeMatch[2]}` : "",
+          location: "",
+          campus: "",
+          instructor: iFaculty >= 0 ? (cells[iFaculty]?.textContent || "").trim() : "",
+          seats: iSeats >= 0 ? (cells[iSeats]?.textContent || "").trim() : "",
+        });
+      }
+    }
+
+    // Strategy 1 (fallback): Look for table rows with course data — used by
+    // JICS instances whose results table has no header row we can map.
+    if (rows.length === 0) {
     const tables = document.querySelectorAll("table");
     for (const table of tables) {
       const trs = table.querySelectorAll("tr");
@@ -291,6 +371,7 @@ async function scrapeJenzabar(
         }
       }
     }
+    } // end if(rows.length===0) Strategy 1 fallback
 
     // Strategy 2: Look for div-based course listings
     if (rows.length === 0) {
@@ -363,48 +444,48 @@ async function scrapeJenzabar(
 
     const moreCourses = await page.evaluate(() => {
       const rows: typeof allCourseData = [];
-      // Same extraction logic as above (simplified reference)
+      // Header-aware Strategy 0 — same logic as the initial extraction
+      // above. Garrett-style "Course code | Name | Faculty | …" tables with
+      // section embedded in the code cell (no separate CRN column).
       const tables = document.querySelectorAll("table");
       for (const table of tables) {
+        const headerCells = Array.from(
+          table.querySelectorAll("tr:first-child th, tr:first-child td"),
+        ).map((c) => (c.textContent || "").trim().toLowerCase());
+        const iCode = headerCells.indexOf("course code");
+        const iName = headerCells.indexOf("name");
+        if (iCode < 0 || iName < 0) continue;
+        const iFaculty = headerCells.indexOf("faculty");
+        const iSeats = headerCells.indexOf("seats open");
+        const iSched = headerCells.indexOf("schedule");
+        const iCred = headerCells.indexOf("credits");
         const trs = table.querySelectorAll("tr");
-        for (const tr of trs) {
-          const cells = tr.querySelectorAll("td");
-          if (cells.length >= 5) {
-            const cellTexts = Array.from(cells).map(
-              (c) => c.textContent?.trim() || ""
-            );
-            const courseCell = cellTexts.find((t) =>
-              /^[A-Z]{2,5}\s+\d{3,4}/.test(t)
-            );
-            if (courseCell) {
-              const courseMatch = courseCell.match(
-                /^([A-Z]{2,5})\s+(\d{3,4}[A-Z]?)/
-              );
-              if (courseMatch) {
-                rows.push({
-                  title: cellTexts[1] || cellTexts[0] || "",
-                  prefix: courseMatch[1],
-                  number: courseMatch[2],
-                  crn: cellTexts.find((t) => /^\d{5}$/.test(t)) || "",
-                  credits:
-                    cellTexts.find((t) => /^\d+\.?\d*$/.test(t)) || "3",
-                  days:
-                    cellTexts.find((t) =>
-                      /^[MTWRFSU]{1,6}$/i.test(t.replace(/\s/g, ""))
-                    ) || "",
-                  times:
-                    cellTexts.find((t) => /\d{1,2}:\d{2}/.test(t)) || "",
-                  location: "",
-                  campus: "",
-                  instructor:
-                    cellTexts.find((t) =>
-                      /^[A-Z][a-z]+,\s+[A-Z]/.test(t)
-                    ) || "",
-                  seats: "",
-                });
-              }
-            }
-          }
+        for (let r = 1; r < trs.length; r++) {
+          const cells = Array.from(trs[r].querySelectorAll("td"));
+          if (cells.length < Math.max(iCode, iName) + 1) continue;
+          const codeText = (cells[iCode]?.textContent || "").trim();
+          const m = codeText.match(/^([A-Z]{2,5})\s+(\d{3,4}[A-Z]?)\s+(\d+)/);
+          if (!m) continue;
+          const title = (cells[iName]?.textContent || "").trim();
+          if (!title) continue;
+          const schedCell = iSched >= 0 ? (cells[iSched]?.textContent || "").trim() : "";
+          const dayMatch = schedCell.match(/^([MTWRFSU]+)\s/);
+          const timeMatch = schedCell.match(
+            /(\d{1,2}:\d{2}\s*(?:AM|PM)?)\s*-\s*(\d{1,2}:\d{2}\s*(?:AM|PM)?)/i,
+          );
+          rows.push({
+            title: title,
+            prefix: m[1],
+            number: m[2],
+            crn: m[3],
+            credits: iCred >= 0 ? (cells[iCred]?.textContent || "").trim() : "3",
+            days: dayMatch ? dayMatch[1] : "",
+            times: timeMatch ? `${timeMatch[1]} - ${timeMatch[2]}` : "",
+            location: "",
+            campus: "",
+            instructor: iFaculty >= 0 ? (cells[iFaculty]?.textContent || "").trim() : "",
+            seats: iSeats >= 0 ? (cells[iSeats]?.textContent || "").trim() : "",
+          });
         }
       }
       return rows;

@@ -1,10 +1,9 @@
 # MD courses — deferred coverage gaps (2026-06-04)
 
-MD currently has courses for 13/16 colleges (81%, grade C). The 3 missing colleges
-all have wired scrapers in `lib/states/md/config.ts`, but live grounding today
-showed each one is blocked by a *different* real problem — none is a simple re-run.
-The 2026-06-01 state-audit's hint "just re-run the wired scrapers; no new code"
-predates the platform changes documented below.
+After this PR, MD courses are at 14/16 (87.5%, still grade C but one closer).
+**Garrett unblocked + shipped here (216 sections).** ccbc and cecil remain
+deferred — the 2026-06-01 audit's "just re-run the wired scrapers; no new code"
+hint underestimated all three. Per-college diagnoses below.
 
 ## Per-college blockers
 
@@ -37,29 +36,41 @@ predates the platform changes documented below.
   before reading available terms. Then guard the pagination loop: don't click
   next-page when page 1 returned 0 rows.
 
-### garrett — JICS row-parser doesn't match garrett's table layout (medium)
-- **Configured target:** `scripts/md/scrape-jenzabar.ts` against
-  `my.garrettcollege.edu/ICS/Portal_Homepage.jnz?portlet=AddDrop_Courses`.
-- **Today:** page is reachable (HTTP 200, IIS, Jenzabar JICS 2025.1.0). The
-  original `waitUntil: "networkidle"` timed out because garrett's portal has
-  persistent network activity that never quiesces. **This PR fixes that** —
-  changing to `waitUntil: "load"` lets the scraper reach the page.
-- **Remaining problem:** with the wait fix, the scraper now **extracts 4 raw
-  rows** for `garrett/2026FA` — but every row is missing `course_title` and
-  `crn`, so the row-level schema validator aborts (100% invalid > 5% threshold).
-  Garrett's table structure differs from the layout the row parser expects.
-- **Next action (separate PR):** dump garrett's rendered course-search HTML
-  after a real search submission, compare to the row-parser selectors in
-  `scrape-jenzabar.ts`, and add a garrett-specific extractor variant.
+### garrett — RESOLVED in this PR ✅
+- **Status:** 216 sections written to `data/md/courses/garrett/2026FA.json`
+  with all rows passing schema validation. Real curriculum coverage: ACC, ART,
+  BIO, BUS, CIS, COM, ENG, MAT, PSY, SOC, etc.
+- **What the audit missed (3 stacked bugs, each fixed):**
+  1. `waitUntil: "networkidle"` timed out because garrett's portal has
+     persistent analytics — changed to `"load"`.
+  2. Term selection used substring match (`2026FA`) against option text like
+     `"Fall 2026"` — never matched. Now parses the target term into year +
+     semester word and matches semantically. Also skips Subterm A/B options
+     in favor of the full-term parent.
+  3. Garrett's results table is header-rowed (`Course code | Name | Faculty
+     | Seats Open | Status | Schedule | Credits | Begin Date | End Date`)
+     and has NO separate CRN column — section number is embedded in the
+     course-code cell as `"ACC 210 01"`. Added a header-aware "Strategy 0"
+     extractor that maps cells by column name and synthesizes CRN from the
+     section number (matching the existing aacc/2026FA convention where
+     `crn: "001"` is the section).
+- **Why audit was misled:** the "Banner 8 term codes like 202691" hint
+  applied to ccbc, not garrett. Garrett's JICS uses academic-year-end
+  encoding (`2027;FA` = Fall 2026) which the audit didn't probe.
 
 ## Net effect of this PR
 
-- **Scraper fix shipped:** `scripts/md/scrape-jenzabar.ts` no longer hangs on
-  garrett's persistent-network page (`networkidle` → `load`). This is a generic
-  JICS improvement; cecil and any future JICS college also benefits from a
-  saner default wait.
-- **No new data for any of the 3 colleges.** Each is blocked by a real issue
-  the audit didn't anticipate; shipping the wait-strategy fix unblocks one
-  step on garrett's path and shrinks the next person's grounding work.
-- **MD coverage unchanged at 13/16 (C).** Lifting it requires the 3 follow-up
-  PRs above.
+- **Garrett resolved (data shipped):** 216 sections at
+  `data/md/courses/garrett/2026FA.json` covering 15+ subject prefixes. MD
+  course coverage goes from **13/16 → 14/16 (87.5%)**. Still under the 90%
+  B+ bar, but closes one of the three audited gaps with real student-facing
+  schedule data.
+- **Three real bugs in `scripts/md/scrape-jenzabar.ts` fixed in this PR:**
+  (a) `networkidle` → `load` (garrett wait); (b) semantic term matching with
+  subterm-skip (garrett, will also help cecil once cecil's term dropdown
+  loads); (c) header-aware "Strategy 0" row extractor with section-as-CRN
+  (garrett, generic for any JICS table with a header row). Used in BOTH the
+  initial extraction and the pagination loop's secondary extraction —
+  garrett has 11 result pages.
+- **Cecil + ccbc still deferred** with sharper diagnoses. Each is a
+  separate small-to-medium PR.
