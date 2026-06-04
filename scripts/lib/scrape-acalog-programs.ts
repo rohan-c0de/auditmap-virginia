@@ -225,29 +225,34 @@ function parseProgramCode(title: string): string | null {
 
 /**
  * Parse a single course list item.
- * Handles formats like:
- *   - "ENG 1010 - Composition"  (CT State dash separator)
- *   - "BUS 116: Entrepreneurship"  (Germanna colon separator)
- *   - "Elective ARHX - Arts & Humanities Course"  (generic elective)
+ * Handles every format observed across ~23 Acalog catalogs (2026-06):
+ *   - "ENG 1010 - Composition"                            CT State, Germanna (dash separator)
+ *   - "BUS 116: Entrepreneurship"                         Germanna (colon separator)
+ *   - "ACG2021 - Financial Accounting"                    cf (FL): NO space between prefix and number
+ *   - "ACA 122 Transfer & Career Success (1 Credit Hour)" gaston (NC): no separator, trailing credit suffix
+ *   - "ENG 1010"                                          code only
+ *
+ * Pattern: PREFIX, optional space, NUMBER (with optional letter suffix),
+ * word boundary, then anything (treated as the title, with trailing
+ * "(N Credit Hour)" / "(1-3 Credits)" parentheticals stripped).
+ * The leading [A-Z]{2,5} anchor prevents matches against free-text electives
+ * like "Math elective" or "Choose 3 credits from…" (lowercase / no code).
  */
 function parseCourseFromLabel(label: string): {
   prefix: string;
   number: string;
   title: string;
 } | null {
-  // Try "PREFIX NUMBER - Title" or "PREFIX NUMBER: Title"
-  const m = label.match(
-    /^([A-Z]{2,5})\s+(\d{3,4}[A-Z]?)\s*[-:]\s*(.+)/,
+  const trimmed = label.trim();
+  const m = trimmed.match(
+    /^([A-Z]{2,5})\s*(\d{3,4}[A-Z]?)\b\s*(?:[-:]\s*)?(.*)$/,
   );
-  if (m) {
-    return { prefix: m[1], number: m[2], title: m[3].trim() };
-  }
-  // Try just "PREFIX NUMBER" with no title
-  const simple = label.match(/^([A-Z]{2,5})\s+(\d{3,4}[A-Z]?)\s*$/);
-  if (simple) {
-    return { prefix: simple[1], number: simple[2], title: "" };
-  }
-  return null;
+  if (!m) return null;
+  // Strip trailing "(N Credit Hour(s))" / "(1-3 Credits)" parentheticals.
+  const title = m[3]
+    .replace(/\s*\(\d+(?:\s*-\s*\d+)?\s*credits?(?:\s*hours?)?\)\s*$/i, "")
+    .trim();
+  return { prefix: m[1], number: m[2], title };
 }
 
 /** Extract credits from an <em>Credits:</em> <em>3</em> or Credits: 3 pattern */
@@ -345,20 +350,43 @@ function parseRequirementGroups(html: string): {
         }
       }
 
-      // Handle adhoc items (electives, free-text requirements)
+      // Handle adhoc items (electives, free-text requirements).
+      // Many Acalog catalogs (notably cf in FL, mott in MI) use
+      // acalog-adhoc-list-item for REAL courses written as plain text
+      // ("ACG1949 - Work Experience I") rather than free-text electives.
+      // Try parsing as a real code first; only fall back to ELEC XXX if no
+      // PREFIX NUMBER pattern is present at the start of the text.
       if (liClass.includes("adhoc") && !courseInfo) {
         const adhocText = htmlToText(liHtml);
         if (adhocText) {
           const adhocCredits = parseCredits(liHtml);
-          courses.push({
-            prefix: "ELEC",
-            number: "XXX",
-            title: adhocText.replace(/Credits:?\s*\d+[-\d]*\s*/i, "").trim(),
-            credits: adhocCredits,
-            or_alternatives: [],
-          });
+          const cleanText = adhocText
+            .replace(/Credits:?\s*\d+[-\d]*\s*/i, "")
+            .trim();
+          const tryReal = parseCourseFromLabel(cleanText);
+          if (tryReal) {
+            const course: RequiredCourse = {
+              prefix: tryReal.prefix,
+              number: tryReal.number,
+              title: tryReal.title,
+              credits: adhocCredits,
+              or_alternatives: [],
+            };
+            courses.push(course);
+            lastCourse = course;
+          } else {
+            courses.push({
+              prefix: "ELEC",
+              number: "XXX",
+              title: cleanText,
+              credits: adhocCredits,
+              or_alternatives: [],
+            });
+            lastCourse = null;
+          }
+        } else {
+          lastCourse = null;
         }
-        lastCourse = null;
         continue;
       }
 
