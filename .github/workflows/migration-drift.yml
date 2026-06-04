@@ -1,0 +1,32 @@
+name: Migration drift
+
+# Fails when a table defined in supabase/migrations/ was never applied to prod
+# (migrations here are applied by hand, so the repo files are not a reliable
+# record of what's deployed). The check SKIPS gracefully when the Supabase
+# secrets are not configured, so it never blocks forks / unconfigured CI — add
+# NEXT_PUBLIC_SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY as repo secrets to enforce.
+
+on:
+  pull_request:
+    paths:
+      - "supabase/migrations/**"
+      - "scripts/check-migration-drift.ts"
+      - "scripts/lib/migration-tables.ts"
+      - ".github/workflows/migration-drift.yml"
+  push:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - run: npm ci
+      - run: npm run check:migration-drift
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}

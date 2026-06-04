@@ -32,6 +32,7 @@
     "check:data": "tsx scripts/check-data-integrity.ts",
     "check:blog-mdx": "tsx scripts/check-blog-mdx.ts",
     "check:scorecard": "tsx scripts/check-scorecard-freshness.ts",
+    "check:migration-drift": "tsx scripts/check-migration-drift.ts",
     "eval:search": "tsx scripts/eval-search-intent.ts",
     "scrape": "tsx scripts/scrape-vccs.ts",
     "scrape:college": "tsx scripts/scrape-vccs.ts --college",
