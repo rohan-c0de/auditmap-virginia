@@ -10,6 +10,7 @@ import SectionSeats from "@/components/SectionSeats";
 import { useAuth } from "@/lib/hooks/useAuth";
 import { createClient } from "@/lib/supabase/client";
 import { track } from "@/lib/analytics";
+import { stashScheduleDraft, scheduleDedupKey } from "@/lib/anon-draft";
 
 interface Props {
   response: ScheduleResponse;
@@ -511,15 +512,30 @@ function ScheduleCard({
             <button
               type="button"
               onClick={async () => {
-                if (!user) { openLoginModal(); return; }
+                // Build a descriptive name from course codes — shared by the
+                // logged-out stash and the authed insert below.
+                const courseLabels = [...new Set(sections.map((s) => `${s.course_prefix} ${s.course_number}`))];
+                const name = courseLabels.length > 0
+                  ? courseLabels.join(", ")
+                  : `Schedule #${rank}`;
+                if (!user) {
+                  // Stash the chosen schedule so it survives the OAuth redirect;
+                  // AuthProvider offers to drain it on first authed load.
+                  stashScheduleDraft({
+                    state,
+                    name,
+                    sections,
+                    score: score ?? null,
+                    scoreBreakdown: scoreBreakdown ?? null,
+                    formData: formData && Object.keys(formData).length > 0 ? formData : null,
+                    dedupKey: scheduleDedupKey(state, sections),
+                  });
+                  openLoginModal();
+                  return;
+                }
                 setSaveStatus("saving");
                 try {
                   const supabase = createClient();
-                  // Build a descriptive name from course codes
-                  const courseLabels = [...new Set(sections.map((s) => `${s.course_prefix} ${s.course_number}`))];
-                  const name = courseLabels.length > 0
-                    ? courseLabels.join(", ")
-                    : `Schedule #${rank}`;
                   const { error } = await supabase.from("saved_schedules").insert({
                     user_id: user.id,
                     state,

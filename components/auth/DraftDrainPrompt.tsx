@@ -6,8 +6,9 @@ import { useAuth } from "@/lib/hooks/useAuth";
 
 /**
  * Shared-computer guard for the anonymous→account drain. When AuthProvider
- * detects a sessionStorage draft (plans and/or favorited courses) on the first
- * authed load, it surfaces THIS confirmation — we NEVER auto-flush a draft into
+ * detects a sessionStorage draft (plans, favorited courses, and/or schedules)
+ * on the first authed load, it surfaces THIS confirmation — we NEVER auto-flush
+ * a draft into
  * whoever happens to be signed in (person A's draft must not silently land in
  * person B's account on a shared machine). Mounted in the root layout next to
  * LoginModal / ConsentPrompt.
@@ -20,15 +21,18 @@ export default function DraftDrainPrompt() {
   if (!user || !pendingDraft) return null;
   const planCount = pendingDraft.plans.length;
   const favCount = pendingDraft.favorites.length;
-  if (planCount === 0 && favCount === 0) return null;
+  const schedCount = pendingDraft.schedules.length;
+  if (planCount === 0 && favCount === 0 && schedCount === 0) return null;
 
   const who = user.email ?? "your account";
   const parts: string[] = [];
   if (planCount > 0) parts.push(`${planCount} ${planCount === 1 ? "plan" : "plans"}`);
   if (favCount > 0)
     parts.push(`${favCount} saved ${favCount === 1 ? "course" : "courses"}`);
+  if (schedCount > 0)
+    parts.push(`${schedCount} ${schedCount === 1 ? "schedule" : "schedules"}`);
   const summary = parts.join(" and ");
-  const isPlural = planCount + favCount > 1;
+  const isPlural = planCount + favCount + schedCount > 1;
 
   return (
     <div className="fixed inset-0 z-[110] flex items-center justify-center bg-black/50 p-4">
