@@ -4,22 +4,29 @@ Programs rollout for Florida (FCS, 28 colleges). Catalog platform per college is
 fingerprinted by `scripts/fl/discover-catalogs.ts` → `data/fl/catalog-discovery.json`,
 then scraped by the matching platform wrapper (cloned from the NC tooling).
 
-## Shipped — 13 colleges scraped (~1,385 programs); **1,185 plannable across 13 colleges**
+## Shipped — 14 colleges scraped (~1,471 programs); **1,255 plannable across 14 colleges**
 
 Verified via `countRealCourses >= PLAN_MIN_COURSES` on local JSON, plannable per college:
 palmbeachstate 156, irsc 143, fscj 129, pensacolastate 112, daytonastate 108, **cf 85**,
-polk 80, **tcc-fl 77**, sjrstate 65, scf 63, fsw 60, southflorida 54, fgc 53.
+polk 80, **tcc-fl 77**, **phsc 70**, sjrstate 65, scf 63, fsw 60, southflorida 54, fgc 53.
 
-**Parser fix (2026-06-04, PR #__):** cf went 0 → 85 plannable and tcc-fl went 0 → 77
+**Walker fix (2026-06-04):** phsc went 0 → 70 plannable. Its 17 category pages under
+`/academic-programs/` link to programs in a SIBLING URL tree (`/prog-desc/{level}/{slug}`)
+rather than as children — outside the walker's `startsWith(programsRoot)` filter.
+The shared `scrape-smartcatalogiq-programs.ts` walker now falls back to a broader
+BFS at the catalog root (one level above `programsPath`, page-capped at 500) when
+the primary BFS finds zero program-detail pages. Working colleges' control flow is
+unchanged by construction — verified empirically against daytonastate/irsc/bladen.
+
+**Acalog parser fix (2026-06-04):** cf went 0 → 85 plannable and tcc-fl went 0 → 77
 plannable after `scripts/lib/scrape-acalog-programs.ts` was broadened to accept
 no-space course codes (`ACG2021`) and to parse adhoc-list-items as real courses
-when the text starts with a code. cf is FL's no-space-code case; tcc-fl is the same
-pattern. See NC's parser commit for the full story (one shared lib, four states).
+when the text starts with a code.
 
 | Platform | Colleges scraped |
 |---|---|
 | Acalog | cf, fgc, fsw, polk, scf, sjrstate, southflorida, tcc-fl |
-| SmartCatalogIQ | daytonastate, irsc, palmbeachstate, pensacolastate |
+| SmartCatalogIQ | daytonastate, irsc, palmbeachstate, pensacolastate, phsc |
 | Coursedog | fscj |
 
 **Recovery log (2026-06-04):** palmbeachstate + pensacolastate (SmartCatalogIQ) were
@@ -31,13 +38,10 @@ stray "Acalog" footer mention can't re-trip this.
 
 ## Deferred / incomplete this pass
 
-- **phsc (SmartCatalogIQ) — 0; a real blocker, not a re-run.** Its SmartCatalogIQ
-  instance is stale (latest published edition is 2023-2024, no 2025-2026) and its
-  programs nest one level below the walker's depth: `…/academic-programs/` lists 17
-  *category* pages (associate-in-science-degree, college-credit-certificate-programs, …)
-  and the actual program pages live inside those. Needs the shared SmartCatalogIQ
-  deeper-walk enhancement (also affects NC lenoir/mayland/western-piedmont, IL
-  moraine-valley/triton) — tracked as a cross-state lever, not a FL-only fix.
+- ~~phsc (SmartCatalogIQ) — 0; real blocker~~ **RESOLVED 2026-06-04** (walker fallback;
+  see above). Catalog is at the 2023-2024 edition (no 2025-2026 published) but the
+  data is current with what phsc publishes, and 70/86 programs now plan cleanly.
+  Re-investigate when phsc publishes a newer edition.
 - ~~cf, tcc-fl (Acalog) — 0 plannable~~ **RESOLVED 2026-06-04** (parser fix; see above).
 - **CourseLeaf (easternflorida, lssc, valencia) — 0.** Their program index doesn't
   match the common CourseLeaf path conventions; needs per-college index discovery.
