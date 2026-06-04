@@ -30,6 +30,8 @@ Self-contained and skimmable — someone (or a fresh session) can execute it wit
 
 Ground the *goal itself* in real code before writing it — a goal full of invented filenames or wrong signatures wastes the whole execution.
 
+**Draft it collaboratively.** The goal is often best *authored by the assistant* from the owner's brief: the owner gives the intent + constraints (even minimal context); the assistant grounds in the real code first, then drafts this tight, structured goal; the owner reviews/edits and feeds it back to execute (e.g. via the harness's goal command). This front-loads the assistant's grounding and precision while the owner keeps judgment over scope and intent. When handed a feature idea, **offer to draft the goal** rather than make the owner write the spec from scratch — and the owner stays the approver: the executor still stops at the PR.
+
 ## Scope: one concern per PR — split when subsystems differ
 
 - Keep a PR to a single concern; a reviewer should hold the whole diff in their head.
