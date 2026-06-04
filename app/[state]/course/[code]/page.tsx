@@ -23,6 +23,8 @@ import {
 } from "@/lib/data-freshness";
 import SectionSeats from "@/components/SectionSeats";
 import { aggregateSeats, aggregateLabel } from "@/lib/seats";
+import { courseHasFullSection } from "@/lib/seat-alert";
+import SeatAlertCTA from "@/components/SeatAlertCTA";
 import { buildCollegeCompareRows } from "@/lib/compare-colleges";
 import CourseCollegeCompare from "@/components/CourseCollegeCompare";
 
@@ -518,6 +520,12 @@ export default async function CoursePage(props: PageProps) {
             )}
           </div>
         </div>
+
+        {/* Seat-open alert CTA — only when the course has full sections.
+            Bridges to the existing plan-based seat-watch via the planner. */}
+        {courseHasFullSection(sections) && (
+          <SeatAlertCTA state={state} courseCode={`${prefix} ${number}`} />
+        )}
 
         {/* Mode breakdown + prereqs */}
         <div className="flex flex-wrap gap-4 mb-8">
