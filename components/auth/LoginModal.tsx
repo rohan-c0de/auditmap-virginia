@@ -106,7 +106,7 @@ export default function LoginModal() {
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-lg font-semibold text-gray-900 dark:text-slate-100">
-            Sign in to save your work
+            Save your work — free, in seconds
           </h2>
           <button
             onClick={closeLoginModal}
