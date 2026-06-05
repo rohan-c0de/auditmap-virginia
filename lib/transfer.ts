@@ -397,8 +397,14 @@ export async function getCoursesForUniversity(
   university: string,
   state: string
 ): Promise<TransferMapping[]> {
-  const mappings = await loadTransferMappings(state);
-  return mappings.filter((m) => m.university === university);
+  // Scope the fetch to this university via the indexed (state, university)
+  // query — idx_transfers_state_university — instead of loading the ENTIRE
+  // state's transfers and filtering in JS. The old path pulled every CA row
+  // (161,680 / ~30 MB / ~162 Supabase pages) to render a single university's
+  // hub page, so even a 642-mapping university 504'd at the function timeout.
+  // Same load-all-then-filter anti-pattern already fixed for getUniversities()
+  // (#777), getUniversitiesWithCounts() (#1206) and the sitemap (#1207).
+  return loadTransferMappingsByUniversity(state, university);
 }
 
 /** Get the list of all universities in the dataset.
