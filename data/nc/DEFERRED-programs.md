@@ -4,7 +4,7 @@ Programs rollout for North Carolina (NCCCS, 58 colleges). Catalog platform per
 college is fingerprinted by `scripts/nc/discover-catalogs.ts` →
 `data/nc/catalog-discovery.json`, then scraped by the matching platform wrapper.
 
-## Shipped — 18 colleges, 2,624 programs scraped; **2,010 plannable across 17 colleges**
+## Shipped — 18 colleges, 2,795 programs scraped; **2,138 plannable across 17 colleges**
 
 Verified via `countRealCourses >= PLAN_MIN_COURSES`. The Acalog parser fix on
 2026-06-04 unlocked **gaston (0 → 96)** and **guilford-technical (0 → 224)**; a
@@ -37,14 +37,18 @@ the codes were never behind links.
 **CourseDog — Colleague-Ethos variant.** These tenants emit requirements as an inline
 HTML blob in `requisites.requisitesFreeform` instead of the structured
 `requisitesSimple` rule tree the lib walked, so it parsed 0.
-- **cape-fear — RESOLVED 2026-06-05 (0 → 100 plannable).** `parseFreeformRequisites` in
+- **cape-fear — RESOLVED 2026-06-05 (0 → 228 plannable).** `parseFreeformRequisites` in
   `scrape-coursedog-programs.ts` parses the freeform HTML (reusing the Acalog
-  `parseCourseFromLabel`). NOTE: only the first 200 of cape-fear's 473 programs are
-  scraped (the lib's single-page `PROGRAMS_PAGE_SIZE` cap — pagination is a follow-up),
-  and a few umbrella/transfer degrees (AA, Associate in General Education) list very large
-  elective pools (up to ~1,400 courses), reflecting the catalog's own structure.
-- **central-carolina — still deferred.** Same freeform shape, but the program-detail
-  endpoint returned mostly empty requisites in probing; needs a focused look.
+  `parseCourseFromLabel`). Pagination (2026-06-05) lifted it from 100 → 228: `listAllPrograms`
+  now pages through `skip += PROGRAMS_PAGE_SIZE` instead of fetching a single 200-row page,
+  so all 469 programs are scraped (275 with parseable requirements). A few umbrella/transfer
+  degrees (AA, Associate in General Education) list very large elective pools (up to ~1,400
+  courses), reflecting the catalog's own structure.
+- **central-carolina — deferred (empty requirement data).** Pagination now fetches all 644
+  programs, but their CourseDog program-detail `requisites` come back **`{}`** — no
+  requisitesSimple AND no requisitesFreeform (verified 2026-06-05). The catalog simply
+  doesn't publish machine-readable requirements here; not a parser gap. Same for **del-mar
+  (TX)** (282 fetched, all empty). Would need a different source (HTML catalog pages / PDF).
 - **isothermal — different problem (NOT freeform).** Re-scrapes 153 programs whose
   requirement GROUPS parse but whose course IDs don't resolve to courses → 0 plannable.
   Separate fix.

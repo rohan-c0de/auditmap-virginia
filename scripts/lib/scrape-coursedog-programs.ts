@@ -263,33 +263,49 @@ export function isActiveProgramStatus(status?: string): boolean {
   return s === "" || s === "active";
 }
 
+/** Safety bound on pagination — 30 × 200 = 6,000 programs is far above any
+ *  real catalog and prevents an unbounded loop if the API misbehaves. */
+const MAX_PROGRAM_PAGES = 30;
+
 async function listAllPrograms(
   page: Page,
   tenantId: string,
   catalogId: string,
 ): Promise<ProgramListItem[]> {
-  const url =
+  const pageUrl = (skip: number) =>
     `https://app.coursedog.com/api/v1/cm/${tenantId}/programs/search/%24filters` +
     `?catalogId=${encodeURIComponent(catalogId)}` +
-    `&skip=0&limit=${PROGRAMS_PAGE_SIZE}` +
+    `&skip=${skip}&limit=${PROGRAMS_PAGE_SIZE}` +
     `&orderBy=code&formatDependents=false`;
-  const resp = await apiPost<{ data: ProgramListItem[]; listLength: number }>(
-    page,
-    url,
-    PROGRAMS_FILTER_BODY,
-  );
-  let data = resp?.data ?? [];
+
+  // Page through results: the search endpoint caps each response at
+  // PROGRAMS_PAGE_SIZE, so a single fetch silently truncated large catalogs
+  // (cape-fear 473, central-carolina 654, del-mar 304). Keep fetching until a
+  // short page signals the end.
+  const fetchAll = async (filterBody: unknown): Promise<ProgramListItem[]> => {
+    const out: ProgramListItem[] = [];
+    for (let p = 0; p < MAX_PROGRAM_PAGES; p++) {
+      const resp = await apiPost<{ data: ProgramListItem[]; listLength: number }>(
+        page,
+        pageUrl(p * PROGRAMS_PAGE_SIZE),
+        filterBody,
+      );
+      const batch = resp?.data ?? [];
+      out.push(...batch);
+      if (batch.length < PROGRAMS_PAGE_SIZE) break;
+    }
+    return out;
+  };
+
+  let data = await fetchAll(PROGRAMS_FILTER_BODY);
   // Casing fallback: when the "Active"-filtered search returns nothing, the
   // tenant likely stores its status lowercase. Re-fetch unfiltered and keep
   // only active/unspecified programs (drop Inactive/Archived) so the catalog
   // isn't silently empty. Tenants that already return rows are untouched.
   if (data.length === 0) {
-    const respAll = await apiPost<{ data: ProgramListItem[]; listLength: number }>(
-      page,
-      url,
-      EMPTY_FILTER_BODY,
+    data = (await fetchAll(EMPTY_FILTER_BODY)).filter((p) =>
+      isActiveProgramStatus(p.status),
     );
-    data = (respAll?.data ?? []).filter((p) => isActiveProgramStatus(p.status));
   }
   return data;
 }
