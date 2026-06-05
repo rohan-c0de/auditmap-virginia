@@ -238,14 +238,19 @@ function parseProgramCode(title: string): string | null {
  * The leading [A-Z]{2,5} anchor prevents matches against free-text electives
  * like "Math elective" or "Choose 3 credits from…" (lowercase / no code).
  */
-function parseCourseFromLabel(label: string): {
+// Exported for unit testing (see __tests__/scrape-acalog-programs.test.ts).
+export function parseCourseFromLabel(label: string): {
   prefix: string;
   number: string;
   title: string;
 } | null {
   const trimmed = label.trim();
+  // Prefix→number separator varies by catalog: plain space ("ENG 111"),
+  // none ("ACG2021"), hyphen-no-space ("ACCT-101", mott/MI), or
+  // nbsp-hyphen-nbsp ("WBL - 110", surry/NC). Allow an optional single
+  // hyphen flanked by optional whitespace. (\s already matches nbsp in JS.)
   const m = trimmed.match(
-    /^([A-Z]{2,5})\s*(\d{3,4}[A-Z]?)\b\s*(?:[-:]\s*)?(.*)$/,
+    /^([A-Z]{2,5})\s*-?\s*(\d{3,4}[A-Z]?)\b\s*(?:[-:]\s*)?(.*)$/,
   );
   if (!m) return null;
   // Strip trailing "(N Credit Hour(s))" / "(1-3 Credits)" parentheticals.
