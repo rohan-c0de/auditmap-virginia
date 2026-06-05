@@ -2,11 +2,12 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import {
-  getCoursesForUniversity,
+  loadTransferMappingsByUniversity,
   getUniversitiesWithCounts,
   trimMappingsForClient,
   capMappingsByRoundRobin,
   TRANSFER_HUB_MAX_CLIENT_MAPPINGS,
+  TRANSFER_HUB_SAMPLE_FETCH,
 } from "@/lib/transfer";
 import { loadInstitutions } from "@/lib/institutions";
 import { isValidState } from "@/lib/states/registry";
@@ -96,15 +97,27 @@ export default async function TransferHubPage(props: PageProps) {
   const uni = universities.find((u) => u.slug === universitySlug);
   if (!uni || uni.totalCount < MIN_TRANSFERABLE) notFound();
 
-  // Fetch all mappings for this university, filter to transferable only.
-  const allMappings = await getCoursesForUniversity(universitySlug, state);
-  const mappings: TransferMapping[] = allMappings.filter(
-    (m) =>
-      !m.no_credit &&
-      !(m.univ_course && m.univ_course.includes("*"))
-  );
+  // Headline counts come from the precomputed transfer-universities.json cache
+  // (uni.*, built by build-transfer-universities-cache.ts) — exact, with no row
+  // load. The page only needs actual rows to populate the browsable table + the
+  // subject filter, both of which are capped for display anyway, so we fetch a
+  // bounded SAMPLE rather than every mapping. CSU/UC system-wide pages (~99K /
+  // ~56K mappings, ~30 MB) used to load all of them just to render 2,500 rows
+  // and timed out. Universities at or under the sample cap fetch every row
+  // (unchanged); above it the table is a representative sample while these
+  // counts stay exact.
+  const directCount = uni.directCount;
+  const electiveCount = uni.electiveCount;
+  const totalMappingCount = uni.totalCount;
 
-  if (mappings.length < MIN_TRANSFERABLE) notFound();
+  const sampleRaw = await loadTransferMappingsByUniversity(
+    state,
+    universitySlug,
+    TRANSFER_HUB_SAMPLE_FETCH
+  );
+  const mappings: TransferMapping[] = sampleRaw.filter(
+    (m) => !m.no_credit && !(m.univ_course && m.univ_course.includes("*"))
+  );
 
   // Slim the payload for the client table. Three things are at play:
   //   1) Strip redundant per-row fields (cc_course, university, university_name,
@@ -113,11 +126,8 @@ export default async function TransferHubPage(props: PageProps) {
   //   2) Sort deterministically by subject + course number so the cap below
   //      produces a stable, alphabetized view within each subject.
   //   3) Cap to TRANSFER_HUB_MAX_CLIENT_MAPPINGS via round-robin across
-  //      subjects to stay under Vercel's 19 MB ISR pre-render limit. Some
-  //      universities (UMGC, Frostburg, UMBC) have tens of thousands of
-  //      mappings that bloat the RSC payload past the cap. Round-robin (vs
-  //      a naive top-N slice) preserves subject diversity so every subject
-  //      filter in the client is still populated.
+  //      subjects to stay under Vercel's 19 MB ISR pre-render limit and keep
+  //      every subject filter in the client populated.
   const sortedMappings = [...mappings].sort((a, b) => {
     const p = a.cc_prefix.localeCompare(b.cc_prefix);
     if (p !== 0) return p;
@@ -128,7 +138,6 @@ export default async function TransferHubPage(props: PageProps) {
     TRANSFER_HUB_MAX_CLIENT_MAPPINGS
   );
   const clientMappings = trimMappingsForClient(cappedMappings);
-  const totalMappingCount = mappings.length;
   const mappingsTruncated = totalMappingCount > clientMappings.length;
 
   // Build a lookup from CC course prefix → CC display name. We use the course
@@ -142,7 +151,9 @@ export default async function TransferHubPage(props: PageProps) {
   // existing /[state]/course/[code] page, which already lists colleges.
   const institutions = loadInstitutions(state);
 
-  // Subject breakdown (unique prefixes)
+  // Subject breakdown (unique prefixes), from the fetched sample. For
+  // universities above the sample cap this reflects the sample, not every row;
+  // the headline counts above stay exact.
   const subjectCounts = new Map<string, number>();
   for (const m of mappings) {
     subjectCounts.set(
@@ -153,10 +164,6 @@ export default async function TransferHubPage(props: PageProps) {
   const subjects = Array.from(subjectCounts.entries())
     .sort((a, b) => b[1] - a[1]);
 
-  // Type breakdown
-  const directCount = mappings.filter((m) => !m.is_elective).length;
-  const electiveCount = mappings.filter((m) => m.is_elective).length;
-
   // JSON-LD
   const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com";
@@ -165,8 +172,8 @@ export default async function TransferHubPage(props: PageProps) {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: `${config.name} Community College Courses that Transfer to ${uni.name}`,
-    description: `${mappings.length} transferable courses from ${config.systemName} to ${uni.name}.`,
-    numberOfItems: mappings.length,
+    description: `${totalMappingCount} transferable courses from ${config.systemName} to ${uni.name}.`,
+    numberOfItems: totalMappingCount,
     url: `${siteUrl}/${state}/transfer/to/${universitySlug}`,
     itemListElement: mappings.slice(0, 25).map((m, i) => ({
       "@type": "ListItem",
@@ -222,7 +229,7 @@ export default async function TransferHubPage(props: PageProps) {
         params={{
           state,
           university: universitySlug,
-          mapping_count: mappings.length,
+          mapping_count: totalMappingCount,
           direct_count: directCount,
           elective_count: electiveCount,
         }}
@@ -264,7 +271,7 @@ export default async function TransferHubPage(props: PageProps) {
           Transfer to {uni.name}
         </h1>
         <p className="text-gray-600 dark:text-slate-400 mt-2 max-w-3xl">
-          {`${mappings.length} courses from ${config.name} community colleges (${config.systemName}) transfer to ${uni.name}. Browse the full list below, or filter by community college or subject to find the courses that fit your transfer plan.`}
+          {`${totalMappingCount} courses from ${config.name} community colleges (${config.systemName}) transfer to ${uni.name}. Browse the full list below, or filter by community college or subject to find the courses that fit your transfer plan.`}
         </p>
       </div>
 

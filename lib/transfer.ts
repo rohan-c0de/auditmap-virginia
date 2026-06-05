@@ -14,6 +14,19 @@ import { cached } from "./courses";
 export const TRANSFER_HUB_MAX_CLIENT_MAPPINGS = 2500;
 
 /**
+ * Upper bound on rows the hub page FETCHES to build its table + subject sample.
+ * The table is round-robin-capped to TRANSFER_HUB_MAX_CLIENT_MAPPINGS for
+ * display, so we never need every row — but we pull a larger pool than the
+ * display cap so the round-robin still has subjects to spread across. The
+ * CSU/UC system-wide pages (~99K / ~56K mappings) would otherwise load ~30 MB
+ * and time out (issue tracked after #1208). The page's headline direct/elective
+ * /total counts come from the transfer-universities.json cache instead, so
+ * capping the fetched sample only changes WHICH courses appear in the browsable
+ * table — never the totals. Universities at/under this cap fetch every row.
+ */
+export const TRANSFER_HUB_SAMPLE_FETCH = 12000;
+
+/**
  * Strip redundant fields before serializing to the client. On pages with
  * many thousands of mappings, these per-row fields add up to several MB
  * of wire payload for no user-visible benefit.
