@@ -211,11 +211,13 @@ function RequirementGroupBlock({
   // "Menu mode" = catalog defines a credit slot but lists more course-credits
   // than the slot needs. Heuristic: courses.length * 3 (assume avg ~3cr each)
   // materially exceeds the slot. Keeps short truly-required groups expanded
-  // (Eng Comp 6cr / 2 courses: 6 ≯ 4 → not menu).
+  // (Eng Comp 6cr / 2 courses: 6 ≯ 4 → not menu). The >= 2 floor blocks
+  // 1-of-1 groups (e.g. SDV 100, 1 cr) from rendering as a fake "choice".
   const menuMode =
     effectiveCredits != null &&
     effectiveCredits > 0 &&
     group.choose_n == null &&
+    group.courses.length >= 2 &&
     group.courses.length * 3 > effectiveCredits * 2;
   const sequenceMode = menuMode && SEQUENCE_RE.test(group.name);
   const collapsed = menuMode && !expanded;
@@ -226,7 +228,7 @@ function RequirementGroupBlock({
   const heading = sequenceMode
     ? `Full degree sequence — ${group.courses.length} courses, ${effectiveCredits} credits`
     : menuMode
-      ? `Choose ${effectiveCredits} credits from ${group.courses.length} approved courses`
+      ? `Choose ${effectiveCredits} credit${effectiveCredits === 1 ? "" : "s"} from ${group.courses.length} approved courses`
       : group.name;
 
   return (
