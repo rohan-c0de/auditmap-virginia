@@ -633,6 +633,40 @@ async function _getUniversitiesWithCounts(state: string): Promise<
 export async function getUniversitySlugsForSitemap(
   state: string
 ): Promise<{ slug: string; totalCount: number }[]> {
+  // Fast path: pre-computed cache file from build-transfer-universities-cache.ts
+  // (wired into `npm run build`). Its `totalCount` is the filtered transferable
+  // count — no_credit and wildcard ('*') rows excluded — identical to both the
+  // Supabase query below and getUniversitiesWithCounts(). Reading the ~1 KB
+  // cache avoids paginating the entire transfers table (161K rows for CA, 254K
+  // for NY) during sitemap generation, the same #777 fix getUniversities() and
+  // getUniversitiesWithCounts() (PR #1206) already got. The totalCount
+  // type-guard falls through to Supabase for any cache written before #1206.
+  try {
+    const cachePath = path.join(
+      process.cwd(),
+      "data",
+      state,
+      "transfer-universities.json",
+    );
+    if (fs.existsSync(cachePath)) {
+      const cached = JSON.parse(fs.readFileSync(cachePath, "utf-8")) as {
+        slug: string;
+        totalCount?: number;
+      }[];
+      if (
+        Array.isArray(cached) &&
+        cached.length > 0 &&
+        typeof cached[0].totalCount === "number"
+      ) {
+        return cached
+          .map((c) => ({ slug: c.slug, totalCount: c.totalCount ?? 0 }))
+          .sort((a, b) => b.totalCount - a.totalCount);
+      }
+    }
+  } catch {
+    // Cache read/parse failed — fall through to Supabase.
+  }
+
   try {
     const counts = new Map<string, number>();
     let offset = 0;
