@@ -153,9 +153,14 @@ interface CourseSearchProps {
   // initial HTML already contains matching sections (SEO, no-JS, instant first
   // paint). Null when there is no query or the server search found nothing.
   initialResults?: SearchResponse | null;
+  // True only in the streamed <Suspense> fallback (app/[state]/courses/page.tsx)
+  // while the server search for a ?q= deep link is still in flight: render the
+  // form immediately with the "Searching…" spinner instead of the pre-search
+  // prompt. The resolved render replaces this fallback with the real results.
+  pendingInitial?: boolean;
 }
 
-export default function CourseSearchClient({ state, systemName, collegeCount, courseUrlMap, defaultZip, initialResults }: CourseSearchProps) {
+export default function CourseSearchClient({ state, systemName, collegeCount, courseUrlMap, defaultZip, initialResults, pendingInitial }: CourseSearchProps) {
   const searchParams = useSearchParams();
   const initialQuery = searchParams.get("q")?.replace(/\+/g, " ") || "";
   // Initialize filter state from URL so deep links like
@@ -255,7 +260,10 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
   const [universities, setUniversities] = useState<{ slug: string; name: string }[]>([]);
 
   const [results, setResults] = useState<SearchResponse | null>(initialResults ?? null);
-  const [loading, setLoading] = useState(false);
+  // Seed `loading` from pendingInitial so the streamed fallback paints the
+  // "Searching all colleges…" spinner under the form while the server search is
+  // still running. The real (resolved) render mounts with pendingInitial unset.
+  const [loading, setLoading] = useState(!!pendingInitial);
   const [error, setError] = useState("");
   const [hasSearched, setHasSearched] = useState(!!initialResults);
   // Natural-language answer card. Populated from /api/[state]/ask in

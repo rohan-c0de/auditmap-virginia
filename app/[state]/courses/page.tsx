@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import Link from "next/link";
 import CourseSearchClient, { type SearchResponse } from "./CourseSearchClient";
 import { requireStateConfig } from "@/lib/states/route-helpers";
@@ -56,22 +57,111 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   };
 }
 
+// Async boundary child: awaits the (already-started) search and renders the
+// real CourseSearchClient with the server-found results. Because it lives
+// inside <Suspense>, only THIS subtree blocks on the search — the page shell
+// (the form-bearing fallback + the SEO directory below) has already streamed.
+async function ResolvedCourseSearch({
+  promise,
+  state,
+  systemName,
+  collegeCount,
+  courseUrlMap,
+  defaultZip,
+}: {
+  promise: Promise<SearchResponse | null>;
+  state: string;
+  systemName: string;
+  collegeCount: number;
+  courseUrlMap: Record<string, string>;
+  defaultZip?: string;
+}) {
+  const initialResults = await promise;
+  return (
+    <CourseSearchClient
+      state={state}
+      systemName={systemName}
+      collegeCount={collegeCount}
+      courseUrlMap={courseUrlMap}
+      defaultZip={defaultZip}
+      initialResults={initialResults}
+    />
+  );
+}
+
+type CoursesConfig = ReturnType<typeof requireStateConfig>;
+
+// Instant fallback for the subject directory: the heading + generic intro paint
+// with the shell; the term-specific count and the subject grid stream in once
+// getDistinctSubjects resolves.
+function SubjectDirectoryShell({ config }: { config: CoursesConfig }) {
+  return (
+    <section className="mt-4 border-t border-gray-200 dark:border-slate-700 pt-10">
+      <h2 className="text-xl font-semibold text-gray-900 dark:text-slate-100 mb-2">
+        Browse {config.systemName} courses by subject
+      </h2>
+      <p className="text-sm text-gray-600 dark:text-slate-400 mb-5">
+        Browse {config.name} community college subjects — every department
+        offered across the {config.collegeCount}-college {config.systemName} system.
+      </p>
+    </section>
+  );
+}
+
+// Streamed subject directory. getDistinctSubjects is a cold cross-state scan
+// (CA paginates ~188k rows), so it renders inside its own <Suspense> boundary
+// rather than blocking the page shell / search form.
+async function SubjectDirectory({
+  state,
+  config,
+  currentTermPromise,
+}: {
+  state: string;
+  config: CoursesConfig;
+  currentTermPromise: Promise<string>;
+}) {
+  const currentTerm = await currentTermPromise;
+  const subjects = currentTerm
+    ? await getDistinctSubjects(currentTerm, state).catch(() => [] as string[])
+    : [];
+  if (subjects.length === 0) return <SubjectDirectoryShell config={config} />;
+  return (
+    <section className="mt-4 border-t border-gray-200 dark:border-slate-700 pt-10">
+      <h2 className="text-xl font-semibold text-gray-900 dark:text-slate-100 mb-2">
+        Browse {config.systemName} courses by subject
+      </h2>
+      <p className="text-sm text-gray-600 dark:text-slate-400 mb-5">
+        {`${subjects.length} subjects offered across ${config.collegeCount} ${config.name} community colleges for ${termLabel(currentTerm)}.`}
+      </p>
+      <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-1.5">
+        {subjects.map((p) => (
+          <li key={p}>
+            <Link
+              href={`/${state}/subject/${p.toLowerCase()}`}
+              className="block rounded-md px-2 py-1 text-sm text-gray-700 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-900/30 hover:text-teal-700 dark:hover:text-teal-400 transition"
+            >
+              <span className="font-mono text-xs text-gray-500 dark:text-slate-400 mr-1.5">
+                {p}
+              </span>
+              {subjectName(p)}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
 export default async function CoursesPage({ params, searchParams }: Props) {
   const { state } = await params;
   const config = requireStateConfig(state);
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com";
-  const currentTerm = await getCurrentTerm(state);
 
-  // Server-render a subject directory + college list below the client search
-  // widget. Before this change the only server-rendered content on /{state}/
-  // courses was the H1 + form rendered by CourseSearchClient — too thin for
-  // Google to index as a meaningful landing page (GSC audit 2026-05 flagged
-  // these as candidates for "Discovered – not indexed"). The subject and
-  // college links also seed internal crawl paths to the per-state subject
-  // and college hub pages.
-  const subjects = await getDistinctSubjects(currentTerm, state).catch(
-    () => [] as string[]
-  );
+  // Resolve the current term ONCE as a shared promise. NOT awaited here: both
+  // the search promise and the subject directory consume it inside their own
+  // streamed <Suspense> boundary, so a cold term lookup never blocks the shell.
+  // (.catch keeps it from ever rejecting, so neither consumer needs to.)
+  const currentTermPromise: Promise<string> = getCurrentTerm(state).catch(() => "");
 
   const breadcrumbLd = {
     "@context": "https://schema.org",
@@ -104,50 +194,57 @@ export default async function CoursesPage({ params, searchParams }: Props) {
     courseUrlMap[inst.college_slug] = config.courseDiscoveryUrl(inst.college_slug, "__PREFIX__", "__NUMBER__");
   }
 
-  // Server-render the unified course search for ?q= deep links. Mirrors the
-  // /api/[state]/courses/search route's parsing (q / zip / mode / days / day /
-  // timeOfDay) and calls the same CA-504-safe SQL-predicate search, so the
-  // initial HTML contains real result rows — previously the only server content
-  // for /{state}/courses?q=… was the empty search form, leaving deep links,
-  // shared links, and Google results blank until client JS ran.
+  // Server-render the unified course search for ?q= deep links, but STREAM it:
+  // start the cross-college search WITHOUT awaiting it here, so the page shell
+  // (search form + SEO directory) paints immediately and the results stream into
+  // a <Suspense> boundary below. Before this the page awaited the search inline,
+  // blocking first paint for the whole search — multi-second on big states (CA
+  // ~6–15s cold; searchSections is cached, so it's a one-time per-query cost).
+  // The promise mirrors the /api/[state]/courses/search route's parsing
+  // (q / zip / mode / days / day / timeOfDay) and uses the same CA-504-safe
+  // search, so the streamed HTML still carries real result rows (SEO + no-JS).
   const sp = await searchParams;
   const initialQuery = firstParam(sp.q)?.trim() ?? "";
-  let initialResults: SearchResponse | null = null;
-  if (initialQuery.length >= 2) {
-    const zip = firstParam(sp.zip)?.trim() || undefined;
-    const mode = firstParam(sp.mode)?.trim() || undefined;
-    const daysRaw = firstParam(sp.days)?.trim();
-    const singleDay = firstParam(sp.day)?.trim();
-    const days = daysRaw
-      ? daysRaw.split(",").map((d) => d.trim()).filter(Boolean)
-      : singleDay
-        ? [singleDay]
-        : undefined;
-    const todRaw = firstParam(sp.timeOfDay)?.trim();
-    const timeOfDay =
-      todRaw === "morning" || todRaw === "afternoon" || todRaw === "evening"
-        ? todRaw
-        : undefined;
-    try {
-      const r = await searchCoursesAcrossColleges(
-        currentTerm,
-        initialQuery,
-        institutions,
-        { mode, days, timeOfDay, zip },
-        50,
-        0,
-        state
-      );
-      // Only seed when the server search found sections. An empty match (or a
-      // natural-language query the keyword search can't resolve) is left null so
-      // the client runs its LLM-refined search and can still rescue the query.
-      if (r.courses.length > 0) initialResults = r;
-    } catch {
-      // A search failure must never break the page render — fall back to the
-      // client search by leaving initialResults null.
-      initialResults = null;
-    }
-  }
+  const hasQuery = initialQuery.length >= 2;
+  const initialResultsPromise: Promise<SearchResponse | null> = hasQuery
+    ? (async () => {
+        const zip = firstParam(sp.zip)?.trim() || undefined;
+        const mode = firstParam(sp.mode)?.trim() || undefined;
+        const daysRaw = firstParam(sp.days)?.trim();
+        const singleDay = firstParam(sp.day)?.trim();
+        const days = daysRaw
+          ? daysRaw.split(",").map((d) => d.trim()).filter(Boolean)
+          : singleDay
+            ? [singleDay]
+            : undefined;
+        const todRaw = firstParam(sp.timeOfDay)?.trim();
+        const timeOfDay =
+          todRaw === "morning" || todRaw === "afternoon" || todRaw === "evening"
+            ? todRaw
+            : undefined;
+        try {
+          const currentTerm = await currentTermPromise;
+          const r = await searchCoursesAcrossColleges(
+            currentTerm,
+            initialQuery,
+            institutions,
+            { mode, days, timeOfDay, zip },
+            50,
+            0,
+            state
+          );
+          // Resolve to results only when the server search found sections. An
+          // empty match (or a natural-language query the keyword search can't
+          // resolve) resolves null so the client runs its LLM-refined search and
+          // can still rescue the query.
+          return r.courses.length > 0 ? r : null;
+        } catch {
+          // A search failure must never break the page render — resolve null and
+          // let the client search take over.
+          return null;
+        }
+      })()
+    : Promise.resolve(null);
 
   return (
     <>
@@ -159,43 +256,42 @@ export default async function CoursesPage({ params, searchParams }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(searchActionLd) }}
       />
-      <CourseSearchClient
-        state={state}
-        systemName={config.systemName}
-        collegeCount={config.collegeCount}
-        courseUrlMap={courseUrlMap}
-        defaultZip={config.defaultZip}
-        initialResults={initialResults}
-      />
+      {/* Streamed: the fallback (the same search form + a "Searching…" state)
+          flushes with the static shell so first paint is instant on every
+          state; the resolved results stream in when the search settles. The
+          fallback is shown only while the search is in flight — for the common
+          warm/small-state case it resolves in well under a second. */}
+      <Suspense
+        fallback={
+          <CourseSearchClient
+            state={state}
+            systemName={config.systemName}
+            collegeCount={config.collegeCount}
+            courseUrlMap={courseUrlMap}
+            defaultZip={config.defaultZip}
+            initialResults={null}
+            pendingInitial={hasQuery}
+          />
+        }
+      >
+        <ResolvedCourseSearch
+          promise={initialResultsPromise}
+          state={state}
+          systemName={config.systemName}
+          collegeCount={config.collegeCount}
+          courseUrlMap={courseUrlMap}
+          defaultZip={config.defaultZip}
+        />
+      </Suspense>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <section className="mt-4 border-t border-gray-200 dark:border-slate-700 pt-10">
-          <h2 className="text-xl font-semibold text-gray-900 dark:text-slate-100 mb-2">
-            Browse {config.systemName} courses by subject
-          </h2>
-          <p className="text-sm text-gray-600 dark:text-slate-400 mb-5">
-            {subjects.length > 0
-              ? `${subjects.length} subjects offered across ${config.collegeCount} ${config.name} community colleges for ${termLabel(currentTerm)}.`
-              : `Browse ${config.name} community college subjects — every department offered across the ${config.collegeCount}-college ${config.systemName} system.`}
-          </p>
-          {subjects.length > 0 && (
-            <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-1.5">
-              {subjects.map((p) => (
-                <li key={p}>
-                  <Link
-                    href={`/${state}/subject/${p.toLowerCase()}`}
-                    className="block rounded-md px-2 py-1 text-sm text-gray-700 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-900/30 hover:text-teal-700 dark:hover:text-teal-400 transition"
-                  >
-                    <span className="font-mono text-xs text-gray-500 dark:text-slate-400 mr-1.5">
-                      {p}
-                    </span>
-                    {subjectName(p)}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          )}
-        </section>
+        <Suspense fallback={<SubjectDirectoryShell config={config} />}>
+          <SubjectDirectory
+            state={state}
+            config={config}
+            currentTermPromise={currentTermPromise}
+          />
+        </Suspense>
 
         <section className="mt-10 pt-10 border-t border-gray-200 dark:border-slate-700">
           <h2 className="text-xl font-semibold text-gray-900 dark:text-slate-100 mb-2">
