@@ -19,7 +19,10 @@ houston(hccs) 97, vernon 59, weatherford 56.
   temple): their Acalog catalog dropdown doesn't expose a `selected` catoid in the
   standard `index.php` form, so catoid auto-discovery falls back to a wrong id with no
   programs. Needs per-college catoid pinning.
-- **blinn — 100 programs, 0 plannable**: links courses instead of inlining codes.
+- **blinn — 100 programs, 0 plannable**: NOT a code-format issue (the Acalog regex fix
+  that recovered surry/mott does not help here). Verified 2026-06-04: blinn's catalog
+  (catoid 22 and 24) now serves "Archived Content!" empty shells — no inline codes and no
+  preview_course links. Needs a separate source (newer catalog edition or PDF degree plans).
 - **Alamo Colleges District (san-antonio, northeast-lakeview, northwest-vista, palo-alto,
   st-philips, southwest-deaf) and Lone Star College System** publish ONE district-shared
   catalog, not per-college — needs a district splitter; only san-antonio (alamo.edu) was

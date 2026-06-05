@@ -4,12 +4,12 @@ Programs rollout for North Carolina (NCCCS, 58 colleges). Catalog platform per
 college is fingerprinted by `scripts/nc/discover-catalogs.ts` →
 `data/nc/catalog-discovery.json`, then scraped by the matching platform wrapper.
 
-## Shipped — 17 colleges, 2,520 programs scraped; **1,803 plannable across 16 colleges**
+## Shipped — 17 colleges, 2,520 programs scraped; **1,910 plannable across 16 colleges**
 
 Verified via `countRealCourses >= PLAN_MIN_COURSES`. The Acalog parser fix on
-2026-06-04 unlocked **gaston (0 → 96)** and **guilford-technical (0 → 224)**; surry
-moved from 0 → 1 plannable (most surry programs still have a different requirement
-structure the parser doesn't reach — see "Deferred" below).
+2026-06-04 unlocked **gaston (0 → 96)** and **guilford-technical (0 → 224)**; a
+follow-up regex fix (optional hyphen between prefix and number) then unlocked
+**surry (1 → 108)** — see "Deferred" below.
 
 | Platform | Colleges |
 |---|---|
@@ -26,9 +26,11 @@ Success (1 Credit Hour)`). The fix relaxes the regex and also tries `parseCourse
 on `acalog-adhoc-list-item` text before falling back to ELEC. gaston (0 → 96) and
 guilford-technical (0 → 224) now plan cleanly.
 
-**surry remains mostly 0 plannable (1/169).** Most surry programs use a third structure
-the parser doesn't yet reach — investigation deferred. The cross-state effect is small
-since surry's catalog is unusual.
+**surry — RESOLVED 2026-06-04 (1 → 108 plannable).** surry's course codes are inline in
+`aria-label`s but use a nbsp-hyphen-nbsp separator between prefix and number (`WBL - 110`);
+`parseCourseFromLabel` in `scripts/lib/scrape-acalog-programs.ts` now accepts an optional
+hyphen there. The earlier "third structure / preview_course follow" diagnosis was wrong —
+the codes were never behind links.
 
 ## Deferred gaps (real catalogs, but the generic scrapers don't yet handle them)
 
