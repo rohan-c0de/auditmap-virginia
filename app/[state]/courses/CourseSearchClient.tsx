@@ -59,7 +59,7 @@ interface CourseGroup {
   prerequisite_courses: string[];
 }
 
-interface SearchResponse {
+export interface SearchResponse {
   courses: CourseGroup[];
   totalCourses: number;
   totalSections: number;
@@ -149,9 +149,13 @@ interface CourseSearchProps {
   collegeCount?: number;
   courseUrlMap?: Record<string, string>;
   defaultZip?: string;
+  // Server-rendered results for a ?q= deep link, seeded into `results` so the
+  // initial HTML already contains matching sections (SEO, no-JS, instant first
+  // paint). Null when there is no query or the server search found nothing.
+  initialResults?: SearchResponse | null;
 }
 
-export default function CourseSearchClient({ state, systemName, collegeCount, courseUrlMap, defaultZip }: CourseSearchProps) {
+export default function CourseSearchClient({ state, systemName, collegeCount, courseUrlMap, defaultZip, initialResults }: CourseSearchProps) {
   const searchParams = useSearchParams();
   const initialQuery = searchParams.get("q")?.replace(/\+/g, " ") || "";
   // Initialize filter state from URL so deep links like
@@ -250,10 +254,10 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
   const [transferLookup, setTransferLookup] = useState<Record<string, { university: string; type: string }[]> | null>(null);
   const [universities, setUniversities] = useState<{ slug: string; name: string }[]>([]);
 
-  const [results, setResults] = useState<SearchResponse | null>(null);
+  const [results, setResults] = useState<SearchResponse | null>(initialResults ?? null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [hasSearched, setHasSearched] = useState(false);
+  const [hasSearched, setHasSearched] = useState(!!initialResults);
   // Natural-language answer card. Populated from /api/[state]/ask in
   // parallel with the course search; null until a query has resolved or
   // when the classifier returned a non-actionable intent.
@@ -464,11 +468,29 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
     doSearch(query);
   }
 
-  // Auto-search when loaded with ?q= parameter
+  // Auto-search when loaded with a ?q= deep link.
   useEffect(() => {
-    if (initialQuery) {
-      doSearch(initialQuery);
+    if (!initialQuery) return;
+    if (initialResults) {
+      // The server already rendered matching sections for this query and seeded
+      // them into `results`, so they're in the initial HTML. Skip the redundant
+      // section refetch — which would flash results→spinner→results and
+      // duplicate the query — and fetch only the natural-language answer card so
+      // the deep link still matches the interactive search experience.
+      fetch(`/api/${state}/ask?q=${encodeURIComponent(initialQuery)}`)
+        .then((r) => (r.ok ? r.json() : null))
+        .then((d) => {
+          if (d?.answer) setAnswer(d.answer);
+          if (d?.secondaryAnswer) setSecondaryAnswer(d.secondaryAnswer);
+          if (d?.classification) setClassification(d.classification);
+        })
+        .catch(() => {});
+      return;
     }
+    // No server-rendered results (no keyword match, or a natural-language query
+    // the keyword search couldn't resolve). Run the full client search, which
+    // adds LLM query refinement and can rescue queries SSR left empty.
+    doSearch(initialQuery);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   function toggleExpand(courseKey: string, slug: string) {
