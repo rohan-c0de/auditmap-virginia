@@ -24,6 +24,9 @@ interface TransferMapping {
   state?: string;
   university: string;
   university_name: string;
+  univ_course?: string | null;
+  no_credit?: boolean;
+  is_elective?: boolean;
 }
 
 interface UniversityEntry {
@@ -36,6 +39,15 @@ interface UniversityEntry {
   // Heavy states (CA/TX/NY/MI, 150K+ rows) gate the full matrix behind an
   // explicit "Load all" button instead. See TransferClient. Issue #777 kin.
   mappingCount: number;
+  // Transferable-row counts that mirror getUniversitiesWithCounts() in
+  // lib/transfer.ts exactly: rows with no_credit or a wildcard ('*')
+  // univ_course are excluded; direct = not is_elective, elective =
+  // is_elective; totalCount = direct + elective. Lets that function read
+  // this cache instead of paginating the full transfers table (162K rows
+  // for CA) at request time — the same #777 fix getUniversities already got.
+  directCount: number;
+  electiveCount: number;
+  totalCount: number;
 }
 
 const DATA_DIR = path.join(process.cwd(), "data");
@@ -57,14 +69,37 @@ function buildOne(state: string): { written: boolean; count: number } {
 
   const seen = new Map<string, string>();
   const counts = new Map<string, number>();
+  const directCounts = new Map<string, number>();
+  const electiveCounts = new Map<string, number>();
   for (const m of data) {
     if (!m.university) continue;
     if (!seen.has(m.university)) seen.set(m.university, m.university_name || m.university);
     counts.set(m.university, (counts.get(m.university) ?? 0) + 1);
+    // Transferable split — mirror getUniversitiesWithCounts() filters exactly:
+    // drop no-credit rows and wildcard ('*') equivalencies, then count
+    // direct (not is_elective) vs elective (is_elective).
+    if (m.no_credit) continue;
+    if (m.univ_course && m.univ_course.includes("*")) continue;
+    if (m.is_elective) {
+      electiveCounts.set(m.university, (electiveCounts.get(m.university) ?? 0) + 1);
+    } else {
+      directCounts.set(m.university, (directCounts.get(m.university) ?? 0) + 1);
+    }
   }
 
   const out: UniversityEntry[] = Array.from(seen.entries())
-    .map(([slug, name]) => ({ slug, name, mappingCount: counts.get(slug) ?? 0 }))
+    .map(([slug, name]) => {
+      const directCount = directCounts.get(slug) ?? 0;
+      const electiveCount = electiveCounts.get(slug) ?? 0;
+      return {
+        slug,
+        name,
+        mappingCount: counts.get(slug) ?? 0,
+        directCount,
+        electiveCount,
+        totalCount: directCount + electiveCount,
+      };
+    })
     .sort((a, b) => a.name.localeCompare(b.name));
 
   const outPath = path.join(DATA_DIR, state, "transfer-universities.json");
