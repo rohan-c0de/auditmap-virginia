@@ -711,6 +711,10 @@ async function main() {
         let termCode = rawTermCode.replace(/\//g, "");
         // Normalize SM → SU (some Colleague portals use SM for Summer)
         termCode = termCode.replace(/SM$/, "SU").replace(/SM(\d)/, "SU$1");
+        // Strip a single-letter season prefix (PGCC encodes its Credit Summer
+        // term as "{year}CSU"; without this the trailing normalizer below can't
+        // match the season and the suspicious "2026CSU" leaks to the audit).
+        termCode = termCode.replace(/^(\d{4})C(SP|SU|FA)/, "$1$2");
         // Fix 2-digit year prefix (e.g. "26FA" → "2026FA")
         if (/^\d{2}(SP|SU|FA)$/.test(termCode)) {
           termCode = "20" + termCode;
