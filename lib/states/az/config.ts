@@ -77,9 +77,14 @@ const azConfig: StateConfig = {
     transfers: [
       { scripts: ["scripts/az/scrape-transfer-aztransfer.ts"], runner: "http" },
     ],
-    // manual-only: programs — scripts/az/scrape-programs.ts wrapper exists
-    //   but each of the 4 Acalog catalogs needs manual navoid identification
-    //   (auto-discovery finds catoid but not navoids — same as NV/CSN).
+    // Programs: 4 Acalog catalogs (pima, yavapai, mohave, coconino) scraped via
+    // search_advanced.php discovery (navoid auto-discovery finds 0 on these).
+    // The Maricopa Coursedog catalog publishes no programs, and the other
+    // Coursedog colleges (cochise/eastern-arizona/central-arizona) expose no
+    // plannable requirements — see scripts/az/scrape-programs.ts for details.
+    programs: [
+      { scripts: ["scripts/az/scrape-programs.ts"], runner: "http" },
+    ],
   },
   documentedCeilings: {
     courses: [
