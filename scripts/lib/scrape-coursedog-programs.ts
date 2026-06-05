@@ -48,6 +48,8 @@
  */
 
 import { chromium, type Browser, type Page } from "playwright";
+import * as cheerio from "cheerio";
+import { parseCourseFromLabel } from "./scrape-acalog-programs.js";
 import type {
   CollegePrograms,
   ProgramCredential,
@@ -154,7 +156,12 @@ interface ProgramDetail {
   degreeDesignation?: string;
   type?: string;
   status?: string;
-  requisites?: { requisitesSimple?: RequisiteGroup[] };
+  requisites?: {
+    requisitesSimple?: RequisiteGroup[];
+    /** *_colleague_ethos tenants emit requirements as an inline HTML blob here
+     *  instead of the structured requisitesSimple rule tree. */
+    requisitesFreeform?: { value?: string } | string;
+  };
   customFields?: Record<string, unknown>;
 }
 
@@ -433,6 +440,69 @@ function classifyCredential(
   return "other";
 }
 
+/**
+ * Parse a Coursedog `requisitesFreeform` HTML blob into RequirementGroups.
+ * `*_colleague_ethos` tenants (e.g. cape-fear) publish requirements as inline
+ * HTML — `<p><strong>Group</strong> (Take N credits)</p><ul><li><p>ENG 111 -
+ * Title Credits: 3</p></li>…</ul>` — instead of the structured requisitesSimple
+ * rule tree, so the normal walker yields nothing. Course-code formats vary
+ * (plain space, hyphen-no-space, nbsp-hyphen) exactly like Acalog, so we reuse
+ * `parseCourseFromLabel`. Group headers are <h3>/<h4>/<p><strong>; each course
+ * is an <li>.
+ */
+export function parseFreeformRequisites(html: string): RequirementGroup[] {
+  const $ = cheerio.load(html);
+  const groups: RequirementGroup[] = [];
+  let current: RequirementGroup | null = null;
+
+  const flush = () => {
+    if (current && current.courses.length > 0) groups.push(current);
+    current = null;
+  };
+
+  $("h3, h4, p, li").each((_i, el) => {
+    const $el = $(el);
+
+    if ($el.is("li")) {
+      // A course line. Strip the trailing "Credits: N" the catalog appends,
+      // then reuse the Acalog label parser for the prefix/number.
+      const raw = $el.text().replace(/\s+/g, " ").trim();
+      const credM = raw.match(/credits?:\s*([\d.]+)/i);
+      const credits = credM ? Number(credM[1]) : null;
+      const label = raw.replace(/\s*credits?:\s*[\d.]+.*$/i, "").trim();
+      const parsed = parseCourseFromLabel(label);
+      if (!parsed) return;
+      const cur =
+        current ??
+        (current = { name: "Requirements", credits_required: null, choose_n: null, courses: [] });
+      const key = `${parsed.prefix} ${parsed.number}`;
+      if (cur.courses.some((c) => `${c.prefix} ${c.number}` === key)) return;
+      cur.courses.push({
+        prefix: parsed.prefix,
+        number: parsed.number,
+        title: parsed.title,
+        credits,
+        or_alternatives: [],
+      });
+      return;
+    }
+
+    // A header (<h3>/<h4>/<p>). Skip the <p> nested inside a course <li>.
+    if ($el.closest("li").length > 0) return;
+    const headerText = $el.text().replace(/\s+/g, " ").trim();
+    if (!headerText) return;
+    flush();
+    const name =
+      (($el.find("strong").first().text() || headerText).trim().replace(/\s*\([^)]*\)\s*$/, "").trim()) ||
+      "Requirements";
+    const takeM = headerText.match(/take\s+(\d+)\s+credits?/i);
+    current = { name, credits_required: takeM ? Number(takeM[1]) : null, choose_n: null, courses: [] };
+  });
+
+  flush();
+  return groups;
+}
+
 // ---------------------------------------------------------------------------
 // Public entry point
 // ---------------------------------------------------------------------------
@@ -481,54 +551,61 @@ export async function scrapeCoursedogPrograms(
           continue;
         }
         const requisitesSimple = detail.requisites?.requisitesSimple ?? [];
-        if (requisitesSimple.length === 0) {
-          skipped++;
-          continue;
-        }
+        let requirementGroups: RequirementGroup[] = [];
 
-        // Flatten each top-level requisitesSimple entry.
-        const flattened: { name: string; flat: FlattenedGroup }[] = [];
-        const allCourseIds = new Set<string>();
-        for (const group of requisitesSimple) {
-          const flat: FlattenedGroup = {
-            courseGroupIds: new Set(),
-            chooseN: null,
-            creditsRequired: null,
-          };
-          walkRules(group.rules, flat);
-          for (const id of flat.courseGroupIds) allCourseIds.add(id);
-          flattened.push({ name: (group.name ?? "Required Courses").trim(), flat });
-        }
-
-        // Resolve all course IDs once
-        const courseDocs = await getCoursesByGroupIds(
-          page,
-          tenantId,
-          [...allCourseIds],
-        );
-
-        // Build RequirementGroups
-        const requirementGroups: RequirementGroup[] = [];
-        for (const { name, flat } of flattened) {
-          const courses: RequiredCourse[] = [];
-          const seen = new Set<string>();
-          for (const id of flat.courseGroupIds) {
-            const doc = courseDocs[id];
-            const rc = courseToRequired(doc);
-            if (!rc) continue;
-            const key = `${rc.prefix} ${rc.number}`;
-            if (seen.has(key)) continue;
-            seen.add(key);
-            courses.push(rc);
+        if (requisitesSimple.length > 0) {
+          // Flatten each top-level requisitesSimple entry.
+          const flattened: { name: string; flat: FlattenedGroup }[] = [];
+          const allCourseIds = new Set<string>();
+          for (const group of requisitesSimple) {
+            const flat: FlattenedGroup = {
+              courseGroupIds: new Set(),
+              chooseN: null,
+              creditsRequired: null,
+            };
+            walkRules(group.rules, flat);
+            for (const id of flat.courseGroupIds) allCourseIds.add(id);
+            flattened.push({ name: (group.name ?? "Required Courses").trim(), flat });
           }
-          if (courses.length === 0 && flat.creditsRequired === null) continue;
-          requirementGroups.push({
-            name,
-            credits_required: flat.creditsRequired,
-            choose_n: flat.chooseN,
-            courses,
-          });
+
+          // Resolve all course IDs once
+          const courseDocs = await getCoursesByGroupIds(
+            page,
+            tenantId,
+            [...allCourseIds],
+          );
+
+          // Build RequirementGroups
+          for (const { name, flat } of flattened) {
+            const courses: RequiredCourse[] = [];
+            const seen = new Set<string>();
+            for (const id of flat.courseGroupIds) {
+              const doc = courseDocs[id];
+              const rc = courseToRequired(doc);
+              if (!rc) continue;
+              const key = `${rc.prefix} ${rc.number}`;
+              if (seen.has(key)) continue;
+              seen.add(key);
+              courses.push(rc);
+            }
+            if (courses.length === 0 && flat.creditsRequired === null) continue;
+            requirementGroups.push({
+              name,
+              credits_required: flat.creditsRequired,
+              choose_n: flat.chooseN,
+              courses,
+            });
+          }
+        } else {
+          // Freeform fallback: *_colleague_ethos tenants (cape-fear, jackson,
+          // south-suburban) publish requirements as an inline HTML blob instead
+          // of the structured requisitesSimple rule tree. Parse the HTML —
+          // course codes are inline, so no courseGroupId resolution is needed.
+          const ff = detail.requisites?.requisitesFreeform;
+          const ffHtml = typeof ff === "string" ? ff : ff?.value ?? "";
+          if (ffHtml) requirementGroups = parseFreeformRequisites(ffHtml);
         }
+
         if (requirementGroups.length === 0) {
           skipped++;
           continue;
