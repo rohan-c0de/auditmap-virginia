@@ -510,6 +510,48 @@ async function _getUniversitiesWithCounts(state: string): Promise<
     totalCount: number;
   }[]
 > {
+  // Fast path: pre-computed cache file from build-transfer-universities-cache.ts
+  // (wired into `npm run build`). getUniversities() got this #777 fix; this
+  // counts variant was missed and kept paginating the full transfers table —
+  // 162K rows for CA, ~10s to cold-render /[state]/transfer. The cache is
+  // ~1 KB and read in <5ms. The totalCount type-guard means an older cache
+  // file written before this field existed falls through to Supabase, so the
+  // change is safe before the cache is regenerated.
+  try {
+    const cachePath = path.join(
+      process.cwd(),
+      "data",
+      state,
+      "transfer-universities.json",
+    );
+    if (fs.existsSync(cachePath)) {
+      const cached = JSON.parse(fs.readFileSync(cachePath, "utf-8")) as {
+        slug: string;
+        name: string;
+        directCount?: number;
+        electiveCount?: number;
+        totalCount?: number;
+      }[];
+      if (
+        Array.isArray(cached) &&
+        cached.length > 0 &&
+        typeof cached[0].totalCount === "number"
+      ) {
+        return cached
+          .map((c) => ({
+            slug: c.slug,
+            name: c.name,
+            directCount: c.directCount ?? 0,
+            electiveCount: c.electiveCount ?? 0,
+            totalCount: c.totalCount ?? 0,
+          }))
+          .sort((a, b) => b.totalCount - a.totalCount);
+      }
+    }
+  } catch {
+    // Cache read/parse failed — fall through to Supabase.
+  }
+
   // Performance: column-projected Supabase query — same reason as
   // getUniversities. Only pulls the 5 fields we actually inspect, not the
   // full 13. See that function's comment.
