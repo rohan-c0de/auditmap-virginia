@@ -89,6 +89,43 @@ function normalizeDate(dateStr: string): string {
   return `${match[3]}-${match[1].padStart(2, "0")}-${match[2].padStart(2, "0")}`;
 }
 
+/**
+ * Canonicalize a Colleague term code to `{YYYY}{FA|SP|SU|WI}[#]`.
+ *
+ * NJ's Colleague portals expose the same logical term under inconsistent option
+ * values across runs — 2-digit years ("26FA"), slashes ("26/FA", "26/SU1"),
+ * single-letter seasons ("2026F" Fall, "2026U" Summer), pre-session/May terms
+ * ("26/PS"), and multi-char session suffixes ("26FA15", "26SU7E"). Left raw,
+ * each writes its own `data/nj/courses/{slug}/{code}.json` file, so a college
+ * ends up with both a clean `2026FA.json` and a junk `26-FA.json` sibling — and
+ * the audit flags the junk as a "suspicious term". Normalizing at write-time
+ * collapses every variant to the same canonical filename, so re-scraping
+ * overwrites the clean file instead of spawning a malformed duplicate.
+ *
+ * Idempotent on already-valid codes: recognized canonical forms (incl. valid
+ * sub-sessions like `2026SU1` and `2026S1`) are returned untouched so we never
+ * mangle the colleges that legitimately publish session-level terms.
+ */
+function normalizeTermCode(raw: string): string {
+  let t = (raw || "").toUpperCase().trim();
+  // Strip slash/backslash session separators: "26/SU1"→"26SU1", "26/PS"→"26PS".
+  t = t.replace(/[\\/]/g, "");
+  // Expand a 2-digit leading year when a season letter follows: "26FA"→"2026FA".
+  t = t.replace(/^(\d{2})(?=[A-Z])/, "20$1");
+  // Map non-standard seasons: pre-session/May "2026PS" → Summer.
+  t = t.replace(/^(\d{4})PS\d*$/, "$1SU");
+  // Bare single-letter Fall "2026F" → "2026FA" (only when F is not part of "FA").
+  t = t.replace(/^(\d{4})F(?![A-Z])/, "$1FA");
+  // Bare single-letter Summer "2026U" → "2026SU" (not a valid "U#" sub-session).
+  t = t.replace(/^(\d{4})U(?![A-Z0-9])/, "$1SU");
+  // Already canonical (incl. valid sub-sessions)? Leave it alone.
+  if (/^\d{4}(FA|SP|SU|WI)\d?$/.test(t)) return t;
+  if (/^\d{4}(U|S)\d$/.test(t)) return t;
+  // Strip a trailing multi-char session suffix: "2026FA15"→"2026FA", "2026SU7E"→"2026SU".
+  t = t.replace(/^(\d{4}(?:FA|SP|SU|WI)).*$/, "$1");
+  return t;
+}
+
 function determineMode(section: {
   locationCode: string;
   locationDisplay: string;
@@ -676,12 +713,15 @@ async function main() {
       const sections = await scrapeCollege(slug, baseUrl, currentTermName, context);
 
       if (sections.length > 0) {
-        const termCode = sections[0].term;
-        // Some NJ Colleague installations (e.g. Passaic) return term codes
-        // containing slashes like "26/SU1". Use a sanitized form for the
-        // filename so we keep the flat data/{state}/courses/{slug}/{term}.json
-        // layout; the in-memory `term` field is left alone for downstream
-        // import logic.
+        const rawTermCode = sections[0].term;
+        // Canonicalize the term code (e.g. "26/SU1"→"2026SU1", "2026F"→"2026FA",
+        // "26FA15"→"2026FA"). Rewrite every section's `term` field to match so
+        // the data and the filename agree and the audit's suspicious-term check
+        // passes. See normalizeTermCode for the full rationale.
+        const termCode = normalizeTermCode(rawTermCode);
+        if (termCode !== rawTermCode) {
+          for (const s of sections) s.term = termCode;
+        }
         const fileTermCode = termCode.replace(/[\\/]/g, "-");
         const outDir = path.join(process.cwd(), "data", "nj", "courses", slug);
         fs.mkdirSync(outDir, { recursive: true });
