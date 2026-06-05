@@ -25,6 +25,9 @@ export interface CourseGroup {
 export interface CollegeGroup {
   slug: string;
   name: string;
+  /** "City, ST" from the college's primary campus address, or null if it can't
+   * be parsed. Lets a result card convey proximity even with no zip entered. */
+  city: string | null;
   distance: number | null;
   auditAllowed: boolean | null;
   sections: CourseSection[];
@@ -44,6 +47,24 @@ export interface RecoverySuggestion {
 
 export interface SearchRecovery {
   suggestions: RecoverySuggestion[];
+}
+
+/**
+ * Derive a "City, ST" label from a campus street address like
+ * "1247 Jimmie Kerr Road, Graham, NC 27253" → "Graham, NC". The city is the
+ * second-to-last comma segment (so multi-word cities like "Lake Jackson" and
+ * "Corpus Christi" survive); the state is the first token of the last segment
+ * (dropping the ZIP, including ZIP+4). Returns null when the address doesn't
+ * have at least street/city/"ST ZIP" parts, so the UI just omits it.
+ */
+export function cityFromAddress(address: string | null | undefined): string | null {
+  if (!address) return null;
+  const parts = address.split(",").map((p) => p.trim()).filter(Boolean);
+  if (parts.length < 3) return null;
+  const city = parts[parts.length - 2];
+  const stateAbbr = parts[parts.length - 1].split(/\s+/)[0];
+  if (!city || !stateAbbr) return null;
+  return `${city}, ${stateAbbr}`;
 }
 
 /** Parse a search query into structured parts */
@@ -329,6 +350,9 @@ export async function searchCoursesAcrossColleges(
       colleges.push({
         slug,
         name: inst?.name || slug,
+        // Primary-campus city, so a result conveys where the college is even
+        // when no zip was entered (no distance computed).
+        city: cityFromAddress(inst?.campuses?.[0]?.address),
         distance,
         auditAllowed: inst?.audit_policy?.allowed ?? null,
         sections,

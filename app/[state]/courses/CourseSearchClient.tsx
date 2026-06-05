@@ -43,6 +43,7 @@ interface SectionResult {
 interface CollegeGroup {
   slug: string;
   name: string;
+  city: string | null;
   distance: number | null;
   auditAllowed: boolean | null;
   sections: SectionResult[];
@@ -933,6 +934,11 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
                                 <span className="font-medium text-gray-900 dark:text-slate-100 text-sm">
                                   {college.name}
                                 </span>
+                                {college.city && (
+                                  <span className="ml-2 text-xs text-gray-500 dark:text-slate-400">
+                                    {college.city}
+                                  </span>
+                                )}
                                 {college.distance !== null && (
                                   <span className="ml-2 text-xs text-gray-500 dark:text-slate-400">
                                     {college.distance} mi
