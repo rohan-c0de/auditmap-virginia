@@ -241,6 +241,21 @@ const PROGRAMS_FILTER_BODY = {
   ],
 };
 
+// Empty filter — fetches ALL programs regardless of status. Fallback for
+// tenants that store status as lowercase "active" (Banner-SQL / some Colleague
+// syncs), which the case-sensitive "Active" filter above returns 0 for.
+const EMPTY_FILTER_BODY = { condition: "AND", filters: [] };
+
+/**
+ * Whether a Coursedog program status counts as "active" for scraping. Tenants
+ * vary in casing ("Active" vs "active"); a missing/blank status defaults to
+ * active. Inactive / Archived / etc. are dropped. Exported for unit testing.
+ */
+export function isActiveProgramStatus(status?: string): boolean {
+  const s = (status ?? "").trim().toLowerCase();
+  return s === "" || s === "active";
+}
+
 async function listAllPrograms(
   page: Page,
   tenantId: string,
@@ -256,8 +271,20 @@ async function listAllPrograms(
     url,
     PROGRAMS_FILTER_BODY,
   );
-  if (!resp) return [];
-  return resp.data ?? [];
+  let data = resp?.data ?? [];
+  // Casing fallback: when the "Active"-filtered search returns nothing, the
+  // tenant likely stores its status lowercase. Re-fetch unfiltered and keep
+  // only active/unspecified programs (drop Inactive/Archived) so the catalog
+  // isn't silently empty. Tenants that already return rows are untouched.
+  if (data.length === 0) {
+    const respAll = await apiPost<{ data: ProgramListItem[]; listLength: number }>(
+      page,
+      url,
+      EMPTY_FILTER_BODY,
+    );
+    data = (respAll?.data ?? []).filter((p) => isActiveProgramStatus(p.status));
+  }
+  return data;
 }
 
 async function getProgramDetail(

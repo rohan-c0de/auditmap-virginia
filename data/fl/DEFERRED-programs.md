@@ -4,11 +4,12 @@ Programs rollout for Florida (FCS, 28 colleges). Catalog platform per college is
 fingerprinted by `scripts/fl/discover-catalogs.ts` → `data/fl/catalog-discovery.json`,
 then scraped by the matching platform wrapper (cloned from the NC tooling).
 
-## Shipped — 14 colleges scraped (~1,471 programs); **1,255 plannable across 14 colleges**
+## Shipped — 15 colleges scraped (~1,523 programs); **1,290 plannable across 15 colleges**
 
 Verified via `countRealCourses >= PLAN_MIN_COURSES` on local JSON, plannable per college:
 palmbeachstate 156, irsc 143, fscj 129, pensacolastate 112, daytonastate 108, **cf 85**,
-polk 80, **tcc-fl 77**, **phsc 70**, sjrstate 65, scf 63, fsw 60, southflorida 54, fgc 53.
+polk 80, **tcc-fl 77**, **phsc 70**, sjrstate 65, scf 63, fsw 60, southflorida 54, fgc 53,
+**nwfsc 35**.
 
 **Walker fix (2026-06-04):** phsc went 0 → 70 plannable. Its 17 category pages under
 `/academic-programs/` link to programs in a SIBLING URL tree (`/prog-desc/{level}/{slug}`)
@@ -45,9 +46,13 @@ stray "Acalog" footer mention can't re-trip this.
 - ~~cf, tcc-fl (Acalog) — 0 plannable~~ **RESOLVED 2026-06-04** (parser fix; see above).
 - **CourseLeaf (easternflorida, lssc, valencia) — 0.** Their program index doesn't
   match the common CourseLeaf path conventions; needs per-college index discovery.
-- **CourseDog (nwfsc) — 0.** `nwfsc_banner_sql` tenant variant returns 0 programs via
-  the shared Coursedog lib. (fscj, a standard `fscj_peoplesoft` Coursedog tenant, works
-  fine — the remaining gap is specifically the `*_banner_sql` variant.)
+- **CourseDog (nwfsc) — RESOLVED 2026-06-05 (0 → 35 plannable).** The `nwfsc_banner_sql`
+  tenant stores program status as lowercase `active`, so the shared lib's case-sensitive
+  `status is "Active"` filter returned 0. `listAllPrograms` in
+  `scripts/lib/scrape-coursedog-programs.ts` now falls back to an unfiltered fetch (keeping
+  only active programs via `isActiveProgramStatus`) when the filtered fetch is empty. 52
+  programs scraped, 35 plannable. The payload shape was standard all along — the prior
+  "payload differs" guess was wrong; it was purely the status-filter casing.
 - **9 colleges fingerprinted `unknown`** (gulfcoast, hccfl, mdc, nfc, seminolestate,
   sfcollege, spcollege, + the 2 above): catalog not found via probed patterns.
   Second-pass discovery (more subdomain patterns, PDF catalogs) is the next lever.
