@@ -59,11 +59,21 @@ interface CourseGroup {
   prerequisite_courses: string[];
 }
 
+export interface RecoverySuggestion {
+  drop: "mode" | "days" | "timeOfDay";
+  droppedLabel: string;
+  totalCourses: number;
+  totalSections: number;
+}
+
 export interface SearchResponse {
   courses: CourseGroup[];
   totalCourses: number;
   totalSections: number;
   totalColleges: number;
+  // Present only on an empty filtered result: how many sections come back if
+  // one filter is dropped (see lib/courses-search.ts). Powers the recovery CTAs.
+  recovery?: { suggestions: RecoverySuggestion[] };
 }
 
 interface IntentSummary {
@@ -290,6 +300,11 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
   // Pagination
   const [displayLimit, setDisplayLimit] = useState(10);
 
+  // Set true by an empty-state recovery CTA after it clears a filter; the effect
+  // below then re-runs the search. We can't clear-and-search in one handler
+  // because doSearch closes over the pre-clear filter value (stale closure).
+  const [recoveryPending, setRecoveryPending] = useState(false);
+
   const doSearch = useCallback(async (searchQuery: string) => {
     if (!searchQuery.trim() || searchQuery.trim().length < 2) {
       setError("Enter at least 2 characters to search.");
@@ -500,6 +515,15 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
     // adds LLM query refinement and can rescue queries SSR left empty.
     doSearch(initialQuery);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Re-run the search after a recovery CTA cleared a filter. Runs post-render so
+  // doSearch now closes over the cleared filter value. The early return keeps a
+  // normal manual filter change (recoveryPending false) from auto-searching.
+  useEffect(() => {
+    if (!recoveryPending) return;
+    setRecoveryPending(false);
+    doSearch(query);
+  }, [recoveryPending, query, doSearch]);
 
   function toggleExpand(courseKey: string, slug: string) {
     const id = `${courseKey}::${slug}`;
@@ -781,6 +805,26 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
                     ? `Try removing the ${activeFilters.join(", ")} filter${activeFilters.length === 1 ? "" : "s"}.`
                     : "Try a different keyword or course code."}
                 </p>
+                {results.recovery && results.recovery.suggestions.length > 0 && (
+                  <div className="mt-4 flex flex-wrap justify-center gap-2">
+                    {results.recovery.suggestions.map((s) => (
+                      <button
+                        key={s.drop}
+                        type="button"
+                        onClick={() => {
+                          if (s.drop === "mode") setMode("");
+                          else if (s.drop === "days") setDays([]);
+                          else setTimeOfDay("");
+                          setRecoveryPending(true);
+                        }}
+                        className="rounded-full border border-teal-300 dark:border-teal-700 bg-teal-50 dark:bg-teal-900/30 px-3 py-1.5 text-xs font-medium text-teal-700 dark:text-teal-300 hover:bg-teal-100 dark:hover:bg-teal-900/50 transition"
+                      >
+                        Show {s.totalSections.toLocaleString()}{" "}
+                        {s.totalSections === 1 ? "section" : "sections"} without the {s.droppedLabel} filter
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
             );
           })()}

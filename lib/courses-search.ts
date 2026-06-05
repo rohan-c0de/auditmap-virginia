@@ -30,6 +30,22 @@ export interface CollegeGroup {
   sections: CourseSection[];
 }
 
+// Empty-state recovery: when a query matches courses but the mode/days/timeOfDay
+// filters knock the result to zero, each suggestion reports how many
+// courses/sections would match if that ONE filter were dropped — so the UI can
+// offer "show N sections without the {evening} filter" instead of a dead end.
+export interface RecoverySuggestion {
+  drop: "mode" | "days" | "timeOfDay";
+  /** Human label for the dropped filter, e.g. "evening", "online", "day". */
+  droppedLabel: string;
+  totalCourses: number;
+  totalSections: number;
+}
+
+export interface SearchRecovery {
+  suggestions: RecoverySuggestion[];
+}
+
 /** Parse a search query into structured parts */
 export function parseQuery(q: string): {
   prefix: string | null;
@@ -156,6 +172,7 @@ export async function searchCoursesAcrossColleges(
   totalCourses: number;
   totalSections: number;
   totalColleges: number;
+  recovery?: SearchRecovery;
 }> {
   let { prefix, number, keyword } = parseQuery(query);
   // Push the query predicate into Postgres instead of loading every section
@@ -234,14 +251,19 @@ export async function searchCoursesAcrossColleges(
     return true;
   };
 
-  // Step 1: Apply the remaining JS-side filters to the server-narrowed set
-  // (prefix/number/keyword reflect the rescue's effective parse when it ran).
-  const matched = allCourses.filter((s) => {
+  // Step 1a: query match only (prefix/number/keyword reflect the rescue's
+  // effective parse when it ran). This is the set the mode/days/timeOfDay
+  // filters narrow — kept separate so empty-state recovery can re-count it
+  // with one filter dropped, without re-querying.
+  const queryMatched = allCourses.filter((s) => {
     if (prefix && s.course_prefix !== prefix) return false;
     if (number && s.course_number !== number) return false;
     if (keyword && !s.course_title.toLowerCase().includes(keyword)) return false;
-    return passesFilters(s);
+    return true;
   });
+
+  // Step 1b: apply the mode/days/timeOfDay hard filters.
+  const matched = queryMatched.filter(passesFilters);
 
   // Step 2: Group by course (prefix+number), then by college
   const courseMap = new Map<
@@ -344,5 +366,59 @@ export async function searchCoursesAcrossColleges(
   // Paginate
   const paginated = courseGroups.slice(offset, offset + limit);
 
-  return { courses: paginated, totalCourses, totalSections, totalColleges };
+  // Empty-state recovery. When the query DID match courses but the hard filters
+  // zeroed the result, re-count `queryMatched` (the same already-fetched set)
+  // with each applied filter dropped individually, so the UI can offer a way
+  // forward instead of a dead end. Skipped when the query itself matched
+  // nothing (queryMatched empty) — then "try a different keyword" is the right
+  // message, not "drop a filter".
+  let recovery: SearchRecovery | undefined;
+  if (totalCourses === 0 && queryMatched.length > 0) {
+    const applied: Array<"mode" | "days" | "timeOfDay"> = [];
+    if (filters.mode) applied.push("mode");
+    if (filters.days && filters.days.length > 0) applied.push("days");
+    if (filters.timeOfDay) applied.push("timeOfDay");
+
+    if (applied.length > 0) {
+      const okMode = (s: CourseSection) => !filters.mode || s.mode === filters.mode;
+      const okDays = (s: CourseSection) =>
+        !(filters.days && filters.days.length > 0) || sectionMatchesDays(s.days, filters.days);
+      const okTime = (s: CourseSection) =>
+        !filters.timeOfDay || matchesTimeOfDay(s.start_time, filters.timeOfDay);
+      // For each dropped filter, keep the OTHER two and count distinct courses + sections.
+      const keepPred: Record<"mode" | "days" | "timeOfDay", (s: CourseSection) => boolean> = {
+        mode: (s) => okDays(s) && okTime(s),
+        days: (s) => okMode(s) && okTime(s),
+        timeOfDay: (s) => okMode(s) && okDays(s),
+      };
+      const labelFor: Record<"mode" | "days" | "timeOfDay", string> = {
+        mode: filters.mode || "mode",
+        days: "day",
+        timeOfDay: filters.timeOfDay || "time",
+      };
+      const suggestions: RecoverySuggestion[] = applied
+        .map((drop) => {
+          const courseSet = new Set<string>();
+          let sections = 0;
+          for (const s of queryMatched) {
+            if (keepPred[drop](s)) {
+              courseSet.add(`${s.course_prefix}-${s.course_number}`);
+              sections++;
+            }
+          }
+          return { drop, droppedLabel: labelFor[drop], totalCourses: courseSet.size, totalSections: sections };
+        })
+        .filter((x) => x.totalSections > 0)
+        .sort((a, b) => b.totalSections - a.totalSections);
+      if (suggestions.length > 0) recovery = { suggestions };
+    }
+  }
+
+  return {
+    courses: paginated,
+    totalCourses,
+    totalSections,
+    totalColleges,
+    ...(recovery ? { recovery } : {}),
+  };
 }
