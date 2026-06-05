@@ -179,6 +179,18 @@ function AvailabilityBadge({ code, availability }: { code: string; availability?
   return null;
 }
 
+// Catch credit-slot hints in group titles across every state's catalog format
+// we've seen: "(6 cr.)", "(6cr)", "(3 Credits)", "(6 credit hours)",
+// "(4-6 Credits)" → low end. Falls back to `group.credits_required` when the
+// scraper populated the field directly (NY BMCC "Common Core" has no hint in
+// the title but credits_required: 4).
+const CR_RE = /\b(\d+)(?:[-–]\d+)?\s*(?:cr|credit)s?\b/i;
+// "Recommended Course Sequence" / "Course Sequence" headings list the entire
+// degree in one bucket — same data shape as a menu but semantically different.
+// Render with a "Full degree sequence" framing instead of "Choose N from M".
+const SEQUENCE_RE = /recommended.*sequence|course\s+sequence/i;
+const MENU_PREVIEW_COUNT = 5;
+
 function RequirementGroupBlock({
   group,
   state,
@@ -188,13 +200,42 @@ function RequirementGroupBlock({
   state: string;
   availability?: AvailabilityRecord;
 }) {
+  const [expanded, setExpanded] = useState(false);
+
+  const parsedCredits = (() => {
+    const m = group.name.match(CR_RE);
+    return m ? parseInt(m[1], 10) : null;
+  })();
+  const effectiveCredits = group.credits_required ?? parsedCredits;
+
+  // "Menu mode" = catalog defines a credit slot but lists more course-credits
+  // than the slot needs. Heuristic: courses.length * 3 (assume avg ~3cr each)
+  // materially exceeds the slot. Keeps short truly-required groups expanded
+  // (Eng Comp 6cr / 2 courses: 6 ≯ 4 → not menu).
+  const menuMode =
+    effectiveCredits != null &&
+    effectiveCredits > 0 &&
+    group.choose_n == null &&
+    group.courses.length * 3 > effectiveCredits * 2;
+  const sequenceMode = menuMode && SEQUENCE_RE.test(group.name);
+  const collapsed = menuMode && !expanded;
+  const visibleCourses = collapsed
+    ? group.courses.slice(0, MENU_PREVIEW_COUNT)
+    : group.courses;
+
+  const heading = sequenceMode
+    ? `Full degree sequence — ${group.courses.length} courses, ${effectiveCredits} credits`
+    : menuMode
+      ? `Choose ${effectiveCredits} credits from ${group.courses.length} approved courses`
+      : group.name;
+
   return (
     <div>
-      <div className="flex items-baseline gap-2 mb-1.5">
+      <div className="flex items-baseline gap-2 mb-1.5 flex-wrap">
         <h4 className="text-sm font-medium text-gray-900 dark:text-slate-100">
-          {group.name}
+          {heading}
         </h4>
-        {group.credits_required != null && (
+        {!menuMode && group.credits_required != null && (
           <span className="text-xs text-gray-500 dark:text-slate-400">
             {group.credits_required} credits
           </span>
@@ -205,45 +246,68 @@ function RequirementGroupBlock({
           </span>
         )}
       </div>
+      {menuMode && (
+        // Preserve the catalog's original title so any extra rules in it
+        // (e.g. NC Alamance "from 2 different subject areas") aren't lost.
+        <p className="text-xs italic text-gray-500 dark:text-slate-400 mb-1.5">
+          Catalog group: {group.name}
+        </p>
+      )}
 
       {group.courses.length > 0 ? (
-        <ul className="space-y-0.5">
-          {group.courses.map((course, ci) => (
-            <li key={ci} className="flex items-baseline gap-1.5 text-sm flex-wrap">
-              <Link
-                href={`/${state}/course/${course.prefix.toLowerCase()}-${course.number.toLowerCase()}`}
-                className="font-mono text-xs font-medium text-teal-600 dark:text-teal-400 hover:underline whitespace-nowrap"
-              >
-                {course.prefix} {course.number}
-              </Link>
-              <span className="text-gray-700 dark:text-slate-300 truncate">
-                {course.title}
-              </span>
-              {course.credits != null && (
-                <span className="text-xs text-gray-400 dark:text-slate-500 whitespace-nowrap">
-                  ({course.credits} cr)
+        <>
+          <ul className="space-y-0.5">
+            {visibleCourses.map((course, ci) => (
+              <li key={ci} className="flex items-baseline gap-1.5 text-sm flex-wrap">
+                <Link
+                  href={`/${state}/course/${course.prefix.toLowerCase()}-${course.number.toLowerCase()}`}
+                  className="font-mono text-xs font-medium text-teal-600 dark:text-teal-400 hover:underline whitespace-nowrap"
+                >
+                  {course.prefix} {course.number}
+                </Link>
+                <span className="text-gray-700 dark:text-slate-300 truncate">
+                  {course.title}
                 </span>
-              )}
-              <AvailabilityBadge code={`${course.prefix} ${course.number}`} availability={availability} />
-              {course.or_alternatives.length > 0 && (
-                <span className="text-xs text-gray-500 dark:text-slate-400">
-                  or{" "}
-                  {course.or_alternatives.map((alt, ai) => (
-                    <span key={ai}>
-                      {ai > 0 && " or "}
-                      <Link
-                        href={`/${state}/course/${alt.prefix.toLowerCase()}-${alt.number.toLowerCase()}`}
-                        className="font-mono text-teal-600 dark:text-teal-400 hover:underline"
-                      >
-                        {alt.prefix} {alt.number}
-                      </Link>
-                    </span>
-                  ))}
-                </span>
-              )}
-            </li>
-          ))}
-        </ul>
+                {course.credits != null && (
+                  <span className="text-xs text-gray-400 dark:text-slate-500 whitespace-nowrap">
+                    ({course.credits} cr)
+                  </span>
+                )}
+                <AvailabilityBadge code={`${course.prefix} ${course.number}`} availability={availability} />
+                {course.or_alternatives.length > 0 && (
+                  <span className="text-xs text-gray-500 dark:text-slate-400">
+                    or{" "}
+                    {course.or_alternatives.map((alt, ai) => (
+                      <span key={ai}>
+                        {ai > 0 && " or "}
+                        <Link
+                          href={`/${state}/course/${alt.prefix.toLowerCase()}-${alt.number.toLowerCase()}`}
+                          className="font-mono text-teal-600 dark:text-teal-400 hover:underline"
+                        >
+                          {alt.prefix} {alt.number}
+                        </Link>
+                      </span>
+                    ))}
+                  </span>
+                )}
+              </li>
+            ))}
+          </ul>
+          {menuMode && group.courses.length > MENU_PREVIEW_COUNT && (
+            <button
+              type="button"
+              onClick={() => setExpanded(!expanded)}
+              aria-expanded={expanded}
+              className="mt-1.5 text-xs font-medium text-teal-600 dark:text-teal-400 hover:underline"
+            >
+              {expanded
+                ? "Show fewer"
+                : sequenceMode
+                  ? `Show entire sequence (${group.courses.length} courses)`
+                  : `Show all ${group.courses.length} options`}
+            </button>
+          )}
+        </>
       ) : (
         <p className="text-xs text-gray-500 dark:text-slate-400 italic">
           See catalog for course list
