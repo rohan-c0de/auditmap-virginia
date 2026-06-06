@@ -560,14 +560,31 @@ export default function SemesterPlanner({
   );
   const [anyStale, setAnyStale] = useState(false);
 
+  // Whether the planner was opened with courses pre-seeded via ?targets=
+  // (e.g. from an "Add to planner" link on course search / a program page).
+  const hasInitialTargets = (initialTargets?.length ?? 0) > 0;
+
   // Fetch all courses on mount
   useEffect(() => {
     async function load() {
       try {
         const res = await fetch(`/api/${state}/prereqs/courses`);
-        if (!res.ok) throw new Error("Failed to load courses");
-        const data = await res.json();
-        setAllCourses(data.courses);
+        if (res.ok) {
+          const data = await res.json();
+          setAllCourses(data.courses);
+        } else if (res.status === 404) {
+          // State has no prerequisite dataset. The planner can still render
+          // courses seeded via ?targets= as standalone nodes — just without an
+          // auto-sequenced prerequisite chain. Only show the "not available"
+          // error when nothing was seeded, so an "Add to planner" hand-off
+          // into such a state isn't a dead-end.
+          setAllCourses([]);
+          if (!hasInitialTargets) {
+            setError("Prerequisite data not available for this state");
+          }
+        } else {
+          throw new Error("Failed to load courses");
+        }
       } catch {
         setError("Prerequisite data not available for this state");
       } finally {
@@ -575,7 +592,7 @@ export default function SemesterPlanner({
       }
     }
     load();
-  }, [state]);
+  }, [state, hasInitialTargets]);
 
   // Build lookup map
   const lookup = useMemo(() => {

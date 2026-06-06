@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { countRealCourses, programSlug, PLAN_MIN_COURSES } from "@/lib/programs/plan-shared";
+import { plannerHref } from "@/lib/planner-link";
+import { track } from "@/lib/analytics";
 import type { ProgramRequirement } from "@/lib/types";
 import type { Institution } from "@/lib/types";
 
@@ -41,6 +43,14 @@ function ProgramCard({
     collegeId && countRealCourses(program) >= PLAN_MIN_COURSES
       ? `/${state}/college/${collegeId}/program/${programSlug(program)}`
       : null;
+
+  // Every primary course across the program's requirement groups, as
+  // "PREFIX NUMBER" codes, for the "Plan all required courses" deep link into
+  // the semester planner. plannerHref de-dupes + caps at 100.
+  const allCourseCodes = program.requirement_groups.flatMap((g) =>
+    g.courses.map((c) => `${c.prefix} ${c.number}`),
+  );
+  const planAllHref = plannerHref(state, allCourseCodes);
 
   return (
     <div className="rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900">
@@ -108,6 +118,25 @@ function ProgramCard({
             <p className="text-sm text-gray-600 dark:text-slate-400">
               {program.description}
             </p>
+          )}
+
+          {planAllHref && (
+            <Link
+              href={planAllHref}
+              onClick={() =>
+                track("planner_add", {
+                  state,
+                  source: "program_all",
+                  count: Math.min(allCourseCodes.length, 100),
+                })
+              }
+              className="inline-flex items-center gap-1.5 rounded-lg border border-teal-200 dark:border-teal-800 bg-teal-50 dark:bg-teal-900/20 px-3 py-1.5 text-xs font-semibold text-teal-700 dark:text-teal-300 hover:bg-teal-100 dark:hover:bg-teal-900/40 transition"
+            >
+              <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+              </svg>
+              Plan all required courses
+            </Link>
           )}
 
           {program.requirement_groups.length === 0 ? (
@@ -292,6 +321,16 @@ function RequirementGroupBlock({
                     ))}
                   </span>
                 )}
+                <Link
+                  href={plannerHref(state, [`${course.prefix} ${course.number}`])}
+                  onClick={() =>
+                    track("planner_add", { state, source: "program_course", count: 1 })
+                  }
+                  className="text-[11px] font-medium text-gray-400 dark:text-slate-500 hover:text-teal-600 dark:hover:text-teal-400 hover:underline whitespace-nowrap"
+                  title="Add this course to your semester planner"
+                >
+                  + plan
+                </Link>
               </li>
             ))}
           </ul>

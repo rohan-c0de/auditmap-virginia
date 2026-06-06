@@ -21,6 +21,7 @@ import { createClient } from "@/lib/supabase/client";
 import { track } from "@/lib/analytics";
 import AdUnit from "@/components/AdUnit";
 import { stashFavoriteDraft, favoriteDedupKey } from "@/lib/anon-draft";
+import { plannerHref } from "@/lib/planner-link";
 
 // ---------------------------------------------------------------------------
 // Types matching the API response
@@ -901,6 +902,20 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
                           prereqText={course.prerequisite_text}
                         />
                       )}
+                      <Link
+                        href={plannerHref(state, [`${course.prefix} ${course.number}`])}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          track("planner_add", { state, source: "search", count: 1 });
+                        }}
+                        className="inline-flex items-center gap-1 rounded-lg px-2 py-1 text-xs font-medium text-teal-600 dark:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-900/30 transition"
+                        title="Add this course to your semester planner"
+                      >
+                        <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                        </svg>
+                        Add to planner
+                      </Link>
                       <button
                         type="button"
                         onClick={(e) => { e.stopPropagation(); toggleBookmark(course); }}
