@@ -177,6 +177,7 @@ async function _loadTransferMappingsByUniversity(
         )
         .eq("state", state)
         .eq("university", university)
+        .order("id", { ascending: true })
         .range(offset, offset + pageSize - 1);
 
       if (error) throw error;
@@ -321,6 +322,7 @@ export async function loadTransferMappings(
           "cc_prefix, cc_number, cc_course, cc_title, cc_credits, university, university_name, univ_course, univ_title, univ_credits, notes, no_credit, is_elective"
         )
         .eq("state", state)
+        .order("id", { ascending: true })
         .range(offset, offset + PAGE_SIZE - 1);
 
       if (error) throw error;
@@ -485,6 +487,7 @@ export async function getUniversities(
         .from("transfers")
         .select("university, university_name")
         .eq("state", state)
+        .order("id", { ascending: true })
         .range(offset, offset + PAGE_SIZE - 1);
 
       if (error || !data || data.length === 0) break;
@@ -614,6 +617,7 @@ async function _getUniversitiesWithCounts(state: string): Promise<
           "university, university_name, univ_course, no_credit, is_elective"
         )
         .eq("state", state)
+        .order("id", { ascending: true })
         .range(offset, offset + PAGE_SIZE - 1);
 
       if (error || !data || data.length === 0) break;
@@ -721,6 +725,7 @@ export async function getUniversitySlugsForSitemap(
         .eq("state", state)
         .eq("no_credit", false)
         .not("univ_course", "like", "%*%")
+        .order("id", { ascending: true })
         .range(offset, offset + PAGE_SIZE - 1);
 
       if (error || !data || data.length === 0) break;

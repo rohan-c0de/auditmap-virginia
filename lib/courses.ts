@@ -121,6 +121,7 @@ export async function loadCoursesForCollege(
           .eq("college_code", collegeSlug)
           .eq("term", term)
           .eq("state", state)
+          .order("id", { ascending: true })
           .range(start, end);
         if (error) {
           console.error(`loadCoursesForCollege page ${i} error:`, error.message);
@@ -210,6 +211,7 @@ export async function getTermsWithDataForCollegeSubject(
           .eq("college_code", collegeSlug)
           .eq("course_prefix", prefix)
           .eq("state", state)
+          .order("id", { ascending: true })
           .range(start, start + PAGE_SIZE - 1);
         if (fbErr || !rows || rows.length === 0) break;
         for (const row of rows) seen.add(row.term);
@@ -383,6 +385,7 @@ export async function loadAllCourses(
           .select(COURSE_COLUMNS)
           .eq("term", term)
           .eq("state", state)
+          .order("id", { ascending: true })
           .range(start, end);
         if (error) {
           console.error(`loadAllCourses page ${i} error:`, error.message);
@@ -448,10 +451,12 @@ export async function searchSections(
           const safe = parsed.keyword.replace(/[%_]/g, (m) => `\\${m}`);
           q = q.ilike("course_title", `%${safe}%`);
         }
-        const { data, error } = await q.range(
-          i * SEARCH_PAGE_SIZE,
-          i * SEARCH_PAGE_SIZE + SEARCH_PAGE_SIZE - 1
-        );
+        const { data, error } = await q
+          .order("id", { ascending: true })
+          .range(
+            i * SEARCH_PAGE_SIZE,
+            i * SEARCH_PAGE_SIZE + SEARCH_PAGE_SIZE - 1
+          );
         if (error) {
           console.error(`searchSections page ${i} error:`, error.message);
           break;
@@ -505,6 +510,7 @@ export async function loadCoursesByPrefixes(
           .eq("state", state)
           .eq("term", term)
           .in("course_prefix", distinct)
+          .order("id", { ascending: true })
           .range(offset, offset + PAGE_SIZE - 1);
 
         if (error) {
@@ -590,6 +596,7 @@ export async function loadCoursesBySubject(
             .eq("state", state)
             .eq("term", term)
             .eq("course_prefix", prefix)
+            .order("id", { ascending: true })
             .range(start, end);
           if (error) {
             console.error(`loadCoursesBySubject page ${i} error:`, error.message);
@@ -792,6 +799,7 @@ export async function getSitemapCourseIndex(
         .select("course_prefix,course_number,college_code")
         .eq("state", state)
         .eq("term", term)
+        .order("id", { ascending: true })
         .range(start, start + PAGE_SIZE - 1);
       if (error || !rows || rows.length === 0) break;
       for (const r of rows) {
@@ -852,6 +860,7 @@ export async function getDistinctSubjects(
         .select("course_prefix")
         .eq("state", state)
         .eq("term", term)
+        .order("id", { ascending: true })
         .range(start, start + PAGE_SIZE - 1);
       if (error || !rows || rows.length === 0) break;
       for (const r of rows) seen.add(r.course_prefix);
@@ -897,6 +906,7 @@ export async function getCourseTitlesForSubject(
         .select("course_number, course_title")
         .eq("state", state)
         .eq("course_prefix", upper)
+        .order("id", { ascending: true })
         .range(start, start + PAGE_SIZE - 1);
       if (error || !rows || rows.length === 0) {
         if (error) console.error("getCourseTitlesForSubject error:", error.message);
@@ -957,6 +967,7 @@ export async function getDistinctCourseCodes(
         .select("course_prefix,course_number")
         .eq("state", state)
         .eq("term", term)
+        .order("id", { ascending: true })
         .range(start, start + PAGE_SIZE - 1);
       if (pageErr || !rows || rows.length === 0) break;
       for (const r of rows) {
