@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import type { CourseMode } from "@/lib/types";
 import type { Answer } from "@/lib/search-intent/answer";
-import { expandDays } from "@/lib/time-utils";
+import { formatMeeting } from "@/lib/time-utils";
 import { termCodeFromLabel } from "@/lib/term-label";
 import { bestTransferEntry } from "@/lib/transfer-rank";
 import dynamic from "next/dynamic";
@@ -105,21 +105,8 @@ const MODE_STYLES: Record<CourseMode, { bg: string; text: string; label: string 
 
 // DAY_OPTIONS removed — replaced by DayToggle component
 
-function isValidTime(t: string): boolean {
-  return !!t && t !== "TBA" && t !== "0:00 AM" && t !== "0:00 PM";
-}
-
 function formatSchedule(s: SectionResult): string {
-  const hasTime = isValidTime(s.start_time) && isValidTime(s.end_time);
-  if (!s.days && !hasTime) {
-    return "Asynchronous / Online";
-  }
-  const days = s.days ? expandDays(s.days) : "";
-  const time = hasTime ? `${s.start_time}\u2013${s.end_time}` : "";
-  if (days && time) return `${days} ${time}`;
-  if (days) return days;
-  if (time) return time;
-  return "Asynchronous / Online";
+  return formatMeeting(s.days, s.start_time, s.end_time);
 }
 
 // The LLM emits compact single-letter day codes per the classifier prompt

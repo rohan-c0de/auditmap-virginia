@@ -5,7 +5,7 @@ import Link from "next/link";
 import type { GeneratedSchedule, ScheduleResponse, ScheduleSection } from "@/lib/types";
 import WeeklyCalendar from "./WeeklyCalendar";
 import ScoreBar from "./ScoreBar";
-import { isValidTime, expandDays } from "@/lib/time-utils";
+import { isValidTime, formatMeeting } from "@/lib/time-utils";
 import SectionSeats from "@/components/SectionSeats";
 import { useAuth } from "@/lib/hooks/useAuth";
 import { createClient } from "@/lib/supabase/client";
@@ -32,12 +32,7 @@ const TRANSFER_STYLES: Record<string, { bg: string; text: string; label: string 
 };
 
 function formatSchedule(days: string, startTime: string, endTime: string): string {
-  const hasTime = isValidTime(startTime) && isValidTime(endTime);
-  if (!days && !hasTime) return "Async / Online";
-  const d = days ? expandDays(days) : "";
-  const time = hasTime ? `${startTime}\u2013${endTime}` : "";
-  if (d && time) return `${d} ${time}`;
-  return d || time || "Async / Online";
+  return formatMeeting(days, startTime, endTime);
 }
 
 function scoreColor(score: number): string {

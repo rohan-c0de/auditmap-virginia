@@ -99,11 +99,12 @@ function expandDays(days: string): string {
 
 function formatSchedule(s: CourseSection): string {
   const hasTime = isValidTime(s.start_time) && isValidTime(s.end_time);
-  if (!s.days && !hasTime) return "Asynchronous / Online";
+  // No valid meeting time = no real schedule, regardless of the `days` field
+  // (async/online rows arrive with an all-days "M T W Th F Sa Su" placeholder).
+  if (!hasTime) return "No set meeting time";
   const days = s.days ? expandDays(s.days) : "";
-  const time = hasTime ? `${s.start_time}\u2013${s.end_time}` : "";
-  if (days && time) return `${days} ${time}`;
-  return days || time || "Asynchronous / Online";
+  const time = `${s.start_time}\u2013${s.end_time}`;
+  return days ? `${days} ${time}` : time;
 }
 
 // ---------------------------------------------------------------------------

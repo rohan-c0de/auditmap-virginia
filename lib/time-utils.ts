@@ -102,6 +102,27 @@ export function isValidTime(t: string): boolean {
 }
 
 /**
+ * Format a section's meeting for display: "Tu Th 5:30 PM–7:40 PM", or just the
+ * time when days are absent. A section with NO valid start/end time has no real
+ * meeting schedule — return "No set meeting time" regardless of its `days`
+ * field. (Async/online sections arrive with a "M T W Th F Sa Su" all-days
+ * placeholder; keying off `!days` instead let that print as if the class met
+ * every day.) Stays mode-agnostic — the Online/In-Person badge shown beside this
+ * conveys modality. Single source of truth: every section row should call this.
+ */
+export function formatMeeting(
+  days: string,
+  startTime: string,
+  endTime: string,
+): string {
+  const hasTime = isValidTime(startTime) && isValidTime(endTime);
+  if (!hasTime) return "No set meeting time";
+  const d = days ? expandDays(days) : "";
+  const time = `${startTime}–${endTime}`;
+  return d ? `${d} ${time}` : time;
+}
+
+/**
  * Compute the day bitmask for a day string like "M W F" or compact "MWF" / "TuTh".
  */
 export function daysToBitmask(days: string): number {
