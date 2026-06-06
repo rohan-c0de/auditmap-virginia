@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { headers } from "next/headers";
-import { getAllStates } from "@/lib/states/registry";
+import { getAllStates, statesCoveredLabel, coveredStateCount } from "@/lib/states/registry";
 import ThemeToggle from "@/components/ThemeToggle";
 import UserMenu from "@/components/auth/UserMenu";
 import CourseSearchHero from "@/components/CourseSearchHero";
@@ -13,7 +13,7 @@ const STATE_LIST_SENTENCE =
   STATE_NAMES.length <= 1
     ? STATE_NAMES.join("")
     : `${STATE_NAMES.slice(0, -1).join(", ")}, and ${STATE_NAMES[STATE_NAMES.length - 1]}`;
-const META_DESCRIPTION = `Search community college courses, transfer credits, and schedules across ${STATE_NAMES.length} states. Free, no signup.`;
+const META_DESCRIPTION = `Search community college courses, transfer credits, and schedules across ${statesCoveredLabel()}. Free, no signup.`;
 
 export const metadata: Metadata = {
   title: "Community College Path — Find any community college course in one search",
@@ -137,7 +137,7 @@ export default async function LandingPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-20 sm:pt-24 sm:pb-28">
           <div className="text-center">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-teal-100 dark:bg-teal-900/40 text-teal-800 dark:text-teal-200 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em]">
-              ✓ {totalColleges} colleges · {states.length} states · always free
+              ✓ {totalColleges} colleges · {statesCoveredLabel()} · always free
             </span>
             <h1 className="mt-6 text-4xl sm:text-6xl lg:text-[64px] font-semibold leading-[1.05] tracking-[-0.025em] text-slate-900 dark:text-slate-100">
               Find any community college course in{" "}
@@ -346,10 +346,10 @@ export default async function LandingPage() {
                 </div>
                 <div>
                   <div className="text-3xl font-semibold text-teal-300">
-                    {states.length}
+                    {coveredStateCount()}
                   </div>
                   <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-400 mt-1">
-                    states
+                    states + D.C.
                   </div>
                 </div>
                 <div>

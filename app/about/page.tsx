@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getAllStates } from "@/lib/states/registry";
+import { getAllStates, statesCoveredLabel } from "@/lib/states/registry";
 
 export const metadata: Metadata = {
   title: "About — Community College Path",
-  description:
-    "Community College Path is a free course finder and transfer guide for community college students. Search courses, check transfers, plan schedules — across 26 states in one place.",
+  description: `Community College Path is a free course finder and transfer guide for community college students. Search courses, check transfers, plan schedules — across ${statesCoveredLabel()} in one place.`,
   alternates: { canonical: "/about" },
 };
 
@@ -33,7 +32,7 @@ export default function AboutPage() {
           </h2>
           <p className="mb-3">
             Community College Path is a free course navigator covering {totalColleges}+ community
-            colleges across {states.length} states. Search for courses, compare sections across
+            colleges across {statesCoveredLabel()}. Search for courses, compare sections across
             campuses, check transfer credit, and plan your schedule — without bouncing between
             a dozen different college websites.
           </p>

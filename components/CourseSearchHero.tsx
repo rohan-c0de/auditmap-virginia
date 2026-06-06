@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState, useRef } from "react";
 import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
+import { statesCoveredLabel } from "@/lib/states/registry";
 
 const PLACEHOLDER_QUERIES = [
   "ENG 111",
@@ -265,7 +266,7 @@ export default function CourseSearchHero({
           onClick={() => setPickerOpen((o) => !o)}
           className="inline-flex items-center gap-1 rounded-full border border-dashed border-slate-300 dark:border-slate-700 px-3 py-1 text-slate-500 dark:text-slate-400 hover:border-teal-600 hover:text-teal-700 transition-colors"
         >
-          all {states.length} states
+          all {statesCoveredLabel()}
         </button>
 
       </div>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { getAllStates } from "@/lib/states/registry";
+import { getAllStates, statesCoveredLabel } from "@/lib/states/registry";
 
 export const metadata: Metadata = {
   title: "Page not found — Community College Path",
@@ -118,7 +118,7 @@ export default function NotFound() {
             Pick a state
           </h2>
           <p className="mt-1 text-sm text-gray-500 dark:text-slate-400">
-            We cover {states.length} states. Jump straight to one.
+            We cover {statesCoveredLabel()}. Jump straight to one.
           </p>
           <ul className="mt-3 flex flex-wrap gap-2">
             {states.map((s) => (

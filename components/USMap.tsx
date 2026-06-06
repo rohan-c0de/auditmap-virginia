@@ -30,7 +30,7 @@ export default function USMap() {
         viewBox="0 0 975 610"
         className="w-full h-auto"
         role="img"
-        aria-label={`Map of US states. ${states.length} active, click to browse a state.`}
+        aria-label={`Map of US states and D.C. ${states.length} active, click to browse.`}
       >
         <g>
           {fc.features.map((f, i) => {
