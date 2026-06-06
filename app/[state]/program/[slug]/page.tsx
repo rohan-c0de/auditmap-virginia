@@ -118,6 +118,13 @@ export default async function ProgramPage(props: PageProps) {
   const data = await loadProgramData(state, slug);
   if (!data || !qualifies(data)) notFound();
 
+  // The program's first candidate prefix that actually appears in this state's
+  // course data — handles prefix variance (e.g. "accounting" is ACC nationally
+  // but ACCT in TX). Carried into the transfer page to pre-filter the subject.
+  const inDataPrefixes = new Set(data.flatSections.map((s) => s.course_prefix));
+  const transferPrefix =
+    program.prefixes.find((p) => inDataPrefixes.has(p)) ?? program.prefixes[0];
+
   const config = requireStateConfig(state);
   const [term, requirementEntries] = await Promise.all([
     getCurrentTerm(state),
@@ -404,7 +411,7 @@ export default async function ProgramPage(props: PageProps) {
               coursework; you earn the degree, and its earnings, at a four-year
               university.{" "}
               <Link
-                href={`/${state}/transfer`}
+                href={`/${state}/transfer?subject=${encodeURIComponent(transferPrefix)}`}
                 className="font-medium underline hover:no-underline"
               >
                 See where it transfers &rarr;

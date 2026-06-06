@@ -22,6 +22,7 @@ export const maxDuration = 60;
 
 type Props = {
   params: Promise<{ state: string }>;
+  searchParams: Promise<{ subject?: string; to?: string }>;
 };
 
 export function generateStaticParams() {
@@ -40,8 +41,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function TransferPage({ params }: Props) {
+export default async function TransferPage({ params, searchParams }: Props) {
   const { state } = await params;
+  const { subject: initialSubject, to: initialUniversity } = await searchParams;
   const config = requireStateConfig(state);
   if (!config.transferSupported) notFound();
   const universities = await getUniversities(state);
@@ -135,6 +137,8 @@ export default async function TransferPage({ params }: Props) {
         defaultUniversity={defaultUni}
         state={state}
         popularCourses={config.popularCourses}
+        initialSubject={initialSubject}
+        initialUniversity={initialUniversity}
       />
 
       {/* Browse transfer pathways by university — hub-page directory */}
