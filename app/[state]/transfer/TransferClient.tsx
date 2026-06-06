@@ -19,6 +19,12 @@ interface Props {
   defaultUniversity: string;
   state: string;
   popularCourses: string[];
+  /** Pre-seed the subject filter — e.g. a program page's "See where it
+   *  transfers" link passing ?subject=ACCT. */
+  initialSubject?: string;
+  /** Pre-select the receiving university (?to=<slug>); ignored when it isn't a
+   *  known university, falling back to defaultUniversity. */
+  initialUniversity?: string;
 }
 
 type ViewMode = "browse" | "compare";
@@ -31,10 +37,16 @@ export default function TransferClient({
   defaultUniversity,
   state,
   popularCourses,
+  initialSubject,
+  initialUniversity,
 }: Props) {
   const [viewMode, setViewMode] = useState<ViewMode>("browse");
-  const [selectedUniversity, setSelectedUniversity] = useState(defaultUniversity);
-  const [subjectFilter, setSubjectFilter] = useState("");
+  const [selectedUniversity, setSelectedUniversity] = useState(
+    initialUniversity && universities.some((u) => u.slug === initialUniversity)
+      ? initialUniversity
+      : defaultUniversity,
+  );
+  const [subjectFilter, setSubjectFilter] = useState(initialSubject ?? "");
   const [typeFilter, setTypeFilter] = useState<
     "" | "direct" | "elective" | "no-credit"
   >("");
@@ -479,6 +491,9 @@ export default function TransferClient({
             className="w-full rounded-md border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-900 px-3 py-2 text-sm dark:text-slate-100 focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-200"
           >
             <option value="">All Subjects ({subjects.length})</option>
+            {subjectFilter && !subjects.includes(subjectFilter) && (
+              <option value={subjectFilter}>{subjectFilter}</option>
+            )}
             {subjects.map((s) => (
               <option key={s} value={s}>
                 {s}
