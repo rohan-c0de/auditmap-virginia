@@ -88,6 +88,7 @@ export async function collectWatchedCourses(
     const { data, error } = await service
       .from("saved_plans")
       .select("state, target_courses")
+      .order("id", { ascending: true })
       .range(offset, offset + PAGE_SIZE - 1);
     if (error) throw new Error(`collectWatchedCourses: ${error.message}`);
     if (!data || data.length === 0) break;
@@ -149,6 +150,7 @@ export async function fetchCurrentSeats(
           .eq("state", state)
           .eq("course_prefix", prefix)
           .in("course_number", Array.from(numbers))
+          .order("id", { ascending: true })
           .range(offset, offset + PAGE_SIZE - 1);
         if (error) {
           throw new Error(

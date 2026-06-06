@@ -73,6 +73,7 @@ async function loadOnlineSections(
       .eq("state", state)
       .eq("term", term)
       .in("mode", ["online", "zoom"])
+      .order("id", { ascending: true })
       .range(i * PAGE, i * PAGE + PAGE - 1);
     if (error) continue;
     out.push(...(data ?? []));
