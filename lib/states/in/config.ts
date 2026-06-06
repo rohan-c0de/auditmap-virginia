@@ -69,8 +69,10 @@ const inConfig: StateConfig = {
     // Banner credit guide and IU's CollegeSource TES public views. A follow-up
     // PR will add those receivers; this establishes baseline coverage.
     transfers: [{ scripts: ["scripts/in/scrape-transfer.ts"], runner: "http" }],
-    // manual-only: programs — no public catalog matched a templated platform
-    // (catalog.ivytech.edu is Acalog); programs discovery deferred.
+    // Ivy Tech's full degree/certificate catalog (catalog.ivytech.edu, Acalog
+    // catoid=13) scraped via the shared Acalog template — one statewide catalog
+    // covers every campus. ~392 programs with requirement groups.
+    programs: [{ scripts: ["scripts/in/scrape-programs.ts"], runner: "http" }],
   },
 };
 
