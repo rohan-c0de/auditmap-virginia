@@ -430,6 +430,31 @@ export async function getCoursesForUniversity(
  * a column-projected query (just `university, university_name`), keeping
  * the same pagination but slashing wire payload and JSON parse cost.
  */
+/**
+ * Per-course "available this term" map for the transfer finder, read from the
+ * build-time cache data/{state}/course-availability.json (built by
+ * scripts/build-course-availability-cache.ts). Keyed "PREFIX-NUMBER". Returns {}
+ * when the cache is absent so the page degrades gracefully. A cheap file read
+ * (~tens of KB) — this replaces the request-time course fan-out that tripped
+ * Vercel's streaming timeout and forced the empty `{}` in #777.
+ */
+export function loadCourseAvailability(
+  state: string
+): Record<string, { colleges: string[]; totalSections: number }> {
+  try {
+    const cachePath = path.join(process.cwd(), "data", state, "course-availability.json");
+    if (fs.existsSync(cachePath)) {
+      return JSON.parse(fs.readFileSync(cachePath, "utf-8")) as Record<
+        string,
+        { colleges: string[]; totalSections: number }
+      >;
+    }
+  } catch {
+    // fall through to empty — the page still renders, just without availability
+  }
+  return {};
+}
+
 export async function getUniversities(
   state: string
 ): Promise<{ slug: string; name: string; mappingCount?: number }[]> {

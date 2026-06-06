@@ -5,6 +5,7 @@ import {
   loadTransferMappingsByUniversity,
   getUniversities,
   getUniversitiesWithCounts,
+  loadCourseAvailability,
 } from "@/lib/transfer";
 import { getAllStates } from "@/lib/states/registry";
 import { requireStateConfig } from "@/lib/states/route-helpers";
@@ -58,15 +59,14 @@ export default async function TransferPage({ params }: Props) {
   // 500. Issue #777.
   const mappings: Awaited<ReturnType<typeof loadTransferMappingsByUniversity>> = [];
 
-  // Course-availability map: temporarily passed empty. Building it
-  // server-side (even with the IN-query narrowing in #786) was tripping
-  // Vercel's ~15s streaming timeout for CA/TX/MI/TN/NJ/MD due to cold-start
-  // variance. The visible cost is that the "available this term" badge
-  // doesn't appear on course rows — filters/sorts still work, mappings
-  // still render. Proper fix tracked separately: build-time aggregation
-  // cache (data/{state}/course-availability-{term}.json), same pattern as
-  // the transfer-universities cache in #781. Issue #777.
-  const courseAvailability: Record<string, { colleges: string[]; totalSections: number }> = {};
+  // Course-availability map ("available this term"): read from the build-time
+  // cache data/{state}/course-availability.json (loadCourseAvailability →
+  // scripts/build-course-availability-cache.ts). Building it server-side at
+  // request time tripped Vercel's ~15s streaming timeout on big states (#777),
+  // so it shipped empty and the feature silently showed 0; the cache is a cheap
+  // file read with no Supabase, restoring the "Available Now" count, the
+  // "available this term only" filter, and the per-row badge.
+  const courseAvailability = loadCourseAvailability(state);
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com";
 
