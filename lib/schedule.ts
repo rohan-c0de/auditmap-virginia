@@ -354,9 +354,21 @@ function filterSections(
     // (async sections pass through)
     if (!isAsync && (dayMask & ~availableDayMask) !== 0) continue;
 
-    // Time window filter (async sections pass through)
-    if (!isAsync) {
-      if (startMin < timeWindow.startMin || endMin > timeWindow.endMin) continue;
+    // Time window filter. Timed sections must fall inside the requested window.
+    // Async / no-meeting-time sections normally "fit any schedule" and pass
+    // through — BUT when the student narrowed Time of day (Morning/Afternoon/
+    // Evening, i.e. a window tighter than all-day), they're asking for classes
+    // that MEET then. An async course has no meeting time, so letting it pass
+    // silently ignored that availability: picking "Evening" returned a wall of
+    // anytime-online courses that don't meet in the evening. Keep async only
+    // when Time is "Any" (full-day window) or the student explicitly wants
+    // online/zoom/hybrid.
+    const timeConstrained = timeWindow.startMin > 0 || timeWindow.endMin < 1440;
+    const wantsOnline = modeFilter === "online" || modeFilter === "hybrid";
+    if (isAsync) {
+      if (timeConstrained && !wantsOnline) continue;
+    } else if (startMin < timeWindow.startMin || endMin > timeWindow.endMin) {
+      continue;
     }
 
     // Distance filter
