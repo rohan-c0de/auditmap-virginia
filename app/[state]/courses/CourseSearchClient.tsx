@@ -22,6 +22,7 @@ import { track } from "@/lib/analytics";
 import AdUnit from "@/components/AdUnit";
 import { stashFavoriteDraft, favoriteDedupKey } from "@/lib/anon-draft";
 import { plannerHref } from "@/lib/planner-link";
+import { communityCollegesLabel } from "@/lib/states/registry";
 
 // ---------------------------------------------------------------------------
 // Types matching the API response
@@ -587,7 +588,7 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-slate-100">Find a Course</h1>
         <p className="text-gray-600 dark:text-slate-400 mt-1">
-          Search across all {collegeCount} {systemName} colleges at once
+          Search across all {collegeCount} {communityCollegesLabel(state)} at once
         </p>
       </div>
 
@@ -1085,7 +1086,7 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
               <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
             </svg>
           </div>
-          <h3 className="font-medium text-gray-900 dark:text-slate-100">Search all {systemName} colleges at once</h3>
+          <h3 className="font-medium text-gray-900 dark:text-slate-100">Search all {communityCollegesLabel(state)} at once</h3>
           <p className="mt-1 text-sm text-gray-500 dark:text-slate-400 max-w-md mx-auto">
             Enter a subject code (ENG), course number (ENG 111), or keyword
             (psychology) to find sections across all {collegeCount} community colleges.

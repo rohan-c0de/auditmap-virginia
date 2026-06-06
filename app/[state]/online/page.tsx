@@ -47,7 +47,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
   if (!onlineQualifies(data) || !data) return { title: "Not Found" };
 
   const title = `Online Community College Courses in ${config.name} (${termLabel(data.term)})`;
-  const description = `Find ${data.totalSections} online sections across ${data.totalColleges} ${config.systemName} colleges for ${termLabel(data.term)}. ${data.totalUniqueCourses} unique courses available online — compare schedules and transfer options.`;
+  const description = `Find ${data.totalSections} online sections across ${data.totalColleges} ${config.name} community colleges for ${termLabel(data.term)}. ${data.totalUniqueCourses} unique courses available online — compare schedules and transfer options.`;
   const canonical = `${siteUrl()}/${state}/online`;
 
   return {
@@ -89,7 +89,7 @@ export default async function OnlinePage(props: PageProps) {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: `Online community college courses in ${config.name}`,
-    description: `${data.totalSections} online sections across ${data.totalColleges} ${config.systemName} colleges for ${termLabel(data.term)}.`,
+    description: `${data.totalSections} online sections across ${data.totalColleges} ${config.name} community colleges for ${termLabel(data.term)}.`,
     numberOfItems: data.colleges.length,
     url: `${url}/${state}/online`,
     itemListElement: data.colleges.slice(0, 25).map((c, i) => ({
@@ -129,7 +129,7 @@ export default async function OnlinePage(props: PageProps) {
           </h1>
           <p className="text-gray-600 dark:text-slate-400 mt-3 leading-relaxed max-w-3xl">
             {data.totalSections} online sections across {data.totalColleges}{" "}
-            {config.systemName} colleges for {termLabel(data.term)}.{" "}
+            {config.name} community colleges for {termLabel(data.term)}.{" "}
             {data.totalUniqueCourses} unique courses delivered fully online or
             via Zoom — same credits, same transfer eligibility as in-person
             sections.

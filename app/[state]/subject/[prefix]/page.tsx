@@ -86,8 +86,8 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
   ).length;
   const term = termLabel(currentTerm);
 
-  const title = `${subject} Courses — All ${config.systemName} Colleges (${term})`;
-  const description = `Browse ${filtered.length} ${subject} sections across ${collegeCount} ${config.systemName} colleges for ${term}. ${uniqueCourses} unique courses${onlineCount > 0 ? `, ${onlineCount} available online` : ""}. Compare schedules, credits, and transfer options.`;
+  const title = `${subject} Courses — All ${config.name} Community Colleges (${term})`;
+  const description = `Browse ${filtered.length} ${subject} sections across ${collegeCount} ${config.name} community colleges for ${term}. ${uniqueCourses} unique courses${onlineCount > 0 ? `, ${onlineCount} available online` : ""}. Compare schedules, credits, and transfer options.`;
 
   const canonical = `${process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com"}/${state}/subject/${rawPrefix}`;
 
@@ -222,7 +222,7 @@ export default async function StateSubjectPage(props: PageProps) {
     "@type": "ItemList",
     "@id": `${siteUrl}/${state}/subject/${rawPrefix}#itemlist`,
     name: `${subject} Courses — ${config.systemName}`,
-    description: `${sections.length} ${subject} sections across ${collegeCount} ${config.systemName} colleges for ${term}.`,
+    description: `${sections.length} ${subject} sections across ${collegeCount} ${config.name} community colleges for ${term}.`,
     numberOfItems: courses.length,
     url: `${siteUrl}/${state}/subject/${rawPrefix}`,
     // Connect to the site-wide WebSite/Organization graph from the root

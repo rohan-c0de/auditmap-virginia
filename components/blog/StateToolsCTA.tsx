@@ -14,7 +14,7 @@ export default function StateToolsCTA({ state, variant }: StateToolsCTAProps) {
       : `Use the ${config.name} tools`;
   const subhead =
     variant === "top"
-      ? `Skip to the search and transfer tools for ${config.systemName} colleges.`
+      ? `Skip to the search and transfer tools for ${config.name} community colleges.`
       : `Search ${config.systemName} courses, look up transfer credit, or build a schedule.`;
 
   return (

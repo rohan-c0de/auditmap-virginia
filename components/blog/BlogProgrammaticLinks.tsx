@@ -24,11 +24,11 @@ type ProgrammaticLink = {
   href: string;
 };
 
-function linksForCategory(state: string, category: string, stateName: string, systemName: string): ProgrammaticLink[] {
+function linksForCategory(state: string, category: string, stateName: string): ProgrammaticLink[] {
   // Common base — every state-tagged post benefits from the colleges
   // directory (high-leverage page that lists all colleges in the state).
   const collegesLink: ProgrammaticLink = {
-    label: `Browse all ${systemName} colleges`,
+    label: `Browse all ${stateName} community colleges`,
     href: `/${state}/colleges`,
   };
 
@@ -106,8 +106,7 @@ export default function BlogProgrammaticLinks({
   const links = linksForCategory(
     state,
     category,
-    config.name,
-    config.systemName
+    config.name
   );
 
   if (links.length === 0) return null;

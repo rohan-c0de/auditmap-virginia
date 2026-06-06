@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         url: `${baseUrl}/${state}/opengraph-image`,
         width: 1200,
         height: 630,
-        alt: `${config.name} community college course finder — search ${config.collegeCount} ${config.systemName} colleges, transfer equivalencies, and schedules`,
+        alt: `${config.name} community college course finder — search ${config.collegeCount} ${config.name} community colleges, transfer equivalencies, and schedules`,
       }],
     },
     twitter: {
@@ -120,7 +120,7 @@ export default async function StateLayout({ children, params }: Props) {
                 )}
                 <li>
                   <Link href={`/${state}/colleges`} className="text-gray-600 dark:text-slate-400 hover:text-teal-600 transition-colors">
-                    All {config.systemName} Colleges
+                    All {config.name} Community Colleges
                   </Link>
                 </li>
               </ul>

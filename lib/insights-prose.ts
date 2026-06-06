@@ -27,6 +27,7 @@
 import type { CollegeInsights } from "@/lib/college-insights";
 import type { StateInsights } from "@/lib/state-insights";
 import { subjectName } from "@/lib/subjects";
+import { communityCollegesLabel } from "@/lib/states/registry";
 
 // ---------------------------------------------------------------------------
 // Banned-phrase list (enforced at test time)
@@ -118,20 +119,13 @@ function subjectLabel(prefix: string): string {
 }
 
 /**
- * Form a noun phrase like "23 VCCS colleges" or "23 California Community
- * Colleges schools" depending on whether the system name already ends in
- * "Colleges" (e.g. "California Community Colleges"). Avoids the awkward
- * "Colleges colleges" duplication when the system name is plural.
+ * Form a noun phrase like "23 California community colleges" from the state
+ * slug (via communityCollegesLabel), so it reads naturally for every system
+ * and avoids the doubled "Colleges colleges" / awkward "CCs colleges" the old
+ * systemName-based version produced.
  */
-function systemColleges(systemName: string, count: number): string {
-  const noun = /colleges$/i.test(systemName) ? "schools" : "colleges";
-  return `${count} ${systemName} ${noun}`;
-}
-
-/** Single-college form: "VCCS college" or "California Community Colleges school". */
-function systemCollegeSingular(systemName: string): string {
-  const noun = /colleges$/i.test(systemName) ? "school" : "college";
-  return `${systemName} ${noun}`;
+function systemColleges(state: string, count: number): string {
+  return `${count} ${communityCollegesLabel(state)}`;
 }
 
 // ---------------------------------------------------------------------------
@@ -151,9 +145,9 @@ export function renderCollegeProse(insights: CollegeInsights): string[] {
     const sr = insights.sectionRank;
     const key = `${insights.collegeId}:catalog`;
     const variants = [
-      `Across ${insights.collegeName}'s catalog this term, ${approxCount(insights.termSectionCount)} course sections are listed — the ${ordinal(sr.position)}-largest catalog among the ${systemColleges(insights.systemName, sr.outOf)} with current data.`,
-      `${insights.collegeName} lists ${approxCount(insights.termSectionCount)} sections this term, putting it ${ordinal(sr.position)} of ${systemColleges(insights.systemName, sr.outOf)} by catalog size.`,
-      `Among ${systemColleges(insights.systemName, sr.outOf)} with current course data, ${insights.collegeName} ranks ${ordinal(sr.position)} by section count, with ${approxCount(insights.termSectionCount)} sections this term.`,
+      `Across ${insights.collegeName}'s catalog this term, ${approxCount(insights.termSectionCount)} course sections are listed — the ${ordinal(sr.position)}-largest catalog among the ${systemColleges(insights.state, sr.outOf)} with current data.`,
+      `${insights.collegeName} lists ${approxCount(insights.termSectionCount)} sections this term, putting it ${ordinal(sr.position)} of ${systemColleges(insights.state, sr.outOf)} by catalog size.`,
+      `Among ${systemColleges(insights.state, sr.outOf)} with current course data, ${insights.collegeName} ranks ${ordinal(sr.position)} by section count, with ${approxCount(insights.termSectionCount)} sections this term.`,
     ];
     sentences.push(variants[pickVariant(key, variants.length)]);
   } else if (insights.termSectionCount) {
@@ -203,8 +197,8 @@ export function renderCollegeProse(insights: CollegeInsights): string[] {
     const lsr = insights.lateStartRank;
     const key = `${insights.collegeId}:latestart`;
     const variants = [
-      `Late-start sections — those beginning more than two weeks after the term's earliest start date — number ${approxCount(insights.lateStartCount)} at ${insights.collegeName}, placing it ${ordinal(lsr.position)} of ${systemColleges(insights.systemName, lsr.outOf)} for late-start availability this term.`,
-      `${insights.collegeName} has ${approxCount(insights.lateStartCount)} late-start sections (more than two weeks past the earliest term start), ranking ${ordinal(lsr.position)} among ${systemColleges(insights.systemName, lsr.outOf)} for that availability.`,
+      `Late-start sections — those beginning more than two weeks after the term's earliest start date — number ${approxCount(insights.lateStartCount)} at ${insights.collegeName}, placing it ${ordinal(lsr.position)} of ${systemColleges(insights.state, lsr.outOf)} for late-start availability this term.`,
+      `${insights.collegeName} has ${approxCount(insights.lateStartCount)} late-start sections (more than two weeks past the earliest term start), ranking ${ordinal(lsr.position)} among ${systemColleges(insights.state, lsr.outOf)} for that availability.`,
       `For students who missed the main registration window, ${insights.collegeName} offers ${approxCount(insights.lateStartCount)} late-start sections this term — ${ordinal(lsr.position)} of ${lsr.outOf} in the ${insights.systemName}.`,
     ];
     sentences.push(variants[pickVariant(key, variants.length)]);
@@ -308,7 +302,7 @@ export function renderStateProse(insights: StateInsights): string[] {
     const variants = [
       `Across the ${insights.systemName}, ${insights.collegesWithData} ${isPlural ? "colleges report" : "college reports"} ${approxCount(insights.totalSections)} course sections in the current term.`,
       `The ${insights.systemName} runs ${approxCount(insights.totalSections)} course sections across ${insights.collegesWithData} ${isPlural ? "colleges" : "college"} this term.`,
-      `${systemColleges(insights.systemName, insights.collegesWithData)} ${isPlural ? "list" : "lists"} ${approxCount(insights.totalSections)} sections this term across their combined catalogs.`,
+      `${systemColleges(insights.state, insights.collegesWithData)} ${isPlural ? "list" : "lists"} ${approxCount(insights.totalSections)} sections this term across their combined catalogs.`,
     ];
     sentences.push(variants[pickVariant(key, variants.length)]);
   }
@@ -368,7 +362,7 @@ export function renderStateProse(insights: StateInsights): string[] {
     const variants = [
       `Per the California ASSIST registry, the ${insights.systemName} maintains ${approxCount(insights.assistAgreementCount)} per-major articulation agreements with UC and CSU campuses — the deepest single pipeline runs from ${lead.ccName} to ${lead.uniName} with ${lead.agreementCount} majors.`,
       `The California ASSIST registry lists ${approxCount(insights.assistAgreementCount)} per-major agreements across the ${insights.systemName}, with the deepest CC-to-university pipeline being ${lead.ccName} → ${lead.uniName} (${lead.agreementCount} majors).`,
-      `Across the California ASSIST registry, ${insights.systemName} colleges hold ${approxCount(insights.assistAgreementCount)} major-specific articulation agreements — ${lead.ccName} → ${lead.uniName} is the deepest at ${lead.agreementCount} majors.`,
+      `Across the California ASSIST registry, ${insights.stateName} community colleges hold ${approxCount(insights.assistAgreementCount)} major-specific articulation agreements — ${lead.ccName} → ${lead.uniName} is the deepest at ${lead.agreementCount} majors.`,
     ];
     sentences.push(variants[pickVariant(key, variants.length)]);
   }
@@ -378,8 +372,8 @@ export function renderStateProse(insights: StateInsights): string[] {
     const sw = insights.seniorWaiver;
     const key = `${insights.state}:senior`;
     const variants = [
-      `${insights.stateName} residents ${sw.ageThreshold} and older may attend ${insights.systemName} colleges tuition-free under ${sw.legalCitation}.`,
-      `Under ${sw.legalCitation}, ${insights.stateName} waives tuition at ${insights.systemName} colleges for residents ${sw.ageThreshold} and older.`,
+      `${insights.stateName} residents ${sw.ageThreshold} and older may attend ${insights.stateName} community colleges tuition-free under ${sw.legalCitation}.`,
+      `Under ${sw.legalCitation}, ${insights.stateName} waives tuition at ${insights.stateName} community colleges for residents ${sw.ageThreshold} and older.`,
       `The ${insights.systemName} participates in ${insights.stateName}'s senior tuition waiver — residents ${sw.ageThreshold}+ enroll without paying tuition, per ${sw.legalCitation}.`,
     ];
     sentences.push(variants[pickVariant(key, variants.length)]);
@@ -392,7 +386,7 @@ export function renderStateProse(insights: StateInsights): string[] {
     const variants = [
       `Federal College Scorecard data puts the ${insights.systemName} median in-state tuition at ${dollar(sc.medianTuition)} per year, with former students earning a median of ${dollar(sc.medianEarnings)} ten years after entry.`,
       `Across the ${insights.systemName}, median in-state tuition is ${dollar(sc.medianTuition)} per year and median earnings ten years after enrollment are ${dollar(sc.medianEarnings)}, per the federal College Scorecard.`,
-      `Per federal College Scorecard data, ${insights.systemName} colleges charge a median ${dollar(sc.medianTuition)} in-state tuition annually; alumni earn a median ${dollar(sc.medianEarnings)} a decade after entry.`,
+      `Per federal College Scorecard data, ${insights.stateName} community colleges charge a median ${dollar(sc.medianTuition)} in-state tuition annually; alumni earn a median ${dollar(sc.medianEarnings)} a decade after entry.`,
     ];
     sentences.push(variants[pickVariant(key, variants.length)]);
   }

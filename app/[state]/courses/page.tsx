@@ -43,14 +43,14 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   // dropped from the canonical so day/time/zip variants consolidate to one page).
   if (q && q.length >= 2) {
     return {
-      title: `"${q}" Courses — Search All ${config.collegeCount} ${config.systemName} Colleges | ${config.branding.siteName}`,
+      title: `"${q}" Courses — Search All ${config.collegeCount} ${config.name} Community Colleges | ${config.branding.siteName}`,
       description: `Find "${q}" course sections across all ${config.collegeCount} ${config.name} community colleges at once — compare schedule, location, format, and transfer credit.`,
       keywords: config.branding.metaKeywords,
       alternates: { canonical: `/${state}/courses?q=${encodeURIComponent(q)}` },
     };
   }
   return {
-    title: `Find a Course — Search All ${config.collegeCount} ${config.systemName} Colleges | ${config.branding.siteName}`,
+    title: `Find a Course — Search All ${config.collegeCount} ${config.name} Community Colleges | ${config.branding.siteName}`,
     description: `Search for courses across all ${config.collegeCount} ${config.name} community colleges at once. Find the best schedule, location, and format for auditing.`,
     keywords: config.branding.metaKeywords,
     alternates: { canonical: `/${state}/courses` },
@@ -175,7 +175,7 @@ export default async function CoursesPage({ params, searchParams }: Props) {
   const searchActionLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: `Find a Course — Search All ${config.collegeCount} ${config.systemName} Colleges`,
+    name: `Find a Course — Search All ${config.collegeCount} ${config.name} Community Colleges`,
     url: `${siteUrl}/${state}/courses`,
     potentialAction: {
       "@type": "SearchAction",

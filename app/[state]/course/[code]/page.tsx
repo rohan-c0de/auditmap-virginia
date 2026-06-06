@@ -176,7 +176,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
   const term = termLabel(currentTerm);
 
   const pageTitle = `${parsed.prefix} ${parsed.number}: ${title} — ${config.name} Community Colleges`;
-  const description = `${parsed.prefix} ${parsed.number} (${title}, ${credits} ${credits === 1 ? "credit" : "credits"}) — ${sections.length} sections at all ${collegeCount} ${config.systemName} colleges for ${term}${onlineCount > 0 ? `, ${onlineCount} online` : ""}. See schedules, open seats, and transfer credit.`;
+  const description = `${parsed.prefix} ${parsed.number} (${title}, ${credits} ${credits === 1 ? "credit" : "credits"}) — ${sections.length} sections at all ${collegeCount} ${config.name} community colleges for ${term}${onlineCount > 0 ? `, ${onlineCount} online` : ""}. See schedules, open seats, and transfer credit.`;
 
   const canonical = `${process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com"}/${state}/course/${code}`;
 
