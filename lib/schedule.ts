@@ -18,7 +18,7 @@ import type {
   ScoreBreakdown,
   TransferStatus,
 } from "./types";
-import { loadAllCourses } from "./courses";
+import { loadCoursesForScheduleQuery, termHasAnyData } from "./courses";
 import { getZipCoordinates, calculateDistance } from "./geo";
 import { parseTimeToMinutes, daysToBitmask } from "./time-utils";
 import { isInProgress } from "./course-status";
@@ -109,9 +109,23 @@ export async function generateSchedules(
     request.timeWindowEnd
   );
 
-  // Stage 1: Filter all sections to candidates
+  // Stage 1: Fetch only the sections this query can match (by resolved prefix
+  // and/or title keyword) instead of the whole term catalog, then filter.
+  // filterSections re-applies the exact same predicate, so the candidate set is
+  // identical to filtering loadAllCourses(...) — just far smaller on the wire.
   const term = request.term || await getCurrentTerm(state);
-  const allSections = await loadAllCourses(term, state);
+  const prefixesToFetch = Array.from(
+    new Set([
+      ...subjectPrefixes,
+      ...exactCourses.map((c) => c.split("-")[0]),
+    ])
+  );
+  const allSections = await loadCoursesForScheduleQuery(
+    term,
+    state,
+    prefixesToFetch,
+    keywordGroups
+  );
   const hideFullSections = request.hideFullSections !== false; // default true
   const { sections: candidates, filteredFullCount } = filterSections(
     allSections,
@@ -193,8 +207,14 @@ export async function generateSchedules(
 
   const timeTakenMs = Math.round(performance.now() - t0);
 
+  // A scoped-empty fetch no longer implies the term has no data — it usually
+  // just means the query matched nothing. Only claim "no data yet" when the
+  // term genuinely has zero rows (one cheap head-count, on the empty path only).
+  const termEmpty =
+    allSections.length === 0 ? !(await termHasAnyData(state, term)) : false;
+
   let message: string | undefined;
-  if (allSections.length === 0) {
+  if (termEmpty) {
     message =
       "No course data available for this term yet. Check back soon — new schedules are added regularly.";
   } else if (candidateCourses === 0) {
