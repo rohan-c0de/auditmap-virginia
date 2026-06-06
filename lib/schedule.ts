@@ -23,6 +23,7 @@ import { getZipCoordinates, calculateDistance } from "./geo";
 import { parseTimeToMinutes, daysToBitmask } from "./time-utils";
 import { isInProgress } from "./course-status";
 import { getCurrentTerm } from "./terms";
+import { subjectPrefixesForName } from "./subjects";
 import { bestTransferEntry } from "./transfer-rank";
 import { describeSeats } from "./seats";
 const MAX_RESULTS = 20;
@@ -92,7 +93,7 @@ export async function generateSchedules(
   }
 
   // Parse subject queries
-  const { exactCourses, subjectPrefixes } = parseSubjectQueries(
+  const { exactCourses, subjectPrefixes, keywordGroups } = parseSubjectQueries(
     request.subjects
   );
 
@@ -116,6 +117,7 @@ export async function generateSchedules(
     allSections,
     exactCourses,
     subjectPrefixes,
+    keywordGroups,
     availableDayMask,
     timeWindow,
     request.mode || "any",
@@ -195,6 +197,9 @@ export async function generateSchedules(
   if (allSections.length === 0) {
     message =
       "No course data available for this term yet. Check back soon — new schedules are added regularly.";
+  } else if (candidateCourses === 0) {
+    message =
+      "No courses matched your subjects. Check the course code (e.g. HIST) or try a broader term.";
   } else if (candidateCourses < request.maxCourses) {
     message = `Only ${candidateCourses} matching course${candidateCourses === 1 ? "" : "s"} found. Try adding more subjects or reducing max courses to ${candidateCourses}.`;
   } else if (results.length === 0 && candidates.length > 0) {
@@ -222,12 +227,34 @@ export async function generateSchedules(
 // Subject query parsing
 // ---------------------------------------------------------------------------
 
+/**
+ * Filler words stripped from free-text subject queries before matching, so a
+ * natural phrase like "history courses" or "intro to psychology" reduces to its
+ * meaningful tokens (["history"], ["intro","psychology"]).
+ */
+const SUBJECT_FILLER_WORDS = new Set([
+  "course",
+  "courses",
+  "class",
+  "classes",
+  "the",
+  "of",
+  "to",
+  "and",
+  "for",
+  "in",
+  "a",
+  "an",
+]);
+
 export function parseSubjectQueries(subjects: string[]): {
   exactCourses: string[]; // e.g. ["PSY-200", "ART-101"]
-  subjectPrefixes: string[]; // e.g. ["BIO"]
+  subjectPrefixes: string[]; // clean prefixes + prefixes resolved from names
+  keywordGroups: string[][]; // tokenized free text, AND-matched against titles
 } {
   const exactCourses: string[] = [];
   const subjectPrefixes: string[] = [];
+  const keywordGroups: string[][] = [];
 
   for (const raw of subjects) {
     const trimmed = raw.trim().toUpperCase();
@@ -235,19 +262,71 @@ export function parseSubjectQueries(subjects: string[]): {
     const exact = trimmed.match(/^([A-Z]{2,4})\s*(\d{3})$/);
     if (exact) {
       exactCourses.push(`${exact[1]}-${exact[2]}`);
-    } else {
-      // "ART" or "art" or "psychology" (keyword)
-      const prefix = trimmed.match(/^([A-Z]{2,4})$/);
-      if (prefix) {
-        subjectPrefixes.push(prefix[1]);
-      } else {
-        // Treat as keyword — match against prefix or title
-        subjectPrefixes.push(trimmed);
+      continue;
+    }
+    // "ART" or "art" — a bare course prefix
+    const prefix = trimmed.match(/^([A-Z]{2,4})$/);
+    if (prefix) {
+      subjectPrefixes.push(prefix[1]);
+      continue;
+    }
+
+    // Free text ("history courses", "intro to psychology"): tokenize, drop
+    // filler, then both (a) resolve the subject NAME to course prefixes and
+    // (b) keep the cleaned tokens to AND-match against course titles. The two
+    // are complementary — prefixes catch titles that omit the word; title
+    // tokens catch states whose prefixes aren't in the name map.
+    const tokens = raw
+      .toLowerCase()
+      .split(/\s+/)
+      .map((t) => t.trim())
+      .filter((t) => t.length > 0 && !SUBJECT_FILLER_WORDS.has(t));
+    if (tokens.length === 0) continue;
+
+    // Try the whole cleaned phrase first ("computer science"), then each token.
+    const synonymPrefixes = new Set<string>(
+      subjectPrefixesForName(tokens.join(" "))
+    );
+    if (synonymPrefixes.size === 0) {
+      for (const tok of tokens) {
+        for (const p of subjectPrefixesForName(tok)) synonymPrefixes.add(p);
+      }
+    }
+    for (const p of synonymPrefixes) subjectPrefixes.push(p);
+
+    keywordGroups.push(tokens);
+  }
+
+  return { exactCourses, subjectPrefixes, keywordGroups };
+}
+
+/**
+ * Does a course match the parsed subject query? A match is any of:
+ *  - exact course code (e.g. "HIST-101")
+ *  - course prefix (clean prefix or one resolved from a subject name)
+ *  - a keyword group where every token is a substring of the title (or equals
+ *    the prefix) — AND semantics, so "world history" needs both words.
+ */
+export function matchesSubjectQuery(
+  coursePrefix: string,
+  courseTitle: string,
+  courseKey: string,
+  exactSet: Set<string>,
+  prefixSet: Set<string>,
+  keywordGroups: string[][]
+): boolean {
+  if (exactSet.size > 0 && exactSet.has(courseKey)) return true;
+  if (prefixSet.has(coursePrefix)) return true;
+  if (keywordGroups.length > 0) {
+    const titleLower = courseTitle.toLowerCase();
+    const prefixLower = coursePrefix.toLowerCase();
+    for (const group of keywordGroups) {
+      if (group.every((t) => titleLower.includes(t) || t === prefixLower)) {
+        return true;
       }
     }
   }
-
-  return { exactCourses, subjectPrefixes };
+  return false;
 }
 
 // ---------------------------------------------------------------------------
@@ -290,6 +369,7 @@ function filterSections(
   allSections: CourseSection[],
   exactCourses: string[],
   subjectPrefixes: string[],
+  keywordGroups: string[][],
   availableDayMask: number,
   timeWindow: { startMin: number; endMin: number },
   modeFilter: string,
@@ -303,9 +383,6 @@ function filterSections(
 ): { sections: EnrichedSection[]; filteredFullCount: number } {
   const exactSet = new Set(exactCourses);
   const prefixSet = new Set(subjectPrefixes);
-  // For keyword search: lowercase prefixes that don't look like course codes
-  const keywords = subjectPrefixes.filter((p) => p.length > 4 || !/^[A-Z]+$/.test(p));
-  const keywordsLower = keywords.map((k) => k.toLowerCase());
 
   const results: EnrichedSection[] = [];
   let filteredFullCount = 0;
@@ -314,23 +391,18 @@ function filterSections(
     const courseKey = `${s.course_prefix}-${s.course_number}`;
 
     // Subject/course matching
-    let matched = false;
-    if (exactSet.size > 0 && exactSet.has(courseKey)) {
-      matched = true;
+    if (
+      !matchesSubjectQuery(
+        s.course_prefix,
+        s.course_title,
+        courseKey,
+        exactSet,
+        prefixSet,
+        keywordGroups
+      )
+    ) {
+      continue;
     }
-    if (!matched && prefixSet.has(s.course_prefix)) {
-      matched = true;
-    }
-    if (!matched && keywordsLower.length > 0) {
-      const titleLower = s.course_title.toLowerCase();
-      for (const kw of keywordsLower) {
-        if (titleLower.includes(kw)) {
-          matched = true;
-          break;
-        }
-      }
-    }
-    if (!matched) continue;
 
     // Date filter: skip sections that already started (unless opted in)
     if (!includeInProgress && isInProgress(s.start_date)) continue;

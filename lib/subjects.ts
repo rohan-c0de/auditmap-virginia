@@ -38,6 +38,7 @@ const SUBJECT_NAMES: Record<string, string> = {
   // English & Communications
   ENG: "English",
   ENGL: "English",
+  ENC: "English", // FL (e.g. ENC 1101)
   COM: "Communications",
   COMM: "Communications",
   JOU: "Journalism",
@@ -63,12 +64,14 @@ const SUBJECT_NAMES: Record<string, string> = {
   MAT: "Mathematics",
   MATH: "Mathematics",
   MTH: "Mathematics",
+  MAC: "Mathematics", // FL (e.g. MAC 1105)
   STA: "Statistics",
   STAT: "Statistics",
 
   // Sciences
   BIO: "Biology",
   BIOL: "Biology",
+  BSC: "Biology", // FL (e.g. BSC 1010)
   CHE: "Chemistry",
   CHEM: "Chemistry",
   PHY: "Physics",
@@ -88,9 +91,11 @@ const SUBJECT_NAMES: Record<string, string> = {
   SOC: "Sociology",
   HIS: "History",
   HIST: "History",
+  AMH: "History", // FL (American History, e.g. AMH 2010)
   POL: "Political Science",
   POLS: "Political Science",
   GOV: "Government",
+  GOVT: "Government", // TX (e.g. GOVT 2305)
   ANT: "Anthropology",
   ANTH: "Anthropology",
   GEG: "Geography",
@@ -194,4 +199,47 @@ export function subjectName(prefix: string): string {
  */
 export function hasSubjectName(prefix: string): boolean {
   return prefix.toUpperCase() in SUBJECT_NAMES;
+}
+
+/**
+ * Reverse of SUBJECT_NAMES: human-readable name (lowercased) → the course
+ * prefixes that carry it. Derived once from SUBJECT_NAMES so the two never
+ * drift. One name can map to several prefixes (e.g. "history" → HIS, HIST, AMH).
+ */
+const NAME_TO_PREFIXES: Record<string, string[]> = (() => {
+  const map: Record<string, string[]> = {};
+  for (const [prefix, name] of Object.entries(SUBJECT_NAMES)) {
+    const key = name.toLowerCase();
+    (map[key] ??= []).push(prefix);
+  }
+  return map;
+})();
+
+/**
+ * Colloquial / abbreviated subject names → their canonical SUBJECT_NAMES entry.
+ * Only entries that survive prefix parsing matter here: a query of 4 or fewer
+ * letters (e.g. "bio", "econ") is treated as a course prefix upstream and never
+ * reaches this resolver, so this list focuses on the multi-word and >4-letter
+ * forms a student is likely to type.
+ */
+const SUBJECT_ALIASES: Record<string, string> = {
+  "poli sci": "political science",
+  polisci: "political science",
+  "comp sci": "computer science",
+  compsci: "computer science",
+  psych: "psychology",
+  stats: "statistics",
+  maths: "mathematics",
+};
+
+/**
+ * Resolve a free-text subject NAME to the course prefixes that represent it.
+ * e.g. "history" → ["HIS","HIST","AMH"], "poli sci" → ["POL","POLS"].
+ * Returns [] when the query isn't a recognized subject name.
+ */
+export function subjectPrefixesForName(query: string): string[] {
+  const q = query.trim().toLowerCase();
+  if (!q) return [];
+  const canonical = SUBJECT_ALIASES[q] ?? q;
+  return NAME_TO_PREFIXES[canonical] ?? [];
 }

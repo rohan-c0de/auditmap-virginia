@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   parseSubjectQueries,
+  matchesSubjectQuery,
   parseTimeWindow,
   combinations,
   hasTimeConflict,
@@ -48,6 +49,7 @@ describe("parseSubjectQueries", () => {
     expect(parseSubjectQueries(["PSY 200", "ART 101"])).toEqual({
       exactCourses: ["PSY-200", "ART-101"],
       subjectPrefixes: [],
+      keywordGroups: [],
     });
   });
 
@@ -55,19 +57,15 @@ describe("parseSubjectQueries", () => {
     expect(parseSubjectQueries(["BIO", "art"])).toEqual({
       exactCourses: [],
       subjectPrefixes: ["BIO", "ART"],
+      keywordGroups: [],
     });
-  });
-
-  it("treats free text as keyword search", () => {
-    const result = parseSubjectQueries(["psychology"]);
-    expect(result.exactCourses).toEqual([]);
-    expect(result.subjectPrefixes).toEqual(["PSYCHOLOGY"]);
   });
 
   it("supports mixed exact + prefix input", () => {
     expect(parseSubjectQueries(["PSY 200", "BIO"])).toEqual({
       exactCourses: ["PSY-200"],
       subjectPrefixes: ["BIO"],
+      keywordGroups: [],
     });
   });
 
@@ -75,7 +73,105 @@ describe("parseSubjectQueries", () => {
     expect(parseSubjectQueries(["psy200"])).toEqual({
       exactCourses: ["PSY-200"],
       subjectPrefixes: [],
+      keywordGroups: [],
     });
+  });
+
+  it("treats 'math' as a prefix (matches MATH sections even when titles omit 'math')", () => {
+    expect(parseSubjectQueries(["math"])).toEqual({
+      exactCourses: [],
+      subjectPrefixes: ["MATH"],
+      keywordGroups: [],
+    });
+  });
+
+  it("resolves a subject NAME to its prefixes AND keeps a keyword group", () => {
+    const result = parseSubjectQueries(["psychology"]);
+    expect(result.exactCourses).toEqual([]);
+    expect(result.subjectPrefixes.slice().sort()).toEqual(["PSY", "PSYC"]);
+    expect(result.keywordGroups).toEqual([["psychology"]]);
+  });
+
+  it("strips filler words ('history courses' → resolves history, drops 'courses')", () => {
+    const result = parseSubjectQueries(["history courses"]);
+    expect(result.subjectPrefixes.slice().sort()).toEqual(["AMH", "HIS", "HIST"]);
+    expect(result.keywordGroups).toEqual([["history"]]);
+  });
+
+  it("keeps all meaningful tokens for AND-matching ('intro to psychology')", () => {
+    const result = parseSubjectQueries(["intro to psychology"]);
+    expect(result.keywordGroups).toEqual([["intro", "psychology"]]);
+    expect(result.subjectPrefixes.slice().sort()).toEqual(["PSY", "PSYC"]);
+  });
+
+  it("ignores a query that is only filler ('courses')", () => {
+    expect(parseSubjectQueries(["courses"])).toEqual({
+      exactCourses: [],
+      subjectPrefixes: [],
+      keywordGroups: [],
+    });
+  });
+
+  it("leaves unknown free text as a title-only keyword group", () => {
+    const result = parseSubjectQueries(["underwater basket weaving"]);
+    expect(result.subjectPrefixes).toEqual([]);
+    expect(result.keywordGroups).toEqual([["underwater", "basket", "weaving"]]);
+  });
+});
+
+describe("matchesSubjectQuery", () => {
+  const match = (
+    prefix: string,
+    title: string,
+    opts: { exact?: string[]; prefixes?: string[]; groups?: string[][] } = {}
+  ) =>
+    matchesSubjectQuery(
+      prefix,
+      title,
+      `${prefix}-101`,
+      new Set(opts.exact ?? []),
+      new Set(opts.prefixes ?? []),
+      opts.groups ?? []
+    );
+
+  it("matches an exact course code", () => {
+    expect(match("HIST", "World History", { exact: ["HIST-101"] })).toBe(true);
+  });
+
+  it("matches by course prefix (typed or synonym-resolved)", () => {
+    expect(
+      match("HIST", "United States History to 1877", { prefixes: ["HIST"] })
+    ).toBe(true);
+  });
+
+  it("matches a keyword group present in the title", () => {
+    expect(
+      match("HIST", "United States History to 1877", { groups: [["history"]] })
+    ).toBe(true);
+  });
+
+  it("matches via TITLE when the prefix is unmapped (FL biology = BSC)", () => {
+    expect(match("BSC", "General Biology I", { groups: [["biology"]] })).toBe(true);
+  });
+
+  it("requires ALL tokens in a group (AND semantics)", () => {
+    expect(
+      match("HIST", "United States History to 1877", {
+        groups: [["world", "history"]],
+      })
+    ).toBe(false);
+    expect(
+      match("HIST", "World History Since 1500", { groups: [["world", "history"]] })
+    ).toBe(true);
+  });
+
+  it("does not match unrelated courses", () => {
+    expect(
+      match("MATH", "College Algebra", {
+        groups: [["history"]],
+        prefixes: ["HIST"],
+      })
+    ).toBe(false);
   });
 });
 
