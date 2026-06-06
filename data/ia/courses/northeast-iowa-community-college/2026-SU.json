@@ -38,12 +38,13 @@
     "campus": "ONLN",
     "mode": "online",
     "instructor": "Mekonnen, Medhanie",
-    "seats_open": 13,
+    "seats_open": 14,
     "seats_total": 28,
-    "prerequisite_text": "MAT 063 and ACC 115",
+    "prerequisite_text": "ACC 115 or BUS 102 or MAT 063 and ACC 115",
     "prerequisite_courses": [
-      "MAT 063",
-      "ACC 115"
+      "ACC 115",
+      "BUS 102",
+      "MAT 063"
     ]
   },
   {
@@ -135,8 +136,10 @@
     "instructor": "Moser, Anne M.",
     "seats_open": 2,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ADN 332",
+    "prerequisite_courses": [
+      "ADN 332"
+    ]
   },
   {
     "college_code": "northeast-iowa-community-college",
@@ -156,8 +159,10 @@
     "instructor": "Cleveland, Heather L.",
     "seats_open": 0,
     "seats_total": 21,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ADN 332",
+    "prerequisite_courses": [
+      "ADN 332"
+    ]
   },
   {
     "college_code": "northeast-iowa-community-college",
@@ -177,8 +182,10 @@
     "instructor": "Phillips, Kelly L.",
     "seats_open": 2,
     "seats_total": 12,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ADN 332",
+    "prerequisite_courses": [
+      "ADN 332"
+    ]
   },
   {
     "college_code": "northeast-iowa-community-college",
@@ -198,8 +205,10 @@
     "instructor": "Necker, Kari E.",
     "seats_open": 4,
     "seats_total": 20,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "ADN 332",
+    "prerequisite_courses": [
+      "ADN 332"
+    ]
   },
   {
     "college_code": "northeast-iowa-community-college",
@@ -860,7 +869,7 @@
     "campus": "ONLN",
     "mode": "online",
     "instructor": "Sagan, Nicholas A.",
-    "seats_open": 3,
+    "seats_open": 4,
     "seats_total": 24,
     "prerequisite_text": "BIO 112 or BIO 157 or BIO 161 or CHM 110 or BIO 102 or BIO 103",
     "prerequisite_courses": [
@@ -1999,7 +2008,7 @@
     "campus": "ONLN",
     "mode": "zoom",
     "instructor": "Stock, Karen I.",
-    "seats_open": 15,
+    "seats_open": 14,
     "seats_total": 22,
     "prerequisite_text": "ENG 105",
     "prerequisite_courses": [
@@ -2242,9 +2251,9 @@
     "instructor": "Urbain, Matthew J.",
     "seats_open": 12,
     "seats_total": 16,
-    "prerequisite_text": "ELE 118 and HCR 122 and HCR 128 and HCR 204",
+    "prerequisite_text": "ELE 121 and HCR 122 and HCR 128 and HCR 204",
     "prerequisite_courses": [
-      "ELE 118",
+      "ELE 121",
       "HCR 122",
       "HCR 128",
       "HCR 204"
@@ -2268,9 +2277,9 @@
     "instructor": "Urbain, Matthew J.",
     "seats_open": 12,
     "seats_total": 16,
-    "prerequisite_text": "ELE 118 or HCR 403",
+    "prerequisite_text": "ELE 121 or HCR 403",
     "prerequisite_courses": [
-      "ELE 118",
+      "ELE 121",
       "HCR 403"
     ]
   },
@@ -2292,9 +2301,9 @@
     "instructor": "Urbain, Matthew J.",
     "seats_open": 12,
     "seats_total": 16,
-    "prerequisite_text": "ELE 118 and HCR 122 and HCR 128 and HCR 202",
+    "prerequisite_text": "ELE 121 and HCR 122 and HCR 128 and HCR 202",
     "prerequisite_courses": [
-      "ELE 118",
+      "ELE 121",
       "HCR 122",
       "HCR 128",
       "HCR 202"
@@ -2779,7 +2788,7 @@
     "campus": "ONLN",
     "mode": "zoom",
     "instructor": "Wright, Renee S.",
-    "seats_open": 17,
+    "seats_open": 16,
     "seats_total": 28,
     "prerequisite_text": "MAT 102 or MAT 747",
     "prerequisite_courses": [
@@ -3298,7 +3307,7 @@
     "campus": "PEOS",
     "mode": "hybrid",
     "instructor": "Rhomberg, Jesse L.",
-    "seats_open": 14,
+    "seats_open": 15,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3578,10 +3587,10 @@
     "instructor": "Lamey, Wanda R.",
     "seats_open": 4,
     "seats_total": 30,
-    "prerequisite_text": "RAD 143 and RAD 270",
+    "prerequisite_text": "RAD 143 and RAD 273",
     "prerequisite_courses": [
       "RAD 143",
-      "RAD 270"
+      "RAD 273"
     ]
   },
   {
@@ -3704,7 +3713,7 @@
     "instructor": "Hannan, Lora L., Lamey, Wanda R., Williams, Theresa K.",
     "seats_open": 1,
     "seats_total": 16,
-    "prerequisite_text": "HUM 108 and MAT 110 and PSY 111 and RAD 712 and RAD 738 and RAD 810 and RAD 860 and SPC 112 and RAD 592",
+    "prerequisite_text": "HUM 108 and MAT 110 and PSY 111 and RAD 712 and RAD 738 and RAD 810 and RAD 860 and SPC 112 and RAD 593",
     "prerequisite_courses": [
       "HUM 108",
       "MAT 110",
@@ -3714,7 +3723,7 @@
       "RAD 810",
       "RAD 860",
       "SPC 112",
-      "RAD 592"
+      "RAD 593"
     ]
   },
   {
@@ -3823,7 +3832,7 @@
     "campus": "ONLN",
     "mode": "online",
     "instructor": "Houser, Vickie L.",
-    "seats_open": 2,
+    "seats_open": 1,
     "seats_total": 20,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3844,7 +3853,7 @@
     "campus": "ONLN",
     "mode": "online",
     "instructor": "Ratel-Khan, Joshua",
-    "seats_open": 4,
+    "seats_open": 3,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3949,7 +3958,7 @@
     "campus": "ONLN",
     "mode": "online",
     "instructor": "Mensink, Todd A.",
-    "seats_open": 11,
+    "seats_open": 12,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -3970,7 +3979,7 @@
     "campus": "ONLN",
     "mode": "online",
     "instructor": "Tomlinson, Allison R.",
-    "seats_open": 7,
+    "seats_open": 8,
     "seats_total": 28,
     "prerequisite_text": null,
     "prerequisite_courses": []
