@@ -35,6 +35,7 @@ export type AnalyticsEvent =
   | "plan_save"
   | "plan_delete"
   | "plan_duplicate"
+  | "planner_add"
   // Saved items
   | "course_bookmark_add"
   | "course_bookmark_remove"
