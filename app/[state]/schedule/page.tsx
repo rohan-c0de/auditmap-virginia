@@ -3,6 +3,8 @@ import ScheduleClient from "./ScheduleClient";
 import { requireStateConfig } from "@/lib/states/route-helpers";
 import { getUniversities } from "@/lib/transfer";
 import { getAvailableTermsForDisplay } from "@/lib/terms";
+import { loadSubjectVocab } from "@/lib/programs/subject-vocab";
+import { quickAddSubjectsForState } from "@/lib/schedule-chips";
 
 type Props = {
   params: Promise<{ state: string }>;
@@ -44,10 +46,13 @@ export default async function SchedulePage({ params }: Props) {
     // Terms unavailable — term selector will be hidden
   }
 
-  // Extract just the prefixes from popularCourses (e.g. "ENG 111" → "ENG")
-  const quickAddSubjects = [
-    ...new Set(config.popularCourses.map((c) => c.split(" ")[0])),
-  ];
+  // Quick-add chips: curated popularCourses prefixes first, then the state's
+  // most-offered subjects from the precomputed subject vocab. Falls back to
+  // just the popularCourses prefixes when no vocab exists for the state.
+  const quickAddSubjects = quickAddSubjectsForState(
+    loadSubjectVocab(state),
+    config.popularCourses
+  );
 
   return (
     <ScheduleClient
