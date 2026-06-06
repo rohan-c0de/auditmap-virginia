@@ -80,7 +80,20 @@ const hiConfig: StateConfig = {
     // Prereqs aggregated from course-search prerequisite_text (data/hi/prereqs.json,
     // 418 parsed chains). No dedicated catalog scraper; refreshed from committed courses.
     prereqs: { source: "aggregate-from-courses" },
-    // manual-only: programs — Phase 5+.
+    // Programs: Kauai + Windward CC publish Clean Catalog (catalog.<campus>.hawaii.edu).
+    // The other 4 UH CCs are platform ceilings — see documentedCeilings.programs.
+    programs: [{ scripts: ["scripts/hi/scrape-programs.ts"], runner: "http" }],
+  },
+
+  documentedCeilings: {
+    // Programs reach 2 of 6 colleges: only Kauai CC and Windward CC publish a
+    // scrapeable online catalog (Clean Catalog, 98 programs — shipped). The other
+    // four have no public program source (verified 2026-06): Hawaii CC and Leeward
+    // CC run Kuali whose program/group API is auth-gated (401; only the catalog
+    // list is public); Honolulu CC is a bespoke WordPress catalog; Kapiolani CC
+    // publishes degree requirements as PDFs only.
+    programs:
+      "Only Kauai CC and Windward CC publish a scrapeable online catalog (Clean Catalog, 98 programs — shipped). Hawaii CC + Leeward CC run Kuali with an auth-gated program API (public catalog list only); Honolulu CC is bespoke WordPress; Kapiolani CC is PDF-only. No public program source for those four. Verified 2026-06.",
   },
 };
 

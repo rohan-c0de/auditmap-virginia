@@ -64,7 +64,19 @@ const meConfig: StateConfig = {
     courses: [{ scripts: ["scripts/me/scrape-mccs.ts"], runner: "playwright" }],
     transfers: [{ scripts: ["scripts/me/scrape-transfer-mainestreet.ts"], runner: "playwright" }],
     prereqs: [{ scripts: ["scripts/me/scrape-catalog-prereqs.ts"], runner: "http" }],
-    // manual-only: programs — Acalog program scraper not yet wired up for this state.
+    // manual-only: programs — all 7 MCCS colleges publish catalogs as PDF/DOCX
+    // only (no Acalog/Coursedog/CourseLeaf/etc.); see documentedCeilings.programs.
+  },
+
+  documentedCeilings: {
+    // No programs: all 7 Maine CC System colleges (cmcc/emcc/kvcc/nmcc/smcc/wccc/
+    // yccc) publish their catalog as PDF or DOCX behind WordPress (verified
+    // 2026-06). The programs-of-study web pages are marketing prose with no course
+    // codes; requirements live only inside the PDF/DOCX. No supported catalog
+    // platform is present, so the degree-path planner is data-limited here pending
+    // a PDF-extraction approach.
+    programs:
+      "All 7 Maine CC System colleges publish catalogs as PDF/DOCX behind WordPress (no Acalog/Coursedog/CourseLeaf/SmartCatalogIQ/CleanCatalog). Program requirements exist only inside the PDFs/DOCX; the web program pages carry no course codes. Planner is data-limited pending PDF extraction. Verified 2026-06.",
   },
 };
 
