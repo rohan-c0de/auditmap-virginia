@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo, useCallback } from "react";
+import { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import type { CourseMode } from "@/lib/types";
@@ -301,12 +301,7 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
   // Pagination
   const [displayLimit, setDisplayLimit] = useState(10);
 
-  // Set true by an empty-state recovery CTA after it clears a filter; the effect
-  // below then re-runs the search. We can't clear-and-search in one handler
-  // because doSearch closes over the pre-clear filter value (stale closure).
-  const [recoveryPending, setRecoveryPending] = useState(false);
-
-  const doSearch = useCallback(async (searchQuery: string) => {
+  const doSearch = useCallback(async (searchQuery: string, opts?: { keepAnswer?: boolean }) => {
     if (!searchQuery.trim() || searchQuery.trim().length < 2) {
       setError("Enter at least 2 characters to search.");
       return;
@@ -316,11 +311,15 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
     setError("");
     setHasSearched(true);
     setDisplayLimit(10);
-    // Reset previous answer card before either fetch resolves so a stale
-    // card never lingers under a new query.
-    setAnswer(null);
-    setSecondaryAnswer(null);
-    setClassification(null);
+    // Reset previous answer card before either fetch resolves so a stale card
+    // never lingers under a new query. Skipped on a filter-only re-search
+    // (keepAnswer): the query is unchanged, so resetting would just flash the
+    // card out and back to the same content.
+    if (!opts?.keepAnswer) {
+      setAnswer(null);
+      setSecondaryAnswer(null);
+      setClassification(null);
+    }
 
     const trimmed = searchQuery.trim();
     // The user query may be natural language ("Computer Science classes on
@@ -517,14 +516,41 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
     doSearch(initialQuery);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Re-run the search after a recovery CTA cleared a filter. Runs post-render so
-  // doSearch now closes over the cleared filter value. The early return keeps a
-  // normal manual filter change (recoveryPending false) from auto-searching.
+  // Keep refs to the latest doSearch + query so the debounced auto-apply below
+  // invokes the current closure (which sees the just-changed filter), not a
+  // stale one captured when the timer was scheduled.
+  const doSearchRef = useRef(doSearch);
+  const queryRef = useRef(query);
   useEffect(() => {
-    if (!recoveryPending) return;
-    setRecoveryPending(false);
-    doSearch(query);
-  }, [recoveryPending, query, doSearch]);
+    doSearchRef.current = doSearch;
+    queryRef.current = query;
+  });
+
+  // Live filters: re-run the search (debounced) whenever Day / Time / Mode / Zip
+  // changes after a search exists — so they behave like the Transfers-to filter
+  // (instant) instead of silently needing a second click of Search. This also
+  // makes the empty-state recovery CTAs work: they just clear a filter and let
+  // this fire. Keyed only on these four (NOT doSearch) so a Transfers-to change
+  // — which recreates doSearch but is applied client-side — doesn't trigger a
+  // server re-search. Guards: skip the initial mount / deep-link seeding; only
+  // after a real search; valid query; whole-or-empty zip; and not while a search
+  // is in flight (when doSearch syncs LLM-extracted filters into state — that
+  // must not loop back into another search).
+  const liveFiltersReady = useRef(false);
+  useEffect(() => {
+    if (!liveFiltersReady.current) {
+      liveFiltersReady.current = true;
+      return;
+    }
+    if (!hasSearched || loading) return;
+    if (queryRef.current.trim().length < 2) return;
+    if (zip !== "" && zip.length !== 5) return;
+    const t = setTimeout(
+      () => doSearchRef.current(queryRef.current, { keepAnswer: true }),
+      400
+    );
+    return () => clearTimeout(t);
+  }, [mode, days, timeOfDay, zip]); // eslint-disable-line react-hooks/exhaustive-deps
 
   function toggleExpand(courseKey: string, slug: string) {
     const id = `${courseKey}::${slug}`;
@@ -813,10 +839,10 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
                         key={s.drop}
                         type="button"
                         onClick={() => {
+                          // Clear the filter; the live-filter effect re-searches.
                           if (s.drop === "mode") setMode("");
                           else if (s.drop === "days") setDays([]);
                           else setTimeOfDay("");
-                          setRecoveryPending(true);
                         }}
                         className="rounded-full border border-teal-300 dark:border-teal-700 bg-teal-50 dark:bg-teal-900/30 px-3 py-1.5 text-xs font-medium text-teal-700 dark:text-teal-300 hover:bg-teal-100 dark:hover:bg-teal-900/50 transition"
                       >
