@@ -76,7 +76,12 @@ const nmConfig: StateConfig = {
     // Prereqs aggregated from course-search prerequisite_text + coursedog-catalog
     // (data/nm/prereqs.json, 213 parsed chains). Refreshed from committed courses.
     prereqs: { source: "aggregate-from-courses" },
-    // manual-only: programs — Phase 6 catalog discovery yielded no templated catalogs.
+    // Acalog (CNM, San Juan, Santa Fe, Northern) via search_advanced discovery.
+    // SENMC (Coursedog: 67 found / 0 parseable) + ENMU-Ruidoso (PDF-only) lack
+    // parseable program data and are deferred.
+    programs: [
+      { scripts: ["scripts/nm/scrape-programs.ts"], runner: "http" },
+    ],
   },
 };
 
