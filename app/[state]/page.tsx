@@ -7,7 +7,7 @@ import NotifyBanner from "@/components/NotifyBanner";
 import AccountPromo from "@/components/auth/AccountPromo";
 import StateContext from "@/components/StateContext";
 import { getCurrentTerm, getNextTerm } from "@/lib/terms";
-import { getAllStates, hasPrereqsCoverage, isValidState } from "@/lib/states/registry";
+import { getAllStates, hasPrereqsCoverage, isValidState, statesCoveredLabel } from "@/lib/states/registry";
 import { requireStateConfig } from "@/lib/states/route-helpers";
 import { getArticlesByState, getStateTopicLinks, categoryLabel } from "@/lib/blog";
 import { getQualifyingProgramSlugs, getProgramBySlug } from "@/lib/programs";
@@ -376,7 +376,7 @@ export default async function HomePage({ params }: Props) {
               href="/colleges"
               className="text-teal-600 hover:text-teal-700 transition-colors"
             >
-              browse colleges in all {getAllStates().length} states
+              browse colleges in all {statesCoveredLabel()}
             </Link>
           </p>
         </div>

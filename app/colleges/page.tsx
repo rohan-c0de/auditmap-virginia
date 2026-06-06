@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { getAllStates } from "@/lib/states/registry";
+import { getAllStates, statesCoveredLabel } from "@/lib/states/registry";
 import { loadInstitutions } from "@/lib/institutions";
 import { getCourseCount } from "@/lib/courses";
 import { getCurrentTerm } from "@/lib/terms";
@@ -146,7 +146,7 @@ export default async function AllCollegesPage() {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: "All Community Colleges",
-    description: `Browse ${totalColleges} community colleges across ${states.length} states.`,
+    description: `Browse ${totalColleges} community colleges across ${statesCoveredLabel()}.`,
     url: `${siteUrl}/colleges`,
     mainEntity: {
       "@type": "ItemList",
@@ -182,7 +182,7 @@ export default async function AllCollegesPage() {
         All Community Colleges
       </h1>
       <p className="text-gray-600 dark:text-slate-400 mb-8 max-w-2xl">
-        Browse {totalColleges} community colleges across {states.length} states
+        Browse {totalColleges} community colleges across {statesCoveredLabel()}
         {totalCourses > 0 && (
           <>
             {" "}

@@ -10,7 +10,7 @@ import ConsentPrompt from "@/components/auth/ConsentPrompt";
 import DraftDrainPrompt from "@/components/auth/DraftDrainPrompt";
 import JsonLd from "@/components/JsonLd";
 import Footer from "@/components/Footer";
-import { getAllStates } from "@/lib/states/registry";
+import { getAllStates, statesCoveredLabel } from "@/lib/states/registry";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     default: "Community College Path — Course Finder & Transfer Guide",
     template: "%s | Community College Path",
   },
-  description: `Search courses, plan transfers, and build schedules across ${_totalColleges}+ community colleges in ${_states.length} states. Free course finder for community college students.`,
+  description: `Search courses, plan transfers, and build schedules across ${_totalColleges}+ community colleges in ${statesCoveredLabel()}. Free course finder for community college students.`,
   openGraph: {
     type: "website",
     siteName: "Community College Path",
@@ -72,7 +72,7 @@ const siteJsonLd = {
       "@id": `${SITE_URL}/#website`,
       url: SITE_URL,
       name: "Community College Path",
-      description: `Search courses, plan transfers, and build schedules across ${_totalColleges}+ community colleges in ${_states.length} states.`,
+      description: `Search courses, plan transfers, and build schedules across ${_totalColleges}+ community colleges in ${statesCoveredLabel()}.`,
       potentialAction: {
         "@type": "SearchAction",
         target: {
@@ -87,7 +87,7 @@ const siteJsonLd = {
       "@id": `${SITE_URL}/#organization`,
       url: SITE_URL,
       name: "Community College Path",
-      description: `An independent guide to ${_totalColleges}+ community colleges across ${_states.length} U.S. states. Free course finder, transfer lookup, and schedule planning tools for community college students.`,
+      description: `An independent guide to ${_totalColleges}+ community colleges across ${statesCoveredLabel()}. Free course finder, transfer lookup, and schedule planning tools for community college students.`,
       sameAs: [],
     },
   ],

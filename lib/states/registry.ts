@@ -322,6 +322,26 @@ export function communityCollegesLabel(slug: string): string {
   return `${configs[slug]?.name ?? slug.toUpperCase()} community colleges`;
 }
 
+/** Number of registered states, excluding D.C. (a federal district, not a
+ *  state). Use for any "{N} states" count so `getAllStates().length` — which
+ *  includes D.C. — doesn't overstate the number of states. */
+export function coveredStateCount(): number {
+  const all = getAllStates();
+  return all.length - (all.some((s) => s.slug === "dc") ? 1 : 0);
+}
+
+/**
+ * "{N} states and D.C." for coverage copy. D.C. is a federal district, not a
+ * state, so `getAllStates().length` (which includes it) must not be labelled
+ * "N states". Notes D.C. separately; falls back to "{N} states" if D.C. isn't
+ * registered.
+ */
+export function statesCoveredLabel(): string {
+  const all = getAllStates();
+  const hasDC = all.some((s) => s.slug === "dc");
+  return `${coveredStateCount()} states${hasDC ? " and D.C." : ""}`;
+}
+
 /**
  * Returns the slugs whose pages should be pre-rendered at build time
  * (`prerenderAtBuild: true` in the StateConfig). All other states' pages

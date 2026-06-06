@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { getAllStates } from "@/lib/states/registry";
+import { getAllStates, statesCoveredLabel } from "@/lib/states/registry";
 
 export const runtime = "nodejs";
 export const alt = "Community College Path — Community College Course Finder";
@@ -101,7 +101,7 @@ export default async function Image() {
               lineHeight: 1.4,
             }}
           >
-            {totalColleges}+ community colleges across {states.length} states.
+            {totalColleges}+ community colleges across {statesCoveredLabel()}.
             Course search, transfer lookup, schedule builder.
           </div>
         </div>
