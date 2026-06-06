@@ -3,7 +3,7 @@
 import { useState, useMemo, useCallback, useEffect } from "react";
 import type { CourseSection, CourseMode } from "@/lib/types";
 import { getCourseStatus, formatStartInfo, isInProgress, type CourseStatus } from "@/lib/course-status";
-import { expandDays } from "@/lib/time-utils";
+import { formatMeeting } from "@/lib/time-utils";
 import DayToggle from "@/components/DayToggle";
 import PrereqChain from "@/components/PrereqChain";
 import { subjectName } from "@/lib/subjects";
@@ -68,21 +68,8 @@ function getUniqueModes(courses: CourseSection[]): CourseMode[] {
   return Array.from(modes).sort() as CourseMode[];
 }
 
-function isValidTime(t: string): boolean {
-  return !!t && t !== "TBA" && t !== "0:00 AM" && t !== "0:00 PM";
-}
-
 function formatSchedule(course: CourseSection): string {
-  const hasTime = isValidTime(course.start_time) && isValidTime(course.end_time);
-  if (!course.days && !hasTime) {
-    return "Asynchronous / Online";
-  }
-  const days = course.days ? expandDays(course.days) : "";
-  const time = hasTime ? `${course.start_time}\u2013${course.end_time}` : "";
-  if (days && time) return `${days} ${time}`;
-  if (days) return days;
-  if (time) return time;
-  return "Asynchronous / Online";
+  return formatMeeting(course.days, course.start_time, course.end_time);
 }
 
 function courseMatchesDays(courseDays: string, filterDays: string[]): boolean {
