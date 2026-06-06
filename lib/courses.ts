@@ -605,6 +605,162 @@ export async function loadCoursesBySubject(
   });
 }
 
+// ---------------------------------------------------------------------------
+// Scoped fetch for the Smart Schedule Builder
+// ---------------------------------------------------------------------------
+
+/**
+ * Full-row identity for de-duplicating unioned query results. The only rows we
+ * must collapse are the SAME database row returned by both the prefix and the
+ * title query; using the entire row (mapRow produces a stable key order) means
+ * genuinely-distinct sections — even ones sharing a CRN (lecture + lab) or a
+ * meeting time (different instructor/location) — are all preserved.
+ */
+function sectionKey(s: CourseSection): string {
+  return JSON.stringify(s);
+}
+
+/**
+ * De-duplicate sections that matched more than one sub-query (e.g. a course
+ * found by both its prefix and a title keyword). Pure — exported for tests.
+ */
+export function dedupeSections(sections: CourseSection[]): CourseSection[] {
+  const seen = new Set<string>();
+  const out: CourseSection[] = [];
+  for (const s of sections) {
+    const k = sectionKey(s);
+    if (seen.has(k)) continue;
+    seen.add(k);
+    out.push(s);
+  }
+  return out;
+}
+
+/** Escape SQL LIKE wildcards so a user token is matched literally by ILIKE. */
+function escapeLike(token: string): string {
+  return token.replace(/[\\%_]/g, (c) => `\\${c}`);
+}
+
+type PageQuery = (
+  start: number,
+  end: number
+) => PromiseLike<{ data: unknown[] | null; error: { message: string } | null }>;
+
+/** Run a paginated Supabase query (1000-row pages) until a short page. */
+async function paginateSections(
+  build: PageQuery,
+  label: string
+): Promise<CourseSection[]> {
+  const PAGE_SIZE = 1000;
+  const all: CourseSection[] = [];
+  let offset = 0;
+  while (true) {
+    const { data, error } = await build(offset, offset + PAGE_SIZE - 1);
+    if (error) {
+      console.error(`${label} error:`, error.message);
+      break;
+    }
+    if (!data || data.length === 0) break;
+    all.push(...data.map(mapRow));
+    if (data.length < PAGE_SIZE) break;
+    offset += PAGE_SIZE;
+  }
+  return all;
+}
+
+/**
+ * Load only the sections a Smart Schedule Builder query can match, instead of
+ * the full term catalog. Two kinds of targeted Supabase queries, unioned:
+ *   - one `.in("course_prefix", prefixes)` for resolved subjects / course codes
+ *   - one per keyword group, AND-ing `.ilike("course_title", "%token%")` per token
+ *
+ * This mirrors the predicate in lib/schedule.ts `matchesSubjectQuery`, so the
+ * candidate set after `filterSections` is identical to filtering the output of
+ * `loadAllCourses` — only far smaller on the wire (e.g. CA "history" pulls a
+ * few thousand rows instead of the full ~54k term catalog).
+ */
+export async function loadCoursesForScheduleQuery(
+  term: string,
+  state: string,
+  prefixes: string[],
+  keywordGroups: string[][]
+): Promise<CourseSection[]> {
+  const uniqPrefixes = Array.from(
+    new Set(prefixes.map((p) => p.trim().toUpperCase()).filter(Boolean))
+  ).sort();
+  const cleanGroups = keywordGroups
+    .map((g) => g.map((t) => t.toLowerCase()).filter(Boolean))
+    .filter((g) => g.length > 0);
+  if (uniqPrefixes.length === 0 && cleanGroups.length === 0) return [];
+
+  const groupKeys = cleanGroups.map((g) => g.join("+")).sort();
+  const key = `scheduleQuery:${state}:${term}:${uniqPrefixes.join("|")}::${groupKeys.join(",")}`;
+
+  return cached(key, async () => {
+    const queries: Promise<CourseSection[]>[] = [];
+
+    if (uniqPrefixes.length > 0) {
+      queries.push(
+        paginateSections(
+          (start, end) =>
+            supabase
+              .from("courses")
+              .select(COURSE_COLUMNS)
+              .eq("state", state)
+              .eq("term", term)
+              .in("course_prefix", uniqPrefixes)
+              .order("id", { ascending: true })
+              .range(start, end),
+          "loadCoursesForScheduleQuery(prefixes)"
+        )
+      );
+    }
+
+    for (const tokens of cleanGroups) {
+      queries.push(
+        paginateSections((start, end) => {
+          let q = supabase
+            .from("courses")
+            .select(COURSE_COLUMNS)
+            .eq("state", state)
+            .eq("term", term);
+          for (const t of tokens) {
+            q = q.ilike("course_title", `%${escapeLike(t)}%`);
+          }
+          return q.order("id", { ascending: true }).range(start, end);
+        }, `loadCoursesForScheduleQuery(kw:${tokens.join("+")})`)
+      );
+    }
+
+    const results = await Promise.all(queries);
+    return dedupeSections(results.flat());
+  });
+}
+
+/**
+ * Cheap check: does this (state, term) have any course rows at all? Used to
+ * distinguish "the term has no data yet" from "your query matched nothing"
+ * now that the schedule builder fetches a scoped slice rather than everything.
+ * Fails open (true) on error so a transient failure never shows "no data".
+ */
+export async function termHasAnyData(
+  state: string,
+  term: string
+): Promise<boolean> {
+  return cached(`termHasData:${state}:${term}`, async () => {
+    const { count, error } = await supabase
+      .from("courses")
+      .select("id", { count: "exact", head: true })
+      .eq("state", state)
+      .eq("term", term);
+    if (error) {
+      console.error("termHasAnyData error:", error.message);
+      return true;
+    }
+    return (count ?? 0) > 0;
+  });
+}
+
 /**
  * Single scan returning both distinct course codes and per-prefix section
  * counts for a state+term. Used by the sitemap so it doesn't have to pull
