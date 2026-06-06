@@ -184,6 +184,21 @@ export default async function ProgramPage(props: PageProps) {
           x.outcomes.earnings1YrMedian != null),
     );
 
+  // A program only has outcomes worth a table column if at least one college
+  // actually reports awards or earnings. Transfer-academic programs (Psychology,
+  // Liberal Arts…) have CIP codes but community colleges don't award the degree
+  // (students transfer first), so every Awards/Earnings cell is "—". Gate the
+  // columns on real data and reframe to the transfer pathway instead of showing
+  // a wall of dashes that reads as "broken" / "this major earns nothing".
+  const hasOutcomes = data.colleges.some((c) => {
+    const o = outcomesByCollege[c.collegeCode];
+    return (
+      (o?.awardsLevel1 ?? 0) + (o?.awardsLevel2 ?? 0) > 0 ||
+      o?.earnings5YrMedian != null ||
+      o?.earnings1YrMedian != null
+    );
+  });
+
   const itemListLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -383,6 +398,19 @@ export default async function ProgramPage(props: PageProps) {
               ones transfer to the school you want, and what&rsquo;s open now.
             </p>
           )}
+          {!hasOutcomes && (
+            <p className="mb-4 rounded-lg border border-teal-200 dark:border-teal-800 bg-teal-50 dark:bg-teal-900/20 px-3 py-2 text-sm text-teal-800 dark:text-teal-300">
+              {program.name} is a transfer program — community colleges offer the
+              coursework; you earn the degree, and its earnings, at a four-year
+              university.{" "}
+              <Link
+                href={`/${state}/transfer`}
+                className="font-medium underline hover:no-underline"
+              >
+                See where it transfers &rarr;
+              </Link>
+            </p>
+          )}
           <div className="rounded-xl border border-gray-200 dark:border-slate-700 overflow-hidden bg-white dark:bg-slate-900">
             <table className="w-full text-left text-sm">
               <thead className="bg-gray-50 dark:bg-slate-800 text-xs uppercase tracking-wider text-gray-500 dark:text-slate-400">
@@ -393,7 +421,7 @@ export default async function ProgramPage(props: PageProps) {
                   </th>
                   <th className="px-4 py-2.5 font-medium text-right">Courses</th>
                   <th className="px-4 py-2.5 font-medium text-right">Online</th>
-                  {program.cips.length > 0 && (
+                  {hasOutcomes && (
                     <>
                       <th
                         className="px-4 py-2.5 font-medium text-right"
@@ -448,7 +476,7 @@ export default async function ProgramPage(props: PageProps) {
                       <td className="px-4 py-2.5 text-right text-gray-600 dark:text-slate-400">
                         {c.onlineCount > 0 ? c.onlineCount : "—"}
                       </td>
-                      {program.cips.length > 0 && (
+                      {hasOutcomes && (
                         <>
                           <td className="px-4 py-2.5 text-right text-gray-600 dark:text-slate-400">
                             {awards > 0 ? awards : "—"}
