@@ -59,7 +59,12 @@ const ohConfig: StateConfig = {
       { scripts: ["scripts/oh/scrape-transfer-osu.ts"], runner: "http" },
     ],
     prereqs: { source: "aggregate-from-courses" },
-    // manual-only: programs — Phase 5+.
+    // Acalog (Sinclair, Owens) via search_advanced + CourseLeaf (Cuyahoga/Tri-C,
+    // Lakeland, Rhodes State). Columbus State + Cincinnati State (CourseLeaf,
+    // program index path TBD) and the other colleges are deferred.
+    programs: [
+      { scripts: ["scripts/oh/scrape-programs.ts"], runner: "http" },
+    ],
   },
 };
 
