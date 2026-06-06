@@ -70,7 +70,7 @@ export default async function AboutPage({ params }: Props) {
         name: "What does auditing a course cost?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: `At most ${config.systemName} colleges, audit students pay the same tuition and fees as credit students.${config.seniorWaiver ? ` ${config.name} residents aged ${config.seniorWaiver.ageThreshold}+ may qualify for free tuition under state law.` : ""}`,
+          text: `At most ${config.name} community colleges, audit students pay the same tuition and fees as credit students.${config.seniorWaiver ? ` ${config.name} residents aged ${config.seniorWaiver.ageThreshold}+ may qualify for free tuition under state law.` : ""}`,
         },
       },
     ],
@@ -220,7 +220,7 @@ export default async function AboutPage({ params }: Props) {
             What Does It Cost?
           </h2>
           <p className="text-gray-600 dark:text-slate-400 mb-3">
-            {`At most ${config.systemName} colleges, audit students pay the same tuition and fees as credit students. Check each college's page for specific cost details.`}
+            {`At most ${config.name} community colleges, audit students pay the same tuition and fees as credit students. Check each college's page for specific cost details.`}
           </p>
           {config.seniorWaiver && (
             <div className="bg-teal-50 dark:bg-teal-900/30 border border-teal-200 dark:border-teal-800 rounded-lg p-4">

@@ -310,6 +310,19 @@ export function hasProgramsCoverage(slug: string): boolean {
 }
 
 /**
+ * Grammatical "{State} community colleges" label for a state slug.
+ *
+ * Avoids the doubled-noun bug from appending "colleges" to a systemName that
+ * already ends in "Colleges" (e.g. "Texas Community Colleges" made the old
+ * `${systemName} colleges` render "Texas Community Colleges colleges"). Server
+ * components with a StateConfig in scope can write `${config.name} community
+ * colleges` directly; client components that only have the slug use this.
+ */
+export function communityCollegesLabel(slug: string): string {
+  return `${configs[slug]?.name ?? slug.toUpperCase()} community colleges`;
+}
+
+/**
  * Returns the slugs whose pages should be pre-rendered at build time
  * (`prerenderAtBuild: true` in the StateConfig). All other states' pages
  * defer to ISR-on-demand rendering.

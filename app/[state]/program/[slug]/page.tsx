@@ -80,7 +80,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
 
   const term = await getCurrentTerm(state);
   const title = `${program.name} Programs at ${config.name} Community Colleges`;
-  const description = `${data.totalColleges} ${config.systemName} colleges offer ${program.name.toLowerCase()} coursework — ${data.totalSections} sections across ${data.totalUniqueCourses} courses for ${termLabel(term)}. Compare colleges and transfer options.`;
+  const description = `${data.totalColleges} ${config.name} community colleges offer ${program.name.toLowerCase()} coursework — ${data.totalSections} sections across ${data.totalUniqueCourses} courses for ${termLabel(term)}. Compare colleges and transfer options.`;
   const canonical = `${siteUrl()}/${state}/program/${slug}`;
 
   return {

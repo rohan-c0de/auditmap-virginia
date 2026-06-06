@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const b = config.branding;
   return {
     title: `${config.name} Community College Course Finder`,
-    description: `Search courses, check transfer equivalencies, find late-start sections, and compare ${config.collegeCount} ${config.systemName} colleges. ${b.tagline}`,
+    description: `Search courses, check transfer equivalencies, find late-start sections, and compare ${config.collegeCount} ${config.name} community colleges. ${b.tagline}`,
     keywords: b.metaKeywords,
     alternates: { canonical: `/${state}` },
   };
@@ -143,7 +143,7 @@ export default async function HomePage({ params }: Props) {
             Find {config.name} Community College Courses
           </h1>
           <p className="text-lg text-gray-600 dark:text-slate-400 mb-8">
-            Search by zip code to find nearby {config.systemName} colleges,
+            Search by zip code to find nearby {config.name} community colleges,
             browse courses, check transfer equivalencies, and build your
             schedule.
           </p>
@@ -300,7 +300,7 @@ export default async function HomePage({ params }: Props) {
                 Search All Courses
               </h3>
               <p className="text-sm text-gray-600 dark:text-slate-400">
-                Search across all {config.collegeCount} {config.systemName} colleges at once by subject, keyword, or course number.
+                Search across all {config.collegeCount} {config.name} community colleges at once by subject, keyword, or course number.
               </p>
             </Link>
             {config.transferSupported && (
@@ -353,7 +353,7 @@ export default async function HomePage({ params }: Props) {
                 Browse All Colleges
               </h3>
               <p className="text-sm text-gray-600 dark:text-slate-400">
-                View audit policies, senior waivers, course counts, and campus info for every {config.systemName} college.
+                View audit policies, senior waivers, course counts, and campus info for every {config.name} community college.
               </p>
             </Link>
             {showOnline && (
@@ -365,7 +365,7 @@ export default async function HomePage({ params }: Props) {
                   Online Courses
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-slate-400">
-                  {onlineSections} online sections across {onlineColleges} {config.systemName} colleges this term.
+                  {onlineSections} online sections across {onlineColleges} {config.name} community colleges this term.
                 </p>
               </Link>
             )}

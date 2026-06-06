@@ -7,6 +7,7 @@ import ScheduleResults from "@/components/schedule/ScheduleResults";
 import type { ScheduleFormData } from "@/components/schedule/ScheduleForm";
 import type { ScheduleResponse } from "@/lib/types";
 import { track } from "@/lib/analytics";
+import { communityCollegesLabel } from "@/lib/states/registry";
 
 interface UniversityOption {
   slug: string;
@@ -98,7 +99,7 @@ function paramsToDefaults(p: URLSearchParams): Partial<ScheduleFormData> | null 
   return defaults;
 }
 
-export default function ScheduleClient({ state, systemName, collegeCount, defaultZip, universities, terms, quickAddSubjects }: ScheduleClientProps) {
+export default function ScheduleClient({ state, collegeCount, defaultZip, universities, terms, quickAddSubjects }: ScheduleClientProps) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [response, setResponse] = useState<ScheduleResponse | null>(null);
@@ -202,7 +203,7 @@ export default function ScheduleClient({ state, systemName, collegeCount, defaul
         </h1>
         <p className="text-gray-600 dark:text-slate-400 mt-1">
           Tell us your constraints and we&apos;ll build conflict-free schedules
-          across all {collegeCount} {systemName} colleges.
+          across all {collegeCount} {communityCollegesLabel(state)}.
         </p>
       </div>
 

@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { state } = await params;
   const config = requireStateConfig(state);
   return {
-    title: `All ${config.collegeCount} ${config.systemName} Colleges — ${config.branding.siteName}`,
+    title: `All ${config.collegeCount} ${config.name} Community Colleges — ${config.branding.siteName}`,
     description: `Browse all ${config.name} community colleges — see course counts, transfer data, and campus locations.`,
     keywords: config.branding.metaKeywords,
     alternates: { canonical: `/${state}/colleges` },
@@ -58,7 +58,7 @@ export default async function CollegesPage({ params }: Props) {
   const collectionLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: `All ${config.collegeCount} ${config.systemName} Colleges`,
+    name: `All ${config.collegeCount} ${config.name} Community Colleges`,
     description: `Browse all ${config.name} community colleges — see course counts, transfer data, and campus locations.`,
     url: `${siteUrl}/${state}/colleges`,
     numberOfItems: sorted.length,
@@ -91,7 +91,7 @@ export default async function CollegesPage({ params }: Props) {
       </Link>
 
       <h1 className="text-3xl font-bold text-gray-900 dark:text-slate-100 mb-2">
-        All {config.collegeCount} {config.systemName} Colleges
+        All {config.collegeCount} {config.name} Community Colleges
       </h1>
       <p className="text-gray-600 dark:text-slate-400 mb-8">
         Browse courses and transfer info across all {config.collegeCount}{" "}
