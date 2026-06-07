@@ -78,9 +78,21 @@ const ksConfig: StateConfig = {
     // the KS Systemwide Transfer (KRSN) flag. scrape-transfer.ts drives the
     // two-step institution→results postback and keeps the latest effective
     // term per course.
-    // COVERAGE GAP: Wichita State is one receiver; KU and K-State have their
-    // own public tools (follow-ups).
-    transfers: [{ scripts: ["scripts/ks/scrape-transfer.ts"], runner: "http" }],
+    // Three receivers, each a public no-login source: Wichita State
+    // (genedtsfequiv WebForms), KU (JSON API credittransfer-api.ku.edu),
+    // Emporia State (htmx credittransfer.emporia.edu). K-State, Pittsburg State,
+    // and Washburn publish only CollegeSource TES public views (CAPTCHA-gated,
+    // not scrapeable); Fort Hays is PDF-only.
+    transfers: [
+      {
+        scripts: [
+          "scripts/ks/scrape-transfer.ts",
+          "scripts/ks/scrape-transfer-ku.ts",
+          "scripts/ks/scrape-transfer-emporia.ts",
+        ],
+        runner: "http",
+      },
+    ],
     prereqs: { source: "aggregate-from-courses" },
     // manual-only: programs — Phase 6 catalog discovery found no templated platforms; bespoke per-college needed.
   },

@@ -73,15 +73,26 @@ const wvConfig: StateConfig = {
       { scripts: ["scripts/wv/scrape-catalog-prereqs.ts"], runner: "http" },
     ],
     transfers: [
-      // No WV statewide articulation portal (HEPC's is outcomes-based, not
-      // course-level). Marshall University publishes a public equivalency tool
-      // (mubert.marshall.edu/transfer) covering 8 of WV's 9 CCs. Single
-      // receiver for now — WVU's data is behind a DegreeWorks SPA and
-      // Fairmont/Shepherd's CollegeSource TES public view 403s non-browser
-      // clients; both are documented follow-ups.
+      // Two receivers, both public no-login sources: Marshall (equivalency tool
+      // mubert.marshall.edu/transfer, all 9 CCs) and WVU (its public
+      // transfer-credit-database.xlsx — WVU's DegreeWorks SPA is auth-gated, but
+      // the same data is exported as a downloadable spreadsheet). Fairmont,
+      // Shepherd, WV State, Concord are ceilings — see documentedCeilings.
       { scripts: ["scripts/wv/scrape-transfer-marshall.ts"], runner: "http" },
+      { scripts: ["scripts/wv/scrape-transfer-wvu.ts"], runner: "http" },
     ],
     // manual-only: programs — Phase 5+.
+  },
+
+  documentedCeilings: {
+    // Transfers cap at B: Marshall and WVU are the only WV public universities
+    // with a public, scrapeable course-to-course source (both shipped).
+    // Re-verified 2026-06 — Fairmont State, Shepherd, WV State, and Concord
+    // publish only CollegeSource TES public views (ImageMath CAPTCHA to
+    // non-browser clients) or PDF agreements; the statewide HEPC/CFWV dashboard
+    // is AWS-WAF-gated and gen-ed-only. No third public course-level source.
+    transfers:
+      "Marshall and WVU are the only WV public universities with a public, scrapeable course-to-course transfer source (both shipped). Fairmont/Shepherd/WV State/Concord publish only CollegeSource TES public views (CAPTCHA-gated) or PDFs; the statewide HEPC dashboard is AWS-WAF-gated + gen-ed-only. Verified 2026-06.",
   },
 };
 
