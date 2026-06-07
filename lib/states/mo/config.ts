@@ -74,7 +74,12 @@ const moConfig: StateConfig = {
       { scripts: ["scripts/mo/scrape-transfer-core42.ts"], runner: "http" },
     ],
     prereqs: { source: "aggregate-from-courses" },
-    // manual-only: programs — Phase 5+.
+    // CourseLeaf (St. Louis CC, /programs/) + Acalog (St. Charles, search
+    // discovery). Ozarks Technical (Acalog search lists 0) + Metropolitan KC
+    // (SmartCatalogIQ year not auto-discoverable) + the rest are deferred.
+    programs: [
+      { scripts: ["scripts/mo/scrape-programs.ts"], runner: "http" },
+    ],
   },
 };
 
