@@ -55,12 +55,19 @@ const iaConfig: StateConfig = {
       { scripts: ["scripts/ia/scrape-colleague.ts"], runner: "playwright" },
     ],
     transfers: [
-      // Iowa State University's TRANSIT tool (transit.iastate.edu) exposes a
-      // public reverse-lookup JSON API. The scraper iterates all ISU subjects,
-      // fetches course listings, and queries which Iowa 2-year CC courses
-      // transfer to each ISU course. Single receiver (ISU); covers all 17 IA
-      // community colleges. No login or browser needed (http runner).
-      { scripts: ["scripts/ia/scrape-transfer-transit.ts"], runner: "http" },
+      // All three Iowa Regent universities, each via a public no-login source:
+      //   ISU    — TRANSIT reverse-lookup JSON API (transit.iastate.edu)
+      //   UNI    — TransferPlanIt JSON REST API (java.access.uni.edu)
+      //   U Iowa — MyUI transfer search, GET query params (myui.uiowa.edu)
+      // These are Iowa's only public 4-years, so receiver coverage is complete.
+      {
+        scripts: [
+          "scripts/ia/scrape-transfer-transit.ts",
+          "scripts/ia/scrape-transfer-uni.ts",
+          "scripts/ia/scrape-transfer-uiowa.ts",
+        ],
+        runner: "http",
+      },
     ],
     prereqs: { source: "aggregate-from-courses" },
     // manual-only: programs — Phase 5+.

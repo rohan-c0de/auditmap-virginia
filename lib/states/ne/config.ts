@@ -78,9 +78,26 @@ const neConfig: StateConfig = {
     // public Transfer Course Equivalency tool (ASP.NET WebForms) lists all 9
     // NE community colleges' course-to-course equivalencies. scrape-transfer.ts
     // posts each institution id and parses the results table.
-    // COVERAGE GAP: UNL is the only University of Nebraska campus with a public
-    // tool (UNO/UNK use login-adjacent CollegeSource TES views — a follow-up).
+    // CEILING: UNL is the only NE public university with a public, scrapeable
+    // course-to-course tool. UNO/UNK publish only CollegeSource TES public views
+    // that serve an ImageMath human-verification CAPTCHA to non-browser clients
+    // (verified 2026-06) — see documentedCeilings.transfers.
     transfers: [{ scripts: ["scripts/ne/scrape-transfer.ts"], runner: "http" }],
+  },
+
+  documentedCeilings: {
+    // Transfers cap at B: UNL is the ONLY Nebraska public university with a
+    // public, scrapeable course-to-course equivalency tool (its ASP.NET app,
+    // ~2,000 CC→UNL pairs — shipped). Re-verified 2026-06 against every other
+    // in-state receiver: UNO and UNK publish only CollegeSource TES public views
+    // that serve an ImageMath "human verification" CAPTCHA to non-browser
+    // clients (no automatable course table); the statewide Transfer Nebraska
+    // portal funnels into login-gated Transferology; Nebraska State College
+    // System sites (Wayne/Peru/Chadron) bot-block (HTTP 403). No second public
+    // data source exists to scrape, so 1-receiver coverage is the structural
+    // ceiling — not an open gap.
+    transfers:
+      "UNL is the only Nebraska public university with a public, scrapeable course-to-course equivalency tool (shipped, ~2,000 pairs). UNO/UNK publish only CollegeSource TES public views that serve an ImageMath human-verification CAPTCHA to non-browser clients; Transfer Nebraska funnels into login-gated Transferology; NSCS colleges (Wayne/Peru/Chadron) bot-block (403). No second public source to scrape. Verified 2026-06.",
   },
 };
 

@@ -62,13 +62,24 @@ const inConfig: StateConfig = {
     // Prereqs are flattened out of the course scrape (prerequisite_text on
     // each section, parsed from the CollegeScheduler course descriptions).
     prereqs: { source: "aggregate-from-courses" },
-    // Ivy Tech's CollegeTransfer.Net OData record yields in-state equivalencies
-    // to the University of Southern Indiana (~400 direct course pairs).
-    // COVERAGE GAP: CT.Net does not carry Ivy Tech → IU / Purdue / Ball State /
-    // Indiana State, which are the dominant pathways — those live in Purdue's
-    // Banner credit guide and IU's CollegeSource TES public views. A follow-up
-    // PR will add those receivers; this establishes baseline coverage.
-    transfers: [{ scripts: ["scripts/in/scrape-transfer.ts"], runner: "http" }],
+    // Ivy Tech → three in-state public universities, one per-receiver pass
+    // (mergeTransferRows keeps them conflict-free):
+    //   • USI    — CollegeTransfer.Net OData (scrape-transfer.ts)
+    //   • Purdue — public Banner credit guide bzwtxcrd (scrape-transfer-purdue.ts)
+    //   • IU Bloomington — public Credit Transfer Service JSON API
+    //     components.cfc (scrape-transfer-iu.ts)
+    // Ball State (DegreeWorks SPA) and Indiana State (redirects to login-gated
+    // Transferology) expose no public course table; not scrapeable.
+    transfers: [
+      {
+        scripts: [
+          "scripts/in/scrape-transfer.ts",
+          "scripts/in/scrape-transfer-purdue.ts",
+          "scripts/in/scrape-transfer-iu.ts",
+        ],
+        runner: "http",
+      },
+    ],
     // Ivy Tech's full degree/certificate catalog (catalog.ivytech.edu, Acalog
     // catoid=13) scraped via the shared Acalog template — one statewide catalog
     // covers every campus. ~392 programs with requirement groups.

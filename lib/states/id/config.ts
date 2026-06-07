@@ -72,8 +72,11 @@ const idConfig: StateConfig = {
     // and parses the per-receiver equivalency results pages.
     transfers: [{ scripts: ["scripts/id/scrape-transfer.ts"], runner: "http" }],
     prereqs: { source: "aggregate-from-courses" },
-    // manual-only: programs — no college's catalog matched a templated
-    // platform (acalog/courseleaf/smartcatalogiq/coursedog/cleancatalog).
+    // Per-college program catalogs across 3 platforms: CEI (Acalog, via
+    // Playwright for its TLS chain), CWI (CourseLeaf @ catalog.cwi.edu), CSI
+    // (SmartCatalogIQ). North Idaho College (Coursedog) is deferred — see the
+    // DEFERRED-scrapers note in scripts/id/scrape-programs.ts.
+    programs: [{ scripts: ["scripts/id/scrape-programs.ts"], runner: "playwright" }],
   },
 };
 

@@ -55,7 +55,12 @@ const orConfig: StateConfig = {
     ],
     transfers: [{ scripts: ["scripts/or/scrape-transfer-osu.ts"], runner: "http" }],
     prereqs: { source: "aggregate-from-courses" },
-    // manual-only: programs — Phase 5+.
+    // Acalog (Chemeketa, Rogue, Klamath) via search_advanced + CourseLeaf
+    // (Portland CC). Mt Hood/Clackamas/Central Oregon (CourseLeaf, non-default
+    // program index) and the other ~9 colleges are deferred.
+    programs: [
+      { scripts: ["scripts/or/scrape-programs.ts"], runner: "http" },
+    ],
   },
 };
 
