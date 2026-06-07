@@ -103,6 +103,31 @@ const miConfig: StateConfig = {
       },
     ],
   },
+
+  documentedCeilings: {
+    // Course-coverage ceilings — every uncovered MI college was fingerprinted +
+    // probed (2026-06-06); none of these 14 expose public live class-schedule
+    // (section) data to scrape, so they're excluded from the coverage denominator.
+    // alpena is deliberately NOT here: its Colleague host (acc-ss.colleague.
+    // elluciancloud.com) responds 200 but the scraper finds 0 sections — a
+    // term-selector bug to debug (a deferred buildable), not a ceiling.
+    courses: [
+      { collegeSlug: "bay-de-noc-community-college", reason: "Jenzabar JICS — guest course-search disabled (verified 2026-05-28)" },
+      { collegeSlug: "gogebic-community-college", reason: "Jenzabar JICS — SAML auto-redirect, no guest access (verified 2026-05-28)" },
+      { collegeSlug: "kirtland-community-college", reason: "Jenzabar JICS — SAML auto-redirect, no guest access (verified 2026-05-28)" },
+      { collegeSlug: "keweenaw-bay-ojibwa-community-college", reason: "Jenzabar JICS — guest course-search disabled (tribal college, verified 2026-05-28)" },
+      { collegeSlug: "grand-rapids-community-college", reason: "Banner SSB 9 — section API redirects to login (0 sections, verified 2026-06)" },
+      { collegeSlug: "west-shore-community-college", reason: "Banner SSB 9 — section API behind CAPTCHA (0 sections, verified 2026-06)" },
+      { collegeSlug: "northwestern-michigan-college", reason: "Course search auth-gated; no public section endpoint (verified 2026-06)" },
+      { collegeSlug: "wayne-county-community-college-district", reason: "Acalog catalog only — no public live class schedule (verified 2026-06)" },
+      { collegeSlug: "monroe-county-community-college", reason: "Acalog catalog only — no public live class schedule (verified 2026-06)" },
+      { collegeSlug: "henry-ford-college", reason: "Coursedog catalog only (catalog.hfcc.edu) — no public live section data (verified 2026-06)" },
+      { collegeSlug: "lake-michigan-college", reason: "Coursedog catalog only — no public live section data (verified 2026-06)" },
+      { collegeSlug: "kalamazoo-valley-community-college", reason: "Custom site; no public Banner/Colleague section endpoint found (verified 2026-06)" },
+      { collegeSlug: "bay-mills-community-college", reason: "Tribal college — no public SIS / section search (verified 2026-06)" },
+      { collegeSlug: "saginaw-chippewa-tribal-college", reason: "Tribal college — no public SIS / section search (verified 2026-06)" },
+    ],
+  },
 };
 
 export default miConfig;
