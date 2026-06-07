@@ -57,6 +57,11 @@ const ohConfig: StateConfig = {
     transfers: [
       // OSU Quick Equivalencies Excel — ~5K mappings across 15 OH CCs, single GET.
       { scripts: ["scripts/oh/scrape-transfer-osu.ts"], runner: "http" },
+      // Statewide ORDS API (Transfer to Degree Guarantee, cems.regents.ohio.gov) —
+      // every other OH public university (Cincinnati, Miami, Ohio U, Akron, Kent,
+      // BGSU, Cleveland State, Toledo, Wright State, Youngstown) in one crawl.
+      // OSU is excluded there (owned by scrape-transfer-osu.ts above).
+      { scripts: ["scripts/oh/scrape-transfer-ords.ts"], runner: "http" },
     ],
     prereqs: { source: "aggregate-from-courses" },
     // Acalog (Sinclair, Owens) via search_advanced + CourseLeaf (Cuyahoga/Tri-C,
