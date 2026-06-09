@@ -37,6 +37,20 @@ async function main() {
     hosts: {
       "victoria-college": "https://xe-stu.victoriacollege.edu",
       "laredo-college": "https://reg-prod.laredo.elluciancloud.com:8103",
+      // Banner SSB 9 on the same non-standard :8103 port as Laredo. The WCJC
+      // Pioneer Portal homepage is Ellucian Experience (SSO), but the underlying
+      // SSB classSearch JSON API at reg-prod.wcjc.elluciancloud.com:8103 is
+      // public — getTerms returns 9 terms, searchResults returns 892 Spring-2026
+      // sections (CRN/seats/faculty). Linked from wcjc.edu's how-to-register
+      // page. Verified 2026-06.
+      "wharton-county-junior-college":
+        "https://reg-prod.wcjc.elluciancloud.com:8103",
+      // Banner SSB 9 at the standard Ellucian-Cloud reg-prod.ec host. The
+      // college portal (generalssb-prod.ec.sanjac.edu) is SSO-gated and the
+      // Acalog course-finder is AWS-WAF-walled, but the SSB classSearch JSON
+      // API at reg-prod.ec.sanjac.edu is public — getTerms returns the live
+      // credit terms (Fall/Spring/Summer 2026). Verified 2026-06.
+      "san-jacinto-community-college": "https://reg-prod.ec.sanjac.edu",
     },
   });
 }

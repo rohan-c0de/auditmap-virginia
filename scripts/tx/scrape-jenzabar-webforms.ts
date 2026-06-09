@@ -38,6 +38,12 @@ const HOSTS: Record<string, string> = {
     "https://my.nctc.edu/ICS/Academics/Academics_Homepage.jnz?portlet=AddDrop_Courses&screen=Advanced+Course+Search&screenType=next",
   "texarkana-college":
     "https://my.texarkanacollege.edu/ICS/Home.jnz?portlet=Course_Search&screen=Advanced+Course+Search&screenType=next",
+  // Course_Search.jnz (not Home.jnz) renders the public `pg0$V$ddlTerm`
+  // Advanced Course Search portlet with real terms (2026 FA/SP etc.) — the
+  // page also carries the portal login widget in its header, same as the
+  // three above. Verified 2026-06.
+  "midland-college":
+    "https://mymcportal.midland.edu/ICS/Course_Search.jnz?portlet=Course_Search&screen=Advanced+Course+Search&screenType=next",
 };
 
 async function main() {

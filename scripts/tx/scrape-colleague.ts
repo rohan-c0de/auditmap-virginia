@@ -21,9 +21,14 @@ const HOSTS: Record<string, string> = {
   "odessa-college": "https://sserv.odessa.edu",
   // Added via coverage-expansion + refingerprint workflow:
   "college-of-the-mainland": "https://selfserve.com.edu",
-  "galveston-college": "https://gcsis-ssprod.gc.edu",
   "mclennan-community-college": "https://mymcc.mclennan.edu",
-  "texas-southmost-college": "https://selfservice.tsc.edu",
+  // galveston-college (gcsis-ssprod.gc.edu) and texas-southmost-college
+  // (selfservice.tsc.edu) were wired here but never produced sections: both
+  // Colleague instances render the catalog shell but gate live section/term
+  // data behind login (galveston → Account/Login markers on the search page;
+  // TSC → redirects to SSO at colss-prod.tscsaas.elluciancloud.com). Removed
+  // from the active host map and recorded in documentedCeilings.courses.
+  // Verified 2026-06.
   // TX Phase A — verified guest-open Colleague Self-Service hosts.
   "alvin-community-college": "https://self-service.alvincollege.edu",
   // Vernon was fingerprinted as Banner SSB but
@@ -37,8 +42,12 @@ const HOSTS: Record<string, string> = {
   // is a separate Colleague host the fingerprinter never probed).
   "del-mar-college": "https://colss-prod.ec.delmar.edu",
   // Austin CCD's selfservice.austincc.edu is auth-gated
-  // (redirects /Student/Courses → /Account/Login). Deferred — needs an
-  // alternate guest endpoint or catalog-only import.
+  // (redirects /Student/Courses → /Account/Login) — but its public
+  // www6.austincc.edu/schedule PHP app is scraped by scripts/tx/scrape-austin.ts.
+  // Central Texas College's Colleague at student.ctcd.org is public but sits
+  // behind Cloudflare Bot Management; the shared template's Playwright run does
+  // not clear the managed challenge (0 terms discovered), so CTC is handled by
+  // the bespoke stealth scraper scripts/tx/scrape-central-texas.ts instead.
 };
 
 async function main() {
