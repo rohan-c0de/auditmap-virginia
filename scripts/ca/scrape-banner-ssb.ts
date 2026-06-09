@@ -4,20 +4,32 @@
  * Thin wrapper around the shared Banner SSB 9 template for the California
  * community colleges reachable via public Banner Self-Service 9 endpoints.
  *
+ * Multi-college Banner DISTRICTS (one shared instance -> several colleges,
+ * split by campusDescription) are NOT handled here -- they live in
+ * scripts/ca/scrape-banner-cluster.ts (SMCCCD, CLPCCD, Kern CCD). Listing a
+ * shared-instance college in both places would double-scrape and mix the
+ * district's sections.
+ *
  * Usage:
  *   npx tsx scripts/ca/scrape-banner-ssb.ts
  *   npx tsx scripts/ca/scrape-banner-ssb.ts --college mt-san-antonio-college
+ *   npx tsx scripts/ca/scrape-banner-ssb.ts --college college-of-the-sequoias --no-import
  */
 import { scrapeBannerSsbState } from "../lib/scrape-banner-ssb";
 
 // Top-level await is not supported with the CJS output format used by the
 // cron runner's esbuild step. Wrap in main() so it compiles cleanly.
 async function main() {
+  const args = process.argv.slice(2);
+  const collegeIdx = args.indexOf("--college");
+  const collegeFilter = collegeIdx >= 0 ? args[collegeIdx + 1] : undefined;
+  const noImport = args.includes("--no-import");
   await scrapeBannerSsbState({
   state: "ca",
+  collegeFilter,
+  noImport,
   hosts: {
     "antelope-valley-community-college-district": "https://ssb.avc.edu",
-    "bakersfield-college":                        "https://reg-prod.ec.kccd.edu",
     "rio-hondo-college":                          "https://prod-ssb9-registration.riohondo.edu:8443",
     "solano-community-college":                   "https://ssb.solano.edu",
     "allan-hancock-college":                      "https://ssb.hancockcollege.edu",
@@ -44,7 +56,16 @@ async function main() {
     // Singletons
     "gavilan-college":                            "https://reg-prod.ec.gavilan.edu",
     "pasadena-city-college":                      "https://reg-prod.ec.pasadena.edu",
-    "porterville-college":                        "https://reg-prod.ec.kccd.edu",
+    // College of the Sequoias (Sequoias CCD) -- single college; all campuses
+    // (Visalia / Tulare / Hanford) are COS sites, no cross-college filter.
+    "college-of-the-sequoias":                    "https://banweb.cos.edu",
+    // Feather River College -- single college, Ellucian Cloud Banner SSB 9
+    // on non-standard port 8118.
+    "feather-river-community-college-district":   "https://reg-prod.frc.elluciancloud.com:8118",
+    // NOTE: bakersfield-college, porterville-college and cerro-coso-community-college
+    // (Kern CCD) all share https://reg-prod.ec.kccd.edu. They are scraped by
+    // scripts/ca/scrape-banner-cluster.ts, which buckets the shared instance by
+    // campusDescription (BC / Porterville / CC). Do not add them here.
   },
   });
 }

@@ -189,6 +189,22 @@ export function formatDays(daysOfWeekDisplay: string): string {
   return daysOfWeekDisplay.replace(/\//g, " ").replace(/,\s*/g, " ").trim();
 }
 
+/**
+ * Normalize a Colleague term CODE to the standard `YYYY` + 2-letter season
+ * form used everywhere else (2026FA / 2026SP / 2026SU / 2026WI). Most
+ * Colleague installs already emit the 2-letter code, so this is a no-op for
+ * them. A few (e.g. Merced's `2026F` / `2026U`) use a single trailing season
+ * letter; only those `^\d{4}[FSUW]$` codes are expanded. Anything else
+ * (2-letter codes, custom multi-college codes like `V26SP` / `26/SU1`,
+ * mini-session variants `2026SP2`) is returned unchanged.
+ */
+export function standardizeColleagueTerm(code: string): string {
+  const m = code.match(/^(\d{4})([FSUW])$/);
+  if (!m) return code;
+  const season: Record<string, string> = { F: "FA", S: "SP", U: "SU", W: "WI" };
+  return `${m[1]}${season[m[2]]}`;
+}
+
 export function defaultDetermineMode(input: {
   locationCode: string;
   locationDisplay: string;
@@ -557,7 +573,7 @@ export async function scrapeColleagueCollegeTerm(
 
               allSections.push({
                 college_code: slug,
-                term: termCode,
+                term: standardizeColleagueTerm(termCode),
                 course_prefix: s.Course.SubjectCode,
                 course_number: s.Course.Number,
                 course_title: s.Course.Title,

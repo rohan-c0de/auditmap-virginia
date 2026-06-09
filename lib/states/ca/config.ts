@@ -90,6 +90,41 @@ const caConfig: StateConfig = {
       // files per term (courses, crns, ssrmeet, section-instructors) provide
       // complete section data including seats, meeting times, and instructors.
       { scripts: ["scripts/ca/scrape-wvm.ts"], runner: "http" },
+      // --- CA course-coverage expansion (2026-06) -------------------------
+      // SMCCCD / CLPCCD / Kern CCD: each is one shared public Banner SSB 9
+      // instance serving several colleges; bucketed to each college by
+      // campusDescription (Skyline/Canada/CSM; Chabot/Las Positas; BC/
+      // Porterville/CC).
+      { scripts: ["scripts/ca/scrape-banner-cluster.ts"], runner: "http" },
+      // Riverside CCD (RCC, Moreno Valley, Norco): one public SharePoint
+      // OData backend (apps-studentrcc.msappproxy.net), one list per college.
+      { scripts: ["scripts/ca/scrape-rccd.ts"], runner: "http" },
+      // South Orange County CCD (Saddleback, Irvine Valley): shared public
+      // "SmartSchedule" guest-JWT JSON API (classesapi.socccd.edu).
+      { scripts: ["scripts/ca/scrape-socccd.ts"], runner: "http" },
+      // San Bernardino CCD (Crafton Hills, San Bernardino Valley): shared
+      // Colleague SearchAsync endpoint; split by LocationCode (CHC / SBVC).
+      { scripts: ["scripts/ca/scrape-sbccd.ts"], runner: "http" },
+      // Yosemite CCD (Modesto JC, Columbia): per-college public ASP.NET
+      // WebForms class-search apps at myapps.yosemite.edu.
+      { scripts: ["scripts/ca/scrape-yosemite.ts"], runner: "http" },
+      // San Joaquin Delta College: unauthenticated CollegeScheduler GraphQL.
+      { scripts: ["scripts/ca/scrape-delta.ts"], runner: "http" },
+      // Imperial Valley College: public Laravel/Livewire schedule page.
+      { scripts: ["scripts/ca/scrape-imperial.ts"], runner: "http" },
+      // City College of San Francisco: public Drupal Views course schedule.
+      { scripts: ["scripts/ca/scrape-ccsf.ts"], runner: "http" },
+      // Cerritos College: bespoke public "Schedule+" CGI app.
+      { scripts: ["scripts/ca/scrape-cerritos.ts"], runner: "http" },
+      // College of Marin: public ASP.NET WebForms schedule search.
+      { scripts: ["scripts/ca/scrape-marin.ts"], runner: "http" },
+      // Mt. San Jacinto, Mendocino, Santiago Canyon: Colleague variants the
+      // standard template can't drive (/css context, SearchAsync, shared host).
+      { scripts: ["scripts/ca/scrape-colleague-variants.ts"], runner: "http" },
+      // Long Beach City College: PeopleSoft "Viking" public guest class search.
+      { scripts: ["scripts/ca/scrape-lbcc.ts"], runner: "playwright" },
+      // College of the Redwoods: legacy WebAdvisor guest "Search for Classes".
+      { scripts: ["scripts/ca/scrape-redwoods.ts"], runner: "playwright" },
     ],
     prereqs: { source: "aggregate-from-courses" },
     transfers: [
@@ -115,6 +150,45 @@ const caConfig: StateConfig = {
       // eLumen (30 CCs) and Curricunet (20 CCs) deferred to follow-up PRs
       // (both are SPAs requiring new Playwright-based templates).
       { scripts: ["scripts/ca/scrape-template-programs.ts"], runner: "playwright" },
+    ],
+  },
+  documentedCeilings: {
+    courses: [
+      {
+        collegeSlug: "taft-college",
+        reason:
+          "Class search is behind PortalGuard SAML SSO (portalguard.taftcollege.edu) plus a Fastly bot-challenge; Banner app servers are campus-firewalled. Only a static SmartCatalog and term PDFs are public.",
+      },
+      {
+        collegeSlug: "glendale-community-college",
+        reason:
+          "PeopleSoft Campus Solutions (psprd.glendale.edu) and Banner SSB both redirect to PortalGuard/SAML SSO; no COMMUNITY_ACCESS guest node and no CollegeScheduler instance.",
+      },
+      {
+        collegeSlug: "copper-mountain-community-college",
+        reason:
+          "Colleague Student Planning sits behind Duo SAML SSO (experience.elluciancloud.com); ss.cmccd.edu is firewalled. Only static PDF schedules are public.",
+      },
+      {
+        collegeSlug: "palomar-college",
+        reason:
+          "PeopleSoft + HighPoint CX (my.palomar.edu) -- every class-search path redirects to cmd=login; no public schedule subdomain or CollegeScheduler instance.",
+      },
+      {
+        collegeSlug: "miracosta-college",
+        reason:
+          "PeopleSoft SURF (surf.miracosta.edu) -- all class-search nodes redirect to okta.miracosta.edu SSO; only PDF schedules are public.",
+      },
+      {
+        collegeSlug: "california-indian-nations-college",
+        reason:
+          "SIS is Populi (cincollege.populiweb.com), login-only; the marketing site is CAPTCHA-walled. No public catalog or section endpoint.",
+      },
+      {
+        collegeSlug: "los-angeles-county-college-of-nursing-and-allied-health",
+        reason:
+          "County-run cohort RN program (dhs.lacounty.gov); no online class-search SIS exists -- only consumer-info pages.",
+      },
     ],
   },
 };
