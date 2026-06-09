@@ -28,6 +28,7 @@ import { execSync } from "child_process";
 import * as fs from "fs";
 import * as os from "os";
 import * as path from "path";
+import { inferTccnsCredits } from "../lib/tccns-credits";
 
 const SLUG = "frank-phillips-college";
 const COLLEGE_CODE = SLUG;
@@ -201,6 +202,15 @@ function parseSchedulePdf(
     if (!cm) continue;
 
     const credits = parseFloat(r.credits || "");
+    // Right-anchor the date columns. In the Summer PDF pdftotext sometimes
+    // splits a faculty name into an extra cell, shifting the positional
+    // startDate onto a name token (e.g. "Marinda") — which then fails the
+    // Supabase `date` column at import. The real start/end dates are always
+    // the last two MM/DD/YYYY cells, regardless of how the name split.
+    const dateCells = cells.filter((c) => /^\d{1,2}\/\d{1,2}\/\d{4}$/.test(c));
+    const startDateRaw =
+      dateCells.length >= 2 ? dateCells[dateCells.length - 2] : dateCells[0] || "";
+    const endDateRaw = dateCells.length >= 2 ? dateCells[dateCells.length - 1] : "";
     // Many courses have multiple meeting times (lecture + lab, MW + TR) that
     // appear as separate rows in the PDF with the same prefix+section. We keep
     // each as a distinct CourseSection (matching what LSC/Cisco do for the
@@ -212,13 +222,16 @@ function parseSchedulePdf(
       course_prefix: cm[1],
       course_number: cm[2],
       course_title: r.title || "",
-      credits: Number.isFinite(credits) ? credits : null,
+      credits:
+        Number.isFinite(credits) && credits > 0
+          ? credits
+          : inferTccnsCredits(cm[2]) || null,
       crn: `${cm[1]}${cm[2]}-${r.section || "00"}-${campusOverride}-${termFile}-${meetingKey}`,
       days: normalizeDays(r.days || ""),
       start_time: normalizeTime(r.startTime || ""),
       end_time: normalizeTime(r.endTime || ""),
-      start_date: isoFromMDY(r.startDate || ""),
-      end_date: isoFromMDY(r.endDate || ""),
+      start_date: isoFromMDY(startDateRaw),
+      end_date: isoFromMDY(endDateRaw),
       location: r.room || "",
       campus: campusOverride,
       mode: inferMode(r.room || ""),

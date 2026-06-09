@@ -394,7 +394,11 @@ function normalizeMode(raw: string): string {
   if (r.includes("online anytime") || r.includes("online on a schedule") || r.includes("online")) return "online";
   if (r.includes("hybrid")) return "hybrid";
   if (r.includes("in person")) return "in-person";
-  return raw || "in-person";
+  if (r.includes("remote") || r.includes("web")) return "online";
+  // Anything else is a course-FORMAT label, not a delivery mode (e.g.
+  // "Lab Based", "Lecture") — those are taught in person. Returning the raw
+  // label here used to leak an invalid `mode` that failed import validation.
+  return "in-person";
 }
 
 function parseStartDate(s: string): string {

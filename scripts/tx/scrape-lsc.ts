@@ -46,6 +46,8 @@
 import { chromium, type Browser, type Page } from "playwright";
 import * as fs from "fs";
 import * as path from "path";
+import { inferTccnsCredits } from "../lib/tccns-credits";
+import { inferCourseMode } from "../lib/course-mode";
 
 const SLUG = "lone-star-college-system";
 const COLLEGE_CODE = SLUG;
@@ -409,10 +411,19 @@ function parseDaytime(dt: string): { days: string; start: string; end: string } 
   return { days: dt, start: "", end: "" };
 }
 
+// PS Classic prints "08/24/2026 - 12/13/2026"; the Supabase `date` column needs
+// ISO YYYY-MM-DD or the row is rejected at import. Returns "" for blank cells.
+function mdyToIso(s: string): string {
+  const m = (s || "").trim().match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  if (!m) return "";
+  const [, mm, dd, yyyy] = m;
+  return `${yyyy}-${mm.padStart(2, "0")}-${dd.padStart(2, "0")}`;
+}
+
 function parseDates(d: string): { start: string; end: string } {
   // e.g. "08/24/2026 - 12/13/2026"
   const m = d.match(/(\d{2}\/\d{2}\/\d{4})\s*-\s*(\d{2}\/\d{2}\/\d{4})/);
-  return { start: m?.[1] || "", end: m?.[2] || "" };
+  return { start: mdyToIso(m?.[1] || ""), end: mdyToIso(m?.[2] || "") };
 }
 
 function rawToSection(r: RawSection, opts: { campusName: string; term: string }): CourseSection | null {
@@ -427,7 +438,9 @@ function rawToSection(r: RawSection, opts: { campusName: string; term: string })
     course_prefix: ch.prefix,
     course_number: ch.number,
     course_title: ch.title,
-    credits: null,
+    // PS Classic's CommunityAccess search omits credit hours; infer from the
+    // TCCNS number (2nd digit = SCH). null when not inferable.
+    credits: inferTccnsCredits(ch.number) || null,
     crn: r.classNbr,
     days: dt.days,
     start_time: dt.start,
@@ -436,7 +449,10 @@ function rawToSection(r: RawSection, opts: { campusName: string; term: string })
     end_date: dates.end,
     location: r.room,
     campus: opts.campusName,
-    mode: cn.mode,
+    // cn.mode is the PS session-length label ("Regular"/"8 Week 1"), not a
+    // delivery mode — infer the real mode from the room/days instead so the
+    // row passes import validation (room "ONLINE" → online).
+    mode: inferCourseMode({ location: r.room, campus: opts.campusName, days: dt.days }),
     instructor: r.instructor || null,
     seats_open: null,
     seats_total: null,
