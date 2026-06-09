@@ -45,6 +45,7 @@
  */
 
 import * as cheerio from "cheerio";
+import type { AnyNode } from "domhandler";
 import * as fs from "fs";
 import * as path from "path";
 
@@ -269,7 +270,7 @@ function deriveMode(typeText: string, locationText: string, timesText: string): 
 }
 
 // Cell text that preserves <br> as newlines and strips other tags.
-function cellText($: cheerio.CheerioAPI, td: cheerio.AnyNode): string {
+function cellText($: cheerio.CheerioAPI, td: AnyNode): string {
   const html = $(td).html() || "";
   const withBreaks = html.replace(/<br\s*\/?>/gi, "\n");
   const text = cheerio.load(withBreaks).text();

@@ -46,6 +46,7 @@
  */
 
 import * as cheerio from "cheerio";
+import type { Element } from "domhandler";
 import * as fs from "fs";
 import * as path from "path";
 
@@ -291,7 +292,7 @@ function deriveMode(campus: string, room: string): Mode {
   return "in-person";
 }
 
-function cellText($: cheerio.CheerioAPI, td: cheerio.Element): string {
+function cellText($: cheerio.CheerioAPI, td: Element): string {
   return $(td).text().replace(/ /g, " ").replace(/\s+/g, " ").trim();
 }
 
