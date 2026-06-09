@@ -125,6 +125,11 @@ const caConfig: StateConfig = {
       { scripts: ["scripts/ca/scrape-lbcc.ts"], runner: "playwright" },
       // College of the Redwoods: legacy WebAdvisor guest "Search for Classes".
       { scripts: ["scripts/ca/scrape-redwoods.ts"], runner: "playwright" },
+      // Santa Barbara City College: public Banner ORDS pw_pub_sched package.
+      { scripts: ["scripts/ca/scrape-sbcc.ts"], runner: "http" },
+      // College of the Canyons (Santa Clarita CCD): public Colleague Self-
+      // Service; bespoke term discovery (standard term endpoint returns empty).
+      { scripts: ["scripts/ca/scrape-canyons.ts"], runner: "http" },
     ],
     prereqs: { source: "aggregate-from-courses" },
     transfers: [
