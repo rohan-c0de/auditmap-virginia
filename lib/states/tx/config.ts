@@ -195,6 +195,60 @@ const txConfig: StateConfig = {
         scripts: ["scripts/tx/scrape-frank-phillips.ts"],
         runner: "http",
       },
+      // Tyler Junior College — Banner 8 (classic bwckschd dynamic schedule) on
+      // a non-standard host+port: ssbprod.tjc.edu:8100/prod. Driven by the
+      // shared Banner 8 template; ~2,700 sections across the live terms.
+      {
+        scripts: ["scripts/tx/scrape-banner8.ts"],
+        runner: "http",
+      },
+      // Austin Community College District — the public ACC Online Course
+      // Schedule PHP app at www6.austincc.edu/schedule (no auth; the Colleague
+      // selfservice.austincc.edu is login-gated). Enumerates every credit term
+      // × discipline and parses the section tables. ~23k sections / 5 terms.
+      // (Largest TX district; credits aren't published in the schedule view.)
+      {
+        scripts: ["scripts/tx/scrape-austin.ts"],
+        runner: "http",
+      },
+      // Grayson College — public custom .NET "Student Planner" at
+      // planner.grayson.edu/Planner/CourseSearch/{termId}. Parses the per-term
+      // HTML section table (no CRN — synthesized; credits not published).
+      // ~2,700 sections / 5 terms.
+      {
+        scripts: ["scripts/tx/scrape-grayson.ts"],
+        runner: "http",
+      },
+      // Brazosport College — public Campus Management Corp (CMC) ASP.NET
+      // WebForms portal at mybcnext.brazosport.edu/CMCPortal. Session-warmup
+      // GET then per-term postback returns the full section grid (client-side
+      // DataTables, no server pagination). ~1,000 sections / 2 terms.
+      {
+        scripts: ["scripts/tx/scrape-brazosport.ts"],
+        runner: "http",
+      },
+      // Central Texas College — Ellucian Colleague Self-Service at
+      // student.ctcd.org. The ctcd.org domain is behind Cloudflare Bot
+      // Management, so the shared colleague template (plain Playwright) can't
+      // clear the managed challenge. This bespoke scraper drives a STEALTH
+      // Chromium context (navigator.webdriver hidden, real Chrome UA) that
+      // passes the challenge, then hands that context to the shared Colleague
+      // section logic. ~1,800 sections / 2 terms, prereqs enriched.
+      {
+        scripts: ["scripts/tx/scrape-central-texas.ts"],
+        runner: "playwright",
+      },
+      // Dallas College (former DCCCD, ~70k students — the largest TX district).
+      // Credit registration is Workday (SSO), but the legacy eConnect credit
+      // class schedule at schedule.dallascollege.edu is public — fronted by AWS
+      // WAF, so a plain fetch is challenged. This bespoke scraper drives a
+      // stealth Chromium that clears the WAF, walks term → subject → sections,
+      // and parses the eConnect result tables. ~18k sections / 2 terms; long
+      // rate-limited run (detach on cron).
+      {
+        scripts: ["scripts/tx/scrape-dallas.ts"],
+        runner: "playwright",
+      },
     ],
     transfers: [
       { scripts: ["scripts/tx/scrape-transfer-tccns.ts"], runner: "http" },
@@ -229,6 +283,84 @@ const txConfig: StateConfig = {
           "scripts/tx/scrape-misc-programs.ts",
         ],
         runner: "http",
+      },
+    ],
+  },
+
+  // Colleges with no public, scrapeable live-section source. Each was probed
+  // live in 2026-06 (fingerprint + SIS-subdomain sweep + Playwright). The
+  // /state-audit collector drops these from the course-coverage denominator so
+  // the grade reflects what's actually reachable, not a permanent gap we can fix.
+  documentedCeilings: {
+    courses: [
+      // Colleague Self-Service — section/term data behind login (catalog shell
+      // may render publicly, but the schedule does not).
+      {
+        collegeSlug: "galveston-college",
+        reason:
+          "Colleague Self-Service (gcsis-ssprod.gc.edu) gates section/term data behind Account/Login; only the catalog shell is public.",
+      },
+      {
+        collegeSlug: "texas-southmost-college",
+        reason:
+          "Colleague search page redirects to SSO login at colss-prod.tscsaas.elluciancloud.com — no public live-section data.",
+      },
+      {
+        collegeSlug: "western-texas-college",
+        reason:
+          "Colleague Self-Service (wtc-ss.colleague.elluciancloud.com) sets logInUrl with no unauthenticated course-search path.",
+      },
+      {
+        collegeSlug: "texas-state-technical-college",
+        reason:
+          "Colleague Self-Service (selfservice.tstc.edu) immediately SAML-redirects to tstc.auth.securid.com — no anonymous guest path.",
+      },
+      {
+        collegeSlug: "southwest-texas-junior-college",
+        reason:
+          "Colleague SIS migrated — old colss-prod.ec.swtjc.edu is NXDOMAIN and current selfservice.swtjc.edu is unreachable (connection times out); no reachable public class search.",
+      },
+      // Jenzabar ICS — Course Search portlet / section REST is login-walled.
+      {
+        collegeSlug: "angelina-college",
+        reason:
+          "Jenzabar ICS (myac.angelina.edu) section REST endpoint returns 0 bytes without a login session; schedule is login-walled.",
+      },
+      {
+        collegeSlug: "el-paso-community-college",
+        reason:
+          "Jenzabar ICS (my.epcc.edu) returns HTTP 401 on all class-search paths (incl. Before_you_start.jnz) — login required throughout.",
+      },
+      {
+        collegeSlug: "hill-college",
+        reason:
+          "Jenzabar ICS (myhc.hillcollege.edu) Advanced Course Search portlet renders only a login form (no public ddlTerm).",
+      },
+      {
+        collegeSlug: "ranger-college",
+        reason:
+          "Jenzabar ICS (rctportal.jenzabarcloud.com) Advanced Course Search portlet renders only a login form (no public ddlTerm).",
+      },
+      // PeopleSoft — class search behind the EMPLOYEE portal, no guest realm.
+      {
+        collegeSlug: "lee-college",
+        reason:
+          "PeopleSoft (mylccampus.lee.edu) CLASS_SEARCH 302-redirects to login; no classsearchguest / community-access portal is configured.",
+      },
+      // Cloudflare-protected POST — the public schedule app loads fine on GET
+      // but the data only arrives via a postback that Cloudflare Turnstile
+      // (Managed Challenge) blocks for automation (verified headless + headed
+      // real Chrome). Same class of ceiling as CollegeSource TES.
+      {
+        collegeSlug: "trinity-valley-community-college",
+        reason:
+          "webapps.tvcc.edu/ClassSched2 renders on GET but its ASP.NET section-search POST hits a Cloudflare Turnstile managed challenge (403) for all automation incl. headed real Chrome; no public API and the catalog is also Cloudflare-walled.",
+      },
+      // No machine-readable SIS at all.
+      {
+        collegeSlug: "lamar-state-college-orange",
+        reason:
+          "No machine-readable SIS — the only public schedule is a hand-maintained HTML table (lsco.edu) with no CRN/section/instructor/seats; catalog is Acalog (descriptions only).",
       },
     ],
   },
