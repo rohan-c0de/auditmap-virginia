@@ -56,6 +56,7 @@ import * as path from "path";
 import * as cheerio from "cheerio";
 // cheerio 1.2 doesn't re-export the node types as `cheerio.*` — import directly.
 import type { AnyNode, Element } from "domhandler";
+import { inferTccnsCredits } from "../lib/tccns-credits";
 
 const SLUG = "austin-community-college-district";
 const STATE = "tx";
@@ -490,7 +491,9 @@ function parseDisciplinePage(html: string, termFile: string): CourseSection[] {
         course_prefix: curCourse.prefix,
         course_number: curCourse.number,
         course_title: curCourse.title,
-        credits: 0, // not published in the schedule table view
+        // ACC's schedule table omits credit hours; infer from the TCCNS number
+        // (2nd digit = SCH). Returns 0 when not inferable (developmental/local).
+        credits: inferTccnsCredits(curCourse.number),
         crn,
         days: m.days,
         start_time: m.start_time,

@@ -32,6 +32,8 @@ import { chromium, type Page } from "playwright";
 import * as cheerio from "cheerio";
 import * as fs from "fs";
 import * as path from "path";
+import { inferTccnsCredits } from "../lib/tccns-credits";
+import { inferCourseMode } from "../lib/course-mode";
 
 const SLUG = "northeast-texas-community-college";
 const COLLEGE_CODE = SLUG;
@@ -298,7 +300,9 @@ function rawToSection(r: RawRow, termFile: string): CourseSection | null {
     course_prefix: c.prefix,
     course_number: c.number,
     course_title: "", // NTCC's Find_Courses table doesn't include titles
-    credits: null,    // not in the export
+    // NTCC's export omits credit hours; infer from the TCCNS number (2nd digit
+    // = SCH). Falls back to null when not inferable (developmental/local).
+    credits: inferTccnsCredits(c.number) || null,
     crn: `${c.prefix}${c.number}-${c.section || "00"}-${r.div || "x"}-${termFile}`,
     days: (r.days || "").replace(/\s+/g, ""),
     start_time: normalizeTime(r.begTime),
@@ -307,7 +311,9 @@ function rawToSection(r: RawRow, termFile: string): CourseSection | null {
     end_date: toIsoDate(r.end),
     location: "",
     campus: r.div || "",
-    mode: "",
+    // The Find_Courses export has no instruction-mode column; infer from the
+    // division code (WEB → online, HYBRD → hybrid) so the row passes import.
+    mode: inferCourseMode({ campus: r.div, days: r.days }),
     instructor: r.instr || null,
     seats_open: avail !== null ? avail : (cap !== null && enr !== null ? cap - enr : null),
     seats_total: cap,

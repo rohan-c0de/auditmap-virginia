@@ -25,6 +25,8 @@
 import { chromium, type Page } from "playwright";
 import * as fs from "fs";
 import * as path from "path";
+import { inferTccnsCredits } from "../lib/tccns-credits";
+import { inferCourseMode } from "../lib/course-mode";
 
 const SLUG = "cisco-college";
 const COLLEGE_CODE = SLUG;
@@ -207,6 +209,15 @@ function toFloat(s: string): number | null {
   return Number.isFinite(n) ? n : null;
 }
 
+// CC4 prints dates as MM/DD/YYYY; the Supabase `date` column needs ISO
+// YYYY-MM-DD or the row is rejected at import. Returns "" for blank/non-dates.
+function mdyToIso(s: string): string {
+  const m = (s || "").trim().match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  if (!m) return "";
+  const [, mm, dd, yyyy] = m;
+  return `${yyyy}-${mm.padStart(2, "0")}-${dd.padStart(2, "0")}`;
+}
+
 function rawToSection(r: RawRow, termFile: string): CourseSection | null {
   const ch = parseCourseId(r.courseId);
   if (!ch) return null;
@@ -220,16 +231,18 @@ function rawToSection(r: RawRow, termFile: string): CourseSection | null {
     course_prefix: ch.prefix,
     course_number: ch.number,
     course_title: r.title,
-    credits: toFloat(r.credits),
+    credits: toFloat(r.credits) || inferTccnsCredits(ch.number) || null,
     crn: r.shortId || `${ch.prefix}${ch.number}-${ch.section}`,
     days: r.days,
     start_time: normalizeTime(r.startTime),
     end_time: normalizeTime(r.endTime),
-    start_date: r.startDate,
-    end_date: r.endDate,
+    start_date: mdyToIso(r.startDate),
+    end_date: mdyToIso(r.endDate),
     location: r.location,
     campus: r.campus,
-    mode: "",
+    // CC4 has no instruction-mode column; infer from the location/campus
+    // (campus "ONLINE", loc "ONL"/"DCONL") so the row passes import validation.
+    mode: inferCourseMode({ location: r.location, campus: r.campus, days: r.days }),
     instructor: r.instructor || null,
     seats_open: seatsOpen,
     seats_total: limit,

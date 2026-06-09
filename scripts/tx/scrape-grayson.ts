@@ -45,6 +45,7 @@ import * as path from "path";
 import * as cheerio from "cheerio";
 // cheerio 1.2 doesn't re-export the node types as `cheerio.*` — import directly.
 import type { AnyNode } from "domhandler";
+import { inferTccnsCredits } from "../lib/tccns-credits";
 
 const SLUG = "grayson-college";
 const STATE = "tx";
@@ -269,7 +270,9 @@ function rowToSection(
     course_prefix: prefix,
     course_number: number,
     course_title: title,
-    credits: 0, // not published anywhere in the Student Planner HTML
+    // Student Planner HTML omits credit hours; infer from the TCCNS number
+    // (2nd digit = SCH). Returns 0 when not inferable (developmental/local).
+    credits: inferTccnsCredits(number),
     crn,
     days,
     start_time: start,
