@@ -3,21 +3,29 @@
  *
  * Calls the shared template at scripts/lib/scrape-colleague.ts for the
  * California CCs that publicly expose an Ellucian Colleague Self-Service
- * instance.
+ * instance whose /Student/Courses search + term list are reachable without
+ * login.
  *
  * Re-survey lookups: hosts are non-uniform; don't pattern-guess.
- *   • napa-valley   — standard `colss-prod.ec.<domain>` cluster
- *   • shasta        — non-standard subdomain `mysc.<domain>`
- *   • lassen        — `webadvisor.<domain>` on non-standard port 8171
- *   • southwestern  — non-standard subdomain `collselfserv.<domain>`
+ *   - napa-valley   : standard `colss-prod.ec.<domain>` cluster
+ *   - shasta        : non-standard subdomain `mysc.<domain>`
+ *   - lassen        : `webadvisor.<domain>` on non-standard port 8171
+ *   - southwestern  : non-standard subdomain `collselfserv.<domain>`
+ *   - ohlone        : `selfservice.<domain>:8443` (my.ohlone.edu Banner is a wall)
+ *   - lake-tahoe    : `ss.<domain>:8183` (portal.ltcc.edu Banner is Entra-SAML)
  *
- * Still TODO:
- *   • modesto — legacy WebAdvisor at piratesnet.mjc.edu, needs separate scraper
- *   • chaffey — re-survey pending
+ * Colleague installs that DON'T work via this template (handled elsewhere):
+ *   - crafton-hills / san-bernardino-valley (SBCCD): PostSearchCriteria 400s;
+ *     served by scripts/ca/scrape-sbccd.ts (SearchAsync + LocationCode split).
+ *   - columbia / modesto-junior (Yosemite): selfservice.yosemite.edu is a
+ *     Microsoft-SAML wall; public source is scripts/ca/scrape-yosemite.ts.
+ *   - mt-san-jacinto (/css context), mendocino (SearchAsync), santiago-canyon
+ *     (shared RSCCD host, SCC-only): scripts/ca/scrape-colleague-variants.ts.
+ *   - college-of-the-canyons: Colleague SS is public but its term list is not
+ *     discoverable via the standard endpoint; left for a follow-up bespoke pass.
  *
- * Auth-gated (Colleague but SAML-walled):
- *   • college-of-the-canyons → portalguard.canyons.edu
- *   • copper-mountain-community-college → experience.elluciancloud.com SSO
+ * Documented course ceilings (no public live-section search): copper-mountain
+ * (Duo-SAML Student Planning) -- see lib/states/ca/config.ts documentedCeilings.
  *
  * Usage:
  *   npx tsx scripts/ca/scrape-colleague.ts
@@ -51,12 +59,10 @@ const HOSTS: Record<string, string> = {
   "reedley-college":                       "https://selfservice.scccd.edu",
   "clovis-community-college":              "https://selfservice.scccd.edu",
   "madera-community-college":              "https://selfservice.scccd.edu",
-  // SBCCD (2)
-  "crafton-hills-college":                 "https://colss-prod.ec.sbccd.edu",
-  "san-bernardino-valley-college":         "https://colss-prod.ec.sbccd.edu",
-  // Yosemite CCD (2)
-  "columbia-college":                      "https://selfservice.yosemite.edu",
-  "modesto-junior-college":                "https://selfservice.yosemite.edu",
+  // CA course-coverage expansion (fingerprint-verified, public term list)
+  "ohlone-college":                        "https://selfservice.ohlone.edu:8443",
+  "merced-college":                        "https://ss-prod.mccd.edu",
+  "lake-tahoe-community-college":          "https://ss.ltcc.edu:8183",
 };
 
 async function main() {
@@ -65,7 +71,7 @@ async function main() {
     .find((a) => a.startsWith("--college="))
     ?.split("=")[1];
 
-  console.log("🌴 CA Colleague scraper");
+  console.log("CA Colleague scraper");
   console.log(`   Hosts: ${Object.keys(HOSTS).length}`);
 
   const result = await scrapeColleagueState({
@@ -76,11 +82,11 @@ async function main() {
   });
 
   console.log(
-    `\n✅ Done — ${result.grandTotal} sections across ${result.results.length} colleges.`
+    `\nDone -- ${result.grandTotal} sections across ${result.results.length} colleges.`
   );
 }
 
 main().catch((err) => {
-  console.error("❌ CA Colleague scraper failed:", err);
+  console.error("CA Colleague scraper failed:", err);
   process.exit(1);
 });
