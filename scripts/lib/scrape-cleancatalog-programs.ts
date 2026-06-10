@@ -235,13 +235,14 @@ function parseCredits(text: string): number | null {
 /**
  * Split a CleanCatalog course code into prefix + number. Different
  * instances render the code differently — Cape Cod glues it together
- * ("ENL101"), Bristol spaces it ("CIS 111"). Strip whitespace first so
- * both shapes parse.
+ * ("ENL101"), Bristol spaces it ("CIS 111"), and Washington colleges
+ * (Bates, WVC) carry the common-course-numbering "&" suffix ("BUS& 101").
+ * Strip whitespace first so all shapes parse.
  */
 function splitCourseCode(
   code: string,
 ): { prefix: string; number: string } | null {
-  const m = code.replace(/\s+/g, "").match(/^([A-Z]{2,5})(\d{3,4}[A-Z]?)$/);
+  const m = code.replace(/\s+/g, "").match(/^([A-Z]{2,5}&?)(\d{3,4}[A-Z]?)$/);
   if (!m) return null;
   return { prefix: m[1], number: m[2] };
 }
@@ -345,18 +346,26 @@ function parseProgramPage(
   }
 
   // Iterate only top-level sections — skip ones nested inside elective-group
-  // modals (option lists for "choose one") or .field--name-field-course-sequencing
-  // wrappers (Bristol's "Recommended Course Sequence" duplicates the real
-  // Program/Elective/Concentration sections by semester — counting both
-  // would double everything).
-  const groups: RequirementGroup[] = [];
+  // modals (option lists for "choose one"). Sections inside
+  // .field--name-field-course-sequencing are skipped only when standalone
+  // sections also exist: on Bristol the "Recommended Course Sequence"
+  // duplicates the real Program/Elective/Concentration sections by semester
+  // (counting both would double everything), but on Bates the sequencing
+  // wrapper holds the ONLY course listing.
+  const standalone: RequirementGroup[] = [];
+  const sequenced: RequirementGroup[] = [];
   $(".paragraph--type--degree-section").each((_, el) => {
     const $el = $(el);
     if ($el.parents(".modal").length > 0) return;
-    if ($el.parents(".field--name-field-course-sequencing").length > 0) return;
     const group = parseSection($, $el);
-    if (group) groups.push(group);
+    if (!group) return;
+    if ($el.parents(".field--name-field-course-sequencing").length > 0) {
+      sequenced.push(group);
+    } else {
+      standalone.push(group);
+    }
   });
+  const groups = standalone.length > 0 ? standalone : sequenced;
 
   if (groups.length === 0) return null;
 
