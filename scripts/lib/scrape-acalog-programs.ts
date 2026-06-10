@@ -575,7 +575,10 @@ export async function scrapeAcalogPrograms(
   if (allPoids.size === 0 && useSearchDiscovery) {
     console.log(`  [${collegeSlug}] Navoids empty — falling back to search_advanced.php`);
     let page = 1;
-    const maxPages = 20;
+    // Runaway guard only — pagination already stops at the first empty page.
+    // 20 was too low and silently truncated real catalogs (Bellevue lists 5
+    // programs per search page → capped at exactly 100).
+    const maxPages = 100;
     while (page <= maxPages) {
       const searchUrl = `${baseUrl}/search_advanced.php?cur_cat_oid=${catoid}&filter%5B1%5D=1&filter%5Bonly_active%5D=1&ppage=${page}`;
       const html = await fetchHtml(searchUrl, `search-page-${page}`);
@@ -630,11 +633,13 @@ export async function scrapeAcalogPrograms(
     `  [${collegeSlug}] Parsed ${parsed} programs, skipped ${skipped}`,
   );
 
-  // Detect catalog year from the catalog page title
+  // Detect catalog year from the catalog page title. Pin the catoid —
+  // a bare /index.php can land on an archived catalog (Edmonds reported
+  // "2013-2014" for its current 2025-2026 catalog without this).
   let catalogYear = "";
   try {
     const indexHtml = await fetchHtml(
-      `${baseUrl}/index.php`,
+      `${baseUrl}/index.php?catoid=${catoid}`,
       "catalog-index",
     );
     const yearMatch = indexHtml.match(

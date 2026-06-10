@@ -46,6 +46,19 @@ async function run(
   console.log(`\n=== ${slug} ===`);
   try {
     const data = await scrape();
+    // Some WA catalogs (Edmonds) publish scaffolding as program-type items —
+    // distribution course lists, degree templates, pathway examples. Drop
+    // them; they aren't degrees a student can plan toward.
+    const before = data.programs.length;
+    data.programs = (data.programs as { title?: string }[]).filter(
+      (p) =>
+        !/^(Course List|Template\b|Program Map|Guided pathway|Degree Map)/i.test(
+          String(p.title ?? ""),
+        ),
+    );
+    if (data.programs.length < before) {
+      console.log(`  Filtered ${before - data.programs.length} scaffolding items`);
+    }
     if (data.programs.length === 0) {
       console.log(`  No programs found for ${slug}.`);
       return;
@@ -73,7 +86,8 @@ const ACALOG: { collegeSlug: string; baseUrl: string; catoid: number }[] = [
   { collegeSlug: "highline-college", baseUrl: "https://catalog.highline.edu", catoid: 31 },
   { collegeSlug: "lake-washington-institute-of-technology", baseUrl: "https://catalog.lwtech.edu", catoid: 20 },
   { collegeSlug: "olympic-college", baseUrl: "https://catalog.olympic.edu", catoid: 24 },
-  { collegeSlug: "pierce-college-district", baseUrl: "https://catalog.pierce.ctc.edu", catoid: 19 },
+  // catoid 21 = current catalog (homepage dropdown only lists archived ones).
+  { collegeSlug: "pierce-college-district", baseUrl: "https://catalog.pierce.ctc.edu", catoid: 21 },
   { collegeSlug: "renton-technical-college", baseUrl: "https://catalog.rtc.edu", catoid: 23 },
   { collegeSlug: "shoreline-community-college", baseUrl: "https://catalog.shoreline.edu", catoid: 8 },
   { collegeSlug: "skagit-valley-college", baseUrl: "https://catalog.skagit.edu", catoid: 35 },

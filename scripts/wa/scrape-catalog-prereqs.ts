@@ -23,7 +23,7 @@
  * catalog.sfcc.edu is Santa Fe CC (NM), not Spokane Falls — name-guessed
  * hosts that would have merged out-of-state prereqs into WA. Spokane's
  * colleges (SCC/SFCC) live on the custom catalog.spokane.edu site instead
- * (see scrape-ccs-catalog.ts); Seattle Colleges publish no scrapeable
+ * (see scrape-ccs-programs.ts); Seattle Colleges publish no scrapeable
  * catalog (catalog.seattlecolleges.edu is a redirect loop).
  *
  * Re-run each summer when colleges publish new-year catalogs.
@@ -105,15 +105,21 @@ const ACALOG_CATALOGS: Array<{
     slug: "pierce-college",
     name: "Pierce College",
     base: "https://catalog.pierce.ctc.edu",
-    catoid: 19,
-    navoid: 963,
+    // catoid 19 (and the homepage dropdown's 17) are archived years; 21 is
+    // the catalog pierce.ctc.edu links as current. Its course listing is the
+    // "Courses with Prefix Info" navoid.
+    catoid: 21,
+    navoid: 1198,
     expectTitle: "Pierce College",
   },
   {
     slug: "shoreline-community-college",
     name: "Shoreline Community College",
     base: "https://catalog.shoreline.edu",
-    catoid: 8,
+    // catoid rolls forward when a new catalog year publishes (8 was the
+    // 2025 archive and returns 0 courses) — re-discover from the homepage
+    // nav if this college drops to 0 coids again.
+    catoid: 10,
     navoid: 1082,
     expectTitle: "Shoreline",
   },
@@ -342,20 +348,31 @@ function parseDetailPage(
   // in WA's common-course-numbering "&" (ENGL& 101), which raw HTML encodes
   // as "&amp;".
   const titleMatch = html.match(
-    /<title>\s*([A-Z]{1,6})(&amp;|&)?(?:\s|&nbsp;?|&#160;?| )*(\d{3,4}[A-Z]?)(?:\s|&nbsp;?|&#160;?| )*-/,
+    /<title>\s*([A-Z]{1,6})(&amp;|&)?(?:\s|&nbsp;?|&#160;?| )*(\d{2,4}[A-Z]?)(?=\s|&nbsp;|&#160;| |-|:)/,
   );
   if (!titleMatch) return null;
   const prefix = (titleMatch[1] + (titleMatch[2] ? "&" : "")).toUpperCase();
   const number = titleMatch[3];
 
-  // Label varies by catalog: "Prerequisite(s):" (Bellevue, Centralia) vs
-  // "Enrollment Requirement:" (Green River, Highline).
-  const prereqMatch = html.match(
-    /<strong>(?:\s|&nbsp;?|&#160;?| )*(?:Prerequisite(?:s|\(s\))?|Enrollment Requirements?|Requisites?)(?:\s|&nbsp;?|&#160;?| )*:?(?:\s|&nbsp;?|&#160;?| )*<\/strong>(?:\s|&nbsp;?|&#160;?| )*:?\s*([\s\S]*?)(?:<br\s*\/?>\s*<br|<\/p>|<strong>)/i,
-  );
+  // Label markup varies by catalog: "<strong>Prerequisite(s):</strong>"
+  // (Bellevue, Centralia), "<strong>Enrollment Requirement:</strong>"
+  // (Green River), "<strong>Pre-requisite(s)</strong>" with no colon
+  // (Highline), "<em>Prerequisite(s):</em>" (Bellingham Tech), and bare
+  // "<br>Prerequisite: …<br>" with no tag at all (Yakima Valley).
+  const prereqMatch: ReadonlyArray<string> | null =
+    html.match(
+      /<(strong|em|b)>(?:\s|&nbsp;?|&#160;?| )*(?:Pre-?requisite(?:s|\(s\))?(?:\s+Required)?|Enrollment Requirements?|Requisites?)(?:\s|&nbsp;?|&#160;?| )*:?(?:\s|&nbsp;?|&#160;?| )*<\/\1>(?:\s|&nbsp;?|&#160;?| )*:?\s*([\s\S]*?)(?:<br\s*\/?>\s*<br|<\/p>|<(?:strong|em|b)>)/i,
+    ) ??
+    (() => {
+      const bare = html.match(
+        /<(?:br\s*\/?|p)>\s*(?:Pre-?requisite(?:s|\(s\))?|Enrollment Requirements?)\s*:\s*([\s\S]*?)(?:<br|<\/p>)/i,
+      );
+      // Re-shape to the tagged-match layout ([2] = text).
+      return bare ? [bare[0], "", bare[1]] : null;
+    })();
   if (!prereqMatch) return null;
 
-  let text = prereqMatch[1]
+  let text = prereqMatch[2]
     .replace(/<br\s*\/?>/gi, " ")
     .replace(/<[^>]+>/g, "")
     .replace(/&nbsp;?/g, " ")
@@ -369,6 +386,10 @@ function parseDetailPage(
     .replace(/&gt;/g, ">")
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
+    // Second pass: some catalogs double-encode ("&amp;nbsp;"), which only
+    // becomes "&nbsp;" after the &amp; decode above.
+    .replace(/&nbsp;?/g, " ")
+    .replace(/&#160;?/g, " ")
     .replace(/\s+/g, " ")
     .trim();
   text = text.replace(/[.;,]\s*$/, "").trim();
@@ -376,7 +397,9 @@ function parseDetailPage(
   if (!text || /^none\b/i.test(text) || /^not applicable/i.test(text)) return null;
 
   const courses = new Set<string>();
-  const codeRegex = /\b([A-Z&]{2,6})\s*(\d{3,4}[A-Z]?)\b/g;
+  // \d{2,4}: WA colleges offer pre-college courses with 2-digit numbers
+  // ("ENGL 99", "ABE 96") that appear in prereq text.
+  const codeRegex = /\b([A-Z&]{2,6})\s*(\d{2,4}[A-Z]?)\b/g;
   let m: RegExpExecArray | null;
   while ((m = codeRegex.exec(text)) !== null) {
     const code = `${m[1]} ${m[2]}`;
@@ -403,14 +426,22 @@ async function scrapeAcalogCollege(
     );
     if (cpage === 1) {
       const title = html.match(/<title>([^<]*)<\/title>/i)?.[1]?.trim() ?? "";
-      if (!title.toLowerCase().includes(college.expectTitle.toLowerCase())) {
+      const expect = college.expectTitle.toLowerCase();
+      // Some catalogs use a generic page title ("Course Descriptions -
+      // Areas of Study", Skagit) — fall back to searching the page body
+      // (header/footer always carry the college name).
+      const titleHit = title.toLowerCase().includes(expect);
+      const bodyHit = html.toLowerCase().includes(expect);
+      if (!titleHit && !bodyHit) {
         console.error(
-          `  ✗ SKIPPING ${college.slug}: catalog title "${title}" does not ` +
-            `contain "${college.expectTitle}" — wrong-school host?`,
+          `  ✗ SKIPPING ${college.slug}: neither catalog title "${title}" ` +
+            `nor page body contains "${college.expectTitle}" — wrong-school host?`,
         );
         return results;
       }
-      console.log(`  Title OK: "${title}"`);
+      console.log(
+        `  ${titleHit ? `Title OK: "${title}"` : `Body match for "${college.expectTitle}" (title: "${title}")`}`,
+      );
     }
     const coids = extractCoids(html);
     if (coids.length === 0) break;
@@ -484,15 +515,29 @@ async function main() {
     }
   }
 
-  const sorted: Record<string, PrereqEntry> = {};
-  for (const key of Object.keys(merged).sort()) sorted[key] = merged[key];
-
   const outDir = path.join(process.cwd(), "data", "wa");
   fs.mkdirSync(outDir, { recursive: true });
   const outPath = path.join(outDir, "prereqs.json");
 
+  // A --college re-scrape merges into the existing statewide file (fresh
+  // entries win) instead of replacing it — otherwise re-running one college
+  // would silently drop the other 14. --limit smoke tests still overwrite,
+  // so they never leave a half-merged file looking complete.
+  if (collegeFilter && limit === 0 && fs.existsSync(outPath)) {
+    const existing = JSON.parse(
+      fs.readFileSync(outPath, "utf8"),
+    ) as Record<string, PrereqEntry>;
+    for (const [key, entry] of Object.entries(existing)) {
+      if (!merged[key]) merged[key] = entry;
+    }
+    console.log(`Merged into existing ${Object.keys(existing).length}-entry file`);
+  }
+
+  const sorted: Record<string, PrereqEntry> = {};
+  for (const key of Object.keys(merged).sort()) sorted[key] = merged[key];
+
   // Don't clobber a good prereqs.json with a near-empty one when the WAF (or
-  // a catalog outage) hollowed out the run. Full-run floor: ~9 catalogs at
+  // a catalog outage) hollowed out the run. Full-run floor: ~15 catalogs at
   // hundreds of prereqs each. Skip the guard for --limit/--college runs.
   const isPartialRun = limit > 0 || Boolean(collegeFilter);
   const total = Object.keys(sorted).length;
