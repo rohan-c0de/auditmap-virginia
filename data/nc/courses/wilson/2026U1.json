@@ -168,7 +168,7 @@
     "campus": "WCOL",
     "mode": "in-person",
     "instructor": "Gohegan, D",
-    "seats_open": 2,
+    "seats_open": 3,
     "seats_total": 18,
     "prerequisite_text": "BIO 108",
     "prerequisite_courses": [
@@ -237,7 +237,7 @@
     "campus": "WCOL",
     "mode": "online",
     "instructor": "Gohegan, D",
-    "seats_open": 2,
+    "seats_open": 3,
     "seats_total": 18,
     "prerequisite_text": "BIO 108L",
     "prerequisite_courses": [
@@ -325,7 +325,7 @@
     "campus": "WCOL",
     "mode": "online",
     "instructor": "Long, J",
-    "seats_open": 4,
+    "seats_open": 5,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -597,7 +597,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Schoenleber, L",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -660,7 +660,7 @@
     "campus": "OL",
     "mode": "online",
     "instructor": "Schoenleber, L",
-    "seats_open": 0,
+    "seats_open": 1,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
@@ -1752,7 +1752,7 @@
     "campus": "WCOL",
     "mode": "online",
     "instructor": "Horton, T",
-    "seats_open": 11,
+    "seats_open": 13,
     "seats_total": 25,
     "prerequisite_text": "ENG 101 or ENG 108 or ENG 104 or ENG 180",
     "prerequisite_courses": [
@@ -2369,8 +2369,11 @@
     "instructor": "Peterson, G",
     "seats_open": 7,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HSC 215A and HSC 216A",
+    "prerequisite_courses": [
+      "HSC 215A",
+      "HSC 216A"
+    ]
   },
   {
     "college_code": "wilson",
@@ -2390,8 +2393,11 @@
     "instructor": "Collier, J",
     "seats_open": 9,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HSC 215A and HSC 216A",
+    "prerequisite_courses": [
+      "HSC 215A",
+      "HSC 216A"
+    ]
   },
   {
     "college_code": "wilson",
@@ -2411,8 +2417,11 @@
     "instructor": "Buffenbarger, J",
     "seats_open": 8,
     "seats_total": 25,
-    "prerequisite_text": null,
-    "prerequisite_courses": []
+    "prerequisite_text": "HSC 215A and HSC 216A",
+    "prerequisite_courses": [
+      "HSC 215A",
+      "HSC 216A"
+    ]
   },
   {
     "college_code": "wilson",
@@ -2666,7 +2675,7 @@
     "instructor": "Hollenbach, P, Runk, J",
     "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": "NUR 305 and PSY 202 and NUR 304AC",
+    "prerequisite_text": "NUR 305 or PSY 202 and NUR 304AC",
     "prerequisite_courses": [
       "NUR 305",
       "PSY 202",
@@ -2691,7 +2700,7 @@
     "instructor": "Fleischman, A",
     "seats_open": 0,
     "seats_total": 25,
-    "prerequisite_text": "NUR 305 and PSY 202 and NUR 304AC",
+    "prerequisite_text": "NUR 305 or PSY 202 and NUR 304AC",
     "prerequisite_courses": [
       "NUR 305",
       "PSY 202",
@@ -2713,7 +2722,7 @@
     "location": "Wilson College",
     "campus": "WC",
     "mode": "in-person",
-    "instructor": "Erwin, K",
+    "instructor": "Erwin, K, Clark, C, Wilson, A",
     "seats_open": 5,
     "seats_total": 10,
     "prerequisite_text": "NUR 304",
@@ -2930,7 +2939,7 @@
     "campus": "WCOL",
     "mode": "online",
     "instructor": "Rowsell, D",
-    "seats_open": 2,
+    "seats_open": 3,
     "seats_total": 25,
     "prerequisite_text": null,
     "prerequisite_courses": []
