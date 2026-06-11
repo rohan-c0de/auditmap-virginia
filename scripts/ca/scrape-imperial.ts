@@ -142,12 +142,19 @@ async function fetchHtml(url: string): Promise<string> {
   return res.text();
 }
 
+/** Minimal shape of the Livewire serverMemo.data blob — only the fields we read. */
+interface LivewireData {
+  data?: Record<string, IvcSection>;
+  meetings?: Record<string, IvcMeeting[]>;
+  searchForm?: { terms?: Array<{ term_code?: unknown; term_name?: unknown }> };
+}
+
 /** Pull the Livewire serverMemo.data object out of a page's wire:initial-data blob. */
-function extractLivewireData(html: string): any {
+function extractLivewireData(html: string): LivewireData {
   const m = html.match(/wire:initial-data="([^"]*)"/);
   if (!m) throw new Error('wire:initial-data attribute not found in page');
   const decoded = decodeHtmlEntities(m[1]);
-  let obj: any;
+  let obj: { serverMemo?: { data?: LivewireData } };
   try {
     obj = JSON.parse(decoded);
   } catch (e) {
@@ -211,8 +218,8 @@ function isCreditTermCode(code: string, name: string): boolean {
 }
 
 /** Read available CREDIT term options from the searchForm in the root page blob. */
-function readTermOptions(rootData: any): TermOption[] {
-  const terms: any[] = rootData?.searchForm?.terms ?? [];
+function readTermOptions(rootData: LivewireData): TermOption[] {
+  const terms = rootData?.searchForm?.terms ?? [];
   const out: TermOption[] = [];
   for (const t of terms) {
     const code = String(t.term_code);
@@ -235,7 +242,7 @@ function formatTime(raw: string): string {
   if (!raw) return '';
   const m = raw.match(/^(\d{1,2}):(\d{2})/);
   if (!m) return '';
-  let h = Number.parseInt(m[1], 10);
+  const h = Number.parseInt(m[1], 10);
   const min = m[2];
   if (h === 0 && min === '00') return ''; // 00:00:00 sentinel = no real time (async/online)
   const ampm = h >= 12 ? 'PM' : 'AM';

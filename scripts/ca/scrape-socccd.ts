@@ -122,11 +122,10 @@ async function bootstrapToken(tenantId: string, termTenantId: string): Promise<s
   });
   // Set-Cookie may be exposed via getSetCookie() (Node 20+) or the raw header.
   const cookies: string[] =
-    typeof (res.headers as any).getSetCookie === "function"
-      ? (res.headers as any).getSetCookie()
-      : res.headers.get("set-cookie")
-        ? [res.headers.get("set-cookie") as string]
-        : [];
+    res.headers.getSetCookie?.() ??
+    (res.headers.get("set-cookie")
+      ? [res.headers.get("set-cookie") as string]
+      : []);
   for (const c of cookies) {
     const m = c.match(/\.SmartScheduleWeb\.ApiToken=([^;]+)/);
     if (m) {
@@ -240,7 +239,7 @@ function toMinutes(s: string): number | null {
 }
 
 function fmtTime(mins: number): string {
-  let h = Math.floor(mins / 60);
+  const h = Math.floor(mins / 60);
   const m = mins % 60;
   const ap = h >= 12 ? "PM" : "AM";
   let hr = h % 12;
@@ -302,6 +301,15 @@ function parseSeats(text: string | null | undefined): number | null {
   return Number.isFinite(n) ? n : null;
 }
 
+/** Minimal shape of a class-search meeting row — only the fields we read. */
+interface ApiSchedule {
+  time?: string;
+  day?: string;
+  instructionMethod?: string;
+  location?: { isLocationOnline?: boolean; displayName?: string };
+  instructor?: { instructorName?: string };
+}
+
 /**
  * Classify a section's modality from its meeting rows.
  *   - all rows online, none with a meeting day/time → "online" (asynchronous)
@@ -309,7 +317,7 @@ function parseSeats(text: string | null | undefined): number | null {
  *   - some online + some in-person rows → "hybrid"
  *   - otherwise → "in-person"
  */
-function classifyMode(schedules: any[]): string {
+function classifyMode(schedules: ApiSchedule[]): string {
   if (!schedules || schedules.length === 0) return "online";
   const rows = schedules.map((cs) => {
     const online = !!(cs.location && cs.location.isLocationOnline) || /online/i.test(cs.instructionMethod || "");
@@ -349,6 +357,9 @@ interface CourseMeta {
 }
 
 function buildSection(
+  // The class-search section blob is large and only partially read; fully
+  // typing it forces logic edits (see ApiSchedule for the meeting rows).
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   raw: any,
   course: CourseMeta | undefined,
   startDate: string,
@@ -359,6 +370,7 @@ function buildSection(
   const split = splitCourseCode(code);
   if (!split) return null;
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const schedules: any[] = raw.classSchedules || [];
   // Choose the primary meeting row for day/time/location/instructor: prefer a
   // row that actually has a day+time; fall back to the first row.
@@ -466,6 +478,7 @@ async function scrapeCollegeTerm(
     }
     const data = await res.json();
     total = typeof data.totalSearchResultsCount === "number" ? data.totalSearchResultsCount : 0;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const pageSections: any[] = data.sections || [];
 
     // Build courseKey → metadata and sectionKey → start_date maps for this page.
