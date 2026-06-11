@@ -130,6 +130,9 @@ const caConfig: StateConfig = {
       // College of the Canyons (Santa Clarita CCD): public Colleague Self-
       // Service; bespoke term discovery (standard term endpoint returns empty).
       { scripts: ["scripts/ca/scrape-canyons.ts"], runner: "http" },
+      // Santa Monica College: public Oracle APEX "Online Class List" (app 373),
+      // driven with Playwright; units come from the per-term catalog HTML.
+      { scripts: ["scripts/ca/scrape-smc.ts"], runner: "playwright" },
     ],
     prereqs: { source: "aggregate-from-courses" },
     transfers: [
