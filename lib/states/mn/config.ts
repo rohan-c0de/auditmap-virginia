@@ -90,8 +90,15 @@ const mnConfig: StateConfig = {
     ],
     prereqs: [
       {
+        // Mostly plain HTTP, but acquireWafCookies() launches headless
+        // Chromium when an Acalog catalog's AWS WAF challenge fires — so the
+        // cron job needs the Playwright browser (scheduled-scrape-v2 only
+        // runs `playwright install` when runner == "playwright"). With
+        // runner: "http" the launch failure is swallowed by retryFetch and
+        // the job "succeeds" writing 0 prereqs for the WAF-protected
+        // colleges (run 27089258314: century, dctc, inver-hills, saint-paul).
         scripts: ["scripts/mn/scrape-catalog-prereqs.ts"],
-        runner: "http",
+        runner: "playwright",
       },
     ],
     programs: [
