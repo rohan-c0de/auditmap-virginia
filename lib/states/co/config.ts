@@ -90,10 +90,17 @@ const coConfig: StateConfig = {
         runner: "http",
       },
     ],
-    // manual-only: programs — Phase 6 (catalog discovery emitted a wrapper
-    // at scripts/co/scrape-programs.ts but no catalogs matched a templated
-    // platform; will be picked up when one of the CCCS Acalog/SmartCatalogIQ
-    // / CleanCatalog catalogs gets a scraper).
+    // Programs from the 2026-06-11 live probe of all 15 college catalogs:
+    // Acalog (aims, pueblo), CourseLeaf (ccd), SmartCatalogIQ (frontrange,
+    // rrcc — the only two real CO tenants; the wildcard subdomains are empty
+    // shells), and Arapahoe's native Drupal catalog. Blocked/untemplated
+    // colleges are documented in the scraper header.
+    programs: [
+      {
+        scripts: ["scripts/co/scrape-programs.ts"],
+        runner: "http",
+      },
+    ],
   },
   documentedCeilings: {
     // Transfers cap at B: University of Denver is the ONLY Colorado receiver

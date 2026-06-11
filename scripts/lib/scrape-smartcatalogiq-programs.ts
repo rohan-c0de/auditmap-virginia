@@ -400,38 +400,52 @@ function parseProgramPage(
     /^Semester\s+\d+/i.test(name) ||
     /^Year\s+\d+/i.test(name);
 
-  const groups: RequirementGroup[] = [];
+  let groups: RequirementGroup[] = [];
   let totalCreditsAggregate = 0;
   let sawAnyTotal = false;
 
-  $("h3.sc-RequiredCoursesHeading1").each((_, h3) => {
-    const $h3 = $(h3);
-    const groupName = $h3.text().replace(/\s+/g, " ").trim() || "Required Courses";
-    if (isSequenceHeading(groupName)) return;
-    // Walk forward to the next table at the same level
-    let $sibling = $h3.next();
-    while (
-      $sibling.length &&
-      !$sibling.is("table") &&
-      !$sibling.is("h3.sc-RequiredCoursesHeading1") &&
-      !$sibling.is("h2")
-    ) {
-      $sibling = $sibling.next();
-    }
-    if (!$sibling.is("table")) return;
-    const { courses, totalCredits } = parseProgramTable($, $sibling);
-    if (courses.length === 0 && totalCredits === null) return;
-    groups.push({
-      name: groupName,
-      credits_required: totalCredits,
-      choose_n: null,
-      courses,
+  const collectGroups = (headingSelector: string): RequirementGroup[] => {
+    const out: RequirementGroup[] = [];
+    $(headingSelector).each((_, h3) => {
+      const $h3 = $(h3);
+      const groupName = $h3.text().replace(/\s+/g, " ").trim() || "Required Courses";
+      if (isSequenceHeading(groupName)) return;
+      // Walk forward to the next table at the same level
+      let $sibling = $h3.next();
+      while (
+        $sibling.length &&
+        !$sibling.is("table") &&
+        !$sibling.is(headingSelector) &&
+        !$sibling.is("h2")
+      ) {
+        $sibling = $sibling.next();
+      }
+      if (!$sibling.is("table")) return;
+      const { courses, totalCredits } = parseProgramTable($, $sibling);
+      if (courses.length === 0 && totalCredits === null) return;
+      out.push({
+        name: groupName,
+        credits_required: totalCredits,
+        choose_n: null,
+        courses,
+      });
+      if (totalCredits !== null) {
+        totalCreditsAggregate += totalCredits;
+        sawAnyTotal = true;
+      }
     });
-    if (totalCredits !== null) {
-      totalCreditsAggregate += totalCredits;
-      sawAnyTotal = true;
-    }
-  });
+    return out;
+  };
+
+  groups = collectGroups("h3.sc-RequiredCoursesHeading1");
+  if (groups.length === 0) {
+    // Some tenants emit a different heading level/element for requirement
+    // groups — Front Range (CO) uses class sc-RequiredCoursesHeading2 on its
+    // 2026 "academic plans & maps" pages. Fallback ONLY when Heading1 found
+    // nothing, so split-level catalogs can't double-count a table under two
+    // headings.
+    groups = collectGroups("[class*='sc-RequiredCoursesHeading']");
+  }
 
   if (groups.length === 0) return null;
 
