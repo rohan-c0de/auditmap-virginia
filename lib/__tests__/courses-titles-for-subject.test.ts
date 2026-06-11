@@ -16,6 +16,7 @@ const { fromMock, eqMock, rangeMock, supabaseClient } = vi.hoisted(() => {
   type Chain = {
     select: () => Chain;
     eq: (col: string, val: unknown) => Chain;
+    order: (col: string, opts?: unknown) => Chain;
     range: (start: number, end: number) => Promise<{ data: unknown[] | null; error: unknown }>;
   };
   const chain: Chain = {
@@ -24,6 +25,7 @@ const { fromMock, eqMock, rangeMock, supabaseClient } = vi.hoisted(() => {
       eqMock(col, val);
       return chain;
     },
+    order: () => chain,
     range: (start, _end) => rangeMock(start),
   };
   const fromMock = vi.fn(() => chain);

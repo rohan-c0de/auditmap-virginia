@@ -48,6 +48,7 @@
  */
 
 import * as cheerio from "cheerio";
+import type { AnyNode } from "domhandler";
 import * as fs from "fs";
 import * as path from "path";
 
@@ -180,7 +181,7 @@ interface MeetingInfo {
  */
 function parseMeeting(
   $: cheerio.CheerioAPI,
-  cell: cheerio.Cheerio<any>,
+  cell: cheerio.Cheerio<AnyNode>,
   year: number
 ): MeetingInfo {
   const firstLi = cell.find("li").first();
@@ -222,7 +223,7 @@ function parseMeeting(
 }
 
 /** Derive mode from the modality icon's title attribute in the row. */
-function parseMode(tdNothing: cheerio.Cheerio<any>, campus: string): Mode {
+function parseMode(tdNothing: cheerio.Cheerio<AnyNode>, campus: string): Mode {
   const title = (tdNothing.find("[title]").attr("title") ?? "").toLowerCase();
   if (title.includes("online")) {
     return title.includes("hybrid") ? "hybrid" : "online";
@@ -234,7 +235,7 @@ function parseMode(tdNothing: cheerio.Cheerio<any>, campus: string): Mode {
   return "in-person";
 }
 
-function parseInstructor($: cheerio.CheerioAPI, cell: cheerio.Cheerio<any>): string | null {
+function parseInstructor($: cheerio.CheerioAPI, cell: cheerio.Cheerio<AnyNode>): string | null {
   const names: string[] = [];
   cell
     .find(".field--name-field-name a, .field--name-field-name")
@@ -250,7 +251,7 @@ function parseInstructor($: cheerio.CheerioAPI, cell: cheerio.Cheerio<any>): str
   return names.join("; ");
 }
 
-function tdText($: cheerio.CheerioAPI, $tr: cheerio.Cheerio<any>, cls: string): string {
+function tdText($: cheerio.CheerioAPI, $tr: cheerio.Cheerio<AnyNode>, cls: string): string {
   return cleanText($tr.find(`td.views-field-${cls} .td-container`).first().text());
 }
 
@@ -267,7 +268,7 @@ function parsePage(html: string, term: string, year: number): CourseSection[] {
     const prefix = tdText($, $tr, "field-subject-code");
     const number = tdText($, $tr, "field-course-id");
     const section = tdText($, $tr, "field-section");
-    let title = tdText($, $tr, "title");
+    const title = tdText($, $tr, "title");
 
     // Units cell contains a "Units" label div followed by the number.
     const unitsRaw = tdText($, $tr, "field-units").replace(/units/i, "").trim();
