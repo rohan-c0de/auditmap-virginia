@@ -35,6 +35,7 @@
 import * as fs from "fs";
 import * as path from "path";
 import { chromium, type Browser, type Page, type Request } from "playwright";
+import { sanitizePrereqEntry, sanitizePrereqText } from "../lib/prereq-sanitize";
 
 // CUNY community college Coursedog subdomains. Slug matches the subdomain.
 // Some schools may 500 intermittently — we log and continue past failures.
@@ -250,7 +251,10 @@ function extractPrereqString(course: CourseDoc): string | null {
  * this verbatim.
  */
 function normalizePrereqText(raw: string): string {
-  let t = raw.replace(/\s+/g, " ").trim();
+  // Some CUNY customFields values arrive as full "<p><u>Explanation</u>…"
+  // change-log prose — strip markup/entities before the local cleanup
+  // (250 NY entries shipped with raw tags before this pass existed).
+  let t = sanitizePrereqText(raw).replace(/\s+/g, " ").trim();
   t = t.replace(PREREQ_PREFIX_RE, "").trim();
   t = t.replace(/[.;,]+\s*$/, "").trim();
   return t;
@@ -259,6 +263,16 @@ function normalizePrereqText(raw: string): string {
 // Boilerplate that means "no real prereq". CUNY reuses a handful of these.
 const BOILERPLATE_RE =
   /^(none|n\/a|not applicable|no prerequisites?( required)?)\.?$/i;
+
+/**
+ * The customFields scan keys off a "PREREQ" marker, which occasionally
+ * matches pasted curriculum-committee email threads instead of prereq text
+ * (KBCC's ENG 6000 shipped a full From/Sent/Subject thread with staff
+ * email addresses to prod). Real prereq text never has mail headers.
+ */
+function isJunkPrereq(text: string): boolean {
+  return /@/.test(text) && /\b(From|Sent|Subject|Cc):\s/.test(text);
+}
 
 /**
  * Extract course codes referenced in the prereq text. CUNY uses three forms:
@@ -388,9 +402,11 @@ async function scrapeSchool(
     const raw = extractPrereqString(c);
     if (!raw) continue;
     const text = normalizePrereqText(raw);
-    if (!text || BOILERPLATE_RE.test(text)) continue;
-    const courses = extractCourseCodes(text, key);
-    prereqs[key] = { text, courses };
+    if (!text || BOILERPLATE_RE.test(text) || isJunkPrereq(text)) continue;
+    // sanitizePrereqEntry drops effective-term stamps ("FALL 2023") the
+    // code regex otherwise matches as courses.
+    const clean = sanitizePrereqEntry(text, extractCourseCodes(text, key));
+    prereqs[key] = { text: clean.text, courses: clean.courses };
     hits++;
   }
   console.log(`  ${hits} courses with prereqs (of ${pool.length} scanned)`);
@@ -426,21 +442,49 @@ async function main() {
   if (limit > 0) console.log(`  limit=${limit} per school`);
 
   const browser = await chromium.launch({ headless: true });
+
+  // Seed from the committed file so a CUNY-only run can't wipe what the
+  // SUNY acalog scraper contributed (same failure class as the MA
+  // 1946→1020 wipe — this script used to write CUNY-only output).
+  // Re-sanitizing the preserved entries makes every cron tick self-healing
+  // for legacy contamination, not just newly scraped text.
   const merged: Record<string, PrereqEntry> = {};
+  const seededKeys = new Set<string>();
+  const outDirEarly = path.join(process.cwd(), "data", "ny");
+  const outPathEarly = path.join(outDirEarly, "prereqs.json");
+  try {
+    const existing = JSON.parse(fs.readFileSync(outPathEarly, "utf-8")) as Record<
+      string,
+      PrereqEntry
+    >;
+    for (const [k, v] of Object.entries(existing)) {
+      if (!v || typeof v !== "object") continue;
+      if (isJunkPrereq(v.text ?? "")) continue; // shed legacy email-thread junk
+      const clean = sanitizePrereqEntry(v.text ?? "", v.courses ?? []);
+      merged[k] = { ...v, text: clean.text, courses: clean.courses };
+      seededKeys.add(k);
+    }
+    console.log(`  seeded ${Object.keys(merged).length} existing entries (sanitized)`);
+  } catch {
+    // no existing file — fresh build
+  }
   const counts: { slug: string; count: number }[] = [];
 
   for (const school of targets) {
     try {
       const res = await scrapeSchool(browser, school, limit);
       counts.push({ slug: school.slug, count: Object.keys(res).length });
-      // Merge: last writer wins. If two schools describe the same course key
-      // with different text, keep the one with more referenced courses (more
-      // informative). This is rare — CUNY codes like "ENGL 101" exist on
-      // multiple campuses but the prereq boilerplate tends to match.
+      // Merge: a freshly scraped entry always replaces a seeded (previous
+      // run) one for the same key — newer catalog data wins over stale.
+      // Between two schools in the SAME run, keep the entry with more
+      // referenced courses (more informative). This is rare — CUNY codes
+      // like "ENGL 101" exist on multiple campuses but the prereq
+      // boilerplate tends to match.
       for (const [k, v] of Object.entries(res)) {
         const existing = merged[k];
-        if (!existing || v.courses.length > existing.courses.length) {
+        if (!existing || seededKeys.has(k) || v.courses.length > existing.courses.length) {
           merged[k] = v;
+          seededKeys.delete(k);
         }
       }
     } catch (e) {

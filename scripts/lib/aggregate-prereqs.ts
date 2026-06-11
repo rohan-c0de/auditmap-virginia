@@ -28,6 +28,7 @@
 import * as fs from "fs";
 import * as path from "path";
 import { getAllStates, getStateConfig } from "../../lib/states/registry";
+import { sanitizePrereqEntry } from "./prereq-sanitize";
 
 interface CourseSection {
   course_prefix: string;
@@ -188,7 +189,12 @@ export function aggregateState(
         const number = section.course_number?.trim();
         if (!prefix || !number) continue;
 
-        mergePrereq(prereqs, `${prefix} ${number}`, text || "", courses || []);
+        // Scrapers sometimes deliver raw markup (",<br>" separators, "<p>"
+        // prose) and term-stamp junk in courses[] — clean it here so a
+        // cron rebuild can never re-contaminate prereqs.json (PR #973 fixed
+        // the data only, and the next scheduled run reverted it).
+        const clean = sanitizePrereqEntry(text || "", courses || []);
+        mergePrereq(prereqs, `${prefix} ${number}`, clean.text, clean.courses);
       }
     }
   }
@@ -232,7 +238,8 @@ export function aggregateState(
         const number = c.number?.trim();
         if (!prefix || !number) continue;
 
-        mergePrereq(prereqs, `${prefix} ${number}`, text, courseList);
+        const clean = sanitizePrereqEntry(text, courseList);
+        mergePrereq(prereqs, `${prefix} ${number}`, clean.text, clean.courses);
       }
     }
   }
