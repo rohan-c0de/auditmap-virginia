@@ -427,9 +427,20 @@ function parseEquivalencyTable(
 // Main TES Scraper
 // ---------------------------------------------------------------------------
 
+interface TESScrapeResult {
+  mappings: TransferMapping[];
+  /**
+   * False when pagination aborted early (session expiry / EventValidation
+   * mid-GridView). A partial result must never overwrite committed data —
+   * the 2026-06 cron run shipped RIC at 546 of 840 rows exactly this way
+   * (PR #1261).
+   */
+  complete: boolean;
+}
+
 async function scrapeTESPublicView(
   target: TESTarget
-): Promise<TransferMapping[]> {
+): Promise<TESScrapeResult> {
   const { url, universitySlug, universityName, searchTerm } = target;
   const allMappings: TransferMapping[] = [];
 
@@ -564,6 +575,7 @@ async function scrapeTESPublicView(
 
   // --- Step 6: Paginate (full POST with all form fields) ---
   let consecutiveEmpty = 0;
+  let complete = true;
   for (let page = 2; page <= totalPages; page++) {
     await sleep(800);
     console.log(`  Loading page ${page}/${totalPages}...`);
@@ -578,12 +590,14 @@ async function scrapeTESPublicView(
     // Detect session expiry (CAPTCHA page returned)
     if (fr.html.includes("Security Verification") && fr.html.includes("Captcha1")) {
       console.log(`  Session expired at page ${page} (CAPTCHA returned). Stopping pagination.`);
+      complete = false;
       break;
     }
 
     // Detect EventValidation error
     if (fr.html.includes("Invalid postback")) {
       console.error(`  Page ${page} failed: EventValidation error. Stopping pagination.`);
+      complete = false;
       break;
     }
 
@@ -610,7 +624,7 @@ async function scrapeTESPublicView(
     }
   }
 
-  return allMappings;
+  return { mappings: allMappings, complete };
 }
 
 // ---------------------------------------------------------------------------
@@ -623,27 +637,107 @@ async function main() {
   console.log("TES Public View -- Rhode Island Transfer Scraper\n");
   console.log("Source: Community College of Rhode Island (CCRI)\n");
 
-  const allMappings: TransferMapping[] = [];
+  // One result per target. A target that throws or aborts mid-pagination is
+  // recorded as incomplete — its committed rows are preserved below instead
+  // of being replaced by a partial set (CLAUDE.md invariant #4; PR #1261
+  // shipped RIC at 546/840 rows from exactly this failure).
+  const results = new Map<
+    string,
+    { mappings: TransferMapping[]; complete: boolean }
+  >();
 
   for (const target of TARGETS) {
     console.log(
       `\n${"=".repeat(60)}\n${target.universityName} (${target.universitySlug})\n${"=".repeat(60)}`
     );
-    try {
-      const mappings = await scrapeTESPublicView(target);
-      allMappings.push(...mappings);
-      console.log(`  Total: ${mappings.length} mappings`);
-    } catch (err) {
-      console.error(
-        `  ERROR scraping ${target.universityName}: ${(err as Error).message}`
-      );
+    let best: { mappings: TransferMapping[]; complete: boolean } = {
+      mappings: [],
+      complete: false,
+    };
+    // The math CAPTCHA is solved programmatically, so a fresh session is
+    // cheap — retry once before accepting an incomplete result.
+    for (let attempt = 1; attempt <= 2; attempt++) {
+      try {
+        const result = await scrapeTESPublicView(target);
+        if (result.complete || result.mappings.length > best.mappings.length) {
+          best = result;
+        }
+        if (result.complete) break;
+        console.log(
+          `  Incomplete scrape on attempt ${attempt} (${result.mappings.length} mappings)` +
+            (attempt === 1 ? " -- retrying with a fresh session..." : "")
+        );
+      } catch (err) {
+        console.error(
+          `  ERROR scraping ${target.universityName} (attempt ${attempt}): ${(err as Error).message}`
+        );
+      }
+      // WAF cooldown before the retry (see inter-target note below).
+      if (attempt === 1) await sleep(30000);
     }
+    results.set(target.universitySlug, best);
+    console.log(
+      `  Total: ${best.mappings.length} mappings (${best.complete ? "complete" : "INCOMPLETE"})`
+    );
     // 30s cooldown between targets. Empirically tes.collegesource.com's
     // AWS WAF returns HTTP 405 on back-to-back requests to different
     // rid/aid pairs from the same IP within ~10s of finishing a long
     // pagination loop, but lets us through after ~30s. Cheaper than
     // session rotation.
     await sleep(30000);
+  }
+
+  // --- Merge per university against the committed file ---
+  // Replace a university's rows only when its scrape finished pagination AND
+  // didn't collapse below 50% of the committed count (mirrors
+  // scrape-diff.ts's ABORT_RATIO). Anything else keeps the committed rows,
+  // loudly.
+  const outPath = path.join(
+    process.cwd(),
+    "data",
+    "ri",
+    "transfer-equiv.json"
+  );
+  let committed: TransferMapping[] = [];
+  try {
+    const parsed = JSON.parse(fs.readFileSync(outPath, "utf-8"));
+    if (Array.isArray(parsed)) committed = parsed;
+  } catch {
+    /* no committed file -- first run */
+  }
+  const committedByUniv = new Map<string, TransferMapping[]>();
+  for (const m of committed) {
+    const rows = committedByUniv.get(m.university) ?? [];
+    rows.push(m);
+    committedByUniv.set(m.university, rows);
+  }
+
+  const allMappings: TransferMapping[] = [];
+  // Committed rows for a university no longer in TARGETS are kept untouched
+  // rather than silently dropped.
+  for (const [univ, rows] of committedByUniv) {
+    if (!results.has(univ)) allMappings.push(...rows);
+  }
+  for (const [univ, result] of results) {
+    const prior = committedByUniv.get(univ) ?? [];
+    const accepted =
+      result.complete &&
+      (prior.length === 0 || result.mappings.length >= prior.length * 0.5);
+    if (accepted) {
+      allMappings.push(...result.mappings);
+      console.log(
+        `  ${univ}: accepted fresh scrape (${result.mappings.length} rows, prior ${prior.length})`
+      );
+    } else {
+      allMappings.push(...prior);
+      console.error(
+        `  KEPT ${univ}: ` +
+          (result.complete
+            ? `scraped ${result.mappings.length} < 50% of prior ${prior.length}`
+            : `scrape incomplete (${result.mappings.length} rows; prior ${prior.length})`) +
+          ` -- committed data preserved.`
+      );
+    }
   }
 
   // Filter out no-transfer entries for stats
@@ -728,13 +822,7 @@ async function main() {
     );
   }
 
-  // Save to file
-  const outPath = path.join(
-    process.cwd(),
-    "data",
-    "ri",
-    "transfer-equiv.json"
-  );
+  // Save to file (outPath declared in the merge step above)
   fs.mkdirSync(path.dirname(outPath), { recursive: true });
   fs.writeFileSync(outPath, JSON.stringify(finalMappings, null, 2) + "\n");
   console.log(`\nSaved to ${outPath}`);

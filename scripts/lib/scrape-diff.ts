@@ -98,28 +98,54 @@ export function countBySource(text: string): Record<string, number> {
 }
 
 /**
- * Per-source regressions between two prereqs.json payloads. A group that
- * had at least `minGroup` entries before and retains under ABORT_RATIO of
- * them is a regression — its scraper (or the aggregation input) broke,
- * regardless of what the file-level total says. Tiny groups are skipped:
- * a 4→1 blip shouldn't abort a whole state's cron tick.
+ * Row counts per value of `field` for an array payload (e.g.
+ * transfer-equiv.json rows grouped by their `university`). Rows missing
+ * the field group under "(none)".
  */
-export function sourceRegressions(
+export function countByField(
+  text: string,
+  field: string,
+): Record<string, number> {
+  const counts: Record<string, number> = {};
+  try {
+    const parsed = JSON.parse(text);
+    if (!Array.isArray(parsed)) return counts;
+    for (const row of parsed) {
+      const value =
+        row && typeof row === "object" && typeof row[field] === "string"
+          ? (row[field] as string)
+          : "(none)";
+      counts[value] = (counts[value] ?? 0) + 1;
+    }
+  } catch {
+    /* unparseable — treated as no groups */
+  }
+  return counts;
+}
+
+/**
+ * Apply a retention threshold per group. A group that had at least
+ * `minGroup` entries before and retains under `abortRatio` of them is a
+ * regression — its scraper (or input) broke, regardless of what the
+ * file-level total says. Tiny groups are skipped: a 4→1 blip shouldn't
+ * abort a whole state's cron tick.
+ */
+function groupRegressions(
   file: string,
-  beforeText: string,
-  afterText: string,
-  minGroup = 20,
+  label: string,
+  before: Record<string, number>,
+  after: Record<string, number>,
+  minGroup: number,
+  abortRatio: number,
 ): Regression[] {
-  const before = countBySource(beforeText);
-  const after = countBySource(afterText);
   const out: Regression[] = [];
-  for (const [source, b] of Object.entries(before)) {
+  for (const [group, b] of Object.entries(before)) {
     if (b < minGroup) continue;
-    const a = after[source] ?? 0;
+    const a = after[group] ?? 0;
     const ratio = a / b;
-    if (ratio < ABORT_RATIO) {
+    if (ratio < abortRatio) {
       out.push({
-        file: `${file} [source: ${source}]`,
+        file: `${file} [${label}: ${group}]`,
         before: b,
         after: a,
         ratio: `${(ratio * 100).toFixed(1)}%`,
@@ -127,6 +153,54 @@ export function sourceRegressions(
     }
   }
   return out;
+}
+
+/** Per-source regressions between two prereqs.json payloads. */
+export function sourceRegressions(
+  file: string,
+  beforeText: string,
+  afterText: string,
+  minGroup = 20,
+): Regression[] {
+  return groupRegressions(
+    file,
+    "source",
+    countBySource(beforeText),
+    countBySource(afterText),
+    minGroup,
+    ABORT_RATIO,
+  );
+}
+
+/**
+ * Per-receiving-university regressions between two transfer-equiv.json
+ * payloads. One receiver's scrape dying mid-pagination can hide inside a
+ * passing file total — RI's 2026-06 cron run shipped RIC at 546 of 840
+ * rows while the file-level ratio passed easily (PR #1261).
+ *
+ * The threshold here is 75%, deliberately tighter than the file-level
+ * ABORT_RATIO: articulation agreements are near-static between runs
+ * (healthy receivers in the same incident moved by ±0.2%), so retaining
+ * only 65% of one receiver — which sails past a 50% gate — is a partial
+ * scrape, not churn. A genuine large prune trips this and takes the
+ * manual-run escape hatch, same as any file-level abort.
+ */
+export const UNIVERSITY_ABORT_RATIO = 0.75;
+
+export function universityRegressions(
+  file: string,
+  beforeText: string,
+  afterText: string,
+  minGroup = 20,
+): Regression[] {
+  return groupRegressions(
+    file,
+    "university",
+    countByField(beforeText, "university"),
+    countByField(afterText, "university"),
+    minGroup,
+    UNIVERSITY_ABORT_RATIO,
+  );
 }
 
 function main(): void {
@@ -189,6 +263,8 @@ function main(): void {
       });
     } else if (file.endsWith("prereqs.json")) {
       regressions.push(...sourceRegressions(file, beforeRaw, afterRaw));
+    } else if (file.endsWith("transfer-equiv.json")) {
+      regressions.push(...universityRegressions(file, beforeRaw, afterRaw));
     }
   }
 
