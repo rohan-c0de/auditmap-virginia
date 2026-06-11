@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { loadInstitutions } from "@/lib/institutions";
-import { loadCourseByCode, loadCoursesBySubject } from "@/lib/courses";
+import { loadCourseByCode, loadSubjectCourseList } from "@/lib/courses";
 import { getCurrentTerm, termLabel } from "@/lib/terms";
 import { getAllStates, isValidState, getStateConfig } from "@/lib/states/registry";
 import { requireStateConfig } from "@/lib/states/route-helpers";
@@ -239,10 +239,16 @@ export default async function CoursePage(props: PageProps) {
   const institutions = loadInstitutions(state);
   const currentTerm = await getCurrentTerm(state);
 
-  // Pull only this subject's rows once and split — used for both the target
-  // course's sections and the "Related courses" sidebar (same prefix).
-  const subjectSections = await loadCoursesBySubject(prefix, currentTerm, state);
-  const sections = subjectSections.filter((c) => c.course_number === number);
+  // Two cheap, indexed reads instead of pulling the whole subject's sections:
+  //  • this course's own sections via the (state,term,prefix,number) index
+  //    (loadCourseByCode — also already cached from generateMetadata above), and
+  //  • a tiny DISTINCT course list for the "Related courses" sidebar.
+  // A big subject in a big state (CA Fall ENGL = 9,120 wide rows) used to be
+  // pulled in full here, which tripped Vercel's 15s FUNCTION_INVOCATION_TIMEOUT.
+  const [sections, subjectCourses] = await Promise.all([
+    loadCourseByCode(prefix, number, currentTerm, state),
+    loadSubjectCourseList(prefix, currentTerm, state),
+  ]);
 
   if (sections.length === 0) {
     // The course code is well-formed and the state is valid — but no sections
@@ -252,9 +258,7 @@ export default async function CoursePage(props: PageProps) {
     // 404. Instead we render a real page with helpful next-steps links and
     // rely on the noindex meta in generateMetadata() to keep these out of
     // Google's index.
-    const relatedSubjectCourses = Array.from(
-      new Map(subjectSections.map((s) => [s.course_number, s])).values(),
-    )
+    const relatedSubjectCourses = [...subjectCourses]
       .sort((a, b) => a.course_number.localeCompare(b.course_number))
       .slice(0, 12);
     return (
@@ -345,9 +349,9 @@ export default async function CoursePage(props: PageProps) {
 
   // Related courses — same prefix, different number
   const relatedCourses = new Map<string, string>();
-  for (const c of subjectSections) {
+  for (const c of subjectCourses) {
     if (c.course_number !== number) {
-      const key = `${c.course_prefix}-${c.course_number}`;
+      const key = `${prefix}-${c.course_number}`;
       if (!relatedCourses.has(key)) {
         relatedCourses.set(key, c.course_title);
       }

@@ -556,6 +556,42 @@ export async function loadCourseByCode(
 }
 
 /**
+ * Distinct course list for one subject prefix — `{ course_number, course_title }`,
+ * one row per course number (not per section). Backs the lightweight "Related
+ * courses" sidebar on the course-detail page.
+ *
+ * Uses the `get_subject_course_list` RPC (migration 031) so we make ONE round
+ * trip returning a few hundred small rows instead of paginating the subject's
+ * full section set (a big subject like CA Fall ENGL is 9,120 wide rows — that
+ * full pull was the cause of the /{state}/course/* 504s). The course page gets
+ * its OWN sections from the indexed loadCourseByCode, so it never needs the
+ * whole subject anymore.
+ */
+export interface SubjectCourse {
+  course_number: string;
+  course_title: string;
+}
+
+export async function loadSubjectCourseList(
+  prefix: string,
+  term: string,
+  state: string
+): Promise<SubjectCourse[]> {
+  return cached(`subjectlist:${state}:${term}:${prefix}`, async () => {
+    const { data, error } = await supabase.rpc("get_subject_course_list", {
+      p_state: state,
+      p_term: term,
+      p_prefix: prefix,
+    });
+    if (error) {
+      console.error("loadSubjectCourseList error:", error.message);
+      return [];
+    }
+    return (data || []) as SubjectCourse[];
+  });
+}
+
+/**
  * Load all sections for one subject prefix across the state.
  * Targeted query — pulls only the rows for that prefix (typically 100–2000)
  * instead of the full state catalog. Used by the subject pSEO pages.
