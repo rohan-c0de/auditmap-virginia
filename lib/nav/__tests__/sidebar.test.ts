@@ -10,7 +10,11 @@ import {
   type NavGating,
 } from "../sidebar";
 
-const ALL: NavGating = { transferSupported: true, prereqsAvailable: true };
+const ALL: NavGating = {
+  transferSupported: true,
+  prereqsAvailable: true,
+  programsAvailable: true,
+};
 
 // --- sidebarVisible -------------------------------------------------------
 
@@ -47,9 +51,20 @@ describe("showNavItem", () => {
     expect(showNavItem("/plan", { ...ALL, prereqsAvailable: true })).toBe(true);
   });
 
-  it("shows every other item regardless of gating", () => {
-    const none = { transferSupported: false, prereqsAvailable: false };
-    for (const p of ["", "/courses", "/colleges", "/choose", "/programs", "/about"]) {
+  it("hides /programs AND /choose when no qualifying programs exist", () => {
+    expect(showNavItem("/programs", { ...ALL, programsAvailable: false })).toBe(false);
+    expect(showNavItem("/choose", { ...ALL, programsAvailable: false })).toBe(false);
+    expect(showNavItem("/programs", { ...ALL, programsAvailable: true })).toBe(true);
+    expect(showNavItem("/choose", { ...ALL, programsAvailable: true })).toBe(true);
+  });
+
+  it("shows ungated items regardless of gating", () => {
+    const none: NavGating = {
+      transferSupported: false,
+      prereqsAvailable: false,
+      programsAvailable: false,
+    };
+    for (const p of ["", "/courses", "/colleges", "/about"]) {
       expect(showNavItem(p, none)).toBe(true);
     }
   });
@@ -93,16 +108,24 @@ describe("buildNavColumns", () => {
   });
 
   it("omits Transfer when transfers are unsupported", () => {
-    const plan = buildNavColumns("va", { transferSupported: false, prereqsAvailable: true })
+    const plan = buildNavColumns("va", { ...ALL, transferSupported: false })
       .find((c) => c.heading === "Plan your path")!;
     expect(plan.links.some((l) => l.href === "/va/transfer")).toBe(false);
     expect(plan.links.some((l) => l.href === "/va/schedule")).toBe(true);
   });
 
   it("omits Semester Planner when prereqs are unavailable", () => {
-    const plan = buildNavColumns("va", { transferSupported: true, prereqsAvailable: false })
+    const plan = buildNavColumns("va", { ...ALL, prereqsAvailable: false })
       .find((c) => c.heading === "Plan your path")!;
     expect(plan.links.some((l) => l.href === "/va/plan")).toBe(false);
+  });
+
+  it("drops the Programs & majors column when the state has no qualifying programs", () => {
+    const cols = buildNavColumns("wy", { ...ALL, programsAvailable: false });
+    expect(cols.some((c) => c.heading === "Programs & majors")).toBe(false);
+    const allHrefs = cols.flatMap((c) => c.links.map((l) => l.href));
+    expect(allHrefs).not.toContain("/wy/programs");
+    expect(allHrefs).not.toContain("/wy/choose");
   });
 });
 
