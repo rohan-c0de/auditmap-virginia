@@ -54,7 +54,12 @@ const waConfig: StateConfig = {
       // separate WordPress site — deferred).
       { scripts: ["scripts/wa/scrape-ctclink.ts"], runner: "http" },
     ],
-    transfers: [{ scripts: ["scripts/wa/scrape-transfer-uw.ts"], runner: "http" }],
+    transfers: [
+      { scripts: ["scripts/wa/scrape-transfer-uw.ts"], runner: "http" },
+      // WSU's Transfer Credit Equivalencies is a public PeopleSoft
+      // Community Access page; the scraper drives it with Playwright.
+      { scripts: ["scripts/wa/scrape-transfer-wsu.ts"], runner: "playwright" },
+    ],
     // ctcLink course search exposes no prerequisite text, so prereqs come
     // from the 15 public acalog college catalogs. Those hosts sit behind
     // AWS WAF bot protection (HTTP 202 challenge on flagged clients); the
