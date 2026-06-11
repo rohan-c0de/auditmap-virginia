@@ -17,6 +17,7 @@
  */
 
 import * as cheerio from "cheerio";
+import { chromium } from "playwright";
 // AnyNode is exported from domhandler (cheerio's underlying DOM lib) but
 // isn't re-exported as `cheerio.AnyNode` in cheerio 1.2 — import directly.
 import type { AnyNode } from "domhandler";
@@ -37,6 +38,19 @@ export interface CourseleafProgramConfig {
    *  Override if a college uses a different convention.
    */
   programIndexPath?: string;
+  /**
+   * How many link levels to walk from the index page. Default 1 (the index
+   * links program pages directly). Use 2 when the index links area pages
+   * that in turn link the programs (e.g. Clark College's
+   * /academic-plans/<area>/<program>/).
+   */
+  indexDepth?: 1 | 2;
+  /**
+   * Regex source matched against every href on the index page, replacing
+   * prefix-based discovery. For catalogs with no single program index whose
+   * nav links every program (e.g. SPSCC's /<division>/(ado|cert)/<name>/).
+   */
+  programPathPattern?: string;
 }
 
 const UA =
@@ -47,29 +61,77 @@ const DELAY_MS = 80;
 
 const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 
+// Some CourseLeaf hosts sit behind AWS WAF bot protection that answers a
+// flagged client with HTTP 202 + empty body (e.g. catalog.spscc.edu). A
+// headless Chromium visit solves the JS challenge and yields an
+// aws-waf-token cookie that plain fetch() can then carry. Acquired lazily —
+// only when a challenge is actually seen — so non-WAF catalogs never pay
+// the browser-launch cost. Deduped per origin to avoid a worker stampede.
+const wafCookies = new Map<string, string>();
+const wafInFlight = new Map<string, Promise<string>>();
+
+async function acquireWafCookies(origin: string, force = false): Promise<string> {
+  if (!force) {
+    const cached = wafCookies.get(origin);
+    if (cached) return cached;
+  }
+  const inFlight = wafInFlight.get(origin);
+  if (inFlight) return inFlight;
+  const p = (async () => {
+    console.log(`  Acquiring WAF token via headless browser: ${origin}`);
+    const browser = await chromium.launch({ headless: true });
+    try {
+      const ctx = await browser.newContext({ userAgent: UA });
+      const page = await ctx.newPage();
+      await page.goto(origin, { waitUntil: "networkidle", timeout: 45_000 });
+      await page.waitForTimeout(2_000);
+      const cookies = await ctx.cookies();
+      const cookieStr = cookies.map((c) => `${c.name}=${c.value}`).join("; ");
+      wafCookies.set(origin, cookieStr);
+      return cookieStr;
+    } finally {
+      await browser.close();
+      wafInFlight.delete(origin);
+    }
+  })();
+  wafInFlight.set(origin, p);
+  return p;
+}
+
+function isWafChallenge(status: number, body: string): boolean {
+  if (status === 202) return true;
+  return body.length < 5_000 && body.includes("awswaf");
+}
+
 async function retryFetch(
   url: string,
   label: string,
-  attempts = 3,
+  attempts = 4,
 ): Promise<string> {
   let lastErr: unknown;
   for (let i = 0; i < attempts; i++) {
     try {
       const u = new URL(url);
-      const res = await fetch(url, {
-        headers: {
-          "User-Agent": UA,
-          Accept:
-            "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-          "Accept-Language": "en-US,en;q=0.9",
-          Referer: `${u.protocol}//${u.host}/`,
-          "Sec-Fetch-Dest": "document",
-          "Sec-Fetch-Mode": "navigate",
-          "Sec-Fetch-Site": "same-origin",
-          "Upgrade-Insecure-Requests": "1",
-        },
-      });
-      if (res.ok) return res.text();
+      const headers: Record<string, string> = {
+        "User-Agent": UA,
+        Accept:
+          "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
+        Referer: `${u.protocol}//${u.host}/`,
+        "Sec-Fetch-Dest": "document",
+        "Sec-Fetch-Mode": "navigate",
+        "Sec-Fetch-Site": "same-origin",
+        "Upgrade-Insecure-Requests": "1",
+      };
+      const cookies = wafCookies.get(u.origin);
+      if (cookies) headers["Cookie"] = cookies;
+      const res = await fetch(url, { headers });
+      const body = res.ok || res.status === 202 ? await res.text() : "";
+      if (isWafChallenge(res.status, body)) {
+        await acquireWafCookies(u.origin, i > 0);
+        continue;
+      }
+      if (res.ok) return body;
       if (res.status >= 500) {
         lastErr = new Error(`HTTP ${res.status}`);
       } else {
@@ -456,7 +518,38 @@ export async function scrapeCourseleafPrograms(
   const indexUrl = `${baseUrl}${programIndexPath}`;
   console.log(`  [${collegeSlug}] Discovering programs at ${indexUrl}`);
   const indexHtml = await retryFetch(indexUrl, "program-index");
-  const paths = discoverProgramPaths(indexHtml, programIndexPath);
+  let paths: string[];
+  if (config.programPathPattern) {
+    const re = new RegExp(config.programPathPattern);
+    paths = Array.from(
+      new Set(
+        [...indexHtml.matchAll(/href="(\/[^"]*)"/g)]
+          .map((m) => m[1].split("#")[0])
+          .filter((h) => re.test(h)),
+      ),
+    ).sort();
+  } else {
+    paths = discoverProgramPaths(indexHtml, programIndexPath);
+  }
+
+  if ((config.indexDepth ?? 1) === 2) {
+    // The index links area pages; walk each one to find the program pages.
+    console.log(
+      `  [${collegeSlug}] ${paths.length} area pages — walking depth 2...`,
+    );
+    const subPaths = new Set<string>();
+    await pmap(paths, CONCURRENCY, async (areaPath) => {
+      const areaHtml = await retryFetch(
+        `${baseUrl}${areaPath}`,
+        `area(${areaPath})`,
+      );
+      if (!areaHtml) return;
+      for (const p of discoverProgramPaths(areaHtml, areaPath)) {
+        subPaths.add(p);
+      }
+    });
+    paths = Array.from(subPaths).sort();
+  }
   console.log(`  [${collegeSlug}] Found ${paths.length} program paths`);
 
   if (paths.length === 0) {

@@ -55,17 +55,25 @@ const waConfig: StateConfig = {
       { scripts: ["scripts/wa/scrape-ctclink.ts"], runner: "http" },
     ],
     transfers: [{ scripts: ["scripts/wa/scrape-transfer-uw.ts"], runner: "http" }],
-    // manual-only: prereqs — ctcLink course search exposes no prerequisite text,
-    // so aggregate-from-courses yields 0. 11 SBCTC colleges have public acalog
-    // catalogs (see scripts/wa/scrape-catalog-prereqs.ts), but ALL return AWS
-    // WAF bot challenges (HTTP 202, x-amzn-waf-action: challenge) on headless
-    // fetches, blocking pagination in CI. The scraper script is committed and
-    // correct; re-enable if/when WAF rules are relaxed or colleges adopt a
-    // CDN without bot protection. Keeping aggregate-from-courses here so the
-    // CI check passes and the aggregation runs (even though it yields 0 it
-    // is not harmful).
-    prereqs: { source: "aggregate-from-courses" },
-    // manual-only: programs — Phase 5+.
+    // ctcLink course search exposes no prerequisite text, so prereqs come
+    // from the 15 public acalog college catalogs. Those hosts sit behind
+    // AWS WAF bot protection (HTTP 202 challenge on flagged clients); the
+    // scraper solves the challenge with a headless-Chromium token pass, so
+    // it needs runner: "playwright" (CI installs the browser only for that
+    // runner type).
+    prereqs: [
+      {
+        scripts: ["scripts/wa/scrape-catalog-prereqs.ts"],
+        runner: "playwright",
+      },
+    ],
+    programs: [
+      // 15 acalog + Tacoma (Coursedog) + Clark/SPSCC (CourseLeaf) +
+      // Bates/Cascadia/WVC (CleanCatalog) — 21 colleges.
+      { scripts: ["scripts/wa/scrape-programs.ts"], runner: "playwright" },
+      // Spokane CC + Spokane Falls via the CCS JSON web service (plain http).
+      { scripts: ["scripts/wa/scrape-ccs-programs.ts"], runner: "http" },
+    ],
   },
 };
 
