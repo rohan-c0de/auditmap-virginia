@@ -5,6 +5,7 @@ import { createClient } from "@/lib/supabase/client";
 import { useAuth } from "@/lib/hooks/useAuth";
 import { track } from "@/lib/analytics";
 import { stashPlanDraft, planDedupKey } from "@/lib/anon-draft";
+import { resolveRequirements } from "@/lib/prereq-groups";
 
 // ---------------------------------------------------------------------------
 // Types
@@ -21,6 +22,9 @@ interface PlanCourse {
   text: string;
   semester: number; // 1-indexed — which semester to take it in
   isTarget: boolean; // was this explicitly selected by the user?
+  /** Other ways to satisfy the requirement this course was picked for —
+   *  each entry is a set of courses to take together instead. */
+  alternatives?: string[][];
 }
 
 /** Per-course seat summary returned by /api/{state}/sections-for-courses */
@@ -46,72 +50,6 @@ interface SemesterPlannerProps {
 }
 
 // ---------------------------------------------------------------------------
-// AND/OR prereq text parser
-// ---------------------------------------------------------------------------
-
-/**
- * Parse a prereq text string into AND-of-OR groups.
- *
- * Example: "ACC 101 and (BUS 107 or CIS 107 or OAT 152)"
- *  → [["ACC 101"], ["BUS 107", "CIS 107", "OAT 152"]]
- *
- * Meaning: you must take ACC 101 AND (one of BUS 107 / CIS 107 / OAT 152).
- *
- * Strategy: split the text on top-level "and" (outside parentheses), then
- * map each known course code to the chunk it appears in. Courses in the
- * same chunk form an OR group.
- */
-function parsePrereqGroups(text: string, courses: string[]): string[][] {
-  if (courses.length === 0) return [];
-  if (courses.length === 1) return [courses];
-
-  // Split text on top-level " and " (not inside parentheses)
-  const chunks: string[] = [];
-  let depth = 0;
-  let current = "";
-  const tokens = text.split(/(\s+)/);
-
-  for (const token of tokens) {
-    for (const ch of token) {
-      if (ch === "(") depth++;
-      if (ch === ")") depth--;
-    }
-    if (token.toLowerCase() === "and" && depth === 0 && current.trim()) {
-      chunks.push(current.trim());
-      current = "";
-    } else {
-      current += token;
-    }
-  }
-  if (current.trim()) chunks.push(current.trim());
-
-  // Map each course to its chunk → courses in the same chunk are OR alternatives
-  const groups: string[][] = [];
-  const assigned = new Set<string>();
-
-  for (const chunk of chunks) {
-    const group: string[] = [];
-    for (const course of courses) {
-      if (assigned.has(course)) continue;
-      if (chunk.toUpperCase().includes(course)) {
-        group.push(course);
-        assigned.add(course);
-      }
-    }
-    if (group.length > 0) groups.push(group);
-  }
-
-  // Any unassigned courses become their own AND group (required)
-  for (const course of courses) {
-    if (!assigned.has(course)) {
-      groups.push([course]);
-    }
-  }
-
-  return groups;
-}
-
-// ---------------------------------------------------------------------------
 // Algorithm: topological sort → semester assignment (AND/OR aware)
 // ---------------------------------------------------------------------------
 
@@ -119,11 +57,12 @@ function parsePrereqGroups(text: string, courses: string[]): string[][] {
  * Given a set of target courses and a prereq lookup table, compute the
  * minimum-semester plan. Uses a reverse topological sort:
  *
- * 1. Parse each course's prereqs into AND-of-OR groups
- * 2. For each OR group, pick the option with the fewest direct prereqs
- * 3. BFS from targets using only resolved (picked) prereqs
- * 4. Compute "level" of each course (max distance from any leaf)
- * 5. Group by level → each level is one semester
+ * 1. Resolve each course's prereq text into requirements via the shared
+ *    parser (lib/prereq-groups) — one chosen (cheapest) way to satisfy each
+ *    slot/combination, with the other ways kept as display alternatives
+ * 2. BFS from targets using only resolved (picked) prereqs
+ * 3. Compute "level" of each course (max distance from any leaf)
+ * 4. Group by level → each level is one semester
  */
 function buildPlan(
   targets: string[],
@@ -132,6 +71,13 @@ function buildPlan(
   // Cache resolved prereqs: for each course, the actual prereqs to take
   // (after OR resolution)
   const resolvedPrereqs = new Map<string, string[]>();
+  // For each picked course, the other ways its requirement could be met
+  // (first requirement to pick a course wins — good enough for display).
+  const altByCourse = new Map<string, string[][]>();
+
+  // Cheapest = fewest courses pulled into the plan: the course itself plus
+  // its own direct prereqs.
+  const cost = (course: string) => 1 + (lookup.get(course)?.prereqs.length || 0);
 
   function getResolvedPrereqs(course: string): string[] {
     if (resolvedPrereqs.has(course)) return resolvedPrereqs.get(course)!;
@@ -141,20 +87,13 @@ function buildPlan(
       return [];
     }
 
-    const groups = parsePrereqGroups(entry.text, entry.prereqs);
     const picked: string[] = [];
-
-    for (const group of groups) {
-      if (group.length === 1) {
-        picked.push(group[0]);
-      } else {
-        // Pick the OR option with the fewest direct prereqs (cheapest path)
-        const best = group.reduce((a, b) => {
-          const aCount = lookup.get(a)?.prereqs.length || 0;
-          const bCount = lookup.get(b)?.prereqs.length || 0;
-          return aCount <= bCount ? a : b;
-        });
-        picked.push(best);
+    for (const req of resolveRequirements(entry.text, entry.prereqs, cost)) {
+      for (const c of req.chosen) {
+        if (!picked.includes(c)) picked.push(c);
+        if (req.alternatives.length > 0 && !altByCourse.has(c)) {
+          altByCourse.set(c, req.alternatives);
+        }
       }
     }
 
@@ -211,11 +150,13 @@ function buildPlan(
 
   for (const course of visited) {
     const entry = lookup.get(course);
+    const alternatives = targetSet.has(course) ? undefined : altByCourse.get(course);
     plan.push({
       code: course,
       text: entry?.text || "",
       semester: (levels.get(course) || 0) + 1,
       isTarget: targetSet.has(course),
+      ...(alternatives && alternatives.length > 0 ? { alternatives } : {}),
     });
   }
 
@@ -449,6 +390,14 @@ function CourseNode({
       >
         {course.code}
         {seats && <SeatBadge seats={seats} />}
+        {course.alternatives && course.alternatives.length > 0 && (
+          <span
+            className="text-[8px] font-bold px-1 py-0.5 rounded bg-slate-100 dark:bg-slate-600/70 text-slate-500 dark:text-slate-300 uppercase whitespace-nowrap"
+            title={`This is one of ${course.alternatives.length + 1} ways to meet the requirement. Others: ${course.alternatives.map((a) => a.join(" + ")).join(" · ")}`}
+          >
+            1 of {course.alternatives.length + 1} options
+          </span>
+        )}
         {course.isTarget && (
           <span className="text-[8px] font-black px-1 py-0.5 rounded bg-teal-200/60 dark:bg-teal-700/60 text-teal-600 dark:text-teal-300 uppercase">
             target
@@ -468,7 +417,7 @@ function CourseNode({
       </div>
 
       {/* Tooltip */}
-      {hover && course.text && (
+      {hover && (course.text || (course.alternatives?.length ?? 0) > 0) && (
         <div
           className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2.5
             px-3 py-2 rounded-xl
@@ -480,8 +429,21 @@ function CourseNode({
             z-50 pointer-events-none"
         >
           <span className="font-bold text-white/90">{course.code}</span>
-          <br />
-          <span className="text-slate-300">{course.text}</span>
+          {course.text && (
+            <>
+              <br />
+              <span className="text-slate-300">{course.text}</span>
+            </>
+          )}
+          {course.alternatives && course.alternatives.length > 0 && (
+            <>
+              <br />
+              <span className="text-teal-300">
+                Instead of this, you could take:{" "}
+                {course.alternatives.map((a) => a.join(" + ")).join(" · ")}
+              </span>
+            </>
+          )}
           <div className="absolute top-full left-1/2 -translate-x-1/2 border-[6px] border-transparent border-t-slate-900/95 dark:border-t-slate-700/95" />
         </div>
       )}

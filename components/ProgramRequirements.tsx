@@ -2,7 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { countRealCourses, programSlug, PLAN_MIN_COURSES } from "@/lib/programs/plan-shared";
+import {
+  countRealCourses,
+  programSlug,
+  foldHonorsVariants,
+  PLAN_MIN_COURSES,
+} from "@/lib/programs/plan-shared";
 import { plannerHref } from "@/lib/planner-link";
 import { track } from "@/lib/analytics";
 import type { ProgramRequirement } from "@/lib/types";
@@ -44,10 +49,18 @@ function ProgramCard({
       ? `/${state}/college/${collegeId}/program/${programSlug(program)}`
       : null;
 
+  // Fold "Honors X" duplicate rows into or-alternatives of their base course
+  // before anything is rendered or counted — both variants listed as required
+  // overstates the degree.
+  const foldedGroups = program.requirement_groups.map((g) => ({
+    ...g,
+    courses: foldHonorsVariants(g.courses),
+  }));
+
   // Every primary course across the program's requirement groups, as
   // "PREFIX NUMBER" codes, for the "Plan all required courses" deep link into
   // the semester planner. plannerHref de-dupes + caps at 100.
-  const allCourseCodes = program.requirement_groups.flatMap((g) =>
+  const allCourseCodes = foldedGroups.flatMap((g) =>
     g.courses.map((c) => `${c.prefix} ${c.number}`),
   );
   const planAllHref = plannerHref(state, allCourseCodes);
@@ -155,7 +168,7 @@ function ProgramCard({
               )}
             </p>
           ) : (
-            program.requirement_groups.map((group, gi) => (
+            foldedGroups.map((group, gi) => (
               <RequirementGroupBlock
                 key={gi}
                 group={group}
@@ -299,7 +312,9 @@ function RequirementGroupBlock({
                 <span className="text-gray-700 dark:text-slate-300 truncate">
                   {course.title}
                 </span>
-                {course.credits != null && (
+                {/* 0 credits = the scraper lost the value; showing it reads
+                    as "this course is free/worthless" — hide instead. */}
+                {course.credits != null && course.credits > 0 && (
                   <span className="text-xs text-gray-400 dark:text-slate-500 whitespace-nowrap">
                     ({course.credits} cr)
                   </span>

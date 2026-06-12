@@ -357,7 +357,11 @@ function NotListedLabel({ catalogUrl }: { catalogUrl: string }) {
 
 function CourseRow({ course, uni, catalogUrl }: { course: PlanCourse; uni: string; catalogUrl: string }) {
   const t = uni === "__all__" ? null : course.transfers[uni];
-  const creditLabel = course.credits != null ? ` · ${course.credits} credit${course.credits === 1 ? "" : "s"}` : "";
+  // 0 credits = value lost at scrape time, not a free course — hide it.
+  const creditLabel =
+    course.credits != null && course.credits > 0
+      ? ` · ${course.credits} credit${course.credits === 1 ? "" : "s"}`
+      : "";
   return (
     <li className="px-4 py-3">
       {/* Lead with the human name; code + credits are secondary. */}
@@ -370,6 +374,21 @@ function CourseRow({ course, uni, catalogUrl }: { course: PlanCourse; uni: strin
             {course.code}
             {creditLabel}
           </div>
+          {course.alternatives.length > 0 && (
+            <div className="mt-0.5 text-xs text-gray-500 dark:text-slate-400">
+              or take{" "}
+              {course.alternatives.map((alt, i) => (
+                <span key={`${alt.prefix}-${alt.number}`}>
+                  {i > 0 && " or "}
+                  <span className="font-mono">
+                    {alt.prefix} {alt.number}
+                  </span>{" "}
+                  ({alt.title})
+                </span>
+              ))}{" "}
+              instead
+            </div>
+          )}
         </div>
         {/* The two things that matter, on the right. */}
         {course.sectionsThisTerm > 0 ? (
