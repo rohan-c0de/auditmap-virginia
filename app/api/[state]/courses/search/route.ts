@@ -42,6 +42,12 @@ export async function GET(request: NextRequest, context: RouteContext) {
     return NextResponse.json({ error: "Invalid timeOfDay value." }, { status: 400 });
   }
   const timeOfDay = timeOfDayRaw as "morning" | "afternoon" | "evening" | undefined;
+  // Optional ?radius= (miles around ?zip=), clamped like /api/[state]/search.
+  // No default: a zip alone ranks by distance without dropping far colleges.
+  const radiusRaw = parseInt(searchParams.get("radius") || "", 10);
+  const radius = Number.isFinite(radiusRaw)
+    ? Math.max(1, Math.min(radiusRaw, 100))
+    : undefined;
   const limit = Math.max(1, Math.min(parseInt(searchParams.get("limit") || "10", 10) || 10, 100));
   const offset = Math.max(0, parseInt(searchParams.get("offset") || "0", 10) || 0);
 
@@ -79,7 +85,7 @@ export async function GET(request: NextRequest, context: RouteContext) {
     term,
     q,
     institutions,
-    { mode, days, timeOfDay, zip },
+    { mode, days, timeOfDay, zip, radius },
     limit,
     offset,
     state

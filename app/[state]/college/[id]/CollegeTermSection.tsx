@@ -143,7 +143,7 @@ export default function CollegeTermSection({
               rel="noopener noreferrer"
               className="underline"
             >
-              {systemName} course site
+              {institution.name} course site
             </a>{" "}
             for the latest listings.
           </p>
@@ -221,7 +221,7 @@ export default function CollegeTermSection({
                 rel="noopener noreferrer"
                 className="text-xs text-gray-400 dark:text-slate-500 hover:text-gray-600 dark:hover:text-slate-300 ml-1"
               >
-                {systemName} ↗
+                View at {institution.name} ↗
               </a>
             </div>
           )}
@@ -249,7 +249,7 @@ export default function CollegeTermSection({
               rel="noopener noreferrer"
               className="text-teal-600 hover:underline text-sm"
             >
-              {`Check ${systemName} course site directly →`}
+              {`Check the ${institution.name} course site directly →`}
             </a>
           </div>
         ) : (

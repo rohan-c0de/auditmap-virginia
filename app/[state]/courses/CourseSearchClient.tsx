@@ -168,6 +168,7 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
   // apply the filters on first load. Previously only `q` was read and the
   // rest defaulted to empty, which silently dropped every other filter.
   const initialZip = searchParams.get("zip") || "";
+  const initialRadius = searchParams.get("radius") || "";
   const initialMode = searchParams.get("mode") || "";
   const initialDays = (searchParams.get("days") || "")
     .split(",")
@@ -179,9 +180,15 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
 
   const [query, setQuery] = useState(initialQuery);
   const [zip, setZip] = useState(initialZip);
+  // Radius (miles around the zip) as a select value: "" = any distance.
+  const [radius, setRadius] = useState(initialRadius);
   const [mode, setMode] = useState(initialMode);
   const [days, setDays] = useState<string[]>(initialDays);
   const [timeOfDay, setTimeOfDay] = useState(initialTimeOfDay);
+  // The query the last search actually ran with (vs `query`, which tracks
+  // every keystroke). Drives the URL write-back so typing doesn't churn the
+  // address bar.
+  const [submittedQuery, setSubmittedQuery] = useState(initialQuery);
 
   // Bookmark state
   const [bookmarkedCourses, setBookmarkedCourses] = useState<Set<string>>(new Set());
@@ -300,6 +307,7 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
     setError("");
     setHasSearched(true);
     setDisplayLimit(10);
+    setSubmittedQuery(searchQuery.trim());
     // Reset previous answer card before either fetch resolves so a stale card
     // never lingers under a new query. Skipped on a filter-only re-search
     // (keepAnswer): the query is unchanged, so resetting would just flash the
@@ -430,6 +438,7 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
     try {
       const params = new URLSearchParams({ q: searchQ, limit: "50" });
       if (zip) params.set("zip", zip);
+      if (zip && radius) params.set("radius", radius);
       if (effectiveMode) params.set("mode", effectiveMode);
       if (effectiveDays.length > 0) params.set("days", effectiveDays.join(","));
       if (effectiveTimeOfDay) params.set("timeOfDay", effectiveTimeOfDay);
@@ -465,7 +474,7 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
       setResults(null);
     }
     setLoading(false);
-  }, [state, zip, mode, days, timeOfDay, transferTo]);
+  }, [state, zip, radius, mode, days, timeOfDay, transferTo]);
 
   async function handleSearch(e: React.FormEvent) {
     e.preventDefault();
@@ -473,6 +482,7 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
       state,
       query: query.trim().slice(0, 80),
       has_zip: !!zip,
+      radius: radius || "any",
       mode: mode || "any",
       days: days.length > 0 ? days.join("") : "any",
       time_of_day: timeOfDay || "any",
@@ -539,7 +549,31 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
       400
     );
     return () => clearTimeout(t);
-  }, [mode, days, timeOfDay, zip]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [mode, days, timeOfDay, zip, radius]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Persist the active search + filters in the URL (replaceState — no
+  // navigation, no scroll reset) so refresh and share keep the narrowed state.
+  // Keyed on submittedQuery (the last query actually searched), not `query`,
+  // so typing doesn't churn the address bar. Skipped mid-zip-edit and before
+  // any search so the pristine landing URL stays clean.
+  useEffect(() => {
+    if (!hasSearched) return;
+    if (zip !== "" && zip.length !== 5) return;
+    const params = new URLSearchParams();
+    if (submittedQuery.trim()) params.set("q", submittedQuery.trim());
+    if (zip) params.set("zip", zip);
+    if (zip && radius) params.set("radius", radius);
+    if (mode) params.set("mode", mode);
+    if (days.length > 0) params.set("days", days.join(","));
+    if (timeOfDay) params.set("timeOfDay", timeOfDay);
+    if (transferTo) params.set("transfersTo", transferTo);
+    const qs = params.toString();
+    window.history.replaceState(
+      null,
+      "",
+      qs ? `${window.location.pathname}?${qs}` : window.location.pathname
+    );
+  }, [hasSearched, submittedQuery, zip, radius, mode, days, timeOfDay, transferTo]);
 
   function toggleExpand(courseKey: string, slug: string) {
     const id = `${courseKey}::${slug}`;
@@ -636,6 +670,26 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
 
           {/* Filters row */}
           <div className="flex flex-wrap items-end gap-3">
+            {/* Distance cap — only meaningful once a full zip is entered, so it
+                appears alongside the other filters at that point. Mirrors the
+                /{state}/results radius options. */}
+            {zip.length === 5 && (
+              <div className="min-w-[130px]">
+                <label className="block text-xs font-medium text-gray-500 dark:text-slate-400 mb-1">
+                  Within
+                </label>
+                <select
+                  value={radius}
+                  onChange={(e) => setRadius(e.target.value)}
+                  className="w-full rounded-md border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 dark:text-slate-100 px-3 py-2 text-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-200"
+                >
+                  <option value="">Any distance</option>
+                  <option value="10">10 miles</option>
+                  <option value="25">25 miles</option>
+                  <option value="50">50 miles</option>
+                </select>
+              </div>
+            )}
             <div className="min-w-[120px]">
               <label className="block text-xs font-medium text-gray-500 dark:text-slate-400 mb-1">Mode</label>
               <select
@@ -803,6 +857,7 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
               already restates what we understood, so we don't repeat it. */}
           {results.courses.length === 0 && (() => {
             const activeFilters: string[] = [];
+            if (zip.length === 5 && radius) activeFilters.push(`within ${radius} miles`);
             if (mode) activeFilters.push(mode === "in-person" ? "in-person" : mode);
             if (days.length > 0) activeFilters.push(`day (${days.join(", ")})`);
             if (timeOfDay) activeFilters.push(timeOfDay);
@@ -1042,7 +1097,7 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
                                   rel="noopener noreferrer"
                                   className="text-xs font-medium text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:hover:text-slate-300 hover:underline"
                                 >
-                                  {`View on ${systemName} →`}
+                                  {`View at ${college.name} ↗`}
                                 </a>
                               </div>
                             </div>

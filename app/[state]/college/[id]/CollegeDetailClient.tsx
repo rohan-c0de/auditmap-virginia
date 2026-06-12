@@ -73,6 +73,7 @@ export default function CollegeDetailClient({
         courses={courses}
         collegeSlug={collegeSlug}
         systemName={systemName}
+        collegeName={institution.name}
         courseListingUrl={courseListingUrl}
         onAuditClick={(course) => {
           setSelectedCourse(course);
