@@ -239,17 +239,21 @@ export default function TransferClient({
     ].filter((g) => g.courses.length > 0);
   }, [filtered]);
 
-  // Stats (based on selected university's mappings)
+  // Stats — derived from the SAME `filtered` array the rows render from, so
+  // the banner tiles always agree with the list below them. They previously
+  // counted the unfiltered university mappings, so picking a subject (e.g.
+  // PSY) left the tiles reporting totals across every subject while the rows
+  // showed only the filtered handful.
   const stats = useMemo(() => {
-    const direct = universityMappings.filter((m) => !m.no_credit && !m.is_elective).length;
-    const elective = universityMappings.filter((m) => m.is_elective && !m.no_credit).length;
-    const noCredit = universityMappings.filter((m) => m.no_credit).length;
-    const available = universityMappings.filter((m) => {
+    const direct = filtered.filter((m) => !m.no_credit && !m.is_elective).length;
+    const elective = filtered.filter((m) => m.is_elective && !m.no_credit).length;
+    const noCredit = filtered.filter((m) => m.no_credit).length;
+    const available = filtered.filter((m) => {
       const key = `${m.cc_prefix}-${m.cc_number}`;
       return courseAvailability[key] && !m.no_credit;
     }).length;
-    return { direct, elective, noCredit, total: universityMappings.length, available };
-  }, [universityMappings, courseAvailability]);
+    return { direct, elective, noCredit, total: filtered.length, available };
+  }, [filtered, courseAvailability]);
 
   const uniName =
     universities.find((u) => u.slug === selectedUniversity)?.name ||

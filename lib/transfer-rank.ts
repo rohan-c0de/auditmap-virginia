@@ -80,3 +80,45 @@ export function bestMappingForUniversity<
   }
   return best;
 }
+
+/**
+ * Render-side safety net against duplicate articulation rows: collapse a
+ * mapping list to ONE row per (cc course, university, equivalent course),
+ * keeping the best-ranked row (direct > elective > no-credit; ties keep the
+ * first occurrence, so order is stable).
+ *
+ * Some receiver portals (e.g. Elon's ASP.NET articulation form) serve the same
+ * statewide table once per sending college; a scrape that misses dedup then
+ * writes ~50 identical copies of each row, and /nc/course/psy-150 rendered
+ * "Elon | PSY*1000 | Direct Match" 50 times. Scrapers dedupe at the pipeline
+ * (scripts/lib/transfer-dedupe.ts) — this collapse guarantees the UI stays
+ * sane even when a bad scrape slips through. Legitimate one-to-many mappings
+ * (one CC course → several DISTINCT courses at the same university) survive
+ * because univ_course is part of the key.
+ */
+export function collapseDuplicateMappings<
+  T extends {
+    cc_course?: string | null;
+    cc_prefix?: string | null;
+    cc_number?: string | null;
+    university: string;
+    univ_course?: string | null;
+    no_credit?: boolean | null;
+    is_elective?: boolean | null;
+  },
+>(mappings: readonly T[]): T[] {
+  const indexByKey = new Map<string, number>();
+  const out: T[] = [];
+  for (const m of mappings) {
+    const course = m.cc_course ?? `${m.cc_prefix ?? ""} ${m.cc_number ?? ""}`;
+    const key = `${course}|${m.university}|${m.univ_course ?? ""}`;
+    const i = indexByKey.get(key);
+    if (i === undefined) {
+      indexByKey.set(key, out.length);
+      out.push(m);
+    } else if (rankMapping(m) > rankMapping(out[i])) {
+      out[i] = m;
+    }
+  }
+  return out;
+}

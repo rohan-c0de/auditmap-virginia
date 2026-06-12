@@ -17,6 +17,7 @@
 import { execSync } from "child_process";
 import fs from "fs";
 import path from "path";
+import { dedupeTransferMappings } from "../lib/transfer-dedupe";
 
 interface TransferMapping {
   cc_prefix: string;
@@ -203,7 +204,7 @@ print(json.dumps(lines))
   }
 
   const withoutWingate = existing.filter(m => m.university !== "wingate");
-  const merged = [...withoutWingate, ...mappings];
+  const merged = dedupeTransferMappings([...withoutWingate, ...mappings]);
 
   merged.sort((a, b) =>
     a.cc_prefix.localeCompare(b.cc_prefix) ||

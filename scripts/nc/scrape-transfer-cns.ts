@@ -22,6 +22,7 @@
 import * as cheerio from "cheerio";
 import fs from "fs";
 import path from "path";
+import { dedupeTransferMappings } from "../lib/transfer-dedupe";
 
 interface TransferMapping {
   cc_prefix: string;
@@ -285,7 +286,7 @@ async function main() {
   // For new universities, add all CNS data
   const cnsNew = deduped.filter((m) => !keepSlugs.has(m.university));
 
-  const merged = [...kept, ...cnsForExisting, ...cnsNew];
+  const merged = dedupeTransferMappings([...kept, ...cnsForExisting, ...cnsNew]);
 
   // Final stats
   const mergedByUniv = new Map<string, number>();

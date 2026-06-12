@@ -17,6 +17,7 @@
 import * as cheerio from "cheerio";
 import fs from "fs";
 import path from "path";
+import { dedupeTransferMappings } from "../lib/transfer-dedupe";
 
 interface TransferMapping {
   cc_prefix: string;
@@ -190,7 +191,7 @@ async function main() {
   }
 
   const nonUncg = existing.filter((m) => m.university !== "uncg");
-  const merged = [...nonUncg, ...deduped];
+  const merged = dedupeTransferMappings([...nonUncg, ...deduped]);
 
   console.log(`Merged: ${nonUncg.length} existing (non-UNCG) + ${deduped.length} UNCG = ${merged.length} total`);
 
