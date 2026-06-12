@@ -1,5 +1,123 @@
 import type { StateConfig } from "../registry";
 
+// Texas has no statewide SIS — every district runs its own class search. These
+// are per-college public class-search / registration entry points, harvested
+// from the working scrapers in scripts/tx/ and each probed 2026-06-12 (HTTP 200
+// for curl with a browser UA, or verified rendering in real headless Chromium
+// where a bot wall blocks curl — noted inline).
+//
+// Five Alamo Colleges share one public Banner SSB instance (same host the
+// scraper uses; the student-facing aces.alamo.edu portal is login-walled).
+const ALAMO_CLASS_SEARCH =
+  "https://lum010.alamo.edu:8010/StudentRegistrationSsb/ssb/classSearch/classSearch";
+// Howard College + SW College for the Deaf share one Concourse instance.
+// The root redirects to /login but /search is public.
+const HOWARD_CLASS_SEARCH = "https://howardcollege.campusconcourse.com/search";
+
+const REGISTRATION_URLS: Record<string, string> = {
+  // hccs.edu's own "class searcher" link — auto-establishes a PeopleSoft guest
+  // session in the browser and lands on Class Search (curl sees ?cmd=login
+  // because the guest auto-login is JS; verified in headless Chromium).
+  "houston-community-college": "https://www.hccs.edu/class-searcher/",
+  "san-antonio-college": ALAMO_CLASS_SEARCH,
+  "st-philips-college": ALAMO_CLASS_SEARCH,
+  "palo-alto-college": ALAMO_CLASS_SEARCH,
+  "northwest-vista-college": ALAMO_CLASS_SEARCH,
+  "northeast-lakeview-college": ALAMO_CLASS_SEARCH,
+  // Colleague Self-Service guest course search (same hosts the scrapers use).
+  "amarillo-college": "https://acselfservice.actx.edu/Student/Courses",
+  "odessa-college": "https://sserv.odessa.edu/Student/Courses",
+  "college-of-the-mainland": "https://selfserve.com.edu/Student/Courses",
+  "mclennan-community-college": "https://mymcc.mclennan.edu/Student/Courses",
+  "alvin-community-college":
+    "https://self-service.alvincollege.edu/Student/Courses",
+  "vernon-college":
+    "https://vernon-ss.colleague.elluciancloud.com/Student/Courses",
+  "del-mar-college": "https://colss-prod.ec.delmar.edu/Student/Courses",
+  // Public, but Cloudflare Bot Management 403s curl — renders fine in a real
+  // browser ("Search for Courses and Course Sections", verified in Chromium).
+  "central-texas-college": "https://student.ctcd.org/Student/Courses",
+  // Jenzabar ICS public course-search portlets.
+  "kilgore-college":
+    "https://accesskc.kilgore.edu/ICS/Current_Students/Academics/AddDrop_Courses.jnz",
+  "panola-college":
+    "https://pctportal.jenzabarcloud.com/ICS/Admin/Shared_Features/Everyone.jnz?portlet=Student_Registration&screen=StudentRegistrationPortlet_CourseSearchView&screenType=next",
+  "paris-junior-college":
+    "https://mypjc.parisjc.edu/ICS/Portal_Homepage.jnz?portlet=AddDrop_Courses&screen=Advanced+Course+Search&screenType=next",
+  "north-central-texas-college":
+    "https://my.nctc.edu/ICS/Academics/Academics_Homepage.jnz?portlet=AddDrop_Courses&screen=Advanced+Course+Search&screenType=next",
+  "texarkana-college":
+    "https://my.texarkanacollege.edu/ICS/Home.jnz?portlet=Course_Search&screen=Advanced+Course+Search&screenType=next",
+  "midland-college":
+    "https://mymcportal.midland.edu/ICS/Course_Search.jnz?portlet=Course_Search&screen=Advanced+Course+Search&screenType=next",
+  "northeast-texas-community-college": "https://myeagle.ntcc.edu/ICS/Find_Courses/",
+  // Banner SSB 9 class search.
+  "victoria-college":
+    "https://xe-stu.victoriacollege.edu/StudentRegistrationSsb/ssb/classSearch/classSearch",
+  "laredo-college":
+    "https://reg-prod.laredo.elluciancloud.com:8103/StudentRegistrationSsb/ssb/classSearch/classSearch",
+  "wharton-county-junior-college":
+    "https://reg-prod.wcjc.elluciancloud.com:8103/StudentRegistrationSsb/ssb/classSearch/classSearch",
+  "san-jacinto-community-college":
+    "https://reg-prod.ec.sanjac.edu/StudentRegistrationSsb/ssb/classSearch/classSearch",
+  "lamar-institute-of-technology":
+    "https://reg-prod.litsaas.elluciancloud.com:8103/StudentRegistrationSsb/ssb/classSearch/classSearch",
+  // Banner 8 dynamic schedule.
+  "tyler-junior-college": "https://ssbprod.tjc.edu:8100/prod/bwckschd.p_disp_dyn_sched",
+  // Bespoke public schedule apps (same endpoints the scrapers read).
+  "austin-community-college-district": "https://www6.austincc.edu/schedule/",
+  "collin-county-community-college-district": "https://collin-coursebook.web.app/",
+  "dallas-college": "https://schedule.dallascollege.edu/",
+  "grayson-college": "https://planner.grayson.edu/Planner/CourseSearch",
+  "brazosport-college":
+    "https://mybcnext.brazosport.edu/CMCPortal/Common/CourseSchedule.aspx",
+  "cisco-college": "https://admin.cisco.edu/cc4/web_course_avail.html",
+  "clarendon-college": "https://ci.clarendoncollege.edu/",
+  "lone-star-college-system": "https://campus.lonestar.edu/classsearch.htm",
+  "howard-college": HOWARD_CLASS_SEARCH,
+  "southwest-college-for-the-deaf": HOWARD_CLASS_SEARCH,
+  // Per-term PDF schedules live on this page.
+  "frank-phillips-college": "https://fpctx.edu/student-resources/",
+  // Public schedule app; its search POST is Turnstile-walled for bots
+  // (documentedCeilings) but the page renders fine for humans (verified in
+  // Chromium: "TVCC Schedule Of Classes").
+  "trinity-valley-community-college": "https://webapps.tvcc.edu/ClassSched2/",
+};
+
+// Honest fallback for colleges with no public class search (login-walled SIS —
+// see documentedCeilings — or no scraper yet): the college's own homepage,
+// from data/tx/scorecard schoolUrl. Never tacc.org per college — TACC is a
+// trade association, useless to a student trying to register.
+const COLLEGE_HOMEPAGES: Record<string, string> = {
+  "angelina-college": "https://www.angelina.edu/",
+  "blinn-college-district": "https://www.blinn.edu/",
+  "coastal-bend-college": "https://www.coastalbend.edu/",
+  "el-paso-community-college": "https://www.epcc.edu/",
+  "galveston-college": "https://www.gc.edu/",
+  "hill-college": "https://www.hillcollege.edu/",
+  "lamar-state-college-orange": "https://www.lsco.edu/",
+  "lamar-state-college-port-arthur": "https://www.lamarpa.edu/",
+  "lee-college": "https://www.lee.edu/",
+  "navarro-college": "https://www.navarrocollege.edu/",
+  "ranger-college": "https://www.rangercollege.edu/",
+  "south-plains-college": "https://www.southplainscollege.edu/",
+  "south-texas-college": "https://www.southtexascollege.edu/",
+  // Canonical domain; the whole swtjc.edu web presence was timing out at probe
+  // time (2026-06-12) — kept anyway since it's still the college's only site.
+  "southwest-texas-junior-college": "https://www.swtjc.edu/",
+  "tarrant-county-college-district": "https://www.tccd.edu/",
+  "temple-college": "https://www.templejc.edu/",
+  "texas-southmost-college": "https://www.tsc.edu/",
+  "texas-state-technical-college": "https://www.tstc.edu/",
+  "weatherford-college": "https://www.wc.edu/",
+  "western-texas-college": "https://www.wtc.edu/",
+};
+
+const collegeUrl = (collegeSlug: string): string =>
+  REGISTRATION_URLS[collegeSlug] ??
+  COLLEGE_HOMEPAGES[collegeSlug] ??
+  "https://www.tacc.org/";
+
 const txConfig: StateConfig = {
   slug: "tx",
   name: "Texas",
@@ -34,11 +152,10 @@ const txConfig: StateConfig = {
   defaultZip: "77002",
   defaultZipCity: "Houston",
 
-  courseDiscoveryUrl: (_collegeSlug: string, _prefix: string, _number: string) =>
-    "https://www.tacc.org/",
+  courseDiscoveryUrl: (collegeSlug: string, _prefix: string, _number: string) =>
+    collegeUrl(collegeSlug),
 
-  collegeCoursesUrl: (_collegeSlug: string) =>
-    "https://www.tacc.org/",
+  collegeCoursesUrl: (collegeSlug: string) => collegeUrl(collegeSlug),
 
   branding: {
     siteName: "Community College Path Texas",
