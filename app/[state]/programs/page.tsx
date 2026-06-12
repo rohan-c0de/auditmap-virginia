@@ -24,6 +24,7 @@ import {
   qualifies,
   getQualifyingProgramSlugs,
 } from "@/lib/programs";
+import { loadStateSummary } from "@/lib/state-summary";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const revalidate = 1209600; // 14 days
@@ -54,7 +55,11 @@ export async function generateMetadata(
   const { state } = await props.params;
   if (!isValidState(state)) return { title: "Not Found" };
   const config = requireStateConfig(state);
-  const slugs = await getQualifyingProgramSlugs(state);
+  // Manifest-first (the live getQualifyingProgramSlugs aggregates every program
+  // across colleges — ~13s for a big state, which can time out the ISR
+  // revalidation and leave this page frozen). Fallback to live when absent.
+  const slugs =
+    loadStateSummary(state)?.programSlugs ?? (await getQualifyingProgramSlugs(state));
 
   const title = `Programs at ${config.name} Community Colleges — Earnings, Transfer, and Course Comparison`;
   const description = `Compare ${slugs.length} program${slugs.length === 1 ? "" : "s"} across ${config.systemName} community colleges. Side-by-side awards-per-year, graduate earnings, and transfer details for popular majors at every CC in ${config.name}.`;

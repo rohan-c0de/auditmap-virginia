@@ -23,6 +23,7 @@ import { subjectName } from "@/lib/subjects";
 import { computeCourseAvailabilityProfile } from "@/lib/course-stats";
 import { getBestProgramForPrefix } from "@/lib/programs/registry";
 import { getQualifyingProgramSlugs } from "@/lib/programs";
+import { loadStateSummary } from "@/lib/state-summary";
 import SectionHeading from "@/components/SectionHeading";
 import AdUnit from "@/components/AdUnit";
 import TrackView from "@/components/TrackView";
@@ -187,8 +188,13 @@ export default async function StateSubjectPage(props: PageProps) {
   // link so subject-page visitors discover the cross-college comparison
   // view with earnings data.
   const matchedProgram = getBestProgramForPrefix(prefix);
+  // Use the precomputed summary manifest (same source the state home + course
+  // page use) instead of the live getQualifyingProgramSlugs(), which loops every
+  // program × per-college section aggregation — ~13s for CA, pushing this page
+  // to ~12.6s (on the edge of Vercel's 15s 504). Manifest read is ~1ms; the
+  // live call stays only as a fallback when the manifest is absent.
   const qualifyingSlugs = matchedProgram
-    ? await getQualifyingProgramSlugs(state)
+    ? (loadStateSummary(state)?.programSlugs ?? (await getQualifyingProgramSlugs(state)))
     : [];
   const programLink =
     matchedProgram && qualifyingSlugs.includes(matchedProgram.slug)
