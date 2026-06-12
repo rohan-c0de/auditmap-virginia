@@ -89,3 +89,102 @@ export function resolveProgramBySlug<T extends { title: string; credential: stri
   }
   return null;
 }
+
+// ── honors-variant folding ──────────────────────────────────────────────────
+
+/** If `title` is an honors variant ("Honors X", "X (Honors)", "X - Honors"),
+ *  return the base title X (normalized); otherwise null. */
+function honorsBaseTitle(title: string): string | null {
+  const t = (title ?? "").trim();
+  const prefix = t.match(/^honors\s+(.+)$/i);
+  if (prefix) return normTitle(prefix[1]);
+  const suffix = t.match(/^(.+?)\s*(?:\(\s*honors\s*\)|[-–—]\s*honors)$/i);
+  if (suffix) return normTitle(suffix[1]);
+  return null;
+}
+
+function normTitle(s: string): string {
+  return s.toLowerCase().replace(/\s+/g, " ").trim();
+}
+
+/**
+ * Collapse honors variants into their base course's `or_alternatives`.
+ *
+ * Some catalogs (e.g. Tri-C/OH) list "ENG 1010 College Composition I" and
+ * "ENG 101H Honors College Composition I" as two separate rows in the same
+ * requirement group when the real requirement is "take either". Rendering
+ * both as required overstates the degree — the exact mistake a first-gen
+ * student can't catch. Fold rule (deliberately narrow): same prefix, and one
+ * title is exactly the honors-marked form of the other.
+ *
+ * Pure + non-mutating: returns new course objects; safe for client bundles.
+ */
+export function foldHonorsVariants<
+  T extends {
+    prefix: string;
+    number: string;
+    title: string;
+    credits: number | null;
+    or_alternatives: Array<{ prefix: string; number: string; title: string }>;
+  },
+>(courses: T[]): T[] {
+  const folded = new Set<number>();
+  const out: T[] = [];
+
+  for (let i = 0; i < courses.length; i++) {
+    if (folded.has(i)) continue;
+    const base = courses[i];
+    if (honorsBaseTitle(base.title) !== null) {
+      // This row is itself an honors variant: fold it only if its base course
+      // exists somewhere in the group (handled when we reach the base);
+      // otherwise keep it as-is.
+      const hasBase = courses.some(
+        (c, j) =>
+          j !== i &&
+          !folded.has(j) &&
+          c.prefix === base.prefix &&
+          normTitle(c.title) === honorsBaseTitle(base.title),
+      );
+      if (hasBase) continue; // will be absorbed by its base course below
+      out.push(base);
+      continue;
+    }
+
+    const variants: T[] = [];
+    let credits = base.credits;
+    for (let j = 0; j < courses.length; j++) {
+      if (j === i || folded.has(j)) continue;
+      const cand = courses[j];
+      if (
+        cand.prefix === base.prefix &&
+        honorsBaseTitle(cand.title) === normTitle(base.title)
+      ) {
+        variants.push(cand);
+        folded.add(j);
+        // Recover credits the scraper lost on one of the pair.
+        if ((credits == null || credits === 0) && (cand.credits ?? 0) > 0) {
+          credits = cand.credits;
+        }
+      }
+    }
+
+    if (variants.length === 0) {
+      out.push(base);
+    } else {
+      out.push({
+        ...base,
+        credits,
+        or_alternatives: [
+          ...base.or_alternatives,
+          ...variants.map((v) => ({
+            prefix: v.prefix,
+            number: v.number,
+            title: v.title,
+          })),
+        ],
+      });
+    }
+  }
+
+  return out;
+}

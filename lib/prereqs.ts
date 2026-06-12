@@ -10,6 +10,12 @@
 
 import fs from "fs";
 import path from "path";
+import { parsePrereqGroups } from "@/lib/prereq-groups";
+
+// Parsing lives in lib/prereq-groups.ts (pure, client-safe) so the semester
+// planner and this server-side chain builder share one implementation.
+// Re-exported here because the chain route and its tests import it from us.
+export { parsePrereqGroups };
 
 /**
  * Prerequisite chain tree node. Each node represents a course and its
@@ -60,56 +66,6 @@ export function buildInverseIndex(prereqs: PrereqsMap): Map<string, string[]> {
     }
   }
   return inverse;
-}
-
-/**
- * Parse prereq text into AND-of-OR groups.
- * "ACC 101 and (BUS 107 or CIS 107)" → [["ACC 101"], ["BUS 107","CIS 107"]]
- */
-export function parsePrereqGroups(text: string, courses: string[]): string[][] {
-  if (courses.length === 0) return [];
-  if (courses.length === 1) return [courses];
-
-  const chunks: string[] = [];
-  let depth = 0;
-  let current = "";
-  const tokens = text.split(/(\s+)/);
-  for (const token of tokens) {
-    for (const ch of token) {
-      if (ch === "(") depth++;
-      if (ch === ")") depth--;
-    }
-    if (token.toLowerCase() === "and" && depth === 0 && current.trim()) {
-      chunks.push(current.trim());
-      current = "";
-    } else {
-      current += token;
-    }
-  }
-  if (current.trim()) chunks.push(current.trim());
-
-  const groups: string[][] = [];
-  const assigned = new Set<string>();
-  for (const chunk of chunks) {
-    const chunkUpper = chunk.toUpperCase();
-    const group: string[] = [];
-    for (const course of courses) {
-      if (assigned.has(course)) continue;
-      // Case-insensitive on both sides: course codes can be stored mixed-case
-      // ("Business (BUS) 121"), and a case-sensitive match silently drops them
-      // out of their OR group — making "X or Y" render as "X and Y", a wrong
-      // (and costly) prerequisite signal.
-      if (chunkUpper.includes(course.toUpperCase())) {
-        group.push(course);
-        assigned.add(course);
-      }
-    }
-    if (group.length > 0) groups.push(group);
-  }
-  for (const course of courses) {
-    if (!assigned.has(course)) groups.push([course]);
-  }
-  return groups;
 }
 
 /**

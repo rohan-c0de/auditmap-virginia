@@ -31,6 +31,7 @@ import {
   countRealCourses,
   programSlug,
   resolveProgramBySlug,
+  foldHonorsVariants,
   PLAN_MIN_COURSES,
 } from "@/lib/programs/plan-shared";
 import type { RequiredCourse } from "@/lib/types";
@@ -281,7 +282,9 @@ async function buildMajorPlanInner(
   let listedCourses = 0;
 
   const groups: PlanGroup[] = program.requirement_groups.map((g) => {
-    const real = g.courses.filter(isRealCourse);
+    // Fold "Honors X" rows into their base course as or-alternatives so the
+    // plan never lists both as separately required (Tri-C nursing shape).
+    const real = foldHonorsVariants(g.courses.filter(isRealCourse));
     const courses: PlanCourse[] = real.map((c: RequiredCourse) => {
       const key = joinKey(c.prefix, c.number);
       const rawMappings = transferIndex.get(key) ?? [];
@@ -371,7 +374,7 @@ async function buildMajorPlanInner(
 // cached objects don't deserialize wrong.
 const _cachedBuildMajorPlan = unstable_cache(
   (state: string, collegeId: string, slug: string) => buildMajorPlanInner(state, collegeId, slug),
-  ["program-plan-v1"],
+  ["program-plan-v2"], // v2: honors variants folded into or_alternatives
   { revalidate: 86400, tags: ["transfers", "programs"] },
 );
 
@@ -469,7 +472,9 @@ export function buildSequence(
     const deps = intra.get(c.code) ?? [];
     const minTerm =
       deps.length === 0 ? 0 : Math.max(...deps.map((d) => termOf.get(d) ?? 0)) + 1;
-    const cr = c.credits ?? 3;
+    // `|| 3`: 0 credits in program data means "scraper lost the value", not a
+    // free course — pack it like a typical 3-credit class.
+    const cr = c.credits || 3;
     let t = minTerm;
     for (;;) {
       if (t >= terms.length) terms.push({ courses: [], credits: 0 });
