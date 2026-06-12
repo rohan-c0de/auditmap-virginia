@@ -109,9 +109,36 @@ function buildProvider(spec: string | undefined): { llm: Classifier; modelVersio
   }
 }
 
-/** Chain N classifiers: try each in order, falling to the next on any throw. */
-export function chainAll(classifiers: Classifier[]): Classifier {
-  return classifiers.reduce((primary, next) => chain(primary, next));
+/**
+ * Chain N classifiers: try each in order, falling to the next on any throw.
+ *
+ * When EVERY provider fails, the thrown error's message lists each provider's
+ * failure (labelled by `labels[i]` — pass the modelVersions). Before this, only
+ * the LAST provider's error survived to the route's 503 `cause`, which made
+ * outages look like the wrong provider was broken: a dead Groq key surfaced as
+ * "Cloudflare neurons exhausted" because Cloudflare was merely the last
+ * fallback in line (2026-06-12 incident — /ask was down in every state).
+ */
+export function chainAll(classifiers: Classifier[], labels?: string[]): Classifier {
+  if (classifiers.length === 1) return classifiers[0];
+  return async (query, state) => {
+    const failures: string[] = [];
+    for (let i = 0; i < classifiers.length; i++) {
+      try {
+        return await classifiers[i](query, state);
+      } catch (err) {
+        const label = labels?.[i] ?? `provider ${i + 1}/${classifiers.length}`;
+        const msg = err instanceof Error ? err.message : String(err);
+        failures.push(`[${label}] ${msg}`);
+        if (i < classifiers.length - 1) {
+          console.warn(
+            `[classifier] ${label} failed (${msg.slice(0, 160)}); trying next provider`,
+          );
+        }
+      }
+    }
+    throw new Error(`all ${classifiers.length} classifier providers failed: ${failures.join(" | ")}`);
+  };
 }
 
 /**
@@ -143,9 +170,47 @@ function providerDefault(): { llm: Classifier; modelVersion: string } | null {
     .filter((p) => p.modelVersion !== primary.modelVersion);
 
   if (fallbacks.length === 0) return primary;
+  const providers = [primary, ...fallbacks];
   return {
-    llm: chainAll([primary, ...fallbacks].map((p) => p.llm)),
+    llm: chainAll(
+      providers.map((p) => p.llm),
+      providers.map((p) => p.modelVersion),
+    ),
     modelVersion: primary.modelVersion,
+  };
+}
+
+// "ENG 111", "eng-111", "MATH 151A" — subject prefix + number, nothing else.
+const BARE_COURSE_CODE = /^([a-z]{2,5})[\s-]*(\d{2,4}[a-z]{0,2})$/i;
+
+/**
+ * Skip the LLM entirely for bare course-code queries. The classifier would
+ * return a course intent whose only payload is the code itself — which the
+ * keyword search already parses natively — and the answer layer maps course
+ * intents to a no-answer. So the LLM call buys nothing, yet it's the most
+ * common query shape AND the one bots burn quota with: every crawled
+ * /{state}/courses?q=ENG+111 deep link fires /ask with a distinct code,
+ * bypassing the Supabase cache. Groq's free tier is ~45 classify calls/day
+ * (200k tokens ÷ ~4.4k per call); a catalog crawl exhausts it before breakfast
+ * (2026-06-12: both Groq pools + Cloudflare's neurons were drained, so /ask
+ * 503'd in every state). Empty studentSummary = the UI renders no card.
+ */
+export function bareCourseCodeShortcut(query: string): ClassifiedIntent | null {
+  const m = query.trim().match(BARE_COURSE_CODE);
+  if (!m) return null;
+  return {
+    intent: {
+      type: "course",
+      keyword: null,
+      filters: { course: { prefix: m[1].toUpperCase(), number: m[2].toUpperCase() } },
+    },
+    secondaryIntent: null,
+    confidence: 1,
+    reasoning: "bare course code — regex shortcut, no LLM call",
+    studentSummary: "",
+    clarifyingQuestion: null,
+    sourceCollege: null,
+    suggestedFollowups: [],
   };
 }
 
@@ -160,6 +225,9 @@ export function classifierWith(opts: ClassifierWithOptions = {}): Classifier {
   const modelVersion = opts.modelVersion ?? provider?.modelVersion ?? CLASSIFIER_MODEL;
 
   return async (query: string, state: string): Promise<ClassifiedIntent> => {
+    // Cheapest first: bare course codes never need the LLM or the cache.
+    const shortcut = bareCourseCodeShortcut(query);
+    if (shortcut) return shortcut;
     const cached = await cache.get(query, state, modelVersion);
     if (cached) return cached;
     const fresh = await llm(query, state);

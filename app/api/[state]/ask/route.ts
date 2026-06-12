@@ -79,14 +79,26 @@ export async function GET(request: NextRequest, context: RouteContext) {
   try {
     classification = await classifyQuery(q, state);
   } catch (err) {
-    // Anthropic outage, missing key, billing issue, network error, etc.
-    // Log server-side, return 503 so the UI knows to skip the answer card.
-    console.error("[ask] classifier failed:", err);
+    // Provider outage, missing key, billing issue, network error, etc.
+    // chainAll() aggregates every provider's failure into one message, so this
+    // names the broken provider instead of just the last fallback in line.
+    // Structured line first (grep `ask.classifier_failed` in Vercel logs),
+    // human-readable error second.
+    const cause = err instanceof Error ? err.message : "unknown";
+    console.error(
+      JSON.stringify({
+        event: "ask.classifier_failed",
+        state,
+        queryLength: q.length,
+        cause: cause.slice(0, 600),
+      }),
+    );
     return NextResponse.json(
       {
         error: "Classifier service unavailable.",
+        code: "classifier_unavailable",
         // Surface the high-level cause without leaking stack details.
-        cause: err instanceof Error ? err.message : "unknown",
+        cause,
       },
       { status: 503 },
     );

@@ -279,6 +279,10 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
   const [answer, setAnswer] = useState<Answer | null>(null);
   const [secondaryAnswer, setSecondaryAnswer] = useState<Answer | null>(null);
   const [classification, setClassification] = useState<ClassificationSummary | null>(null);
+  // True when /ask 5xxed (classifier outage) or the fetch itself failed. Shown
+  // as a small note so a broken classifier is visible instead of silently
+  // degrading every natural-language question to keyword soup.
+  const [askUnavailable, setAskUnavailable] = useState(false);
 
   // Fetch transfer lookup data on mount (small, cached 24h)
   useEffect(() => {
@@ -317,6 +321,7 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
       setSecondaryAnswer(null);
       setClassification(null);
     }
+    setAskUnavailable(false);
 
     const trimmed = searchQuery.trim();
     // The user query may be natural language ("Computer Science classes on
@@ -418,9 +423,15 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
             if (!llmTransferTo && sec.university) llmTransferTo = sec.university;
           }
         }
+      } else if (askRes.status >= 500) {
+        // Classifier outage (all providers down, missing key, quota). The
+        // course search below still runs on the raw query — but say so, or a
+        // natural-language question silently turns into keyword soup.
+        setAskUnavailable(true);
       }
     } catch {
-      /* silent — no answer card, fall through to raw-query search below */
+      // Network failure reaching /ask — same degradation as a 5xx.
+      setAskUnavailable(true);
     }
 
     // Sync LLM-extracted filters into UI state when the user hasn't set
@@ -500,13 +511,17 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
       // duplicate the query — and fetch only the natural-language answer card so
       // the deep link still matches the interactive search experience.
       fetch(`/api/${state}/ask?q=${encodeURIComponent(initialQuery)}`)
-        .then((r) => (r.ok ? r.json() : null))
+        .then((r) => {
+          if (r.ok) return r.json();
+          if (r.status >= 500) setAskUnavailable(true);
+          return null;
+        })
         .then((d) => {
           if (d?.answer) setAnswer(d.answer);
           if (d?.secondaryAnswer) setSecondaryAnswer(d.secondaryAnswer);
           if (d?.classification) setClassification(d.classification);
         })
-        .catch(() => {});
+        .catch(() => setAskUnavailable(true));
       return;
     }
     // No server-rendered results (no keyword match, or a natural-language query
@@ -778,6 +793,18 @@ export default function CourseSearchClient({ state, systemName, collegeCount, co
           transfer to GMU?", renders just its typed answer body — passing
           classification={null} naturally suppresses the duplicate summary
           UI on the second card. */}
+      {/* Classifier outage: the question couldn't be interpreted, but keyword
+          search still ran. Without this note the failure is invisible — the
+          user just sees worse results and assumes the site can't answer. */}
+      {askUnavailable && !loading && (
+        <div className="rounded-lg border border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-900/30 p-3 mb-4" role="status">
+          <p className="text-sm text-amber-800 dark:text-amber-300">
+            We couldn&apos;t interpret your question right now, so these are
+            plain keyword matches. Try again in a minute for a direct answer.
+          </p>
+        </div>
+      )}
+
       {answer && (
         <AnswerCard
           answer={answer}

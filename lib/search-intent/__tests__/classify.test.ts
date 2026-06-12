@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from "vitest";
-import { classifierWith } from "../classify";
+import { bareCourseCodeShortcut, classifierWith } from "../classify";
 import { hashQuery, memoryCache, normalizeQuery, nullCache } from "../cache";
 import type { Classifier } from "../types";
 
@@ -132,5 +132,55 @@ describe("classifierWith", () => {
     await classifier("hello", "va");
     await classifier("hello", "va");
     expect(llm).toHaveBeenCalledTimes(2);
+  });
+});
+
+describe("bareCourseCodeShortcut", () => {
+  it("matches bare course codes in common spellings", () => {
+    for (const q of ["ENG 111", "eng111", "BIO-256", "MATH 151A", "  cs 50  ", "CRTV 121F"]) {
+      const result = bareCourseCodeShortcut(q);
+      expect(result, q).not.toBeNull();
+      expect(result!.intent.type).toBe("course");
+    }
+  });
+
+  it("extracts an uppercased prefix + number", () => {
+    const result = bareCourseCodeShortcut("eng-111");
+    expect(result!.intent).toEqual({
+      type: "course",
+      keyword: null,
+      filters: { course: { prefix: "ENG", number: "111" } },
+    });
+  });
+
+  it("returns an empty studentSummary so the UI renders no card", () => {
+    expect(bareCourseCodeShortcut("ENG 111")!.studentSummary).toBe("");
+  });
+
+  it("does NOT match natural-language or filtered queries", () => {
+    for (const q of [
+      "does ENG 111 transfer to GMU?",
+      "ENG 111 online",
+      "biology",
+      "intro psychology",
+      "prereqs for BIO 256",
+      "free college if I'm 65+",
+      "summer 2026",
+    ]) {
+      expect(bareCourseCodeShortcut(q), q).toBeNull();
+    }
+  });
+
+  it("classifierWith never touches cache or LLM for a bare code", async () => {
+    const llm: Classifier = vi.fn();
+    const cacheGet = vi.fn();
+    const classifier = classifierWith({
+      cache: { get: cacheGet, put: vi.fn() },
+      llm,
+    });
+    const result = await classifier("ENG 111", "nc");
+    expect(result.intent.type).toBe("course");
+    expect(llm).not.toHaveBeenCalled();
+    expect(cacheGet).not.toHaveBeenCalled();
   });
 });
