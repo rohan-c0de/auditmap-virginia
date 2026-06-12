@@ -19,11 +19,13 @@ export default function Header({
   stateName,
   transferSupported = true,
   prereqsAvailable = false,
+  programsAvailable = true,
 }: {
   state: string;
   stateName?: string;
   transferSupported?: boolean;
   prereqsAvailable?: boolean;
+  programsAvailable?: boolean;
 }) {
   // `open` is the transient show/hide; `pinned` (persisted) keeps the sidebar
   // open across navigation on desktop. `isDesktop` gates pinning + push.
@@ -104,7 +106,7 @@ export default function Header({
     if (next) setOpen(true);
   };
 
-  const columns = buildNavColumns(state, { transferSupported, prereqsAvailable });
+  const columns = buildNavColumns(state, { transferSupported, prereqsAvailable, programsAvailable });
   const stateHome = `/${state}`;
   const isActive = (href: string) => isNavLinkActive(pathname, href, stateHome);
 

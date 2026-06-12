@@ -62,6 +62,14 @@ export const DESKTOP_MQ = "(min-width: 1024px)";
 export type NavGating = {
   transferSupported: boolean;
   prereqsAvailable: boolean;
+  /**
+   * Whether the state has at least one qualifying program. When false, both
+   * "/programs" and "/choose" notFound() (a state with no programs that clear
+   * the thin-content threshold), so we hide their nav links rather than link
+   * to a soft-404 — matching the state home, which already hides its program
+   * chips on the same signal.
+   */
+  programsAvailable: boolean;
 };
 
 /**
@@ -78,13 +86,16 @@ export function sidebarVisible(
 }
 
 /**
- * Hide /transfer where transfers aren't supported and /plan where prereqs
- * aren't available; every other item always shows.
+ * Hide /transfer where transfers aren't supported, /plan where prereqs aren't
+ * available, and /programs + /choose where the state has no qualifying
+ * programs (both notFound() there); every other item always shows.
  */
 export function showNavItem(path: string, g: NavGating): boolean {
   return (
     (path !== "/transfer" || g.transferSupported) &&
-    (path !== "/plan" || g.prereqsAvailable)
+    (path !== "/plan" || g.prereqsAvailable) &&
+    (path !== "/programs" || g.programsAvailable) &&
+    (path !== "/choose" || g.programsAvailable)
   );
 }
 
@@ -98,10 +109,13 @@ export function buildNavColumns(state: string, g: NavGating): NavColumn[] {
     label: i.label,
   });
   return [
+    // A task group whose every item is gated out (e.g. "Programs & majors" in a
+    // state with no qualifying programs) is dropped entirely — otherwise its
+    // heading renders with no links under it.
     ...NAV_GROUPS.map((grp) => ({
       heading: grp.heading,
       links: grp.items.filter((i) => showNavItem(i.path, g)).map(toLink),
-    })),
+    })).filter((col) => col.links.length > 0),
     {
       heading: "Guides",
       links: GUIDES_ITEMS.map((i) => ({ href: i.href, label: i.label })),

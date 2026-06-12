@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import { hasPrereqsCoverage, isValidState } from "@/lib/states/registry";
 import { requireStateConfig } from "@/lib/states/route-helpers";
+import { loadStateSummary } from "@/lib/state-summary";
+import { getQualifyingProgramSlugs } from "@/lib/programs";
 type Props = {
   children: React.ReactNode;
   params: Promise<{ state: string }>;
@@ -52,6 +54,16 @@ export default async function StateLayout({ children, params }: Props) {
   const baseUrl =
     process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com";
 
+  // Gate the Programs/Find-your-program nav links on whether the state has any
+  // qualifying program — otherwise those links land on a soft-404 (the pages
+  // notFound() with no qualifying programs). Use the same precomputed manifest
+  // the state home uses for its program chips so nav and chips always agree;
+  // fall back to the live check only when the manifest is absent.
+  const programSummary = loadStateSummary(state);
+  const programsAvailable = programSummary
+    ? programSummary.programSlugs.length > 0
+    : (await getQualifyingProgramSlugs(state).catch(() => [])).length > 0;
+
   return (
     <>
       <script
@@ -79,6 +91,7 @@ export default async function StateLayout({ children, params }: Props) {
         stateName={config.name}
         transferSupported={config.transferSupported}
         prereqsAvailable={hasPrereqsCoverage(state)}
+        programsAvailable={programsAvailable}
       />
 
       {/* Main content */}
