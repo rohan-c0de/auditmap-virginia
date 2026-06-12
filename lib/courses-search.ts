@@ -1,7 +1,7 @@
 import type { CourseSection, Institution } from "./types";
 import { getZipCoordinates, calculateDistance } from "./geo";
 import { searchSections, getDistinctSubjects } from "./courses";
-import { subjectName } from "./subjects";
+import { subjectName, subjectPrefixesForName } from "./subjects";
 
 // ---------------------------------------------------------------------------
 // Cross-college search
@@ -75,8 +75,10 @@ export function parseQuery(q: string): {
 } {
   const trimmed = q.trim().toUpperCase();
 
-  // "ENG 111" or "ENG111"
-  const exactMatch = trimmed.match(/^([A-Z]{2,4})\s*(\d{3})$/);
+  // "ENG 111" or "ENG111" — also 4-digit numbering ("ENGL 1301", TX/FL).
+  // With only \d{3}, "ENGL 1301" fell through to the title-keyword path and
+  // returned the corequisite courses that MENTION it, not the course itself.
+  const exactMatch = trimmed.match(/^([A-Z]{2,4})\s*(\d{3,4})$/);
   if (exactMatch) {
     return { prefix: exactMatch[1], number: exactMatch[2], keyword: null };
   }
@@ -184,6 +186,8 @@ export async function searchCoursesAcrossColleges(
     days?: string[];
     timeOfDay?: "morning" | "afternoon" | "evening";
     zip?: string;
+    /** Optional cap in miles around `zip`; ignored without a resolvable zip. */
+    radius?: number;
   } = {},
   limit = 10,
   offset = 0,
@@ -196,22 +200,72 @@ export async function searchCoursesAcrossColleges(
   recovery?: SearchRecovery;
 }> {
   let { prefix, number, keyword } = parseQuery(query);
+
+  // Subject-aware keyword search. A keyword like "english" only title-matches
+  // colleges that literally word their titles that way — Houston CC titles
+  // ENGL 1301 "Composition I", so its sections never matched while Austin CC's
+  // "English…" titles did. Resolve the keyword as a subject NAME ("english" →
+  // ENG/ENGL/ENC via lib/subjects.ts) and UNION those prefixes' sections with
+  // the title matches, so per-college title wording can't hide a subject.
+  // Restricted to prefixes the state actually offers (getDistinctSubjects is
+  // cached) so unused prefixes never cost a query.
+  let subjectPrefixes: string[] = [];
+  if (keyword) {
+    const candidates = subjectPrefixesForName(keyword);
+    if (candidates.length > 0) {
+      const stateSubjects = new Set(await getDistinctSubjects(term, state));
+      subjectPrefixes = candidates.filter((p) => stateSubjects.has(p));
+    }
+  }
+  const subjectPrefixSet = new Set(subjectPrefixes);
+
   // Push the query predicate into Postgres instead of loading every section
   // for the term and filtering in JS (which 504'd on large states like CA,
   // ~188k rows). The JS filters below still run on this already-narrowed set,
   // so output is unchanged — just over 10s–1000s of rows.
-  let allCourses = await searchSections(term, state, { prefix, number, keyword });
+  let allCourses: CourseSection[];
+  if (subjectPrefixes.length > 0) {
+    const batches = await Promise.all([
+      searchSections(term, state, { prefix: null, number: null, keyword }),
+      ...subjectPrefixes.map((p) =>
+        searchSections(term, state, { prefix: p, number: null, keyword: null })
+      ),
+    ]);
+    // Dedupe across batches (a "English Composition" title row also arrives
+    // via its ENG prefix batch). The key includes the meeting fields because
+    // one CRN can have several meeting rows and CourseSection carries no row
+    // id — crn alone would collapse a lecture+lab pair into one row.
+    const seen = new Set<string>();
+    allCourses = [];
+    for (const rows of batches) {
+      for (const r of rows) {
+        const k = `${r.college_code}|${r.crn}|${r.course_prefix}${r.course_number}|${r.days}|${r.start_time}|${r.end_time}`;
+        if (!seen.has(k)) {
+          seen.add(k);
+          allCourses.push(r);
+        }
+      }
+    }
+  } else {
+    allCourses = await searchSections(term, state, { prefix, number, keyword });
+  }
 
   // Zero-result rescue for natural-language keyword phrases. A keyword like
   // "math courses without prerequisite" matches no course TITLE verbatim, so the
   // server-side search returns nothing (this also happens when the /ask
   // classifier leaves `keyword` null and the client searches the raw sentence).
-  // Strip filler words and re-query on the remaining subject token(s). Because a
-  // short subject word re-parses as a PREFIX (e.g. "math" → MATH), this recovers
-  // the whole subject, not just title matches. Only runs when the normal search
-  // found nothing, so it can never change a query that already returns results.
-  if (allCourses.length === 0 && keyword) {
-    const tokens = meaningfulKeywordTokens(keyword);
+  // Strip filler words and re-query on the remaining subject token(s). Only runs
+  // when the normal search found nothing, so it can never change a query that
+  // already returns results.
+  //
+  // Also fires for a bare-PREFIX parse that found nothing: "math" parses as
+  // prefix MATH, but a state that numbers its math courses MAT (NC) has no MATH
+  // rows — the subject-name match below ("mathematics".includes("math")) then
+  // recovers the state's real prefix instead of dead-ending at 0 results.
+  const rescueKeyword =
+    keyword ?? (prefix && !number ? query.trim().toLowerCase() : null);
+  if (allCourses.length === 0 && rescueKeyword) {
+    const tokens = meaningfulKeywordTokens(rescueKeyword);
     if (tokens.length > 0) {
       // Resolve each token to THIS state's actual subject prefixes via subject
       // names — so "math" → MTH (VA) / MAT (NC) / MATH (CT,TX), not a literal
@@ -263,6 +317,35 @@ export async function searchCoursesAcrossColleges(
     if (zipInfo) userCoords = { lat: zipInfo.lat, lng: zipInfo.lng };
   }
 
+  // Per-college distance to the user's zip (nearest campus), computed once and
+  // shared by the radius filter, the per-college display value, and the course
+  // ordering so the three can never disagree.
+  const collegeDistance = new Map<string, number>();
+  if (userCoords) {
+    for (const inst of institutions) {
+      if (inst.campuses.length === 0) continue;
+      const d = Math.min(
+        ...inst.campuses.map((c) =>
+          calculateDistance(userCoords!.lat, userCoords!.lng, c.lat, c.lng)
+        )
+      );
+      collegeDistance.set(inst.college_slug, Math.round(d * 10) / 10);
+    }
+  }
+
+  // Optional radius cap (miles around the zip). Scopes the section universe
+  // BEFORE the query/mode/days/timeOfDay steps — like `term` does — so the
+  // empty-state recovery counts never suggest sections at colleges outside the
+  // radius. Colleges with no campus coordinates are kept: we can't show a
+  // distance for them, but we also can't prove they're far.
+  const radius = filters.radius;
+  if (userCoords && radius && radius > 0) {
+    allCourses = allCourses.filter((s) => {
+      const d = collegeDistance.get(s.college_code);
+      return d === undefined || d <= radius;
+    });
+  }
+
   // Non-query filters (mode/days/time) — shared by the main pass and the
   // zero-result keyword rescue below so they stay in sync.
   const passesFilters = (s: CourseSection): boolean => {
@@ -279,7 +362,16 @@ export async function searchCoursesAcrossColleges(
   const queryMatched = allCourses.filter((s) => {
     if (prefix && s.course_prefix !== prefix) return false;
     if (number && s.course_number !== number) return false;
-    if (keyword && !s.course_title.toLowerCase().includes(keyword)) return false;
+    // A section matches a keyword by title OR by belonging to a subject prefix
+    // the keyword resolved to — without the prefix clause this re-filter would
+    // strip the subject-union rows whose titles don't contain the keyword
+    // (the entire point of the union).
+    if (
+      keyword &&
+      !s.course_title.toLowerCase().includes(keyword) &&
+      !subjectPrefixSet.has(s.course_prefix)
+    )
+      return false;
     return true;
   });
 
@@ -336,16 +428,8 @@ export async function searchCoursesAcrossColleges(
       allCollegeSlugs.add(slug);
       const inst = instMap.get(slug);
 
-      let distance: number | null = null;
-      if (userCoords && inst && inst.campuses.length > 0) {
-        // Use nearest campus
-        distance = Math.min(
-          ...inst.campuses.map((c) =>
-            calculateDistance(userCoords!.lat, userCoords!.lng, c.lat, c.lng)
-          )
-        );
-        distance = Math.round(distance * 10) / 10;
-      }
+      // Nearest-campus distance, precomputed once per college above.
+      const distance: number | null = collegeDistance.get(slug) ?? null;
 
       colleges.push({
         slug,
@@ -380,8 +464,20 @@ export async function searchCoursesAcrossColleges(
     });
   }
 
-  // Sort course groups: most sections first (most available)
-  courseGroups.sort((a, b) => b.totalSections - a.totalSections);
+  // Sort course groups: with a zip, nearest offering college first (each
+  // group's colleges are already distance-sorted, so colleges[0] is its
+  // nearest), availability breaking ties — so a Houston student sees Houston
+  // CC's courses before Austin CC's. Without a zip: most sections first,
+  // unchanged.
+  if (userCoords) {
+    const nearest = (g: CourseGroup) =>
+      g.colleges[0]?.distance ?? Number.POSITIVE_INFINITY;
+    courseGroups.sort(
+      (a, b) => nearest(a) - nearest(b) || b.totalSections - a.totalSections
+    );
+  } else {
+    courseGroups.sort((a, b) => b.totalSections - a.totalSections);
+  }
 
   const totalCourses = courseGroups.length;
   const totalSections = matched.length;

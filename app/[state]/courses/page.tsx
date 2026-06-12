@@ -222,13 +222,18 @@ export default async function CoursesPage({ params, searchParams }: Props) {
           todRaw === "morning" || todRaw === "afternoon" || todRaw === "evening"
             ? todRaw
             : undefined;
+        // Same optional radius clamp as /api/[state]/courses/search.
+        const radiusRaw = parseInt(firstParam(sp.radius)?.trim() || "", 10);
+        const radius = Number.isFinite(radiusRaw)
+          ? Math.max(1, Math.min(radiusRaw, 100))
+          : undefined;
         try {
           const currentTerm = await currentTermPromise;
           const r = await searchCoursesAcrossColleges(
             currentTerm,
             initialQuery,
             institutions,
-            { mode, days, timeOfDay, zip },
+            { mode, days, timeOfDay, zip, radius },
             50,
             0,
             state
