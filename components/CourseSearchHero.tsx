@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState, useRef } from "react";
 import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
 import { statesCoveredLabel } from "@/lib/states/registry";
+import { readStoredState, storeSelectedState } from "./state-selection";
 
 const PLACEHOLDER_QUERIES = [
   "ENG 111",
@@ -66,8 +67,6 @@ function useTypewriter(phrases: string[], active: boolean) {
 
 type StateOption = { slug: string; name: string; abbr: string };
 
-const LS_KEY = "ccp:lastState";
-
 export default function CourseSearchHero({
   states,
   geoState,
@@ -95,8 +94,8 @@ export default function CourseSearchHero({
   // localStorage is only available client-side, so this hydration must
   // happen in an effect after mount.
   useEffect(() => {
-    const stored = typeof window !== "undefined" ? localStorage.getItem(LS_KEY) : null;
-    if (stored && states.some((s) => s.slug === stored)) {
+    const stored = readStoredState(states.map((s) => s.slug));
+    if (stored) {
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setSelectedState(stored);
 
@@ -144,7 +143,11 @@ export default function CourseSearchHero({
   const pickState = (slug: string) => {
     setSelectedState(slug);
     setIsAuto(false);
-    localStorage.setItem(LS_KEY, slug);
+    // Persists the choice AND broadcasts it so the feature cards below the
+    // hero retarget to the new state immediately. The typed query lives in
+    // this component's state, so switching state never discards it — submit
+    // still routes to /{selectedState}/courses?q=<query>.
+    storeSelectedState(slug);
     setPickerOpen(false);
     setNeedsState(false);
   };
