@@ -358,10 +358,32 @@ export async function getTransferInfo(
   number: string,
   state: string
 ): Promise<TransferMapping[]> {
-  const mappings = await loadTransferMappings(state);
-  return mappings.filter(
-    (m) => m.cc_prefix === prefix && m.cc_number === number
-  );
+  // Scoped query on the idx_transfers_state_course (state, cc_prefix, cc_number)
+  // index — returns the handful of rows for THIS course directly. The old code
+  // called loadTransferMappings(state), which paginates the WHOLE state's
+  // transfer set into memory and filters in JS; for a big state that is
+  // catastrophic on a cold cache (CA = 161K rows ≈ 100s on a Vercel lambda),
+  // and it was the dominant cause of the /[state]/course/* 504 timeouts.
+  return cached(`transfer-course:${state}:${prefix}:${number}`, async () => {
+    const { data, error } = await supabase
+      .from("transfers")
+      .select(
+        "cc_prefix, cc_number, cc_course, cc_title, cc_credits, university, university_name, univ_course, univ_title, univ_credits, notes, no_credit, is_elective"
+      )
+      .eq("state", state)
+      .eq("cc_prefix", prefix)
+      .eq("cc_number", number);
+    if (error) {
+      console.error("getTransferInfo error:", error.message);
+      // Fall back to the (slow) full-state load only on a query error, so a
+      // transient Supabase issue degrades to correct-but-slow, never wrong.
+      const mappings = await loadTransferMappings(state);
+      return mappings.filter(
+        (m) => m.cc_prefix === prefix && m.cc_number === number
+      );
+    }
+    return (data || []) as TransferMapping[];
+  });
 }
 
 /**

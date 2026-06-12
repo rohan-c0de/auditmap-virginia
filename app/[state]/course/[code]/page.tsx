@@ -10,6 +10,7 @@ import { getTransferInfo, getUniversities } from "@/lib/transfer";
 import { subjectName } from "@/lib/subjects";
 import { getBestProgramForPrefix } from "@/lib/programs/registry";
 import { getQualifyingProgramSlugs } from "@/lib/programs";
+import { loadStateSummary } from "@/lib/state-summary";
 import { computeCourseAvailabilityProfile } from "@/lib/course-stats";
 import type { CourseSection } from "@/lib/types";
 import SectionHeading from "@/components/SectionHeading";
@@ -180,15 +181,16 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
 
   const canonical = `${process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com"}/${state}/course/${code}`;
 
-  // Thin-content guard. GSC audit (2026-05) found 26K of these "Discovered –
-  // not indexed". A course is thin unless it has either real breadth
-  // (≥3 sections at ≥2 colleges) or substantial breadth at one college
-  // (≥5 sections). The previous rule (`<3 && colleges===1`) was too narrow:
-  // a course with 2 sections at 2 colleges, or 4 sections at one college,
-  // would slip through as "indexable" with very little unique content.
-  const isThin =
-    sections.length < 3 ||
-    (collegeCount < 2 && sections.length < 5);
+  // Thin-content guard. The prior rule (noindex unless ≥3 sections, or ≥5 at a
+  // single college) was too aggressive: a GSC audit (2026-06) found it had
+  // noindexed 169 course pages that were actively ranking and earning clicks
+  // before they were suppressed on 2026-05-11. A course offered at even one or
+  // two sections is still a real, searchable course with unique content here
+  // (its live sections + transfer verdicts + prereq chain + related courses),
+  // and Google already declines to index the genuinely-empty long tail on its
+  // own. So we now noindex only the absolute-thinnest case — a single section
+  // at a single college — and index everything with more substance.
+  const isThin = sections.length < 2 && collegeCount < 2;
 
   return {
     title: pageTitle,
@@ -373,8 +375,13 @@ export default async function CoursePage(props: PageProps) {
   // course-detail visitor can step up to the program comparison view
   // with earnings + per-college data.
   const matchedProgram = getBestProgramForPrefix(prefix);
+  // Use the precomputed summary manifest (the same source the state home uses
+  // for its program chips) instead of the live getQualifyingProgramSlugs(),
+  // which loops every program × per-college section aggregation — ~13s for a
+  // big state like CA, the second-largest contributor to this page's 504s.
+  // The manifest read is ~1ms; fall back to the live check only if it's absent.
   const qualifyingSlugs = matchedProgram
-    ? await getQualifyingProgramSlugs(state)
+    ? (loadStateSummary(state)?.programSlugs ?? (await getQualifyingProgramSlugs(state)))
     : [];
   const programLink =
     matchedProgram && qualifyingSlugs.includes(matchedProgram.slug)
