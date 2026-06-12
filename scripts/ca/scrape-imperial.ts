@@ -142,18 +142,29 @@ async function fetchHtml(url: string): Promise<string> {
   return res.text();
 }
 
+// Loose shapes for the Livewire serverMemo.data blob (only the fields we read).
+interface TermRaw {
+  term_code?: unknown;
+  term_name?: unknown;
+}
+interface LivewireData {
+  data?: Record<string, IvcSection>;
+  meetings?: Record<string, IvcMeeting[]>;
+  searchForm?: { terms?: TermRaw[] } | null;
+}
+
 /** Pull the Livewire serverMemo.data object out of a page's wire:initial-data blob. */
-function extractLivewireData(html: string): any {
+function extractLivewireData(html: string): LivewireData {
   const m = html.match(/wire:initial-data="([^"]*)"/);
   if (!m) throw new Error('wire:initial-data attribute not found in page');
   const decoded = decodeHtmlEntities(m[1]);
-  let obj: any;
+  let obj: unknown;
   try {
     obj = JSON.parse(decoded);
   } catch (e) {
     throw new Error(`failed to JSON.parse wire:initial-data: ${(e as Error).message}`);
   }
-  const data = obj?.serverMemo?.data;
+  const data = (obj as { serverMemo?: { data?: LivewireData } })?.serverMemo?.data;
   if (!data) throw new Error('serverMemo.data missing from Livewire blob');
   return data;
 }
@@ -211,8 +222,8 @@ function isCreditTermCode(code: string, name: string): boolean {
 }
 
 /** Read available CREDIT term options from the searchForm in the root page blob. */
-function readTermOptions(rootData: any): TermOption[] {
-  const terms: any[] = rootData?.searchForm?.terms ?? [];
+function readTermOptions(rootData: LivewireData): TermOption[] {
+  const terms: TermRaw[] = rootData?.searchForm?.terms ?? [];
   const out: TermOption[] = [];
   for (const t of terms) {
     const code = String(t.term_code);
@@ -235,7 +246,7 @@ function formatTime(raw: string): string {
   if (!raw) return '';
   const m = raw.match(/^(\d{1,2}):(\d{2})/);
   if (!m) return '';
-  let h = Number.parseInt(m[1], 10);
+  const h = Number.parseInt(m[1], 10);
   const min = m[2];
   if (h === 0 && min === '00') return ''; // 00:00:00 sentinel = no real time (async/online)
   const ampm = h >= 12 ? 'PM' : 'AM';

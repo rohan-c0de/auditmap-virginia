@@ -121,9 +121,10 @@ async function bootstrapToken(tenantId: string, termTenantId: string): Promise<s
     redirect: "manual",
   });
   // Set-Cookie may be exposed via getSetCookie() (Node 20+) or the raw header.
+  const getSetCookie = (res.headers as { getSetCookie?: () => string[] }).getSetCookie;
   const cookies: string[] =
-    typeof (res.headers as any).getSetCookie === "function"
-      ? (res.headers as any).getSetCookie()
+    typeof getSetCookie === "function"
+      ? getSetCookie.call(res.headers)
       : res.headers.get("set-cookie")
         ? [res.headers.get("set-cookie") as string]
         : [];
@@ -240,7 +241,7 @@ function toMinutes(s: string): number | null {
 }
 
 function fmtTime(mins: number): string {
-  let h = Math.floor(mins / 60);
+  const h = Math.floor(mins / 60);
   const m = mins % 60;
   const ap = h >= 12 ? "PM" : "AM";
   let hr = h % 12;
@@ -309,7 +310,28 @@ function parseSeats(text: string | null | undefined): number | null {
  *   - some online + some in-person rows → "hybrid"
  *   - otherwise → "in-person"
  */
-function classifyMode(schedules: any[]): string {
+// Loose shapes for the SmartSchedule JSON (only the fields we read).
+interface ScheduleRow {
+  day?: string | null;
+  time?: string | null;
+  instructionMethod?: string | null;
+  location?: { isLocationOnline?: boolean; displayName?: string } | null;
+  instructor?: { instructorName?: string } | null;
+}
+
+interface RawSection {
+  courseDisplayCode?: string;
+  classSchedules?: ScheduleRow[];
+  totalSeatCountText?: string;
+  availableSeatCountText?: string;
+  units?: number | string;
+  sectionTenantDefinedId?: string | number;
+  sectionDisplayCode?: string | number;
+  sectionKey?: number;
+  courseKey?: number;
+}
+
+function classifyMode(schedules: ScheduleRow[]): string {
   if (!schedules || schedules.length === 0) return "online";
   const rows = schedules.map((cs) => {
     const online = !!(cs.location && cs.location.isLocationOnline) || /online/i.test(cs.instructionMethod || "");
@@ -349,7 +371,7 @@ interface CourseMeta {
 }
 
 function buildSection(
-  raw: any,
+  raw: RawSection,
   course: CourseMeta | undefined,
   startDate: string,
   college: CollegeSpec,
@@ -359,7 +381,7 @@ function buildSection(
   const split = splitCourseCode(code);
   if (!split) return null;
 
-  const schedules: any[] = raw.classSchedules || [];
+  const schedules: ScheduleRow[] = raw.classSchedules || [];
   // Choose the primary meeting row for day/time/location/instructor: prefer a
   // row that actually has a day+time; fall back to the first row.
   const primary =
@@ -377,7 +399,7 @@ function buildSection(
   // Location: first non-online physical room, else "ONLINE", else first label.
   let location = "";
   const physical = schedules.find((cs) => cs.location && !cs.location.isLocationOnline && cs.location.displayName);
-  if (physical) location = physical.location.displayName;
+  if (physical?.location?.displayName) location = physical.location.displayName;
   else if (schedules.some((cs) => cs.location && cs.location.isLocationOnline)) location = "ONLINE";
   else if (primary?.location?.displayName) location = primary.location.displayName;
 
@@ -387,7 +409,7 @@ function buildSection(
   const seatsTotal = parseSeats(raw.totalSeatCountText);
   const seatsOpen = parseSeats(raw.availableSeatCountText);
 
-  const units = typeof raw.units === "number" ? raw.units : parseFloat(raw.units) || 0;
+  const units = typeof raw.units === "number" ? raw.units : parseFloat(String(raw.units ?? "")) || 0;
 
   return {
     college_code: college.slug,
@@ -466,7 +488,7 @@ async function scrapeCollegeTerm(
     }
     const data = await res.json();
     total = typeof data.totalSearchResultsCount === "number" ? data.totalSearchResultsCount : 0;
-    const pageSections: any[] = data.sections || [];
+    const pageSections: RawSection[] = data.sections || [];
 
     // Build courseKey → metadata and sectionKey → start_date maps for this page.
     const courseMeta = new Map<number, CourseMeta>();
@@ -488,8 +510,8 @@ async function scrapeCollegeTerm(
     for (const raw of pageSections) {
       const crn = String(raw.sectionTenantDefinedId || raw.sectionDisplayCode || "");
       if (crn && seenCrn.has(crn)) continue; // idempotent de-dupe across pages
-      const startDate = startDateByKey.get(raw.sectionKey) || "";
-      const sec = buildSection(raw, courseMeta.get(raw.courseKey), startDate, college, term.fileTerm);
+      const startDate = startDateByKey.get(raw.sectionKey ?? -1) || "";
+      const sec = buildSection(raw, courseMeta.get(raw.courseKey ?? -1), startDate, college, term.fileTerm);
       if (sec) {
         if (sec.crn) seenCrn.add(sec.crn);
         sections.push(sec);

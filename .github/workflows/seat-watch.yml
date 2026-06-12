@@ -38,7 +38,7 @@ jobs:
       # The script defaults DRY_RUN to true if unset. workflow_dispatch
       # input takes precedence; otherwise the repo secret controls it.
       SEAT_WATCH_DRY_RUN: ${{ inputs.dry_run || secrets.SEAT_WATCH_DRY_RUN || 'true' }}
-      NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+      NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
       SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
       RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
       SEAT_WATCH_TOKEN_SECRET: ${{ secrets.SEAT_WATCH_TOKEN_SECRET }}
