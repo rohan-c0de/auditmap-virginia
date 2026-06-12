@@ -19,6 +19,7 @@
 import * as cheerio from "cheerio";
 import fs from "fs";
 import path from "path";
+import { dedupeTransferMappings } from "../lib/transfer-dedupe";
 
 interface TransferMapping {
   cc_prefix: string;
@@ -183,7 +184,7 @@ async function main() {
 
   // Remove old HPU entries
   const filtered = existing.filter((m) => m.university !== UNIVERSITY_SLUG);
-  const merged = [...filtered, ...mappings];
+  const merged = dedupeTransferMappings([...filtered, ...mappings]);
 
   fs.writeFileSync(dataPath, JSON.stringify(merged, null, 2) + "\n");
   console.log(`Wrote ${merged.length} total mappings (was ${existing.length})`);

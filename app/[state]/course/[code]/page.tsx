@@ -609,7 +609,7 @@ export default async function CoursePage(props: PageProps) {
                         : "direct";
                     const badge = TRANSFER_BADGE[type];
                     return (
-                      <tr key={t.university} className="hover:bg-gray-50 dark:hover:bg-slate-800">
+                      <tr key={`${t.university}-${t.univ_course}`} className="hover:bg-gray-50 dark:hover:bg-slate-800">
                         <td className="px-4 py-2.5 font-medium text-gray-900 dark:text-slate-100">
                           {t.no_credit ? (
                             uniNameMap.get(t.university) || t.university_name || t.university

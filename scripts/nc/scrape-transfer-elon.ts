@@ -17,6 +17,7 @@
 import * as cheerio from "cheerio";
 import fs from "fs";
 import path from "path";
+import { dedupeTransferMappings } from "../lib/transfer-dedupe";
 
 interface TransferMapping {
   cc_prefix: string;
@@ -337,9 +338,11 @@ async function main() {
     existing = JSON.parse(fs.readFileSync(equivPath, "utf-8"));
   }
 
-  // Remove old Elon data
+  // Remove old Elon data. Dedupe is essential here: Elon's form serves the
+  // same statewide table once per sending college, so the 50-college loop
+  // above yields ~50 copies of every row.
   const withoutElon = existing.filter((m) => m.university !== "elon");
-  const merged = [...withoutElon, ...allMappings];
+  const merged = dedupeTransferMappings([...withoutElon, ...allMappings]);
 
   // Sort
   merged.sort((a, b) =>

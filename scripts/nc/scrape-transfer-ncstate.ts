@@ -20,6 +20,7 @@
 import * as cheerio from "cheerio";
 import fs from "fs";
 import path from "path";
+import { dedupeTransferMappings } from "../lib/transfer-dedupe";
 
 interface TransferMapping {
   cc_prefix: string;
@@ -214,7 +215,7 @@ async function main() {
   }
 
   const nonNcstate = existing.filter((m) => m.university !== "ncstate");
-  const merged = [...nonNcstate, ...mappings];
+  const merged = dedupeTransferMappings([...nonNcstate, ...mappings]);
 
   console.log(`Merged: ${nonNcstate.length} existing (non-NCSU) + ${mappings.length} NCSU = ${merged.length} total`);
 

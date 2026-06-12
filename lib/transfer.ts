@@ -4,6 +4,7 @@ import { unstable_cache } from "next/cache";
 import type { TransferMapping, TransferMappingClient } from "./types";
 import { supabase } from "./supabase";
 import { cached } from "./courses";
+import { collapseDuplicateMappings } from "./transfer-rank";
 
 /**
  * Hard cap on mappings passed to the client on a single transfer-hub page.
@@ -188,7 +189,10 @@ async function _loadTransferMappingsByUniversity(
       offset += pageSize;
     }
 
-    if (allData.length > 0) return allData;
+    // Same duplicate-row safety net as getTransferInfo — Supabase mirrors the
+    // scraped JSON, so a dup-laden scrape would otherwise reach every
+    // per-university surface (browse list, /transfer/to pages, plans).
+    if (allData.length > 0) return collapseDuplicateMappings(allData);
     // Supabase succeeded but returned 0 rows: a legitimately-empty result.
     // Fall through to the JSON fallback (dev may have local data Supabase lacks).
   } catch {
@@ -198,7 +202,9 @@ async function _loadTransferMappingsByUniversity(
 
   // Fallback: filter from the full local JSON
   const all = await loadTransferMappings(state);
-  const filtered = all.filter((m) => m.university === university);
+  const filtered = collapseDuplicateMappings(
+    all.filter((m) => m.university === university)
+  );
   const result = cap ? filtered.slice(0, cap) : filtered;
 
   // Cache-poisoning guard: if Supabase ERRORED and the fallback also produced
@@ -352,7 +358,12 @@ export async function loadTransferMappings(
   }
 }
 
-/** Get all transfer mappings for a specific community college course. */
+/** Get all transfer mappings for a specific community college course.
+ *
+ * Collapses duplicate articulation rows per (university, equivalent course),
+ * keeping the best outcome — see collapseDuplicateMappings. Without this, a
+ * scrape that misses pipeline dedup renders the same row dozens of times on
+ * the course page (the /nc/course/psy-150 "Elon ×50" bug). */
 export async function getTransferInfo(
   prefix: string,
   number: string,
@@ -378,11 +389,11 @@ export async function getTransferInfo(
       // Fall back to the (slow) full-state load only on a query error, so a
       // transient Supabase issue degrades to correct-but-slow, never wrong.
       const mappings = await loadTransferMappings(state);
-      return mappings.filter(
-        (m) => m.cc_prefix === prefix && m.cc_number === number
+      return collapseDuplicateMappings(
+        mappings.filter((m) => m.cc_prefix === prefix && m.cc_number === number)
       );
     }
-    return (data || []) as TransferMapping[];
+    return collapseDuplicateMappings((data || []) as TransferMapping[]);
   });
 }
 
