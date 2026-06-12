@@ -1005,7 +1005,7 @@ function CollegeBlock({
               rel="noopener noreferrer"
               className="text-xs font-medium text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:hover:text-slate-300 hover:underline"
             >
-              View on {config.systemName} &rarr;
+              View at {college.name} ↗
             </a>
           )}
         </div>

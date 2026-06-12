@@ -18,6 +18,8 @@ interface CourseTableProps {
   collegeSlug: string;
   courseListingUrl?: string;
   systemName?: string;
+  /** College display name for the external-link label ("View at {college}"). */
+  collegeName?: string;
   onAuditClick?: (course: CourseSection) => void;
   pinnedCRNs?: Set<string>;
   onTogglePin?: (crn: string) => void;
@@ -253,6 +255,7 @@ interface CourseRowProps {
   collegeSlug: string;
   courseListingUrl?: string;
   systemName?: string;
+  collegeName?: string;
   onAuditClick?: (course: CourseSection) => void;
   pinnedCRNs?: Set<string>;
   onTogglePin?: (crn: string) => void;
@@ -260,7 +263,7 @@ interface CourseRowProps {
   state?: string;
 }
 
-function CourseRow({ course, collegeSlug, courseListingUrl, systemName, onAuditClick, pinnedCRNs, onTogglePin, transferLookup, state }: CourseRowProps) {
+function CourseRow({ course, collegeSlug, courseListingUrl, systemName, collegeName, onAuditClick, pinnedCRNs, onTogglePin, transferLookup, state }: CourseRowProps) {
   const style = MODE_STYLES[course.mode];
   const status = getCourseStatus(course.start_date);
   const statusStyle = STATUS_STYLES[status];
@@ -362,7 +365,7 @@ function CourseRow({ course, collegeSlug, courseListingUrl, systemName, onAuditC
             rel="noopener noreferrer"
             className="text-xs font-medium text-gray-500 hover:text-gray-700 hover:underline dark:text-slate-400 dark:hover:text-slate-300"
           >
-            {systemName} &rarr;
+            View at {collegeName ?? systemName} ↗
           </a>
         </div>
       </td>
@@ -370,7 +373,7 @@ function CourseRow({ course, collegeSlug, courseListingUrl, systemName, onAuditC
   );
 }
 
-export default function CourseTable({ courses, collegeSlug, courseListingUrl, systemName, onAuditClick, pinnedCRNs, onTogglePin, transferLookup, state, groupBySubject, defaultStatusFilter = "", defaultModeFilter = "" }: CourseTableProps) {
+export default function CourseTable({ courses, collegeSlug, courseListingUrl, systemName, collegeName, onAuditClick, pinnedCRNs, onTogglePin, transferLookup, state, groupBySubject, defaultStatusFilter = "", defaultModeFilter = "" }: CourseTableProps) {
   const [subjectFilter, setSubjectFilter] = useState("");
   const [dayFilters, setDayFilters] = useState<string[]>([]);
   const [modeFilter, setModeFilter] = useState(defaultModeFilter);
@@ -498,7 +501,14 @@ export default function CourseTable({ courses, collegeSlug, courseListingUrl, sy
             <table className="w-full text-left text-sm">
               <thead className="border-b border-gray-200 bg-gray-50 text-xs uppercase tracking-wider text-gray-500 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-400">
                 <tr>
-                  <th className="whitespace-nowrap px-3 py-3 font-medium">CRN</th>
+                  <th className="whitespace-nowrap px-3 py-3 font-medium">
+                    <abbr
+                      title="Course Reference Number — the code you give the college when you register for this exact section"
+                      className="cursor-help no-underline border-b border-dotted border-gray-400 dark:border-slate-500"
+                    >
+                      CRN
+                    </abbr>
+                  </th>
                   <th className="whitespace-nowrap px-3 py-3 font-medium">Course</th>
                   <th className="px-3 py-3 font-medium w-full">Title</th>
                   <th className="whitespace-nowrap px-3 py-3 font-medium">Schedule</th>
@@ -523,7 +533,7 @@ export default function CourseTable({ courses, collegeSlug, courseListingUrl, sy
                           <span className="ml-3 text-xs text-gray-400 dark:text-slate-500">{group.length} {group.length === 1 ? "section" : "sections"}</span>
                         </td>
                       </tr>,
-                      ...group.map((course) => <CourseRow key={`${course.crn}-${course.course_prefix}${course.course_number}-${course.days}-${course.start_time}`} course={course} collegeSlug={collegeSlug} courseListingUrl={courseListingUrl} systemName={systemName} onAuditClick={onAuditClick} pinnedCRNs={pinnedCRNs} onTogglePin={onTogglePin} transferLookup={transferLookup} state={state} />),
+                      ...group.map((course) => <CourseRow key={`${course.crn}-${course.course_prefix}${course.course_number}-${course.days}-${course.start_time}`} course={course} collegeSlug={collegeSlug} courseListingUrl={courseListingUrl} systemName={systemName} collegeName={collegeName} onAuditClick={onAuditClick} pinnedCRNs={pinnedCRNs} onTogglePin={onTogglePin} transferLookup={transferLookup} state={state} />),
                     ];
                   });
                 })() : filtered.map((course) => (
@@ -533,6 +543,7 @@ export default function CourseTable({ courses, collegeSlug, courseListingUrl, sy
                     collegeSlug={collegeSlug}
                     courseListingUrl={courseListingUrl}
                     systemName={systemName}
+                    collegeName={collegeName}
                     onAuditClick={onAuditClick}
                     pinnedCRNs={pinnedCRNs}
                     onTogglePin={onTogglePin}
@@ -597,7 +608,7 @@ export default function CourseTable({ courses, collegeSlug, courseListingUrl, sy
                     </span>
                   </div>
                   <div className="grid grid-cols-2 gap-y-1 text-xs text-gray-500 dark:text-slate-400">
-                    <span className="truncate">CRN: <span className="font-mono text-gray-700 dark:text-slate-300">{course.crn}</span></span>
+                    <span className="truncate" title="Course Reference Number — the code you give the college when you register for this exact section">CRN: <span className="font-mono text-gray-700 dark:text-slate-300">{course.crn}</span></span>
                     <span>Campus: <span className="text-gray-700 dark:text-slate-300">{course.campus || "---"}</span></span>
                     <span className="col-span-2">
                       Schedule: <span className="text-gray-700 dark:text-slate-300">{formatSchedule(course)}</span>
@@ -640,7 +651,7 @@ export default function CourseTable({ courses, collegeSlug, courseListingUrl, sy
                       rel="noopener noreferrer"
                       className="text-xs font-medium text-gray-500 hover:text-gray-700 hover:underline dark:text-slate-400 dark:hover:text-slate-300"
                     >
-                      View on {systemName} &rarr;
+                      View at {collegeName ?? systemName} ↗
                     </a>
                   </div>
                 </div>
