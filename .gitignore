@@ -62,6 +62,12 @@ next-env.d.ts
 # Claude deliberately created in this session.
 .claude/branch-lock
 
+# Claude Code worktrees — created by scripts/new-pr-worktree.sh under
+# .claude/worktrees/<slug>. Their contents are working copies of the repo and
+# must never be tracked: doing so duplicates the whole tree into the index and
+# re-materializes on every `git worktree add`, exhausting disk on the shared box.
+.claude/worktrees/
+
 # SUNY STEP scraper incremental saves (cleared after successful merge)
 data/ny/.step-partial/
 
