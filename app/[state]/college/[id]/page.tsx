@@ -58,19 +58,20 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
     process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com";
 
   return {
-    title: `${institution.name} — Courses & Transfer Info | Community College Path ${requireStateConfig(state).name}`,
-    description: `Find out how to audit courses at ${institution.name}. ${
-      institution.audit_policy.allowed
-        ? "Auditing is available."
-        : "Contact the college to confirm audit policies."
-    }`,
+    title: `${institution.name} — Courses, Programs & Transfer Info | Community College Path ${requireStateConfig(state).name}`,
+    // Value-first description. The old copy led with "Find out how to audit
+    // courses at X" — legacy AuditMap framing that buried the page's real value
+    // and signalled niche "audit" intent to search engines instead of the
+    // high-volume "courses / programs / transfer at {college}" queries students
+    // actually run. The page already surfaces all of this; only the lead changed.
+    description: `${institution.name}: browse course schedules and sections, compare programs, and check transfer-credit equivalencies — with tuition, graduation rates, and median graduate earnings. Free on Community College Path.`,
     alternates: { canonical: `/${state}/college/${id}` },
     openGraph: {
       images: [{
         url: `${baseUrl}/${state}/college/${id}/opengraph-image`,
         width: 1200,
         height: 630,
-        alt: `${institution.name} — courses, audit policy, and transfer info on Community College Path`,
+        alt: `${institution.name} — courses, programs, transfer info, and graduate outcomes on Community College Path`,
       }],
     },
   };
@@ -257,15 +258,8 @@ export default async function CollegeDetailPage(props: PageProps) {
     ],
   };
 
-  // Derive audit cost stat for hero card
+  // Senior-audit discount still drives the hero badge below.
   const sd = institution.audit_policy.eligibility.senior_discount;
-  const auditCostStat = sd.available
-    ? `Free ${sd.age_threshold ?? 60}+`
-    : institution.audit_policy.allowed === false
-    ? "N/A"
-    : institution.audit_policy.cost_note
-    ? institution.audit_policy.cost_note.slice(0, 14)
-    : "—";
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -355,7 +349,7 @@ export default async function CollegeDetailPage(props: PageProps) {
               { label: "Students", value: scorecard?.size ? scorecard.size.toLocaleString() : "—" },
               { label: "In-state/yr", value: scorecard?.cost?.tuitionInState != null ? formatDollar(scorecard.cost.tuitionInState) : "—" },
               { label: "Completion", value: scorecard?.completion?.completionRate150nt != null ? formatPercent(scorecard.completion.completionRate150nt) : "—" },
-              { label: "Audit cost", value: auditCostStat },
+              { label: "Grad earnings", value: scorecard?.earnings?.median10YrsAfterEntry != null ? formatDollar(scorecard.earnings.median10YrsAfterEntry) : "—" },
             ].map(({ label, value }) => (
               <div key={label} className="bg-white dark:bg-slate-800 px-3 py-4">
                 <p className="text-[10px] font-mono font-medium uppercase tracking-wider text-gray-400 dark:text-slate-500">{label}</p>
