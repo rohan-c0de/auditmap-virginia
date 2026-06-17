@@ -1,5 +1,67 @@
 import type { StateConfig } from "../registry";
 
+// Per-college public class-search / schedule URLs. Harvested from the working
+// scrapers in scripts/ks/ + data/state-health/fingerprint-baseline.json and
+// probed 2026-06-17.
+const REGISTRATION_URLS: Record<string, string> = {
+  // Banner SSB 9.
+  "butler-community-college":
+    "https://banssreg1.butlercc.edu:8081/StudentRegistrationSsb/ssb/classSearch/classSearch",
+  // Ellucian Colleague Self-Service (same hosts the scraper uses).
+  "kansas-city-kansas-community-college":
+    "https://selfservice.kckcc.edu/Student/Courses",
+  "coffeyville-community-college":
+    "https://coffey-ss.colleague.elluciancloud.com/Student/Courses",
+  "highland-community-college":
+    "https://colss-prod.highldsaas.elluciancloud.com/Student/Courses",
+  "independence-community-college":
+    "https://indycc-ss.colleague.elluciancloud.com/Student/Courses",
+  // Jenzabar JICS Course Search / Course Schedule portlets.
+  "cloud-county-community-college":
+    "https://icloud.cloud.edu/ICS/Course_Search.jnz?portlet=Course_Search&screen=Advanced+Course+Search&screenType=next",
+  "cowley-county-community-college":
+    "https://mycc.cowley.edu/ICS/Course_Search.jnz?portlet=Course_Search&screen=Advanced+Course+Search&screenType=next",
+  "dodge-city-community-college":
+    "https://conqs.dc3.edu/ICS/Course_Search.jnz?portlet=Course_Search&screen=Advanced+Course+Search&screenType=next",
+  "flint-hills-technical-college":
+    "https://my.fhtc.edu/ICS/Academics/Course_Schedule.jnz?portlet=Course_Schedule&screen=Advanced+Course+Search&screenType=next",
+  "fort-scott-community-college":
+    "https://my.fortscott.edu/ICS/Course_Schedule.jnz?portlet=Course_Schedule&screen=Advanced+Course+Search&screenType=next",
+  "labette-community-college":
+    "https://redzone.labette.edu/ICS/The_Red_Zone.jnz?portlet=Course_Schedules&screen=Advanced+Course+Search&screenType=next",
+  "neosho-county-community-college":
+    "https://web.neosho.edu/ICS/Guest_Home.jnz?portlet=Course_Schedules&screen=Advanced+Course+Search&screenType=next",
+  // Empower-XL public course catalog (Fort Hays Tech | Northwest, formerly
+  // Northwest Kansas Technical College — slug retained from federal data).
+  "northwest-kansas-technical-college":
+    "https://nwktc.empower-xl.com/fusebox.cfm?fuseaction=CourseCatalog",
+  // Bespoke public schedule apps (same endpoints the scrapers read).
+  "hutchinson-community-college": "https://www.hutchcc.edu/courses",
+  "allen-county-community-college":
+    "https://web.allencc.edu/portal/asp/schedule.aspx",
+  "manhattan-area-technical-college": "https://manhattantech.edu/course-search",
+  "salina-area-technical-college":
+    "https://sonis.salinatech.edu/courses/default.aspx",
+};
+
+// Honest fallback for KS colleges with no public class search (Cloudflare-walled
+// human page or auth-gated SIS). Sourced from data/ks/scorecard/*.json schoolUrl.
+// Never kansasregents.org per college — the Board of Regents site has no
+// course listings.
+const COLLEGE_HOMEPAGES: Record<string, string> = {
+  "barton-county-community-college": "https://www.bartonccc.edu/",
+  "colby-community-college": "https://www.colbycc.edu/",
+  "garden-city-community-college": "https://www.gcccks.edu/",
+  "johnson-county-community-college": "https://www.jccc.edu/",
+  "pratt-community-college": "https://www.prattcc.edu/",
+  "seward-county-community-college": "https://sccc.edu/",
+};
+
+const ksCollegeUrl = (collegeSlug: string): string =>
+  REGISTRATION_URLS[collegeSlug] ??
+  COLLEGE_HOMEPAGES[collegeSlug] ??
+  "https://www.kansasregents.org/";
+
 const ksConfig: StateConfig = {
   slug: "ks",
   name: "Kansas",
@@ -42,11 +104,10 @@ const ksConfig: StateConfig = {
   defaultZip: "67202",
   defaultZipCity: "Wichita",
 
-  courseDiscoveryUrl: (_collegeSlug: string, _prefix: string, _number: string) =>
-    "https://www.example.edu/",
+  courseDiscoveryUrl: (collegeSlug: string, _prefix: string, _number: string) =>
+    ksCollegeUrl(collegeSlug),
 
-  collegeCoursesUrl: (_collegeSlug: string) =>
-    "https://www.example.edu/",
+  collegeCoursesUrl: (collegeSlug: string) => ksCollegeUrl(collegeSlug),
 
   branding: {
     siteName: "Community College Path Kansas",
