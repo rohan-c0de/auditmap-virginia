@@ -510,9 +510,10 @@ export default function SemesterPlanner({
   // Save-plan state — mirrors ScheduleResults exactly: idle → saving → saved,
   // reverts after 3s. Auth gating via openLoginModal() if not signed in.
   const { user, openLoginModal } = useAuth();
-  const [saveStatus, setSaveStatus] = useState<"idle" | "saving" | "saved">(
-    "idle",
-  );
+  const [saveStatus, setSaveStatus] = useState<
+    "idle" | "saving" | "saved" | "error"
+  >("idle");
+  const [saveError, setSaveError] = useState<string | null>(null);
 
   // Seat-availability data for every course in the current plan. Fetched
   // from /api/{state}/sections-for-courses whenever the set of course codes
@@ -749,21 +750,24 @@ export default function SemesterPlanner({
                   return;
                 }
                 setSaveStatus("saving");
+                setSaveError(null);
                 try {
                   const supabase = createClient();
-                  // Default name = comma-joined target codes, or fall back to
-                  // initialName when this is a "Duplicate to edit" flow.
                   const fallback = targets.length > 0
                     ? targets.join(", ")
                     : "My Plan";
                   const name = initialName?.trim() || fallback;
-                  const { error } = await supabase.from("saved_plans").insert({
+                  const insertPromise = supabase.from("saved_plans").insert({
                     user_id: user.id,
                     state,
                     name,
                     target_courses: targets,
                     plan_data: { semesters },
                   });
+                  const timeoutPromise = new Promise<never>((_, reject) =>
+                    setTimeout(() => reject(new Error("Save timed out")), 10_000),
+                  );
+                  const { error } = await Promise.race([insertPromise, timeoutPromise]);
                   if (error) throw error;
                   setSaveStatus("saved");
                   track("plan_save", {
@@ -773,15 +777,26 @@ export default function SemesterPlanner({
                     semesters: totalSemesters,
                   });
                   setTimeout(() => setSaveStatus("idle"), 3000);
-                } catch {
-                  setSaveStatus("idle");
+                } catch (err) {
+                  const msg = err instanceof Error ? err.message : String(err);
+                  const isAuth = /jwt|auth|token|permission|row-level/i.test(msg);
+                  console.error("Plan save failed:", msg);
+                  setSaveError(
+                    isAuth
+                      ? "Your session expired — please sign in again."
+                      : "Couldn't save your plan. Please try again.",
+                  );
+                  setSaveStatus("error");
+                  if (isAuth) openLoginModal();
                 }
               }}
               disabled={saveStatus === "saving" || saveStatus === "saved"}
               className={`inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-medium transition ${
                 saveStatus === "saved"
                   ? "border-emerald-300 dark:border-emerald-700 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400"
-                  : "border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-600 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-700"
+                  : saveStatus === "error"
+                    ? "border-red-300 dark:border-red-700 bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-400"
+                    : "border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-600 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-700"
               }`}
             >
               {saveStatus === "saved" ? (
@@ -793,6 +808,13 @@ export default function SemesterPlanner({
                 </>
               ) : saveStatus === "saving" ? (
                 "Saving..."
+              ) : saveStatus === "error" ? (
+                <>
+                  <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+                  </svg>
+                  Try again
+                </>
               ) : (
                 <>
                   <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -802,6 +824,11 @@ export default function SemesterPlanner({
                 </>
               )}
             </button>
+            {saveError && (
+              <p className="mt-1 text-xs text-red-600 dark:text-red-400">
+                {saveError}
+              </p>
+            )}
           </div>
         </div>
       )}
