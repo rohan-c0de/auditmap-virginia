@@ -1,5 +1,207 @@
 import type { StateConfig } from "../registry";
 
+// California has no statewide SIS — every district runs its own class search.
+// These are per-college public class-search / registration entry points,
+// harvested from the working scrapers in scripts/ca/ and probed 2026-06-17
+// (HTTP 200 for curl with a browser UA or verified in real headless Chromium).
+
+const BANNER_PATH =
+  "/StudentRegistrationSsb/ssb/classSearch/classSearch";
+const COLLEAGUE_PATH = "/Student/Courses";
+
+// LACCD PeopleSoft guest class search (covers all 9 LA CC District colleges).
+const LACCD_CLASS_SEARCH =
+  "https://mycollege-guest.laccd.edu/psc/classsearchguest/EMPLOYEE/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL";
+// Los Rios CCD shared class-search portal (4 colleges).
+// hub.losrios.edu/classSearch is the API backend (500 to browsers);
+// losrios.edu/class-search is the student-facing page.
+const LOSRIOS_CLASS_SEARCH = "https://losrios.edu/class-search";
+// SDCCD shared class-search page (3 colleges).
+const SDCCD_CLASS_SEARCH =
+  "https://www.sdccd.edu/students/class-search/search.html";
+// Contra Costa CCD (4CD) shared course-schedule search (3 colleges).
+const FOURCD_CLASS_SEARCH =
+  "https://webapps.4cd.edu/apps/courseschedulesearch/search-course.aspx";
+// West Hills CCD shared schedule (2 colleges).
+const WESTHILLS_SCHEDULE =
+  "https://classweb.westhillscollege.com/schedule/";
+// West Valley-Mission CCD shared schedule (2 colleges).
+const WVM_SCHEDULE = "https://schedule.wvm.edu/";
+// South Orange County CCD shared class search (2 colleges).
+const SOCCCD_CLASS_SEARCH = "https://classes.socccd.edu/";
+
+const REGISTRATION_URLS: Record<string, string> = {
+  // --- Banner SSB 9 (single-college instances) ---
+  "allan-hancock-college": `https://ssb.hancockcollege.edu${BANNER_PATH}`,
+  "antelope-valley-community-college-district": `https://ssb.avc.edu${BANNER_PATH}`,
+  "barstow-community-college": `https://ssbprod2.barstow.edu:8443${BANNER_PATH}`,
+  "citrus-college": `https://ssb.citruscollege.edu${BANNER_PATH}`,
+  "college-of-the-sequoias": `https://banweb.cos.edu${BANNER_PATH}`,
+  "college-of-the-siskiyous": `https://reg-prod.cloud.siskiyous.edu${BANNER_PATH}`,
+  "compton-college": `https://cmptn-prod-pxes02.banner.elluciancloud.com:8090${BANNER_PATH}`,
+  "cuesta-college": `https://ssb2.cuesta.edu${BANNER_PATH}`,
+  "feather-river-community-college-district": `https://reg-prod.frc.elluciancloud.com:8118${BANNER_PATH}`,
+  "gavilan-college": `https://reg-prod.ec.gavilan.edu${BANNER_PATH}`,
+  "monterey-peninsula-college": `https://reg-prod.mpc.elluciancloud.com:8103${BANNER_PATH}`,
+  "mt-san-antonio-college": `https://prodrg.mtsac.edu${BANNER_PATH}`,
+  "pasadena-city-college": `https://reg-prod.ec.pasadena.edu${BANNER_PATH}`,
+  "rio-hondo-college": `https://prod-ssb9-registration.riohondo.edu:8443${BANNER_PATH}`,
+  "santa-rosa-junior-college": `https://reg-prod.santarosajc.elluciancloud.com:8103${BANNER_PATH}`,
+  "sierra-college": `https://ss.oci.sierracollege.edu${BANNER_PATH}`,
+  "solano-community-college": `https://ssb.solano.edu${BANNER_PATH}`,
+
+  // --- Banner SSB 9 (Coast CCD — 3 colleges share one host) ---
+  "coastline-community-college": `https://reg-prod.ec.cccd.edu${BANNER_PATH}`,
+  "golden-west-college": `https://reg-prod.ec.cccd.edu${BANNER_PATH}`,
+  "orange-coast-college": `https://reg-prod.ec.cccd.edu${BANNER_PATH}`,
+
+  // --- Banner SSB 9 (NOCCCD — 2 colleges) ---
+  "cypress-college": `https://ssb.nocccd.edu${BANNER_PATH}`,
+  "fullerton-college": `https://ssb.nocccd.edu${BANNER_PATH}`,
+
+  // --- Banner SSB 9 (Ventura CCD — 3 colleges) ---
+  "moorpark-college": `https://ssb.vcccd.edu${BANNER_PATH}`,
+  "oxnard-college": `https://ssb.vcccd.edu${BANNER_PATH}`,
+  "ventura-college": `https://ssb.vcccd.edu${BANNER_PATH}`,
+
+  // --- Banner SSB 9 (SMCCD cluster — 3 colleges) ---
+  "canada-college": `https://phx-ban-apps.smccd.edu${BANNER_PATH}`,
+  "college-of-san-mateo": `https://phx-ban-apps.smccd.edu${BANNER_PATH}`,
+  "skyline-college": `https://phx-ban-apps.smccd.edu${BANNER_PATH}`,
+
+  // --- Banner SSB 9 (CLPCCD cluster — 2 colleges) ---
+  "chabot-college": `https://banssprod.clpccd.cc.ca.us${BANNER_PATH}`,
+  "las-positas-college": `https://banssprod.clpccd.cc.ca.us${BANNER_PATH}`,
+
+  // --- Banner SSB 9 (Kern CCD cluster — 3 colleges) ---
+  "bakersfield-college": `https://reg-prod.ec.kccd.edu${BANNER_PATH}`,
+  "cerro-coso-community-college": `https://reg-prod.ec.kccd.edu${BANNER_PATH}`,
+  "porterville-college": `https://reg-prod.ec.kccd.edu${BANNER_PATH}`,
+
+  // --- Colleague Self-Service (single-college instances) ---
+  "butte-college": `https://selfservice.butte.edu${COLLEAGUE_PATH}`,
+  "cabrillo-college": `https://cabrillo-ss.colleague.elluciancloud.com${COLLEAGUE_PATH}`,
+  "chaffey-college": `https://colss-prod.ec.chaffey.edu${COLLEAGUE_PATH}`,
+  "college-of-the-canyons": `https://selfservice.canyons.edu${COLLEAGUE_PATH}`,
+  "college-of-the-desert": `https://ss.collegeofthedesert.edu${COLLEAGUE_PATH}`,
+  "el-camino-community-college-district": `https://selfservice.elcamino.edu${COLLEAGUE_PATH}`,
+  "hartnell-college": `https://stuserv.hartnell.edu${COLLEAGUE_PATH}`,
+  "lake-tahoe-community-college": `https://ss.ltcc.edu:8183${COLLEAGUE_PATH}`,
+  "lassen-community-college": `https://webadvisor.lassencollege.edu:8171${COLLEAGUE_PATH}`,
+  "mendocino-college": `https://service.mendocino.edu${COLLEAGUE_PATH}`,
+  "merced-college": `https://ss-prod.mccd.edu${COLLEAGUE_PATH}`,
+  "mt-san-jacinto-community-college-district": `https://selfservice.msjc.edu/css${COLLEAGUE_PATH}`,
+  "napa-valley-college": `https://colss-prod.ec.napavalley.edu${COLLEAGUE_PATH}`,
+  "ohlone-college": `https://selfservice.ohlone.edu:8443${COLLEAGUE_PATH}`,
+  "palo-verde-college": `https://prod-selfserv.paloverde.edu${COLLEAGUE_PATH}`,
+  "shasta-college": `https://mysc.shastacollege.edu${COLLEAGUE_PATH}`,
+  "southwestern-college": `https://collselfserv.swccd.edu${COLLEAGUE_PATH}`,
+  "victor-valley-college": `https://vvc-ss.colleague.elluciancloud.com${COLLEAGUE_PATH}`,
+
+  // --- Colleague Self-Service (GCCCD — 2 colleges) ---
+  "cuyamaca-college": `https://selfservice.gcccd.edu${COLLEAGUE_PATH}`,
+  "grossmont-college": `https://selfservice.gcccd.edu${COLLEAGUE_PATH}`,
+
+  // --- Colleague Self-Service (SJECCD — 2 colleges) ---
+  "evergreen-valley-college": `https://colss-prod.ec.sjeccd.edu${COLLEAGUE_PATH}`,
+  "san-jose-city-college": `https://colss-prod.ec.sjeccd.edu${COLLEAGUE_PATH}`,
+
+  // --- Colleague Self-Service (YCCD — 2 colleges) ---
+  "woodland-community-college": `https://wcc-self-service.yccd.edu${COLLEAGUE_PATH}`,
+  "yuba-college": `https://yc-self-service.yccd.edu${COLLEAGUE_PATH}`,
+
+  // --- Colleague Self-Service (SCCCD — 4 colleges share one host) ---
+  "clovis-community-college": `https://selfservice.scccd.edu${COLLEAGUE_PATH}`,
+  "fresno-city-college": `https://selfservice.scccd.edu${COLLEAGUE_PATH}`,
+  "madera-community-college": `https://selfservice.scccd.edu${COLLEAGUE_PATH}`,
+  "reedley-college": `https://selfservice.scccd.edu${COLLEAGUE_PATH}`,
+
+  // --- Colleague Self-Service (RSCCD — 2 colleges) ---
+  "santa-ana-college": `https://colss-prod.cloud.rsccd.edu${COLLEAGUE_PATH}`,
+  "santiago-canyon-college": `https://colss-prod.cloud.rsccd.edu${COLLEAGUE_PATH}`,
+
+  // --- Colleague Self-Service (SBCCD — 2 colleges) ---
+  "crafton-hills-college": `https://colss-prod.ec.sbccd.edu${COLLEAGUE_PATH}`,
+  "san-bernardino-valley-college": `https://colss-prod.ec.sbccd.edu${COLLEAGUE_PATH}`,
+
+  // --- LACCD (9 colleges share PeopleSoft guest class search) ---
+  "east-los-angeles-college": LACCD_CLASS_SEARCH,
+  "los-angeles-city-college": LACCD_CLASS_SEARCH,
+  "los-angeles-harbor-college": LACCD_CLASS_SEARCH,
+  "los-angeles-mission-college": LACCD_CLASS_SEARCH,
+  "los-angeles-pierce-college": LACCD_CLASS_SEARCH,
+  "los-angeles-southwest-college": LACCD_CLASS_SEARCH,
+  "los-angeles-trade-technical-college": LACCD_CLASS_SEARCH,
+  "los-angeles-valley-college": LACCD_CLASS_SEARCH,
+  "west-los-angeles-college": LACCD_CLASS_SEARCH,
+
+  // --- Los Rios CCD (4 colleges share one class-search portal) ---
+  "american-river-college": LOSRIOS_CLASS_SEARCH,
+  "cosumnes-river-college": LOSRIOS_CLASS_SEARCH,
+  "folsom-lake-college": LOSRIOS_CLASS_SEARCH,
+  "sacramento-city-college": LOSRIOS_CLASS_SEARCH,
+
+  // --- SDCCD (3 colleges) ---
+  "san-diego-city-college": SDCCD_CLASS_SEARCH,
+  "san-diego-mesa-college": SDCCD_CLASS_SEARCH,
+  "san-diego-miramar-college": SDCCD_CLASS_SEARCH,
+
+  // --- 4CD / Contra Costa CCD (3 colleges) ---
+  "contra-costa-college": FOURCD_CLASS_SEARCH,
+  "diablo-valley-college": FOURCD_CLASS_SEARCH,
+  "los-medanos-college": FOURCD_CLASS_SEARCH,
+
+  // --- West Hills CCD (2 colleges) ---
+  "coalinga-college": WESTHILLS_SCHEDULE,
+  "lemoore-college": WESTHILLS_SCHEDULE,
+
+  // --- West Valley-Mission CCD (2 colleges) ---
+  "mission-college": WVM_SCHEDULE,
+  "west-valley-college": WVM_SCHEDULE,
+
+  // --- SOCCCD (2 colleges) ---
+  "irvine-valley-college": SOCCCD_CLASS_SEARCH,
+  "saddleback-college": SOCCCD_CLASS_SEARCH,
+
+  // --- Yosemite CCD ---
+  "columbia-college": "https://myapps.yosemite.edu/ccClassSearch/",
+  "modesto-junior-college": "https://myapps.yosemite.edu/mjcClassSearch/",
+
+  // --- Bespoke public class-search apps ---
+  "cerritos-college": "https://secure.cerritos.edu/schedule/",
+  "city-college-of-san-francisco": "https://www.ccsf.edu/courses",
+  "college-of-marin": "https://netapps.marin.edu/Apps/Directory/ScheduleSearch.aspx",
+  "college-of-the-redwoods":
+    "https://webadvisor.redwoods.edu/WAPROD/WebAdvisor?TYPE=P&PID=ST-XWESTS12A&CONSTITUENCY=WBST",
+  "de-anza-college": "https://deanza.edu/schedule/",
+  "foothill-college": "https://foothill.edu/schedule/",
+  "imperial-valley-college": "https://www.imperial.edu/student-news/index.html",
+  "long-beach-city-college":
+    "https://www.cs.lbcc.edu/psc/guest/EMPLOYEE/SA/c/LBC_SS0017.LBC_SS0017_LST_FL.GBL",
+  "santa-barbara-city-college":
+    "https://banner.sbcc.edu/ords/ssb/pw_pub_sched.p_search",
+  "santa-monica-college": "https://www.smc.edu/searchclasses",
+};
+
+// Colleges whose scraper uses an API not suitable for students (Peralta
+// HubSpot GraphQL, Riverside SharePoint OData, Delta CollegeScheduler API).
+// Homepage is the honest fallback — still better than cccco.edu.
+const COLLEGE_HOMEPAGES: Record<string, string> = {
+  "berkeley-city-college": "https://www.berkeleycitycollege.edu/",
+  "college-of-alameda": "https://alameda.edu/",
+  "laney-college": "https://laney.edu/",
+  "merritt-college": "https://www.merritt.edu/",
+  "moreno-valley-college": "https://www.mvc.edu/",
+  "norco-college": "https://www.norcocollege.edu/",
+  "riverside-city-college": "https://www.rcc.edu/",
+  "san-joaquin-delta-college": "https://www.deltacollege.edu/",
+};
+
+const collegeUrl = (collegeSlug: string): string =>
+  REGISTRATION_URLS[collegeSlug] ??
+  COLLEGE_HOMEPAGES[collegeSlug] ??
+  "https://www.cccco.edu/";
+
 const caConfig: StateConfig = {
   slug: "ca",
   name: "California",
@@ -29,11 +231,10 @@ const caConfig: StateConfig = {
   defaultZip: "90029",
   defaultZipCity: "Los Angeles",
 
-  courseDiscoveryUrl: (_collegeSlug: string, _prefix: string, _number: string) =>
-    "https://www.cccco.edu/",
+  courseDiscoveryUrl: (collegeSlug: string, _prefix: string, _number: string) =>
+    collegeUrl(collegeSlug),
 
-  collegeCoursesUrl: (_collegeSlug: string) =>
-    "https://www.cccco.edu/",
+  collegeCoursesUrl: (collegeSlug: string) => collegeUrl(collegeSlug),
 
   branding: {
     siteName: "Community College Path California",
