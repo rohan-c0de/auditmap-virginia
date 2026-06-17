@@ -12,6 +12,7 @@ import MoreStateGuides from "@/components/blog/MoreStateGuides";
 import StateToolsCTA from "@/components/blog/StateToolsCTA";
 import BlogProgrammaticLinks from "@/components/blog/BlogProgrammaticLinks";
 import { isValidState } from "@/lib/states/registry";
+import { isBlogNoindexed } from "@/lib/blog-noindex-slugs";
 import AdUnit from "@/components/AdUnit";
 import Link from "next/link";
 
@@ -30,6 +31,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: meta.title,
     description: meta.description,
+    // Prune zero-engagement posts from Google's index (see lib/blog-noindex-slugs).
+    // follow:true keeps internal links live; the post still renders for on-site
+    // readers and stays in the on-site blog index — it just stops competing in
+    // search and dragging the domain's sitewide quality signal post-core-update.
+    ...(isBlogNoindexed(slug)
+      ? { robots: { index: false, follow: true } }
+      : {}),
     openGraph: {
       title: meta.title,
       description: meta.description,
