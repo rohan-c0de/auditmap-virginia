@@ -93,6 +93,8 @@ const laConfig: StateConfig = {
           "Northshore Technical CC is the only LCTCS college not on the shared Banner SSB host (reg-prod.ec.lctcs.edu); its sections sit behind LoLA SSO with no public guest class search. Only the Coursedog catalog is reachable (course metadata + 23 prereqs, fed to the aggregator) — never sections. Verified 2026-06.",
       },
     ],
+    programs:
+      "Programs cover the 7 LCTCS colleges with parseable public catalogs (6 Acalog + Nunez CourseLeaf). The remaining 5 (verified 2026-06): northshore's Coursedog lists 29 programs but parses 0 usable requirement lists; sowela's SmartCatalogIQ catalog-year discovery fails; central-louisiana-tech / northwest-louisiana-tech / river-parishes return HTTP 500 with no alternate catalog host. See data/la/DEFERRED-programs.md.",
   },
 };
 
