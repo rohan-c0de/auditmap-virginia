@@ -117,40 +117,76 @@ async function pmap<T, R>(
 // Index discovery
 // ---------------------------------------------------------------------------
 
-const CREDENTIAL_SEGMENTS = new Set([
-  "associate-in-arts",
-  "associate-in-science",
-  "associate-in-applied-science",
-  "certificate",
+// A "credential segment" is the middle URL part of a 3-segment program page.
+// Cape Cod uses the long canonical form ("associate-in-applied-science");
+// Central Alabama (AL) appends/varies the abbreviation
+// ("associate-in-applied-science-aas", "embedded-short-term-certificate-stc",
+// "short-term-certificate-stc"). Match on substring keywords rather than an
+// exact set so both render styles are recognized.
+const CREDENTIAL_KEYWORD_RE =
+  /associate-in-arts|associate-in-science|applied-science|short-term-certificate|certificate|diploma/;
+
+function looksLikeCredentialSegment(seg: string): boolean {
+  return CREDENTIAL_KEYWORD_RE.test(seg);
+}
+
+// Short credential codes used in Trenholm's (AL) 4-segment URL shape
+// /degrees/{division}/{code}/{program-slug}.
+const SHORT_CREDENTIAL_CODES = new Set([
+  "aa",
+  "as",
+  "aas",
+  "cer",
+  "cert",
+  "stc",
+  "dip",
   "diploma",
+  "certificate",
 ]);
 
-// CleanCatalog instances expose two URL shapes for program pages:
-//   • 3-segment: /{division}/{credential-segment}/{program-slug}    (Cape Cod)
-//   • 2-segment: /{division}/{program-slug}                          (Bristol)
-// We accept either: 3-segment iff segment[1] is a known credential
-// keyword (so we don't accept arbitrary nesting), 2-segment iff both
-// segments look like content slugs (lowercase letters/digits/dashes).
+// CleanCatalog instances expose several URL shapes for program pages:
+//   • 4-segment: /degrees/{division}/{code}/{program-slug}    (Trenholm, AL)
+//   • 3-segment: /{division}/{credential-segment}/{program-slug}
+//       (Cape Cod, Central Alabama)
+//   • 2-segment: /{division}/{program-slug}                    (Bristol, Coastal)
+// We accept: 4-segment iff under /degrees with a known short credential code;
+// 3-segment iff segment[1] reads as a credential (keyword match); 2-segment
+// iff both segments look like content slugs. Non-program 2-segment pages
+// (course detail, handbook, policies) are filtered by NON_PROGRAM_PREFIXES
+// and, ultimately, by parseProgramPage returning null for non-degree nodes.
 
 const SLUG_RE = /^[a-z0-9][a-z0-9-]*$/;
 
 function isProgramPath(p: string): boolean {
   if (!p.startsWith("/")) return false;
-  const parts = p.replace(/^\/+/, "").split("/");
+  const parts = p.replace(/^\/+/, "").replace(/\/+$/, "").split("/");
+  if (parts.some((seg) => !SLUG_RE.test(seg))) return false;
+  if (NON_PROGRAM_PREFIXES.has(parts[0])) return false;
+  if (parts.length === 4) {
+    return parts[0] === "degrees" && SHORT_CREDENTIAL_CODES.has(parts[2]);
+  }
   if (parts.length === 3) {
-    return (
-      SLUG_RE.test(parts[0]) &&
-      CREDENTIAL_SEGMENTS.has(parts[1]) &&
-      SLUG_RE.test(parts[2])
-    );
+    return looksLikeCredentialSegment(parts[1]);
   }
   if (parts.length === 2) {
-    return SLUG_RE.test(parts[0]) && SLUG_RE.test(parts[1]);
+    return true;
   }
   return false;
 }
 
-// Routes Bristol's /degrees index links to that aren't programs.
+// First-segment prefixes that are never program divisions — skip them so a
+// 2-segment match doesn't pull in handbook/policy/about pages.
+const NON_PROGRAM_PREFIXES = new Set([
+  "student-handbook",
+  "policies-procedures",
+  "about",
+  "catalog",
+  "sites",
+  "themes",
+  "user",
+]);
+
+// Exact index/listing paths that link to programs but aren't programs.
 const NON_PROGRAM_PATHS = new Set([
   "/degrees",
   "/degrees-and-certificates",
@@ -182,23 +218,23 @@ async function discoverProgramPaths(
 // ---------------------------------------------------------------------------
 
 function credentialFromPath(p: string): ProgramCredential {
-  const parts = p.replace(/^\/+/, "").split("/");
-  // Only 3-segment URLs encode credential in the path.
-  const seg = parts.length >= 3 ? parts[1] : "";
-  switch (seg) {
-    case "associate-in-arts":
-      return "AA";
-    case "associate-in-science":
-      return "AS";
-    case "associate-in-applied-science":
-      return "AAS";
-    case "certificate":
-      return "certificate";
-    case "diploma":
-      return "diploma";
-    default:
-      return "other";
-  }
+  const parts = p.replace(/^\/+/, "").replace(/\/+$/, "").split("/");
+  // The credential lives in the middle segment: parts[2] for the 4-segment
+  // /degrees/{div}/{code}/{slug} shape (Trenholm), parts[1] for 3-segment
+  // /{div}/{credential-segment}/{slug} (Cape Cod, Central Alabama). 2-segment
+  // URLs carry no credential in the path → fall back to prose downstream.
+  let seg = "";
+  if (parts.length === 4 && parts[0] === "degrees") seg = parts[2];
+  else if (parts.length === 3) seg = parts[1];
+  if (!seg) return "other";
+  // Order matters: AAS before AS, long forms before short codes.
+  if (/applied-science|\baas\b/.test(seg)) return "AAS";
+  if (/associate-in-arts|\baa\b/.test(seg)) return "AA";
+  if (/associate-in-science|\bas\b/.test(seg)) return "AS";
+  if (/short-term-certificate|certificate|\bstc\b|\bcert?\b/.test(seg))
+    return "certificate";
+  if (/diploma|\bdip\b/.test(seg)) return "diploma";
+  return "other";
 }
 
 /** Parse credential from a CleanCatalog "degree offered" prose field. */
@@ -210,6 +246,25 @@ function credentialFromProse(text: string): ProgramCredential {
   if (t.includes("certificate")) return "certificate";
   if (t.includes("diploma")) return "diploma";
   return "other";
+}
+
+/**
+ * Parse credential from the program title. Coastal Alabama (and other
+ * CleanCatalog installs using 2-segment URLs that carry no path credential)
+ * encode the award in a parenthetical code — "Cybersecurity (AAS-CBS)",
+ * "Graphic Design (STC-GRD)" — or spell it out in the name. Used as the
+ * second resolution step after the path and before the body-prose fallback.
+ */
+function credentialFromTitle(title: string): ProgramCredential {
+  // Parenthetical award code at the head of the paren, e.g. "(AAS-CBS)".
+  const paren = title.match(/\(([A-Z]{2,4})[-\s)]/);
+  const code = paren ? paren[1] : "";
+  if (code === "AAS") return "AAS";
+  if (code === "AA") return "AA";
+  if (code === "AS") return "AS";
+  if (code === "STC" || code === "CER" || code === "CERT") return "certificate";
+  if (code === "DIP") return "diploma";
+  return credentialFromProse(title);
 }
 
 function parseTitle($: cheerio.CheerioAPI): string {
@@ -235,14 +290,17 @@ function parseCredits(text: string): number | null {
 /**
  * Split a CleanCatalog course code into prefix + number. Different
  * instances render the code differently — Cape Cod glues it together
- * ("ENL101"), Bristol spaces it ("CIS 111"), and Washington colleges
- * (Bates, WVC) carry the common-course-numbering "&" suffix ("BUS& 101").
- * Strip whitespace first so all shapes parse.
+ * ("ENL101"), Bristol spaces it ("CIS 111"), Trenholm (AL) hyphenates it
+ * ("ENG-101"), and Washington colleges (Bates, WVC) carry the
+ * common-course-numbering "&" suffix ("BUS& 101"). Strip whitespace and
+ * the prefix↔number separator hyphen first so all shapes parse.
  */
 function splitCourseCode(
   code: string,
 ): { prefix: string; number: string } | null {
-  const m = code.replace(/\s+/g, "").match(/^([A-Z]{2,5}&?)(\d{3,4}[A-Z]?)$/);
+  const m = code
+    .replace(/[\s -]+/g, "")
+    .match(/^([A-Z]{2,5}&?)(\d{3,4}[A-Z]?)$/);
   if (!m) return null;
   return { prefix: m[1], number: m[2] };
 }
@@ -332,9 +390,14 @@ function parseProgramPage(
   const title = parseTitle($);
   if (!title) return null;
 
-  // 3-segment URLs (Cape Cod) carry credential in the path; 2-segment URLs
-  // (Bristol) don't, so fall back to the .field--name-field-degree-offered
-  // prose ("Associate in Science in Business Administration Career …").
+  // Credential resolution, most-reliable first:
+  //   1. URL path         — Cape Cod (3-seg), Central Alabama (3-seg),
+  //                         Trenholm (4-seg /degrees/…)
+  //   2. degree-offered   — Bristol's .field--name-field-degree-offered prose
+  //   3. degree-type      — Coastal's .field--name-field-degree-type field
+  //                         ("A.S.", "A.A.S.") — covers transfer pathways with
+  //                         no award code in the title
+  //   4. program title    — Coastal's parenthetical award code "(AAS-CBS)"
   let credential = credentialFromPath(new URL(pageUrl).pathname);
   if (credential === "other") {
     const offered = $(".field--name-field-degree-offered")
@@ -343,6 +406,17 @@ function parseProgramPage(
       .replace(/\s+/g, " ")
       .trim();
     if (offered) credential = credentialFromProse(offered);
+  }
+  if (credential === "other") {
+    const degreeType = $(".field--name-field-degree-type .field__item")
+      .first()
+      .text()
+      .replace(/\s+/g, " ")
+      .trim();
+    if (degreeType) credential = credentialFromProse(degreeType);
+  }
+  if (credential === "other") {
+    credential = credentialFromTitle(title);
   }
 
   // Iterate only top-level sections — skip ones nested inside elective-group
