@@ -79,6 +79,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
   const description = `Browse ${filtered.length} ${subject} sections (${uniqueCourses} courses) at ${institution.name} for ${termLabel(resolvedTerm)}.${onlineCount > 0 ? ` ${onlineCount} available online.` : ""} View schedules, instructors, and prerequisites.`;
 
   const canonical = `/${state}/college/${id}/courses/${rawPrefix}`;
+  const isThin = filtered.length < 5;
   return {
     title,
     description,
@@ -90,6 +91,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
       ...config.branding.metaKeywords,
     ],
     alternates: { canonical },
+    ...(isThin && { robots: { index: false, follow: true } }),
     openGraph: {
       title,
       description,
