@@ -2,11 +2,11 @@
   "college_slug": "bevill-state-community-college",
   "catalog_year": "2025-2026",
   "catalog_url": "https://catalog.bscc.edu/degrees",
-  "scraped_at": "2026-06-03T21:27:04.876Z",
+  "scraped_at": "2026-06-20T13:59:15.788Z",
   "programs": [
     {
       "title": "Additive Engineering Technology Short-Term Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/advanced-engineering-design-technology/additive-engineering-technology-shortterm-certificate",
       "total_credits": 13,
@@ -53,7 +53,7 @@
     },
     {
       "title": "Architectural Engineering Technology Short-Term Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/advanced-engineering-design-technology/architectural-engineering-technology-shortterm-certificate",
       "total_credits": 16,
@@ -106,55 +106,8 @@
       "matched_program_slug": "engineering"
     },
     {
-      "title": "Advanced Engineering Design Technology Short-Term Certificate",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.bscc.edu/advanced-engineering-design-technology/advanced-engineering-design-technology-shortterm-certificate",
-      "total_credits": 13,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 13,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ORI",
-              "number": "107",
-              "title": "STUDENT SURVIVAL SKILLS",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ADM",
-              "number": "101",
-              "title": "PRECISION MEASUREMENT",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "DDT",
-              "number": "244",
-              "title": "ADVANCED 3D MODELING",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "DDT",
-              "number": "211",
-              "title": "INTERMEDIATE MACHINE DRAFTING",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "engineering"
-    },
-    {
       "title": "Engineering Design Technology Short-Term Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/advanced-engineering-design-technology/engineering-design-technology-shortterm-certificate",
       "total_credits": 19,
@@ -221,8 +174,90 @@
       "matched_program_slug": "engineering"
     },
     {
+      "title": "Advanced Manufacturing Automation Short-Term Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.bscc.edu/advanced-manufacturing-technology/advanced-manufacturing-automation-shortterm-certificate",
+      "total_credits": 25,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 25,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "107",
+              "title": "STUDENT SURVIVAL SKILLS",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETC",
+              "number": "101",
+              "title": "DC FUNDAMENTALS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETC",
+              "number": "102",
+              "title": "AC FUNDAMENTALS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETC",
+              "number": "104",
+              "title": "DIGITAL FUNDAMENTALS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETC",
+              "number": "108",
+              "title": "MOTOR CONTROLS I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "212",
+              "title": "MOTOR CONTROL II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ILT",
+              "number": "196",
+              "title": "ADVANCED PROGRAMMABLE LOGIC CONTROLLERS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "117",
+              "title": "PRINCIPLES OF INDUSTRIAL MECHANICS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUT",
+              "number": "139",
+              "title": "INTRO TO ROBOTIC PROGRAMMING",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Associate In Applied Science Degree",
-      "credential": "other",
+      "credential": "AAS",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/advanced-engineering-design-technology/associate-in-applied-science-degree",
       "total_credits": 64,
@@ -429,8 +464,254 @@
       "matched_program_slug": null
     },
     {
+      "title": "Advanced Manufacturing Industrial Maintenance Short-Term Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.bscc.edu/advanced-manufacturing-technology/advanced-manufacturing-industrial-maintenance-shortterm",
+      "total_credits": 28,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 28,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "107",
+              "title": "STUDENT SURVIVAL SKILLS",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETC",
+              "number": "101",
+              "title": "DC FUNDAMENTALS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETC",
+              "number": "102",
+              "title": "AC FUNDAMENTALS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETC",
+              "number": "108",
+              "title": "MOTOR CONTROLS I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "212",
+              "title": "MOTOR CONTROL II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "184",
+              "title": "INTRODUCTION TO PROGRAMMABLE LOGIC CONTROLLERS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ILT",
+              "number": "196",
+              "title": "ADVANCED PROGRAMMABLE LOGIC CONTROLLERS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "118",
+              "title": "COMMERCIAL/INDUSTRIAL WIRING",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "117",
+              "title": "PRINCIPLES OF INDUSTRIAL MECHANICS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "118",
+              "title": "FUNDAMENTALS OF INDUSTRIAL HYDRAULICS AND PNEUMATICS",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Advanced Manufacturing Machine Tool Technology Short-Term Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.bscc.edu/advanced-manufacturing-technology/advanced-manufacturing-machine-tool-technology-shortterm",
+      "total_credits": 28,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 28,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "107",
+              "title": "STUDENT SURVIVAL SKILLS",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MTT",
+              "number": "100",
+              "title": "MACHINING TECHNOLOGY I",
+              "credits": 6,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MTT",
+              "number": "103",
+              "title": "MACHINING TECHNOLOGY II",
+              "credits": 6,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MTT",
+              "number": "121",
+              "title": "BASIC PRINT READING FOR MACHINISTS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MTT",
+              "number": "127",
+              "title": "INTRODUCTION TO METROLOGY",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MTT",
+              "number": "136",
+              "title": "MILLING OPERATIONS",
+              "credits": 6,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CNC",
+              "number": "139",
+              "title": "BASIC COMPUTER NUMERICAL CONTROL",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Advanced Manufacturing Welding Short-Term Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.bscc.edu/advanced-manufacturing-technology/advanced-manufacturing-welding-shortterm-certificate",
+      "total_credits": 28,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 28,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "107",
+              "title": "STUDENT SURVIVAL SKILLS",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "108",
+              "title": "SMAW FILLET/OFC",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "110",
+              "title": "INDUSTRIAL BLUE PRINT READING",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "122",
+              "title": "SMAW FILLET/OFC LAB",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "119",
+              "title": "GAS METAL ARC/FLUX CORED ARC WELDING",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "120",
+              "title": "SHIELDED METAL ARC WELDING GROOVE",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "124",
+              "title": "GAS METAL ARC/FLUX CORED ARC WELDING LAB",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "125",
+              "title": "SHIELDED METAL ARC WELDING GROOVE LAB",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "218",
+              "title": "CERTIFICATION",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "258",
+              "title": "CERTIFICATION LAB",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "welding"
+    },
+    {
       "title": "Associate in Applied Science Degree",
-      "credential": "other",
+      "credential": "AAS",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/advanced-manufacturing-technology/associate-in-applied-science-degree",
       "total_credits": 141,
@@ -806,7 +1087,7 @@
     },
     {
       "title": "Long-Term Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/advanced-manufacturing-technology/longterm-certificate",
       "total_credits": 132,
@@ -1181,8 +1462,55 @@
       "matched_program_slug": null
     },
     {
+      "title": "Advanced Engineering Design Technology Short-Term Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.bscc.edu/advanced-engineering-design-technology/advanced-engineering-design-technology-shortterm-certificate",
+      "total_credits": 13,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 13,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "107",
+              "title": "STUDENT SURVIVAL SKILLS",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ADM",
+              "number": "101",
+              "title": "PRECISION MEASUREMENT",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DDT",
+              "number": "244",
+              "title": "ADVANCED 3D MODELING",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DDT",
+              "number": "211",
+              "title": "INTERMEDIATE MACHINE DRAFTING",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "engineering"
+    },
+    {
       "title": "Manufacturing Skills Standard Council (MSSC) Short-term Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/advanced-manufacturing-technology/manufacturing-skills-standard-council-mssc-shortterm-certificate",
       "total_credits": 13,
@@ -1236,7 +1564,7 @@
     },
     {
       "title": "Associate In Applied Science Degree",
-      "credential": "other",
+      "credential": "AAS",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/air-conditioning-refrigeration-technology/associate-in-applied-science-degree",
       "total_credits": 67,
@@ -1465,7 +1793,7 @@
     },
     {
       "title": "Long-Term Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/air-conditioning-refrigeration-technology/longterm-certificate",
       "total_credits": 49,
@@ -1679,17 +2007,17 @@
       "matched_program_slug": null
     },
     {
-      "title": "Advanced Manufacturing Automation Short-Term Certificate",
-      "credential": "other",
+      "title": "Short-term Certificate",
+      "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.bscc.edu/advanced-manufacturing-technology/advanced-manufacturing-automation-shortterm-certificate",
-      "total_credits": 25,
+      "catalog_url": "https://catalog.bscc.edu/air-conditioning-refrigeration-technology/shortterm-certificate",
+      "total_credits": 19,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "Required Courses",
-          "credits_required": 25,
+          "credits_required": 19,
           "choose_n": null,
           "courses": [
             {
@@ -1700,126 +2028,44 @@
               "or_alternatives": []
             },
             {
-              "prefix": "ETC",
-              "number": "101",
-              "title": "DC FUNDAMENTALS",
+              "prefix": "ACR",
+              "number": "111",
+              "title": "PRINCIPLES OF REFRIGERATION",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "ETC",
-              "number": "102",
-              "title": "AC FUNDAMENTALS",
+              "prefix": "ACR",
+              "number": "112",
+              "title": "HVAC/R SERVICE PROCEDURES",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "ETC",
-              "number": "104",
-              "title": "DIGITAL FUNDAMENTALS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ETC",
-              "number": "108",
-              "title": "MOTOR CONTROLS I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELT",
-              "number": "212",
-              "title": "MOTOR CONTROL II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ILT",
-              "number": "196",
-              "title": "ADVANCED PROGRAMMABLE LOGIC CONTROLLERS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "117",
-              "title": "PRINCIPLES OF INDUSTRIAL MECHANICS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AUT",
-              "number": "139",
-              "title": "INTRO TO ROBOTIC PROGRAMMING",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Advanced Manufacturing Machine Tool Technology Short-Term Certificate",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.bscc.edu/advanced-manufacturing-technology/advanced-manufacturing-machine-tool-technology-shortterm",
-      "total_credits": 28,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 28,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ORI",
-              "number": "107",
-              "title": "STUDENT SURVIVAL SKILLS",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MTT",
-              "number": "100",
-              "title": "MACHINING TECHNOLOGY I",
-              "credits": 6,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MTT",
-              "number": "103",
-              "title": "MACHINING TECHNOLOGY II",
-              "credits": 6,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MTT",
+              "prefix": "ACR",
               "number": "121",
-              "title": "BASIC PRINT READING FOR MACHINISTS",
+              "title": "PRINCIPLES OF ELECTRICITY FOR HVAC/R",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "MTT",
-              "number": "127",
-              "title": "INTRODUCTION TO METROLOGY",
+              "prefix": "ACR",
+              "number": "123",
+              "title": "HVAC/R ELECTRICAL COMPONENTS",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "MTT",
-              "number": "136",
-              "title": "MILLING OPERATIONS",
-              "credits": 6,
+              "prefix": "ACR",
+              "number": "147",
+              "title": "REFRIGERATION TRANSITION & RECOVERY THEORY",
+              "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "CNC",
-              "number": "139",
-              "title": "BASIC COMPUTER NUMERICAL CONTROL",
+              "prefix": "ACR",
+              "number": "132",
+              "title": "RESIDENTIAL AIR CONDITIONING",
               "credits": 3,
               "or_alternatives": []
             }
@@ -1830,7 +2076,7 @@
     },
     {
       "title": "Associate In Applied Science Degree",
-      "credential": "other",
+      "credential": "AAS",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/child-development/associate-in-applied-science-degree",
       "total_credits": 63,
@@ -1988,97 +2234,8 @@
       "matched_program_slug": null
     },
     {
-      "title": "Advanced Manufacturing Industrial Maintenance Short-Term Certificate",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.bscc.edu/advanced-manufacturing-technology/advanced-manufacturing-industrial-maintenance-shortterm",
-      "total_credits": 28,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 28,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ORI",
-              "number": "107",
-              "title": "STUDENT SURVIVAL SKILLS",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ETC",
-              "number": "101",
-              "title": "DC FUNDAMENTALS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ETC",
-              "number": "102",
-              "title": "AC FUNDAMENTALS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ETC",
-              "number": "108",
-              "title": "MOTOR CONTROLS I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELT",
-              "number": "212",
-              "title": "MOTOR CONTROL II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "184",
-              "title": "INTRODUCTION TO PROGRAMMABLE LOGIC CONTROLLERS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ILT",
-              "number": "196",
-              "title": "ADVANCED PROGRAMMABLE LOGIC CONTROLLERS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELT",
-              "number": "118",
-              "title": "COMMERCIAL/INDUSTRIAL WIRING",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "117",
-              "title": "PRINCIPLES OF INDUSTRIAL MECHANICS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "118",
-              "title": "FUNDAMENTALS OF INDUSTRIAL HYDRAULICS AND PNEUMATICS",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Short-Term Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/child-development/shortterm-certificate",
       "total_credits": 10,
@@ -2181,7 +2338,7 @@
     },
     {
       "title": "Associate In Applied Science Degree",
-      "credential": "other",
+      "credential": "AAS",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/electrical-systems-technology/associate-in-applied-science-degree",
       "total_credits": 61,
@@ -2353,76 +2510,8 @@
       "matched_program_slug": null
     },
     {
-      "title": "Electrical Short-Term Certificate",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.bscc.edu/electrical-systems-technology/electrical-shortterm-certificate",
-      "total_credits": 19,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Core Requirements",
-          "credits_required": 19,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ORI",
-              "number": "107",
-              "title": "STUDENT SURVIVAL SKILLS",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ETC",
-              "number": "101",
-              "title": "DC FUNDAMENTALS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ETC",
-              "number": "102",
-              "title": "AC FUNDAMENTALS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELT",
-              "number": "241",
-              "title": "NATIONAL ELECTRIC CODE",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELT",
-              "number": "110",
-              "title": "WIRING METHODS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELT",
-              "number": "118",
-              "title": "COMMERCIAL/INDUSTRIAL WIRING",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WKO",
-              "number": "110",
-              "title": "NCCER CORE",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Automated Manufacturing Short-Term Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/electrical-systems-technology/automated-manufacturing-shortterm-certificate",
       "total_credits": 22,
@@ -2496,8 +2585,137 @@
       "matched_program_slug": null
     },
     {
+      "title": "Electrical Short-Term Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.bscc.edu/electrical-systems-technology/electrical-shortterm-certificate",
+      "total_credits": 19,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Core Requirements",
+          "credits_required": 19,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "107",
+              "title": "STUDENT SURVIVAL SKILLS",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETC",
+              "number": "101",
+              "title": "DC FUNDAMENTALS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETC",
+              "number": "102",
+              "title": "AC FUNDAMENTALS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "241",
+              "title": "NATIONAL ELECTRIC CODE",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "110",
+              "title": "WIRING METHODS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "118",
+              "title": "COMMERCIAL/INDUSTRIAL WIRING",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WKO",
+              "number": "110",
+              "title": "NCCER CORE",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Electronics Short-Term Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.bscc.edu/electrical-systems-technology/electronics-shortterm-certificate",
+      "total_credits": 16,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Core Requirements",
+          "credits_required": 16,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "107",
+              "title": "STUDENT SURVIVAL SKILLS",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETC",
+              "number": "101",
+              "title": "DC FUNDAMENTALS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETC",
+              "number": "102",
+              "title": "AC FUNDAMENTALS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETC",
+              "number": "104",
+              "title": "DIGITAL FUNDAMENTALS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETC",
+              "number": "103",
+              "title": "SOLID STATE FUNDAMENTALS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WKO",
+              "number": "110",
+              "title": "NCCER CORE",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Industrial Plant Technician Short-Term Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/electrical-systems-technology/industrial-plant-technician-shortterm-certificate",
       "total_credits": 22,
@@ -2571,69 +2789,8 @@
       "matched_program_slug": null
     },
     {
-      "title": "Electronics Short-Term Certificate",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.bscc.edu/electrical-systems-technology/electronics-shortterm-certificate",
-      "total_credits": 16,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Core Requirements",
-          "credits_required": 16,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ORI",
-              "number": "107",
-              "title": "STUDENT SURVIVAL SKILLS",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ETC",
-              "number": "101",
-              "title": "DC FUNDAMENTALS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ETC",
-              "number": "102",
-              "title": "AC FUNDAMENTALS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ETC",
-              "number": "104",
-              "title": "DIGITAL FUNDAMENTALS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ETC",
-              "number": "103",
-              "title": "SOLID STATE FUNDAMENTALS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WKO",
-              "number": "110",
-              "title": "NCCER CORE",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Long-Term Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/electrical-systems-technology/longterm-certificate",
       "total_credits": 43,
@@ -2763,146 +2920,8 @@
       "matched_program_slug": null
     },
     {
-      "title": "Long-Term Certificate",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.bscc.edu/industrial-systems-technology/longterm-certificate",
-      "total_credits": 47,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Orientation",
-          "credits_required": 1,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ORI",
-              "number": "107",
-              "title": "STUDENT SURVIVAL SKILLS",
-              "credits": 1,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Core Courses",
-          "credits_required": 46,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ETC",
-              "number": "101",
-              "title": "DC FUNDAMENTALS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ETC",
-              "number": "102",
-              "title": "AC FUNDAMENTALS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ETC",
-              "number": "103",
-              "title": "SOLID STATE FUNDAMENTALS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ETC",
-              "number": "104",
-              "title": "DIGITAL FUNDAMENTALS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MTH",
-              "number": "116",
-              "title": "MATHEMATICAL APPLICATIONS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ETC",
-              "number": "108",
-              "title": "MOTOR CONTROLS I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "118",
-              "title": "FUNDAMENTALS OF INDUSTRIAL HYDRAULICS AND PNEUMATICS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "184",
-              "title": "INTRODUCTION TO PROGRAMMABLE LOGIC CONTROLLERS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "117",
-              "title": "PRINCIPLES OF INDUSTRIAL MECHANICS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELT",
-              "number": "118",
-              "title": "COMMERCIAL/INDUSTRIAL WIRING",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELT",
-              "number": "192",
-              "title": "PRACTICUM/INTERNSHIP/CO-OP",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENG",
-              "number": "101",
-              "title": "ENGLISH COMPOSITION I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ILT",
-              "number": "139",
-              "title": "INTRODUCTION TO ROBOTIC PROGRAMMING",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AUT",
-              "number": "219",
-              "title": "PLC Applications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ADM",
-              "number": "291",
-              "title": "MSSC SAFETY COURSE",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Associate In Applied Science Degree",
-      "credential": "other",
+      "credential": "AAS",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/facility-maintenance-technician/associate-in-applied-science-degree",
       "total_credits": 64,
@@ -3081,8 +3100,369 @@
       "matched_program_slug": null
     },
     {
+      "title": "Long-Term Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.bscc.edu/industrial-systems-technology/longterm-certificate",
+      "total_credits": 47,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Orientation",
+          "credits_required": 1,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "107",
+              "title": "STUDENT SURVIVAL SKILLS",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Core Courses",
+          "credits_required": 46,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ETC",
+              "number": "101",
+              "title": "DC FUNDAMENTALS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETC",
+              "number": "102",
+              "title": "AC FUNDAMENTALS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETC",
+              "number": "103",
+              "title": "SOLID STATE FUNDAMENTALS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETC",
+              "number": "104",
+              "title": "DIGITAL FUNDAMENTALS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MTH",
+              "number": "116",
+              "title": "MATHEMATICAL APPLICATIONS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETC",
+              "number": "108",
+              "title": "MOTOR CONTROLS I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "118",
+              "title": "FUNDAMENTALS OF INDUSTRIAL HYDRAULICS AND PNEUMATICS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "184",
+              "title": "INTRODUCTION TO PROGRAMMABLE LOGIC CONTROLLERS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "117",
+              "title": "PRINCIPLES OF INDUSTRIAL MECHANICS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "118",
+              "title": "COMMERCIAL/INDUSTRIAL WIRING",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "192",
+              "title": "PRACTICUM/INTERNSHIP/CO-OP",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "ENGLISH COMPOSITION I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ILT",
+              "number": "139",
+              "title": "INTRODUCTION TO ROBOTIC PROGRAMMING",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUT",
+              "number": "219",
+              "title": "PLC Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ADM",
+              "number": "291",
+              "title": "MSSC SAFETY COURSE",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Associate In Applied Science Degree",
-      "credential": "other",
+      "credential": "AAS",
+      "program_code": null,
+      "catalog_url": "https://catalog.bscc.edu/machine-tool-technology/associate-in-applied-science-degree",
+      "total_credits": 64,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Orientation",
+          "credits_required": 1,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "107",
+              "title": "STUDENT SURVIVAL SKILLS",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "General Studies Courses",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "ENGLISH COMPOSITION I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Field of Concentration Courses",
+          "credits_required": 48,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MTT",
+              "number": "121",
+              "title": "BASIC PRINT READING FOR MACHINISTS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MTT",
+              "number": "127",
+              "title": "INTRODUCTION TO METROLOGY",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MTT",
+              "number": "270",
+              "title": "MACHINING SKILLS APPLICATION",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Basic Machining Technology Short-Term Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.bscc.edu/machine-tool-technology/basic-machining-technology-shortterm-certificate",
+      "total_credits": 25,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Field of Concentration Courses",
+          "credits_required": 25,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "107",
+              "title": "STUDENT SURVIVAL SKILLS",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MTT",
+              "number": "121",
+              "title": "BASIC PRINT READING FOR MACHINISTS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MTT",
+              "number": "127",
+              "title": "INTRODUCTION TO METROLOGY",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Computer Numerical Control Short-Term Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.bscc.edu/machine-tool-technology/computer-numerical-control-shortterm-certificate",
+      "total_credits": 25,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Field of Concentration Courses",
+          "credits_required": 25,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "107",
+              "title": "STUDENT SURVIVAL SKILLS",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MTT",
+              "number": "109",
+              "title": "ORIENTATION TO COMPUTER ASSISTED MANUFACTURING",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MTT",
+              "number": "139",
+              "title": "BASIC COMPUTER NUMERICAL CONTROL",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MTT",
+              "number": "270",
+              "title": "MACHINING SKILLS APPLICATION",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Long-Term Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.bscc.edu/machine-tool-technology/longterm-certificate",
+      "total_credits": 52,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Orientation",
+          "credits_required": 1,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "107",
+              "title": "STUDENT SURVIVAL SKILLS",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "General Studies Courses",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "ENGLISH COMPOSITION I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Field of Concentration Courses",
+          "credits_required": 45,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MTT",
+              "number": "121",
+              "title": "BASIC PRINT READING FOR MACHINISTS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MTT",
+              "number": "127",
+              "title": "INTRODUCTION TO METROLOGY",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MTT",
+              "number": "270",
+              "title": "MACHINING SKILLS APPLICATION",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Associate In Applied Science Degree",
+      "credential": "AAS",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/industrial-systems-technology/associate-in-applied-science-degree",
       "total_credits": 65,
@@ -3247,428 +3627,8 @@
       "matched_program_slug": null
     },
     {
-      "title": "Short-Term Certificate",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.bscc.edu/industrial-systems-technology/shortterm-certificate",
-      "total_credits": 16,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Orientation",
-          "credits_required": 1,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ORI",
-              "number": "107",
-              "title": "STUDENT SURVIVAL SKILLS",
-              "credits": 1,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Core Courses",
-          "credits_required": 15,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ETC",
-              "number": "101",
-              "title": "DC FUNDAMENTALS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ETC",
-              "number": "102",
-              "title": "AC FUNDAMENTALS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ETC",
-              "number": "103",
-              "title": "SOLID STATE FUNDAMENTALS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ETC",
-              "number": "104",
-              "title": "DIGITAL FUNDAMENTALS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ADM",
-              "number": "291",
-              "title": "MSSC SAFETY COURSE",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Associate In Applied Science Degree",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.bscc.edu/machine-tool-technology/associate-in-applied-science-degree",
-      "total_credits": 64,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Orientation",
-          "credits_required": 1,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ORI",
-              "number": "107",
-              "title": "STUDENT SURVIVAL SKILLS",
-              "credits": 1,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "General Studies Courses",
-          "credits_required": 15,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ENG",
-              "number": "101",
-              "title": "ENGLISH COMPOSITION I",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Field of Concentration Courses",
-          "credits_required": 48,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "MTT",
-              "number": "121",
-              "title": "BASIC PRINT READING FOR MACHINISTS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MTT",
-              "number": "127",
-              "title": "INTRODUCTION TO METROLOGY",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MTT",
-              "number": "270",
-              "title": "MACHINING SKILLS APPLICATION",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Computer Numerical Control Short-Term Certificate",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.bscc.edu/machine-tool-technology/computer-numerical-control-shortterm-certificate",
-      "total_credits": 25,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Field of Concentration Courses",
-          "credits_required": 25,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ORI",
-              "number": "107",
-              "title": "STUDENT SURVIVAL SKILLS",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MTT",
-              "number": "109",
-              "title": "ORIENTATION TO COMPUTER ASSISTED MANUFACTURING",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MTT",
-              "number": "139",
-              "title": "BASIC COMPUTER NUMERICAL CONTROL",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MTT",
-              "number": "270",
-              "title": "MACHINING SKILLS APPLICATION",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Basic Machining Technology Short-Term Certificate",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.bscc.edu/machine-tool-technology/basic-machining-technology-shortterm-certificate",
-      "total_credits": 25,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Field of Concentration Courses",
-          "credits_required": 25,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ORI",
-              "number": "107",
-              "title": "STUDENT SURVIVAL SKILLS",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MTT",
-              "number": "121",
-              "title": "BASIC PRINT READING FOR MACHINISTS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MTT",
-              "number": "127",
-              "title": "INTRODUCTION TO METROLOGY",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Accounting Short-term Certificate",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.bscc.edu/management-and-entrepreneurship/accounting-shortterm-certificate",
-      "total_credits": 25,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 25,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ORI",
-              "number": "107",
-              "title": "STUDENT SURVIVAL SKILLS",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "241",
-              "title": "PRINCIPLES OF ACCOUNTING I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "242",
-              "title": "PRINCIPLES OF ACCOUNTING II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "275",
-              "title": "PRINCIPLES OF MANAGEMENT",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "246",
-              "title": "OFFICE GRAPHICS AND PRESENTATIONS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACT",
-              "number": "246",
-              "title": "MICROCOMPUTER ACCOUNTING",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACT",
-              "number": "249",
-              "title": "PAYROLL ACCOUNTING",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACT",
-              "number": "253",
-              "title": "INDIVIDUAL INCOME TAX",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "accounting"
-    },
-    {
-      "title": "Short-term Certificate",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.bscc.edu/air-conditioning-refrigeration-technology/shortterm-certificate",
-      "total_credits": 19,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 19,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ORI",
-              "number": "107",
-              "title": "STUDENT SURVIVAL SKILLS",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACR",
-              "number": "111",
-              "title": "PRINCIPLES OF REFRIGERATION",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACR",
-              "number": "112",
-              "title": "HVAC/R SERVICE PROCEDURES",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACR",
-              "number": "121",
-              "title": "PRINCIPLES OF ELECTRICITY FOR HVAC/R",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACR",
-              "number": "123",
-              "title": "HVAC/R ELECTRICAL COMPONENTS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACR",
-              "number": "147",
-              "title": "REFRIGERATION TRANSITION & RECOVERY THEORY",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACR",
-              "number": "132",
-              "title": "RESIDENTIAL AIR CONDITIONING",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Business Essentials Short-term Certificate",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.bscc.edu/management-and-entrepreneurship/business-essentials-shortterm-certificate",
-      "total_credits": 16,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 16,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ORI",
-              "number": "107",
-              "title": "STUDENT SURVIVAL SKILLS",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "241",
-              "title": "PRINCIPLES OF ACCOUNTING I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "275",
-              "title": "PRINCIPLES OF MANAGEMENT",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "276",
-              "title": "HUMAN RESOURCE MANAGEMENT",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "285",
-              "title": "PRINCIPLES OF MARKETING",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "business-administration"
-    },
-    {
-      "title": "Associate In Applied Science Degree",
-      "credential": "other",
+      "credential": "AAS",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/management-and-entrepreneurship/associate-in-applied-science-degree",
       "total_credits": 88,
@@ -3875,17 +3835,17 @@
       "matched_program_slug": null
     },
     {
-      "title": "Advanced Manufacturing Welding Short-Term Certificate",
-      "credential": "other",
+      "title": "Accounting Short-term Certificate",
+      "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.bscc.edu/advanced-manufacturing-technology/advanced-manufacturing-welding-shortterm-certificate",
-      "total_credits": 28,
+      "catalog_url": "https://catalog.bscc.edu/management-and-entrepreneurship/accounting-shortterm-certificate",
+      "total_credits": 25,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "Required Courses",
-          "credits_required": 28,
+          "credits_required": 25,
           "choose_n": null,
           "courses": [
             {
@@ -3896,76 +3856,184 @@
               "or_alternatives": []
             },
             {
-              "prefix": "WDT",
-              "number": "108",
-              "title": "SMAW FILLET/OFC",
+              "prefix": "BUS",
+              "number": "241",
+              "title": "PRINCIPLES OF ACCOUNTING I",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "WDT",
-              "number": "110",
-              "title": "INDUSTRIAL BLUE PRINT READING",
+              "prefix": "BUS",
+              "number": "242",
+              "title": "PRINCIPLES OF ACCOUNTING II",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "WDT",
-              "number": "122",
-              "title": "SMAW FILLET/OFC LAB",
+              "prefix": "BUS",
+              "number": "275",
+              "title": "PRINCIPLES OF MANAGEMENT",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "WDT",
-              "number": "119",
-              "title": "GAS METAL ARC/FLUX CORED ARC WELDING",
+              "prefix": "OAD",
+              "number": "246",
+              "title": "OFFICE GRAPHICS AND PRESENTATIONS",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "WDT",
-              "number": "120",
-              "title": "SHIELDED METAL ARC WELDING GROOVE",
+              "prefix": "ACT",
+              "number": "246",
+              "title": "MICROCOMPUTER ACCOUNTING",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "WDT",
-              "number": "124",
-              "title": "GAS METAL ARC/FLUX CORED ARC WELDING LAB",
+              "prefix": "ACT",
+              "number": "249",
+              "title": "PAYROLL ACCOUNTING",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "WDT",
-              "number": "125",
-              "title": "SHIELDED METAL ARC WELDING GROOVE LAB",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WDT",
-              "number": "218",
-              "title": "CERTIFICATION",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WDT",
-              "number": "258",
-              "title": "CERTIFICATION LAB",
+              "prefix": "ACT",
+              "number": "253",
+              "title": "INDIVIDUAL INCOME TAX",
               "credits": 3,
               "or_alternatives": []
             }
           ]
         }
       ],
-      "matched_program_slug": "welding"
+      "matched_program_slug": "accounting"
+    },
+    {
+      "title": "Short-Term Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.bscc.edu/industrial-systems-technology/shortterm-certificate",
+      "total_credits": 16,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Orientation",
+          "credits_required": 1,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "107",
+              "title": "STUDENT SURVIVAL SKILLS",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Core Courses",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ETC",
+              "number": "101",
+              "title": "DC FUNDAMENTALS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETC",
+              "number": "102",
+              "title": "AC FUNDAMENTALS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETC",
+              "number": "103",
+              "title": "SOLID STATE FUNDAMENTALS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETC",
+              "number": "104",
+              "title": "DIGITAL FUNDAMENTALS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ADM",
+              "number": "291",
+              "title": "MSSC SAFETY COURSE",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Business Essentials Short-term Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.bscc.edu/management-and-entrepreneurship/business-essentials-shortterm-certificate",
+      "total_credits": 16,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 16,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "107",
+              "title": "STUDENT SURVIVAL SKILLS",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "241",
+              "title": "PRINCIPLES OF ACCOUNTING I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "275",
+              "title": "PRINCIPLES OF MANAGEMENT",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "276",
+              "title": "HUMAN RESOURCE MANAGEMENT",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "285",
+              "title": "PRINCIPLES OF MARKETING",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "business-administration"
     },
     {
       "title": "Entrepreneurship Short-term Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/management-and-entrepreneurship/entrepreneurship-shortterm-certificate",
       "total_credits": 16,
@@ -4019,7 +4087,7 @@
     },
     {
       "title": "Retail Management Short-term Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/management-and-entrepreneurship/retail-management-shortterm-certificate",
       "total_credits": 25,
@@ -4267,7 +4335,7 @@
     },
     {
       "title": "Medical Assisting Technology STC",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/medical-assisting-technology/medical-assisting-technology-stc",
       "total_credits": 24,
@@ -4325,116 +4393,6 @@
         }
       ],
       "matched_program_slug": null
-    },
-    {
-      "title": "Nursing Mobility: LPN & Paramedic to ADN",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.bscc.edu/nursing/nursing-mobility-lpn-paramedic-to-adn",
-      "total_credits": 52,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "First Semester — Required Pre-Requisite Classes",
-          "credits_required": 21,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BIO",
-              "number": "201",
-              "title": "HUMAN A & P I",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MTH",
-              "number": "100",
-              "title": "INTERMEDIATE COLLEGE ALGEBRA",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ORI",
-              "number": "107",
-              "title": "STUDENT SURVIVAL SKILLS",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENG",
-              "number": "101",
-              "title": "ENGLISH COMPOSITION I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "202",
-              "title": "HUMAN A & P II",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSY",
-              "number": "210",
-              "title": "HUMAN GROWTH AND DEVELOPMENT",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "First Semester",
-          "credits_required": 10,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "NUR",
-              "number": "209",
-              "title": "CONCEPTS FOR HEALTHCARE TRANSITION STUDENTS",
-              "credits": 10,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Second Semester",
-          "credits_required": 11,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BIO",
-              "number": "220",
-              "title": "GENERAL MICROBIOLOGY",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NUR",
-              "number": "211",
-              "title": "ADVANCED NURSING CONCEPTS",
-              "credits": 7,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Third Semester",
-          "credits_required": 10,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "NUR",
-              "number": "221",
-              "title": "ADVANCED EVIDENCE BASED CLINICAL REASONING",
-              "credits": 7,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "nursing"
     },
     {
       "title": "Nursing",
@@ -4575,8 +4533,118 @@
       "matched_program_slug": "nursing"
     },
     {
-      "title": "Associate In Applied Science Degree",
+      "title": "Nursing Mobility: LPN & Paramedic to ADN",
       "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.bscc.edu/nursing/nursing-mobility-lpn-paramedic-to-adn",
+      "total_credits": 52,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "First Semester — Required Pre-Requisite Classes",
+          "credits_required": 21,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BIO",
+              "number": "201",
+              "title": "HUMAN A & P I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MTH",
+              "number": "100",
+              "title": "INTERMEDIATE COLLEGE ALGEBRA",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ORI",
+              "number": "107",
+              "title": "STUDENT SURVIVAL SKILLS",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "ENGLISH COMPOSITION I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "202",
+              "title": "HUMAN A & P II",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
+              "number": "210",
+              "title": "HUMAN GROWTH AND DEVELOPMENT",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "First Semester",
+          "credits_required": 10,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "NUR",
+              "number": "209",
+              "title": "CONCEPTS FOR HEALTHCARE TRANSITION STUDENTS",
+              "credits": 10,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Second Semester",
+          "credits_required": 11,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BIO",
+              "number": "220",
+              "title": "GENERAL MICROBIOLOGY",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "211",
+              "title": "ADVANCED NURSING CONCEPTS",
+              "credits": 7,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Third Semester",
+          "credits_required": 10,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "NUR",
+              "number": "221",
+              "title": "ADVANCED EVIDENCE BASED CLINICAL REASONING",
+              "credits": 7,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "nursing"
+    },
+    {
+      "title": "Associate In Applied Science Degree",
+      "credential": "AAS",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/office-administration-and-technology/associate-in-applied-science-degree",
       "total_credits": 105,
@@ -4839,8 +4907,90 @@
       "matched_program_slug": null
     },
     {
+      "title": "Legal Office Short-term Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.bscc.edu/office-administration-and-technology/legal-office-shortterm-certificate",
+      "total_credits": 28,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Field of Study Courses",
+          "credits_required": 28,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "107",
+              "title": "STUDENT SURVIVAL SKILLS",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "103",
+              "title": "INTERMEDIATE KEYBOARDING",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "125",
+              "title": "WORD PROCESSING",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "138",
+              "title": "RECORDS/INFORMATION MANAGEMENT",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "189",
+              "title": "HUMAN RELATIONSHIPS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "263",
+              "title": "THE LEGAL AND SOCIAL ENVIRONMENT OF BUSINESS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "201",
+              "title": "Legal Terminology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "203",
+              "title": "LEGAL OFFICE PROCEDURES",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "276",
+              "title": "HUMAN RESOURCE MANAGEMENT",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Long-Term Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/office-administration-and-technology/longterm-certificate",
       "total_credits": 46,
@@ -5033,104 +5183,8 @@
       "matched_program_slug": null
     },
     {
-      "title": "Medical Office Short-term Certificate",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.bscc.edu/office-administration-and-technology/medical-office-shortterm-certificate",
-      "total_credits": 27,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Field of Study Courses",
-          "credits_required": 27,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ORI",
-              "number": "107",
-              "title": "STUDENT SURVIVAL SKILLS",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "103",
-              "title": "INTERMEDIATE KEYBOARDING",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "125",
-              "title": "WORD PROCESSING",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "138",
-              "title": "RECORDS/INFORMATION MANAGEMENT",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "211",
-              "title": "MEDICAL TERMINOLOGY",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "146",
-              "title": "Computer Applications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIT",
-              "number": "230",
-              "title": "Medical Coding Systems I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIT",
-              "number": "231",
-              "title": "Medical Coding Skills Laboratory",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIT",
-              "number": "232",
-              "title": "Medical Coding Systems II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIT",
-              "number": "236",
-              "title": "Medical Coding Skills Laboratory",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "189",
-              "title": "HUMAN RELATIONSHIPS",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Office Administration Essentials",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/office-administration-and-technology/office-administration-essentials",
       "total_credits": 28,
@@ -5225,17 +5279,17 @@
       "matched_program_slug": null
     },
     {
-      "title": "Legal Office Short-term Certificate",
-      "credential": "other",
+      "title": "Medical Office Short-term Certificate",
+      "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.bscc.edu/office-administration-and-technology/legal-office-shortterm-certificate",
-      "total_credits": 28,
+      "catalog_url": "https://catalog.bscc.edu/office-administration-and-technology/medical-office-shortterm-certificate",
+      "total_credits": 27,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "Field of Study Courses",
-          "credits_required": 28,
+          "credits_required": 27,
           "choose_n": null,
           "courses": [
             {
@@ -5267,37 +5321,51 @@
               "or_alternatives": []
             },
             {
+              "prefix": "OAD",
+              "number": "211",
+              "title": "MEDICAL TERMINOLOGY",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIT",
+              "number": "230",
+              "title": "Medical Coding Systems I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIT",
+              "number": "231",
+              "title": "Medical Coding Skills Laboratory",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIT",
+              "number": "232",
+              "title": "Medical Coding Systems II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIT",
+              "number": "236",
+              "title": "Medical Coding Skills Laboratory",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
               "prefix": "BUS",
               "number": "189",
               "title": "HUMAN RELATIONSHIPS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "263",
-              "title": "THE LEGAL AND SOCIAL ENVIRONMENT OF BUSINESS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "201",
-              "title": "Legal Terminology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "203",
-              "title": "LEGAL OFFICE PROCEDURES",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "276",
-              "title": "HUMAN RESOURCE MANAGEMENT",
               "credits": 3,
               "or_alternatives": []
             }
@@ -5307,16 +5375,16 @@
       "matched_program_slug": null
     },
     {
-      "title": "Emergency Medical Technician (Basic) - Short Term Certificate",
-      "credential": "other",
+      "title": "Emergency Medical Technician",
+      "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.bscc.edu/paramedic/emergency-medical-technician-basic-short-term-certificate",
+      "catalog_url": "https://catalog.bscc.edu/paramedic/emergency-medical-technician",
       "total_credits": 10,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
-          "name": "Field of Concentration Courses - EMT",
+          "name": "Required Courses",
           "credits_required": 10,
           "choose_n": null,
           "courses": [
@@ -5341,7 +5409,7 @@
     },
     {
       "title": "Emergency Medical Technician (Advanced) - Short Term Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/paramedic/emergency-medical-technician-advanced-short-term-certificate",
       "total_credits": 9,
@@ -5365,6 +5433,114 @@
               "number": "156",
               "title": "ADVANCED EMERGENCY MEDICAL TECHNICIAN CLINICAL",
               "credits": 2,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Nursing Mobility: Military Medic to Practical Nursing",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.bscc.edu/paramedic/nursing-mobility-military-medic-to-practical-nursing",
+      "total_credits": 33,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 33,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BIO",
+              "number": "201",
+              "title": "HUMAN A & P I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "202",
+              "title": "HUMAN A & P II",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MTH",
+              "number": "100",
+              "title": "INTERMEDIATE COLLEGE ALGEBRA",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "ENGLISH COMPOSITION I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
+              "number": "210",
+              "title": "HUMAN GROWTH AND DEVELOPMENT",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ORI",
+              "number": "107",
+              "title": "STUDENT SURVIVAL SKILLS",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "120",
+              "title": "Healthcare Transistion",
+              "credits": 10,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "115",
+              "title": "EVIDENCE BASED CLINICAL REASONING",
+              "credits": 2,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "nursing"
+    },
+    {
+      "title": "Emergency Medical Technician (Basic) - Short Term Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.bscc.edu/paramedic/emergency-medical-technician-basic-short-term-certificate",
+      "total_credits": 10,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Field of Concentration Courses - EMT",
+          "credits_required": 10,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "EMS",
+              "number": "118",
+              "title": "EMERGENCY MEDICAL TECHNICIAN",
+              "credits": 9,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "119",
+              "title": "EMERGENCY MEDICAL TECHNICIAN CLINICAL",
+              "credits": 1,
               "or_alternatives": []
             }
           ]
@@ -5547,7 +5723,7 @@
     },
     {
       "title": "Paramedic Short Term Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/paramedic/paramedic-short-term-certificate",
       "total_credits": 29,
@@ -5650,7 +5826,7 @@
     },
     {
       "title": "Associate in Applied Science Degree - Barbering",
-      "credential": "other",
+      "credential": "AAS",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/salon-and-spa-management/associate-in-applied-science-degree-barbering",
       "total_credits": 64,
@@ -5836,17 +6012,17 @@
       "matched_program_slug": null
     },
     {
-      "title": "Associate In Applied Science Degree - Instructor Training",
-      "credential": "other",
+      "title": "Cosmetology Short Term Certificate",
+      "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.bscc.edu/salon-and-spa-management/associate-in-applied-science-degree-instructor-training",
-      "total_credits": 62,
+      "catalog_url": "https://catalog.bscc.edu/salon-and-spa-management/cosmetology-short-term-certificate",
+      "total_credits": 28,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
-          "name": "Orientation",
-          "credits_required": 1,
+          "name": "Required Courses",
+          "credits_required": 25,
           "choose_n": null,
           "courses": [
             {
@@ -5855,112 +6031,63 @@
               "title": "STUDENT SURVIVAL SKILLS",
               "credits": 1,
               "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "112",
+              "title": "INTRODUCTION TO COSMETOLOGY LAB",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "113",
+              "title": "THEORY OF CHEMICAL SERVICES",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "114",
+              "title": "CHEMICAL SERVICES LAB",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "115",
+              "title": "HAIR COLORING THEORY",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "116",
+              "title": "HAIR COLORING LAB",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "137",
+              "title": "HAIR SHAPING AND DESIGN THEORY",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "145",
+              "title": "HAIR SHAPING LAB",
+              "credits": 3,
+              "or_alternatives": []
             }
           ]
         },
         {
-          "name": "General Education Courses",
-          "credits_required": 18,
+          "name": "CHOOSE ONE",
+          "credits_required": 3,
           "choose_n": null,
           "courses": [
-            {
-              "prefix": "ENG",
-              "number": "101",
-              "title": "ENGLISH COMPOSITION I",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Field of Study Courses",
-          "credits_required": 43,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "SAL",
-              "number": "133",
-              "title": "SALON MANAGEMENT TECHNOLOGY",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SAL",
-              "number": "201",
-              "title": "ENTREPRENEURSHIP FOR SALON AND SPA MANAGEMENT",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIT",
-              "number": "211",
-              "title": "TEACHING AND CURRICULUM DEVELOPMENT",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIT",
-              "number": "212",
-              "title": "TEACHER MENTORSHIP",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIT",
-              "number": "213",
-              "title": "COSMETOLOGY INSTRUCTOR CO-OP",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIT",
-              "number": "214",
-              "title": "LESSON PLAN METHODS AND DEVELOPMENT",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIT",
-              "number": "221",
-              "title": "LESSON PLAN IMPLEMENTATION",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIT",
-              "number": "222",
-              "title": "AUDIO VISUAL MATERIALS AND METHODS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIT",
-              "number": "223",
-              "title": "AUDIO VISUAL MATERIALS AND METHODS APPLICATIONS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COS",
-              "number": "125",
-              "title": "CAREER AND PERSONAL DEVELOPMENT",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COS",
-              "number": "133",
-              "title": "Salon Management Technology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COS",
-              "number": "158",
-              "title": "EMPLOYABILITY SKILLS",
-              "credits": 3,
-              "or_alternatives": []
-            },
             {
               "prefix": "COS",
               "number": "190",
@@ -5969,10 +6096,17 @@
               "or_alternatives": []
             },
             {
-              "prefix": "EMS",
-              "number": "103",
-              "title": "FIRST AID-CPR and AED",
-              "credits": 1,
+              "prefix": "COS",
+              "number": "191",
+              "title": "CO-OP",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "123",
+              "title": "COSMETOLOGY SALON PRACTICES",
+              "credits": 3,
               "or_alternatives": []
             }
           ]
@@ -5982,7 +6116,7 @@
     },
     {
       "title": "Associate in Applied Science Degree - Salon and Spa Management",
-      "credential": "other",
+      "credential": "AAS",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/salon-and-spa-management/associate-in-applied-science-degree-salon-and-spa-management",
       "total_credits": 118,
@@ -6245,10 +6379,113 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Cosmetology Short Term Certificate",
-      "credential": "other",
+      "title": "Esthetics Short Term Certificate",
+      "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.bscc.edu/salon-and-spa-management/cosmetology-short-term-certificate",
+      "catalog_url": "https://catalog.bscc.edu/salon-and-spa-management/esthetics-short-term-certificate",
+      "total_credits": 25,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 22,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "107",
+              "title": "STUDENT SURVIVAL SKILLS",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "127",
+              "title": "ESTHETICS THEORY",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "134",
+              "title": "ADVANCED ESTHETICS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "135",
+              "title": "ADVANCED ESTHETICS APPLICATION",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "163",
+              "title": "FACIAL TREATMENTS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "164",
+              "title": "FACIAL MACHINE",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "166",
+              "title": "SKIN CARE BACTERIOLOGY AND SANITATION",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "169",
+              "title": "SKIN FUNCTIONS",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "CHOOSE ONE",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "COS",
+              "number": "165",
+              "title": "RELATED SUBJECTS ESTHETICIANS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "190",
+              "title": "INTERNSHIP IN COSMETOLOGY",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "191",
+              "title": "CO-OP",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Nail Technology Short Term Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.bscc.edu/salon-and-spa-management/nail-technology-short-term-certificate",
       "total_credits": 28,
       "gpa_minimum": 2,
       "description": null,
@@ -6267,50 +6504,57 @@
             },
             {
               "prefix": "COS",
-              "number": "112",
-              "title": "INTRODUCTION TO COSMETOLOGY LAB",
+              "number": "150",
+              "title": "Manicuring",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "COS",
-              "number": "113",
-              "title": "THEORY OF CHEMICAL SERVICES",
+              "number": "148",
+              "title": "NAIL CARE THEORY",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "COS",
-              "number": "114",
-              "title": "CHEMICAL SERVICES LAB",
+              "number": "149",
+              "title": "NAIL ART THEORY",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "COS",
-              "number": "115",
-              "title": "HAIR COLORING THEORY",
+              "number": "152",
+              "title": "NAIL CARE APPLICATIONS",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "COS",
-              "number": "116",
-              "title": "HAIR COLORING LAB",
+              "number": "153",
+              "title": "NAIL ART",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "COS",
-              "number": "137",
-              "title": "HAIR SHAPING AND DESIGN THEORY",
+              "number": "154",
+              "title": "NAIL ART APPLICATIONS",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "COS",
-              "number": "145",
-              "title": "HAIR SHAPING LAB",
+              "number": "158",
+              "title": "EMPLOYABILITY SKILLS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "151",
+              "title": "Nail Care",
               "credits": 3,
               "or_alternatives": []
             }
@@ -6321,6 +6565,13 @@
           "credits_required": 3,
           "choose_n": null,
           "courses": [
+            {
+              "prefix": "COS",
+              "number": "166",
+              "title": "SKIN CARE BACTERIOLOGY AND SANITATION",
+              "credits": 3,
+              "or_alternatives": []
+            },
             {
               "prefix": "COS",
               "number": "190",
@@ -6334,13 +6585,6 @@
               "title": "CO-OP",
               "credits": 3,
               "or_alternatives": []
-            },
-            {
-              "prefix": "COS",
-              "number": "123",
-              "title": "COSMETOLOGY SALON PRACTICES",
-              "credits": 3,
-              "or_alternatives": []
             }
           ]
         }
@@ -6348,17 +6592,17 @@
       "matched_program_slug": null
     },
     {
-      "title": "Long-Term Certificate",
-      "credential": "other",
+      "title": "Sterile Processing Technology",
+      "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.bscc.edu/machine-tool-technology/longterm-certificate",
-      "total_credits": 52,
+      "catalog_url": "https://catalog.bscc.edu/surgical-technology/sterile-processing-technology",
+      "total_credits": 22,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
-          "name": "Orientation",
-          "credits_required": 1,
+          "name": "Sterile Processing Technology - Short Term Certificate",
+          "credits_required": 22,
           "choose_n": null,
           "courses": [
             {
@@ -6367,46 +6611,39 @@
               "title": "STUDENT SURVIVAL SKILLS",
               "credits": 1,
               "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "General Studies Courses",
-          "credits_required": 6,
-          "choose_n": null,
-          "courses": [
+            },
             {
-              "prefix": "ENG",
-              "number": "101",
-              "title": "ENGLISH COMPOSITION I",
-              "credits": 3,
+              "prefix": "BIO",
+              "number": "201",
+              "title": "HUMAN A & P I",
+              "credits": 4,
               "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Field of Concentration Courses",
-          "credits_required": 45,
-          "choose_n": null,
-          "courses": [
+            },
             {
-              "prefix": "MTT",
-              "number": "121",
-              "title": "BASIC PRINT READING FOR MACHINISTS",
+              "prefix": "BIO",
+              "number": "202",
+              "title": "HUMAN A & P II",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SUR",
+              "number": "150",
+              "title": "Central Sterile I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SUR",
+              "number": "151",
+              "title": "Central Sterile II",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "MTT",
-              "number": "127",
-              "title": "INTRODUCTION TO METROLOGY",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MTT",
-              "number": "270",
-              "title": "MACHINING SKILLS APPLICATION",
+              "prefix": "SUR",
+              "number": "152",
+              "title": "Central Sterile Lab",
               "credits": 3,
               "or_alternatives": []
             }
@@ -6417,7 +6654,7 @@
     },
     {
       "title": "Surgical Technology",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/surgical-technology/surgical-technology",
       "total_credits": 29,
@@ -6498,69 +6735,8 @@
       "matched_program_slug": null
     },
     {
-      "title": "Sterile Processing Technology",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.bscc.edu/surgical-technology/sterile-processing-technology",
-      "total_credits": 22,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Sterile Processing Technology - Short Term Certificate",
-          "credits_required": 22,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ORI",
-              "number": "107",
-              "title": "STUDENT SURVIVAL SKILLS",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "201",
-              "title": "HUMAN A & P I",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "202",
-              "title": "HUMAN A & P II",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SUR",
-              "number": "150",
-              "title": "Central Sterile I",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SUR",
-              "number": "151",
-              "title": "Central Sterile II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SUR",
-              "number": "152",
-              "title": "Central Sterile Lab",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "App Development with Swift Short-term Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/systems-information-technology/app-development-with-swift-shortterm-certificate",
       "total_credits": 10,
@@ -6607,7 +6783,7 @@
     },
     {
       "title": "Associate in Applied Science Degree",
-      "credential": "other",
+      "credential": "AAS",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/systems-information-technology/associate-in-applied-science-degree",
       "total_credits": 64,
@@ -6786,17 +6962,17 @@
       "matched_program_slug": null
     },
     {
-      "title": "Nail Technology Short Term Certificate",
-      "credential": "other",
+      "title": "Associate In Applied Science Degree - Instructor Training",
+      "credential": "AAS",
       "program_code": null,
-      "catalog_url": "https://catalog.bscc.edu/salon-and-spa-management/nail-technology-short-term-certificate",
-      "total_credits": 28,
+      "catalog_url": "https://catalog.bscc.edu/salon-and-spa-management/associate-in-applied-science-degree-instructor-training",
+      "total_credits": 62,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
-          "name": "Required Courses",
-          "credits_required": 25,
+          "name": "Orientation",
+          "credits_required": 1,
           "choose_n": null,
           "courses": [
             {
@@ -6805,46 +6981,102 @@
               "title": "STUDENT SURVIVAL SKILLS",
               "credits": 1,
               "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "General Education Courses",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "ENGLISH COMPOSITION I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Field of Study Courses",
+          "credits_required": 43,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "SAL",
+              "number": "133",
+              "title": "SALON MANAGEMENT TECHNOLOGY",
+              "credits": 3,
+              "or_alternatives": []
             },
             {
-              "prefix": "COS",
-              "number": "150",
-              "title": "Manicuring",
+              "prefix": "SAL",
+              "number": "201",
+              "title": "ENTREPRENEURSHIP FOR SALON AND SPA MANAGEMENT",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIT",
+              "number": "211",
+              "title": "TEACHING AND CURRICULUM DEVELOPMENT",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIT",
+              "number": "212",
+              "title": "TEACHER MENTORSHIP",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIT",
+              "number": "213",
+              "title": "COSMETOLOGY INSTRUCTOR CO-OP",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIT",
+              "number": "214",
+              "title": "LESSON PLAN METHODS AND DEVELOPMENT",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIT",
+              "number": "221",
+              "title": "LESSON PLAN IMPLEMENTATION",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIT",
+              "number": "222",
+              "title": "AUDIO VISUAL MATERIALS AND METHODS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIT",
+              "number": "223",
+              "title": "AUDIO VISUAL MATERIALS AND METHODS APPLICATIONS",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "COS",
-              "number": "148",
-              "title": "NAIL CARE THEORY",
+              "number": "125",
+              "title": "CAREER AND PERSONAL DEVELOPMENT",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "COS",
-              "number": "149",
-              "title": "NAIL ART THEORY",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COS",
-              "number": "152",
-              "title": "NAIL CARE APPLICATIONS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COS",
-              "number": "153",
-              "title": "NAIL ART",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COS",
-              "number": "154",
-              "title": "NAIL ART APPLICATIONS",
+              "number": "133",
+              "title": "Salon Management Technology",
               "credits": 3,
               "or_alternatives": []
             },
@@ -6857,37 +7089,16 @@
             },
             {
               "prefix": "COS",
-              "number": "151",
-              "title": "Nail Care",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "CHOOSE ONE",
-          "credits_required": 3,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "COS",
-              "number": "166",
-              "title": "SKIN CARE BACTERIOLOGY AND SANITATION",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COS",
               "number": "190",
               "title": "INTERNSHIP IN COSMETOLOGY",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "COS",
-              "number": "191",
-              "title": "CO-OP",
-              "credits": 3,
+              "prefix": "EMS",
+              "number": "103",
+              "title": "FIRST AID-CPR and AED",
+              "credits": 1,
               "or_alternatives": []
             }
           ]
@@ -6896,10 +7107,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Emergency Medical Technician",
-      "credential": "other",
+      "title": "Computer User Support Short-term Certificate",
+      "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.bscc.edu/paramedic/emergency-medical-technician",
+      "catalog_url": "https://catalog.bscc.edu/systems-information-technology/computer-user-support-shortterm-certificate",
       "total_credits": 10,
       "gpa_minimum": 2,
       "description": null,
@@ -6910,17 +7121,31 @@
           "choose_n": null,
           "courses": [
             {
-              "prefix": "EMS",
-              "number": "118",
-              "title": "EMERGENCY MEDICAL TECHNICIAN",
-              "credits": 9,
+              "prefix": "ORI",
+              "number": "107",
+              "title": "STUDENT SURVIVAL SKILLS",
+              "credits": 1,
               "or_alternatives": []
             },
             {
-              "prefix": "EMS",
-              "number": "119",
-              "title": "EMERGENCY MEDICAL TECHNICIAN CLINICAL",
-              "credits": 1,
+              "prefix": "CIS",
+              "number": "134",
+              "title": "IT Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "268",
+              "title": "SOFTWARE SUPPORT",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "269",
+              "title": "HARDWARE SUPPORT",
+              "credits": 3,
               "or_alternatives": []
             }
           ]
@@ -6930,7 +7155,7 @@
     },
     {
       "title": "Cyber Security Short-term Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/systems-information-technology/cyber-security-shortterm-certificate",
       "total_credits": 10,
@@ -6990,55 +7215,8 @@
       "matched_program_slug": null
     },
     {
-      "title": "Programming Support Short-term Certificate",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.bscc.edu/systems-information-technology/programming-support-shortterm-certificate",
-      "total_credits": 10,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 10,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ORI",
-              "number": "107",
-              "title": "STUDENT SURVIVAL SKILLS",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "150",
-              "title": "INTRODUCTION TO COMPUTER LOGIC AND PROGRAMMING",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "207",
-              "title": "INTRODUCTION TO WEB DEVELOPMENT",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "251",
-              "title": "C++ PROGRAMMING",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Network Support Short-term Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/systems-information-technology/network-support-shortterm-certificate",
       "total_credits": 10,
@@ -7084,10 +7262,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Computer User Support Short-term Certificate",
-      "credential": "other",
+      "title": "Programming Support Short-term Certificate",
+      "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.bscc.edu/systems-information-technology/computer-user-support-shortterm-certificate",
+      "catalog_url": "https://catalog.bscc.edu/systems-information-technology/programming-support-shortterm-certificate",
       "total_credits": 10,
       "gpa_minimum": 2,
       "description": null,
@@ -7106,22 +7284,22 @@
             },
             {
               "prefix": "CIS",
-              "number": "134",
-              "title": "IT Fundamentals",
+              "number": "150",
+              "title": "INTRODUCTION TO COMPUTER LOGIC AND PROGRAMMING",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "CIS",
-              "number": "268",
-              "title": "SOFTWARE SUPPORT",
+              "number": "207",
+              "title": "INTRODUCTION TO WEB DEVELOPMENT",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "CIS",
-              "number": "269",
-              "title": "HARDWARE SUPPORT",
+              "number": "251",
+              "title": "C++ PROGRAMMING",
               "credits": 3,
               "or_alternatives": []
             }
@@ -7132,7 +7310,7 @@
     },
     {
       "title": "Windows Support Short-term Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/systems-information-technology/windows-support-shortterm-certificate",
       "total_credits": 10,
@@ -7193,7 +7371,7 @@
     },
     {
       "title": "Short-Term Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/truck-driver-training/shortterm-certificate",
       "total_credits": 9,
@@ -7232,83 +7410,8 @@
       "matched_program_slug": null
     },
     {
-      "title": "Nursing Mobility: Military Medic to Practical Nursing",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.bscc.edu/paramedic/nursing-mobility-military-medic-to-practical-nursing",
-      "total_credits": 33,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 33,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BIO",
-              "number": "201",
-              "title": "HUMAN A & P I",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "202",
-              "title": "HUMAN A & P II",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MTH",
-              "number": "100",
-              "title": "INTERMEDIATE COLLEGE ALGEBRA",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENG",
-              "number": "101",
-              "title": "ENGLISH COMPOSITION I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSY",
-              "number": "210",
-              "title": "HUMAN GROWTH AND DEVELOPMENT",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ORI",
-              "number": "107",
-              "title": "STUDENT SURVIVAL SKILLS",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NUR",
-              "number": "120",
-              "title": "Healthcare Transistion",
-              "credits": 10,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NUR",
-              "number": "115",
-              "title": "EVIDENCE BASED CLINICAL REASONING",
-              "credits": 2,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "nursing"
-    },
-    {
       "title": "Urban Forestry Technician Short-term Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/urban-forestry-technician/urban-forestry-technician-shortterm-certificate",
       "total_credits": 13,
@@ -7362,7 +7465,7 @@
     },
     {
       "title": "Associate in Applied Science Degree",
-      "credential": "other",
+      "credential": "AAS",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/vehicle-technology-and-repair/associate-in-applied-science-degree",
       "total_credits": 64,
@@ -7528,7 +7631,7 @@
     },
     {
       "title": "Long-Term Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/vehicle-technology-and-repair/longterm-certificate",
       "total_credits": 40,
@@ -7686,8 +7789,62 @@
       "matched_program_slug": null
     },
     {
+      "title": "Fitting Short-term Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.bscc.edu/welding-technology/fitting-shortterm-certificate",
+      "total_credits": 13,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 13,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "107",
+              "title": "STUDENT SURVIVAL SKILLS",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PFT",
+              "number": "101",
+              "title": "Introduction to Pipefitting",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PFT",
+              "number": "105",
+              "title": "Introduction to Pipefitting Blueprints",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PFT",
+              "number": "107",
+              "title": "Threaded Pipe and Socket Weld Pipe Fabrication",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PFT",
+              "number": "109",
+              "title": "Butt Weld Pipe Fitting and Pipe Rigging",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Short-Term Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/vehicle-technology-and-repair/shortterm-certificate",
       "total_credits": 25,
@@ -7755,7 +7912,7 @@
     },
     {
       "title": "Associate in Applied Science Degree",
-      "credential": "other",
+      "credential": "AAS",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/welding-technology/associate-in-applied-science-degree",
       "total_credits": 61,
@@ -7941,111 +8098,8 @@
       "matched_program_slug": null
     },
     {
-      "title": "Esthetics Short Term Certificate",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.bscc.edu/salon-and-spa-management/esthetics-short-term-certificate",
-      "total_credits": 25,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 22,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ORI",
-              "number": "107",
-              "title": "STUDENT SURVIVAL SKILLS",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COS",
-              "number": "127",
-              "title": "ESTHETICS THEORY",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COS",
-              "number": "134",
-              "title": "ADVANCED ESTHETICS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COS",
-              "number": "135",
-              "title": "ADVANCED ESTHETICS APPLICATION",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COS",
-              "number": "163",
-              "title": "FACIAL TREATMENTS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COS",
-              "number": "164",
-              "title": "FACIAL MACHINE",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COS",
-              "number": "166",
-              "title": "SKIN CARE BACTERIOLOGY AND SANITATION",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COS",
-              "number": "169",
-              "title": "SKIN FUNCTIONS",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "CHOOSE ONE",
-          "credits_required": 3,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "COS",
-              "number": "165",
-              "title": "RELATED SUBJECTS ESTHETICIANS",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COS",
-              "number": "190",
-              "title": "INTERNSHIP IN COSMETOLOGY",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COS",
-              "number": "191",
-              "title": "CO-OP",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "GMAW/FCAW Welding Short-Term Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/welding-technology/gmawfcaw-welding-shortterm-certificate",
       "total_credits": 16,
@@ -8106,7 +8160,7 @@
     },
     {
       "title": "Long-Term Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/welding-technology/longterm-certificate",
       "total_credits": 49,
@@ -8251,7 +8305,7 @@
     },
     {
       "title": "Pipe Welding Short-term Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/welding-technology/pipe-welding-shortterm-certificate",
       "total_credits": 13,
@@ -8304,62 +8358,8 @@
       "matched_program_slug": "welding"
     },
     {
-      "title": "Fitting Short-term Certificate",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.bscc.edu/welding-technology/fitting-shortterm-certificate",
-      "total_credits": 13,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 13,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ORI",
-              "number": "107",
-              "title": "STUDENT SURVIVAL SKILLS",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PFT",
-              "number": "101",
-              "title": "Introduction to Pipefitting",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PFT",
-              "number": "105",
-              "title": "Introduction to Pipefitting Blueprints",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PFT",
-              "number": "107",
-              "title": "Threaded Pipe and Socket Weld Pipe Fabrication",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PFT",
-              "number": "109",
-              "title": "Butt Weld Pipe Fitting and Pipe Rigging",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Welding for Fitting Short-term Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/welding-technology/welding-for-fitting-shortterm-certificate",
       "total_credits": 13,
@@ -8413,7 +8413,7 @@
     },
     {
       "title": "SMAW Welding Technology Short-Term Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.bscc.edu/welding-technology/smaw-welding-technology-shortterm-certificate",
       "total_credits": 13,
