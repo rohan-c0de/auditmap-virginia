@@ -133,7 +133,9 @@ const scConfig: StateConfig = {
       },
     ],
     prereqs: { source: "aggregate-from-courses" },
-    programs: [{ scripts: ["scripts/sc/scrape-programs.ts"], runner: "http" }],
+    // Playwright: every SC Acalog catalog is behind AWS WAF (202 challenge)
+    // and is scraped via headless Chromium.
+    programs: [{ scripts: ["scripts/sc/scrape-programs.ts"], runner: "playwright" }],
   },
   documentedCeilings: {},
 };

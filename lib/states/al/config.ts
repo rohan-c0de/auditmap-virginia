@@ -90,7 +90,9 @@ const alConfig: StateConfig = {
     // Degree/program requirements for the 9 CleanCatalog colleges that yield
     // parseable programs (14 more deferred — see data/al/DEFERRED-programs.md).
     programs: [
-      { scripts: ["scripts/al/scrape-programs.ts"], runner: "http" },
+      // Playwright: shelton-state's Acalog catalog is behind AWS WAF (202
+      // challenge) and is scraped via headless Chromium.
+      { scripts: ["scripts/al/scrape-programs.ts"], runner: "playwright" },
     ],
   },
   documentedCeilings: {

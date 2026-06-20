@@ -119,6 +119,18 @@ async function main() {
       catalogPath: "college-catalog",
     }),
   );
+
+  // Enterprise State — SmartCatalogIQ at escc.smartcatalogiq.com. The
+  // /programs-of-study/ index is empty; degree plans live under
+  // career-technical-degree-plans/ and general-education-transfer-degree-plans/,
+  // which the broader catalog-root BFS fallback resolves.
+  await run("enterprise-state-community-college", () =>
+    scrapeSmartCatalogIqPrograms({
+      collegeSlug: "enterprise-state-community-college",
+      baseUrl: "https://escc.smartcatalogiq.com",
+      catalogPath: "academic-catalog",
+    }),
+  );
 }
 
 main().catch((e) => {
