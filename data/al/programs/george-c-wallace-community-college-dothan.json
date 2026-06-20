@@ -2,11 +2,11 @@
   "college_slug": "george-c-wallace-community-college-dothan",
   "catalog_year": "2025-2026",
   "catalog_url": "https://catalog.wallace.edu/degrees",
-  "scraped_at": "2026-06-03T21:27:22.088Z",
+  "scraped_at": "2026-06-20T13:59:20.438Z",
   "programs": [
     {
       "title": "Air Conditioning/Refrigeration, A.A.S.",
-      "credential": "other",
+      "credential": "AAS",
       "program_code": null,
       "catalog_url": "https://catalog.wallace.edu/air-conditioningrefrigeration/air-conditioningrefrigeration-aas",
       "total_credits": 58,
@@ -178,17 +178,17 @@
       "matched_program_slug": null
     },
     {
-      "title": "Basic HVAC Technician, STC",
+      "title": "Air Conditioning/Refrigeration, STC",
       "credential": "other",
       "program_code": null,
-      "catalog_url": "https://catalog.wallace.edu/air-conditioningrefrigeration/basic-hvac-technician-stc",
-      "total_credits": 15,
+      "catalog_url": "https://catalog.wallace.edu/air-conditioningrefrigeration/air-conditioningrefrigeration-stc",
+      "total_credits": 27,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "Area V: Required Field of Concentration Courses",
-          "credits_required": 15,
+          "credits_required": 27,
           "choose_n": null,
           "courses": [
             {
@@ -202,6 +202,13 @@
               "prefix": "ACR",
               "number": "112",
               "title": "HVAC/R Service Procedures",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "119",
+              "title": "Fundamentals of Gas Heating Systems",
               "credits": 3,
               "or_alternatives": []
             },
@@ -221,8 +228,29 @@
             },
             {
               "prefix": "ACR",
+              "number": "123",
+              "title": "HVAC/R Electrical Components",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
               "number": "147",
               "title": "Refrigerant Transition and Recovery Theory",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "148",
+              "title": "Heat Pump Systems I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "149",
+              "title": "Heat Pump Systems II",
               "credits": 3,
               "or_alternatives": []
             }
@@ -233,7 +261,7 @@
     },
     {
       "title": "Air Conditioning/Refrigeration, Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.wallace.edu/air-conditioningrefrigeration/air-conditioningrefrigeration-certificate",
       "total_credits": 52,
@@ -384,8 +412,62 @@
       "matched_program_slug": null
     },
     {
-      "title": "Automotive Technology, Certificate",
+      "title": "Basic HVAC Technician, STC",
       "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.wallace.edu/air-conditioningrefrigeration/basic-hvac-technician-stc",
+      "total_credits": 15,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area V: Required Field of Concentration Courses",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACR",
+              "number": "111",
+              "title": "Principles of Refrigeration",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "112",
+              "title": "HVAC/R Service Procedures",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "121",
+              "title": "Principles of Electricity for HVAC/R",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "122",
+              "title": "HVAC/R Electric Circuits",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "147",
+              "title": "Refrigerant Transition and Recovery Theory",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Automotive Technology, Certificate",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.wallace.edu/automotive-technology/automotive-technology-certificate",
       "total_credits": 52,
@@ -537,7 +619,7 @@
     },
     {
       "title": "Automotive Technology, A.A.S.",
-      "credential": "other",
+      "credential": "AAS",
       "program_code": null,
       "catalog_url": "https://catalog.wallace.edu/automotive-technology/automotive-technology-aas",
       "total_credits": 55,
@@ -660,6 +742,156 @@
       "matched_program_slug": "automotive-technology"
     },
     {
+      "title": "Automotive Technology, STC",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.wallace.edu/automotive-technology/automotive-technology-stc",
+      "total_credits": 21,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area V: Required Field of Concentration Courses",
+          "credits_required": 21,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ASE",
+              "number": "101",
+              "title": "Fundamentals of Automotive Technology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ASE",
+              "number": "112",
+              "title": "Electrical Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ASE",
+              "number": "121",
+              "title": "Braking Systems",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ASE",
+              "number": "122",
+              "title": "Steering and Suspension",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ASE",
+              "number": "124",
+              "title": "Automotive Engines",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ASE",
+              "number": "133",
+              "title": "Motor Vehicle Air Conditioning",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ASE",
+              "number": "239",
+              "title": "Engine Performance",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "automotive-technology"
+    },
+    {
+      "title": "Basic Automotive, Truck, and Tractor Service and Repair, STC",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.wallace.edu/automotive-technology/basic-automotive-truck-and-tractor-service-and-repair-stc",
+      "total_credits": 27,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 27,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ASE",
+              "number": "101",
+              "title": "Fundamentals of Automotive Technology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ASE",
+              "number": "112",
+              "title": "Electrical Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ASE",
+              "number": "121",
+              "title": "Braking Systems",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ASE",
+              "number": "122",
+              "title": "Steering and Suspension",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ASE",
+              "number": "124",
+              "title": "Automotive Engines",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ASE",
+              "number": "130",
+              "title": "Drive Train and Axles",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ASE",
+              "number": "133",
+              "title": "Motor Vehicle Air Conditioning",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ASE",
+              "number": "239",
+              "title": "Engine Performance",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ASE",
+              "number": "291",
+              "title": "Co-Op",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "automotive-technology"
+    },
+    {
       "title": "Diesel and Heavy Equipment Mechanics",
       "credential": "other",
       "program_code": null,
@@ -707,8 +939,256 @@
       "matched_program_slug": null
     },
     {
-      "title": "Business Technologies, A.A.S.",
+      "title": "Lube Technician, STC",
       "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.wallace.edu/automotive-technology/lube-technician-stc",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area V: Required Field of Concentration Courses",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ASE",
+              "number": "101",
+              "title": "Fundamentals of Automotive Technology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ASE",
+              "number": "112",
+              "title": "Electrical Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ASE",
+              "number": "121",
+              "title": "Braking Systems",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ASE",
+              "number": "122",
+              "title": "Steering and Suspension",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Business Technologies Short Certificates",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.wallace.edu/business-technologies/business-technologies-short-certificates",
+      "total_credits": 72,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Accounting Technology Short Certificate",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACT",
+              "number": "249",
+              "title": "Payroll Accounting",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACC",
+              "number": "129",
+              "title": "Individual Income Taxes",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "241",
+              "title": "Principles of Accounting I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "242",
+              "title": "Principles of Accounting II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "248",
+              "title": "Managerial Accounting",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "245",
+              "title": "Accounting with QuickBooks",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Business Management & Supervision Short Certificate",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BUS",
+              "number": "186",
+              "title": "Elements of Supervision",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "215",
+              "title": "Business Communications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "241",
+              "title": "Principles of Accounting I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "275",
+              "title": "Principles of Management",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "279",
+              "title": "Small Business Management",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Entrepreneurship Short Certificate",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BUS",
+              "number": "100",
+              "title": "Introduction to Business",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "186",
+              "title": "Elements of Supervision",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "241",
+              "title": "Principles of Accounting I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "245",
+              "title": "Accounting with QuickBooks",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "279",
+              "title": "Small Business Management",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "285",
+              "title": "Principles of Marketing",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Office Administration Short Certificate",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BUS",
+              "number": "215",
+              "title": "Business Communications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "103",
+              "title": "Intermediate Keyboarding",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "125",
+              "title": "Word Processing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "138",
+              "title": "Records/Information Management",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Business Technologies, A.A.S.",
+      "credential": "AAS",
       "program_code": null,
       "catalog_url": "https://catalog.wallace.edu/business-technologies/business-technologies-aas",
       "total_credits": 85,
@@ -951,7 +1431,7 @@
     },
     {
       "title": "Child Development, A.A.S.",
-      "credential": "other",
+      "credential": "AAS",
       "program_code": null,
       "catalog_url": "https://catalog.wallace.edu/child-development/child-development-aas",
       "total_credits": 49,
@@ -1095,40 +1575,19 @@
       "matched_program_slug": "early-childhood-education"
     },
     {
-      "title": "Child Development, Certificate",
+      "title": "Pre-K Endorsement, STC",
       "credential": "other",
       "program_code": null,
-      "catalog_url": "https://catalog.wallace.edu/child-development/child-development-certificate",
-      "total_credits": 34,
+      "catalog_url": "https://catalog.wallace.edu/child-development/prek-endorsement-stc",
+      "total_credits": 9,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
-          "name": "Area I: Written Composition",
-          "credits_required": 3,
+          "name": "Area V: Required Field of Concentration Courses",
+          "credits_required": 9,
           "choose_n": null,
           "courses": [
-            {
-              "prefix": "ENG",
-              "number": "101",
-              "title": "English Composition I",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Area V: Career and Technical Courses",
-          "credits_required": 31,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CIS",
-              "number": "146",
-              "title": "Computer Applications",
-              "credits": 3,
-              "or_alternatives": []
-            },
             {
               "prefix": "CHD",
               "number": "100",
@@ -1142,57 +1601,15 @@
               "title": "Child Growth and Development Principles",
               "credits": 3,
               "or_alternatives": []
-            },
-            {
-              "prefix": "CHD",
-              "number": "203",
-              "title": "Children’s Literature and Language Development",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHD",
-              "number": "204",
-              "title": "Methods and Materials for Teaching Young Children",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHD",
-              "number": "206",
-              "title": "Children’s Health and Safety",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHD",
-              "number": "213",
-              "title": "Child Development Trends Seminar",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHD",
-              "number": "214",
-              "title": "Families and Communities in Early Care and Education Programs",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHD",
-              "number": "217",
-              "title": "Math and Science for Young Children",
-              "credits": 3,
-              "or_alternatives": []
             }
           ]
         }
       ],
-      "matched_program_slug": "early-childhood-education"
+      "matched_program_slug": null
     },
     {
       "title": "Computer Information Science, A.A.S.",
-      "credential": "other",
+      "credential": "AAS",
       "program_code": null,
       "catalog_url": "https://catalog.wallace.edu/computer-information-science/computer-information-science-aas",
       "total_credits": 91,
@@ -1455,8 +1872,375 @@
       "matched_program_slug": null
     },
     {
+      "title": "Computer Information Science Short Certificates",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.wallace.edu/computer-information-science/computer-information-science-short-certificates",
+      "total_credits": 84,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Computer Technician Short Certificate",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "182",
+              "title": "Help Desk Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "268",
+              "title": "Software Support",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "269",
+              "title": "Hardware Support",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Cyber Defense Short Certificate",
+          "credits_required": 9,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "245",
+              "title": "Cyber Defense",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "246",
+              "title": "Ethical Hacking",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "282",
+              "title": "Computer Forensics",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Google IT Support Professional Short Certificate",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "120",
+              "title": "Google IT Professional Support I—Technical Support Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "121",
+              "title": "Google IT Professional Support II—Computer Networking",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "122",
+              "title": "Google IT Professional Support III—Operating Systems",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "123",
+              "title": "Google IT Professional Support IV—System Administration and IT Infrastructure",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "124",
+              "title": "Google IT Professional Support V—IT Security",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Mobile App Development Short Certificate",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "150",
+              "title": "Introduction to Computer Logic and Programming",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "219",
+              "title": "Android App Development",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "259",
+              "title": "Advanced Mobile App Development",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "285",
+              "title": "Object-Oriented Programming",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Networking Essentials Short Certificate",
+          "credits_required": 9,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "161",
+              "title": "Introduction to Networking Communications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "171",
+              "title": "Linux I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "280",
+              "title": "Network Security",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Programming Essentials Short Certificate",
+          "credits_required": 9,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "150",
+              "title": "Introduction to Computer Logic and Programming",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "212",
+              "title": "Visual Basic Programming",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "285",
+              "title": "Object-Oriented Programming",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Software Applications Short Certificate",
+          "credits_required": 9,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "113",
+              "title": "Spreadsheet Software Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "117",
+              "title": "Database Management Software Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Web Development Essentials",
+          "credits_required": 9,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "150",
+              "title": "Introduction to Computer Logic and Programming",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "202",
+              "title": "Python Programming",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "207",
+              "title": "Web Development",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Cosmetology, Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.wallace.edu/cosmetology/cosmetology-certificate",
+      "total_credits": 40,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area V: Career and Technical Courses",
+          "credits_required": 40,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "COS",
+              "number": "111",
+              "title": "Introduction to Cosmetology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "112",
+              "title": "Introduction to Cosmetology Lab",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "113",
+              "title": "Theory of Chemical Services",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "114",
+              "title": "Chemical Services Lab",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "115",
+              "title": "Hair Color Theory",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "116",
+              "title": "Hair Color Lab",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "117",
+              "title": "Basic Spa Techniques Theory",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "118",
+              "title": "Basic Spa Techniques Lab",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "119",
+              "title": "Business of Cosmetology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "167",
+              "title": "State Board Review",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "181",
+              "title": "Special Topics Theory",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "182",
+              "title": "Special Topics Lab",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Criminal Justice Forensic Concentration, A.A.S.",
-      "credential": "other",
+      "credential": "AAS",
       "program_code": null,
       "catalog_url": "https://catalog.wallace.edu/criminal-justice/criminal-justice-forensic-concentration-aas",
       "total_credits": 53,
@@ -1655,7 +2439,7 @@
     },
     {
       "title": "Criminal Justice Law Enforcement Concentration, A.A.S.",
-      "credential": "other",
+      "credential": "AAS",
       "program_code": null,
       "catalog_url": "https://catalog.wallace.edu/criminal-justice/criminal-justice-law-enforcement-concentration-aas",
       "total_credits": 56,
@@ -1813,8 +2597,104 @@
       "matched_program_slug": "criminal-justice"
     },
     {
+      "title": "Child Development, Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.wallace.edu/child-development/child-development-certificate",
+      "total_credits": 34,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area I: Written Composition",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area V: Career and Technical Courses",
+          "credits_required": 31,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHD",
+              "number": "100",
+              "title": "Introduction to Early Care and Education of Children",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHD",
+              "number": "201",
+              "title": "Child Growth and Development Principles",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHD",
+              "number": "203",
+              "title": "Children’s Literature and Language Development",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHD",
+              "number": "204",
+              "title": "Methods and Materials for Teaching Young Children",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHD",
+              "number": "206",
+              "title": "Children’s Health and Safety",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHD",
+              "number": "213",
+              "title": "Child Development Trends Seminar",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHD",
+              "number": "214",
+              "title": "Families and Communities in Early Care and Education Programs",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHD",
+              "number": "217",
+              "title": "Math and Science for Young Children",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "early-childhood-education"
+    },
+    {
       "title": "Electrical Technology, A.A.S.",
-      "credential": "other",
+      "credential": "AAS",
       "program_code": null,
       "catalog_url": "https://catalog.wallace.edu/electrical-technology/electrical-technology-aas",
       "total_credits": 62,
@@ -1983,6 +2863,39 @@
               "number": "118",
               "title": "Commercial/Industrial Wiring I",
               "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Emergency Medical Services- EMT Short Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.wallace.edu/emergency-medical-services/emergency-medical-services-emt-short-certificate",
+      "total_credits": 10,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "SHORT CERTIFICATE CURRICULUM EMERGENCY MEDICAL TECHNICIAN (EMT)",
+          "credits_required": 10,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "EMS",
+              "number": "118",
+              "title": "Emergency Medical Technician",
+              "credits": 9,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "119",
+              "title": "Emergency Medical Technician Clinical",
+              "credits": 1,
               "or_alternatives": []
             }
           ]
@@ -2179,7 +3092,7 @@
     },
     {
       "title": "Emergency Medical Services - Paramedic Certificate Curriculum",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.wallace.edu/emergency-medical-services/emergency-medical-services-paramedic-certificate-curriculum",
       "total_credits": 56,
@@ -2323,6 +3236,142 @@
       "matched_program_slug": null
     },
     {
+      "title": "Emergency Medical Services - Paramedic Short Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.wallace.edu/emergency-medical-services/emergency-medical-services-paramedic-short-certificate",
+      "total_credits": 28,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "SHORT CERTIFICATE CURRICULUM PARAMEDIC (EMP)",
+          "credits_required": 28,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "EMS",
+              "number": "241",
+              "title": "Paramedic Cardiology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "242",
+              "title": "Paramedic Patient Assessment",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "243",
+              "title": "Paramedic Pharmacology",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "244",
+              "title": "Paramedic Clinical I",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "245",
+              "title": "Paramedic Medical Emergencies I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "246",
+              "title": "Paramedic Trauma Management",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "247",
+              "title": "Paramedic Special Populations",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "248",
+              "title": "Paramedic Clinical II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "253",
+              "title": "Paramedic Transition to the Workforce",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "254",
+              "title": "Advanced Competencies for Paramedic",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "255",
+              "title": "Paramedic Field Preceptorship",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "256",
+              "title": "Paramedic Team Leadership",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Emergency Medical Services-AEMT Short Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.wallace.edu/emergency-medical-services/emergency-medical-servicesaemt-short-certificate",
+      "total_credits": 9,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "SHORT CERTIFICATE CURRICULUM ADVANCED EMERGENCY MEDICAL TECHNICIAN",
+          "credits_required": 9,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "EMS",
+              "number": "155",
+              "title": "Advanced Emergency Medical Technician",
+              "credits": 7,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "156",
+              "title": "Advanced Emergency Medical Technician Clinical",
+              "credits": 2,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "3D Graphics Technician, STC",
       "credential": "other",
       "program_code": null,
@@ -2363,37 +3412,44 @@
       "matched_program_slug": null
     },
     {
-      "title": "Emergency Medical Services-AEMT Short Certificate",
+      "title": "Advanced Engineering Draftsman, STC",
       "credential": "other",
       "program_code": null,
-      "catalog_url": "https://catalog.wallace.edu/emergency-medical-services/emergency-medical-servicesaemt-short-certificate",
+      "catalog_url": "https://catalog.wallace.edu/engineering-graphics/advanced-engineering-draftsman-stc",
       "total_credits": 9,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
-          "name": "SHORT CERTIFICATE CURRICULUM ADVANCED EMERGENCY MEDICAL TECHNICIAN",
+          "name": "Area V: Required Field of Concentration Courses",
           "credits_required": 9,
           "choose_n": null,
           "courses": [
             {
-              "prefix": "EMS",
-              "number": "155",
-              "title": "Advanced Emergency Medical Technician",
-              "credits": 7,
+              "prefix": "DDT",
+              "number": "213",
+              "title": "Civil Drafting, Plat Maps",
+              "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "EMS",
-              "number": "156",
-              "title": "Advanced Emergency Medical Technician Clinical",
-              "credits": 2,
+              "prefix": "DDT",
+              "number": "225",
+              "title": "Structural Steel Drafting",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DDT",
+              "number": "244",
+              "title": "Advanced 3D Modeling",
+              "credits": 3,
               "or_alternatives": []
             }
           ]
         }
       ],
-      "matched_program_slug": null
+      "matched_program_slug": "engineering"
     },
     {
       "title": "Architectural Graphics Technician, STC",
@@ -2436,8 +3492,55 @@
       "matched_program_slug": null
     },
     {
-      "title": "Engineering Graphics, A.A.S.",
+      "title": "CAD Operator, STC",
       "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.wallace.edu/engineering-graphics/cad-operator-stc",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area V: Required Field of Concentration Courses",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "DDT",
+              "number": "104",
+              "title": "Basic Computer-Aided Drafting and Design",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DDT",
+              "number": "111",
+              "title": "Fundamentals of Drafting and Design Technology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DDT",
+              "number": "124",
+              "title": "Basic Technical Drawing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DDT",
+              "number": "127",
+              "title": "Intermediate Computer-Aided Drafting and Design",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Engineering Graphics, A.A.S.",
+      "credential": "AAS",
       "program_code": null,
       "catalog_url": "https://catalog.wallace.edu/engineering-graphics/engineering-graphics-aas",
       "total_credits": 50,
@@ -2574,8 +3677,289 @@
       "matched_program_slug": "engineering"
     },
     {
-      "title": "Industrial Systems Technology, A.A.S.",
+      "title": "Engineering Graphics, Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.wallace.edu/engineering-graphics/engineering-graphics-certificate",
+      "total_credits": 44,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area I: Written Composition",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area V: Career and Technical Courses",
+          "credits_required": 41,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DDT",
+              "number": "104",
+              "title": "Basic Computer-Aided Drafting and Design",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DDT",
+              "number": "111",
+              "title": "Fundamentals of Drafting and Design Technology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DDT",
+              "number": "124",
+              "title": "Basic Technical Drawing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DDT",
+              "number": "127",
+              "title": "Intermediate Computer-Aided Drafting and Design",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DDT",
+              "number": "128",
+              "title": "Intermediate Technical Drawing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DDT",
+              "number": "144",
+              "title": "Basic 3D Modeling",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DDT",
+              "number": "150",
+              "title": "Theory of Residential Drawing and Design",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DDT",
+              "number": "155",
+              "title": "Drawing for Residential Construction",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DDT",
+              "number": "213",
+              "title": "Civil Drafting, Plat Maps",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DDT",
+              "number": "225",
+              "title": "Structural Steel Drafting",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DDT",
+              "number": "233",
+              "title": "Intermediate 3D Modeling",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WKO",
+              "number": "106",
+              "title": "Workplace Skills",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "engineering"
+    },
+    {
+      "title": "Engineering Graphics, STC",
       "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.wallace.edu/engineering-graphics/engineering-graphics-stc",
+      "total_credits": 25,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area V: REQUIRED FIELD OF CONCENTRATION COURSES",
+          "credits_required": 25,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "DDT",
+              "number": "104",
+              "title": "Basic Computer-Aided Drafting and Design",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DDT",
+              "number": "111",
+              "title": "Fundamentals of Drafting and Design Technology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DDT",
+              "number": "124",
+              "title": "Basic Technical Drawing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DDT",
+              "number": "127",
+              "title": "Intermediate Computer-Aided Drafting and Design",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DDT",
+              "number": "144",
+              "title": "Basic 3D Modeling",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DDT",
+              "number": "150",
+              "title": "Theory of Residential Drawing and Design",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DDT",
+              "number": "155",
+              "title": "Drawing for Residential Construction",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DDT",
+              "number": "213",
+              "title": "Civil Drafting, Plat Maps",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "engineering"
+    },
+    {
+      "title": "Esthetics Technology, STC",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.wallace.edu/esthetics-technology/esthetics-technology-stc",
+      "total_credits": 27,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area V: Required Field of Concentration Courses",
+          "credits_required": 27,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "COS",
+              "number": "134",
+              "title": "Advanced Esthetics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "135",
+              "title": "Advanced Esthetics Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "181",
+              "title": "Special Topics Theory",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "165",
+              "title": "Related Subjects Estheticians",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "163",
+              "title": "Facial Treatments",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "164",
+              "title": "Facial Machines",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "169",
+              "title": "Skin Functions",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "168",
+              "title": "Bacteriology and Sanitation",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "167",
+              "title": "State Board Review",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Industrial Systems Technology, A.A.S.",
+      "credential": "AAS",
       "program_code": null,
       "catalog_url": "https://catalog.wallace.edu/industrial-systems-technology/industrial-systems-technology-aas",
       "total_credits": 62,
@@ -2706,7 +4090,7 @@
     },
     {
       "title": "Industrial Systems Technology: FAME - Advanced Manufacturing, A.A.S",
-      "credential": "other",
+      "credential": "AAS",
       "program_code": null,
       "catalog_url": "https://catalog.wallace.edu/industrial-systems-technology/industrial-systems-technology-fame-advanced-manufacturing-aas",
       "total_credits": 67,
@@ -2920,26 +4304,19 @@
       "matched_program_slug": null
     },
     {
-      "title": "Millwright Technician, STC",
+      "title": "Industrial Systems Technology, STC",
       "credential": "other",
       "program_code": null,
-      "catalog_url": "https://catalog.wallace.edu/industrial-systems-technology/millwright-technician-stc",
-      "total_credits": 21,
+      "catalog_url": "https://catalog.wallace.edu/industrial-systems-technology/industrial-systems-technology-stc",
+      "total_credits": 24,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "Area V: Required Field of Concentration Courses",
-          "credits_required": 21,
+          "credits_required": 24,
           "choose_n": null,
           "courses": [
-            {
-              "prefix": "INT",
-              "number": "117",
-              "title": "Principles of Industrial Mechanics",
-              "credits": 3,
-              "or_alternatives": []
-            },
             {
               "prefix": "INT",
               "number": "118",
@@ -2956,15 +4333,8 @@
             },
             {
               "prefix": "INT",
-              "number": "132",
-              "title": "Preventive and Predictive Maintenance",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WDT",
-              "number": "107",
-              "title": "Smaw Fillet/OFC/PAC/CAC",
+              "number": "284",
+              "title": "Advanced Programmable Logic Controllers (PLC's)",
               "credits": 3,
               "or_alternatives": []
             }
@@ -3040,6 +4410,224 @@
               "prefix": "MAS",
               "number": "251",
               "title": "Stone Masonry Lab",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Millwright Technician, STC",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.wallace.edu/industrial-systems-technology/millwright-technician-stc",
+      "total_credits": 21,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area V: Required Field of Concentration Courses",
+          "credits_required": 21,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "INT",
+              "number": "117",
+              "title": "Principles of Industrial Mechanics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "118",
+              "title": "Fundamentals of Industrial Hydraulics and Pneumatics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "119",
+              "title": "Principles of Mechanical Measurement and Technical Drawing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "132",
+              "title": "Preventive and Predictive Maintenance",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "107",
+              "title": "Smaw Fillet/OFC/PAC/CAC",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "EKG Technician Short Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.wallace.edu/medical-assisting/ekg-technician-short-certificate",
+      "total_credits": 25,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area V: Required Field of Concentration Courses",
+          "credits_required": 25,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "100",
+              "title": "Cardiopulmonary Resuscitation I",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "101",
+              "title": "Medical Terminology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "102",
+              "title": "Medical Assisting Theory I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "103",
+              "title": "Medical Assisting Theory II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "111",
+              "title": "Clinical Procedures I for the Medical Assistant",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "122",
+              "title": "Basic Concepts of Interpersonal Relationships",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "128",
+              "title": "Medical Law and Ethics for the Medical Assistant",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "211",
+              "title": "Clinical Procedures II for the Medical Assistant",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Medical Administrative Assistant Short Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.wallace.edu/medical-assisting/medical-administrative-assistant-short-certificate",
+      "total_credits": 27,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area V: Required Field of Concentration Courses",
+          "credits_required": 27,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "101",
+              "title": "Medical Terminology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "102",
+              "title": "Medical Assisting Theory I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "103",
+              "title": "Medical Assisting Theory II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "120",
+              "title": "Medical Administrative Procedures I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "121",
+              "title": "Medical Administrative Procedures II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "128",
+              "title": "Medical Law and Ethics for the Medical Assistant",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "130",
+              "title": "Medical Office Communication",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "220",
+              "title": "Medical Office Insurance",
               "credits": 3,
               "or_alternatives": []
             }
@@ -3250,17 +4838,17 @@
       "matched_program_slug": null
     },
     {
-      "title": "EKG Technician Short Certificate",
-      "credential": "other",
+      "title": "Phlebotomy Short Certificate",
+      "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.wallace.edu/medical-assisting/ekg-technician-short-certificate",
-      "total_credits": 25,
+      "catalog_url": "https://catalog.wallace.edu/medical-assisting/phlebotomy-short-certificate",
+      "total_credits": 28,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "Area V: Required Field of Concentration Courses",
-          "credits_required": 25,
+          "credits_required": 28,
           "choose_n": null,
           "courses": [
             {
@@ -3300,15 +4888,15 @@
             },
             {
               "prefix": "MAT",
-              "number": "111",
-              "title": "Clinical Procedures I for the Medical Assistant",
+              "number": "122",
+              "title": "Basic Concepts of Interpersonal Relationships",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "MAT",
-              "number": "122",
-              "title": "Basic Concepts of Interpersonal Relationships",
+              "number": "125",
+              "title": "Laboratory Procedures I for the Medical Assistant",
               "credits": 3,
               "or_alternatives": []
             },
@@ -3321,9 +4909,98 @@
             },
             {
               "prefix": "MAT",
-              "number": "211",
-              "title": "Clinical Procedures II for the Medical Assistant",
+              "number": "215",
+              "title": "Laboratory Procedures II for the Medical Assistant",
               "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "239",
+              "title": "Phlebotomy Practicum",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Mental Health Technician (MHT)",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.wallace.edu/mental-health-technician/mental-health-technician-mht",
+      "total_credits": 29,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area IV: History, Social and Behavioral Sciences",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "PSY",
+              "number": "200",
+              "title": "General Psychology",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area V: Career and Technical Courses",
+          "credits_required": 26,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "EMS",
+              "number": "100",
+              "title": "Cardiopulmonary Resuscitation I",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MHT",
+              "number": "100",
+              "title": "Introduction to Inpatient and Residential Operations",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MHT",
+              "number": "101",
+              "title": "Fundamentals of Mental Health Technician",
+              "credits": 6,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MHT",
+              "number": "110",
+              "title": "Introduction into Abnormal Psychology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MHT",
+              "number": "120",
+              "title": "Addiction and Forensic Psychology",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MHT",
+              "number": "130",
+              "title": "Management of Behavioral Crisis",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MHT",
+              "number": "140",
+              "title": "Psychiatric Pharmacology",
+              "credits": 4,
               "or_alternatives": []
             }
           ]
@@ -4029,165 +5706,6 @@
       "matched_program_slug": "nursing"
     },
     {
-      "title": "Surgical Technology (SUR)",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.wallace.edu/surgical-technology/surgical-technology-sur",
-      "total_credits": 65,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "AREA I: WRITTEN COMPOSITION",
-          "credits_required": 3,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ENG",
-              "number": "101",
-              "title": "English Composition I",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "AREA III: NATURAL SCIENCES AND MATHEMATICS",
-          "credits_required": 15,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BIO",
-              "number": "201",
-              "title": "Human Anatomy Physiology I",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "202",
-              "title": "Human Anatomy Physiology II",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "220",
-              "title": "General Microbiology",
-              "credits": 4,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "AREA IV HISTORY, SOCIAL AND BEHAVIORAL SCIENCE",
-          "credits_required": 6,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "PSY",
-              "number": "200",
-              "title": "General Psychology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSY",
-              "number": "210",
-              "title": "Human Growth and Development",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "AREA V: CAREER AND TECHNICAL COURSES",
-          "credits_required": 41,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CIS",
-              "number": "146",
-              "title": "Computer Applications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SUR",
-              "number": "101",
-              "title": "Introduction to Surgical Technology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SUR",
-              "number": "102",
-              "title": "Applied Surgical Techniques",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SUR",
-              "number": "103",
-              "title": "Surgical Procedures",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SUR",
-              "number": "104",
-              "title": "Surgical Practicum I",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SUR",
-              "number": "105",
-              "title": "Surgical Practicum II",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SUR",
-              "number": "106",
-              "title": "Role Transition in Surgical Technology",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SUR",
-              "number": "108",
-              "title": "Pharmacology for the Surgical Technologist",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SUR",
-              "number": "203",
-              "title": "Surgical Procedures II",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SUR",
-              "number": "204",
-              "title": "Surgical Practicum III",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SUR",
-              "number": "205",
-              "title": "Surgical Practicum IV",
-              "credits": 5,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Radiologic Technology (RAD)",
       "credential": "other",
       "program_code": null,
@@ -4576,8 +6094,336 @@
       "matched_program_slug": null
     },
     {
-      "title": "Welding Technology, Certificate",
+      "title": "Surgical Technology (SUR)",
       "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.wallace.edu/surgical-technology/surgical-technology-sur",
+      "total_credits": 65,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "AREA I: WRITTEN COMPOSITION",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "AREA III: NATURAL SCIENCES AND MATHEMATICS",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BIO",
+              "number": "201",
+              "title": "Human Anatomy Physiology I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "202",
+              "title": "Human Anatomy Physiology II",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "220",
+              "title": "General Microbiology",
+              "credits": 4,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "AREA IV HISTORY, SOCIAL AND BEHAVIORAL SCIENCE",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "PSY",
+              "number": "200",
+              "title": "General Psychology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
+              "number": "210",
+              "title": "Human Growth and Development",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "AREA V: CAREER AND TECHNICAL COURSES",
+          "credits_required": 41,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SUR",
+              "number": "101",
+              "title": "Introduction to Surgical Technology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SUR",
+              "number": "102",
+              "title": "Applied Surgical Techniques",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SUR",
+              "number": "103",
+              "title": "Surgical Procedures",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SUR",
+              "number": "104",
+              "title": "Surgical Practicum I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SUR",
+              "number": "105",
+              "title": "Surgical Practicum II",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SUR",
+              "number": "106",
+              "title": "Role Transition in Surgical Technology",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SUR",
+              "number": "108",
+              "title": "Pharmacology for the Surgical Technologist",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SUR",
+              "number": "203",
+              "title": "Surgical Procedures II",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SUR",
+              "number": "204",
+              "title": "Surgical Practicum III",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SUR",
+              "number": "205",
+              "title": "Surgical Practicum IV",
+              "credits": 5,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Basic Welding Fundamentals, STC",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.wallace.edu/welding-technology/basic-welding-fundamentals-stc",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area V: Required Field of Concentration Courses",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "WDT",
+              "number": "107",
+              "title": "Smaw Fillet/OFC/PAC/CAC",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "119",
+              "title": "Gas Metal Arc/Flux Cored Arc Welding",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "123",
+              "title": "Smaw Fillet/PAC/CAC/Lab",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "124",
+              "title": "Gas Metal Arc/Flux Cored Arc Welding Lab",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "welding"
+    },
+    {
+      "title": "Welding Technology Advanced MIG Welding (Aluminum Concentration), STC",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.wallace.edu/welding-technology/welding-technology-advanced-mig-welding-aluminum-concentration-stc",
+      "total_credits": 18,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area V: Career and Technical Courses",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "WDT",
+              "number": "119",
+              "title": "Gas Metal Arc/Flux Cored Arc Welding",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "124",
+              "title": "Gas Metal Arc/Flux Cored Arc Welding Lab",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "162",
+              "title": "Consumable Welding Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "163",
+              "title": "Consumable Welding Applications Lab",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "115",
+              "title": "GTAW Carbon Pipe",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "228",
+              "title": "Gas Tungsten Arc Welding",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "welding"
+    },
+    {
+      "title": "Welding Technology Advanced Pipe Welding (Stainless Steel Concentration), STC",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.wallace.edu/welding-technology/welding-technology-advanced-pipe-welding-stainless-steel-concentration-stc",
+      "total_credits": 18,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area V: Career and Technical Courses",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "WDT",
+              "number": "116",
+              "title": "GTAW Stainless Pipe",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "156",
+              "title": "GTAW Stainless Pipe Lab",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "157",
+              "title": "Consumable Welding Processes",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "158",
+              "title": "Consumable Welding Processes Lab",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "115",
+              "title": "GTAW Carbon Pipe",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "155",
+              "title": "GTAW Carbon Pipe Lab",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "welding"
+    },
+    {
+      "title": "Welding Technology, Certificate",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.wallace.edu/welding-technology/welding-technology-certificate",
       "total_credits": 49,
@@ -4691,6 +6537,81 @@
               "prefix": "WDT",
               "number": "268",
               "title": "Gas Tungsten Arc Welding Lab",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "welding"
+    },
+    {
+      "title": "Welding Technology, STC",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.wallace.edu/welding-technology/welding-technology-stc",
+      "total_credits": 24,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area V: Required Field of Concentration Courses",
+          "credits_required": 24,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "WDT",
+              "number": "107",
+              "title": "Smaw Fillet/OFC/PAC/CAC",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "110",
+              "title": "Industrial Blueprint Reading",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "119",
+              "title": "Gas Metal Arc/Flux Cored Arc Welding",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "120",
+              "title": "Shielded Metal Arc Welding Groove",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "122",
+              "title": "Smaw Fillet/OFC Lab",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "123",
+              "title": "Smaw Fillet/PAC/CAC/Lab",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "124",
+              "title": "Gas Metal Arc/Flux Cored Arc Welding Lab",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "125",
+              "title": "Shielded Metal Arc Welding Groove Lab",
               "credits": 3,
               "or_alternatives": []
             }

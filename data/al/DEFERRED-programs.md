@@ -1,34 +1,41 @@
-# AL programs — deferred colleges
+# AL programs — coverage & deferred colleges
 
-Programs were rolled out for **9 of 23** Alabama community colleges (all on
-CleanCatalog). The remaining 14 are deferred below with the reason and the
-next step, so a follow-up session can extend coverage without re-discovering.
+Programs are now scraped for **15 of 23** Alabama community colleges across
+three platforms (see `scripts/al/scrape-programs.ts`):
 
-Discovery method: `scripts/lib/discover-programs.ts` probed each college's
-catalog domain (derived from the Scorecard `schoolUrl`).
+- **CleanCatalog (12):** bevill, chattahoochee-valley, gadsden, wallace-dothan,
+  wallace-hanceville, wallace-selma, calhoun, northwest-shoals, southern-union,
+  coastal-alabama, h-councill-trenholm, central-alabama.
+- **Acalog (1):** shelton-state (behind AWS WAF → Playwright, navoid 574).
+- **SmartCatalogIQ (2):** j-f-drake-state, enterprise-state.
 
-## Platform detected, but no parseable programs (5)
+The 5 previously "platform detected, no parseable programs" colleges (coastal,
+trenholm, central-alabama, drake-state, shelton-state) were all resolved in
+2026-06 by generalizing the CleanCatalog parser (multi-shape URL support),
+driving shelton's WAF-gated Acalog through Playwright, and pointing drake at
+its SmartCatalogIQ catalog-root BFS.
 
-| College | Platform | Catalog URL | Reason / next step |
+## Remaining deferred (8)
+
+### Buildable but blocked (1)
+
+| College | Platform | Catalog URL | Blocker |
 |---|---|---|---|
-| coastal-alabama-community-college | CleanCatalog | https://catalog.coastalalabama.edu | `/degrees` returns 200 but the crawl finds 0 program detail pages; programs sit under a `/catalog/...` structure. Inspect the DOM and set `indexPaths`. |
-| h-councill-trenholm-state-community-college | CleanCatalog | https://catalog.trenholmstate.edu | `/degrees` and `/certificate` exist but parse to 0 programs. Inspect link structure; likely a custom template variant. |
-| central-alabama-community-college | CleanCatalog | https://live-central-alabama.cleancatalog.io | Programs live under category pages (`/academic-transfer-programs`, `/career-technical-programs`) that link to intermediate pages, not program detail pages. Needs a deeper crawl depth. |
-| j-f-drake-state-community-and-technical-college | SmartCatalogIQ | (body marker on https://drakestate.edu) | Discovery matched the SmartCatalogIQ marker on the main domain; the real `*.smartcatalogiq.com` catalog URL is unresolved (`Could not discover catalog year`). Find the actual catalog host and pass it as `baseUrl`. |
-| shelton-state-community-college | Acalog | https://catalog.sheltonstate.edu | Acalog needs `programNavoids`; auto-discovery returned 0. Open the catalog, find the program-listing navoid(s), and fill them in. |
+| bishop-state-community-college | Acalog | https://catalog.bishop.edu | Triple-blocked: catalog is behind AWS WAF (202), serves an **invalid TLS cert** (Playwright `ERR_CERT_AUTHORITY_INVALID`), and exposes no `catoid` on the public root, so auto-discovery can't seed the scrape. Needs a Playwright context with `ignoreHTTPSErrors` plus a manually-probed catoid. |
 
-## No public catalog matched a known platform (9)
+### No templated public catalog (7) — documented course/program ceilings
 
-These returned no Acalog / CourseLeaf / SmartCatalogIQ / Coursedog /
-CleanCatalog catalog on their primary domain (likely Modern Campus, custom
-HTML, or PDF-only). Each needs manual investigation.
+These expose no Acalog / CourseLeaf / SmartCatalogIQ / Coursedog / CleanCatalog
+catalog. Each publishes requirements as PDF, a bespoke CMS page, or a JS SPA
+with no server-rendered program list. Treat as program ceilings until a public
+templated catalog appears.
 
-- bishop-state-community-college
-- enterprise-state-community-college
-- jefferson-state-community-college
-- lawson-state-community-college
-- lurleen-b-wallace-community-college
-- marion-military-institute
-- northeast-alabama-community-college
-- reid-state-technical-college
-- snead-state-community-college
+| College | Finding |
+|---|---|
+| jefferson-state-community-college | No catalog link on homepage; no catalog subdomain. |
+| lawson-state-community-college | Catalog is an ASPX page (`/learn_at_lawson/academic_catalog/default.aspx`), no templated platform. |
+| lurleen-b-wallace-community-college | Catalog under `/current-students/college-catalog-student-handbook`, custom CMS. |
+| marion-military-institute | `/academics/catalog/` is a custom HTML page, no platform markers. |
+| northeast-alabama-community-college | `catalog.nacc.edu` is a JS SPA app-shell (meta-refresh, no server-rendered program list). |
+| reid-state-technical-college | `/collegecatalog` custom page, no platform markers. |
+| snead-state-community-college | No catalog link on homepage; no catalog subdomain. |

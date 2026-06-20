@@ -2,8 +2,434 @@
   "college_slug": "chattahoochee-valley-community-college",
   "catalog_year": "2025-2026",
   "catalog_url": "https://catalog.cv.edu/degrees",
-  "scraped_at": "2026-06-03T21:27:14.099Z",
+  "scraped_at": "2026-06-20T13:59:17.279Z",
   "programs": [
+    {
+      "title": "Basic Accounting",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/accounting/short-certificate/basic-accounting",
+      "total_credits": 21,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 21,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACC",
+              "number": "149",
+              "title": "Introduction to Accounting Spreadsheets",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACC",
+              "number": "150",
+              "title": "Computerized General Ledger",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "241",
+              "title": "Principles of Accounting I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "242",
+              "title": "Principles of Accounting II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "accounting"
+    },
+    {
+      "title": "Applied Technology: Automotive Manufacturing Option",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/automotive-manufacturing-technology/certificate/applied-technology-automotive-manufacturing-option",
+      "total_credits": 45,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Automotive Manufacturing Courses",
+          "credits_required": 39,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ADM",
+              "number": "100",
+              "title": "Industrial Safety",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ADM",
+              "number": "101",
+              "title": "Precision Measurement",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ADM",
+              "number": "102",
+              "title": "Computer-Aided Design",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ADM",
+              "number": "105",
+              "title": "Fluid Systems",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ADM",
+              "number": "106",
+              "title": "Quality Control Concepts",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "101",
+              "title": "DC Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "103",
+              "title": "AC Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "117",
+              "title": "Principles of Industrial Mechanics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "184",
+              "title": "Introduction to Programmable Logic Controllers (PLCs)",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "284",
+              "title": "Advanced Programmable Logic Controllers",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "288",
+              "title": "Applied Programmable Logic Controllers",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "134",
+              "title": "Principles of Industrial Maintenance Welding and Metal Cutting Techniques",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Additional Certificate Requirements",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "automotive-technology"
+    },
+    {
+      "title": "Applied Technology: Air Conditioning and Refrigeration (HVAC) Option",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/air-conditioning-refrigeration-technology/short-certificate/applied-technology-air-conditioning-and",
+      "total_credits": 25,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 25,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "111",
+              "title": "Principles of Refrigeration",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "112",
+              "title": "HVACR Service Procedures",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "113",
+              "title": "Refrigeration Piping Practices",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "119",
+              "title": "Fundamentals of Gas Heating Systems",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "121",
+              "title": "Principles of Electricity for HVAC/R",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "148",
+              "title": "Heat Pump Systems I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "183",
+              "title": "Special Topics in Air Conditioning and Refrigeration",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "203",
+              "title": "Commercial Refrigeration",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Applied Technology: Automotive Manufacturing Option",
+      "credential": "AAS",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/automotive-manufacturing-technology/associate-of-applied-science/applied-technology-automotive",
+      "total_credits": 57,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area III: Natural Science and Mathematics",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MTH",
+              "number": "100",
+              "title": "Intermediate College Algebra",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area IV: History, Social and Behavioral Sciences",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "PSY",
+              "number": "200",
+              "title": "General Psychology",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area V: Preprofessional Major and Elective Courses",
+          "credits_required": 42,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ADM",
+              "number": "100",
+              "title": "Industrial Safety",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ADM",
+              "number": "101",
+              "title": "Precision Measurement",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ADM",
+              "number": "102",
+              "title": "Computer-Aided Design",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ADM",
+              "number": "105",
+              "title": "Fluid Systems",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ADM",
+              "number": "106",
+              "title": "Quality Control Concepts",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "101",
+              "title": "DC Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "103",
+              "title": "AC Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "117",
+              "title": "Principles of Industrial Mechanics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "184",
+              "title": "Introduction to Programmable Logic Controllers (PLCs)",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "284",
+              "title": "Advanced Programmable Logic Controllers",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "288",
+              "title": "Applied Programmable Logic Controllers",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "134",
+              "title": "Principles of Industrial Maintenance Welding and Metal Cutting Techniques",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "291",
+              "title": "Cooperative Education",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Additional Degree Requirements",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "automotive-technology"
+    },
     {
       "title": "Applied Technology Air Conditioning and Refrigeration (HVAC) Option",
       "credential": "certificate",
@@ -136,17 +562,31 @@
       "matched_program_slug": null
     },
     {
-      "title": "Applied Technology: Industrial Maintenance Option",
-      "credential": "certificate",
+      "title": "Applied Technology: Air Conditioning and Refrigeration (HVAC) Option",
+      "credential": "AAS",
       "program_code": null,
-      "catalog_url": "https://catalog.cv.edu/industrial-maintenance-technology/certificate/applied-technology-industrial-maintenance-option",
-      "total_credits": 42,
+      "catalog_url": "https://catalog.cv.edu/air-conditioning-refrigeration-technology/associate-of-applied-science/applied-technology-air",
+      "total_credits": 55,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
-          "name": "Required Industrial Maintenance Courses",
-          "credits_required": 36,
+          "name": "Area IV: History, Social and Behavioral Sciences",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "PSY",
+              "number": "200",
+              "title": "General Psychology",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area V: Preprofessional Major and Elective Courses",
+          "credits_required": 46,
           "choose_n": null,
           "courses": [
             {
@@ -200,36 +640,71 @@
             },
             {
               "prefix": "INT",
+              "number": "291",
+              "title": "Cooperative Education",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "111",
+              "title": "Principles of Refrigeration",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "112",
+              "title": "HVACR Service Procedures",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
               "number": "113",
-              "title": "Industrial Motor Controls I",
+              "title": "Refrigeration Piping Practices",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "INT",
-              "number": "117",
-              "title": "Principles of Industrial Mechanics",
+              "prefix": "ACR",
+              "number": "119",
+              "title": "Fundamentals of Gas Heating Systems",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "INT",
-              "number": "184",
-              "title": "Introduction to Programmable Logic Controllers (PLCs)",
+              "prefix": "ACR",
+              "number": "121",
+              "title": "Principles of Electricity for HVAC/R",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "INT",
-              "number": "284",
-              "title": "Advanced Programmable Logic Controllers",
+              "prefix": "ACR",
+              "number": "148",
+              "title": "Heat Pump Systems I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "183",
+              "title": "Special Topics in Air Conditioning and Refrigeration",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "203",
+              "title": "Commercial Refrigeration",
               "credits": 3,
               "or_alternatives": []
             }
           ]
         },
         {
-          "name": "Additional Certificate Requirements",
+          "name": "Additional Degree Requirements",
           "credits_required": 6,
           "choose_n": null,
           "courses": [
@@ -253,17 +728,17 @@
       "matched_program_slug": null
     },
     {
-      "title": "Fire Science",
+      "title": "Applied Technology: Automotive Manufacturing Option",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.cv.edu/fire-science/certificate/fire-science",
-      "total_credits": 18,
+      "catalog_url": "https://catalog.cv.edu/automotive-manufacturing-technology/short-certificate/applied-technology-automotive-manufacturing",
+      "total_credits": 27,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
-          "name": "Area V: Technical Core, Technical Concentration Electives",
-          "credits_required": 18,
+          "name": "Required Courses",
+          "credits_required": 27,
           "choose_n": null,
           "courses": [
             {
@@ -274,37 +749,1281 @@
               "or_alternatives": []
             },
             {
-              "prefix": "FSC",
+              "prefix": "INT",
               "number": "101",
-              "title": "Introduction to the Fire Service",
+              "title": "DC Fundamentals",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "FSC",
-              "number": "110",
-              "title": "Building Construction Principles",
+              "prefix": "INT",
+              "number": "103",
+              "title": "AC Fundamentals",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "FSC",
+              "prefix": "INT",
+              "number": "117",
+              "title": "Principles of Industrial Mechanics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "184",
+              "title": "Introduction to Programmable Logic Controllers (PLCs)",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "284",
+              "title": "Advanced Programmable Logic Controllers",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "288",
+              "title": "Applied Programmable Logic Controllers",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "134",
+              "title": "Principles of Industrial Maintenance Welding and Metal Cutting Techniques",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "automotive-technology"
+    },
+    {
+      "title": "Business: Accounting Option",
+      "credential": "AAS",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/business/associate-of-applied-science/business-accounting-option",
+      "total_credits": 42,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area I: Written Composition",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area V: Preprofessional Major and Elective Courses",
+          "credits_required": 30,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACC",
+              "number": "129",
+              "title": "Individual Income Taxes",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACC",
+              "number": "150",
+              "title": "Computerized General Ledger",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "100",
+              "title": "Introduction to Business",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "241",
+              "title": "Principles of Accounting I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "242",
+              "title": "Principles of Accounting II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "248",
+              "title": "Managerial Accounting",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "149",
+              "title": "Introduction to Computers",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ECO",
+              "number": "231",
+              "title": "Principles of Macroeconomics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ECO",
+              "number": "232",
+              "title": "Principles of Microeconomics",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Additional Degree Requirements",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Business",
+      "credential": "AAS",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/business/associate-of-applied-science/business",
+      "total_credits": 42,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area I: Written Composition",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area V: Preprofessional Major and Elective Courses",
+          "credits_required": 30,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "113",
+              "title": "Spreadsheet Software Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "100",
+              "title": "Introduction to Business",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "241",
+              "title": "Principles of Accounting I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "242",
+              "title": "Principles of Accounting II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "263",
+              "title": "The Legal and Social Environment of Business",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "271",
+              "title": "Business Statistics I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "275",
+              "title": "Principles of Management",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ECO",
+              "number": "231",
+              "title": "Principles of Macroeconomics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ECO",
+              "number": "232",
+              "title": "Principles of Microeconomics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "IDS",
+              "number": "102",
+              "title": "Ethics",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Additional Degree Requirements",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Basic Accounting - Short Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/business/short-certificate/basic-accounting-short-certificate",
+      "total_credits": 21,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 21,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BUS",
+              "number": "241",
+              "title": "Principles of Accounting I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "242",
+              "title": "Principles of Accounting II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACC",
+              "number": "149",
+              "title": "Introduction to Accounting Spreadsheets",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACC",
+              "number": "150",
+              "title": "Computerized General Ledger",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "accounting"
+    },
+    {
+      "title": "Business: Management Option",
+      "credential": "AAS",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/business/associate-of-applied-science/business-management-option",
+      "total_credits": 36,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area I: Written Composition",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area V: Preprofessional Major and Elective Courses",
+          "credits_required": 24,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACC",
+              "number": "149",
+              "title": "Introduction to Accounting Spreadsheets",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "100",
+              "title": "Introduction to Business",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "241",
+              "title": "Principles of Accounting I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "263",
+              "title": "The Legal and Social Environment of Business",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "275",
+              "title": "Principles of Management",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "149",
+              "title": "Introduction to Computers",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Additional Degree Requirements",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Business - Short Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/business/short-certificate/business-short-certificate",
+      "total_credits": 21,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 21,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BUS",
+              "number": "100",
+              "title": "Introduction to Business",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "241",
+              "title": "Principles of Accounting I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "275",
+              "title": "Principles of Management",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Customer Service - Short Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/business/short-certificate/customer-service-short-certificate",
+      "total_credits": 24,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 24,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BUS",
+              "number": "105",
+              "title": "Customer Service",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "185",
+              "title": "Computer Ethics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Child Care and Development",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/child-care-and-development/short-certificate/child-care-and-development",
+      "total_credits": 29,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 27,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHD",
+              "number": "100",
+              "title": "Introduction to Early Care and Education of Children",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHD",
+              "number": "201",
+              "title": "Child Growth and Development Principles",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHD",
+              "number": "202",
+              "title": "Children’s Creative Experience",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHD",
+              "number": "203",
+              "title": "Children’s Literature and Language Development",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHD",
+              "number": "204",
+              "title": "Methods and Materials for Teaching Children",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHD",
+              "number": "205",
+              "title": "Program Planning for Educating Young Children",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MTH",
+              "number": "100",
+              "title": "Intermediate College Algebra",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Additional Certificate Requirements",
+          "credits_required": 2,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "EMS",
+              "number": "100",
+              "title": "Cardiopulmonary Resuscitation I",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "104",
+              "title": "First Aid for Students of Health Related Professions",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Child Development Associate - CDA Credential",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/child-care-and-development/short-certificate/child-development-associate-cda-credential",
+      "total_credits": 9,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 9,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CHD",
+              "number": "100",
+              "title": "Introduction to Early Care and Education of Children",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHD",
+              "number": "201",
+              "title": "Child Growth and Development Principles",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHD",
+              "number": "204",
+              "title": "Methods and Materials for Teaching Children",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "early-childhood-education"
+    },
+    {
+      "title": "Computer Information Systems: Information Technology Option",
+      "credential": "AAS",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/computer-information-systems/associate-of-applied-science/computer-information-systems-information",
+      "total_credits": 43,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area I: Written Composition",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area V: Preprofessional Major and Elective Courses",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
               "number": "130",
-              "title": "Introduction to Fire Suppression",
+              "title": "Introduction to Information Systems",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "FSC",
-              "number": "151",
-              "title": "Introduction to Fire Prevention/Education",
+              "prefix": "CIS",
+              "number": "150",
+              "title": "Introduction to Computer Logic and Programming",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "FSC",
-              "number": "295",
-              "title": "Fire Department Safety Officer",
+              "prefix": "CIS",
+              "number": "270",
+              "title": "CISCO CCNA I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "275",
+              "title": "Workstation Administration",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Required Information Technology Core",
+          "credits_required": 19,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "149",
+              "title": "Introduction to Computers",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "171",
+              "title": "Linux I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "191",
+              "title": "Introduction to Computer Programming Concepts",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "193",
+              "title": "Introduction to Computer Programming Lab",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "207",
+              "title": "Web Development",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "280",
+              "title": "Network Security",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Additional Degree Requirements",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "computer-science"
+    },
+    {
+      "title": "Computer Information Systems: Cybersecurity Option",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/computer-information-systems/short-certificate/computer-information-systems-cybersecurity-option",
+      "total_credits": 21,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 21,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "130",
+              "title": "Introduction to Information Systems",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "171",
+              "title": "Linux I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "245",
+              "title": "Cyber Defense",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "280",
+              "title": "Network Security",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "computer-science"
+    },
+    {
+      "title": "Computer Information Systems: Cyber Defense Option",
+      "credential": "AAS",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/computer-information-systems/associate-of-applied-science/computer-information-systems-cyber",
+      "total_credits": 39,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area I: Written Composition",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area V: Preprofessional Major and Elective Courses",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "130",
+              "title": "Introduction to Information Systems",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "150",
+              "title": "Introduction to Computer Logic and Programming",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "270",
+              "title": "CISCO CCNA I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "275",
+              "title": "Workstation Administration",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Required Cyber Courses",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "185",
+              "title": "Computer Ethics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "244",
+              "title": "Introduction to Cybersecurity",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "245",
+              "title": "Cyber Defense",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "246",
+              "title": "Ethical Hacking",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "271",
+              "title": "CISCO CCNA II",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Additional Degree Requirements",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Computer Information Systems: Information Technology Option",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/computer-information-systems/short-certificate/computer-information-systems-information-technology",
+      "total_credits": 28,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 28,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "130",
+              "title": "Introduction to Information Systems",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "149",
+              "title": "Introduction to Computers",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "150",
+              "title": "Introduction to Computer Logic and Programming",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "171",
+              "title": "Linux I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "185",
+              "title": "Computer Ethics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "191",
+              "title": "Introduction to Computer Programming Concepts",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "193",
+              "title": "Introduction to Computer Programming Lab",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "207",
+              "title": "Web Development",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "270",
+              "title": "CISCO CCNA I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "computer-science"
+    },
+    {
+      "title": "Computer Information Systems: Mobile App Development Option",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/computer-information-systems/short-certificate/computer-information-systems-mobile-app-development",
+      "total_credits": 18,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "150",
+              "title": "Introduction to Computer Logic and Programming",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "155",
+              "title": "Introduction to Mobile App Development",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "157",
+              "title": "Introduction to App Development with Swift",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "207",
+              "title": "Web Development",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "219",
+              "title": "Android App Development",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "220",
+              "title": "App Development with Swift I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Computer Information Systems: Networking Technology Option",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/computer-information-systems/short-certificate/computer-information-systems-networking-technology",
+      "total_credits": 21,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 21,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "185",
+              "title": "Computer Ethics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "268",
+              "title": "Software Support",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "269",
+              "title": "Hardware Support",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "270",
+              "title": "CISCO CCNA I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Computer Information Systems: Office Specialist Option",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/computer-information-systems/short-certificate/computer-information-systems-office-specialist",
+      "total_credits": 21,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 21,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BUS",
+              "number": "105",
+              "title": "Customer Service",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "149",
+              "title": "Introduction to Computers",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "185",
+              "title": "Computer Ethics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "245",
+              "title": "Cyber Defense",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
               "credits": 3,
               "or_alternatives": []
             }
@@ -389,225 +2108,47 @@
       "matched_program_slug": "criminal-justice"
     },
     {
-      "title": "Applied Technology: Automotive Manufacturing Option",
-      "credential": "certificate",
+      "title": "Criminal Justice",
+      "credential": "AAS",
       "program_code": null,
-      "catalog_url": "https://catalog.cv.edu/automotive-manufacturing-technology/certificate/applied-technology-automotive-manufacturing-option",
-      "total_credits": 45,
+      "catalog_url": "https://catalog.cv.edu/criminal-justice/associate-of-applied-science/criminal-justice",
+      "total_credits": 20,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
-          "name": "Required Automotive Manufacturing Courses",
-          "credits_required": 39,
+          "name": "Area V: Preprofessional Major and Elective Courses",
+          "credits_required": 14,
           "choose_n": null,
           "courses": [
             {
-              "prefix": "ADM",
+              "prefix": "CRJ",
               "number": "100",
-              "title": "Industrial Safety",
+              "title": "Introduction to Criminal Justice",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "ADM",
-              "number": "101",
-              "title": "Precision Measurement",
+              "prefix": "CRJ",
+              "number": "110",
+              "title": "Introduction to Law Enforcement",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "ADM",
-              "number": "102",
-              "title": "Computer-Aided Design",
+              "prefix": "CRJ",
+              "number": "178",
+              "title": "Narcotics/Dangerous Drugs",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "ADM",
-              "number": "105",
-              "title": "Fluid Systems",
+              "prefix": "CRJ",
+              "number": "216",
+              "title": "Police Organization and Administration",
               "credits": 3,
               "or_alternatives": []
             },
-            {
-              "prefix": "ADM",
-              "number": "106",
-              "title": "Quality Control Concepts",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "101",
-              "title": "DC Fundamentals",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "103",
-              "title": "AC Fundamentals",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "117",
-              "title": "Principles of Industrial Mechanics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "184",
-              "title": "Introduction to Programmable Logic Controllers (PLCs)",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "284",
-              "title": "Advanced Programmable Logic Controllers",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "288",
-              "title": "Applied Programmable Logic Controllers",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "134",
-              "title": "Principles of Industrial Maintenance Welding and Metal Cutting Techniques",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Additional Certificate Requirements",
-          "credits_required": 6,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ORI",
-              "number": "105",
-              "title": "Orientation and Student Success",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "146",
-              "title": "Computer Applications",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "automotive-technology"
-    },
-    {
-      "title": "Kinesiology-Exercise Science",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.cv.edu/kinesiology/certificate/kinesiology-exercise-science",
-      "total_credits": 26,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "The Short Certificate in Kinesiology-Exercise Science is designed for individuals seeking foundational knowledge and skills in the field of exercise science. This program provides a concise yet comprehensive introduction to the principles of kinesiology, preparing students for entry-level positions in fitness and wellness or further studies in related fields.",
-          "credits_required": 26,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ORI",
-              "number": "105",
-              "title": "Orientation and Student Success",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HED",
-              "number": "226",
-              "title": "Wellness",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HED",
-              "number": "231",
-              "title": "First Aid",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "201",
-              "title": "Human Anatomy and Physiology I",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "101",
-              "title": "Medical Terminology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PED",
-              "number": "224",
-              "title": "Principles of Nutrition",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HED",
-              "number": "232",
-              "title": "Care and Prevention of Athletic Injuries",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PED",
-              "number": "223",
-              "title": "Methods of Instruction",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PED",
-              "number": "105",
-              "title": "Personal Fitness",
-              "credits": 1,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Medical Assisting",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.cv.edu/medical-assisting/certificate/medical-assisting",
-      "total_credits": 30,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 30,
-          "choose_n": null,
-          "courses": [
             {
               "prefix": "EMS",
               "number": "100",
@@ -616,373 +2157,10 @@
               "or_alternatives": []
             },
             {
-              "prefix": "MAT",
-              "number": "101",
-              "title": "Medical Terminology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "102",
-              "title": "Medical Assisting Theory I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "103",
-              "title": "Medical Assisting Theory II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "111",
-              "title": "Clinical Procedures I for the Medical Assistant",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "120",
-              "title": "Medical Administrative Procedures I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "121",
-              "title": "Medical Administrative Procedures II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "211",
-              "title": "Clinical Procedures II for the Medical Assistant",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "216",
-              "title": "Medical Pharmacology for the Medical Office",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "228R",
-              "title": "Medical Assistant CCMA Review Course",
+              "prefix": "EMS",
+              "number": "104",
+              "title": "First Aid for Students of Health Related Professions",
               "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "229",
-              "title": "Medical Assisting Practicum",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Practical Nursing",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.cv.edu/nursing/certificate/practical-nursing",
-      "total_credits": 45,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required General Education Courses",
-          "credits_required": 20,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BIO",
-              "number": "201",
-              "title": "Human Anatomy and Physiology I",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "202",
-              "title": "Human Anatomy and Physiology II",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENG",
-              "number": "101",
-              "title": "English Composition I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSY",
-              "number": "210",
-              "title": "Human Growth and Development",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Required Nursing Courses",
-          "credits_required": 25,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "NUR",
-              "number": "112",
-              "title": "Fundamental Concepts of Nursing",
-              "credits": 7,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NUR",
-              "number": "113",
-              "title": "Nursing Concepts I",
-              "credits": 8,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NUR",
-              "number": "114",
-              "title": "Nursing Concepts II",
-              "credits": 8,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NUR",
-              "number": "115",
-              "title": "Evidence-Based Clinical Reasoning",
-              "credits": 2,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "nursing"
-    },
-    {
-      "title": "Medical Assisting: EKG Technician Option",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.cv.edu/medical-assisting/certificate/medical-assisting-ekg-technician-option",
-      "total_credits": 7,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 7,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ORI",
-              "number": "105",
-              "title": "Orientation and Student Success",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "218",
-              "title": "EKG Technician",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "228E",
-              "title": "Medical Assistant CET Review Course",
-              "credits": 1,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Wellness and Personal Trainer",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.cv.edu/wellness-and-personal-trainer/certificate/wellness-and-personal-trainer",
-      "total_credits": 29,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 29,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "PED",
-              "number": "224",
-              "title": "Principles of Nutrition",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PED",
-              "number": "100",
-              "title": "Fundamentals of Fitness",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HED",
-              "number": "221",
-              "title": "Personal Health",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HED",
-              "number": "222",
-              "title": "Community Health",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HED",
-              "number": "231",
-              "title": "First Aid",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PED",
-              "number": "223",
-              "title": "Methods of Instruction",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "201",
-              "title": "Human Anatomy and Physiology I",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "202",
-              "title": "Human Anatomy and Physiology II",
-              "credits": 4,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Applied Technology: Welding Option",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.cv.edu/welding/certificate/applied-technology-welding-option",
-      "total_credits": 42,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Area V: Preprofessional, Major and Elective Courses",
-          "credits_required": 36,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ADM",
-              "number": "100",
-              "title": "Industrial Safety",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ADM",
-              "number": "101",
-              "title": "Precision Measurement",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WDT",
-              "number": "108",
-              "title": "SMAW/Fillet OFC",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WDT",
-              "number": "110",
-              "title": "Industrial Blueprint Reading",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WDT",
-              "number": "119",
-              "title": "Gas Metal Arc/Flux Cored Arc Welding",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WDT",
-              "number": "120",
-              "title": "SMAW Groove",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WDT",
-              "number": "122",
-              "title": "SMAW Fillet/OFC Lab",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WDT",
-              "number": "124",
-              "title": "Gas Metal Arc/Flux Cored Arc Welding Lab",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WDT",
-              "number": "125",
-              "title": "Shielding Metal Arc Welding Groove Lab",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WDT",
-              "number": "217",
-              "title": "SMAW Carbon Pipe Theory",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WDT",
-              "number": "228",
-              "title": "Gas Tungsten Arc Welding",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WDT",
-              "number": "257",
-              "title": "SMAW Carbon Pipe Lab",
-              "credits": 3,
               "or_alternatives": []
             }
           ]
@@ -1009,7 +2187,557 @@
           ]
         }
       ],
-      "matched_program_slug": "welding"
+      "matched_program_slug": "criminal-justice"
+    },
+    {
+      "title": "Criminal Justice",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/criminal-justice/short-certificate/criminal-justice",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CRJ",
+              "number": "100",
+              "title": "Introduction to Criminal Justice",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CRJ",
+              "number": "110",
+              "title": "Introduction to Law Enforcement",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CRJ",
+              "number": "178",
+              "title": "Narcotics/Dangerous Drugs",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CRJ",
+              "number": "216",
+              "title": "Police Organization and Administration",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "criminal-justice"
+    },
+    {
+      "title": "Electrical Technology Option",
+      "credential": "AAS",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/electrical-technology/associate-of-applied-science/electrical-technology-option",
+      "total_credits": 69,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 69,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
+              "number": "200",
+              "title": "General Psychology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HUM",
+              "number": "101",
+              "title": "Introduction to Humanities I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MTH",
+              "number": "100",
+              "title": "Intermediate College Algebra",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ADM",
+              "number": "100",
+              "title": "Industrial Safety",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "241",
+              "title": "National Electric Code",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ILT",
+              "number": "160",
+              "title": "DC Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ILT",
+              "number": "161",
+              "title": "AC Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ILT",
+              "number": "162",
+              "title": "Solid State Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ILT",
+              "number": "166",
+              "title": "Motors and Transformers",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "117",
+              "title": "AC/DC Machines",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ILT",
+              "number": "109",
+              "title": "Electrical Blueprint Reading I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ILT",
+              "number": "165",
+              "title": "Industrial Electronics Control I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "242",
+              "title": "Journeyman Master Prep Exam",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ILT",
+              "number": "209",
+              "title": "Motor Controls I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "115",
+              "title": "Residential Wiring II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "118",
+              "title": "Commercial Industrial Wiring",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "114",
+              "title": "Residential Wiring Methods",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ILT",
+              "number": "108",
+              "title": "Introduction to Instrumentation and Process Control",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Commercial and Industrial Wiring",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/electrical-technology/short-certificate/commercial-and-industrial-wiring",
+      "total_credits": 21,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "The Commercial and Industrial Wiring certificate program equips students with the technical skills and knowledge required to install, maintain, and troubleshoot electrical systems in commercial and industrial environments. This program emphasizes hands-on training in wiring techniques, safety protocols, blueprint interpretation, and adherence to the National Electrical Code (NEC). Graduates will be prepared for entry-level positions in the electrical industry, with the ability to work on complex electrical systems in various commercial and industrial settings.",
+          "credits_required": 21,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "114",
+              "title": "Residential Wiring Methods",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "118",
+              "title": "Commercial Industrial Wiring",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "241",
+              "title": "National Electric Code",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ILT",
+              "number": "109",
+              "title": "Electrical Blueprint Reading I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ILT",
+              "number": "160",
+              "title": "DC Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ILT",
+              "number": "161",
+              "title": "AC Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Industrial Instrumentation",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/electrical-technology/short-certificate/industrial-instrumentation",
+      "total_credits": 18,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "The Industrial Instrumentation certificate program provides students with the foundational knowledge and technical skills required to work with instrumentation and process control systems in industrial settings. The program covers essential topics such as motor controls, industrial electronics, and both DC and AC electrical fundamentals. Through hands-on training and theoretical instruction, students will learn to install, maintain, and troubleshoot instrumentation systems, preparing them for entry-level positions in various industrial environments, including manufacturing, power generation, and automation industries.",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ILT",
+              "number": "209",
+              "title": "Motor Controls I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ILT",
+              "number": "165",
+              "title": "Industrial Electronics Control I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ILT",
+              "number": "108",
+              "title": "Introduction to Instrumentation and Process Control",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ILT",
+              "number": "160",
+              "title": "DC Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ILT",
+              "number": "161",
+              "title": "AC Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Emergency Medical Services Paramedic",
+      "credential": "AAS",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/emergency-medical-technology-technician/associate-of-applied-science/emergency-medical-services",
+      "total_credits": 73,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area I: Written Composition",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area III: Natural Science and Mathematics",
+          "credits_required": 11,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BIO",
+              "number": "201",
+              "title": "Human Anatomy and Physiology I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "202",
+              "title": "Human Anatomy and Physiology II",
+              "credits": 4,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area IV: History, Social and Behavioral Sciences",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "PSY",
+              "number": "200",
+              "title": "General Psychology",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area V: Career and Technical Courses",
+          "credits_required": 50,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "EMS",
+              "number": "100",
+              "title": "Cardiopulmonary Resuscitation I",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "107",
+              "title": "Emergency Vehicle Operator Ambulance",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "118",
+              "title": "Emergency Medical Technician",
+              "credits": 9,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "119",
+              "title": "Emergency Medical Technician Clinical",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "155",
+              "title": "Advanced Emergency Medical Technician",
+              "credits": 7,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "156",
+              "title": "Advanced Emergency Medical Technician Clinical",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "241",
+              "title": "Paramedic Cardiology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "242",
+              "title": "Paramedic Patient Assessment",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "244",
+              "title": "Paramedic Clinical I",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "245",
+              "title": "Paramedic Medical Emergencies",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "246",
+              "title": "Paramedic Trauma Management",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "247",
+              "title": "Paramedic Special Populations",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "248",
+              "title": "Paramedic Clinical II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "253",
+              "title": "Paramedic Transition to the Workforce",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "254",
+              "title": "Advanced Competencies",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "255",
+              "title": "Paramedic Field Preceptorship",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "256",
+              "title": "Paramedic Team Leadership",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "257",
+              "title": "Paramedic Applied Pharmacology",
+              "credits": 2,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Additional Degree Requirements",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
     },
     {
       "title": "Emergency Medical Services Paramedic",
@@ -1184,6 +2912,3135 @@
               "number": "257",
               "title": "Paramedic Applied Pharmacology",
               "credits": 2,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Advanced Emergency Medical Technician",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/emergency-medical-technology-technician/short-certificate/advanced-emergency-medical-technician",
+      "total_credits": 13,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required AEMT Courses",
+          "credits_required": 13,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "107",
+              "title": "Emergency Vehicle Operator Ambulance",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "155",
+              "title": "Advanced Emergency Medical Technician",
+              "credits": 7,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "156",
+              "title": "Advanced Emergency Medical Technician Clinical",
+              "credits": 2,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Emergency Medical Services Paramedic",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/emergency-medical-technology-technician/short-certificate/emergency-medical-services-paramedic",
+      "total_credits": 32,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required EMS Courses",
+          "credits_required": 29,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "EMS",
+              "number": "241",
+              "title": "Paramedic Cardiology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "242",
+              "title": "Paramedic Patient Assessment",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "244",
+              "title": "Paramedic Clinical I",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "245",
+              "title": "Paramedic Medical Emergencies",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "246",
+              "title": "Paramedic Trauma Management",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "247",
+              "title": "Paramedic Special Populations",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "248",
+              "title": "Paramedic Clinical II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "253",
+              "title": "Paramedic Transition to the Workforce",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "254",
+              "title": "Advanced Competencies",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "255",
+              "title": "Paramedic Field Preceptorship",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "256",
+              "title": "Paramedic Team Leadership",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "257",
+              "title": "Paramedic Applied Pharmacology",
+              "credits": 2,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Required Courses",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Emergency Medical Technician",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/emergency-medical-technology-technician/short-certificate/emergency-medical-technician",
+      "total_credits": 15,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required EMT Courses",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "EMS",
+              "number": "100",
+              "title": "Cardiopulmonary Resuscitation I",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "107",
+              "title": "Emergency Vehicle Operator Ambulance",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "118",
+              "title": "Emergency Medical Technician",
+              "credits": 9,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "119",
+              "title": "Emergency Medical Technician Clinical",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Required Courses",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Fire Science",
+      "credential": "AAS",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/fire-science/associate-of-applied-science/fire-science",
+      "total_credits": 20,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area V: Preprofessional Major and Elective Courses",
+          "credits_required": 14,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "FSC",
+              "number": "101",
+              "title": "Introduction to the Fire Service",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "FSC",
+              "number": "110",
+              "title": "Building Construction Principles",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "FSC",
+              "number": "130",
+              "title": "Introduction to Fire Suppression",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "FSC",
+              "number": "299",
+              "title": "Legal Aspects of the Fire Service",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "100",
+              "title": "Cardiopulmonary Resuscitation I",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "104",
+              "title": "First Aid for Students of Health Related Professions",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Additional Degree Requirements",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Fire Science",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/fire-science/short-certificate/fire-science",
+      "total_credits": 27,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "FSC",
+              "number": "101",
+              "title": "Introduction to the Fire Service",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "FSC",
+              "number": "110",
+              "title": "Building Construction Principles",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "FSC",
+              "number": "130",
+              "title": "Introduction to Fire Suppression",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "FSC",
+              "number": "299",
+              "title": "Legal Aspects of the Fire Service",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Fire Science Elective Courses",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "FSC",
+              "number": "120",
+              "title": "National Incident Management System (NIMS) I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Fire Science",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/fire-science/certificate/fire-science",
+      "total_credits": 18,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area V: Technical Core, Technical Concentration Electives",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "FSC",
+              "number": "101",
+              "title": "Introduction to the Fire Service",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "FSC",
+              "number": "110",
+              "title": "Building Construction Principles",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "FSC",
+              "number": "130",
+              "title": "Introduction to Fire Suppression",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "FSC",
+              "number": "151",
+              "title": "Introduction to Fire Prevention/Education",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "FSC",
+              "number": "295",
+              "title": "Fire Department Safety Officer",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "General Education",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/general-requirements/short-certificate/general-education",
+      "total_credits": 19,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area I: Written Composition",
+          "credits_required": 9,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "102",
+              "title": "English Composition II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area III: Natural Science and Mathematics",
+          "credits_required": 7,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MTH",
+              "number": "100",
+              "title": "Intermediate College Algebra",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area V: Elective",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Applied Technology: Industrial Maintenance Option",
+      "credential": "AAS",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/industrial-maintenance-technology/associate-of-applied-science/applied-technology-industrial",
+      "total_credits": 54,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area IV: History, Social and Behavioral Sciences",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "PSY",
+              "number": "200",
+              "title": "General Psychology",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area V: Preprofessional Major and Elective Courses",
+          "credits_required": 45,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ADM",
+              "number": "100",
+              "title": "Industrial Safety",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ADM",
+              "number": "101",
+              "title": "Precision Measurement",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ADM",
+              "number": "102",
+              "title": "Computer-Aided Design",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ADM",
+              "number": "105",
+              "title": "Fluid Systems",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ADM",
+              "number": "106",
+              "title": "Quality Control Concepts",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "101",
+              "title": "DC Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "103",
+              "title": "AC Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "113",
+              "title": "Industrial Motor Controls I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "117",
+              "title": "Principles of Industrial Mechanics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "253",
+              "title": "Industrial Robotics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUT",
+              "number": "210",
+              "title": "Industrial Robotics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "184",
+              "title": "Introduction to Programmable Logic Controllers (PLCs)",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "284",
+              "title": "Advanced Programmable Logic Controllers",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "134",
+              "title": "Principles of Industrial Maintenance Welding and Metal Cutting Techniques",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "291",
+              "title": "Cooperative Education",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Additional Degree Requirements",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Applied Technology: Industrial Maintenance Option",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/industrial-maintenance-technology/certificate/applied-technology-industrial-maintenance-option",
+      "total_credits": 42,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Industrial Maintenance Courses",
+          "credits_required": 36,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ADM",
+              "number": "100",
+              "title": "Industrial Safety",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ADM",
+              "number": "101",
+              "title": "Precision Measurement",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ADM",
+              "number": "102",
+              "title": "Computer-Aided Design",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ADM",
+              "number": "105",
+              "title": "Fluid Systems",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ADM",
+              "number": "106",
+              "title": "Quality Control Concepts",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "101",
+              "title": "DC Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "103",
+              "title": "AC Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "113",
+              "title": "Industrial Motor Controls I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "117",
+              "title": "Principles of Industrial Mechanics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "184",
+              "title": "Introduction to Programmable Logic Controllers (PLCs)",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "284",
+              "title": "Advanced Programmable Logic Controllers",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Additional Certificate Requirements",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Applied Technology: Industrial Maintenance Option (MSSC - Certified Production Technician)",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/industrial-maintenance-technology/short-certificate/applied-technology-industrial-maintenance",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "WKO",
+              "number": "141",
+              "title": "MSSC Safety Course",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WKO",
+              "number": "142",
+              "title": "MSSC Quality Practices and Measurement Course",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WKO",
+              "number": "143",
+              "title": "MSSC Manufacturing Processes and Production Course",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WKO",
+              "number": "144",
+              "title": "MSSC Maintenance Awareness Course",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Applied Technology: Industrial Maintenance Option",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/industrial-maintenance-technology/short-certificate/applied-technology-industrial-maintenance-0",
+      "total_credits": 18,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ADM",
+              "number": "101",
+              "title": "Precision Measurement",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "101",
+              "title": "DC Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "103",
+              "title": "AC Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "117",
+              "title": "Principles of Industrial Mechanics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "184",
+              "title": "Introduction to Programmable Logic Controllers (PLCs)",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "134",
+              "title": "Principles of Industrial Maintenance Welding and Metal Cutting Techniques",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Electrical Equipment Installation and Repair",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/industrial-maintenance-technology/short-certificate/electrical-equipment-installation-and-repair",
+      "total_credits": 24,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Electrical Equipment Installation and Repair (Semiconductor)",
+          "credits_required": 24,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "101",
+              "title": "DC Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "103",
+              "title": "AC Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "113",
+              "title": "Industrial Motor Controls I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "184",
+              "title": "Introduction to Programmable Logic Controllers (PLCs)",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ADM",
+              "number": "101",
+              "title": "Precision Measurement",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ADM",
+              "number": "106",
+              "title": "Quality Control Concepts",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Kinesiology-Exercise Science",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/kinesiology/certificate/kinesiology-exercise-science",
+      "total_credits": 26,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "The Short Certificate in Kinesiology-Exercise Science is designed for individuals seeking foundational knowledge and skills in the field of exercise science. This program provides a concise yet comprehensive introduction to the principles of kinesiology, preparing students for entry-level positions in fitness and wellness or further studies in related fields.",
+          "credits_required": 26,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HED",
+              "number": "226",
+              "title": "Wellness",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HED",
+              "number": "231",
+              "title": "First Aid",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "201",
+              "title": "Human Anatomy and Physiology I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "101",
+              "title": "Medical Terminology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PED",
+              "number": "224",
+              "title": "Principles of Nutrition",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HED",
+              "number": "232",
+              "title": "Care and Prevention of Athletic Injuries",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PED",
+              "number": "223",
+              "title": "Methods of Instruction",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PED",
+              "number": "105",
+              "title": "Personal Fitness",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Medical Assisting Program",
+      "credential": "AAS",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/medical-assisting/associate-of-applied-science/medical-assisting-program",
+      "total_credits": 84,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area II: Humanities and Fine Arts",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "SPH",
+              "number": "107",
+              "title": "Fundamentals of Public Speaking",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area III: Natural Science and Mathematics",
+          "credits_required": 7,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BIO",
+              "number": "103",
+              "title": "Principles of Biology I",
+              "credits": 4,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area IV: History, Social and Behavioral Sciences",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "PSY",
+              "number": "200",
+              "title": "General Psychology",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area V: Career and Technical Courses",
+          "credits_required": 47,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MAT",
+              "number": "101",
+              "title": "Medical Terminology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "102",
+              "title": "Medical Assisting Theory I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "103",
+              "title": "Medical Assisting Theory II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "111",
+              "title": "Clinical Procedures I for the Medical Assistant",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "120",
+              "title": "Medical Administrative Procedures I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "121",
+              "title": "Medical Administrative Procedures II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "125",
+              "title": "Laboratory Procedures I for the Medical Assistant",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "128",
+              "title": "Medical Law and Ethics for the Medical Assistant",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "200",
+              "title": "Management of Office Emergencies",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "211",
+              "title": "Clinical Procedures II for the Medical Assistant",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "215",
+              "title": "Laboratory Procedures II for the Medical Assistant",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "216",
+              "title": "Medical Pharmacology for the Medical Office",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "219",
+              "title": "Radiology for the Medical Assistant",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "220",
+              "title": "Medical Office Insurance",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "228R",
+              "title": "Medical Assistant CCMA Review Course",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "229",
+              "title": "Medical Assisting Practicum",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "100",
+              "title": "Cardiopulmonary Resuscitation I",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Additional Degree Requirements",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "**Optional Courses",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MAT",
+              "number": "218",
+              "title": "EKG Technician",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "227",
+              "title": "Special Topics in Medical Assisting",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "228A",
+              "title": "Medical Assistant CMAA Review",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "228P",
+              "title": "Medical Assistant CPT Review Course",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "228E",
+              "title": "Medical Assistant CET Review Course",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "228H",
+              "title": "Medical Assistant CEHRS Review Course",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "239",
+              "title": "Phlebotomy Practicum",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NAS",
+              "number": "100",
+              "title": "Long Term Care Nursing Assistant",
+              "credits": 4,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Medical Assisting",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/medical-assisting/certificate/medical-assisting",
+      "total_credits": 30,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 30,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "EMS",
+              "number": "100",
+              "title": "Cardiopulmonary Resuscitation I",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "101",
+              "title": "Medical Terminology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "102",
+              "title": "Medical Assisting Theory I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "103",
+              "title": "Medical Assisting Theory II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "111",
+              "title": "Clinical Procedures I for the Medical Assistant",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "120",
+              "title": "Medical Administrative Procedures I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "121",
+              "title": "Medical Administrative Procedures II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "211",
+              "title": "Clinical Procedures II for the Medical Assistant",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "216",
+              "title": "Medical Pharmacology for the Medical Office",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "228R",
+              "title": "Medical Assistant CCMA Review Course",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "229",
+              "title": "Medical Assisting Practicum",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Medical Assisting: EKG Technician Option",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/medical-assisting/certificate/medical-assisting-ekg-technician-option",
+      "total_credits": 7,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 7,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "218",
+              "title": "EKG Technician",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "228E",
+              "title": "Medical Assistant CET Review Course",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Medical Assisting: Electronic Health Records Specialist",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/medical-assisting/short-certificate/medical-assisting-electronic-health-records-specialist",
+      "total_credits": 16,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 16,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "101",
+              "title": "Medical Terminology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "120",
+              "title": "Medical Administrative Procedures I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "121",
+              "title": "Medical Administrative Procedures II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "220",
+              "title": "Medical Office Insurance",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "228H",
+              "title": "Medical Assistant CEHRS Review Course",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Medical Assisting: Medical Administrative Assistant Option",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/medical-assisting/short-certificate/medical-assisting-medical-administrative-assistant-option",
+      "total_credits": 19,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 19,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "101",
+              "title": "Medical Terminology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "120",
+              "title": "Medical Administrative Procedures I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "121",
+              "title": "Medical Administrative Procedures II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "128",
+              "title": "Medical Law and Ethics for the Medical Assistant",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "220",
+              "title": "Medical Office Insurance",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "228A",
+              "title": "Medical Assistant CMAA Review",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Medical Assisting: Phlebotomy",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/medical-assisting/short-certificate/medical-assisting-phlebotomy",
+      "total_credits": 17,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 17,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "100",
+              "title": "Cardiopulmonary Resuscitation I",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "101",
+              "title": "Medical Terminology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "125",
+              "title": "Laboratory Procedures I for the Medical Assistant",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "215",
+              "title": "Laboratory Procedures II for the Medical Assistant",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "239",
+              "title": "Phlebotomy Practicum",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "228P",
+              "title": "Medical Assistant CPT Review Course",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Medical Laboratory Technician",
+      "credential": "AAS",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/medical-laboratory-technician/associate-of-applied-science/medical-laboratory-technician",
+      "total_credits": 68,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area I: Written Composition",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area III: Natural Science and Mathematics",
+          "credits_required": 11,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CHM",
+              "number": "104",
+              "title": "Introduction to Chemistry I",
+              "credits": 4,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area IV: History, Social and Behavioral Sciences",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "PSY",
+              "number": "200",
+              "title": "General Psychology",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area V: Career and Technical Courses",
+          "credits_required": 45,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MLT",
+              "number": "111",
+              "title": "Urinalysis and Body Fluids",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MLT",
+              "number": "121",
+              "title": "Hematology",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MLT",
+              "number": "131",
+              "title": "Laboratory Techniques",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MLT",
+              "number": "141",
+              "title": "MLT Microbiology I",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MLT",
+              "number": "142",
+              "title": "MLT Microbiology II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MLT",
+              "number": "151",
+              "title": "MLT Clinical Chemistry",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MLT",
+              "number": "161",
+              "title": "Integrated Laboratory Simulation",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MLT",
+              "number": "181",
+              "title": "Clinical Immunology",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MLT",
+              "number": "191",
+              "title": "MLT Immunohematology",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MLT",
+              "number": "293",
+              "title": "MLT Medical Laboratory Review Seminar",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MLT",
+              "number": "294",
+              "title": "Medical Laboratory Practicum I",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MLT",
+              "number": "295",
+              "title": "Medical Laboratory Practicum II",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MLT",
+              "number": "296",
+              "title": "Medical Laboratory Practicum III",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MLT",
+              "number": "297",
+              "title": "Medical Laboratory Practicum IV",
+              "credits": 2,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Additional Degree Requirements",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Nursing Assistant Program",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/nursing-assistant/short-certificate/nursing-assistant-program",
+      "total_credits": 7,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Course",
+          "credits_required": 7,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NAS",
+              "number": "100",
+              "title": "Long Term Care Nursing Assistant",
+              "credits": 4,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "nursing"
+    },
+    {
+      "title": "Nursing Assistant: Home Health Aide",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/nursing-assistant/short-certificate/nursing-assistant-home-health-aide",
+      "total_credits": 14,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 14,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NAS",
+              "number": "120",
+              "title": "Fundamentals of Nursing Assistant/Home Health Aide",
+              "credits": 7,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NAS",
+              "number": "121",
+              "title": "Fundamentals of Nursing Assistant/Home Health Aide",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "100",
+              "title": "Cardiopulmonary Resuscitation I",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "nursing"
+    },
+    {
+      "title": "Nursing (ADN) - Direct Entry Option",
+      "credential": "AAS",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/nursing/associate-of-applied-science/nursing-adn-direct-entry-option",
+      "total_credits": 63,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area I: Written Composition",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area III: Natural Science, Mathematics, and Computer Science",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BIO",
+              "number": "201",
+              "title": "Human Anatomy and Physiology I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "202",
+              "title": "Human Anatomy and Physiology II",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "220",
+              "title": "General Microbiology",
+              "credits": 4,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area IV: History, Social and Behavioral Sciences",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "PSY",
+              "number": "210",
+              "title": "Human Growth and Development",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area V: Career and Technical Courses",
+          "credits_required": 39,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "NUR",
+              "number": "112",
+              "title": "Fundamental Concepts of Nursing",
+              "credits": 7,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "113",
+              "title": "Nursing Concepts I",
+              "credits": 8,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "114",
+              "title": "Nursing Concepts II",
+              "credits": 8,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "115",
+              "title": "Evidence-Based Clinical Reasoning",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "211",
+              "title": "Advanced Nursing Concepts",
+              "credits": 7,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "221",
+              "title": "Advanced Evidence-Based Clinical Reasoning",
+              "credits": 7,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "nursing"
+    },
+    {
+      "title": "Nursing (ADN) - Mobility Option",
+      "credential": "AAS",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/nursing/associate-of-applied-science/nursing-adn-mobility-option",
+      "total_credits": 63,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area I: Written and Oral Communication",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area III: Natural Science, Mathematics, and Computer Science",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BIO",
+              "number": "201",
+              "title": "Human Anatomy and Physiology I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "202",
+              "title": "Human Anatomy and Physiology II",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "220",
+              "title": "General Microbiology",
+              "credits": 4,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area IV: History, Social and Behavioral Sciences",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "PSY",
+              "number": "210",
+              "title": "Human Growth and Development",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area V: Career and Technical Courses",
+          "credits_required": 39,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "NUR",
+              "number": "209",
+              "title": "Concepts for Healthcare Transition Students",
+              "credits": 10,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "211",
+              "title": "Advanced Nursing Concepts",
+              "credits": 7,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "221",
+              "title": "Advanced Evidence-Based Clinical Reasoning",
+              "credits": 7,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "nursing"
+    },
+    {
+      "title": "Practical Nursing",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/nursing/certificate/practical-nursing",
+      "total_credits": 45,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required General Education Courses",
+          "credits_required": 20,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BIO",
+              "number": "201",
+              "title": "Human Anatomy and Physiology I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "202",
+              "title": "Human Anatomy and Physiology II",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
+              "number": "210",
+              "title": "Human Growth and Development",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Required Nursing Courses",
+          "credits_required": 25,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "NUR",
+              "number": "112",
+              "title": "Fundamental Concepts of Nursing",
+              "credits": 7,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "113",
+              "title": "Nursing Concepts I",
+              "credits": 8,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "114",
+              "title": "Nursing Concepts II",
+              "credits": 8,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "115",
+              "title": "Evidence-Based Clinical Reasoning",
+              "credits": 2,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "nursing"
+    },
+    {
+      "title": "Pharmacy Technology",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/pharmacy-technology/short-certificate/pharmacy-technology",
+      "total_credits": 29,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 29,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHM",
+              "number": "100",
+              "title": "Introduction to Pharmacy",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHM",
+              "number": "102",
+              "title": "Pharmacology I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHM",
+              "number": "112",
+              "title": "Pharmacology II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHM",
+              "number": "113",
+              "title": "Drugs and Health",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHM",
+              "number": "205",
+              "title": "Computers and Billings",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHM",
+              "number": "207",
+              "title": "Institutional Pharmacy",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHM",
+              "number": "210",
+              "title": "Pharmacy Practice",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHM",
+              "number": "211",
+              "title": "Pharmacy Technician Practicum I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHM",
+              "number": "212",
+              "title": "Pharmacy Technician Practicum II",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Visual Communications: Multimedia Graphic Design Option",
+      "credential": "AAS",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/visual-communications/associate-of-applied-science/visual-communications-multimedia-graphic-design",
+      "total_credits": 63,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area I: Written Composition",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area II: Humanities and Fine Arts",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ART",
+              "number": "100",
+              "title": "Art Appreciation",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SPH",
+              "number": "107",
+              "title": "Fundamentals of Public Speaking",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area III: Natural Science and Mathematics",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "150",
+              "title": "Introduction to Computer Logic and Programming",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area V: Preprofessional Major and Elective Courses",
+          "credits_required": 24,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ART",
+              "number": "121",
+              "title": "Two-Dimensional Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "207",
+              "title": "Web Development",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "VCM",
+              "number": "145",
+              "title": "Introduction to Digital Photography",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "VCM",
+              "number": "150",
+              "title": "Typography",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "VCM",
+              "number": "171",
+              "title": "Graphics Software Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "VCM",
+              "number": "254",
+              "title": "Graphic Design",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Required Mutimedia Core",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ART",
+              "number": "113",
+              "title": "Drawing I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "285",
+              "title": "Principles of Marketing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "VCM",
+              "number": "193",
+              "title": "Digital Publishing I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Additional Degree Requirements",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "art"
+    },
+    {
+      "title": "Design and Visual Communications: Digital Photography Option",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/visual-communications/short-certificate/design-and-visual-communications-digital-photography-option",
+      "total_credits": 21,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 21,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ART",
+              "number": "121",
+              "title": "Two-Dimensional Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ART",
+              "number": "273",
+              "title": "Studio Photography I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "285",
+              "title": "Principles of Marketing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "VCM",
+              "number": "145",
+              "title": "Introduction to Digital Photography",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "VCM",
+              "number": "146",
+              "title": "Digital Photography",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "VCM",
+              "number": "185",
+              "title": "Digital Imaging I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Visual Communications: Multimedia Graphic Design Option",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/visual-communications/short-certificate/visual-communications-multimedia-graphic-design-option",
+      "total_credits": 30,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 30,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ART",
+              "number": "121",
+              "title": "Two-Dimensional Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "207",
+              "title": "Web Development",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "285",
+              "title": "Principles of Marketing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "VCM",
+              "number": "150",
+              "title": "Typography",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "VCM",
+              "number": "171",
+              "title": "Graphics Software Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "VCM",
+              "number": "254",
+              "title": "Graphic Design",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "art"
+    },
+    {
+      "title": "Applied Technology: Welding Option",
+      "credential": "AAS",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/welding/associate-of-applied-science/applied-technology-welding-option",
+      "total_credits": 60,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area III: Natural Science and Mathematics",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MTH",
+              "number": "100",
+              "title": "Intermediate College Algebra",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area IV: History, Social and Behavioral Sciences",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "PSY",
+              "number": "200",
+              "title": "General Psychology",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area V: Preprofessional Major and Elective Courses",
+          "credits_required": 45,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ADM",
+              "number": "100",
+              "title": "Industrial Safety",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ADM",
+              "number": "101",
+              "title": "Precision Measurement",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ADM",
+              "number": "102",
+              "title": "Computer-Aided Design",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "291",
+              "title": "Cooperative Education",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "108",
+              "title": "SMAW/Fillet OFC",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "110",
+              "title": "Industrial Blueprint Reading",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "119",
+              "title": "Gas Metal Arc/Flux Cored Arc Welding",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "120",
+              "title": "SMAW Groove",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "122",
+              "title": "SMAW Fillet/OFC Lab",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "124",
+              "title": "Gas Metal Arc/Flux Cored Arc Welding Lab",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "125",
+              "title": "Shielding Metal Arc Welding Groove Lab",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "217",
+              "title": "SMAW Carbon Pipe Theory",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "228",
+              "title": "Gas Tungsten Arc Welding",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "257",
+              "title": "SMAW Carbon Pipe Lab",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "268",
+              "title": "Gas Tungsten Arc Welding Lab",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Additional Degree Requirements",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "welding"
+    },
+    {
+      "title": "Gas Metal Arc Welding",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/welding/short-certificate/gas-metal-arc-welding",
+      "total_credits": 15,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ADM",
+              "number": "101",
+              "title": "Precision Measurement",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ADM",
+              "number": "102",
+              "title": "Computer-Aided Design",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "119",
+              "title": "Gas Metal Arc/Flux Cored Arc Welding",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "124",
+              "title": "Gas Metal Arc/Flux Cored Arc Welding Lab",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "welding"
+    },
+    {
+      "title": "Applied Technology: Welding Option",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/welding/certificate/applied-technology-welding-option",
+      "total_credits": 42,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area V: Preprofessional, Major and Elective Courses",
+          "credits_required": 36,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ADM",
+              "number": "100",
+              "title": "Industrial Safety",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ADM",
+              "number": "101",
+              "title": "Precision Measurement",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "108",
+              "title": "SMAW/Fillet OFC",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "110",
+              "title": "Industrial Blueprint Reading",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "119",
+              "title": "Gas Metal Arc/Flux Cored Arc Welding",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "120",
+              "title": "SMAW Groove",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "122",
+              "title": "SMAW Fillet/OFC Lab",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "124",
+              "title": "Gas Metal Arc/Flux Cored Arc Welding Lab",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "125",
+              "title": "Shielding Metal Arc Welding Groove Lab",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "217",
+              "title": "SMAW Carbon Pipe Theory",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "228",
+              "title": "Gas Tungsten Arc Welding",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "257",
+              "title": "SMAW Carbon Pipe Lab",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Additional Degree Requirements",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Computer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "welding"
+    },
+    {
+      "title": "Welding Technology",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/welding/short-certificate/welding-technology",
+      "total_credits": 24,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 24,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "108",
+              "title": "SMAW/Fillet OFC",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "110",
+              "title": "Industrial Blueprint Reading",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "119",
+              "title": "Gas Metal Arc/Flux Cored Arc Welding",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "120",
+              "title": "SMAW Groove",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "122",
+              "title": "SMAW Fillet/OFC Lab",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "124",
+              "title": "Gas Metal Arc/Flux Cored Arc Welding Lab",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "125",
+              "title": "Shielding Metal Arc Welding Groove Lab",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "welding"
+    },
+    {
+      "title": "Shielded Metal Arc Welding",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/welding/short-certificate/shielded-metal-arc-welding",
+      "total_credits": 15,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ORI",
+              "number": "105",
+              "title": "Orientation and Student Success",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ADM",
+              "number": "100",
+              "title": "Industrial Safety",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "110",
+              "title": "Industrial Blueprint Reading",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "120",
+              "title": "SMAW Groove",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "125",
+              "title": "Shielding Metal Arc Welding Groove Lab",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "welding"
+    },
+    {
+      "title": "Wellness and Personal Trainer",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.cv.edu/wellness-and-personal-trainer/certificate/wellness-and-personal-trainer",
+      "total_credits": 29,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 29,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "PED",
+              "number": "224",
+              "title": "Principles of Nutrition",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PED",
+              "number": "100",
+              "title": "Fundamentals of Fitness",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HED",
+              "number": "221",
+              "title": "Personal Health",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HED",
+              "number": "222",
+              "title": "Community Health",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HED",
+              "number": "231",
+              "title": "First Aid",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PED",
+              "number": "223",
+              "title": "Methods of Instruction",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "201",
+              "title": "Human Anatomy and Physiology I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "202",
+              "title": "Human Anatomy and Physiology II",
+              "credits": 4,
               "or_alternatives": []
             }
           ]

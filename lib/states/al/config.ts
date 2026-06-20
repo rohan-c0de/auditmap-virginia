@@ -90,7 +90,9 @@ const alConfig: StateConfig = {
     // Degree/program requirements for the 9 CleanCatalog colleges that yield
     // parseable programs (14 more deferred — see data/al/DEFERRED-programs.md).
     programs: [
-      { scripts: ["scripts/al/scrape-programs.ts"], runner: "http" },
+      // Playwright: shelton-state's Acalog catalog is behind AWS WAF (202
+      // challenge) and is scraped via headless Chromium.
+      { scripts: ["scripts/al/scrape-programs.ts"], runner: "playwright" },
     ],
   },
   documentedCeilings: {
@@ -100,6 +102,8 @@ const alConfig: StateConfig = {
         reason: "MMI is a military prep college (~400 students) that does not publish a public course schedule on either ACCS cluster; its registrar page has no SIS link. Verified 2026-05-24.",
       },
     ],
+    programs:
+      "Programs cover 15 of 23 colleges (CleanCatalog, Acalog, SmartCatalogIQ). The remaining 8 have no scrapeable program source (verified 2026-06): jefferson-state, lawson-state (ASPX), lurleen-b-wallace, marion-military, northeast-alabama (JS SPA), reid-state, snead-state publish requirements only as PDF or bespoke CMS pages; bishop-state's Acalog is behind AWS WAF with an invalid TLS cert and no discoverable catoid. See data/al/DEFERRED-programs.md.",
   },
 };
 

@@ -2,7 +2,7 @@
   "college_slug": "northwest-shoals-community-college",
   "catalog_year": "2025-2026",
   "catalog_url": "https://catalog.nwscc.edu/degrees",
-  "scraped_at": "2026-06-03T21:27:41.546Z",
+  "scraped_at": "2026-06-20T13:59:30.401Z",
   "programs": [
     {
       "title": "Accounting Technology - AOT",
@@ -150,6 +150,102 @@
       "matched_program_slug": "accounting"
     },
     {
+      "title": "Accounting Technology - Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.nwscc.edu/accounting-technology/accounting-technology-certificate",
+      "total_credits": 39,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "General Education Requirements",
+          "credits_required": 9,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MTH",
+              "number": "116",
+              "title": "Mathematical Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Microcomputer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Major Requirements",
+          "credits_required": 30,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACT",
+              "number": "104",
+              "title": "Introduction to Business",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACT",
+              "number": "114",
+              "title": "Introduction to Accounting Database Resources",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACT",
+              "number": "246",
+              "title": "Microcomputer Accounting",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACT",
+              "number": "247",
+              "title": "Advanced Accounting Applications on the Microcomputer",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACT",
+              "number": "249",
+              "title": "Payroll Accounting",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACT",
+              "number": "253",
+              "title": "Individual Income Tax",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACT",
+              "number": "254",
+              "title": "Business Income Tax",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACT",
+              "number": "256",
+              "title": "Cost Accounting",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "accounting"
+    },
+    {
       "title": "Accounting Technology Bookkeeping",
       "credential": "other",
       "program_code": null,
@@ -221,137 +317,6 @@
               "prefix": "ASC",
               "number": "121",
               "title": "Principles of Electricity for HVACR",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ASC",
-              "number": "148",
-              "title": "Heat Pump Systems I",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Air Conditioning/Refrigeration Technology",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/air-conditioningrefrigeration-technology/air-conditioningrefrigeration-technology",
-      "total_credits": 45,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Area V: Technical Concentration and Electives",
-          "credits_required": 33,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ACR",
-              "number": "112",
-              "title": "HVACR Service Procedures",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACR",
-              "number": "113",
-              "title": "Refrigeration Piping Practices",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACR",
-              "number": "123",
-              "title": "HVACR Electrical Components",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACR",
-              "number": "126",
-              "title": "Commercial Heating Systems",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACR",
-              "number": "132",
-              "title": "Residential Air Conditioning",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACR",
-              "number": "147",
-              "title": "Refrigeration Transition and Recovery Theory",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACR",
-              "number": "181",
-              "title": "Special Topics in Air Conditioning and Refrigeration I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACR",
-              "number": "149",
-              "title": "Heat Pump Systems II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACR",
-              "number": "203",
-              "title": "Commercial Refrigeration",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACR",
-              "number": "205",
-              "title": "System Sizing and Air Distribution",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACR",
-              "number": "209",
-              "title": "Commercial Air Conditioning Systems",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Minor Requirements: Heating, Air Conditioning, Ventilation, and Refrigeration Maintenance",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ASC",
-              "number": "111",
-              "title": "Principles of Refrigeration",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ASC",
-              "number": "121",
-              "title": "Principles of Electricity for HVACR",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ASC",
-              "number": "119",
-              "title": "Fundamentals of Gas Heating Systems",
               "credits": 3,
               "or_alternatives": []
             },
@@ -499,17 +464,17 @@
       "matched_program_slug": null
     },
     {
-      "title": "Air Conditioning/Refrigeration Technology ACR Level 2",
+      "title": "Air Conditioning/Refrigeration Technology",
       "credential": "other",
       "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/air-conditioningrefrigeration-technology/air-conditioningrefrigeration-technology-acr-level-2",
-      "total_credits": 9,
+      "catalog_url": "https://catalog.nwscc.edu/air-conditioningrefrigeration-technology/air-conditioningrefrigeration-technology",
+      "total_credits": 45,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
-          "name": "Required Courses",
-          "credits_required": 9,
+          "name": "Area V: Technical Concentration and Electives",
+          "credits_required": 33,
           "choose_n": null,
           "courses": [
             {
@@ -521,8 +486,57 @@
             },
             {
               "prefix": "ACR",
-              "number": "209",
-              "title": "Commercial Air Conditioning Systems",
+              "number": "113",
+              "title": "Refrigeration Piping Practices",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "123",
+              "title": "HVACR Electrical Components",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "126",
+              "title": "Commercial Heating Systems",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "132",
+              "title": "Residential Air Conditioning",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "147",
+              "title": "Refrigeration Transition and Recovery Theory",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "181",
+              "title": "Special Topics in Air Conditioning and Refrigeration I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "149",
+              "title": "Heat Pump Systems II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "203",
+              "title": "Commercial Refrigeration",
               "credits": 3,
               "or_alternatives": []
             },
@@ -530,6 +544,48 @@
               "prefix": "ACR",
               "number": "205",
               "title": "System Sizing and Air Distribution",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "209",
+              "title": "Commercial Air Conditioning Systems",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Minor Requirements: Heating, Air Conditioning, Ventilation, and Refrigeration Maintenance",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ASC",
+              "number": "111",
+              "title": "Principles of Refrigeration",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ASC",
+              "number": "121",
+              "title": "Principles of Electricity for HVACR",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ASC",
+              "number": "119",
+              "title": "Fundamentals of Gas Heating Systems",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ASC",
+              "number": "148",
+              "title": "Heat Pump Systems I",
               "credits": 3,
               "or_alternatives": []
             }
@@ -578,6 +634,147 @@
               "number": "181",
               "title": "Special Topics in Air Conditioning and Refrigeration I",
               "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Air Conditioning/Refrigeration Technology ACR Level 2",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.nwscc.edu/air-conditioningrefrigeration-technology/air-conditioningrefrigeration-technology-acr-level-2",
+      "total_credits": 9,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 9,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACR",
+              "number": "112",
+              "title": "HVACR Service Procedures",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "209",
+              "title": "Commercial Air Conditioning Systems",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "205",
+              "title": "System Sizing and Air Distribution",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Air Conditioning/Refrigeration Technology ACR Level 3",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.nwscc.edu/air-conditioningrefrigeration-technology/air-conditioningrefrigeration-technology-acr-level-3",
+      "total_credits": 9,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 9,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACR",
+              "number": "132",
+              "title": "Residential Air Conditioning",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "147",
+              "title": "Refrigeration Transition and Recovery Theory",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACR",
+              "number": "203",
+              "title": "Commercial Refrigeration",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Dental Assisting",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.nwscc.edu/allied-health-linkage-programs/dental-assisting",
+      "total_credits": 22,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 22,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Microcomputer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MTH",
+              "number": "116",
+              "title": "Mathematical Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
+              "number": "200",
+              "title": "General Psychology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SPH",
+              "number": "107",
+              "title": "Fundamentals of Public Speaking",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "103",
+              "title": "Principles of Biology I",
+              "credits": 4,
               "or_alternatives": []
             }
           ]
@@ -652,203 +849,6 @@
               "prefix": "SOC",
               "number": "200",
               "title": "Introduction to Sociology",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Dental Assisting",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/allied-health-linkage-programs/dental-assisting",
-      "total_credits": 22,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 22,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CIS",
-              "number": "146",
-              "title": "Microcomputer Applications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENG",
-              "number": "101",
-              "title": "English Composition I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MTH",
-              "number": "116",
-              "title": "Mathematical Applications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSY",
-              "number": "200",
-              "title": "General Psychology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SPH",
-              "number": "107",
-              "title": "Fundamentals of Public Speaking",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "103",
-              "title": "Principles of Biology I",
-              "credits": 4,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Accounting Technology - Certificate",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/accounting-technology/accounting-technology-certificate",
-      "total_credits": 39,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "General Education Requirements",
-          "credits_required": 9,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "MTH",
-              "number": "116",
-              "title": "Mathematical Applications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "146",
-              "title": "Microcomputer Applications",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Major Requirements",
-          "credits_required": 30,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ACT",
-              "number": "104",
-              "title": "Introduction to Business",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACT",
-              "number": "114",
-              "title": "Introduction to Accounting Database Resources",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACT",
-              "number": "246",
-              "title": "Microcomputer Accounting",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACT",
-              "number": "247",
-              "title": "Advanced Accounting Applications on the Microcomputer",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACT",
-              "number": "249",
-              "title": "Payroll Accounting",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACT",
-              "number": "253",
-              "title": "Individual Income Tax",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACT",
-              "number": "254",
-              "title": "Business Income Tax",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACT",
-              "number": "256",
-              "title": "Cost Accounting",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "accounting"
-    },
-    {
-      "title": "Air Conditioning/Refrigeration Technology ACR Level 3",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/air-conditioningrefrigeration-technology/air-conditioningrefrigeration-technology-acr-level-3",
-      "total_credits": 9,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 9,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ACR",
-              "number": "132",
-              "title": "Residential Air Conditioning",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACR",
-              "number": "147",
-              "title": "Refrigeration Transition and Recovery Theory",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACR",
-              "number": "203",
-              "title": "Commercial Refrigeration",
               "credits": 3,
               "or_alternatives": []
             }
@@ -973,6 +973,142 @@
       "matched_program_slug": null
     },
     {
+      "title": "Occupational Therapy Assistant",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.nwscc.edu/allied-health-linkage-programs/occupational-therapy-assistant",
+      "total_credits": 25,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 25,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BIO",
+              "number": "201",
+              "title": "Human Anatomy and Physiology I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MTH",
+              "number": "116",
+              "title": "Mathematical Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "211",
+              "title": "Medical Terminology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Microcomputer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
+              "number": "200",
+              "title": "General Psychology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SPH",
+              "number": "107",
+              "title": "Fundamentals of Public Speaking",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Automotive Service Technology Advanced STC II - Advanced",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.nwscc.edu/automotive-service-technology/automotive-service-technology-advanced-stc-ii-advanced",
+      "total_credits": 21,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 21,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ASE",
+              "number": "212",
+              "title": "Advanced Electrical and Electronic Systems",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUM",
+              "number": "224",
+              "title": "Manual Transmission and Transaxle",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUM",
+              "number": "230",
+              "title": "Auto Transmission and Transaxle",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUM",
+              "number": "239",
+              "title": "Engine Performance",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUM",
+              "number": "244",
+              "title": "Engine Performance and Diagnostics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ASE",
+              "number": "246",
+              "title": "Automotive Emissions",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ASE",
+              "number": "220",
+              "title": "Advanced Automotive Engines",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "automotive-technology"
+    },
+    {
       "title": "Physical Therapist Assistant",
       "credential": "other",
       "program_code": null,
@@ -1093,405 +1229,6 @@
               "prefix": "PSY",
               "number": "200",
               "title": "General Psychology",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Automotive Service Technology Advanced STC II - Advanced",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/automotive-service-technology/automotive-service-technology-advanced-stc-ii-advanced",
-      "total_credits": 21,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 21,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ASE",
-              "number": "212",
-              "title": "Advanced Electrical and Electronic Systems",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AUM",
-              "number": "224",
-              "title": "Manual Transmission and Transaxle",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AUM",
-              "number": "230",
-              "title": "Auto Transmission and Transaxle",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AUM",
-              "number": "239",
-              "title": "Engine Performance",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AUM",
-              "number": "244",
-              "title": "Engine Performance and Diagnostics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ASE",
-              "number": "246",
-              "title": "Automotive Emissions",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ASE",
-              "number": "220",
-              "title": "Advanced Automotive Engines",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "automotive-technology"
-    },
-    {
-      "title": "Occupational Therapy Assistant",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/allied-health-linkage-programs/occupational-therapy-assistant",
-      "total_credits": 25,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 25,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BIO",
-              "number": "201",
-              "title": "Human Anatomy and Physiology I",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENG",
-              "number": "101",
-              "title": "English Composition I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MTH",
-              "number": "116",
-              "title": "Mathematical Applications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "211",
-              "title": "Medical Terminology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "146",
-              "title": "Microcomputer Applications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSY",
-              "number": "200",
-              "title": "General Psychology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SPH",
-              "number": "107",
-              "title": "Fundamentals of Public Speaking",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Essentials of Automotive Service Technology",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/automotive-service-technology/essentials-of-automotive-service-technology",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "AUM",
-              "number": "101",
-              "title": "Fundamentals of Automotive Technology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AUM",
-              "number": "112",
-              "title": "Electrical Fundamentals",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AUM",
-              "number": "121",
-              "title": "Braking Systems",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AUM",
-              "number": "124",
-              "title": "Automotive Engines",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "automotive-technology"
-    },
-    {
-      "title": "Cabinetmaking Advanced",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/cabinetmaking/cabinetmaking-advanced",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CAB",
-              "number": "102",
-              "title": "Introduction to Lumber and Wood Products",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CAB",
-              "number": "104",
-              "title": "Cabinet Shop Operations",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CAB",
-              "number": "141",
-              "title": "Woodfinishing",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CAB",
-              "number": "230",
-              "title": "Estimating Costs in Cabinetmaking",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Automotive Service Technology STC 1 - Basic",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/automotive-service-technology/automotive-service-technology-stc-1-basic",
-      "total_credits": 24,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 24,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "AUM",
-              "number": "101",
-              "title": "Fundamentals of Automotive Technology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AUM",
-              "number": "112",
-              "title": "Electrical Fundamentals",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AUM",
-              "number": "121",
-              "title": "Braking Systems",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AUM",
-              "number": "122",
-              "title": "Steering, Suspension and Alignment",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AUM",
-              "number": "124",
-              "title": "Automotive Engines",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AUM",
-              "number": "130",
-              "title": "Drive Train and Axles",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ASE",
-              "number": "133",
-              "title": "Motor Vehicle Air Conditioning",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AUM",
-              "number": "162",
-              "title": "Electrical and Electronic Systems",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "automotive-technology"
-    },
-    {
-      "title": "Carpentry Advanced",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/carpentry/carpentry-advanced",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BUC",
-              "number": "113",
-              "title": "Basic Construction Print Reading",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUC",
-              "number": "115",
-              "title": "Roof and Ceiling Framing",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUC",
-              "number": "131",
-              "title": "Interior and Exterior Finishes",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUC",
-              "number": "156",
-              "title": "Residential Repair and Remodeling",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Cabinetmaking Basic",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/cabinetmaking/cabinetmaking-basic",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CAB",
-              "number": "101",
-              "title": "Introduction to Cabinetmaking",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CAB",
-              "number": "103",
-              "title": "Sizes, Dimension, and Joints",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CAB",
-              "number": "110",
-              "title": "Equipment Maintenance",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CAB",
-              "number": "204",
-              "title": "Cabinetmaking and Millwork",
               "credits": 3,
               "or_alternatives": []
             }
@@ -1630,6 +1367,269 @@
         }
       ],
       "matched_program_slug": "automotive-technology"
+    },
+    {
+      "title": "Automotive Service Technology STC 1 - Basic",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.nwscc.edu/automotive-service-technology/automotive-service-technology-stc-1-basic",
+      "total_credits": 24,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 24,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "AUM",
+              "number": "101",
+              "title": "Fundamentals of Automotive Technology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUM",
+              "number": "112",
+              "title": "Electrical Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUM",
+              "number": "121",
+              "title": "Braking Systems",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUM",
+              "number": "122",
+              "title": "Steering, Suspension and Alignment",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUM",
+              "number": "124",
+              "title": "Automotive Engines",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUM",
+              "number": "130",
+              "title": "Drive Train and Axles",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ASE",
+              "number": "133",
+              "title": "Motor Vehicle Air Conditioning",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUM",
+              "number": "162",
+              "title": "Electrical and Electronic Systems",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "automotive-technology"
+    },
+    {
+      "title": "Essentials of Automotive Service Technology",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.nwscc.edu/automotive-service-technology/essentials-of-automotive-service-technology",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "AUM",
+              "number": "101",
+              "title": "Fundamentals of Automotive Technology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUM",
+              "number": "112",
+              "title": "Electrical Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUM",
+              "number": "121",
+              "title": "Braking Systems",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUM",
+              "number": "124",
+              "title": "Automotive Engines",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "automotive-technology"
+    },
+    {
+      "title": "Cabinetmaking Basic",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.nwscc.edu/cabinetmaking/cabinetmaking-basic",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CAB",
+              "number": "101",
+              "title": "Introduction to Cabinetmaking",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CAB",
+              "number": "103",
+              "title": "Sizes, Dimension, and Joints",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CAB",
+              "number": "110",
+              "title": "Equipment Maintenance",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CAB",
+              "number": "204",
+              "title": "Cabinetmaking and Millwork",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Cabinetmaking Advanced",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.nwscc.edu/cabinetmaking/cabinetmaking-advanced",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CAB",
+              "number": "102",
+              "title": "Introduction to Lumber and Wood Products",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CAB",
+              "number": "104",
+              "title": "Cabinet Shop Operations",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CAB",
+              "number": "141",
+              "title": "Woodfinishing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CAB",
+              "number": "230",
+              "title": "Estimating Costs in Cabinetmaking",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Carpentry Advanced",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.nwscc.edu/carpentry/carpentry-advanced",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BUC",
+              "number": "113",
+              "title": "Basic Construction Print Reading",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUC",
+              "number": "115",
+              "title": "Roof and Ceiling Framing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUC",
+              "number": "131",
+              "title": "Interior and Exterior Finishes",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUC",
+              "number": "156",
+              "title": "Residential Repair and Remodeling",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
     },
     {
       "title": "Carpentry Basic",
@@ -1934,6 +1934,39 @@
       "matched_program_slug": null
     },
     {
+      "title": "Auxiliary Teacher STC",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.nwscc.edu/child-development/auxiliary-teacher-stc",
+      "total_credits": 9,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Core Courses",
+          "credits_required": 9,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CHD",
+              "number": "100",
+              "title": "Introduction of Early Care and Education of Children",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHD",
+              "number": "206",
+              "title": "Children’s Health and Safety",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Chemical Laboratory Technician",
       "credential": "other",
       "program_code": null,
@@ -2168,10 +2201,120 @@
       "matched_program_slug": "early-childhood-education"
     },
     {
-      "title": "Auxiliary Teacher STC",
+      "title": "Child Development STC",
       "credential": "other",
       "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/child-development/auxiliary-teacher-stc",
+      "catalog_url": "https://catalog.nwscc.edu/child-development/child-development-stc",
+      "total_credits": 27,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 21,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CHD",
+              "number": "201",
+              "title": "Child Growth and Development Principles",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHD",
+              "number": "202",
+              "title": "Children’s Creative Experiences",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHD",
+              "number": "203",
+              "title": "Children’s Literature and Language Development",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHD",
+              "number": "204",
+              "title": "Methods and Materials for Teaching Children",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHD",
+              "number": "205",
+              "title": "Program Planning for Educating Young Children",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHD",
+              "number": "206",
+              "title": "Children’s Health and Safety",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHD",
+              "number": "215",
+              "title": "Supervised Practical Experience in Early Childhood Education",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Electives",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CHD",
+              "number": "100",
+              "title": "Introduction of Early Care and Education of Children",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHD",
+              "number": "208",
+              "title": "Administration of Child Development Programs",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHD",
+              "number": "209",
+              "title": "Infant and Toddler Education Programs",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHD",
+              "number": "210",
+              "title": "Educating Children with Exceptional Needs",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHD",
+              "number": "214",
+              "title": "Families and Communities in Early Care and Education Programs",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "early-childhood-education"
+    },
+    {
+      "title": "Early Childhood Education STC",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.nwscc.edu/child-development/early-childhood-education-stc",
       "total_credits": 9,
       "gpa_minimum": 2,
       "description": null,
@@ -2190,15 +2333,22 @@
             },
             {
               "prefix": "CHD",
-              "number": "206",
-              "title": "Children’s Health and Safety",
+              "number": "201",
+              "title": "Child Growth and Development Principles",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHD",
+              "number": "203",
+              "title": "Children’s Literature and Language Development",
               "credits": 3,
               "or_alternatives": []
             }
           ]
         }
       ],
-      "matched_program_slug": null
+      "matched_program_slug": "early-childhood-education"
     },
     {
       "title": "Computer Information Systems Technology",
@@ -2596,231 +2746,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Computer Technology Software Technician",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/computer-information-systems-technology/computer-technology-software-technician",
-      "total_credits": 27,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 27,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CIS",
-              "number": "146",
-              "title": "Microcomputer Applications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "147",
-              "title": "Advanced Microcomputer Applications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "148",
-              "title": "Post Advanced Microcomputer Applications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "157",
-              "title": "Introduction to App Development with Swift",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "205",
-              "title": "Control Language and Utilities Applications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "220",
-              "title": "App Development with Swift",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "227",
-              "title": "App Development with Swift II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "249",
-              "title": "Microcomputer Operating Systems",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Child Development STC",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/child-development/child-development-stc",
-      "total_credits": 27,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 21,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CHD",
-              "number": "201",
-              "title": "Child Growth and Development Principles",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHD",
-              "number": "202",
-              "title": "Children’s Creative Experiences",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHD",
-              "number": "203",
-              "title": "Children’s Literature and Language Development",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHD",
-              "number": "204",
-              "title": "Methods and Materials for Teaching Children",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHD",
-              "number": "205",
-              "title": "Program Planning for Educating Young Children",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHD",
-              "number": "206",
-              "title": "Children’s Health and Safety",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHD",
-              "number": "215",
-              "title": "Supervised Practical Experience in Early Childhood Education",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Electives",
-          "credits_required": 6,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CHD",
-              "number": "100",
-              "title": "Introduction of Early Care and Education of Children",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHD",
-              "number": "208",
-              "title": "Administration of Child Development Programs",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHD",
-              "number": "209",
-              "title": "Infant and Toddler Education Programs",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHD",
-              "number": "210",
-              "title": "Educating Children with Exceptional Needs",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHD",
-              "number": "214",
-              "title": "Families and Communities in Early Care and Education Programs",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "early-childhood-education"
-    },
-    {
-      "title": "Early Childhood Education STC",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/child-development/early-childhood-education-stc",
-      "total_credits": 9,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Core Courses",
-          "credits_required": 9,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CHD",
-              "number": "100",
-              "title": "Introduction of Early Care and Education of Children",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHD",
-              "number": "201",
-              "title": "Child Growth and Development Principles",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHD",
-              "number": "203",
-              "title": "Children’s Literature and Language Development",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "early-childhood-education"
-    },
-    {
       "title": "Swift Programming",
       "credential": "other",
       "program_code": null,
@@ -2978,217 +2903,6 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Microcomputer Applications",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/computer-information-systems-technology/microcomputer-applications",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CIS",
-              "number": "146",
-              "title": "Microcomputer Applications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "147",
-              "title": "Advanced Microcomputer Applications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "148",
-              "title": "Post Advanced Microcomputer Applications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "249",
-              "title": "Microcomputer Operating Systems",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Salon and Spa Management",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/cosmetology/salon-and-spa-management-0",
-      "total_credits": 42,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Area V: Technical Concentration and Electives",
-          "credits_required": 42,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "COS",
-              "number": "190",
-              "title": "Internship in Cosmetology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SAL",
-              "number": "133",
-              "title": "Salon Management Technology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COS",
-              "number": "111",
-              "title": "Introduction to Cosmetology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COS",
-              "number": "112",
-              "title": "Introduction to Cosmetology Lab",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COS",
-              "number": "113",
-              "title": "Theory of Chemical Services",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COS",
-              "number": "114",
-              "title": "Chemical Services Lab",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COS",
-              "number": "115",
-              "title": "Hair Coloring Theory",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COS",
-              "number": "116",
-              "title": "Hair Coloring Lab",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COS",
-              "number": "117",
-              "title": "Basic Spa Techniques",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COS",
-              "number": "118",
-              "title": "Basic Spa Techniques Lab",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COS",
-              "number": "123",
-              "title": "Cosmetology Salon Practices",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COS",
-              "number": "167",
-              "title": "State Board Review",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COS",
-              "number": "144",
-              "title": "Hair Shaping and Design",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COS",
-              "number": "145",
-              "title": "Hair Shaping Lab",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "business-administration"
-    },
-    {
-      "title": "Computer-Aided Design",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/design-engineering-technology/computeraided-design",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "DDT",
-              "number": "104",
-              "title": "Basic Computer Aided Drafting and Design",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "DDT",
-              "number": "127",
-              "title": "Intermediate Computer Aided Drafting and Design",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "DDT",
-              "number": "231",
-              "title": "Advanced Cad",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "DDT",
-              "number": "111",
-              "title": "Fundamentals of Drafting and Design Technology",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Salon and Spa Management",
       "credential": "other",
       "program_code": null,
@@ -3318,6 +3032,123 @@
               "prefix": "COS",
               "number": "167",
               "title": "State Board Review",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Salon and Spa Management",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.nwscc.edu/cosmetology/salon-and-spa-management-0",
+      "total_credits": 42,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area V: Technical Concentration and Electives",
+          "credits_required": 42,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "COS",
+              "number": "190",
+              "title": "Internship in Cosmetology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SAL",
+              "number": "133",
+              "title": "Salon Management Technology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "111",
+              "title": "Introduction to Cosmetology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "112",
+              "title": "Introduction to Cosmetology Lab",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "113",
+              "title": "Theory of Chemical Services",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "114",
+              "title": "Chemical Services Lab",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "115",
+              "title": "Hair Coloring Theory",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "116",
+              "title": "Hair Coloring Lab",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "117",
+              "title": "Basic Spa Techniques",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "118",
+              "title": "Basic Spa Techniques Lab",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "123",
+              "title": "Cosmetology Salon Practices",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "167",
+              "title": "State Board Review",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "144",
+              "title": "Hair Shaping and Design",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COS",
+              "number": "145",
+              "title": "Hair Shaping Lab",
               "credits": 3,
               "or_alternatives": []
             }
@@ -3470,6 +3301,175 @@
         }
       ],
       "matched_program_slug": "criminal-justice"
+    },
+    {
+      "title": "Computer-Aided Design",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.nwscc.edu/design-engineering-technology/computeraided-design",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "DDT",
+              "number": "104",
+              "title": "Basic Computer Aided Drafting and Design",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DDT",
+              "number": "127",
+              "title": "Intermediate Computer Aided Drafting and Design",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DDT",
+              "number": "231",
+              "title": "Advanced Cad",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DDT",
+              "number": "111",
+              "title": "Fundamentals of Drafting and Design Technology",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Computer Technology Software Technician",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.nwscc.edu/computer-information-systems-technology/computer-technology-software-technician",
+      "total_credits": 27,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 27,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Microcomputer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "147",
+              "title": "Advanced Microcomputer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "148",
+              "title": "Post Advanced Microcomputer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "157",
+              "title": "Introduction to App Development with Swift",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "205",
+              "title": "Control Language and Utilities Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "220",
+              "title": "App Development with Swift",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "227",
+              "title": "App Development with Swift II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "249",
+              "title": "Microcomputer Operating Systems",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Microcomputer Applications",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.nwscc.edu/computer-information-systems-technology/microcomputer-applications",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Microcomputer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "147",
+              "title": "Advanced Microcomputer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "148",
+              "title": "Post Advanced Microcomputer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "249",
+              "title": "Microcomputer Operating Systems",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
     },
     {
       "title": "Design Engineering Technology - AAS",
@@ -3978,7 +3978,7 @@
     },
     {
       "title": "Electrical Technology - Career Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.nwscc.edu/electrical-technology/electrical-technology-career-certificate",
       "total_credits": 45,
@@ -4279,86 +4279,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Electrical Technology Residential Technician",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/electrical-technology/electrical-technology-residential-technician",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELT",
-              "number": "114",
-              "title": "Residential Wiring Methods",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELT",
-              "number": "115",
-              "title": "Residential Wiring Methods II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELT",
-              "number": "108",
-              "title": "DC Fundamentals",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELT",
-              "number": "110",
-              "title": "Wiring Methods",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Emergency Medical Services AEMT Certificate",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/emergency-medical-services/emergency-medical-services-aemt-certificate",
-      "total_credits": 9,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 9,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "EMS",
-              "number": "155",
-              "title": "Advanced Emergency Medical Technician",
-              "credits": 7,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EMS",
-              "number": "156",
-              "title": "Advanced Emergency Medical Technician Clinical",
-              "credits": 2,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Electrical Technology Industrial Technician",
       "credential": "other",
       "program_code": null,
@@ -4406,162 +4326,45 @@
       "matched_program_slug": null
     },
     {
-      "title": "Emergency Medical Services Paramedic Certificate",
+      "title": "Electrical Technology Residential Technician",
       "credential": "other",
       "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/emergency-medical-services/emergency-medical-services-paramedic-certificate",
-      "total_credits": 45,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "EMS Concentration",
-          "credits_required": 45,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "EMS",
-              "number": "118",
-              "title": "Emergency Medical Technician",
-              "credits": 9,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EMS",
-              "number": "119",
-              "title": "Emergency Medical Technician Clinical",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EMS",
-              "number": "189",
-              "title": "Applied Anatomy and Physiology for the Paramedic",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EMS",
-              "number": "240",
-              "title": "Paramedic Operations",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EMS",
-              "number": "241",
-              "title": "Paramedic Cardiology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EMS",
-              "number": "242",
-              "title": "Paramedic Patient Assessment",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EMS",
-              "number": "257",
-              "title": "Paramedic Applied Pharmacology",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EMS",
-              "number": "244",
-              "title": "Paramedic Clinical I",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EMS",
-              "number": "245",
-              "title": "Paramedic Medical Emergencies",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EMS",
-              "number": "246",
-              "title": "Paramedic Trauma Management",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EMS",
-              "number": "247",
-              "title": "Paramedic Special Populations",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EMS",
-              "number": "248",
-              "title": "Paramedic Clinical II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EMS",
-              "number": "253",
-              "title": "Paramedic Transition to the Workplace",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EMS",
-              "number": "254",
-              "title": "Advanced Competencies for Paramedic",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EMS",
-              "number": "255",
-              "title": "Paramedic Field Preceptorship",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EMS",
-              "number": "256",
-              "title": "Paramedic Team Leadership",
-              "credits": 1,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Emergency Medical Services EMT Certificate",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/emergency-medical-services/emergency-medical-services-emt-certificate",
-      "total_credits": 10,
+      "catalog_url": "https://catalog.nwscc.edu/electrical-technology/electrical-technology-residential-technician",
+      "total_credits": 12,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "Required Courses",
-          "credits_required": 10,
+          "credits_required": 12,
           "choose_n": null,
           "courses": [
             {
-              "prefix": "EMS",
-              "number": "118",
-              "title": "Emergency Medical Technician",
-              "credits": 9,
+              "prefix": "ELT",
+              "number": "114",
+              "title": "Residential Wiring Methods",
+              "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "EMS",
-              "number": "119",
-              "title": "Emergency Medical Technician Clinical",
-              "credits": 1,
+              "prefix": "ELT",
+              "number": "115",
+              "title": "Residential Wiring Methods II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "108",
+              "title": "DC Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "110",
+              "title": "Wiring Methods",
+              "credits": 3,
               "or_alternatives": []
             }
           ]
@@ -4736,6 +4539,203 @@
       "matched_program_slug": null
     },
     {
+      "title": "Emergency Medical Services AEMT Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.nwscc.edu/emergency-medical-services/emergency-medical-services-aemt-certificate",
+      "total_credits": 9,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 9,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "EMS",
+              "number": "155",
+              "title": "Advanced Emergency Medical Technician",
+              "credits": 7,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "156",
+              "title": "Advanced Emergency Medical Technician Clinical",
+              "credits": 2,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Emergency Medical Services EMT Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.nwscc.edu/emergency-medical-services/emergency-medical-services-emt-certificate",
+      "total_credits": 10,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 10,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "EMS",
+              "number": "118",
+              "title": "Emergency Medical Technician",
+              "credits": 9,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "119",
+              "title": "Emergency Medical Technician Clinical",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Emergency Medical Services Paramedic Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.nwscc.edu/emergency-medical-services/emergency-medical-services-paramedic-certificate",
+      "total_credits": 45,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "EMS Concentration",
+          "credits_required": 45,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "EMS",
+              "number": "118",
+              "title": "Emergency Medical Technician",
+              "credits": 9,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "119",
+              "title": "Emergency Medical Technician Clinical",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "189",
+              "title": "Applied Anatomy and Physiology for the Paramedic",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "240",
+              "title": "Paramedic Operations",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "241",
+              "title": "Paramedic Cardiology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "242",
+              "title": "Paramedic Patient Assessment",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "257",
+              "title": "Paramedic Applied Pharmacology",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "244",
+              "title": "Paramedic Clinical I",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "245",
+              "title": "Paramedic Medical Emergencies",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "246",
+              "title": "Paramedic Trauma Management",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "247",
+              "title": "Paramedic Special Populations",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "248",
+              "title": "Paramedic Clinical II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "253",
+              "title": "Paramedic Transition to the Workplace",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "254",
+              "title": "Advanced Competencies for Paramedic",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "255",
+              "title": "Paramedic Field Preceptorship",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EMS",
+              "number": "256",
+              "title": "Paramedic Team Leadership",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Industrial Systems Technology: Basic",
       "credential": "other",
       "program_code": null,
@@ -4784,7 +4784,7 @@
     },
     {
       "title": "Industrial Systems Technology - Career Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.nwscc.edu/industrial-maintenance-technology/industrial-systems-technology-career-certificate",
       "total_credits": 39,
@@ -5125,53 +5125,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Industrial Systems Technology: Instrumentation",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/industrial-maintenance-technology/industrial-systems-technology-instrumentation",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "INT",
-              "number": "184",
-              "title": "Introduction to Programmable Logic Controllers",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "207",
-              "title": "Industrial Automatic Controls",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ILT",
-              "number": "114",
-              "title": "Instrumentation Operation and Calibration",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ILT",
-              "number": "240",
-              "title": "Sensors Technology and Applications",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Industrial Systems Technology: FAME Option",
       "credential": "other",
       "program_code": null,
@@ -5336,6 +5289,53 @@
               "prefix": "INT",
               "number": "284",
               "title": "Advanced Programmable Logic Controllers",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Industrial Systems Technology: Instrumentation",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.nwscc.edu/industrial-maintenance-technology/industrial-systems-technology-instrumentation",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "INT",
+              "number": "184",
+              "title": "Introduction to Programmable Logic Controllers",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "207",
+              "title": "Industrial Automatic Controls",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ILT",
+              "number": "114",
+              "title": "Instrumentation Operation and Calibration",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ILT",
+              "number": "240",
+              "title": "Sensors Technology and Applications",
               "credits": 3,
               "or_alternatives": []
             }
@@ -5535,158 +5535,6 @@
               "prefix": "INT",
               "number": "127",
               "title": "Principles of Industrial Pumps and Piping Systems",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Industrial Systems Technology: Mechanical Option",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/industrial-maintenance-technology/industrial-systems-technology-mechanical-option",
-      "total_credits": 55,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Area III: Natural Sciences and Mathematics",
-          "credits_required": 7,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "MTH",
-              "number": "100",
-              "title": "Intermediate College Algebra",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHY",
-              "number": "115",
-              "title": "Technical Physics",
-              "credits": 4,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Area V: Technical Concentration and Electives",
-          "credits_required": 48,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "INT",
-              "number": "101",
-              "title": "DC Fundamentals",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "103",
-              "title": "AC Fundamentals",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "106",
-              "title": "Elements of Industrial Mechanics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "113",
-              "title": "Industrial Motor Control I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "117",
-              "title": "Principles of Industrial Mechanics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "118",
-              "title": "Fundamentals of Industrial Hydraulics and Pneumatics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "121",
-              "title": "Industrial Hydraulics Troubleshooting",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "127",
-              "title": "Principles of Industrial Pumps and Piping Systems",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "134",
-              "title": "Principles of Industrial Maintenance Welding and Metal Cutting Techniques",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "158",
-              "title": "Industrial Wiring I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "161",
-              "title": "Blueprint Reading for Industrial Technicians",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "206",
-              "title": "Industrial Motors I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "222",
-              "title": "Special Topics: Safety",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "280",
-              "title": "Special Topics Computer Fundamentals",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MSP",
-              "number": "105",
-              "title": "Lathes",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WDT",
-              "number": "182",
-              "title": "Special Topics - Advanced Maintenance Welding",
               "credits": 3,
               "or_alternatives": []
             }
@@ -6068,74 +5916,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Medical Assisting Technology: Medical Billing and Coding Option",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/medical-assisting-technology/medical-assisting-technology-medical-billing-and-coding-option",
-      "total_credits": 27,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 27,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "MAT",
-              "number": "101",
-              "title": "Medical Terminology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "120",
-              "title": "Medical Administrative Procedures I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "121",
-              "title": "Medical Administrative Procedures II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "220",
-              "title": "Medical Office Insurance",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIT",
-              "number": "230",
-              "title": "Medical Coding Systems I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIT",
-              "number": "232",
-              "title": "Medical Coding Systems II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "242",
-              "title": "Office Internship",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Medical Assisting Technology",
       "credential": "other",
       "program_code": null,
@@ -6288,6 +6068,226 @@
       "matched_program_slug": null
     },
     {
+      "title": "Medical Assisting Technology: Medical Billing and Coding Option",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.nwscc.edu/medical-assisting-technology/medical-assisting-technology-medical-billing-and-coding-option",
+      "total_credits": 27,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 27,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MAT",
+              "number": "101",
+              "title": "Medical Terminology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "120",
+              "title": "Medical Administrative Procedures I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "121",
+              "title": "Medical Administrative Procedures II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "220",
+              "title": "Medical Office Insurance",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIT",
+              "number": "230",
+              "title": "Medical Coding Systems I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIT",
+              "number": "232",
+              "title": "Medical Coding Systems II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "242",
+              "title": "Office Internship",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Industrial Systems Technology: Mechanical Option",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.nwscc.edu/industrial-maintenance-technology/industrial-systems-technology-mechanical-option",
+      "total_credits": 55,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area III: Natural Sciences and Mathematics",
+          "credits_required": 7,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MTH",
+              "number": "100",
+              "title": "Intermediate College Algebra",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHY",
+              "number": "115",
+              "title": "Technical Physics",
+              "credits": 4,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area V: Technical Concentration and Electives",
+          "credits_required": 48,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "INT",
+              "number": "101",
+              "title": "DC Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "103",
+              "title": "AC Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "106",
+              "title": "Elements of Industrial Mechanics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "113",
+              "title": "Industrial Motor Control I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "117",
+              "title": "Principles of Industrial Mechanics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "118",
+              "title": "Fundamentals of Industrial Hydraulics and Pneumatics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "121",
+              "title": "Industrial Hydraulics Troubleshooting",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "127",
+              "title": "Principles of Industrial Pumps and Piping Systems",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "134",
+              "title": "Principles of Industrial Maintenance Welding and Metal Cutting Techniques",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "158",
+              "title": "Industrial Wiring I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "161",
+              "title": "Blueprint Reading for Industrial Technicians",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "206",
+              "title": "Industrial Motors I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "222",
+              "title": "Special Topics: Safety",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "280",
+              "title": "Special Topics Computer Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MSP",
+              "number": "105",
+              "title": "Lathes",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "182",
+              "title": "Special Topics - Advanced Maintenance Welding",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Medical Assisting Technology: Phlebotomy Option",
       "credential": "other",
       "program_code": null,
@@ -6333,259 +6333,6 @@
         }
       ],
       "matched_program_slug": null
-    },
-    {
-      "title": "Practical Nursing",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/nursing/practical-nursing",
-      "total_credits": 45,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Semester I",
-          "credits_required": 14,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BIO",
-              "number": "201",
-              "title": "Human Anatomy and Physiology I",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NUR",
-              "number": "112",
-              "title": "Fundamental Concepts of Nursing",
-              "credits": 7,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Semester II",
-          "credits_required": 18,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ENG",
-              "number": "101",
-              "title": "English Composition I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "202",
-              "title": "Human Anatomy and Physiology II",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSY",
-              "number": "210",
-              "title": "Human Growth and Development",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NUR",
-              "number": "113",
-              "title": "Nursing Concepts",
-              "credits": 8,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Semester III",
-          "credits_required": 13,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "NUR",
-              "number": "114",
-              "title": "Nursing Concepts II",
-              "credits": 8,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NUR",
-              "number": "115",
-              "title": "Evidence Based Clinical Reasoning",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SPH",
-              "number": "107",
-              "title": "Fundamentals of Public Speaking",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "nursing"
-    },
-    {
-      "title": "Nursing Assistant",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/nurse-assistant/nursing-assistant",
-      "total_credits": 4,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 4,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "NAS",
-              "number": "100",
-              "title": "Long Term Care Nursing Assistant",
-              "credits": 4,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "nursing"
-    },
-    {
-      "title": "Registered Nursing",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/nursing/registered-nursing",
-      "total_credits": 66,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Semester I (Fall)",
-          "credits_required": 14,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BIO",
-              "number": "201",
-              "title": "Human Anatomy and Physiology I",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NUR",
-              "number": "112",
-              "title": "Fundamental Concepts of Nursing",
-              "credits": 7,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Semester II (Spring)",
-          "credits_required": 18,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ENG",
-              "number": "101",
-              "title": "English Composition I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "202",
-              "title": "Human Anatomy and Physiology II",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSY",
-              "number": "210",
-              "title": "Human Growth and Development",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NUR",
-              "number": "113",
-              "title": "Nursing Concepts",
-              "credits": 8,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Semester III (Summer)",
-          "credits_required": 13,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "NUR",
-              "number": "114",
-              "title": "Nursing Concepts II",
-              "credits": 8,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NUR",
-              "number": "115",
-              "title": "Evidence Based Clinical Reasoning",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SPH",
-              "number": "107",
-              "title": "Fundamentals of Public Speaking",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Semester IV (Fall)",
-          "credits_required": 11,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BIO",
-              "number": "220",
-              "title": "General Microbiology",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NUR",
-              "number": "211",
-              "title": "Advanced Nursing Concepts",
-              "credits": 7,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Semester V (Spring)",
-          "credits_required": 10,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "NUR",
-              "number": "221",
-              "title": "Advanced Evidence Based Clinical Reasoning",
-              "credits": 7,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "nursing"
     },
     {
       "title": "Medical Laboratory Technology - AAS",
@@ -6745,6 +6492,259 @@
         }
       ],
       "matched_program_slug": null
+    },
+    {
+      "title": "Nursing Assistant",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.nwscc.edu/nurse-assistant/nursing-assistant",
+      "total_credits": 4,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 4,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "NAS",
+              "number": "100",
+              "title": "Long Term Care Nursing Assistant",
+              "credits": 4,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "nursing"
+    },
+    {
+      "title": "Practical Nursing",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.nwscc.edu/nursing/practical-nursing",
+      "total_credits": 45,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Semester I",
+          "credits_required": 14,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BIO",
+              "number": "201",
+              "title": "Human Anatomy and Physiology I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "112",
+              "title": "Fundamental Concepts of Nursing",
+              "credits": 7,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Semester II",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "202",
+              "title": "Human Anatomy and Physiology II",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
+              "number": "210",
+              "title": "Human Growth and Development",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "113",
+              "title": "Nursing Concepts",
+              "credits": 8,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Semester III",
+          "credits_required": 13,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "NUR",
+              "number": "114",
+              "title": "Nursing Concepts II",
+              "credits": 8,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "115",
+              "title": "Evidence Based Clinical Reasoning",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SPH",
+              "number": "107",
+              "title": "Fundamentals of Public Speaking",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "nursing"
+    },
+    {
+      "title": "Registered Nursing",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.nwscc.edu/nursing/registered-nursing",
+      "total_credits": 66,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Semester I (Fall)",
+          "credits_required": 14,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BIO",
+              "number": "201",
+              "title": "Human Anatomy and Physiology I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "112",
+              "title": "Fundamental Concepts of Nursing",
+              "credits": 7,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Semester II (Spring)",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "202",
+              "title": "Human Anatomy and Physiology II",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
+              "number": "210",
+              "title": "Human Growth and Development",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "113",
+              "title": "Nursing Concepts",
+              "credits": 8,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Semester III (Summer)",
+          "credits_required": 13,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "NUR",
+              "number": "114",
+              "title": "Nursing Concepts II",
+              "credits": 8,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "115",
+              "title": "Evidence Based Clinical Reasoning",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SPH",
+              "number": "107",
+              "title": "Fundamentals of Public Speaking",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Semester IV (Fall)",
+          "credits_required": 11,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BIO",
+              "number": "220",
+              "title": "General Microbiology",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "211",
+              "title": "Advanced Nursing Concepts",
+              "credits": 7,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Semester V (Spring)",
+          "credits_required": 10,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "NUR",
+              "number": "221",
+              "title": "Advanced Evidence Based Clinical Reasoning",
+              "credits": 7,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "nursing"
     },
     {
       "title": "Registered Nursing: Mobility (Healthcare Transition)",
@@ -6974,6 +6974,81 @@
       "matched_program_slug": "business-administration"
     },
     {
+      "title": "Business Office Management - Career Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.nwscc.edu/office-administration/business-office-management-career-certificate",
+      "total_credits": 24,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Major Requirements",
+          "credits_required": 24,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "OAD",
+              "number": "103",
+              "title": "Intermediate Keyboarding",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "125",
+              "title": "Word Processing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "138",
+              "title": "Records/Information Management",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "218",
+              "title": "Office Procedures",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "215",
+              "title": "Business Communication",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "241",
+              "title": "Principles of Accounting I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "275",
+              "title": "Principles of Management",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Microcomputer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "business-administration"
+    },
+    {
       "title": "Salon & Spa AAS - Barbering Option",
       "credential": "other",
       "program_code": null,
@@ -7180,175 +7255,6 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Welding Basic SMAW (Stick)",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/welding/welding-basic-smaw-stick",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "WDT",
-              "number": "109",
-              "title": "SMAW Fillet/Pac/Cac",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WDT",
-              "number": "123",
-              "title": "SMAW Fillet/Pac/CAC Lab",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AUT",
-              "number": "286",
-              "title": "SMAW Fillet/OFC",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AUT",
-              "number": "287",
-              "title": "SMAW Fillet/OFC Lab",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "welding"
-    },
-    {
-      "title": "Business Office Management - Career Certificate",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/office-administration/business-office-management-career-certificate",
-      "total_credits": 24,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Major Requirements",
-          "credits_required": 24,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "OAD",
-              "number": "103",
-              "title": "Intermediate Keyboarding",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "125",
-              "title": "Word Processing",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "138",
-              "title": "Records/Information Management",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "218",
-              "title": "Office Procedures",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "215",
-              "title": "Business Communication",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "241",
-              "title": "Principles of Accounting I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "275",
-              "title": "Principles of Management",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "146",
-              "title": "Microcomputer Applications",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "business-administration"
-    },
-    {
-      "title": "Welding FCAW/GMAW (MIG/Flux Cored)",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/welding/welding-fcawgmaw-migflux-cored",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "WDT",
-              "number": "110",
-              "title": "Industrial Blueprint Reading",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WDT",
-              "number": "119",
-              "title": "Gas Metal Arc/Flux Cored Arc Welding Theory",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WDT",
-              "number": "124",
-              "title": "Gas Metal Arc/Flux Cored Arc Welding Lab",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WDT",
-              "number": "219",
-              "title": "Welding Inspection & Testing",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "welding"
-    },
-    {
       "title": "Welding - AOT",
       "credential": "other",
       "program_code": null,
@@ -7487,10 +7393,10 @@
       "matched_program_slug": "welding"
     },
     {
-      "title": "Welding SMAW Groove and Pipe (STICK)",
+      "title": "Welding Basic SMAW (Stick)",
       "credential": "other",
       "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/welding/welding-smaw-groove-and-pipe-stick",
+      "catalog_url": "https://catalog.nwscc.edu/welding/welding-basic-smaw-stick",
       "total_credits": 12,
       "gpa_minimum": 2,
       "description": null,
@@ -7502,76 +7408,29 @@
           "courses": [
             {
               "prefix": "WDT",
-              "number": "120",
-              "title": "Shielded Metal Arc Welding Groove Theory",
+              "number": "109",
+              "title": "SMAW Fillet/Pac/Cac",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "WDT",
-              "number": "125",
-              "title": "Shielded Metal Arc Welding Groove Lab",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WDT",
-              "number": "217",
-              "title": "SMAW Carbon Pipe Theory",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WDT",
-              "number": "257",
-              "title": "SMAW Carbon Pipe Lab",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "welding"
-    },
-    {
-      "title": "Welding GTAW Plate and Pipe (TIG)",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.nwscc.edu/welding/welding-gtaw-plate-and-pipe-tig",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "WDT",
-              "number": "115",
-              "title": "GTAW Carbon Pipe Theory",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WDT",
-              "number": "155",
-              "title": "GTAW Carbon Pipe Lab",
+              "number": "123",
+              "title": "SMAW Fillet/Pac/CAC Lab",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "AUT",
-              "number": "178",
-              "title": "Gas Tungsten Arc Welding",
+              "number": "286",
+              "title": "SMAW Fillet/OFC",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "AUT",
-              "number": "180",
-              "title": "Gas Tungsten Arc Welding Lab",
+              "number": "287",
+              "title": "SMAW Fillet/OFC Lab",
               "credits": 3,
               "or_alternatives": []
             }
@@ -7582,7 +7441,7 @@
     },
     {
       "title": "Welding - Career Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.nwscc.edu/welding/welding-career-certificate",
       "total_credits": 54,
@@ -7703,6 +7562,147 @@
               "prefix": "AUT",
               "number": "180",
               "title": "Gas Tungsten Arc Welding Lab",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "welding"
+    },
+    {
+      "title": "Welding FCAW/GMAW (MIG/Flux Cored)",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.nwscc.edu/welding/welding-fcawgmaw-migflux-cored",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "WDT",
+              "number": "110",
+              "title": "Industrial Blueprint Reading",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "119",
+              "title": "Gas Metal Arc/Flux Cored Arc Welding Theory",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "124",
+              "title": "Gas Metal Arc/Flux Cored Arc Welding Lab",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "219",
+              "title": "Welding Inspection & Testing",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "welding"
+    },
+    {
+      "title": "Welding GTAW Plate and Pipe (TIG)",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.nwscc.edu/welding/welding-gtaw-plate-and-pipe-tig",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "WDT",
+              "number": "115",
+              "title": "GTAW Carbon Pipe Theory",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "155",
+              "title": "GTAW Carbon Pipe Lab",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUT",
+              "number": "178",
+              "title": "Gas Tungsten Arc Welding",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUT",
+              "number": "180",
+              "title": "Gas Tungsten Arc Welding Lab",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "welding"
+    },
+    {
+      "title": "Welding SMAW Groove and Pipe (STICK)",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.nwscc.edu/welding/welding-smaw-groove-and-pipe-stick",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "WDT",
+              "number": "120",
+              "title": "Shielded Metal Arc Welding Groove Theory",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "125",
+              "title": "Shielded Metal Arc Welding Groove Lab",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "217",
+              "title": "SMAW Carbon Pipe Theory",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WDT",
+              "number": "257",
+              "title": "SMAW Carbon Pipe Lab",
               "credits": 3,
               "or_alternatives": []
             }

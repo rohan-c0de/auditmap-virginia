@@ -15,6 +15,8 @@ import * as path from "path";
 import { applyProgramMatching } from "../../lib/programs/matcher.js";
 import { scrapeCourseleafPrograms } from "../lib/scrape-courseleaf-programs.js";
 import { scrapeAcalogPrograms } from "../lib/scrape-acalog-programs.js";
+import { scrapeCoursedogPrograms } from "../lib/scrape-coursedog-programs.js";
+import { scrapeSmartCatalogIqPrograms } from "../lib/scrape-smartcatalogiq-programs.js";
 
 async function run(
   slug: string,
@@ -47,15 +49,20 @@ async function main() {
     scrapeCourseleafPrograms({ collegeSlug: "nunez-community-college", baseUrl: "https://catalog.nunez.edu", programIndexPath: "/programs/" }),
   );
 
-  // fletcher-technical-community-college (acalog)
+  // fletcher-technical-community-college (acalog) — catalog.fletcher.edu is
+  // now behind AWS WAF (HTTP 202 + empty on plain fetch), which silently
+  // zeroed the previously-working 83-program scrape. Playwright solves the
+  // challenge.
   await run("fletcher-technical-community-college", () =>
-    scrapeAcalogPrograms({ collegeSlug: "fletcher-technical-community-college", baseUrl: "https://catalog.fletcher.edu", catoidFallback: 0, programNavoids: [], autoDiscoverCatoid: true, useSearchDiscovery: true }),
+    scrapeAcalogPrograms({ collegeSlug: "fletcher-technical-community-college", baseUrl: "https://catalog.fletcher.edu", catoidFallback: 0, programNavoids: [], autoDiscoverCatoid: true, useSearchDiscovery: true, usePlaywright: true }),
   );
 
   // south-louisiana-community-college (acalog) — programs listed under
-  // navoid=10083 ("Programs"). Probed manually 2026-05-29.
+  // navoid=10083 ("Programs"). catalog.solacc.edu sits behind AWS WAF
+  // (content.php returns HTTP 202 + empty body on plain fetch), so use
+  // Playwright to solve the JS challenge (same as Delta below).
   await run("south-louisiana-community-college", () =>
-    scrapeAcalogPrograms({ collegeSlug: "south-louisiana-community-college", baseUrl: "https://catalog.solacc.edu", catoidFallback: 22, programNavoids: [10083], autoDiscoverCatoid: false }),
+    scrapeAcalogPrograms({ collegeSlug: "south-louisiana-community-college", baseUrl: "https://catalog.solacc.edu", catoidFallback: 22, programNavoids: [10083], autoDiscoverCatoid: false, usePlaywright: true }),
   );
 
   // louisiana-delta-community-college (acalog) — catalog.ladelta.edu is behind
@@ -69,9 +76,34 @@ async function main() {
 
   // baton-rouge-community-college (acalog) — navoid=76 ("Programs A-Z") has
   // 61 preview_program.php links; navoid=85 ("Programs of Study") is a
-  // navigation parent with no direct program poids.
+  // navigation parent with no direct program poids. catalog.mybrcc.edu sits
+  // behind AWS WAF (HTTP 202 + empty on plain fetch), so use Playwright.
   await run("baton-rouge-community-college", () =>
-    scrapeAcalogPrograms({ collegeSlug: "baton-rouge-community-college", baseUrl: "https://catalog.mybrcc.edu", catoidFallback: 3, programNavoids: [76], autoDiscoverCatoid: false }),
+    scrapeAcalogPrograms({ collegeSlug: "baton-rouge-community-college", baseUrl: "https://catalog.mybrcc.edu", catoidFallback: 3, programNavoids: [76], autoDiscoverCatoid: false, usePlaywright: true }),
+  );
+
+  // delgado-community-college (acalog) — largest LCTCS college. catalog.dcc.edu
+  // is behind AWS WAF; catoid auto-discovers (60) and search_advanced.php finds
+  // ~197 programs, all via Playwright.
+  await run("delgado-community-college", () =>
+    scrapeAcalogPrograms({ collegeSlug: "delgado-community-college", baseUrl: "https://catalog.dcc.edu", catoidFallback: 0, programNavoids: [], autoDiscoverCatoid: true, useSearchDiscovery: true, usePlaywright: true }),
+  );
+
+  // bossier-parish-community-college (acalog) — catalog.bpcc.edu behind AWS WAF.
+  await run("bossier-parish-community-college", () =>
+    scrapeAcalogPrograms({ collegeSlug: "bossier-parish-community-college", baseUrl: "https://catalog.bpcc.edu", catoidFallback: 0, programNavoids: [], autoDiscoverCatoid: true, useSearchDiscovery: true, usePlaywright: true }),
+  );
+
+  // northshore-technical-community-college (coursedog) — catalog.northshorecollege.edu.
+  // (Course sections are LoLA-SSO-gated — a documented ceiling — but the public
+  // Coursedog catalog still exposes program requirements.)
+  await run("northshore-technical-community-college", () =>
+    scrapeCoursedogPrograms({ collegeSlug: "northshore-technical-community-college", catalogDomain: "catalog.northshorecollege.edu", catalogYear: "2025-2026" }),
+  );
+
+  // sowela-technical-community-college (smartcatalogiq) — sowela.smartcatalogiq.com.
+  await run("sowela-technical-community-college", () =>
+    scrapeSmartCatalogIqPrograms({ collegeSlug: "sowela-technical-community-college", baseUrl: "https://sowela.smartcatalogiq.com" }),
   );
 }
 

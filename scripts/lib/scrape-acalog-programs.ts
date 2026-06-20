@@ -120,12 +120,21 @@ async function playwrightFetch(
 ): Promise<string> {
   const page = await ctx.newPage();
   try {
-    await page.goto(url, { waitUntil: "networkidle", timeout: 30_000 });
+    // Use domcontentloaded, not networkidle: Acalog program pages embed
+    // analytics/widgets whose long-poll connections mean networkidle often
+    // never settles, so every fetch burned the full 30s timeout (and, under
+    // memory/disk pressure, stalled the renderer entirely on large catalogs
+    // like Delgado/Bossier). domcontentloaded returns as soon as the HTML is
+    // parsed — sufficient for the static catalog markup we scrape.
+    await page.goto(url, { waitUntil: "domcontentloaded", timeout: 30_000 });
     // AWS WAF JS-challenge pages are typically ≤2 KB and auto-redirect once
-    // the token is solved. Wait an extra beat to ensure the real page loaded.
+    // the token is solved. Wait for the real page if we got the challenge.
     const html = await page.content();
     if (html.length < 5_000 && html.includes("awswaf")) {
-      // Challenge page — wait for real navigation
+      // Challenge page — wait for the WAF redirect to the real document.
+      await page
+        .waitForLoadState("domcontentloaded", { timeout: 15_000 })
+        .catch(() => {});
       await page.waitForNavigation({ timeout: 15_000 }).catch(() => {});
       return page.content();
     }
@@ -184,6 +193,23 @@ function htmlToText(raw: string): string {
 // ---------------------------------------------------------------------------
 // Parsing — program list
 // ---------------------------------------------------------------------------
+
+/** Parse the active (non-archived) catoid from an Acalog catalog dropdown.
+ *  Mirrors discoverAcalogCatoid's logic but runs on already-fetched HTML
+ *  (used when the page was retrieved through Playwright to clear a WAF). */
+function parseCatoidFromDropdown(html: string): number | null {
+  const optionRe = /<option\s[^>]*value="(\d+)"[^>]*(selected)?[^>]*>([^<]+)/gi;
+  let match: RegExpExecArray | null;
+  let firstNonArchived: number | null = null;
+  while ((match = optionRe.exec(html)) !== null) {
+    const id = parseInt(match[1], 10);
+    const isSelected = !!match[2];
+    const isArchived = match[3].includes("[ARCHIVED");
+    if (isSelected && !isArchived) return id;
+    if (!isArchived && firstNonArchived === null) firstNonArchived = id;
+  }
+  return firstNonArchived;
+}
 
 function extractPoids(html: string): string[] {
   const re = /preview_program\.php\?catoid=\d+&(?:amp;)?poid=(\d+)/g;
@@ -535,6 +561,11 @@ export async function scrapeAcalogPrograms(
     browser = await chromium.launch({ headless: true });
     pwCtx = await browser.newContext({
       userAgent: UA,
+      // Several WAF-gated SC/LA Acalog catalogs (netc.edu, tctc.edu, bishop.edu)
+      // also serve an invalid/incomplete TLS chain, which otherwise fails the
+      // navigation with ERR_CERT_AUTHORITY_INVALID before the WAF challenge can
+      // even run. We're only reading public catalog HTML, so tolerate it.
+      ignoreHTTPSErrors: true,
       extraHTTPHeaders: {
         Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.9",
@@ -549,10 +580,29 @@ export async function scrapeAcalogPrograms(
   };
 
   try {
-  // Step 1: Discover catoid
-  const catoid = autoDiscoverCatoid
-    ? await discoverAcalogCatoid(baseUrl, catoidFallback)
-    : catoidFallback;
+  // Step 1: Discover catoid. For WAF-gated catalogs the bare-fetch discovery
+  // in discoverAcalogCatoid can't reach index.php (202 challenge / bad cert),
+  // so when Playwright is active we parse the catalog dropdown through the
+  // browser context instead — it already clears the WAF and tolerates the cert.
+  let catoid = catoidFallback;
+  if (autoDiscoverCatoid) {
+    if (pwCtx) {
+      try {
+        const idxHtml = await playwrightFetch(pwCtx, `${baseUrl}/index.php`);
+        const discovered = parseCatoidFromDropdown(idxHtml);
+        if (discovered !== null) {
+          catoid = discovered;
+          console.log(`  [${collegeSlug}] Auto-discovered catoid=${catoid} via Playwright`);
+        } else {
+          console.warn(`  [${collegeSlug}] No catoid in dropdown, using fallback=${catoidFallback}`);
+        }
+      } catch (e) {
+        console.warn(`  [${collegeSlug}] Playwright catoid discovery failed: ${e}; fallback=${catoidFallback}`);
+      }
+    } else {
+      catoid = await discoverAcalogCatoid(baseUrl, catoidFallback);
+    }
+  }
   console.log(`  [${collegeSlug}] catoid=${catoid}`);
 
   // Step 2: Collect all program poids from the nav pages

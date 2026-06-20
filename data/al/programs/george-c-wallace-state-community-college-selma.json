@@ -2,7 +2,7 @@
   "college_slug": "george-c-wallace-state-community-college-selma",
   "catalog_year": "2025-2026",
   "catalog_url": "https://catalog.wccs.edu/degrees",
-  "scraped_at": "2026-06-03T21:27:32.721Z",
+  "scraped_at": "2026-06-20T13:59:25.471Z",
   "programs": [
     {
       "title": "Air Conditioning and Refrigeration Tech (ACR)",
@@ -150,8 +150,200 @@
       "matched_program_slug": null
     },
     {
-      "title": "Cosmetology Standard Certificate",
+      "title": "Computer Information Systems Standard Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.wccs.edu/computer-information-systems/computer-information-systems-standard-certificate",
+      "total_credits": 45,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Written Composition",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Additional General Education Courses, Major Courses and Electives",
+          "credits_required": 36,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "130",
+              "title": "Introduction to Information Systems",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Microcomputer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "147",
+              "title": "Advanced Micro Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "155",
+              "title": "Introduction to Mobile App Development",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "185",
+              "title": "Computer Ethics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "191",
+              "title": "Intro to Computer Programming Concepts",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "207",
+              "title": "Intro to Web Development",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "209",
+              "title": "Advanced Web Development",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "251",
+              "title": "C++ Programming",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "268",
+              "title": "Software Support",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "269",
+              "title": "Hardware Support",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Networking Option",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "161",
+              "title": "Intro to Networking Communications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "280",
+              "title": "Network Security",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Cosmetology Instructor Training STC",
       "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.wccs.edu/cosmetology-instructor-training/cosmetology-instructor-training-stc",
+      "total_credits": 18,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area V: Additional General Education Courses, Major Courses and Electives",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIT",
+              "number": "211",
+              "title": "Teaching & Curriculum Development",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIT",
+              "number": "212",
+              "title": "Teacher Mentorship",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIT",
+              "number": "221",
+              "title": "Lesson Plan Implementation",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIT",
+              "number": "222",
+              "title": "Audio Visual Material & Methods",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIT",
+              "number": "223",
+              "title": "Audio Visual Material & Methods Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIT",
+              "number": "224",
+              "title": "Special Topics in Cosmetology Instruction",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Cosmetology Standard Certificate",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.wccs.edu/cosmetology/cosmetology-standard-certificate",
       "total_credits": 54,
@@ -316,16 +508,16 @@
       "matched_program_slug": null
     },
     {
-      "title": "Criminal Justice: Corrections & Parole Standard Certificate",
+      "title": "Computer Information Systems Degree",
       "credential": "other",
       "program_code": null,
-      "catalog_url": "https://catalog.wccs.edu/criminal-justice/criminal-justice-corrections-parole-standard-certificate",
-      "total_credits": 45,
+      "catalog_url": "https://catalog.wccs.edu/computer-information-systems/computer-information-systems-degree",
+      "total_credits": 51,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
-          "name": "Area I: Written Composition",
+          "name": "Written Composition",
           "credits_required": 3,
           "choose_n": null,
           "courses": [
@@ -339,105 +531,105 @@
           ]
         },
         {
-          "name": "Area III: Natural Sciences and Mathematics",
-          "credits_required": 6,
+          "name": "Additional General Education Courses, Major Courses and Electives",
+          "credits_required": 48,
           "choose_n": null,
           "courses": [
+            {
+              "prefix": "CIS",
+              "number": "130",
+              "title": "Introduction to Information Systems",
+              "credits": 3,
+              "or_alternatives": []
+            },
             {
               "prefix": "CIS",
               "number": "146",
               "title": "Microcomputer Applications",
               "credits": 3,
               "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Area V: Additional General Education Courses, Major Courses and Electives",
-          "credits_required": 36,
-          "choose_n": null,
-          "courses": [
+            },
             {
-              "prefix": "CRJ",
-              "number": "100",
-              "title": "Introduction to Criminal Justice",
+              "prefix": "CIS",
+              "number": "147",
+              "title": "Advanced Micro Applications",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "CRJ",
-              "number": "110",
-              "title": "Introduction to Law Enforcement",
+              "prefix": "CIS",
+              "number": "155",
+              "title": "Introduction to Mobile App Development",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "CRJ",
-              "number": "140",
-              "title": "Criminal Law and Procedure",
+              "prefix": "CIS",
+              "number": "161",
+              "title": "Intro to Networking Communications",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "CRJ",
-              "number": "150",
-              "title": "Introduction to Corrections",
+              "prefix": "CIS",
+              "number": "185",
+              "title": "Computer Ethics",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "CRJ",
-              "number": "156",
-              "title": "Correctional Institutions",
+              "prefix": "CIS",
+              "number": "191",
+              "title": "Intro to Computer Programming Concepts",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "CRJ",
-              "number": "157",
-              "title": "Community-Based Corrections",
+              "prefix": "CIS",
+              "number": "207",
+              "title": "Intro to Web Development",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "CRJ",
-              "number": "178",
-              "title": "Narcotics/Dangerous Drugs",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CRJ",
+              "prefix": "CIS",
               "number": "209",
-              "title": "Juvenile Delinquency",
+              "title": "Advanced Web Development",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "CRJ",
-              "number": "212",
-              "title": "Correctional Counseling Techniques",
+              "prefix": "CIS",
+              "number": "251",
+              "title": "C++ Programming",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "CRJ",
-              "number": "256",
-              "title": "Correctional Rehabilitation",
+              "prefix": "CIS",
+              "number": "268",
+              "title": "Software Support",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "CRJ",
-              "number": "259",
-              "title": "Issues in Corrections",
+              "prefix": "CIS",
+              "number": "269",
+              "title": "Hardware Support",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "280",
+              "title": "Network Security",
               "credits": 3,
               "or_alternatives": []
             }
           ]
         }
       ],
-      "matched_program_slug": "criminal-justice"
+      "matched_program_slug": null
     },
     {
       "title": "Business Administration Degree",
@@ -599,322 +791,6 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Computer Information Systems Degree",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.wccs.edu/computer-information-systems/computer-information-systems-degree",
-      "total_credits": 51,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Written Composition",
-          "credits_required": 3,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ENG",
-              "number": "101",
-              "title": "English Composition I",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Additional General Education Courses, Major Courses and Electives",
-          "credits_required": 48,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CIS",
-              "number": "130",
-              "title": "Introduction to Information Systems",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "146",
-              "title": "Microcomputer Applications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "147",
-              "title": "Advanced Micro Applications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "155",
-              "title": "Introduction to Mobile App Development",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "161",
-              "title": "Intro to Networking Communications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "185",
-              "title": "Computer Ethics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "191",
-              "title": "Intro to Computer Programming Concepts",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "207",
-              "title": "Intro to Web Development",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "209",
-              "title": "Advanced Web Development",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "251",
-              "title": "C++ Programming",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "268",
-              "title": "Software Support",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "269",
-              "title": "Hardware Support",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "280",
-              "title": "Network Security",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Cosmetology Instructor Training STC",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.wccs.edu/cosmetology-instructor-training/cosmetology-instructor-training-stc",
-      "total_credits": 18,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Area V: Additional General Education Courses, Major Courses and Electives",
-          "credits_required": 18,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CIT",
-              "number": "211",
-              "title": "Teaching & Curriculum Development",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIT",
-              "number": "212",
-              "title": "Teacher Mentorship",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIT",
-              "number": "221",
-              "title": "Lesson Plan Implementation",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIT",
-              "number": "222",
-              "title": "Audio Visual Material & Methods",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIT",
-              "number": "223",
-              "title": "Audio Visual Material & Methods Applications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIT",
-              "number": "224",
-              "title": "Special Topics in Cosmetology Instruction",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Computer Information Systems Standard Certificate",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.wccs.edu/computer-information-systems/computer-information-systems-standard-certificate",
-      "total_credits": 45,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Written Composition",
-          "credits_required": 3,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ENG",
-              "number": "101",
-              "title": "English Composition I",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Additional General Education Courses, Major Courses and Electives",
-          "credits_required": 36,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CIS",
-              "number": "130",
-              "title": "Introduction to Information Systems",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "146",
-              "title": "Microcomputer Applications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "147",
-              "title": "Advanced Micro Applications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "155",
-              "title": "Introduction to Mobile App Development",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "185",
-              "title": "Computer Ethics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "191",
-              "title": "Intro to Computer Programming Concepts",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "207",
-              "title": "Intro to Web Development",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "209",
-              "title": "Advanced Web Development",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "251",
-              "title": "C++ Programming",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "268",
-              "title": "Software Support",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "269",
-              "title": "Hardware Support",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Networking Option",
-          "credits_required": 6,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CIS",
-              "number": "161",
-              "title": "Intro to Networking Communications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "280",
-              "title": "Network Security",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Criminal Justice: Corrections & Parole STC",
       "credential": "other",
       "program_code": null,
@@ -984,7 +860,7 @@
     },
     {
       "title": "Criminal Justice: Law Enforcement Standard Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.wccs.edu/criminal-justice/criminal-justice-law-enforcement-standard-certificate",
       "total_credits": 45,
@@ -1084,6 +960,74 @@
               "prefix": "CRJ",
               "number": "209",
               "title": "Juvenile Delinquency",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CRJ",
+              "number": "216",
+              "title": "Police Organization and Administration",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CRJ",
+              "number": "220",
+              "title": "Criminal Investigation",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "criminal-justice"
+    },
+    {
+      "title": "Criminal Justice: Law Enforcement STC",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.wccs.edu/criminal-justice/criminal-justice-law-enforcement-stc",
+      "total_credits": 21,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Written Composition",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Required Courses",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Microcomputer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CRJ",
+              "number": "110",
+              "title": "Introduction to Law Enforcement",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CRJ",
+              "number": "116",
+              "title": "Police Patrol",
               "credits": 3,
               "or_alternatives": []
             },
@@ -1288,7 +1232,7 @@
     },
     {
       "title": "Drafting and Design Technology Standard Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.wccs.edu/drafting-and-design-technology/drafting-and-design-technology-standard-certificate",
       "total_credits": 45,
@@ -1425,16 +1369,16 @@
       "matched_program_slug": null
     },
     {
-      "title": "Criminal Justice: Law Enforcement STC",
-      "credential": "other",
+      "title": "Criminal Justice: Corrections & Parole Standard Certificate",
+      "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.wccs.edu/criminal-justice/criminal-justice-law-enforcement-stc",
-      "total_credits": 21,
+      "catalog_url": "https://catalog.wccs.edu/criminal-justice/criminal-justice-corrections-parole-standard-certificate",
+      "total_credits": 45,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
-          "name": "Written Composition",
+          "name": "Area I: Written Composition",
           "credits_required": 3,
           "choose_n": null,
           "courses": [
@@ -1448,14 +1392,28 @@
           ]
         },
         {
-          "name": "Required Courses",
-          "credits_required": 18,
+          "name": "Area III: Natural Sciences and Mathematics",
+          "credits_required": 6,
           "choose_n": null,
           "courses": [
             {
               "prefix": "CIS",
               "number": "146",
               "title": "Microcomputer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area V: Additional General Education Courses, Major Courses and Electives",
+          "credits_required": 36,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CRJ",
+              "number": "100",
+              "title": "Introduction to Criminal Justice",
               "credits": 3,
               "or_alternatives": []
             },
@@ -1468,22 +1426,64 @@
             },
             {
               "prefix": "CRJ",
-              "number": "116",
-              "title": "Police Patrol",
+              "number": "140",
+              "title": "Criminal Law and Procedure",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "CRJ",
-              "number": "216",
-              "title": "Police Organization and Administration",
+              "number": "150",
+              "title": "Introduction to Corrections",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "CRJ",
-              "number": "220",
-              "title": "Criminal Investigation",
+              "number": "156",
+              "title": "Correctional Institutions",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CRJ",
+              "number": "157",
+              "title": "Community-Based Corrections",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CRJ",
+              "number": "178",
+              "title": "Narcotics/Dangerous Drugs",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CRJ",
+              "number": "209",
+              "title": "Juvenile Delinquency",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CRJ",
+              "number": "212",
+              "title": "Correctional Counseling Techniques",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CRJ",
+              "number": "256",
+              "title": "Correctional Rehabilitation",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CRJ",
+              "number": "259",
+              "title": "Issues in Corrections",
               "credits": 3,
               "or_alternatives": []
             }
@@ -1531,6 +1531,158 @@
               "prefix": "CIS",
               "number": "146",
               "title": "Microcomputer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MTH",
+              "number": "116",
+              "title": "Mathematical Applications",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area V: Additional General Education Courses, Major Courses and Electives",
+          "credits_required": 42,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELT",
+              "number": "108",
+              "title": "DC Principles of Electricity",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "109",
+              "title": "AC Principles of Electricity",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "110",
+              "title": "Wiring Methods",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "114",
+              "title": "Residential Wiring Methods",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "115",
+              "title": "Residential Wiring Methods II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "117",
+              "title": "Basic AC/DC Machines",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "118",
+              "title": "Commercial/Industrial Wiring I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "132",
+              "title": "Commercial/Industrial Wiring II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "209",
+              "title": "Motor Control I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "212",
+              "title": "Motor Controls II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "231",
+              "title": "Introduction to Programmable Controllers",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "232",
+              "title": "Advanced Programmable Controllers",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "241",
+              "title": "National Electric Code",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELT",
+              "number": "244",
+              "title": "Conduit Bending and Installation",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Electrical Technology Standard Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.wccs.edu/electrical-technology/electrical-technology-standard-certificate",
+      "total_credits": 51,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area I: Written Composition",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area III: Natural Sciences and Math",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "130",
+              "title": "Introduction to Information Systems",
               "credits": 3,
               "or_alternatives": []
             },
@@ -1833,7 +1985,7 @@
     },
     {
       "title": "Industrial Maintenance Technology Standard Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.wccs.edu/industrial-maintenance-technology/industrial-maintenance-technology-standard-certificate",
       "total_credits": 48,
@@ -1977,8 +2129,90 @@
       "matched_program_slug": null
     },
     {
-      "title": "Masonry/Building Trades Standard Certificate",
+      "title": "Industrial Maintenance Technology STC",
       "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.wccs.edu/industrial-maintenance-technology/industrial-maintenance-technology-stc",
+      "total_credits": 24,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Principles of Industrial Maintenance I",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "INT",
+              "number": "104",
+              "title": "Principles of Technology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "112",
+              "title": "Industrial Maintenance Safety Procedures",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "117",
+              "title": "Principles of Industrial Mechanics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "119",
+              "title": "Principles of Mechanical Measurement and Technical Drawing",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Principles of Industrial Maintenance II",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "INT",
+              "number": "118",
+              "title": "Fundamentals of Industrial Hydraulics and Pneumatics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "121",
+              "title": "Industrial Hydraulics Troubleshooting",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "126",
+              "title": "Preventive Maintenance",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "INT",
+              "number": "127",
+              "title": "Principles of Industrial Pumps and Piping Systems",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Masonry/Building Trades Standard Certificate",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.wccs.edu/masonrybuilding-trades/masonrybuilding-trades-standard-certificate",
       "total_credits": 54,
@@ -2136,6 +2370,81 @@
       "matched_program_slug": null
     },
     {
+      "title": "Short-Term Certificate in Advanced Masonry",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.wccs.edu/masonrybuilding-trades/shortterm-certificate-in-advanced-masonry",
+      "total_credits": 24,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": 24,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MAS",
+              "number": "272",
+              "title": "Advanced Cement Masonry",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAS",
+              "number": "282",
+              "title": "Special Topics in Masonry",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAS",
+              "number": "290",
+              "title": "Co-op Elective",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAS",
+              "number": "291",
+              "title": "Co-op Elective",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAS",
+              "number": "292",
+              "title": "Co-op Elective",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAS",
+              "number": "293",
+              "title": "Co-op Elective",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAS",
+              "number": "294",
+              "title": "Co-op Elective",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAS",
+              "number": "295",
+              "title": "Co-op Elective",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Masonry/Building Trades STC",
       "credential": "other",
       "program_code": null,
@@ -2209,191 +2518,6 @@
         }
       ],
       "matched_program_slug": null
-    },
-    {
-      "title": "Industrial Maintenance Technology STC",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.wccs.edu/industrial-maintenance-technology/industrial-maintenance-technology-stc",
-      "total_credits": 24,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Principles of Industrial Maintenance I",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "INT",
-              "number": "104",
-              "title": "Principles of Technology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "112",
-              "title": "Industrial Maintenance Safety Procedures",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "117",
-              "title": "Principles of Industrial Mechanics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "119",
-              "title": "Principles of Mechanical Measurement and Technical Drawing",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Principles of Industrial Maintenance II",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "INT",
-              "number": "118",
-              "title": "Fundamentals of Industrial Hydraulics and Pneumatics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "121",
-              "title": "Industrial Hydraulics Troubleshooting",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "126",
-              "title": "Preventive Maintenance",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "INT",
-              "number": "127",
-              "title": "Principles of Industrial Pumps and Piping Systems",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Nursing: Associate Degree Nursing (ADN) Mobility Program",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.wccs.edu/nursing/nursing-associate-degree-nursing-adn-mobility-program",
-      "total_credits": 45,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Area I: Written Composition",
-          "credits_required": 3,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ENG",
-              "number": "101",
-              "title": "English Composition I",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Area III: Natural Sciences and Mathematics",
-          "credits_required": 15,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "MTH",
-              "number": "100",
-              "title": "Intermediate College Algebra",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "201",
-              "title": "Human Anatomy & Physiology I",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "202",
-              "title": "Human Anatomy & Physiology II",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "220",
-              "title": "General Microbiology",
-              "credits": 4,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Area IV: History, Social and Behavioral Sciences",
-          "credits_required": 3,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "PSY",
-              "number": "210",
-              "title": "Human Growth and Development",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Area V: Additional General Education Courses, Major Courses and Electives",
-          "credits_required": 24,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "NUR",
-              "number": "209",
-              "title": "Concepts for Healthcare Transition Students",
-              "credits": 10,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NUR",
-              "number": "211",
-              "title": "Advanced Nursing Concepts",
-              "credits": 7,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NUR",
-              "number": "221",
-              "title": "Advanced Evidence-Based Clinical Reasoning",
-              "credits": 7,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "nursing"
     },
     {
       "title": "Modern Manufacturing Technology - Production",
@@ -2630,8 +2754,111 @@
       "matched_program_slug": "nursing"
     },
     {
-      "title": "Practical Nursing (PN) Standard Certificate",
+      "title": "Nursing: Associate Degree Nursing (ADN) Mobility Program",
       "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.wccs.edu/nursing/nursing-associate-degree-nursing-adn-mobility-program",
+      "total_credits": 45,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area I: Written Composition",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area III: Natural Sciences and Mathematics",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MTH",
+              "number": "100",
+              "title": "Intermediate College Algebra",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "201",
+              "title": "Human Anatomy & Physiology I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "202",
+              "title": "Human Anatomy & Physiology II",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "220",
+              "title": "General Microbiology",
+              "credits": 4,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area IV: History, Social and Behavioral Sciences",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "PSY",
+              "number": "210",
+              "title": "Human Growth and Development",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area V: Additional General Education Courses, Major Courses and Electives",
+          "credits_required": 24,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "NUR",
+              "number": "209",
+              "title": "Concepts for Healthcare Transition Students",
+              "credits": 10,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "211",
+              "title": "Advanced Nursing Concepts",
+              "credits": 7,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "221",
+              "title": "Advanced Evidence-Based Clinical Reasoning",
+              "credits": 7,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "nursing"
+    },
+    {
+      "title": "Practical Nursing (PN) Standard Certificate",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.wccs.edu/nursing/practical-nursing-pn-standard-certificate",
       "total_credits": 44,
@@ -2740,72 +2967,369 @@
       "matched_program_slug": "nursing"
     },
     {
-      "title": "Short-Term Certificate in Advanced Masonry",
+      "title": "Office Administration: Accounting Option Degree",
       "credential": "other",
       "program_code": null,
-      "catalog_url": "https://catalog.wccs.edu/masonrybuilding-trades/shortterm-certificate-in-advanced-masonry",
+      "catalog_url": "https://catalog.wccs.edu/office-administration/office-administration-accounting-option-degree",
+      "total_credits": 54,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area I: Written Composition",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area III: Natural Sciences and Math",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MTH",
+              "number": "116",
+              "title": "Mathematical Applications",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area V: Additional General Education Courses, Major Courses and Electives",
+          "credits_required": 48,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BUS",
+              "number": "241",
+              "title": "Principles of Accounting I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "242",
+              "title": "Principles of Accounting II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "263",
+              "title": "Legal & Social Environment of Business",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "130",
+              "title": "Introduction to Information Systems",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "146",
+              "title": "Microcomputer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "101",
+              "title": "Beginning Keyboarding",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "103",
+              "title": "Intermediate Keyboarding",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "125",
+              "title": "Word Processing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "126",
+              "title": "Advanced Word Processing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "131",
+              "title": "Business English",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "133",
+              "title": "Business Communications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "137",
+              "title": "Computerized Financial Recordkeeping",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "138",
+              "title": "Records and Information Management",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "218",
+              "title": "Office Procedures",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "219",
+              "title": "Accounting Concepts and Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "232",
+              "title": "Excel/Powerpoint",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "accounting"
+    },
+    {
+      "title": "Office Administration: Accounting Option Standard Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.wccs.edu/office-administration/office-administration-accounting-option-standard-certificate",
+      "total_credits": 45,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area I: Written Composition",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area V: Additional General Education Courses, Major Courses and Electives",
+          "credits_required": 42,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BUS",
+              "number": "241",
+              "title": "Principles of Accounting I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "242",
+              "title": "Principles of Accounting II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "263",
+              "title": "Legal & Social Environment of Business",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "101",
+              "title": "Beginning Keyboarding",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "103",
+              "title": "Intermediate Keyboarding",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "125",
+              "title": "Word Processing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "126",
+              "title": "Advanced Word Processing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "131",
+              "title": "Business English",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "133",
+              "title": "Business Communications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "137",
+              "title": "Computerized Financial Recordkeeping",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "138",
+              "title": "Records and Information Management",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "218",
+              "title": "Office Procedures",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "219",
+              "title": "Accounting Concepts and Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "232",
+              "title": "Excel/Powerpoint",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "accounting"
+    },
+    {
+      "title": "Office Administration: Administrative Assistant STC",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.wccs.edu/office-administration/office-administration-administrative-assistant-stc",
       "total_credits": 24,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
-          "name": "Required Courses",
-          "credits_required": 24,
+          "name": "First Year – Fall",
+          "credits_required": 12,
           "choose_n": null,
           "courses": [
             {
-              "prefix": "MAS",
-              "number": "272",
-              "title": "Advanced Cement Masonry",
+              "prefix": "BUS",
+              "number": "241",
+              "title": "Principles of Accounting I",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "MAS",
-              "number": "282",
-              "title": "Special Topics in Masonry",
+              "prefix": "OAD",
+              "number": "101",
+              "title": "Beginning Keyboarding",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "MAS",
-              "number": "290",
-              "title": "Co-op Elective",
+              "prefix": "OAD",
+              "number": "131",
+              "title": "Business English",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "MAS",
-              "number": "291",
-              "title": "Co-op Elective",
+              "prefix": "OAD",
+              "number": "138",
+              "title": "Records and Information Management",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "First Year – Spring",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BUS",
+              "number": "242",
+              "title": "Principles of Accounting II",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "MAS",
-              "number": "292",
-              "title": "Co-op Elective",
+              "prefix": "OAD",
+              "number": "103",
+              "title": "Intermediate Keyboarding",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "MAS",
-              "number": "293",
-              "title": "Co-op Elective",
+              "prefix": "OAD",
+              "number": "125",
+              "title": "Word Processing",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "MAS",
-              "number": "294",
-              "title": "Co-op Elective",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAS",
-              "number": "295",
-              "title": "Co-op Elective",
+              "prefix": "OAD",
+              "number": "133",
+              "title": "Business Communications",
               "credits": 3,
               "or_alternatives": []
             }
@@ -2981,380 +3505,8 @@
       "matched_program_slug": null
     },
     {
-      "title": "Office Administration: Accounting Option Standard Certificate",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.wccs.edu/office-administration/office-administration-accounting-option-standard-certificate",
-      "total_credits": 45,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Area I: Written Composition",
-          "credits_required": 3,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ENG",
-              "number": "101",
-              "title": "English Composition I",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Area V: Additional General Education Courses, Major Courses and Electives",
-          "credits_required": 42,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BUS",
-              "number": "241",
-              "title": "Principles of Accounting I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "242",
-              "title": "Principles of Accounting II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "263",
-              "title": "Legal & Social Environment of Business",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "101",
-              "title": "Beginning Keyboarding",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "103",
-              "title": "Intermediate Keyboarding",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "125",
-              "title": "Word Processing",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "126",
-              "title": "Advanced Word Processing",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "131",
-              "title": "Business English",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "133",
-              "title": "Business Communications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "137",
-              "title": "Computerized Financial Recordkeeping",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "138",
-              "title": "Records and Information Management",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "218",
-              "title": "Office Procedures",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "219",
-              "title": "Accounting Concepts and Applications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "232",
-              "title": "Excel/Powerpoint",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "accounting"
-    },
-    {
-      "title": "Office Administration: Accounting Option Degree",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.wccs.edu/office-administration/office-administration-accounting-option-degree",
-      "total_credits": 54,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Area I: Written Composition",
-          "credits_required": 3,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ENG",
-              "number": "101",
-              "title": "English Composition I",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Area III: Natural Sciences and Math",
-          "credits_required": 3,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "MTH",
-              "number": "116",
-              "title": "Mathematical Applications",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Area V: Additional General Education Courses, Major Courses and Electives",
-          "credits_required": 48,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BUS",
-              "number": "241",
-              "title": "Principles of Accounting I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "242",
-              "title": "Principles of Accounting II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "263",
-              "title": "Legal & Social Environment of Business",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "130",
-              "title": "Introduction to Information Systems",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "146",
-              "title": "Microcomputer Applications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "101",
-              "title": "Beginning Keyboarding",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "103",
-              "title": "Intermediate Keyboarding",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "125",
-              "title": "Word Processing",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "126",
-              "title": "Advanced Word Processing",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "131",
-              "title": "Business English",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "133",
-              "title": "Business Communications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "137",
-              "title": "Computerized Financial Recordkeeping",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "138",
-              "title": "Records and Information Management",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "218",
-              "title": "Office Procedures",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "219",
-              "title": "Accounting Concepts and Applications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "232",
-              "title": "Excel/Powerpoint",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "accounting"
-    },
-    {
-      "title": "Office Administration: Administrative Assistant STC",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.wccs.edu/office-administration/office-administration-administrative-assistant-stc",
-      "total_credits": 24,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "First Year – Fall",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BUS",
-              "number": "241",
-              "title": "Principles of Accounting I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "101",
-              "title": "Beginning Keyboarding",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "131",
-              "title": "Business English",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "138",
-              "title": "Records and Information Management",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "First Year – Spring",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BUS",
-              "number": "242",
-              "title": "Principles of Accounting II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "103",
-              "title": "Intermediate Keyboarding",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "125",
-              "title": "Word Processing",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "133",
-              "title": "Business Communications",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Office Administration: Information Processing Standard Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.wccs.edu/office-administration/office-administration-information-processing-standard-certificate",
       "total_credits": 48,
@@ -3483,109 +3635,6 @@
               "number": "218",
               "title": "Office Procedures",
               "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Patient Care Technician Standard Certificate",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.wccs.edu/patient-care-technician/patient-care-technician-standard-certificate",
-      "total_credits": 49,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Area I: Written Composition",
-          "credits_required": 3,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ENG",
-              "number": "100",
-              "title": "Vocational Technical English I",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Area II: Humanities and Fine Arts",
-          "credits_required": 3,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "PHL",
-              "number": "206",
-              "title": "Ethics and Society",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Area III: Natural Sciences and Mathematics",
-          "credits_required": 10,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "MTH",
-              "number": "116",
-              "title": "Mathematical Applications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "130",
-              "title": "Introduction to Information Systems",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "250",
-              "title": "Directed Studies in Biology I",
-              "credits": 4,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Area V: Additional General Education Courses, Major Courses and Electives",
-          "credits_required": 33,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "HPS",
-              "number": "103",
-              "title": "Foundation Competencies for Health Science",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HPS",
-              "number": "105",
-              "title": "Medical Terminology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HPS",
-              "number": "118",
-              "title": "Fundamentals of Phlebotomy",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HPS",
-              "number": "119",
-              "title": "Phlebotomy Clinical",
-              "credits": 4,
               "or_alternatives": []
             }
           ]
@@ -3753,8 +3802,263 @@
       "matched_program_slug": null
     },
     {
+      "title": "Patient Care Technician Standard Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.wccs.edu/patient-care-technician/patient-care-technician-standard-certificate",
+      "total_credits": 49,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area I: Written Composition",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "100",
+              "title": "Vocational Technical English I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area II: Humanities and Fine Arts",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "PHL",
+              "number": "206",
+              "title": "Ethics and Society",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area III: Natural Sciences and Mathematics",
+          "credits_required": 10,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MTH",
+              "number": "116",
+              "title": "Mathematical Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "130",
+              "title": "Introduction to Information Systems",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "250",
+              "title": "Directed Studies in Biology I",
+              "credits": 4,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area V: Additional General Education Courses, Major Courses and Electives",
+          "credits_required": 33,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "HPS",
+              "number": "103",
+              "title": "Foundation Competencies for Health Science",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HPS",
+              "number": "105",
+              "title": "Medical Terminology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HPS",
+              "number": "118",
+              "title": "Fundamentals of Phlebotomy",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HPS",
+              "number": "119",
+              "title": "Phlebotomy Clinical",
+              "credits": 4,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Office Administration: Medical Transcription Standard Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.wccs.edu/office-administration/office-administration-medical-transcription-standard-certificate",
+      "total_credits": 56,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area I: Written Composition",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area III: Natural Sciences and Math",
+          "credits_required": 11,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BIO",
+              "number": "103",
+              "title": "Principles of Biology I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "201",
+              "title": "Human Anatomy & Physiology I",
+              "credits": 4,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area V: Additional General Education Courses, Major Courses and Electives",
+          "credits_required": 42,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BUS",
+              "number": "241",
+              "title": "Principles of Accounting I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "242",
+              "title": "Principles of Accounting II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "101",
+              "title": "Beginning Keyboarding",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "103",
+              "title": "Intermediate Keyboarding",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "125",
+              "title": "Word Processing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "126",
+              "title": "Advanced Word Processing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "131",
+              "title": "Business English",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "133",
+              "title": "Business Communications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "138",
+              "title": "Records and Information Management",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "211",
+              "title": "Medical Terminology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "212",
+              "title": "Medical Transcription",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "213",
+              "title": "Adv. Medical Transcription",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "214",
+              "title": "Medical Office Procedures",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OAD",
+              "number": "218",
+              "title": "Office Procedures",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Welding: Pipe Welding Standard Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.wccs.edu/welding-technology/welding-pipe-welding-standard-certificate",
       "total_credits": 56,
@@ -3920,7 +4224,7 @@
     },
     {
       "title": "Welding: Structural Welding Certificate",
-      "credential": "other",
+      "credential": "certificate",
       "program_code": null,
       "catalog_url": "https://catalog.wccs.edu/welding-technology/welding-structural-welding-certificate",
       "total_credits": 30,
@@ -4020,310 +4324,6 @@
         }
       ],
       "matched_program_slug": "welding"
-    },
-    {
-      "title": "Office Administration: Medical Transcription Standard Certificate",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.wccs.edu/office-administration/office-administration-medical-transcription-standard-certificate",
-      "total_credits": 56,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Area I: Written Composition",
-          "credits_required": 3,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ENG",
-              "number": "101",
-              "title": "English Composition I",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Area III: Natural Sciences and Math",
-          "credits_required": 11,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BIO",
-              "number": "103",
-              "title": "Principles of Biology I",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "201",
-              "title": "Human Anatomy & Physiology I",
-              "credits": 4,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Area V: Additional General Education Courses, Major Courses and Electives",
-          "credits_required": 42,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BUS",
-              "number": "241",
-              "title": "Principles of Accounting I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "242",
-              "title": "Principles of Accounting II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "101",
-              "title": "Beginning Keyboarding",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "103",
-              "title": "Intermediate Keyboarding",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "125",
-              "title": "Word Processing",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "126",
-              "title": "Advanced Word Processing",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "131",
-              "title": "Business English",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "133",
-              "title": "Business Communications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "138",
-              "title": "Records and Information Management",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "211",
-              "title": "Medical Terminology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "212",
-              "title": "Medical Transcription",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "213",
-              "title": "Adv. Medical Transcription",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "214",
-              "title": "Medical Office Procedures",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OAD",
-              "number": "218",
-              "title": "Office Procedures",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Electrical Technology Standard Certificate",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.wccs.edu/electrical-technology/electrical-technology-standard-certificate",
-      "total_credits": 51,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Area I: Written Composition",
-          "credits_required": 3,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ENG",
-              "number": "101",
-              "title": "English Composition I",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Area III: Natural Sciences and Math",
-          "credits_required": 6,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CIS",
-              "number": "130",
-              "title": "Introduction to Information Systems",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MTH",
-              "number": "116",
-              "title": "Mathematical Applications",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Area V: Additional General Education Courses, Major Courses and Electives",
-          "credits_required": 42,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ELT",
-              "number": "108",
-              "title": "DC Principles of Electricity",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELT",
-              "number": "109",
-              "title": "AC Principles of Electricity",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELT",
-              "number": "110",
-              "title": "Wiring Methods",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELT",
-              "number": "114",
-              "title": "Residential Wiring Methods",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELT",
-              "number": "115",
-              "title": "Residential Wiring Methods II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELT",
-              "number": "117",
-              "title": "Basic AC/DC Machines",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELT",
-              "number": "118",
-              "title": "Commercial/Industrial Wiring I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELT",
-              "number": "132",
-              "title": "Commercial/Industrial Wiring II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELT",
-              "number": "209",
-              "title": "Motor Control I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELT",
-              "number": "212",
-              "title": "Motor Controls II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELT",
-              "number": "231",
-              "title": "Introduction to Programmable Controllers",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELT",
-              "number": "232",
-              "title": "Advanced Programmable Controllers",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELT",
-              "number": "241",
-              "title": "National Electric Code",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELT",
-              "number": "244",
-              "title": "Conduit Bending and Installation",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
     }
   ]
 }

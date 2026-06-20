@@ -71,13 +71,12 @@ const laConfig: StateConfig = {
       { scripts: ["scripts/la/scrape-regents-matrix.ts"], runner: "http" },
     ],
     programs: [
-      // 5 LA colleges have public catalogs (Fletcher/SLCC/Delta/BRCC = acalog,
-      // Nunez = courseleaf). Currently only Fletcher's search-discovery path
-      // yields parseable programs (83 programs, 33 matched). The other 4 are
-      // wired but return 0: Nunez courseleaf needs a non-default URL pattern;
-      // SLCC/Delta/BRCC need per-catalog programNavoids (search_advanced.php
-      // returns empty for those instances). Follow-up to discover navoids.
-      { scripts: ["scripts/la/scrape-programs.ts"], runner: "http" },
+      // LA colleges with public catalogs: Fletcher/SLCC/Delta/BRCC + Delgado/
+      // Bossier (acalog, all behind AWS WAF → Playwright), Nunez (courseleaf,
+      // /programs/), Northshore (coursedog), Sowela (smartcatalogiq). The four
+      // Acalog catalogs return HTTP 202 + empty on plain fetch, so the scraper
+      // drives headless Chromium — hence runner: "playwright".
+      { scripts: ["scripts/la/scrape-programs.ts"], runner: "playwright" },
     ],
   },
   // Northshore Technical CC (12th LCTCS college) has no public section data:
@@ -94,6 +93,8 @@ const laConfig: StateConfig = {
           "Northshore Technical CC is the only LCTCS college not on the shared Banner SSB host (reg-prod.ec.lctcs.edu); its sections sit behind LoLA SSO with no public guest class search. Only the Coursedog catalog is reachable (course metadata + 23 prereqs, fed to the aggregator) — never sections. Verified 2026-06.",
       },
     ],
+    programs:
+      "Programs cover the 7 LCTCS colleges with parseable public catalogs (6 Acalog + Nunez CourseLeaf). The remaining 5 (verified 2026-06): northshore's Coursedog lists 29 programs but parses 0 usable requirement lists; sowela's SmartCatalogIQ catalog-year discovery fails; central-louisiana-tech / northwest-louisiana-tech / river-parishes return HTTP 500 with no alternate catalog host. See data/la/DEFERRED-programs.md.",
   },
 };
 
