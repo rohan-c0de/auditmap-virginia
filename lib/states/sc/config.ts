@@ -137,7 +137,10 @@ const scConfig: StateConfig = {
     // and is scraped via headless Chromium.
     programs: [{ scripts: ["scripts/sc/scrape-programs.ts"], runner: "playwright" }],
   },
-  documentedCeilings: {},
+  documentedCeilings: {
+    programs:
+      "Programs cover 10 of 16 colleges (8 Acalog, piedmont CourseLeaf, orangeburg-calhoun CleanCatalog). The remaining 6 (verified 2026-06): york's Acalog returns a hard HTTP 403 that the WAF solver can't clear (its existing data is retained); greenville's CourseLeaf nests programs under /school-*/ paths; aiken, denmark (PDF), horry-georgetown, midlands, williamsburg expose no templated public catalog. See data/sc/DEFERRED-programs.md.",
+  },
 };
 
 export default scConfig;
