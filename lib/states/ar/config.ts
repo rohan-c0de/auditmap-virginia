@@ -1,5 +1,62 @@
 import type { StateConfig } from "../registry";
 
+// Per-college public class-search / schedule entry points. Harvested from the
+// working scrapers in scripts/ar/ + data/state-health/fingerprint-baseline.json
+// and probed 2026-06-17 (HTTP 200 for curl with a browser UA, or known
+// scraper-target where the host is firewalled from this network but live for
+// students). Power BI report URLs land on the embedded Course Schedule report
+// the UA System publishes for its CCs.
+const REGISTRATION_URLS: Record<string, string> = {
+  // Ellucian Colleague Self-Service guest course-search (same hosts the
+  // scrapers use).
+  "black-river-technical-college":
+    "https://selfservice.blackrivertech.org/Student/Courses",
+  "north-arkansas-college": "https://my.northark.edu/Student/Courses",
+  "southeast-arkansas-college": "https://p2.seark.edu:8443/Student/Courses",
+  // Jenzabar ICS course-search portlet (public). Cert is self-signed at the
+  // edge but the page renders in a normal browser.
+  "east-arkansas-community-college":
+    "https://my.eacc.edu/ICS/Course_Search.jnz?portlet=AddDrop_Courses&screen=Advanced+Course+Search&screenType=next",
+  // NWACC's only public surface is the JSON master schedule feed the scraper
+  // reads (the human-facing schedule page is behind My.NWACC SSO). Send the
+  // student to nwacc.edu/students for the next step in registration.
+  "northwest-arkansas-community-college":
+    "https://www.nwacc.edu/students/",
+  // ColdFusion public schedule form (curl 403 from bots, 200 in a real browser).
+  "ozarka-college": "https://www.ozarka.edu/academics/class-schedule/",
+  // Per-term PDF schedules live on this page.
+  "national-park-college":
+    "https://www.np.edu/admissions-aid/registration/",
+  // University of Arkansas System publishes each of its CCs' live schedules
+  // as an embedded Power BI report — these are the public, unauthenticated
+  // /view share URLs the scraper reads.
+  "cossatot-community-college-of-the-university-of-arkansas":
+    "https://app.powerbi.com/view?r=eyJrIjoiOTliODM5NDUtZDUwMy00OGZjLWFjMzItMTFmYTk1YTRhZTM1IiwidCI6ImM2NTExYjkyLTU3NmMtNGNkYy05MTdmLWY0ZTAyZWQ1ZDRjMCJ9",
+  "university-of-arkansas-community-college-batesville":
+    "https://app.powerbi.com/view?r=eyJrIjoiNDNiZmYwYTktODM4Yi00NDAyLWE2OWMtNjIyOGFiNTY3ZDI1IiwidCI6IjhjMWE4N2NiLTgwYjctNDEzZi05YWU4LTU1YzZhNTM3MDYwNCJ9",
+  "university-of-arkansas-community-college-rich-mountain":
+    "https://app.powerbi.com/view?r=eyJrIjoiOTM3ODZmMTAtZjBlZi00MTZhLWEyNTgtNjBlOTFiY2YyYjJkIiwidCI6IjhjMWE4N2NiLTgwYjctNDEzZi05YWU4LTU1YzZhNTM3MDYwNCJ9",
+  "phillips-community-college-of-the-university-of-arkansas":
+    "https://app.powerbi.com/view?r=eyJrIjoiMjFlNmU3NTItODYxNi00Mjk2LTg3MmEtOTM5ZWNkYWM0ODFiIiwidCI6IjhjMWE4N2NiLTgwYjctNDEzZi05YWU4LTU1YzZhNTM3MDYwNCJ9",
+  // UACCM publishes only an 8-page PDF schedule; link the PDF directly.
+  "university-of-arkansas-community-college-morrilton":
+    "https://www.uaccm.edu/courses/crssch.pdf",
+};
+
+// Honest fallback for the colleges with no public class search (ANC + SouthArk
+// JICS schedules are auth-gated — see documentedCeilings). Sourced from
+// data/ar/scorecard/*.json schoolUrl. Never adhe.edu per college — ADHE is
+// the state oversight agency, useless for student registration.
+const COLLEGE_HOMEPAGES: Record<string, string> = {
+  "arkansas-northeastern-college": "https://www.anc.edu/",
+  "south-arkansas-college": "https://www.southark.edu/",
+};
+
+const arCollegeUrl = (collegeSlug: string): string =>
+  REGISTRATION_URLS[collegeSlug] ??
+  COLLEGE_HOMEPAGES[collegeSlug] ??
+  "https://adhe.edu/";
+
 const arConfig: StateConfig = {
   slug: "ar",
   name: "Arkansas",
@@ -30,11 +87,10 @@ const arConfig: StateConfig = {
   defaultZip: "72201",
   defaultZipCity: "Little Rock",
 
-  courseDiscoveryUrl: (_collegeSlug: string, _prefix: string, _number: string) =>
-    "https://www.example.edu/",
+  courseDiscoveryUrl: (collegeSlug: string, _prefix: string, _number: string) =>
+    arCollegeUrl(collegeSlug),
 
-  collegeCoursesUrl: (_collegeSlug: string) =>
-    "https://www.example.edu/",
+  collegeCoursesUrl: (collegeSlug: string) => arCollegeUrl(collegeSlug),
 
   branding: {
     siteName: "Community College Path Arkansas",

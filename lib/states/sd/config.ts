@@ -1,5 +1,31 @@
 import type { StateConfig } from "../registry";
 
+// Per-college public class-search / schedule URLs. Harvested from the working
+// scrapers in scripts/sd/ + data/state-health/fingerprint-baseline.json and
+// probed 2026-06-17.
+const REGISTRATION_URLS: Record<string, string> = {
+  // Jenzabar JICS Course Schedule portlet (the only public source).
+  "southeast-technical-college":
+    "https://my.southeasttech.edu/ICS/Admissions/Course_Schedule.jnz",
+  // Oglala Lakota — per-term PDFs linked from the homepage.
+  "oglala-lakota-college": "https://www.olc.edu/",
+  // Mitchell Tech — Coursedog catalog (no public live-sections endpoint).
+  "mitchell-technical-college": "https://catalog.mitchelltech.edu/",
+};
+
+// Honest fallback for the 3 SD colleges whose Jenzabar Course_Search portlets
+// require SSO login. Sourced from data/sd/scorecard/*.json schoolUrl.
+const COLLEGE_HOMEPAGES: Record<string, string> = {
+  "lake-area-technical-college": "https://www.lakeareatech.edu/",
+  "western-dakota-technical-college": "https://www.wdt.edu/",
+  "sisseton-wahpeton-college": "https://www.swcollege.edu/",
+};
+
+const sdCollegeUrl = (collegeSlug: string): string =>
+  REGISTRATION_URLS[collegeSlug] ??
+  COLLEGE_HOMEPAGES[collegeSlug] ??
+  "https://www.boardofregents.sd.gov/";
+
 const sdConfig: StateConfig = {
   slug: "sd",
   name: "South Dakota",
@@ -29,11 +55,10 @@ const sdConfig: StateConfig = {
   defaultZip: "57104",
   defaultZipCity: "Sioux Falls",
 
-  courseDiscoveryUrl: (_collegeSlug: string, _prefix: string, _number: string) =>
-    "https://www.example.edu/",
+  courseDiscoveryUrl: (collegeSlug: string, _prefix: string, _number: string) =>
+    sdCollegeUrl(collegeSlug),
 
-  collegeCoursesUrl: (_collegeSlug: string) =>
-    "https://www.example.edu/",
+  collegeCoursesUrl: (collegeSlug: string) => sdCollegeUrl(collegeSlug),
 
   branding: {
     siteName: "Community College Path — South Dakota",

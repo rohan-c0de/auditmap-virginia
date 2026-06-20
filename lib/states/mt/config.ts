@@ -1,5 +1,44 @@
 import type { StateConfig } from "../registry";
 
+// Per-college public class-search / schedule URLs. Harvested from the working
+// scrapers in scripts/mt/ and probed 2026-06-17 (HTTP 200 for curl with a
+// browser UA on all 8 wired colleges).
+const REGISTRATION_URLS: Record<string, string> = {
+  // Banner 8 dynamic schedule.
+  "dawson-community-college":
+    "https://ssbweb.dcc.umt.edu/dwsnssb/bwckschd.p_disp_dyn_sched",
+  "miles-community-college":
+    "https://ssbweb.mcc.umt.edu/milsssb/bwckschd.p_disp_dyn_sched",
+  // Banner SSB 9 — shared with Montana Tech 4-year; scraper keeps Highlands
+  // (South Campus) only.
+  "highlands-college-of-montana-tech":
+    "https://reg-prod.ec.mtech.edu/StudentRegistrationSsb/ssb/classSearch/classSearch",
+  // SKC publishes per-term class lists as static pages.
+  "salish-kootenai-college": "https://www.skc.edu/registrar/",
+  // Chief Dull Knife — only public surface is per-term PDFs hosted at the
+  // domain root.
+  "chief-dull-knife-college": "https://www.cdkc.edu/",
+  // Empower-XL public course catalog (ColdFusion).
+  "aaniiih-nakoda-college":
+    "https://empowerweb-ancollege.empower-xl.com/fusebox.cfm?fuseaction=CourseCatalog",
+  // Jenzabar JICS Course Search portlet.
+  "little-big-horn-college": "https://cloudram.lbhc.edu/ICS/Course_Search.jnz",
+  // Bespoke ASP schedule pages.
+  "flathead-valley-community-college": "https://elements.fvcc.edu/Schedules/",
+};
+
+// Honest fallback for the 2 MT colleges with no scraper-backed public class
+// search. Sourced from data/mt/scorecard/*.json schoolUrl.
+const COLLEGE_HOMEPAGES: Record<string, string> = {
+  "stone-child-college": "https://www.stonechild.edu/",
+  "fort-peck-community-college": "https://www.fpcc.edu/",
+};
+
+const mtCollegeUrl = (collegeSlug: string): string =>
+  REGISTRATION_URLS[collegeSlug] ??
+  COLLEGE_HOMEPAGES[collegeSlug] ??
+  "https://mus.edu/";
+
 const mtConfig: StateConfig = {
   slug: "mt",
   name: "Montana",
@@ -24,11 +63,10 @@ const mtConfig: StateConfig = {
   defaultZip: "59601",
   defaultZipCity: "Helena",
 
-  courseDiscoveryUrl: (_collegeSlug: string, _prefix: string, _number: string) =>
-    "https://www.example.edu/",
+  courseDiscoveryUrl: (collegeSlug: string, _prefix: string, _number: string) =>
+    mtCollegeUrl(collegeSlug),
 
-  collegeCoursesUrl: (_collegeSlug: string) =>
-    "https://www.example.edu/",
+  collegeCoursesUrl: (collegeSlug: string) => mtCollegeUrl(collegeSlug),
 
   branding: {
     siteName: "Community College Path Montana",

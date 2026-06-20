@@ -1,5 +1,61 @@
 import type { StateConfig } from "../registry";
 
+// Per-college public class-search entry points. Harvested from the working
+// scrapers in scripts/az/ + data/state-health/fingerprint-baseline.json and
+// probed 2026-06-17. The 10 Maricopa District colleges all use one shared
+// SIS at classes.sis.maricopa.edu (the same host the scraper hits — pre-
+// filtered to each campus via institutions[]= query string).
+const maricopaSearchUrl = (instCode: string): string =>
+  `https://classes.sis.maricopa.edu/?keywords=&all_classes=false&institutions%5B%5D=${instCode}`;
+
+const REGISTRATION_URLS: Record<string, string> = {
+  // Banner SSB 9 — class search (same hosts the scraper uses).
+  "cochise-county-community-college-district":
+    "https://ssb.cochise.edu/StudentRegistrationSsb/ssb/classSearch/classSearch",
+  "pima-community-college":
+    "https://ssb.pima.edu/StudentRegistrationSsb/ssb/classSearch/classSearch",
+  "coconino-community-college":
+    "https://registration.coconino.edu/StudentRegistrationSsb/ssb/classSearch/classSearch",
+  "yavapai-college":
+    "https://banprodssb.yc.edu/StudentRegistrationSsb/ssb/classSearch/classSearch",
+  // Ellucian Colleague Self-Service guest course-search.
+  "mohave-community-college":
+    "https://mohave-ss.colleague.elluciancloud.com/Student/Courses",
+  "arizona-western-college":
+    "https://colss-prod.ec.azwestern.edu/Student/Courses",
+  // Diné College — bespoke PDF schedule page.
+  "dine-college": "https://www.dinecollege.edu/admissions/course-schedule/",
+  // Jenzabar CMC Portal (ASP.NET WebForms) public class schedule.
+  "northland-pioneer-college":
+    "https://my.npc.edu/CMCPortal/Common/CourseSchedule.aspx",
+  "eastern-arizona-college":
+    "https://my.eac.edu/CMCPortal/Common/CourseSchedule.aspx",
+  // Maricopa District (10 colleges) — shared SIS, deep-linked per campus.
+  "chandler-gilbert-community-college": maricopaSearchUrl("CGC08"),
+  "estrella-mountain-community-college": maricopaSearchUrl("EMC10"),
+  "gateway-community-college": maricopaSearchUrl("GWC03"),
+  "glendale-community-college": maricopaSearchUrl("GCC02"),
+  "mesa-community-college": maricopaSearchUrl("MCC04"),
+  "paradise-valley-community-college": maricopaSearchUrl("PVC09"),
+  "phoenix-college": maricopaSearchUrl("PCC01"),
+  "rio-salado-college": maricopaSearchUrl("RSC06"),
+  "scottsdale-community-college": maricopaSearchUrl("SCC05"),
+  "south-mountain-community-college": maricopaSearchUrl("SMC07"),
+};
+
+// Honest fallback for the 2 AZ colleges with no scraper-backed public class
+// search (Central Arizona uses a Coursedog catalog, Tohono O'odham is
+// Jenzabar auth-gated). Sourced from data/az/scorecard/*.json schoolUrl.
+const COLLEGE_HOMEPAGES: Record<string, string> = {
+  "central-arizona-college": "https://www.centralaz.edu/",
+  "tohono-oodham-community-college": "https://www.tocc.edu/",
+};
+
+const azCollegeUrl = (collegeSlug: string): string =>
+  REGISTRATION_URLS[collegeSlug] ??
+  COLLEGE_HOMEPAGES[collegeSlug] ??
+  "https://aztransfer.com/";
+
 const azConfig: StateConfig = {
   slug: "az",
   name: "Arizona",
@@ -31,11 +87,10 @@ const azConfig: StateConfig = {
   defaultZip: "85003",
   defaultZipCity: "Phoenix",
 
-  courseDiscoveryUrl: (_collegeSlug: string, _prefix: string, _number: string) =>
-    "https://www.example.edu/",
+  courseDiscoveryUrl: (collegeSlug: string, _prefix: string, _number: string) =>
+    azCollegeUrl(collegeSlug),
 
-  collegeCoursesUrl: (_collegeSlug: string) =>
-    "https://www.example.edu/",
+  collegeCoursesUrl: (collegeSlug: string) => azCollegeUrl(collegeSlug),
 
   branding: {
     siteName: "Community College Path Arizona",

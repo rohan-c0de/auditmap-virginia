@@ -1,5 +1,47 @@
 import type { StateConfig } from "../registry";
 
+// Per-college public class-search / schedule URLs. Harvested from the working
+// scrapers in scripts/nm/ + data/state-health/fingerprint-baseline.json and
+// probed 2026-06-17.
+const REGISTRATION_URLS: Record<string, string> = {
+  // Banner 8 dynamic schedule (same host the scraper uses).
+  "northern-new-mexico-college":
+    "https://prodssb1.nnmc.edu:4000/PRODODA/bwckschd.p_disp_dyn_sched",
+  // Banner SSB 9 — fingerprint-baseline class search.
+  "new-mexico-junior-college":
+    "https://bss-prod-fin.nmjc.edu/StudentRegistrationSsb/ssb/classSearch/classSearch",
+  // Ellucian Colleague Self-Service (non-standard port; same host the scraper
+  // uses).
+  "san-juan-college":
+    "https://selfservice.sanjuancollege.edu:467/Student/Courses",
+  // Anthology / CampusNexus Student portal (ASP.NET WebForms course schedule).
+  "southeast-new-mexico-college":
+    "https://lionsden.senmc.edu/CMCPortal/Common/CourseSchedule.aspx",
+  // SIPI — homepage; the only public schedule is a per-term PDF linked from
+  // the homepage.
+  "southwestern-indian-polytechnic-institute": "https://www.sipi.edu/",
+  // Santa Fe — Acalog catalog (no public live-sections endpoint).
+  "santa-fe-community-college": "https://catalog.sfcc.edu/",
+};
+
+// Honest fallback for the 6 NM colleges with no scraper-backed public class
+// search. CNM, NMMI, Mesalands, Luna, Clovis (Workday SSO), Ruidoso — all
+// have auth-gated SIS. Sourced from data/nm/scorecard/*.json schoolUrl.
+const COLLEGE_HOMEPAGES: Record<string, string> = {
+  "central-new-mexico-community-college": "https://www.cnm.edu/",
+  "clovis-community-college": "https://www.clovis.edu/",
+  "eastern-new-mexico-university-ruidoso-branch-community-college":
+    "https://www.ruidoso.enmu.edu/",
+  "luna-community-college": "https://www.luna.edu/",
+  "mesalands-community-college": "https://www.mesalands.edu/",
+  "new-mexico-military-institute": "https://www.nmmi.edu/",
+};
+
+const nmCollegeUrl = (collegeSlug: string): string =>
+  REGISTRATION_URLS[collegeSlug] ??
+  COLLEGE_HOMEPAGES[collegeSlug] ??
+  "https://hed.nm.gov/";
+
 const nmConfig: StateConfig = {
   slug: "nm",
   name: "New Mexico",
@@ -24,11 +66,10 @@ const nmConfig: StateConfig = {
   defaultZip: "87501",
   defaultZipCity: "Santa Fe",
 
-  courseDiscoveryUrl: (_collegeSlug: string, _prefix: string, _number: string) =>
-    "https://www.example.edu/",
+  courseDiscoveryUrl: (collegeSlug: string, _prefix: string, _number: string) =>
+    nmCollegeUrl(collegeSlug),
 
-  collegeCoursesUrl: (_collegeSlug: string) =>
-    "https://www.example.edu/",
+  collegeCoursesUrl: (collegeSlug: string) => nmCollegeUrl(collegeSlug),
 
   branding: {
     siteName: "Community College Path New Mexico",
