@@ -278,11 +278,18 @@ ${seniorWaiverBlock}
   defaultZip: ${JSON.stringify(defaultZip)},
   defaultZipCity: ${JSON.stringify(defaultZipCity)},
 
+  // TODO: replace with a per-college class-search lookup (see lib/states/tx/config.ts
+  // for the REGISTRATION_URLS + COLLEGE_HOMEPAGES + collegeUrl() helper template).
+  // The empty-string default is intentional — \`example.edu\` is a reserved
+  // non-existent domain, so seeding it sent every course row to a dead link
+  // until the human curator noticed (PR #1481). check-config-urls.ts flags
+  // empty/non-URL returns so the rolling URL-health issue catches this before
+  // a state ships data.
   courseDiscoveryUrl: (_collegeSlug: string, _prefix: string, _number: string) =>
-    ${JSON.stringify(systemUrl || "https://www.example.edu/")},
+    ${JSON.stringify(systemUrl)},
 
   collegeCoursesUrl: (_collegeSlug: string) =>
-    ${JSON.stringify(systemUrl || "https://www.example.edu/")},
+    ${JSON.stringify(systemUrl)},
 
   branding: {
     siteName: ${JSON.stringify(`Community College Path ${fullName}`)},
