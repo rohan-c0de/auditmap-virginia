@@ -120,12 +120,21 @@ async function playwrightFetch(
 ): Promise<string> {
   const page = await ctx.newPage();
   try {
-    await page.goto(url, { waitUntil: "networkidle", timeout: 30_000 });
+    // Use domcontentloaded, not networkidle: Acalog program pages embed
+    // analytics/widgets whose long-poll connections mean networkidle often
+    // never settles, so every fetch burned the full 30s timeout (and, under
+    // memory/disk pressure, stalled the renderer entirely on large catalogs
+    // like Delgado/Bossier). domcontentloaded returns as soon as the HTML is
+    // parsed — sufficient for the static catalog markup we scrape.
+    await page.goto(url, { waitUntil: "domcontentloaded", timeout: 30_000 });
     // AWS WAF JS-challenge pages are typically ≤2 KB and auto-redirect once
-    // the token is solved. Wait an extra beat to ensure the real page loaded.
+    // the token is solved. Wait for the real page if we got the challenge.
     const html = await page.content();
     if (html.length < 5_000 && html.includes("awswaf")) {
-      // Challenge page — wait for real navigation
+      // Challenge page — wait for the WAF redirect to the real document.
+      await page
+        .waitForLoadState("domcontentloaded", { timeout: 15_000 })
+        .catch(() => {});
       await page.waitForNavigation({ timeout: 15_000 }).catch(() => {});
       return page.content();
     }

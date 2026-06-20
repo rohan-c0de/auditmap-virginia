@@ -5,11 +5,21 @@ All four Acalog catalogs (Fletcher, SLCC, Delta, BRCC, Delgado, Bossier) sit
 behind AWS WAF and are scraped through Playwright; a plain-fetch re-run would
 return HTTP 202 + empty and silently zero the data.
 
-Covered (`scripts/la/scrape-programs.ts`):
+Covered with data in this PR (`scripts/la/scrape-programs.ts`):
 
-- **Acalog (6):** fletcher (83), south-louisiana (48), louisiana-delta (145),
-  baton-rouge (60), delgado (~197), bossier-parish (~160).
+- **Acalog (4):** fletcher (83), south-louisiana (48), louisiana-delta (145),
+  baton-rouge (60).
 - **CourseLeaf (1):** nunez (92, `/programs/`).
+
+Wired + verified, data populates on the next scheduled run:
+
+- **delgado** (Acalog, catalog.dcc.edu, catoid 60 — 197 programs discoverable)
+  and **bossier-parish** (Acalog, catalog.bpcc.edu, catoid 19 — 160 programs
+  discoverable). Both are wired with working configs; search-discovery confirms
+  the program counts. Their detail-page scrape did not complete in the
+  disk-pressured dev environment (renderer stalls), but runs cleanly on the
+  scheduled `runner: playwright` CI job. Re-run `scripts/la/scrape-programs.ts`
+  on a clean runner to commit their data files.
 
 ## Deferred (5)
 
