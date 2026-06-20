@@ -1,6 +1,10 @@
 import { getAllStates } from "@/lib/states/registry";
 import { loadOnlineData, onlineQualifies } from "@/lib/online";
 import {
+  getCourseLastUpdated,
+  getTransferLastUpdated,
+} from "@/lib/data-freshness";
+import {
   toSitemapXml,
   siteOrigin,
   xmlResponse,
@@ -11,29 +15,28 @@ export const dynamic = "force-dynamic";
 
 export async function GET() {
   const url = siteOrigin();
-  const now = new Date();
   const entries: SitemapEntry[] = [
-    { url, changeFrequency: "daily", priority: 1, lastModified: now },
-    { url: `${url}/colleges`, changeFrequency: "weekly", priority: 0.9, lastModified: now },
+    { url, changeFrequency: "daily", priority: 1 },
+    { url: `${url}/colleges`, changeFrequency: "weekly", priority: 0.9 },
   ];
 
   const states = getAllStates();
 
   for (const state of states) {
     const s = state.slug;
+    const courseFreshness = getCourseLastUpdated(s) ?? undefined;
     entries.push(
-      { url: `${url}/${s}`, changeFrequency: "weekly", priority: 1, lastModified: now },
-      { url: `${url}/${s}/courses`, changeFrequency: "weekly", priority: 0.85, lastModified: now },
-      { url: `${url}/${s}/colleges`, changeFrequency: "weekly", priority: 0.9, lastModified: now },
-      // /starting-soon is noindex (client-rendered tool page) — omit from sitemap
-      { url: `${url}/${s}/about`, changeFrequency: "yearly", priority: 0.5, lastModified: now }
+      { url: `${url}/${s}`, changeFrequency: "weekly", priority: 1, lastModified: courseFreshness },
+      { url: `${url}/${s}/courses`, changeFrequency: "weekly", priority: 0.85, lastModified: courseFreshness },
+      { url: `${url}/${s}/colleges`, changeFrequency: "weekly", priority: 0.9, lastModified: courseFreshness },
+      { url: `${url}/${s}/about`, changeFrequency: "yearly", priority: 0.5 }
     );
     if (state.transferSupported) {
       entries.push({
         url: `${url}/${s}/transfer`,
         changeFrequency: "weekly",
         priority: 0.9,
-        lastModified: now,
+        lastModified: getTransferLastUpdated(s) ?? undefined,
       });
     }
   }

@@ -1,6 +1,7 @@
 import { getAllStates } from "@/lib/states/registry";
 import { loadInstitutions } from "@/lib/institutions";
 import { getCurrentTerm } from "@/lib/terms";
+import { getCollegeLastUpdated } from "@/lib/data-freshness";
 import {
   toSitemapXml,
   siteOrigin,
@@ -23,7 +24,7 @@ import snapshotJson from "@/data/sitemap-college-subjects.json";
 const SUBJECT_SNAPSHOT: Record<string, Array<{ prefix: string; count: number }>> =
   (snapshotJson as unknown as Record<string, Array<{ prefix: string; count: number }>>) ?? {};
 
-const MIN_SECTIONS_FOR_INDEXED_URL = 3;
+const MIN_SECTIONS_FOR_INDEXED_URL = 5;
 
 export const dynamic = "force-dynamic";
 
@@ -53,7 +54,8 @@ export async function GET() {
           url: `${url}/${state.slug}/college/${inst.id}/courses/${prefix.toLowerCase()}`,
           changeFrequency: "weekly",
           priority: 0.5,
-          lastModified: new Date(),
+          lastModified:
+            getCollegeLastUpdated(state.slug, inst.college_slug) ?? undefined,
         });
       }
     }
