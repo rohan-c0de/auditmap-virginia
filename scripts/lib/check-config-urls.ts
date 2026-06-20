@@ -84,13 +84,24 @@ function collectUrlsToCheck(): Array<{ state: string; field: string; url: string
     }
     // Sample courseDiscoveryUrl / collegeCoursesUrl with one college's data.
     // We aren't trying to validate every college — just that the URL-shape
-    // generator still produces a URL the source site recognizes.
+    // generator still produces a URL the source site recognizes. Empty
+    // strings and non-http(s) returns are pushed under a synthetic
+    // BOOTSTRAP_STUB_URL so probe() surfaces them as bootstrap leftovers —
+    // auto-add-state seeds the helpers with "" when no per-college lookup
+    // exists yet, and that needs to fail the URL-health check before the
+    // state ships data (not be silently skipped).
     const sample = pickSampleCollege(cfg.slug);
     if (sample && sample.slug) {
       try {
         const url = cfg.courseDiscoveryUrl(sample.slug, "ENG", "101");
         if (url && /^https?:\/\//i.test(url)) {
           out.push({ state: cfg.slug, field: "courseDiscoveryUrl(sample)", url });
+        } else {
+          out.push({
+            state: cfg.slug,
+            field: "courseDiscoveryUrl(sample)",
+            url: BOOTSTRAP_STUB_URL,
+          });
         }
       } catch {
         // Some states throw if the slug isn't recognized — skip.
@@ -99,6 +110,12 @@ function collectUrlsToCheck(): Array<{ state: string; field: string; url: string
         const url = cfg.collegeCoursesUrl(sample.slug);
         if (url && /^https?:\/\//i.test(url)) {
           out.push({ state: cfg.slug, field: "collegeCoursesUrl(sample)", url });
+        } else {
+          out.push({
+            state: cfg.slug,
+            field: "collegeCoursesUrl(sample)",
+            url: BOOTSTRAP_STUB_URL,
+          });
         }
       } catch {
         // Same — skip if slug not recognized.
@@ -115,10 +132,15 @@ function collectUrlsToCheck(): Array<{ state: string; field: string; url: string
 // Placeholder URLs left over from auto-add-state bootstrap that weren't
 // curated. example.edu / example.com both legitimately resolve (returning
 // 200), so probe() can't detect these — we filter them out separately and
-// mark them as failed regardless of HTTP status.
+// mark them as failed regardless of HTTP status. BOOTSTRAP_STUB_URL is a
+// synthetic sentinel collectUrlsToCheck() emits when a state's
+// courseDiscoveryUrl/collegeCoursesUrl returns "" or a non-http(s) value
+// (the new bootstrap default — see scripts/lib/bootstrap-state.ts).
 const PLACEHOLDER_HOSTS = ["example.edu", "example.com", "example.org"];
+const BOOTSTRAP_STUB_URL = "https://bootstrap-stub.invalid/";
 
 function isPlaceholder(url: string): boolean {
+  if (url === BOOTSTRAP_STUB_URL) return true;
   try {
     const host = new URL(url).hostname.toLowerCase();
     return PLACEHOLDER_HOSTS.some((p) => host === p || host.endsWith("." + p));
@@ -129,7 +151,11 @@ function isPlaceholder(url: string): boolean {
 
 async function probe(url: string): Promise<{ status: number | null; ok: boolean; error?: string }> {
   if (isPlaceholder(url)) {
-    return { status: null, ok: false, error: "placeholder URL (auto-add-state bootstrap leftover)" };
+    const why =
+      url === BOOTSTRAP_STUB_URL
+        ? "empty / non-http(s) URL (auto-add-state bootstrap leftover — wire courseDiscoveryUrl/collegeCoursesUrl to a real per-college lookup)"
+        : "placeholder URL (auto-add-state bootstrap leftover)";
+    return { status: null, ok: false, error: why };
   }
   const controller = new AbortController();
   const t = setTimeout(() => controller.abort(), timeoutMs);
