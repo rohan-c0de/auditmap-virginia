@@ -88,7 +88,19 @@ const tnConfig: StateConfig = {
   scrapers: {
     courses: [{ scripts: ["scripts/tn/scrape-banner-ssb.ts"], runner: "http" }],
     transfers: [{ scripts: ["scripts/tn/transfer/scrape-all.ts"], runner: "http" }],
-    prereqs: [{ scripts: ["scripts/tn/scrape-catalog-prereqs.ts"], runner: "http" }],
+    // Hybrid prereqs, run in order: (1) rebuild ≈628 from live course-section
+    // prerequisite_text, then (2) merge ≈79 catalog-only prereqs on top (≈707).
+    // runner "playwright" because the catalog now sits behind AWS WAF and the
+    // scraper solves the JS challenge via headless Chromium (acalog-waf-fetch).
+    prereqs: [
+      {
+        scripts: [
+          "scripts/tn/aggregate-prereqs.ts",
+          "scripts/tn/scrape-catalog-prereqs.ts",
+        ],
+        runner: "playwright",
+      },
+    ],
     programs: [
       { scripts: ["scripts/tn/scrape-programs.ts"], runner: "http" },
       {

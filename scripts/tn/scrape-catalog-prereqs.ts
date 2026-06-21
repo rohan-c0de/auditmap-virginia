@@ -35,10 +35,21 @@
 
 import * as fs from "fs";
 import * as path from "path";
+import { createAcalogFetch } from "../lib/acalog-waf-fetch";
 
 const BASE = "https://catalog.pstcc.edu";
 const CATOID = 20;       // Pellissippi 2026-2027 catalog id
 const NAVOID = 1165;     // "Course Descriptions" nav entry
+
+// We MERGE into the existing data/tn/prereqs.json rather than overwrite it.
+// That file's base is course-section-aggregated (≈628 entries, every one backed
+// by a live section's prerequisite_text — see scripts/tn/aggregate-prereqs.ts
+// which runs first in the prereqs job). This catalog adds ≈79 prereqs the
+// sections don't carry (e.g. AGRI). Each entry we own is tagged
+// `source: SOURCE` so a later `aggregate-prereqs --force` rebuild preserves it
+// via preserveSourcedEntries() instead of silently dropping it. Overwriting
+// here is exactly the regression that closed PR #1465 (628 → 503).
+const SOURCE = "pstcc";
 const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
 
@@ -58,37 +69,23 @@ const MAX_PAGES = 20;
 interface PrereqEntry {
   text: string;
   courses: string[];
+  /** Set on entries this scraper contributes, so a section-derived rebuild
+   *  (aggregate-prereqs --force) preserves them rather than dropping them. */
+  source?: string;
 }
 
 // ---------------------------------------------------------------------------
-// HTTP helpers (same shape as scripts/de/scrape-catalog-prereqs.ts)
+// HTTP helpers
 // ---------------------------------------------------------------------------
 
 const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 
-async function retryFetch(url: string, label: string, attempts = 3): Promise<string> {
-  let lastErr: unknown;
-  for (let i = 0; i < attempts; i++) {
-    try {
-      const res = await fetch(url, {
-        headers: {
-          "User-Agent": UA,
-          Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        },
-      });
-      if (res.ok) return res.text();
-      if (res.status >= 500) {
-        lastErr = new Error(`HTTP ${res.status}`);
-      } else {
-        return ""; // 404 — course probably delisted; skip silently
-      }
-    } catch (e) {
-      lastErr = e;
-    }
-    await sleep(500 * Math.pow(2, i));
-  }
-  throw new Error(`${label} failed after ${attempts} attempts: ${lastErr}`);
-}
+// pstcc.edu moved behind AWS WAF (202 + empty body on plain fetch); the shared
+// WAF-aware fetcher solves the JS challenge via headless Chromium and carries
+// the aws-waf-token cookie. It throws (rather than silently returning "") when
+// a challenge can't be cleared, so a blocked run aborts instead of writing a
+// partial catalog. See scripts/lib/acalog-waf-fetch.ts.
+const retryFetch = createAcalogFetch({ ua: UA });
 
 // ---------------------------------------------------------------------------
 // Concurrency primitive
@@ -294,12 +291,43 @@ async function main() {
   console.log(`  Parsed ${seen}/${coidList.length} detail pages`);
   console.log(`  Extracted prereqs for ${Object.keys(prereqs).length} courses`);
 
-  // --- Write ---
+  // --- Merge into existing prereqs.json (never overwrite) ---
   const outDir = path.join(process.cwd(), "data", "tn");
   fs.mkdirSync(outDir, { recursive: true });
   const outPath = path.join(outDir, "prereqs.json");
-  fs.writeFileSync(outPath, JSON.stringify(prereqs, null, 2));
-  console.log(`\n✓ Wrote ${Object.keys(prereqs).length} prereqs to ${outPath}`);
+
+  let merged: Record<string, PrereqEntry> = {};
+  try {
+    const raw = JSON.parse(fs.readFileSync(outPath, "utf-8"));
+    if (raw && typeof raw === "object" && !Array.isArray(raw)) merged = raw;
+  } catch {
+    /* no existing file — fresh start */
+  }
+  const baseCount = Object.keys(merged).length;
+
+  // Drop our own previous contributions so a re-run refreshes cleanly, leaving
+  // the course-aggregated base (entries without our source) untouched.
+  for (const k of Object.keys(merged)) {
+    if (merged[k]?.source === SOURCE) delete merged[k];
+  }
+
+  // Add only the catalog prereqs the base doesn't already carry. The base is
+  // derived from real section prerequisite_text, so on a key collision the base
+  // wins and we skip the catalog duplicate.
+  let added = 0;
+  for (const [key, entry] of Object.entries(prereqs)) {
+    if (merged[key]) continue;
+    merged[key] = { ...entry, source: SOURCE };
+    added++;
+  }
+
+  const sorted: Record<string, PrereqEntry> = {};
+  for (const key of Object.keys(merged).sort()) sorted[key] = merged[key];
+  fs.writeFileSync(outPath, JSON.stringify(sorted, null, 2));
+  console.log(
+    `\n✓ Catalog yielded ${Object.keys(prereqs).length} prereqs; merged +${added} ` +
+      `net-new onto a base of ${baseCount} → ${Object.keys(sorted).length} total in ${outPath}`,
+  );
 }
 
 main().catch((e) => {
