@@ -1,25 +1,21 @@
 # LA programs — coverage & deferred colleges
 
 Programs are scraped for the LCTCS colleges with public, parseable catalogs.
-All four Acalog catalogs (Fletcher, SLCC, Delta, BRCC, Delgado, Bossier) sit
+All six Acalog catalogs (Fletcher, SLCC, Delta, BRCC, Delgado, Bossier) sit
 behind AWS WAF and are scraped through Playwright; a plain-fetch re-run would
 return HTTP 202 + empty and silently zero the data.
 
-Covered with data in this PR (`scripts/la/scrape-programs.ts`):
+Covered with data (`scripts/la/scrape-programs.ts`):
 
-- **Acalog (4):** fletcher (83), south-louisiana (48), louisiana-delta (145),
-  baton-rouge (60).
+- **Acalog (6):** fletcher (83), south-louisiana (48), louisiana-delta (145),
+  baton-rouge (60), bossier-parish (160), delgado (120).
 - **CourseLeaf (1):** nunez (92, `/programs/`).
 
-Wired + verified, data populates on the next scheduled run:
-
-- **delgado** (Acalog, catalog.dcc.edu, catoid 60 — 197 programs discoverable)
-  and **bossier-parish** (Acalog, catalog.bpcc.edu, catoid 19 — 160 programs
-  discoverable). Both are wired with working configs; search-discovery confirms
-  the program counts. Their detail-page scrape did not complete in the
-  disk-pressured dev environment (renderer stalls), but runs cleanly on the
-  scheduled `runner: playwright` CI job. Re-run `scripts/la/scrape-programs.ts`
-  on a clean runner to commit their data files.
+> Bossier and Delgado were the two largest WAF catalogs. Their detail-page
+> scrape only completes when `playwrightFetch` uses `waitUntil: "networkidle"`
+> (so the WAF JS-challenge solves before the HTML is read) **and** the box has
+> disk headroom — under disk pressure the headless renderer crashes mid-fetch.
+> See memory `feedback_disk_pressure_crashes_playwright`.
 
 ## Deferred (5)
 

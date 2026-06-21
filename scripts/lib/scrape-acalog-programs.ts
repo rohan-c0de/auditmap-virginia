@@ -120,27 +120,25 @@ async function playwrightFetch(
 ): Promise<string> {
   const page = await ctx.newPage();
   try {
-    // Use domcontentloaded, not networkidle: Acalog program pages embed
-    // analytics/widgets whose long-poll connections mean networkidle often
-    // never settles, so every fetch burned the full 30s timeout (and, under
-    // memory/disk pressure, stalled the renderer entirely on large catalogs
-    // like Delgado/Bossier). domcontentloaded returns as soon as the HTML is
-    // parsed — sufficient for the static catalog markup we scrape.
-    await page.goto(url, { waitUntil: "domcontentloaded", timeout: 30_000 });
-    // AWS WAF JS-challenge pages are typically ≤2 KB and auto-redirect once
-    // the token is solved. Wait for the real page if we got the challenge.
+    // networkidle (not domcontentloaded): the WAF JS challenge needs the page's
+    // scripts to run and redirect before the real catalog HTML exists.
+    // domcontentloaded returns too early, lands on the ~2 KB challenge stub far
+    // more often, and the challenge-recovery path is fragile — so prefer
+    // networkidle and let the challenge settle in one shot. The earlier
+    // "networkidle stalls forever" symptom was actually the headless renderer
+    // crashing under a full disk, not networkidle itself (see memory
+    // feedback_disk_pressure_crashes_playwright).
+    await page.goto(url, { waitUntil: "networkidle", timeout: 30_000 });
+    // Belt-and-suspenders: if we still got the challenge stub, wait for the
+    // WAF redirect to the real document before reading content.
     const html = await page.content();
     if (html.length < 5_000 && html.includes("awswaf")) {
-      // Challenge page — wait for the WAF redirect to the real document.
-      await page
-        .waitForLoadState("domcontentloaded", { timeout: 15_000 })
-        .catch(() => {});
       await page.waitForNavigation({ timeout: 15_000 }).catch(() => {});
-      return page.content();
+      return page.content().catch(() => html);
     }
     return html;
   } finally {
-    await page.close();
+    await page.close().catch(() => {});
   }
 }
 
