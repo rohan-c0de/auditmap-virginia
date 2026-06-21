@@ -118,30 +118,44 @@ async function playwrightFetch(
   ctx: BrowserContext,
   url: string,
 ): Promise<string> {
-  const page = await ctx.newPage();
-  try {
-    // Use domcontentloaded, not networkidle: Acalog program pages embed
-    // analytics/widgets whose long-poll connections mean networkidle often
-    // never settles, so every fetch burned the full 30s timeout (and, under
-    // memory/disk pressure, stalled the renderer entirely on large catalogs
-    // like Delgado/Bossier). domcontentloaded returns as soon as the HTML is
-    // parsed — sufficient for the static catalog markup we scrape.
-    await page.goto(url, { waitUntil: "domcontentloaded", timeout: 30_000 });
-    // AWS WAF JS-challenge pages are typically ≤2 KB and auto-redirect once
-    // the token is solved. Wait for the real page if we got the challenge.
-    const html = await page.content();
-    if (html.length < 5_000 && html.includes("awswaf")) {
-      // Challenge page — wait for the WAF redirect to the real document.
-      await page
-        .waitForLoadState("domcontentloaded", { timeout: 15_000 })
-        .catch(() => {});
-      await page.waitForNavigation({ timeout: 15_000 }).catch(() => {});
-      return page.content();
+  const fetchOnce = async (): Promise<string> => {
+    const page = await ctx.newPage();
+    try {
+      // domcontentloaded, not networkidle: Acalog program pages embed
+      // long-poll widgets that mean networkidle often never settles.
+      await page.goto(url, { waitUntil: "domcontentloaded", timeout: 30_000 });
+      const html = await page.content();
+      // AWS WAF JS-challenge: ≤5 KB body containing the camelCase
+      // `awsWafCookieDomainList` identifier. Match case-insensitively (the
+      // earlier lowercase check `includes("awswaf")` silently missed every
+      // KS Acalog challenge, verified 2026-06-21). When seen, wait for the
+      // WAF script to auto-submit + redirect. The post-challenge navigation
+      // sometimes invalidates the page handle — caller retries on a fresh
+      // page; the WAF cookie now lives in the BrowserContext so the retry
+      // bypasses the challenge.
+      if (html.length < 5_000 && /awswaf/i.test(html)) {
+        await page
+          .waitForLoadState("networkidle", { timeout: 20_000 })
+          .catch(() => {});
+        // Page may have closed during the redirect — return what we have
+        // and let the caller decide whether to retry.
+        try {
+          return await page.content();
+        } catch {
+          return "";
+        }
+      }
+      return html;
+    } finally {
+      await page.close().catch(() => {});
     }
-    return html;
-  } finally {
-    await page.close();
-  }
+  };
+  // First call may hit + solve the WAF challenge (and leave us with an
+  // empty body if the page died mid-redirect); retry once with the cookie
+  // now in the context.
+  const first = await fetchOnce();
+  if (first && first.length >= 5_000) return first;
+  return fetchOnce();
 }
 
 async function pmap<T, R>(
@@ -634,8 +648,14 @@ export async function scrapeAcalogPrograms(
       const html = await fetchHtml(searchUrl, `search-page-${page}`);
       const poids = extractPoids(html);
       if (poids.length === 0) break;
+      const sizeBefore: number = allPoids.size;
       for (const p of poids) allPoids.add(p);
       console.log(`    search page ${page}: ${poids.length} programs (total: ${allPoids.size})`);
+      // Some Acalogs (Colby KS, verified 2026-06-21) keep returning the same
+      // 1-2 poids on every "page past the end" instead of an empty page —
+      // stop when a full page adds nothing new so we don't burn 100 round
+      // trips before the maxPages guard fires.
+      if (allPoids.size === sizeBefore) break;
       page++;
       await sleep(200);
     }
