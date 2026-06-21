@@ -152,12 +152,17 @@ export async function getAvailableTerms(state: string): Promise<string[]> {
     }
 
     // Fallback: select distinct via select + limit (less efficient but works without RPC)
+    // Cap at 2000: this only needs the DISTINCT term set, and no state has
+    // anywhere near 2000 distinct terms — the old .limit(50000) pulled up to
+    // 50k single-column rows on every RPC failure, needless egress for a value
+    // that's a handful of distinct terms. 2000 rows is plenty to observe every
+    // term while bounding the worst case.
     console.warn("get_distinct_terms RPC error, using fallback:", error?.message ?? error);
     const { data: fallback, error: fbErr } = await supabase
       .from("courses")
       .select("term")
       .eq("state", state)
-      .limit(50000);
+      .limit(2000);
 
     if (fbErr || !fallback) return [];
 

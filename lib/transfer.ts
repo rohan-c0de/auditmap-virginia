@@ -376,22 +376,33 @@ export async function getTransferInfo(
   // catastrophic on a cold cache (CA = 161K rows ≈ 100s on a Vercel lambda),
   // and it was the dominant cause of the /[state]/course/* 504 timeouts.
   return cached(`transfer-course:${state}:${prefix}:${number}`, async () => {
-    const { data, error } = await supabase
-      .from("transfers")
-      .select(
-        "cc_prefix, cc_number, cc_course, cc_title, cc_credits, university, university_name, univ_course, univ_title, univ_credits, notes, no_credit, is_elective"
-      )
-      .eq("state", state)
-      .eq("cc_prefix", prefix)
-      .eq("cc_number", number);
+    const scoped = () =>
+      supabase
+        .from("transfers")
+        .select(
+          "cc_prefix, cc_number, cc_course, cc_title, cc_credits, university, university_name, univ_course, univ_title, univ_credits, notes, no_credit, is_elective"
+        )
+        .eq("state", state)
+        .eq("cc_prefix", prefix)
+        .eq("cc_number", number);
+
+    let { data, error } = await scoped();
     if (error) {
-      console.error("getTransferInfo error:", error.message);
-      // Fall back to the (slow) full-state load only on a query error, so a
-      // transient Supabase issue degrades to correct-but-slow, never wrong.
-      const mappings = await loadTransferMappings(state);
-      return collapseDuplicateMappings(
-        mappings.filter((m) => m.cc_prefix === prefix && m.cc_number === number)
-      );
+      // Retry the SCOPED query once (it hits idx_transfers_state_course and
+      // returns the handful of rows for this one course). The previous fallback
+      // here was loadTransferMappings(state), which paginates the WHOLE state's
+      // transfer table into memory — under crawler load the scoped query times
+      // out, the full-state load times out harder, and that timeout→load-all
+      // cascade was the dominant driver of the egress-quota overage (41M
+      // full-state reads in pg_stat_statements). Never load the whole state per
+      // request; on persistent error return [] (uncached only briefly via the
+      // 30-min TTL, far cheaper than re-paginating millions of rows).
+      console.error("getTransferInfo error (retrying scoped):", error.message);
+      ({ data, error } = await scoped());
+      if (error) {
+        console.error("getTransferInfo scoped retry failed:", error.message);
+        return [];
+      }
     }
     return collapseDuplicateMappings((data || []) as TransferMapping[]);
   });
