@@ -73,8 +73,11 @@ const wyConfig: StateConfig = {
     // CollegeTransfer.Net's public OData API. scrape-transfer.ts pages each
     // sender and keeps in-state targets only.
     transfers: [{ scripts: ["scripts/wy/scrape-transfer.ts"], runner: "http" }],
-    // manual-only: programs — Phase 6 wrapper at scripts/wy/scrape-programs.ts
-    // found no templated catalogs; needs per-college investigation.
+    // 6 of 7 colleges are on Acalog (LCCC, Casper, Western Wyoming, Sheridan
+    // a.k.a. Northern WY, Northwest, EWC); CWC is on SmartCatalogIQ. Each
+    // Acalog runner auto-discovers the current catoid and program navoids at
+    // runtime so the script keeps working when colleges roll catalogs.
+    programs: [{ scripts: ["scripts/wy/scrape-programs.ts"], runner: "http" }],
   },
 };
 

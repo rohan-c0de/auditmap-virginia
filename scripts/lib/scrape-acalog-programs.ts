@@ -118,44 +118,31 @@ async function playwrightFetch(
   ctx: BrowserContext,
   url: string,
 ): Promise<string> {
-  const fetchOnce = async (): Promise<string> => {
-    const page = await ctx.newPage();
-    try {
-      // domcontentloaded, not networkidle: Acalog program pages embed
-      // long-poll widgets that mean networkidle often never settles.
-      await page.goto(url, { waitUntil: "domcontentloaded", timeout: 30_000 });
-      const html = await page.content();
-      // AWS WAF JS-challenge: ≤5 KB body containing the camelCase
-      // `awsWafCookieDomainList` identifier. Match case-insensitively (the
-      // earlier lowercase check `includes("awswaf")` silently missed every
-      // KS Acalog challenge, verified 2026-06-21). When seen, wait for the
-      // WAF script to auto-submit + redirect. The post-challenge navigation
-      // sometimes invalidates the page handle — caller retries on a fresh
-      // page; the WAF cookie now lives in the BrowserContext so the retry
-      // bypasses the challenge.
-      if (html.length < 5_000 && /awswaf/i.test(html)) {
-        await page
-          .waitForLoadState("networkidle", { timeout: 20_000 })
-          .catch(() => {});
-        // Page may have closed during the redirect — return what we have
-        // and let the caller decide whether to retry.
-        try {
-          return await page.content();
-        } catch {
-          return "";
-        }
-      }
-      return html;
-    } finally {
-      await page.close().catch(() => {});
+  const page = await ctx.newPage();
+  try {
+    // networkidle (not domcontentloaded): the WAF JS challenge needs the page's
+    // scripts to run and redirect before the real catalog HTML exists.
+    // domcontentloaded returns too early, lands on the ~2 KB challenge stub far
+    // more often, and the challenge-recovery path is fragile — so prefer
+    // networkidle and let the challenge settle in one shot. The earlier
+    // "networkidle stalls forever" symptom was actually the headless renderer
+    // crashing under a full disk, not networkidle itself (see memory
+    // feedback_disk_pressure_crashes_playwright).
+    await page.goto(url, { waitUntil: "networkidle", timeout: 30_000 });
+    // Belt-and-suspenders: if we still got the challenge stub, wait for the
+    // WAF redirect to the real document before reading content. Match the
+    // marker case-insensitively — the challenge body uses the camelCase
+    // identifier `window.awsWafCookieDomainList`, so the prior lowercase
+    // `includes("awswaf")` silently missed every KS Acalog challenge.
+    const html = await page.content();
+    if (html.length < 5_000 && /awswaf/i.test(html)) {
+      await page.waitForNavigation({ timeout: 15_000 }).catch(() => {});
+      return page.content().catch(() => html);
     }
-  };
-  // First call may hit + solve the WAF challenge (and leave us with an
-  // empty body if the page died mid-redirect); retry once with the cookie
-  // now in the context.
-  const first = await fetchOnce();
-  if (first && first.length >= 5_000) return first;
-  return fetchOnce();
+    return html;
+  } finally {
+    await page.close().catch(() => {});
+  }
 }
 
 async function pmap<T, R>(

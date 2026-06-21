@@ -43,6 +43,12 @@
       "ADM 165"
     ]
   },
+  "ADM 208": {
+    "text": "ADM 108 (min C)",
+    "courses": [
+      "ADM 108"
+    ]
+  },
   "ADM 210": {
     "text": "ADM 108 (min C)",
     "courses": [
@@ -735,6 +741,12 @@
       "EGR 125"
     ]
   },
+  "CDT 223": {
+    "text": "ADM 102 (min C)",
+    "courses": [
+      "ADM 102"
+    ]
+  },
   "CHD 100": {
     "text": "RDG - Reading 085 (min S) or RDG - Reading 085 (min C.) or RDG - Reading 114 (min C) or ENR 098 (min C.) or ENG 101 (min C) or ENG 101 (min P) or ENG 101 (min TC) or ENG 101C (min C) and ENG 099 (min C.)",
     "courses": [
@@ -994,9 +1006,11 @@
     ]
   },
   "CIS 197E": {
-    "text": "CIS 146 (min D)",
+    "text": "CIS 113 (min C) or CIS 113I (min C) or OAD 243E (min C)",
     "courses": [
-      "CIS 146"
+      "CIS 113",
+      "CIS 113I",
+      "OAD 243E"
     ]
   },
   "CIS 197W": {
@@ -1124,6 +1138,13 @@
     ]
   },
   "CIS 255": {
+    "text": "CIS 191 (min D) or CIS 191 (min TD) and CIS 193A (min D) or CIS 193A (min TD)",
+    "courses": [
+      "CIS 191",
+      "CIS 193A"
+    ]
+  },
+  "CIS 260": {
     "text": "CIS 191 (min D) or CIS 191 (min TD) and CIS 193A (min D) or CIS 193A (min TD)",
     "courses": [
       "CIS 191",
@@ -1498,6 +1519,15 @@
       "CUA 125"
     ]
   },
+  "CUA 163": {
+    "text": "CUA 101 (min C) and CUA 112 (min C) and CUA 125 (min C) and CUA 111 (min C)",
+    "courses": [
+      "CUA 101",
+      "CUA 112",
+      "CUA 125",
+      "CUA 111"
+    ]
+  },
   "CUA 173": {
     "text": "CUA 112 (min C) and CUA 125 (min C) and CUA 115 (min C)",
     "courses": [
@@ -1531,9 +1561,11 @@
     ]
   },
   "CUA 205": {
-    "text": "CUA 116 (min D)",
+    "text": "CUA 112 (min C) and CUA 115 (min C) and CUA 125 (min C)",
     "courses": [
-      "CUA 116"
+      "CUA 112",
+      "CUA 115",
+      "CUA 125"
     ]
   },
   "CUA 208": {
@@ -1546,6 +1578,14 @@
     "text": "CUA 116 (min D)",
     "courses": [
       "CUA 116"
+    ]
+  },
+  "CUA 215": {
+    "text": "CUA 112 (min C) and CUA 125 (min C) and CUA 115 (min C)",
+    "courses": [
+      "CUA 112",
+      "CUA 125",
+      "CUA 115"
     ]
   },
   "CUA 285": {
@@ -2133,10 +2173,11 @@
     ]
   },
   "ENG 101": {
-    "text": "Tech Communication 100 (min C) or ENG 093 (min C) or ENG 093 (min S) or ENG 093 (min C.) or ENR 094 (min C.) or ENR 094 (min C) or ENR 098 (min C.) or ENR 098 (min C)",
+    "text": "Tech Communication 100 (min C) or ENG 093 (min C) or ENG 093 (min S) or ENG 093 (min C.) and ENG 099 and ENG 099 or ENR 094 (min C.) or ENR 094 (min C) or ENR 098 (min C.) or ENR 098 (min C) and ENG 099",
     "courses": [
       "Tech Communication 100",
       "ENG 093",
+      "ENG 099",
       "ENR 094",
       "ENR 098"
     ]
@@ -2200,15 +2241,17 @@
     ]
   },
   "ENG 271": {
-    "text": "ENG 102 (min C) or ENG 102 (min T) or ENG 102 (min TC)",
+    "text": "ENG 102 (min C) or ENG 102I (min C) or ENG 102 (min TA) or ENG 102 (min TB) or ENG 102 (min TC) or ENG 102 (min TS)",
     "courses": [
-      "ENG 102"
+      "ENG 102",
+      "ENG 102I"
     ]
   },
   "ENG 272": {
-    "text": "ENG 102 (min C) or ENG 102 (min TC) or ENG 102 (min T)",
+    "text": "ENG 102 (min C) or ENG 102I (min C) or ENG 102 (min TA) or ENG 102 (min TB) or ENG 102 (min TC) or ENG 102 (min TS)",
     "courses": [
-      "ENG 102"
+      "ENG 102",
+      "ENG 102I"
     ]
   },
   "ENT 127": {
@@ -2217,6 +2260,13 @@
       "ADM 108",
       "ENT 126",
       "ADM 107"
+    ]
+  },
+  "ENT 128": {
+    "text": "ADM 102 (min C) and EGR 125 (min C)",
+    "courses": [
+      "ADM 102",
+      "EGR 125"
     ]
   },
   "ENT 215": {
@@ -2230,6 +2280,12 @@
     "courses": [
       "ADM 102",
       "EGR 125"
+    ]
+  },
+  "ENT 217": {
+    "text": "ADM 102 (min C)",
+    "courses": [
+      "ADM 102"
     ]
   },
   "ENT 239": {
@@ -2353,8 +2409,9 @@
     ]
   },
   "HIT 232": {
-    "text": "HIT 230 (min C) or HIT 230 (min TC)",
+    "text": "HIT 230I (min C) or HIT 230 (min C)",
     "courses": [
+      "HIT 230I",
       "HIT 230"
     ]
   },
@@ -2370,6 +2427,12 @@
       "HIT 230",
       "HIT 232",
       "HIT 235"
+    ]
+  },
+  "HIT 291": {
+    "text": "HIT 230 (min C)",
+    "courses": [
+      "HIT 230"
     ]
   },
   "HIT 292": {
@@ -2627,6 +2690,14 @@
       "MAT 101",
       "CIS 146",
       "MAT 121"
+    ]
+  },
+  "MAT 222": {
+    "text": "HIT 110 (min C) or HIT 110I (min C) or MAT 101 (min C)",
+    "courses": [
+      "HIT 110",
+      "HIT 110I",
+      "MAT 101"
     ]
   },
   "MAT 229": {
@@ -3046,17 +3117,17 @@
     ]
   },
   "MTH 237": {
-    "text": "MTH 126 (min C) or MTH 126H (min C)",
+    "text": "MTH 126 (min C) or MTH 126I (min C)",
     "courses": [
       "MTH 126",
-      "MTH 126H"
+      "MTH 126I"
     ]
   },
   "MTH 238": {
-    "text": "MTH 227 (min C) or MTH 227H (min C)",
+    "text": "MTH 227 (min C) or MTH 227I (min C)",
     "courses": [
       "MTH 227",
-      "MTH 227H"
+      "MTH 227I"
     ]
   },
   "MTH 265": {
@@ -3951,6 +4022,12 @@
       "PTA 241",
       "PTA 253",
       "PTA 260"
+    ]
+  },
+  "PTA 201": {
+    "text": "PTA 200 (min C)",
+    "courses": [
+      "PTA 200"
     ]
   },
   "PTA 231": {
