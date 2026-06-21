@@ -130,9 +130,12 @@ async function playwrightFetch(
     // feedback_disk_pressure_crashes_playwright).
     await page.goto(url, { waitUntil: "networkidle", timeout: 30_000 });
     // Belt-and-suspenders: if we still got the challenge stub, wait for the
-    // WAF redirect to the real document before reading content.
+    // WAF redirect to the real document before reading content. Match the
+    // marker case-insensitively — the challenge body uses the camelCase
+    // identifier `window.awsWafCookieDomainList`, so the prior lowercase
+    // `includes("awswaf")` silently missed every KS Acalog challenge.
     const html = await page.content();
-    if (html.length < 5_000 && html.includes("awswaf")) {
+    if (html.length < 5_000 && /awswaf/i.test(html)) {
       await page.waitForNavigation({ timeout: 15_000 }).catch(() => {});
       return page.content().catch(() => html);
     }
@@ -632,8 +635,14 @@ export async function scrapeAcalogPrograms(
       const html = await fetchHtml(searchUrl, `search-page-${page}`);
       const poids = extractPoids(html);
       if (poids.length === 0) break;
+      const sizeBefore: number = allPoids.size;
       for (const p of poids) allPoids.add(p);
       console.log(`    search page ${page}: ${poids.length} programs (total: ${allPoids.size})`);
+      // Some Acalogs (Colby KS, verified 2026-06-21) keep returning the same
+      // 1-2 poids on every "page past the end" instead of an empty page —
+      // stop when a full page adds nothing new so we don't burn 100 round
+      // trips before the maxPages guard fires.
+      if (allPoids.size === sizeBefore) break;
       page++;
       await sleep(200);
     }

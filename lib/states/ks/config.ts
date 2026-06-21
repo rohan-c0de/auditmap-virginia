@@ -155,7 +155,21 @@ const ksConfig: StateConfig = {
       },
     ],
     prereqs: { source: "aggregate-from-courses" },
-    // manual-only: programs — Phase 6 catalog discovery found no templated platforms; bespoke per-college needed.
+    // Programs: 10 of 24 KS colleges publish a scrapeable catalog. Live-probed
+    // 2026-06-21; see scripts/ks/scrape-programs.ts for the per-college URL +
+    // platform mapping. The remaining 14 are documented in
+    // documentedCeilings.programs below (WordPress / PDF-only catalogs).
+    programs: [
+      {
+        scripts: ["scripts/ks/scrape-programs.ts"],
+        runner: "playwright",
+      },
+    ],
+  },
+
+  documentedCeilings: {
+    programs:
+      "14 of 24 KS colleges publish catalogs as WordPress prose / PDF-only / no public catalog subdomain (verified 2026-06-21): barton-county, cloud-county, dodge-city, flint-hills-technical, fort-scott, highland, hutchinson, independence, labette, manhattan-area-technical, north-central-kansas-technical, northwest-kansas-technical, pratt, salina-area-technical. Program requirements exist only inside PDFs; the web catalog pages carry no machine-readable course codes. Planner is data-limited for these pending PDF extraction.",
   },
 };
 
