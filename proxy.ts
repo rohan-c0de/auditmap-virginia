@@ -49,6 +49,18 @@ const COURSE_PATH_RE = /^\/([a-z]{2})\/course\/([^/]+)\/?$/;
 // lowercase letters at the start of the path; everything after is anything.
 const STATE_PATH_RE = /^\/([a-z]{2})(\/.*)?$/;
 
+// `/<segment>/<state-subroute>` capture where <segment> is NOT necessarily a
+// 2-letter slug. STATE_PATH_RE above only validates exactly-2-lowercase-letter
+// first segments, so longer or oddly-cased junk slugs that still carry a real
+// state subroute — `/notastate/transfer`, `/zzz/courses`, `/VA/about` — fell
+// through to the ISR page and rendered a soft-404 (HTTP 200) instead of a true
+// 404 (the status is locked at 200 once app/loading.tsx starts streaming; same
+// problem as #158). Listing the known app/[state]/* subroutes keeps genuine
+// top-level routes (e.g. /plan/<id>) from being caught. Keep the alternation in
+// sync with the directories under app/[state]/.
+const STATE_SUBROUTE_RE =
+  /^\/([^/]+)\/(?:about|choose|college|colleges|course|courses|online|plan|program|programs|results|schedule|starting-soon|subject|transfer)(?:\/.*)?$/;
+
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
@@ -87,6 +99,19 @@ export async function proxy(request: NextRequest) {
     // branch (state pages don't need session refresh, and updateSession
     // touches cookies which kills ISR caching).
     return NextResponse.next();
+  }
+
+  // -------------------------------------------------------------------------
+  // Unregistered-state validation for non-2-letter junk slugs that still carry
+  // a real state subroute (e.g. /notastate/transfer, /zzz/courses, /VA/about).
+  // STATE_PATH_RE only handles exactly-2-letter first segments; these longer or
+  // oddly-cased slugs otherwise fall through and render a soft-404 (HTTP 200).
+  // Any first segment reaching here that isn't a valid state must 404 — valid
+  // states are 2 lowercase letters and already returned above.
+  // -------------------------------------------------------------------------
+  const subrouteMatch = pathname.match(STATE_SUBROUTE_RE);
+  if (subrouteMatch && !isValidState(subrouteMatch[1])) {
+    return new NextResponse(null, { status: 404 });
   }
 
   // -------------------------------------------------------------------------
