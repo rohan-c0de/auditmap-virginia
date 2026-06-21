@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { loadAllCourses, getAvailableTerms } from "@/lib/courses";
+import { loadUpcomingCourses, getAvailableTerms } from "@/lib/courses";
 import { daysUntilStart } from "@/lib/course-status";
 import { rateLimit, getClientKey } from "@/lib/rate-limit";
 import { getZipCoordinates, calculateDistance } from "@/lib/geo";
@@ -57,9 +57,27 @@ export async function GET(request: NextRequest, context: RouteContext) {
   const zip = searchParams.get("zip")?.trim() || undefined;
 
   // Load courses from all available terms — late-start Spring sections and
-  // early Summer sections can both fall within the upcoming window.
+  // early Summer sections can both fall within the upcoming window. Scope the
+  // query to the upcoming-start-date window server-side instead of pulling
+  // every section for every term (loadAllCourses per term was a request-time
+  // full-state egress driver). Widen the bounds by a day on each side so the
+  // DB filter stays a strict superset of the exact `daysUntilStart` JS filter
+  // below — output is identical, just far less data on the wire.
+  const iso = (d: Date) =>
+    `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(
+      d.getDate()
+    ).padStart(2, "0")}`;
+  const today = new Date();
+  const fromDate = new Date(today);
+  fromDate.setDate(fromDate.getDate() - 1);
+  const toDate = new Date(today);
+  toDate.setDate(toDate.getDate() + daysWindow + 1);
+  const fromStr = iso(fromDate);
+  const toStr = iso(toDate);
   const terms = await getAvailableTerms(state);
-  const coursesPerTerm = await Promise.all(terms.map((t) => loadAllCourses(t, state)));
+  const coursesPerTerm = await Promise.all(
+    terms.map((t) => loadUpcomingCourses(t, state, fromStr, toStr))
+  );
   const allCourses = coursesPerTerm.flat();
 
   // Build institution lookup

@@ -408,6 +408,45 @@ export async function loadAllCourses(
   });
 }
 
+/**
+ * Load only sections whose `start_date` falls within [fromDate, toDate]
+ * (inclusive ISO `YYYY-MM-DD` strings). Scoped server-side for the
+ * "starting soon" feature so we never pull the whole state catalog across
+ * every term at request time — `loadAllCourses(t, state)` per term was a
+ * request-time full-state egress driver (the `SELECT * FROM courses WHERE
+ * state AND term` calls in pg_stat_statements). The upcoming-window slice is
+ * at most a few hundred sections per (state, term); the 5000 cap is a safety
+ * bound. Callers should still apply their exact day-window filter in JS — this
+ * only narrows the wire payload, so widen the date bounds by a day on each
+ * side to stay a strict superset of the JS predicate.
+ */
+export async function loadUpcomingCourses(
+  term: string,
+  state: string,
+  fromDate: string,
+  toDate: string
+): Promise<CourseSection[]> {
+  return cached(`upcoming:${state}:${term}:${fromDate}:${toDate}`, async () => {
+    const { data, error } = await supabase
+      .from("courses")
+      .select(COURSE_COLUMNS)
+      .eq("term", term)
+      .eq("state", state)
+      .gte("start_date", fromDate)
+      .lte("start_date", toDate)
+      .order("id", { ascending: true })
+      .limit(5000);
+    if (error) {
+      console.error(
+        `loadUpcomingCourses error (${state} ${term}):`,
+        error.message
+      );
+      return [];
+    }
+    return (data || []).map(mapRow);
+  });
+}
+
 // Cap on sections returned by a single search. A course search groups sections
 // into courses and paginates COURSES, so even a broad prefix (e.g. "ENG"
 // resolves to ~dozens of distinct courses) never needs the full set. The cap
