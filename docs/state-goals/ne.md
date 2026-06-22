@@ -1,31 +1,29 @@
 # Nebraska (ne) — state goals
 
-> **Current tier: F** · Rank **#18 of 40** · Tranche: **NEXT** · Impact 2/5 · Effort: medium · Value/effort: **H**
+> **Current tier: B** · Limited by: **courses** · _Refreshed 2026-06-22_
 >
-> Dimensions: `crs=B` `prq=A` `trf=F` `sc=A` `cfg=A`
+> Dimensions: `crs=B` `prq=A` `trf=B` `sc=A` `cfg=A`
 >
-> _Courses B, all else A; F is empty transfers only — one Transfer Nebraska scraper (portal exists) flips F->B/A._
+> _The old F is cleared — transfers are now wired (B). Courses are 89% (8/9); the single gap, Nebraska College of Technical Agriculture (NCTA), is a tiny custom-HTML UNL ag college — buildable but low-value. Two separate levers could lift to A: the NCTA course scraper (courses B→A) or deepening transfers (B→A)._
 
 ## Diagnosis
 
-- **Primary gap:** Transfers is the sole blocker: transfer-equiv.json is [] (0 mappings, 0 universities, unwired, no scraper, no documented ceiling) → drags composite to F. Courses B (8/9, only NCTA missing), prereqs A, config A, scorecard A all healthy; programs present and planner-aligned.
-- **Cheapest lever** (investigate-articulation): Investigate Nebraska's statewide articulation portal (Transfer Nebraska, transfer.nebraska.edu), build scripts/ne/scrape-transfer.ts, populate data/ne/transfer-equiv.json, and declare transfers in lib/states/ne/config.ts scrapers — this alone lifts composite F→B.
-- **Effort:** medium — One investigation + one scraper. NE's statewide articulation source (Transfer Nebraska / transfer.nebraska.edu, run by the state college + university system) is simply not registered — the audit's "no articulation portal" means unwired, not nonexistent. Building and wiring a transfers scraper is 1-4hr and flips the only failing dimension. NCTA course gap is trivial/low-value (already B).
-- **Course colleges:** 1 buildable / 0 blocked (of the missing set)
-- **Programs / planner:** 2 program files · aligned ✅ · planner-ready: yes
-- **Shippable (B+) bar met:** no
-
-> Notes: Courses already B (8/9); only NCTA (ncta.unl.edu, tiny UNL ag college, not in fingerprint-baseline) missing — buildable but low-value. Prereqs/config/scorecard all A. Programs: 2 files (southeast, western-nebraska), both filenames match institutions.json college_slug and internal college_slug — planner can see them. The single F is transfers (empty transfer-equiv.json, no ceiling). Fingerprint-baseline.json predates NE and has no NE entries, so SIS-platform judgment for missing college came from clusters.json (NCTA = singleton, ncta.unl.edu).
+- **Primary gap (this lever):** courses 89% (8/9). The lone gap is `nebraska-college-of-technical-agriculture` (ncta.unl.edu), a small custom-HTML site with no detected public SIS (not in fingerprint-baseline; clusters.json = singleton).
+- **Disposition (honest):** buildable IF a public course-search endpoint exists — needs a live probe (`ncta.unl.edu/...` for a sections page or JSON). If public → build a small bespoke scraper inline; if login-walled → document as a ceiling. Low value: NCTA is tiny and courses is already B.
+- **Secondary lever (out of scope here):** transfers are B (not A) — a separate improvement, not part of this courses flip.
+- **Effort:** low (small custom scraper) but low-value. Programs present and planner-aligned (2 files).
+- **Course colleges:** 1 probe (NCTA) / 0 blocked.
 
 ## Goal checklist
 
-### NE — current tier F (limited by transfers)
+### NE — current tier B (limited by courses; transfers now wired at B)
 
-- [ ] **Investigate articulation (cheapest high-value).** Check Nebraska's statewide transfer portal — Transfer Nebraska at transfer.nebraska.edu (NE state colleges + University of Nebraska system course-equivalency tool). Find a public/guest course-equivalency or API endpoint. If genuinely none exists publicly, document it as a transfers ceiling in `lib/states/ne/config.ts` and the audit ceiling list (accept-as-is) — that alone clears the composite blocker.
-- [ ] **Build the scraper** `scripts/ne/scrape-transfer.ts` (model on `scripts/me/scrape-transfer-mainestreet.ts` or `scripts/ct/scrape-transfer-all.ts`). In-state targets only (UNL/UNO/UNK + Chadron/Peru/Wayne state colleges). Drop any cross-state rows.
-- [ ] **Write** `data/ne/transfer-equiv.json` with non-trivial mappings (currently `[]`).
-- [ ] **Wire cron**: add `transfers: [{ scripts: ["scripts/ne/scrape-transfer.ts"], runner: ... }]` to `scrapers` in `lib/states/ne/config.ts` (remove the `// manual-only: transfers` marker).
-- [ ] **Verify** at `/ne/transfer`: pick a sending CC + course, confirm equivalency renders.
-- [ ] (Optional, low value) NCTA course scraper (ncta.unl.edu, 1 college) to push courses 89%→100%; courses is already B so skip unless going for gold.
+- [ ] Pre-flight: `WT=$(scripts/new-pr-worktree.sh ne-ncta); cd "$WT"`.
+- [ ] **Probe first** (audit hint is optimistic): check `ncta.unl.edu` for a public course/section listing or JSON endpoint (no SSO).
+  - If public → build a small bespoke scraper → `data/ne/courses/nebraska-college-of-technical-agriculture/`; wire in `lib/states/ne/config.ts scrapers.courses`.
+  - If login-walled / no public sections → add NCTA to `documentedCeilings.courseColleges` with the probe evidence.
+- [ ] Re-run the collector for ne: courses A (9/9 or NCTA exempt), composite A.
+- [ ] Pre-PR check: if built, load `/ne` and search an NCTA course.
+- [ ] PR (branch `claude/ne-ncta`): plain-English first; state whether NCTA was built or ceilinged, with the probe result. DO NOT MERGE — stop for review.
 
-Definition of done: `/ne/transfer` shows real in-state equivalencies, transfers scraper cron-wired, composite ≥ B.
+Definition of done: NCTA either has real course data OR is a probe-verified documented ceiling; courses A; composite A.

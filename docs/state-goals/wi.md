@@ -1,31 +1,30 @@
 # Wisconsin (wi) — state goals
 
-> **Current tier: F** · Rank **#40 of 40** · Tranche: **LATER** · Impact 4/5 · Effort: hard · Value/effort: **L**
+> **Current tier: F** (the registry's only F) · Limited by: **prereqs** · _Refreshed 2026-06-22_
 >
-> Dimensions: `crs=D` `prq=F` `trf=F` `sc=A` `cfg=A`
+> Dimensions: `crs=D` `prq=F` `trf=C` `sc=A` `cfg=A`
 >
-> _F from prereqs (cheap aggregate fix), but courses 25% with 12 WTCS singletons each on a distinct custom platform (0 clusters) = a ~12-scraper greenfield slog._
+> _F solely because `data/wi/prereqs.json` doesn't exist. Aggregating prerequisite text already on disk (no scraping) clears the F → D. Courses 25% (12 WTCS singletons on distinct custom platforms) is a separate ~12-scraper slog, out of scope for the cheap fix._
 
 ## Diagnosis
 
-- **Primary gap:** 12 of 16 WTCS colleges have no course data (25% coverage, D); prereqs F (no file) and transfers F (no portal) compound it. Config + scorecard are A.
-- **Cheapest lever** (build-prereqs): Aggregate prereqs.json from on-disk data: parse prerequisite_text/prerequisite_courses already present in data/wi/coursedog-catalog/nicolet-area-technical-college.json + the 4 scraped course files; flips prereqs F (the composite limiter) without any scraping.
-- **Effort:** hard — The 12 missing colleges are WTCS singletons each on a distinct custom platform (Drupal, CMC Portal ASP.NET, PHP, Colleague cloud) — clusters.json found 0 clusters, so each needs its own bespoke scraper (>half-day for the set). Transfers need articulation from scratch (no WI portal). Only prereqs is cheap.
-- **Course colleges:** 12 buildable / 0 blocked (of the missing set)
-- **Programs / planner:** 0 program files · no programs · planner-ready: no
-- **Shippable (B+) bar met:** no
-
-> Notes: WTCS = 16 colleges, shared statewide course numbering. Built bespoke so far: CVTC (PHP coursesearch), Western (Colleague elluciancloud guest), NTC (Drupal faceted search), SWTC (CMC Portal). All 4 wired in config courses[]. No fingerprint-baseline entries for WI colleges (grep empty); clusters.json reports 0 clusters/15 singletons — no shared-endpoint shortcut, each remaining college is its own scraper. Course files carry prerequisite_text/prerequisite_courses fields but sampled values are null, so prereq yield may be thin; the Nicolet coursedog dump (467KB) is the richest prereq source and also seeds Nicolet's course data. Transfers: no documented ceiling set, but no articulation portal exists. Programs: 0 files, Phase 6 found no catalog platform.
+- **Primary gap:** prereqs F (no file) is the composite limiter. Courses D (4/16), transfers C (1 uni). Config + scorecard A.
+- **Cheapest lever** (aggregate prereqs from on-disk data): set `prereqs: { source: "aggregate-from-courses" }` in `lib/states/wi/config.ts` (replacing the `// manual-only: prereqs` marker, ~line 91), then run `npx tsx scripts/lib/aggregate-prereqs.ts wi`. The aggregator reads `data/wi/coursedog-catalog/nicolet-area-technical-college.json` (~11 courses carry prereq text) + the 4 scraped course dirs (whose prereq fields are null), sanitizes via `scripts/lib/prereq-sanitize.ts`, and writes `data/wi/prereqs.json`. Auto-included in the Sunday prereq cron via `scripts/lib/scraper-matrix.ts`.
+- **Expected outcome (honest):** ~11 entries → prereqs F→B (≥10, wired, clean) → composite F→**D** (courses becomes the limiter). Coverage is thin (only Nicolet has prereq text) — name it. This clears the worst tier cheaply.
+- **Effort:** cheap (one config line + an aggregator run). The courses slog (12 WTCS bespoke scrapers, 0 clusters) and transfers depth are separate, hard, deferred.
+- **Course colleges:** 4 covered / 12 bespoke-buildable (each a distinct custom platform).
+- **Programs / planner:** 0 program files (A-tier extra only).
 
 ## Goal checklist
 
-### WI — current tier F (limited by prereqs)
+### WI — current tier F (limited by prereqs; cheap aggregation fix)
 
-- [ ] Build `data/wi/prereqs.json`: extractor over existing on-disk data — `data/wi/coursedog-catalog/nicolet-area-technical-college.json` (`prerequisite_text`/`prerequisite_courses`) + the 4 scraped course dirs (`data/wi/courses/*/2026FA.json`). Flips prereqs F→D/C, the composite limiter. (cheap)
-- [ ] Wire prereqs: add a `prereqs` aggregator script to `lib/states/wi/config.ts scrapers` and remove the `// manual-only: prereqs` marker. (cheap)
-- [ ] Ingest Nicolet courses from the coursedog dump → `data/wi/courses/nicolet-area-technical-college/` (1 more college, no scrape). (cheap)
-- [ ] Build bespoke course scrapers for remaining WTCS colleges (each public, distinct platform): madison-area (madisoncollege.edu), fox-valley (fvtc.edu), gateway (gtc.edu), milwaukee-area (matc.edu), waukesha-county (wctc.edu), moraine-park, blackhawk, lakeshore, mid-state, northeast-wisconsin (nwtc.edu), northwood. Adapt scrape-ntc/swtc/cvtc templates; wire each in config. Target >=90% coverage. (hard, ~1 scraper each)
-- [ ] Transfers: no WI articulation portal — investigate UW System / WTCS articulation or document as a ceiling. (hard)
-- [ ] Programs: Phase 6 found no platform — defer or investigate WTCS program catalogs.
+- [ ] Pre-flight: `WT=$(scripts/new-pr-worktree.sh wi-prereqs); cd "$WT"`.
+- [ ] In `lib/states/wi/config.ts`, replace the `// manual-only: prereqs` comment with `prereqs: { source: "aggregate-from-courses" },` inside `scrapers` (copy the VA pattern in `lib/states/va/config.ts`).
+- [ ] Run `npx tsx scripts/lib/aggregate-prereqs.ts wi` → writes `data/wi/prereqs.json` (~11 entries).
+- [ ] Verify: `jq 'length' data/wi/prereqs.json` (~11) and `grep -c '<' data/wi/prereqs.json` (expect 0 — no HTML). Re-run the collector for wi → prereqs B, composite D. State the thin-coverage caveat honestly; if <10 entries it stays C.
+- [ ] `npm run build` (the JSON must load via `lib/prereqs.ts loadPrereqs`).
+- [ ] PR (branch `claude/wi-prereqs`): plain-English first ("Wisconsin now has prerequisite data — ~11 courses from Nicolet's catalog — clearing it off the F tier; the remaining gap is course coverage"). Stage only `lib/states/wi/config.ts` + `data/wi/prereqs.json`. DO NOT MERGE — stop for review.
+- [ ] (Separate, hard, deferred) The 12 missing WTCS colleges (madison-area, fox-valley, gateway, milwaukee-area, waukesha-county, …) each need a bespoke scraper — a multi-day greenfield effort, NOT this PR.
 
-Definition of done: >=90% of 16 colleges have course data, prereqs.json present+wired, transfers built-or-ceilinged, config/scorecard stay A.
+Definition of done: `data/wi/prereqs.json` present + wired + clean (~11 entries); composite F→D; courses slog explicitly deferred; no placeholder data.

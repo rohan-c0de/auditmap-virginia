@@ -1,31 +1,28 @@
 # Texas (tx) — state goals
 
-> **Current tier: C** · Rank **#21 of 40** · Tranche: **NEXT** · Impact 5/5 · Effort: medium · Value/effort: **M**
+> **Current tier: B** · Limited by: **courses (term hygiene)** · _Refreshed 2026-06-22_
 >
-> Dimensions: `crs=C` `prq=A` `trf=A` `sc=B` `cfg=A`
+> Dimensions: `crs=B` `prq=A` `trf=A` `sc=A` `cfg=A`
 >
-> _Largest state but courses 90% unreachable; re-run 3 wired colleges (galveston/southmost/north-central) then document the 19 SSO/custom as ceiling -> shippable B+._
+> _Adjusted course coverage is full (unbuildable colleges are documented ceilings). The B-cap is term-code hygiene: 21 "suspicious" + 2 stale terms, but most suspicious ones are real terms in non-canonical encodings across 59 colleges (`2026-FA`, `226FA`, `26-FA`, `FA2026`, plus real sub-sessions `2026MAY`/`2026DEC`/`2026SUL`). Partly a grading artifact._
 
 ## Diagnosis
 
-- **Primary gap:** 22 of 59 colleges have no course data (63% coverage, grade C); transfers (43 univ / 187k mappings), prereqs (2511, clean), and config are all A. Most missing colleges are SSO/custom/catalog-only blocked — only 3 are already-wired-but-never-landed.
-- **Cheapest lever** (wire-existing-scraper): Re-run the 3 already-wired course scrapers (galveston/texas-southmost via scrape-colleague.ts, north-central-texas via scrape-jenzabar-webforms.ts) and verify/repair the host endpoints so their data actually lands — nudges coverage 63%→68% with zero new scaffolding.
-- **Effort:** medium — 3 missing colleges (galveston, texas-southmost, north-central-texas) are already in existing scraper HOSTS maps but never produced committed data — a verify/fix run, not net-new scaffolding (cheap, ~1hr). Beyond those, reaching the 90% courses bar is impossible: 4 are acalog/coursedog catalog-only (no live sections), 3 are jenzabar/colleague login-gated, and 12 are custom/unknown with no detected public endpoint — that's a documented ceiling, not a build task.
-- **Course colleges:** 3 buildable / 19 blocked (of the missing set)
-- **Programs / planner:** 0 program files · no programs · planner-ready: no
-- **Shippable (B+) bar met:** yes ✅
-
-> Notes: galveston-college + texas-southmost-college are in scripts/tx/scrape-colleague.ts HOSTS (added bulk in #550) but have no committed course file — never verified. north-central-texas-college is in scripts/tx/scrape-jenzabar-webforms.ts HOSTS (#708), also no data. These 3 are the only cheap course wins. austin-acc/hill/ranger are documented login-gated in scraper docstrings. brazosport/dallas/midland (acalog) + trinity-valley (coursedog) are catalog-only — no live section endpoint; trinity-valley already has a coursedog-catalog dump usable for prereqs only. Remaining 12 (grayson, san-jacinto, tyler-junior, angelina, central-texas, el-paso, lamar-state-orange, lee, southwest-texas-junior, western-texas, wharton-county, texas-state-technical) are custom/unknown with no public SIS detected. Even maxing every buildable college reaches only ~73% — courses is a documented structural ceiling, so composite C is near its realistic floor. shippableBarMet=true because transfers/prereqs/config pass and the courses shortfall is ceiling-bound, not a quality gap.
+- **Primary gap:** courses graded B only because `suspicious>0 || stale>0` (coverage ≥95% adjusted). TX's 21 suspicious terms split into (a) encoding variants of valid 2026 terms, (b) real sub-sessions outside the FA/SP/SU/WI vocabulary (MAY/DEC/SM/SUL/SUMINI), and (c) far-future codes (`2028*`/`2029*`) worth a spot-check. The 2 stale (`2024FA`,`2025FA`) are genuinely old.
+- **Cheapest lever** (grader term hygiene): the same shared `lib/term-normalize.ts` + `isSuspicious()` change as ca — one PR covers both states. Update `grade-snapshot.test.ts`.
+- **Honesty:** partly a grading-artifact fix. The far-future `2028`/`2029` codes are NOT encoding noise — list them as a data follow-up (verify at the offending colleges; fix or exclude). Stale clears on a re-scrape.
+- **Effort:** medium — shared util + collector + snapshot. Out of scope: per-college SIS rewrites (coverage already ceiling-documented).
+- **Programs / planner:** 0 program files (A-tier extra).
 
 ## Goal checklist
 
-### TX — current tier C (limited by courses; transfers/prereqs/config all A)
+### TX — current tier B (coverage maxed; limited by term-code hygiene)
 
-Course coverage is 37/59 (63%). The 90% bar is unreachable (16+ colleges are SSO/custom/catalog-only). Goal: capture the cheap already-wired colleges, then document the ceiling.
+Shared **ca/tx term-code hygiene** goal — one PR covers both (see `ca.md` for the core steps). TX-specific:
 
-- [ ] Re-run `npx tsx scripts/tx/scrape-colleague.ts --college=galveston-college` and `--college=texas-southmost-college` (hosts already in HOSTS map from #550). If endpoints 404/redirect-to-login, update the host in `scripts/tx/scrape-colleague.ts`; else commit the new `data/tx/courses/*` files. (+2 colleges)
-- [ ] Re-run `npx tsx scripts/tx/scrape-jenzabar-webforms.ts --college=north-central-texas-college` (host in HOSTS from #708); verify data lands or repair the portlet URL. (+1 college → 40/59, 68%)
-- [ ] For brazosport/dallas/midland (acalog) + trinity-valley (coursedog catalog-only): confirm no live section endpoint exists; if not, mark them documented course-ceiling colleges in the audit record rather than building.
-- [ ] Record the remaining 12 custom/unknown + 3 login-gated (austin-acc, hill, ranger) colleges as a documented course ceiling so composite isn't penalized as a gap.
+- [ ] In the normalizer, ensure TX's variants resolve: `2026-FA`/`226FA`/`26-FA`/`FA2026`/`S12026` → canonical; accept `2026MAY`/`2026DEC`/`2026-SM`/`2026SUL`/`2026SUMINI` as real sub-sessions.
+- [ ] Spot-check the far-future codes (`2028FA`/`2028SP`/`2028SU`/`2029FA`/`2029SP`/`2027-SP`/`SP2027`) — if a college mis-emits a year, fix at the scraper or exclude; if they're real advance terms, allow them.
+- [ ] Re-scrape / prune the stale `2024FA`,`2025FA`.
+- [ ] Update `grade-snapshot.test.ts` tx expected grade; re-run collector + `npm test`; report suspicious/stale before→after. tx reaches A only if suspicious AND stale hit 0 — be honest if it stays B.
 
-Definition of done: the 3 wired colleges either yield committed course data or are confirmed blocked, and the 19 unbuildable colleges are recorded as a documented courses ceiling — leaving TX shippable at B+ (transfers/prereqs/config A, courses ceiling-capped).
+Definition of done: tx's suspicious count driven down via canonical recognition + far-future triage; stale cleared or named as a follow-up; snapshot updated; honest about whether A is reached.

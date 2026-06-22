@@ -1,31 +1,31 @@
 # Montana (mt) — state goals
 
-> **Current tier: C** · Rank **#8 of 40** · Tranche: **NOW** · Impact 2/5 · Effort: cheap · Value/effort: **H**
+> **Current tier: B** · Limited by: **courses** · _Refreshed 2026-06-22_
 >
-> Dimensions: `crs=C` `prq=A` `trf=A` `sc=A` `cfg=A`
+> Dimensions: `crs=B` `prq=A` `trf=A` `sc=A` `cfg=A`
 >
-> _All dims A except courses 60%; the 4 missing are tribal/auth-gated ceilings — recording them lifts courses 60%->effective 100%, composite C->A._
+> _Three of the four tribal/auth-gated colleges are already documented ceilings; coverage is 89% (8/9). The single remaining gap, Fort Peck CC, is a deferred-buildable (Jenzabar auth-gated, but public PDF schedules exist) — its config author explicitly declined to call it a ceiling. NOT a cheap flip._
 
 ## Diagnosis
 
-- **Primary gap:** 4 of 10 colleges have no course data (60% coverage); all 4 are tribal/auth-gated colleges with no public course-search. Transfers (6 universities, 1309 mappings, wired), prereqs (119, clean), scorecard (10/10), config all A. No programs dir.
-- **Cheapest lever** (documented-ceiling-accept): Document the 4 missing tribal/auth-gated colleges (aaniiih-nakoda, stone-child, highlands-college-of-montana-tech, fort-peck) as course-data ceilings so the audit excuses them — lifts courses 60%→effective 100% and composite C→A with no scraping.
-- **Effort:** cheap — The composite is C limited ONLY by courses at 60%. The 4 missing colleges are not buildable: Aaniiih Nakoda + Stone Child are custom tribal-college sites with no courseSearchUrl, Highlands College of Montana Tech is auth-gated (high-confidence SSO), and Fort Peck's only Jenzabar URL is an Admissions/Apply portlet, not class search. These are a documented ceiling. Recording them as course-ceiling colleges (no scraping) excuses them, making 6/6 reachable = 100% and lifting courses C→A and composite to A. <1hr config/audit edit.
-- **Course colleges:** 0 buildable / 4 blocked (of the missing set)
-- **Programs / planner:** 0 program files · no programs · planner-ready: no
-- **Shippable (B+) bar met:** yes ✅
-
-> Notes: scripts/mt/ already has scrapers for the 6 covered colleges (banner8 for dawson+miles, cdkc, fvcc, lbhc, skc, transfer-ccn). dawson + chief-dull-knife are in lowSection (thin but present, not missing). Transfers via CCN are strong (A). Term 2025FA flagged stale — a cron rerun would refresh to current term but is not gating. Programs are manualOnly ("Phase 5+") — building them is a separate A-tier extra, not needed for a B+ finish. The 4 missing are classic tribal-college / SSO ceilings: no public Banner SSB / Colleague guest / CollegeScheduler endpoint detected.
+- **Primary gap:** courses 89% (8/9). Already-documented ceilings: aaniiih-nakoda, stone-child, highlands-college-of-montana-tech. The lone non-ceiling gap is `fort-peck-community-college`.
+- **Disposition (honest):** `lib/states/mt/config.ts` marks fort-peck `DEFERRED-scrapers`: its interactive Jenzabar JICS (`fpcportal.jenzabarcloud.com`) is auth-gated, BUT term-by-term **PDF class schedules are public** on a Webflow CDN (linked from fpcc.edu). The author's note verbatim: "Needs a PDF extractor — distinct, larger effort. **NOT a ceiling (data is public), just deferred.**"
+- **B is fair.** Two honest paths to A:
+  1. **Accept B** — fort-peck is one tiny tribal college; B is honest. (recommended unless going for A)
+  2. **Build a PDF extractor** — fetch the public term PDFs and parse sections → `data/mt/courses/fort-peck-community-college/`. A new capability (PDF parsing), medium effort. This is the only legitimate path to A — do NOT ceiling-document public data to game the grade.
+- **Effort:** accept-B is free; the PDF extractor is a genuine medium build.
+- **Course colleges:** 0 cleanly buildable / 1 deferred (fort-peck, PDF) / 3 documented ceilings.
+- **Programs / planner:** manual-only (A-tier extra).
 
 ## Goal checklist
 
-### MT — current tier C (courses-limited; prereqs/transfers/scorecard/config all A)
+### MT — current tier B (limited only by courses; all other dims A)
 
-The only gap is course coverage 60% (6/10). The 4 missing are not buildable — they are tribal/auth-gated colleges with no public class search. Accept them as a documented ceiling.
+- [ ] **Decide:** accept B (honest — fort-peck is tiny) OR build the PDF extractor for A.
+- [ ] If building: pre-flight `WT=$(scripts/new-pr-worktree.sh mt-fortpeck); cd "$WT"`.
+- [ ] Locate the public term-schedule PDFs (linked from fpcc.edu/academics; hosted on the Webflow CDN). Build a PDF→sections extractor (new capability) writing `data/mt/courses/fort-peck-community-college/`. Wire it in `lib/states/mt/config.ts scrapers.courses`, or mark `// manual-only:` with a reason if it can't be cron-stable.
+- [ ] Do NOT add fort-peck to `documentedCeilings` — the config author already ruled it's not a ceiling (data is public).
+- [ ] Re-run the collector for mt: courses A (9/9), composite A.
+- [ ] PR (branch `claude/mt-fortpeck`): plain-English first; note the PDF-extraction mechanism. DO NOT MERGE — stop for review.
 
-- [ ] In the state-audit ceiling config (the source feeding `documentedCeilings.courseColleges` / `ceilingsApplied`), add the 4 missing slugs as course-data ceilings: `aaniiih-nakoda-college` (custom, no courseSearchUrl), `stone-child-college` (custom, no courseSearchUrl), `highlands-college-of-montana-tech` (auth-gated/SSO, high confidence), `fort-peck-community-college` (Jenzabar URL is an Admissions/Apply portlet, not class search). Cite the fingerprint-baseline.json platform verdicts as rationale.
-- [ ] Re-run `state-audit mt` — with 6/6 reachable colleges covered, courses should hit ~100% → A, lifting composite to A/B+.
-- [ ] (Optional, non-gating) Rerun cron `scripts/mt/scrape-banner8.ts` etc. to refresh the stale `2025FA` term to current.
-- [ ] (A-tier extra, defer) Build `data/mt/programs/` + planner alignment — currently manualOnly "Phase 5+", not required for B+.
-
-Definition of done: composite >= B with courses A/B after the 4 unbuildable tribal/auth-gated colleges are recorded as documented ceilings; transfers/prereqs/scorecard/config remain A.
+Definition of done: mt accepted at B (no change) OR fort-peck PDF sections landed + wired → courses A, composite A. No ceiling-gaming.
