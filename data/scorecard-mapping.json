@@ -7090,8 +7090,8 @@
     "state": "tx",
     "id": "south-texas-college",
     "name": "South Texas College",
-    "unitid": null,
-    "tier": "review",
+    "unitid": 409315,
+    "tier": "manual",
     "candidates": [
       {
         "unitid": 409315,
@@ -7108,14 +7108,6 @@
         "predominantDegree": 2,
         "inStateTuition": 3148,
         "size": 3372
-      },
-      {
-        "unitid": 228185,
-        "name": "South Texas Barber College Inc",
-        "ownership": 3,
-        "predominantDegree": 1,
-        "inStateTuition": null,
-        "size": 23
       },
       {
         "unitid": 228194,
@@ -7137,7 +7129,7 @@
         "unitid": 228316,
         "name": "Southwest Texas College",
         "ownership": 1,
-        "predominantDegree": 2,
+        "predominantDegree": 1,
         "inStateTuition": 2646,
         "size": 3306
       },
@@ -7150,7 +7142,7 @@
         "size": 762
       }
     ],
-    "note": "3 plausible public CCs returned — needs human disambiguation"
+    "note": "manually resolved via Scorecard id/name+city verification (2026-06-21)"
   },
   {
     "state": "tx",
@@ -7241,8 +7233,8 @@
     "state": "tx",
     "id": "central-texas-college",
     "name": "Central Texas College",
-    "unitid": null,
-    "tier": "review",
+    "unitid": 223816,
+    "tier": "manual",
     "candidates": [
       {
         "unitid": 224110,
@@ -7277,7 +7269,7 @@
         "size": 32
       }
     ],
-    "note": "2 plausible public CCs returned — needs human disambiguation"
+    "note": "manually resolved via Scorecard id/name+city verification (2026-06-21)"
   },
   {
     "state": "tx",
@@ -7606,10 +7598,10 @@
     "state": "tx",
     "id": "southwest-texas-junior-college",
     "name": "Southwest Texas Junior College",
-    "unitid": null,
-    "tier": "review",
+    "unitid": 228316,
+    "tier": "manual",
     "candidates": [],
-    "note": "no candidates returned by Scorecard"
+    "note": "manually resolved via Scorecard id/name+city verification (2026-06-21)"
   },
   {
     "state": "tx",
@@ -8192,8 +8184,8 @@
     "state": "il",
     "id": "illinois-central-college",
     "name": "Illinois Central College",
-    "unitid": null,
-    "tier": "review",
+    "unitid": 145682,
+    "tier": "manual",
     "candidates": [
       {
         "unitid": 145682,
@@ -8220,7 +8212,7 @@
         "size": null
       }
     ],
-    "note": "3 plausible public CCs returned — needs human disambiguation"
+    "note": "manually resolved via Scorecard id/name+city verification (2026-06-21)"
   },
   {
     "state": "il",
@@ -10338,8 +10330,8 @@
     "state": "ca",
     "id": "los-angeles-county-college-of-nursing-and-allied-health",
     "name": "Los Angeles County College of Nursing and Allied Health",
-    "unitid": null,
-    "tier": "review",
+    "unitid": 117803,
+    "tier": "manual",
     "candidates": [
       {
         "unitid": 117803,
@@ -10350,7 +10342,7 @@
         "size": 204
       }
     ],
-    "note": "no candidate is a public institution with non-null in-state tuition"
+    "note": "manually resolved via Scorecard id/name+city verification (2026-06-21)"
   },
   {
     "state": "ca",
@@ -10458,8 +10450,8 @@
     "state": "ca",
     "id": "mission-college",
     "name": "Mission College",
-    "unitid": null,
-    "tier": "review",
+    "unitid": 118930,
+    "tier": "manual",
     "candidates": [
       {
         "unitid": 117867,
@@ -10486,7 +10478,7 @@
         "size": 198
       }
     ],
-    "note": "2 plausible public CCs returned — needs human disambiguation"
+    "note": "manually resolved via Scorecard id/name+city verification (2026-06-21)"
   },
   {
     "state": "ca",
@@ -13029,18 +13021,26 @@
   {
     "state": "ks",
     "id": "north-central-kansas-technical-college",
-    "name": "North Central Kansas Technical College",
-    "unitid": null,
-    "tier": "review",
-    "candidates": [],
-    "note": "no candidates returned by Scorecard"
+    "name": "Fort Hays Tech | North Central",
+    "unitid": 155593,
+    "tier": "tier1",
+    "candidates": [
+      {
+        "unitid": 155593,
+        "name": "Fort Hays Tech North Central",
+        "ownership": 1,
+        "predominantDegree": 1,
+        "inStateTuition": 7350,
+        "size": 441
+      }
+    ]
   },
   {
     "state": "ks",
     "id": "northwest-kansas-technical-college",
-    "name": "Northwest Kansas Technical College",
-    "unitid": null,
-    "tier": "review",
+    "name": "Fort Hays Tech | Northwest",
+    "unitid": 155618,
+    "tier": "manual",
     "candidates": [
       {
         "unitid": 155618,
@@ -13051,7 +13051,7 @@
         "size": 315
       }
     ],
-    "note": "no candidate is a public institution with non-null in-state tuition"
+    "note": "manually resolved via Scorecard id/name+city verification (2026-06-21)"
   },
   {
     "state": "ks",
@@ -14603,8 +14603,8 @@
     "state": "wa",
     "id": "spokane-community-college",
     "name": "Spokane Community College",
-    "unitid": null,
-    "tier": "review",
+    "unitid": 236692,
+    "tier": "manual",
     "candidates": [
       {
         "unitid": 236692,
@@ -14623,7 +14623,7 @@
         "size": 3199
       }
     ],
-    "note": "2 plausible public CCs returned — needs human disambiguation"
+    "note": "manually resolved via Scorecard id/name+city verification (2026-06-21)"
   },
   {
     "state": "wa",

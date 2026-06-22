@@ -1,0 +1,46 @@
+{
+  "unitid": 193283,
+  "schoolName": "Mohawk Valley Community College",
+  "state": "NY",
+  "city": "Utica",
+  "schoolUrl": "www.mvcc.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-06-22T08:33:18.660Z",
+  "size": 2950,
+  "shareFirstGeneration": 0.4253593808,
+  "cost": {
+    "tuitionInState": 6218,
+    "tuitionOutOfState": 8851,
+    "attendanceAcademicYear": 16656,
+    "avgNetPricePublic": 8987,
+    "bookSupply": 1600,
+    "roomBoardOffCampus": 9700,
+    "netPriceByIncome": {
+      "0_30000": 6000,
+      "30001_48000": 7190,
+      "48001_75000": 10602,
+      "75001_110000": 13405,
+      "110001_plus": 16026
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.3108,
+    "federalLoanRate": 0.1666,
+    "medianDebtCompleters": 11000
+  },
+  "completion": {
+    "completionRate150nt": 0.3791,
+    "completionRate200nt": 0.3855,
+    "transferRate": 0.1068,
+    "retentionRateFullTime": 0.595,
+    "retentionRatePartTime": 0.49
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 39850,
+    "median1YrAfterCompletion": 32287,
+    "percentile25_10YrsAfterEntry": 22867,
+    "percentile75_10YrsAfterEntry": 58484,
+    "shareEarningAboveHsGrad": 0.557
+  }
+}

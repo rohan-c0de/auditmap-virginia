@@ -1,0 +1,46 @@
+{
+  "unitid": 191083,
+  "schoolName": "Erie Community College",
+  "state": "NY",
+  "city": "Buffalo",
+  "schoolUrl": "www.ecc.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-06-22T08:33:21.500Z",
+  "size": 6099,
+  "shareFirstGeneration": 0.3842961487,
+  "cost": {
+    "tuitionInState": 6100,
+    "tuitionOutOfState": 11300,
+    "attendanceAcademicYear": 14348,
+    "avgNetPricePublic": 7765,
+    "bookSupply": 2800,
+    "roomBoardOffCampus": 16320,
+    "netPriceByIncome": {
+      "0_30000": 5730,
+      "30001_48000": 7506,
+      "48001_75000": 9571,
+      "75001_110000": 11798,
+      "110001_plus": 13912
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.3803,
+    "federalLoanRate": 0.2317,
+    "medianDebtCompleters": 9250
+  },
+  "completion": {
+    "completionRate150nt": 0.2798,
+    "completionRate200nt": 0.3049,
+    "transferRate": 0.1709,
+    "retentionRateFullTime": 0.5648,
+    "retentionRatePartTime": 0.3034
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 41228,
+    "median1YrAfterCompletion": 34583,
+    "percentile25_10YrsAfterEntry": 22181,
+    "percentile75_10YrsAfterEntry": 60772,
+    "shareEarningAboveHsGrad": 0.599
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "unitid": 118930,
+  "schoolName": "Mission College",
+  "state": "CA",
+  "city": "Santa Clara",
+  "schoolUrl": "www.missioncollege.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-06-22T08:28:29.755Z",
+  "size": 5784,
+  "shareFirstGeneration": 0.5602094241,
+  "cost": {
+    "tuitionInState": 1438,
+    "tuitionOutOfState": 12500,
+    "attendanceAcademicYear": 13744,
+    "avgNetPricePublic": 5080,
+    "bookSupply": 1188,
+    "roomBoardOffCampus": 35361,
+    "netPriceByIncome": {
+      "0_30000": 3463,
+      "30001_48000": 4927,
+      "48001_75000": 6463,
+      "75001_110000": 9974,
+      "110001_plus": null
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.1585,
+    "federalLoanRate": 0.0036,
+    "medianDebtCompleters": null
+  },
+  "completion": {
+    "completionRate150nt": 0.3918,
+    "completionRate200nt": 0.5796,
+    "transferRate": 0.0485,
+    "retentionRateFullTime": 0.7318,
+    "retentionRatePartTime": 0.304
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 50936,
+    "median1YrAfterCompletion": 39499,
+    "percentile25_10YrsAfterEntry": 22795,
+    "percentile75_10YrsAfterEntry": 83348,
+    "shareEarningAboveHsGrad": 0.596
+  }
+}
