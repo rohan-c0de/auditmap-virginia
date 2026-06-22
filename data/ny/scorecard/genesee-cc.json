@@ -1,0 +1,46 @@
+{
+  "unitid": 191339,
+  "schoolName": "Genesee Community College",
+  "state": "NY",
+  "city": "Batavia",
+  "schoolUrl": "https://www.genesee.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-06-22T08:33:17.708Z",
+  "size": 1973,
+  "shareFirstGeneration": 0.4453818828,
+  "cost": {
+    "tuitionInState": 5900,
+    "tuitionOutOfState": 6500,
+    "attendanceAcademicYear": 15959,
+    "avgNetPricePublic": 8334,
+    "bookSupply": 1540,
+    "roomBoardOffCampus": 9580,
+    "netPriceByIncome": {
+      "0_30000": 4635,
+      "30001_48000": 5900,
+      "48001_75000": 9715,
+      "75001_110000": 13186,
+      "110001_plus": 15098
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.2232,
+    "federalLoanRate": 0.2057,
+    "medianDebtCompleters": 11622
+  },
+  "completion": {
+    "completionRate150nt": 0.309,
+    "completionRate200nt": 0.3107,
+    "transferRate": 0.19,
+    "retentionRateFullTime": 0.5658,
+    "retentionRatePartTime": 0.3529
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 39674,
+    "median1YrAfterCompletion": 37060,
+    "percentile25_10YrsAfterEntry": 21407,
+    "percentile75_10YrsAfterEntry": 56946,
+    "shareEarningAboveHsGrad": 0.555
+  }
+}

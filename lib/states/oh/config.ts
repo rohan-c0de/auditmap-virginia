@@ -71,6 +71,15 @@ const ohConfig: StateConfig = {
       { scripts: ["scripts/oh/scrape-programs.ts"], runner: "http" },
     ],
   },
+  documentedCeilings: {
+    // Eastern Gateway Community College suspended operations in 2024 (it lost
+    // HLC accreditation / federal aid eligibility after the "Free College"
+    // dispute) and has no College Scorecard record — a name and unitid search
+    // both return nothing. The other 21 OH colleges have full scorecard
+    // coverage; this is the lone, permanent gap. Verified 2026-06-21.
+    scorecard:
+      "Eastern Gateway Community College closed in 2024 and publishes no College Scorecard record (no IPEDS unitid resolves). The remaining 21 Ohio colleges have full scorecard coverage.",
+  },
 };
 
 export default ohConfig;

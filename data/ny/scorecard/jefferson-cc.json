@@ -1,0 +1,46 @@
+{
+  "unitid": 192022,
+  "schoolName": "Jefferson Community College",
+  "state": "NY",
+  "city": "Watertown",
+  "schoolUrl": "https://www.sunyjefferson.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-06-22T08:33:11.607Z",
+  "size": 1499,
+  "shareFirstGeneration": 0.4432216108,
+  "cost": {
+    "tuitionInState": 6264,
+    "tuitionOutOfState": 11700,
+    "attendanceAcademicYear": 19286,
+    "avgNetPricePublic": 11923,
+    "bookSupply": 1000,
+    "roomBoardOffCampus": 17720,
+    "netPriceByIncome": {
+      "0_30000": 8754,
+      "30001_48000": 9100,
+      "48001_75000": 13669,
+      "75001_110000": 15928,
+      "110001_plus": 18472
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.3375,
+    "federalLoanRate": 0.2229,
+    "medianDebtCompleters": 12000
+  },
+  "completion": {
+    "completionRate150nt": 0.2784,
+    "completionRate200nt": 0.2945,
+    "transferRate": 0.1991,
+    "retentionRateFullTime": 0.5628,
+    "retentionRatePartTime": 0.3529
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 39991,
+    "median1YrAfterCompletion": 28585,
+    "percentile25_10YrsAfterEntry": 21866,
+    "percentile75_10YrsAfterEntry": 59273,
+    "shareEarningAboveHsGrad": 0.565
+  }
+}

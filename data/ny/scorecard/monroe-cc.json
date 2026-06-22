@@ -1,0 +1,46 @@
+{
+  "unitid": 193326,
+  "schoolName": "Monroe Community College",
+  "state": "NY",
+  "city": "Rochester",
+  "schoolUrl": "www.monroecc.edu/",
+  "ownership": 1,
+  "predominantDegree": 2,
+  "fetchedAt": "2026-06-22T08:33:22.534Z",
+  "size": 7623,
+  "shareFirstGeneration": 0.3915606578,
+  "cost": {
+    "tuitionInState": 6006,
+    "tuitionOutOfState": 11056,
+    "attendanceAcademicYear": 14606,
+    "avgNetPricePublic": 6353,
+    "bookSupply": 1200,
+    "roomBoardOffCampus": 10150,
+    "netPriceByIncome": {
+      "0_30000": 3737,
+      "30001_48000": 5081,
+      "48001_75000": 8810,
+      "75001_110000": 11432,
+      "110001_plus": 13933
+    }
+  },
+  "aid": {
+    "pellGrantRate": 0.5042,
+    "federalLoanRate": 0.3006,
+    "medianDebtCompleters": 9750
+  },
+  "completion": {
+    "completionRate150nt": 0.2669,
+    "completionRate200nt": 0.2792,
+    "transferRate": 0.1605,
+    "retentionRateFullTime": 0.5697,
+    "retentionRatePartTime": 0.3798
+  },
+  "earnings": {
+    "median10YrsAfterEntry": 40174,
+    "median1YrAfterCompletion": 35590,
+    "percentile25_10YrsAfterEntry": 22254,
+    "percentile75_10YrsAfterEntry": 59746,
+    "shareEarningAboveHsGrad": 0.59
+  }
+}
