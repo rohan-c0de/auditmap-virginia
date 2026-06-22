@@ -152,12 +152,17 @@ export async function getAvailableTerms(state: string): Promise<string[]> {
     }
 
     // Fallback: select distinct via select + limit (less efficient but works without RPC)
+    // Cap at 2000: this only needs the DISTINCT term set, and no state has
+    // anywhere near 2000 distinct terms — the old .limit(50000) pulled up to
+    // 50k single-column rows on every RPC failure, needless egress for a value
+    // that's a handful of distinct terms. 2000 rows is plenty to observe every
+    // term while bounding the worst case.
     console.warn("get_distinct_terms RPC error, using fallback:", error?.message ?? error);
     const { data: fallback, error: fbErr } = await supabase
       .from("courses")
       .select("term")
       .eq("state", state)
-      .limit(50000);
+      .limit(2000);
 
     if (fbErr || !fallback) return [];
 
@@ -400,6 +405,45 @@ export async function loadAllCourses(
     // — well under any pgbouncer pool size in use here.
     const results = await runPooled(tasks, 5);
     return results.flat();
+  });
+}
+
+/**
+ * Load only sections whose `start_date` falls within [fromDate, toDate]
+ * (inclusive ISO `YYYY-MM-DD` strings). Scoped server-side for the
+ * "starting soon" feature so we never pull the whole state catalog across
+ * every term at request time — `loadAllCourses(t, state)` per term was a
+ * request-time full-state egress driver (the `SELECT * FROM courses WHERE
+ * state AND term` calls in pg_stat_statements). The upcoming-window slice is
+ * at most a few hundred sections per (state, term); the 5000 cap is a safety
+ * bound. Callers should still apply their exact day-window filter in JS — this
+ * only narrows the wire payload, so widen the date bounds by a day on each
+ * side to stay a strict superset of the JS predicate.
+ */
+export async function loadUpcomingCourses(
+  term: string,
+  state: string,
+  fromDate: string,
+  toDate: string
+): Promise<CourseSection[]> {
+  return cached(`upcoming:${state}:${term}:${fromDate}:${toDate}`, async () => {
+    const { data, error } = await supabase
+      .from("courses")
+      .select(COURSE_COLUMNS)
+      .eq("term", term)
+      .eq("state", state)
+      .gte("start_date", fromDate)
+      .lte("start_date", toDate)
+      .order("id", { ascending: true })
+      .limit(5000);
+    if (error) {
+      console.error(
+        `loadUpcomingCourses error (${state} ${term}):`,
+        error.message
+      );
+      return [];
+    }
+    return (data || []).map(mapRow);
   });
 }
 
