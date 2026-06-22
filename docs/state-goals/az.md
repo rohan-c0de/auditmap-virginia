@@ -1,30 +1,28 @@
 # Arizona (az) — state goals
 
-> **Current tier: C** · Rank **#4 of 40** · Tranche: **NOW** · Impact 5/5 · Effort: cheap · Value/effort: **H**
+> **Current tier: B** · Limited by: **courses** · _Refreshed 2026-06-22_
 >
-> Dimensions: `crs=C` `prq=A` `trf=A` `sc=A` `cfg=A`
+> Dimensions: `crs=B` `prq=A` `trf=A` `sc=A` `cfg=A`
 >
-> _Large state; AWC re-run (transient 502) + central-AZ coursedog lands courses ~95% with tohono-oodham as documented ceiling -> composite A-/A._
+> _95% course coverage (18/19). The single gap, Arizona Western, already has a wired Colleague scraper that only failed on a transient 502 — a re-run flips B→A. tohono-oodham is already a documented ceiling._
 
 ## Diagnosis
 
-- **Primary gap:** Courses at 84% (16/19 system colleges); transfers (3 unis/31k mappings), prereqs (2788, clean), config, scorecard all A. 2 of 3 missing colleges are buildable, 1 is a documented ceiling.
-- **Cheapest lever** (wire-existing-scraper): Re-run scripts/az/scrape-colleague.ts --college arizona-western-college (transient 502 at last run; scraper already wired) to land AWC course data, then add central-arizona-college via a coursedog course scrape.
-- **Effort:** cheap — AWC already has a wired Colleague scraper (scripts/az/scrape-colleague.ts, host colss-prod.ec.azwestern.edu) that only failed on a transient 502 — re-run, no new code. central-arizona-college is public coursedog (catalog.centralaz.edu) with a reusable template (scripts/lib/scrape-coursedog.ts) and catalog data already on disk. Landing both takes courses to ~95%, clearing the 90% bar. No SSO/CAPTCHA blockers.
-- **Course colleges:** 2 buildable / 1 blocked (of the missing set)
-- **Programs / planner:** 0 program files · no programs · planner-ready: no
-- **Shippable (B+) bar met:** yes ✅
-
-> Notes: composite C, limitedBy courses only. tohono-oodham-community-college (jenzabar behind my.tocc.edu ICS login, tiny tribal college) is already in documentedCeilings.courseColleges — accept. No data/az/programs/ dir exists, so planner is not GOLD; that's the only thing between B+ and A-tier. central-az coursedog json on disk is catalog/program data (no sections), so a real course-section scrape is still needed for that college.
+- **Primary gap:** courses 95% (18/19). The lone missing college, `arizona-western-college`, already has a wired Colleague scraper — it just didn't land data on the last run. Transfers (3 unis/31k), prereqs (clean), scorecard, config all A. (central-arizona-college, a prior gap, has since landed.)
+- **Cheapest lever** (re-run a wired scraper): `scripts/az/scrape-colleague.ts` already declares AWC (host `colss-prod.ec.azwestern.edu`, documented in the file header). Last run hit a transient Ellucian-Cloud 502. Re-run; if the 502 persists, confirm the host resolves and retry — no new code.
+- **Effort:** cheap — one re-run, no new scraper.
+- **Course colleges:** 1 buildable (AWC, wired) / 0 blocked. `tohono-oodham-community-college` already in `documentedCeilings.courseColleges` (tribal Jenzabar behind login).
+- **Programs / planner:** 0 program files — planner not GOLD (an A-tier extra, not gating).
 
 ## Goal checklist
 
-### AZ — current tier C (limited only by courses; transfers/prereqs/config/scorecard all A)
+### AZ — current tier B (limited only by courses; all other dims A)
 
-- [ ] Re-run the already-wired Colleague scraper for Arizona Western (transient 502 last time): `npx tsx scripts/az/scrape-colleague.ts --college arizona-western-college` (host colss-prod.ec.azwestern.edu). Confirm data lands in `data/az/courses/arizona-western-college/`.
-- [ ] Add central-arizona-college course sections via coursedog: adapt `scripts/lib/scrape-coursedog.ts` for `catalog.centralaz.edu` (catalog data already at `data/az/coursedog-catalog/central-arizona-college.json`, 913/1412 have credits). Wire into a new `scripts/az/scrape-coursedog-courses.ts` and declare in `StateConfig.scrapers`.
-- [ ] Verify courses coverage: 18/19 ≈ 95% (tohono-oodham excused as documented ceiling) → courses clears 90% → composite A-/A.
-- [ ] Pre-PR check: load `/az`, search a course at AWC and Central AZ, confirm sections render.
-- [ ] (A-tier extra, optional) Create `data/az/programs/` aligned to institutions.json college_slug values to unlock the degree-path planner — currently 0 program files.
+- [ ] Pre-flight: `WT=$(scripts/new-pr-worktree.sh az-awc); cd "$WT"`.
+- [ ] Re-run the wired Colleague scraper for Arizona Western: `npx tsx scripts/az/scrape-colleague.ts --college arizona-western-college` (host `colss-prod.ec.azwestern.edu`). Confirm sections land in `data/az/courses/arizona-western-college/`.
+- [ ] If the host 502s again, verify it resolves (Ellucian-Cloud transient) and retry; do NOT substitute placeholder data.
+- [ ] Re-run the collector for az: courses → A (19/19 with tohono-oodham exempt), composite → A.
+- [ ] Pre-PR check: load `/az`, search an AWC course, confirm sections render with terms/credits.
+- [ ] PR (branch `claude/az-awc`): plain-English first ("Arizona Western College now shows course sections on the site"). Stage only `data/az/courses/arizona-western-college/**`. DO NOT MERGE — stop for review.
 
-Definition of done: AWC + Central AZ course data present and wired; courses ≥90% with tohono-oodham as documented ceiling; composite lifts to A-/A.
+Definition of done: AWC course data present; courses A (tohono-oodham documented ceiling); composite A.

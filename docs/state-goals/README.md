@@ -1,8 +1,8 @@
 # State goals — finish-line plan
 
-_Generated 2026-06-01 from the canonical `/state-audit` collector (`.claude/skills/state-audit/scripts/collect-audit-data.ts`) plus a 40-agent effort/lever diagnosis workflow. Grades respect `documentedCeilings`._
+_**Tier data refreshed 2026-06-22** from the canonical `/state-audit` collector (commit `e6626372`). The cross-cutting registry health items that used to span many states — empty `popularCourses`, null `seniorWaiver`, unwired transfer scrapers, HTML-contaminated prereqs, missing scorecards — are now **all resolved**; the remaining ladder is course-coverage scrapers. Grades respect `documentedCeilings`. The ranking under "Historical diagnosis" is the original **2026-06-01** 40-agent analysis, kept for its effort/tranche reasoning but partially stale (the F-tier shrank from 10 states to 1)._
 
-**How to use:** open `{slug}.md` for any unfinished state and paste its **Goal checklist** into a fresh Claude session — each is written to be actionable cold. Tick states off the tracker below as they cross the line. Re-run the collector to regenerate `_audit-snapshot.json` and re-grade.
+**How to use:** open `{slug}.md` for any unfinished state and paste its **Goal checklist** into a fresh Claude session — each is written to be actionable cold. Re-run the collector (`npx tsx .claude/skills/state-audit/scripts/collect-audit-data.ts`) to re-grade.
 
 > ⚠️ **Registration ≠ data completeness.** All 50 states + DC are in the registry; this plan is about raising the *data quality* of the 40 that aren't yet A-tier.
 
@@ -10,13 +10,67 @@ _Generated 2026-06-01 from the canonical `/state-audit` collector (`.claude/skil
 
 | Tier | Count | States |
 |------|-------|--------|
-| A | 11 | al, ct, de, ga, hi, ky, me, nv, sc, tn, ut |
-| B | 7 | co, dc, fl, la, mn, nh, ri |
-| C | 17 | ar, az, ca, il, ma, md, mi, mo, mt, nc, nd, nj, nm, or, pa, tx, vt |
-| D | 6 | ia, ny, oh, sd, va, wv |
-| F | 10 | ak, id, in, ks, ms, ne, ok, wa, wi, wy |
+| A | 21 | al, ar, ct, de, fl, ga, hi, in, ky, la, md, me, mn, nc, nj, nv, ri, sc, tn, ut, va |
+| B | 13 | ak, az, ca, co, dc, mi, mt, ne, nh, tx, vt, wa, wy |
+| C | 12 | id, il, ks, ma, mo, ms, nd, nm, ny, ok, or, pa |
+| D | 4 | ia, oh, sd, wv |
+| F | 1 | wi |
 
-**Done (A-tier, 11):** al, ct, de, ga, hi, ky, me, nv, sc, tn, ut
+**Done (A-tier, 21):** al, ar, ct, de, fl, ga, hi, in, ky, la, md, me, mn, nc, nj, nv, ri, sc, tn, ut, va
+
+_Movement since the 2026-06-01 baseline (11A/7B/17C/6D/10F): **+10 A, +6 B, −5 C, −2 D, −9 F** — no regressions. The single remaining F is `wi`._
+
+## Current status — every non-A state (2026-06-22)
+
+Authoritative current grades, regenerated from the collector. `Limited by` names the one dimension setting the composite (composite = worst dimension). The ceiling-capped transfer rows (co, dc, nh, vt, ms, ak) are at a documented structural limit, not an open gap.
+
+| State | Name | Tier | Limited by | Reason |
+|-------|------|------|-----------|--------|
+| [ak](ak.md) | Alaska | B | prereqs | 71 entries (needs ≥100 for A) |
+| [az](az.md) | Arizona | B | courses | 95% — 1 college (arizona-western: wired Colleague, transient 502) |
+| [ca](ca.md) | California | B | courses | 100% adj coverage; capped by stale + heterogeneous term codes |
+| [co](co.md) | Colorado | B | transfers | ceiling: U Denver only public CO receiver |
+| [dc](dc.md) | DC | B | transfers | ceiling: UDC equivalencies all out-of-state |
+| [mi](mi.md) | Michigan | B | courses | 94% — 1 college (alpena: wired Colleague, 0-section term bug) |
+| [mt](mt.md) | Montana | B | courses | 89% — 1 college (fort-peck: Jenzabar auth, PDF-only) |
+| [ne](ne.md) | Nebraska | B | courses | 89% — 1 college (NCTA: custom HTML, low-value) |
+| [nh](nh.md) | New Hampshire | B | transfers | ceiling: USNH publishes no public articulation DB |
+| [tx](tx.md) | Texas | B | courses | 100% adj coverage; capped by stale + heterogeneous term codes |
+| [vt](vt.md) | Vermont | B | transfers | ceiling: UVM only public VT receiver |
+| [wa](wa.md) | Washington | B | transfers | 2 universities, 48,100 mappings (a 3rd lifts to A) |
+| [wy](wy.md) | Wyoming | B | courses | 86% — 1 college (central-wyoming: SAML+WAF, Google-Docs only) |
+| [id](id.md) | Idaho | C | courses | 75% (3/4) |
+| [il](il.md) | Illinois | C | courses | 60% (29/48) |
+| [ks](ks.md) | Kansas | C | courses | 54% (13/24) |
+| [ma](ma.md) | Massachusetts | C | courses | 53% (8/15) |
+| [mo](mo.md) | Missouri | C | courses | 62% (8/13) |
+| [ms](ms.md) | Mississippi | C | transfers | thin: 1 university, 2,109 mappings |
+| [nd](nd.md) | North Dakota | C | courses | 63% (5/8) |
+| [nm](nm.md) | New Mexico | C | courses | 58% (7/12) |
+| [ny](ny.md) | New York | C | courses | 62% (23/37) |
+| [ok](ok.md) | Oklahoma | C | courses | 54% (7/13) |
+| [or](or.md) | Oregon | C | courses | 53% (9/17) |
+| [pa](pa.md) | Pennsylvania | C | courses | 67% (10/15) |
+| [ia](ia.md) | Iowa | D | courses | 31% (5/16) |
+| [oh](oh.md) | Ohio | D | courses | 41% (9/22) |
+| [sd](sd.md) | South Dakota | D | courses | 33% (2/6) |
+| [wv](wv.md) | West Virginia | D | courses | 33% (3/9) |
+| [wi](wi.md) | Wisconsin | F | prereqs | no prereqs file (also courses D, transfers C) |
+
+### Cheap-lever goals refreshed this pass (2026-06-22)
+
+These eight `{slug}.md` files were rewritten against current code evidence; the rest still carry their 2026-06-01 framing.
+
+- **wi** — aggregate on-disk prereqs → clears the only F (F→D).
+- **az** / **mi** — land an already-wired Colleague scraper (az = re-run a transient 502; mi = debug a 0-section term bug) → each B→A.
+- **wy** / **mt** / **ne** — *not* cheap flips: wy (SAML+WAF, Google-Docs-only) and mt (Jenzabar PDF-only) are deferred-buildables their config authors explicitly declined to ceiling; ne (NCTA) is low-value. Disposition documented; no quick win.
+- **ca** / **tx** — term-code hygiene: both at 100% adjusted coverage; the B-cap is mostly the collector flagging real-but-non-canonical term encodings. A grader-vocabulary fix, partly a grading artifact.
+
+---
+
+## ⓘ Historical diagnosis (generated 2026-06-01)
+
+> Everything below — the biggest-lever framing, secondary levers, the impact÷effort ranking, and the progress tracker — is from the original 2026-06-01 40-agent diagnosis. It is preserved for the effort/value reasoning, but **its tiers are stale**: use the current-status table above for authoritative grades. Many states ranked F/D/C here have since reached A (va, nc, ak, la, in, ar, md, nj, mn, fl, …). The "documented-ceiling" biggest lever was largely executed — that's why the F-tier collapsed from 10 to 1.
 
 ## 🎯 The single biggest lever
 

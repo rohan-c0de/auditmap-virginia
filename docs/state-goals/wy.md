@@ -1,30 +1,31 @@
 # Wyoming (wy) — state goals
 
-> **Current tier: F** · Rank **#22 of 40** · Tranche: **NEXT** · Impact 1/5 · Effort: medium · Value/effort: **M**
+> **Current tier: B** · Limited by: **courses** · _Refreshed 2026-06-22_
 >
-> Dimensions: `crs=B` `prq=A` `trf=F` `sc=A` `cfg=A`
+> Dimensions: `crs=B` `prq=A` `trf=A` `sc=A` `cfg=A`
 >
-> _F is empty transfers; investigate WCCC matrix or accept no-portal ceiling (cheap) + record central-wyoming SAML course ceiling -> composite B._
+> _Transfers are now wired (A) — the old F is cleared. Courses sit at 86% (6/7); the single gap, Central Wyoming College, is a genuine deferred-buildable (Colleague behind SAML-SSO + Cloudflare WAF; schedule only in Google Docs). B is an honest grade — this is NOT a cheap flip._
 
 ## Diagnosis
 
-- **Primary gap:** Composite F driven entirely by transfers: 0 mappings, 0 in-state university targets, no articulation portal registered. Courses/prereqs/config/scorecard are all A/B and healthy.
-- **Cheapest lever** (investigate-articulation): Investigate Wyoming's statewide articulation source (WCCC transfer matrix to UW), register it in data/articulation-portals.json, scrape/import in-state mappings, and declare scrapers.transfers in lib/states/wy/config.ts — moves transfers F→passing and lifts composite off F.
-- **Effort:** medium — The only F dimension (transfers) has no registered portal and no documented ceiling — it needs a 1-4hr investigation to find Wyoming's articulation source (statewide WCCC transfer matrix / WyoTransfer-style guide) and a scraper or static-import, then wire it. Everything else is already done or a hard blocker.
-- **Course colleges:** 0 buildable / 1 blocked (of the missing set)
-- **Programs / planner:** 0 program files · no programs · planner-ready: no
-- **Shippable (B+) bar met:** no
-
-> Notes: central-wyoming-college (the only course gap) is a genuine documented blocker: Colleague host central-ss.colleague.elluciancloud.com is 100% SAML-SSO-gated (tenant central.edu), course-search behind Cloudflare WAF, schedule only in Google Docs — marked DEFERRED-scrapers in config. Courses sit at 86% (6/7) and cannot realistically reach 90%; recommend recording central-wyoming-college as a documented courseColleges ceiling so 86% is excused. Transfers is the true F: WY has no entry in data/articulation-portals.json. If transfers can be accepted as a documented ceiling (no statewide machine-readable matrix found), the state would be B-shippable immediately via a one-line config flag + audit ceiling.
+- **Primary gap:** courses 86% (6/7). The lone gap is `central-wyoming-college`.
+- **Disposition (honest):** `lib/states/wy/config.ts` marks it `DEFERRED-scrapers`: Colleague host `central-ss.colleague.elluciancloud.com` is 100% SAML-SSO-gated (tenant central.edu), course-search is behind Cloudflare WAF, and the only public schedule is Google Docs spreadsheets — no stable machine-readable public SIS endpoint.
+- **B is fair.** Don't ceiling-game public-but-hard data. Two optional paths to A, both judgment calls:
+  1. **Defensible ceiling** — argue that a SAML+WAF SIS with data only in ad-hoc Google Docs is not a stable public endpoint, and record `central-wyoming-college` in `documentedCeilings.courseColleges`. Borderline (the Docs are technically public) — only if you can defend it in the PR.
+  2. **Bespoke build** — parse the public Google-Docs schedule spreadsheets → real sections. Honest but fragile/brittle; medium effort.
+- **Effort:** accept-B is free; the ceiling path is cheap metadata (but a judgment call); the build path is medium and brittle.
+- **Course colleges:** 0 cleanly buildable / 1 deferred-buildable.
+- **Programs / planner:** check `scripts/wy/scrape-programs.ts` base URLs — a separate GOLD lever, not this gap.
 
 ## Goal checklist
 
-### WY — current tier F (limited by transfers)
+### WY — current tier B (limited only by courses; transfers now wired/A)
 
-- [ ] Record course ceiling: add `central-wyoming-college` to WY's documentedCeilings.courseColleges (SAML-SSO + Cloudflare WAF, schedule only in Google Docs — see DEFERRED-scrapers note in `lib/states/wy/config.ts`). Excuses the 86% (6/7) coverage so courses passes at ceiling. (cheap)
-- [ ] Investigate Wyoming articulation: confirm whether WCCC publishes a machine-readable CC→University of Wyoming transfer matrix (WyoTransfer / UW transfer guides). No portal is in `data/articulation-portals.json` today. (medium)
-- [ ] If a source exists: register it in `data/articulation-portals.json`, write `scripts/wy/scrape-transfers.ts`, populate `data/wy/transfer-equiv.json` (in-state only, UW as receiver), then declare `scrapers.transfers` in `lib/states/wy/config.ts` and verify `/wy/transfer` renders an equivalency. (medium)
-- [ ] If NO machine-readable source exists: set transfers as a documented ceiling (`documentedCeilings.transfers=true`) with rationale — this alone lifts composite off F to B. (cheap)
-- [ ] (GOLD, optional) Fix `scripts/wy/scrape-programs.ts` catalog base URLs (currently western.edu/eastern.edu/northern.edu look wrong vs WY domains), run it, confirm `data/wy/programs/*.json` filenames match institutions.json college_slug values for planner visibility. (medium)
+- [ ] **Default: accept B.** It's an honest grade for a single SAML+WAF-gated college. Only pursue A if there's appetite.
+- [ ] If pursuing A, pre-flight `WT=$(scripts/new-pr-worktree.sh wy-central); cd "$WT"` and pick a path for `central-wyoming-college`:
+  - **Path A (defensible ceiling):** add it to `documentedCeilings.courseColleges` in `lib/states/wy/config.ts` with the SAML-SSO + Cloudflare-WAF + Google-Docs-only rationale (cite the existing `DEFERRED-scrapers` note). Only if you can defend "no stable public endpoint" in the PR body.
+  - **Path B (bespoke build):** write a parser over the public Google-Docs schedule spreadsheets → `data/wy/courses/central-wyoming-college/`; wire or mark `// manual-only:` honestly.
+- [ ] Re-run the collector for wy; confirm courses A, composite A.
+- [ ] PR (branch `claude/wy-central`): plain-English first; name the SAML/WAF reality and which path you took. DO NOT MERGE — stop for review.
 
-Definition of done: transfers either populated+wired OR a recorded documented ceiling, central-wyoming-college recorded as course ceiling → composite ≥ B, no placeholder data.
+Definition of done: wy accepted at B (no change) OR central-wyoming has real course data OR is a defensibly-documented ceiling; no placeholder data, no grade-gaming.
