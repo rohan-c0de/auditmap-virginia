@@ -109,12 +109,25 @@ interface ParsedTerm {
   fileTermCode: string;
 }
 
-function parseArgs() {
+/**
+ * Split a slug list into `count` balanced, deterministic shards and return the
+ * `index`-th one. Round-robin over the sorted list so the 23 VCCS colleges
+ * spread evenly (e.g. 4 shards → 6/6/6/5) regardless of PS_CODES key order —
+ * this is what lets the cron run the colleges across parallel runners and stay
+ * under the 6h GitHub Actions timeout (see lib/states/va/config.ts).
+ */
+export function shardSlugs(all: string[], index: number, count: number): string[] {
+  const sorted = [...all].sort();
+  return sorted.filter((_, i) => i % count === index);
+}
+
+export function parseArgs() {
   const args = process.argv.slice(2);
   let slugs: string[] = Object.keys(PS_CODES);
   let termArg = "";
   let subject: string | null = null;
   let headed = false;
+  let shardSpec: string | null = null;
 
   for (let i = 0; i < args.length; i++) {
     if (args[i] === "--term" && args[i + 1]) {
@@ -126,9 +139,26 @@ function parseArgs() {
     } else if (args[i] === "--subject" && args[i + 1]) {
       subject = args[i + 1].toUpperCase();
       i++;
+    } else if (args[i] === "--shard" && args[i + 1]) {
+      shardSpec = args[i + 1];
+      i++;
     } else if (args[i] === "--headed") {
       headed = true;
     }
+  }
+
+  // --shard i/n keeps the i-th balanced slice of the colleges (applied after
+  // any --slug filter). Used by the per-shard cron wrappers and manual reruns.
+  if (shardSpec) {
+    const [idx, count] = shardSpec.split("/").map((n) => Number(n));
+    if (
+      !Number.isInteger(idx) || !Number.isInteger(count) ||
+      count < 1 || idx < 0 || idx >= count
+    ) {
+      console.error(`Invalid --shard "${shardSpec}". Expected i/n with 0 <= i < n, e.g. 0/4.`);
+      process.exit(1);
+    }
+    slugs = shardSlugs(slugs, idx, count);
   }
 
   if (!termArg) {
@@ -718,9 +748,9 @@ async function scrapeCollege(
 // Main
 // ---------------------------------------------------------------------------
 
-async function main() {
-  const { slugs, terms, subject, headed } = parseArgs();
-
+export async function runScrape(
+  { slugs, terms, subject, headed }: ReturnType<typeof parseArgs>,
+) {
   const browser = await chromium.launch({ headless: !headed });
   const startTime = Date.now();
   let grandTotal = 0;
@@ -760,4 +790,26 @@ async function main() {
   console.log(`${"=".repeat(60)}\n`);
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+/**
+ * Run one balanced shard (`index` of `count`) of the full college list. The
+ * per-shard cron wrappers (scripts/va/scrape-courses-shard-*.ts) call this;
+ * --term still comes from argv (the scheduled workflow passes it from the
+ * vccs-ps term system), and --no-import is ignored (this scraper never imports).
+ */
+export async function runShard(index: number, count: number) {
+  const opts = parseArgs();
+  opts.slugs = shardSlugs(opts.slugs, index, count);
+  await runScrape(opts);
+}
+
+// Only scrape when invoked directly (npx tsx scrape-peoplesoft.ts ...), not
+// when a shard wrapper imports runShard/runScrape from this module. Mirrors the
+// guard in scripts/lib/resolve-terms.ts.
+const invokedDirectly =
+  typeof import.meta.url === "string" &&
+  process.argv[1] !== undefined &&
+  import.meta.url === `file://${process.argv[1]}`;
+
+if (invokedDirectly) {
+  runScrape(parseArgs()).catch((e) => { console.error(e); process.exit(1); });
+}

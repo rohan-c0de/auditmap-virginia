@@ -61,14 +61,31 @@ const vaConfig: StateConfig = {
     { slug: "liberty", names: ["Liberty", "Liberty University"] },
   ],
   scrapers: {
-    // manual-only: courses — VA PeopleSoft scraper consistently exceeds the 6h GitHub Actions timeout; run manually when needed.
-    // Transfers are SAFE on cron despite courses being manual-only. The eight
-    // scrapers below hit external university transfer-equivalency portals
-    // (GMU/ODU/UMW/UVA/VCU/VSU/VWU public HTML/JSON endpoints + Virginia Tech's
-    // published VCCS-equivalency page) — none invoke the heavy PeopleSoft course
-    // scrape they were previously (incorrectly) disabled alongside. They run
-    // sequentially in one job because each loads data/va/transfer-equiv.json,
-    // merges its own university's rows, and writes the file back.
+    // Courses run on cron as 6 balanced shards
+    // (scripts/va/scrape-courses-shard-{0..5}.ts), each its own matrix entry so
+    // they execute on parallel runners. The single all-23-colleges PeopleSoft
+    // run blew past the 6h Actions timeout (#98); ≈4 colleges per shard finishes
+    // comfortably under it even across the two terms (Summer+Fall) that vccs-ps
+    // currently resolves. The worst shard holds Northern Virginia CC — the
+    // system's largest at 88 subjects, measured ~17 min for one term locally —
+    // plus three smaller colleges, so a 4-college × 2-term shard lands around
+    // ~1.5–2 h, well inside the 6h budget. termSystem "vccs-ps"
+    // makes the workflow resolve live terms and pass --term; the shared scraper
+    // (scrape-peoplesoft.ts) exposes runShard() so each wrapper scrapes only its
+    // balanced slice of the colleges.
+    courses: [
+      { scripts: ["scripts/va/scrape-courses-shard-0.ts"], runner: "playwright", termSystem: "vccs-ps" },
+      { scripts: ["scripts/va/scrape-courses-shard-1.ts"], runner: "playwright", termSystem: "vccs-ps" },
+      { scripts: ["scripts/va/scrape-courses-shard-2.ts"], runner: "playwright", termSystem: "vccs-ps" },
+      { scripts: ["scripts/va/scrape-courses-shard-3.ts"], runner: "playwright", termSystem: "vccs-ps" },
+      { scripts: ["scripts/va/scrape-courses-shard-4.ts"], runner: "playwright", termSystem: "vccs-ps" },
+      { scripts: ["scripts/va/scrape-courses-shard-5.ts"], runner: "playwright", termSystem: "vccs-ps" },
+    ],
+    // The eight transfer scrapers hit external university transfer-equivalency
+    // portals (GMU/ODU/UMW/UVA/VCU/VSU/VWU public HTML/JSON endpoints + Virginia
+    // Tech's published VCCS-equivalency page). They run sequentially in one job
+    // because each loads data/va/transfer-equiv.json, merges its own
+    // university's rows, and writes the file back.
     transfers: [
       {
         scripts: [
@@ -86,10 +103,11 @@ const vaConfig: StateConfig = {
     ],
     // Prereqs aggregate from committed course-section prerequisite_text
     // (data/va/prereqs.json, 302 parsed chains; 4,227 sections carry prereq
-    // text). This reads already-committed data — it does NOT run the heavy
-    // PeopleSoft scraper — so it's safe on cron despite courses being manual-only.
+    // text). This reads already-committed data rather than re-running the
+    // PeopleSoft scrape, so it stays a lightweight per-tick aggregation.
     prereqs: { source: "aggregate-from-courses" },
-    // manual-only: programs — disabled alongside courses.
+    // manual-only: programs — VA programs scraper is a separate effort; sharding
+    // it under the timeout is out of scope for the courses-on-cron change.
   },
 };
 
