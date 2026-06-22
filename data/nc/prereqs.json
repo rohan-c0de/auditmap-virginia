@@ -280,10 +280,10 @@
     ]
   },
   "AET 210": {
-    "text": "AET 110 and AET 122",
+    "text": "AET 122 and AET 110",
     "courses": [
-      "AET 110",
-      "AET 122"
+      "AET 122",
+      "AET 110"
     ]
   },
   "AGR 268": {
@@ -357,11 +357,14 @@
     ]
   },
   "AHR 133": {
-    "text": "AHR 110 or AHR 112 or AHR 113",
+    "text": "AHR 110 or AHR 112 or AHR 113 and AHR 110 and AHR 111 and AHR 112 and AHR 113 and AHR 114 and AHR 130",
     "courses": [
       "AHR 110",
       "AHR 112",
-      "AHR 113"
+      "AHR 113",
+      "AHR 111",
+      "AHR 114",
+      "AHR 130"
     ]
   },
   "AHR 140": {
@@ -423,10 +426,14 @@
     "courses": []
   },
   "AHR 211": {
-    "text": "AHR 112 or AHR 113",
+    "text": "AHR 110 and AHR 111 and AHR 112 and AHR 113 and AHR 114 and AHR 130",
     "courses": [
+      "AHR 110",
+      "AHR 111",
       "AHR 112",
-      "AHR 113"
+      "AHR 113",
+      "AHR 114",
+      "AHR 130"
     ]
   },
   "AHR 212": {
@@ -503,9 +510,10 @@
     ]
   },
   "AHR 255": {
-    "text": "AHR 110",
+    "text": "AHR 110 and AHR 151",
     "courses": [
-      "AHR 110"
+      "AHR 110",
+      "AHR 151"
     ]
   },
   "AHR 263": {
@@ -2963,20 +2971,22 @@
     ]
   },
   "BUS 225": {
-    "text": "ACC 120 and ENG 002 and ENG 011 and ENG 002 and BSP 4002 and ENG 045 and ENG 8045 and MAT 003 and MAT 043 and MAT 003 and MAT 052 and MAT 003 and BSP 4003 and MAT 045 and MAT 7045",
+    "text": "ACC 120 and ENG 002 and ENG 011 and ENG 002 and BSP 4002 and ENG 025 and ENG 111 and MAT 003 and MAT 043 and MAT 003 and MAT 052 and MAT 003 and BSP 4003 and MAT 025 and MAT 035 and MAT 143 and MAT 152",
     "courses": [
       "ACC 120",
       "ENG 002",
       "ENG 011",
       "BSP 4002",
-      "ENG 045",
-      "ENG 8045",
+      "ENG 025",
+      "ENG 111",
       "MAT 003",
       "MAT 043",
       "MAT 052",
       "BSP 4003",
-      "MAT 045",
-      "MAT 7045"
+      "MAT 025",
+      "MAT 035",
+      "MAT 143",
+      "MAT 152"
     ]
   },
   "BUS 230": {
@@ -5222,13 +5232,14 @@
     ]
   },
   "CTS 285": {
-    "text": "CTS 115 and CSC 251 and CTS 115 and NOS 130 and CTS 115 and WEB 115 and CTS 115 and WEB 210",
+    "text": "CSC 118 or CSC 134 or CSC 121 or CSC 151 or CSC 153 or WEB 151",
     "courses": [
-      "CTS 115",
-      "CSC 251",
-      "NOS 130",
-      "WEB 115",
-      "WEB 210"
+      "CSC 118",
+      "CSC 134",
+      "CSC 121",
+      "CSC 151",
+      "CSC 153",
+      "WEB 151"
     ]
   },
   "CTS 289": {
@@ -5584,6 +5595,12 @@
     "text": "CVS 163",
     "courses": [
       "CVS 163"
+    ]
+  },
+  "CYS 241": {
+    "text": "CYS 101",
+    "courses": [
+      "CYS 101"
     ]
   },
   "CYS 312": {
@@ -6222,12 +6239,6 @@
     "text": "Take BTB-101 - Must be taken either prior to or at the same time as this course.",
     "courses": []
   },
-  "DFT 111": {
-    "text": "DFT 111A",
-    "courses": [
-      "DFT 111A"
-    ]
-  },
   "DFT 111A": {
     "text": "DFT 111",
     "courses": [
@@ -6235,17 +6246,9 @@
     ]
   },
   "DFT 112": {
-    "text": "DFT 111 and DFT 112A",
+    "text": "DFT 111",
     "courses": [
-      "DFT 111",
-      "DFT 112A"
-    ]
-  },
-  "DFT 112A": {
-    "text": "DFT 112 and DFT 111A",
-    "courses": [
-      "DFT 112",
-      "DFT 111A"
+      "DFT 111"
     ]
   },
   "DFT 119": {
@@ -8261,23 +8264,11 @@
       "EQS 328"
     ]
   },
-  "EQU 120": {
-    "text": "EQU 111",
-    "courses": [
-      "EQU 111"
-    ]
-  },
   "EQU 211": {
     "text": "EQU 112 and EQU 150",
     "courses": [
       "EQU 112",
       "EQU 150"
-    ]
-  },
-  "EQU 270": {
-    "text": "EQU 111",
-    "courses": [
-      "EQU 111"
     ]
   },
   "ESL 463": {
@@ -9021,12 +9012,6 @@
       "GRD 131"
     ]
   },
-  "GRD 133": {
-    "text": "GRD 132",
-    "courses": [
-      "GRD 132"
-    ]
-  },
   "GRD 141": {
     "text": "ENG 002 or ENG 025 or ENG 111",
     "courses": [
@@ -9102,12 +9087,6 @@
     "text": "GRD 156",
     "courses": [
       "GRD 156"
-    ]
-  },
-  "GRD 160": {
-    "text": "GRD 167",
-    "courses": [
-      "GRD 167"
     ]
   },
   "GRD 167": {
@@ -12962,12 +12941,9 @@
     ]
   },
   "NAS 101": {
-    "text": "DRE 097 or DRE 098 or ENG 002 or ENG 111 or ENG 025",
+    "text": "ENG 002 or ENG 025",
     "courses": [
-      "DRE 097",
-      "DRE 098",
       "ENG 002",
-      "ENG 111",
       "ENG 025"
     ]
   },
