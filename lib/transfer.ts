@@ -147,9 +147,11 @@ export async function loadTransferMappingsByUniversity(
 // Cross-instance persistent cache (Vercel Data Cache). revalidate 1800s (30m)
 // matches the in-memory CACHE_TTL and is well within the ~3×/week scrape
 // cadence. unstable_cache keys on the function arguments automatically; the
-// keyParts entry is just a stable namespace. Only the transfers loader gets
-// this — the courses loaders run inside build scripts (no Next cache context),
-// whereas this loader is only ever called from Next routes (verified).
+// keyParts entry is just a stable namespace. The per-college courses loader
+// (lib/courses.ts loadCoursesForCollege) now uses the same two-layer pattern;
+// both are only ever called from Next routes — the build-time snapshot scripts
+// read committed JSON, not these loaders. loadAllCourses stays uncached: a big
+// state (CA ~135k sections) exceeds the Data Cache's ~2 MB per-item limit.
 const _xInstanceTransfersByUniversity = unstable_cache(
   (state: string, university: string, cap?: number) =>
     _loadTransferMappingsByUniversity(state, university, cap),

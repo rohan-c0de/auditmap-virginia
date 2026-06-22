@@ -1,3 +1,4 @@
+import { unstable_cache } from "next/cache";
 import type { CourseSection } from "./types";
 import { supabase } from "./supabase";
 import { runPooled } from "./concurrency";
@@ -81,59 +82,93 @@ const COURSE_COLUMNS =
 
 /**
  * Load all course sections for a given college and term from Supabase.
+ *
+ * Two cache layers, same pattern as the transfers-by-university loader
+ * (lib/transfer.ts), both keyed by (state, college, term):
+ *   1. in-memory `cached()` — intra-instance dedup + fast warm hits, and a
+ *      safety net for results too large for the Data Cache's ~2 MB item limit
+ *      (no single college's term comes close — NOVA tops out ~2k sections /
+ *      ~0.5 MB after the COURSE_COLUMNS projection).
+ *   2. `unstable_cache` — Vercel Data Cache, shared ACROSS serverless
+ *      instances, so crawler deep-links into /[state]/college/[id] and its
+ *      /courses/[prefix] pages stop re-querying Postgres on every cold start.
+ *      This is the courses analogue of the transfers caching (#1517 narrowed
+ *      the columns; this adds the cross-instance layer the college pages still
+ *      lacked). Safe here because this loader is only ever called from Next
+ *      routes — the build-time snapshot scripts read committed JSON, not this.
  */
 export async function loadCoursesForCollege(
   collegeSlug: string,
   term: string,
   state: string
 ): Promise<CourseSection[]> {
-  return cached(`courses:${state}:${collegeSlug}:${term}`, async () => {
-    // Supabase caps rows at 1000 by default. Paginate in parallel to get
-    // everything for colleges with more than 1000 sections (e.g. NOVA ~2000+).
-    const { count, error: countErr } = await supabase
-      .from("courses")
-      .select("id", { count: "exact", head: true })
-      .eq("college_code", collegeSlug)
-      .eq("term", term)
-      .eq("state", state);
+  return cached(
+    `courses:${state}:${collegeSlug}:${term}`,
+    () => _xInstanceCoursesForCollege(collegeSlug, term, state),
+  );
+}
 
-    if (countErr || !count || count === 0) {
-      if (countErr) console.error("loadCoursesForCollege count error:", countErr.message);
-      return [];
-    }
+// Cross-instance persistent cache (Vercel Data Cache). revalidate 1800s (30m)
+// matches the in-memory CACHE_TTL and is well within the ~3×/week scrape
+// cadence; unstable_cache keys on the arguments automatically.
+const _xInstanceCoursesForCollege = unstable_cache(
+  (collegeSlug: string, term: string, state: string) =>
+    _loadCoursesForCollege(collegeSlug, term, state),
+  ["courses-by-college"],
+  { revalidate: 1800, tags: ["courses"] },
+);
 
-    const PAGE_SIZE = 1000;
-    const pages = Math.ceil(count / PAGE_SIZE);
+async function _loadCoursesForCollege(
+  collegeSlug: string,
+  term: string,
+  state: string
+): Promise<CourseSection[]> {
+  // Supabase caps rows at 1000 by default. Paginate in parallel to get
+  // everything for colleges with more than 1000 sections (e.g. NOVA ~2000+).
+  const { count, error: countErr } = await supabase
+    .from("courses")
+    .select("id", { count: "exact", head: true })
+    .eq("college_code", collegeSlug)
+    .eq("term", term)
+    .eq("state", state);
 
-    // Concurrency-cap page fetches (same pattern as loadAllCourses). The
-    // college page loads courses for every term simultaneously; without a cap,
-    // 4 terms × 3 pages × 3 build workers = 36 concurrent Supabase queries
-    // from this one function alone, which saturates the connection pool and
-    // causes statement_timeout on other queries.
-    const tasks: Array<() => Promise<CourseSection[]>> = [];
-    for (let i = 0; i < pages; i++) {
-      const start = i * PAGE_SIZE;
-      const end = start + PAGE_SIZE - 1;
-      tasks.push(async () => {
-        const { data, error } = await supabase
-          .from("courses")
-          .select(COURSE_COLUMNS)
-          .eq("college_code", collegeSlug)
-          .eq("term", term)
-          .eq("state", state)
-          .order("id", { ascending: true })
-          .range(start, end);
-        if (error) {
-          console.error(`loadCoursesForCollege page ${i} error:`, error.message);
-          return [];
-        }
-        return (data || []).map(mapRow);
-      });
-    }
+  // Throw (don't return []) on a Supabase error so neither cache layer pins an
+  // empty "no courses" result: in prod there is no JSON fallback, so a cached
+  // [] from a transient error would persist for the full 30-min TTL across
+  // every instance. A legitimate count === 0 (the college doesn't offer this
+  // term) is a real empty and is safe to cache.
+  if (countErr) throw countErr;
+  if (!count || count === 0) return [];
 
-    const results = await runPooled(tasks, 5);
-    return results.flat();
-  });
+  const PAGE_SIZE = 1000;
+  const pages = Math.ceil(count / PAGE_SIZE);
+
+  // Concurrency-cap page fetches (same pattern as loadAllCourses). The
+  // college page loads courses for every term simultaneously; without a cap,
+  // 4 terms × 3 pages × 3 build workers = 36 concurrent Supabase queries
+  // from this one function alone, which saturates the connection pool and
+  // causes statement_timeout on other queries.
+  const tasks: Array<() => Promise<CourseSection[]>> = [];
+  for (let i = 0; i < pages; i++) {
+    const start = i * PAGE_SIZE;
+    const end = start + PAGE_SIZE - 1;
+    tasks.push(async () => {
+      const { data, error } = await supabase
+        .from("courses")
+        .select(COURSE_COLUMNS)
+        .eq("college_code", collegeSlug)
+        .eq("term", term)
+        .eq("state", state)
+        .order("id", { ascending: true })
+        .range(start, end);
+      // Throw on a page error too, so a partial result is never cached.
+      if (error) throw error;
+      return (data || []).map(mapRow);
+    });
+  }
+
+  const results = await runPooled(tasks, 5);
+  return results.flat();
 }
 
 /**
