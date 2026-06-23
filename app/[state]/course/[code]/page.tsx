@@ -154,8 +154,21 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
   if (!parsed) return { title: "Not Found" };
 
   const config = requireStateConfig(state);
-  const currentTerm = await getCurrentTerm(state);
-  const sections = await loadCourseByCode(parsed.prefix, parsed.number, currentTerm, state);
+
+  let currentTerm: string;
+  let sections: CourseSection[];
+  try {
+    currentTerm = await getCurrentTerm(state);
+    sections = await loadCourseByCode(parsed.prefix, parsed.number, currentTerm, state);
+  } catch {
+    // Supabase outage (402 egress, timeout, etc.) — return minimal metadata
+    // with noindex so Google doesn't index the degraded page, but also doesn't
+    // see a 500 and start de-indexing the URL.
+    return {
+      title: `${parsed.prefix} ${parsed.number} — Temporarily unavailable | ${config.branding.siteName}`,
+      robots: { index: false, follow: true },
+    };
+  }
 
   if (sections.length === 0) {
     // Course code is well-formed but has no sections this term. We render a
@@ -238,19 +251,46 @@ export default async function CoursePage(props: PageProps) {
 
   const { prefix, number } = parsed;
   const config = requireStateConfig(state);
-  const institutions = loadInstitutions(state);
-  const currentTerm = await getCurrentTerm(state);
 
-  // Two cheap, indexed reads instead of pulling the whole subject's sections:
-  //  • this course's own sections via the (state,term,prefix,number) index
-  //    (loadCourseByCode — also already cached from generateMetadata above), and
-  //  • a tiny DISTINCT course list for the "Related courses" sidebar.
-  // A big subject in a big state (CA Fall ENGL = 9,120 wide rows) used to be
-  // pulled in full here, which tripped Vercel's 15s FUNCTION_INVOCATION_TIMEOUT.
-  const [sections, subjectCourses] = await Promise.all([
-    loadCourseByCode(prefix, number, currentTerm, state),
+  let institutions: ReturnType<typeof loadInstitutions>;
+  let currentTerm: string;
+  let sections: CourseSection[];
+  let subjectCourses: Awaited<ReturnType<typeof loadSubjectCourseList>>;
+  try {
+    institutions = loadInstitutions(state);
+    currentTerm = await getCurrentTerm(state);
+    [sections, subjectCourses] = await Promise.all([
+      loadCourseByCode(prefix, number, currentTerm, state),
     loadSubjectCourseList(prefix, currentTerm, state),
-  ]);
+    ]);
+  } catch {
+    // Supabase outage — render a degraded page instead of 500ing.
+    // generateMetadata already sets noindex for this case.
+    return (
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h1 className="text-3xl font-bold text-gray-900 dark:text-slate-100 mb-2">
+          {prefix} {number}
+        </h1>
+        <p className="text-gray-600 dark:text-slate-400 mb-8">
+          Course data is temporarily unavailable. Please try again in a few minutes.
+        </p>
+        <div className="flex flex-wrap gap-3">
+          <Link
+            href={`/${state}/courses`}
+            className="rounded-lg bg-teal-600 px-4 py-2 text-sm font-medium text-white hover:bg-teal-700 transition"
+          >
+            Search courses
+          </Link>
+          <Link
+            href={`/${state}`}
+            className="rounded-lg border border-gray-300 dark:border-slate-600 px-4 py-2 text-sm font-medium text-gray-700 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-800 transition"
+          >
+            {config.name} home
+          </Link>
+        </div>
+      </div>
+    );
+  }
 
   if (sections.length === 0) {
     // The course code is well-formed and the state is valid — but no sections

@@ -120,7 +120,16 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
   if (!institution) return { title: "Not Found" };
 
   const config = requireStateConfig(state);
-  const result = await findInstructor(institution.college_slug, state, slug);
+
+  let result: Awaited<ReturnType<typeof findInstructor>>;
+  try {
+    result = await findInstructor(institution.college_slug, state, slug);
+  } catch {
+    return {
+      title: `Instructor — Temporarily unavailable | ${config.branding.siteName}`,
+      robots: { index: false, follow: true },
+    };
+  }
   if (!result) return { title: "Not Found" };
   const { profile, term: resolvedTerm } = result;
 
@@ -173,7 +182,36 @@ export default async function InstructorPage(props: PageProps) {
   if (!institution) notFound();
 
   const config = requireStateConfig(state);
-  const result = await findInstructor(institution.college_slug, state, slug);
+
+  let result: Awaited<ReturnType<typeof findInstructor>>;
+  try {
+    result = await findInstructor(institution.college_slug, state, slug);
+  } catch {
+    return (
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h1 className="text-3xl font-bold text-gray-900 dark:text-slate-100 mb-2">
+          Instructor
+        </h1>
+        <p className="text-gray-600 dark:text-slate-400 mb-8">
+          Instructor data is temporarily unavailable. Please try again in a few minutes.
+        </p>
+        <div className="flex flex-wrap gap-3">
+          <Link
+            href={`/${state}/college/${id}`}
+            className="rounded-lg bg-teal-600 px-4 py-2 text-sm font-medium text-white hover:bg-teal-700 transition"
+          >
+            Back to {institution.name}
+          </Link>
+          <Link
+            href={`/${state}`}
+            className="rounded-lg border border-gray-300 dark:border-slate-600 px-4 py-2 text-sm font-medium text-gray-700 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-800 transition"
+          >
+            {config.name} home
+          </Link>
+        </div>
+      </div>
+    );
+  }
   if (!result) notFound();
   const { profile, term: resolvedTerm } = result;
 
