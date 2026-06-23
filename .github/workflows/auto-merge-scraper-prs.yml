@@ -10,11 +10,13 @@ name: Auto-merge scraper PRs
 #   - The eligibility filter (scripts/lib/automerge-eligible.ts, unit-tested)
 #     requires bot provenance + data-only paths + single state + labels +
 #     mergeable + soak + file-cap + state-not-unhealthy (per scraper triage).
-#   - Before each merge we re-validate the PR's data against CURRENT main
-#     (scrape-diff + check:data on an overlay) — catching PRs that went stale
-#     because main grew since they opened. check:data never runs on these PRs
-#     today (bot-token PRs don't trigger pull_request CI), so this is strictly
-#     more validation than the status quo.
+#   - Before each merge we re-validate the PR's data against CURRENT main on an
+#     overlay: scrape-diff (50% row-count), check:data (parse/shape), and
+#     content-quality-diff (per-field fill/validity regression — catches
+#     title/mode collapse + instructor-column loss that count+schema miss).
+#     check:data + content-quality never run on these PRs today (bot-token PRs
+#     don't trigger pull_request CI), so this is strictly more validation than
+#     the status quo.
 #   - After merge, import-on-merge.yml re-checks 50% change-detection + schema
 #     per row before any Supabase upsert; cloud data is untouched on abort.
 #
@@ -157,6 +159,16 @@ jobs:
             # Parse/shape gate that normally never runs on these PRs.
             if [ "$ok" = "true" ] && ! npm run check:data -- --state "$state"; then
               echo "::warning::#$num failed check:data — skipping."; ok=false
+            fi
+            # Content-quality gate: catch SEMANTICALLY degraded data that count +
+            # schema miss — title/mode collapse, instructor-column loss — by
+            # comparing per-field fill/validity rates against current main.
+            if [ "$ok" = "true" ]; then
+              if ! npx tsx scripts/lib/content-quality-diff.ts --path "data/$state" --format json > /tmp/cq.json; then
+                echo "::warning::#$num content-quality-diff failed to run — skipping."; ok=false
+              elif [ "$(jq -r '.degraded' /tmp/cq.json)" != "false" ]; then
+                echo "::warning::#$num content quality degraded — skipping. $(jq -c '.findings' /tmp/cq.json)"; ok=false
+              fi
             fi
 
             # Restore clean main before merging (merge is a pure API call).
