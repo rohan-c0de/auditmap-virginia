@@ -88,7 +88,10 @@ const wiConfig: StateConfig = {
     // COVERAGE GAP: UW-Milwaukee is the only receiver with a public API; other
     // UW campuses are Transferology-gated.
     transfers: [{ scripts: ["scripts/wi/scrape-transfer-uwm.ts"], runner: "http" }],
-    // manual-only: prereqs — Coursedog catalog data for Nicolet Area TC at data/wi/coursedog-catalog/; aggregate into prereqs.json manually.
+    // Prereqs aggregated from on-disk course/catalog data (no scrape). Only
+    // Nicolet's Coursedog catalog (data/wi/coursedog-catalog/) carries prereq
+    // text; the 4 scraped WTCS colleges have none, so coverage is thin (~11).
+    prereqs: { source: "aggregate-from-courses" },
     // manual-only: programs — Phase 6 discovery found no matching catalog platforms; manual investigation needed.
   },
 };
