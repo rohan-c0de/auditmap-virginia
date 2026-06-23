@@ -2,14 +2,17 @@
  * Grade snapshot test for the state-audit rubric.
  *
  * Asserts expected per-dim and composite grades for a curated set of
- * states that exercise the rubric's branches:
+ * states that exercise the rubric's branches. Grades drift as data lands,
+ * so the curated examples are re-baselined periodically (last: 2026-06-23,
+ * the same commit that fixed the lexicographic isStale bug — see
+ * collect-audit-data.ts). Branches currently covered:
  *
- *   - Wide-and-deep coverage (NC, NY) → composite A
- *   - Documented-ceiling exemption (NH) → transfers capped at B
- *   - Thin transfers (OH, VT, RI)      → transfers C or B
- *   - Course coverage gaps (FL, MI, TX) → courses D
- *   - Data-not-wired (VA)              → transfers D
- *   - Missing dimensions (CA, WV)      → composite F
+ *   - Wide-and-deep coverage (NC) → composite A
+ *   - Documented course ceilings (FL, AR, AZ, MI, TX, CA) → courses on adj. coverage
+ *   - Documented transfer ceiling (NH) → transfers capped at B
+ *   - Improving / thin transfers (OH, VT, WV, WA) → transfers A or B
+ *   - Course coverage gaps (NY, OH, WV) → courses C/D
+ *   - All-dims-wired flagship (VA) → composite A
  *
  * When the data legitimately shifts a grade, update the expected value
  * in the same commit with a one-line justification — the snapshot is a
@@ -47,12 +50,12 @@ const EXPECTATIONS: Expectation[] = [
   },
   {
     slug: "ny",
-    composite: "D",
+    composite: "C",
     limitedBy: "courses",
-    courses: "D",
-    prereqs: "C",
+    courses: "C",
+    prereqs: "A",
     transfers: "A",
-    note: "drift re-baseline (unrelated to collector fix): NY courses now 49% (18/37) + prereqs HTML-contaminated → composite D; was flagship A. Investigate NY data separately.",
+    note: "re-baseline 2026-06-23: NY courses recovered to C (62%, 23/37) and prereqs HTML cleaned → A; composite C (courses-limited). Was D.",
   },
   {
     slug: "nh",
@@ -67,8 +70,8 @@ const EXPECTATIONS: Expectation[] = [
     composite: "D",
     limitedBy: "courses",
     courses: "D",
-    transfers: "C",
-    note: "5/22 colleges → courses D dominates; transfers thin (OSU only)",
+    transfers: "A",
+    note: "re-baseline 2026-06-23: OH transfers now A (was thin C); composite still D (courses 41%, 9/22, dominates).",
   },
   {
     slug: "vt",
@@ -88,20 +91,22 @@ const EXPECTATIONS: Expectation[] = [
   },
   {
     slug: "mi",
-    composite: "C",
+    composite: "B",
     limitedBy: "courses",
-    courses: "C",
+    courses: "B",
     transfers: "A",
-    note: "drift re-baseline (unrelated to collector fix): MI courses now 52% (16/31, C); transfers A → composite C.",
+    ceilingsDimensions: ["courses"],
+    note: "re-baseline 2026-06-23: MI's blocked colleges now documented course ceilings → courses B (94% adj, 16/17); composite B. Was C.",
   },
   {
     slug: "tx",
-    composite: "C",
+    composite: "B",
     limitedBy: "courses",
-    courses: "C",
+    courses: "B",
     transfers: "A",
-    scorecard: "B",
-    note: "drift re-baseline (unrelated to collector fix): TX courses now 63% (37/59, C); transfers A → composite C.",
+    scorecard: "A",
+    ceilingsDimensions: ["courses"],
+    note: "re-baseline 2026-06-23: TX blocked colleges now documented course ceilings → courses B (100% adj) capped by term-code hygiene; scorecard A; composite B. Was C. (stale-fix removed its false 2025FA flag; the genuine 2024FA remains.)",
   },
   {
     slug: "va",
@@ -113,19 +118,20 @@ const EXPECTATIONS: Expectation[] = [
   },
   {
     slug: "ca",
-    composite: "C",
+    composite: "B",
     limitedBy: "courses",
     transfers: "A",
-    courses: "C",
-    note: "drift re-baseline (unrelated to collector fix): CA now has transfer data (A); composite limited by courses 65% (C).",
+    courses: "B",
+    ceilingsDimensions: ["courses"],
+    note: "re-baseline 2026-06-23: CA blocked colleges now documented course ceilings → courses B (100% adj) capped by suspicious term codes; composite B. Was C. (stale-fix removed its false 2025FA flag.)",
   },
   {
     slug: "wv",
     composite: "D",
     limitedBy: "courses",
     courses: "D",
-    transfers: "C",
-    note: "drift re-baseline (unrelated to collector fix): WV courses now 33% (3/9, D) + thin transfers (C) → composite D.",
+    transfers: "B",
+    note: "re-baseline 2026-06-23: WV transfers now B (was thin C); composite still D (courses 33%, 3/9).",
   },
   {
     slug: "ar",
@@ -145,11 +151,12 @@ const EXPECTATIONS: Expectation[] = [
   },
   {
     slug: "wa",
-    composite: "F",
-    limitedBy: "prereqs",
+    composite: "B",
+    limitedBy: "transfers",
     courses: "A",
-    prereqs: "F",
-    note: "collector fix: WA's valid term no longer flagged suspicious → courses A; composite still F (prereqs file missing — separate gap)",
+    prereqs: "A",
+    transfers: "B",
+    note: "re-baseline 2026-06-23: WA now has prereqs (A) and wired transfers (B) → composite B, transfers-limited. Was F (prereqs missing).",
   },
 ];
 
