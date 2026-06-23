@@ -1,0 +1,186 @@
+name: Auto-merge scraper PRs
+
+# Conservative "merge sweeper" for the routine scheduled-scrape data PRs
+# (opened by scheduled-scrape-v2.yml as app/github-actions). It re-validates
+# each PR and squash-merges only those passing every guard, replacing the
+# manual "skim the diff + click merge" step.
+#
+# SAFETY MODEL — this does not relax any existing guard:
+#   - A PR only exists if scrape-diff said no file dropped <50% of prior rows.
+#   - The eligibility filter (scripts/lib/automerge-eligible.ts, unit-tested)
+#     requires bot provenance + data-only paths + single state + labels +
+#     mergeable + soak + file-cap + state-not-unhealthy (per scraper triage).
+#   - Before each merge we re-validate the PR's data against CURRENT main
+#     (scrape-diff + check:data on an overlay) — catching PRs that went stale
+#     because main grew since they opened. check:data never runs on these PRs
+#     today (bot-token PRs don't trigger pull_request CI), so this is strictly
+#     more validation than the status quo.
+#   - After merge, import-on-merge.yml re-checks 50% change-detection + schema
+#     per row before any Supabase upsert; cloud data is untouched on abort.
+#
+# STAGED ROLLOUT (no degradation at any point):
+#   Phase 0 (default): AUTOMERGE_ENABLED is unset ⇒ every run is REPORT-ONLY.
+#     The job writes an eligibility report to the run summary and merges
+#     nothing. Run ~2 weeks; compare its "would merge" list to hand-merges.
+#   Phase 1: set repo variable AUTOMERGE_ENABLED=true and AUTOMERGE_ALLOWLIST
+#     to 2-3 stable states. Scheduled runs then live-merge within the caps.
+#
+# KILL SWITCH: set AUTOMERGE_ENABLED to anything but 'true' (or delete it).
+# PER-PR OPT-OUT: add the 'do-not-automerge' label to any PR.
+
+on:
+  schedule:
+    - cron: "30 * * * *" # hourly at :30, offset from the scrape crons at :00
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "report (dry-run, never merges) or merge (live, still gated by AUTOMERGE_ENABLED)"
+        type: choice
+        options: [report, merge]
+        default: report
+
+permissions:
+  contents: write # squash-merge + delete branch
+  pull-requests: write # merge PRs
+  actions: write # dispatch import-on-merge.yml after a merge
+
+# Never let two sweeps run at once (they'd race on the same PRs / git state).
+concurrency:
+  group: auto-merge-scraper-prs
+  cancel-in-progress: false
+
+env:
+  # Conservative defaults; override with repo variables (Settings → Variables).
+  ALLOWLIST: ${{ vars.AUTOMERGE_ALLOWLIST }} # comma-separated slugs; empty ⇒ nothing eligible
+  MAX_FILES: ${{ vars.AUTOMERGE_MAX_FILES || '25' }}
+  SOAK_HOURS: ${{ vars.AUTOMERGE_SOAK_HOURS || '4' }}
+  MAX_MERGES_PER_RUN: ${{ vars.AUTOMERGE_MAX_MERGES_PER_RUN || '3' }}
+  WINDOW_DAYS: "14"
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # full history so we can diff PR data against main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - run: npm ci
+
+      - name: Resolve mode + kill switch
+        id: cfg
+        run: |
+          # Scheduled runs intend to merge (still gated below); manual runs use
+          # the chosen input, defaulting to the safe 'report'.
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            mode="merge"
+          else
+            mode="${{ github.event.inputs.mode }}"
+          fi
+          enabled="${{ vars.AUTOMERGE_ENABLED }}"
+          if [ "$mode" = "merge" ] && [ "$enabled" = "true" ]; then
+            echo "live=true" >> "$GITHUB_OUTPUT"
+            echo "Mode: LIVE MERGE (mode=$mode, AUTOMERGE_ENABLED=$enabled)"
+          else
+            echo "live=false" >> "$GITHUB_OUTPUT"
+            echo "Mode: REPORT-ONLY (mode=$mode, AUTOMERGE_ENABLED=${enabled:-unset})"
+          fi
+
+      - name: Evaluate open PRs
+        id: eval
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npx tsx scripts/lib/automerge-eligible.ts \
+            --allowlist "${ALLOWLIST}" \
+            --max-files "${MAX_FILES}" \
+            --soak-hours "${SOAK_HOURS}" \
+            --window-days "${WINDOW_DAYS}" \
+            --out /tmp/eligible.json
+          # The markdown report is the run summary in BOTH modes.
+          jq -r '.markdown' /tmp/eligible.json >> "$GITHUB_STEP_SUMMARY"
+          echo "health_err=$(jq -r '.healthError // "null"' /tmp/eligible.json)" >> "$GITHUB_OUTPUT"
+          echo "candidate_count=$(jq -r '.candidates | length' /tmp/eligible.json)" >> "$GITHUB_OUTPUT"
+
+      - name: Report-only notice
+        if: steps.cfg.outputs.live != 'true'
+        run: |
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "> **Report-only run — no PRs were merged.** ${{ steps.eval.outputs.candidate_count }} candidate(s) would have been eligible." >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Merge eligible PRs
+        # Live only, and only when health could be verified (triage succeeded).
+        if: steps.cfg.outputs.live == 'true' && steps.eval.outputs.health_err == 'null'
+        env:
+          # Phase 1: set AUTOMERGE_PAT (a fine-grained PAT / app token with
+          # repo + workflow scope) so the squash-merge is attributed to a user
+          # and import-on-merge.yml fires naturally on the push. Without it the
+          # merge still works via GITHUB_TOKEN, and we dispatch the import
+          # explicitly below, but VERIFY the import ran (a GITHUB_TOKEN push may
+          # not trigger downstream workflows).
+          GH_TOKEN: ${{ secrets.AUTOMERGE_PAT || secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          max="${MAX_MERGES_PER_RUN}"
+          count="${{ steps.eval.outputs.candidate_count }}"
+          merged=0
+          echo "Candidates: $count; per-run cap: $max"
+
+          for i in $(seq 0 $((count - 1))); do
+            [ "$merged" -ge "$max" ] && { echo "Hit per-run cap ($max); stopping."; break; }
+
+            num=$(jq -r ".candidates[$i].number" /tmp/eligible.json)
+            state=$(jq -r ".candidates[$i].state" /tmp/eligible.json)
+            dt=$(jq -r ".candidates[$i].datatype" /tmp/eligible.json)
+            echo "::group::Re-validate + merge #$num ($state/$dt)"
+
+            # Clean slate at current main, then overlay this PR's data only.
+            git reset -q --hard origin/main
+            git clean -qfd data || true
+            git fetch origin main --quiet
+            git checkout -q origin/main
+            git fetch origin "pull/$num/head:pr-$num" --quiet
+            git checkout -q "pr-$num" -- "data/$state"
+
+            ok=true
+            # Re-diff against CURRENT main: broken==false means no file dropped
+            # below 50% of main's row count (catches staleness from main growth).
+            if ! npx tsx scripts/lib/scrape-diff.ts --path "data/$state" --format json > /tmp/diff.json; then
+              echo "::warning::#$num scrape-diff failed to run — skipping."; ok=false
+            elif [ "$(jq -r '.broken' /tmp/diff.json)" != "false" ]; then
+              echo "::warning::#$num regressed vs current main — skipping."; ok=false
+            fi
+            # Parse/shape gate that normally never runs on these PRs.
+            if [ "$ok" = "true" ] && ! npm run check:data -- --state "$state"; then
+              echo "::warning::#$num failed check:data — skipping."; ok=false
+            fi
+
+            # Restore clean main before merging (merge is a pure API call).
+            git reset -q --hard origin/main
+            git clean -qfd data || true
+
+            if [ "$ok" != "true" ]; then echo "::endgroup::"; continue; fi
+
+            gh pr merge "$num" --squash --delete-branch
+            merged=$((merged + 1))
+            echo "Merged #$num — $state/$dt"
+
+            # Make sure the merged data reaches Supabase. import is idempotent
+            # (upsert) and serialized, so a duplicate dispatch is harmless.
+            gh workflow run import-on-merge.yml -f state="$state" -f datatype="$dt" \
+              || echo "::warning::Could not dispatch import for $state — verify import-on-merge ran."
+            echo "::endgroup::"
+          done
+
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "**Merged $merged PR(s) this run** (cap $max)." >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Health-unverifiable notice
+        if: steps.cfg.outputs.live == 'true' && steps.eval.outputs.health_err != 'null'
+        run: |
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "> ⚠️ **No merges performed:** scraper-health triage failed (\`${{ steps.eval.outputs.health_err }}\`), so the health exclusion could not be verified this run." >> "$GITHUB_STEP_SUMMARY"
