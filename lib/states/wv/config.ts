@@ -58,14 +58,15 @@ const wvConfig: StateConfig = {
     courses: [
       // Eastern WV — WordPress + PDF schedule.
       { scripts: ["scripts/wv/scrape-eastern-wv.ts"], runner: "http" },
-      // Mountwest CTC — Banner SSB 9 at xemctcprod.wvnet.edu (public, no WAF).
-      { scripts: ["scripts/wv/scrape-mountwest.ts"], runner: "http" },
+      // WVCTCS Banner SSB 9 cluster — 6 colleges on shared WVNET hosts
+      // (xe<code>prod.wvnet.edu): mountwest, blueridge, bridgevalley,
+      // newriver, pierpont, southern. Each college's own *.edu front door is
+      // SSO/WAF/JS-gated, but the WVNET Banner backend is public. Verified 2026-06.
+      { scripts: ["scripts/wv/scrape-wvctcs-banner.ts"], runner: "http" },
       // WVU at Parkersburg — custom XML schedule at schedules.wvup.edu.
       { scripts: ["scripts/wv/scrape-wvup.ts"], runner: "http" },
-      // manual-only: blueridge — JS-rendered WP schedule, data source unknown
-      // manual-only: bridgevalley, pierpont, southern — Ellucian Experience SSO
-      // manual-only: newriver — Banner SSB but visual CAPTCHA (sgcaptcha WAF)
-      // manual-only: wvncc — Pathify SAML portal, no public SIS endpoint
+      // wvncc — no public sections (WVNET host has no SSB/8 module; CollegeScheduler
+      // stale to Fall 2023; Pathify SAML). Documented as a course ceiling below.
     ],
     prereqs: [
       // Six WV Acalog catalogs — WAF bypass via Playwright. Covers Pierpont,
@@ -85,6 +86,13 @@ const wvConfig: StateConfig = {
   },
 
   documentedCeilings: {
+    courses: [
+      {
+        collegeSlug: "wvncc",
+        reason:
+          "West Virginia Northern has no public course-section endpoint: its WVNET Banner host (xewvnprod.wvnet.edu) has neither SSB 9 nor Banner 8 deployed, its CollegeScheduler tenant is stale to Fall 2023, and its Pathify portal is SAML-gated. Verified 2026-06.",
+      },
+    ],
     // Transfers cap at B: Marshall and WVU are the only WV public universities
     // with a public, scrapeable course-to-course source (both shipped).
     // Re-verified 2026-06 — Fairmont State, Shepherd, WV State, and Concord
