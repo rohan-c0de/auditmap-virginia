@@ -510,43 +510,64 @@ export async function searchSections(
   parsed: { prefix: string | null; number: string | null; keyword: string | null }
 ): Promise<CourseSection[]> {
   if (!parsed.prefix && !parsed.number && !parsed.keyword) return [];
+  // Two-layer cache (see loadCoursesForCollege): in-memory cached() +
+  // cross-instance unstable_cache. This is the ?q= deep-link path — crawlers
+  // hammer the same course-code searches across many cold instances, so the
+  // cross-instance layer is where the egress win is. Result is bounded by
+  // SEARCH_SECTION_CAP (5000 rows ≈ ~1 MB after COURSE_COLUMNS), under the
+  // ~2 MB Data Cache item limit.
   return cached(
     `search:${state}:${term}:${parsed.prefix ?? ""}:${parsed.number ?? ""}:${parsed.keyword ?? ""}`,
-    async () => {
-      const out: CourseSection[] = [];
-      const maxPages = Math.ceil(SEARCH_SECTION_CAP / SEARCH_PAGE_SIZE);
-      for (let i = 0; i < maxPages; i++) {
-        let q = supabase
-          .from("courses")
-          .select(COURSE_COLUMNS)
-          .eq("state", state)
-          .eq("term", term);
-        if (parsed.prefix) q = q.eq("course_prefix", parsed.prefix);
-        if (parsed.number) q = q.eq("course_number", parsed.number);
-        // ILIKE mirrors the previous JS `title.toLowerCase().includes(kw)`
-        // (case-insensitive substring). `%` is escaped so a literal % in the
-        // query can't widen the match.
-        if (parsed.keyword) {
-          const safe = parsed.keyword.replace(/[%_]/g, (m) => `\\${m}`);
-          q = q.ilike("course_title", `%${safe}%`);
-        }
-        const { data, error } = await q
-          .order("id", { ascending: true })
-          .range(
-            i * SEARCH_PAGE_SIZE,
-            i * SEARCH_PAGE_SIZE + SEARCH_PAGE_SIZE - 1
-          );
-        if (error) {
-          console.error(`searchSections page ${i} error:`, error.message);
-          break;
-        }
-        const rows = (data || []).map(mapRow);
-        out.push(...rows);
-        if (rows.length < SEARCH_PAGE_SIZE) break; // last page reached
-      }
-      return out;
-    }
+    () => _xInstanceSearchSections(term, state, parsed),
   );
+}
+
+const _xInstanceSearchSections = unstable_cache(
+  (
+    term: string,
+    state: string,
+    parsed: { prefix: string | null; number: string | null; keyword: string | null },
+  ) => _searchSections(term, state, parsed),
+  ["search-sections"],
+  { revalidate: 1800, tags: ["courses"] },
+);
+
+async function _searchSections(
+  term: string,
+  state: string,
+  parsed: { prefix: string | null; number: string | null; keyword: string | null },
+): Promise<CourseSection[]> {
+  const out: CourseSection[] = [];
+  const maxPages = Math.ceil(SEARCH_SECTION_CAP / SEARCH_PAGE_SIZE);
+  for (let i = 0; i < maxPages; i++) {
+    let q = supabase
+      .from("courses")
+      .select(COURSE_COLUMNS)
+      .eq("state", state)
+      .eq("term", term);
+    if (parsed.prefix) q = q.eq("course_prefix", parsed.prefix);
+    if (parsed.number) q = q.eq("course_number", parsed.number);
+    // ILIKE mirrors the previous JS `title.toLowerCase().includes(kw)`
+    // (case-insensitive substring). `%` is escaped so a literal % in the
+    // query can't widen the match.
+    if (parsed.keyword) {
+      const safe = parsed.keyword.replace(/[%_]/g, (m) => `\\${m}`);
+      q = q.ilike("course_title", `%${safe}%`);
+    }
+    const { data, error } = await q
+      .order("id", { ascending: true })
+      .range(
+        i * SEARCH_PAGE_SIZE,
+        i * SEARCH_PAGE_SIZE + SEARCH_PAGE_SIZE - 1
+      );
+    // Throw on a page error (was: log + break) so a partial or empty result is
+    // never pinned in either cache layer for the full TTL.
+    if (error) throw error;
+    const rows = (data || []).map(mapRow);
+    out.push(...rows);
+    if (rows.length < SEARCH_PAGE_SIZE) break; // last page reached
+  }
+  return out;
 }
 
 /**
@@ -617,21 +638,43 @@ export async function loadCourseByCode(
   term: string,
   state: string
 ): Promise<CourseSection[]> {
-  return cached(`course:${state}:${term}:${prefix}:${number}`, async () => {
-    const { data, error } = await supabase
-      .from("courses")
-      .select(COURSE_COLUMNS)
-      .eq("state", state)
-      .eq("term", term)
-      .eq("course_prefix", prefix)
-      .eq("course_number", number);
+  // Two-layer cache (see loadCoursesForCollege): in-memory cached() +
+  // cross-instance unstable_cache. Backs the course-detail pSEO pages
+  // (/[state]/course/[code]) — heavily crawled by course code, so the
+  // cross-instance layer stops every cold start from re-querying Postgres.
+  // Tiny result set (one course's sections, ~10–100 rows) — far under the
+  // ~2 MB Data Cache item limit.
+  return cached(
+    `course:${state}:${term}:${prefix}:${number}`,
+    () => _xInstanceCourseByCode(prefix, number, term, state),
+  );
+}
 
-    if (error) {
-      console.error("loadCourseByCode error:", error.message);
-      return [];
-    }
-    return (data || []).map(mapRow);
-  });
+const _xInstanceCourseByCode = unstable_cache(
+  (prefix: string, number: string, term: string, state: string) =>
+    _loadCourseByCode(prefix, number, term, state),
+  ["course-by-code"],
+  { revalidate: 1800, tags: ["courses"] },
+);
+
+async function _loadCourseByCode(
+  prefix: string,
+  number: string,
+  term: string,
+  state: string
+): Promise<CourseSection[]> {
+  const { data, error } = await supabase
+    .from("courses")
+    .select(COURSE_COLUMNS)
+    .eq("state", state)
+    .eq("term", term)
+    .eq("course_prefix", prefix)
+    .eq("course_number", number);
+
+  // Throw (don't return []) so neither cache layer pins an empty result from a
+  // transient Supabase error for the full TTL (prod has no JSON fallback).
+  if (error) throw error;
+  return (data || []).map(mapRow);
 }
 
 /**
