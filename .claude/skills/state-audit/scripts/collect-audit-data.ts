@@ -200,14 +200,34 @@ function currentTerms(): { current: string[]; staleThreshold: string } {
     terms.push(`${year - 1}FA`);
   }
 
-  // Stale = more than 2 semesters ago
+  // Stale threshold = Spring of (last year in H1, else this year), compared
+  // chronologically via termRank below — NOT lexicographically. Alphabetical
+  // order ranks "FA" < "SP", so the old `term < threshold` wrongly flagged a
+  // recent Fall term (e.g. 2025FA) as older than a 2025SP threshold. The
+  // threshold season is always SP so the chronological compare reproduces the
+  // intended "prior academic year is stale" boundary in both halves of the year.
   const staleYear = month <= 6 ? year - 1 : year;
-  const staleSeason = month <= 6 ? "SP" : "FA";
-  return { current: terms, staleThreshold: `${staleYear}${staleSeason}` };
+  return { current: terms, staleThreshold: `${staleYear}SP` };
+}
+
+// Chronological rank of a term (higher = more recent), using 3 primary seasons
+// per academic year (SP < SU < FA). WI ≈ end-of-year (FA rank); U#/S# encode
+// summer/spring sub-sessions. Returns null for unrecognized forms — those are
+// caught by isSuspicious, and the staleness of a malformed term is unknowable.
+const SEASON_RANK: Record<string, number> = { SP: 0, SU: 1, FA: 2, WI: 2 };
+function termRank(term: string): number | null {
+  const m = term.match(/^(\d{4})(SP|SU|FA|WI)\d?$/);
+  if (m) return parseInt(m[1], 10) * 3 + SEASON_RANK[m[2]];
+  const sub = term.match(/^(\d{4})(U|S)\d$/);
+  if (sub) return parseInt(sub[1], 10) * 3 + (sub[2] === "U" ? 1 : 0);
+  return null;
 }
 
 function isStale(term: string, threshold: string): boolean {
-  return term < threshold;
+  const t = termRank(term);
+  const thr = termRank(threshold);
+  if (t === null || thr === null) return false;
+  return t < thr;
 }
 
 function isSuspicious(term: string): boolean {
