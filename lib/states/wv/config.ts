@@ -86,11 +86,13 @@ const wvConfig: StateConfig = {
   },
 
   documentedCeilings: {
-    // West Virginia Northern (wvncc) — no public course-section endpoint: its
-    // WVNET Banner host (xewvnprod.wvnet.edu) has neither SSB 9 nor Banner 8
-    // deployed, its CollegeScheduler tenant is stale to Fall 2023, and its
-    // Pathify portal is SAML-gated. Verified 2026-06.
-    courseColleges: ["wvncc"],
+    courses: [
+      {
+        collegeSlug: "wvncc",
+        reason:
+          "West Virginia Northern has no public course-section endpoint: its WVNET Banner host (xewvnprod.wvnet.edu) has neither SSB 9 nor Banner 8 deployed, its CollegeScheduler tenant is stale to Fall 2023, and its Pathify portal is SAML-gated. Verified 2026-06.",
+      },
+    ],
     // Transfers cap at B: Marshall and WVU are the only WV public universities
     // with a public, scrapeable course-to-course source (both shipped).
     // Re-verified 2026-06 — Fairmont State, Shepherd, WV State, and Concord
