@@ -3,22 +3,28 @@
 Programs rollout for Texas (59 colleges; 37 with course data). Catalog platform
 fingerprinted by `scripts/tx/discover-catalogs.ts` → `data/tx/catalog-discovery.json`.
 
-## Shipped — 8 colleges scraped (1,036 programs); **834 plannable across 7 colleges**
-Live-planner verified: collin 205, tarrant-county 174, amarillo 123, alvin 120,
-houston(hccs) 97, vernon 59, weatherford 56.
+## Shipped — 11 colleges scraped (~1,845 programs)
+Original 8 (1,036 programs): collin 205, tarrant-county 174, amarillo 123, alvin 120,
+houston(hccs) 97, vernon 59, weatherford 56, blinn 100 (0 plannable).
+Added 2026-06-22 via per-college catoid pinning + Playwright (809 programs):
+**dallas-college 500, tyler-junior-college 189, midland-college 120.**
 
 | Platform | Colleges |
 |---|---|
-| Acalog | alvin, amarillo, blinn, collin-county, houston-community-college |
+| Acalog | alvin, amarillo, blinn, collin-county, houston-community-college, **dallas, tyler, midland** |
 | SmartCatalogIQ | vernon-college |
 | CourseDog | tarrant-county-college-district |
 | CleanCatalog | weatherford-college |
 
 ## Deferred / incomplete
-- **6 Acalog colleges return 0** (howard, kilgore, northeast-texas, odessa, south-plains,
-  temple): their Acalog catalog dropdown doesn't expose a `selected` catoid in the
-  standard `index.php` form, so catoid auto-discovery falls back to a wrong id with no
-  programs. Needs per-college catoid pinning.
+- **6 more Acalog colleges return 0** (howard, kilgore, northeast-texas, odessa,
+  south-plains, temple): their Acalog catalog dropdown doesn't expose a `selected`
+  catoid in the standard `index.php` form, so catoid auto-discovery falls back to a
+  wrong id with no programs. The fix now exists — `CATALOG_OVERRIDES` in
+  `scripts/tx/scrape-acalog-programs.ts` pins the active catoid (and forces Playwright
+  for JS-rendered search). Dallas/Tyler/Midland were cracked this way; these 6 are the
+  next easy win — probe each catalog's active catoid (see how Dallas=5 was found:
+  the homepage's most-referenced `catoid=` value) and add an override entry.
 - **blinn — 100 programs, 0 plannable**: NOT a code-format issue (the Acalog regex fix
   that recovered surry/mott does not help here). Verified 2026-06-04: blinn's catalog
   (catoid 22 and 24) now serves "Archived Content!" empty shells — no inline codes and no

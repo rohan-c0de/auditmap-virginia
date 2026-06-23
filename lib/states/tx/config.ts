@@ -389,17 +389,21 @@ const txConfig: StateConfig = {
       {
         // discover-catalogs.ts fingerprints each TX college's catalog platform
         // → data/tx/catalog-discovery.json; the platform scrapers read it.
-        // Keep ordered — discovery MUST run before the scrapers. Coverage:
-        // 7 plannable colleges (834 programs). Gaps in data/tx/DEFERRED-programs.md
-        // (6 Acalog colleges with non-standard catoid dropdowns, Alamo/Lone Star
-        // district-shared catalogs, unknown-platform colleges).
+        // Keep ordered — discovery MUST run before the scrapers. Coverage grew
+        // when Dallas/Tyler/Midland (large Acalog catalogs with non-standard
+        // catoid dropdowns + JS-rendered search) were cracked via per-college
+        // catoid pins + Playwright in scrape-acalog-programs.ts (CATALOG_OVERRIDES).
+        // Remaining gaps in data/tx/DEFERRED-programs.md (Alamo/Lone Star
+        // district-shared catalogs, unknown-platform colleges). runner is
+        // "playwright" because the Acalog search-discovery for those three needs
+        // a real browser.
         scripts: [
           "scripts/tx/discover-catalogs.ts",
           "scripts/tx/scrape-smartcatalogiq-programs.ts",
           "scripts/tx/scrape-acalog-programs.ts",
           "scripts/tx/scrape-misc-programs.ts",
         ],
-        runner: "http",
+        runner: "playwright",
       },
     ],
   },

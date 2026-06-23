@@ -25,12 +25,47 @@ interface Discovery {
   domain: string;
   platform: string;
   catalogUrl: string | null;
+  /**
+   * Pin the active catalog id when auto-discovery picks the wrong one — some
+   * catalogs (e.g. Dallas College) expose an old/empty catoid first, so the
+   * generic `discoverAcalogCatoid` lands on an archived catalog with 0 programs.
+   */
+  catoid?: number;
+  /**
+   * Drive the program-discovery fetches through headless Chromium. Needed for
+   * catalogs whose `search_advanced.php` is JS-rendered / bot-gated and returns
+   * nothing to a plain fetch (Dallas/Tyler/Midland). Costs a `runner: playwright`
+   * cron leg, so only set it where plain fetch genuinely fails.
+   */
+  playwright?: boolean;
 }
 
 function baseFromUrl(u: string): string {
   const m = u.match(/^https?:\/\/[^/]+/);
   return m ? m[0] : u.replace(/\/$/, "");
 }
+
+/**
+ * Per-college scrape overrides applied on top of the auto-generated
+ * data/tx/catalog-discovery.json. Lives here (not in the discovery file)
+ * because discover-catalogs.ts REWRITES that file every cron tick, which would
+ * otherwise wipe these pins. Each of these catalogs has a non-standard Acalog
+ * setup that the generic discovery can't handle:
+ *   - catoid: the active catalog id, when auto-discovery lands on an old/empty
+ *     one (Dallas exposes catoid 3/4 before the live catoid 5).
+ *   - playwright: their search_advanced.php is JS-rendered, so a plain fetch
+ *     returns 0 programs — drive it through headless Chromium instead.
+ * Verified 2026-06-22; these were the colleges noted as deferred in
+ * data/tx/DEFERRED-programs.md ("non-standard catoid dropdowns").
+ */
+const CATALOG_OVERRIDES: Record<
+  string,
+  { catoid?: number; playwright?: boolean }
+> = {
+  "dallas-college": { catoid: 5, playwright: true },
+  "tyler-junior-college": { catoid: 20, playwright: true },
+  "midland-college": { catoid: 20, playwright: true },
+};
 
 async function main() {
   const args = process.argv.slice(2);
@@ -51,18 +86,23 @@ async function main() {
   let totalPrograms = 0;
   const summary: { slug: string; catoid: number; navoids: number; programs: number; matched: number }[] = [];
 
-  for (const c of colleges) {
+  for (const c0 of colleges) {
+    // Merge per-college overrides (catoid / playwright) so they survive the
+    // discover-catalogs.ts rewrite of catalog-discovery.json on each cron tick.
+    const c = { ...c0, ...(CATALOG_OVERRIDES[c0.slug] ?? {}) };
     const base = baseFromUrl(c.catalogUrl!);
     console.log(`\n${"=".repeat(60)}\nScraping ${c.slug} (${base})\n${"=".repeat(60)}`);
     try {
-      const catoid = await discoverAcalogCatoid(base, 1);
+      const catoid = c.catoid ?? (await discoverAcalogCatoid(base, 1));
       let navoids: number[] = [];
       try {
         navoids = await discoverProgramNavoids(base, catoid);
       } catch (e) {
         console.warn(`  navoid discovery failed: ${e}`);
       }
-      console.log(`  catoid=${catoid} navoids=[${navoids.join(",")}]`);
+      console.log(
+        `  catoid=${catoid}${c.catoid ? " (pinned)" : ""} navoids=[${navoids.join(",")}]${c.playwright ? " playwright" : ""}`
+      );
       const data = await scrapeAcalogPrograms({
         collegeSlug: c.slug,
         baseUrl: base,
@@ -70,6 +110,7 @@ async function main() {
         autoDiscoverCatoid: false,
         programNavoids: navoids,
         useSearchDiscovery: true,
+        usePlaywright: c.playwright ?? false,
       });
       if (data.programs.length === 0) {
         console.log(`  No programs found for ${c.slug}, skipping.`);
