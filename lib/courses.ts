@@ -108,14 +108,17 @@ export async function loadCoursesForCollege(
   );
 }
 
-// Cross-instance persistent cache (Vercel Data Cache). revalidate 1800s (30m)
-// matches the in-memory CACHE_TTL and is well within the ~3×/week scrape
-// cadence; unstable_cache keys on the arguments automatically.
+// Cross-instance persistent cache (Vercel Data Cache). revalidate 86400s (1d)
+// is well within the ~3×/week scrape cadence and busts immediately on the
+// "courses" tag when an import lands, so the long TTL carries no staleness
+// risk — it just stops crawler-driven cold instances from re-querying Postgres
+// ~48×/day (the egress + ISR-write win). unstable_cache keys on the arguments
+// automatically.
 const _xInstanceCoursesForCollege = unstable_cache(
   (collegeSlug: string, term: string, state: string) =>
     _loadCoursesForCollege(collegeSlug, term, state),
   ["courses-by-college"],
-  { revalidate: 1800, tags: ["courses"] },
+  { revalidate: 86400, tags: ["courses"] },
 );
 
 async function _loadCoursesForCollege(
@@ -529,7 +532,7 @@ const _xInstanceSearchSections = unstable_cache(
     parsed: { prefix: string | null; number: string | null; keyword: string | null },
   ) => _searchSections(term, state, parsed),
   ["search-sections"],
-  { revalidate: 1800, tags: ["courses"] },
+  { revalidate: 86400, tags: ["courses"] },
 );
 
 async function _searchSections(
@@ -654,7 +657,7 @@ const _xInstanceCourseByCode = unstable_cache(
   (prefix: string, number: string, term: string, state: string) =>
     _loadCourseByCode(prefix, number, term, state),
   ["course-by-code"],
-  { revalidate: 1800, tags: ["courses"] },
+  { revalidate: 86400, tags: ["courses"] },
 );
 
 async function _loadCourseByCode(

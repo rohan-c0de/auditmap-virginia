@@ -24,7 +24,7 @@ import { termLabel } from "@/lib/terms";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PlanClient from "./PlanClient";
 
-export const revalidate = 86400; // 1 day
+export const revalidate = 604800; // 7 days — high-cardinality pSEO page (college × program); longer window cuts ISR writes
 
 // Plain-English, jargon-free description of what each credential is. Coarse on
 // purpose (robust to AA/AS/AAS catalog quirks) — the goal is a first-gen
