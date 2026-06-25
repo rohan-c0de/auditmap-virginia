@@ -185,12 +185,41 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
 
   const title = sections[0].course_title;
   const credits = sections[0].credits;
-  const collegeCount = new Set(sections.map((s) => s.college_code)).size;
+  const collegeCodes = new Set(sections.map((s) => s.college_code));
+  const collegeCount = collegeCodes.size;
   const onlineCount = sections.filter((s) => s.mode === "online" || s.mode === "zoom").length;
   const term = termLabel(currentTerm);
+  const creditLabel = `${credits} ${credits === 1 ? "credit" : "credits"}`;
 
-  const pageTitle = `${parsed.prefix} ${parsed.number}: ${title} — ${config.name} Community Colleges`;
-  const description = `${parsed.prefix} ${parsed.number} (${title}, ${credits} ${credits === 1 ? "credit" : "credits"}) — ${sections.length} sections at all ${collegeCount} ${config.name} community colleges for ${term}${onlineCount > 0 ? `, ${onlineCount} online` : ""}. See schedules, open seats, and transfer credit.`;
+  // CTR lever (SEO course-page analysis, 2026-06): these pages rank ~position
+  // 14 but convert at ~1.1% because the title advertised the whole state
+  // ("… — New York Community Colleges") while the searches that hit them are
+  // single-college ("phy 118 suffolk county"). When a course runs at exactly
+  // one college this term, the page effectively IS that college's course page,
+  // so lead the title with the college name to echo the query. Multi-college
+  // pages instead lead with the cross-college comparison — the thing no single
+  // college's own site offers. No transfer fetch here on purpose: getTransferInfo
+  // in metadata is what caused the 2026-05 504s (the #1444 regression).
+  let dominantCollegeName: string | null = null;
+  if (collegeCount === 1) {
+    const code = [...collegeCodes][0];
+    const inst = loadInstitutions(state).find(
+      (i) => i.college_slug === code || i.id === code,
+    );
+    dominantCollegeName = inst?.name ?? null;
+  }
+
+  let pageTitle: string;
+  let description: string;
+  if (dominantCollegeName) {
+    // Front-load code + college (the searched terms); the descriptive
+    // title/term tail may truncate in the SERP — that's fine.
+    pageTitle = `${parsed.prefix} ${parsed.number} at ${dominantCollegeName}: ${title} (${term})`;
+    description = `${parsed.prefix} ${parsed.number} (${title}, ${creditLabel}) at ${dominantCollegeName} for ${term}: ${sections.length} ${sections.length === 1 ? "section" : "sections"}${onlineCount > 0 ? `, ${onlineCount} online` : ""} — schedules, open seats, prerequisites, and where it transfers.`;
+  } else {
+    pageTitle = `${parsed.prefix} ${parsed.number}: ${title} at ${collegeCount} ${config.name} Colleges`;
+    description = `Compare every ${config.name} community college offering ${parsed.prefix} ${parsed.number} (${title}, ${creditLabel}) in ${term}: ${sections.length} sections across ${collegeCount} colleges${onlineCount > 0 ? `, ${onlineCount} online` : ""} — schedules, open seats, and which universities it transfers to.`;
+  }
 
   const canonical = `${process.env.NEXT_PUBLIC_SITE_URL || "https://communitycollegepath.com"}/${state}/course/${code}`;
 
