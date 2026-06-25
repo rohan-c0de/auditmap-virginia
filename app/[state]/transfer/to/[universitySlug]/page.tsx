@@ -20,7 +20,7 @@ import TrackView from "@/components/TrackView";
 import RelatedBlogPosts from "@/components/RelatedBlogPosts";
 import { getBlogRecommendations } from "@/lib/blog-recommendations";
 
-export const revalidate = 86400;
+export const revalidate = 604800; // 7 days — high-cardinality pSEO page (per receiving university); longer window cuts ISR writes
 
 // Only serve pre-generated (state, university) combos. Any slug not in
 // Thin-content guard: only render pages for universities

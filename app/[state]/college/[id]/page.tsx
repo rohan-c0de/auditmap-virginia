@@ -37,8 +37,10 @@ import {
   formatPercent,
 } from "@/lib/scorecard";
 
-// Revalidate every 24 hours — course data only changes when re-scraped
-export const revalidate = 86400;
+// Revalidate weekly — course data only changes when re-scraped, and this is a
+// high-cardinality pSEO page (one per college × state), so the longer window
+// cuts on-demand ISR-cache writes. Busts sooner via the import tag if needed.
+export const revalidate = 604800;
 
 type PageProps = {
   params: Promise<{ state: string; id: string }>;

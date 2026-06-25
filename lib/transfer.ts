@@ -156,7 +156,7 @@ const _xInstanceTransfersByUniversity = unstable_cache(
   (state: string, university: string, cap?: number) =>
     _loadTransferMappingsByUniversity(state, university, cap),
   ["transfer-by-university"],
-  { revalidate: 1800, tags: ["transfers"] },
+  { revalidate: 86400, tags: ["transfers"] },
 );
 
 async function _loadTransferMappingsByUniversity(
