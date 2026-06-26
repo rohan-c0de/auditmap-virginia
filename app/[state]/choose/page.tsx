@@ -10,7 +10,7 @@
  * itself is a small client component. Only programs that QUALIFY for a
  * program page are ever surfaced, so a match can never dead-end on a 404.
  *
- * On-demand ISR (7 days) like the program/programs pages — no build-time
+ * On-demand ISR (14 days) like the program/programs pages — no build-time
  * fan-out. notFound() when the state has no qualifying programs at all
  * (same gate as the /[state]/programs index).
  */
@@ -24,7 +24,7 @@ import { gatherChooseFacts } from "@/lib/programs/choose-data";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ChooseQuiz from "@/components/ChooseQuiz";
 
-export const revalidate = 604800; // 7 days
+export const revalidate = 1209600; // 14 days
 export const dynamicParams = true;
 
 export async function generateStaticParams() {

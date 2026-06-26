@@ -38,7 +38,7 @@ import {
 } from "@/lib/scorecard";
 
 // Revalidate every 24 hours — course data only changes when re-scraped
-export const revalidate = 86400;
+export const revalidate = 1209600;
 
 type PageProps = {
   params: Promise<{ state: string; id: string }>;

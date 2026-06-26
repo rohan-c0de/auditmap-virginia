@@ -4,7 +4,7 @@
  * Lists every course under a given subject (prefix) across all colleges in the
  * state. e.g. `/va/subject/eng` shows all ENG courses across VCCS.
  *
- * Uses ISR (revalidate = 604800). Pages are rendered on-demand and cached for
+ * Uses ISR (revalidate = 1209600). Pages are rendered on-demand and cached for
  * 7 days, same pattern as `/[state]/course/[code]`. Sitemap lists every valid
  * (state, prefix) combination so Google discovers them.
  */
@@ -35,7 +35,7 @@ import {
   formatLastUpdated,
 } from "@/lib/data-freshness";
 
-export const revalidate = 604800; // 7 days — pSEO content rarely changes
+export const revalidate = 1209600; // 14 days
 
 type PageProps = {
   params: Promise<{ state: string; prefix: string }>;
@@ -54,7 +54,7 @@ type PageProps = {
 // out since the courses table grew. The fallback N+1 query path then ran for
 // each of ~1,300 pages, accumulating in memory and OOM-ing the Vercel build
 // worker (observed 2026-05-26). The sitemap still lists every valid
-// combination so Google finds them; ISR caches each page for 7 days after
+// combination so Google finds them; ISR caches each page for 14 days after
 // first visit, so cold-start latency is paid once per page lifetime.
 export const dynamicParams = true;
 

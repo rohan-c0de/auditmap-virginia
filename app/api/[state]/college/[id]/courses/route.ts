@@ -44,7 +44,7 @@ export async function GET(request: NextRequest, context: RouteContext) {
     { courses: trimCoursesForClient(full) },
     {
       headers: {
-        "Cache-Control": "public, s-maxage=86400, stale-while-revalidate=604800",
+        "Cache-Control": "public, s-maxage=1209600, stale-while-revalidate=1209600",
       },
     }
   );

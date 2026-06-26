@@ -10,7 +10,7 @@
  * now reaches the per-program comparison views in two clicks
  * (any-page → header "Programs" → state index → program hub).
  *
- * ISR cadence matches the per-program page (7 days).
+ * ISR cadence matches the per-program page (14 days).
  */
 
 import { notFound } from "next/navigation";

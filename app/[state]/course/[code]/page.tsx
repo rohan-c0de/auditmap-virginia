@@ -29,7 +29,7 @@ import SeatAlertCTA from "@/components/SeatAlertCTA";
 import { buildCollegeCompareRows } from "@/lib/compare-colleges";
 import CourseCollegeCompare from "@/components/CourseCollegeCompare";
 
-export const revalidate = 604800; // 7 days — pSEO content rarely changes
+export const revalidate = 1209600; // 14 days
 
 type PageProps = {
   params: Promise<{ state: string; code: string }>;
@@ -137,7 +137,7 @@ function formatSchedule(s: CourseSection): string {
 // ---------------------------------------------------------------------------
 
 // Return empty — all 25k+ course pages are generated on-demand via ISR
-// (revalidate = 604800). The sitemap still lists every URL so Google finds them.
+// (revalidate = 1209600). The sitemap still lists every URL so Google finds them.
 export async function generateStaticParams() {
   return [];
 }

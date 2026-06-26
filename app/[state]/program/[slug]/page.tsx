@@ -5,7 +5,7 @@
  * college".
  *
  * Threshold-gated to avoid thin pSEO — see `qualifies()` in lib/programs.
- * ISR: 7 days, same as subject/course pages. Sitemap (programs partition)
+ * ISR: 14 days, same as subject/course pages. Sitemap (programs partition)
  * lists only qualifying (state, program) pairs.
  */
 
@@ -44,7 +44,7 @@ import {
   getBlsReportingYear,
 } from "@/lib/bls";
 
-export const revalidate = 604800; // 7 days
+export const revalidate = 1209600; // 14 days
 
 type PageProps = {
   params: Promise<{ state: string; slug: string }>;

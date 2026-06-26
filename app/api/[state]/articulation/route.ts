@@ -15,7 +15,7 @@ interface MajorOption {
   slug: string;
 }
 
-export const revalidate = 86400; // 1 day
+export const revalidate = 1209600; // 14 days
 
 export async function GET(
   request: NextRequest,
@@ -56,7 +56,7 @@ export async function GET(
       { majors: uniqueMajors },
       {
         headers: {
-          "Cache-Control": "public, s-maxage=86400, stale-while-revalidate=604800",
+          "Cache-Control": "public, s-maxage=1209600, stale-while-revalidate=1209600",
         },
       }
     );

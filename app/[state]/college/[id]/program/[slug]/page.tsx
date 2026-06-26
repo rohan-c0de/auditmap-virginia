@@ -8,7 +8,7 @@
  * the cross-dataset join that the separate search / transfer / schedule tools
  * make the student assemble by hand. See lib/programs/planner.ts.
  *
- * ISR (1 day), same cadence as the college page. University selection happens
+ * ISR (14 days), same cadence as the college page. University selection happens
  * client-side from a tiny server-built payload, so the route stays static and
  * never opts into dynamic rendering (cf. the college page's searchParams note).
  */
@@ -24,7 +24,7 @@ import { termLabel } from "@/lib/terms";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PlanClient from "./PlanClient";
 
-export const revalidate = 86400; // 1 day
+export const revalidate = 1209600; // 14 days
 
 // Plain-English, jargon-free description of what each credential is. Coarse on
 // purpose (robust to AA/AS/AAS catalog quirks) — the goal is a first-gen

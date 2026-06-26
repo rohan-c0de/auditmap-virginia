@@ -9,7 +9,7 @@ import { getCurrentTerm } from "@/lib/terms";
 import { ProgramList } from "@/components/ProgramRequirements";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
-export const revalidate = 604800; // 7 days
+export const revalidate = 1209600; // 14 days
 
 type PageProps = {
   params: Promise<{ state: string; id: string }>;

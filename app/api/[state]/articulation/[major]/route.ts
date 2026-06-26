@@ -10,7 +10,7 @@ const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-export const revalidate = 86400; // 1 day
+export const revalidate = 1209600; // 14 days
 
 export async function GET(
   request: NextRequest,
@@ -155,7 +155,7 @@ export async function GET(
       { agreement },
       {
         headers: {
-          "Cache-Control": "public, s-maxage=86400, stale-while-revalidate=604800",
+          "Cache-Control": "public, s-maxage=1209600, stale-while-revalidate=1209600",
         },
       }
     );

@@ -16,7 +16,7 @@ import SubjectTermSection from "./SubjectTermSection";
 import AdUnit from "@/components/AdUnit";
 import TrackView from "@/components/TrackView";
 
-export const revalidate = 86400;
+export const revalidate = 1209600;
 
 type PageProps = {
   params: Promise<{ state: string; id: string; prefix: string }>;

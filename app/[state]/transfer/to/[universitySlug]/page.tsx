@@ -20,7 +20,7 @@ import TrackView from "@/components/TrackView";
 import RelatedBlogPosts from "@/components/RelatedBlogPosts";
 import { getBlogRecommendations } from "@/lib/blog-recommendations";
 
-export const revalidate = 86400;
+export const revalidate = 1209600;
 
 // Only serve pre-generated (state, university) combos. Any slug not in
 // Thin-content guard: only render pages for universities

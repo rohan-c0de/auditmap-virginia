@@ -5,7 +5,7 @@ import { getCourseCount } from "@/lib/courses";
 import { getCurrentTerm } from "@/lib/terms";
 import { getAllStates } from "@/lib/states/registry";
 import { requireStateConfig } from "@/lib/states/route-helpers";
-export const revalidate = 86400; // Revalidate daily so new course imports show up
+export const revalidate = 1209600; // 14 days
 
 type Props = {
   params: Promise<{ state: string }>;

@@ -64,10 +64,10 @@ export async function GET(request: NextRequest, context: RouteContext) {
     {
       headers: {
         // Cache at the edge — contents only change when Supabase data updates,
-        // which we reflect via the same `revalidate = 86400` cadence as the
+        // which we reflect via the same `revalidate = 1209600` cadence as the
         // page itself.
         "Cache-Control":
-          "public, s-maxage=86400, stale-while-revalidate=604800",
+          "public, s-maxage=1209600, stale-while-revalidate=1209600",
       },
     }
   );
