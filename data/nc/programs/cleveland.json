@@ -2,7 +2,7 @@
   "college_slug": "cleveland",
   "catalog_year": "2026-2027",
   "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/academic-programs/",
-  "scraped_at": "2026-06-01T13:42:23.353Z",
+  "scraped_at": "2026-08-01T10:13:09.894Z",
   "programs": [
     {
       "title": "Air Conditioning, Heating, and Refrigeration Technology Certificate (C35100)",
@@ -139,100 +139,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Automation Engineering Technology - Automation Systems Certificate (C40120S)",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/applied-science-programs/automation-engineering-technology-automation-systems-certificate-c40120s",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ATR",
-              "number": "112",
-              "title": "Intro to Automation",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ATR",
-              "number": "215",
-              "title": "Sensors and Transducers",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ELC",
-              "number": "128",
-              "title": "Intro to PLC",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HYD",
-              "number": "110",
-              "title": "Hydraulics/Pneumatics I",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "engineering"
-    },
-    {
-      "title": "Applied Animal Science Technology - Intro to Animal Science Certificate (C15280A)",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/applied-science-programs/applied-animal-science-technology-intro-to-animal-science-certificate-c15280a",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ANS",
-              "number": "110",
-              "title": "Animal Science",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ANS",
-              "number": "115",
-              "title": "Animal Feeds & Nutrition",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ANS",
-              "number": "120",
-              "title": "Beef Production",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ANS",
-              "number": "140",
-              "title": "Swine Production",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Automation Engineering Technology Certificate (C40120)",
       "credential": "certificate",
       "program_code": null,
@@ -334,10 +240,10 @@
       "matched_program_slug": "engineering"
     },
     {
-      "title": "Business Administration - General Certificate (C25120G)",
+      "title": "Automation Engineering Technology - Automation Systems Certificate (C40120S)",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/applied-science-programs/business-administration-general-certificate-c25120g",
+      "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/applied-science-programs/automation-engineering-technology-automation-systems-certificate-c40120s",
       "total_credits": 12,
       "gpa_minimum": 2,
       "description": null,
@@ -348,37 +254,84 @@
           "choose_n": null,
           "courses": [
             {
-              "prefix": "BUS",
+              "prefix": "ATR",
+              "number": "112",
+              "title": "Intro to Automation",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ATR",
+              "number": "215",
+              "title": "Sensors and Transducers",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ELC",
+              "number": "128",
+              "title": "Intro to PLC",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HYD",
               "number": "110",
-              "title": "Introduction to Business",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "115",
-              "title": "Business Law I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "137",
-              "title": "Principles of Management",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MKT",
-              "number": "120",
-              "title": "Principles of Marketing",
+              "title": "Hydraulics/Pneumatics I",
               "credits": 3,
               "or_alternatives": []
             }
           ]
         }
       ],
-      "matched_program_slug": "business-administration"
+      "matched_program_slug": "engineering"
+    },
+    {
+      "title": "Applied Animal Science Technology - Intro to Animal Science Certificate (C15280A)",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/applied-science-programs/applied-animal-science-technology-intro-to-animal-science-certificate-c15280a",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ANS",
+              "number": "110",
+              "title": "Animal Science",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ANS",
+              "number": "115",
+              "title": "Animal Feeds & Nutrition",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ANS",
+              "number": "120",
+              "title": "Beef Production",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ANS",
+              "number": "140",
+              "title": "Swine Production",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
     },
     {
       "title": "Automation Engineering Technology - Programming Certificate (C40120F)",
@@ -543,11 +496,11 @@
       "matched_program_slug": "criminal-justice"
     },
     {
-      "title": "Collision Repair and Refinishing Technology Advanced Certificate (C60130A)",
+      "title": "Business Administration - General Certificate (C25120G)",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/applied-science-programs/collision-repair-and-refinishing-technology-advanced-certificate-c60130a",
-      "total_credits": 13,
+      "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/applied-science-programs/business-administration-general-certificate-c25120g",
+      "total_credits": 12,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
@@ -557,37 +510,37 @@
           "choose_n": null,
           "courses": [
             {
-              "prefix": "AUB",
-              "number": "114",
-              "title": "Special Finishes",
-              "credits": 2,
+              "prefix": "BUS",
+              "number": "110",
+              "title": "Introduction to Business",
+              "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "AUB",
-              "number": "122",
-              "title": "Non-Structural Damage II",
-              "credits": 4,
+              "prefix": "BUS",
+              "number": "115",
+              "title": "Business Law I",
+              "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "AUB",
-              "number": "132",
-              "title": "Structural Damage II",
-              "credits": 4,
+              "prefix": "BUS",
+              "number": "137",
+              "title": "Principles of Management",
+              "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "TRN",
-              "number": "180",
-              "title": "Basic Welding for Transp",
+              "prefix": "MKT",
+              "number": "120",
+              "title": "Principles of Marketing",
               "credits": 3,
               "or_alternatives": []
             }
           ]
         }
       ],
-      "matched_program_slug": null
+      "matched_program_slug": "business-administration"
     },
     {
       "title": "Business Administration - Operations Management-Lean Certificate (C25120OL)",
@@ -635,6 +588,53 @@
         }
       ],
       "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Collision Repair and Refinishing Technology Advanced Certificate (C60130A)",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/applied-science-programs/collision-repair-and-refinishing-technology-advanced-certificate-c60130a",
+      "total_credits": 13,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "AUB",
+              "number": "114",
+              "title": "Special Finishes",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUB",
+              "number": "122",
+              "title": "Non-Structural Damage II",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUB",
+              "number": "132",
+              "title": "Structural Damage II",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TRN",
+              "number": "180",
+              "title": "Basic Welding for Transp",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
     },
     {
       "title": "Collision Repair and Refinishing Technology Certificate (C60130)",
@@ -954,6 +954,53 @@
       "matched_program_slug": null
     },
     {
+      "title": "Criminal Justice Technology Certificate (C55180)",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/applied-science-programs/criminal-justice-technology-certificate-c55180",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CJC",
+              "number": "111",
+              "title": "Intro to Criminal Justice",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CJC",
+              "number": "121",
+              "title": "Law Enforcement Operations",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CJC",
+              "number": "141",
+              "title": "Corrections",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CJC",
+              "number": "212",
+              "title": "Ethics & Comm Relations",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "criminal-justice"
+    },
+    {
       "title": "Early Childhood Education Certificate (C55220)",
       "credential": "certificate",
       "program_code": null,
@@ -985,6 +1032,60 @@
               "prefix": "EDU",
               "number": "151",
               "title": "Creative Activities",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "153",
+              "title": "Health, Safety and Nutrition",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "early-childhood-education"
+    },
+    {
+      "title": "Early Childhood Preschool Certificate (C55860)",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/applied-science-programs/early-childhood-preschool-certificate-c55860",
+      "total_credits": 16,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "EDU",
+              "number": "119",
+              "title": "Intro to Early Child Education",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "131",
+              "title": "Child, Family, and Community",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "145",
+              "title": "Child Development II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "146",
+              "title": "Child Guidance",
               "credits": 3,
               "or_alternatives": []
             },
@@ -1046,107 +1147,6 @@
         }
       ],
       "matched_program_slug": null
-    },
-    {
-      "title": "Early Childhood Preschool Certificate (C55860)",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/applied-science-programs/early-childhood-preschool-certificate-c55860",
-      "total_credits": 16,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "EDU",
-              "number": "119",
-              "title": "Intro to Early Child Education",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "131",
-              "title": "Child, Family, and Community",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "145",
-              "title": "Child Development II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "146",
-              "title": "Child Guidance",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "153",
-              "title": "Health, Safety and Nutrition",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "early-childhood-education"
-    },
-    {
-      "title": "Criminal Justice Technology Certificate (C55180)",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/applied-science-programs/criminal-justice-technology-certificate-c55180",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CJC",
-              "number": "111",
-              "title": "Intro to Criminal Justice",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CJC",
-              "number": "121",
-              "title": "Law Enforcement Operations",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CJC",
-              "number": "141",
-              "title": "Corrections",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CJC",
-              "number": "212",
-              "title": "Ethics & Comm Relations",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "criminal-justice"
     },
     {
       "title": "Elementary Education Residency Licensure Certificate (C55490)",
@@ -1553,6 +1553,53 @@
       "matched_program_slug": "business-administration"
     },
     {
+      "title": "Information Technology - Cisco Networking Certificate (C25590C)",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/applied-science-programs/information-technology-cisco-networking-certificate-c25590c",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CCT",
+              "number": "250",
+              "title": "Network Vulnerabilities I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NET",
+              "number": "125",
+              "title": "Introduction to Networks",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NET",
+              "number": "126",
+              "title": "Switching and Routing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NET",
+              "number": "225",
+              "title": "Enterprise Networking",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "computer-science"
+    },
+    {
       "title": "Information Technology - Computer Science Foundation Certificate (C25590K)",
       "credential": "certificate",
       "program_code": null,
@@ -1748,53 +1795,6 @@
       "matched_program_slug": "computer-science"
     },
     {
-      "title": "Information Technology - Cisco Networking Certificate (C25590C)",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/applied-science-programs/information-technology-cisco-networking-certificate-c25590c",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CCT",
-              "number": "250",
-              "title": "Network Vulnerabilities I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NET",
-              "number": "125",
-              "title": "Introduction to Networks",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NET",
-              "number": "126",
-              "title": "Switching and Routing",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NET",
-              "number": "225",
-              "title": "Enterprise Networking",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "computer-science"
-    },
-    {
       "title": "Information Technology - Social Media Certificate (C25590S)",
       "credential": "certificate",
       "program_code": null,
@@ -1889,53 +1889,6 @@
       "matched_program_slug": "computer-science"
     },
     {
-      "title": "Magnetic Resonance Imaging Certificate (C45200M)",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/applied-science-programs/magnetic-resonance-imaging-certificate-c45200m",
-      "total_credits": 18,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "MRI",
-              "number": "210",
-              "title": "MRI Physics and Equipment",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MRI",
-              "number": "211",
-              "title": "MRI Procedures",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MRI",
-              "number": "225",
-              "title": "MRI Clinical Practicum",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MRI",
-              "number": "226",
-              "title": "MRI Clinical Practicum",
-              "credits": 6,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Information Technology - Webmaster Certificate (C25590Q)",
       "credential": "certificate",
       "program_code": null,
@@ -1981,6 +1934,53 @@
         }
       ],
       "matched_program_slug": "computer-science"
+    },
+    {
+      "title": "Magnetic Resonance Imaging Certificate (C45200M)",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/applied-science-programs/magnetic-resonance-imaging-certificate-c45200m",
+      "total_credits": 18,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MRI",
+              "number": "210",
+              "title": "MRI Physics and Equipment",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MRI",
+              "number": "211",
+              "title": "MRI Procedures",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MRI",
+              "number": "225",
+              "title": "MRI Clinical Practicum",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MRI",
+              "number": "226",
+              "title": "MRI Clinical Practicum",
+              "credits": 6,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
     },
     {
       "title": "Manicuring/Nail Technology Certificate (C55400)",
@@ -2204,100 +2204,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Mission Critical Operations - Information Technology Foundations Certificate (C40430I)",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/applied-science-programs/mission-critical-operations-information-technology-foundations-certificate-c40430i",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CTS",
-              "number": "120",
-              "title": "Hardware/Software Support",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MCO",
-              "number": "110",
-              "title": "Introduction to Mission Critical Operations",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MCO",
-              "number": "115",
-              "title": "Mission Critical Operations Infrastructure",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NOS",
-              "number": "110",
-              "title": "Operating Systems Concepts",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "computer-science"
-    },
-    {
-      "title": "Mission Critical Operations - Operations Technology Foundations Certificate (C40430O)",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/applied-science-programs/mission-critical-operations-operations-technology-foundations-certificate-c40430o",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CIS",
-              "number": "110",
-              "title": "Introduction to Computers",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CTS",
-              "number": "130",
-              "title": "Spreadsheet",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MCO",
-              "number": "110",
-              "title": "Introduction to Mission Critical Operations",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MCO",
-              "number": "115",
-              "title": "Mission Critical Operations Infrastructure",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Medical Office Administration - Medical Coding Certificate (C25310M)",
       "credential": "certificate",
       "program_code": null,
@@ -2352,10 +2258,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Nurse Aide Certificate (C45840)",
+      "title": "Mission Critical Operations - Information Technology Foundations Certificate (C40430I)",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/applied-science-programs/nurse-aide-certificate-c45840",
+      "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/applied-science-programs/mission-critical-operations-information-technology-foundations-certificate-c40430i",
       "total_credits": 12,
       "gpa_minimum": 2,
       "description": null,
@@ -2366,23 +2272,37 @@
           "choose_n": null,
           "courses": [
             {
-              "prefix": "NAS",
-              "number": "111",
-              "title": "Nurse Aide I",
-              "credits": 6,
+              "prefix": "CTS",
+              "number": "120",
+              "title": "Hardware/Software Support",
+              "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "NAS",
-              "number": "112",
-              "title": "Nurse Aide II",
-              "credits": 6,
+              "prefix": "MCO",
+              "number": "110",
+              "title": "Introduction to Mission Critical Operations",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MCO",
+              "number": "115",
+              "title": "Mission Critical Operations Infrastructure",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NOS",
+              "number": "110",
+              "title": "Operating Systems Concepts",
+              "credits": 3,
               "or_alternatives": []
             }
           ]
         }
       ],
-      "matched_program_slug": "nursing"
+      "matched_program_slug": "computer-science"
     },
     {
       "title": "Office Management- Basic Certificate (C25370E)",
@@ -2519,6 +2439,46 @@
       "matched_program_slug": null
     },
     {
+      "title": "Plumbing Certificate (C35300)",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/applied-science-programs/plumbing-certificate-c35300",
+      "total_credits": 17,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "PLU",
+              "number": "110",
+              "title": "Modern Plumbing",
+              "credits": 9,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PLU",
+              "number": "130",
+              "title": "Plumbing Systems",
+              "credits": 6,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PLU",
+              "number": "140",
+              "title": "Intro to Plumbing Codes",
+              "credits": 2,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Welding Technology - Basic Certificate (C50420C)",
       "credential": "certificate",
       "program_code": null,
@@ -2566,10 +2526,10 @@
       "matched_program_slug": "welding"
     },
     {
-      "title": "Plumbing Certificate (C35300)",
+      "title": "Welding Technology Certificate (C50420)",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/applied-science-programs/plumbing-certificate-c35300",
+      "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/applied-science-programs/welding-technology-certificate-c50420",
       "total_credits": 17,
       "gpa_minimum": 2,
       "description": null,
@@ -2580,30 +2540,37 @@
           "choose_n": null,
           "courses": [
             {
-              "prefix": "PLU",
-              "number": "110",
-              "title": "Modern Plumbing",
-              "credits": 9,
+              "prefix": "WLD",
+              "number": "115",
+              "title": "SMAW (Stick) Plate",
+              "credits": 5,
               "or_alternatives": []
             },
             {
-              "prefix": "PLU",
-              "number": "130",
-              "title": "Plumbing Systems",
-              "credits": 6,
+              "prefix": "WLD",
+              "number": "121",
+              "title": "GMAW (MIG) FCAW/Plate",
+              "credits": 4,
               "or_alternatives": []
             },
             {
-              "prefix": "PLU",
-              "number": "140",
-              "title": "Intro to Plumbing Codes",
-              "credits": 2,
+              "prefix": "WLD",
+              "number": "131",
+              "title": "GTAW (TIG) Plate",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WLD",
+              "number": "215",
+              "title": "SMAW (Stick) Pipe",
+              "credits": 4,
               "or_alternatives": []
             }
           ]
         }
       ],
-      "matched_program_slug": null
+      "matched_program_slug": "welding"
     },
     {
       "title": "Welding Technology - GTAW (TIG) Certificate (C50420T)",
@@ -2645,53 +2612,6 @@
               "number": "141",
               "title": "Symbols and Specifications",
               "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "welding"
-    },
-    {
-      "title": "Welding Technology Certificate (C50420)",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/applied-science-programs/welding-technology-certificate-c50420",
-      "total_credits": 17,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required Courses",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "WLD",
-              "number": "115",
-              "title": "SMAW (Stick) Plate",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WLD",
-              "number": "121",
-              "title": "GMAW (MIG) FCAW/Plate",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WLD",
-              "number": "131",
-              "title": "GTAW (TIG) Plate",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WLD",
-              "number": "215",
-              "title": "SMAW (Stick) Pipe",
-              "credits": 4,
               "or_alternatives": []
             }
           ]
@@ -2766,6 +2686,32 @@
       "matched_program_slug": null
     },
     {
+      "title": "Electrical Lineworker Academy",
+      "credential": "diploma",
+      "program_code": null,
+      "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/continuing-education-programs-non-credit/ce-academy-programs/electrical-lineworker-academy",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ELT",
+              "number": "3018",
+              "title": "Electrical Lineworker Academy-Basic",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Heavy Equipment Operator",
       "credential": "other",
       "program_code": null,
@@ -2792,10 +2738,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Electrical Lineworker Academy",
-      "credential": "diploma",
+      "title": "Pharmacy Tech Academy",
+      "credential": "other",
       "program_code": null,
-      "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/continuing-education-programs-non-credit/ce-academy-programs/electrical-lineworker-academy",
+      "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/continuing-education-programs-non-credit/ce-academy-programs/pharmacy-technician",
       "total_credits": null,
       "gpa_minimum": 2,
       "description": null,
@@ -2806,10 +2752,57 @@
           "choose_n": null,
           "courses": [
             {
-              "prefix": "ELT",
-              "number": "3018",
-              "title": "Electrical Lineworker Academy-Basic",
+              "prefix": "PHM",
+              "number": "3250",
+              "title": "Pharmacy Technician",
               "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Mission Critical Operations - Operations Technology Foundations Certificate (C40430O)",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/applied-science-programs/mission-critical-operations-operations-technology-foundations-certificate-c40430o",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "110",
+              "title": "Introduction to Computers",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CTS",
+              "number": "130",
+              "title": "Spreadsheet",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MCO",
+              "number": "110",
+              "title": "Introduction to Mission Critical Operations",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MCO",
+              "number": "115",
+              "title": "Mission Critical Operations Infrastructure",
+              "credits": 3,
               "or_alternatives": []
             }
           ]
@@ -2844,11 +2837,11 @@
       "matched_program_slug": null
     },
     {
-      "title": "Pharmacy Tech Academy",
-      "credential": "other",
+      "title": "Nurse Aide Certificate (C45840)",
+      "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/continuing-education-programs-non-credit/ce-academy-programs/pharmacy-technician",
-      "total_credits": null,
+      "catalog_url": "https://clevelandcc.smartcatalogiq.com/en/2026-2027/academic-bulletin-student-handbook/applied-science-programs/nurse-aide-certificate-c45840",
+      "total_credits": 12,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
@@ -2858,16 +2851,23 @@
           "choose_n": null,
           "courses": [
             {
-              "prefix": "PHM",
-              "number": "3250",
-              "title": "Pharmacy Technician",
-              "credits": 0,
+              "prefix": "NAS",
+              "number": "111",
+              "title": "Nurse Aide I",
+              "credits": 6,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NAS",
+              "number": "112",
+              "title": "Nurse Aide II",
+              "credits": 6,
               "or_alternatives": []
             }
           ]
         }
       ],
-      "matched_program_slug": null
+      "matched_program_slug": "nursing"
     }
   ]
 }

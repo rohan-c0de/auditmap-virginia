@@ -2,7 +2,7 @@
   "college_slug": "wayne",
   "catalog_year": "2024-2025",
   "catalog_url": "https://waynecc.smartcatalogiq.com/en/2024-2025/general-catalog-and-student-handbook/work-based-learning-program/",
-  "scraped_at": "2026-06-01T13:45:44.456Z",
+  "scraped_at": "2026-08-01T10:25:01.943Z",
   "programs": [
     {
       "title": "A+ Fundamentals Certificate",
@@ -50,6 +50,60 @@
               "prefix": "CTS",
               "number": "220",
               "title": "Advanced Hardware/Software Support",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Application Development Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://waynecc.smartcatalogiq.com/en/2024-2025/general-catalog-and-student-handbook/programs-of-study/certificate-diploma-and-associate-in-applied-science-degree-programs/application-development-certificate",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "First (Spring) Semester",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CSC",
+              "number": "134",
+              "title": "C++ Programming",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSC",
+              "number": "151",
+              "title": "JAVA Programming",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Second (Fall) Semester",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CSC",
+              "number": "251",
+              "title": "Advanced JAVA Programming",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DBA",
+              "number": "120",
+              "title": "Database Programming I",
               "credits": 3,
               "or_alternatives": []
             }
@@ -235,60 +289,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Application Development Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://waynecc.smartcatalogiq.com/en/2024-2025/general-catalog-and-student-handbook/programs-of-study/certificate-diploma-and-associate-in-applied-science-degree-programs/application-development-certificate",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "First (Spring) Semester",
-          "credits_required": 6,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CSC",
-              "number": "134",
-              "title": "C++ Programming",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CSC",
-              "number": "151",
-              "title": "JAVA Programming",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Second (Fall) Semester",
-          "credits_required": 6,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CSC",
-              "number": "251",
-              "title": "Advanced JAVA Programming",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "DBA",
-              "number": "120",
-              "title": "Database Programming I",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Artificial Intelligence Fundamentals Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -397,6 +397,74 @@
       "matched_program_slug": null
     },
     {
+      "title": "Computer-Integrated Machining - CNC Programming Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://waynecc.smartcatalogiq.com/en/2024-2025/general-catalog-and-student-handbook/programs-of-study/certificate-diploma-and-associate-in-applied-science-degree-programs/computer-integrated-machining-cnc-programming-certificate",
+      "total_credits": 8,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "1st 8 weeks",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MAC",
+              "number": "124",
+              "title": "CNC Milling",
+              "credits": 2,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "2nd 8 weeks",
+          "credits_required": 4,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MAC",
+              "number": "224",
+              "title": "Advanced CNC Milling",
+              "credits": 2,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "1st Session",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MAC",
+              "number": "122",
+              "title": "CNC Turning",
+              "credits": 2,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "2nd Session",
+          "credits_required": 4,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MAC",
+              "number": "222",
+              "title": "Advanced CNC Turning",
+              "credits": 2,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Computer Programming Certificate",
       "credential": "certificate",
       "program_code": null,
@@ -456,6 +524,46 @@
         }
       ],
       "matched_program_slug": null
+    },
+    {
+      "title": "Criminal Justice Technology/ Forensic Science Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://waynecc.smartcatalogiq.com/en/2024-2025/general-catalog-and-student-handbook/programs-of-study/certificate-diploma-and-associate-in-applied-science-degree-programs/criminal-justice-technology-forensic-science-certificate",
+      "total_credits": 9,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "1st 8 weeks",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CJC",
+              "number": "245",
+              "title": "Friction Ridge Analysis",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "2nd 8 weeks",
+          "credits_required": 9,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CJC",
+              "number": "246",
+              "title": "Advanced Friction Ridge Analysis",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "criminal-justice"
     },
     {
       "title": "Cybersecurity Concepts Certificate",

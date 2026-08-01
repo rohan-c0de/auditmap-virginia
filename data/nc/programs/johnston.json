@@ -2,69 +2,8 @@
   "college_slug": "johnston",
   "catalog_year": "",
   "catalog_url": "https://courseleaf.johnstoncc.edu/programs/",
-  "scraped_at": "2026-06-01T13:49:35.738Z",
+  "scraped_at": "2026-08-01T10:32:00.281Z",
   "programs": [
-    {
-      "title": "Biotechnology- Bioprocess Manufacturing Certificate — Associate in Arts",
-      "credential": "AA",
-      "program_code": null,
-      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/biological-chemical-technologies/biological-chemical-technologies-certificate/",
-      "total_credits": null,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BIO",
-              "number": "110",
-              "title": "Principles of Biology",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "111",
-              "title": "General Biology I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BPM",
-              "number": "110",
-              "title": "Bioprocess Practices",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PTC",
-              "number": "110",
-              "title": "Industrial Environment",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PTC",
-              "number": "210",
-              "title": "Pharmaceutical Industrial Processes",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PTC",
-              "number": "228",
-              "title": "Pharmaceutical Issues",
-              "credits": 1,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "biology"
-    },
     {
       "title": "Biotechnology Degree — Associate in Arts",
       "credential": "AA",
@@ -216,6 +155,67 @@
               "prefix": "WBL",
               "number": "111",
               "title": "Work-Based Learning Ior Pharmaceutical Issues",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "biology"
+    },
+    {
+      "title": "Biotechnology- Bioprocess Manufacturing Certificate — Associate in Arts",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/biological-chemical-technologies/biological-chemical-technologies-certificate/",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BIO",
+              "number": "110",
+              "title": "Principles of Biology",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "111",
+              "title": "General Biology I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BPM",
+              "number": "110",
+              "title": "Bioprocess Practices",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PTC",
+              "number": "110",
+              "title": "Industrial Environment",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PTC",
+              "number": "210",
+              "title": "Pharmaceutical Industrial Processes",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PTC",
+              "number": "228",
+              "title": "Pharmaceutical Issues",
               "credits": 1,
               "or_alternatives": []
             }
@@ -651,6 +651,60 @@
       "matched_program_slug": "accounting"
     },
     {
+      "title": "Payroll Accounting Clerk Certificate — Associate in Arts",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/business-technologies/accounting-finance/payroll-accounting-clerk-certificate/",
+      "total_credits": 13,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 13,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACC",
+              "number": "120",
+              "title": "Principles of Financial Accounting",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "110",
+              "title": "Introduction to Computers",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACC",
+              "number": "140",
+              "title": "Payroll Accounting",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACC",
+              "number": "149",
+              "title": "Introduction to Accounting Spreadsheets",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACC",
+              "number": "150",
+              "title": "Accounting Software Applications",
+              "credits": 2,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "accounting"
+    },
+    {
       "title": "Income Tax Preparer Certificate — Associate in Arts",
       "credential": "AA",
       "program_code": null,
@@ -710,60 +764,6 @@
         }
       ],
       "matched_program_slug": null
-    },
-    {
-      "title": "Payroll Accounting Clerk Certificate — Associate in Arts",
-      "credential": "AA",
-      "program_code": null,
-      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/business-technologies/accounting-finance/payroll-accounting-clerk-certificate/",
-      "total_credits": 13,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 13,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ACC",
-              "number": "120",
-              "title": "Principles of Financial Accounting",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "110",
-              "title": "Introduction to Computers",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACC",
-              "number": "140",
-              "title": "Payroll Accounting",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACC",
-              "number": "149",
-              "title": "Introduction to Accounting Spreadsheets",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACC",
-              "number": "150",
-              "title": "Accounting Software Applications",
-              "credits": 2,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "accounting"
     },
     {
       "title": "Business Administration Degree — Associate in Arts",
@@ -939,60 +939,6 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Entrepreneurship Certificate — Associate in Arts",
-      "credential": "AA",
-      "program_code": null,
-      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/business-technologies/business-administration/entrepreneurship-certificate/",
-      "total_credits": 16,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 16,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BAS",
-              "number": "120",
-              "title": "Introduction to Analytics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "139",
-              "title": "Entrepreneurship I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MKT",
-              "number": "232",
-              "title": "Social Media Marketing",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACC",
-              "number": "120",
-              "title": "Principles of Financial Accounting",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "245",
-              "title": "Entrepreneurship II",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Business Administration Diploma — Associate in Arts",
       "credential": "AA",
       "program_code": null,
@@ -1108,6 +1054,60 @@
         }
       ],
       "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Entrepreneurship Certificate — Associate in Arts",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/business-technologies/business-administration/entrepreneurship-certificate/",
+      "total_credits": 16,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 16,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BAS",
+              "number": "120",
+              "title": "Introduction to Analytics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "139",
+              "title": "Entrepreneurship I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MKT",
+              "number": "232",
+              "title": "Social Media Marketing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACC",
+              "number": "120",
+              "title": "Principles of Financial Accounting",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "245",
+              "title": "Entrepreneurship II",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
     },
     {
       "title": "Intermediate Business Administration Certificate — Associate in Arts",
@@ -1860,67 +1860,6 @@
       "matched_program_slug": "computer-science"
     },
     {
-      "title": "Cybersecurity II Certificate — Associate in Arts",
-      "credential": "AA",
-      "program_code": null,
-      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/business-technologies/information-technology/cybersecurity-ii-certificate/",
-      "total_credits": 18,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 18,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CCT",
-              "number": "110",
-              "title": "Introduction to Cyber Crime",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SEC",
-              "number": "110",
-              "title": "Security Concepts",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NET",
-              "number": "125",
-              "title": "Introduction to Networks",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CSC",
-              "number": "121",
-              "title": "Python Programming",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SEC",
-              "number": "160",
-              "title": "Security Administration I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SEC",
-              "number": "151",
-              "title": "Introduction to Protocol Analysis",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "computer-science"
-    },
-    {
       "title": "General PC Support Tech Certificate — Associate in Arts",
       "credential": "AA",
       "program_code": null,
@@ -1980,6 +1919,67 @@
         }
       ],
       "matched_program_slug": null
+    },
+    {
+      "title": "Cybersecurity II Certificate — Associate in Arts",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/business-technologies/information-technology/cybersecurity-ii-certificate/",
+      "total_credits": 18,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CCT",
+              "number": "110",
+              "title": "Introduction to Cyber Crime",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SEC",
+              "number": "110",
+              "title": "Security Concepts",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NET",
+              "number": "125",
+              "title": "Introduction to Networks",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSC",
+              "number": "121",
+              "title": "Python Programming",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SEC",
+              "number": "160",
+              "title": "Security Administration I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SEC",
+              "number": "151",
+              "title": "Introduction to Protocol Analysis",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "computer-science"
     },
     {
       "title": "Information Technology - Network Management Concentration Degree — Associate in Arts",
@@ -2148,116 +2148,6 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Information Technology Diploma — Associate in Arts",
-      "credential": "AA",
-      "program_code": null,
-      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/business-technologies/information-technology/information-technology-diploma/",
-      "total_credits": 39,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 39,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "NOS",
-              "number": "110",
-              "title": "Operating Systems Concepts",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "110",
-              "title": "Introduction to Computers",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENG",
-              "number": "111",
-              "title": "Writing and Inquiry",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CTI",
-              "number": "110",
-              "title": "Information Technology Foundations",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CTI",
-              "number": "120",
-              "title": "Network and Security Foundations",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CTS",
-              "number": "115",
-              "title": "Information Systems Business Concepts",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NOS",
-              "number": "120",
-              "title": "Linux Single User",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NOS",
-              "number": "130",
-              "title": "Windows Single User",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SEC",
-              "number": "110",
-              "title": "Security Concepts",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NET",
-              "number": "125",
-              "title": "Introduction to Networks",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NET",
-              "number": "126",
-              "title": "Switching and Routing",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HUM",
-              "number": "115",
-              "title": "Critical Thinkingor Introduction to Ethics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CTS",
-              "number": "120",
-              "title": "Hardware/Software Support",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "computer-science"
-    },
-    {
       "title": "Information Technology - Cybersecurity Concentration Degree — Associate in Arts",
       "credential": "AA",
       "program_code": null,
@@ -2424,19 +2314,61 @@
       "matched_program_slug": "computer-science"
     },
     {
-      "title": "Information Technology Operating SYS Foundation Certificate — Associate in Arts",
+      "title": "Information Technology Diploma — Associate in Arts",
       "credential": "AA",
       "program_code": null,
-      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/business-technologies/information-technology/information-technology-operating-sys-foundation-certificate/",
-      "total_credits": 12,
+      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/business-technologies/information-technology/information-technology-diploma/",
+      "total_credits": 39,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "Recommended Course Sequence",
-          "credits_required": 12,
+          "credits_required": 39,
           "choose_n": null,
           "courses": [
+            {
+              "prefix": "NOS",
+              "number": "110",
+              "title": "Operating Systems Concepts",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "110",
+              "title": "Introduction to Computers",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "111",
+              "title": "Writing and Inquiry",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CTI",
+              "number": "110",
+              "title": "Information Technology Foundations",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CTI",
+              "number": "120",
+              "title": "Network and Security Foundations",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CTS",
+              "number": "115",
+              "title": "Information Systems Business Concepts",
+              "credits": 3,
+              "or_alternatives": []
+            },
             {
               "prefix": "NOS",
               "number": "120",
@@ -2464,152 +2396,32 @@
               "title": "Introduction to Networks",
               "credits": 3,
               "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "computer-science"
-    },
-    {
-      "title": "Network Foundation Certificate — Associate in Arts",
-      "credential": "AA",
-      "program_code": null,
-      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/business-technologies/information-technology/network-foundation-certificate/",
-      "total_credits": 15,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 15,
-          "choose_n": null,
-          "courses": [
+            },
             {
-              "prefix": "NOS",
-              "number": "110",
-              "title": "Operating Systems Concepts",
+              "prefix": "NET",
+              "number": "126",
+              "title": "Switching and Routing",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "CIS",
-              "number": "110",
-              "title": "Introduction to Computers",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CTI",
-              "number": "110",
-              "title": "Information Technology Foundations",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CTI",
-              "number": "120",
-              "title": "Network and Security Foundations",
+              "prefix": "HUM",
+              "number": "115",
+              "title": "Critical Thinkingor Introduction to Ethics",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "CTS",
-              "number": "115",
-              "title": "Information Systems Business Concepts",
+              "number": "120",
+              "title": "Hardware/Software Support",
               "credits": 3,
               "or_alternatives": []
             }
           ]
         }
       ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Networking Specialist I Certificate — Associate in Arts",
-      "credential": "AA",
-      "program_code": null,
-      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/business-technologies/information-technology/networking-specialist-certificate/",
-      "total_credits": 13,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 13,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "NOS",
-              "number": "220",
-              "title": "Linux Administration I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NOS",
-              "number": "230",
-              "title": "Windows Administration I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NET",
-              "number": "225",
-              "title": "Enterprise Networking",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Networking Specialist II Certificate — Associate in Arts",
-      "credential": "AA",
-      "program_code": null,
-      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/business-technologies/information-technology/networking-specialist-ii-certificate/",
-      "total_credits": 13,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 13,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "NET",
-              "number": "270",
-              "title": "Building Scalable Networks",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NET",
-              "number": "289",
-              "title": "Networking Capstone Project",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NOS",
-              "number": "231",
-              "title": "Windows Administration II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CTI",
-              "number": "140",
-              "title": "Virtualization Concepts",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
+      "matched_program_slug": "computer-science"
     },
     {
       "title": "Information Technology - Information Systems Degree — Associate in Arts",
@@ -2776,6 +2588,154 @@
         }
       ],
       "matched_program_slug": "computer-science"
+    },
+    {
+      "title": "Information Technology Operating SYS Foundation Certificate — Associate in Arts",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/business-technologies/information-technology/information-technology-operating-sys-foundation-certificate/",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "NOS",
+              "number": "120",
+              "title": "Linux Single User",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NOS",
+              "number": "130",
+              "title": "Windows Single User",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SEC",
+              "number": "110",
+              "title": "Security Concepts",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NET",
+              "number": "125",
+              "title": "Introduction to Networks",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "computer-science"
+    },
+    {
+      "title": "Network Foundation Certificate — Associate in Arts",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/business-technologies/information-technology/network-foundation-certificate/",
+      "total_credits": 15,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "NOS",
+              "number": "110",
+              "title": "Operating Systems Concepts",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "110",
+              "title": "Introduction to Computers",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CTI",
+              "number": "110",
+              "title": "Information Technology Foundations",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CTI",
+              "number": "120",
+              "title": "Network and Security Foundations",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CTS",
+              "number": "115",
+              "title": "Information Systems Business Concepts",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Networking Specialist II Certificate — Associate in Arts",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/business-technologies/information-technology/networking-specialist-ii-certificate/",
+      "total_credits": 13,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 13,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "NET",
+              "number": "270",
+              "title": "Building Scalable Networks",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NET",
+              "number": "289",
+              "title": "Networking Capstone Project",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NOS",
+              "number": "231",
+              "title": "Windows Administration II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CTI",
+              "number": "140",
+              "title": "Virtualization Concepts",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
     },
     {
       "title": "Python Programming — Associate in Arts",
@@ -3065,6 +3025,46 @@
               "number": "270",
               "title": "Law Office Management/Technology",
               "credits": 2,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Networking Specialist I Certificate — Associate in Arts",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/business-technologies/information-technology/networking-specialist-certificate/",
+      "total_credits": 13,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 13,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "NOS",
+              "number": "220",
+              "title": "Linux Administration I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NOS",
+              "number": "230",
+              "title": "Windows Administration I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NET",
+              "number": "225",
+              "title": "Enterprise Networking",
+              "credits": 3,
               "or_alternatives": []
             }
           ]
@@ -3588,6 +3588,53 @@
       "matched_program_slug": null
     },
     {
+      "title": "Building Code & Design Certificate — Associate in Arts",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/construction-technologies/air-conditioning-heating-refrigeration-technology/building-code-design-certificate/",
+      "total_credits": 14,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 14,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "AHR",
+              "number": "110",
+              "title": "Introduction to Refrigeration",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AHR",
+              "number": "113",
+              "title": "Comfort Cooling",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AHR",
+              "number": "211",
+              "title": "Residential System Design",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AHR",
+              "number": "213",
+              "title": "HVACR Building Code",
+              "credits": 2,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Commercial Building Automation Certificate — Associate in Arts",
       "credential": "AA",
       "program_code": null,
@@ -3635,17 +3682,17 @@
       "matched_program_slug": null
     },
     {
-      "title": "Building Code & Design Certificate — Associate in Arts",
+      "title": "Fundamentals of HVAC Certificate — Associate in Arts",
       "credential": "AA",
       "program_code": null,
-      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/construction-technologies/air-conditioning-heating-refrigeration-technology/building-code-design-certificate/",
-      "total_credits": 14,
+      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/construction-technologies/air-conditioning-heating-refrigeration-technology/fundamentals-hvac-certificate/",
+      "total_credits": 16,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "Recommended Course Sequence",
-          "credits_required": 14,
+          "credits_required": 16,
           "choose_n": null,
           "courses": [
             {
@@ -3657,23 +3704,30 @@
             },
             {
               "prefix": "AHR",
-              "number": "113",
-              "title": "Comfort Cooling",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AHR",
-              "number": "211",
-              "title": "Residential System Design",
+              "number": "111",
+              "title": "HVACR Electricity",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "AHR",
-              "number": "213",
-              "title": "HVACR Building Code",
-              "credits": 2,
+              "number": "160",
+              "title": "Refrigerant Certification",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AHR",
+              "number": "114",
+              "title": "Heat Pump Technology",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AHR",
+              "number": "130",
+              "title": "HVAC Controls",
+              "credits": 3,
               "or_alternatives": []
             }
           ]
@@ -3743,60 +3797,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Fundamentals of HVAC Certificate — Associate in Arts",
-      "credential": "AA",
-      "program_code": null,
-      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/construction-technologies/air-conditioning-heating-refrigeration-technology/fundamentals-hvac-certificate/",
-      "total_credits": 16,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 16,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "AHR",
-              "number": "110",
-              "title": "Introduction to Refrigeration",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AHR",
-              "number": "111",
-              "title": "HVACR Electricity",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AHR",
-              "number": "160",
-              "title": "Refrigerant Certification",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AHR",
-              "number": "114",
-              "title": "Heat Pump Technology",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AHR",
-              "number": "130",
-              "title": "HVAC Controls",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Birth through Kindergarten Residency Licensure Certificate — Associate in Arts",
       "credential": "AA",
       "program_code": null,
@@ -3849,6 +3849,60 @@
               "prefix": "EDU",
               "number": "283",
               "title": "Educator Preparation Practicum (16 Weeks )",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Autism Certificate — Associate in Arts",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/education/early-childhood-education/autism20certificate/",
+      "total_credits": 16,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 16,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "EDU",
+              "number": "119",
+              "title": "Introduction to Early Childhood Education",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "144",
+              "title": "Child Development I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "145",
+              "title": "Child Development II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "221",
+              "title": "Children With Exceptionalities",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "149",
+              "title": "Introduction to Autism Spectrum Disorder",
               "credits": 3,
               "or_alternatives": []
             }
@@ -3919,60 +3973,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Autism Certificate — Associate in Arts",
-      "credential": "AA",
-      "program_code": null,
-      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/education/early-childhood-education/autism20certificate/",
-      "total_credits": 16,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 16,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "EDU",
-              "number": "119",
-              "title": "Introduction to Early Childhood Education",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "144",
-              "title": "Child Development I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "145",
-              "title": "Child Development II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "221",
-              "title": "Children With Exceptionalities",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "149",
-              "title": "Introduction to Autism Spectrum Disorder",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Early Childhood Education Administration Certificate — Associate in Arts",
       "credential": "AA",
       "program_code": null,
@@ -4018,6 +4018,123 @@
               "prefix": "EDU",
               "number": "131",
               "title": "Child, Family, and Community",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "early-childhood-education"
+    },
+    {
+      "title": "Early Childhood Education Degree - Professional — Associate in Arts",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/education/early-childhood-education/early-childhood-education-degree-professional/",
+      "total_credits": 65,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 65,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "EDU",
+              "number": "119",
+              "title": "Introduction to Early Childhood Education",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "144",
+              "title": "Child Development I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "145",
+              "title": "Child Development II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "111",
+              "title": "Writing and Inquiry",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "151",
+              "title": "Creative Activities",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "146",
+              "title": "Child Guidance",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "153",
+              "title": "Health, Safety and Nutrition",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "131",
+              "title": "Child, Family, and Community",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "162",
+              "title": "Observation and Assessment in Early Childhood Education",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "259",
+              "title": "Curriculum Planning",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "234",
+              "title": "Infants, Toddlers, and Twos",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "221",
+              "title": "Children With Exceptionalities",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "284",
+              "title": "Early Childhood Capstone Practicum (16 Weeks)",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "280",
+              "title": "Language and Literacy Experiences",
               "credits": 3,
               "or_alternatives": []
             }
@@ -4128,123 +4245,6 @@
               "prefix": "EDU",
               "number": "151",
               "title": "Creative Activities",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "234",
-              "title": "Infants, Toddlers, and Twos",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "221",
-              "title": "Children With Exceptionalities",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "284",
-              "title": "Early Childhood Capstone Practicum (16 Weeks)",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "280",
-              "title": "Language and Literacy Experiences",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "early-childhood-education"
-    },
-    {
-      "title": "Early Childhood Education Degree - Professional — Associate in Arts",
-      "credential": "AA",
-      "program_code": null,
-      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/education/early-childhood-education/early-childhood-education-degree-professional/",
-      "total_credits": 65,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 65,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "EDU",
-              "number": "119",
-              "title": "Introduction to Early Childhood Education",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "144",
-              "title": "Child Development I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "145",
-              "title": "Child Development II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENG",
-              "number": "111",
-              "title": "Writing and Inquiry",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "151",
-              "title": "Creative Activities",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "146",
-              "title": "Child Guidance",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "153",
-              "title": "Health, Safety and Nutrition",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "131",
-              "title": "Child, Family, and Community",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "162",
-              "title": "Observation and Assessment in Early Childhood Education",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "259",
-              "title": "Curriculum Planning",
               "credits": 3,
               "or_alternatives": []
             },
@@ -4420,6 +4420,102 @@
       "matched_program_slug": "early-childhood-education"
     },
     {
+      "title": "Early Childhood Education Diploma — Associate in Arts",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/education/early-childhood-education/early-childhood-education-diploma/",
+      "total_credits": 37,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 37,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "EDU",
+              "number": "119",
+              "title": "Introduction to Early Childhood Education",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "144",
+              "title": "Child Development I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "145",
+              "title": "Child Development II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "111",
+              "title": "Writing and Inquiry",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "146",
+              "title": "Child Guidance",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "153",
+              "title": "Health, Safety and Nutrition",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "131",
+              "title": "Child, Family, and Community",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "151",
+              "title": "Creative Activities",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "234",
+              "title": "Infants, Toddlers, and Twos",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "221",
+              "title": "Children With Exceptionalities",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EDU",
+              "number": "280",
+              "title": "Language and Literacy Experiences",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "early-childhood-education"
+    },
+    {
       "title": "Early Childhood Education Preschool Certificate — Associate in Arts",
       "credential": "AA",
       "program_code": null,
@@ -4533,102 +4629,6 @@
         }
       ],
       "matched_program_slug": null
-    },
-    {
-      "title": "Early Childhood Education Diploma — Associate in Arts",
-      "credential": "AA",
-      "program_code": null,
-      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/education/early-childhood-education/early-childhood-education-diploma/",
-      "total_credits": 37,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 37,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "EDU",
-              "number": "119",
-              "title": "Introduction to Early Childhood Education",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "144",
-              "title": "Child Development I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "145",
-              "title": "Child Development II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENG",
-              "number": "111",
-              "title": "Writing and Inquiry",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "146",
-              "title": "Child Guidance",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "153",
-              "title": "Health, Safety and Nutrition",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "131",
-              "title": "Child, Family, and Community",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "151",
-              "title": "Creative Activities",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "234",
-              "title": "Infants, Toddlers, and Twos",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "221",
-              "title": "Children With Exceptionalities",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EDU",
-              "number": "280",
-              "title": "Language and Literacy Experiences",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "early-childhood-education"
     },
     {
       "title": "Infant Toddler Certificate — Associate in Arts",
@@ -5826,6 +5826,39 @@
       "matched_program_slug": null
     },
     {
+      "title": "Emergency Medical Science BLS Certificate — Associate in Arts",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/health-sciences/emergency-medical-science/emergency-medical-science-bls-certificate/",
+      "total_credits": 14,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 14,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "EMS",
+              "number": "110",
+              "title": "EMT",
+              "credits": 9,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "163",
+              "title": "Basic Anatomy & Physiology",
+              "credits": 5,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Emergency Medical Science ALS Certificate — Associate in Arts",
       "credential": "AA",
       "program_code": null,
@@ -5872,39 +5905,6 @@
               "number": "260",
               "title": "Trauma Emergencies",
               "credits": 2,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Emergency Medical Science BLS Certificate — Associate in Arts",
-      "credential": "AA",
-      "program_code": null,
-      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/health-sciences/emergency-medical-science/emergency-medical-science-bls-certificate/",
-      "total_credits": 14,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 14,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "EMS",
-              "number": "110",
-              "title": "EMT",
-              "credits": 9,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "163",
-              "title": "Basic Anatomy & Physiology",
-              "credits": 5,
               "or_alternatives": []
             }
           ]
@@ -6917,177 +6917,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Medical Office Administration Diploma — Associate in Arts",
-      "credential": "AA",
-      "program_code": null,
-      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/health-sciences/medical-office-administration/medical-office-administration-diploma/",
-      "total_credits": 37,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 37,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ACA",
-              "number": "122",
-              "title": "Transfer & Career Success",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MED",
-              "number": "121",
-              "title": "Medical Terminology I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CIS",
-              "number": "110",
-              "title": "Introduction to Computers",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MED",
-              "number": "122",
-              "title": "Medical Terminology II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OST",
-              "number": "136",
-              "title": "Word Processing",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OST",
-              "number": "148",
-              "title": "Medical Insurance and Billing",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OST",
-              "number": "149",
-              "title": "Medical Legal Issues",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OST",
-              "number": "164",
-              "title": "Office Editing",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OST",
-              "number": "247",
-              "title": "Procedure Coding",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OST",
-              "number": "248",
-              "title": "Diagnostic Coding",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COM",
-              "number": "231",
-              "title": "Public Speaking",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENG",
-              "number": "111",
-              "title": "Writing and Inquiry",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OST",
-              "number": "280",
-              "title": "Electronic Health Records",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Patient Services Representative Certificate — Associate in Arts",
-      "credential": "AA",
-      "program_code": null,
-      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/health-sciences/medical-office-administration/patient-services-representative-certificate/",
-      "total_credits": 18,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 18,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "MED",
-              "number": "121",
-              "title": "Medical Terminology I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OST",
-              "number": "148",
-              "title": "Medical Insurance and Billing",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OST",
-              "number": "171",
-              "title": "Introduction to Virtual Office",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MED",
-              "number": "122",
-              "title": "Medical Terminology II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OST",
-              "number": "149",
-              "title": "Medical Legal Issues",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OST",
-              "number": "263",
-              "title": "Healthcare Customer Relations",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Medical Office Administration Degree — Associate in Arts",
       "credential": "AA",
       "program_code": null,
@@ -7259,6 +7088,177 @@
               "prefix": "OST",
               "number": "288",
               "title": "Medical Office Administration Capstone",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Medical Office Administration Diploma — Associate in Arts",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/health-sciences/medical-office-administration/medical-office-administration-diploma/",
+      "total_credits": 37,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 37,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACA",
+              "number": "122",
+              "title": "Transfer & Career Success",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MED",
+              "number": "121",
+              "title": "Medical Terminology I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "110",
+              "title": "Introduction to Computers",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MED",
+              "number": "122",
+              "title": "Medical Terminology II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OST",
+              "number": "136",
+              "title": "Word Processing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OST",
+              "number": "148",
+              "title": "Medical Insurance and Billing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OST",
+              "number": "149",
+              "title": "Medical Legal Issues",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OST",
+              "number": "164",
+              "title": "Office Editing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OST",
+              "number": "247",
+              "title": "Procedure Coding",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OST",
+              "number": "248",
+              "title": "Diagnostic Coding",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COM",
+              "number": "231",
+              "title": "Public Speaking",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "111",
+              "title": "Writing and Inquiry",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OST",
+              "number": "280",
+              "title": "Electronic Health Records",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Patient Services Representative Certificate — Associate in Arts",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/health-sciences/medical-office-administration/patient-services-representative-certificate/",
+      "total_credits": 18,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MED",
+              "number": "121",
+              "title": "Medical Terminology I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OST",
+              "number": "148",
+              "title": "Medical Insurance and Billing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OST",
+              "number": "171",
+              "title": "Introduction to Virtual Office",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MED",
+              "number": "122",
+              "title": "Medical Terminology II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OST",
+              "number": "149",
+              "title": "Medical Legal Issues",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OST",
+              "number": "263",
+              "title": "Healthcare Customer Relations",
               "credits": 3,
               "or_alternatives": []
             }
@@ -11753,6 +11753,137 @@
       "matched_program_slug": null
     },
     {
+      "title": "Associate in Engineering Degree — Associate in Arts",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/transfer/associate-engineering-degree/",
+      "total_credits": 62,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 62,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACA",
+              "number": "122",
+              "title": "Transfer & Career Success",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "111",
+              "title": "Writing and Inquiry",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EGR",
+              "number": "150",
+              "title": "Introduction to Engineering",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "271",
+              "title": "Calculus I (16 Weeks )",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHM",
+              "number": "151",
+              "title": "General Chemistry I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "112",
+              "title": "Writing and Research in the Disciplines",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COM",
+              "number": "231",
+              "title": "Public Speaking",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DFT",
+              "number": "170",
+              "title": "Engineering Graphics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "272",
+              "title": "Calculus II (16 Weeks )",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHY",
+              "number": "251",
+              "title": "General Physics I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EGR",
+              "number": "212",
+              "title": "Logic System Design Ior Engineering Statics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "273",
+              "title": "Calculus III (16 Weeks)",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHI",
+              "number": "240",
+              "title": "Introduction to Ethics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ECO",
+              "number": "251",
+              "title": "Principles of Microeconomics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHY",
+              "number": "252",
+              "title": "General Physics II",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EGR",
+              "number": "220",
+              "title": "",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "engineering"
+    },
+    {
       "title": "Associate in General Education Degree — Associate in Arts",
       "credential": "AA",
       "program_code": null,
@@ -14113,137 +14244,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Associate in Engineering Degree — Associate in Arts",
-      "credential": "AA",
-      "program_code": null,
-      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/transfer/associate-engineering-degree/",
-      "total_credits": 62,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 62,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ACA",
-              "number": "122",
-              "title": "Transfer & Career Success",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENG",
-              "number": "111",
-              "title": "Writing and Inquiry",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EGR",
-              "number": "150",
-              "title": "Introduction to Engineering",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "271",
-              "title": "Calculus I (16 Weeks )",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHM",
-              "number": "151",
-              "title": "General Chemistry I",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENG",
-              "number": "112",
-              "title": "Writing and Research in the Disciplines",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COM",
-              "number": "231",
-              "title": "Public Speaking",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "DFT",
-              "number": "170",
-              "title": "Engineering Graphics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "272",
-              "title": "Calculus II (16 Weeks )",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHY",
-              "number": "251",
-              "title": "General Physics I",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EGR",
-              "number": "212",
-              "title": "Logic System Design Ior Engineering Statics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "273",
-              "title": "Calculus III (16 Weeks)",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHI",
-              "number": "240",
-              "title": "Introduction to Ethics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ECO",
-              "number": "251",
-              "title": "Principles of Microeconomics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHY",
-              "number": "252",
-              "title": "General Physics II",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EGR",
-              "number": "220",
-              "title": "",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "engineering"
-    },
-    {
       "title": "Advanced Vehicle Systems Certificate — Associate in Arts",
       "credential": "AA",
       "program_code": null,
@@ -14291,45 +14291,52 @@
       "matched_program_slug": null
     },
     {
-      "title": "Diesel Fuel Electric Systems Certificate — Associate in Arts",
+      "title": "Chassis and Body Certificate — Associate in Arts",
       "credential": "AA",
       "program_code": null,
-      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/transportation-systems-technologies/diesel-heavy-equipment-technology/diesel-ful-elec-systems-certificate/",
-      "total_credits": 13,
+      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/transportation-systems-technologies/diesel-heavy-equipment-technology/chasis-body-certificate/",
+      "total_credits": 12,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "Recommended Course Sequence",
-          "credits_required": 13,
+          "credits_required": 12,
           "choose_n": null,
           "courses": [
             {
+              "prefix": "TRN",
+              "number": "140",
+              "title": "Transportation Climate Control",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TRN",
+              "number": "140A",
+              "title": "Transportation Climate Control Lab",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
               "prefix": "HET",
-              "number": "134",
-              "title": "Diesel Fuel and Power System",
+              "number": "233",
+              "title": "Suspension and Steering",
               "credits": 4,
               "or_alternatives": []
             },
             {
-              "prefix": "TRN",
-              "number": "145",
-              "title": "Advanced Transportation Electronics",
-              "credits": 3,
+              "prefix": "HYD",
+              "number": "112",
+              "title": "Hydraulics-Medium and Heavy Duty",
+              "credits": 2,
               "or_alternatives": []
             },
             {
-              "prefix": "HET",
-              "number": "115",
-              "title": "Electronic Engines",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TRN",
-              "number": "130",
-              "title": "Introduction to Sustainable Transportation",
-              "credits": 3,
+              "prefix": "WLD",
+              "number": "112",
+              "title": "Basic Welding Processes",
+              "credits": 2,
               "or_alternatives": []
             }
           ]
@@ -14511,52 +14518,45 @@
       "matched_program_slug": null
     },
     {
-      "title": "Chassis and Body Certificate — Associate in Arts",
+      "title": "Diesel Fuel Electric Systems Certificate — Associate in Arts",
       "credential": "AA",
       "program_code": null,
-      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/transportation-systems-technologies/diesel-heavy-equipment-technology/chasis-body-certificate/",
-      "total_credits": 12,
+      "catalog_url": "https://courseleaf.johnstoncc.edu/programs/transportation-systems-technologies/diesel-heavy-equipment-technology/diesel-ful-elec-systems-certificate/",
+      "total_credits": 13,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "Recommended Course Sequence",
-          "credits_required": 12,
+          "credits_required": 13,
           "choose_n": null,
           "courses": [
             {
-              "prefix": "TRN",
-              "number": "140",
-              "title": "Transportation Climate Control",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "TRN",
-              "number": "140A",
-              "title": "Transportation Climate Control Lab",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
               "prefix": "HET",
-              "number": "233",
-              "title": "Suspension and Steering",
+              "number": "134",
+              "title": "Diesel Fuel and Power System",
               "credits": 4,
               "or_alternatives": []
             },
             {
-              "prefix": "HYD",
-              "number": "112",
-              "title": "Hydraulics-Medium and Heavy Duty",
-              "credits": 2,
+              "prefix": "TRN",
+              "number": "145",
+              "title": "Advanced Transportation Electronics",
+              "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "WLD",
-              "number": "112",
-              "title": "Basic Welding Processes",
-              "credits": 2,
+              "prefix": "HET",
+              "number": "115",
+              "title": "Electronic Engines",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TRN",
+              "number": "130",
+              "title": "Introduction to Sustainable Transportation",
+              "credits": 3,
               "or_alternatives": []
             }
           ]
