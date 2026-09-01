@@ -2,7 +2,7 @@
   "college_slug": "hartnell-college",
   "catalog_year": "2025-2026",
   "catalog_url": "https://hartnell.catalog.prod.coursedog.com/programs",
-  "scraped_at": "2026-06-01T13:47:00.901Z",
+  "scraped_at": "2026-09-01T13:19:35.593Z",
   "programs": [
     {
       "title": "Addiction Studies",
@@ -22,6 +22,32 @@
               "prefix": "PSYC",
               "number": "C1000",
               "title": "Introduction to Psychology",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Chicanx Studies",
+      "credential": "other",
+      "program_code": "AA.CHCX",
+      "catalog_url": "https://hartnell.catalog.prod.coursedog.com/programs/AA.CHCX",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Requirements",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ETH",
+              "number": "6",
+              "title": "Chicana/Latina Feminism in Contemporary Society",
               "credits": 3,
               "or_alternatives": []
             }
@@ -127,6 +153,13 @@
           "choose_n": null,
           "courses": [
             {
+              "prefix": "ARTH",
+              "number": "C1200",
+              "title": "Survey of Art from the Renaissance to Contemporary",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
               "prefix": "ART",
               "number": "19",
               "title": "The Intersection of Creative and Critical Thinking: Aesthetics",
@@ -153,6 +186,41 @@
               "title": "Introduction to Digital Photography and Photographic Imaging",
               "credits": 3,
               "or_alternatives": []
+            },
+            {
+              "prefix": "ENGL",
+              "number": "C1002",
+              "title": "Introduction to Literature",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIST",
+              "number": "C1001",
+              "title": "United States History to 1877",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIST",
+              "number": "C1002",
+              "title": "United States History since 1865",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETH",
+              "number": "6",
+              "title": "Chicana/Latina Feminism in Contemporary Society",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETH",
+              "number": "56",
+              "title": "Ethnic Studies Cinema: Race and Representation",
+              "credits": 3,
+              "or_alternatives": []
             }
           ]
         }
@@ -173,6 +241,48 @@
           "credits_required": null,
           "choose_n": null,
           "courses": [
+            {
+              "prefix": "ECON",
+              "number": "C2002",
+              "title": "Principles of Macroeconomics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ECON",
+              "number": "C2001",
+              "title": "Principles of Microeconomics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETH",
+              "number": "6",
+              "title": "Chicana/Latina Feminism in Contemporary Society",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETH",
+              "number": "56",
+              "title": "Ethnic Studies Cinema: Race and Representation",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIST",
+              "number": "C1001",
+              "title": "United States History to 1877",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIST",
+              "number": "C1002",
+              "title": "United States History since 1865",
+              "credits": 3,
+              "or_alternatives": []
+            },
             {
               "prefix": "POLS",
               "number": "C1000",
@@ -211,6 +321,13 @@
               "number": "C1000",
               "title": "Introduction to Statistics",
               "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "1",
+              "title": "Fundamental Biological Concepts",
+              "credits": 4.5,
               "or_alternatives": []
             },
             {
@@ -274,6 +391,13 @@
           "credits_required": 3,
           "choose_n": null,
           "courses": [
+            {
+              "prefix": "BIO",
+              "number": "1",
+              "title": "Fundamental Biological Concepts",
+              "credits": 4.5,
+              "or_alternatives": []
+            },
             {
               "prefix": "CHM",
               "number": "1A",
@@ -339,6 +463,13 @@
               "prefix": "ART",
               "number": "80",
               "title": "Introduction to Digital Photography and Photographic Imaging",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ARTH",
+              "number": "C1200",
+              "title": "Survey of Art from the Renaissance to Contemporary",
               "credits": 3,
               "or_alternatives": []
             },
@@ -424,6 +555,13 @@
             },
             {
               "prefix": "ENGL",
+              "number": "C1002",
+              "title": "Introduction to Literature",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENGL",
               "number": "C1001",
               "title": "Critical Thinking and Writing",
               "credits": 3,
@@ -448,6 +586,20 @@
           "credits_required": null,
           "choose_n": null,
           "courses": [
+            {
+              "prefix": "ECON",
+              "number": "C2002",
+              "title": "Principles of Macroeconomics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ECON",
+              "number": "C2001",
+              "title": "Principles of Microeconomics",
+              "credits": 3,
+              "or_alternatives": []
+            },
             {
               "prefix": "STAT",
               "number": "C1000",
@@ -478,6 +630,13 @@
               "prefix": "ENGL",
               "number": "C1001",
               "title": "Critical Thinking and Writing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENGL",
+              "number": "C1002",
+              "title": "Introduction to Literature",
               "credits": 3,
               "or_alternatives": []
             }
@@ -522,6 +681,20 @@
               "or_alternatives": []
             },
             {
+              "prefix": "ENGL",
+              "number": "C1002",
+              "title": "Introduction to Literature",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIST",
+              "number": "C1001",
+              "title": "United States History to 1877",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
               "prefix": "POLS",
               "number": "C1000",
               "title": "American Government and Politics",
@@ -539,6 +712,39 @@
         }
       ],
       "matched_program_slug": null
+    },
+    {
+      "title": "History for Transfer (AA-T)",
+      "credential": "other",
+      "program_code": "AAT.HIS",
+      "catalog_url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.HIS",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Requirements",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "HIST",
+              "number": "C1001",
+              "title": "United States History to 1877",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIST",
+              "number": "C1002",
+              "title": "United States History since 1865",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "history"
     },
     {
       "title": "Kinesiology for Transfer (AA-T)",
@@ -595,6 +801,13 @@
           "choose_n": null,
           "courses": [
             {
+              "prefix": "LAW",
+              "number": "41",
+              "title": "Street Law",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
               "prefix": "COMM",
               "number": "C1000",
               "title": "Introduction to Public Speaking",
@@ -630,9 +843,37 @@
               "or_alternatives": []
             },
             {
+              "prefix": "HIST",
+              "number": "C1001",
+              "title": "United States History to 1877",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIST",
+              "number": "C1002",
+              "title": "United States History since 1865",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
               "prefix": "POLS",
               "number": "C1000",
               "title": "American Government and Politics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ECON",
+              "number": "C2002",
+              "title": "Principles of Macroeconomics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ECON",
+              "number": "C2001",
+              "title": "Principles of Microeconomics",
               "credits": 3,
               "or_alternatives": []
             }
@@ -685,6 +926,20 @@
               "number": "C1000",
               "title": "Introduction to Statistics",
               "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ECON",
+              "number": "C2002",
+              "title": "Principles of Macroeconomics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ECON",
+              "number": "C2001",
+              "title": "Principles of Microeconomics",
+              "credits": 3,
               "or_alternatives": []
             }
           ]
@@ -740,6 +995,13 @@
           "choose_n": null,
           "courses": [
             {
+              "prefix": "ARTH",
+              "number": "C1200",
+              "title": "Survey of Art from the Renaissance to Contemporary",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
               "prefix": "ART",
               "number": "13",
               "title": "Three-Dimensional Design",
@@ -765,6 +1027,170 @@
               "number": "71",
               "title": "Introduction to 2D Digital Illustration",
               "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Social Justice for Transfer (AA-T)",
+      "credential": "other",
+      "program_code": "AAT.SJ",
+      "catalog_url": "https://hartnell.catalog.prod.coursedog.com/programs/AAT.SJ",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Requirements",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ETH",
+              "number": "56",
+              "title": "Ethnic Studies Cinema: Race and Representation",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETH",
+              "number": "6",
+              "title": "Chicana/Latina Feminism in Contemporary Society",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Agriculture With an Area of Emphasis",
+      "credential": "other",
+      "program_code": "AS.AGRI",
+      "catalog_url": "https://hartnell.catalog.prod.coursedog.com/programs/AS.AGRI",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Area of Emphasis: Agricultural Production",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ABT",
+              "number": "94",
+              "title": "Agriculture Enterprise Project",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ABT",
+              "number": "101",
+              "title": "Organic Vegetable Production",
+              "credits": 1.5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ABT",
+              "number": "102",
+              "title": "Organic Field Production Methods",
+              "credits": 1.5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ABT",
+              "number": "103",
+              "title": "Agriculture Whole Farm Planning and Recordkeeping for Small Farmers",
+              "credits": 1.5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ABT",
+              "number": "104",
+              "title": "Agriculture Business Development For New Organic Farmers",
+              "credits": 1.5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ABT",
+              "number": "105",
+              "title": "Marketing Opportunities and Growth for Organic Farming",
+              "credits": 1.5,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area of Emphasis: Small Farm Operation and Management",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ABT",
+              "number": "94",
+              "title": "Agriculture Enterprise Project",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ABT",
+              "number": "101",
+              "title": "Organic Vegetable Production",
+              "credits": 1.5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ABT",
+              "number": "102",
+              "title": "Organic Field Production Methods",
+              "credits": 1.5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ABT",
+              "number": "103",
+              "title": "Agriculture Whole Farm Planning and Recordkeeping for Small Farmers",
+              "credits": 1.5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ABT",
+              "number": "104",
+              "title": "Agriculture Business Development For New Organic Farmers",
+              "credits": 1.5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ABT",
+              "number": "105",
+              "title": "Marketing Opportunities and Growth for Organic Farming",
+              "credits": 1.5,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Area of Emphasis: Sustainable Crop Management",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ABT",
+              "number": "101",
+              "title": "Organic Vegetable Production",
+              "credits": 1.5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ABT",
+              "number": "102",
+              "title": "Organic Field Production Methods",
+              "credits": 1.5,
               "or_alternatives": []
             }
           ]
@@ -812,6 +1238,13 @@
           "credits_required": null,
           "choose_n": null,
           "courses": [
+            {
+              "prefix": "BIO",
+              "number": "1",
+              "title": "Fundamental Biological Concepts",
+              "credits": 4.5,
+              "or_alternatives": []
+            },
             {
               "prefix": "BIO",
               "number": "2",
@@ -1008,7 +1441,15 @@
           "name": "Major Electives",
           "credits_required": 6,
           "choose_n": null,
-          "courses": []
+          "courses": [
+            {
+              "prefix": "ECE",
+              "number": "27",
+              "title": "Principles and Practices in Guiding Children's Behaviors",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
         }
       ],
       "matched_program_slug": "early-childhood-education"
@@ -1032,6 +1473,13 @@
               "number": "1A",
               "title": "General Chemistry I",
               "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "1",
+              "title": "Fundamental Biological Concepts",
+              "credits": 4.5,
               "or_alternatives": []
             },
             {
@@ -1352,6 +1800,13 @@
               "title": "Introduction to Statistics",
               "credits": 4,
               "or_alternatives": []
+            },
+            {
+              "prefix": "ECON",
+              "number": "C2002",
+              "title": "Principles of Macroeconomics",
+              "credits": 3,
+              "or_alternatives": []
             }
           ]
         }
@@ -1377,6 +1832,13 @@
               "number": "1A",
               "title": "General Chemistry I",
               "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ECON",
+              "number": "C2001",
+              "title": "Principles of Microeconomics",
+              "credits": 3,
               "or_alternatives": []
             },
             {
@@ -1412,6 +1874,13 @@
           "credits_required": null,
           "choose_n": null,
           "courses": [
+            {
+              "prefix": "BIO",
+              "number": "1",
+              "title": "Fundamental Biological Concepts",
+              "credits": 4.5,
+              "or_alternatives": []
+            },
             {
               "prefix": "BIO",
               "number": "2",
@@ -1480,6 +1949,20 @@
           "credits_required": null,
           "choose_n": null,
           "courses": [
+            {
+              "prefix": "ECON",
+              "number": "C2002",
+              "title": "Principles of Macroeconomics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ECON",
+              "number": "C2001",
+              "title": "Principles of Microeconomics",
+              "credits": 3,
+              "or_alternatives": []
+            },
             {
               "prefix": "STAT",
               "number": "C1000",
@@ -1554,6 +2037,13 @@
           "choose_n": null,
           "courses": [
             {
+              "prefix": "BIO",
+              "number": "1",
+              "title": "Fundamental Biological Concepts",
+              "credits": 4.5,
+              "or_alternatives": []
+            },
+            {
               "prefix": "CHM",
               "number": "1A",
               "title": "General Chemistry I",
@@ -1572,6 +2062,13 @@
               "number": "C1000",
               "title": "Introduction to Statistics",
               "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ECON",
+              "number": "C2001",
+              "title": "Principles of Microeconomics",
+              "credits": 3,
               "or_alternatives": []
             }
           ]
@@ -1724,6 +2221,86 @@
       "matched_program_slug": null
     },
     {
+      "title": "Agriculture Business",
+      "credential": "other",
+      "program_code": "CT.AGR",
+      "catalog_url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.AGR",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Major Electives",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ECON",
+              "number": "C2001",
+              "title": "Principles of Microeconomics",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Agriculture-Production",
+      "credential": "other",
+      "program_code": "CT.AGRP",
+      "catalog_url": "https://hartnell.catalog.prod.coursedog.com/programs/CT.AGRP",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Major Electives",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ABT",
+              "number": "101",
+              "title": "Organic Vegetable Production",
+              "credits": 1.5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ABT",
+              "number": "102",
+              "title": "Organic Field Production Methods",
+              "credits": 1.5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ABT",
+              "number": "103",
+              "title": "Agriculture Whole Farm Planning and Recordkeeping for Small Farmers",
+              "credits": 1.5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ABT",
+              "number": "104",
+              "title": "Agriculture Business Development For New Organic Farmers",
+              "credits": 1.5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ABT",
+              "number": "105",
+              "title": "Marketing Opportunities and Growth for Organic Farming",
+              "credits": 1.5,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Sustainable Crop Management",
       "credential": "other",
       "program_code": "CT.AGSC",
@@ -1736,7 +2313,22 @@
           "name": "Major Electives",
           "credits_required": 6,
           "choose_n": null,
-          "courses": []
+          "courses": [
+            {
+              "prefix": "ABT",
+              "number": "101",
+              "title": "Organic Vegetable Production",
+              "credits": 1.5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ABT",
+              "number": "102",
+              "title": "Organic Field Production Methods",
+              "credits": 1.5,
+              "or_alternatives": []
+            }
+          ]
         }
       ],
       "matched_program_slug": "business-administration"
@@ -1750,6 +2342,55 @@
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
+        {
+          "name": "Required Major Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ABT",
+              "number": "94",
+              "title": "Agriculture Enterprise Project",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ABT",
+              "number": "101",
+              "title": "Organic Vegetable Production",
+              "credits": 1.5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ABT",
+              "number": "102",
+              "title": "Organic Field Production Methods",
+              "credits": 1.5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ABT",
+              "number": "103",
+              "title": "Agriculture Whole Farm Planning and Recordkeeping for Small Farmers",
+              "credits": 1.5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ABT",
+              "number": "104",
+              "title": "Agriculture Business Development For New Organic Farmers",
+              "credits": 1.5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ABT",
+              "number": "105",
+              "title": "Marketing Opportunities and Growth for Organic Farming",
+              "credits": 1.5,
+              "or_alternatives": []
+            }
+          ]
+        },
         {
           "name": "Major Electives",
           "credits_required": 3,
@@ -1789,6 +2430,13 @@
             },
             {
               "prefix": "ENGL",
+              "number": "C1002",
+              "title": "Introduction to Literature",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENGL",
               "number": "C1001",
               "title": "Critical Thinking and Writing",
               "credits": 3,
@@ -1809,9 +2457,58 @@
               "or_alternatives": []
             },
             {
+              "prefix": "ARTH",
+              "number": "C1200",
+              "title": "Survey of Art from the Renaissance to Contemporary",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
               "prefix": "ART",
               "number": "19",
               "title": "The Intersection of Creative and Critical Thinking: Aesthetics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETH",
+              "number": "56",
+              "title": "Ethnic Studies Cinema: Race and Representation",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIST",
+              "number": "C1001",
+              "title": "United States History to 1877",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIST",
+              "number": "C1002",
+              "title": "United States History since 1865",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ECON",
+              "number": "C2002",
+              "title": "Principles of Macroeconomics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ECON",
+              "number": "C2001",
+              "title": "Principles of Microeconomics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETH",
+              "number": "6",
+              "title": "Chicana/Latina Feminism in Contemporary Society",
               "credits": 3,
               "or_alternatives": []
             },
@@ -1855,6 +2552,13 @@
               "number": "12B",
               "title": "Organic Chemistry II",
               "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "1",
+              "title": "Fundamental Biological Concepts",
+              "credits": 4.5,
               "or_alternatives": []
             },
             {
@@ -2197,6 +2901,13 @@
               "prefix": "ART",
               "number": "80",
               "title": "Introduction to Digital Photography and Photographic Imaging",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ARTH",
+              "number": "C1200",
+              "title": "Survey of Art from the Renaissance to Contemporary",
               "credits": 3,
               "or_alternatives": []
             },

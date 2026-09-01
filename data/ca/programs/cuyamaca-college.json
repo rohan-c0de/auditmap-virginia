@@ -2,8 +2,90 @@
   "college_slug": "cuyamaca-college",
   "catalog_year": "",
   "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/",
-  "scraped_at": "2026-06-01T13:45:18.057Z",
+  "scraped_at": "2026-09-01T13:16:55.369Z",
   "programs": [
+    {
+      "title": "Anthropology for Transfer (AA-T) — Associate in Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/anthropology-transfer-aa-t/",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ANTH",
+              "number": "120",
+              "title": "Cultural Anthropology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ANTH",
+              "number": "140",
+              "title": "Introduction to Archaeology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
+              "number": "215",
+              "title": "Statistics for the Behavioral Sciences",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "140",
+              "title": "Human Anatomy",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
+              "number": "205",
+              "title": "Research Methods in Psychology",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "GEOL",
+              "number": "110",
+              "title": "Planet Earthand Planet Earth Laboratory",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "GEOL",
+              "number": "104",
+              "title": "Earth Scienceand Physical Geography: Earth Systems Laboratory",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "116",
+              "title": "Introduction to World Music",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "RELG",
+              "number": "120",
+              "title": "World Religions",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
     {
       "title": "Administration Certificate of Specialization — Associate in Science",
       "credential": "AS",
@@ -18,13 +100,6 @@
           "credits_required": 15,
           "choose_n": null,
           "courses": [
-            {
-              "prefix": "CD",
-              "number": "125",
-              "title": "Child Growth and Development",
-              "credits": 3,
-              "or_alternatives": []
-            },
             {
               "prefix": "CD",
               "number": "131",
@@ -101,95 +176,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Anthropology for Transfer (AA-T) — Associate in Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/anthropology-transfer-aa-t/",
-      "total_credits": null,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ANTH",
-              "number": "120",
-              "title": "Cultural Anthropology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ANTH",
-              "number": "130",
-              "title": "Introduction to Biological Anthropology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ANTH",
-              "number": "140",
-              "title": "Introduction to Archaeology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSY",
-              "number": "215",
-              "title": "Statistics for the Behavioral Sciences",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "140",
-              "title": "Human Anatomy",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSY",
-              "number": "205",
-              "title": "Research Methods in Psychology",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "GEOL",
-              "number": "110",
-              "title": "Planet Earthand Planet Earth Laboratory",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "GEOL",
-              "number": "104",
-              "title": "Earth Scienceand Physical Geography: Earth Systems Laboratory",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUS",
-              "number": "116",
-              "title": "Introduction to World Music",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "RELG",
-              "number": "120",
-              "title": "World Religions",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Early Childhood Education for Transfer (AS-T) — Associate in Science",
       "credential": "AS",
       "program_code": null,
@@ -207,13 +193,6 @@
               "prefix": "CD",
               "number": "123",
               "title": "Principles and Practices of Programs and Curriculum for Young Children",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CD",
-              "number": "125",
-              "title": "Child Growth and Development",
               "credits": 3,
               "or_alternatives": []
             },
@@ -280,29 +259,15 @@
           "courses": [
             {
               "prefix": "CD",
-              "number": "125",
-              "title": "Child Growth and Development",
-              "credits": 3,
+              "number": "130",
+              "title": "Curriculum: Design and Implementation",
+              "credits": 0,
               "or_alternatives": []
             },
             {
               "prefix": "CD",
               "number": "131",
               "title": "Child, Family and Community",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "130",
-              "title": "General Biology I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CD",
-              "number": "130",
-              "title": "Curriculum: Design and Implementation",
               "credits": 0,
               "or_alternatives": []
             },
@@ -332,13 +297,6 @@
           "credits_required": 15,
           "choose_n": null,
           "courses": [
-            {
-              "prefix": "CD",
-              "number": "125",
-              "title": "Child Growth and Development",
-              "credits": 3,
-              "or_alternatives": []
-            },
             {
               "prefix": "CD",
               "number": "134",
@@ -408,109 +366,6 @@
       "matched_program_slug": "early-childhood-education"
     },
     {
-      "title": "Preschool Children Associate in Science and Certificate of Achievement — Associate in Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/child-development/preschool-children-as-coa/",
-      "total_credits": 31,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 31,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CD",
-              "number": "106",
-              "title": "Practicum: Beginning Observation and Experience",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CD",
-              "number": "123",
-              "title": "Principles and Practices of Programs and Curriculum for Young Children",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CD",
-              "number": "125",
-              "title": "Child Growth and Development",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CD",
-              "number": "126",
-              "title": "Art for Child Development",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CD",
-              "number": "127",
-              "title": "Science and Mathematics for Child Development",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CD",
-              "number": "128",
-              "title": "Music and Movement for Child Development",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CD",
-              "number": "129",
-              "title": "Language and Literature for Child Development",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CD",
-              "number": "131",
-              "title": "Child, Family and Community",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CD",
-              "number": "134",
-              "title": "Health, Safety and Nutrition of Young Children",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CD",
-              "number": "141",
-              "title": "Working with Children with Special Needs",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CD",
-              "number": "210",
-              "title": "Working with Young Children with Challenging Behaviors",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CD",
-              "number": "153",
-              "title": "Teaching in a Diverse Society",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Infants and Toddlers Associate in Science and Certificate of Achievement — Associate in Science",
       "credential": "AS",
       "program_code": null,
@@ -535,13 +390,6 @@
               "prefix": "CD",
               "number": "123",
               "title": "Principles and Practices of Programs and Curriculum for Young Children",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CD",
-              "number": "125",
-              "title": "Child Growth and Development",
               "credits": 3,
               "or_alternatives": []
             },
@@ -663,20 +511,6 @@
               "or_alternatives": []
             },
             {
-              "prefix": "COMM",
-              "number": "120",
-              "title": "Interpersonal Communication",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENGL",
-              "number": "122",
-              "title": "Introduction to Literature",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
               "prefix": "MATH",
               "number": "125",
               "title": "Structure and Concepts of Elementary Mathematics I",
@@ -688,20 +522,6 @@
               "number": "126",
               "title": "Structure and Concepts of Elementary Mathematics II",
               "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "130",
-              "title": "General Biology I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "131",
-              "title": "General Biology I Laboratory",
-              "credits": 1,
               "or_alternatives": []
             },
             {
@@ -720,20 +540,6 @@
             },
             {
               "prefix": "HIST",
-              "number": "108",
-              "title": "Early American History",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIST",
-              "number": "109",
-              "title": "Modern American History",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIST",
               "number": "100",
               "title": "Early World History",
               "credits": 3,
@@ -743,13 +549,6 @@
               "prefix": "THTR",
               "number": "110",
               "title": "Introduction to the Theatre",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CD",
-              "number": "125",
-              "title": "Child Growth and Development",
               "credits": 3,
               "or_alternatives": []
             },
@@ -906,6 +705,102 @@
       "matched_program_slug": null
     },
     {
+      "title": "Preschool Children Associate in Science and Certificate of Achievement — Associate in Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/child-development/preschool-children-as-coa/",
+      "total_credits": 31,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 31,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CD",
+              "number": "106",
+              "title": "Practicum: Beginning Observation and Experience",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CD",
+              "number": "123",
+              "title": "Principles and Practices of Programs and Curriculum for Young Children",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CD",
+              "number": "126",
+              "title": "Art for Child Development",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CD",
+              "number": "127",
+              "title": "Science and Mathematics for Child Development",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CD",
+              "number": "128",
+              "title": "Music and Movement for Child Development",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CD",
+              "number": "129",
+              "title": "Language and Literature for Child Development",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CD",
+              "number": "131",
+              "title": "Child, Family and Community",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CD",
+              "number": "134",
+              "title": "Health, Safety and Nutrition of Young Children",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CD",
+              "number": "141",
+              "title": "Working with Children with Special Needs",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CD",
+              "number": "210",
+              "title": "Working with Young Children with Challenging Behaviors",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CD",
+              "number": "153",
+              "title": "Teaching in a Diverse Society",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Elementary Teacher Education for Transfer (AA-T) — Associate in Science",
       "credential": "AS",
       "program_code": null,
@@ -919,27 +814,6 @@
           "credits_required": null,
           "choose_n": null,
           "courses": [
-            {
-              "prefix": "BIO",
-              "number": "130",
-              "title": "General Biology I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "131",
-              "title": "General Biology I Laboratory",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CD",
-              "number": "125",
-              "title": "Child Growth and Development",
-              "credits": 3,
-              "or_alternatives": []
-            },
             {
               "prefix": "ED",
               "number": "200",
@@ -955,24 +829,10 @@
               "or_alternatives": []
             },
             {
-              "prefix": "ENGL",
-              "number": "122",
-              "title": "Introduction to Literature",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
               "prefix": "HIST",
               "number": "100",
               "title": "Early World History",
               "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIST",
-              "number": "108",
-              "title": "Early American History",
-              "credits": 3,
               "or_alternatives": []
             },
             {
@@ -1008,6 +868,102 @@
               "number": "110",
               "title": "Introduction to the Theatre",
               "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MATH",
+              "number": "125",
+              "title": "Structure and Concepts of Elementary Mathematics I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MATH",
+              "number": "126",
+              "title": "Structure and Concepts of Elementary Mathematics II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MATH",
+              "number": "128",
+              "title": "Children's Mathematical Thinking",
+              "credits": 2,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Elementary Teacher Education for Transfer: Integrated Programs (AA-T) — Associate in Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/elementary-education/elementary-teacher-education-transfer-integrated-programs-aa-t/",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ED",
+              "number": "200",
+              "title": "Teaching as a Profession",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ESL",
+              "number": "122",
+              "title": "College Rhetoric",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIST",
+              "number": "100",
+              "title": "Early World History",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "GEOL",
+              "number": "104",
+              "title": "Earth Scienceand Physical Geography: Earth Systems Laboratory",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ART",
+              "number": "100",
+              "title": "Art Appreciation",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "110",
+              "title": "Great Music Listening",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "THTR",
+              "number": "110",
+              "title": "Introduction to the Theatre",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "GEOG",
+              "number": "106",
+              "title": "World Regional Geography",
+              "credits": 3,
               "or_alternatives": []
             },
             {
@@ -1182,20 +1138,6 @@
               "or_alternatives": []
             },
             {
-              "prefix": "ANTH",
-              "number": "150",
-              "title": "Introduction to Cultural Resource Management",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ANTH",
-              "number": "160",
-              "title": "Introduction to Archaeological Field Work",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
               "prefix": "ARBC",
               "number": "145",
               "title": "Arabic Civilizations",
@@ -1234,20 +1176,6 @@
               "prefix": "ECON",
               "number": "110",
               "title": "Economic Issues and Policies",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ECON",
-              "number": "120",
-              "title": "Principles of Macroeconomics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ECON",
-              "number": "121",
-              "title": "Principles of Microeconomics",
               "credits": 3,
               "or_alternatives": []
             },
@@ -1301,6 +1229,13 @@
               "or_alternatives": []
             },
             {
+              "prefix": "ETHN",
+              "number": "162",
+              "title": "Introduction to Asian American Studies",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
               "prefix": "GEND",
               "number": "116",
               "title": "Introduction to Women's Studies",
@@ -1331,7 +1266,7 @@
             {
               "prefix": "GEOG",
               "number": "130",
-              "title": "Human Geography: the Cultural Landscape",
+              "title": "Human Geography: The Cultural Landscape",
               "credits": 3,
               "or_alternatives": []
             },
@@ -1367,20 +1302,6 @@
               "prefix": "HIST",
               "number": "107",
               "title": "History of Race & Ethnicity in the United States",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIST",
-              "number": "108",
-              "title": "Early American History",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIST",
-              "number": "109",
-              "title": "Modern American History",
               "credits": 3,
               "or_alternatives": []
             },
@@ -1617,15 +1538,8 @@
             },
             {
               "prefix": "SOC",
-              "number": "120",
-              "title": "Introductory Sociology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SOC",
               "number": "125",
-              "title": "Marriage, Family and Alternative Lifestyles",
+              "title": "Marriage, Family, and Alternative Lifestyles",
               "credits": 3,
               "or_alternatives": []
             },
@@ -1795,16 +1709,30 @@
           "courses": [
             {
               "prefix": "PSY",
-              "number": "215",
-              "title": "Statistics for the Behavioral Sciences",
-              "credits": 4,
+              "number": "220",
+              "title": "Learning",
+              "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "PSY",
-              "number": "220",
-              "title": "Learning",
-              "credits": 3,
+              "number": "132",
+              "title": "Psychology of Health",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
+              "number": "150",
+              "title": "Developmental Psychology",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
+              "number": "215",
+              "title": "Statistics for the Behavioral Sciences",
+              "credits": 0,
               "or_alternatives": []
             }
           ]
@@ -1838,13 +1766,6 @@
               "number": "215",
               "title": "Statistics for the Behavioral Sciences",
               "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "130",
-              "title": "General Biology I",
-              "credits": 0,
               "or_alternatives": []
             },
             {
@@ -1884,8 +1805,29 @@
             },
             {
               "prefix": "PSY",
+              "number": "132",
+              "title": "Psychology of Health",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
               "number": "134",
               "title": "Human Sexuality",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
+              "number": "170",
+              "title": "Abnormal Psychology",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
+              "number": "201",
+              "title": "Academic and Career Opportunities in Psychology",
               "credits": 0,
               "or_alternatives": []
             },
@@ -1902,6 +1844,74 @@
       "matched_program_slug": "psychology"
     },
     {
+      "title": "Human Services Certificate of Achievement — Associate in Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/social-work/human-services-coa/",
+      "total_credits": 18,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "SW",
+              "number": "100",
+              "title": "Introduction to Social Work",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SW",
+              "number": "110",
+              "title": "Social Work Fields of Service",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SW",
+              "number": "130",
+              "title": "Introduction to Case Management",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
+              "number": "140",
+              "title": "Physiological Psychology",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
+              "number": "150",
+              "title": "Developmental Psychology",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
+              "number": "170",
+              "title": "Abnormal Psychology",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SOC",
+              "number": "130",
+              "title": "Contemporary Social Problems",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Social Work Associate in Arts — Associate in Science",
       "credential": "AS",
       "program_code": null,
@@ -1916,51 +1926,9 @@
           "choose_n": null,
           "courses": [
             {
-              "prefix": "BIO",
-              "number": "130",
-              "title": "General Biology I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ECON",
-              "number": "120",
-              "title": "Principles of Macroeconomics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ECON",
-              "number": "121",
-              "title": "Principles of Microeconomics",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
               "prefix": "HED",
               "number": "201",
               "title": "Introduction to Public Health",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SOC",
-              "number": "120",
-              "title": "Introductory Sociology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SW",
-              "number": "110",
-              "title": "Social Work Fields of Service",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SW",
-              "number": "120",
-              "title": "Introduction to Social Work",
               "credits": 3,
               "or_alternatives": []
             },
@@ -1969,6 +1937,20 @@
               "number": "215",
               "title": "Statistics for the Behavioral Sciences",
               "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SW",
+              "number": "100",
+              "title": "Introduction to Social Work",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SW",
+              "number": "110",
+              "title": "Social Work Fields of Service",
+              "credits": 3,
               "or_alternatives": []
             }
           ]
@@ -1977,30 +1959,23 @@
       "matched_program_slug": null
     },
     {
-      "title": "Social Work Certificate of Achievement — Associate in Science",
+      "title": "Human Services Certificate of Achievement — Associate in Science",
       "credential": "AS",
       "program_code": null,
       "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/social-work/social-work-coa/",
-      "total_credits": 25,
+      "total_credits": 18,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "Recommended Course Sequence",
-          "credits_required": 25,
+          "credits_required": 18,
           "choose_n": null,
           "courses": [
             {
-              "prefix": "PSY",
-              "number": "215",
-              "title": "Statistics for the Behavioral Sciences",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SOC",
-              "number": "120",
-              "title": "Introductory Sociology",
+              "prefix": "SW",
+              "number": "100",
+              "title": "Introduction to Social Work",
               "credits": 3,
               "or_alternatives": []
             },
@@ -2008,13 +1983,6 @@
               "prefix": "SW",
               "number": "110",
               "title": "Social Work Fields of Service",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SW",
-              "number": "120",
-              "title": "Introduction to Social Work",
               "credits": 3,
               "or_alternatives": []
             },
@@ -2026,23 +1994,9 @@
               "or_alternatives": []
             },
             {
-              "prefix": "BIO",
-              "number": "130",
-              "title": "General Biology I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
               "prefix": "PSY",
               "number": "140",
               "title": "Physiological Psychology",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ECON",
-              "number": "120",
-              "title": "Principles of Macroeconomics",
               "credits": 0,
               "or_alternatives": []
             },
@@ -2088,13 +2042,6 @@
           "courses": [
             {
               "prefix": "SOC",
-              "number": "120",
-              "title": "Introductory Sociology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SOC",
               "number": "130",
               "title": "Contemporary Social Problems",
               "credits": 3,
@@ -2117,7 +2064,7 @@
             {
               "prefix": "SOC",
               "number": "125",
-              "title": "Marriage, Family and Alternative Lifestyles",
+              "title": "Marriage, Family, and Alternative Lifestyles",
               "credits": 0,
               "or_alternatives": []
             },
@@ -2190,20 +2137,6 @@
               "or_alternatives": []
             },
             {
-              "prefix": "ANTH",
-              "number": "150",
-              "title": "Introduction to Cultural Resource Management",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ANTH",
-              "number": "160",
-              "title": "Introduction to Archaeological Field Work",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
               "prefix": "BIO",
               "number": "134",
               "title": "Ethnobotany",
@@ -2228,20 +2161,6 @@
               "prefix": "ECON",
               "number": "110",
               "title": "Economic Issues and Policies",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ECON",
-              "number": "120",
-              "title": "Principles of Macroeconomics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ECON",
-              "number": "121",
-              "title": "Principles of Microeconomics",
               "credits": 3,
               "or_alternatives": []
             },
@@ -2295,6 +2214,13 @@
               "or_alternatives": []
             },
             {
+              "prefix": "ETHN",
+              "number": "162",
+              "title": "Introduction to Asian American Studies",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
               "prefix": "GEND",
               "number": "116",
               "title": "Introduction to Women's Studies",
@@ -2318,7 +2244,7 @@
             {
               "prefix": "GEOG",
               "number": "130",
-              "title": "Human Geography: the Cultural Landscape",
+              "title": "Human Geography: The Cultural Landscape",
               "credits": 3,
               "or_alternatives": []
             },
@@ -2354,20 +2280,6 @@
               "prefix": "HIST",
               "number": "107",
               "title": "History of Race & Ethnicity in the United States",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIST",
-              "number": "108",
-              "title": "Early American History",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIST",
-              "number": "109",
-              "title": "Modern American History",
               "credits": 3,
               "or_alternatives": []
             },
@@ -2604,15 +2516,8 @@
             },
             {
               "prefix": "SOC",
-              "number": "120",
-              "title": "Introductory Sociology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SOC",
               "number": "125",
-              "title": "Marriage, Family and Alternative Lifestyles",
+              "title": "Marriage, Family, and Alternative Lifestyles",
               "credits": 3,
               "or_alternatives": []
             },
@@ -4101,31 +4006,10 @@
               "or_alternatives": []
             },
             {
-              "prefix": "ECON",
-              "number": "120",
-              "title": "Principles of Macroeconomics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ECON",
-              "number": "121",
-              "title": "Principles of Microeconomics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
               "prefix": "MATH",
               "number": "178",
               "title": "Calculus for Business, Social and Behavioral Sciences",
               "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "180",
-              "title": "Analytic Geometry and Calculus I",
-              "credits": 0,
               "or_alternatives": []
             },
             {
@@ -4187,20 +4071,6 @@
               "number": "110",
               "title": "Principles of Information Systems",
               "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ECON",
-              "number": "120",
-              "title": "Principles of Macroeconomics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ECON",
-              "number": "121",
-              "title": "Principles of Microeconomics",
-              "credits": 3,
               "or_alternatives": []
             },
             {
@@ -4304,13 +4174,6 @@
               "number": "110",
               "title": "Economic Issues and Policies",
               "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ECON",
-              "number": "120",
-              "title": "Principles of Macroeconomics",
-              "credits": 0,
               "or_alternatives": []
             }
           ]
@@ -4553,31 +4416,10 @@
           "choose_n": null,
           "courses": [
             {
-              "prefix": "ECON",
-              "number": "120",
-              "title": "Principles of Macroeconomics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ECON",
-              "number": "121",
-              "title": "Principles of Microeconomics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
               "prefix": "MATH",
               "number": "178",
               "title": "Calculus for Business, Social and Behavioral Sciences",
               "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "180",
-              "title": "Analytic Geometry and Calculus I",
-              "credits": 0,
               "or_alternatives": []
             },
             {
@@ -4605,13 +4447,6 @@
               "prefix": "CIS",
               "number": "110",
               "title": "Principles of Information Systems",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "280",
-              "title": "Analytic Geometry and Calculus II",
               "credits": 0,
               "or_alternatives": []
             }
@@ -4826,14 +4661,14 @@
             {
               "prefix": "CIS",
               "number": "202",
-              "title": "\"Cisco Academy - Routing, Switching, and Wireless Essentials\"",
+              "title": "Cisco Academy - Routing, Switching, and Wireless Essentials",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "CIS",
               "number": "203",
-              "title": "\"Cisco Academy - Enterprise Networking, Security, and Automation\"",
+              "title": "Cisco Academy - Enterprise Networking, Security, and Automation",
               "credits": 3,
               "or_alternatives": []
             },
@@ -4915,31 +4750,10 @@
               "or_alternatives": []
             },
             {
-              "prefix": "ECON",
-              "number": "120",
-              "title": "Principles of Macroeconomics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ECON",
-              "number": "121",
-              "title": "Principles of Microeconomics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
               "prefix": "MATH",
               "number": "178",
               "title": "Calculus for Business, Social and Behavioral Sciences",
               "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "180",
-              "title": "Analytic Geometry and Calculus I",
-              "credits": 5,
               "or_alternatives": []
             }
           ]
@@ -5008,13 +4822,6 @@
               "number": "110",
               "title": "Economic Issues and Policies",
               "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ECON",
-              "number": "120",
-              "title": "Principles of Macroeconomics",
-              "credits": 0,
               "or_alternatives": []
             },
             {
@@ -5250,6 +5057,13 @@
               "prefix": "PARA",
               "number": "176",
               "title": "Electronic Discovery: Advanced Practice",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PARA",
+              "number": "180",
+              "title": "Introduction to Immigration Law",
               "credits": 0,
               "or_alternatives": []
             },
@@ -5514,20 +5328,6 @@
               "or_alternatives": []
             },
             {
-              "prefix": "ECON",
-              "number": "120",
-              "title": "Principles of Macroeconomics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ECON",
-              "number": "121",
-              "title": "Principles of Microeconomics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
               "prefix": "CIS",
               "number": "110",
               "title": "Principles of Information Systems",
@@ -5539,13 +5339,6 @@
               "number": "178",
               "title": "Calculus for Business, Social and Behavioral Sciences",
               "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "180",
-              "title": "Analytic Geometry and Calculus I",
-              "credits": 5,
               "or_alternatives": []
             }
           ]
@@ -5791,20 +5584,6 @@
             },
             {
               "prefix": "ART",
-              "number": "140",
-              "title": "Survey of Western Art I: Prehistory through Middle Ages",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ART",
-              "number": "141",
-              "title": "Survey of Western ART II: Renaissance through Modern",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ART",
               "number": "142",
               "title": "Art of Africa, Oceania and the Americas",
               "credits": 3,
@@ -5871,13 +5650,6 @@
               "number": "221",
               "title": "American Sign Language IV",
               "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENGL",
-              "number": "122",
-              "title": "Introduction to Literature",
-              "credits": 3,
               "or_alternatives": []
             },
             {
@@ -6170,7 +5942,7 @@
             {
               "prefix": "RELG",
               "number": "175",
-              "title": "Religion, Government, and Politics in America",
+              "title": "Religion, Government and Politics in America",
               "credits": 3,
               "or_alternatives": []
             },
@@ -6443,7 +6215,7 @@
             {
               "prefix": "MUS",
               "number": "123",
-              "title": "History of Hip-Hop Culture",
+              "title": "History of Hip Hop Culture",
               "credits": 3,
               "or_alternatives": []
             },
@@ -6473,20 +6245,6 @@
           "credits_required": null,
           "choose_n": null,
           "courses": [
-            {
-              "prefix": "HIST",
-              "number": "108",
-              "title": "Early American History",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIST",
-              "number": "109",
-              "title": "Modern American History",
-              "credits": 3,
-              "or_alternatives": []
-            },
             {
               "prefix": "HIST",
               "number": "100",
@@ -6685,13 +6443,6 @@
               "prefix": "HIST",
               "number": "105",
               "title": "Early Western Civilizationand Modern Western Civilization",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIST",
-              "number": "108",
-              "title": "Early American Historyand Modern American History",
               "credits": 0,
               "or_alternatives": []
             },
@@ -7242,20 +6993,6 @@
             },
             {
               "prefix": "ART",
-              "number": "140",
-              "title": "Survey of Western Art I: Prehistory through Middle Ages",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ART",
-              "number": "141",
-              "title": "Survey of Western ART II: Renaissance through Modern",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ART",
               "number": "142",
               "title": "Art of Africa, Oceania and the Americas",
               "credits": 3,
@@ -7322,13 +7059,6 @@
               "number": "221",
               "title": "American Sign Language IV",
               "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENGL",
-              "number": "122",
-              "title": "Introduction to Literature",
-              "credits": 3,
               "or_alternatives": []
             },
             {
@@ -7621,7 +7351,7 @@
             {
               "prefix": "RELG",
               "number": "175",
-              "title": "Religion, Government, and Politics in America",
+              "title": "Religion, Government and Politics in America",
               "credits": 3,
               "or_alternatives": []
             },
@@ -7810,7 +7540,7 @@
             {
               "prefix": "MUS",
               "number": "123",
-              "title": "History of Hip-Hop Culture",
+              "title": "History of Hip Hop Culture",
               "credits": 3,
               "or_alternatives": []
             },
@@ -7850,7 +7580,7 @@
             {
               "prefix": "AUTO",
               "number": "100L",
-              "title": "Introduction to Automotive Technology Laboratory",
+              "title": "Introduction to Automotive Maintenance and Light Repair Laboratory",
               "credits": 1,
               "or_alternatives": []
             },
@@ -8156,7 +7886,7 @@
             {
               "prefix": "AUTO",
               "number": "100L",
-              "title": "Introduction to Automotive Technology Laboratory",
+              "title": "Introduction to Automotive Maintenance and Light Repair Laboratory",
               "credits": 1,
               "or_alternatives": []
             },
@@ -10070,6 +9800,144 @@
       "matched_program_slug": "automotive-technology"
     },
     {
+      "title": "Automotive Technology – Maintenance and Light Repair Certificate of Achievement — Associate in Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-maintenance-light-repair-cert-achievement/",
+      "total_credits": 19,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 19,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "AUTO",
+              "number": "099",
+              "title": "Introduction to Automotive Technology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUTO",
+              "number": "100L",
+              "title": "Introduction to Automotive Maintenance and Light Repair Laboratory",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUTO",
+              "number": "111",
+              "title": "Engine Diagnosis and Repair",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUTO",
+              "number": "111L",
+              "title": "Engine Diagnosis and Repair Laboratory",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUTO",
+              "number": "111T",
+              "title": "Engine Diagnosis and Repair Assessment Test Out",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUTO",
+              "number": "143",
+              "title": "Steering and Suspension Diagnosis and Repair",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUTO",
+              "number": "143L",
+              "title": "Steering and Suspension Diagnosis and Repair Laboratory",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUTO",
+              "number": "143T",
+              "title": "Steering and Suspension Diagnosis and Repair Assessment Test Out",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUTO",
+              "number": "151",
+              "title": "Brake System Diagnosis and Repair",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUTO",
+              "number": "151L",
+              "title": "Brake System Diagnosis and Repair Laboratory",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUTO",
+              "number": "151T",
+              "title": "Brake System Diagnosis and Repair Assessment Test Out",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUTO",
+              "number": "161",
+              "title": "Electrical Diagnosis and Repair",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUTO",
+              "number": "161L",
+              "title": "Electrical Diagnosis and Repair Laboratory",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUTO",
+              "number": "161T",
+              "title": "Electrical Diagnosis and Repair Assessment Test Out",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUTO",
+              "number": "171",
+              "title": "Climate Control System Diagnosis and Repair",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUTO",
+              "number": "171L",
+              "title": "Climate Control System Diagnosis and Repair Laboratory",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AUTO",
+              "number": "171T",
+              "title": "Climate Control System Diagnosis and Repair Assessment Test Out",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "automotive-technology"
+    },
+    {
       "title": "Automotive Technology Service Management Associate in Science and Certificate of Achievement — Associate in Science",
       "credential": "AS",
       "program_code": null,
@@ -10263,8 +10131,8 @@
             },
             {
               "prefix": "CADD",
-              "number": "120",
-              "title": "Introduction to Computer-Aided Drafting and Design",
+              "number": "119",
+              "title": "Intro to CAD and Design",
               "credits": 3,
               "or_alternatives": []
             }
@@ -10296,8 +10164,8 @@
             },
             {
               "prefix": "CADD",
-              "number": "120",
-              "title": "Introduction to Computer-Aided Drafting and Design",
+              "number": "119",
+              "title": "Intro to CAD and Design",
               "credits": 3,
               "or_alternatives": []
             },
@@ -11620,13 +11488,13 @@
       "credential": "AS",
       "program_code": null,
       "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/water-resources-management-as-cert-achievement/",
-      "total_credits": 38,
+      "total_credits": 33,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "Recommended Course Sequence",
-          "credits_required": 38,
+          "credits_required": 33,
           "choose_n": null,
           "courses": [
             {
@@ -11674,8 +11542,8 @@
             {
               "prefix": "OH",
               "number": "221",
-              "title": "Landscape Construction: Irrigation and Carpentry",
-              "credits": 3,
+              "title": "Landscape Construction: Irrigation",
+              "credits": 2,
               "or_alternatives": []
             },
             {
@@ -12988,20 +12856,6 @@
               "or_alternatives": []
             },
             {
-              "prefix": "MATH",
-              "number": "180",
-              "title": "Analytic Geometry and Calculus I",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "280",
-              "title": "Analytic Geometry and Calculus II",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
               "prefix": "PHYC",
               "number": "201",
               "title": "Mechanics and Waves",
@@ -13074,88 +12928,6 @@
               "number": "110",
               "title": "Introduction to Electricity and Electronics",
               "credits": 4,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Environmental Technician Certificate of Achievement — Associate in Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/environmental-health-safety-management/environmental-technician-cert-achievement/",
-      "total_credits": 29,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 29,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "EHSM",
-              "number": "100",
-              "title": "Introduction to Environmental and Occupational Safety and Health (OSH) Management",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EHSM",
-              "number": "110",
-              "title": "Industrial Sustainability",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EHSM",
-              "number": "150",
-              "title": "Hazardous Waste Management Applications",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EHSM",
-              "number": "200",
-              "title": "Hazardous Materials Management (HMM) Applications",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EHSM",
-              "number": "210",
-              "title": "Industrial Wastewater and Stormwater Management",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EHSM",
-              "number": "215",
-              "title": "Air Quality Management",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EHSM",
-              "number": "230",
-              "title": "HAZWOPER Certification",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EHSM",
-              "number": "240",
-              "title": "Cooperative Work Experience",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EHSM",
-              "number": "250",
-              "title": "EHS Field Applications",
-              "credits": 0,
               "or_alternatives": []
             }
           ]
@@ -13242,13 +13014,6 @@
             },
             {
               "prefix": "BIO",
-              "number": "130",
-              "title": "General Biology Iand General Biology I Laboratory",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
               "number": "240",
               "title": "Principles of Ecology, Evolution and Organismal Biology",
               "credits": 0,
@@ -13293,6 +13058,88 @@
         }
       ],
       "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Environmental Technician Certificate of Achievement — Associate in Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/environmental-health-safety-management/environmental-technician-cert-achievement/",
+      "total_credits": 29,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 29,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "EHSM",
+              "number": "100",
+              "title": "Introduction to Environmental and Occupational Safety and Health (OSH) Management",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EHSM",
+              "number": "110",
+              "title": "Industrial Sustainability",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EHSM",
+              "number": "150",
+              "title": "Hazardous Waste Management Applications",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EHSM",
+              "number": "200",
+              "title": "Hazardous Materials Management (HMM) Applications",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EHSM",
+              "number": "210",
+              "title": "Industrial Wastewater and Stormwater Management",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EHSM",
+              "number": "215",
+              "title": "Air Quality Management",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EHSM",
+              "number": "230",
+              "title": "HAZWOPER Certification",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EHSM",
+              "number": "240",
+              "title": "Cooperative Work Experience",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EHSM",
+              "number": "250",
+              "title": "EHS Field Applications",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
     },
     {
       "title": "Laboratory Occupational Safety and Health Technician Certificate of Achievement — Associate in Science",
@@ -13455,13 +13302,6 @@
             },
             {
               "prefix": "BIO",
-              "number": "130",
-              "title": "General Biology Iand General Biology I Laboratory",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
               "number": "240",
               "title": "Principles of Ecology, Evolution and Organismal Biology",
               "credits": 0,
@@ -13604,6 +13444,95 @@
       "matched_program_slug": null
     },
     {
+      "title": "Stormwater Management SWRCB Construction Certificate of Specialization — Associate in Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/environmental-health-safety-management/stormwater-management-swrcb-construction-cert-specialization/",
+      "total_credits": 10,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 10,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "EHSM",
+              "number": "115",
+              "title": "Runoff Sampling for Construction",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EHSM",
+              "number": "117",
+              "title": "Stormwater Best Management Practices for Construction",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EHSM",
+              "number": "220",
+              "title": "Stormwater Runoff Management Regulatory Concepts",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EHSM",
+              "number": "221",
+              "title": "Stormwater Runoff Management Technical Background",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EHSM",
+              "number": "223",
+              "title": "Stormwater Runoff Management Construction Inspections",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EHSM",
+              "number": "225",
+              "title": "Stormwater Runoff Management Post-Construction Best Management Practice Inspections",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EHSM",
+              "number": "226",
+              "title": "Erosion and Sedimentation Concepts",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EHSM",
+              "number": "227",
+              "title": "Erosion and Sedimentation Calculations",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EHSM",
+              "number": "228",
+              "title": "Stormwater Quality Concepts",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "EHSM",
+              "number": "229",
+              "title": "Stormwater Quality Calculations",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "business-administration"
+    },
+    {
       "title": "Arboriculture Associate in Science and Certificate of Achievement — Associate in Science",
       "credential": "AS",
       "program_code": null,
@@ -13703,6 +13632,13 @@
             },
             {
               "prefix": "OH",
+              "number": "190",
+              "title": "Business Management for Turf and Horticulture",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OH",
               "number": "102",
               "title": "Xeriscape: Water Conservation in the Landscape",
               "credits": 0,
@@ -13725,7 +13661,7 @@
             {
               "prefix": "OH",
               "number": "221",
-              "title": "Landscape Construction: Irrigation and Carpentry",
+              "title": "Landscape Construction: Irrigation",
               "credits": 0,
               "or_alternatives": []
             },
@@ -13841,6 +13777,13 @@
             },
             {
               "prefix": "OH",
+              "number": "190",
+              "title": "Business Management for Turf and Horticulture",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OH",
               "number": "114",
               "title": "Floral Design I",
               "credits": 0,
@@ -13877,7 +13820,7 @@
             {
               "prefix": "OH",
               "number": "221",
-              "title": "Landscape Construction: Irrigation and Carpentry",
+              "title": "Landscape Construction: Irrigation",
               "credits": 0,
               "or_alternatives": []
             },
@@ -14025,6 +13968,74 @@
       "matched_program_slug": null
     },
     {
+      "title": "Floral Design Operations Certificate of Achievement — Associate in Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/floral-design-operations-cert-achievement/",
+      "total_credits": 18,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "OH",
+              "number": "114",
+              "title": "Floral Design I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OH",
+              "number": "116",
+              "title": "Floral Design II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "110",
+              "title": "Introduction to Business",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "111",
+              "title": "Entrepreneurship: Starting and Developing a Business",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OH",
+              "number": "117",
+              "title": "Wedding Design I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OH",
+              "number": "118",
+              "title": "Special Occasion Floral Design",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OH",
+              "number": "290",
+              "title": "Cooperative Work Experience Education",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Golf Course and Sports Turf Management Associate in Science and Certificate of Achievement — Associate in Science",
       "credential": "AS",
       "program_code": null,
@@ -14125,7 +14136,7 @@
             {
               "prefix": "OH",
               "number": "221",
-              "title": "Landscape Construction: Irrigation and Carpentry",
+              "title": "Landscape Construction: Irrigation",
               "credits": 0,
               "or_alternatives": []
             },
@@ -14167,13 +14178,13 @@
       "credential": "AS",
       "program_code": null,
       "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/irrigation-technology-as-cert-achievement/",
-      "total_credits": 32,
+      "total_credits": 31,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "Recommended Course Sequence",
-          "credits_required": 32,
+          "credits_required": 31,
           "choose_n": null,
           "courses": [
             {
@@ -14200,8 +14211,8 @@
             {
               "prefix": "OH",
               "number": "221",
-              "title": "Landscape Construction: Irrigation and Carpentry",
-              "credits": 3,
+              "title": "Landscape Construction: Irrigation",
+              "credits": 2,
               "or_alternatives": []
             },
             {
@@ -14392,20 +14403,6 @@
               "or_alternatives": []
             },
             {
-              "prefix": "ART",
-              "number": "140",
-              "title": "Survey of Western Art I: Prehistory through Middle Ages",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ART",
-              "number": "141",
-              "title": "Survey of Western ART II: Renaissance through Modern",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
               "prefix": "OH",
               "number": "180",
               "title": "Plant Materials: Annuals and Perennials",
@@ -14422,7 +14419,7 @@
             {
               "prefix": "OH",
               "number": "221",
-              "title": "Landscape Construction: Irrigation and Carpentry",
+              "title": "Landscape Construction: Irrigation",
               "credits": 0,
               "or_alternatives": []
             },
@@ -14452,6 +14449,205 @@
               "number": "263",
               "title": "Urban Forestry",
               "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Nursery Technology Associate in Science and Certificate of Achievement — Associate in Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/nursery-technology-as-cert-achievement/",
+      "total_credits": 33,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 33,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "OH",
+              "number": "120",
+              "title": "Fundamentals of Ornamental Horticulture",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OH",
+              "number": "121",
+              "title": "Plant Propagation",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OH",
+              "number": "130",
+              "title": "Plant Pest Control",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OH",
+              "number": "140",
+              "title": "Soils",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OH",
+              "number": "170",
+              "title": "Plant Materials: Trees and Shrubs",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OH",
+              "number": "180",
+              "title": "Plant Materials: Annuals and Perennials",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OH",
+              "number": "290",
+              "title": "Cooperative Work Experience Education",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "110",
+              "title": "Introduction to Business",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "111",
+              "title": "Entrepreneurship: Starting and Developing a Business",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "125",
+              "title": "Business Law: Legal Environment of Business",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OH",
+              "number": "190",
+              "title": "Business Management for Turf and Horticulture",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "122",
+              "title": "The Secret Life of Plants",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OH",
+              "number": "102",
+              "title": "Xeriscape: Water Conservation in the Landscape",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OH",
+              "number": "114",
+              "title": "Floral Design I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OH",
+              "number": "150",
+              "title": "Landscape Architecture I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OH",
+              "number": "240",
+              "title": "Greenhouse Plant Production",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SPAN",
+              "number": "120",
+              "title": "Spanish I",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Landscape Design Certificate of Achievement — Associate in Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/landscape-design-cert-achievement/",
+      "total_credits": 19,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 19,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CADD",
+              "number": "200",
+              "title": "Introduction to Computer-Aided Landscape Design",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OH",
+              "number": "120",
+              "title": "Fundamentals of Ornamental Horticulture",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OH",
+              "number": "150",
+              "title": "Landscape Architecture I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OH",
+              "number": "151",
+              "title": "Landscape Architecture II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OH",
+              "number": "170",
+              "title": "Plant Materials: Trees and Shrubs",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "OH",
+              "number": "235",
+              "title": "Principles of Landscape Irrigation",
+              "credits": 4,
               "or_alternatives": []
             }
           ]
@@ -14552,15 +14748,15 @@
             },
             {
               "prefix": "OH",
-              "number": "102",
-              "title": "Xeriscape: Water Conservation in the Landscape",
+              "number": "190",
+              "title": "Business Management for Turf and Horticulture",
               "credits": 0,
               "or_alternatives": []
             },
             {
               "prefix": "OH",
-              "number": "105",
-              "title": "Edibles in Urban Landscapes",
+              "number": "102",
+              "title": "Xeriscape: Water Conservation in the Landscape",
               "credits": 0,
               "or_alternatives": []
             },
@@ -14595,7 +14791,7 @@
             {
               "prefix": "OH",
               "number": "221",
-              "title": "Landscape Construction: Irrigation and Carpentry",
+              "title": "Landscape Construction: Irrigation",
               "credits": 0,
               "or_alternatives": []
             },
@@ -14631,137 +14827,6 @@
               "prefix": "OH",
               "number": "275",
               "title": "Diagnosing Horticultural Problems",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SPAN",
-              "number": "120",
-              "title": "Spanish I",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Nursery Technology Associate in Science and Certificate of Achievement — Associate in Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/nursery-technology-as-cert-achievement/",
-      "total_credits": 33,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 33,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "OH",
-              "number": "120",
-              "title": "Fundamentals of Ornamental Horticulture",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OH",
-              "number": "121",
-              "title": "Plant Propagation",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OH",
-              "number": "130",
-              "title": "Plant Pest Control",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OH",
-              "number": "140",
-              "title": "Soils",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OH",
-              "number": "170",
-              "title": "Plant Materials: Trees and Shrubs",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OH",
-              "number": "180",
-              "title": "Plant Materials: Annuals and Perennials",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OH",
-              "number": "290",
-              "title": "Cooperative Work Experience Education",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "110",
-              "title": "Introduction to Business",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "111",
-              "title": "Entrepreneurship: Starting and Developing a Business",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "125",
-              "title": "Business Law: Legal Environment of Business",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "122",
-              "title": "The Secret Life of Plants",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OH",
-              "number": "102",
-              "title": "Xeriscape: Water Conservation in the Landscape",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OH",
-              "number": "114",
-              "title": "Floral Design I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OH",
-              "number": "150",
-              "title": "Landscape Architecture I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "OH",
-              "number": "240",
-              "title": "Greenhouse Plant Production",
               "credits": 0,
               "or_alternatives": []
             },
@@ -14870,15 +14935,15 @@
             },
             {
               "prefix": "OH",
-              "number": "102",
-              "title": "Xeriscape: Water Conservation in the Landscape",
+              "number": "190",
+              "title": "Business Management for Turf and Horticulture",
               "credits": 0,
               "or_alternatives": []
             },
             {
               "prefix": "OH",
-              "number": "105",
-              "title": "Edibles in Urban Landscapes",
+              "number": "102",
+              "title": "Xeriscape: Water Conservation in the Landscape",
               "credits": 0,
               "or_alternatives": []
             },
@@ -14906,7 +14971,7 @@
             {
               "prefix": "OH",
               "number": "221",
-              "title": "Landscape Construction: Irrigation and Carpentry",
+              "title": "Landscape Construction: Irrigation",
               "credits": 0,
               "or_alternatives": []
             },
@@ -14941,13 +15006,13 @@
       "credential": "AS",
       "program_code": null,
       "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/surveying/surveying-as-cert-achievement/",
-      "total_credits": 28,
+      "total_credits": 25,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "Recommended Course Sequence",
-          "credits_required": 28,
+          "credits_required": 25,
           "choose_n": null,
           "courses": [
             {
@@ -14966,22 +15031,22 @@
             },
             {
               "prefix": "CADD",
-              "number": "120",
-              "title": "Introduction to Computer-Aided Drafting and Design",
+              "number": "119",
+              "title": "Introduction to Computer Aided Drafting and Design",
               "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENGR",
+              "number": "119",
+              "title": "Introduction to Computer Aided Drafting and Design",
+              "credits": 0,
               "or_alternatives": []
             },
             {
               "prefix": "SURV",
               "number": "127",
               "title": "Survey Drafting Technology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "170",
-              "title": "Analytic Trigonometry",
               "credits": 3,
               "or_alternatives": []
             },
@@ -15113,13 +15178,6 @@
               "title": "Introduction to General, Organic and Biological Chemistry",
               "credits": 5,
               "or_alternatives": []
-            },
-            {
-              "prefix": "SOC",
-              "number": "120",
-              "title": "Introductory Sociology",
-              "credits": 3,
-              "or_alternatives": []
             }
           ]
         }
@@ -15199,7 +15257,7 @@
             {
               "prefix": "ES",
               "number": "209",
-              "title": "Intercollegiate Cross-Country",
+              "title": "Intercollegiate Cross Country",
               "credits": 3,
               "or_alternatives": []
             },
@@ -15275,13 +15333,6 @@
             },
             {
               "prefix": "ES",
-              "number": "270",
-              "title": "Cooperative Games",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ES",
               "number": "271",
               "title": "Fitness Walking with Children",
               "credits": 1,
@@ -15331,9 +15382,23 @@
             },
             {
               "prefix": "COUN",
+              "number": "125",
+              "title": "Career Development in a Multicultural Society",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COUN",
               "number": "130",
               "title": "Study Skills and Time Management",
               "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COUN",
+              "number": "135",
+              "title": "Counseling and Identity in a Modern Multicultural Society",
+              "credits": 3,
               "or_alternatives": []
             },
             {
@@ -15371,20 +15436,6 @@
           "courses": [
             {
               "prefix": "BIO",
-              "number": "130",
-              "title": "General Biology I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "131",
-              "title": "General Biology I Laboratory",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
               "number": "140",
               "title": "Human Anatomy",
               "credits": 4,
@@ -15401,13 +15452,6 @@
               "prefix": "ES",
               "number": "255",
               "title": "Care and Prevention of Athletic and Recreational Injuries",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SOC",
-              "number": "120",
-              "title": "Introductory Sociology",
               "credits": 3,
               "or_alternatives": []
             },
@@ -15609,27 +15653,6 @@
             },
             {
               "prefix": "ES",
-              "number": "125A",
-              "title": "Beginning Golf",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ES",
-              "number": "125B",
-              "title": "Intermediate Golf",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ES",
-              "number": "125C",
-              "title": "Advanced Golf",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ES",
               "number": "155A",
               "title": "Beginning Basketball",
               "credits": 0,
@@ -15667,27 +15690,6 @@
               "prefix": "ES",
               "number": "170C",
               "title": "Advanced Soccer",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ES",
-              "number": "171A",
-              "title": "Beginning Softball",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ES",
-              "number": "171B",
-              "title": "Intermediate Softball",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ES",
-              "number": "171C",
-              "title": "Advanced Softball",
               "credits": 0,
               "or_alternatives": []
             },
@@ -15769,14 +15771,14 @@
             {
               "prefix": "ES",
               "number": "009A",
-              "title": "Beginning Aerobic Dance Exercise",
+              "title": "Beginning Cardio Dance Exercise",
               "credits": 0,
               "or_alternatives": []
             },
             {
               "prefix": "ES",
               "number": "009B",
-              "title": "Intermediate Aerobic Dance Exercise",
+              "title": "Intermediate Cardio Dance Exercise",
               "credits": 0,
               "or_alternatives": []
             },
@@ -15790,7 +15792,7 @@
             {
               "prefix": "ES",
               "number": "014B",
-              "title": "Intermediate Body Building",
+              "title": "Intermediate Weight Training",
               "credits": 0,
               "or_alternatives": []
             },
@@ -15861,20 +15863,6 @@
               "prefix": "ES",
               "number": "076B",
               "title": "Intermediate Tennis",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ES",
-              "number": "125A",
-              "title": "Beginning Golf",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ES",
-              "number": "125B",
-              "title": "Intermediate Golf",
               "credits": 0,
               "or_alternatives": []
             },
@@ -15951,22 +15939,15 @@
       "credential": "AS",
       "program_code": null,
       "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/health-science/kinesiology/recreational-leadership-school-based-programs-cert-specialization/",
-      "total_credits": 12,
+      "total_credits": 11,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "Recommended Course Sequence",
-          "credits_required": 12,
+          "credits_required": 11,
           "choose_n": null,
           "courses": [
-            {
-              "prefix": "CD",
-              "number": "125",
-              "title": "Child Growth and Development",
-              "credits": 3,
-              "or_alternatives": []
-            },
             {
               "prefix": "CD",
               "number": "134",
@@ -15979,13 +15960,6 @@
               "number": "253",
               "title": "Physical Education in Elementary Schools",
               "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ES",
-              "number": "270",
-              "title": "Cooperative Games",
-              "credits": 1,
               "or_alternatives": []
             },
             {
@@ -16008,6 +15982,46 @@
       "matched_program_slug": null
     },
     {
+      "title": "Yoga Instructor 200 Hour Certificate of Specialization — Associate in Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/health-science/kinesiology/yoga-instructor-200-hour-cert-specialization/",
+      "total_credits": 7,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 7,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ES",
+              "number": "028A",
+              "title": "Beginning Yoga",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ES",
+              "number": "280",
+              "title": "Yoga Teacher Training Foundation",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ES",
+              "number": "281",
+              "title": "Yoga Teacher Training Cultivation",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Public Health for Transfer (AS-T) — Associate in Science",
       "credential": "AS",
       "program_code": null,
@@ -16021,20 +16035,6 @@
           "credits_required": null,
           "choose_n": null,
           "courses": [
-            {
-              "prefix": "BIO",
-              "number": "130",
-              "title": "General Biology I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "131",
-              "title": "General Biology I Laboratory",
-              "credits": 1,
-              "or_alternatives": []
-            },
             {
               "prefix": "HED",
               "number": "120",
@@ -16379,13 +16379,6 @@
           "courses": [
             {
               "prefix": "COMM",
-              "number": "120",
-              "title": "Interpersonal Communication",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COMM",
               "number": "123",
               "title": "Advanced Public Speaking",
               "credits": 0,
@@ -16440,13 +16433,6 @@
           "courses": [
             {
               "prefix": "COMM",
-              "number": "120",
-              "title": "Interpersonal Communication",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COMM",
               "number": "110",
               "title": "Introduction to Mass Communication",
               "credits": 0,
@@ -16486,30 +16472,161 @@
       "matched_program_slug": null
     },
     {
-      "title": "English Associate in Arts and Certificate of Achievement — Associate in Science",
+      "title": "Creative Writing Certificate of Achievement — Associate in Science",
       "credential": "AS",
       "program_code": null,
-      "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/language-communication/english/english-aa-cert-achievement/",
-      "total_credits": 28,
+      "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/language-communication/english/creative-writing-cert-achievement/",
+      "total_credits": 20,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "Recommended Course Sequence",
-          "credits_required": 28,
+          "credits_required": 20,
           "choose_n": null,
           "courses": [
             {
               "prefix": "ENGL",
-              "number": "122",
-              "title": "Introduction to Literature",
+              "number": "126",
+              "title": "Introduction to Creative Writing",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "ENGL",
+              "number": "130",
+              "title": "Short Fiction Writing I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENGL",
+              "number": "140",
+              "title": "Poetry Writing I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENGL",
+              "number": "131",
+              "title": "Short Fiction Writing II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENGL",
+              "number": "132",
+              "title": "Short Fiction Writing III",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENGL",
+              "number": "133",
+              "title": "Short Fiction Writing IV",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENGL",
+              "number": "141",
+              "title": "Poetry Writing II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENGL",
+              "number": "142",
+              "title": "Poetry Writing III",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENGL",
+              "number": "143",
+              "title": "Poetry Writing IV",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENGL",
+              "number": "201",
+              "title": "Women, Gender, and Sexuality in Literature",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENGL",
+              "number": "202",
+              "title": "Introduction to Film as Literature",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENGL",
+              "number": "217",
+              "title": "Fantasy and Science Fiction",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENGL",
+              "number": "236",
+              "title": "Chicana/o Literature",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETHN",
+              "number": "236",
+              "title": "Chicana/o Literature",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENGL",
+              "number": "238",
+              "title": "Black Literature",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETHN",
+              "number": "238",
+              "title": "Black Literature",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENGL",
+              "number": "200",
+              "title": "Cooperative Work Experience in English",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "English Associate in Arts and Certificate of Achievement — Associate in Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/language-communication/english/english-aa-cert-achievement/",
+      "total_credits": 29,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 29,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENGL",
               "number": "126",
-              "title": "Creative Writing",
+              "title": "Introduction to Creative Writing",
               "credits": 3,
               "or_alternatives": []
             },
@@ -16677,7 +16794,7 @@
             {
               "prefix": "MUS",
               "number": "123",
-              "title": "History of Hip-Hop Culture",
+              "title": "History of Hip Hop Culture",
               "credits": 0,
               "or_alternatives": []
             },
@@ -16716,13 +16833,6 @@
           "courses": [
             {
               "prefix": "ENGL",
-              "number": "122",
-              "title": "Introduction to Literature",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENGL",
               "number": "221",
               "title": "British Literature I",
               "credits": 0,
@@ -16759,7 +16869,7 @@
             {
               "prefix": "ENGL",
               "number": "126",
-              "title": "Creative Writing",
+              "title": "Introduction to Creative Writing",
               "credits": 0,
               "or_alternatives": []
             },
@@ -16891,13 +17001,6 @@
               "prefix": "COMM",
               "number": "110",
               "title": "Introduction to Mass Communication",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COMM",
-              "number": "120",
-              "title": "Interpersonal Communication",
               "credits": 3,
               "or_alternatives": []
             },
@@ -17135,13 +17238,6 @@
             },
             {
               "prefix": "COMM",
-              "number": "120",
-              "title": "Interpersonal Communication",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COMM",
               "number": "123",
               "title": "Advanced Public Speaking",
               "credits": 3,
@@ -17223,23 +17319,9 @@
               "or_alternatives": []
             },
             {
-              "prefix": "SOC",
-              "number": "120",
-              "title": "Introductory Sociology",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
               "prefix": "SW",
               "number": "110",
               "title": "Social Work Fields of Service",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COMM",
-              "number": "120",
-              "title": "Interpersonal Communication",
               "credits": 0,
               "or_alternatives": []
             },
@@ -17321,7 +17403,7 @@
             {
               "prefix": "BOT",
               "number": "117",
-              "title": "Essential Powerpoint",
+              "title": "Essential PowerPoint",
               "credits": 0,
               "or_alternatives": []
             },
@@ -17329,13 +17411,6 @@
               "prefix": "BOT",
               "number": "132",
               "title": "Google Applications for Business",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ECON",
-              "number": "120",
-              "title": "Principles of Macroeconomics",
               "credits": 0,
               "or_alternatives": []
             },
@@ -17385,13 +17460,6 @@
               "prefix": "RE",
               "number": "191",
               "title": "Real Estate Practice",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COMM",
-              "number": "120",
-              "title": "Interpersonal Communication",
               "credits": 0,
               "or_alternatives": []
             },
@@ -17451,13 +17519,6 @@
             },
             {
               "prefix": "HIST",
-              "number": "108",
-              "title": "Early American History",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIST",
               "number": "118",
               "title": "U.S. History: Chicano/Chicana Perspectives I",
               "credits": 0,
@@ -17488,13 +17549,6 @@
               "prefix": "PHIL",
               "number": "110",
               "title": "A General Introduction to Philosophy",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COMM",
-              "number": "120",
-              "title": "Interpersonal Communication",
               "credits": 0,
               "or_alternatives": []
             },
@@ -17561,8 +17615,8 @@
             },
             {
               "prefix": "CADD",
-              "number": "120",
-              "title": "Introduction to Computer-Aided Drafting and Design",
+              "number": "119",
+              "title": "Intro to CAD and Design",
               "credits": 0,
               "or_alternatives": []
             },
@@ -17623,9 +17677,63 @@
               "or_alternatives": []
             },
             {
-              "prefix": "COMM",
+              "prefix": "MATH",
               "number": "120",
-              "title": "Interpersonal Communication",
+              "title": "Quantitative Reasoning",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHIL",
+              "number": "125",
+              "title": "Critical Thinking and Philosophical Composition",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "ESL Pathway Health Sciences Certificate of Achievement — Associate in Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/pre-academic-career-pathways/esl/esl-pathway-health-sciences-cert-achievement/",
+      "total_credits": 20,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 20,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ESL",
+              "number": "122",
+              "title": "College Rhetoric",
+              "credits": 6,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "140",
+              "title": "Human Anatomy",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ES",
+              "number": "250",
+              "title": "Introduction to Kinesiology",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HED",
+              "number": "120",
+              "title": "Personal Health and Lifestyles",
               "credits": 0,
               "or_alternatives": []
             },
@@ -17684,20 +17792,6 @@
               "or_alternatives": []
             },
             {
-              "prefix": "COMM",
-              "number": "120",
-              "title": "Interpersonal Communication",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENGL",
-              "number": "122",
-              "title": "Introduction to Literature",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
               "prefix": "SPAN",
               "number": "120",
               "title": "Spanish I",
@@ -17708,81 +17802,6 @@
               "prefix": "SPAN",
               "number": "121",
               "title": "Spanish II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "120",
-              "title": "Quantitative Reasoning",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHIL",
-              "number": "125",
-              "title": "Critical Thinking and Philosophical Composition",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "ESL Pathway Health Sciences Certificate of Achievement — Associate in Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/pre-academic-career-pathways/esl/esl-pathway-health-sciences-cert-achievement/",
-      "total_credits": 20,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 20,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ESL",
-              "number": "122",
-              "title": "College Rhetoric",
-              "credits": 6,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "130",
-              "title": "General Biology Iand General Biology I Laboratory",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "140",
-              "title": "Human Anatomy",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ES",
-              "number": "250",
-              "title": "Introduction to Kinesiology",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HED",
-              "number": "120",
-              "title": "Personal Health and Lifestyles",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COMM",
-              "number": "120",
-              "title": "Interpersonal Communication",
               "credits": 0,
               "or_alternatives": []
             },
@@ -17827,20 +17846,6 @@
               "or_alternatives": []
             },
             {
-              "prefix": "ASTR",
-              "number": "110",
-              "title": "Descriptive Astronomyand General Astronomy Laboratory",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "130",
-              "title": "General Biology Iand General Biology I Laboratory",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
               "prefix": "BIO",
               "number": "230",
               "title": "Principles of Cellular, Molecular and Evolutionary Biology",
@@ -17862,13 +17867,6 @@
               "or_alternatives": []
             },
             {
-              "prefix": "MATH",
-              "number": "180",
-              "title": "Analytic Geometry and Calculus I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
               "prefix": "PHYC",
               "number": "130",
               "title": "Fundamentals of Physics",
@@ -17879,13 +17877,6 @@
               "prefix": "PHYC",
               "number": "201",
               "title": "Mechanics and Waves",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "COMM",
-              "number": "120",
-              "title": "Interpersonal Communication",
               "credits": 0,
               "or_alternatives": []
             },
@@ -17965,13 +17956,6 @@
               "or_alternatives": []
             },
             {
-              "prefix": "COMM",
-              "number": "120",
-              "title": "Interpersonal Communication",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
               "prefix": "MATH",
               "number": "120",
               "title": "Quantitative Reasoning",
@@ -18036,13 +18020,6 @@
               "prefix": "CHEM",
               "number": "231",
               "title": "Organic Chemistry I",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "180",
-              "title": "Analytic Geometry and Calculus I",
               "credits": 5,
               "or_alternatives": []
             },
@@ -18115,13 +18092,6 @@
               "or_alternatives": []
             },
             {
-              "prefix": "MATH",
-              "number": "180",
-              "title": "Analytic Geometry and Calculus I",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
               "prefix": "PHYC",
               "number": "130",
               "title": "Fundamentals of Physicsand Fundamentals of Physics",
@@ -18173,20 +18143,6 @@
               "number": "142",
               "title": "General Chemistry II",
               "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "180",
-              "title": "Analytic Geometry and Calculus I",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "280",
-              "title": "Analytic Geometry and Calculus II",
-              "credits": 4,
               "or_alternatives": []
             },
             {
@@ -18273,20 +18229,6 @@
             },
             {
               "prefix": "MATH",
-              "number": "180",
-              "title": "Analytic Geometry and Calculus I",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "280",
-              "title": "Analytic Geometry and Calculus II",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
               "number": "281",
               "title": "Multivariable Calculus",
               "credits": 4,
@@ -18349,14 +18291,14 @@
             {
               "prefix": "ENGR",
               "number": "119",
-              "title": "Basic Engineering CAD",
+              "title": "Introduction to Computer Aided Drafting and Design",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "CADD",
-              "number": "120",
-              "title": "Introduction to Computer-Aided Drafting and Design",
+              "number": "119",
+              "title": "Introduction to Computer Aided Drafting and Design",
               "credits": 0,
               "or_alternatives": []
             },
@@ -18372,20 +18314,6 @@
               "number": "225",
               "title": "Mechanics for Civil Engineers",
               "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "180",
-              "title": "Analytic Geometry and Calculus I",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "280",
-              "title": "Analytic Geometry and Calculus II",
-              "credits": 4,
               "or_alternatives": []
             },
             {
@@ -18493,13 +18421,6 @@
             },
             {
               "prefix": "MATH",
-              "number": "180",
-              "title": "Analytic Geometry and Calculus I",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
               "number": "245",
               "title": "Discrete Mathematics",
               "credits": 3,
@@ -18510,13 +18431,6 @@
               "number": "281",
               "title": "Multivariable Calculus",
               "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "280",
-              "title": "Analytic Geometry and Calculus II",
-              "credits": 4,
               "or_alternatives": []
             },
             {
@@ -18617,20 +18531,6 @@
             },
             {
               "prefix": "MATH",
-              "number": "180",
-              "title": "Analytic Geometry and Calculus I",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "280",
-              "title": "Analytic Geometry and Calculus II",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
               "number": "281",
               "title": "Multivariable Calculus",
               "credits": 4,
@@ -18676,27 +18576,6 @@
           "credits_required": null,
           "choose_n": null,
           "courses": [
-            {
-              "prefix": "ANTH",
-              "number": "130",
-              "title": "Introduction to Biological Anthropology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ASTR",
-              "number": "110",
-              "title": "Descriptive Astronomy",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ASTR",
-              "number": "112",
-              "title": "General Astronomy Laboratory",
-              "credits": 1,
-              "or_alternatives": []
-            },
             {
               "prefix": "BIO",
               "number": "112",
@@ -18867,13 +18746,6 @@
             },
             {
               "prefix": "GEOL",
-              "number": "105",
-              "title": "Physical Geology: Earth Systems Laboratory",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "GEOL",
               "number": "110",
               "title": "Planet Earth",
               "credits": 3,
@@ -18980,7 +18852,7 @@
             {
               "prefix": "MATH",
               "number": "176",
-              "title": "PreCalculus: Functions and Graphs",
+              "title": "Precalculus: Functions and Graphs",
               "credits": 6,
               "or_alternatives": []
             },
@@ -18993,23 +18865,9 @@
             },
             {
               "prefix": "MATH",
-              "number": "180",
-              "title": "Analytic Geometry and Calculus I",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
               "number": "245",
               "title": "Discrete Mathematics",
               "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "280",
-              "title": "Analytic Geometry and Calculus II",
-              "credits": 4,
               "or_alternatives": []
             },
             {
@@ -19049,8 +18907,8 @@
             },
             {
               "prefix": "CADD",
-              "number": "120",
-              "title": "Introduction to Computer-Aided Drafting and Design",
+              "number": "119",
+              "title": "Intro to CAD and Design",
               "credits": 3,
               "or_alternatives": []
             },
@@ -19207,6 +19065,67 @@
       "matched_program_slug": "mathematics"
     },
     {
+      "title": "Mathematics 2.0 for Transfer (AS-T) — Associate in Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/stem/mathematics/mathematics-2-transfer-as-t/",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MATH",
+              "number": "281",
+              "title": "Multivariable Calculus",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MATH",
+              "number": "284",
+              "title": "Linear Algebra",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MATH",
+              "number": "285",
+              "title": "Differential Equations",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CS",
+              "number": "181",
+              "title": "Introduction to C++ Programming",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CS",
+              "number": "182",
+              "title": "Introduction to Java Programming",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHYC",
+              "number": "201",
+              "title": "Mechanics and Waves",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "mathematics"
+    },
+    {
       "title": "Mathematics Associate in Science and Certificate of Achievement — Associate in Science",
       "credential": "AS",
       "program_code": null,
@@ -19220,20 +19139,6 @@
           "credits_required": 21,
           "choose_n": null,
           "courses": [
-            {
-              "prefix": "MATH",
-              "number": "180",
-              "title": "Analytic Geometry and Calculus I",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "280",
-              "title": "Analytic Geometry and Calculus II",
-              "credits": 4,
-              "or_alternatives": []
-            },
             {
               "prefix": "MATH",
               "number": "281",
@@ -19304,20 +19209,6 @@
           "courses": [
             {
               "prefix": "MATH",
-              "number": "180",
-              "title": "Analytic Geometry and Calculus I",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "280",
-              "title": "Analytic Geometry and Calculus II",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
               "number": "281",
               "title": "Multivariable Calculus",
               "credits": 4,
@@ -19364,6 +19255,81 @@
       "matched_program_slug": "mathematics"
     },
     {
+      "title": "Physics 2.0 for Transfer (AS-T) — Associate in Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/stem/physics/physics-2-transfer-as-t/",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MATH",
+              "number": "281",
+              "title": "Multivariable Calculus",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MATH",
+              "number": "284",
+              "title": "Linear Algebra",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MATH",
+              "number": "285",
+              "title": "Differential Equations",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHYC",
+              "number": "201",
+              "title": "Mechanics and Waves",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHYC",
+              "number": "202",
+              "title": "Electricity, Magnetism, and Heat",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHYC",
+              "number": "203",
+              "title": "Light, Optics, and Modern Physics",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CS",
+              "number": "181",
+              "title": "Introduction to C++ Programming",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CS",
+              "number": "182",
+              "title": "Introduction to Java Programming",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Physics Associate in Science — Associate in Science",
       "credential": "AS",
       "program_code": null,
@@ -19393,18 +19359,51 @@
             },
             {
               "prefix": "MATH",
-              "number": "180",
-              "title": "Analytic Geometry and Calculus I",
+              "number": "281",
+              "title": "Multivariable Calculus",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHYC",
+              "number": "201",
+              "title": "Mechanics and Waves",
               "credits": 5,
               "or_alternatives": []
             },
             {
-              "prefix": "MATH",
-              "number": "280",
-              "title": "Analytic Geometry and Calculus II",
-              "credits": 4,
+              "prefix": "PHYC",
+              "number": "202",
+              "title": "Electricity, Magnetism, and Heat",
+              "credits": 5,
               "or_alternatives": []
             },
+            {
+              "prefix": "PHYC",
+              "number": "203",
+              "title": "Light, Optics, and Modern Physics",
+              "credits": 5,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Physics for Transfer (AS-T) — Associate in Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/stem/physics/physics-transfer-as-t/",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
             {
               "prefix": "MATH",
               "number": "281",
@@ -19453,45 +19452,10 @@
           "choose_n": null,
           "courses": [
             {
-              "prefix": "ANTH",
-              "number": "130",
-              "title": "Introduction to Biological Anthropology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ASTR",
-              "number": "110",
-              "title": "Descriptive Astronomy",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ASTR",
-              "number": "112",
-              "title": "General Astronomy Laboratory",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
               "prefix": "BIO",
               "number": "122",
               "title": "The Secret Life of Plants",
               "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "130",
-              "title": "General Biology I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIO",
-              "number": "131",
-              "title": "General Biology I Laboratory",
-              "credits": 1,
               "or_alternatives": []
             },
             {
@@ -19671,13 +19635,6 @@
             },
             {
               "prefix": "GEOL",
-              "number": "105",
-              "title": "Physical Geology: Earth Systems Laboratory",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "GEOL",
               "number": "110",
               "title": "Planet Earth",
               "credits": 3,
@@ -19773,67 +19730,6 @@
       "matched_program_slug": "mathematics"
     },
     {
-      "title": "Physics for Transfer (AS-T) — Associate in Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/stem/physics/physics-transfer-as-t/",
-      "total_credits": null,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "MATH",
-              "number": "180",
-              "title": "Analytic Geometry and Calculus I",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "280",
-              "title": "Analytic Geometry and Calculus II",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "281",
-              "title": "Multivariable Calculus",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHYC",
-              "number": "201",
-              "title": "Mechanics and Waves",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHYC",
-              "number": "202",
-              "title": "Electricity, Magnetism, and Heat",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHYC",
-              "number": "203",
-              "title": "Light, Optics, and Modern Physics",
-              "credits": 5,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Art–Animation Associate in Arts — Associate in Science",
       "credential": "AS",
       "program_code": null,
@@ -19865,20 +19761,6 @@
               "prefix": "ART",
               "number": "129",
               "title": "Three-Dimensional Design",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ART",
-              "number": "140",
-              "title": "Survey of Western Art I: Prehistory through Middle Ages",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ART",
-              "number": "141",
-              "title": "Survey of Western ART II: Renaissance through Modern",
               "credits": 3,
               "or_alternatives": []
             },
@@ -20015,20 +19897,6 @@
             },
             {
               "prefix": "ART",
-              "number": "140",
-              "title": "Survey of Western Art I: Prehistory through Middle Ages",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ART",
-              "number": "141",
-              "title": "Survey of Western ART II: Renaissance through Modern",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ART",
               "number": "104",
               "title": "Artists and Designers Today",
               "credits": 3,
@@ -20144,20 +20012,6 @@
           "credits_required": null,
           "choose_n": null,
           "courses": [
-            {
-              "prefix": "ART",
-              "number": "140",
-              "title": "Survey of Western Art I: Prehistory through Middle Ages",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ART",
-              "number": "141",
-              "title": "Survey of Western ART II: Renaissance through Modern",
-              "credits": 0,
-              "or_alternatives": []
-            },
             {
               "prefix": "ART",
               "number": "124",
@@ -20305,20 +20159,6 @@
             },
             {
               "prefix": "ART",
-              "number": "140",
-              "title": "Survey of Western Art I: Prehistory through Middle Ages",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ART",
-              "number": "141",
-              "title": "Survey of Western ART II: Renaissance through Modern",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ART",
               "number": "121",
               "title": "Painting I",
               "credits": 3,
@@ -20438,20 +20278,6 @@
               "prefix": "ART",
               "number": "124",
               "title": "Drawing I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ART",
-              "number": "140",
-              "title": "Survey of Western Art I: Prehistory through Middle Ages",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ART",
-              "number": "141",
-              "title": "Survey of Western ART II: Renaissance through Modern",
               "credits": 3,
               "or_alternatives": []
             },
@@ -20619,20 +20445,6 @@
               "number": "129",
               "title": "Three-Dimensional Design",
               "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ART",
-              "number": "141",
-              "title": "Survey of Western ART II: Renaissance through Modern",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ART",
-              "number": "140",
-              "title": "Survey of Western Art I: Prehistory through Middle Ages",
-              "credits": 0,
               "or_alternatives": []
             },
             {
@@ -20975,13 +20787,13 @@
       "credential": "AS",
       "program_code": null,
       "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/visual-performing-arts/music/music-education-aa/",
-      "total_credits": 40,
+      "total_credits": null,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "Recommended Course Sequence",
-          "credits_required": 40,
+          "credits_required": null,
           "choose_n": null,
           "courses": [
             {
@@ -21213,6 +21025,102 @@
               "number": "273",
               "title": "Percussion Methods",
               "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "292A",
+              "title": "Applied Music",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "293A",
+              "title": "Applied Music",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "294A",
+              "title": "Applied Music",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "295A",
+              "title": "Applied Music",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Music Education Certificate of Achievement — Associate in Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/visual-performing-arts/music/music-education-cert-achievement/",
+      "total_credits": 9,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 9,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MUS",
+              "number": "126",
+              "title": "Class Guitar I",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "170",
+              "title": "Class Voice",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "260",
+              "title": "Conducting",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "262",
+              "title": "Woodwinds Methods",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "263",
+              "title": "Brass Methods",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "272",
+              "title": "String Methods",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "273",
+              "title": "Percussion Methods",
+              "credits": 1,
               "or_alternatives": []
             }
           ]
@@ -21477,74 +21385,6 @@
               "number": "291",
               "title": "Performance Studies",
               "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Music Education Certificate of Achievement — Associate in Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/visual-performing-arts/music/music-education-cert-achievement/",
-      "total_credits": 9,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 9,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "MUS",
-              "number": "126",
-              "title": "Class Guitar I",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUS",
-              "number": "170",
-              "title": "Class Voice",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUS",
-              "number": "260",
-              "title": "Conducting",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUS",
-              "number": "262",
-              "title": "Woodwinds Methods",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUS",
-              "number": "263",
-              "title": "Brass Methods",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUS",
-              "number": "272",
-              "title": "String Methods",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUS",
-              "number": "273",
-              "title": "Percussion Methods",
-              "credits": 1,
               "or_alternatives": []
             }
           ]
