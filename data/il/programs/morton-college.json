@@ -1,21 +1,21 @@
 {
   "college_slug": "morton-college",
-  "catalog_year": "2026-2027",
-  "catalog_url": "https://morton.smartcatalogiq.com/en/2026-2027/catalog/degree-and-certificate-requirements/",
-  "scraped_at": "2026-06-01T03:55:31.692Z",
+  "catalog_year": "2020-2021",
+  "catalog_url": "https://morton.smartcatalogiq.com/en/2020-2021/college-catalog/certificates-and-a-a-s-degrees-available-at-morton-college/",
+  "scraped_at": "2026-09-01T13:18:51.235Z",
   "programs": [
     {
       "title": "Associate in Applied Science (A.A.S.) Degree Requirements",
-      "credential": "other",
+      "credential": "AS",
       "program_code": null,
-      "catalog_url": "https://morton.smartcatalogiq.com/en/2026-2027/catalog/certificates-and-a-a-s-degrees-available-at-morton-college/associate-in-applied-science-a-a-s-degree-requirements",
-      "total_credits": 26,
+      "catalog_url": "https://morton.smartcatalogiq.com/en/2020-2021/college-catalog/certificates-and-a-a-s-degrees-available-at-morton-college/associate-in-applied-science-a-a-s-degree-requirements",
+      "total_credits": 528,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "A. Communications",
-          "credits_required": 6,
+          "credits_required": null,
           "choose_n": null,
           "courses": [
             {
@@ -43,7 +43,7 @@
         },
         {
           "name": "B. Behavioral/Social Sciences",
-          "credits_required": 6,
+          "credits_required": null,
           "choose_n": null,
           "courses": [
             {
@@ -61,13 +61,6 @@
               "or_alternatives": []
             },
             {
-              "prefix": "ANT",
-              "number": "103",
-              "title": "Introduction to Archaeology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
               "prefix": "ECO",
               "number": "101",
               "title": "Principles of Economics I-Macroeconomics",
@@ -77,7 +70,7 @@
             {
               "prefix": "ECO",
               "number": "102",
-              "title": "Principles of Economics II - Microeconomics",
+              "title": "Principles of Economics Ii-Microeconomic",
               "credits": 3,
               "or_alternatives": []
             },
@@ -91,7 +84,7 @@
             {
               "prefix": "GEG",
               "number": "125",
-              "title": "Geography of the Developing World",
+              "title": "Geography of the Eastern World",
               "credits": 3,
               "or_alternatives": []
             },
@@ -112,21 +105,21 @@
             {
               "prefix": "POL",
               "number": "201",
-              "title": "U.S. National Government",
+              "title": "United States National Government",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "POL",
               "number": "202",
-              "title": "State and Local Government",
+              "title": "State+local Govt",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "PSY",
               "number": "101",
-              "title": "Introduction to Psychology",
+              "title": "Intro to Psychology",
               "credits": 3,
               "or_alternatives": []
             },
@@ -161,14 +154,14 @@
             {
               "prefix": "PSY",
               "number": "215",
-              "title": "Life Span: A Survey of Human Development",
+              "title": "Life Span: Survey of Human Dev",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "SOC",
               "number": "100",
-              "title": "Introduction to Sociology",
+              "title": "Intro to Sociology",
               "credits": 3,
               "or_alternatives": []
             },
@@ -189,7 +182,7 @@
             {
               "prefix": "SOC",
               "number": "201",
-              "title": "Race and Ethnicity",
+              "title": "Minority Group Relations",
               "credits": 3,
               "or_alternatives": []
             },
@@ -204,7 +197,7 @@
         },
         {
           "name": "C. Science and Mathematics",
-          "credits_required": 7,
+          "credits_required": null,
           "choose_n": null,
           "courses": [
             {
@@ -223,23 +216,30 @@
             },
             {
               "prefix": "BIO",
-              "number": "109",
-              "title": "Introduction to Evolution Lab",
-              "credits": 1,
+              "number": "106",
+              "title": "A & P for Allied Health Profes",
+              "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "BIO",
               "number": "110",
-              "title": "Biology: A Cellular Approach",
+              "title": "Biology: a Cellular Approach",
               "credits": 5,
               "or_alternatives": []
             },
             {
               "prefix": "BIO",
               "number": "111",
-              "title": "Biology: A Systems Approach",
+              "title": "Biology: a Systems Approach",
               "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "140",
+              "title": "Introduction to Marine Ecology",
+              "credits": 3,
               "or_alternatives": []
             },
             {
@@ -252,8 +252,22 @@
             {
               "prefix": "BIO",
               "number": "152",
-              "title": "Anatomy & Physiology (Therapies)",
+              "title": "Anatomy & Physiology (therapies)",
               "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "160",
+              "title": "Plants & Society",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "161",
+              "title": "Plants & Society Laboratory",
+              "credits": 1,
               "or_alternatives": []
             },
             {
@@ -287,14 +301,14 @@
             {
               "prefix": "CHM",
               "number": "100",
-              "title": "Fundamentals of Chemistry",
+              "title": "Fundamentals ofChemistry",
               "credits": 4,
               "or_alternatives": []
             },
             {
               "prefix": "CHM",
               "number": "101",
-              "title": "Chemistry in Action: Chemistry in Art",
+              "title": "Introduction to Chemistry I",
               "credits": 4,
               "or_alternatives": []
             },
@@ -392,21 +406,21 @@
             {
               "prefix": "MAT",
               "number": "110",
-              "title": "College Trigonometry",
+              "title": "College Trig",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "MAT",
               "number": "120",
-              "title": "Mathematics for Elementary School Teachers I",
+              "title": "Math/Elem School Teachers I",
               "credits": 4,
               "or_alternatives": []
             },
             {
               "prefix": "MAT",
               "number": "121",
-              "title": "Mathematics for Elementary School Teachers II",
+              "title": "Math/Elem School Teachers II",
               "credits": 4,
               "or_alternatives": []
             },
@@ -422,13 +436,6 @@
               "number": "141",
               "title": "Statistics",
               "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "150",
-              "title": "Pre-Calculus with Trigonometry",
-              "credits": 5,
               "or_alternatives": []
             },
             {
@@ -462,14 +469,14 @@
             {
               "prefix": "MAT",
               "number": "215",
-              "title": "Differential Equations",
+              "title": "Differ Equations",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "MAT",
               "number": "224",
-              "title": "Calculus for Business & Social Science",
+              "title": "Calculus for Business & Soc Sc",
               "credits": 4,
               "or_alternatives": []
             },
@@ -526,7 +533,7 @@
         },
         {
           "name": "D. Humanities",
-          "credits_required": 4,
+          "credits_required": null,
           "choose_n": null,
           "courses": [
             {
@@ -616,14 +623,21 @@
             {
               "prefix": "ART",
               "number": "125",
-              "title": "Art History World Survey I Prehistoric to 15th Century",
+              "title": "Art History I Prehistoric/Goth",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "ART",
               "number": "126",
-              "title": "Art History World Survey II 15th Century to Modern Art",
+              "title": "Art History II Renaissance & B",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ART",
+              "number": "127",
+              "title": "Art History III the Modern Wor",
               "credits": 3,
               "or_alternatives": []
             },
@@ -664,13 +678,6 @@
             },
             {
               "prefix": "ART",
-              "number": "210",
-              "title": "Diverse Perspectives in American Art",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ART",
               "number": "211",
               "title": "Sculpture II",
               "credits": 3,
@@ -693,7 +700,7 @@
             {
               "prefix": "ART",
               "number": "220",
-              "title": "Latin American Traditions in Art",
+              "title": "Latin America Traditions in Ar",
               "credits": 3,
               "or_alternatives": []
             },
@@ -748,6 +755,13 @@
             },
             {
               "prefix": "HUM",
+              "number": "151",
+              "title": "Humanities: History & Philosophy and Lit",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HUM",
               "number": "153",
               "title": "Survey of Film History",
               "credits": 3,
@@ -783,6 +797,13 @@
             },
             {
               "prefix": "MUS",
+              "number": "105",
+              "title": "Introduction to American Music",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
               "number": "106",
               "title": "Trends in Modern American Music",
               "credits": 3,
@@ -798,14 +819,14 @@
             {
               "prefix": "MUS",
               "number": "110",
-              "title": "Music Theory I",
+              "title": "Music Theory 1",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "MUS",
               "number": "111",
-              "title": "Music Theory II",
+              "title": "Music Theory 2",
               "credits": 3,
               "or_alternatives": []
             },
@@ -819,7 +840,7 @@
             {
               "prefix": "MUS",
               "number": "116",
-              "title": "Ear Training and Sight Singing II",
+              "title": "Ear Trn & Sight Sign II",
               "credits": 1,
               "or_alternatives": []
             },
@@ -833,7 +854,7 @@
             {
               "prefix": "MUS",
               "number": "122",
-              "title": "College Singers I",
+              "title": "College Singers 1",
               "credits": 1,
               "or_alternatives": []
             },
@@ -861,28 +882,28 @@
             {
               "prefix": "MUS",
               "number": "129",
-              "title": "Concert Band I",
+              "title": "Concert Band 1",
               "credits": 1,
               "or_alternatives": []
             },
             {
               "prefix": "MUS",
               "number": "130",
-              "title": "Private Applied Piano Music Major I",
+              "title": "Private Applied Piano Music Major 1",
               "credits": 2,
               "or_alternatives": []
             },
             {
               "prefix": "MUS",
               "number": "131",
-              "title": "Private Applied Piano Non Major I",
+              "title": "Private Applied Piano Non-Major 1",
               "credits": 1,
               "or_alternatives": []
             },
             {
               "prefix": "MUS",
               "number": "160",
-              "title": "Private Applied Piano Music Major II",
+              "title": "Private Applied Piano Music Major 2",
               "credits": 2,
               "or_alternatives": []
             },
@@ -896,28 +917,28 @@
             {
               "prefix": "MUS",
               "number": "210",
-              "title": "Music Theory III",
+              "title": "Music Theory 3",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "MUS",
               "number": "211",
-              "title": "Music Theory IV",
+              "title": "Music Theory 4",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "MUS",
               "number": "215",
-              "title": "Ear Training & Sight Singing III",
+              "title": "Ear Training & Sight Singing II",
               "credits": 1,
               "or_alternatives": []
             },
             {
               "prefix": "MUS",
               "number": "216",
-              "title": "Ear Training & Sight Singing IV",
+              "title": "Ear Trn+sight Sing IV",
               "credits": 1,
               "or_alternatives": []
             },
@@ -946,6 +967,13 @@
               "prefix": "PHI",
               "number": "201",
               "title": "Philosophy",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SPE",
+              "number": "115",
+              "title": "Oral Interpretation",
               "credits": 3,
               "or_alternatives": []
             },
@@ -1008,14 +1036,14 @@
             {
               "prefix": "SPN",
               "number": "216",
-              "title": "Spanish Conversation & Composition II",
+              "title": "Spanish Conv & Comp II",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "SPN",
               "number": "220",
-              "title": "Culture & Civilization of Latin America",
+              "title": "Cult. & Civil. of Latin Americ",
               "credits": 3,
               "or_alternatives": []
             },
@@ -1029,7 +1057,7 @@
             {
               "prefix": "SPN",
               "number": "226",
-              "title": "Spanish American Literature II",
+              "title": "Spanish American Literature Ii",
               "credits": 3,
               "or_alternatives": []
             },
@@ -1079,7 +1107,7 @@
         },
         {
           "name": "E. Health, Technology and College Readiness",
-          "credits_required": 3,
+          "credits_required": null,
           "choose_n": null,
           "courses": [
             {
@@ -1113,8 +1141,8 @@
             {
               "prefix": "CSS",
               "number": "100",
-              "title": "College Success Seminar",
-              "credits": 2,
+              "title": "College Study Seminar",
+              "credits": 3,
               "or_alternatives": []
             },
             {
@@ -1246,7 +1274,7 @@
             {
               "prefix": "PEC",
               "number": "181",
-              "title": "Jogging & Power Walking for Fitness",
+              "title": "Jogging & Power Walking for Fi",
               "credits": 1,
               "or_alternatives": []
             },
@@ -1267,15 +1295,15 @@
             {
               "prefix": "PEC",
               "number": "200",
-              "title": "Leadership in Team and Individual Sports",
+              "title": "Leadership in Team/Indiv Sport",
               "credits": 2,
               "or_alternatives": []
             },
             {
               "prefix": "PEH",
               "number": "101",
-              "title": "Personal Community Health",
-              "credits": 3,
+              "title": "Personal & Community Health",
+              "credits": 2,
               "or_alternatives": []
             },
             {
@@ -1295,7 +1323,7 @@
             {
               "prefix": "PEH",
               "number": "104",
-              "title": "Foundations of Health & Fitness",
+              "title": "Foundations of Health & Fitnes",
               "credits": 2,
               "or_alternatives": []
             },
@@ -1315,7 +1343,7 @@
       "title": "3D CAD Certificate (CDC)",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://morton.smartcatalogiq.com/en/2026-2027/catalog/certificates-and-a-a-s-degrees-available-at-morton-college/computer-aided-design/3d-cad-certificate-cdc",
+      "catalog_url": "https://morton.smartcatalogiq.com/en/2020-2021/college-catalog/certificates-and-a-a-s-degrees-available-at-morton-college/computer-aided-design/3d-cad-certificate-cdc",
       "total_credits": 15,
       "gpa_minimum": 2,
       "description": null,
@@ -1369,13 +1397,13 @@
       "title": "CAD Degree (MDT)",
       "credential": "other",
       "program_code": null,
-      "catalog_url": "https://morton.smartcatalogiq.com/en/2026-2027/catalog/certificates-and-a-a-s-degrees-available-at-morton-college/computer-aided-design/cad-degree-mdt-151302-2026",
-      "total_credits": 18,
+      "catalog_url": "https://morton.smartcatalogiq.com/en/2020-2021/college-catalog/certificates-and-a-a-s-degrees-available-at-morton-college/computer-aided-design/cad-degree-mdt",
+      "total_credits": 6,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
-          "name": "CAD Electives",
+          "name": "CAD Electives (6 Credits)",
           "credits_required": null,
           "choose_n": null,
           "courses": [
@@ -1388,36 +1416,8 @@
             },
             {
               "prefix": "CAD",
-              "number": "117",
-              "title": "3D Printing Basics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CAD",
               "number": "127",
               "title": "Solid Works Essentials",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CAD",
-              "number": "137",
-              "title": "Revit MEP Fundamentals",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CAD",
-              "number": "227",
-              "title": "Solid Works Assemblies",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CAD",
-              "number": "237",
-              "title": "Revit BIM Management",
               "credits": 3,
               "or_alternatives": []
             }
@@ -1427,10 +1427,10 @@
       "matched_program_slug": null
     },
     {
-      "title": "Computer Aided Design Technology Program (CAD)",
+      "title": "Technology Program (CAD)",
       "credential": "other",
       "program_code": null,
-      "catalog_url": "https://morton.smartcatalogiq.com/en/2026-2027/catalog/certificates-and-a-a-s-degrees-available-at-morton-college/computer-aided-design/computer-aided-design-technology-program-cad",
+      "catalog_url": "https://morton.smartcatalogiq.com/en/2020-2021/college-catalog/certificates-and-a-a-s-degrees-available-at-morton-college/computer-aided-design/technology-program-cad",
       "total_credits": 12,
       "gpa_minimum": 2,
       "description": null,
@@ -1474,17 +1474,17 @@
       "matched_program_slug": null
     },
     {
-      "title": "Computer Service Technician Certificate (CRT)",
+      "title": "Computer Service Tech. (CRT) Certificate",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://morton.smartcatalogiq.com/en/2026-2027/catalog/certificates-and-a-a-s-degrees-available-at-morton-college/computer-information-systems/computer-service-tech-crt-certificate",
-      "total_credits": 17,
+      "catalog_url": "https://morton.smartcatalogiq.com/en/2020-2021/college-catalog/certificates-and-a-a-s-degrees-available-at-morton-college/computer-information-systems/computer-service-tech-crt-certificate",
+      "total_credits": 15,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "Coursework",
-          "credits_required": 17,
+          "credits_required": null,
           "choose_n": null,
           "courses": [
             {
@@ -1496,29 +1496,29 @@
             },
             {
               "prefix": "CIS",
-              "number": "104",
-              "title": "CIS Fundamentals",
+              "number": "132",
+              "title": "Introduction to Networking",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "161",
+              "title": "Introduction to Operating Systems",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "CIS",
               "number": "180",
-              "title": "Computer Servicing-Hardware",
+              "title": "Computer Diagnosis & Service I",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "CIS",
               "number": "181",
-              "title": "Computer Servicing-Operating Systems",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CPS",
-              "number": "111",
-              "title": "Business Computer Systems",
+              "title": "Computer Diagnosis & Service II",
               "credits": 3,
               "or_alternatives": []
             }
@@ -1528,11 +1528,65 @@
       "matched_program_slug": null
     },
     {
-      "title": "Early Childhood Education Degree (ECE)",
+      "title": "Networking Essentials (NET) Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://morton.smartcatalogiq.com/en/2020-2021/college-catalog/certificates-and-a-a-s-degrees-available-at-morton-college/computer-information-systems/networking-essentials-net-certificate",
+      "total_credits": 17,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CIS",
+              "number": "102",
+              "title": "Career Essentials for CIS",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "132",
+              "title": "Introduction to Networking",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "135",
+              "title": "Network Client Configuration",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "136",
+              "title": "Server Configuration & Administration",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CIS",
+              "number": "161",
+              "title": "Introduction to Operating Systems",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Early Childhood Ed. Degree (ECE)",
       "credential": "other",
       "program_code": null,
-      "catalog_url": "https://morton.smartcatalogiq.com/en/2026-2027/catalog/certificates-and-a-a-s-degrees-available-at-morton-college/early-childhood-education/early-childhood-ed-degree-ece",
-      "total_credits": 35,
+      "catalog_url": "https://morton.smartcatalogiq.com/en/2020-2021/college-catalog/certificates-and-a-a-s-degrees-available-at-morton-college/early-childhood-education/early-childhood-ed-degree-ece",
+      "total_credits": 37,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
@@ -1550,9 +1604,23 @@
             },
             {
               "prefix": "ECE",
+              "number": "162",
+              "title": "Creative Curriculum for Preschool",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ECE",
+              "number": "164",
+              "title": "Creative Curriculum for Inf/Tod./2",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ECE",
               "number": "202",
               "title": "Math for Early Childhood",
-              "credits": 3,
+              "credits": 2,
               "or_alternatives": []
             },
             {
@@ -1565,7 +1633,7 @@
             {
               "prefix": "ECE",
               "number": "207",
-              "title": "Creative Expression of Children",
+              "title": "Creative Expression of Childre",
               "credits": 3,
               "or_alternatives": []
             },
@@ -1602,6 +1670,13 @@
               "number": "215",
               "title": "The First Three Years of Life",
               "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ECE",
+              "number": "164",
+              "title": "Creative Curriculum for Inf/Tod./2",
+              "credits": 1,
               "or_alternatives": []
             },
             {
@@ -1652,17 +1727,17 @@
       "matched_program_slug": "early-childhood-education"
     },
     {
-      "title": "Fire Science Technology Degree (FST)",
+      "title": "Fire Investigation Specialist (FIS)",
       "credential": "other",
       "program_code": null,
-      "catalog_url": "https://morton.smartcatalogiq.com/en/2026-2027/catalog/certificates-and-a-a-s-degrees-available-at-morton-college/fire-science-technology-program/fire-science-tech-degree-fst",
-      "total_credits": 40,
+      "catalog_url": "https://morton.smartcatalogiq.com/en/2020-2021/college-catalog/certificates-and-a-a-s-degrees-available-at-morton-college/fire-science-technology-program/fire-investigation-specialist-fis",
+      "total_credits": 28,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
-          "name": "FIR Electives",
-          "credits_required": null,
+          "name": "Required",
+          "credits_required": 28,
           "choose_n": null,
           "courses": [
             {
@@ -1672,6 +1747,156 @@
               "credits": 3,
               "or_alternatives": []
             },
+            {
+              "prefix": "FIR",
+              "number": "150",
+              "title": "Introduction to Fire and Emergency Servi",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "FIR",
+              "number": "180",
+              "title": "Fire Investigation I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "FIR",
+              "number": "240",
+              "title": "Building Construction for Fire Protectio",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "FIR",
+              "number": "270",
+              "title": "Fire Behavior and Combustion",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "FIR",
+              "number": "280",
+              "title": "Fire Investigation II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "Rhetoric I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SPE",
+              "number": "101",
+              "title": "Principles of Public Speaking",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHM",
+              "number": "100",
+              "title": "Fundamentals ofChemistry",
+              "credits": 4,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Fire Prevention Specialist (FPS)",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://morton.smartcatalogiq.com/en/2020-2021/college-catalog/certificates-and-a-a-s-degrees-available-at-morton-college/fire-science-technology-program/fire-prevention-specialist-fps",
+      "total_credits": 24,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "FIR",
+              "number": "112",
+              "title": "Fire Prevention",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "FIR",
+              "number": "120",
+              "title": "Hazardous Materials",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "FIR",
+              "number": "150",
+              "title": "Introduction to Fire and Emergency Servi",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "FIR",
+              "number": "230",
+              "title": "Fire Protection Systems",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "FIR",
+              "number": "240",
+              "title": "Building Construction for Fire Protectio",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "FIR",
+              "number": "250",
+              "title": "Fire Protection Hydraulics & Water",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "Rhetoric I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SPE",
+              "number": "101",
+              "title": "Principles of Public Speaking",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Fire Science Tech. Degree (FST)",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://morton.smartcatalogiq.com/en/2020-2021/college-catalog/certificates-and-a-a-s-degrees-available-at-morton-college/fire-science-technology-program/fire-science-tech-degree-fst",
+      "total_credits": 26,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Fir Electives (3 Credits Each)",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
             {
               "prefix": "FIR",
               "number": "132",
@@ -1688,29 +1913,8 @@
             },
             {
               "prefix": "FIR",
-              "number": "150",
-              "title": "Introduction to Fire and Emergency Services",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "FIR",
-              "number": "160",
-              "title": "Legal Aspects of the Fire Service",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "FIR",
               "number": "180",
               "title": "Fire Investigation I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "FIR",
-              "number": "190",
-              "title": "Occupational Safety and Health for Fire",
               "credits": 3,
               "or_alternatives": []
             },
@@ -1739,7 +1943,328 @@
               "prefix": "EMT",
               "number": "101",
               "title": "Emergency Medical Technician",
-              "credits": 10,
+              "credits": 8,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Health Info Tech. Degree (HIT)",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://morton.smartcatalogiq.com/en/2020-2021/college-catalog/certificates-and-a-a-s-degrees-available-at-morton-college/health-information-technology/health-info-tech-degree-hit",
+      "total_credits": 60,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "HIT",
+              "number": "100",
+              "title": "Introduction to Health Information",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIT",
+              "number": "102",
+              "title": "Data Systems & Computer Application",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIT",
+              "number": "103",
+              "title": "Coding & Classification System",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIT",
+              "number": "104",
+              "title": "CPT Coding",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIT",
+              "number": "105",
+              "title": "Insurance Reimbursement",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIT",
+              "number": "109",
+              "title": "Pathology & Pharmacology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIT",
+              "number": "201",
+              "title": "Computer Data & Statistical Analysis",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIT",
+              "number": "204",
+              "title": "Management in Health Information",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIT",
+              "number": "205",
+              "title": "Legal, Quality Analysis & Management",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIT",
+              "number": "206",
+              "title": "Internship",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HCP",
+              "number": "130",
+              "title": "Medical Terminology",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "General Education Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CPS",
+              "number": "111",
+              "title": "Business Computer Systems",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "102",
+              "title": "General Education Mathematics",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SPE",
+              "number": "101",
+              "title": "Principles of Public Speaking",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHI",
+              "number": "126",
+              "title": "Introduction to Ethics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "Rhetoric I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
+              "number": "101",
+              "title": "Intro to Psychology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "152",
+              "title": "Anatomy & Physiology (therapies)",
+              "credits": 5,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Medical Billing and Coding (MBC) Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://morton.smartcatalogiq.com/en/2020-2021/college-catalog/certificates-and-a-a-s-degrees-available-at-morton-college/health-information-technology/medical-billing-and-coding-mbc-certificate",
+      "total_credits": 24,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "HCP",
+              "number": "130",
+              "title": "Medical Terminology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIT",
+              "number": "100",
+              "title": "Introduction to Health Information",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIT",
+              "number": "103",
+              "title": "Coding & Classification System",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIT",
+              "number": "104",
+              "title": "CPT Coding",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIT",
+              "number": "105",
+              "title": "Insurance Reimbursement",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIT",
+              "number": "203",
+              "title": "Advanced Coding",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "152",
+              "title": "Anatomy & Physiology (therapies)",
+              "credits": 5,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Medical Transcription (MTC) Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://morton.smartcatalogiq.com/en/2020-2021/college-catalog/certificates-and-a-a-s-degrees-available-at-morton-college/health-information-technology/medical-transcription-mtc-certificate",
+      "total_credits": 18,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Coursework",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BIO",
+              "number": "106",
+              "title": "A & P for Allied Health Profes",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HCP",
+              "number": "130",
+              "title": "Medical Terminology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIT",
+              "number": "109",
+              "title": "Pathology & Pharmacology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIT",
+              "number": "111",
+              "title": "Medical Transcription I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIT",
+              "number": "112",
+              "title": "Medical Transcription II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIT",
+              "number": "113",
+              "title": "Medical Transcription Practicum",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Heating, Ventilation and Air Conditioning (HVC) Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://morton.smartcatalogiq.com/en/2020-2021/college-catalog/certificates-and-a-a-s-degrees-available-at-morton-college/heating-ventilation-and-air-conditioning/heating-ventilation-and-air-conditioning-hvc-certificate",
+      "total_credits": 8,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "HVA",
+              "number": "201",
+              "title": "Commercial Refrigeration",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HVA",
+              "number": "203",
+              "title": "Commercial Air Conditioning & Refrigera",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HVA",
+              "number": "253",
+              "title": "Successful Career & Life Strategies",
+              "credits": 2,
               "or_alternatives": []
             }
           ]
@@ -1751,8 +2276,8 @@
       "title": "Associate in Liberal Studies (A.L.S.)",
       "credential": "other",
       "program_code": null,
-      "catalog_url": "https://morton.smartcatalogiq.com/en/2026-2027/catalog/certificates-and-a-a-s-degrees-available-at-morton-college/liberal-studies-program/associate-in-liberal-studies-a-l-s",
-      "total_credits": 20,
+      "catalog_url": "https://morton.smartcatalogiq.com/en/2020-2021/college-catalog/certificates-and-a-a-s-degrees-available-at-morton-college/liberal-studies-program/associate-in-liberal-studies-a-l-s",
+      "total_credits": 15,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
@@ -1813,7 +2338,7 @@
             {
               "prefix": "ECO",
               "number": "102",
-              "title": "Principles of Economics II - Microeconomics",
+              "title": "Principles of Economics Ii-Microeconomic",
               "credits": 3,
               "or_alternatives": []
             },
@@ -1827,7 +2352,7 @@
             {
               "prefix": "GEG",
               "number": "125",
-              "title": "Geography of the Developing World",
+              "title": "Geography of the Eastern World",
               "credits": 3,
               "or_alternatives": []
             },
@@ -1848,21 +2373,21 @@
             {
               "prefix": "POL",
               "number": "201",
-              "title": "U.S. National Government",
+              "title": "United States National Government",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "POL",
               "number": "202",
-              "title": "State and Local Government",
+              "title": "State+local Govt",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "PSY",
               "number": "101",
-              "title": "Introduction to Psychology",
+              "title": "Intro to Psychology",
               "credits": 3,
               "or_alternatives": []
             },
@@ -1897,14 +2422,14 @@
             {
               "prefix": "PSY",
               "number": "215",
-              "title": "Life Span: A Survey of Human Development",
+              "title": "Life Span: Survey of Human Dev",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "SOC",
               "number": "100",
-              "title": "Introduction to Sociology",
+              "title": "Intro to Sociology",
               "credits": 3,
               "or_alternatives": []
             },
@@ -1925,7 +2450,7 @@
             {
               "prefix": "SOC",
               "number": "201",
-              "title": "Race and Ethnicity",
+              "title": "Minority Group Relations",
               "credits": 3,
               "or_alternatives": []
             },
@@ -1966,16 +2491,30 @@
             },
             {
               "prefix": "BIO",
+              "number": "106",
+              "title": "A & P for Allied Health Profes",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
               "number": "110",
-              "title": "Biology: A Cellular Approach",
+              "title": "Biology: a Cellular Approach",
               "credits": 5,
               "or_alternatives": []
             },
             {
               "prefix": "BIO",
               "number": "111",
-              "title": "Biology: A Systems Approach",
+              "title": "Biology: a Systems Approach",
               "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "140",
+              "title": "Introduction to Marine Ecology",
+              "credits": 3,
               "or_alternatives": []
             },
             {
@@ -1988,8 +2527,22 @@
             {
               "prefix": "BIO",
               "number": "152",
-              "title": "Anatomy & Physiology (Therapies)",
+              "title": "Anatomy & Physiology (therapies)",
               "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "160",
+              "title": "Plants & Society",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "161",
+              "title": "Plants & Society Laboratory",
+              "credits": 1,
               "or_alternatives": []
             },
             {
@@ -2023,14 +2576,14 @@
             {
               "prefix": "CHM",
               "number": "100",
-              "title": "Fundamentals of Chemistry",
+              "title": "Fundamentals ofChemistry",
               "credits": 4,
               "or_alternatives": []
             },
             {
               "prefix": "CHM",
               "number": "101",
-              "title": "Chemistry in Action: Chemistry in Art",
+              "title": "Introduction to Chemistry I",
               "credits": 4,
               "or_alternatives": []
             },
@@ -2128,14 +2681,21 @@
             {
               "prefix": "MAT",
               "number": "110",
-              "title": "College Trigonometry",
+              "title": "College Trig",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "MAT",
+              "number": "120",
+              "title": "Math/Elem School Teachers I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
               "number": "121",
-              "title": "Mathematics for Elementary School Teachers II",
+              "title": "Math/Elem School Teachers II",
               "credits": 4,
               "or_alternatives": []
             },
@@ -2184,14 +2744,14 @@
             {
               "prefix": "MAT",
               "number": "215",
-              "title": "Differential Equations",
+              "title": "Differ Equations",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "MAT",
               "number": "224",
-              "title": "Calculus for Business & Social Science",
+              "title": "Calculus for Business & Soc Sc",
               "credits": 4,
               "or_alternatives": []
             },
@@ -2338,14 +2898,21 @@
             {
               "prefix": "ART",
               "number": "125",
-              "title": "Art History World Survey I Prehistoric to 15th Century",
+              "title": "Art History I Prehistoric/Goth",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "ART",
               "number": "126",
-              "title": "Art History World Survey II 15th Century to Modern Art",
+              "title": "Art History II Renaissance & B",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ART",
+              "number": "127",
+              "title": "Art History III the Modern Wor",
               "credits": 3,
               "or_alternatives": []
             },
@@ -2408,7 +2975,7 @@
             {
               "prefix": "ART",
               "number": "220",
-              "title": "Latin American Traditions in Art",
+              "title": "Latin America Traditions in Ar",
               "credits": 3,
               "or_alternatives": []
             },
@@ -2463,6 +3030,13 @@
             },
             {
               "prefix": "HUM",
+              "number": "151",
+              "title": "Humanities: History & Philosophy and Lit",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HUM",
               "number": "153",
               "title": "Survey of Film History",
               "credits": 3,
@@ -2498,6 +3072,13 @@
             },
             {
               "prefix": "MUS",
+              "number": "105",
+              "title": "Introduction to American Music",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
               "number": "106",
               "title": "Trends in Modern American Music",
               "credits": 3,
@@ -2513,14 +3094,14 @@
             {
               "prefix": "MUS",
               "number": "110",
-              "title": "Music Theory I",
+              "title": "Music Theory 1",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "MUS",
               "number": "111",
-              "title": "Music Theory II",
+              "title": "Music Theory 2",
               "credits": 3,
               "or_alternatives": []
             },
@@ -2534,7 +3115,7 @@
             {
               "prefix": "MUS",
               "number": "116",
-              "title": "Ear Training and Sight Singing II",
+              "title": "Ear Trn & Sight Sign II",
               "credits": 1,
               "or_alternatives": []
             },
@@ -2548,7 +3129,7 @@
             {
               "prefix": "MUS",
               "number": "122",
-              "title": "College Singers I",
+              "title": "College Singers 1",
               "credits": 1,
               "or_alternatives": []
             },
@@ -2576,56 +3157,56 @@
             {
               "prefix": "MUS",
               "number": "129",
-              "title": "Concert Band I",
+              "title": "Concert Band 1",
               "credits": 1,
               "or_alternatives": []
             },
             {
               "prefix": "MUS",
               "number": "130",
-              "title": "Private Applied Piano Music Major I",
+              "title": "Private Applied Piano Music Major 1",
               "credits": 2,
               "or_alternatives": []
             },
             {
               "prefix": "MUS",
               "number": "131",
-              "title": "Private Applied Piano Non Major I",
+              "title": "Private Applied Piano Non-Major 1",
               "credits": 1,
               "or_alternatives": []
             },
             {
               "prefix": "MUS",
               "number": "160",
-              "title": "Private Applied Piano Music Major II",
+              "title": "Private Applied Piano Music Major 2",
               "credits": 2,
               "or_alternatives": []
             },
             {
               "prefix": "MUS",
               "number": "210",
-              "title": "Music Theory III",
+              "title": "Music Theory 3",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "MUS",
               "number": "211",
-              "title": "Music Theory IV",
+              "title": "Music Theory 4",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "MUS",
               "number": "215",
-              "title": "Ear Training & Sight Singing III",
+              "title": "Ear Training & Sight Singing II",
               "credits": 1,
               "or_alternatives": []
             },
             {
               "prefix": "MUS",
               "number": "216",
-              "title": "Ear Training & Sight Singing IV",
+              "title": "Ear Trn+sight Sing IV",
               "credits": 1,
               "or_alternatives": []
             },
@@ -2654,13 +3235,6 @@
               "prefix": "PHI",
               "number": "201",
               "title": "Philosophy",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHI",
-              "number": "202",
-              "title": "Introduction to Logic",
               "credits": 3,
               "or_alternatives": []
             },
@@ -2730,14 +3304,14 @@
             {
               "prefix": "SPN",
               "number": "216",
-              "title": "Spanish Conversation & Composition II",
+              "title": "Spanish Conv & Comp II",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "SPN",
               "number": "220",
-              "title": "Culture & Civilization of Latin America",
+              "title": "Cult. & Civil. of Latin Americ",
               "credits": 3,
               "or_alternatives": []
             },
@@ -2751,7 +3325,7 @@
             {
               "prefix": "SPN",
               "number": "226",
-              "title": "Spanish American Literature II",
+              "title": "Spanish American Literature Ii",
               "credits": 3,
               "or_alternatives": []
             },
@@ -2826,16 +3400,16 @@
               "or_alternatives": []
             },
             {
-              "prefix": "CSS",
-              "number": "100",
-              "title": "College Success Seminar",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
               "prefix": "CPS",
               "number": "200",
               "title": "C++ Programming",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSS",
+              "number": "100",
+              "title": "College Study Seminar",
               "credits": 3,
               "or_alternatives": []
             },
@@ -2968,7 +3542,7 @@
             {
               "prefix": "PEC",
               "number": "181",
-              "title": "Jogging & Power Walking for Fitness",
+              "title": "Jogging & Power Walking for Fi",
               "credits": 1,
               "or_alternatives": []
             },
@@ -2989,15 +3563,15 @@
             {
               "prefix": "PEC",
               "number": "200",
-              "title": "Leadership in Team and Individual Sports",
+              "title": "Leadership in Team/Indiv Sport",
               "credits": 2,
               "or_alternatives": []
             },
             {
               "prefix": "PEH",
               "number": "101",
-              "title": "Personal Community Health",
-              "credits": 3,
+              "title": "Personal & Community Health",
+              "credits": 2,
               "or_alternatives": []
             },
             {
@@ -3017,7 +3591,7 @@
             {
               "prefix": "PEH",
               "number": "104",
-              "title": "Foundations of Health & Fitness",
+              "title": "Foundations of Health & Fitnes",
               "credits": 2,
               "or_alternatives": []
             },
@@ -3029,96 +3603,134 @@
               "or_alternatives": []
             }
           ]
-        },
-        {
-          "name": "F. Additional General Education Electives",
-          "credits_required": 5,
-          "choose_n": null,
-          "courses": []
         }
       ],
       "matched_program_slug": "liberal-arts"
     },
     {
-      "title": "Licensed Practical Nurse Certificate (NPN)",
+      "title": "Music Production Certificate (MPC)",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://morton.smartcatalogiq.com/en/2026-2027/catalog/certificates-and-a-a-s-degrees-available-at-morton-college/nursing/licensed-practical-nurse-certificate-npn",
-      "total_credits": 10,
+      "catalog_url": "https://morton.smartcatalogiq.com/en/2020-2021/college-catalog/certificates-and-a-a-s-degrees-available-at-morton-college/music-production/music-production-certificate-mpc",
+      "total_credits": 26,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
-          "name": "Required Support Courses:",
-          "credits_required": 10,
+          "name": "Required",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MUS",
+              "number": "110",
+              "title": "Music Theory 1",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "112",
+              "title": "Keyboard Musicianship 1",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "115",
+              "title": "Ear Training & Sight Singing I",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "111",
+              "title": "Music Theory 2",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "117",
+              "title": "Keyboard Musicianship 2",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "116",
+              "title": "Ear Trn & Sight Sign II",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "180",
+              "title": "Introduction to Media Production",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "181",
+              "title": "Music Production 1",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "182",
+              "title": "Music Production 2",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "280",
+              "title": "Music Production for Media",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "281",
+              "title": "Live Sound Recording",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "282",
+              "title": "Music Production Internship",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Nursing Degree (NUR)",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://morton.smartcatalogiq.com/en/2020-2021/college-catalog/certificates-and-a-a-s-degrees-available-at-morton-college/nursing/nursing-degree-nur",
+      "total_credits": 50,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required support courses (31-32 credits):",
+          "credits_required": null,
           "choose_n": null,
           "courses": [
             {
               "prefix": "BIO",
-              "number": "203",
-              "title": "Anatomy & Physiology I",
+              "number": "102",
+              "title": "Introduction to Biology",
               "credits": 4,
               "or_alternatives": []
             },
-            {
-              "prefix": "ENG",
-              "number": "101",
-              "title": "Rhetoric I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSY",
-              "number": "101",
-              "title": "Introduction to Psychology",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "nursing"
-    },
-    {
-      "title": "Nursing Assistant Certificate (NUA)",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://morton.smartcatalogiq.com/en/2026-2027/catalog/certificates-and-a-a-s-degrees-available-at-morton-college/nursing/nursing-assistant-certificate-nua",
-      "total_credits": 7,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Semester One",
-          "credits_required": 7,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "NUR",
-              "number": "105",
-              "title": "Basic Nursing Assistant Training",
-              "credits": 7,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "nursing"
-    },
-    {
-      "title": "Nursing Degree (NUR)",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://morton.smartcatalogiq.com/en/2026-2027/catalog/certificates-and-a-a-s-degrees-available-at-morton-college/nursing/nursing-degree-nur",
-      "total_credits": 27,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Required support courses (27 credits):",
-          "credits_required": 27,
-          "choose_n": null,
-          "courses": [
             {
               "prefix": "BIO",
               "number": "203",
@@ -3157,14 +3769,112 @@
             {
               "prefix": "PSY",
               "number": "101",
-              "title": "Introduction to Psychology",
+              "title": "Intro to Psychology",
               "credits": 3,
               "or_alternatives": []
             },
             {
               "prefix": "PSY",
               "number": "215",
-              "title": "Life Span: A Survey of Human Development",
+              "title": "Life Span: Survey of Human Dev",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Required nursing courses (38 credits):",
+          "credits_required": 19,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "NUR",
+              "number": "107",
+              "title": "Foundations of Nursing I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "108",
+              "title": "Foundations of Nursing II",
+              "credits": 7,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "116",
+              "title": "Mental Health Nursing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "117",
+              "title": "Nursing of the Childbearing Family",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "118",
+              "title": "NUR Care of Child & Family",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Nursing – first year",
+          "credits_required": 14,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "NUR",
+              "number": "107",
+              "title": "Foundations of Nursing I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "108",
+              "title": "Foundations of Nursing II",
+              "credits": 7,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "204",
+              "title": "Anatomy & Physiology II",
+              "credits": 4,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Nursing – second year",
+          "credits_required": 17,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "NUR",
+              "number": "206",
+              "title": "Medical-Surgical Nursing",
+              "credits": 10,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "212",
+              "title": "Microbiology",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "102",
+              "title": "Rhetoric II",
               "credits": 3,
               "or_alternatives": []
             }
@@ -3174,10 +3884,10 @@
       "matched_program_slug": "nursing"
     },
     {
-      "title": "Electronic Records Management Certificate (ERM)",
+      "title": "Electronic Records Management (ERM) Certificate",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://morton.smartcatalogiq.com/en/2026-2027/catalog/certificates-and-a-a-s-degrees-available-at-morton-college/office-management-technology/electronic-records-management-certificate-erm",
+      "catalog_url": "https://morton.smartcatalogiq.com/en/2020-2021/college-catalog/certificates-and-a-a-s-degrees-available-at-morton-college/office-management-technology/electronic-records-management-erm-certificate",
       "total_credits": 11,
       "gpa_minimum": 2,
       "description": null,
@@ -3221,10 +3931,10 @@
       "matched_program_slug": "business-administration"
     },
     {
-      "title": "Medical Office Support Certificate (MOS)",
+      "title": "Medical Office Support (MOS) Certificate",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://morton.smartcatalogiq.com/en/2026-2027/catalog/certificates-and-a-a-s-degrees-available-at-morton-college/office-management-technology/medical-office-support-certificate-mos",
+      "catalog_url": "https://morton.smartcatalogiq.com/en/2020-2021/college-catalog/certificates-and-a-a-s-degrees-available-at-morton-college/office-management-technology/medical-office-support-mos-certificate",
       "total_credits": 12,
       "gpa_minimum": 2,
       "description": null,
@@ -3237,7 +3947,7 @@
             {
               "prefix": "HIT",
               "number": "103",
-              "title": "Coding & Classification Systems",
+              "title": "Coding & Classification System",
               "credits": 3,
               "or_alternatives": []
             },
@@ -3268,16 +3978,16 @@
       "matched_program_slug": null
     },
     {
-      "title": "Microsoft Office Certificate (DMO)",
+      "title": "Microsoft Office (DMO) Certificate",
       "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://morton.smartcatalogiq.com/en/2026-2027/catalog/certificates-and-a-a-s-degrees-available-at-morton-college/office-management-technology/microsoft-office-certificate-dmo",
+      "catalog_url": "https://morton.smartcatalogiq.com/en/2020-2021/college-catalog/certificates-and-a-a-s-degrees-available-at-morton-college/office-management-technology/microsoft-office-dmo-certificate",
       "total_credits": 7,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
-          "name": "Required Courses",
+          "name": "Requirements",
           "credits_required": null,
           "choose_n": null,
           "courses": [
@@ -3298,7 +4008,7 @@
             {
               "prefix": "OMT",
               "number": "210",
-              "title": "Word Processing Fundamentals",
+              "title": "Word ProcessingFundamentals",
               "credits": 1,
               "or_alternatives": []
             },
@@ -3329,72 +4039,438 @@
       "matched_program_slug": null
     },
     {
-      "title": "Associate in Engineering Science (A.E.S)",
+      "title": "Physical Therapist Assistant (PTA) Degree",
       "credential": "other",
       "program_code": null,
-      "catalog_url": "https://morton.smartcatalogiq.com/en/2026-2027/catalog/certificates-and-a-a-s-degrees-available-at-morton-college/university-transfer-programs/associate-in-engineering-science-aes",
-      "total_credits": 25,
+      "catalog_url": "https://morton.smartcatalogiq.com/en/2020-2021/college-catalog/certificates-and-a-a-s-degrees-available-at-morton-college/physical-therapist-assistant/physical-therapist-assistant-pta-degree",
+      "total_credits": 18,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
-          "name": "Major Area Required Courses",
-          "credits_required": 25,
+          "name": "Course Sequence",
+          "credits_required": 18,
           "choose_n": null,
           "courses": [
             {
-              "prefix": "MAT",
-              "number": "215",
-              "title": "Differential Equations",
+              "prefix": "ENG",
+              "number": "101",
+              "title": "Rhetoric I",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "PHY",
-              "number": "105",
-              "title": "Physics I",
+              "prefix": "PHT",
+              "number": "101",
+              "title": "Medical Terminology/Clinicians",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
+              "number": "101",
+              "title": "Intro to Psychology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "152",
+              "title": "Anatomy & Physiology (therapies)",
               "credits": 5,
               "or_alternatives": []
             },
             {
               "prefix": "PHY",
-              "number": "205",
-              "title": "Physics II",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CPS",
-              "number": "200",
-              "title": "C++ Programming",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EGR",
-              "number": "110",
-              "title": "Engineering Graphics I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EGR",
-              "number": "120",
-              "title": "Statics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "EGR",
-              "number": "121",
-              "title": "Dynamics",
+              "number": "100",
+              "title": "Fundamentals of Physics",
               "credits": 3,
               "or_alternatives": []
             }
           ]
         }
       ],
-      "matched_program_slug": "engineering"
+      "matched_program_slug": null
+    },
+    {
+      "title": "Therapeutic Massage (TMA) Degree (65 Credits)",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://morton.smartcatalogiq.com/en/2020-2021/college-catalog/certificates-and-a-a-s-degrees-available-at-morton-college/therapeutic-massage-program/therapeutic-massage-tma-degree-65-credits",
+      "total_credits": 14,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Suggested Format for the A.A.S. TPM Program",
+          "credits_required": 14,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "TPM",
+              "number": "100",
+              "title": "Introduction to Therapeutic Massage",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HCP",
+              "number": "130",
+              "title": "Medical Terminology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "152",
+              "title": "Anatomy & Physiology (therapies)",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "Rhetoric I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PEH",
+              "number": "103",
+              "title": "Nutrition",
+              "credits": 2,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Therapeutic Massage (TPM) Certificate",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://morton.smartcatalogiq.com/en/2020-2021/college-catalog/certificates-and-a-a-s-degrees-available-at-morton-college/therapeutic-massage-program/therapeutic-massage-tpm-certificate",
+      "total_credits": 39,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Fall Semester",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "HCP",
+              "number": "130",
+              "title": "Medical Terminology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TPM",
+              "number": "100",
+              "title": "Introduction to Therapeutic Massage",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "152",
+              "title": "Anatomy & Physiology (therapies)",
+              "credits": 5,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Spring Semester",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "TPM",
+              "number": "110",
+              "title": "Therapeutic Massage Techniques",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIT",
+              "number": "109",
+              "title": "Pathology & Pharmacology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TPM",
+              "number": "115",
+              "title": "Kinesiology for Massage Therapists",
+              "credits": 4,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Summer Semester",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "TPM",
+              "number": "120",
+              "title": "Therapeutic Massage Techniq II",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TPM",
+              "number": "130",
+              "title": "Therapeutic Massage Techniq III",
+              "credits": 4,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Fall Semester",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "TPM",
+              "number": "116",
+              "title": "Research in Massage",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TPM",
+              "number": "125",
+              "title": "Business Practices and Ethics",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "TPM",
+              "number": "140",
+              "title": "Therapeutic Massage Clinical",
+              "credits": 4,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Associate in Arts (A.A.)",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://morton.smartcatalogiq.com/en/2020-2021/college-catalog/certificates-and-a-a-s-degrees-available-at-morton-college/university-transfer-programs/associate-in-arts-a-a",
+      "total_credits": 9,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "General Education Requirements (37 to 41 credits)",
+          "credits_required": 9,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "Rhetoric I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "102",
+              "title": "Rhetoric II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SPE",
+              "number": "101",
+              "title": "Principles of Public Speaking",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Associate in Fine Arts in Art (A.F.A.)",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://morton.smartcatalogiq.com/en/2020-2021/college-catalog/certificates-and-a-a-s-degrees-available-at-morton-college/university-transfer-programs/associate-in-fine-arts-in-art-a-f-a",
+      "total_credits": 9,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "General education requirements (32 credits)",
+          "credits_required": 9,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "Rhetoric I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "102",
+              "title": "Rhetoric II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SPE",
+              "number": "101",
+              "title": "Principles of Public Speaking",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Other Requirements",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ART",
+              "number": "101",
+              "title": "2-D Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ART",
+              "number": "102",
+              "title": "3-D Fundamentals",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ART",
+              "number": "103",
+              "title": "Drawing I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ART",
+              "number": "104",
+              "title": "Drawing II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ART",
+              "number": "125",
+              "title": "Art History I Prehistoric/Goth",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ART",
+              "number": "126",
+              "title": "Art History II Renaissance & B",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ART",
+              "number": "203",
+              "title": "Figure Drawing I",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "art"
+    },
+    {
+      "title": "Associate in Science (A.S.)",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://morton.smartcatalogiq.com/en/2020-2021/college-catalog/certificates-and-a-a-s-degrees-available-at-morton-college/university-transfer-programs/associate-in-science-a-s",
+      "total_credits": 9,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "General Education Requirements (41 credits)",
+          "credits_required": 9,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "Rhetoric I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "102",
+              "title": "Rhetoric II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SPE",
+              "number": "101",
+              "title": "Principles of Public Speaking",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Welding Certificate (WEL)",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://morton.smartcatalogiq.com/en/2020-2021/college-catalog/certificates-and-a-a-s-degrees-available-at-morton-college/welding/welding-certificate-wel",
+      "total_credits": 6,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Required Courses:",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "WEL",
+              "number": "100",
+              "title": "Basic Welding Safety & Tech",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WEL",
+              "number": "115",
+              "title": "Gas Tungsten Arc Welding",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "welding"
     }
   ]
 }
