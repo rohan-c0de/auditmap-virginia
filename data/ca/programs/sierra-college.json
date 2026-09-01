@@ -2,7 +2,7 @@
   "college_slug": "sierra-college",
   "catalog_year": "",
   "catalog_url": "https://catalog.sierracollege.edu/departments/",
-  "scraped_at": "2026-06-01T13:44:41.019Z",
+  "scraped_at": "2026-09-01T13:16:17.689Z",
   "programs": [
     {
       "title": "Advanced Manufacturing — AS",
@@ -281,95 +281,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Agriculture — AS",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.sierracollege.edu/departments/agriculture/",
-      "total_credits": 40,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 40,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "AGRI",
-              "number": "0163",
-              "title": "Wildland Trees and Shrubs (Dendrology)",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AGRI",
-              "number": "0221",
-              "title": "Introduction to Soil Science",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AGRI",
-              "number": "0260",
-              "title": "Forest Ecology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AGRI",
-              "number": "0264",
-              "title": "Forest Health and Protection",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AGRI",
-              "number": "0265",
-              "title": "Forest Measurements",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "AGRI",
-              "number": "0266",
-              "title": "Introduction to Forest Operations",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIOL",
-              "number": "0002",
-              "title": "Botany",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHEM",
-              "number": "0002A",
-              "title": "Introduction to Chemistry I",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "GEOG",
-              "number": "0090",
-              "title": "Introduction to Geographic Information Systems (GIS)",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ESS",
-              "number": "0001",
-              "title": "Introduction to Environmental Sciences and Sustainability",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Anthropology — Associate in Arts",
       "credential": "AA",
       "program_code": null,
@@ -479,6 +390,95 @@
               "number": "0027",
               "title": "Anthropology of Sex, Gender and Sexuality",
               "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Agriculture — AS",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.sierracollege.edu/departments/agriculture/",
+      "total_credits": 40,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 40,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "AGRI",
+              "number": "0163",
+              "title": "Wildland Trees and Shrubs (Dendrology)",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AGRI",
+              "number": "0221",
+              "title": "Introduction to Soil Science",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AGRI",
+              "number": "0260",
+              "title": "Forest Ecology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AGRI",
+              "number": "0264",
+              "title": "Forest Health and Protection",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AGRI",
+              "number": "0265",
+              "title": "Forest Measurements",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "AGRI",
+              "number": "0266",
+              "title": "Introduction to Forest Operations",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIOL",
+              "number": "0002",
+              "title": "Botany",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHEM",
+              "number": "0002A",
+              "title": "Introduction to Chemistry I",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "GEOG",
+              "number": "0090",
+              "title": "Introduction to Geographic Information Systems (GIS)",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ESS",
+              "number": "0001",
+              "title": "Introduction to Environmental Sciences and Sustainability",
+              "credits": 3,
               "or_alternatives": []
             }
           ]
@@ -1062,144 +1062,6 @@
       "matched_program_slug": "art"
     },
     {
-      "title": "Astronomy — AS",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.sierracollege.edu/departments/astronomy/",
-      "total_credits": 24,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 24,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ASTR",
-              "number": "0007",
-              "title": "Life in the Universe",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ASTR",
-              "number": "0011",
-              "title": "Observational Astronomy",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ASTR",
-              "number": "0013",
-              "title": "Laboratory Astronomy",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ASTR",
-              "number": "0014",
-              "title": "Astrophotography and Imaging",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ASTR",
-              "number": "0002",
-              "title": "Introduction to Planetary Systems",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ASTR",
-              "number": "0005",
-              "title": "Introduction to Stars, Galaxies, and the Universe",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ASTR",
-              "number": "0010",
-              "title": "Elementary Astronomy",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHYS",
-              "number": "0105",
-              "title": "General Physics I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHYS",
-              "number": "0105L",
-              "title": "General Physics I Laboratory",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHYS",
-              "number": "0110",
-              "title": "General Physics II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHYS",
-              "number": "0110L",
-              "title": "General Physics II Laboratory",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHYS",
-              "number": "0205",
-              "title": "Principles of Physics: Mechanics",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHYS",
-              "number": "0205L",
-              "title": "Principles of Physics Laboratory: Mechanics",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHYS",
-              "number": "0210",
-              "title": "Principles of Physics: Electricity and Magnetism",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHYS",
-              "number": "0210L",
-              "title": "Principles of Physics Laboratory: Electricity and Magnetism",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHYS",
-              "number": "0215",
-              "title": "Principles of Physics: Heat, Waves and Modern Physics",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHYS",
-              "number": "0215L",
-              "title": "Principles of Physics Laboratory: Heat, Waves and Modern Physics",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Art — Associate in Arts",
       "credential": "AA",
       "program_code": null,
@@ -1462,6 +1324,233 @@
       "matched_program_slug": "automotive-technology"
     },
     {
+      "title": "Astronomy — AS",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.sierracollege.edu/departments/astronomy/",
+      "total_credits": 24,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 24,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ASTR",
+              "number": "0007",
+              "title": "Life in the Universe",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ASTR",
+              "number": "0011",
+              "title": "Observational Astronomy",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ASTR",
+              "number": "0013",
+              "title": "Laboratory Astronomy",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ASTR",
+              "number": "0014",
+              "title": "Astrophotography and Imaging",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ASTR",
+              "number": "0002",
+              "title": "Introduction to Planetary Systems",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ASTR",
+              "number": "0005",
+              "title": "Introduction to Stars, Galaxies, and the Universe",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ASTR",
+              "number": "0010",
+              "title": "Elementary Astronomy",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHYS",
+              "number": "0105",
+              "title": "General Physics I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHYS",
+              "number": "0105L",
+              "title": "General Physics I Laboratory",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHYS",
+              "number": "0110",
+              "title": "General Physics II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHYS",
+              "number": "0110L",
+              "title": "General Physics II Laboratory",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHYS",
+              "number": "0205",
+              "title": "Principles of Physics: Mechanics",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHYS",
+              "number": "0205L",
+              "title": "Principles of Physics Laboratory: Mechanics",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHYS",
+              "number": "0210",
+              "title": "Principles of Physics: Electricity and Magnetism",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHYS",
+              "number": "0210L",
+              "title": "Principles of Physics Laboratory: Electricity and Magnetism",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHYS",
+              "number": "0215",
+              "title": "Principles of Physics: Heat, Waves and Modern Physics",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHYS",
+              "number": "0215L",
+              "title": "Principles of Physics Laboratory: Heat, Waves and Modern Physics",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Biological Sciences — Associate in Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.sierracollege.edu/departments/biological-sciences/",
+      "total_credits": 31,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 31,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BIOL",
+              "number": "0001",
+              "title": "General Biology",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIOL",
+              "number": "0140",
+              "title": "Organismal Biology",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIOL",
+              "number": "0002",
+              "title": "Botanyand General Zoology",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHEM",
+              "number": "0001A",
+              "title": "General Chemistry I (OR)",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHEM",
+              "number": "0003A",
+              "title": "General Chemistry I - Part 1and General Chemistry I - Part 2",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHEM",
+              "number": "0001B",
+              "title": "General Chemistry II",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MATH",
+              "number": "0016A",
+              "title": "Calculus for Social and Life Sciences",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MATH",
+              "number": "0030",
+              "title": "Analytical Geometry and Calculus I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHYS",
+              "number": "0105",
+              "title": "General Physics Iand General Physics I Laboratoryand General Physics IIand General Physics II Laboratory",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHYS",
+              "number": "0205",
+              "title": "Principles of Physics: Mechanicsand Principles of Physics Laboratory: Mechanicsand Principles of Physics: Electricity and Magnetismand Principles of Physics Laboratory: Electricity and Magnetism",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Building Industries — AS",
       "credential": "other",
       "program_code": null,
@@ -1556,95 +1645,6 @@
         }
       ],
       "matched_program_slug": null
-    },
-    {
-      "title": "Computer Science — Associate in Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.sierracollege.edu/departments/computer-science/",
-      "total_credits": 29,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 29,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "CSCI",
-              "number": "0012",
-              "title": "Programming Concepts and Methodology I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CSCI",
-              "number": "0013",
-              "title": "Programming Concepts and Methodology II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CSCI",
-              "number": "0026",
-              "title": "Discrete Structures for Computer Science",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CSCI",
-              "number": "0039",
-              "title": "Introduction to Computer Architecture and Assembly Language",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "0030",
-              "title": "Analytical Geometry and Calculus I",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "0031",
-              "title": "Analytical Geometry and Calculus II",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHYS",
-              "number": "0205",
-              "title": "Principles of Physics: Mechanics",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHYS",
-              "number": "0205L",
-              "title": "Principles of Physics Laboratory: Mechanics",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHYS",
-              "number": "0210",
-              "title": "Principles of Physics: Electricity and Magnetism",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHYS",
-              "number": "0210L",
-              "title": "Principles of Physics Laboratory: Electricity and Magnetism",
-              "credits": 1,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "computer-science"
     },
     {
       "title": "Communication Studies — Associate in Arts",
@@ -1743,40 +1743,19 @@
       "matched_program_slug": null
     },
     {
-      "title": "Biological Sciences — Associate in Science",
+      "title": "Chemistry — Associate in Science",
       "credential": "AS",
       "program_code": null,
-      "catalog_url": "https://catalog.sierracollege.edu/departments/biological-sciences/",
-      "total_credits": 31,
+      "catalog_url": "https://catalog.sierracollege.edu/departments/chemistry/",
+      "total_credits": 38,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "Recommended Course Sequence",
-          "credits_required": 31,
+          "credits_required": 38,
           "choose_n": null,
           "courses": [
-            {
-              "prefix": "BIOL",
-              "number": "0001",
-              "title": "General Biology",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIOL",
-              "number": "0140",
-              "title": "Organismal Biology",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIOL",
-              "number": "0002",
-              "title": "Botanyand General Zoology",
-              "credits": 0,
-              "or_alternatives": []
-            },
             {
               "prefix": "CHEM",
               "number": "0001A",
@@ -1799,37 +1778,229 @@
               "or_alternatives": []
             },
             {
-              "prefix": "MATH",
-              "number": "0016A",
-              "title": "Calculus for Social and Life Sciences",
+              "prefix": "CHEM",
+              "number": "0012A",
+              "title": "Organic Chemistry I",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHEM",
+              "number": "0012B",
+              "title": "Organic Chemistry II",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHYS",
+              "number": "0205",
+              "title": "Principles of Physics: Mechanics",
               "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHYS",
+              "number": "0205L",
+              "title": "Principles of Physics Laboratory: Mechanics",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHYS",
+              "number": "0210",
+              "title": "Principles of Physics: Electricity and Magnetism",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHYS",
+              "number": "0210L",
+              "title": "Principles of Physics Laboratory: Electricity and Magnetism",
+              "credits": 1,
               "or_alternatives": []
             },
             {
               "prefix": "MATH",
               "number": "0030",
               "title": "Analytical Geometry and Calculus I",
-              "credits": 0,
+              "credits": 4,
               "or_alternatives": []
             },
             {
-              "prefix": "PHYS",
-              "number": "0105",
-              "title": "General Physics Iand General Physics I Laboratoryand General Physics IIand General Physics II Laboratory",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHYS",
-              "number": "0205",
-              "title": "Principles of Physics: Mechanicsand Principles of Physics Laboratory: Mechanicsand Principles of Physics: Electricity and Magnetismand Principles of Physics Laboratory: Electricity and Magnetism",
-              "credits": 0,
+              "prefix": "MATH",
+              "number": "0031",
+              "title": "Analytical Geometry and Calculus II",
+              "credits": 4,
               "or_alternatives": []
             }
           ]
         }
       ],
       "matched_program_slug": null
+    },
+    {
+      "title": "Business — Associate in Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.sierracollege.edu/departments/business/",
+      "total_credits": 28,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 28,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BUS",
+              "number": "0201",
+              "title": "Financial Accounting",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "0203",
+              "title": "Managerial Accounting",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "0270",
+              "title": "Business Law",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "0271",
+              "title": "Law and Society",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MATH",
+              "number": "0024",
+              "title": "Modern Business Mathematics",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MATH",
+              "number": "0042",
+              "title": "Business Calculus",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "0260",
+              "title": "Introduction to Business",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "0265",
+              "title": "Business Communications",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Computer Science — Associate in Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.sierracollege.edu/departments/computer-science/",
+      "total_credits": 29,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 29,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CSCI",
+              "number": "0012",
+              "title": "Programming Concepts and Methodology I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSCI",
+              "number": "0013",
+              "title": "Programming Concepts and Methodology II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSCI",
+              "number": "0026",
+              "title": "Discrete Structures for Computer Science",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSCI",
+              "number": "0039",
+              "title": "Introduction to Computer Architecture and Assembly Language",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MATH",
+              "number": "0030",
+              "title": "Analytical Geometry and Calculus I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MATH",
+              "number": "0031",
+              "title": "Analytical Geometry and Calculus II",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHYS",
+              "number": "0205",
+              "title": "Principles of Physics: Mechanics",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHYS",
+              "number": "0205L",
+              "title": "Principles of Physics Laboratory: Mechanics",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHYS",
+              "number": "0210",
+              "title": "Principles of Physics: Electricity and Magnetism",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHYS",
+              "number": "0210L",
+              "title": "Principles of Physics Laboratory: Electricity and Magnetism",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "computer-science"
     },
     {
       "title": "Economics — Associate in Arts",
@@ -2059,6 +2230,88 @@
       "matched_program_slug": null
     },
     {
+      "title": "Earth Science — Associate in Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.sierracollege.edu/departments/earth-science/",
+      "total_credits": 27,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 27,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ESCI",
+              "number": "0001",
+              "title": "Physical Geology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ESCI",
+              "number": "0001L",
+              "title": "Physical Geology Laboratory",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ESCI",
+              "number": "0003",
+              "title": "Historical Geology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ESCI",
+              "number": "0003L",
+              "title": "Historical Geology Laboratory",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHEM",
+              "number": "0001A",
+              "title": "General Chemistry I (OR)",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHEM",
+              "number": "0003A",
+              "title": "General Chemistry I - Part 1and General Chemistry I - Part 2",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHEM",
+              "number": "0001B",
+              "title": "General Chemistry II",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MATH",
+              "number": "0030",
+              "title": "Analytical Geometry and Calculus I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MATH",
+              "number": "0031",
+              "title": "Analytical Geometry and Calculus II",
+              "credits": 4,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Engineering — AS",
       "credential": "other",
       "program_code": null,
@@ -2225,299 +2478,6 @@
       "matched_program_slug": "engineering"
     },
     {
-      "title": "English as a Second Language — Certificate of Competency",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.sierracollege.edu/departments/english-second-language/",
-      "total_credits": 12,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 12,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ESL",
-              "number": "0025G",
-              "title": "Academic Grammar and Editing",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ESL",
-              "number": "0025L",
-              "title": "Academic Listening and Speaking",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ESL",
-              "number": "0025C",
-              "title": "Advanced Reading and Writing",
-              "credits": 6,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Deaf Studies — AA",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.sierracollege.edu/departments/deaf-studies/",
-      "total_credits": 19,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 19,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "DFST",
-              "number": "0001",
-              "title": "American Sign Language I",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "DFST",
-              "number": "0002",
-              "title": "American Sign Language II",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "DFST",
-              "number": "0003",
-              "title": "American Sign Language III",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "DFST",
-              "number": "0004",
-              "title": "American Sign Language IV",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "DFST",
-              "number": "0010",
-              "title": "Introduction to Deaf Studies",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "DFST",
-              "number": "0028",
-              "title": "Independent Study",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "DFST",
-              "number": "0095",
-              "title": "Internship in Deaf Studies",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Earth Science — Associate in Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.sierracollege.edu/departments/earth-science/",
-      "total_credits": 27,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 27,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ESCI",
-              "number": "0001",
-              "title": "Physical Geology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ESCI",
-              "number": "0001L",
-              "title": "Physical Geology Laboratory",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ESCI",
-              "number": "0003",
-              "title": "Historical Geology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ESCI",
-              "number": "0003L",
-              "title": "Historical Geology Laboratory",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHEM",
-              "number": "0001A",
-              "title": "General Chemistry I (OR)",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHEM",
-              "number": "0003A",
-              "title": "General Chemistry I - Part 1and General Chemistry I - Part 2",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHEM",
-              "number": "0001B",
-              "title": "General Chemistry II",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "0030",
-              "title": "Analytical Geometry and Calculus I",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "0031",
-              "title": "Analytical Geometry and Calculus II",
-              "credits": 4,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Environmental Sciences and Sustainability — Associate in Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.sierracollege.edu/departments/environmental-studies-sustainability/",
-      "total_credits": 45,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 45,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BIOL",
-              "number": "0001",
-              "title": "General Biology",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHEM",
-              "number": "0001A",
-              "title": "General Chemistry I",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHEM",
-              "number": "0003A",
-              "title": "General Chemistry I - Part 1and General Chemistry I - Part 2",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHEM",
-              "number": "0001B",
-              "title": "General Chemistry II",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ESS",
-              "number": "0001",
-              "title": "Introduction to Environmental Sciences and Sustainability",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHYS",
-              "number": "0105",
-              "title": "General Physics I",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHYS",
-              "number": "0105L",
-              "title": "General Physics I Laboratory",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHYS",
-              "number": "0110",
-              "title": "General Physics II",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHYS",
-              "number": "0110L",
-              "title": "General Physics II Laboratory",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ESCI",
-              "number": "0001",
-              "title": "Physical Geologyand Physical Geology Laboratory",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "GEOG",
-              "number": "0001",
-              "title": "Physical Geographyand Physical Geography Laboratory",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSYC",
-              "number": "0142",
-              "title": "Introduction to Psychological Statisticsand Analytical Geometry and Calculus I",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "English — Associate in Arts",
       "credential": "AA",
       "program_code": null,
@@ -2654,6 +2614,149 @@
         }
       ],
       "matched_program_slug": "english"
+    },
+    {
+      "title": "English as a Second Language — Certificate of Competency",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.sierracollege.edu/departments/english-second-language/",
+      "total_credits": 12,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ESL",
+              "number": "0025G",
+              "title": "Academic Grammar and Editing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ESL",
+              "number": "0025L",
+              "title": "Academic Listening and Speaking",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ESL",
+              "number": "0025C",
+              "title": "Advanced Reading and Writing",
+              "credits": 6,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Environmental Sciences and Sustainability — Associate in Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.sierracollege.edu/departments/environmental-studies-sustainability/",
+      "total_credits": 45,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 45,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BIOL",
+              "number": "0001",
+              "title": "General Biology",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHEM",
+              "number": "0001A",
+              "title": "General Chemistry I",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHEM",
+              "number": "0003A",
+              "title": "General Chemistry I - Part 1and General Chemistry I - Part 2",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHEM",
+              "number": "0001B",
+              "title": "General Chemistry II",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ESS",
+              "number": "0001",
+              "title": "Introduction to Environmental Sciences and Sustainability",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHYS",
+              "number": "0105",
+              "title": "General Physics I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHYS",
+              "number": "0105L",
+              "title": "General Physics I Laboratory",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHYS",
+              "number": "0110",
+              "title": "General Physics II",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHYS",
+              "number": "0110L",
+              "title": "General Physics II Laboratory",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ESCI",
+              "number": "0001",
+              "title": "Physical Geologyand Physical Geology Laboratory",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "GEOG",
+              "number": "0001",
+              "title": "Physical Geographyand Physical Geography Laboratory",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSYC",
+              "number": "0142",
+              "title": "Introduction to Psychological Statisticsand Analytical Geometry and Calculus I",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
     },
     {
       "title": "Ethnic Studies — Associate in Arts",
@@ -2855,183 +2958,59 @@
       "matched_program_slug": null
     },
     {
-      "title": "Chemistry — Associate in Science",
-      "credential": "AS",
+      "title": "Fire Technology — AS",
+      "credential": "other",
       "program_code": null,
-      "catalog_url": "https://catalog.sierracollege.edu/departments/chemistry/",
-      "total_credits": 38,
+      "catalog_url": "https://catalog.sierracollege.edu/departments/fire-technology/",
+      "total_credits": null,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "Recommended Course Sequence",
-          "credits_required": 38,
+          "credits_required": null,
           "choose_n": null,
           "courses": [
             {
-              "prefix": "CHEM",
-              "number": "0001A",
-              "title": "General Chemistry I (OR)",
-              "credits": 5,
+              "prefix": "FIRE",
+              "number": "0174",
+              "title": "Human Resource Management for Company Officers - CO 2A",
+              "credits": 2,
               "or_alternatives": []
             },
             {
-              "prefix": "CHEM",
-              "number": "0003A",
-              "title": "General Chemistry I - Part 1and General Chemistry I - Part 2",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHEM",
-              "number": "0001B",
-              "title": "General Chemistry II",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHEM",
-              "number": "0012A",
-              "title": "Organic Chemistry I",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHEM",
-              "number": "0012B",
-              "title": "Organic Chemistry II",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHYS",
-              "number": "0205",
-              "title": "Principles of Physics: Mechanics",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHYS",
-              "number": "0205L",
-              "title": "Principles of Physics Laboratory: Mechanics",
+              "prefix": "FIRE",
+              "number": "0175",
+              "title": "General Administrative Functions for Company Officers - CO 2B",
               "credits": 1,
               "or_alternatives": []
             },
             {
-              "prefix": "PHYS",
-              "number": "0210",
-              "title": "Principles of Physics: Electricity and Magnetism",
-              "credits": 3,
+              "prefix": "FIRE",
+              "number": "0176",
+              "title": "Fire Inspections and Investigation for Company Officers - CO 2C",
+              "credits": 2,
               "or_alternatives": []
             },
             {
-              "prefix": "PHYS",
-              "number": "0210L",
-              "title": "Principles of Physics Laboratory: Electricity and Magnetism",
+              "prefix": "FIRE",
+              "number": "0177",
+              "title": "All-Risk Command Operations for Company Officers - CO 2D",
               "credits": 1,
               "or_alternatives": []
             },
             {
-              "prefix": "MATH",
-              "number": "0030",
-              "title": "Analytical Geometry and Calculus I",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "0031",
-              "title": "Analytical Geometry and Calculus II",
-              "credits": 4,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Geography — Associate in Arts",
-      "credential": "AA",
-      "program_code": null,
-      "catalog_url": "https://catalog.sierracollege.edu/departments/geography/",
-      "total_credits": 22,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 22,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "GEOG",
-              "number": "0001",
-              "title": "Physical Geography",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "GEOG",
-              "number": "0001L",
-              "title": "Physical Geography Laboratory",
+              "prefix": "FIRE",
+              "number": "0178",
+              "title": "Wildland Incident Operations for Company Officers - CO 2E",
               "credits": 1,
               "or_alternatives": []
             },
             {
-              "prefix": "GEOG",
-              "number": "0002",
-              "title": "Cultural Geography",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "GEOG",
-              "number": "0003",
-              "title": "Geography of California",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "GEOG",
-              "number": "0004",
-              "title": "Weather and Climate",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "GEOG",
-              "number": "0005",
-              "title": "World Regional Geography",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "GEOG",
-              "number": "0016",
-              "title": "Field Geography - Central California Coast",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "GEOG",
-              "number": "0090",
-              "title": "Introduction to Geographic Information Systems (GIS)",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ANTH",
-              "number": "0002",
-              "title": "Cultural Anthropology",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ESCI",
-              "number": "0001",
-              "title": "Physical Geology",
-              "credits": 0,
+              "prefix": "FIRE",
+              "number": "0179",
+              "title": "Fire and Emergency Services Instructor 1",
+              "credits": 1,
               "or_alternatives": []
             }
           ]
@@ -3185,67 +3164,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Fire Technology — AS",
-      "credential": "other",
-      "program_code": null,
-      "catalog_url": "https://catalog.sierracollege.edu/departments/fire-technology/",
-      "total_credits": null,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": null,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "FIRE",
-              "number": "0174",
-              "title": "Human Resource Management for Company Officers - CO 2A",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "FIRE",
-              "number": "0175",
-              "title": "General Administrative Functions for Company Officers - CO 2B",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "FIRE",
-              "number": "0176",
-              "title": "Fire Inspections and Investigation for Company Officers - CO 2C",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "FIRE",
-              "number": "0177",
-              "title": "All-Risk Command Operations for Company Officers - CO 2D",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "FIRE",
-              "number": "0178",
-              "title": "Wildland Incident Operations for Company Officers - CO 2E",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "FIRE",
-              "number": "0179",
-              "title": "Fire and Emergency Services Instructor 1",
-              "credits": 1,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Health Sciences — Associate of Science",
       "credential": "AS",
       "program_code": null,
@@ -3389,158 +3307,6 @@
         }
       ],
       "matched_program_slug": null
-    },
-    {
-      "title": "History — Associate in Arts",
-      "credential": "AA",
-      "program_code": null,
-      "catalog_url": "https://catalog.sierracollege.edu/departments/history/",
-      "total_credits": 18,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 18,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "HIST",
-              "number": "0017A",
-              "title": "History of the United States to 1877",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIST",
-              "number": "0017B",
-              "title": "History of the United States since 1865",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIST",
-              "number": "0004A",
-              "title": "Western Civilization to 1715",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIST",
-              "number": "0050",
-              "title": "World History to 1500",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIST",
-              "number": "0004B",
-              "title": "Western Civilization since 1715",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIST",
-              "number": "0051",
-              "title": "World History since 1500",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIST",
-              "number": "0019A",
-              "title": "History of Traditional East Asia",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIST",
-              "number": "0019B",
-              "title": "History of Modern East Asia",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIST",
-              "number": "0024",
-              "title": "Russian History - 10th Century to Present",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIST",
-              "number": "0008A",
-              "title": "Asian American History: 18th Century to 1945",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIST",
-              "number": "0008B",
-              "title": "Asian American History: Early 20th Century to 21st Century",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIST",
-              "number": "0018A",
-              "title": "The African American Experience in American History to 1877",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIST",
-              "number": "0018B",
-              "title": "The African American Experience in American History since 1877",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIST",
-              "number": "0020",
-              "title": "California History",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIST",
-              "number": "0021",
-              "title": "Contemporary United States History",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIST",
-              "number": "0022",
-              "title": "American Military History",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIST",
-              "number": "0023",
-              "title": "Chicano/Mexican American History",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIST",
-              "number": "0025",
-              "title": "Native American History",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIST",
-              "number": "0027",
-              "title": "Women in American History",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "history"
     },
     {
       "title": "Human Development and Family — Associate in Science",
@@ -3728,81 +3494,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Business — Associate in Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.sierracollege.edu/departments/business/",
-      "total_credits": 28,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 28,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BUS",
-              "number": "0201",
-              "title": "Financial Accounting",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "0203",
-              "title": "Managerial Accounting",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "0270",
-              "title": "Business Law",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "0271",
-              "title": "Law and Society",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "0024",
-              "title": "Modern Business Mathematics",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "0042",
-              "title": "Business Calculus",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "0260",
-              "title": "Introduction to Business",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "0265",
-              "title": "Business Communications",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "business-administration"
-    },
-    {
       "title": "Information Technology — AS",
       "credential": "other",
       "program_code": null,
@@ -3904,6 +3595,247 @@
         }
       ],
       "matched_program_slug": "computer-science"
+    },
+    {
+      "title": "Geography — Associate in Arts",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://catalog.sierracollege.edu/departments/geography/",
+      "total_credits": 22,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 22,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "GEOG",
+              "number": "0001",
+              "title": "Physical Geography",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "GEOG",
+              "number": "0001L",
+              "title": "Physical Geography Laboratory",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "GEOG",
+              "number": "0002",
+              "title": "Cultural Geography",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "GEOG",
+              "number": "0003",
+              "title": "Geography of California",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "GEOG",
+              "number": "0004",
+              "title": "Weather and Climate",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "GEOG",
+              "number": "0005",
+              "title": "World Regional Geography",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "GEOG",
+              "number": "0016",
+              "title": "Field Geography - Central California Coast",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "GEOG",
+              "number": "0090",
+              "title": "Introduction to Geographic Information Systems (GIS)",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ANTH",
+              "number": "0002",
+              "title": "Cultural Anthropology",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ESCI",
+              "number": "0001",
+              "title": "Physical Geology",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "History — Associate in Arts",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://catalog.sierracollege.edu/departments/history/",
+      "total_credits": 18,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "HIST",
+              "number": "0017A",
+              "title": "History of the United States to 1877",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIST",
+              "number": "0017B",
+              "title": "History of the United States since 1865",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIST",
+              "number": "0004A",
+              "title": "Western Civilization to 1715",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIST",
+              "number": "0050",
+              "title": "World History to 1500",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIST",
+              "number": "0004B",
+              "title": "Western Civilization since 1715",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIST",
+              "number": "0051",
+              "title": "World History since 1500",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIST",
+              "number": "0019A",
+              "title": "History of Traditional East Asia",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIST",
+              "number": "0019B",
+              "title": "History of Modern East Asia",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIST",
+              "number": "0024",
+              "title": "Russian History - 10th Century to Present",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIST",
+              "number": "0008A",
+              "title": "Asian American History: 18th Century to 1945",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIST",
+              "number": "0008B",
+              "title": "Asian American History: Early 20th Century to 21st Century",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIST",
+              "number": "0018A",
+              "title": "The African American Experience in American History to 1877",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIST",
+              "number": "0018B",
+              "title": "The African American Experience in American History since 1877",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIST",
+              "number": "0020",
+              "title": "California History",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIST",
+              "number": "0021",
+              "title": "Contemporary United States History",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIST",
+              "number": "0022",
+              "title": "American Military History",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIST",
+              "number": "0023",
+              "title": "Chicano/Mexican American History",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIST",
+              "number": "0025",
+              "title": "Native American History",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIST",
+              "number": "0027",
+              "title": "Women in American History",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "history"
     },
     {
       "title": "Lesbian, Gay, Bisexual and Transgender Studies — AA",
@@ -4684,6 +4616,261 @@
       "matched_program_slug": null
     },
     {
+      "title": "Mathematics — Associate in Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.sierracollege.edu/departments/mathematics/",
+      "total_credits": 23,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 23,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MATH",
+              "number": "0030",
+              "title": "Analytical Geometry and Calculus I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MATH",
+              "number": "0031",
+              "title": "Analytical Geometry and Calculus II",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MATH",
+              "number": "0032",
+              "title": "Analytical Geometry and Calculus III",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MATH",
+              "number": "0033",
+              "title": "Differential Equations and Linear Algebra",
+              "credits": 6,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSCI",
+              "number": "0010",
+              "title": "Introduction to Computing",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSCI",
+              "number": "0012",
+              "title": "Programming Concepts and Methodology I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSCI",
+              "number": "0013",
+              "title": "Programming Concepts and Methodology II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSCI",
+              "number": "0014",
+              "title": "Data Structures",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSCI",
+              "number": "0026",
+              "title": "Discrete Structures for Computer Science",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSCI",
+              "number": "0039",
+              "title": "Introduction to Computer Architecture and Assembly Language",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSCI",
+              "number": "0046",
+              "title": "System Programming with C",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSCI",
+              "number": "0066",
+              "title": "Object-Oriented Programming Using C++",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENGR",
+              "number": "0220",
+              "title": "Programming and Problem Solving in Engineering",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "IT",
+              "number": "0075",
+              "title": "Python for Many Uses",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHYS",
+              "number": "0205",
+              "title": "Principles of Physics: Mechanicsand Principles of Physics Laboratory: Mechanics",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "mathematics"
+    },
+    {
+      "title": "Music — Associate in Arts",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://catalog.sierracollege.edu/departments/music/",
+      "total_credits": 26,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 26,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MUS",
+              "number": "0003A",
+              "title": "Ear Training I",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "0003B",
+              "title": "Ear Training II",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "0004A",
+              "title": "Advanced Ear Training I",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "0004B",
+              "title": "Advanced Ear Training II",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "0006A",
+              "title": "Music Theory I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "0006B",
+              "title": "Music Theory II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "0009A",
+              "title": "Music Theory III",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "0009B",
+              "title": "Music Theory IV",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "0051",
+              "title": "Applied Music (4 semesters, 1 unit each semester)",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "0042",
+              "title": "Chamber Singers",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "0046",
+              "title": "Jazz Ensemble",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "0047",
+              "title": "Vocal Jazz Ensemble",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "0048",
+              "title": "Concert Choir",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "0049",
+              "title": "Jazz Improvisation Performance Ensemble",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "0050",
+              "title": "Wind Ensemble",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MUS",
+              "number": "0054",
+              "title": "Symphonic Band",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Natural Science — AS",
       "credential": "other",
       "program_code": null,
@@ -5221,128 +5408,91 @@
       "matched_program_slug": null
     },
     {
-      "title": "Music — Associate in Arts",
-      "credential": "AA",
+      "title": "Nursing Assistant — Certificate",
+      "credential": "certificate",
       "program_code": null,
-      "catalog_url": "https://catalog.sierracollege.edu/departments/music/",
-      "total_credits": 26,
+      "catalog_url": "https://catalog.sierracollege.edu/departments/nursing-assistant/",
+      "total_credits": 6,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "Recommended Course Sequence",
-          "credits_required": 26,
+          "credits_required": 6,
           "choose_n": null,
           "courses": [
             {
-              "prefix": "MUS",
-              "number": "0003A",
-              "title": "Ear Training I",
-              "credits": 1,
+              "prefix": "NRSA",
+              "number": "0003",
+              "title": "Precertification Nursing Assistant Training",
+              "credits": 6,
               "or_alternatives": []
-            },
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "nursing"
+    },
+    {
+      "title": "Deaf Studies — AA",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.sierracollege.edu/departments/deaf-studies/",
+      "total_credits": 19,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 19,
+          "choose_n": null,
+          "courses": [
             {
-              "prefix": "MUS",
-              "number": "0003B",
-              "title": "Ear Training II",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUS",
-              "number": "0004A",
-              "title": "Advanced Ear Training I",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUS",
-              "number": "0004B",
-              "title": "Advanced Ear Training II",
-              "credits": 1,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUS",
-              "number": "0006A",
-              "title": "Music Theory I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUS",
-              "number": "0006B",
-              "title": "Music Theory II",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUS",
-              "number": "0009A",
-              "title": "Music Theory III",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUS",
-              "number": "0009B",
-              "title": "Music Theory IV",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUS",
-              "number": "0051",
-              "title": "Applied Music (4 semesters, 1 unit each semester)",
+              "prefix": "DFST",
+              "number": "0001",
+              "title": "American Sign Language I",
               "credits": 4,
               "or_alternatives": []
             },
             {
-              "prefix": "MUS",
-              "number": "0042",
-              "title": "Chamber Singers",
+              "prefix": "DFST",
+              "number": "0002",
+              "title": "American Sign Language II",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DFST",
+              "number": "0003",
+              "title": "American Sign Language III",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "DFST",
+              "number": "0004",
+              "title": "American Sign Language IV",
               "credits": 0,
               "or_alternatives": []
             },
             {
-              "prefix": "MUS",
-              "number": "0046",
-              "title": "Jazz Ensemble",
+              "prefix": "DFST",
+              "number": "0010",
+              "title": "Introduction to Deaf Studies",
               "credits": 0,
               "or_alternatives": []
             },
             {
-              "prefix": "MUS",
-              "number": "0047",
-              "title": "Vocal Jazz Ensemble",
+              "prefix": "DFST",
+              "number": "0028",
+              "title": "Independent Study",
               "credits": 0,
               "or_alternatives": []
             },
             {
-              "prefix": "MUS",
-              "number": "0048",
-              "title": "Concert Choir",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUS",
-              "number": "0049",
-              "title": "Jazz Improvisation Performance Ensemble",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUS",
-              "number": "0050",
-              "title": "Wind Ensemble",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MUS",
-              "number": "0054",
-              "title": "Symphonic Band",
+              "prefix": "DFST",
+              "number": "0095",
+              "title": "Internship in Deaf Studies",
               "credits": 0,
               "or_alternatives": []
             }
@@ -5352,128 +5502,203 @@
       "matched_program_slug": null
     },
     {
-      "title": "Mathematics — Associate in Science",
+      "title": "Nutrition and Food Science — Associate in Science",
       "credential": "AS",
       "program_code": null,
-      "catalog_url": "https://catalog.sierracollege.edu/departments/mathematics/",
-      "total_credits": 23,
+      "catalog_url": "https://catalog.sierracollege.edu/departments/nutrition-food-science/",
+      "total_credits": 30,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "Recommended Course Sequence",
-          "credits_required": 23,
+          "credits_required": 30,
           "choose_n": null,
           "courses": [
+            {
+              "prefix": "BIOL",
+              "number": "0004",
+              "title": "Microbiology",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIOL",
+              "number": "0006",
+              "title": "Human Physiology",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHEM",
+              "number": "0001A",
+              "title": "General Chemistry I (OR)",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHEM",
+              "number": "0003A",
+              "title": "General Chemistry I - Part 1and General Chemistry I - Part 2",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CHEM",
+              "number": "0001B",
+              "title": "General Chemistry II",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUTF",
+              "number": "0005",
+              "title": "Food Preparation for Nutrition and Life Fitness",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUTF",
+              "number": "0010",
+              "title": "Principles of Nutrition",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Nursing, Registered — AA",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.sierracollege.edu/departments/nursing-registered/",
+      "total_credits": null,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": null,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BIOL",
+              "number": "0004",
+              "title": "Microbiology",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIOL",
+              "number": "0005",
+              "title": "Human Anatomy",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIOL",
+              "number": "0006",
+              "title": "Human Physiology",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HDEV",
+              "number": "0001",
+              "title": "Human Development Through the Lifespan",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSYC",
+              "number": "0104",
+              "title": "Developmental Psychology",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUTF",
+              "number": "0010",
+              "title": "Principles of Nutrition",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MATH",
+              "number": "0012",
+              "title": "College Algebra",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MATH",
+              "number": "0016A",
+              "title": "Calculus for Social and Life Sciences",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MATH",
+              "number": "0016B",
+              "title": "Calculus for Social and Life Sciences",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MATH",
+              "number": "0024",
+              "title": "Modern Business Mathematics",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MATH",
+              "number": "0029",
+              "title": "Pre-Calculus Mathematics",
+              "credits": 0,
+              "or_alternatives": []
+            },
             {
               "prefix": "MATH",
               "number": "0030",
               "title": "Analytical Geometry and Calculus I",
-              "credits": 4,
+              "credits": 0,
               "or_alternatives": []
             },
             {
               "prefix": "MATH",
               "number": "0031",
               "title": "Analytical Geometry and Calculus II",
-              "credits": 4,
+              "credits": 0,
               "or_alternatives": []
             },
             {
               "prefix": "MATH",
-              "number": "0032",
-              "title": "Analytical Geometry and Calculus III",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "0033",
-              "title": "Differential Equations and Linear Algebra",
-              "credits": 6,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CSCI",
-              "number": "0010",
-              "title": "Introduction to Computing",
+              "number": "0042",
+              "title": "Business Calculus",
               "credits": 0,
               "or_alternatives": []
             },
             {
-              "prefix": "CSCI",
-              "number": "0012",
-              "title": "Programming Concepts and Methodology I",
+              "prefix": "PSYC",
+              "number": "0142",
+              "title": "Introduction to Psychological Statistics",
               "credits": 0,
               "or_alternatives": []
             },
             {
-              "prefix": "CSCI",
-              "number": "0013",
-              "title": "Programming Concepts and Methodology II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CSCI",
-              "number": "0014",
-              "title": "Data Structures",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CSCI",
-              "number": "0026",
-              "title": "Discrete Structures for Computer Science",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CSCI",
-              "number": "0039",
-              "title": "Introduction to Computer Architecture and Assembly Language",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CSCI",
-              "number": "0046",
-              "title": "System Programming with C",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CSCI",
-              "number": "0066",
-              "title": "Object-Oriented Programming Using C++",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENGR",
-              "number": "0220",
-              "title": "Programming and Problem Solving in Engineering",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "IT",
-              "number": "0075",
-              "title": "Python for Many Uses",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHYS",
-              "number": "0205",
-              "title": "Principles of Physics: Mechanicsand Principles of Physics Laboratory: Mechanics",
+              "prefix": "SOC",
+              "number": "0015",
+              "title": "Introduction to Statistics in Sociology",
               "credits": 0,
               "or_alternatives": []
             }
           ]
         }
       ],
-      "matched_program_slug": "mathematics"
+      "matched_program_slug": "nursing"
     },
     {
       "title": "Philosophy — Associate in Arts",
@@ -5584,32 +5809,6 @@
         }
       ],
       "matched_program_slug": null
-    },
-    {
-      "title": "Nursing Assistant — Certificate",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.sierracollege.edu/departments/nursing-assistant/",
-      "total_credits": 6,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 6,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "NRSA",
-              "number": "0003",
-              "title": "Precertification Nursing Assistant Training",
-              "credits": 6,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "nursing"
     },
     {
       "title": "Photography — AS",
@@ -5799,74 +5998,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Nutrition and Food Science — Associate in Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.sierracollege.edu/departments/nutrition-food-science/",
-      "total_credits": 30,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 30,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "BIOL",
-              "number": "0004",
-              "title": "Microbiology",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIOL",
-              "number": "0006",
-              "title": "Human Physiology",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHEM",
-              "number": "0001A",
-              "title": "General Chemistry I (OR)",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHEM",
-              "number": "0003A",
-              "title": "General Chemistry I - Part 1and General Chemistry I - Part 2",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CHEM",
-              "number": "0001B",
-              "title": "General Chemistry II",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NUTF",
-              "number": "0005",
-              "title": "Food Preparation for Nutrition and Life Fitness",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NUTF",
-              "number": "0010",
-              "title": "Principles of Nutrition",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Physics — Associate in Science",
       "credential": "AS",
       "program_code": null,
@@ -6003,6 +6134,308 @@
         }
       ],
       "matched_program_slug": null
+    },
+    {
+      "title": "Psychology — Associate in Arts",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://catalog.sierracollege.edu/departments/psychology/",
+      "total_credits": 22,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 22,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "PSYC",
+              "number": "0142",
+              "title": "Introduction to Psychological Statistics",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSYC",
+              "number": "0200",
+              "title": "Introduction to Research Methods in Psychology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSYC",
+              "number": "0105",
+              "title": "Research Methods in Psychology",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIOL",
+              "number": "0011",
+              "title": "Concepts of Biology",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIOL",
+              "number": "0056",
+              "title": "Biology: A Human Perspectiveand Biology: A Human Perspective Laboratory",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSYC",
+              "number": "0140",
+              "title": "Introduction to Biopsychologyand Biopsychology Laboratory",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSYC",
+              "number": "0103",
+              "title": "Social Psychology",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSYC",
+              "number": "0104",
+              "title": "Developmental Psychology",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SOC",
+              "number": "0001",
+              "title": "Introduction to Sociology",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSYC",
+              "number": "0102",
+              "title": "Navigating Psychology: The Major and Careers",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSYC",
+              "number": "0107",
+              "title": "Abnormal Psychology",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSYC",
+              "number": "0127",
+              "title": "Psychology of Women",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSYC",
+              "number": "0130",
+              "title": "Human Sexuality",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSYC",
+              "number": "0150",
+              "title": "Alcohol, Drugs and Society",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSYC",
+              "number": "0180",
+              "title": "Cultural Psychology",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "psychology"
+    },
+    {
+      "title": "Political Science — Associate in Arts",
+      "credential": "AA",
+      "program_code": null,
+      "catalog_url": "https://catalog.sierracollege.edu/departments/political-science/",
+      "total_credits": 18,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "POLS",
+              "number": "0002",
+              "title": "Introduction to Comparative Government",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "POLS",
+              "number": "0003",
+              "title": "Introduction to International Relations",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "POLS",
+              "number": "0016",
+              "title": "Introduction to Political Theory",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "POLS",
+              "number": "0017",
+              "title": "Introduction to Political Science Research Methods",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "POLS",
+              "number": "0004",
+              "title": "Russian and East European Political Systems",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "POLS",
+              "number": "0005",
+              "title": "California Politics and Government",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "POLS",
+              "number": "0007",
+              "title": "Politics of the Developing World",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "POLS",
+              "number": "0008",
+              "title": "American Foreign Policy",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "POLS",
+              "number": "0009",
+              "title": "Politics of the Middle East",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "POLS",
+              "number": "0012",
+              "title": "Terrorism",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "POLS",
+              "number": "0027",
+              "title": "Women and Politics in a Global Society",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Recreation Management — Associate in Science",
+      "credential": "AS",
+      "program_code": null,
+      "catalog_url": "https://catalog.sierracollege.edu/departments/recreation-management/",
+      "total_credits": 19,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 19,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "RECM",
+              "number": "0084",
+              "title": "Hospitality: Hotel and Lodging Operations",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "RECM",
+              "number": "0100",
+              "title": "Introduction to Hospitality",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "RECM",
+              "number": "0120",
+              "title": "Hospitality Cost Control",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "0270",
+              "title": "Business Law",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "RECM",
+              "number": "0010",
+              "title": "Foundations of Recreation, Parks, and Tourism Management",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "RECM",
+              "number": "0020",
+              "title": "Program Planning and Event Management",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "RECM",
+              "number": "0040",
+              "title": "Leisure Aspects of the Hospitality Industry",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MATH",
+              "number": "0011",
+              "title": "Data Science for All",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSYC",
+              "number": "0142",
+              "title": "Introduction to Psychological Statistics",
+              "credits": 0,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "business-administration"
     },
     {
       "title": "Kinesiology — Associate in Arts",
@@ -6311,479 +6744,6 @@
       "matched_program_slug": null
     },
     {
-      "title": "Political Science — Associate in Arts",
-      "credential": "AA",
-      "program_code": null,
-      "catalog_url": "https://catalog.sierracollege.edu/departments/political-science/",
-      "total_credits": 18,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 18,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "POLS",
-              "number": "0002",
-              "title": "Introduction to Comparative Government",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "POLS",
-              "number": "0003",
-              "title": "Introduction to International Relations",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "POLS",
-              "number": "0016",
-              "title": "Introduction to Political Theory",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "POLS",
-              "number": "0017",
-              "title": "Introduction to Political Science Research Methods",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "POLS",
-              "number": "0004",
-              "title": "Russian and East European Political Systems",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "POLS",
-              "number": "0005",
-              "title": "California Politics and Government",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "POLS",
-              "number": "0007",
-              "title": "Politics of the Developing World",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "POLS",
-              "number": "0008",
-              "title": "American Foreign Policy",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "POLS",
-              "number": "0009",
-              "title": "Politics of the Middle East",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "POLS",
-              "number": "0012",
-              "title": "Terrorism",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "POLS",
-              "number": "0027",
-              "title": "Women and Politics in a Global Society",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Psychology — Associate in Arts",
-      "credential": "AA",
-      "program_code": null,
-      "catalog_url": "https://catalog.sierracollege.edu/departments/psychology/",
-      "total_credits": 22,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 22,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "PSYC",
-              "number": "0142",
-              "title": "Introduction to Psychological Statistics",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSYC",
-              "number": "0200",
-              "title": "Introduction to Research Methods in Psychology",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSYC",
-              "number": "0105",
-              "title": "Research Methods in Psychology",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIOL",
-              "number": "0011",
-              "title": "Concepts of Biology",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIOL",
-              "number": "0056",
-              "title": "Biology: A Human Perspectiveand Biology: A Human Perspective Laboratory",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSYC",
-              "number": "0140",
-              "title": "Introduction to Biopsychologyand Biopsychology Laboratory",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSYC",
-              "number": "0103",
-              "title": "Social Psychology",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSYC",
-              "number": "0104",
-              "title": "Developmental Psychology",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SOC",
-              "number": "0001",
-              "title": "Introduction to Sociology",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSYC",
-              "number": "0102",
-              "title": "Navigating Psychology: The Major and Careers",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSYC",
-              "number": "0107",
-              "title": "Abnormal Psychology",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSYC",
-              "number": "0127",
-              "title": "Psychology of Women",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSYC",
-              "number": "0130",
-              "title": "Human Sexuality",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSYC",
-              "number": "0150",
-              "title": "Alcohol, Drugs and Society",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSYC",
-              "number": "0180",
-              "title": "Cultural Psychology",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "psychology"
-    },
-    {
-      "title": "Recreation Management — Associate in Science",
-      "credential": "AS",
-      "program_code": null,
-      "catalog_url": "https://catalog.sierracollege.edu/departments/recreation-management/",
-      "total_credits": 19,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 19,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "RECM",
-              "number": "0084",
-              "title": "Hospitality: Hotel and Lodging Operations",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "RECM",
-              "number": "0100",
-              "title": "Introduction to Hospitality",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "RECM",
-              "number": "0120",
-              "title": "Hospitality Cost Control",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "0270",
-              "title": "Business Law",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "RECM",
-              "number": "0010",
-              "title": "Foundations of Recreation, Parks, and Tourism Management",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "RECM",
-              "number": "0020",
-              "title": "Program Planning and Event Management",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "RECM",
-              "number": "0040",
-              "title": "Leisure Aspects of the Hospitality Industry",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "0011",
-              "title": "Data Science for All",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSYC",
-              "number": "0142",
-              "title": "Introduction to Psychological Statistics",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": "business-administration"
-    },
-    {
-      "title": "Spanish — Associate in Arts",
-      "credential": "AA",
-      "program_code": null,
-      "catalog_url": "https://catalog.sierracollege.edu/departments/spanish/",
-      "total_credits": 21,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 21,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "SPAN",
-              "number": "0001",
-              "title": "Elementary Spanish - Level I",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SPAN",
-              "number": "0002",
-              "title": "Elementary Spanish - Level II",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SPAN",
-              "number": "0003",
-              "title": "Intermediate Spanish - Level I",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SPAN",
-              "number": "0004",
-              "title": "Intermediate Spanish - Level II",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SPAN",
-              "number": "0017",
-              "title": "Intermediate Conversational Spanish",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Theatre Arts — Associate in Arts",
-      "credential": "AA",
-      "program_code": null,
-      "catalog_url": "https://catalog.sierracollege.edu/departments/thea/",
-      "total_credits": 20,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Recommended Course Sequence",
-          "credits_required": 20,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "THEA",
-              "number": "0010A",
-              "title": "Acting I",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "THEA",
-              "number": "0013",
-              "title": "Introduction to Theatre",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "THEA",
-              "number": "0022A",
-              "title": "Production Crew I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "THEA",
-              "number": "0022B",
-              "title": "Production Crew II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "THEA",
-              "number": "0022C",
-              "title": "Production Crew III",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "THEA",
-              "number": "0022D",
-              "title": "Production Crew IV",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "THEA",
-              "number": "0010B",
-              "title": "Acting II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "THEA",
-              "number": "0014",
-              "title": "Stagecraft",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "THEA",
-              "number": "0015",
-              "title": "Stage Lighting",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "THEA",
-              "number": "0017",
-              "title": "Stage Makeup",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "THEA",
-              "number": "0021",
-              "title": "Script Analysis",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "THEA",
-              "number": "0023A",
-              "title": "Rehearsal and Performance - Cast I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "THEA",
-              "number": "0023B",
-              "title": "Rehearsal and Performance - Cast II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "THEA",
-              "number": "0023C",
-              "title": "Rehearsal and Performance - Cast III",
-              "credits": 0,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
       "title": "Sociology — Associate in Arts",
       "credential": "AA",
       "program_code": null,
@@ -6943,135 +6903,189 @@
       "matched_program_slug": null
     },
     {
-      "title": "Nursing, Registered — AA",
-      "credential": "other",
+      "title": "Spanish — Associate in Arts",
+      "credential": "AA",
       "program_code": null,
-      "catalog_url": "https://catalog.sierracollege.edu/departments/nursing-registered/",
-      "total_credits": null,
+      "catalog_url": "https://catalog.sierracollege.edu/departments/spanish/",
+      "total_credits": 21,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "Recommended Course Sequence",
-          "credits_required": null,
+          "credits_required": 21,
           "choose_n": null,
           "courses": [
             {
-              "prefix": "BIOL",
-              "number": "0004",
-              "title": "Microbiology",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIOL",
-              "number": "0005",
-              "title": "Human Anatomy",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BIOL",
-              "number": "0006",
-              "title": "Human Physiology",
-              "credits": 5,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HDEV",
+              "prefix": "SPAN",
               "number": "0001",
-              "title": "Human Development Through the Lifespan",
+              "title": "Elementary Spanish - Level I",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SPAN",
+              "number": "0002",
+              "title": "Elementary Spanish - Level II",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SPAN",
+              "number": "0003",
+              "title": "Intermediate Spanish - Level I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SPAN",
+              "number": "0004",
+              "title": "Intermediate Spanish - Level II",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SPAN",
+              "number": "0017",
+              "title": "Intermediate Conversational Spanish",
               "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSYC",
-              "number": "0104",
-              "title": "Developmental Psychology",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "NUTF",
-              "number": "0010",
-              "title": "Principles of Nutrition",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "0012",
-              "title": "College Algebra",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "0016A",
-              "title": "Calculus for Social and Life Sciences",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "0016B",
-              "title": "Calculus for Social and Life Sciences",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "0024",
-              "title": "Modern Business Mathematics",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "0029",
-              "title": "Pre-Calculus Mathematics",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "0030",
-              "title": "Analytical Geometry and Calculus I",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "0031",
-              "title": "Analytical Geometry and Calculus II",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MATH",
-              "number": "0042",
-              "title": "Business Calculus",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSYC",
-              "number": "0142",
-              "title": "Introduction to Psychological Statistics",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SOC",
-              "number": "0015",
-              "title": "Introduction to Statistics in Sociology",
-              "credits": 0,
               "or_alternatives": []
             }
           ]
         }
       ],
-      "matched_program_slug": "nursing"
+      "matched_program_slug": null
+    },
+    {
+      "title": "Women and Gender Studies — AA",
+      "credential": "other",
+      "program_code": null,
+      "catalog_url": "https://catalog.sierracollege.edu/departments/women-gender-studies/",
+      "total_credits": 24,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Recommended Course Sequence",
+          "credits_required": 24,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "WMST",
+              "number": "0001",
+              "title": "Introduction to Women's Studies",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ANTH",
+              "number": "0027",
+              "title": "Anthropology of Sex, Gender and Sexuality",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ARHI",
+              "number": "0132",
+              "title": "History of Women in Art",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENGL",
+              "number": "0027",
+              "title": "Literature by Women",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HIST",
+              "number": "0027",
+              "title": "Women in American History",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PHIL",
+              "number": "0027",
+              "title": "Introduction to Philosophy of Women in Western Cultures",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "POLS",
+              "number": "0027",
+              "title": "Women and Politics in a Global Society",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSYC",
+              "number": "0127",
+              "title": "Psychology of Women",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSYC",
+              "number": "0130",
+              "title": "Human Sexuality",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SOC",
+              "number": "0005",
+              "title": "Sociology of Women's Health",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SOC",
+              "number": "0027",
+              "title": "Sociology of Gender",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WMST",
+              "number": "0002",
+              "title": "Introduction to LGBT Studies/Queer Theory (also LGBT 0001)",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WMST",
+              "number": "0003",
+              "title": "Introduction to Women, Gender and Religion (also HUM 0009)",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WMST",
+              "number": "0004",
+              "title": "Feminism and Social Action (also SOC 0010)",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WMST",
+              "number": "0006",
+              "title": "Introduction to Disability Studies",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "WMST",
+              "number": "0300",
+              "title": "Selected Topics in Women and Gender Studies",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
     },
     {
       "title": "Welding Technology — AS",
@@ -7310,129 +7324,115 @@
       "matched_program_slug": "welding"
     },
     {
-      "title": "Women and Gender Studies — AA",
-      "credential": "other",
+      "title": "Theatre Arts — Associate in Arts",
+      "credential": "AA",
       "program_code": null,
-      "catalog_url": "https://catalog.sierracollege.edu/departments/women-gender-studies/",
-      "total_credits": 24,
+      "catalog_url": "https://catalog.sierracollege.edu/departments/thea/",
+      "total_credits": 20,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
           "name": "Recommended Course Sequence",
-          "credits_required": 24,
+          "credits_required": 20,
           "choose_n": null,
           "courses": [
             {
-              "prefix": "WMST",
-              "number": "0001",
-              "title": "Introduction to Women's Studies",
+              "prefix": "THEA",
+              "number": "0010A",
+              "title": "Acting I",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "ANTH",
-              "number": "0027",
-              "title": "Anthropology of Sex, Gender and Sexuality",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ARHI",
-              "number": "0132",
-              "title": "History of Women in Art",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ENGL",
-              "number": "0027",
-              "title": "Literature by Women",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "HIST",
-              "number": "0027",
-              "title": "Women in American History",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PHIL",
-              "number": "0027",
-              "title": "Introduction to Philosophy of Women in Western Cultures",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "POLS",
-              "number": "0027",
-              "title": "Women and Politics in a Global Society",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSYC",
-              "number": "0127",
-              "title": "Psychology of Women",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "PSYC",
-              "number": "0130",
-              "title": "Human Sexuality",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SOC",
-              "number": "0005",
-              "title": "Sociology of Women's Health",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "SOC",
-              "number": "0027",
-              "title": "Sociology of Gender",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WMST",
-              "number": "0002",
-              "title": "Introduction to LGBT Studies/Queer Theory (also LGBT 0001)",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WMST",
-              "number": "0003",
-              "title": "Introduction to Women, Gender and Religion (also HUM 0009)",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WMST",
-              "number": "0004",
-              "title": "Feminism and Social Action (also SOC 0010)",
-              "credits": 0,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "WMST",
-              "number": "0006",
-              "title": "Introduction to Disability Studies",
+              "prefix": "THEA",
+              "number": "0013",
+              "title": "Introduction to Theatre",
               "credits": 3,
               "or_alternatives": []
             },
             {
-              "prefix": "WMST",
-              "number": "0300",
-              "title": "Selected Topics in Women and Gender Studies",
-              "credits": 1,
+              "prefix": "THEA",
+              "number": "0022A",
+              "title": "Production Crew I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "THEA",
+              "number": "0022B",
+              "title": "Production Crew II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "THEA",
+              "number": "0022C",
+              "title": "Production Crew III",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "THEA",
+              "number": "0022D",
+              "title": "Production Crew IV",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "THEA",
+              "number": "0010B",
+              "title": "Acting II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "THEA",
+              "number": "0014",
+              "title": "Stagecraft",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "THEA",
+              "number": "0015",
+              "title": "Stage Lighting",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "THEA",
+              "number": "0017",
+              "title": "Stage Makeup",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "THEA",
+              "number": "0021",
+              "title": "Script Analysis",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "THEA",
+              "number": "0023A",
+              "title": "Rehearsal and Performance - Cast I",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "THEA",
+              "number": "0023B",
+              "title": "Rehearsal and Performance - Cast II",
+              "credits": 0,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "THEA",
+              "number": "0023C",
+              "title": "Rehearsal and Performance - Cast III",
+              "credits": 0,
               "or_alternatives": []
             }
           ]
