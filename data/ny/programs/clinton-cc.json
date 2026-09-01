@@ -2,116 +2,20 @@
   "college_slug": "clinton-cc",
   "catalog_year": "2025-2026",
   "catalog_url": "https://catalog.clinton.edu/degrees",
-  "scraped_at": "2026-06-01T13:39:34.947Z",
+  "scraped_at": "2026-09-01T13:11:11.220Z",
   "programs": [
     {
-      "title": "Industrial/Commercial Electrician",
-      "credential": "certificate",
+      "title": "Computer Information Technology & Cybersecurity",
+      "credential": "AAS",
       "program_code": null,
-      "catalog_url": "https://catalog.clinton.edu/certificate-programs/certificate/industrial-commercial-electrician",
-      "total_credits": 28,
+      "catalog_url": "https://catalog.clinton.edu/career-programs/associate-of-applied-science/computer-information-technology-cybersecurity",
+      "total_credits": 42,
       "gpa_minimum": 2,
       "description": null,
       "requirement_groups": [
         {
-          "name": "Industrial/Commercial Electrician (10 Credits):",
-          "credits_required": 10,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ICE",
-              "number": "101",
-              "title": "Residential Electrical And Wiring",
-              "credits": 6,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ICE",
-              "number": "102",
-              "title": "Electrical Blueprint Reading",
-              "credits": 2,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ICE",
-              "number": "202",
-              "title": "Electrical Project Estimation",
-              "credits": 2,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Mathematics (8 Credits):",
-          "credits_required": 8,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "MAT",
-              "number": "105",
-              "title": "Technical Mathematics I",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "MAT",
-              "number": "205",
-              "title": "Technical Mathematics II",
-              "credits": 4,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Electrical/Electronics Technology (8 Credits):",
-          "credits_required": 8,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ETE",
-              "number": "101",
-              "title": "Electrical Circuits I",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ETE",
-              "number": "102",
-              "title": "Electrical Circuits II",
-              "credits": 4,
-              "or_alternatives": []
-            }
-          ]
-        },
-        {
-          "name": "Mechanical Technology (2 Credit):",
-          "credits_required": 2,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "MEC",
-              "number": "209",
-              "title": "Industrial Health And Safety",
-              "credits": 2,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Payroll",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.clinton.edu/certificate-programs/certificate/payroll",
-      "total_credits": 25,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "English (3 Credits):",
-          "credits_required": 3,
+          "name": "English (6 Credits)",
+          "credits_required": 6,
           "choose_n": null,
           "courses": [
             {
@@ -120,11 +24,18 @@
               "title": "English Composition",
               "credits": 3,
               "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "102",
+              "title": "Literature and Composition",
+              "credits": 3,
+              "or_alternatives": []
             }
           ]
         },
         {
-          "name": "Communications (3 Credits):",
+          "name": "Humanities",
           "credits_required": 3,
           "choose_n": null,
           "courses": [
@@ -138,89 +49,35 @@
           ]
         },
         {
-          "name": "Business (19 Credits):",
-          "credits_required": 19,
+          "name": "Computer Science (33 Credits)",
+          "credits_required": 33,
           "choose_n": null,
           "courses": [
-            {
-              "prefix": "ACC",
-              "number": "120",
-              "title": "Financial Accounting",
-              "credits": 4,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACC",
-              "number": "159",
-              "title": "Payroll Accounting",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "ACC",
-              "number": "252",
-              "title": "Computer Applications In Accounting",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "101",
-              "title": "Introduction To Business",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "BUS",
-              "number": "213",
-              "title": "Business Communications",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CSC",
-              "number": "102",
-              "title": "Introduction To Microcomputer Applications",
-              "credits": 3,
-              "or_alternatives": []
-            }
-          ]
-        }
-      ],
-      "matched_program_slug": null
-    },
-    {
-      "title": "Computer Support",
-      "credential": "certificate",
-      "program_code": null,
-      "catalog_url": "https://catalog.clinton.edu/certificate-programs/certificate/computer-support",
-      "total_credits": 24,
-      "gpa_minimum": 2,
-      "description": null,
-      "requirement_groups": [
-        {
-          "name": "Degree Requirements (24 Credits)",
-          "credits_required": 24,
-          "choose_n": null,
-          "courses": [
-            {
-              "prefix": "ENG",
-              "number": "101",
-              "title": "English Composition",
-              "credits": 3,
-              "or_alternatives": []
-            },
-            {
-              "prefix": "CSC",
-              "number": "102",
-              "title": "Introduction To Microcomputer Applications",
-              "credits": 3,
-              "or_alternatives": []
-            },
             {
               "prefix": "CSC",
               "number": "121",
               "title": "Fundamental Concepts of Computing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSC",
+              "number": "152",
+              "title": "Computer Security & Society",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSC",
+              "number": "202",
+              "title": "Database Systems",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSC",
+              "number": "217",
+              "title": "Computer Programming",
               "credits": 3,
               "or_alternatives": []
             },
@@ -244,11 +101,785 @@
               "title": "Introduction To Networking",
               "credits": 3,
               "or_alternatives": []
+            },
+            {
+              "prefix": "CSC",
+              "number": "240",
+              "title": "Networking II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSC",
+              "number": "250",
+              "title": "Introduction to Computer Security",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSC",
+              "number": "260",
+              "title": "Computer Security II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSC",
+              "number": "280",
+              "title": "Technology Practicum Seminar",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "computer-science"
+    },
+    {
+      "title": "Accounting",
+      "credential": "AAS",
+      "program_code": null,
+      "catalog_url": "https://catalog.clinton.edu/career-programs/associate-of-applied-science/accounting",
+      "total_credits": 47,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Humanities (9 Credits)",
+          "credits_required": 9,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "102",
+              "title": "Literature and Composition",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "COM",
+              "number": "101",
+              "title": "Public Speaking",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Computer Science (3 Credits)",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CSC",
+              "number": "102",
+              "title": "Introduction To Microcomputer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Accounting (17 Credits)",
+          "credits_required": 17,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACC",
+              "number": "120",
+              "title": "Financial Accounting",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACC",
+              "number": "125",
+              "title": "Managerial Accounting",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACC",
+              "number": "159",
+              "title": "Payroll Accounting",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACC",
+              "number": "251",
+              "title": "Federal Income Tax",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACC",
+              "number": "252",
+              "title": "Computer Applications In Accounting",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Business (18 Credits)",
+          "credits_required": 18,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BUS",
+              "number": "101",
+              "title": "Introduction To Business",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "110",
+              "title": "Personal Finance",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "213",
+              "title": "Business Communications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "260",
+              "title": "Business Law I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "261",
+              "title": "Business Law II",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "accounting"
+    },
+    {
+      "title": "Business Administration",
+      "credential": "AAS",
+      "program_code": null,
+      "catalog_url": "https://catalog.clinton.edu/career-programs/associate-of-applied-science/business-administration",
+      "total_credits": 44,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Accounting (8 Credits)",
+          "credits_required": 8,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACC",
+              "number": "120",
+              "title": "Financial Accounting",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACC",
+              "number": "125",
+              "title": "Managerial Accounting",
+              "credits": 4,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "English (6 Credits)",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "102",
+              "title": "Literature and Composition",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Computer Science (3 Credits)",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CSC",
+              "number": "102",
+              "title": "Introduction To Microcomputer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Humanities (3 Credits)",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "COM",
+              "number": "101",
+              "title": "Public Speaking",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Business (24 Credits)",
+          "credits_required": 24,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BUS",
+              "number": "101",
+              "title": "Introduction To Business",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "110",
+              "title": "Personal Finance",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "210",
+              "title": "Principles of Marketing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "213",
+              "title": "Business Communications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "260",
+              "title": "Business Law I",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "261",
+              "title": "Business Law II",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "285",
+              "title": "Business Internship or Business Elective",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Health Services Management",
+      "credential": "AAS",
+      "program_code": null,
+      "catalog_url": "https://catalog.clinton.edu/career-programs/associate-of-applied-science/health-services-management",
+      "total_credits": 50,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "English (6 Credits)",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "102",
+              "title": "Literature and Composition",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Humanities (3 Credits)",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "COM",
+              "number": "101",
+              "title": "Public Speaking",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Computer Science (3 Credits)",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CSC",
+              "number": "102",
+              "title": "Introduction To Microcomputer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Business (15 Credits)",
+          "credits_required": 15,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BUS",
+              "number": "101",
+              "title": "Introduction To Business",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "210",
+              "title": "Principles of Marketing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "213",
+              "title": "Business Communications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "215",
+              "title": "Human Resource Management",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "250",
+              "title": "Principles of Management",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Accounting (4 Credits)",
+          "credits_required": 4,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACC",
+              "number": "120",
+              "title": "Financial Accounting",
+              "credits": 4,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Health Services Management (12 Credits)",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "HSM",
+              "number": "111",
+              "title": "Community Medicine And Public Health",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HSM",
+              "number": "112",
+              "title": "Issues In Long Term Care",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HSM",
+              "number": "211",
+              "title": "Medical Problems And Programs",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HSM",
+              "number": "212",
+              "title": "Management of Health Facilities",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Social Science (6 Credits)",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "PSY",
+              "number": "101",
+              "title": "Introduction To Psychology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SOC",
+              "number": "101",
+              "title": "Introduction To Sociology",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Nursing (1 Credit)",
+          "credits_required": 1,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "NUR",
+              "number": "106",
+              "title": "Medical Terminology",
+              "credits": 1,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Human Services",
+      "credential": "AAS",
+      "program_code": null,
+      "catalog_url": "https://catalog.clinton.edu/career-programs/associate-of-applied-science/human-services",
+      "total_credits": 59,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "English (6 Credits)",
+          "credits_required": 6,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ENG",
+              "number": "102",
+              "title": "Literature and Composition",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Communications (3 Credits)",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "COM",
+              "number": "101",
+              "title": "Public Speaking",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Human Services (33 Credits)",
+          "credits_required": 33,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "HUS",
+              "number": "101",
+              "title": "Introduction To Human Services",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HUS",
+              "number": "105",
+              "title": "Introduction To Basic Counseling Skills",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HUS",
+              "number": "160",
+              "title": "Human Services Organizations",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HUS",
+              "number": "200",
+              "title": "Case Management And Crisis Intervention",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "HUS",
+              "number": "206",
+              "title": "Group Skills For Human Services",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Social Science (12 Credits)",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "PSC",
+              "number": "240",
+              "title": "State & Local Government",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
+              "number": "101",
+              "title": "Introduction To Psychology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SOC",
+              "number": "101",
+              "title": "Introduction To Sociology",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Science (4 Credits)",
+          "credits_required": 4,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BIO",
+              "number": "100",
+              "title": "Human Biology",
+              "credits": 4,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Informational Management (3 credit)",
+          "credits_required": 1,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "CSC",
+              "number": "102",
+              "title": "Introduction To Microcomputer Applications",
+              "credits": 3,
+              "or_alternatives": []
             }
           ]
         }
       ],
       "matched_program_slug": null
+    },
+    {
+      "title": "Nursing",
+      "credential": "AAS",
+      "program_code": null,
+      "catalog_url": "https://catalog.clinton.edu/career-programs/associate-of-applied-science/nursing",
+      "total_credits": 62,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "English (3 Credits)",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Nursing (38 Credits)",
+          "credits_required": 38,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "NUR",
+              "number": "103",
+              "title": "Fundamentals of Nursing",
+              "credits": 7,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "104",
+              "title": "Medical/Surgical Nursing I",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "105",
+              "title": "Nursing Care of The Child-bearing Family",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "201",
+              "title": "Medical/surgical Nursing II",
+              "credits": 5,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "202",
+              "title": "Mental Health Nursing",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "203",
+              "title": "Medical/surgical Nursing III",
+              "credits": 10,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "NUR",
+              "number": "204",
+              "title": "Pharmacology For Nurses",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Social Science (9 Credits)",
+          "credits_required": 9,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "PSY",
+              "number": "101",
+              "title": "Introduction To Psychology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "PSY",
+              "number": "230",
+              "title": "Human Development",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "SOC",
+              "number": "101",
+              "title": "Introduction To Sociology",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Science (12 Credits)",
+          "credits_required": 12,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "BIO",
+              "number": "204",
+              "title": "Microbiology",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "228",
+              "title": "Anatomy & Physiology I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BIO",
+              "number": "229",
+              "title": "Anatomy & Physiology II",
+              "credits": 4,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": "nursing"
     },
     {
       "title": "Alcohol & Substance Abuse Counseling",
@@ -333,6 +964,186 @@
       "matched_program_slug": null
     },
     {
+      "title": "Mechanical Technology",
+      "credential": "AAS",
+      "program_code": null,
+      "catalog_url": "https://catalog.clinton.edu/career-programs/associate-of-applied-science/mechanical-technology",
+      "total_credits": 59,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "English (3 Credits)",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Mathematics (8 Credits)",
+          "credits_required": 8,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MAT",
+              "number": "105",
+              "title": "Technical Mathematics I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MAT",
+              "number": "205",
+              "title": "Technical Mathematics II",
+              "credits": 4,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Science (8 Credits)",
+          "credits_required": 8,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "PHY",
+              "number": "111",
+              "title": "General Physics I",
+              "credits": 4,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Electrical/Electronics Technology (7 Credits)",
+          "credits_required": 7,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ETE",
+              "number": "101",
+              "title": "Electrical Circuits I",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ETE",
+              "number": "202",
+              "title": "Introduction To Industrial Electricity",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Mechanical Technology (30 Credits)",
+          "credits_required": 30,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "MEC",
+              "number": "100",
+              "title": "Introduction To Engineering Technology",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MEC",
+              "number": "101",
+              "title": "Technical Drawing/CAD",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MEC",
+              "number": "102",
+              "title": "Blueprint Reading & Technical Schematics",
+              "credits": 1,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MEC",
+              "number": "203",
+              "title": "Introduction To Quality Control/ Quality Assurance",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MEC",
+              "number": "204",
+              "title": "Manufacturing Processes",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MEC",
+              "number": "205",
+              "title": "Geometric Dimensioning And Tolerancing",
+              "credits": 2,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MEC",
+              "number": "206",
+              "title": "Principles of Fluid Power Systems",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MEC",
+              "number": "207",
+              "title": "Industrial Maintenance",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MEC",
+              "number": "212",
+              "title": "Computer Aided Manufacturing (CAM)",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MEC",
+              "number": "217",
+              "title": "Instrumentation",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "MEC",
+              "number": "228",
+              "title": "Robotics & Automated Controls",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Humanities (3 Credits)",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "COM",
+              "number": "101",
+              "title": "Public Speaking",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
       "title": "Business Management",
       "credential": "certificate",
       "program_code": null,
@@ -392,6 +1203,67 @@
         }
       ],
       "matched_program_slug": "business-administration"
+    },
+    {
+      "title": "Computer Support",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.clinton.edu/certificate-programs/certificate/computer-support",
+      "total_credits": 24,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "Degree Requirements (24 Credits)",
+          "credits_required": 24,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSC",
+              "number": "102",
+              "title": "Introduction To Microcomputer Applications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSC",
+              "number": "121",
+              "title": "Fundamental Concepts of Computing",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSC",
+              "number": "220",
+              "title": "Operating Systems",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSC",
+              "number": "225",
+              "title": "Computer Hardware",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSC",
+              "number": "230",
+              "title": "Introduction To Networking",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
     },
     {
       "title": "Mechanical Technology Certificate",
@@ -502,6 +1374,95 @@
               "prefix": "ETE",
               "number": "202",
               "title": "Introduction To Industrial Electricity",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        }
+      ],
+      "matched_program_slug": null
+    },
+    {
+      "title": "Payroll",
+      "credential": "certificate",
+      "program_code": null,
+      "catalog_url": "https://catalog.clinton.edu/certificate-programs/certificate/payroll",
+      "total_credits": 25,
+      "gpa_minimum": 2,
+      "description": null,
+      "requirement_groups": [
+        {
+          "name": "English (3 Credits):",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ENG",
+              "number": "101",
+              "title": "English Composition",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Communications (3 Credits):",
+          "credits_required": 3,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "COM",
+              "number": "101",
+              "title": "Public Speaking",
+              "credits": 3,
+              "or_alternatives": []
+            }
+          ]
+        },
+        {
+          "name": "Business (19 Credits):",
+          "credits_required": 19,
+          "choose_n": null,
+          "courses": [
+            {
+              "prefix": "ACC",
+              "number": "120",
+              "title": "Financial Accounting",
+              "credits": 4,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACC",
+              "number": "159",
+              "title": "Payroll Accounting",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "ACC",
+              "number": "252",
+              "title": "Computer Applications In Accounting",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "101",
+              "title": "Introduction To Business",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "BUS",
+              "number": "213",
+              "title": "Business Communications",
+              "credits": 3,
+              "or_alternatives": []
+            },
+            {
+              "prefix": "CSC",
+              "number": "102",
+              "title": "Introduction To Microcomputer Applications",
               "credits": 3,
               "or_alternatives": []
             }
