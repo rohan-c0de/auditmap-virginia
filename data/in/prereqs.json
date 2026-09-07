@@ -31,9 +31,10 @@
     ]
   },
   "ACCT 201": {
-    "text": "ACCT 101 Financial Accounting",
+    "text": "ACCT 101 - Financial Accounting and OTEC 118 - Microsoft Excel",
     "courses": [
-      "ACCT 101"
+      "ACCT 101",
+      "OTEC 118"
     ]
   },
   "ACCT 202": {
@@ -43,9 +44,10 @@
     ]
   },
   "ACCT 203": {
-    "text": "ACCT 102 Managerial Accounting",
+    "text": "ACCT 102 Managerial Accounting and OTEC 118 Microsoft Excel",
     "courses": [
-      "ACCT 102"
+      "ACCT 102",
+      "OTEC 118"
     ]
   },
   "ACCT 205": {
@@ -1072,9 +1074,9 @@
     ]
   },
   "CSCI 210": {
-    "text": "CSCI 105 Discrete Logic for Computers. COREQUISITE: CSCI 105 Discrete Logic for Computers",
+    "text": "CSCI 201 - Computer Science II",
     "courses": [
-      "CSCI 105"
+      "CSCI 201"
     ]
   },
   "CSCI 279": {
@@ -1113,9 +1115,9 @@
     ]
   },
   "CSIA 235": {
-    "text": "SVAD 120 - Computing Logic and CSIA 105 - Introduction to Cyber Security/Information Assurance and (ITSP 132 IT Support Essentials I and ITSP 134 IT Support Essentials II)",
+    "text": "SDEV 120 - Computing Logic and CSIA 105 - Introduction to Cyber Security/Information Assurance and (ITSP 132 IT Support Essentials I and ITSP 134 IT Support Essentials II)",
     "courses": [
-      "SVAD 120",
+      "SDEV 120",
       "CSIA 105",
       "ITSP 132",
       "ITSP 134"
@@ -1393,11 +1395,10 @@
     ]
   },
   "DMSI 121": {
-    "text": "MATH 123 Quantitative Reasoning or Higher (excluding MATH 135 and MATH 137) and Program Chair Approval",
+    "text": "Program Chair Approval | USA exam | MATH 123 - Quantitative Reasoning or any of the following: MATH 118, 136, 138, 201, 202, 211, 212, 218, 219, 221, 222, 261",
     "courses": [
       "MATH 123",
-      "MATH 135",
-      "MATH 137"
+      "MATH 118"
     ]
   },
   "DMSI 122": {
@@ -2819,10 +2820,10 @@
     ]
   },
   "INFM 219": {
-    "text": "INFM 109 Informatics Fundamentals and DBMS 110 Database Design and Management. COURSE",
+    "text": "INFM 109 - Informatics Fundamentals or AAIT 110 - AI Essentials",
     "courses": [
       "INFM 109",
-      "DBMS 110"
+      "AAIT 110"
     ]
   },
   "ITSP 132": {
@@ -2856,9 +2857,8 @@
     ]
   },
   "ITSP 215": {
-    "text": "ITSP 135 Hardware/Software Support or (ITSP 132 IT Support Essentials I and ITSP 134 IT Support Essentials II)",
+    "text": "ITSP 132 IT Support Essentials I and ITSP 134 IT Support Essentials II",
     "courses": [
-      "ITSP 135",
       "ITSP 132",
       "ITSP 134"
     ]
@@ -2870,12 +2870,13 @@
     ]
   },
   "ITSP 235": {
-    "text": "(ITSP 135 Hardware - Software Support or (ITSP 132 IT Support Essentials I and ITSP 134 IT Support Essentials II)) and SDEV 120 Computing Logic",
+    "text": "(ITSP 132 - IT Support Essentials I and ITSP 134 - IT Support Essentials II) and SDEV 120 - Computing Logic and (NETI 104 - Introduction to Networking or NETI 109 - Networking I)",
     "courses": [
-      "ITSP 135",
       "ITSP 132",
       "ITSP 134",
-      "SDEV 120"
+      "SDEV 120",
+      "NETI 104",
+      "NETI 109"
     ]
   },
   "LEGS 101": {
@@ -4232,10 +4233,9 @@
     ]
   },
   "SVAD 111": {
-    "text": "INFM 109 - Informatics Fundamentals or ITSP 135 - Hardware / Software Support or (ITSP 132 - IT Support Essentials I & ITSP 134 - IT Support Essentials II)",
+    "text": "INFM 109 - Informatics Fundamentals or (ITSP 132 - IT Support Essentials I & ITSP 134 - IT Support Essentials II)",
     "courses": [
       "INFM 109",
-      "ITSP 135",
       "ITSP 132",
       "ITSP 134"
     ]
@@ -4253,13 +4253,9 @@
     ]
   },
   "SVAD 121": {
-    "text": "ITSP 135 Hardware/Software Support or (ITSP132 IT Support Essentials I and ITSP 134 IT Support Essentials II) and (NETI 105 Network Fundamentals or NETI 104 Introduction to Networking or NETI 109 Networking I)",
+    "text": "ITSP132 IT Support Essentials I and ITSP 134 IT Support Essentials II",
     "courses": [
-      "ITSP 135",
-      "ITSP 134",
-      "NETI 105",
-      "NETI 104",
-      "NETI 109"
+      "ITSP 134"
     ]
   },
   "SVAD 151": {
@@ -4516,6 +4512,830 @@
     "courses": [
       "AVIT 146",
       "AVIT 148"
+    ]
+  },
+  "ARTS 103": {
+    "text": "Demonstrated competency through appropriate assessment or earning a grade of “C” or better in or ENGL 093 Introduction to College Writing and ENGL 083 Reading Strategies for College or ENGL 095 Integrated Reading and Writing",
+    "courses": [
+      "ENGL 093",
+      "ENGL 083",
+      "ENGL 095"
+    ]
+  },
+  "AVIT 142": {
+    "text": "Demonstrated competency through appropriate assessment or earning a grade of “C” or better in FOUN 071 Tech Foundations II, or MATH 023 Essentials of Algebra I",
+    "courses": [
+      "FOUN 071",
+      "MATH 023"
+    ]
+  },
+  "AVIT 144": {
+    "text": "Demonstrated competency through appropriate assessment or earning a grade of “C” or better in FOUN 071 Tech Foundations II, or MATH 023 Essentials of Algebra I",
+    "courses": [
+      "FOUN 071",
+      "MATH 023"
+    ]
+  },
+  "AVIT 141": {
+    "text": "Demonstrated competency through appropriate assessment or earning a grade of “C” or better in FOUN 071 Tech Foundations II, or MATH 023 Essentials of Algebra I",
+    "courses": [
+      "FOUN 071",
+      "MATH 023"
+    ]
+  },
+  "AVIT 148": {
+    "text": "Demonstrated competency through appropriate assessment or earning a grade of “C” or better FOUN 071 Tech Foundations II, or MATH 023 Essentials of Algebra I",
+    "courses": [
+      "FOUN 071",
+      "MATH 023"
+    ]
+  },
+  "AVIT 145": {
+    "text": "Demonstrated competency through appropriate assessment or earning a grade of “C” or better FOUN 071 Tech Foundations II, or MATH 023 Essentials of Algebra I",
+    "courses": [
+      "FOUN 071",
+      "MATH 023"
+    ]
+  },
+  "AVIT 146": {
+    "text": "Demonstrated competency through appropriate assessment or earning a grade of “C” or better FOUN 071 Tech Foundations II, or MATH 023 Essentials of Algebra I",
+    "courses": [
+      "FOUN 071",
+      "MATH 023"
+    ]
+  },
+  "DESN 208": {
+    "text": "DESN 101, Introduction to Design Technology and DESN 109 Construction Materials and Specifications and MATH 122 Applied Technical Mathematics or MATH 136 College Algebra or MATH 137 Trigonometry with Analytic Geometry",
+    "courses": [
+      "DESN 101",
+      "DESN 109",
+      "MATH 122",
+      "MATH 136",
+      "MATH 137"
+    ]
+  },
+  "AAIT 216": {
+    "text": "AAIT 212 - Machine Learning",
+    "courses": [
+      "AAIT 212"
+    ]
+  },
+  "ACCT 273": {
+    "text": "Successful completion of ACCT 205 Income Tax and IRS VITA Certifications at both Basic and Advanced Levels",
+    "courses": [
+      "ACCT 205"
+    ]
+  },
+  "ASEP 101": {
+    "text": "ASEP 100 - Introduction to GM ASEP Program",
+    "courses": [
+      "ASEP 100"
+    ]
+  },
+  "ASEP 224": {
+    "text": "ASEP 123 GM ASEP Electrical Systems II, and ASEP 121 GM ASEP Braking Systems, and ASEP 101 GM ASEP Steering and Suspension Systems",
+    "courses": [
+      "ASEP 123",
+      "ASEP 121",
+      "ASEP 101"
+    ]
+  },
+  "CHEM 212": {
+    "text": "CHEM 211 Organic Chemistry I",
+    "courses": [
+      "CHEM 211"
+    ]
+  },
+  "CRIM 155": {
+    "text": "Demonstrated competency through appropriate assessment or earning a grade of “C” or better in ENGL 083 Reading Strategies for College and ENGL 093 Introduction to College Writing, or ENGL 095 Integrated Reading and Writing, or ENGL 075 Co-Requisite Integrated Reading and Writing",
+    "courses": [
+      "ENGL 083",
+      "ENGL 093",
+      "ENGL 095",
+      "ENGL 075"
+    ]
+  },
+  "CRIM 210": {
+    "text": "CRIM 101 Introduction to Criminal Justice Systems",
+    "courses": [
+      "CRIM 101"
+    ]
+  },
+  "DENT 118": {
+    "text": "DENT 115 Preclinical Practice I and II (or DENT 113 Preclinical Practice I and DENT 114 Preclinical Practice II) and DENT 123 Dental Anatomy This is an in-depth course that focuses on the principles, benefits, effects, and control of X-ray production. Covers history, radiation sources, modern dental radiographic equipment and techniques, anatomical landmarks, dental films and processing. Emphasizes avoidance of errors while exposing and processing dental radiographs. The Radiation Health and Safety component of the Dental Assisting National Board exam and the fee for this exam is assessed upon enrollment in the course",
+    "courses": [
+      "DENT 115",
+      "DENT 113",
+      "DENT 114",
+      "DENT 123"
+    ]
+  },
+  "DENT 128": {
+    "text": "DENT 123 Dental Anatomy, DENT 124 Preventive Dentistry, and DENT 115 Preclinical Practice I and II (or DENT 113 - Preclinical Practice I and DENT 114 - Preclinical Practice II)",
+    "courses": [
+      "DENT 123",
+      "DENT 124",
+      "DENT 115",
+      "DENT 113",
+      "DENT 114"
+    ]
+  },
+  "DESN 133": {
+    "text": "DESN 130 Fundamentals of Computer Graphics",
+    "courses": [
+      "DESN 130"
+    ]
+  },
+  "DESN 230": {
+    "text": "DESN 101 Introduction to Design Technology",
+    "courses": [
+      "DESN 101"
+    ]
+  },
+  "DHYG 113": {
+    "text": "DHYG 101 - Fundamentals of Dental Hygiene, DHYG 102 - Fundamentals of Dental Hygiene Lab, DHYG 103 - Dental Radiography, DHYG 104 - Dental Anatomy, DHYG 105 - Nutrition and Oral Health, DHYG 106 - Oral Histology and Embryology and DHYG 107 - Head and Neck Anatomy",
+    "courses": [
+      "DHYG 101",
+      "DHYG 102",
+      "DHYG 103",
+      "DHYG 104",
+      "DHYG 105",
+      "DHYG 106",
+      "DHYG 107"
+    ]
+  },
+  "DHYG 114": {
+    "text": "DHYG 101 - Fundamentals of Dental Hygiene, DHYG 102 - Fundamentals of Dental Hygiene Lab, DHYG 103 - Dental Radiography, DHYG 104 - Dental Anatomy, DHYG 105 - Nutrition and Oral Health, DHYG 106 - Oral Histology and Embryology, and DHYG 107 - Head and Neck Anatomy",
+    "courses": [
+      "DHYG 101",
+      "DHYG 102",
+      "DHYG 103",
+      "DHYG 104",
+      "DHYG 105",
+      "DHYG 106",
+      "DHYG 107"
+    ]
+  },
+  "DHYG 235": {
+    "text": "DHYG 109 Preventive Dentistry, DHYG 201 Community and Public Health Dentistry, DHYG 203 Dental Materials, DHYG 222 Oral Pathology, DHYG 224 Dental Hygiene,",
+    "courses": [
+      "DHYG 109",
+      "DHYG 201",
+      "DHYG 203",
+      "DHYG 222",
+      "DHYG 224"
+    ]
+  },
+  "ENGR 261": {
+    "text": "ENGR 260 Vector Mechanics-Statics",
+    "courses": [
+      "ENGR 260"
+    ]
+  },
+  "ENRG 202": {
+    "text": "INDT 113 Basic Electricity",
+    "courses": [
+      "INDT 113"
+    ]
+  },
+  "HIMT 202": {
+    "text": "HIMT 101 Introduction to Health Information Technology, HIMT 102 Health Data Content and Structure, and MATH 200",
+    "courses": [
+      "HIMT 101",
+      "HIMT 102",
+      "MATH 200"
+    ]
+  },
+  "HIMT 204": {
+    "text": "HIMT 101 Introduction to Health Information Technology and HIMT 102 Health Data Content and Structure",
+    "courses": [
+      "HIMT 101",
+      "HIMT 102"
+    ]
+  },
+  "HVAC 209": {
+    "text": "Demonstrated competency through appropriate assessment or earning a grade of “C” or better in MATH 015 Fundamentals of Algebra",
+    "courses": [
+      "MATH 015"
+    ]
+  },
+  "MEDL 205": {
+    "text": "MEDL 101 Fundamentals of Laboratory Techniques, MEDL 102 Routine Analysis Techniques and Program Advisor Approval",
+    "courses": [
+      "MEDL 101",
+      "MEDL 102"
+    ]
+  },
+  "MEDL 216": {
+    "text": "MEDL 101 Fundamentals of Laboratory Techniques, MEDL 102 Routine Analysis Techniques and Program Chair Approval",
+    "courses": [
+      "MEDL 101",
+      "MEDL 102"
+    ]
+  },
+  "MTTC 185": {
+    "text": "MTTC 107 CNC Setup and Operations",
+    "courses": [
+      "MTTC 107"
+    ]
+  },
+  "MTTC 195": {
+    "text": "MTTC 185 Multi-Axis CNC Setup and Operation I",
+    "courses": [
+      "MTTC 185"
+    ]
+  },
+  "OTAS 204": {
+    "text": "APHY 102 Anatomy and Physiology II; PSYC 201 Lifespan Development; OTAS 101 Foundations and Theory in Occupational Therapy; OTAS 102 Applied Kinesiology in OT; OTAS 103 Conditions in Occupational Therapy",
+    "courses": [
+      "APHY 102",
+      "PSYC 201",
+      "OTAS 101",
+      "OTAS 102",
+      "OTAS 103"
+    ]
+  },
+  "RDTH 220": {
+    "text": "RDTH 100, Introduction to Radiation Therapy",
+    "courses": [
+      "RDTH 100"
+    ]
+  },
+  "RDTH 245": {
+    "text": "RDTH 235 Clinical Externship III",
+    "courses": [
+      "RDTH 235"
+    ]
+  },
+  "RESP 107": {
+    "text": "RESP 103 Cardiopulmonary Anatomy and Physiology, Current CPR AHA-BLS for Healthcare Professionals or equivalent and RESP 101, Assessment and Caring for a Respiratory Patient, completed health forms, and required pre-clinical documents or Program Chair Approval",
+    "courses": [
+      "RESP 103",
+      "RESP 101"
+    ]
+  },
+  "SURG 211": {
+    "text": "SURG 113 Surgical Procedures and SURG 114 Clinical Applications I",
+    "courses": [
+      "SURG 113",
+      "SURG 114"
+    ]
+  },
+  "SURG 212": {
+    "text": "SURG 113 Surgical Procedures and SURG 114 Clinical Applications I",
+    "courses": [
+      "SURG 113",
+      "SURG 114"
+    ]
+  },
+  "SVAD 260": {
+    "text": "SVAD 150 Cloud Foundations and (NETI 104 Introduction to Networking or NETI 109 Networking I)",
+    "courses": [
+      "SVAD 150",
+      "NETI 104",
+      "NETI 109"
+    ]
+  },
+  "TTEN 219": {
+    "text": "TTEN 209 Toyota T-Ten Engine Performance II",
+    "courses": [
+      "TTEN 209"
+    ]
+  },
+  "TTEN 243": {
+    "text": "TTEN 123 Toyota T-Ten Electrical II",
+    "courses": [
+      "TTEN 123"
+    ]
+  },
+  "MORT 209": {
+    "text": "MORT 105 Embalming Theory I and MORT 106 Anatomy of Funeral Service",
+    "courses": [
+      "MORT 105",
+      "MORT 106"
+    ]
+  },
+  "MPRO 202": {
+    "text": "MPRO 122",
+    "courses": [
+      "MPRO 122"
+    ]
+  },
+  "OTAS 203": {
+    "text": "APHY 102 Anatomy and Physiology II; PSYC 201 Lifespan Development; OTAS 101 Foundations and Theory in Occupational Therapy; OTAS 102 Applied Kinesiology in OT; OTAS 103 Conditions in Occupational Therapy",
+    "courses": [
+      "APHY 102",
+      "PSYC 201",
+      "OTAS 101",
+      "OTAS 102",
+      "OTAS 103"
+    ]
+  },
+  "OTAS 205": {
+    "text": "APHY 102 Anatomy and Physiology II; PSYC 201 Lifespan Development; OTAS 101 Foundations and Theory in Occupational Therapy; OTAS 102 Applied Kinesiology in OT; OTAS 103 Conditions in Occupational Therapy",
+    "courses": [
+      "APHY 102",
+      "PSYC 201",
+      "OTAS 101",
+      "OTAS 102",
+      "OTAS 103"
+    ]
+  },
+  "ARTS 200": {
+    "text": "ARTS 101 Life and Object Drawing II",
+    "courses": [
+      "ARTS 101"
+    ]
+  },
+  "AUTI 255": {
+    "text": "AUTI 254 High Performance Engines/Systems I",
+    "courses": [
+      "AUTI 254"
+    ]
+  },
+  "AVIT 222": {
+    "text": "AVIT 141 Aviation Basics I, AVIT 142 Aviation Basics II, AVIT 146 Aviation Regulations and AVIT 148 Aviation Materials and Processes",
+    "courses": [
+      "AVIT 141",
+      "AVIT 142",
+      "AVIT 146",
+      "AVIT 148"
+    ]
+  },
+  "AVIT 245": {
+    "text": "AVIT 141 Aviation Basics I, AVIT 146 Aviation Regulations and AVIT 148 Aviation Materials and Processes",
+    "courses": [
+      "AVIT 141",
+      "AVIT 146",
+      "AVIT 148"
+    ]
+  },
+  "CRIM 230": {
+    "text": "CRIM 130 Introduction to Corrections",
+    "courses": [
+      "CRIM 130"
+    ]
+  },
+  "DENT 121": {
+    "text": "DENT 120 Dental Radiography I This is the second in a series of two in-depth courses that focuses on the principles, benefits, effects, and control of X-ray production. Covers history, radiation sources, modern dental radiographic equipment and techniques, anatomical landmarks, dental films and processing. Emphasizes avoidance of errors while exposing and processing dental radiographs. The Radiation Health and Safety component of the Dental Assisting National Board exam and the fee for this exam is assessed upon enrollment in the course",
+    "courses": [
+      "DENT 120"
+    ]
+  },
+  "DENT 122": {
+    "text": "DENT 102 Dental Materials and Lab I, DENT 115 Preclinical Practice I and II (or DENT 113 Preclinical Practice I and DENT 114 Preclinical Practice II), DENT 116 Dental Emergencies/Pharmacology, and DENT 123 Dental Anatomy",
+    "courses": [
+      "DENT 102",
+      "DENT 115",
+      "DENT 113",
+      "DENT 114",
+      "DENT 116",
+      "DENT 123"
+    ]
+  },
+  "DESN 207": {
+    "text": "DESN 104 Mechanical Graphics",
+    "courses": [
+      "DESN 104"
+    ]
+  },
+  "DHYG 121": {
+    "text": "DHYG 101 Fundamentals of Dental Hygiene, DHYG 102 Fundamentals of Dental Hygiene Lab, DHYG 103 Dental Radiography, DHYG 104 Dental Anatomy, DHYG 105 Nutrition and Oral Health, DHYG 106 Oral Histology and Embryology, DHYG 107 Head and Neck Anatomy COREQUISITE: DHYG 113 Dental Radiology Clinic I, DHYG 114 Dental Hygiene Clinic I, DHYG 120 Pharmacology, DHYG 122 General Pathology, DHYG 110 Periodontology",
+    "courses": [
+      "DHYG 101",
+      "DHYG 102",
+      "DHYG 103",
+      "DHYG 104",
+      "DHYG 105",
+      "DHYG 106",
+      "DHYG 107",
+      "DHYG 113",
+      "DHYG 114",
+      "DHYG 120",
+      "DHYG 122",
+      "DHYG 110"
+    ]
+  },
+  "DHYG 122": {
+    "text": "DHYG 101 Fundamentals of Dental Hygiene, DHYG 102 Fundamentals of Dental Hygiene Lab, DHYG 103 Dental Radiography, DHYG 104 Dental Anatomy, DHYG 105 Nutrition and Oral Health, DHYG 106 Oral Histology and Embryology, DHYG 107 Head and Neck Anatomy. COREQUISITE: DHYG 113 Dental Radiology Clinic I, DHYG 114 Dental Hygiene Clinic I, DHYG 120 Pharmacology, DHYG 121 Medical and Dental Emergencies, DHYG 110 Periodontology",
+    "courses": [
+      "DHYG 101",
+      "DHYG 102",
+      "DHYG 103",
+      "DHYG 104",
+      "DHYG 105",
+      "DHYG 106",
+      "DHYG 107",
+      "DHYG 113",
+      "DHYG 114",
+      "DHYG 120",
+      "DHYG 121",
+      "DHYG 110"
+    ]
+  },
+  "DMSI 163": {
+    "text": "DMSI 162",
+    "courses": [
+      "DMSI 162"
+    ]
+  },
+  "SMDI 271": {
+    "text": "DBMS 160 - Data Visualization and Analysis and ADMF 205 - Sensors in Manufacturing and ADMF 206 - Industrial Robotics II and INDT 206 - Programmable Automation Controls II",
+    "courses": [
+      "DBMS 160",
+      "ADMF 205",
+      "ADMF 206",
+      "INDT 206"
+    ]
+  },
+  "TTEN 109": {
+    "text": "TTEN 113 - Toyota T-Ten Electrical I",
+    "courses": [
+      "TTEN 113"
+    ]
+  },
+  "ASEP 145": {
+    "text": "ASEP 100 - Introduction to GM ASEP Program",
+    "courses": [
+      "ASEP 100"
+    ]
+  },
+  "AUTI 254": {
+    "text": "AUTI 141 Engine Fundamentals and Repair",
+    "courses": [
+      "AUTI 141"
+    ]
+  },
+  "COMM 213": {
+    "text": "COMM 101 Fundamentals of Public Speaking or COMM 102 Introduction to Interpersonal Communication and ENGL 111 English Composition",
+    "courses": [
+      "COMM 101",
+      "COMM 102",
+      "ENGL 111"
+    ]
+  },
+  "DENT 125": {
+    "text": "DENT 102 Dental Materials and Lab I, DENT 115 Preclinical Practice I and II (or DENT 113 Preclinical Practice I and DENT 114 Preclinical Practice II), DENT 116 Dental Emergencies/Pharmacology, and DENT 123 Dental Anatomy This is the second in a series of two in depth courses that continues Preclinical Practice I. Anesthesia is presented. The following dental specialties are presented: Oral and Maxillofacial Surgery, Periodontics, Endodontics, Pediatric Dentistry, Orthodontics, Prosthodontics, and Dental Public Health",
+    "courses": [
+      "DENT 102",
+      "DENT 115",
+      "DENT 113",
+      "DENT 114",
+      "DENT 116",
+      "DENT 123"
+    ]
+  },
+  "DENT 133": {
+    "text": "DENT 122 - Clinical Practicum, DENT 118 - Dental Radiography (or DENT 120 - Dental Radiography I and DENT 121 - Dental Radiography II), DENT 124 - Preventive Dentistry/Diet and Nutrition, DENT 125 - Preclinical Practice III, and DENT 129 - Dental Materials and Lab II",
+    "courses": [
+      "DENT 122",
+      "DENT 118",
+      "DENT 120",
+      "DENT 121",
+      "DENT 124",
+      "DENT 125",
+      "DENT 129"
+    ]
+  },
+  "DMSI 161": {
+    "text": "DMSI 159",
+    "courses": [
+      "DMSI 159"
+    ]
+  },
+  "MEDL 219": {
+    "text": "CHEM 101 - Introductory Chemistry I ; MEDL 208 Medical Chemistry I; and Program Chair Approval",
+    "courses": [
+      "CHEM 101",
+      "MEDL 208"
+    ]
+  },
+  "MEDL 226": {
+    "text": "MEDL 101 - Fundamentals of Laboratory Techniques ,MEDL 102 - Routine Analysis Techniques , MEDL 225 - Microbiology Techniques I, and Program Chair Approval",
+    "courses": [
+      "MEDL 101",
+      "MEDL 102",
+      "MEDL 225"
+    ]
+  },
+  "MORT 101": {
+    "text": "MORT 100 Orientation to Funeral Service",
+    "courses": [
+      "MORT 100"
+    ]
+  },
+  "HOSP 153": {
+    "text": "Proof of at least 21 years of age. HOSP 151 Introduction to Wine Service",
+    "courses": [
+      "HOSP 151"
+    ]
+  },
+  "HUMS 116": {
+    "text": "Demonstrated competency through appropriate assessment or earning a grade of “C” or better in ENGL 083 Reading Strategies for College and ENGL 093 Introduction to College Writing, or ENGL 095 Integrated Reading and Writing, or ENGL 075 Co-Requisite Integrated Reading and Writing",
+    "courses": [
+      "ENGL 083",
+      "ENGL 093",
+      "ENGL 095",
+      "ENGL 075"
+    ]
+  },
+  "ITSP 240": {
+    "text": "ITSP 235 - Internet of Things Fundamentals",
+    "courses": [
+      "ITSP 235"
+    ]
+  },
+  "RADT 117": {
+    "text": "Admission to the program through appropriate assessment and MATH 136 College Algebra",
+    "courses": [
+      "MATH 136"
+    ]
+  },
+  "RDTH 155": {
+    "text": "RDTH 110, Virtual Simulation Lab",
+    "courses": [
+      "RDTH 110"
+    ]
+  },
+  "RDTH 160": {
+    "text": "MATH 136 College Algebra or MATH 137 Trig with Analytic Geometry or MATH 201 Brief Calculus I or MATH 202 Brief Calculus II or MATH 211 Calculus I or MATH 212 Calculus II & acceptance to RDTH Program",
+    "courses": [
+      "MATH 136",
+      "MATH 137",
+      "MATH 201",
+      "MATH 202",
+      "MATH 211",
+      "MATH 212"
+    ]
+  },
+  "SVAD 230": {
+    "text": "SVAD 150 Cloud Foundations and (NETI 104 Introduction to Networking or NETI 109 Networking I)",
+    "courses": [
+      "SVAD 150",
+      "NETI 104",
+      "NETI 109"
+    ]
+  },
+  "TMAS 201": {
+    "text": "TMAS 140 Therapeutic Massage Training II COREQUISITE: TMAS 140 Therapeutic Massage Training II",
+    "courses": [
+      "TMAS 140"
+    ]
+  },
+  "TTEN 209": {
+    "text": "TTEN 109 Toyota T-Ten Engine Performance Systems I AND TTEN 123 Toyota T-Ten Electrical II",
+    "courses": [
+      "TTEN 109",
+      "TTEN 123"
+    ]
+  },
+  "VISC 120": {
+    "text": "ENGL 111. Just like comics themselves, this class is for everybody. No previous experience with comics is necessary—simply be prepared to challenge and to be challenged. The course examines the history of comic books, their place in culture, and the philosophy and technique of their creation. Students will develop research skills, communications skills, and work with elements of visual narrative and design. You, dear student, have stumbled upon a class that promises to be academically rigorous and tremendously fun",
+    "courses": [
+      "ENGL 111"
+    ]
+  },
+  "EDSN 108": {
+    "text": "EDSN 103 - Introduction to Environmental Design and EDSN 107 - Design and Construction Graphics",
+    "courses": [
+      "EDSN 103",
+      "EDSN 107"
+    ]
+  },
+  "EDSN 115": {
+    "text": "EDSN 107 - Design and Construction Graphics",
+    "courses": [
+      "EDSN 107"
+    ]
+  },
+  "CRIM 114": {
+    "text": "CRIM 101 Introduction to the Criminal Justice System",
+    "courses": [
+      "CRIM 101"
+    ]
+  },
+  "CRIM 252": {
+    "text": "CRIM 101 Introduction to Criminal Justice Systems",
+    "courses": [
+      "CRIM 101"
+    ]
+  },
+  "DESN 134": {
+    "text": "DESN 130 Fundamentals of Computer Graphics",
+    "courses": [
+      "DESN 130"
+    ]
+  },
+  "DHYG 120": {
+    "text": "DHYG 101 Fundamentals of Dental Hygiene, DHYG 102 Fundamentals of Dental Hygiene Lab, DHYG 103 Dental Radiography, DHYG 104 Dental Anatomy, DHYG 105 Nutrition and Oral Health, DHYG 106 Oral Histology and Embryology, DHYG 107 Head and Neck Anatomy COREQUISITE: DHYG 113 Dental Radiology Clinic I, DHYG 114 Dental Hygiene Clinic I, DHYG 121 Medical and Dental Emergencies, DHYG 122 General Pathology, DHYG 110 Periodontology",
+    "courses": [
+      "DHYG 101",
+      "DHYG 102",
+      "DHYG 103",
+      "DHYG 104",
+      "DHYG 105",
+      "DHYG 106",
+      "DHYG 107",
+      "DHYG 113",
+      "DHYG 114",
+      "DHYG 121",
+      "DHYG 122",
+      "DHYG 110"
+    ]
+  },
+  "DHYG 230": {
+    "text": "DHYG 201 Community and Public Health Dentistry, DHYG 203 Dental Materials, DHYG 209 Preventive, DHYG 222 Oral Pathology, and DHYG 224 Dental Hygiene Clinic II",
+    "courses": [
+      "DHYG 201",
+      "DHYG 203",
+      "DHYG 209",
+      "DHYG 222",
+      "DHYG 224"
+    ]
+  },
+  "MEDL 208": {
+    "text": "CHEM 101, Introductory Chemistry I and Program Advisor Approval",
+    "courses": [
+      "CHEM 101"
+    ]
+  },
+  "MEDL 225": {
+    "text": "MEDL 101 Fundamentals of Laboratory Techniques, MEDL 102 Routine Analysis Techniques and Program Chair Approval",
+    "courses": [
+      "MEDL 101",
+      "MEDL 102"
+    ]
+  },
+  "MPRO 206": {
+    "text": "MPRO 202",
+    "courses": [
+      "MPRO 202"
+    ]
+  },
+  "OTAS 201": {
+    "text": "APHY 102 Anatomy and Physiology II; PSYC 201 Lifespan Development; OTAS 101 Foundations and Theory in Occupational Therapy; OTAS 102 Applied Kinesiology in OT; OTAS 103 Conditions in Occupational Therapy",
+    "courses": [
+      "APHY 102",
+      "PSYC 201",
+      "OTAS 101",
+      "OTAS 102",
+      "OTAS 103"
+    ]
+  },
+  "SPED 240": {
+    "text": "SPED 102 - Introduction to Inclusive Teaching and Learning, EDUC 121 - Child & Adolescent Development, EDUC 230 - The Exceptional Child and SPED 210 - Collaborative Relationships in Special Education",
+    "courses": [
+      "SPED 102",
+      "EDUC 121",
+      "EDUC 230",
+      "SPED 210"
+    ]
+  },
+  "TTEN 123": {
+    "text": "TTEN 100 - Introduction to Toyota T-Ten Program AND TTEN 113 - Toyota T-Ten Electrical Systems I",
+    "courses": [
+      "TTEN 100",
+      "TTEN 113"
+    ]
+  },
+  "TTEN 142": {
+    "text": "TTEN 113 - Toyota T-Ten Electrical I",
+    "courses": [
+      "TTEN 113"
+    ]
+  },
+  "HOSP 271": {
+    "text": "HOSP 171 - Introduction to Convention/Meeting Management",
+    "courses": [
+      "HOSP 171"
+    ]
+  },
+  "INDT 211": {
+    "text": "INDT 113 Basic Electricity",
+    "courses": [
+      "INDT 113"
+    ]
+  },
+  "ACCT 210": {
+    "text": "ACCT 101 Financial Accounting",
+    "courses": [
+      "ACCT 101"
+    ]
+  },
+  "ARTS 224": {
+    "text": "ARTS 100 Life and Object Drawing I and ARTS 102 Color and Design Theory I or Program Chair Approval",
+    "courses": [
+      "ARTS 100",
+      "ARTS 102"
+    ]
+  },
+  "ASEP 121": {
+    "text": "ASEP 100 Introduction to GM ASEP program",
+    "courses": [
+      "ASEP 100"
+    ]
+  },
+  "AVIT 226": {
+    "text": "AVIT 144 Aircraft Electricity and AVIT 146 Aviation Regulations",
+    "courses": [
+      "AVIT 144",
+      "AVIT 146"
+    ]
+  },
+  "AVIT 228": {
+    "text": "AVIT 144 Aircraft Electricity and AVIT 146 Aviation Regulations",
+    "courses": [
+      "AVIT 144",
+      "AVIT 146"
+    ]
+  },
+  "CRIM 214": {
+    "text": "CRIM 110",
+    "courses": [
+      "CRIM 110"
+    ]
+  },
+  "DMSI 162": {
+    "text": "DMSI 158",
+    "courses": [
+      "DMSI 158"
+    ]
+  },
+  "EDSN 211": {
+    "text": "EDSN 107 Design and Construction Graphics and EDSN 103 Introduction to Environmental Design",
+    "courses": [
+      "EDSN 107",
+      "EDSN 103"
+    ]
+  },
+  "HOSP 215": {
+    "text": "HOSP 114 Introduction to Hospitality",
+    "courses": [
+      "HOSP 114"
+    ]
+  },
+  "HOSP 229": {
+    "text": "HOSP 114 Introduction to Hospitality",
+    "courses": [
+      "HOSP 114"
+    ]
+  },
+  "HSPS 212": {
+    "text": "HSPS 101 Introduction to Homeland Security, HSPS 111 Principle of Emergency Management",
+    "courses": [
+      "HSPS 101",
+      "HSPS 111"
+    ]
+  },
+  "HSPS 214": {
+    "text": "HSPS 101 Introduction to Homeland Security, HSPS 111 Principle of Emergency Management",
+    "courses": [
+      "HSPS 101",
+      "HSPS 111"
+    ]
+  },
+  "MATH 251": {
+    "text": "Successful completion of MATH 212 Calculus II",
+    "courses": [
+      "MATH 212"
+    ]
+  },
+  "NGAS 102": {
+    "text": "NGAS 101 Fundamentals of Natural Gas",
+    "courses": [
+      "NGAS 101"
+    ]
+  },
+  "OTAS 202": {
+    "text": "APHY 102 Anatomy and Physiology II; PSYC 201 Lifespan Development; OTAS Foundations and Theory in Occupational Therapy; OTAS 102 Applied Kinesiology in OT; OTAS 103 Conditions in Occupational Therapy",
+    "courses": [
+      "APHY 102",
+      "PSYC 201",
+      "OTAS 102",
+      "OTAS 103"
+    ]
+  },
+  "RDTH 241": {
+    "text": "RDTH 220 Techniques and Applications in Radiation Therapy",
+    "courses": [
+      "RDTH 220"
+    ]
+  },
+  "SDEV 243": {
+    "text": "SDEV 200 - Software Development with Java OR SDEV 210 - Systems Programming with Rust OR SDEV 220 - Software Development Using Python OR SDEV 230 - Software Development using C++ OR SDEV 240 - Software Development Using C# OR CSCI 201 - Computer Science II",
+    "courses": [
+      "SDEV 200",
+      "SDEV 210",
+      "SDEV 220",
+      "SDEV 230",
+      "SDEV 240",
+      "CSCI 201"
+    ]
+  },
+  "SVAD 211": {
+    "text": "SVAD 111 Linux and Virtualization Fundamentals",
+    "courses": [
+      "SVAD 111"
     ]
   }
 }
